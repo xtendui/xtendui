@@ -52,3 +52,12 @@ Use this code to create a **overlay** in **multiple mode**.
   <demoinline src="demos/components/overlay/usage-multiple">
   </demoinline>
 </demo>
+
+## Themes
+
+Check out [overlay themes](/themes/overlay) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/design/overlay-design-v1">
+  </div>
+</demo>

@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div data-xt-tooltip="{ duration: 300, popperjs: false }" data-xt-mousefollow>
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-tooltip-element
       >
         mouse follow
@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
       <div class="*** xt-mousefollow fixed *** xt-tooltip p-3 group" data-xt-tooltip-target data-xt-mousefollow-target>
         <div
-          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} -mt-1 ml-4 pointer-events-none transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0"
+          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()} -mt-1 ml-4 pointer-events-none transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0"
         >
           Lorem ipsum dolor sit amet
         </div>

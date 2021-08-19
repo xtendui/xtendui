@@ -6,9 +6,9 @@ const html = /* HTML */ `
       <div data-xt-tooltip-element>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         >
-          tooltip
+          Tooltip
         </button>
 
         <div
@@ -16,7 +16,7 @@ const html = /* HTML */ `
           data-xt-tooltip-target
         >
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>
@@ -26,9 +26,9 @@ const html = /* HTML */ `
       <div data-xt-tooltip-element>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         >
-          tooltip
+          Tooltip
         </button>
 
         <div
@@ -36,7 +36,7 @@ const html = /* HTML */ `
           data-xt-tooltip-target
         >
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
           >
             Consectetur adipiscing elit
           </div>

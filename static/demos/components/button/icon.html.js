@@ -7,21 +7,21 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-1' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon medium ${classes.iconSearch({ classes: '*** text-base -my-1 *** ml-1' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon large ${classes.iconSearch({ classes: '*** text-xl -my-1 *** ml-1' })}
       </button>
@@ -32,21 +32,21 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-1.5' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon medium ${classes.iconSearch({ classes: '*** text-base *** ml-1.5' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon large ${classes.iconSearch({ classes: '*** text-xl -my-1 *** ml-1.5' })}
       </button>
@@ -57,21 +57,21 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-2' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon medium ${classes.iconSearch({ classes: '*** text-base *** ml-2' })}
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         icon large ${classes.iconSearch({ classes: '*** text-xl -my-1 *** ml-2' })}
       </button>

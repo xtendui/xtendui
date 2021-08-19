@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center justify-center">
-      <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
+      <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
         <div class="${classes.cardSm()}">
           <div class="xt-h5">Small</div>
           <p>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
       >
         Lorem ipsum
         <span class="${classes.loader()} *** bg-white bg-opacity-75 ***">

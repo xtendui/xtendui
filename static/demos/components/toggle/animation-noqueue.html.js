@@ -3,9 +3,21 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ queue: false, duration: 500 }">
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 0</button>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        data-xt-toggle-element
+      >
+        Toggle 0
+      </button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 1</button>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        data-xt-toggle-element
+      >
+        Toggle 1
+      </button>
 
       <div class="relative w-full">
         <div

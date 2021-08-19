@@ -6,23 +6,25 @@ const html = /* HTML */ `
       <div data-xt-drop-element>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         >
           mouse
         </button>
 
         <div class="xt-drop p-3" data-xt-drop-target>
-          <div class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()}">
+          <div
+            class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textBlack()} ${classes.cardGray()}"
+          >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
               >
                 Dolor sit
               </button>
@@ -30,31 +32,31 @@ const html = /* HTML */ `
                 <div data-xt-drop-element>
                   <button
                     type="button"
-                    class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                    class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
                   >
                     nested
                   </button>
 
                   <div class="xt-drop p-3" data-xt-drop-target>
                     <div
-                      class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardPrimary()}"
+                      class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textWhite()} ${classes.cardPrimary()}"
                     >
                       <nav class="xt-list flex-col ${classes.groupMd()}">
                         <a
                           href="#"
-                          class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()}"
+                          class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
                         >
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </a>
                         <button
                           type="button"
-                          class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()}"
+                          class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
                         >
                           Dolor sit
                         </button>
                         <button
                           type="button"
-                          class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()}"
+                          class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
                         >
                           Amet
                         </button>
@@ -73,30 +75,32 @@ const html = /* HTML */ `
       <div data-xt-drop="{ on: 'focus', off: false }">
         <input
           type="text"
-          class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+          class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
           aria-label="Focus"
           placeholder="Focus"
           data-xt-drop-element
         />
 
         <div class="xt-drop p-3" data-xt-drop-target>
-          <div class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()}">
+          <div
+            class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textBlack()} ${classes.cardGray()}"
+          >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
               >
                 Dolor sit
               </button>
               <button
                 type="button"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
               >
                 Amet
               </button>

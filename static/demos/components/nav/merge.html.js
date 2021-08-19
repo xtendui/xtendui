@@ -4,13 +4,13 @@ const html = /* HTML */ `
   <div>
     <a href="#" type="button" class="xt-list flex-col *** group ***">
       <div
-        class="xt-button ${classes.groupButtonMd()} rounded-t${classes.groupButtonRadius()} ${classes.groupButtonDefault()} ${classes.groupButtonDefaultGroup()}"
+        class="xt-button ${classes.groupButtonMd()} rounded-t${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()} ${classes.buttonPrimaryAnimGroup()}"
       >
         Lorem ipsum dolor sit amet
       </div>
 
       <div
-        class="xt-button ${classes.groupButtonMd()} rounded-b${classes.groupButtonRadius()} ${classes.groupButtonPrimary()} ${classes.groupButtonPrimaryGroup()}"
+        class="xt-button ${classes.groupButtonMd()} rounded-b${classes.groupButtonRadius()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()} ${classes.buttonPrimaryAnimGroup()}"
       >
         Et dictum felis vestibulum sed
       </div>

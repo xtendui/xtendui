@@ -3,12 +3,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--sticky-matchmedia">
     <div class="*** xt-sticky ***">
-      <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+      <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

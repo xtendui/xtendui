@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--row-overflow">
     <div class="xt-row xt-row-4">
       <div class="w-full md:w-4/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>
@@ -16,7 +16,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-4/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -25,7 +25,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-4/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -34,7 +34,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-4/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -43,7 +43,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-4/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

@@ -54,7 +54,7 @@ You can have an **unclosable overlay** with `closeDeep: false` and `closeInside:
   </div>
 </demo>
 
-## Custom
+## Other Content
 
 You can put **any content** inside, here are some examples.
 

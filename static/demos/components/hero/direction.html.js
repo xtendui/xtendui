@@ -16,7 +16,7 @@ const html = /* HTML */ `
           </h3>
           <a
             href="#"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Lorem ipsum
           </a>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
           </h3>
           <a
             href="#"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Lorem ipsum
           </a>
@@ -60,7 +60,7 @@ const html = /* HTML */ `
           </h3>
           <a
             href="#"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Lorem ipsum
           </a>

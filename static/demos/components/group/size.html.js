@@ -8,14 +8,14 @@ const html = /* HTML */ `
           <div class="inline-flex flex-auto">
             <button
               type="submit"
-              class="xt-button *** ${classes.buttonSm()} *** rounded-tl${classes.groupButtonRadius()} md:rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+              class="xt-button *** ${classes.buttonSm()} *** rounded-tl${classes.groupButtonRadius()} md:rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             >
               ${classes.iconSearch({ classes: 'text-xl -my-1' })}
             </button>
 
             <input
               type="text"
-              class="${classes.input()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} ${classes.inputDefault()}"
+              class="${classes.input()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} ${classes.inputGray()}"
               aria-label="Search"
               placeholder="Seach Catalog"
             />
@@ -23,7 +23,7 @@ const html = /* HTML */ `
 
           <a
             href="#"
-            class="xt-button *** ${classes.buttonSm()} *** rounded${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button *** ${classes.buttonSm()} *** rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Search
           </a>
@@ -35,14 +35,14 @@ const html = /* HTML */ `
           <div class="inline-flex flex-auto">
             <button
               type="submit"
-              class="xt-button *** ${classes.buttonMd()} *** rounded-tl${classes.groupButtonRadius()} md:rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+              class="xt-button *** ${classes.buttonMd()} *** rounded-tl${classes.groupButtonRadius()} md:rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             >
               ${classes.iconSearch({ classes: 'text-xl -my-1' })}
             </button>
 
             <input
               type="text"
-              class="${classes.input()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} ${classes.inputDefault()}"
+              class="${classes.input()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} ${classes.inputGray()}"
               aria-label="Search"
               placeholder="Seach Catalog"
             />
@@ -50,7 +50,7 @@ const html = /* HTML */ `
 
           <a
             href="#"
-            class="xt-button *** ${classes.buttonMd()} *** rounded${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button *** ${classes.buttonMd()} *** rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Search
           </a>
@@ -62,14 +62,14 @@ const html = /* HTML */ `
           <div class="inline-flex flex-auto">
             <button
               type="submit"
-              class="xt-button *** ${classes.buttonLg()} *** rounded${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+              class="xt-button *** ${classes.buttonLg()} *** rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             >
               ${classes.iconSearch({ classes: 'text-xl -my-1' })}
             </button>
 
             <input
               type="text"
-              class="${classes.input()}  rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} ${classes.inputDefault()}"
+              class="${classes.input()}  rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} ${classes.inputGray()}"
               aria-label="Search"
               placeholder="Seach Catalog"
             />
@@ -77,7 +77,7 @@ const html = /* HTML */ `
 
           <a
             href="#"
-            class="xt-button *** ${classes.buttonLg()} *** rounded${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button *** ${classes.buttonLg()} *** rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Search
           </a>

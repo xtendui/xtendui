@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--javascript-animation">
     <button
       type="button"
-      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()} overflow-hidden"
+      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} overflow-hidden"
     >
       Lorem ipsum
       <span

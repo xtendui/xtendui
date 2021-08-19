@@ -8,7 +8,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
                 <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -22,7 +22,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}"
               >
                 <button
                   type="button"
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
                 <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -69,7 +69,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}"
               >
                 <button
                   type="button"
@@ -92,7 +92,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
                 <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -106,7 +106,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}"
               >
                 <button
                   type="button"
@@ -139,7 +139,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
                 <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -153,7 +153,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}"
               >
                 <button
                   type="button"
@@ -176,7 +176,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
                 <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -190,7 +190,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}"
               >
                 <button
                   type="button"
@@ -223,7 +223,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
                 <div class="xt-media-container bg-gray-300 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -237,7 +237,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()} ${classes.cardDefaultFull()}"
+                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}"
               >
                 <button
                   type="button"

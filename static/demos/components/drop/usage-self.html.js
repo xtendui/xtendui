@@ -3,23 +3,25 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="*** xt-drop *** p-4 relative inline-block *** on ***" data-xt-drop="{ closeOutside: false }">
-      <div class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.dropCardDefault()}">
+      <div
+        class="xt-card w-64 rounded${classes.dropCardRadius()} shadow-drop ${classes.textBlack()} ${classes.cardGray()}"
+      >
         <nav class="xt-list flex-col ${classes.groupMd()}">
           <a
             href="#"
-            class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+            class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </a>
           <button
             type="button"
-            class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+            class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >
             Dolor sit
           </button>
           <button
             type="button"
-            class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+            class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >
             Amet
           </button>

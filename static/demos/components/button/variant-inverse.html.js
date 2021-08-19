@@ -6,35 +6,35 @@ const html = /* HTML */ `
       <div class="xt-list xt-list-3 items-center text-white xt-links-inverse">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonDefault()} ***"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ***"
         >
           Gray
         </button>
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonPrimary()} ***"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} ***"
         >
           Primary
         </button>
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonDefaultPrimary()} ***"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()} ***"
         >
           Gray Primary
         </button>
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonRing()} ***"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonRing()} ${classes.buttonRingAnim()} ***"
         >
           Ring
         </button>
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** text-white ${classes.buttonText()} ***"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** text-white ${classes.buttonUpper()} ${classes.buttonTextAnim()} ***"
         >
           Text
         </button>

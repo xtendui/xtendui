@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div
-        class="inline-block align-middle ${classes.badgeMd()} rounded${classes.badgeRadius()} *** ${classes.badgeDefault()} ***"
+        class="inline-block align-middle ${classes.badgeMd()} rounded${classes.badgeRadius()} *** ${classes.badgeGray()} ***"
       >
         Gray
       </div>

@@ -1,45 +1,72 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const interactionDefault = () =>
-  '*** bg-gray-100 border-transparent border transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
-const interactionPrimary = () =>
-  '*** bg-primary-500 border-transparent border transition hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:bg-primary-700 active:translate-y-0 active:shadow-md on:bg-primary-700 on:translate-y-0 on:shadow-md ***'
-const animDesign = () =>
+const transparentAnim = () =>
+  '*** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
+const grayDesign = () => 'text-black bg-gray-100 border-transparent border'
+const grayAnim = () =>
+  '*** transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
+const primaryDesign = () => 'text-white bg-primary-500 border-transparent border'
+const primaryAnim = () =>
+  '*** transition hover:text-white hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:text-white active:bg-primary-700 active:translate-y-0 active:shadow-md on:text-white on:bg-primary-700 on:translate-y-0 on:shadow-md ***'
+const designAnim = () =>
   '*** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***'
-const animItem = () =>
+const itemAnim = () =>
   '*** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
-const animItemOpacity = () =>
+const itemAnimOpacity = () =>
   '*** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***'
 
-const buttonDefault = () => `font-medium leading-snug tracking-wider uppercase text-black ${interactionDefault()}`
-const buttonPrimary = () => `font-medium leading-snug tracking-wider uppercase text-white ${interactionPrimary()}`
-const cardDefault = () => `${classes.cardRadius()} text-black ${interactionDefault()}`
-const cardPrimary = () => `${classes.cardRadius()} text-white ${interactionPrimary()}`
-const cardWhite = () => 'text-black xt-links-default'
+const buttonGray = () => `${grayDesign()} ${grayAnim()}`
+const buttonPrimary = () => `${primaryDesign()} ${primaryAnim()}`
+const buttonGrayPrimary = () => `${classes.buttonGray()} ${primaryAnim()}`
+const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
+const cardGray = () => `${classes.cardGray()}`
+const cardPrimary = () => `${classes.cardPrimary()}`
+const cardWhite = () => `${classes.cardWhite()}`
+const cardBlack = () => `${classes.cardBlack()}`
 
 const html = /* HTML */ `
   <div>
     <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonDefault()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGray()}"
+      >
         Gray
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+      >
         Primary
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-medium leading-snug tracking-wider uppercase transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGrayPrimary()} ${transparentAnim()}"
+      >
+        Gray Primary
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonRing()} ${transparentAnim()}"
+      >
+        Ring
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} text-black ${transparentAnim()}"
       >
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link ${transparentAnim()}"
       >
         Link
       </button>
@@ -51,59 +78,59 @@ const html = /* HTML */ `
       <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-drop-element
         >
-          group
+          Drop
         </button>
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative">
             <div
-              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white ${animDesign()}"
+              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
             ></div>
-            <div class="xt-card w-64 ${animItem()}">
+            <div class="xt-card w-64 ${classes.textBlack()} ${itemAnim()}">
               <nav class="xt-list flex-col ${classes.groupMd()}">
                 <a
                   href="#"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
                 >
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
                 >
                   Amet
                 </button>
               </nav>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${itemAnimOpacity()}"></div>
         </div>
       </div>
 
       <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-drop-element
         >
-          card
+          Card
         </button>
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div class="relative">
             <div
-              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop bg-white ${animDesign()}"
+              class="*** xt-design *** rounded${classes.dropCardRadius()} shadow-drop rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
             ></div>
-            <div class="xt-card w-64 ${animItem()}">
+            <div class="xt-card w-64 ${classes.textBlack()} ${itemAnim()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -120,7 +147,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${animItemOpacity()}"></div>
+          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${itemAnimOpacity()}"></div>
         </div>
       </div>
     </div>
@@ -132,21 +159,21 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           >
-            tooltip
+            Tooltip
           </button>
 
           <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div class="relative">
               <div
-                class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip bg-black ${animDesign()}"
+                class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip ${cardBlack()} ${designAnim()}"
               ></div>
-              <div class="relative ${classes.tooltipMd()} font-medium text-white xt-links-inverse ${animItem()}">
+              <div class="relative ${classes.tooltipMd()} font-medium text-white xt-links-inverse ${itemAnim()}">
                 Lorem ipsum dolor sit amet
               </div>
             </div>
-            <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-black ${animItemOpacity()}"></div>
+            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black ${itemAnimOpacity()}"></div>
           </div>
         </div>
       </div>
@@ -155,7 +182,7 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           >
             Group
           </button>
@@ -163,21 +190,21 @@ const html = /* HTML */ `
           <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div class="relative">
               <div
-                class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip bg-white ${animDesign()}"
+                class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
               ></div>
-              <div class="font-medium text-black xt-links-default ${animItem()}">
+              <div class="${classes.textBlack()} xt-links-default ${itemAnim()}">
                 <form class="text-sm">
-                  <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem()}">
+                  <div class="xt-list flex-nowrap max-w-sm ${itemAnim()}">
                     <div class="inline-flex flex-auto">
                       <button
                         type="button"
-                        class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonDefault()}"
+                        class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${buttonGray()}"
                       >
                         ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                       </button>
                       <input
                         type="text"
-                        class="${classes.input()} ${classes.inputDefault()}"
+                        class="${classes.input()} ${classes.inputGray()}"
                         aria-label="Search"
                         placeholder="Seach Catalog"
                       />
@@ -185,7 +212,7 @@ const html = /* HTML */ `
 
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${buttonPrimary()}"
+                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                     >
                       Search
                     </button>
@@ -193,7 +220,7 @@ const html = /* HTML */ `
                 </form>
               </div>
             </div>
-            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black ${animItemOpacity()}"></div>
+            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black ${itemAnimOpacity()}"></div>
           </div>
         </div>
       </div>
@@ -205,10 +232,10 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
-          Screen full
+          Gallery
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
@@ -216,15 +243,15 @@ const html = /* HTML */ `
           <div class="xt-overlay-container p-0">
             <button
               type="button"
-              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl ${animItem()}"
+              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl ${itemAnim()}"
               aria-label="Close"
             >
               ${classes.iconX()}
             </button>
             <div class="xt-overlay-inner">
-              <div class="*** xt-design *** bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** ${cardWhite()} ${designAnim()}"></div>
 
-              <div class="xt-card xt-min-h-screen items-center justify-center ${cardWhite()} ${animItem()}">
+              <div class="xt-card xt-min-h-screen items-center justify-center ${classes.textBlack()} ${itemAnim()}">
                 <div class="xt-media-container bg-gray-300 pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                 </div>
@@ -237,7 +264,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Menu
@@ -247,9 +274,9 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
-              <div class="*** xt-design *** bg-white ${animDesign()}"></div>
+              <div class="*** xt-design *** ${cardWhite()} ${designAnim()}"></div>
 
-              <div class="xt-card xt-min-h-screen ${cardWhite()} ${animItem()}">
+              <div class="xt-card xt-min-h-screen ${classes.textBlack()} ${itemAnim()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -260,19 +287,19 @@ const html = /* HTML */ `
                 <div class="xt-list bg-primary-500">
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                   >
                     Menu
                   </button>
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                   >
                     Info
                   </button>
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                   >
                     Account
                   </button>
@@ -303,7 +330,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Contact
@@ -314,13 +341,13 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"
+                class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay ${cardWhite()} ${designAnim()}"
               ></div>
 
-              <div class="xt-card rounded${classes.overlayCardRadius()} ${cardWhite()} ${animItem()}">
+              <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.textBlack()} ${itemAnim()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -333,45 +360,45 @@ const html = /* HTML */ `
                     <form class="text-sm">
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Name </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Name </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Name"
                           />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Surname </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Surname </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Surname"
                           />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Email </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Email"
                           />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Telephone </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Telephone </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Telephone"
                           />
                         </div>
 
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Subject </label>
                           <select
-                            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Subject"
                           >
                             <option selected value="">Select an option</option>
@@ -382,9 +409,9 @@ const html = /* HTML */ `
                         </div>
 
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Message </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Message </label>
                           <textarea
-                            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputDefault()} h-24 resize-vertical"
+                            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputGray()} h-24 resize-vertical"
                             aria-label="Message"
                           ></textarea>
                         </div>
@@ -393,11 +420,10 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
-                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                             />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
                               <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
@@ -406,7 +432,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Send
                           </button>
@@ -439,7 +465,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Newsletter
@@ -450,13 +476,13 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay bg-white ${animDesign()}"
+                class="*** xt-design *** rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay ${cardWhite()} ${designAnim()}"
               ></div>
 
-              <div class="xt-card rounded${classes.overlayCardRadius()} ${cardWhite()} ${animItem()}">
+              <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.textBlack()} ${itemAnim()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -477,23 +503,23 @@ const html = /* HTML */ `
                     <form class="text-sm">
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Email </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Email"
                           />
                         </div>
 
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Subject </label>
 
                           <div class="xt-row xt-row-x-8 xt-row-y-2">
                             <div class="w-full sm:w-auto">
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
                                   checked
                                 />
@@ -505,7 +531,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
                                 />
                                 <span class="${classes.checkContent()}"> Option 2 </span>
@@ -516,7 +542,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
                                 />
                                 <span class="${classes.checkContent()}"> Option 3 </span>
@@ -529,11 +555,10 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
-                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                             />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
                               <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
@@ -542,7 +567,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Subscribe
                           </button>
@@ -566,7 +591,10 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${cardDefault()}">
+        <button
+          type="button"
+          class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textBlack()} ${cardGray()} ${grayAnim()}"
+        >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -579,7 +607,10 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${cardPrimary()}">
+        <button
+          type="button"
+          class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textWhite()} ${cardPrimary()} ${primaryAnim()}"
+        >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>

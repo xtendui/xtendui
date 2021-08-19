@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
           screen
@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.cardWhite()}"
+                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -57,7 +57,7 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
           Screen full
@@ -68,7 +68,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** p-0 ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.cardWhite()}"
+                class="xt-card *** xt-min-h-screen *** *** items-center justify-center *** shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"

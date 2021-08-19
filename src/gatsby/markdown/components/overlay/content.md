@@ -29,14 +29,3 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   <demoinline src="demos/components/overlay/size">
   </demoinline>
 </demo>
-
-## Custom
-
-You can also populate with other [card content](/components/card/content).
-
-> This demos use [card](/components/card) see documentation for more info.
-
-<demo>
-  <demoinline src="demos/components/overlay/custom">
-  </demoinline>
-</demo>

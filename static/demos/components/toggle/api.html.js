@@ -5,56 +5,56 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-first-element"
       >
         1st element
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-first-target"
       >
         1st target
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-add"
       >
         Add
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-remove"
       >
         Remove
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-restart"
       >
         Restart
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--toggle-api-unmount"
       >
         Unmount
@@ -63,14 +63,36 @@ const html = /* HTML */ `
 
     <div id="toggle--eventmethods">
       <div class="xt-list xt-list-3 items-center mb-4" id="toggle--eventmethods-elements">
-        <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element data-xt-group="0">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          data-xt-toggle-element
+          data-xt-group="0"
+        >
           Toggle Group 0
         </button>
-        <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element data-xt-group="0">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          data-xt-toggle-element
+          data-xt-group="0"
+        >
           Toggle Group 0
         </button>
-        <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 1</button>
-        <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>Toggle 2</button>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          data-xt-toggle-element
+        >
+          Toggle 1
+        </button>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          data-xt-toggle-element
+        >
+          Toggle 2
+        </button>
       </div>
 
       <div class="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
@@ -87,7 +109,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.cardRadius()} ${classes.cardDefault()} mt-6">
+    <div class="${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
         id="card--toggle-api-log"

@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <header class="site-header">
-      <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+      <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
         <div class="xt-h4">Header</div>
       </div>
     </header>
@@ -59,7 +59,7 @@ const html = /* HTML */ `
 
               <a
                 href="#"
-                class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} mb-6 ${classes.buttonPrimary()}"
+                class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} mb-6 ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               >
                 Add to cart
               </a>
@@ -89,7 +89,7 @@ const html = /* HTML */ `
     </main>
 
     <footer class="site-footer">
-      <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+      <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
         <div class="xt-h4">Footer</div>
       </div>
     </footer>

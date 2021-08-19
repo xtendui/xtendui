@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <button
       type="button"
-      class="*** xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()} ***"
+      class="*** xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ***"
     >
       button
     </button>

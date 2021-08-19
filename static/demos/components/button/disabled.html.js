@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()} *** xt-disabled ***"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} *** xt-disabled ***"
         aria-disabled="true"
       >
         Gray
@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()} *** xt-disabled ***"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} *** xt-disabled ***"
         aria-disabled="true"
       >
         Primary
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} text-black ${classes.buttonText()} *** xt-disabled ***"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} text-black ${classes.buttonUpper()} ${classes.buttonTextAnim()} *** xt-disabled ***"
         aria-disabled="true"
       >
         Text

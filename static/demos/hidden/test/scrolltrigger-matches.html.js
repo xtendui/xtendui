@@ -3,20 +3,22 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--mount-unmount">
     <div class="xt-sticky">
-      <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}" data-xt-overlay>
+      <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}" data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
-          overlay
+          Overlay
         </button>
 
         <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-black *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
-              <div class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.cardWhite()}">
+              <div
+                class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -51,7 +53,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

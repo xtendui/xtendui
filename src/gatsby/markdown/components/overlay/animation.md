@@ -6,7 +6,7 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [overlay's themes](/themes/overlay) for **advanced animations**.
+Check out [overlay's themes](/themes/overlay) for **advanced implementations**.
 
 ## Activation
 

@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ position: 'bottom' }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-tooltip-element
         >
           bottom
@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>
@@ -25,7 +25,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ position: 'bottom-start' }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-tooltip-element
         >
           bottom start
@@ -33,7 +33,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>
@@ -44,7 +44,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ position: 'right-end' }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-tooltip-element
         >
           right end<br />...
@@ -52,7 +52,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>

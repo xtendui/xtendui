@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--sticky">
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -18,12 +18,12 @@ const html = /* HTML */ `
     </div>
 
     <div class="*** xt-sticky ***" data-node-sticky-top>
-      <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+      <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
         <div class="xt-h4">Top</div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -41,7 +41,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -59,14 +59,14 @@ const html = /* HTML */ `
     <div class="*** relative ***">
       <div class="*** absolute w-full ***">
         <div class="*** xt-sticky ***" data-node-sticky-bottom>
-          <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+          <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
             <div class="xt-h4">Bottom</div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ classBody: 'xt-scrollbar-overlay classbody' }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
           class body
@@ -16,7 +16,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card xt-min-h-screen shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -49,7 +49,7 @@ const html = /* HTML */ `
                   >
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                       data-xt-overlay-element-nested
                     >
                       Overlay
@@ -60,7 +60,7 @@ const html = /* HTML */ `
                       <div class="xt-overlay-container max-w-3xl">
                         <div class="xt-overlay-inner">
                           <div
-                            class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.cardWhite()}"
+                            class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
                           >
                             <button
                               type="button"

@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--tooltip-swap-click">
     <button
       type="button"
-      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       data-xt-tooltip="{ targets: '#tooltip--swap-click, #tooltip--swap-click-swap', duration: 300 }"
     >
       Swap click
@@ -15,7 +15,7 @@ const html = /* HTML */ `
       id="tooltip--swap-click"
     >
       <div
-        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
       >
         Lorem ipsum dolor sit amet
       </div>
@@ -26,7 +26,7 @@ const html = /* HTML */ `
       id="tooltip--swap-click-swap"
     >
       <div
-        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
       >
         Clicked!
       </div>

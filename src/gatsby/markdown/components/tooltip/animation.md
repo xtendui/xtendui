@@ -6,7 +6,7 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [tooltip's themes](/themes/tooltip) for **advanced animations**.
+Check out [tooltip's themes](/themes/tooltip) for **advanced implementations**.
 
 ## Activation
 

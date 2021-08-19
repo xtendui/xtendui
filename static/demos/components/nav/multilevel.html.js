@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--multilevel">
-    <div class="xt-card rounded${classes.cardRadius()} ${classes.cardPrimary()}">
+    <div class="xt-card rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}">
       <div class="relative" data-xt-toggle="{ min: 1, duration: 500, queue: false }">
         <nav
           class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <nav class="xt-list flex-col">
             <button
               type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-0"
             >
@@ -25,7 +25,7 @@ const html = /* HTML */ `
             </button>
             <button
               type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-1"
             >
@@ -33,13 +33,13 @@ const html = /* HTML */ `
             </button>
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 0
             </a>
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 1
             </a>
@@ -55,7 +55,7 @@ const html = /* HTML */ `
             <div>Category 0</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="initial"
             >
@@ -66,7 +66,7 @@ const html = /* HTML */ `
           <nav class="xt-list flex-col">
             <button
               type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-0a"
             >
@@ -74,7 +74,7 @@ const html = /* HTML */ `
             </button>
             <button
               type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-0b"
             >
@@ -82,13 +82,13 @@ const html = /* HTML */ `
             </button>
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 0
             </a>
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 1
             </a>
@@ -104,7 +104,7 @@ const html = /* HTML */ `
             <div>Category 0a</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-0"
             >
@@ -115,13 +115,13 @@ const html = /* HTML */ `
           <nav class="xt-list flex-col">
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 0
             </a>
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 1
             </a>
@@ -137,7 +137,7 @@ const html = /* HTML */ `
             <div>Category 0b</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-0"
             >
@@ -148,13 +148,13 @@ const html = /* HTML */ `
           <nav class="xt-list flex-col">
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 0
             </a>
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 1
             </a>
@@ -170,7 +170,7 @@ const html = /* HTML */ `
             <div>Category 1</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="initial"
             >
@@ -181,13 +181,13 @@ const html = /* HTML */ `
           <nav class="xt-list flex-col">
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 0
             </a>
             <a
               href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             >
               Link 1
             </a>

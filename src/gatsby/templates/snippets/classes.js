@@ -4,13 +4,9 @@ export const classes = {
   bgBlurInner: () => 'bg-opacity-0',
   gatsbyFloat: () =>
     'transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
-  buttonToggle: () =>
-    'rounded-full py-2.5 px-3.5 text-xs text-black font-medium bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition',
-  cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-medium shadow',
+  cardToggle: () => 'rounded-full text-xs py-2 px-3 font-medium shadow',
   cardSlide: () =>
-    'rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition',
-  cardActivation: () =>
-    'text-black xt-links-default bg-gray-100 border-2 border-transparent in:border-gray-200 transition',
+    'rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition',
   buttonSlider: () =>
     'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   // button
@@ -18,39 +14,32 @@ export const classes = {
   buttonSm: () => 'py-2 px-3 text-xs',
   buttonMd: () => 'py-2.5 px-3.5 text-sm',
   buttonLg: () => 'py-3 px-4 text-base',
-  buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
-  buttonDefault: () =>
-    'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
-  buttonDefaultGroup: () => 'group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200',
-  buttonPrimary: () =>
-    'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
-  buttonPrimaryGroup: () => 'group-hover:bg-primary-600 group-active:bg-primary-700 group-on:bg-primary-600',
-  buttonDefaultPrimary: () =>
-    'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
-  buttonDefaultPrimaryGroup: () =>
-    'group-hover:text-white group-hover:bg-primary-500 group-active:text-white group-active:bg-primary-600 group-on:text-white group-on:bg-primary-500',
-  buttonRing: () =>
-    'font-medium leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
-  buttonText: () =>
-    'font-sans font-medium leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
+  buttonLower: () => 'font-medium leading-snug',
+  buttonUpper: () => 'font-medium leading-snug tracking-wider uppercase',
+  buttonGray: () => 'text-black bg-gray-100',
+  buttonGrayAnim: () => 'transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
+  buttonGrayAnimGroup: () => 'group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200',
+  buttonPrimary: () => 'text-white bg-primary-500',
+  buttonPrimaryAnim: () =>
+    'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
+  buttonPrimaryAnimGroup: () =>
+    'group-hover:text-white group-hover:bg-primary-600 group-active:text-white group-active:bg-primary-700 group-on:text-white group-on:bg-primary-600',
+  buttonGrayPrimaryAnim: () =>
+    'transition hover:bg-gray-200 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+  buttonRing: () => 'ring-2 ring-primary-200',
+  buttonRingAnim: () => 'transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
+  buttonTextAnim: () => 'transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
+  buttonCloseOutsideAnim: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   // group
   groupMd: () => 'p-3',
   groupButtonRadius: () => '-md',
   groupButtonSm: () => 'py-1 px-2 text-xs',
   groupButtonMd: () => 'py-1.5 px-2.5 text-sm',
   groupButtonLg: () => 'py-2 px-3 text-base',
-  groupButtonDefault: () =>
-    'w-full justify-start text-left text-black font-medium leading-snug bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
-  groupButtonDefaultGroup: () =>
-    'group-hover:text-white group-hover:bg-primary-500 group-active:text-white group-active:bg-primary-600 group-on:text-white group-on:bg-primary-500',
-  groupButtonPrimary: () =>
-    'w-full justify-start text-left text-white font-medium leading-snug bg-primary-500 transition hover:text-black hover:bg-white active:text-black active:bg-gray-100 on:text-black on:bg-white',
-  groupButtonPrimaryGroup: () =>
-    'group-hover:text-black group-hover:bg-white group-active:text-black group-active:bg-gray-100 group-on:text-black group-on:bg-white',
+  groupButtonGray: () => 'w-full justify-start text-left text-black font-medium leading-snug bg-gray-100',
+  groupButtonPrimary: () => 'w-full justify-start text-left text-white font-medium leading-snug bg-primary-500',
   // drop
   dropCardRadius: () => '-md',
-  dropCardDefault: () => 'text-black xt-links-default bg-gray-100',
-  dropCardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
   // overlay
   overlayCardRadius: () => '-lg',
   // badge
@@ -58,7 +47,7 @@ export const classes = {
   badgeSm: () => 'py-2 px-2.5 text-3xs',
   badgeMd: () => 'py-3 px-3.5 text-xs',
   badgeLg: () => 'py-3.5 px-4 text-base',
-  badgeDefault: () => 'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100',
+  badgeGray: () => 'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100',
   badgePrimary: () => 'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500',
   // tooltip
   tooltipRadius: () => '-md',
@@ -66,24 +55,19 @@ export const classes = {
   tooltipMd: () => 'py-2 px-2.5 text-xs',
   tooltipLg: () => 'py-2.5 px-4 text-base',
   // card
+  textBlack: () => 'text-black xt-links-default',
+  textWhite: () => 'text-white xt-links-inverse',
   cardRadius: () => '-lg',
   cardSm: () => 'p-6 text-sm',
   cardMd: () => 'p-8 text-base',
   cardLg: () => 'p-8 md:p-10 text-base md:text-lg',
-  cardBlack: () => 'font-medium text-white xt-links-inverse bg-black',
-  cardWhite: () => 'text-black xt-links-default bg-white',
-  cardDefault: () => 'text-black xt-links-default bg-gray-100',
-  cardDefaultFull: () => 'text-black xt-links-default',
-  cardDefaultInteractive: () =>
-    'text-black xt-links-default transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
-  cardDefaultFullInteractive: () =>
-    'text-black xt-links-default transition hover:bg-gray-100 active:bg-gray-300 on:bg-gray-200',
-  cardPrimary: () => 'text-white xt-links-inverse bg-primary-500',
-  cardPrimaryFull: () => 'text-primary-600',
+  cardBlack: () => 'font-medium bg-black',
+  cardWhite: () => 'bg-white',
+  cardGray: () => 'bg-gray-100',
+  cardGrayInteractive: () => 'transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
+  cardPrimary: () => 'bg-primary-500',
   cardPrimaryInteractive: () =>
-    'text-white xt-links-inverse transition bg-primary-500 hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
-  cardPrimaryFullInteractive: () =>
-    'text-black xt-links-default transition hover:text-white hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
+    'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
   // components
   slide: () => 'group',
   loader: () => 'xt-loader absolute inset-0 rounded-inherit overflow-hidden',
@@ -92,22 +76,22 @@ export const classes = {
   // form
   checkLabel: () => 'cursor-pointer inline-flex items-baseline',
   checkContent: () => 'ml-4',
-  checkDefault: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
+  checkGray: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
   checkPrimary: () => 'text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all',
   checkRadius: () => 'rounded-md',
-  radioDefault: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
+  radioGray: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
   radioPrimary: () => 'text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all',
   radioRadius: () => 'rounded-full',
-  switchDefault: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
+  switchGray: () => 'text-primary-500 bg-gray-200 border border-transparent transition-all',
   switchPrimary: () => 'text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all',
   switchRadius: () => 'rounded-full',
-  inputDefault: () =>
+  inputGray: () =>
     'py-2.5 px-3.5 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none',
   inputPrimary: () =>
     'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
   inputUnderline: () =>
     'py-2.5 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
-  labelDefault: () => 'font-medium text-gray-700',
+  labelGray: () => 'font-medium text-gray-700',
   labelPrimary: () => 'font-medium text-white',
   label: () => 'block', // no flex or tags inside have no space (e.g. links)
   input: () => 'block w-full',
@@ -241,7 +225,7 @@ export const classes = {
     return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`
   },
   // other
-  svgSpinner: ({ classes, dimension = 120, radius = 100, dash = 628 }) => {
+  svgSpinner: ({ classes, dimension = 120, radius = 100, dash = 628 } = {}) => {
     classes = classes ? `${classes}` : ''
     classes = classes.search('xt-icon') !== -1 ? classes : `xt-icon ${classes}`
     return `<svg viewBox="0 0 ${dimension * 2} ${

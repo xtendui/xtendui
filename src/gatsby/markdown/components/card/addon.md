@@ -13,6 +13,4 @@ Here are some example of **note component** using a card.
 <demo>
   <demoinline src="demos/components/card/note">
   </demoinline>
-  <demoinline src="demos/components/card/note-full">
-  </demoinline>
 </demo>

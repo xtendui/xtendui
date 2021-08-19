@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div data-xt-overlay>
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-overlay-element
       >
         Group
@@ -27,13 +27,13 @@ const html = /* HTML */ `
                 <div class="inline-flex flex-auto">
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+                    class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   >
                     ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                   </button>
                   <input
                     type="text"
-                    class="${classes.input()} ${classes.inputDefault()}"
+                    class="${classes.input()} ${classes.inputGray()}"
                     aria-label="Search"
                     placeholder="Seach Catalog"
                   />
@@ -41,7 +41,7 @@ const html = /* HTML */ `
 
                 <button
                   type="button"
-                  class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+                  class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
                   Search
                 </button>
@@ -53,7 +53,7 @@ const html = /* HTML */ `
         <div data-xt-overlay>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-overlay-element
           >
             Blur
@@ -64,7 +64,7 @@ const html = /* HTML */ `
             <div class="xt-overlay-container max-w-3xl">
               <div class="xt-overlay-inner">
                 <div
-                  class="xt-card rounded${classes.overlayCardRadius()} *** shadow-overlay ${classes.cardWhite()} ${classes.bgBlur()} ***"
+                  class="xt-card rounded${classes.overlayCardRadius()} *** shadow-overlay ${classes.textBlack()} ${classes.cardWhite()} ${classes.bgBlur()} ***"
                 >
                   <button
                     type="button"

@@ -5,10 +5,10 @@ const html = /* HTML */ `
     <div data-xt-overlay="{ duration: 500 }">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-overlay-element
       >
-        overlay
+        Overlay
       </button>
 
       <div class="xt-overlay group" data-xt-overlay-target>

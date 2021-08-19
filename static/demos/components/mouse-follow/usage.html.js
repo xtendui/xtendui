@@ -4,7 +4,10 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}" data-xt-mousefollow>
+        <div
+          class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+          data-xt-mousefollow
+        >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -25,7 +28,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div
-          class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}"
+          class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
           data-xt-mousefollow="{ friction: false }"
         >
           <div class="${classes.cardMd()}">

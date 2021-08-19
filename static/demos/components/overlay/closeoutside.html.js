@@ -6,10 +6,10 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
-          Default
+          Overlay
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
@@ -17,11 +17,11 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayCardRadius()} md:rounded-tr-none shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100 ***"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100 ***"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -55,7 +55,7 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
           Left
@@ -65,10 +65,10 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card xt-min-h-screen shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutside()} md:p-3 md:right-auto md:left-100 ***"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100 ***"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -102,7 +102,7 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
           Right
@@ -112,10 +112,10 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-black opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-auto mr-0">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen shadow-overlay ${classes.cardWhite()}">
+              <div class="xt-card xt-min-h-screen shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutside()} md:p-3 md:left-auto md:right-100 ***"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutsideAnim()} md:p-3 md:left-auto md:right-100 ***"
                   aria-label="Close"
                 >
                   ${classes.iconX()}

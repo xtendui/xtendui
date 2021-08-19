@@ -3,7 +3,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--toggle-progress">
     <div class="xt-list xt-list-3 items-center" data-xt-mousefollow>
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        data-xt-toggle-element
+      >
         Toggle 0
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">
@@ -13,7 +17,11 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        data-xt-toggle-element
+      >
         Toggle 1
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">
@@ -23,7 +31,11 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        data-xt-toggle-element
+      >
         Toggle 2
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">
@@ -33,7 +45,11 @@ const html = /* HTML */ `
         </span>
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonToggle()}" data-xt-toggle-element>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        data-xt-toggle-element
+      >
         Toggle 3
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">

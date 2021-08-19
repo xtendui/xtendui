@@ -13,10 +13,10 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Email </label>
           <input
             type="email"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
             aria-label="Email"
             placeholder="Email"
           />
@@ -25,7 +25,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             submit
           </button>
@@ -36,10 +36,10 @@ const html = /* HTML */ `
     <form class="text-sm mt-12">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Email </label>
           <input
             type="email"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
             aria-label="Email"
             placeholder="Email"
           />
@@ -48,7 +48,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()} *** xt-loading-white ***"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} *** xt-loading-white ***"
           >
             submit
           </button>
@@ -59,10 +59,10 @@ const html = /* HTML */ `
     <form class="text-sm mt-12 ** xt-loading xt-loading-white ***">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Email </label>
           <input
             type="email"
-            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
             aria-label="Email"
             placeholder="Email"
           />
@@ -71,7 +71,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             submit
           </button>

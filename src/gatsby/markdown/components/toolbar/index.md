@@ -22,3 +22,12 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
   <demoinline src="demos/components/toolbar/usage">
   </demoinline>
 </demo>
+
+## Themes
+
+Check out [toolbar themes](/themes/toolbar) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>

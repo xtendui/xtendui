@@ -7,27 +7,27 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Lorem ipsum
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           dolor sit amet
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >Consectetur</a
         >
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >adipiscing elit</a
         >
       </nav>
@@ -36,27 +36,27 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Lorem ipsum
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           dolor sit amet
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >Consectetur</a
         >
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >adipiscing elit</a
         >
       </nav>
@@ -65,27 +65,27 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Lorem ipsum
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           dolor sit amet
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >Consectetur</a
         >
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonDefaultPrimary()}"
+          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >adipiscing elit</a
         >
       </nav>

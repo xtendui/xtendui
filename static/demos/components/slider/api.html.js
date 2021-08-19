@@ -6,56 +6,56 @@ const html = /* HTML */ `
       <div class="xt-list xt-list-3 items-center">
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-first-element"
         >
           1st element
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-first-target"
         >
           1st target
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-add"
         >
           Add
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-remove"
         >
           Remove
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-reinit"
         >
           Reinit
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-restart"
         >
           Restart
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-destroy"
         >
           Destroy
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-unmount"
         >
           Unmount
@@ -71,43 +71,43 @@ const html = /* HTML */ `
           id="slider--eventmethods-targets"
         >
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
             </div>
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">2</div>
             </div>
           </div>
 
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">3</div>
             </div>
           </div>
 
           <div class="xt-slide w-full ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">4</div>
             </div>
           </div>
 
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">5</div>
             </div>
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** on ***" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">6</div>
             </div>
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">7</div>
             </div>
           </div>
@@ -116,7 +116,7 @@ const html = /* HTML */ `
         <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
           <button
             type="button"
-            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonDefault()}"
+            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="-1"
             title="Previous slide"
           >
@@ -132,7 +132,7 @@ const html = /* HTML */ `
           </button>
           <button
             type="button"
-            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonDefault()}"
+            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="1"
             title="Next slide"
           >
@@ -142,7 +142,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
           <div
             class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
             id="card--slider-api-log"

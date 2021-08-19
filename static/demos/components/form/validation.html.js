@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Custom constrain </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Custom constrain </label>
           <input
             type="text"
             class="${classes.input()} ${classes.inputUnderline()} input--constrains"
@@ -15,7 +15,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Email </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Email </label>
           <input
             type="email"
             class="${classes.input()} ${classes.inputUnderline()} valid-submit:!border-green-200 invalid-submit:!border-red-200"
@@ -26,7 +26,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Number </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Number </label>
           <input
             type="number"
             class="${classes.input()} ${classes.inputUnderline()}"
@@ -39,7 +39,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Letters </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Letters </label>
           <input
             type="text"
             class="${classes.input()} ${classes.inputUnderline()}"
@@ -51,12 +51,12 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> File </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> File </label>
           <input type="file" class="${classes.input()} ${classes.inputUnderline()}" aria-label="File" required />
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Textarea </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Textarea </label>
           <textarea
             class="${classes.input()} ${classes.textarea()} ${classes.inputUnderline()} h-24 resize-vertical"
             aria-label="Textarea"
@@ -66,7 +66,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Select </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Select </label>
           <select class="${classes.input()} xt-select ${classes.inputUnderline()}" aria-label="Select" required>
             <option selected value="">Select an option</option>
             <option>Test</option>
@@ -76,7 +76,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Select multiple </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Select multiple </label>
           <select
             class="${classes.input()} xt-select ${classes.inputUnderline()}"
             aria-label="Select multiple"
@@ -93,14 +93,14 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Checkbox </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Checkbox </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                   required
                   disabled
                 />
@@ -116,7 +116,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                   required
                 />
                 <span class="${classes.checkContent()}"
@@ -130,14 +130,14 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Radio </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Radio </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-validation"
                   required
                 />
@@ -153,7 +153,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-validation"
                 />
                 <span class="${classes.checkContent()}"
@@ -167,14 +167,14 @@ const html = /* HTML */ `
         </div>
 
         <div class="w-full">
-          <label class="${classes.label()} mb-3 ${classes.labelDefault()} label-required"> Switch </label>
+          <label class="${classes.label()} mb-3 ${classes.labelGray()} label-required"> Switch </label>
 
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   required
                 />
                 <span class="${classes.checkContent()}"
@@ -189,7 +189,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-validation"
                   required
                 />
@@ -205,7 +205,7 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-validation"
                 />
                 <span class="${classes.checkContent()}"
@@ -221,7 +221,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             submit
           </button>

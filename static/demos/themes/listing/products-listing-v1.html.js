@@ -11,7 +11,7 @@ const html = /* HTML */ `
 
               <button
                 type="button"
-                class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonDefault()}"
+                class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                 data-xt-nav="-1"
                 aria-label="Previous slide"
               >
@@ -22,7 +22,7 @@ const html = /* HTML */ `
 
               <button
                 type="button"
-                class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonDefault()}"
+                class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                 data-xt-nav="1"
                 aria-label="Next slide"
               >

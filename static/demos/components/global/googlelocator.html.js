@@ -12,21 +12,21 @@ const html = /* HTML */ `
                   <div class="inline-flex flex-auto">
                     <input
                       type="text"
-                      class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputDefault()}"
+                      class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputGray()}"
                       aria-label="Search"
                       placeholder="Search"
                       data-xt-googlelocator-search-input
                     />
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} ${classes.buttonDefault()}"
+                      class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                       data-xt-googlelocator-locate-btn
                     >
                       ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     </button>
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                       data-xt-googlelocator-search-btn
                     >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -39,7 +39,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
+                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value=""
                     data-xt-googlelocator-filter
@@ -53,7 +53,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
+                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value="restaurant"
                     data-xt-googlelocator-filter
@@ -66,7 +66,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchDefault()}"
+                    class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value="school"
                     data-xt-googlelocator-filter
@@ -79,7 +79,7 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="checkbox"
-                    class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchDefault()}"
+                    class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-fav"
                     value="fav"
                     data-xt-googlelocator-filter
@@ -141,7 +141,7 @@ const html = /* HTML */ `
 
           <button
             type="button"
-            class="absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-googlelocator-repeat-btn
           >
             Search in this area

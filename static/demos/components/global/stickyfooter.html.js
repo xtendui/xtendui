@@ -4,13 +4,13 @@ const html = /* HTML */ `
   <div class="demo--stickyfooter">
     <div class="*** flex flex-col xt-min-h-screen ***">
       <header>
-        <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+        <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
           <div class="xt-h4">Header</div>
         </div>
       </header>
 
       <main class="*** flex flex-col flex-auto ***">
-        <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}">
+        <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
           <div class="xt-h4">Main</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -21,7 +21,7 @@ const html = /* HTML */ `
       </main>
 
       <footer>
-        <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+        <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
           <div class="xt-h4">Footer</div>
         </div>
       </footer>

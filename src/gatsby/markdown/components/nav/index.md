@@ -24,3 +24,12 @@ You can set activation styles by adding the class `.on`.
   <demoinline src="demos/components/nav/usage">
   </demoinline>
 </demo>
+
+## Themes
+
+Check out [nav themes](/themes/nav) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>

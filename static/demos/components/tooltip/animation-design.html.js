@@ -5,10 +5,10 @@ const html = /* HTML */ `
     <div data-xt-tooltip="{ duration: 300 }">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-tooltip-element
       >
-        tooltip
+        Tooltip
       </button>
 
       <div class="xt-tooltip p-3 group" data-xt-tooltip-target>

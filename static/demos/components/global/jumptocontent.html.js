@@ -7,7 +7,7 @@ const html = /* HTML */ `
     >
       <a
         href="#jumptocontent"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
         Jump to content
       </a>
@@ -15,7 +15,7 @@ const html = /* HTML */ `
 
     <div class="xt-row xt-row-6">
       <div class="w-full">
-        <div class="xt-card rounded${classes.cardRadius()} p-6 ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} p-6 ${classes.textBlack()} ${classes.cardGray()}">
           <div class="xt-h4">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -26,7 +26,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full">
-        <div class="xt-card rounded${classes.cardRadius()} p-6 ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} p-6 ${classes.textBlack()} ${classes.cardGray()}">
           <div class="xt-h4">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,

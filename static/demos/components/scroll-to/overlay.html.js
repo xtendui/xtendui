@@ -4,32 +4,32 @@ const html = /* HTML */ `
   <div class="demo--scrollto-overlay">
     <!-- sticky for demo purpose remove this -->
     <div class="xt-sticky">
-      <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+      <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
         <div class="xt-list xt-list-3">
           <a
             href="#anchor-0"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #0
           </a>
           <a
             href="#anchor-1"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             #1
           </a>
           <button
             type="button"
-            class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
           >
             custom
           </button>
           <a
             href="#anchor-2"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
             data-xt-scrollto-hash="true"
           >
@@ -37,7 +37,7 @@ const html = /* HTML */ `
           </a>
           <a
             href="#anchor-2"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-scrollto-hash="true"
           >
             #2 only anchor
@@ -50,7 +50,7 @@ const html = /* HTML */ `
     <div class="container">
       <form class="text-sm mt-4">
         <label class="${classes.checkLabel()}">
-          <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}" />
+          <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
           <span class="${classes.checkContent()}">Deactivate classes</span>
         </label>
       </form>
@@ -69,29 +69,29 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-sticky">
-            <div class="xt-card ${classes.cardSm()} ${classes.cardPrimary()}">
+            <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
               <div class="xt-list xt-list-3">
                 <a
                   href="#anchor-0"
-                  class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
                   #0
                 </a>
                 <a
                   href="#anchor-1"
-                  class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
                   #1
                 </a>
                 <button
                   type="button"
-                  class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
                   custom
                 </button>
                 <a
                   href="#anchor-2"
-                  class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                  class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
                   #2
                 </a>
@@ -99,7 +99,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}" id="anchor-0">
+          <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-0">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
@@ -111,25 +111,25 @@ const html = /* HTML */ `
             <div class="xt-list xt-list-3">
               <a
                 href="#anchor-0"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #0
               </a>
               <a
                 href="#anchor-1"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #1
               </a>
               <button
                 type="button"
-                class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 custom
               </button>
               <a
                 href="#anchor-2"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #2
               </a>
@@ -140,7 +140,7 @@ const html = /* HTML */ `
           <br /><br /><br /><br /><br /><br /><br />
           <br /><br /><br /><br /><br /><br /><br />
 
-          <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}" id="anchor-1">
+          <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-1">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
@@ -152,25 +152,25 @@ const html = /* HTML */ `
             <div class="xt-list xt-list-3">
               <a
                 href="#anchor-0"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #0
               </a>
               <a
                 href="#anchor-1"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #1
               </a>
               <button
                 type="button"
-                class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 custom
               </button>
               <a
                 href="#anchor-2"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #2
               </a>
@@ -181,7 +181,7 @@ const html = /* HTML */ `
           <br /><br /><br /><br /><br /><br /><br />
           <br /><br /><br /><br /><br /><br /><br />
 
-          <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}" id="anchor-custom">
+          <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-custom">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
@@ -196,7 +196,7 @@ const html = /* HTML */ `
           <br /><br /><br /><br /><br /><br /><br />
           <br /><br /><br /><br /><br /><br /><br />
 
-          <div class="xt-card ${classes.cardSm()} ${classes.cardDefault()}" id="anchor-2">
+          <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-2">
             <div class="xt-h4">Lorem ipsum dolor sit amet</div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
@@ -208,25 +208,25 @@ const html = /* HTML */ `
             <div class="xt-list xt-list-3">
               <a
                 href="#anchor-0"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #0
               </a>
               <a
                 href="#anchor-1"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #1
               </a>
               <button
                 type="button"
-                class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button button--custom ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 custom
               </button>
               <a
                 href="#anchor-2"
-                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+                class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
               >
                 #2
               </a>

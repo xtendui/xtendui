@@ -6,27 +6,37 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** rounded-t${classes.groupButtonRadius()} *** ${classes.groupButtonDefault()} *** on ***"
+        class="xt-button ${classes.groupButtonMd()} *** rounded-t${classes.groupButtonRadius()} *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()} *** on ***"
       >
         Lorem ipsum dolor sit amet
       </a>
 
-      <a href="#" type="button" class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonDefault()}">
+      <a
+        href="#"
+        type="button"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+      >
         Consectetur adipiscing elit
       </a>
 
-      <a href="#" type="button" class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonDefault()}"
+      <a
+        href="#"
+        type="button"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >Mauris mattis</a
       >
 
-      <a href="#" type="button" class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonDefault()}"
+      <a
+        href="#"
+        type="button"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >purus odio</a
       >
 
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** rounded-b${classes.groupButtonRadius()} *** ${classes.groupButtonDefault()}"
+        class="xt-button ${classes.groupButtonMd()} *** rounded-b${classes.groupButtonRadius()} *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Et dictum felis vestibulum sed
       </a>

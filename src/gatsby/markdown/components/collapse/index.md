@@ -49,7 +49,7 @@ Just use the class `on` if you want to automatically open instantly.
 
 ## Themes
 
-Check out [animation themes](/themes/animation) for **advanced animations**.
+Check out [animation themes](/themes/animation) for **advanced implementations**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">

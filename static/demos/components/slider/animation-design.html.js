@@ -13,7 +13,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
-              <div class="xt-card p-8 text-base text-center text-black xt-links-default">
+              <div class="xt-card p-8 text-base text-center ${classes.textBlack()}">
                 <div class="xt-h4">1</div>
               </div>
             </div>
@@ -24,7 +24,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
-              <div class="xt-card p-8 text-base text-center text-black xt-links-default">
+              <div class="xt-card p-8 text-base text-center ${classes.textBlack()}">
                 <div class="xt-h4">2</div>
               </div>
             </div>
@@ -35,7 +35,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
-              <div class="xt-card p-8 text-base text-center text-black xt-links-default">
+              <div class="xt-card p-8 text-base text-center ${classes.textBlack()}">
                 <div class="xt-h4">3</div>
               </div>
             </div>
@@ -46,7 +46,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
-              <div class="xt-card p-8 text-base text-center text-black xt-links-default">
+              <div class="xt-card p-8 text-base text-center ${classes.textBlack()}">
                 <div class="xt-h4">4</div>
               </div>
             </div>
@@ -57,7 +57,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
-              <div class="xt-card p-8 text-base text-center text-black xt-links-default">
+              <div class="xt-card p-8 text-base text-center ${classes.textBlack()}">
                 <div class="xt-h4">5</div>
               </div>
             </div>
@@ -68,7 +68,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
-              <div class="xt-card p-8 text-base text-center text-black xt-links-default">
+              <div class="xt-card p-8 text-base text-center ${classes.textBlack()}">
                 <div class="xt-h4">6</div>
               </div>
             </div>
@@ -79,7 +79,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.cardRadius()} bg-gray-100 border-2 border-transparent *** group-in:border-gray-200 transition opacity-0 -translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
               ></div>
-              <div class="xt-card p-8 text-base text-center text-black xt-links-default">
+              <div class="xt-card p-8 text-base text-center ${classes.textBlack()}">
                 <div class="xt-h4">7</div>
               </div>
             </div>

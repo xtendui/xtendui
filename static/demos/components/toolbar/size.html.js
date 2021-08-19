@@ -7,13 +7,13 @@ const html = /* HTML */ `
         <div class="inline-flex mr-auto">
           <a
             href="#"
-            class="xt-button *** ${classes.buttonSm()} *** rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+            class="xt-button *** ${classes.buttonSm()} *** rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
           >
             Clear
           </a>
           <a
             href="#"
-            class="xt-button *** ${classes.buttonSm()} *** rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button *** ${classes.buttonSm()} *** rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Submit
           </a>
@@ -21,14 +21,14 @@ const html = /* HTML */ `
 
         <a
           href="#"
-          class="xt-button *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+          class="xt-button *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
         >
           Back
         </a>
 
         <a
           href="#"
-          class="xt-button *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         >
           Edit
         </a>
@@ -38,13 +38,13 @@ const html = /* HTML */ `
         <div class="inline-flex mr-auto">
           <a
             href="#"
-            class="xt-button *** ${classes.buttonMd()} *** rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+            class="xt-button *** ${classes.buttonMd()} *** rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
           >
             Clear
           </a>
           <a
             href="#"
-            class="xt-button *** ${classes.buttonMd()} *** rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button *** ${classes.buttonMd()} *** rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Submit
           </a>
@@ -52,14 +52,14 @@ const html = /* HTML */ `
 
         <a
           href="#"
-          class="xt-button *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+          class="xt-button *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
         >
           Back
         </a>
 
         <a
           href="#"
-          class="xt-button *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         >
           Edit
         </a>
@@ -69,13 +69,13 @@ const html = /* HTML */ `
         <div class="inline-flex mr-auto">
           <a
             href="#"
-            class="xt-button *** ${classes.buttonLg()} *** rounded-l${classes.groupButtonRadius()} ${classes.buttonDefault()}"
+            class="xt-button *** ${classes.buttonLg()} *** rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
           >
             Clear
           </a>
           <a
             href="#"
-            class="xt-button *** ${classes.buttonLg()} *** rounded-r${classes.groupButtonRadius()} ${classes.buttonPrimary()}"
+            class="xt-button *** ${classes.buttonLg()} *** rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Submit
           </a>
@@ -83,14 +83,14 @@ const html = /* HTML */ `
 
         <a
           href="#"
-          class="xt-button *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+          class="xt-button *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
         >
           Back
         </a>
 
         <a
           href="#"
-          class="xt-button *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         >
           Edit
         </a>

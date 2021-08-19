@@ -28,17 +28,6 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
   </demoinline>
 </demo>
 
-## Custom
-
-You can include the component inside a [card](/components/card) and add interactive components.
-
-> This demos use [card](/components/card) [tooltip](/components/tooltip) see documentation for more info.
-
-<demo>
-  <demoinline src="demos/components/group/custom">
-  </demoinline>
-</demo>
-
 ## Merge
 
 You can make group a **single interactive object**, just put `button` tag including the interactive elements, be sure to use `group` class and variants.

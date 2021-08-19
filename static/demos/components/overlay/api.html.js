@@ -5,42 +5,42 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--overlay-api-first-element"
       >
         1st element
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--overlay-api-first-target"
       >
         1st target
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--overlay-api-reinit"
       >
         Reinit
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--overlay-api-restart"
       >
         Restart
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--overlay-api-destroy"
       >
         Destroy
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--overlay-api-unmount"
       >
         Unmount
@@ -50,14 +50,14 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center mb-4">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
         id="overlay--eventmethods"
       >
         Overlay
       </button>
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonDefault()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
         id="overlay--eventmethods-alt"
       >
         Overlay same
@@ -68,7 +68,9 @@ const html = /* HTML */ `
       <div class="xt-backdrop z-below bg-black opacity-25"></div>
       <div class="xt-overlay-container max-w-5xl">
         <div class="xt-overlay-inner">
-          <div class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.cardWhite()}">
+          <div
+            class="xt-card rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+          >
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -99,7 +101,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.cardDefault()} mt-6">
+    <div class="xt-card rounded${classes.overlayCardRadius()} ${classes.textBlack()} ${classes.cardGray()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
         id="card--overlay-api-log"

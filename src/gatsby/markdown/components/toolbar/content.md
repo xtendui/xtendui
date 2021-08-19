@@ -19,17 +19,6 @@ Use [list space](/components/list/content#space) to space content.
   </demoinline>
 </demo>
 
-## Custom
-
-You can include the component inside a [card](/components/card) and add interactive components.
-
-> This demos use [card](/components/card) [drop](/components/drop) [tooltip](/components/tooltip) see documentation for more info.
-
-<demo>
-  <demoinline src="demos/components/toolbar/custom">
-  </demoinline>
-</demo>
-
 ## Merge
 
 You can make group a **single interactive object**, just put `button` tag including the interactive elements, be sure to use `group` class and variants.

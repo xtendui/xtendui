@@ -6,7 +6,7 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [slider's themes](/themes/slider) for **advanced animations**.
+Check out [slider's themes](/themes/slider) for **advanced implementations**.
 
 ## Activation
 

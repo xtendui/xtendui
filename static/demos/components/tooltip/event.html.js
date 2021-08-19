@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div data-xt-tooltip="{ on: 'click', off: 'click' }">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-tooltip-element
       >
         click
@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
       <div class="xt-tooltip p-3" data-xt-tooltip-target>
         <div
-          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
         >
           Lorem ipsum dolor sit amet
         </div>
@@ -24,7 +24,7 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ on: 'focus', off: 'blur' }">
         <input
           type="text"
-          class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+          class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
           aria-label="Focus"
           placeholder="Focus"
           data-xt-tooltip-element
@@ -32,7 +32,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} shadow-tooltip ${classes.textWhite()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>

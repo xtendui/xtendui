@@ -9,19 +9,19 @@ const html = /* HTML */ `
           data-xt-slider-dragger
         >
           <div class="xt-slide w-full sm:w-6/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
             </div>
           </div>
 
           <div class="xt-slide w-full sm:w-6/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">2</div>
             </div>
           </div>
 
           <div class="xt-slide w-full sm:w-6/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
               <div class="xt-h4">3</div>
             </div>
           </div>

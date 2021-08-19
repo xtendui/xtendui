@@ -25,14 +25,3 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
   <demoinline src="demos/components/drop/size">
   </demoinline>
 </demo>
-
-## Custom
-
-You can also populate with other [card content](/components/card/content) and [nav content](/components/nav/content).
-
-> This demos use [card](/components/card) [nav](/components/nav) see documentation for more info.
-
-<demo>
-  <demoinline src="demos/components/drop/custom">
-  </demoinline>
-</demo>

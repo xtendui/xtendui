@@ -14,7 +14,7 @@ const html = /* HTML */ `
           <label class="${classes.checkLabel()}">
             <input
               type="checkbox"
-              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
               checked
             />
             <span class="${classes.checkContent()}">Use mouse events</span>

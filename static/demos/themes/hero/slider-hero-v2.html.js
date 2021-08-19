@@ -82,7 +82,7 @@ const html = /* HTML */ `
                   </p>
                   <a
                     href="/"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                   >
                     Lorem ipsum
                   </a>
@@ -110,7 +110,7 @@ const html = /* HTML */ `
                   </p>
                   <a
                     href="/"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                   >
                     Lorem ipsum
                   </a>
@@ -138,7 +138,7 @@ const html = /* HTML */ `
                   </p>
                   <a
                     href="/"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                   >
                     Lorem ipsum
                   </a>
@@ -157,7 +157,7 @@ const html = /* HTML */ `
         aria-label="Previous slide"
       >
         <div
-          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonDefault()} group-hover:scale-125"
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group-hover:scale-125"
         >
           ${classes.iconArrowLeft()}
         </div>
@@ -170,7 +170,7 @@ const html = /* HTML */ `
         aria-label="Next slide"
       >
         <div
-          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonDefault()} group-hover:scale-125"
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group-hover:scale-125"
         >
           ${classes.iconArrowRight()}
         </div>

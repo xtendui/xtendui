@@ -6,10 +6,10 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
-          Default
+          Overlay
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
@@ -24,7 +24,7 @@ const html = /* HTML */ `
                 ${classes.iconX()}
               </button>
               <div
-                class="xt-card items-center justify-center rounded${classes.overlayCardRadius()} shadow-overlay ${classes.cardWhite()}"
+                class="xt-card items-center justify-center rounded${classes.overlayCardRadius()} shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
               >
                 <div class="${classes.cardMd()}">
                   <div class="xt-h4">Lorem ipsum</div>
@@ -106,7 +106,7 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
           Screen
@@ -123,7 +123,9 @@ const html = /* HTML */ `
               >
                 ${classes.iconX()}
               </button>
-              <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${classes.cardWhite()}">
+              <div
+                class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${classes.textBlack()} ${classes.cardWhite()}"
+              >
                 <div class="max-w-3xl">
                   <div class="${classes.cardMd()}">
                     <div class="xt-h4">Lorem ipsum</div>

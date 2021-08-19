@@ -50,3 +50,12 @@ Use this code to create **tooltip** in **multiple mode**.
   <demoinline src="demos/components/tooltip/usage-multiple">
   </demoinline>
 </demo>
+
+## Themes
+
+Check out [tooltip themes](/themes/tooltip) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>

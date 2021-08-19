@@ -28,17 +28,6 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
   </demoinline>
 </demo>
 
-## Custom
-
-You can include the component inside a [card](/components/card) and add interactive components.
-
-> This demos use [card](/components/card) [drop](/components/drop) [tooltip](/components/tooltip) see documentation for more info.
-
-<demo>
-  <demoinline src="demos/components/tabs/custom">
-  </demoinline>
-</demo>
-
 ## Alignment and Icon
 
 Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwindcss.com/docs/text-align), [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).

@@ -50,3 +50,12 @@ Use this code to create **drop** in **multiple mode**.
   <demoinline src="demos/components/drop/usage-multiple">
   </demoinline>
 </demo>
+
+## Themes
+
+Check out [drop themes](/themes/drop) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>
