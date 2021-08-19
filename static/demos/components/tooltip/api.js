@@ -103,7 +103,7 @@ const mountEventmethods = ({ ref }) => {
       const els = self.elements
       const indexEl = els.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
+        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
           data-xt-tooltip-element>
           Tooltip ${indexEl}
         </button>
@@ -114,7 +114,7 @@ const mountEventmethods = ({ ref }) => {
       const strTr = `
         <div class="xt-tooltip p-3" title="Target ${indexTr}"
           data-xt-tooltip-target>
-          <div class="text-xs py-2 px-3.5 rounded-md shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+          <div class="text-xs py-2 px-3.5 rounded-md shadow-tooltip font-medium text-white xt-links-inverse bg-black">
             Lorem ipsum dolor sit amet
           </div>
         </div>

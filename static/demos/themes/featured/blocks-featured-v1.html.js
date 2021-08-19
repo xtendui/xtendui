@@ -1,4 +1,4 @@
-const buttonLine = 'px-0 text-xs font-semibold leading-snug tracking-wider uppercase'
+const buttonLine = 'px-0 text-xs font-medium leading-snug tracking-wider uppercase'
 const buttonLineDesign = 'absolute w-4 border-t border-current opacity-50'
 const buttonLineContent = 'pl-8'
 

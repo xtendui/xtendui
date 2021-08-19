@@ -218,7 +218,7 @@ export default function Header({ page }) {
                                                         return (
                                                           <div
                                                             key={z}
-                                                            className={`inline-block text-white text-4xs font-semibold leading-snug tracking-wider uppercase ml-1.5`}>
+                                                            className={`inline-block text-white text-4xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
                                                             {tag}
                                                           </div>
                                                         )

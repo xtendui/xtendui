@@ -37,7 +37,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonDefault()}"
         >
           Et dictum felis vestibulum sed
         </a>

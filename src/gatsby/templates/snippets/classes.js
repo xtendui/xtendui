@@ -5,46 +5,46 @@ export const classes = {
   gatsbyFloat: () =>
     'transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
   buttonToggle: () =>
-    'rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition',
-  cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-semibold shadow',
+    'rounded-full py-2.5 px-3.5 text-xs text-black font-medium bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition',
+  cardToggle: () => 'rounded-full text-xs py-2.5 px-3.5 font-medium shadow',
   cardSlide: () =>
     'rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition',
   cardActivation: () =>
     'text-black xt-links-default bg-gray-100 border-2 border-transparent in:border-gray-200 transition',
   buttonSlider: () =>
-    'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
+    'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   // button
   buttonRadius: () => '-md',
-  buttonSm: () => 'py-2 px-2.5 text-3xs',
-  buttonMd: () => 'py-3 px-3.5 text-xs',
-  buttonLg: () => 'py-3.5 px-4 text-base',
+  buttonSm: () => 'py-2 px-3 text-xs',
+  buttonMd: () => 'py-2.5 px-3.5 text-sm',
+  buttonLg: () => 'py-3 px-4 text-base',
   buttonCloseOutside: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   buttonDefault: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
+    'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
   buttonDefaultGroup: () => 'group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200',
   buttonPrimary: () =>
-    'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
+    'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600',
   buttonPrimaryGroup: () => 'group-hover:bg-primary-600 group-active:bg-primary-700 group-on:bg-primary-600',
   buttonDefaultPrimary: () =>
-    'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+    'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
   buttonDefaultPrimaryGroup: () =>
     'group-hover:text-white group-hover:bg-primary-500 group-active:text-white group-active:bg-primary-600 group-on:text-white group-on:bg-primary-500',
   buttonRing: () =>
-    'font-semibold leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
+    'font-medium leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
   buttonText: () =>
-    'font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
+    'font-sans font-medium leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100',
   // group
   groupMd: () => 'p-3',
   groupButtonRadius: () => '-md',
   groupButtonSm: () => 'py-1 px-2 text-xs',
-  groupButtonMd: () => 'py-2 px-3 text-xs',
-  groupButtonLg: () => 'py-2.5 px-3.5 text-base',
+  groupButtonMd: () => 'py-1.5 px-2.5 text-sm',
+  groupButtonLg: () => 'py-2 px-3 text-base',
   groupButtonDefault: () =>
-    'w-full justify-start text-left text-black font-semibold bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
+    'w-full justify-start text-left text-black font-medium leading-snug bg-gray-100 transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500',
   groupButtonDefaultGroup: () =>
     'group-hover:text-white group-hover:bg-primary-500 group-active:text-white group-active:bg-primary-600 group-on:text-white group-on:bg-primary-500',
   groupButtonPrimary: () =>
-    'w-full justify-start text-left text-white font-semibold bg-primary-500 transition hover:text-black hover:bg-white active:text-black active:bg-gray-100 on:text-black on:bg-white',
+    'w-full justify-start text-left text-white font-medium leading-snug bg-primary-500 transition hover:text-black hover:bg-white active:text-black active:bg-gray-100 on:text-black on:bg-white',
   groupButtonPrimaryGroup: () =>
     'group-hover:text-black group-hover:bg-white group-active:text-black group-active:bg-gray-100 group-on:text-black group-on:bg-white',
   // drop
@@ -58,8 +58,8 @@ export const classes = {
   badgeSm: () => 'py-2 px-2.5 text-3xs',
   badgeMd: () => 'py-3 px-3.5 text-xs',
   badgeLg: () => 'py-3.5 px-4 text-base',
-  badgeDefault: () => 'text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100',
-  badgePrimary: () => 'text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500',
+  badgeDefault: () => 'text-black font-medium leading-snug tracking-wider uppercase bg-gray-100',
+  badgePrimary: () => 'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500',
   // tooltip
   tooltipRadius: () => '-md',
   tooltipSm: () => 'py-1 px-2 text-3xs',
@@ -70,7 +70,7 @@ export const classes = {
   cardSm: () => 'p-6 text-sm',
   cardMd: () => 'p-8 text-base',
   cardLg: () => 'p-8 md:p-10 text-base md:text-lg',
-  cardBlack: () => 'font-semibold text-white xt-links-inverse bg-black',
+  cardBlack: () => 'font-medium text-white xt-links-inverse bg-black',
   cardWhite: () => 'text-black xt-links-default bg-white',
   cardDefault: () => 'text-black xt-links-default bg-gray-100',
   cardDefaultFull: () => 'text-black xt-links-default',
@@ -107,8 +107,8 @@ export const classes = {
     'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
   inputUnderline: () =>
     'py-2.5 text-black placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
-  labelDefault: () => 'font-semibold text-gray-700',
-  labelPrimary: () => 'font-semibold text-white',
+  labelDefault: () => 'font-medium text-gray-700',
+  labelPrimary: () => 'font-medium text-white',
   label: () => 'block', // no flex or tags inside have no space (e.g. links)
   input: () => 'block w-full',
   inputRadius: () => 'rounded-md',

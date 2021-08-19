@@ -44,7 +44,7 @@ const html = /* HTML */ `
                     <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
-                        <div class="font-semibold text-sm">-35%</div>
+                        <div class="font-medium text-sm">-35%</div>
                         <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">
                           For Exhibition Renewal
                         </div>
@@ -53,7 +53,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -66,14 +66,14 @@ const html = /* HTML */ `
                     <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
-                        <div class="font-semibold text-sm">-40%</div>
+                        <div class="font-medium text-sm">-40%</div>
                         <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>
                       </div>
                     </div>
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -87,7 +87,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -101,7 +101,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -115,7 +115,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -129,7 +129,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -143,7 +143,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -157,7 +157,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="*** listing-item *** -content py-4">
                     <div class="xt-h6">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -181,14 +181,14 @@ const html = /* HTML */ `
                   <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
-                      <div class="font-semibold text-sm">-35%</div>
+                      <div class="font-medium text-sm">-35%</div>
                       <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">For Exhibition Renewal</div>
                     </div>
                   </div>
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Lorem ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -199,14 +199,14 @@ const html = /* HTML */ `
                   <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
-                      <div class="font-semibold text-sm">-40%</div>
+                      <div class="font-medium text-sm">-40%</div>
                       <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>
                     </div>
                   </div>
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -218,7 +218,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Lorem ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -230,7 +230,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -242,7 +242,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Lorem Ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -254,7 +254,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -266,7 +266,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Lorem ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -278,7 +278,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="*** listing-item *** -content py-4">
                   <div class="xt-h6">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>

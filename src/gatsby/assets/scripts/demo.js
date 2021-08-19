@@ -932,7 +932,7 @@ export const makeDocument = () => {
             str: DOMPurify.sanitize(`
 <a href="#${encodeURIComponent(
               id
-            )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+            )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left text-white font-medium leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
   <span class="py-px">${el.textContent.trim()}</span>
 </a>`),
           })

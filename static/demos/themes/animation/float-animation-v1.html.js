@@ -11,8 +11,8 @@ const animItem = () =>
 const animItemOpacity = () =>
   '*** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***'
 
-const buttonDefault = () => `font-semibold leading-snug tracking-wider uppercase text-black ${interactionDefault()}`
-const buttonPrimary = () => `font-semibold leading-snug tracking-wider uppercase text-white ${interactionPrimary()}`
+const buttonDefault = () => `font-medium leading-snug tracking-wider uppercase text-black ${interactionDefault()}`
+const buttonPrimary = () => `font-medium leading-snug tracking-wider uppercase text-white ${interactionPrimary()}`
 const cardDefault = () => `${classes.cardRadius()} text-black ${interactionDefault()}`
 const cardPrimary = () => `${classes.cardRadius()} text-white ${interactionPrimary()}`
 const cardWhite = () => 'text-black xt-links-default'
@@ -32,7 +32,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} text-black font-semibold leading-snug tracking-wider uppercase transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
+        class="xt-button ${classes.buttonMd()} text-black font-medium leading-snug tracking-wider uppercase transition hover:-translate-y-1 active:translate-y-0 on:translate-y-0"
       >
         Text
       </button>
@@ -142,7 +142,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip bg-black ${animDesign()}"
               ></div>
-              <div class="relative ${classes.tooltipMd()} font-semibold text-white xt-links-inverse ${animItem()}">
+              <div class="relative ${classes.tooltipMd()} font-medium text-white xt-links-inverse ${animItem()}">
                 Lorem ipsum dolor sit amet
               </div>
             </div>
@@ -165,7 +165,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** rounded${classes.tooltipRadius()} shadow-tooltip bg-white ${animDesign()}"
               ></div>
-              <div class="font-semibold text-black xt-links-default ${animItem()}">
+              <div class="font-medium text-black xt-links-default ${animItem()}">
                 <form class="text-sm">
                   <div class="xt-list flex-nowrap max-w-sm ${cardWhite()} ${animItem()}">
                     <div class="inline-flex flex-auto">

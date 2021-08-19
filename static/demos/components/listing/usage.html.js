@@ -10,7 +10,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Lorem ipsum</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Dolor sit amet</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>
@@ -34,7 +34,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Lorem ipsum</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>
@@ -46,7 +46,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Dolor sit amet</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>
@@ -58,7 +58,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Lorem Ipsum</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>
@@ -70,7 +70,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Dolor sit amet</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>
@@ -82,7 +82,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Lorem Ipsum</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>
@@ -94,7 +94,7 @@ const html = /* HTML */ `
               </div>
               <div class="py-4">
                 <div class="xt-h6">Dolor sit amet</div>
-                <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
           </div>

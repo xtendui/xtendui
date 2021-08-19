@@ -96,7 +96,7 @@ pre {
   .xt-button {
     padding: .5em .75em;
     font-size: 12px;
-    @apply text-black text-opacity-50 font-semibold leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition;
+    @apply text-black text-opacity-50 font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition;
     &:hover, &.in {
       @apply border-white bg-white text-opacity-100;
     }
@@ -112,7 +112,7 @@ pre {
   .xt-button {
     padding: .5em .75em;
     font-size: 12px;
-    @apply text-white font-semibold leading-tight tracking-normal capitalize rounded-md border-transparent bg-transparent transition;
+    @apply text-white font-medium leading-tight tracking-normal capitalize rounded-md border-transparent bg-transparent transition;
     &:hover, &.in {
       @apply bg-white bg-opacity-20;
     }
@@ -296,7 +296,7 @@ pre {
     border: 1px solid theme('colors.gray.100');
   }
   th, td:first-child {
-    @apply py-2 px-4 text-xs font-semibold leading-snug tracking-wider uppercase text-left;
+    @apply py-2 px-4 text-xs font-medium leading-snug tracking-wider uppercase text-left;
   }
   td {
     @apply py-2.5 px-5 text-sm leading-snug;

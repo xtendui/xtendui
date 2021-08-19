@@ -28,7 +28,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line text-white font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #1
               </a>
@@ -62,7 +62,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line text-white font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #2
               </a>
@@ -89,7 +89,7 @@ const html = /* HTML */ `
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line text-white font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
             >
               Link #3
             </a>
@@ -97,7 +97,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line text-white font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #4
               </a>
@@ -145,7 +145,7 @@ const html = /* HTML */ `
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line text-white font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
             >
               Link #5
             </a>

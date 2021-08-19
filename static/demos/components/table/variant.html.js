@@ -4,17 +4,17 @@ const html = /* HTML */ `
       <thead>
         <tr>
           <th
-            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left"
+            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left"
           >
             #
           </th>
           <th
-            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left"
+            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left"
           >
             Description
           </th>
           <th
-            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left"
+            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left"
           >
             Value
           </th>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
       <tbody>
         <tr>
           <th
-            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
+            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
           >
             1
           </th>
@@ -40,7 +40,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
+            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
           >
             2
           </th>
@@ -57,7 +57,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
+            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
           >
             3
           </th>
@@ -74,7 +74,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
+            class="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***"
           >
             4
           </th>
@@ -96,17 +96,17 @@ const html = /* HTML */ `
       <thead>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***"
           >
             #
           </th>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***"
           >
             Description
           </th>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***"
           >
             Value
           </th>
@@ -115,7 +115,7 @@ const html = /* HTML */ `
       <tbody>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***"
           >
             1
           </th>
@@ -130,7 +130,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***"
           >
             2
           </th>
@@ -147,7 +147,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***"
           >
             3
           </th>
@@ -160,7 +160,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***"
           >
             4
           </th>

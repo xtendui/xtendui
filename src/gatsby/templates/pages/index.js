@@ -176,7 +176,7 @@ export default function Page() {
                           <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                             Usability
                             <div
-                              className={`inline-block text-black text-3xs font-semibold leading-snug tracking-wider uppercase ml-1.5`}>
+                              className={`inline-block text-black text-3xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
                               WIP
                             </div>
                           </h2>

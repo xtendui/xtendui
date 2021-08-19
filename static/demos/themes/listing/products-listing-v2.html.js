@@ -19,13 +19,13 @@ const html = /* HTML */ `
                     <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
-                        <div class="font-semibold text-sm">-35%</div>
+                        <div class="font-medium text-sm">-35%</div>
                       </div>
                     </div>
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -39,13 +39,13 @@ const html = /* HTML */ `
                     <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                     <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
-                        <div class="font-semibold text-sm">-40%</div>
+                        <div class="font-medium text-sm">-40%</div>
                       </div>
                     </div>
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -60,7 +60,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -75,7 +75,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -90,7 +90,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -105,7 +105,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -120,7 +120,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -135,7 +135,7 @@ const html = /* HTML */ `
                   </div>
                   <div class="py-4">
                     <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                    <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -186,13 +186,13 @@ const html = /* HTML */ `
                   <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
-                      <div class="font-semibold text-sm">-35%</div>
+                      <div class="font-medium text-sm">-35%</div>
                     </div>
                   </div>
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -204,13 +204,13 @@ const html = /* HTML */ `
                   <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
                   <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
-                      <div class="font-semibold text-sm">-40%</div>
+                      <div class="font-medium text-sm">-40%</div>
                     </div>
                   </div>
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -223,7 +223,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -236,7 +236,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -249,7 +249,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -262,7 +262,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -275,7 +275,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Lorem ipsum</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -288,7 +288,7 @@ const html = /* HTML */ `
                 </div>
                 <div class="py-4">
                   <div class="xt-h6 group-hover:text-primary-500">Dolor sit amet</div>
-                  <div class="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
