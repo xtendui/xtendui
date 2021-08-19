@@ -34,13 +34,13 @@
     "dev": "yarn setup && yarn clean && gatsby develop -p 8080",
     "serve": "yarn build && gatsby serve -p 8080",
     "deploy": "yarn build && gh-pages -d public",
-    "webpack": "yarn setup && cross-env DIST=true webpack --progress",
+    "dist": "yarn setup && cross-env DIST=true webpack --progress",
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js",
     "lint:generate": "eslint . --ext .jsx",
     "test": "echo '@todo tests'",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
-    "postversion": "yarn webpack"
+    "postversion": "yarn dist"
   },
   "dependencies": {
     "@googlemaps/markerclustererplus": "^1.2.0",
