@@ -9,7 +9,7 @@ const html = /* HTML */ `
         <div class="*** inline-flex ***">
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupButtonRadius()} border border-gray-300 *** ${classes.buttonDefault()}"
+            class="xt-button text-2xs py-1 px-2.5 *** rounded-l${classes.groupButtonRadius()} border border-gray-300 *** ${classes.buttonDefault()}"
             data-xt-step="-1"
           >
             -
@@ -24,7 +24,7 @@ const html = /* HTML */ `
           />
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} *** rounded-r${classes.groupButtonRadius()} border border-l-0 border-gray-300 *** ${classes.buttonDefault()}"
+            class="xt-button text-2xs py-1 px-2.5 *** rounded-r${classes.groupButtonRadius()} border border-l-0 border-gray-300 *** ${classes.buttonDefault()}"
             data-xt-step="1"
           >
             +

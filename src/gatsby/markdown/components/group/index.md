@@ -20,8 +20,3 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
   <demoinline src="demos/components/group/usage">
   </demoinline>
 </demo>
-
-<demo>
-  <demoinline src="demos/components/group/usage-responsive">
-  </demoinline>
-</demo>

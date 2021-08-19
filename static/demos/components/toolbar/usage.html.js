@@ -28,7 +28,7 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonPrimary()}"
           >
-            Edit ${classes.iconEdit({ classes: 'xt-icon ml-2' })}
+            ${classes.iconEdit({ classes: 'xt-icon mr-2' })} Edit
           </button>
 
           <div class="xt-drop p-3" data-xt-drop-target>
