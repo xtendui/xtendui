@@ -56,7 +56,7 @@ Use `on:z-drop` to have the button above the backdrop.
   </demoinline>
 </demo>
 
-## Custom
+## Other Content
 
 You can put **any content** inside, here are some examples.
 

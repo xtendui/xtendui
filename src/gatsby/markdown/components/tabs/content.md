@@ -28,7 +28,6 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
   </demoinline>
 </demo>
 
-
 ## Custom
 
 You can include the component inside a [card](/components/card) and add interactive components.
