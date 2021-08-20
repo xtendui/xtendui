@@ -49,14 +49,14 @@ Test initial scroll and overlay activation data-xt-scrollto-hash.
 
 Test scroll and overlay activation data-xt-scrollto-hash close overlay and browser location prev e next.
 
-Try the demo [on a new page](/demos/components/scroll-to/usage#anchor-2).
+Try the demo [on a new page](/demos/components/scrollto/usage#anchor-2).
 
 Test clicking 2 should open overlay (bug with openauto and overlay on same element).
 
-Try the demo [on a new page](/demos/components/scroll-to/overlay#anchor-2).
+Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2).
 
 Test browser location prev e next.
 
 Test initial activation and scroll on page load when linking non scrolltoInit.
 
-Try the demo [on a new page](/demos/components/scroll-to/toggle#anchor-2).
+Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2).

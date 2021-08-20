@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "ScrollTo"
-title: "ScrollTo"
-description: "ScrollTo is a plugin that manages interaction scroll with hash links or any node."
+parent: "Scrollto"
+title: "Scrollto"
+description: "Scrollto is a plugin that manages interaction scroll with hash links or any node."
 ---
 
 ## Javascript
@@ -16,23 +16,23 @@ Initialize manually **within javascript** with `new Xt.Scrollto(document.querySe
 
 Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
 
-> This demo uses [scroll sticky](/components/scroll-trigger/sticky) see documentation for more info.
+> This demo uses [scroll sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 > Do not assign **other components** to `anchors` or the components activations conflict.
 
-Try the demo [on a new page](/demos/components/scroll-to/usage#anchor-2) to preview location hash changes.
+Try the demo [on a new page](/demos/components/scrollto/usage#anchor-2) to preview location hash changes.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-to/usage">
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrollto/usage">
   </div>
 </demo>
 
 It works also inside [overlay](/components/overlay) and it automatically open **overlay and all parent components** with `openauto: true`.
 
-Try the demo [on a new page](/demos/components/scroll-to/overlay#anchor-2) to preview location hash changes.
+Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2) to preview location hash changes.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-to/overlay">
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrollto/overlay">
   </div>
 </demo>
 
@@ -44,17 +44,17 @@ You can use the Scrollto component in conjunction with any **toggle component** 
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `scrollto:Boolean\|Query\|String`                          | `false`        | On activation trigger [scrollto](/components/scroll-to) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
+| Option                  | `scrollto:Boolean\|Query\|String`                          | `false`        | On activation trigger [scrollto](/components/scrollto) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
 | Option                  | `scrolltoInit:Boolean`                          | `false`        | Scrollto also on initialization (`data-xt-hash` or `.on` or `options.min` etc..)            |
 
 </div>
 
 > Use `queue: false` for proper browser back button.
 
-Try the demo [on a new page](/demos/components/scroll-to/toggle#anchor-2) to preview location hash changes.
+Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2) to preview location hash changes.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-to/toggle">
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrollto/toggle">
   </div>
 </demo>
 

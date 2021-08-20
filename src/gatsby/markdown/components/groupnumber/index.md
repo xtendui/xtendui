@@ -1,28 +1,32 @@
 ---
 type: "Components"
-category: "Scroll"
-parent: "StickyFlow"
-title: "StickyFlow"
-description: "StickyFlow is a plugin that enhance css sticky position by making it scroll the content also if overflowing the window."
+category: "Form"
+parent: "Groupnumber"
+title: "Groupnumber"
+description: "Groupnumber is a plugin that manages quantity increments on input number."
 ---
+
+## Styles
+
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber` see [css customization](/components/global/preset#customization). Check [xtendui/src/groupnumber.css.js](https://github.com/xtendui/xtendui/blob/beta/src/groupnumber.css.js) for default styles.
 
 ## Javascript
 
-Import the **javascript** file with `import 'xtendui/src/stickyflow'`.
+Import the **javascript** file with `import 'xtendui/src/groupnumber'`.
 
-Initialize manually **within javascript** with `new Xt.Stickyflow(document.querySelector('.my-container'), {/* options */})`.
+Initialize automatically **within markup** with `[data-xt-groupnumber="{ <options> }"]`.
+
+Initialize manually **within javascript** with `new Xt.Groupnumber(document.querySelector('.my-container'), {/* options */})`.
 
 ## Usage
 
-Be sure that `sticky` parent has not `overflow-hidden` or `position: sticky;` doesn't work.
+You can add steps with `[data-xt-step="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current value.
 
-Remember to use `.items-stretch` on on the container or `.sticky` doesn't work.
-
-> This addon is for css `position: sticky;` and **doesn't need** Gsap ScrollTrigger.
+> This demos use [group](/components/group) see documentation for more info.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/sticky-flow/usage">
-  </div>
+  <demoinline src="demos/components/groupnumber/usage">
+  </demoinline>
 </demo>
 
 ## Options
@@ -34,8 +38,8 @@ Here are the main **javascript options**.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
-| Option                    | `element:Query`                          | `false`        | Sticky element query            |
-| Option                    | `filler:Query`                          | `false`        | Filler element query            |
+| Option                    | `inputs:Query`                          | `'input[type="number"]'`        | Inputs query            |
+| Option                    | `steps:Query`                          | `'[data-xt-step]'`        | Steps query            |
 
 </div>
 
@@ -56,13 +60,13 @@ You can add **additional options** that gets added on **match media query**. You
 You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') })
+let self = Xt.get({ name: 'xt-groupnumber', el: document.querySelector('.my-container') })
 ```
 
 You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
 
 ```js
-Xt.options['xt-stickyflow'] = {
+Xt.options['xt-groupnumber'] = {
   debug: true,
 }
 ```
@@ -75,10 +79,10 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change.xt.stickyflow`                        | `input` | Position change event             |
-| Event                   | `init.xt.stickyflow`           | `container` | Init or reinit event             |
-| Event                   | `status.xt.stickyflow`           | `container` | Status event (enabled or disabled)             |
-| Event                   | `destroy.xt.stickyflow`           | `container` | Destroy event             |
+| Event                   | `change`                        | `input` | Value change event             |
+| Event                   | `init.xt.groupnumber`           | `container` | Init or reinit event             |
+| Event                   | `status.xt.groupnumber`           | `container` | Status event (enabled or disabled)             |
+| Event                   | `destroy.xt.groupnumber`           | `container` | Destroy event             |
 
 </div>
 
@@ -87,7 +91,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') })
+let self = Xt.get({ name: 'xt-groupnumber', el: document.querySelector('.my-container') })
 const container = self.container
 ```
 
@@ -99,8 +103,8 @@ const container = self.container
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
-| Property                   | `element:Node`       | Sticky element             |
-| Property                   | `filler:Nodes`       | Filler element             |
+| Property                   | `inputs:Nodes`       | Inputs nodes             |
+| Property                   | `steps:Nodes`       | Steps node             |
 
 </div>
 
@@ -109,7 +113,7 @@ const container = self.container
 Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') })
+let self = Xt.get({ name: 'xt-groupnumber', el: document.querySelector('.my-container') })
 self.destroy()
 self = null
 ```

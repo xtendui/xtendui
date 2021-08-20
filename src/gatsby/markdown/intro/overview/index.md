@@ -49,11 +49,11 @@ Sometimes you need to **save the state of a component in the location hash**, to
 
 See [overlay hash](/components/overlay/interaction#hash), [slider hash](/components/slider/interaction#hash), [toggle hash](/components/toggle/interaction#hash) for more info.
 
-#### ScrollTo
+#### Scrollto
 
-Sometimes you need to **automatically scroll to the activated nodes**, you can use the [Scrollto component](/components/scroll-to) in conjunction with any **toggle component**. It also integrates with the **toggle hash** interaction.
+Sometimes you need to **automatically scroll to the activated nodes**, you can use the [Scrollto component](/components/scrollto) in conjunction with any **toggle component**. It also integrates with the **toggle hash** interaction.
 
-See [scrollto toggle](/components/scroll-to#toggle) for more info.
+See [scrollto toggle](/components/scrollto#toggle) for more info.
 
 #### Addon
 
@@ -69,19 +69,19 @@ Many advanced usage of toggle components are in the addon pages.
 
 Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sort of interaction on page scroll**.
 
-See [fade](/components/scroll-trigger/fade), [parallax](/components/scroll-trigger/parallax), [sticky](/components/scroll-trigger/sticky) for more info.
+See [fade](/components/scrolltrigger/fade), [parallax](/components/scrolltrigger/parallax), [sticky](/components/scrolltrigger/sticky) for more info.
 
-#### ScrollTo
+#### Scrollto
 
 ScrollTo is a plugin that manages **interaction scroll**, by setting it up it automatically reacts to **hash links referring to ids on click and page load** or **can get triggered on any node**, with automatic activation on scroll.
 
-See [scrollto](/components/scroll-to) for more info.
+See [scrollto](/components/scrollto) for more info.
 
-#### StickyFlow
+#### Stickyflow
 
-StickyFlow is a plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
+Stickyflow is a plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
 
-See [stickyflow](/components/sticky-flow) for more info.
+See [stickyflow](/components/stickyflow) for more info.
 
 ## Form
 

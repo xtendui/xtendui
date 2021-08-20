@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Form"
-parent: "TextareaAutosize"
-title: "TextareaAutosize"
-description: "TextareaAutosize is a plugin that manages automatic size on textarea."
+parent: "Textareaautosize"
+title: "Textareaautosize"
+description: "Textareaautosize is a plugin that manages automatic size on textarea."
 ---
 
 ## Javascript
@@ -19,7 +19,7 @@ Initialize manually **within javascript** with `new Xt.Textareaautosize(document
 You can customize `min-height` and `max-height` of the textarea.
 
 <demo>
-  <demoinline src="demos/components/textarea-autosize/usage">
+  <demoinline src="demos/components/textareaautosize/usage">
   </demoinline>
 </demo>
 

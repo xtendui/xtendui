@@ -1,9 +1,9 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "ScrollTrigger"
-title: "ScrollTrigger"
-description: "ScrollTrigger component contains interactions for all sort of interaction on page scroll."
+parent: "Scrolltrigger"
+title: "Scrolltrigger"
+description: "Scrolltrigger component contains interactions for all sort of interaction on page scroll."
 ---
 
 ## Styles
@@ -16,22 +16,22 @@ This demos use [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/Scroll
 
 ## Usage
 
-Examples to do **fade animations on page scroll**. See [fade](/components/scroll-trigger/fade) for more info.
+Examples to do **fade animations on page scroll**. See [fade](/components/scrolltrigger/fade) for more info.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/fade"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade"></div>
 </demo>
 
-Examples to do **sticky animations on page scroll**. See [sticky](/components/scroll-trigger/sticky) for more info.
+Examples to do **sticky animations on page scroll**. See [sticky](/components/scrolltrigger/sticky) for more info.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/sticky"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/sticky"></div>
 </demo>
 
-Examples to do **parallax animations on page scroll**. See [parallax](/components/scroll-trigger/parallax) for more info.
+Examples to do **parallax animations on page scroll**. See [parallax](/components/scrolltrigger/parallax) for more info.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax"></div>
 </demo>
 
 ## Setup

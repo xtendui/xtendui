@@ -19,11 +19,11 @@ Use [toggle](/components/toggle) to **activate/deactivate and animate**.
 
 Use [collapse](/components/collapse) to **animate with collapse**.
 
-Use [scrollto toggle](/components/scroll-to#toggle) to **automatically scroll on activation**.
+Use [scrollto toggle](/components/scrollto#toggle) to **automatically scroll on activation**.
 
-Use [sticky](/components/scroll-trigger/sticky) to have **sticky elements**.
+Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 
-> This demos use [collapse](/components/collapse) [scrollto](/components/scroll-to) [sticky](/components/scroll-trigger/sticky) see documentation for more info.
+> This demos use [collapse](/components/collapse) [scrollto](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v2">

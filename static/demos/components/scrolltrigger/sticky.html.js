@@ -84,11 +84,11 @@ const html = /* HTML */ `
       </p>
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
-  </div>
 
-  <br /><br /><br /><br /><br /><br /><br />
-  <br /><br /><br /><br /><br /><br /><br />
-  <br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br />
+  </div>
 `
 
 export const object = {

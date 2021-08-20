@@ -1,40 +1,19 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "ScrollTrigger"
-title: "Sticky"
-date: "2010-10-11"
+parent: "Scrolltrigger"
+title: "Fade"
+date: "2010-10-12"
 ---
 
 For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
 ## Usage
 
-A **sticky** can be achieved by assigning **ScrollTrigger** with `pin: true` and `pinSpacing: false`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `pin:Boolean\|String\|Element`                          | `false`        | **Pin the trigger** when scrolling           |
-| Option                  | `pinSpacing:Boolean\|String`                          | `true`        | Add **distance spacing** for the pinned element            |
-
-</div>
-
-Use the **component classes** to create a **sticky**.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Syntax                          | Mixin            | Description                   |
-| ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- |
-| Component                  | `.xt-sticky`                     | `xt-sticky`                | Styles for sticky            |
-| Component                  | `.xt-sticky.xt-sticky-nozindex`                     | `xt-sticky xt-sticky-nozindex`                | Do not set `z-index` for this sticky             |
-| Component                  | `.xt-sticky.xt-sticky-noheight`                     | `xt-sticky xt-sticky-noheight`                | Do not set `height` and `maxHeight` for this sticky             |
-
-</div>
+A **fade** can be achieved by assigning **ScrollTrigger** by setting [ScrollTrigger events](/components/scrolltrigger/fade#event) to **animate depending on scroll position relative to the trigger element**. And using [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/sticky"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade"></div>
 </demo>
 
 You can **toggle classes on activation** using `toggleClass: '<className>'`.
@@ -74,21 +53,25 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on
 
 </div>
 
-Here's an example of **complex sticky stacking**.
+Here's an example of **distance fade** with **animation depending on direction**.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/sticky-stack"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-distance"></div>
 </demo>
 
 ## Event
 
-You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate on certain events**.
+You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onUpdate`, `onScrubComplete`, and `onRefresh` to **animate depending on scroll position relative to the trigger element**.
 
-> Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
-
-Here's an examples of **sticky that hides depending on scroll direction**.
+Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/sticky-hide"></div>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/sticky-hide-sub"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-infinite"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-inside"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-outside"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-outside-infinite"></div>
 </demo>
+
+## Dynamic Content
+
+If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) or other code on live content**, just **check if already done for content added dinamically**.

@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "ScrollTrigger"
+parent: "Scrolltrigger"
 title: "Other"
 date: "2005-10-10"
 ---
@@ -18,8 +18,8 @@ Example of **fade and sticky only on mobile** (**use narrow screen to see it in 
 
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/fade-matchmedia"></div>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/sticky-matchmedia"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-matchmedia"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/sticky-matchmedia"></div>
 </demo>
 
 ## Markers

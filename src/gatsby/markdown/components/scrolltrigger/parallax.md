@@ -1,7 +1,7 @@
 ---
 type: "Components"
 category: "Scroll"
-parent: "ScrollTrigger"
+parent: "Scrolltrigger"
 title: "Parallax"
 date: "2010-10-10"
 ---
@@ -23,7 +23,7 @@ You can use `scrub: true` to animate only when scrolling, or `scrub: <Number>` f
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax"></div>
 </demo>
 
 You can **toggle classes on activation** using `toggleClass: '<className>'`.
@@ -59,7 +59,7 @@ Use `toggleActions` to control the playhead on ScrollTrigger events (**scroll to
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax-actions"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax-actions"></div>
 </demo>
 
 ## Distance
@@ -91,13 +91,13 @@ Use `pin: true` to **pin the trigger** when scrolling.
 </div>
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax-pin"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax-pin"></div>
 </demo>
 
 If you need **full range of animation** also on top and bottom of the page, calculate it and add to `start` and `end`.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax-range"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax-range"></div>
 </demo>
 
 ## Multiple
@@ -107,7 +107,7 @@ You can add **multiple ScrollTriggers and animations** on the same elements.
 > When multiple scrolltrigger animate the same properties use `immediateRender: false` on sequential modification of the property.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax-multiple"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax-multiple"></div>
 </demo>
 
 ## Content
@@ -115,5 +115,5 @@ You can add **multiple ScrollTriggers and animations** on the same elements.
 Here's an example of **parallax on images** with [media](/components/media).
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/scroll-trigger/parallax-image"></div>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax-image"></div>
 </demo>

@@ -2,8 +2,8 @@
 type: "Hidden"
 category: "Hidden"
 parent: "Future"
-title: "GoogleLocator"
-description: "GoogleLocator is a plugin that manages google places and maps and markers."
+title: "Googlelocator"
+description: "Googlelocator is a plugin that manages google places and maps and markers."
 ---
 
 ## Javascript
