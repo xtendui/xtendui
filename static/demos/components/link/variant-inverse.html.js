@@ -2,7 +2,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} *** ${classes.textWhite()} *** ${classes.cardPrimary()}">
+    <div
+      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} *** ${classes.textWhite()} *** ${classes.cardPrimary()}"
+    >
       <div class="xt-list xt-list-3 items-center">
         <a href="#"> link </a>
 
@@ -12,7 +14,9 @@ const html = /* HTML */ `
 
         <div class="xt-link">link class</div>
 
-        <div class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} *** ${classes.textBlack()} *** ${classes.cardWhite()}">
+        <div
+          class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} *** ${classes.textBlack()} *** ${classes.cardWhite()}"
+        >
           <div class="xt-list xt-list-3 items-center">
             <a href="#"> link </a>
 

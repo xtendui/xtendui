@@ -2,7 +2,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--drop-prevent-overflow">
-    <div class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}" data-node-boundary>
+    <div
+      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}"
+      data-node-boundary
+    >
       <div class="xt-list xt-list-3 items-center" data-node-drop>
         <div data-xt-drop-element>
           <button
