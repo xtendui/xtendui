@@ -25,7 +25,7 @@ const mountSticky = ({ ref }) => {
   ScrollTrigger.create({
     trigger: ref.querySelector('[data-node-sticky-top]'),
     start: 'top top',
-    endTrigger: 'html',
+    endTrigger: ref.querySelector('[data-node-sticky-top-endtrigger]'),
     end: 'bottom top',
     pin: true,
     pinSpacing: false,

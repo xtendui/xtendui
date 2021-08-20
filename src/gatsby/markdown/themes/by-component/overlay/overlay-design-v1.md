@@ -1,7 +1,7 @@
 ---
 type: "Themes"
-category: "By Type"
-parent: "Design"
+category: "By Component"
+parent: "Overlay"
 title: "overlay-design-v1"
 date: "2000-10-10"
 demos: [

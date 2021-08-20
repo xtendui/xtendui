@@ -119,6 +119,10 @@ const highlightCode = (pre, element, language, isReact = false) => {
     /(<span class="token attr-name">data-xt-.*?<\/span>)/g,
     (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
   ) // data-xt-
+  highlighted = highlighted.replace(
+    /(<span class="token attr-name">data-node-.*?<\/span>)/g,
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+  ) // data-node-
   code.innerHTML = highlighted
   // clipboard
   text = text.replace(/\/?\*\*\*\/?\n*\s*([\s\S\r]*?)\n*\s*\/?\*\*\*\/?/g, (_, str) => str) // remove highlight syntax

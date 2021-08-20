@@ -23,7 +23,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" data-node-sticky-top-endtrigger>
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
@@ -38,6 +38,7 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
 
+    <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
@@ -81,6 +82,10 @@ const html = /* HTML */ `
       <p>Morbi sodales, dolor a iaculis ornare, velit justo lacinia erat, pretium sollicitudin dui sem id justo.</p>
     </div>
   </div>
+
+  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br />
 `
 
 export const object = {

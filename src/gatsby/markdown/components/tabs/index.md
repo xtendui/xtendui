@@ -30,6 +30,6 @@ You can set activation styles by adding the class `.on`.
 Check out [tabs themes](/themes/tabs) for **advanced implementations**.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  <div class="gatsby_demo_item" data-iframe="demos/themes/design/tabs-design-v1">
   </div>
 </demo>

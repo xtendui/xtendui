@@ -4,16 +4,20 @@ import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--scrollto-toggle',
+  matches: '.demo--tabs-design-v1',
   mount: ({ ref }) => {
     const unmountScrollto = mountScrollto({ ref })
+    const unmountSticky = mountSticky({ ref })
 
     // unmount
 
     return () => {
       unmountScrollto()
+      unmountSticky()
     }
   },
 })
@@ -27,8 +31,8 @@ const mountScrollto = () => {
   let self = new Xt.Scrollto(document.documentElement, {
     hash: true,
     space: ({ self }) => {
-      let space = 0
-      for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
+      let space = window.innerHeight / 20
+      for (const el of self.scroller.querySelectorAll('.xt-sticky')) {
         space += el.clientHeight
       }
       return space
@@ -63,4 +67,25 @@ const mountScrollto = () => {
     self.destroy()
     self = null
   }
+}
+
+/* mountSticky */
+
+const mountSticky = ({ ref }) => {
+  // sticky
+
+  /***/
+  ScrollTrigger.create({
+    trigger: ref.querySelector('[data-node-sticky]'),
+    start: 'top top',
+    endTrigger: ref.querySelector('[data-node-sticky-endtrigger]'),
+    end: 'bottom top',
+    pin: true,
+    pinSpacing: false,
+  })
+  /***/
+
+  // unmount
+
+  return () => {}
 }
