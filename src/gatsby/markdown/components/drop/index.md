@@ -18,15 +18,6 @@ Initialize automatically **within markup** with `[data-xt-drop="{ <options> }"]`
 
 Initialize manually **within javascript** with `new Xt.Drop(document.querySelector('.my-container'), {/* options */})`.
 
-## Implementation
-
-Check out [drop themes](/themes/drop) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
-  </div>
-</demo>
-
 ## Usage Self
 
 Use this code to create a **drop** in **self mode**.
@@ -58,4 +49,13 @@ Use this code to create **drop** in **multiple mode**.
 <demo>
   <demoinline src="demos/components/drop/usage-multiple">
   </demoinline>
+</demo>
+
+## Implementation
+
+Check out [drop themes](/themes/drop) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
 </demo>

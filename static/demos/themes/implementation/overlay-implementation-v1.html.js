@@ -19,7 +19,9 @@ const html = /* HTML */ `
         <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***">
+            <div
+              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+            >
               <div
                 class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
               >
@@ -154,7 +156,9 @@ const html = /* HTML */ `
         <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***">
+            <div
+              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+            >
               <div
                 class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
               >
@@ -276,7 +280,9 @@ const html = /* HTML */ `
         <div class="xt-overlay group" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-            <div class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***">
+            <div
+              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+            >
               <div class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}">
                 <button
                   type="button"
@@ -347,7 +353,9 @@ const html = /* HTML */ `
             >
               ${classes.iconX()}
             </button>
-            <div class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***">
+            <div
+              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+            >
               <div
                 class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()}"
               >

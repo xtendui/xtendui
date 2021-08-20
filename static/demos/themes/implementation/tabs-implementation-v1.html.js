@@ -45,7 +45,10 @@ const html = /* HTML */ `
         </div>
 
         <div class="mt-3">
-          <div class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***" data-xt-toggle-target>
+          <div
+            class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***"
+            data-xt-toggle-target
+          >
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >
@@ -58,7 +61,10 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***" data-xt-toggle-target>
+          <div
+            class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***"
+            data-xt-toggle-target
+          >
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >
@@ -81,7 +87,10 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***" data-xt-toggle-target>
+          <div
+            class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***"
+            data-xt-toggle-target
+          >
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >

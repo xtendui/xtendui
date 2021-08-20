@@ -6,17 +6,6 @@ title: "Tabs"
 description: "Tabs is a component to group up buttons, inputs and other content."
 ---
 
-## Implementation
-
-Check out [tabs themes](/themes/tabs) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v1">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v2">
-  </div>
-</demo>
-
 ## Usage
 
 Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwindcss.com/docs/border-radius)).
@@ -34,4 +23,15 @@ You can set activation styles by adding the class `.on`.
 <demo>
   <demoinline src="demos/components/tabs/usage">
   </demoinline>
+</demo>
+
+## Implementation
+
+Check out [tabs themes](/themes/tabs) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v1">
+  </div>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v2">
+  </div>
 </demo>

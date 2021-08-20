@@ -6,15 +6,6 @@ title: "Collapse"
 description: "Collapse is a toggle interaction to animate with start and end height or width."
 ---
 
-## Implementation
-
-Check out [animation themes](/themes/animation) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
-  </div>
-</demo>
-
 ## Usage
 
 Collapse only work with **toggle components**, assign `options.collapseHeight` or `options.collapseWidth`.
@@ -54,4 +45,13 @@ Just use the class `on` if you want to automatically open instantly.
 <demo>
   <demoinline src="demos/components/collapse/initial">
   </demoinline>
+</demo>
+
+## Implementation
+
+Check out [animation themes](/themes/animation) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
 </demo>
