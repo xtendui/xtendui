@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const buttonPrimary = () => `${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
+const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
 const cardWhite = () => `${classes.cardWhite()}`
 const cardWhiteAccent = () => `${classes.cardWhiteAccent()}`
 
@@ -10,7 +10,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Contact
@@ -112,7 +112,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Send
                           </button>
@@ -147,7 +147,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Newsletter
@@ -249,7 +249,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Subscribe
                           </button>
@@ -271,7 +271,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Menu
@@ -294,19 +294,19 @@ const html = /* HTML */ `
                 <div class="xt-list bg-primary-500">
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                   >
                     Menu
                   </button>
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                   >
                     Info
                   </button>
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                   >
                     Account
                   </button>
@@ -337,7 +337,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Gallery

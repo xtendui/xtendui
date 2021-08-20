@@ -10,7 +10,7 @@ const html = /* HTML */ `
 
     <main class="site-main">
       <div class="container">
-        <div class="xt-row xt-row-8 lg:xt-row-12 items-stretch">
+        <div class="xt-row xt-row-8 lg:xt-row-12 *** items-stretch ***">
           <div class="w-full md:w-6/12 lg:w-7/12">
             <div class="relative pt-6 md:py-6">
               <div class="xt-list flex-col">
@@ -52,7 +52,7 @@ const html = /* HTML */ `
             data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }"
           >
             <div class="*** pointer-events-none absolute md:relative ***" data-xt-stickyflow-filler></div>
-            <div class="md:py-12 *** md:sticky ***" data-xt-stickyflow-el>
+            <div class="*** md:sticky md:py-12 ***" data-xt-stickyflow-el>
               <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>
 
               <div class="xt-h5 mb-6">€&nbsp;229,00</div>

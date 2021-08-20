@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--tabs-implementation-v2',
+  matches: '.demo--nav-implementation-v2',
   mount: ({ ref }) => {
     const unmountScrollto = mountScrollto({ ref })
     const unmountSticky = mountSticky({ ref })

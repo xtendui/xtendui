@@ -2,25 +2,25 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const buttonRadius = () => `-xl`
 const buttonAnim = () =>
-  `${classes.buttonUpper()} transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
+  `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
 const cardRadius = () => `-2xl`
 
 const html = /* HTML */ `
-  <div class="demo--tabs-implementation-v1">
+  <div class="demo--tabs-implementation-v2">
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <div class="max-w-xl mx-auto">
       <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'targets' }">
-        <div class="xt-sticky" data-node-sticky>
+        <div class="*** xt-sticky ***" data-node-sticky>
           <div
             class="xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-50 ${classes.bgBlur()}"
           >
-            <nav class="xt-list xt-list-2 flex-col md:flex-row md:flex-nowrap p-2">
+            <nav class="xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1">
               <a
                 href="#"
                 type="button"
-                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${buttonAnim()}"
+                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="description"
               >
@@ -29,7 +29,7 @@ const html = /* HTML */ `
               <a
                 href="#"
                 type="button"
-                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${buttonAnim()}"
+                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="features"
               >
@@ -38,7 +38,7 @@ const html = /* HTML */ `
               <a
                 href="#"
                 type="button"
-                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${buttonAnim()}"
+                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="accessories"
                 >Accessories</a
@@ -47,8 +47,11 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div class="mt-3">
-          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
+        <div class="mt-3" data-node-sticky-endtrigger>
+          <div
+            class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
+            data-xt-toggle-target
+          >
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >
@@ -61,7 +64,10 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
+          <div
+            class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
+            data-xt-toggle-target
+          >
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >
@@ -84,7 +90,10 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
+          <div
+            class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
+            data-xt-toggle-target
+          >
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >
@@ -119,8 +128,6 @@ const html = /* HTML */ `
         </div>
       </div>
     </div>
-
-    <div data-node-sticky-endtrigger></div>
 
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />

@@ -20,12 +20,3 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
   <demoinline src="demos/components/group/usage">
   </demoinline>
 </demo>
-
-## Implementation
-
-Check out [group themes](/themes/group) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
-  </div>
-</demo>

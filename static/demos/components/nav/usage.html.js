@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** rounded-t${classes.groupButtonRadius()} *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()} *** on ***"
+        class="xt-button ${classes.groupButtonMd()} *** rounded-t${classes.groupButtonRadius()} *** ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()} *** on ***"
       >
         Lorem ipsum dolor sit amet
       </a>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Consectetur adipiscing elit
       </a>
@@ -22,21 +22,21 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >Mauris mattis</a
       >
 
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
-        >purus odio</a
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        >Purus odio</a
       >
 
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** rounded-b${classes.groupButtonRadius()} *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} *** rounded-b${classes.groupButtonRadius()} *** ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Et dictum felis vestibulum sed
       </a>

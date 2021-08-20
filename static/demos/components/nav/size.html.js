@@ -7,7 +7,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Lorem ipsum dolor sit amet
         </a>
@@ -15,7 +15,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Consectetur adipiscing elit
         </a>
@@ -23,21 +23,21 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >Mauris mattis</a
         >
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
-          >purus odio</a
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          >Purus odio</a
         >
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Et dictum felis vestibulum sed
         </a>
@@ -47,7 +47,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Lorem ipsum dolor sit amet
         </a>
@@ -55,7 +55,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Consectetur adipiscing elit
         </a>
@@ -63,21 +63,21 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >Mauris mattis</a
         >
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
-          >purus odio</a
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          >Purus odio</a
         >
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Et dictum felis vestibulum sed
         </a>
@@ -87,7 +87,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Lorem ipsum dolor sit amet
         </a>
@@ -95,7 +95,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Consectetur adipiscing elit
         </a>
@@ -103,21 +103,21 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
           >Mauris mattis</a
         >
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
-          >purus odio</a
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          >Purus odio</a
         >
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
         >
           Et dictum felis vestibulum sed
         </a>

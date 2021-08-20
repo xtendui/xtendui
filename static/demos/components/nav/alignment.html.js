@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Justify default (center)<br />Text default (center) ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-center text-center *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-center text-center *** ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Justify center<br />Text center ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-start text-left *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-start text-left *** ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Justify start<br />Text left ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -30,7 +30,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-end text-right *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-end text-right *** ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Justify end<br />Text right ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-between *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-between *** ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Justify between ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>
@@ -46,7 +46,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-around *** ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} *** justify-around *** ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
       >
         Justify around ${classes.iconSearch({ classes: 'text-xl -my-1 ml-2' })}
       </a>

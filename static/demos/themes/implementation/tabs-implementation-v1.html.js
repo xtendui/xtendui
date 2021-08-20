@@ -2,46 +2,44 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const buttonRadius = () => `-xl`
 const buttonAnim = () =>
-  `${classes.buttonUpper()} transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
+  `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
 const cardRadius = () => `-2xl`
 
 const html = /* HTML */ `
   <div>
     <div class="max-w-xl mx-auto">
       <div data-xt-toggle="{ min: 1, duration: 500 }">
-        <div class="xt-sticky" data-node-sticky>
-          <div
-            class="xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-50 ${classes.bgBlur()}"
-          >
-            <nav class="xt-list xt-list-2 flex-col md:flex-row md:flex-nowrap p-2">
-              <a
-                href="#"
-                type="button"
-                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${buttonAnim()}"
-                data-xt-toggle-element
-                data-xt-hash="description"
-              >
-                Description
-              </a>
-              <a
-                href="#"
-                type="button"
-                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${buttonAnim()}"
-                data-xt-toggle-element
-                data-xt-hash="features"
-              >
-                Features
-              </a>
-              <a
-                href="#"
-                type="button"
-                class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${buttonAnim()}"
-                data-xt-toggle-element
-                data-xt-hash="accessories"
-                >Accessories</a
-              >
-            </nav>
-          </div>
+        <div
+          class="xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-50 ${classes.bgBlur()}"
+        >
+          <nav class="xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1">
+            <a
+              href="#"
+              type="button"
+              class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+              data-xt-toggle-element
+              data-xt-hash="description"
+            >
+              Description
+            </a>
+            <a
+              href="#"
+              type="button"
+              class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+              data-xt-toggle-element
+              data-xt-hash="features"
+            >
+              Features
+            </a>
+            <a
+              href="#"
+              type="button"
+              class="xt-button flex-auto ${classes.buttonMd()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+              data-xt-toggle-element
+              data-xt-hash="accessories"
+              >Accessories</a
+            >
+          </nav>
         </div>
 
         <div class="mt-3">

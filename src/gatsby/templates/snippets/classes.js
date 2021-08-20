@@ -48,11 +48,12 @@ export const classes = {
   // group
   groupMd: () => 'p-3',
   groupButtonRadius: () => '-md',
-  groupButtonSm: () => 'py-1 px-2 text-xs',
-  groupButtonMd: () => 'py-1.5 px-2.5 text-sm',
-  groupButtonLg: () => 'py-2 px-3 text-base',
-  groupButtonGray: () => 'w-full justify-start text-left text-black font-medium leading-snug bg-gray-100',
-  groupButtonPrimary: () => 'w-full justify-start text-left text-white font-medium leading-snug bg-primary-500',
+  groupButtonSm: () => 'py-1 px-2.5 text-xs',
+  groupButtonMd: () => 'py-1.5 px-3 text-sm',
+  groupButtonLg: () => 'py-2 px-3.5 text-base',
+  groupButton: () => 'flex-auto justify-start text-left font-medium leading-snug',
+  groupButtonGray: () => 'text-black bg-gray-100',
+  groupButtonPrimary: () => 'text-white bg-primary-500',
   // tooltip
   tooltipRadius: () => '-md',
   tooltipShadow: () => 'shadow-md',

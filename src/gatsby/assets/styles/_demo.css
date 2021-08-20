@@ -136,6 +136,10 @@ pre {
   margin-top: -3px;
 }
 
+.xt-tooltip--gatsby {
+  z-index: calc(theme('zIndex.above') + 2) !important;
+}
+
 .gatsby_demo_code {
   order: 2;
   @media (max-width: calc(theme('screens.lg') - 1px)) {
