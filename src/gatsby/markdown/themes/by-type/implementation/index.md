@@ -1,7 +1,7 @@
 ---
 type: "Themes"
 category: "By Type"
-parent: "Design"
-title: "Design"
+parent: "Implementation"
+title: "Implementation"
 description: "Implementation of custom design and interactions."
 ---

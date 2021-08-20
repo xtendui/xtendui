@@ -2,9 +2,9 @@
 type: "Themes"
 category: "By Component"
 parent: "Overlay"
-title: "overlay-design-v1"
+title: "overlay-implementation-v1"
 date: "2000-10-10"
 demos: [
-  "themes/design/overlay-design-v1"
+  "themes/implementation/overlay-implementation-v1"
 ]
 ---

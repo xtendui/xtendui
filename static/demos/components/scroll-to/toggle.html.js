@@ -6,8 +6,8 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <div class="max-w-xl mx-auto">
-      <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: true</code></div>
-      <div data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500, scrollto: true }">
+      <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: true</code> and <code>scrolltoInit: true</code></div>
+      <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: true, scrolltoInit: true }">
         <div class="xt-list xt-list-3 justify-center">
           <a
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -120,7 +120,7 @@ const html = /* HTML */ `
     <div class="max-w-xl mx-auto" id="demo--scrollto-toggle-query">
       <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: Query</code></div>
       <div
-        data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500, scrollto: '#demo--scrollto-toggle-query' }"
+        data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: '#demo--scrollto-toggle-query' }"
       >
         <div class="xt-list xt-list-3 justify-center">
           <a
@@ -233,7 +233,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <div class="max-w-xl mx-auto">
       <div class="${classes.hBlock()} text-black bg-gray-100 text-center"><code>scrollto: Type</code></div>
-      <div data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500, scrollto: 'elements' }">
+      <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'elements' }">
         <div class="xt-list xt-list-3 justify-center">
           <a
             class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"

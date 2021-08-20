@@ -2695,19 +2695,22 @@ class Toggle {
     if (options.scrollto) {
       if (actionCurrent === 'In') {
         const scrollto = ({ el }) => {
-          // Xt.ready complete and raf to be right after page refresh
-          const instant = self.initial
-          Xt.ready({
-            state: 'complete',
-            func: () => {
-              requestAnimationFrame(() => {
-                if (instant) {
-                  Xt.scrolltoHashforce = true
-                }
-                el.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
-              })
-            },
-          })
+          // using data-xt-hash or options.min or .on and scrollto should not scroll on init
+          if (!self.initial || options.scrolltoInit) {
+            // Xt.ready complete and raf to be right after page refresh
+            const instant = self.initial
+            Xt.ready({
+              state: 'complete',
+              func: () => {
+                requestAnimationFrame(() => {
+                  if (instant) {
+                    Xt.scrolltoHashforce = true
+                  }
+                  el.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+                })
+              },
+            })
+          }
         }
         // check
         if (typeof options.scrollto === 'string') {
@@ -3455,6 +3458,7 @@ Toggle.optionsDefaultSuper = {
   },
   // other
   scrollto: false,
+  scrolltoInit: false,
   matches: false,
   disabled: false,
   visibleReinit: false,

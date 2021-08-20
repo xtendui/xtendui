@@ -113,4 +113,4 @@ The **typography component** has cssinjs customizzable styles for **automatic an
 
 ## Themes
 
-Check out [themes](/themes) for **advanced demos**.
+Check out [themes](/themes) for **advanced implementations**.

@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--tabs-design-v1',
+  matches: '.demo--tabs-implementation-v1',
   mount: ({ ref }) => {
     const unmountScrollto = mountScrollto({ ref })
     const unmountSticky = mountSticky({ ref })
@@ -72,10 +72,14 @@ const mountScrollto = () => {
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // vars
+
+  const toggle = ref.querySelector('[data-xt-toggle]')
+
   // sticky
 
   /***/
-  ScrollTrigger.create({
+  const scrollTrigger = ScrollTrigger.create({
     trigger: ref.querySelector('[data-node-sticky]'),
     start: 'top top',
     endTrigger: ref.querySelector('[data-node-sticky-endtrigger]'),
@@ -83,6 +87,17 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+  /***/
+
+  /***/
+  // refresh ScrollTrigger
+  toggle.addEventListener(
+    'ondone.xt.toggle',
+    () => {
+      scrollTrigger.refresh()
+    },
+    true
+  )
   /***/
 
   // unmount

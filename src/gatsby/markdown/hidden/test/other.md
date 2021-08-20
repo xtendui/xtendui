@@ -57,6 +57,6 @@ Try the demo [on a new page](/demos/components/scroll-to/overlay#anchor-2).
 
 Test browser location prev e next.
 
-Test initial scroll on page load.
+Test initial activation and scroll on page load when linking non scrolltoInit.
 
 Try the demo [on a new page](/demos/components/scroll-to/toggle#anchor-2).

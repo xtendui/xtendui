@@ -70,9 +70,12 @@ const mountSticky = ({ ref }) => {
   })
   /***/
 
+  /***/
+  // refresh ScrollTrigger
   addEventListener('resize', () => {
     scrollTriggerBottom.refresh()
   })
+  /***/
 
   /***/
   const scrollTriggerBottomSecond = ScrollTrigger.create({
@@ -85,9 +88,12 @@ const mountSticky = ({ ref }) => {
   })
   /***/
 
+  /***/
+  // refresh ScrollTrigger
   addEventListener('resize', () => {
     scrollTriggerBottomSecond.refresh()
   })
+  /***/
 
   // unmount
 

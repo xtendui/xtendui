@@ -6,6 +6,15 @@ title: "Toolbar"
 description: "Toolbar is a component to group up buttons, inputs and other content."
 ---
 
+## Implementation
+
+Check out [toolbar themes](/themes/toolbar) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>
+
 ## Usage
 
 Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwindcss.com/docs/border-radius)).
@@ -21,13 +30,4 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
 <demo>
   <demoinline src="demos/components/toolbar/usage">
   </demoinline>
-</demo>
-
-## Themes
-
-Check out [toolbar themes](/themes/toolbar) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
-  </div>
 </demo>

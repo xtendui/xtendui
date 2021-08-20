@@ -20,6 +20,15 @@ Initialize automatically **within markup** with `[data-xt-overlay="{ <options> }
 
 Initialize manually **within javascript** with `new Xt.Overlay(document.querySelector('.my-container'), {/* options */})`.
 
+## Implementation
+
+Check out [overlay themes](/themes/overlay) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/overlay-implementation-v1">
+  </div>
+</demo>
+
 ## Usage Self
 
 Use this code to create a **overlay** in **self mode**.
@@ -51,13 +60,4 @@ Use this code to create a **overlay** in **multiple mode**.
 <demo>
   <demoinline src="demos/components/overlay/usage-multiple">
   </demoinline>
-</demo>
-
-## Themes
-
-Check out [overlay themes](/themes/overlay) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/design/overlay-design-v1">
-  </div>
 </demo>

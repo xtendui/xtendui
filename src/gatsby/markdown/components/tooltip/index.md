@@ -18,6 +18,15 @@ Initialize automatically **within markup** with `[data-xt-tooltip="{ <options> }
 
 Initialize manually **within javascript** with `new Xt.Tooltip(document.querySelector('.my-container'), {/* options */})`.
 
+## Implementation
+
+Check out [tooltip themes](/themes/tooltip) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>
+
 ## Usage Self
 
 Use this code to create a **tooltip** in **self mode**.
@@ -49,13 +58,4 @@ Use this code to create **tooltip** in **multiple mode**.
 <demo>
   <demoinline src="demos/components/tooltip/usage-multiple">
   </demoinline>
-</demo>
-
-## Themes
-
-Check out [tooltip themes](/themes/tooltip) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
-  </div>
 </demo>

@@ -6,6 +6,15 @@ title: "Group"
 description: "Group is a component to group up buttons, inputs and other content."
 ---
 
+## Implementation
+
+Check out [group themes](/themes/group) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>
+
 ## Usage
 
 Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwindcss.com/docs/border-radius)).
@@ -19,13 +28,4 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
 <demo>
   <demoinline src="demos/components/group/usage">
   </demoinline>
-</demo>
-
-## Themes
-
-Check out [group themes](/themes/group) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
-  </div>
 </demo>

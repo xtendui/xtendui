@@ -43,9 +43,12 @@ const mountSticky = ({ ref }) => {
   })
   /***/
 
+  /***/
+  // refresh ScrollTrigger
   addEventListener('resize', () => {
     scrollTriggerBottom.refresh()
   })
+  /***/
 
   // unmount
 

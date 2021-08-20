@@ -45,6 +45,7 @@ You can use the Scrollto component in conjunction with any **toggle component** 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `scrollto:Boolean\|Query\|String`                          | `false`        | On activation trigger [scrollto](/components/scroll-to) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
+| Option                  | `scrolltoInit:Boolean`                          | `false`        | Scrollto also on initialization (`data-xt-hash` or `.on` or `options.min` etc..)            |
 
 </div>
 

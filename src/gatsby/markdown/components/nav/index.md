@@ -6,6 +6,15 @@ title: "Nav"
 description: "Nav is a component to group up buttons, inputs and other content."
 ---
 
+## Implementation
+
+Check out [nav themes](/themes/nav) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
+  </div>
+</demo>
+
 ## Usage
 
 Use **tailwind classes** to assign styles (e.g. [border-radius](https://tailwindcss.com/docs/border-radius)).
@@ -23,13 +32,4 @@ You can set activation styles by adding the class `.on`.
 <demo>
   <demoinline src="demos/components/nav/usage">
   </demoinline>
-</demo>
-
-## Themes
-
-Check out [nav themes](/themes/nav) for **advanced implementations**.
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/animation/collapse-animation-v1">
-  </div>
 </demo>

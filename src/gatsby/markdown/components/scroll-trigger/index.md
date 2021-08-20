@@ -105,6 +105,7 @@ requestAnimationFrame(() => {
 Then you need to **refresh scrolltriggers selectively** when you want **ScrollTriggers to stick at the bottom** on mobile when the status bar appear/disappear on scroll.
 
 ```js
+// refresh ScrollTrigger
 const scrollTrigger = ScrollTrigger.create({})
 
 addEventListener('resize', () => {
