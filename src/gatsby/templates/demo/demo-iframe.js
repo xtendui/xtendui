@@ -58,9 +58,6 @@ export default class DemoIframe extends React.Component {
       if (object.container) {
         document.documentElement.classList.add('gatsby_iframe-container')
       }
-      if (object.center) {
-        document.documentElement.classList.add('gatsby_iframe-center')
-      }
       if (object.gradient) {
         document.documentElement.classList.add('gatsby_iframe-gradient')
       }

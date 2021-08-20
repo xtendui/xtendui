@@ -1,7 +1,6 @@
 export const classes = {
   // special
-  bgBlur: () => 'backdrop-filter backdrop-blur',
-  bgBlurInner: () => 'bg-opacity-0',
+  bgBlur: () => 'backdrop-filter backdrop-blur-sm backdrop-saturate-50',
   gatsbyFloat: () =>
     'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
   cardToggle: () => 'rounded-full text-xs py-2 px-3 font-medium shadow',

@@ -9,26 +9,19 @@
     .gatsby_iframe-container& {
       @apply p-4 md:p-6 lg:p-8;
     }
-    .gatsby_iframe-center& {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
     .gatsby_iframe-gradient& {
-      @apply bg-gradient-to-r from-primary-100 to-primary-200;
+      @apply flex items-center justify-center bg-gradient-to-r from-primary-100 via-primary-200 to-primary-300;
     }
   }
+}
+
+.gatsby_demo_source--container {
+  @apply relative p-4 md:p-6 lg:p-8;
 }
 
 .gatsby_demo_source--overflow {
   padding: 0 !important;
   overflow: hidden;
-}
-
-/* .gatsby_demo_source--from */
-
-.gatsby_demo_source--from {
-  @apply relative p-4 md:p-6 lg:p-8;
 }
 
 /* code */

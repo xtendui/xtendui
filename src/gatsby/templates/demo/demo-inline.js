@@ -54,7 +54,7 @@ export default class DemoInline extends React.Component {
               this.state.mode === 'react' ? 'gatsby_demo_item--current' : 'hidden'
             }`}>
             <div
-              className={`gatsby_demo_source gatsby_demo_source--from ${
+              className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
                 object.overflow ? 'gatsby_demo_source--overflow' : ''
               }`}>
               <Demo />
@@ -78,7 +78,7 @@ export default class DemoInline extends React.Component {
               this.state.mode === 'html' ? 'gatsby_demo_item--current' : 'hidden'
             }`}>
             <div
-              className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate ${
+              className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container gatsby_demo_source_populate ${
                 object.overflow ? 'gatsby_demo_source--overflow' : ''
               }`}
             />

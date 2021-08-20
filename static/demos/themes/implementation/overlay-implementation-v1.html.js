@@ -374,6 +374,5 @@ const html = /* HTML */ `
 export const object = {
   html: html,
   container: true,
-  center: true,
   gradient: true,
 }
