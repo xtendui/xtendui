@@ -2,7 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.textWhite()} py-4 px-6 bg-primary-500">
+  <div class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}">
+    <div>
       <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Text</div>
 
       ${classes.iconSearch()}
@@ -28,6 +29,7 @@ const html = /* HTML */ `
       ${classes.iconSearch({ classes: '*** text-white text-opacity-75 ***' })}
       ${classes.iconSearch({ classes: '*** text-white text-opacity-100 ***' })}
     </div>
+  </div>
   </div>
 `
 

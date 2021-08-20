@@ -176,7 +176,7 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div
-              class="relative rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} rounded${classes.cardRadius()} ${cardGray()} ${designAnim()}"
+              class="relative rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${cardGray()} ${designAnim()}"
               data-xt-tooltip-inner
             >
               <form class="text-sm">
@@ -184,7 +184,7 @@ const html = /* HTML */ `
                   <div class="inline-flex flex-auto">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonGray()}"
+                      class="xt-button ${classes.buttonMd()} rounded-l${classes.tooltipRadius()} ${buttonGray()}"
                     >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                     </button>

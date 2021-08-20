@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="bg-primary-500 py-5 px-6">
+    <div class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}">
       <div class="xt-list xt-list-3 items-center ${classes.textWhite()}">
         <button
           type="button"

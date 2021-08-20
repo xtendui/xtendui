@@ -25,6 +25,12 @@
   overflow: hidden;
 }
 
+/* .gatsby_demo_source--from */
+
+.gatsby_demo_source--from {
+  @apply relative p-4 md:p-6 lg:p-8;
+}
+
 /* code */
 
 pre[class*="language-"] {

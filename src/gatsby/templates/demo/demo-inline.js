@@ -56,7 +56,7 @@ export default class DemoInline extends React.Component {
             <div
               className={`gatsby_demo_source gatsby_demo_source--from ${
                 object.overflow ? 'gatsby_demo_source--overflow' : ''
-              } relative p-4 md:p-6 lg:p-8`}>
+              }`}>
               <Demo />
             </div>
             <script
@@ -80,7 +80,7 @@ export default class DemoInline extends React.Component {
             <div
               className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source_populate ${
                 object.overflow ? 'gatsby_demo_source--overflow' : ''
-              } relative p-4 md:p-6 lg:p-8`}
+              }`}
             />
             <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: html }} />
             <script
