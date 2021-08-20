@@ -104,10 +104,6 @@ pre {
   .xt-button {
     padding: .5em .75em;
     font-size: 12px;
-    @apply text-black text-opacity-50 font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition;
-    &:hover, &.in {
-      @apply border-white bg-white text-opacity-100;
-    }
   }
 }
 
@@ -120,10 +116,6 @@ pre {
   .xt-button {
     padding: .5em .75em;
     font-size: 12px;
-    @apply text-white font-medium leading-tight tracking-normal capitalize rounded-md border-transparent bg-transparent transition;
-    &:hover, &.in {
-      @apply bg-white bg-opacity-20;
-    }
   }
 }
 
@@ -269,7 +261,6 @@ pre {
     margin-left: 20rem;
   }
   > .xt-dismiss {
-    @apply text-white rounded-md border-primary-500 bg-primary-500 hover:text-opacity-75 hover:border-primary-600 hover:bg-primary-600;
     top: 0;
     right: 0;
     border-radius: 0;

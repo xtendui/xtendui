@@ -7,7 +7,7 @@ const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
 
 const html = /* HTML */ `
   <div class="demo--ripple-animation-v1">
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button</div>
+    <div class="${classes.hBlock()}">Button</div>
 
     <div class="xt-list xt-list-2 items-center">
       <button
@@ -40,7 +40,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} text-black ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
       >
         Text
       </button>
@@ -50,7 +50,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Card</div>
+    <div class="${classes.hBlock()}">Card</div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">

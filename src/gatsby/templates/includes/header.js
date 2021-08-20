@@ -41,7 +41,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="xt-button gatsby_site-header_top_social_btn"
+                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textWhite()} transition`}
                         title="Twitter"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
@@ -59,7 +59,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.npm}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="xt-button gatsby_site-header_top_social_btn"
+                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textWhite()} transition`}
                         title="Npm"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
@@ -77,7 +77,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="xt-button gatsby_site-header_top_social_btn"
+                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textWhite()} transition`}
                         title="Github"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
@@ -138,7 +138,7 @@ export default function Header({ page }) {
                           <div className="w-full" data-xt-tooltip-element>
                             <button
                               type="button"
-                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textWhite()} font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                               Html
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
@@ -153,7 +153,7 @@ export default function Header({ page }) {
                           <div className="w-full" data-xt-tooltip-element>
                             <button
                               type="button"
-                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md text-white font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textWhite()} font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                               React
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
@@ -226,7 +226,7 @@ export default function Header({ page }) {
                                                         return (
                                                           <div
                                                             key={z}
-                                                            className={`inline-block text-white text-4xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
+                                                            className={`inline-block ${classes.textWhite()} text-4xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
                                                             {tag}
                                                           </div>
                                                         )

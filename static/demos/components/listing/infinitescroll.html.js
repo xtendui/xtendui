@@ -38,7 +38,7 @@ const html = /* HTML */ `
 
         <div class="xt-row xt-row-4" data-xt-infinitescroll-items-container>
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
@@ -50,7 +50,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
@@ -62,7 +62,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
@@ -74,7 +74,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
@@ -86,7 +86,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
@@ -98,7 +98,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
@@ -110,7 +110,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
@@ -122,7 +122,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
-            <a href="https://github.com/xtendui/xtendui" class="listing-item block text-black">
+            <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-300 pb-[75%]">
                 <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>

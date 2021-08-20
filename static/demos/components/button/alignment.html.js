@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Justify content</div>
+    <div class="${classes.hBlock()}">Justify content</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button
@@ -48,7 +48,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Align items</div>
+    <div class="${classes.hBlock()}">Align items</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button

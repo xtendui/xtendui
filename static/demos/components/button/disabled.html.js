@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} text-black ${classes.buttonUpper()} ${classes.buttonTextAnim()} *** xt-disabled ***"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()} *** xt-disabled ***"
         aria-disabled="true"
       >
         Text

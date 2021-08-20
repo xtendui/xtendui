@@ -132,12 +132,10 @@
 .gatsby_site-header_top_social_btn {
   padding: 5px;
   border-radius: 0;
-  @apply text-white;
   line-height: 1;
   &:last-child {
     padding-right: 0;
   }
-  @apply transition;
   opacity: .65;
   &:hover {
     opacity: 1;

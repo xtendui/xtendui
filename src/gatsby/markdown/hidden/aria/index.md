@@ -1,9 +1,8 @@
 ---
 type: "Hidden"
 category: "Hidden"
-parent: "Future"
-title: "Future"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tempus laoreet leo sit amet iaculis."
+parent: "Aria"
+title: "Aria"
 ---
 
 ## Keyboard

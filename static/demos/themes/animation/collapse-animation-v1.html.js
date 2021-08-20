@@ -17,7 +17,7 @@ const cardBlack = () => `${classes.cardBlack()}`
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Toggle</div>
+    <div class="${classes.hBlock()}">Toggle</div>
 
     <form class="text-xs">
       <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ collapseWidth: 'targets', duration: 500 }">
@@ -60,7 +60,7 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
+    <div class="${classes.hBlock()}">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop="{ targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', duration: 500 }">
@@ -140,7 +140,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
+    <div class="${classes.hBlock()}">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
@@ -211,7 +211,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
+    <div class="${classes.hBlock()}">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', duration: 500 }">

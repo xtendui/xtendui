@@ -6,11 +6,11 @@ const html = /* HTML */ `
       class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}"
     >
       <div>
-        <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Text</div>
+        <div class="${classes.hBlock()}">Text</div>
 
         ${classes.iconSearch()}
 
-        <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Primary</div>
+        <div class="${classes.hBlock()}">Primary</div>
 
         ${classes.iconSearch({ classes: '*** text-primary-50 ***' })}
         ${classes.iconSearch({ classes: '*** text-primary-100 ***' })}
@@ -23,7 +23,7 @@ const html = /* HTML */ `
         ${classes.iconSearch({ classes: '*** text-primary-800 ***' })}
         ${classes.iconSearch({ classes: '*** text-primary-900 ***' })}
 
-        <div class="${classes.hBlock()} text-black bg-gray-100 text-center">White opacity</div>
+        <div class="${classes.hBlock()}">White opacity</div>
 
         ${classes.iconSearch({ classes: '*** text-white text-opacity-0 ***' })}
         ${classes.iconSearch({ classes: '*** text-white text-opacity-25 ***' })}

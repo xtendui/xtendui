@@ -4,7 +4,7 @@ module.exports = {
   mode: process.env.DIST ? '' : 'jit',
   presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
   purge: {
-    content: process.env.DIST ? [] : ['./{src,static}/**/*.css', './{src,static}/**/*.js'],
+    content: process.env.DIST ? [] : ['./{src,static}/**/*.css', './{src,static}/**/*.js', './gatsby-config.esm.js'],
     safelist: [
       'rounded-sm',
       'rounded',

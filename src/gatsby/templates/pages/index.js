@@ -177,7 +177,7 @@ export default function Page() {
                           <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                             Usability
                             <div
-                              className={`inline-block text-black text-3xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
+                              className={`inline-block text-3xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
                               WIP
                             </div>
                           </h2>
@@ -307,7 +307,7 @@ export default function Page() {
                         <div className="w-6/12">
                           <button
                             type="button"
-                            className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md text-black leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textBlack()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
                             <span className="font-bold text-lg md:text-xl">Html</span>
                             <span className="text-2xs md:text-xs opacity-50">Switch to Html</span>
                           </button>
@@ -315,7 +315,7 @@ export default function Page() {
                         <div className="w-6/12">
                           <button
                             type="button"
-                            className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md text-black leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textBlack()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
                             <span className="font-bold text-lg md:text-xl">React</span>
                             <span className="text-2xs md:text-xs opacity-50">Switch to React</span>
                           </button>

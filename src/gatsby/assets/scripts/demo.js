@@ -301,7 +301,7 @@ export const populateDemo = container => {
     item.setAttribute('id', kebabCase(id))
     container
       .querySelector('.gatsby_demo_tabs_left')
-      .append(Xt.node({ str: DOMPurify.sanitize(`<button type="button" class="xt-button">${name}</button>`) }))
+      .append(Xt.node({ str: DOMPurify.sanitize(`<button type="button" class="xt-button ${classes.textBlack()} text-opacity-50 font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100">${name}</button>`) }))
     // if not iframe
     if (item.getAttribute('data-iframe')) {
       // if not themes
@@ -860,7 +860,7 @@ const populateSources = (item, element, isReact = false) => {
     .append(Xt.node({ str: '<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>' }))
   item
     .querySelector('.gatsby_demo_code_tabs_left')
-    .append(Xt.node({ str: DOMPurify.sanitize(`<button type="button" class="xt-button">${lang}</button>`) }))
+    .append(Xt.node({ str: DOMPurify.sanitize(`<button type="button" class="xt-button ${classes.textWhite()} font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20">${lang}</button>`) }))
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')
   const pre = itemInside[itemInside.length - 1].querySelector('pre')
@@ -936,7 +936,7 @@ export const makeDocument = () => {
             str: DOMPurify.sanitize(`
 <a href="#${encodeURIComponent(
               id
-            )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left text-white font-medium leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+            )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left ${classes.textWhite()} font-medium leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
   <span class="py-px">${el.textContent.trim()}</span>
 </a>`),
           })

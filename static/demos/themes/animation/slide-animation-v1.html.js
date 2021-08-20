@@ -16,7 +16,7 @@ const cardWhite = () => `${classes.cardWhite()}`
 
 const html = /* HTML */ `
   <div class="demo--slide-animation-v1">
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button</div>
+    <div class="${classes.hBlock()}">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonGray()}">
@@ -43,7 +43,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} text-black ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
       >
         Text
       </button>
@@ -53,7 +53,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
+    <div class="${classes.hBlock()}">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop="{ duration: 500 }">
@@ -127,7 +127,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
+    <div class="${classes.hBlock()}">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-tooltip="{ duration: 500 }">
@@ -195,7 +195,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
+    <div class="${classes.hBlock()}">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay="{ duration: 500 }">

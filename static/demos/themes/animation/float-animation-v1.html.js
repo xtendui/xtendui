@@ -2,10 +2,10 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const transparentAnim = () =>
   '*** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
-const grayDesign = () => 'text-black bg-gray-100 border-transparent border'
+const grayDesign = () => `${classes.textBlack()} bg-gray-100 border-transparent border`
 const grayAnim = () =>
   '*** transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
-const primaryDesign = () => 'text-white bg-primary-500 border-transparent border'
+const primaryDesign = () => `${classes.textWhite()} bg-primary-500 border-transparent border`
 const primaryAnim = () =>
   '*** transition hover:text-white hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:text-white active:bg-primary-700 active:translate-y-0 active:shadow-md on:text-white on:bg-primary-700 on:translate-y-0 on:shadow-md ***'
 const designAnim = () =>
@@ -26,7 +26,7 @@ const cardBlack = () => `${classes.cardBlack()}`
 
 const html = /* HTML */ `
   <div>
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button</div>
+    <div class="${classes.hBlock()}">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
       <button
@@ -59,7 +59,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} text-black ${transparentAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${transparentAnim()}"
       >
         Text
       </button>
@@ -72,7 +72,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
+    <div class="${classes.hBlock()}">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop="{ duration: 500 }">
@@ -152,7 +152,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
+    <div class="${classes.hBlock()}">Tooltip</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-tooltip="{ duration: 500 }">
@@ -226,7 +226,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
+    <div class="${classes.hBlock()}">Overlay</div>
 
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay="{ duration: 500 }">
@@ -587,7 +587,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Card</div>
+    <div class="${classes.hBlock()}">Card</div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
