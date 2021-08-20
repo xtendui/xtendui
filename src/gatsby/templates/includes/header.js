@@ -170,23 +170,29 @@ export default function Header({ page }) {
                   <div className="mt-4">
                     <div className="gatsby_site-header_links_container">
                       <div className="gatsby_site-header_links">
-                        {page.menus.posts.map(({ post }, i) => (
-                          <div className="gatsby_tooltip_outside_link" key={i}>
-                            <Link
-                              to={markdownSlug(post)}
-                              className={`xt-button gatsby_button-site-header_link ${
-                                page && page.post
-                                  ? markdownSlug(page.post) === markdownSlug(post)
-                                    ? 'on'
-                                    : post.frontmatter.type === page.post.frontmatter.type
-                                    ? 'current'
+                        {page.menus.posts.map(({ post }, i) =>
+                          window.access !== 'admin' &&
+                          post.frontmatter.tags &&
+                          post.frontmatter.tags.includes('hidden') ? (
+                            ''
+                          ) : (
+                            <div className="gatsby_tooltip_outside_link" key={i}>
+                              <Link
+                                to={markdownSlug(post)}
+                                className={`xt-button gatsby_button-site-header_link ${
+                                  page && page.post
+                                    ? markdownSlug(page.post) === markdownSlug(post)
+                                      ? 'on'
+                                      : post.frontmatter.type === page.post.frontmatter.type
+                                      ? 'current'
+                                      : ''
                                     : ''
-                                  : ''
-                              }`}>
-                              <div className="gatsby_button-site_article_sidebar_inner">{post.frontmatter.title}</div>
-                            </Link>
-                          </div>
-                        ))}
+                                }`}>
+                                <div className="gatsby_button-site_article_sidebar_inner">{post.frontmatter.title}</div>
+                              </Link>
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
                     {page && page.post ? (
@@ -298,6 +304,7 @@ Header.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
+              tags: PropTypes.Array,
             }),
           }),
         })

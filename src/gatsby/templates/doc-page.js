@@ -52,7 +52,11 @@ class Template extends React.Component {
                     <div className="xt-row xt-row-stretch">
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
-                          adiacent.frontmatter.demos ? (
+                          window.access !== 'admin' &&
+                          adiacent.frontmatter.tags &&
+                          adiacent.frontmatter.tags.includes('hidden') ? (
+                            ''
+                          ) : adiacent.frontmatter.demos ? (
                             <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
                               <button
                                 type="button"
@@ -86,18 +90,16 @@ class Template extends React.Component {
                                   })}
                                 </div>
                               </button>
-                              {adiacent.frontmatter.demos ? (
-                                <Demo>
-                                  {adiacent.frontmatter.demos.map((demo, i) => {
-                                    return (
-                                      <div
-                                        className="gatsby_demo_item"
-                                        data-iframe-fullscreen={`demos/${demo}`}
-                                        key={i}></div>
-                                    )
-                                  })}
-                                </Demo>
-                              ) : null}
+                              <Demo>
+                                {adiacent.frontmatter.demos.map((demo, i) => {
+                                  return (
+                                    <div
+                                      className="gatsby_demo_item"
+                                      data-iframe-fullscreen={`demos/${demo}`}
+                                      key={i}></div>
+                                  )
+                                })}
+                              </Demo>
                             </div>
                           ) : (
                             <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
@@ -151,6 +153,7 @@ export const query = graphql`
             type
             title
             description
+            tags
           }
         }
       }
@@ -200,6 +203,7 @@ export const query = graphql`
             parent
             title
             description
+            tags
             demos
           }
         }
@@ -290,6 +294,7 @@ Template.propTypes = {
               parent: PropTypes.string,
               title: PropTypes.string.isRequired,
               description: PropTypes.string,
+              tags: PropTypes.Array,
             }),
           }),
         })

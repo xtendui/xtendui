@@ -4,7 +4,7 @@ category: "Other"
 parent: "Breadcrumbs"
 title: "Breadcrumbs"
 description: "Breadcrumbs is a component for showing layered navigation states."
-tags: ['wip']
+tags: ["wip"]
 ---
 
 ## Usage

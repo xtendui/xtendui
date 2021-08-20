@@ -2,6 +2,9 @@
 type: "Hidden"
 title: "Hidden"
 description: "Hidden"
+date: "2020-09-10"
+tags: ["hidden"]
+menu: true
 ---
 
 ## Classes not xt
