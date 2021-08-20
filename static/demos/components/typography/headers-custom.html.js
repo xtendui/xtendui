@@ -58,9 +58,7 @@ const html = /* HTML */ `
       eget, vehicula scelerisque elit.
     </p>
 
-    <div class="*** ${classes.hBlock()} ***">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    </div>
+    <div class="*** ${classes.hBlock()} ***">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
 
     <p>
       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

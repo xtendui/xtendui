@@ -53,7 +53,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-8/12">
             <div class="md:py-4" data-node-sticky-endtrigger>
               <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
+                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
                 data-xt-toggle-target
               >
                 <div
@@ -79,7 +79,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
+                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
                 data-xt-toggle-target
               >
                 <div
@@ -95,7 +95,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
+                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
                 data-xt-toggle-target
               >
                 <div

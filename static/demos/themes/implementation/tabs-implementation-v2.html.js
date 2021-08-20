@@ -48,10 +48,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="mt-3" data-node-sticky-endtrigger>
-          <div
-            class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
-            data-xt-toggle-target
-          >
+          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >
@@ -74,10 +71,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div
-            class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
-            data-xt-toggle-target
-          >
+          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >
@@ -90,10 +84,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div
-            class="*** off:hidden out:pointer-events-none overflow-hidden transition-all rounded${classes.cardRadius()} ***"
-            data-xt-toggle-target
-          >
+          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
             <div
               class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
             >

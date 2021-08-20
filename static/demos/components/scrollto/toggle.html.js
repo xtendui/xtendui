@@ -6,9 +6,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <div class="max-w-xl mx-auto">
-      <div class="${classes.hBlock()}">
-        <code>scrollto: true</code> and <code>scrolltoInit: true</code>
-      </div>
+      <div class="${classes.hBlock()}"><code>scrollto: true</code> and <code>scrolltoInit: true</code></div>
       <div
         data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: true, scrolltoInit: true }"
       >

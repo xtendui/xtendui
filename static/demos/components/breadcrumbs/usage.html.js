@@ -17,9 +17,7 @@ const html = /* HTML */ `
         Lorem ipsum dolor sit amet
       </a>
       <span class="inline relative align-baseline before:content-['/'] mx-2"></span>
-      <div
-        class="xt-button text-xs py-2 px-0 ${classes.buttonUpper()} ${classes.buttonTextAnim()} pointer-events-none"
-      >
+      <div class="xt-button text-xs py-2 px-0 ${classes.buttonUpper()} ${classes.buttonTextAnim()} pointer-events-none">
         Lorem ipsum
       </div>
     </nav>
