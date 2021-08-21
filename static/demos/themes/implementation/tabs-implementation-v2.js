@@ -83,7 +83,12 @@ const mountSticky = ({ ref }) => {
     const self = Xt.get({ name: 'xt-toggle', el: toggle })
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      scrollTrigger.refresh()
+      // timeout because fix bug scroll when using scrollTrigger.refresh and on browser location prev and next
+      clearTimeout(parseFloat(toggle.dataset.refreshTimeout))
+      toggle.dataset.refreshTimeout = setTimeout(() => {
+        // we refresh sticky values
+        scrollTrigger.refresh()
+      }, 100)
     }
   }
 
