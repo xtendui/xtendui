@@ -76,14 +76,18 @@ const mountSticky = ({ ref }) => {
   /***/
 
   /***/
-  // refresh ScrollTrigger
-  toggle.addEventListener(
-    'ondone.xt.toggle',
-    () => {
+  // refresh
+
+  const refresh = e => {
+    const tr = e.target
+    const self = Xt.get({ name: 'xt-toggle', el: toggle })
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
       scrollTrigger.refresh()
-    },
-    true
-  )
+    }
+  }
+
+  toggle.addEventListener('ondone.xt.toggle', refresh, true)
   /***/
 
   // unmount
