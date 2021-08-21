@@ -21,7 +21,8 @@ const html = /* HTML */ `
                   <div class="${classes.cardSm()} mt-auto pt-0">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}" data-node-action
+                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                      data-node-action
                     >
                       More info
                     </button>
