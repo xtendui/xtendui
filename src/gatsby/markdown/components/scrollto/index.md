@@ -49,7 +49,7 @@ You can use the Scrollto component in conjunction with any **toggle component** 
 
 </div>
 
-> Use `queue: false` for proper browser back button.
+> Use `a[role="button"]` instead of `a[href]`. Use `queue: false` for proper browser back button.
 
 Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2) to preview location hash changes.
 

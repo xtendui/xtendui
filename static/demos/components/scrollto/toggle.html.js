@@ -12,18 +12,21 @@ const html = /* HTML */ `
       >
         <div class="xt-list xt-list-3 justify-center">
           <a
+            role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
             #0
           </a>
           <a
+            role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
             #1
           </a>
           <a
+            role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
@@ -126,18 +129,21 @@ const html = /* HTML */ `
       >
         <div class="xt-list xt-list-3 justify-center">
           <a
+            role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
             #0a
           </a>
           <a
+            role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
             #1a
           </a>
           <a
+            role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
@@ -238,6 +244,7 @@ const html = /* HTML */ `
       <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'elements' }">
         <div class="xt-list xt-list-3 justify-center">
           <a
+            role="button"
             class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
@@ -272,6 +279,7 @@ const html = /* HTML */ `
           </div>
 
           <a
+            role="button"
             class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >
@@ -301,6 +309,7 @@ const html = /* HTML */ `
           </div>
 
           <a
+            role="button"
             class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
             data-xt-toggle-element
           >

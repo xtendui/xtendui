@@ -25,7 +25,6 @@ const mountScrollto = () => {
 
   /***/
   let self = new Xt.Scrollto(document.documentElement, {
-    hash: true,
     space: ({ self }) => {
       let space = 0
       for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {

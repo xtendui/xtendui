@@ -20,8 +20,7 @@ const html = /* HTML */ `
               >
                 <nav class="xt-list xt-list-1 flex-col p-3">
                   <a
-                    href="#"
-                    type="button"
+                    role="button"
                     class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="description"
@@ -29,8 +28,7 @@ const html = /* HTML */ `
                     Description
                   </a>
                   <a
-                    href="#"
-                    type="button"
+                    role="button"
                     class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="features"
@@ -38,8 +36,7 @@ const html = /* HTML */ `
                     Features
                   </a>
                   <a
-                    href="#"
-                    type="button"
+                    role="button"
                     class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="accessories"
