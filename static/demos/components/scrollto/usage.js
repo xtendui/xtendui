@@ -49,19 +49,6 @@ const mountScrollto = () => {
   /***/
   let self = new Xt.Scrollto(document.documentElement, {
     hash: true,
-    space: ({ self }) => {
-      let space = 0
-      for (const el of self.scroller.querySelectorAll('.xt-sticky[style*="position: fixed"]')) {
-        space += el.clientHeight
-      }
-      return space
-    },
-    duration: ({ self }) => {
-      const overlay = self.target.closest('.xt-overlay')
-      if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
-      const distance = Math.abs(self.scroller.scrollTop - self.position)
-      return Math.min(1, Math.log(1 + distance / 200))
-    },
   })
   /***/
 

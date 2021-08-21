@@ -93,10 +93,13 @@ position: ({ self }) => {
   return position
 },
 space: () => {
-  return 0
+  return window.innerHeight / 6
 },
 duration: () => {
-  return 0
+  const overlay = self.target.closest('.xt-overlay')
+  // instant scroll on initial or hashchange or inside overlay and not already activated
+  if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
+  return 1
 },
 ```
 
