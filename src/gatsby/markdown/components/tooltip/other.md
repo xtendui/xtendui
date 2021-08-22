@@ -56,15 +56,6 @@ Use `on:z-tooltip` to have the button above the backdrop.
   </demoinline>
 </demo>
 
-## Other Content
-
-You can put **any content** inside, here are some examples.
-
-<demo>
-  <demoinline src="demos/components/tooltip/other-content">
-  </demoinline>
-</demo>
-
 ## Zindex
 
 On sequential activation you can **automatically set zIndex of activated elements and targets**.

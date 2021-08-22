@@ -38,7 +38,7 @@ Use [scrollto](/components/scrollto#toggle) to **automatically scroll with hash 
 
 Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 
-> This demos use [toggle](/components/scrollto)  [sticky](/components/scrolltrigger/sticky) see documentation for more info.
+> This demos use [toggle](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v3">

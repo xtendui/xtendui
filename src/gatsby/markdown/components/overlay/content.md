@@ -29,3 +29,23 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
   <demoinline src="demos/components/overlay/size">
   </demoinline>
 </demo>
+
+## Other Content
+
+You can put **any content** inside.
+
+<demo>
+  <demoinline src="demos/components/overlay/other-content">
+  </demoinline>
+</demo>
+
+## Complex
+
+Use other [card content](/components/card/content) to make complex design.
+
+> This demos use [card](/components/card) see documentation for more info.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/overlay-implementation-v1">
+  </div>
+</demo>

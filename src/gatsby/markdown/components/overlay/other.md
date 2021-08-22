@@ -54,15 +54,6 @@ You can have an **unclosable overlay** with `closeDeep: false` and `closeInside:
   </div>
 </demo>
 
-## Other Content
-
-You can put **any content** inside, here are some examples.
-
-<demo>
-  <demoinline src="demos/components/overlay/other-content">
-  </demoinline>
-</demo>
-
 ## Append To
 
 You can **automatically move targets on activation inside the DOM**.

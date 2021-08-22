@@ -25,3 +25,12 @@ Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/d
   <demoinline src="demos/components/drop/size">
   </demoinline>
 </demo>
+
+## Other Content
+
+You can put **any content** inside.
+
+<demo>
+  <demoinline src="demos/components/drop/other-content">
+  </demoinline>
+</demo>
