@@ -26,7 +26,7 @@ const html = /* HTML */ `
                     data-xt-toggle-element
                     data-xt-hash="description"
                   >
-                    Description
+                    ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                   </a>
                   <a
                     role="button"
@@ -34,14 +34,22 @@ const html = /* HTML */ `
                     data-xt-toggle-element
                     data-xt-hash="features"
                   >
-                    Features
+                    ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
                   </a>
                   <a
                     role="button"
                     class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="accessories"
-                    >Accessories</a
+                    >${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories</a
+                  >
+                  <a
+                    href="#"
+                    type="button"
+                    class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                    data-xt-toggle-element
+                    data-xt-hash="manuals"
+                    >${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals</a
                   >
                 </nav>
               </div>
@@ -114,6 +122,32 @@ const html = /* HTML */ `
                     commodo at commodo eget, iaculis non diam. Ut at rhoncus massa. Sed placerat tincidunt nisl, eu
                     consequat neque pretium at. Cras et facilisis leo. Mauris justo elit, porttitor sed pellentesque
                     vitae, imperdiet nec ante. Nulla quis tempus risus, a aliquet ligula.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
+                    vestibulum sed. Morbi sodales ex sed dui posuere, a tempor purus consectetur. Curabitur vitae leo at
+                    magna aliquam pellentesque. Nam sed neque in risus volutpat maximus. Sed vitae enim vehicula,
+                    lacinia orci at, pretium nulla. Cras tincidunt quis ipsum et luctus. Cras venenatis, justo in
+                    euismod lacinia, urna leo hendrerit enim, sit amet gravida nunc lectus id augue. Nullam dolor nibh,
+                    commodo at commodo eget, iaculis non diam. Ut at rhoncus massa. Sed placerat tincidunt nisl, eu
+                    consequat neque pretium at. Cras et facilisis leo. Mauris justo elit, porttitor sed pellentesque
+                    vitae, imperdiet nec ante. Nulla quis tempus risus, a aliquet ligula.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
+                data-xt-toggle-target
+              >
+                <div
+                  class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
+                >
+                  <div class="xt-h5">Manuals</div>
+                  <p>
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
