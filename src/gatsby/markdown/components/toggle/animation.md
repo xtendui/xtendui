@@ -6,8 +6,6 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [toggle's themes](/themes/toggle) for **advanced implementations**.
-
 ## Activation
 
 To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.

@@ -97,11 +97,7 @@ export default class DocFoot extends React.Component {
                         {postsThemes.length} theme
                         {postsThemes.length === 1 ? '' : 's'}{' '}
                       </strong>
-                      for{' '}
-                      {postsThemes.filter(x => x.post.frontmatter.parent === page.post.frontmatter.category).length
-                        ? page.post.frontmatter.category
-                        : page.post.frontmatter.parent}
-                      .
+                      for {page.post.frontmatter.parent}.
                     </p>
                   </Link>
                 </div>

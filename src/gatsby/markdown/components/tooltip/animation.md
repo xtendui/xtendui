@@ -6,8 +6,6 @@ title: "Animation"
 date: "2010-10-09"
 ---
 
-Check out [tooltip's themes](/themes/tooltip) for **advanced implementations**.
-
 ## Activation
 
 This component has **automatic activation** you don't need to assign custom variants for activations.
