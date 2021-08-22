@@ -34,4 +34,6 @@ Check out [nav themes](/themes/nav) for **advanced implementations**.
   </div>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v2">
   </div>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v3">
+  </div>
 </demo>

@@ -34,4 +34,6 @@ Check out [tabs themes](/themes/tabs) for **advanced implementations**.
   </div>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v2">
   </div>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v3">
+  </div>
 </demo>

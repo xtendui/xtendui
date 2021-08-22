@@ -10,6 +10,7 @@ const html = /* HTML */ `
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
+
     <div class="max-w-4xl mx-auto">
       <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'targets' }">
         <div class="xt-row xt-row-4 md:xt-row-8 *** items-stretch ***">
