@@ -223,7 +223,7 @@ const html = /* HTML */ `
                 </button>
 
                 <div class="md:xt-card-group rounded${classes.overlayRadius()} ${itemAnim()}">
-                  <div class="${classes.cardMd()} md:w-7/12">
+                  <div class="md:w-7/12 ${classes.cardMd()}">
                     <div class="xt-h4">Contact us</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">
@@ -364,7 +364,7 @@ const html = /* HTML */ `
                     </div>
                   </div>
 
-                  <div class="${classes.cardMd()} md:w-7/12">
+                  <div class="md:w-7/12 ${classes.cardMd()}">
                     <div class="xt-h4">Subscribe to our newsletter</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">

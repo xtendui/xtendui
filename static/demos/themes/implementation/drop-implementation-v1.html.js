@@ -12,7 +12,7 @@ const html = /* HTML */ `
           Nav
         </button>
         <div
-          class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
           data-xt-drop-target
         >
           <div
@@ -58,15 +58,15 @@ const html = /* HTML */ `
           Contact
         </button>
         <div
-          class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
           data-xt-drop-target
         >
           <div
             class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
           >
-            <nav class="xt-list xt-list-1 flex-col py-2">
+            <nav class="xt-list xt-list-1 flex-col *** py-2 ***">
               <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonGrayPrimaryAnim()}">
-                <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
                     ${classes.iconMail({ classes: 'xt-icon text-2xl text-primary-500' })}
                   </div>
@@ -77,7 +77,7 @@ const html = /* HTML */ `
                 </div>
               </a>
               <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonGrayPrimaryAnim()}">
-                <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
                     ${classes.iconPhone({ classes: 'xt-icon text-2xl text-primary-500' })}
                   </div>
@@ -88,7 +88,7 @@ const html = /* HTML */ `
                 </div>
               </a>
               <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonGrayPrimaryAnim()}">
-                <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
                     ${classes.iconUsers({ classes: 'xt-icon text-2xl text-primary-500' })}
                   </div>
@@ -99,7 +99,7 @@ const html = /* HTML */ `
                 </div>
               </a>
             </nav>
-            <div class="p-5 text-xs rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto">
+            <div class="*** p-5 text-xs rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto ***">
               <p class="mb-1 font-bold text-sm">Didn&apos;t find what you was looking for?</p>
               <p>
                 Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at

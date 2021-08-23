@@ -242,7 +242,7 @@ export const populateDemo = container => {
     Xt.node({
       str: `
 <div>
-  <button type="button" class="xt-button button--show-code" aria-label="Toggle Code">
+  <button type="button" class="xt-button button--show-code ${classes.buttonCode()}" aria-label="Toggle Code">
     ${classes.iconCode()}
   </button>
   <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
@@ -262,7 +262,7 @@ export const populateDemo = container => {
     Xt.node({
       str: `
 <div class="button--open-full-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
-  <button type="button" class="xt-button button--open-full" aria-label="Toggle Fullscreen" data-xt-tooltip-element>
+  <button type="button" class="xt-button button--open-full ${classes.buttonCode()}" aria-label="Toggle Fullscreen" data-xt-tooltip-element>
     ${classes.iconMaximize()}
   </button>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
@@ -278,7 +278,7 @@ export const populateDemo = container => {
     Xt.node({
       str: `
 <div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
-  <a href="#" target="_blank" class="xt-button button--open-iframe" aria-label="Open Iframe" data-xt-tooltip-element>
+  <a href="#" target="_blank" class="xt-button button--open-iframe ${classes.buttonCode()}" aria-label="Open Iframe" data-xt-tooltip-element>
     ${classes.iconExternal()}
   </a>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
@@ -302,7 +302,7 @@ export const populateDemo = container => {
     container.querySelector('.gatsby_demo_tabs_left').append(
       Xt.node({
         str: DOMPurify.sanitize(
-          `<button type="button" class="xt-button ${classes.textBlack()} text-opacity-50 font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100">${name}</button>`
+          `<button type="button" class="xt-button ${classes.textBlack()} ${classes.buttonCode()}">${name}</button>`
         ),
       })
     )
@@ -398,7 +398,7 @@ export const populateItem = item => {
     <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
     <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
       <div>
-        <button type="button" class="xt-button button--clipboard" aria-label="Copy to Clipboard">
+        <button type="button" class="xt-button button--clipboard ${classes.textWhite()} ${classes.buttonCodeWhite()}" aria-label="Copy to Clipboard">
           ${classes.iconCopy()}
         </button>
         <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
@@ -865,7 +865,7 @@ const populateSources = (item, element, isReact = false) => {
   item.querySelector('.gatsby_demo_code_tabs_left').append(
     Xt.node({
       str: DOMPurify.sanitize(
-        `<button type="button" class="xt-button ${classes.textWhite()} font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20">${lang}</button>`
+        `<button type="button" class="xt-button ${classes.textWhite()} ${classes.buttonCodeWhite()}">${lang}</button>`
       ),
     })
   )
@@ -925,7 +925,7 @@ export const makeDocument = () => {
             Xt.node({
               str: `
 <div class="xt-tooltip px-5 group" data-xt-tooltip-target>
-  <div class="relative py-2 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} bg-primary-600 transition duration-300 opacity-0 translate-x-2 group-in:opacity-100 group-in:translate-x-0">
+  <div class="relative py-2 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} bg-gray-100 transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100">
     <nav class="xt-list flex-col">
     </nav>
   </div>
@@ -944,7 +944,7 @@ export const makeDocument = () => {
             str: DOMPurify.sanitize(`
 <a href="#${encodeURIComponent(
               id
-            )}" class="xt-button text-3xs py-0.5 px-3 w-full justify-start text-left ${classes.textWhite()} font-medium leading-snug tracking-wider uppercase bg-primary-600 text-opacity-75 transition hover:bg-primary-700 active:bg-primary-700 on:bg-primary-700 hover:text-opacity-100 active:text-opacity-100 on:text-opacity-100">
+            )}" class="xt-button text-3xs py-0.5 px-3 ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayAnim()}">
   <span class="py-px">${el.textContent.trim()}</span>
 </a>`),
           })

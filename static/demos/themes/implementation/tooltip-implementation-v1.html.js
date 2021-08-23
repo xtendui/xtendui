@@ -5,23 +5,27 @@ const html = /* HTML */ `
     <div class="max-w-4xl mx-auto">
       <div
         class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
-        data-xt-tooltip
       >
-        <div>
+        <div data-xt-tooltip="{ duration: 500 }">
           Example tooltips
           <span data-xt-tooltip-element>
             <a href="#">product informations</a>
 
-            <div class="xt-tooltip p-3" data-xt-tooltip-target>
+            <div
+              class="xt-tooltip p-3 *** transition duration-300 opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
+              data-xt-tooltip-target
+            >
               <div
-                class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()}  ${classes.textWhite()} ${classes.cardBlack()}"
+                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} ***"
               >
                 <div class="xt-list xt-list-1 flex-col py-2">
                   <div>
                     <div
-                      class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                      class="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} ***"
                     >
-                      <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
+                      <div
+                        class="*** p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()} ***"
+                      >
                         ${classes.iconInfo({ classes: 'xt-icon text-2xl text-primary-500' })}
                       </div>
                       <div>
@@ -32,9 +36,11 @@ const html = /* HTML */ `
                   </div>
                   <div>
                     <div
-                      class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                      class="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} ***"
                     >
-                      <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
+                      <div
+                        class="*** p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()} ***"
+                      >
                         ${classes.iconAlerttriangle({ classes: 'xt-icon text-2xl text-primary-500' })}
                       </div>
                       <div>
@@ -52,18 +58,23 @@ const html = /* HTML */ `
           <span data-xt-tooltip-element>
             <a href="#">credit card CVV</a>
 
-            <div class="xt-tooltip p-3" data-xt-tooltip-target>
+            <div
+              class="xt-tooltip p-3 *** transition duration-300 opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
+              data-xt-tooltip-target
+            >
               <div
-                class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textBlack()} ${classes.cardWhite()} ***"
               >
-                <div class="xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-40">
+                <div class="*** xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-32 ***">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div>
                   <div
-                    class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                    class="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} ***"
                   >
-                    <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
+                    <div
+                      class="*** p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textWhite()} ***"
+                    >
                       ${classes.iconCreditcard({ classes: 'xt-icon text-2xl text-primary-500' })}
                     </div>
                     <div class="text-xs">

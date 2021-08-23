@@ -14,12 +14,12 @@ const html = /* HTML */ `
       <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'targets' }">
         <div class="*** xt-sticky ***" data-node-sticky>
           <div
-            class="xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
+            class="*** xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
           >
-            <nav class="xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1">
+            <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
               <a
                 role="button"
-                class="xt-button flex-auto ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+                class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="description"
               >
@@ -27,7 +27,7 @@ const html = /* HTML */ `
               </a>
               <a
                 role="button"
-                class="xt-button flex-auto ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+                class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="features"
               >
@@ -35,7 +35,7 @@ const html = /* HTML */ `
               </a>
               <a
                 role="button"
-                class="xt-button flex-auto ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+                class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="accessories"
                 >${classes.iconPackage({ classes: 'xt-icon text-base opacity-50 mr-2' })} Accessories</a
@@ -43,7 +43,7 @@ const html = /* HTML */ `
               <a
                 href="#"
                 type="button"
-                class="xt-button flex-auto ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+                class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="manuals"
                 >${classes.iconDownload({ classes: 'xt-icon text-base opacity-50 mr-2' })} Manuals</a
@@ -54,9 +54,7 @@ const html = /* HTML */ `
 
         <div class="mt-3" data-node-sticky-endtrigger>
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div
-              class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
-            >
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Description</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -77,9 +75,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div
-              class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
-            >
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Features</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -90,9 +86,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div
-              class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
-            >
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Accessories</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -123,9 +117,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div
-              class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
-            >
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Manuals</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

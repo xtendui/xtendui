@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div class="w-full">
         <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
           <div class="md:xt-card-group">
-            <div class="${classes.cardMd()} md:w-7/12">
+            <div class="md:w-7/12 ${classes.cardMd()}">
               <div class="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

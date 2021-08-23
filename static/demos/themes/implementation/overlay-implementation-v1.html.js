@@ -16,7 +16,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div
-              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+              class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
                 class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
@@ -29,8 +29,8 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group">
-                  <div class="${classes.cardMd()} md:w-7/12">
+                <div class="*** md:xt-card-group ***">
+                  <div class="md:w-7/12 *** ${classes.cardMd()}***">
                     <div class="xt-h4">Contact us</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">
@@ -117,14 +117,14 @@ const html = /* HTML */ `
                     </form>
                   </div>
 
-                  <div class="md:w-5/12 flex flex-col">
+                  <div class="md:w-5/12 *** flex flex-col ***">
                     <div
                       class="xt-media-container bg-gray-300 h-48 md:pb-[100%] md:rounded-tr${classes.overlayRadius()} "
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
-                      class="${classes.cardMd()} rounded-b${classes.overlayRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()} flex-auto"
+                      class="*** ${classes.cardMd()} rounded-b${classes.overlayRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()} flex-auto ***"
                     >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
@@ -153,7 +153,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div
-              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+              class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
                 class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
@@ -166,8 +166,8 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group">
-                  <div class="md:w-5/12 flex flex-col">
+                <div class="*** md:xt-card-group ***">
+                  <div class="md:w-5/12 *** flex flex-col ***">
                     <div
                       class="xt-media-container bg-gray-300 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
@@ -175,7 +175,7 @@ const html = /* HTML */ `
                     </div>
                   </div>
 
-                  <div class="${classes.cardMd()} md:w-7/12">
+                  <div class="md:w-7/12 *** ${classes.cardMd()} ***">
                     <div class="xt-h4">Subscribe to our newsletter</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">
@@ -255,7 +255,9 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b${classes.overlayRadius()} ${classes.cardWhiteAccent()}">
+                <div
+                  class="*** ${classes.cardSm()} rounded-b${classes.overlayRadius()} ${classes.cardWhiteAccent()} ***"
+                >
                   <p>Subscribe and receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>
@@ -277,7 +279,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div
-              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+              class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
                 class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
@@ -352,7 +354,7 @@ const html = /* HTML */ `
               ${classes.iconX()}
             </button>
             <div
-              class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***"
+              class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
                 class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"

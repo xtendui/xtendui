@@ -12,13 +12,13 @@ const html = /* HTML */ `
         <div class="xt-row xt-row-4 md:xt-row-8">
           <div class="w-full md:w-4/12">
             <div
-              class="xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
+              class="*** xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
             >
-              <nav class="xt-list xt-list-1 flex-col p-3">
+              <nav class="*** xt-list xt-list-1 flex-col p-3 ***">
                 <a
                   href="#"
                   type="button"
-                  class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="description"
                 >
@@ -27,7 +27,7 @@ const html = /* HTML */ `
                 <a
                   href="#"
                   type="button"
-                  class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="features"
                 >
@@ -36,7 +36,7 @@ const html = /* HTML */ `
                 <a
                   href="#"
                   type="button"
-                  class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="accessories"
                   >${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories</a
@@ -44,7 +44,7 @@ const html = /* HTML */ `
                 <a
                   href="#"
                   type="button"
-                  class="xt-button flex-auto ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="manuals"
                   >${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals</a
@@ -55,11 +55,11 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-8/12">
             <div
-              class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***"
+              class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target
             >
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***"
               >
                 <div class="xt-h5">Description</div>
                 <p>
@@ -81,11 +81,11 @@ const html = /* HTML */ `
             </div>
 
             <div
-              class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***"
+              class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target
             >
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***"
               >
                 <div class="xt-h5">Features</div>
                 <p>
@@ -97,11 +97,11 @@ const html = /* HTML */ `
             </div>
 
             <div
-              class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***"
+              class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target
             >
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***"
               >
                 <div class="xt-h5">Accessories</div>
                 <p>
@@ -133,7 +133,7 @@ const html = /* HTML */ `
             </div>
 
             <div
-              class="*** off:hidden out:pointer-events-none transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0 out:translate-y-4 ***"
+              class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target
             >
               <div

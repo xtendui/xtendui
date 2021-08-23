@@ -10,6 +10,10 @@ export const classes = {
     'rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition',
   buttonSlider: () =>
     'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
+  buttonCode: () =>
+    'text-opacity-50 font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100',
+  buttonCodeWhite: () =>
+    'font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20',
   // button
   buttonRadius: () => '-md',
   buttonSm: () => 'py-2 px-3 text-xs',
