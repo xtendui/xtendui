@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
     <button
       type="button"
-      class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+      class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
       data-xt-toggle-element
     >
       Toggle 0
@@ -12,7 +12,7 @@ const html = /* HTML */ `
 
     <button
       type="button"
-      class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+      class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
       data-xt-toggle-element
     >
       Toggle 1

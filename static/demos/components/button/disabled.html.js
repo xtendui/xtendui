@@ -21,10 +21,16 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()} *** xt-disabled ***"
-        aria-disabled="true"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}  *** xt-disabled ***"
       >
         Text
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonRing()} ${classes.buttonRingAnim()}  *** xt-disabled ***"
+      >
+        Ring
       </button>
 
       <button

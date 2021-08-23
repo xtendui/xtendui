@@ -17,7 +17,7 @@ const itemAnimOpacity = () =>
 
 const buttonGray = () => `${grayDesign()} ${grayAnim()}`
 const buttonPrimary = () => `${primaryDesign()} ${primaryAnim()}`
-const buttonGrayPrimary = () => `${classes.buttonGray()} ${primaryAnim()}`
+const buttonText = () => `${classes.buttonTextAnim()} ${transparentAnim()}`
 const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
 const cardGray = () => `${classes.cardGray()}`
 const cardPrimary = () => `${classes.cardPrimary()}`
@@ -45,9 +45,9 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGrayPrimary()} ${transparentAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()} ${transparentAnim()}"
       >
-        Gray Primary
+        Text
       </button>
 
       <button
@@ -55,13 +55,6 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonRing()} ${transparentAnim()}"
       >
         Ring
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${transparentAnim()}"
-      >
-        Text
       </button>
 
       <button
@@ -93,19 +86,19 @@ const html = /* HTML */ `
               <nav class="xt-list flex-col ${classes.groupMd()}">
                 <a
                   href="#"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
                 >
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
                 >
                   Amet
                 </button>

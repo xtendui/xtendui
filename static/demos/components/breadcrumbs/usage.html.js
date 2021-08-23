@@ -5,19 +5,21 @@ const html = /* HTML */ `
     <nav class="*** truncate ***">
       <a
         href="#"
-        class="xt-button *** inline *** text-xs py-2 px-0 ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
+        class="xt-button *** inline *** ${classes.buttonXs()} rounded-full ${classes.buttonUpper()} transition hover:opacity-75"
       >
         Home
       </a>
-      <span class="inline relative align-baseline before:content-['/'] mx-2"></span>
+      <span class="inline relative align-baseline before:content-['/'] mx-0.5 text-sm"></span>
       <a
         href="#"
-        class="xt-button *** inline *** text-xs py-2 px-0 ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
+        class="xt-button *** inline *** ${classes.buttonXs()} rounded-full ${classes.buttonUpper()} transition hover:opacity-75"
       >
         Lorem ipsum dolor sit amet
       </a>
-      <span class="inline relative align-baseline before:content-['/'] mx-2"></span>
-      <div class="xt-button text-xs py-2 px-0 ${classes.buttonUpper()} ${classes.buttonTextAnim()} pointer-events-none">
+      <span class="inline relative align-baseline before:content-['/'] mx-0.5 text-sm"></span>
+      <div
+        class="xt-button ${classes.buttonXs()} rounded-full ${classes.buttonUpper()} transition hover:opacity-75 pointer-events-none"
+      >
         Lorem ipsum
       </div>
     </nav>

@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <a href="#" type="button" class="xt-list flex-col *** group ***">
       <div
-        class="xt-button ${classes.groupButtonMd()} rounded-t${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()} ${classes.buttonPrimaryAnimGroup()}"
+        class="xt-button ${classes.groupButtonMd()} rounded-t${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()} ${classes.buttonPrimaryAnimGroup()}"
       >
         Lorem ipsum dolor sit amet
       </div>

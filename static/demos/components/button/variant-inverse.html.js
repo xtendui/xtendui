@@ -22,9 +22,9 @@ const html = /* HTML */ `
 
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()} ***"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonTextAnim()} ***"
         >
-          Gray Primary
+          Text
         </button>
 
         <button
@@ -32,13 +32,6 @@ const html = /* HTML */ `
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonRing()} ${classes.buttonRingAnim()} ***"
         >
           Ring
-        </button>
-
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** text-white ${classes.buttonUpper()} ${classes.buttonTextAnim()} ***"
-        >
-          Text
         </button>
 
         <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** xt-link ***">

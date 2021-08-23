@@ -16,6 +16,7 @@ export const classes = {
     'font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20',
   // button
   buttonRadius: () => '-md',
+  buttonXs: () => 'py-1.5 px-2 text-2xs',
   buttonSm: () => 'py-2 px-3 text-xs',
   buttonMd: () => 'py-2.5 px-3.5 text-sm',
   buttonLg: () => 'py-3 px-4 text-base',
@@ -29,11 +30,10 @@ export const classes = {
     'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
   buttonPrimaryAnimGroup: () =>
     'group-hover:text-white group-hover:bg-primary-600 group-active:text-white group-active:bg-primary-700 group-on:text-white group-on:bg-primary-600',
-  buttonGrayPrimaryAnim: () =>
-    'transition hover:bg-primary-100 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+  buttonTextAnim: () =>
+    'transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
   buttonRing: () => 'ring-2 ring-primary-200',
   buttonRingAnim: () => 'transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
-  buttonTextAnim: () => '',
   buttonCloseOutsideAnim: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
   // card
   cardRadius: () => '-2xl',

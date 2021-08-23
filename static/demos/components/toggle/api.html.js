@@ -65,7 +65,7 @@ const html = /* HTML */ `
       <div class="xt-list xt-list-3 items-center mb-4" id="toggle--eventmethods-elements">
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           data-xt-toggle-element
           data-xt-group="0"
         >
@@ -73,7 +73,7 @@ const html = /* HTML */ `
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           data-xt-toggle-element
           data-xt-group="0"
         >
@@ -81,14 +81,14 @@ const html = /* HTML */ `
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           data-xt-toggle-element
         >
           Toggle 1
         </button>
         <button
           type="button"
-          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+          class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           data-xt-toggle-element
         >
           Toggle 2

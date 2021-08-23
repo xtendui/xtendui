@@ -8,7 +8,7 @@ const html = /* HTML */ `
     >
       <a
         href="/"
-        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
         data-xt-toggle-element
       >
         Toggle 1 hover
@@ -16,7 +16,7 @@ const html = /* HTML */ `
 
       <a
         href="/"
-        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}"
+        class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
         data-xt-toggle-element
       >
         Toggle 2 hover

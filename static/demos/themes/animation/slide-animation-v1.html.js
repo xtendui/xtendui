@@ -7,10 +7,10 @@ const itemAnim = () =>
 const itemAnimOpacity = () =>
   '*** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:ease-out-quint group-in:delay-100 group-in:opacity-100 ***'
 
-const buttonGray = () => `${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}`
-const buttonPrimary = () => `${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
-const buttonGrayPrimary = () => `${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}`
-const buttonRing = () => `${classes.buttonUpper()} ${classes.buttonRing()} ${classes.buttonRingAnim()}`
+const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
+const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
+const buttonText = () => `${classes.buttonTextAnim()}`
+const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
 const cardGray = () => `${classes.cardGray()}`
 const cardWhite = () => `${classes.cardWhite()}`
 
@@ -19,33 +19,32 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()}">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonGray()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGray()}"
+      >
         Gray
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+      >
         Primary
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGrayPrimary()}"
-      >
-        Gray Primary
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonRing()}"
-      >
-        Ring
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonUpper()} ${buttonText()}"
       >
         Text
+      </button>
+
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonUpper()} ${buttonRing()}"
+      >
+        Ring
       </button>
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link">
@@ -59,7 +58,7 @@ const html = /* HTML */ `
       <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-drop-element
         >
           Drop
@@ -72,19 +71,19 @@ const html = /* HTML */ `
             <nav class="xt-list flex-col ${classes.groupMd()} ${itemAnim()}">
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
               <button
                 type="button"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
               >
                 Dolor sit
               </button>
               <button
                 type="button"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonGray()} ${classes.buttonGrayPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
               >
                 Amet
               </button>
@@ -97,7 +96,7 @@ const html = /* HTML */ `
       <div data-xt-drop="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-drop-element
         >
           Card
@@ -134,7 +133,7 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           >
             Tooltip
           </button>
@@ -154,7 +153,7 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           >
             Group
           </button>
@@ -168,7 +167,7 @@ const html = /* HTML */ `
                   <div class="inline-flex flex-auto">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonGray()}"
+                      class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${buttonGray()}"
                     >
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                     </button>
@@ -182,7 +181,7 @@ const html = /* HTML */ `
 
                   <button
                     type="button"
-                    class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${buttonPrimary()}"
+                    class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                   >
                     Search
                   </button>
@@ -201,7 +200,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Contact
@@ -301,7 +300,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Send
                           </button>
@@ -334,7 +333,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Newsletter
@@ -434,7 +433,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Subscribe
                           </button>
@@ -458,7 +457,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Menu
@@ -477,9 +476,24 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
                 <div class="xt-list bg-primary-500 ${itemAnim()}">
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Menu</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Info</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Account</button>
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${buttonPrimary()}"
+                  >
+                    Menu
+                  </button>
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${buttonPrimary()}"
+                  >
+                    Info
+                  </button>
+                  <button
+                    type="button"
+                    class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${buttonPrimary()}"
+                  >
+                    Account
+                  </button>
                 </div>
                 <div class="xt-media-container bg-gray-300 h-48 ${itemAnim()}">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
@@ -507,7 +521,7 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
           Gallery

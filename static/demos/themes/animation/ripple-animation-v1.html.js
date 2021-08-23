@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
 const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
-const buttonGrayPrimary = () => `${classes.buttonGray()} ${classes.buttonGrayPrimaryAnim()}`
+const buttonText = () => `${classes.buttonTextAnim()}`
 const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
 
 const html = /* HTML */ `
@@ -26,9 +26,9 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGrayPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()}"
       >
-        Gray Primary
+        Text
       </button>
 
       <button
@@ -36,13 +36,6 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonRing()}"
       >
         Ring
-      </button>
-
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
-      >
-        Text
       </button>
 
       <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link">
