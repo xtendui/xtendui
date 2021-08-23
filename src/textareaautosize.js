@@ -6,6 +6,7 @@
 
 import { Xt } from './xt'
 import RJSON from 'relaxed-json'
+Xt.RJSON = RJSON
 
 /**
  * Textareaautosize

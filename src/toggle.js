@@ -7,6 +7,8 @@
 import { Xt } from './xt'
 import RJSON from 'relaxed-json'
 import * as focusTrap from 'focus-trap'
+Xt.RJSON = RJSON
+Xt.focusTrap = focusTrap
 
 /**
  * Toggle

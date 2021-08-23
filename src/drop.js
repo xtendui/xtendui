@@ -8,6 +8,8 @@ import { Xt } from './xt'
 import './toggle'
 import RJSON from 'relaxed-json'
 import { createPopper } from '@popperjs/core'
+Xt.RJSON = RJSON
+Xt.createPopper = createPopper
 
 /**
  * Drop

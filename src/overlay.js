@@ -7,6 +7,7 @@
 import { Xt } from './xt'
 import './toggle'
 import RJSON from 'relaxed-json'
+Xt.RJSON = RJSON
 
 /**
  * Overlay
