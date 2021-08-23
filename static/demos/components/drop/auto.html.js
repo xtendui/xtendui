@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
           >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
@@ -37,7 +37,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
         </div>
       </div>
 
@@ -52,7 +52,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
           >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
@@ -75,7 +75,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
         </div>
       </div>
 
@@ -90,7 +90,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
           >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
@@ -113,7 +113,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
         </div>
       </div>
     </div>

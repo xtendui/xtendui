@@ -11,7 +11,6 @@ const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
 const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
 const buttonText = () => `${classes.buttonTextAnim()}`
 const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
-const cardGray = () => `${classes.cardGray()}`
 const cardWhite = () => `${classes.cardWhite()}`
 
 const html = /* HTML */ `
@@ -66,7 +65,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardGray()} ${designAnim()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
           >
             <nav class="xt-list flex-col ${classes.groupMd()} ${itemAnim()}">
               <a
@@ -89,7 +88,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${itemAnimOpacity()}"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 ${itemAnimOpacity()}"></div>
         </div>
       </div>
 
@@ -104,7 +103,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardGray()} ${designAnim()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
           >
             <button
               type="button"
@@ -121,7 +120,7 @@ const html = /* HTML */ `
               </p>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${itemAnimOpacity()}"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 ${itemAnimOpacity()}"></div>
         </div>
       </div>
     </div>

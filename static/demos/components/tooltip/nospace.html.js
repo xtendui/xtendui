@@ -18,7 +18,7 @@ const html = /* HTML */ `
           >
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-4 h-4 bg-black z-below"></div>
+          <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
         </div>
       </div>
 
@@ -37,7 +37,7 @@ const html = /* HTML */ `
           >
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-4 h-4 bg-black z-below"></div>
+          <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ const html = /* HTML */ `
           >
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-4 h-4 bg-black z-below"></div>
+          <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
         </div>
       </div>
     </div>

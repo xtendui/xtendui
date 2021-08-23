@@ -21,7 +21,7 @@ If you want to **control a specific drop position** use `[data-xt-position=<valu
 
 </div>
 
-Use `<div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100"></div>` inside `.xt-drop` to add an arrow. If you want the arrow to be **below the drop** use the class `z-below`.
+Use `<div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>` inside `.xt-drop` to add an arrow. If you want the arrow to be **below the drop** use the class `z-below`.
 
 > If you cange any of **`xt-drop` padding** or **`xt-arrow` margin and size** you need to **revisit all of those sizes**.
 

@@ -74,7 +74,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div
-            class="relative  rounded${classes.dropRadius()} ${classes.dropShadow()} ${cardGray()} ${designAnim()}"
+            class="relative  rounded${classes.dropRadius()} ${classes.dropShadow()} ${cardWhite()} ${designAnim()}"
             data-xt-drop-inner
           >
             <div class="xt-card w-64 ${classes.textDefault()}">
@@ -100,7 +100,7 @@ const html = /* HTML */ `
               </nav>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${itemAnimOpacity()}"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 ${itemAnimOpacity()}"></div>
         </div>
       </div>
 
@@ -115,7 +115,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div
-            class="relative rounded${classes.dropRadius()} ${classes.dropShadow()} ${cardGray()} ${designAnim()}"
+            class="relative rounded${classes.dropRadius()} ${classes.dropShadow()} ${cardWhite()} ${designAnim()}"
             data-xt-drop-inner
           >
             <div class="xt-card w-64 ${classes.textDefault()}">
@@ -135,7 +135,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-gray-100 ${itemAnimOpacity()}"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 ${itemAnimOpacity()}"></div>
         </div>
       </div>
     </div>

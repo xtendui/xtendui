@@ -86,7 +86,7 @@ const html = /* HTML */ `
 
       <div class="xt-drop p-3" title="Target 0" data-xt-drop-target>
         <div
-          class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
+          class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
         >
           <nav class="xt-list flex-col ${classes.groupMd()}">
             <a
@@ -121,7 +121,7 @@ const html = /* HTML */ `
 
       <div class="xt-drop p-3" title="Target 1" data-xt-drop-target>
         <div
-          class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
+          class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
         >
           <nav class="xt-list flex-col ${classes.groupMd()}">
             <a
@@ -148,7 +148,7 @@ const html = /* HTML */ `
     </div>
 
     <div
-      class="xt-card rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()} mt-6"
+      class="xt-card rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} mt-6"
     >
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"

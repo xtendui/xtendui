@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
           >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a

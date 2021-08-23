@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="*** xt-drop *** p-4 relative inline-block *** on ***" data-xt-drop="{ closeOutside: false }">
       <div
-        class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
+        class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
       >
         <nav class="xt-list flex-col ${classes.groupMd()}">
           <a
