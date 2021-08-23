@@ -1,22 +1,21 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const buttonRadius = () => `-xl`
-const buttonAnim = () =>
+const tabsRadius = () => `-2xl`
+const tabsAnim = () =>
   `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
-const cardRadius = () => `-2xl`
 
 const html = /* HTML */ `
   <div>
     <div class="max-w-xl mx-auto">
       <div data-xt-toggle="{ min: 1, duration: 500 }">
         <div
-          class="*** xt-card rounded${cardRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
+          class="*** xt-card rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
         >
           <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
             <a
               href="#"
               type="button"
-              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="description"
             >
@@ -25,7 +24,7 @@ const html = /* HTML */ `
             <a
               href="#"
               type="button"
-              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="features"
             >
@@ -34,7 +33,7 @@ const html = /* HTML */ `
             <a
               href="#"
               type="button"
-              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="accessories"
               >${classes.iconPackage({ classes: 'xt-icon text-base opacity-50 mr-2' })} Accessories</a
@@ -42,7 +41,7 @@ const html = /* HTML */ `
             <a
               href="#"
               type="button"
-              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${buttonRadius()} ${classes.buttonUpper()} ${buttonAnim()}"
+              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="manuals"
               >${classes.iconDownload({ classes: 'xt-icon text-base opacity-50 mr-2' })} Manuals</a

@@ -1,9 +1,8 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const buttonRadius = () => `-xl`
+const navRadius = () => `-2xl`
 const buttonAnim = () =>
   `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
-const cardRadius = () => `-2xl`
 
 const html = /* HTML */ `
   <div class="demo--nav-implementation-v3">
@@ -12,33 +11,33 @@ const html = /* HTML */ `
         <div class="w-full md:w-4/12">
           <div class="*** xt-sticky md:py-4 ***" data-node-sticky>
             <div
-              class="*** xt-card rounded${cardRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
+              class="*** xt-card rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
             >
               <nav class="*** xt-list xt-list-1 flex-col p-3 ***">
                 <a
                   href="#description"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
                 >
                   ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                 </a>
                 <a
                   href="#features"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
                 >
                   ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
                 </a>
                 <a
                   href="#accessories"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
                   >${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories</a
                 >
                 <a
                   href="#manuals"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${buttonRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
                   >${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals</a
                 >
               </nav>
