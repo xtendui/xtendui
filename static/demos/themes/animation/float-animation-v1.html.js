@@ -480,7 +480,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div class="${classes.cardSm()} rounded-b${classes.overlayRadius()} ${classes.cardWhiteAccent()}">
-                  <p>Receive <strong>free discount</strong> periodically on all our products.</p>
+                  <p>Subscribe and receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>
             </div>

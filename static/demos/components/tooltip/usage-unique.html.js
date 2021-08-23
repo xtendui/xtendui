@@ -5,7 +5,7 @@ const html = /* HTML */ `
     Lorem ipsum <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique' }">dolor</a> sit
     <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique' }">amet</a>
 
-    <div class="*** xt-tooltip *** p-2" id="tooltip--unique">
+    <div class="*** xt-tooltip p-3 ***" id="tooltip--unique">
       <div
         class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
       >

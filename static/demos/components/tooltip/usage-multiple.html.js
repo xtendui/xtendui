@@ -7,7 +7,7 @@ const html = /* HTML */ `
       <span data-xt-tooltip-element>
         <a href="#">dolor</a>
 
-        <div class="*** xt-tooltip *** p-2" data-xt-tooltip-target>
+        <div class="*** xt-tooltip p-3 ***" data-xt-tooltip-target>
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
           >
@@ -19,7 +19,7 @@ const html = /* HTML */ `
       <span data-xt-tooltip-element>
         <a href="#">amet</a>
 
-        <div class="*** xt-tooltip *** p-2" data-xt-tooltip-target>
+        <div class="*** xt-tooltip p-3 ***" data-xt-tooltip-target>
           <div
             class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
           >

@@ -1,0 +1,88 @@
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
+const html = /* HTML */ `
+  <div>
+    <div class="max-w-4xl mx-auto">
+      <div
+        class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
+        data-xt-tooltip
+      >
+        <div>
+          Example tooltips
+          <span data-xt-tooltip-element>
+            <a href="#">product informations</a>
+
+            <div class="xt-tooltip p-3" data-xt-tooltip-target>
+              <div
+                class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()}  ${classes.textWhite()} ${classes.cardBlack()}"
+              >
+                <div class="xt-list xt-list-1 flex-col py-2">
+                  <div>
+                    <div
+                      class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                    >
+                      <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
+                        ${classes.iconInfo({ classes: 'xt-icon text-2xl text-primary-500' })}
+                      </div>
+                      <div>
+                        <div class="font-medium">Shipping Limits</div>
+                        <div class="text-xs opacity-50">Delivery is EU and US only.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                    >
+                      <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
+                        ${classes.iconAlerttriangle({ classes: 'xt-icon text-2xl text-primary-500' })}
+                      </div>
+                      <div>
+                        <div class="font-medium">VAT Excluded</div>
+                        <div class="text-xs opacity-50">The prices is excluding VAT.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+            </div>
+          </span>
+          and
+          <span data-xt-tooltip-element>
+            <a href="#">credit card CVV</a>
+
+            <div class="xt-tooltip p-3" data-xt-tooltip-target>
+              <div
+                class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+              >
+                <div class="xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-40">
+                  <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                </div>
+                <div>
+                  <div
+                    class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                  >
+                    <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textWhite()}">
+                      ${classes.iconCreditcard({ classes: 'xt-icon text-2xl text-primary-500' })}
+                    </div>
+                    <div class="text-xs">
+                      The card security code is the three-digit number at the back of your debit card.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="xt-arrow -inset-1 m-3 w-3 h-3 bg-white"></div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+`
+
+export const object = {
+  html: html,
+  container: true,
+  gradient: true,
+}

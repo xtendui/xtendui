@@ -467,7 +467,7 @@ const html = /* HTML */ `
                 <div
                   class="${classes.cardSm()} rounded-b${classes.overlayRadius()} ${classes.cardWhiteAccent()} ${itemAnim()}"
                 >
-                  <p>Receive <strong>free discount</strong> periodically on all our products.</p>
+                  <p>Subscribe and receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>
             </div>
