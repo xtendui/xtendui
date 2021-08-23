@@ -19,12 +19,3 @@ The `truncate` class gives ellipses if the breadcrumbs are too long, but it need
   <demoinline src="demos/components/breadcrumbs/usage">
   </demoinline>
 </demo>
-
-## Title
-
-Use **tailwind classes** to add title and background.
-
-<demo>
-  <demoinline src="demos/components/breadcrumbs/title">
-  </demoinline>
-</demo>
