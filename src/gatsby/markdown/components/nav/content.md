@@ -28,15 +28,6 @@ Use **tailwind classes** to assign styles (e.g. [border-color](https://tailwindc
   </demoinline>
 </demo>
 
-## Merge
-
-You can make group a **single interactive object**, just put `button` tag including the interactive elements, be sure to use `group` class and variants.
-
-<demo>
-  <demoinline src="demos/components/nav/merge">
-  </demoinline>
-</demo>
-
 ## Alignment and Icon
 
 Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwindcss.com/docs/text-align), [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
@@ -47,5 +38,25 @@ Use **tailwind classes** to assign alignment (e.g. [text-align](https://tailwind
 
 <demo>
   <demoinline src="demos/components/nav/alignment">
+  </demoinline>
+</demo>
+
+## Complex
+
+Use other [list content](/components/list/content) to make complex design.
+
+> This demos use [icon](/components/icon) see documentation for more info.
+
+<demo>
+  <demoinline src="demos/components/nav/complex">
+  </demoinline>
+</demo>
+
+## Merge
+
+You can make group a **single interactive object**, just put `button` tag including the interactive elements, be sure to use `group` class and variants.
+
+<demo>
+  <demoinline src="demos/components/nav/merge">
   </demoinline>
 </demo>
