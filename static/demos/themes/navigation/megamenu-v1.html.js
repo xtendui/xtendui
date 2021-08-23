@@ -8,7 +8,7 @@ const html = /* HTML */ `
         data-xt-duration="500"
       ></div>
 
-      <div class="relative bg-primary-500 ${classes.textWhite()}">
+      <div class="relative bg-primary-500 ${classes.textInverse()}">
         <!-- switcher for demo purpose remove this -->
         <form class="text-sm container pt-10">
           <label class="${classes.checkLabel()}">
@@ -28,7 +28,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textWhite()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #1
               </a>
@@ -37,7 +37,7 @@ const html = /* HTML */ `
                 <div class="*** relative ***" data-xt-drop-inner>
                   <div class="*** xt-design *** bg-primary-700 border-b-4 border-gray-300"></div>
                   <div class="*** xt-drop-content ***">
-                    <div class="pt-16 pb-24 ${classes.textWhite()}">
+                    <div class="pt-16 pb-24 ${classes.textInverse()}">
                       <div class="container">
                         <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Lorem ipsum
@@ -62,7 +62,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textWhite()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #2
               </a>
@@ -71,7 +71,7 @@ const html = /* HTML */ `
                 <div class="*** relative ***" data-xt-drop-inner>
                   <div class="*** xt-design *** bg-gray-700 border-b-4 border-gray-300"></div>
                   <div class="*** xt-drop-content ***">
-                    <div class="pt-16 pb-24 ${classes.textWhite()}">
+                    <div class="pt-16 pb-24 ${classes.textInverse()}">
                       <div class="container">
                         <a href="#" class="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                           Lorem ipsum
@@ -89,7 +89,7 @@ const html = /* HTML */ `
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line ${classes.textWhite()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
             >
               Link #3
             </a>
@@ -97,7 +97,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textWhite()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
                 Menu #4
               </a>
@@ -106,7 +106,7 @@ const html = /* HTML */ `
                 <div class="*** relative ***" data-xt-drop-inner>
                   <div class="*** xt-design *** bg-gray-100 border-b-4 border-gray-300"></div>
                   <div class="*** xt-drop-content ***">
-                    <div class="pt-16 pb-24 ${classes.textBlack()} ">
+                    <div class="pt-16 pb-24 ${classes.textDefault()} ">
                       <div class="container">
                         <div class="xt-row xt-row-x-8">
                           <div class="w-full md:w-6/12">
@@ -145,7 +145,7 @@ const html = /* HTML */ `
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line ${classes.textWhite()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
             >
               Link #5
             </a>

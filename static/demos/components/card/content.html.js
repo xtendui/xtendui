@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
+    <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
       <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} h-40">
         <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
       </div>

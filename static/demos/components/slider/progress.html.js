@@ -9,7 +9,7 @@ const html = /* HTML */ `
           data-xt-slider-dragger
         >
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
               <span class="${classes.loader()}">
                 <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -21,7 +21,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">2</div>
               <span class="${classes.loader()}">
                 <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -32,7 +32,7 @@ const html = /* HTML */ `
             </div>
           </div>
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">3</div>
               <span class="${classes.loader()}">
                 <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -44,7 +44,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide w-full ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">4</div>
               <span class="${classes.loader()}">
                 <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -56,7 +56,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">5</div>
               <span class="${classes.loader()}">
                 <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -68,7 +68,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">6</div>
               <span class="${classes.loader()}">
                 <span class="${classes.filler()} text-primary-500 h-1 top-auto">
@@ -80,7 +80,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">7</div>
               <span class="${classes.loader()}">
                 <span class="${classes.filler()} text-primary-500 h-1 top-auto">

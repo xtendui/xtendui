@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+            class="rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
           >
             <form class="text-sm">
               <div class="xt-list flex-nowrap max-w-sm">

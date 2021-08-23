@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'targets' }">
         <div class="*** xt-sticky ***" data-node-sticky>
           <div
-            class="*** xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
+            class="*** xt-card rounded${cardRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
           >
             <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
               <a
@@ -54,7 +54,7 @@ const html = /* HTML */ `
 
         <div class="mt-3" data-node-sticky-endtrigger>
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Description</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -75,7 +75,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Features</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -86,7 +86,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Accessories</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -117,7 +117,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
-            <div class="*** xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***">
+            <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
               <div class="xt-h5">Manuals</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

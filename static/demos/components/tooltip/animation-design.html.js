@@ -17,7 +17,7 @@ const html = /* HTML */ `
             class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
           ></div>
           <div
-            class="relative ${classes.tooltipMd()} font-medium ${classes.textWhite()} *** transition duration-300 opacity-0 group-in:opacity-100 ***"
+            class="relative ${classes.tooltipMd()} font-medium ${classes.textInverse()} *** transition duration-300 opacity-0 group-in:opacity-100 ***"
           >
             Lorem ipsum dolor sit amet
           </div>

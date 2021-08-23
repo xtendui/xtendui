@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--scrollto">
     <!-- sticky for demo purpose remove this -->
     <div class="xt-sticky">
-      <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
+      <div class="xt-card ${classes.cardSm()} ${classes.textInverse()} ${classes.cardPrimary()}">
         <div class="xt-list xt-list-3">
           <a
             href="#anchor-0"
@@ -35,7 +35,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="container">
-      <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-0">
+      <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}" id="anchor-0">
         <div class="xt-h4">Lorem ipsum dolor sit amet</div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
@@ -76,7 +76,7 @@ const html = /* HTML */ `
       <br /><br /><br /><br /><br /><br /><br />
       <br /><br /><br /><br /><br /><br /><br />
 
-      <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-1">
+      <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}" id="anchor-1">
         <div class="xt-h4">Lorem ipsum dolor sit amet</div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
@@ -117,7 +117,7 @@ const html = /* HTML */ `
       <br /><br /><br /><br /><br /><br /><br />
       <br /><br /><br /><br /><br /><br /><br />
 
-      <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-custom">
+      <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}" id="anchor-custom">
         <div class="xt-h4">Lorem ipsum dolor sit amet</div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
@@ -132,7 +132,7 @@ const html = /* HTML */ `
       <br /><br /><br /><br /><br /><br /><br />
       <br /><br /><br /><br /><br /><br /><br />
 
-      <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}" id="anchor-2">
+      <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}" id="anchor-2">
         <div class="xt-h4">Lorem ipsum dolor sit amet</div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut

@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
+    <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
       <div class="xt-media-container bg-gray-300 rounded-t${classes.cardRadius()} h-40">
         <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
       </div>
@@ -20,7 +20,7 @@ const html = /* HTML */ `
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
           <div
-            class="${classes.cardSm()} ${classes.textWhite()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()}"
+            class="${classes.cardSm()} ${classes.textInverse()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()}"
           >
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>

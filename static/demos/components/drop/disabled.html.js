@@ -13,7 +13,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
           >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
@@ -42,7 +42,7 @@ const html = /* HTML */ `
                   <div class="xt-drop p-3" data-xt-drop-target-nested>
                     <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
                     <div
-                      class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textWhite()} ${classes.cardPrimary()}"
+                      class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()}"
                     >
                       <nav class="xt-list flex-col ${classes.groupMd()}">
                         <a

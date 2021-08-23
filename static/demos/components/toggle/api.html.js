@@ -109,7 +109,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()} mt-6">
+    <div class="${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
         id="card--toggle-api-log"

@@ -13,7 +13,7 @@ const html = /* HTML */ `
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-1"
           >
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
             </div>
           </div>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-2"
           >
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">2</div>
             </div>
           </div>
@@ -33,13 +33,13 @@ const html = /* HTML */ `
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-3"
           >
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">3</div>
             </div>
           </div>
 
           <div class="xt-slide w-full ${classes.slide()}" data-xt-slider-target data-xt-hash="demo--slider-hash-4">
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">4</div>
             </div>
           </div>
@@ -49,7 +49,7 @@ const html = /* HTML */ `
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-5"
           >
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">5</div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const html = /* HTML */ `
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-6"
           >
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">6</div>
             </div>
           </div>
@@ -69,7 +69,7 @@ const html = /* HTML */ `
             data-xt-slider-target
             data-xt-hash="demo--slider-hash-7"
           >
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">7</div>
             </div>
           </div>

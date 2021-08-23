@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
         <div
-          class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+          class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
           data-xt-mousefollow
         >
           <div class="${classes.cardMd()}">
@@ -28,7 +28,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div
-          class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+          class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
           data-xt-mousefollow="{ friction: false }"
         >
           <div class="${classes.cardMd()}">

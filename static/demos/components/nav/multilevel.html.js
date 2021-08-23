@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--multilevel">
-    <div class="xt-card rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}">
+    <div class="xt-card rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}">
       <div class="relative" data-xt-toggle="{ min: 1, duration: 500, queue: false }">
         <nav
           class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"

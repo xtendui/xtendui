@@ -246,12 +246,12 @@ export const populateDemo = container => {
     ${classes.iconCode()}
   </button>
   <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
-    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Show Code
     </div>
   </div>
   <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
-    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Hide Code
     </div>
   </div>
@@ -267,7 +267,7 @@ export const populateDemo = container => {
   </button>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
   data-xt-tooltip-target>
-    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Fullscreen
     </div>
   </div>
@@ -283,7 +283,7 @@ export const populateDemo = container => {
   </a>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
   data-xt-tooltip-target>
-    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+    <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Open Iframe
     </div>
   </div>
@@ -302,7 +302,7 @@ export const populateDemo = container => {
     container.querySelector('.gatsby_demo_tabs_left').append(
       Xt.node({
         str: DOMPurify.sanitize(
-          `<button type="button" class="xt-button ${classes.textBlack()} ${classes.buttonCode()}">${name}</button>`
+          `<button type="button" class="xt-button ${classes.textDefault()} ${classes.buttonCode()}">${name}</button>`
         ),
       })
     )
@@ -398,16 +398,16 @@ export const populateItem = item => {
     <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
     <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
       <div>
-        <button type="button" class="xt-button button--clipboard ${classes.textWhite()} ${classes.buttonCodeWhite()}" aria-label="Copy to Clipboard">
+        <button type="button" class="xt-button button--clipboard ${classes.textInverse()} ${classes.buttonCodeWhite()}" aria-label="Copy to Clipboard">
           ${classes.iconCopy()}
         </button>
         <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
-          <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+          <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
             Copy to Clipboard
           </div>
         </div>
         <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
-          <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+          <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
             Copied!
           </div>
         </div>
@@ -865,7 +865,7 @@ const populateSources = (item, element, isReact = false) => {
   item.querySelector('.gatsby_demo_code_tabs_left').append(
     Xt.node({
       str: DOMPurify.sanitize(
-        `<button type="button" class="xt-button ${classes.textWhite()} ${classes.buttonCodeWhite()}">${lang}</button>`
+        `<button type="button" class="xt-button ${classes.textInverse()} ${classes.buttonCodeWhite()}">${lang}</button>`
       ),
     })
   )

@@ -41,7 +41,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-0"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#0</div>
               <p>
@@ -69,7 +69,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-1"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#1</div>
               <p>
@@ -91,7 +91,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-2"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#2</div>
               <p>
@@ -158,7 +158,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-0a"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#0a</div>
               <p>
@@ -186,7 +186,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-1a"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#1a</div>
               <p>
@@ -208,7 +208,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-2a"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#2a</div>
               <p>
@@ -256,7 +256,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-0b"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#0b</div>
               <p>
@@ -292,7 +292,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-1b"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#1b</div>
               <p>
@@ -322,7 +322,7 @@ const html = /* HTML */ `
             data-xt-hash="anchor-2b"
           >
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <div class="xt-h5">#2b</div>
               <p>

@@ -28,7 +28,7 @@ export default function LayoutDemo({ children }) {
     <>
       <Helmet>
         <body
-          className={`xt-body ${classes.textBlack()} xl:text-lg`}
+          className={`xt-body ${classes.textDefault()} xl:text-lg`}
           data-version={encodeURIComponent(site.siteMetadata.uuid)}
         />
       </Helmet>

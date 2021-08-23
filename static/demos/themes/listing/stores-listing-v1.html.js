@@ -9,7 +9,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <div class="xt-media-container bg-gray-300 w-full rounded-t${classes.cardRadius()} h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -30,7 +30,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <button
                     type="button"
@@ -65,7 +65,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <div class="xt-media-container bg-gray-300 w-full rounded-t${classes.cardRadius()} h-40">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -86,7 +86,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <button
                     type="button"
@@ -111,7 +111,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <div class="xt-media-container bg-gray-300 w-full rounded-t${classes.cardRadius()} h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -132,7 +132,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <button
                     type="button"
@@ -167,7 +167,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <div class="xt-media-container bg-gray-300 w-full rounded-t${classes.cardRadius()} h-40">
                     <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
@@ -188,7 +188,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <button
                     type="button"
@@ -213,7 +213,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <div class="xt-media-container bg-gray-300 w-full rounded-t${classes.cardRadius()} h-40">
                     <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -234,7 +234,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}"
+                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}"
                 >
                   <button
                     type="button"

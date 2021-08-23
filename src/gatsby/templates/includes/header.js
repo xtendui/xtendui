@@ -15,7 +15,7 @@ export default function Header({ page }) {
   const { site } = useSiteMetadata()
   return (
     <div
-      className={`gatsby_site-article_sidebar xt-overflow-sub lg:bg-primary-500 ${classes.textWhite()} leading-none`}>
+      className={`gatsby_site-article_sidebar xt-overflow-sub lg:bg-primary-500 ${classes.textInverse()} leading-none`}>
       <div className="gatsby_site-article_sidebar_inner">
         <header className="gatsby_site-header xt-sticky relative">
           <div className="xt-backdrop absolute pointer-events-none bg-black transition opacity-25 !right-auto"></div>
@@ -41,7 +41,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textWhite()} transition`}
+                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textInverse()} transition`}
                         title="Twitter"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
@@ -49,7 +49,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
@@ -59,7 +59,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.npm}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textWhite()} transition`}
+                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textInverse()} transition`}
                         title="Npm"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
@@ -67,7 +67,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
@@ -77,7 +77,7 @@ export default function Header({ page }) {
                         href={site.siteMetadata.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textWhite()} transition`}
+                        className={`xt-button gatsby_site-header_top_social_btn ${classes.textInverse()} transition`}
                         title="Github"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
@@ -85,7 +85,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github
                         </div>
                       </div>
@@ -126,7 +126,7 @@ export default function Header({ page }) {
                 <div
                   className={`*** xt-design *** overflow-hidden bg-primary-500 bg-opacity-80 ${classes.bgBlur()} lg:backdrop-filter-none opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:transform-none`}></div>
                 <div
-                  className={`xt-card xt-min-h-screen ${classes.textWhite()} opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:transform-none`}>
+                  className={`xt-card xt-min-h-screen ${classes.textInverse()} opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:transform-none`}>
                   <div
                     className="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 pr-3 text-2xl"
                     aria-label="Close"
@@ -138,12 +138,12 @@ export default function Header({ page }) {
                           <div className="w-full" data-xt-tooltip-element>
                             <button
                               type="button"
-                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textWhite()} font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                               Html
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                               <div
-                                className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                                className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                                 Switch to Html
                               </div>
                             </div>
@@ -153,12 +153,12 @@ export default function Header({ page }) {
                           <div className="w-full" data-xt-tooltip-element>
                             <button
                               type="button"
-                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textWhite()} font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-transparent bg-transparent hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
                               React
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                               <div
-                                className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                                className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                                 Switch to React
                               </div>
                             </div>
@@ -226,7 +226,7 @@ export default function Header({ page }) {
                                                         return (
                                                           <div
                                                             key={z}
-                                                            className={`inline-block ${classes.textWhite()} text-4xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
+                                                            className={`inline-block ${classes.textInverse()} text-4xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
                                                             {tag}
                                                           </div>
                                                         )

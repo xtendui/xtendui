@@ -24,7 +24,7 @@ const html = /* HTML */ `
                 ${classes.iconX()}
               </button>
               <div
-                class="xt-card items-center justify-center rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card items-center justify-center rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <div class="${classes.cardMd()}">
                   <div class="xt-h4">Lorem ipsum</div>
@@ -124,7 +124,7 @@ const html = /* HTML */ `
                 ${classes.iconX()}
               </button>
               <div
-                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <div class="max-w-3xl">
                   <div class="${classes.cardMd()}">

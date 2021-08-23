@@ -20,7 +20,7 @@ export default function Page() {
             <header className="gatsby_home-header xt-sticky">
               <div className="gatsby_home-header_inner relative">
                 <div
-                  className={`gatsby_home-header_content relative z-20 pt-8 pb-10 ${classes.textWhite()} text-center transition-all duration-300 ease-out-quart`}>
+                  className={`gatsby_home-header_content relative z-20 pt-8 pb-10 ${classes.textInverse()} text-center transition-all duration-300 ease-out-quart`}>
                   <div className="container">
                     <div className="gatsby_logo-icon mb-4 transition-all duration-300 ease-out-quart">
                       <img
@@ -79,7 +79,7 @@ export default function Page() {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
@@ -97,7 +97,7 @@ export default function Page() {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
@@ -115,7 +115,7 @@ export default function Page() {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github
                         </div>
                       </div>
@@ -307,7 +307,7 @@ export default function Page() {
                         <div className="w-6/12">
                           <button
                             type="button"
-                            className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textBlack()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
                             <span className="font-bold text-lg md:text-xl">Html</span>
                             <span className="text-2xs md:text-xs opacity-50">Switch to Html</span>
                           </button>
@@ -315,7 +315,7 @@ export default function Page() {
                         <div className="w-6/12">
                           <button
                             type="button"
-                            className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textBlack()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
                             <span className="font-bold text-lg md:text-xl">React</span>
                             <span className="text-2xs md:text-xs opacity-50">Switch to React</span>
                           </button>

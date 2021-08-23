@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--tooltip-prevent-overflow">
     <div
-      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}"
+      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}"
       data-node-boundary
     >
       <div class="xt-list xt-list-3 items-center">
@@ -17,7 +17,7 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
             >
               Consectetur adipiscing elit
             </div>
@@ -35,7 +35,7 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
             >
               Consectetur adipiscing elit
             </div>

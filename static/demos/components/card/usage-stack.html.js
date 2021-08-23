@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="*** xt-card ***">
       <div
-        class="*** ${classes.cardMd()} rounded-t${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()} ***"
+        class="*** ${classes.cardMd()} rounded-t${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ***"
       >
         <div class="xt-h4">Lorem ipsum</div>
         <p>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
         </p>
       </div>
       <div
-        class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()} ***"
+        class="*** ${classes.cardSm()} rounded-b${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()} ***"
       >
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,

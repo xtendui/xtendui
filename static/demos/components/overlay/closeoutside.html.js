@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -66,7 +66,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -115,7 +115,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-auto mr-0">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"

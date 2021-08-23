@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="max-w-4xl mx-auto">
       <div
-        class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
+        class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}"
       >
         <div data-xt-tooltip="{ duration: 500 }">
           Example tooltips
@@ -16,7 +16,7 @@ const html = /* HTML */ `
               data-xt-tooltip-target
             >
               <div
-                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} ***"
+                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} ***"
               >
                 <div class="xt-list xt-list-1 flex-col py-2">
                   <div>
@@ -24,7 +24,7 @@ const html = /* HTML */ `
                       class="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} ***"
                     >
                       <div
-                        class="*** p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()} ***"
+                        class="*** p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textInverse()} ***"
                       >
                         ${classes.iconInfo({ classes: 'xt-icon text-2xl text-primary-500' })}
                       </div>
@@ -39,7 +39,7 @@ const html = /* HTML */ `
                       class="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} ***"
                     >
                       <div
-                        class="*** p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textWhite()} ***"
+                        class="*** p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textInverse()} ***"
                       >
                         ${classes.iconAlerttriangle({ classes: 'xt-icon text-2xl text-primary-500' })}
                       </div>
@@ -63,7 +63,7 @@ const html = /* HTML */ `
               data-xt-tooltip-target
             >
               <div
-                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textBlack()} ${classes.cardWhite()} ***"
+                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()} ***"
               >
                 <div class="*** xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-32 ***">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
@@ -73,7 +73,7 @@ const html = /* HTML */ `
                     class="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} ***"
                   >
                     <div
-                      class="*** p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textWhite()} ***"
+                      class="*** p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()} ***"
                     >
                       ${classes.iconCreditcard({ classes: 'xt-icon text-2xl text-primary-500' })}
                     </div>

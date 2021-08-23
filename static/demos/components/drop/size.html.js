@@ -13,7 +13,7 @@ const html = /* HTML */ `
         </button>
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card *** w-64 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
+            class="xt-card *** w-64 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
           >
             <nav class="xt-list flex-col *** ${classes.groupMd()} ***">
               <a
@@ -49,7 +49,7 @@ const html = /* HTML */ `
         </button>
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card *** w-80 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
+            class="xt-card *** w-80 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
           >
             <nav class="xt-list flex-col *** ${classes.groupMd()} ***">
               <a
@@ -85,7 +85,7 @@ const html = /* HTML */ `
         </button>
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
-            class="xt-card *** w-96 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
+            class="xt-card *** w-96 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
           >
             <nav class="xt-list flex-col *** ${classes.groupMd()} ***">
               <a

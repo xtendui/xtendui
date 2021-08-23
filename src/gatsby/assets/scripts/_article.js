@@ -27,7 +27,7 @@ Xt.mount({
       Xt.node({
         str: `
 <div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
-  <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+  <div class="relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
     Close Fullscreen
   </div>
 </div>`,

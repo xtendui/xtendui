@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>
@@ -33,7 +33,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>
@@ -52,7 +52,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
             Lorem ipsum dolor sit amet
           </div>

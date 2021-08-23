@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--drop-prevent-overflow">
     <div
-      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}"
+      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}"
       data-node-boundary
     >
       <div class="xt-list xt-list-3 items-center" data-node-drop>
@@ -17,7 +17,7 @@ const html = /* HTML */ `
 
           <div class="xt-drop p-3" data-xt-drop-target>
             <div
-              class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <nav class="xt-list flex-col ${classes.groupMd()}">
                 <a
@@ -54,7 +54,7 @@ const html = /* HTML */ `
 
           <div class="xt-drop p-3" data-xt-drop-target>
             <div
-              class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}"
+              class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}"
             >
               <nav class="xt-list flex-col ${classes.groupMd()}">
                 <a

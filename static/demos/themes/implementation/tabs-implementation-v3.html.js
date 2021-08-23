@@ -10,7 +10,7 @@ const html = /* HTML */ `
     <div class="max-w-xl mx-auto">
       <div class="*** xt-sticky ***" data-node-sticky>
         <div
-          class="xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
+          class="xt-card rounded${cardRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
         >
           <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
             <a
@@ -41,7 +41,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="mt-3" data-node-sticky-endtrigger>
-        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} ***">
+        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardWhite()} ***">
           <div class="*** ${classes.cardSm()} border-t border-solid border-gray-300 ***" id="description">
             <div class="xt-h5">Description</div>
             <p>

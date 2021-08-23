@@ -71,43 +71,43 @@ const html = /* HTML */ `
           id="slider--eventmethods-targets"
         >
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">1</div>
             </div>
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">2</div>
             </div>
           </div>
 
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">3</div>
             </div>
           </div>
 
           <div class="xt-slide w-full ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">4</div>
             </div>
           </div>
 
           <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">5</div>
             </div>
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** on ***" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">6</div>
             </div>
           </div>
 
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-card ${classes.textBlack()} ${classes.cardSlide()}">
+            <div class="xt-card ${classes.textDefault()} ${classes.cardSlide()}">
               <div class="xt-h4">7</div>
             </div>
           </div>
@@ -142,7 +142,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
           <div
             class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
             id="card--slider-api-log"

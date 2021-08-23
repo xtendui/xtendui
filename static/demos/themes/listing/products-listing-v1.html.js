@@ -42,7 +42,7 @@ const html = /* HTML */ `
                 <a href="#" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textWhite()}">
+                    <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
                         <div class="font-medium text-sm">-35%</div>
                         <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">
@@ -64,7 +64,7 @@ const html = /* HTML */ `
                 <a href="#" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                    <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textWhite()}">
+                    <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
                         <div class="font-medium text-sm">-40%</div>
                         <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>
@@ -179,7 +179,7 @@ const html = /* HTML */ `
               <a href="#" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textWhite()}">
+                  <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
                       <div class="font-medium text-sm">-35%</div>
                       <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">For Exhibition Renewal</div>
@@ -197,7 +197,7 @@ const html = /* HTML */ `
               <a href="#" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
-                  <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textWhite()}">
+                  <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
                       <div class="font-medium text-sm">-40%</div>
                       <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>

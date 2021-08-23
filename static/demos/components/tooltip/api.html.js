@@ -86,7 +86,7 @@ const html = /* HTML */ `
 
       <div class="xt-tooltip p-3" title="Target 0" data-xt-tooltip-target>
         <div
-          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
         >
           Lorem ipsum dolor sit amet
         </div>
@@ -102,14 +102,14 @@ const html = /* HTML */ `
 
       <div class="xt-tooltip p-3" title="Target 1" data-xt-tooltip-target>
         <div
-          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
         >
           Lorem ipsum dolor sit amet
         </div>
       </div>
     </div>
 
-    <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()} mt-6">
+    <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
         id="card--tooltip-api-log"

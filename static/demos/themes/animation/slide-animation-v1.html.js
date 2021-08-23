@@ -67,7 +67,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${cardGray()} ${designAnim()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardGray()} ${designAnim()}"
           >
             <nav class="xt-list flex-col ${classes.groupMd()} ${itemAnim()}">
               <a
@@ -105,7 +105,7 @@ const html = /* HTML */ `
 
         <div class="xt-drop p-3 group" data-xt-drop-target>
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textBlack()} ${cardGray()} ${designAnim()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardGray()} ${designAnim()}"
           >
             <button
               type="button"
@@ -141,7 +141,7 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()} ${designAnim()}"
+              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} ${designAnim()}"
             >
               <div class="${itemAnim()}">Lorem ipsum dolor sit amet</div>
             </div>
@@ -161,7 +161,7 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
             <div
-              class="rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textBlack()} ${cardWhite()} ${designAnim()}"
+              class="rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
             >
               <form class="text-sm">
                 <div class="xt-list flex-nowrap max-w-sm ${itemAnim()}">
@@ -212,7 +212,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()} ${designAnim()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
               >
                 <button
                   type="button"
@@ -345,7 +345,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${cardWhite()} ${designAnim()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
               >
                 <button
                   type="button"
@@ -468,7 +468,7 @@ const html = /* HTML */ `
           <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen ${classes.textBlack()} ${cardWhite()} ${designAnim()}">
+              <div class="xt-card xt-min-h-screen ${classes.textDefault()} ${cardWhite()} ${designAnim()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -525,7 +525,7 @@ const html = /* HTML */ `
             </button>
             <div class="xt-overlay-inner">
               <div
-                class="xt-card xt-min-h-screen items-center justify-center ${classes.textBlack()} ${cardWhite()} ${designAnim()}"
+                class="xt-card xt-min-h-screen items-center justify-center ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
               >
                 <div class="xt-media-container bg-gray-300 ${itemAnim()} pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />

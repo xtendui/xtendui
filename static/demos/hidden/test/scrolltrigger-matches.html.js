@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--mount-unmount">
     <div class="xt-sticky">
-      <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}" data-xt-overlay>
+      <div class="xt-card ${classes.cardSm()} ${classes.textInverse()} ${classes.cardPrimary()}" data-xt-overlay>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -17,7 +17,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -53,7 +53,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
+    <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

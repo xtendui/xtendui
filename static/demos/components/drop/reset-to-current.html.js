@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--drop-reset-to-current">
     <div
-      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}"
+      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}"
     >
       <div class="xt-list items-center" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
         <div data-xt-drop-element>
@@ -15,7 +15,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-drop xt-drop-static" data-xt-drop-target>
-            <div class="xt-card w-full ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}">
+            <div class="xt-card w-full ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
               </button>
@@ -39,7 +39,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-drop xt-drop-static on current" data-xt-drop-target>
-            <div class="xt-card w-full ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}">
+            <div class="xt-card w-full ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
               </button>
@@ -63,7 +63,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-drop xt-drop-static" data-xt-drop-target>
-            <div class="xt-card w-full ${classes.dropShadow()} ${classes.textBlack()} ${classes.cardGray()}">
+            <div class="xt-card w-full ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardGray()}">
               <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
                 ${classes.iconX()}
               </button>

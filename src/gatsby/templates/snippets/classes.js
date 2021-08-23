@@ -1,6 +1,6 @@
 export const classes = {
-  textBlack: () => 'text-gray-900 xt-links-default',
-  textWhite: () => 'text-white xt-links-inverse',
+  textDefault: () => 'text-gray-900 xt-links-default',
+  textInverse: () => 'text-white xt-links-inverse',
   // special
   bgBlur: () => 'backdrop-filter backdrop-blur-sm backdrop-saturate-50',
   gatsbyFloat: () =>

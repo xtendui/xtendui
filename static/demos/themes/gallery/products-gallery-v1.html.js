@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
     <div class="site-wrapper">
       <header class="site-header">
-        <div class="xt-card ${classes.cardSm()} ${classes.textWhite()} ${classes.cardPrimary()}">
+        <div class="xt-card ${classes.cardSm()} ${classes.textInverse()} ${classes.cardPrimary()}">
           <div class="xt-h4">Header</div>
         </div>
       </header>
@@ -159,7 +159,7 @@ const html = /* HTML */ `
                       </button>
                       <div class="xt-overlay-inner">
                         <div
-                          class="xt-card items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                          class="xt-card items-center justify-center ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
                         >
                           <div class="w-full">
                             <div class="xt-media-container bg-gray-300 overflow-hidden">
@@ -282,7 +282,7 @@ const html = /* HTML */ `
       </main>
 
       <footer class="site-footer">
-        <div class="xt-card ${classes.cardSm()} ${classes.textBlack()} ${classes.cardGray()}">
+        <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h4">Footer</div>
         </div>
       </footer>

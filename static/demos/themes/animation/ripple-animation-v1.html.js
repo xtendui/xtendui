@@ -56,7 +56,7 @@ const html = /* HTML */ `
       <div class="w-full md:w-6/12">
         <button
           type="button"
-          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()} ${classes.cardGrayInteractive()}"
+          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()}"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
@@ -72,7 +72,7 @@ const html = /* HTML */ `
       <div class="w-full md:w-6/12">
         <button
           type="button"
-          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()} ${classes.cardPrimaryInteractive()}"
+          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()} ${classes.cardPrimaryInteractive()}"
         >
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
@@ -86,7 +86,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.textBlack()} ${classes.cardGray()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -105,7 +105,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="w-full md:w-6/12">
-        <div class="xt-card rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>

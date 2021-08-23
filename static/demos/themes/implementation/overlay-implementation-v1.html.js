@@ -19,7 +19,7 @@ const html = /* HTML */ `
               class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
-                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -156,7 +156,7 @@ const html = /* HTML */ `
               class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
-                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -282,7 +282,7 @@ const html = /* HTML */ `
               class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
-                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <button
                   type="button"
@@ -357,7 +357,7 @@ const html = /* HTML */ `
               class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***"
             >
               <div
-                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <div class="xt-media-container bg-gray-300 pb-[100%]">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />

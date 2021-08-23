@@ -12,7 +12,7 @@ const html = /* HTML */ `
         <div class="xt-row xt-row-4 md:xt-row-8">
           <div class="w-full md:w-4/12">
             <div
-              class="*** xt-card rounded${cardRadius()} ${classes.textBlack()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
+              class="*** xt-card rounded${cardRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
             >
               <nav class="*** xt-list xt-list-1 flex-col p-3 ***">
                 <a
@@ -59,7 +59,7 @@ const html = /* HTML */ `
               data-xt-toggle-target
             >
               <div
-                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***"
+                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***"
               >
                 <div class="xt-h5">Description</div>
                 <p>
@@ -85,7 +85,7 @@ const html = /* HTML */ `
               data-xt-toggle-target
             >
               <div
-                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***"
+                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***"
               >
                 <div class="xt-h5">Features</div>
                 <p>
@@ -101,7 +101,7 @@ const html = /* HTML */ `
               data-xt-toggle-target
             >
               <div
-                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()} ***"
+                class="*** xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***"
               >
                 <div class="xt-h5">Accessories</div>
                 <p>
@@ -137,7 +137,7 @@ const html = /* HTML */ `
               data-xt-toggle-target
             >
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textBlack()} ${classes.cardWhite()}"
+                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <div class="xt-h5">Manuals</div>
                 <p>

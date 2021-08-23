@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center justify-center">
-      <div class="xt-card rounded${classes.cardRadius()} ${classes.textWhite()} ${classes.cardPrimary()}">
+      <div class="xt-card rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}">
         <div class="${classes.cardSm()}">
           <div class="xt-h5">Small</div>
           <p>

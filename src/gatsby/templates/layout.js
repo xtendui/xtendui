@@ -26,7 +26,7 @@ export default function Layout({ children, page, seo }) {
     <>
       <Helmet>
         <body
-          className={`xt-body ${classes.textBlack()} xl:text-lg xt-overflow-main`}
+          className={`xt-body ${classes.textDefault()} xl:text-lg xt-overflow-main`}
           data-version={encodeURIComponent(site.siteMetadata.uuid)}
         />
       </Helmet>

@@ -7,7 +7,7 @@ const html = /* HTML */ `
 
     <div class="*** xt-tooltip p-3 ***" id="tooltip--unique">
       <div
-        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textWhite()} ${classes.cardBlack()}"
+        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
       >
         Lorem ipsum dolor sit amet
       </div>
