@@ -5,7 +5,7 @@ const designAnim = () =>
 const itemAnim = () =>
   '*** opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4 ***'
 const itemAnimOpacity = () =>
-  '*** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:ease-out-quint group-in:delay-100 group-in:opacity-100 ***'
+  '*** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***'
 
 const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
 const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
@@ -51,6 +51,48 @@ const html = /* HTML */ `
       </button>
     </div>
 
+    <div class="${classes.hBlock()}">Toggle</div>
+
+    <form class="text-sm">
+      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+          data-xt-toggle-element
+        >
+          Group
+        </button>
+
+        <div class="*** off:hidden out:pointer-events-none ** max-w-sm *** group ***" data-xt-toggle-target>
+          <div class="${designAnim()}">
+            <div class="xt-list flex-nowrap ${itemAnim()}">
+              <div class="inline-flex flex-auto">
+                <button
+                  type="button"
+                  class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonGray()}"
+                >
+                  ${classes.iconSearch({ classes: 'text-xl -my-1' })}
+                </button>
+                <input
+                  type="text"
+                  class="${classes.input()} ${classes.inputGray()}"
+                  aria-label="Search"
+                  placeholder="Seach Catalog"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="xt-button ${classes.buttonMd()} rounded-r${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
     <div class="${classes.hBlock()}">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
@@ -63,7 +105,7 @@ const html = /* HTML */ `
           Drop
         </button>
 
-        <div class="xt-drop p-3 group" data-xt-drop-target>
+        <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
           >
@@ -101,7 +143,7 @@ const html = /* HTML */ `
           Card
         </button>
 
-        <div class="xt-drop p-3 group" data-xt-drop-target>
+        <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
           >
@@ -137,7 +179,7 @@ const html = /* HTML */ `
             Tooltip
           </button>
 
-          <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
             <div
               class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} ${designAnim()}"
             >
@@ -157,7 +199,7 @@ const html = /* HTML */ `
             Group
           </button>
 
-          <div class="xt-tooltip p-3 group" data-xt-tooltip-target>
+          <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
             <div
               class="rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${cardWhite()} ${designAnim()}"
             >
@@ -205,8 +247,8 @@ const html = /* HTML */ `
           Contact
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
@@ -338,8 +380,8 @@ const html = /* HTML */ `
           Newsletter
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
@@ -462,8 +504,8 @@ const html = /* HTML */ `
           Menu
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div class="xt-card xt-min-h-screen ${classes.textDefault()} ${cardWhite()} ${designAnim()}">
@@ -526,8 +568,8 @@ const html = /* HTML */ `
           Gallery
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container p-0">
             <button
               type="button"
