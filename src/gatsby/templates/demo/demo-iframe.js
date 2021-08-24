@@ -12,17 +12,18 @@ export default class DemoIframe extends React.Component {
   }
 
   componentDidMount() {
-    // currentDemos
-    window.parent.currentDemos.push(this)
-    // raf because initial render not switched already because of localStorage
-    requestAnimationFrame(() => {
-      this.refresh()
-    })
+    this.refresh()
+    if (window !== window.parent) {
+      // currentDemos
+      window.parent.currentDemos.push(this)
+    }
   }
 
   switchClean() {
-    // clean react conditional rendering and generated nodes
-    window.parent.switchClean(null, this.src)
+    if (window !== window.parent) {
+      // clean react conditional rendering and generated nodes
+      window.parent.switchClean(null, this.src)
+    }
   }
 
   refresh() {
@@ -62,14 +63,16 @@ export default class DemoIframe extends React.Component {
         document.documentElement.classList.add('gatsby_iframe-gradient')
       }
     }
-    if (this.state.mode === 'html') {
+    let Demo = null
+    if (this.state.mode === 'react') {
+      // react
+      Demo = require(`static/${this.src}.jsx`).default
+    } else {
       try {
         require(`static/${this.src}.js`).default
         // eslint-disable-next-line no-empty
       } catch (ex) {}
     }
-    // react
-    const Demo = require(`static/${this.src}.jsx`).default
     // render all
     return (
       <LayoutDemo>
