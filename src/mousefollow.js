@@ -155,7 +155,9 @@ class Mousefollow {
         self.width = rect.width
         self.height = rect.height
         // class
-        Xt.on({ el: tr })
+        if (!options.classSkip) {
+          Xt.on({ el: tr })
+        }
         // set
         const x = e.clientX - self.width / 2
         const y = e.clientY - self.height / 2
@@ -190,7 +192,9 @@ class Mousefollow {
     if (!options.mouseCheck || options.mouseCheck.call(self)) {
       for (const tr of self.targets) {
         // class
-        Xt.off({ el: tr })
+        if (!options.classSkip) {
+          Xt.off({ el: tr })
+        }
       }
       // dispatch event
       self.container.dispatchEvent(
@@ -296,6 +300,8 @@ Mousefollow.optionsDefault = {
   debug: false,
   // elements
   targets: '[data-xt-mousefollow-target]',
+  // class
+  classSkip: false,
   // mousefollow
   transform: true,
   friction: ({ delta }) => {
