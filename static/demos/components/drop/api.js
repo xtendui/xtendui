@@ -103,7 +103,7 @@ const mountEventmethods = ({ ref }) => {
       const els = self.elements
       const indexEl = els.length + 1
       const strEl = `
-        <button type="button" class="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+        <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           data-xt-drop-element>
           Drop ${indexEl}
         </button>
@@ -114,15 +114,15 @@ const mountEventmethods = ({ ref }) => {
       const strTr = `
         <div class="xt-drop p-3" title="Target ${indexTr}"
           data-xt-drop-target>
-          <div class="xt-card w-64 rounded-md shadow-xl bg-gray-100">
-            <nav class="list flex-col p-3">
-              <a href="#" class="xt-button py-2 px-3 text-xs rounded-md  w-full justify-start text-left text-black font-medium transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500">
+          <div class="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+            <nav class="xt-list flex-col p-3">
+              <a href="#" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button py-2 px-3 text-xs rounded-md  w-full justify-start text-left text-black font-medium transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500">
+              <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button py-2 px-3 text-xs rounded-md  w-full justify-start text-left text-black font-medium transition hover:text-white hover:bg-primary-500 active:text-white active:bg-primary-600 on:text-white on:bg-primary-500">
+              <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 Amet
               </button>
             </nav>

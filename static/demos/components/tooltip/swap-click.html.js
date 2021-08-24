@@ -15,9 +15,9 @@ const html = /* HTML */ `
       id="tooltip--swap-click"
     >
       <div
-        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+        class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
       >
-        Lorem ipsum dolor sit amet
+        <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
       </div>
     </div>
 
@@ -26,9 +26,9 @@ const html = /* HTML */ `
       id="tooltip--swap-click-swap"
     >
       <div
-        class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+        class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
       >
-        Clicked!
+        <div class="${classes.tooltipMd()}">Clicked!</div>
       </div>
     </div>
   </div>

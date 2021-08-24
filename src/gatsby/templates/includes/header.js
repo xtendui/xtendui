@@ -49,7 +49,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Twitter
                         </div>
                       </div>
@@ -67,7 +67,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Npm
                         </div>
                       </div>
@@ -85,7 +85,7 @@ export default function Header({ page }) {
                         }}></a>
                       <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                         <div
-                          className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                          className={`xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                           Visit on Github
                         </div>
                       </div>
@@ -143,7 +143,7 @@ export default function Header({ page }) {
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                               <div
-                                className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                                className={`xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                                 Switch to Html
                               </div>
                             </div>
@@ -158,7 +158,7 @@ export default function Header({ page }) {
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
                               <div
-                                className={`relative ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
+                                className={`xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
                                 Switch to React
                               </div>
                             </div>

@@ -14,10 +14,12 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} ***"
+            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} ***"
           >
-            <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
-            molestie ${classes.iconLink()} diam nec euismod commodo.
+            <div class="${classes.tooltipMd()}">
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
+              molestie ${classes.iconLink()} diam nec euismod commodo.
+            </div>
           </div>
         </div>
       </div>
@@ -33,10 +35,12 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardPrimary()} ***"
+            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardPrimary()} ***"
           >
-            <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
-            molestie ${classes.iconLink()} diam nec euismod commodo.
+            <div class="${classes.tooltipMd()}">
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
+              molestie ${classes.iconLink()} diam nec euismod commodo.
+            </div>
           </div>
         </div>
       </div>

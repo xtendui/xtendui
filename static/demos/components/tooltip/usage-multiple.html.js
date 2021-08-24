@@ -9,9 +9,9 @@ const html = /* HTML */ `
 
         <div class="*** xt-tooltip p-3 ***" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet
+            <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </span>
@@ -21,9 +21,9 @@ const html = /* HTML */ `
 
         <div class="*** xt-tooltip p-3 ***" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Consectetur adipiscing elit
+            <div class="${classes.tooltipMd()}">Consectetur adipiscing elit</div>
           </div>
         </div>
       </span>

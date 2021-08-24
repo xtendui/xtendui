@@ -103,7 +103,7 @@ const mountEventmethods = ({ ref }) => {
       const els = self.elements
       const indexEl = els.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
+        <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
           data-xt-tooltip-element>
           Tooltip ${indexEl}
         </button>

@@ -80,7 +80,7 @@ const mountEventmethods = ({ ref }) => {
       const indexTr = trs.length + 1
       const strTr = `
       <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-        <div class="xt-card rounded-md text-base p-8 text-center bg-gray-100 border-2 border-transparent transition group-in:border-gray-300">
+        <div class="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
           <div class="xt-h4">${indexTr}</div>
         </div>
       </div>

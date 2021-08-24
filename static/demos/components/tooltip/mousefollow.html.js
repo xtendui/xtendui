@@ -13,9 +13,9 @@ const html = /* HTML */ `
 
       <div class="*** xt-mousefollow fixed *** xt-tooltip p-3 group" data-xt-tooltip-target data-xt-mousefollow-target>
         <div
-          class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} -mt-1 ml-4 pointer-events-none transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0"
+          class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} -mt-1 ml-4 pointer-events-none transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0"
         >
-          Lorem ipsum dolor sit amet
+          <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
         </div>
       </div>
     </div>

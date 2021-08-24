@@ -17,9 +17,9 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+              class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
             >
-              Consectetur adipiscing elit
+              <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
             <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
@@ -35,9 +35,9 @@ const html = /* HTML */ `
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
-              class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+              class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
             >
-              Consectetur adipiscing elit
+              <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
             <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>

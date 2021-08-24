@@ -10,28 +10,30 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum
+            <div class="${classes.tooltipMd()}">
+              Lorem ipsum dolor sit amet
 
-            <div
-              class="inline-block"
-              data-xt-tooltip="{ elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }"
-            >
-              <span data-xt-tooltip-element-nested>
-                <a href="#">dolor</a>
+              <div
+                class="inline-block"
+                data-xt-tooltip="{ elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }"
+              >
+                <span data-xt-tooltip-element-nested>
+                  <a href="#">dolor</a>
 
-                <div class="xt-tooltip p-3" data-xt-tooltip-target-nested>
-                  <div
-                    class="relative ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
-                  >
-                    Consectetur adipiscing elit
+                  <div class="xt-tooltip p-3" data-xt-tooltip-target-nested>
+                    <div
+                      class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+                    >
+                      <div class="${classes.tooltipMd()}">Consectetur adipiscing elit</div>
+                    </div>
                   </div>
-                </div>
-              </span>
-            </div>
+                </span>
+              </div>
 
-            sit amet
+              sit amet
+            </div>
           </div>
         </div>
       </span>

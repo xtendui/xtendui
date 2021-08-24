@@ -14,9 +14,9 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipSm()} rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet
+            <div class="${classes.tooltipSm()}">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </div>
@@ -32,9 +32,9 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipMd()} rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet
+            <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </div>
@@ -50,9 +50,9 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipLg()} rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet
+            <div class="${classes.tooltipLg()}">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </div>
@@ -68,11 +68,13 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipMd()} max-w-lg rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** max-w-lg rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
-            fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
-            egestas congue.
+            <div class="${classes.tooltipMd()}">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
+              fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
+              egestas congue.
+            </div>
           </div>
         </div>
       </div>
