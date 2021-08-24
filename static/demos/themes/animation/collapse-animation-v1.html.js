@@ -131,7 +131,7 @@ const html = /* HTML */ `
                   </div>
                   <div>
                     <div class="font-medium">Email Us</div>
-                    <div class="text-xs opacity-50">We'll respond within 24 hours.</div>
+                    <div class="text-xs opacity-50">We&apos;ll respond within 24 hours.</div>
                   </div>
                 </div>
               </a>
