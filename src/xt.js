@@ -534,66 +534,69 @@ if (typeof window !== 'undefined') {
       el,
       ns: `xtFrictionInitFrame`,
       func: () => {
-        let xCurrent
-        let yCurrent
-        if (transform) {
-          const translate = Xt.getTranslate({ el })
-          xCurrent = translate[0]
-          yCurrent = translate[1]
-        } else {
-          const rect = el.getBoundingClientRect()
-          xCurrent = rect.left
-          yCurrent = rect.top
-        }
-        let xDist = obj.x - xCurrent
-        let yDist = obj.y - yCurrent
-        // momentum
-        const fncFriction = obj.friction
-        // set
-        if (fncFriction && Xt.dataStorage.get(el, 'xtFrictionX') && Xt.durationTimescale !== 1000) {
-          // friction
-          xCurrent += fncFriction({ delta: Math.abs(xDist) }) * Math.sign(xDist)
-          yCurrent += fncFriction({ delta: Math.abs(yDist) }) * Math.sign(yDist)
+        // fix loop when not visible
+        if (Xt.visible({ el })) {
+          let xCurrent
+          let yCurrent
           if (transform) {
-            el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
+            const translate = Xt.getTranslate({ el })
+            xCurrent = translate[0]
+            yCurrent = translate[1]
           } else {
-            el.style.left = `${xCurrent}px`
-            el.style.top = `${yCurrent}px`
+            const rect = el.getBoundingClientRect()
+            xCurrent = rect.left
+            yCurrent = rect.top
           }
-        } else {
-          // instant
-          xCurrent = obj.x
-          yCurrent = obj.y
+          let xDist = obj.x - xCurrent
+          let yDist = obj.y - yCurrent
+          // momentum
+          const fncFriction = obj.friction
           // set
-          if (transform) {
-            el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
+          if (fncFriction && Xt.dataStorage.get(el, 'xtFrictionX') && Xt.durationTimescale !== 1000) {
+            // friction
+            xCurrent += fncFriction({ delta: Math.abs(xDist) }) * Math.sign(xDist)
+            yCurrent += fncFriction({ delta: Math.abs(yDist) }) * Math.sign(yDist)
+            if (transform) {
+              el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
+            } else {
+              el.style.left = `${xCurrent}px`
+              el.style.top = `${yCurrent}px`
+            }
           } else {
-            el.style.top = `${yCurrent}px`
-            el.style.left = `${xCurrent}px`
+            // instant
+            xCurrent = obj.x
+            yCurrent = obj.y
+            // set
+            if (transform) {
+              el.style.transform = `translateX(${xCurrent}px) translateY(${yCurrent}px)`
+            } else {
+              el.style.top = `${yCurrent}px`
+              el.style.left = `${xCurrent}px`
+            }
           }
-        }
-        // next interaction friction
-        Xt.dataStorage.set(el, 'xtFrictionX', xCurrent)
-        Xt.dataStorage.set(el, 'xtFrictionY', yCurrent)
-        // loop
-        if (fncFriction && Xt.durationTimescale !== 1000) {
-          const frictionLimit = obj.frictionLimit ? obj.frictionLimit : 1.5
-          xDist = obj.x - xCurrent
-          yDist = obj.y - yCurrent
-          Xt.frame({
-            el,
-            ns: `xtFrictionFrame`,
-            func: () => {
-              if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
-                // continue friction
-                Xt.friction({ el, obj, transform })
-              } else {
-                // next interaction instant
-                Xt.dataStorage.remove(el, 'xtFrictionX')
-                Xt.dataStorage.remove(el, 'xtFrictionY')
-              }
-            },
-          })
+          // next interaction friction
+          Xt.dataStorage.set(el, 'xtFrictionX', xCurrent)
+          Xt.dataStorage.set(el, 'xtFrictionY', yCurrent)
+          // loop
+          if (fncFriction && Xt.durationTimescale !== 1000) {
+            const frictionLimit = obj.frictionLimit ? obj.frictionLimit : 1.5
+            xDist = obj.x - xCurrent
+            yDist = obj.y - yCurrent
+            Xt.frame({
+              el,
+              ns: `xtFrictionFrame`,
+              func: () => {
+                if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
+                  // continue friction
+                  Xt.friction({ el, obj, transform })
+                } else {
+                  // next interaction instant
+                  Xt.dataStorage.remove(el, 'xtFrictionX')
+                  Xt.dataStorage.remove(el, 'xtFrictionY')
+                }
+              },
+            })
+          }
         }
       },
     })
