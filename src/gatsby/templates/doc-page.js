@@ -52,6 +52,7 @@ class Template extends React.Component {
                     <div className="xt-row xt-row-stretch">
                       {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                         adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
+                          typeof window !== 'undefined' &&
                           window.access !== 'admin' &&
                           adiacent.frontmatter.tags &&
                           adiacent.frontmatter.tags.includes('hidden') ? (

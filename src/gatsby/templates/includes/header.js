@@ -171,6 +171,7 @@ export default function Header({ page }) {
                     <div className="gatsby_site-header_links_container">
                       <div className="gatsby_site-header_links">
                         {page.menus.posts.map(({ post }, i) =>
+                          typeof window !== 'undefined' &&
                           window.access !== 'admin' &&
                           post.frontmatter.tags &&
                           post.frontmatter.tags.includes('hidden') ? (
