@@ -40,7 +40,7 @@ const mountInteraction = ({ ref }) => {
       item.classList.add('overflow-hidden')
       const text = item.innerHTML
       item.innerHTML = ''
-      item.append(Xt.node({ str: `<span class="content"></span>` }))
+      item.append(Xt.node({ str: `<span class="content flex-auto"></span>` }))
       item.append(Xt.node({ str: `<span class="clone absolute"></span>` }))
       content = item.querySelector('.content')
       clone = item.querySelector('.clone')

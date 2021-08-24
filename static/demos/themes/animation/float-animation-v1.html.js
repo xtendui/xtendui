@@ -1,28 +1,24 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const transparentAnim = () =>
-  '*** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
+  'transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md'
 const grayDesign = () => `${classes.textDefault()} bg-gray-100 border-transparent border`
 const grayAnim = () =>
-  '*** transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md ***'
+  'transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md'
 const primaryDesign = () => `${classes.textInverse()} bg-primary-500 border-transparent border`
 const primaryAnim = () =>
-  '*** transition hover:text-white hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:text-white active:bg-primary-700 active:translate-y-0 active:shadow-md on:text-white on:bg-primary-700 on:translate-y-0 on:shadow-md ***'
+  'transition hover:text-white hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:text-white active:bg-primary-700 active:translate-y-0 active:shadow-md on:text-white on:bg-primary-700 on:translate-y-0 on:shadow-md'
 const designAnim = () =>
-  '*** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***'
+  'opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint'
 const itemAnim = () =>
-  '*** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***'
+  'opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2'
 const itemAnimOpacity = () =>
-  '*** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***'
+  'opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
 
-const buttonGray = () => `${grayDesign()} ${grayAnim()}`
-const buttonPrimary = () => `${primaryDesign()} ${primaryAnim()}`
-const buttonText = () => `${classes.buttonTextAnim()} ${transparentAnim()}`
+const buttonGray = () => `${grayDesign()} *** ${grayAnim()} ***`
+const buttonPrimary = () => `${primaryDesign()} *** ${primaryAnim()} ***`
+const buttonText = () => `${classes.buttonTextAnim()} *** ${transparentAnim()} ***`
 const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
-const cardGray = () => `${classes.cardGray()}`
-const cardPrimary = () => `${classes.cardPrimary()}`
-const cardWhite = () => `${classes.cardWhite()}`
-const cardBlack = () => `${classes.cardBlack()}`
 
 const html = /* HTML */ `
   <div>
@@ -45,21 +41,21 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()} ${transparentAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()} *** ${transparentAnim()} ***"
       >
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonRing()} ${transparentAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonRing()} *** ${transparentAnim()} ***"
       >
         Ring
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link ${transparentAnim()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link *** ${transparentAnim()} ***"
       >
         Link
       </button>
@@ -78,8 +74,8 @@ const html = /* HTML */ `
         </button>
 
         <div class="*** off:hidden out:pointer-events-none ** max-w-sm *** group ***" data-xt-toggle-target>
-          <div class="${designAnim()}">
-            <div class="xt-list flex-nowrap ${itemAnim()}">
+          <div class="*** ${designAnim()} ***">
+            <div class="xt-list flex-nowrap *** ${itemAnim()} ***">
               <div class="inline-flex flex-auto">
                 <button
                   type="button"
@@ -110,155 +106,203 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()}">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ duration: 500 }">
+      <div data-xt-drop="{ position: 'auto-end', duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-drop-element
         >
-          Drop
+          Nav
         </button>
-
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
-          <div class="relative">
+          <div class="*** relative ***">
             <div
-              class="*** xt-design *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${cardWhite()} ${designAnim()}"
+              class="*** xt-design *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.cardPrimary()} *** ${designAnim()} ***"
             ></div>
-            <div class="xt-card w-64 ${classes.textDefault()} ${itemAnim()}">
-              <nav class="xt-list flex-col ${classes.groupMd()}">
+            <div class="xt-card w-60 ${classes.textInverse()}">
+              <nav class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
                 <a
                   href="#"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                  ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                 </a>
-                <button
-                  type="button"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                <a
+                  href="#"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
-                  Dolor sit
-                </button>
-                <button
-                  type="button"
-                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                  ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
+                </a>
+                <a
+                  href="#"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
-                  Amet
-                </button>
+                  ${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories
+                </a>
+                <a
+                  href="#"
+                  class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                >
+                  ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
+                </a>
               </nav>
             </div>
           </div>
-          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 ${itemAnimOpacity()}"></div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** ${itemAnimOpacity()} group-in:opacity-100 ***"
+          ></div>
         </div>
       </div>
 
-      <div data-xt-drop="{ duration: 500 }">
+      <div data-xt-drop="{ position: 'auto-end', duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-drop-element
         >
-          Card
+          Contact
         </button>
-
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
-          <div class="relative">
+          <div class="*** relative ***">
             <div
-              class="*** xt-design *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${cardWhite()} ${designAnim()}"
+              class="*** xt-design *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
             ></div>
-            <div class="xt-card w-64 ${classes.textDefault()} ${itemAnim()}">
-              <button
-                type="button"
-                class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                aria-label="Close"
+            <div class="xt-card w-80 ${classes.textDefault()}">
+              <nav class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
+                <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+                  <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                    <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                      ${classes.iconMail({ classes: 'xt-icon text-2xl text-primary-500' })}
+                    </div>
+                    <div>
+                      <div class="font-medium">Email Us</div>
+                      <div class="text-xs opacity-50">We'll respond within 24 hours.</div>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+                  <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                    <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                      ${classes.iconPhone({ classes: 'xt-icon text-2xl text-primary-500' })}
+                    </div>
+                    <div>
+                      <div class="font-medium">Phone</div>
+                      <div class="text-xs opacity-50">Contact us on 24/7 support line.</div>
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+                  <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                    <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                      ${classes.iconUsers({ classes: 'xt-icon text-2xl text-primary-500' })}
+                    </div>
+                    <div>
+                      <div class="font-medium">Support</div>
+                      <div class="text-xs opacity-50">Open a ticket on our support site.</div>
+                    </div>
+                  </div>
+                </a>
+              </nav>
+              <div
+                class="p-5 text-xs rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto *** ${itemAnim()} ***"
               >
-                ${classes.iconX()}
-              </button>
-              <div class="${classes.cardSm()}">
-                <div class="xt-h5">Lorem ipsum</div>
+                <p class="mb-1 font-bold text-sm">Didn&apos;t find what you was looking for?</p>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                  suscipit, velit eu tristique mollis.
+                  Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
+                  <a href="mailto:info@info.com">info@info.com</a>.
                 </p>
               </div>
             </div>
           </div>
-          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 ${itemAnimOpacity()}"></div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"
+          ></div>
         </div>
       </div>
     </div>
 
     <div class="${classes.hBlock()}">Tooltip</div>
 
-    <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ duration: 500 }">
-        <div data-xt-tooltip-element>
-          <button
-            type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
-          >
-            Tooltip
-          </button>
+    <div data-xt-tooltip="{ duration: 500 }">
+      Example tooltips
+      <span data-xt-tooltip-element>
+        <a href="#">product informations</a>
 
-          <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
-            <div class="relative">
-              <div
-                class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${cardBlack()} ${designAnim()}"
-              ></div>
-              <div class="relative ${classes.tooltipMd()} font-medium ${classes.textInverse()} ${itemAnim()}">
-                Lorem ipsum dolor sit amet
-              </div>
-            </div>
-            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black ${itemAnimOpacity()}"></div>
-          </div>
-        </div>
-      </div>
-
-      <div data-xt-tooltip="{ duration: 500 }">
-        <div data-xt-tooltip-element>
-          <button
-            type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
-          >
-            Group
-          </button>
-
-          <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
-            <div class="relative">
-              <div
-                class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${cardGray()} ${designAnim()}"
-              ></div>
-              <div class="${classes.textDefault()} ${itemAnim()}">
-                <form class="text-sm">
-                  <div class="xt-list flex-nowrap max-w-sm ${itemAnim()}">
-                    <div class="inline-flex flex-auto">
-                      <button
-                        type="button"
-                        class="xt-button ${classes.buttonMd()} rounded-l${classes.tooltipRadius()} ${classes.buttonUpper()} ${buttonGray()}"
-                      >
-                        ${classes.iconSearch({ classes: 'text-xl -my-1' })}
-                      </button>
-                      <input
-                        type="text"
-                        class="${classes.input()} ${classes.inputGray()}"
-                        aria-label="Search"
-                        placeholder="Seach Catalog"
-                      />
+        <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+          <div class="*** relative ***">
+            <div
+              class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.cardBlack()} *** ${designAnim()} ***"
+            ></div>
+            <div class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.textInverse()}">
+              <div class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
+                <div>
+                  <div
+                    class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                  >
+                    <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                      ${classes.iconInfo({ classes: 'xt-icon text-2xl text-primary-500' })}
                     </div>
-
-                    <button
-                      type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
-                    >
-                      Search
-                    </button>
+                    <div>
+                      <div class="font-medium">Shipping Limits</div>
+                      <div class="text-xs opacity-50">Delivery is EU and US only.</div>
+                    </div>
                   </div>
-                </form>
+                </div>
+                <div>
+                  <div
+                    class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                  >
+                    <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                      ${classes.iconAlerttriangle({ classes: 'xt-icon text-2xl text-primary-500' })}
+                    </div>
+                    <div>
+                      <div class="font-medium">VAT Excluded</div>
+                      <div class="text-xs opacity-50">The prices is excluding VAT.</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black ${itemAnimOpacity()}"></div>
           </div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** ${itemAnimOpacity()} group-in:opacity-100 ***"
+          ></div>
         </div>
-      </div>
+      </span>
+      and
+      <span data-xt-tooltip-element>
+        <a href="#">credit card CVV</a>
+
+        <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+          <div class="*** relative ***">
+            <div
+              class="*** xt-design *** rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
+            ></div>
+            <div class="xt-card w-80 ${classes.textDefault()}">
+              <div
+                class="xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-32 *** ${itemAnim()} ***"
+              >
+                <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+              </div>
+              <div>
+                <div
+                  class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} *** ${itemAnim()} ***"
+                >
+                  <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                    ${classes.iconCreditcard({ classes: 'xt-icon text-2xl text-primary-500' })}
+                  </div>
+                  <div class="text-xs">
+                    The card security code is the three-digit number at the back of your debit card.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"
+          ></div>
+        </div>
+      </span>
     </div>
 
     <div class="${classes.hBlock()}">Overlay</div>
@@ -274,14 +318,14 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${cardWhite()} ${designAnim()}"
+                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
               ></div>
 
-              <div class="xt-card rounded${classes.overlayRadius()} ${classes.textDefault()} ${itemAnim()}">
+              <div class="xt-card ${classes.textDefault()} *** ${itemAnim()} ***">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
@@ -409,14 +453,14 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${cardWhite()} ${designAnim()}"
+                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
               ></div>
 
-              <div class="xt-card rounded${classes.overlayRadius()} ${classes.textDefault()} ${itemAnim()}">
+              <div class="xt-card ${classes.textDefault()} *** ${itemAnim()} ***">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
@@ -523,39 +567,40 @@ const html = /* HTML */ `
         </div>
       </div>
 
-    <div class="${classes.hBlock()}">Card</div>
+      <div class="${classes.hBlock()}">Card</div>
 
-    <div class="xt-row xt-row-6">
-      <div class="w-full md:w-6/12">
-        <button
-          type="button"
-          class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textDefault()} ${cardGray()} ${grayAnim()}"
-        >
-          <div class="${classes.cardMd()}">
-            <div class="xt-h4">Default</div>
-            <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-              tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae
-              magna eget, vehicula scelerisque elit.
-            </p>
-          </div>
-        </button>
-      </div>
+      <div class="xt-row xt-row-6">
+        <div class="w-full md:w-6/12">
+          <button
+            type="button"
+            class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} *** ${grayAnim()} ***"
+          >
+            <div class="${classes.cardMd()}">
+              <div class="xt-h4">Default</div>
+              <p>
+                <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
+                tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae
+                magna eget, vehicula scelerisque elit.
+              </p>
+            </div>
+          </button>
+        </div>
 
-      <div class="w-full md:w-6/12">
-        <button
-          type="button"
-          class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textInverse()} ${cardPrimary()} ${primaryAnim()}"
-        >
-          <div class="${classes.cardMd()}">
-            <div class="xt-h4">Primary</div>
-            <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-              tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae
-              magna eget, vehicula scelerisque elit.
-            </p>
-          </div>
-        </button>
+        <div class="w-full md:w-6/12">
+          <button
+            type="button"
+            class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${primaryAnim()} ***"
+          >
+            <div class="${classes.cardMd()}">
+              <div class="xt-h4">Primary</div>
+              <p>
+                <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
+                tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae
+                magna eget, vehicula scelerisque elit.
+              </p>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   </div>

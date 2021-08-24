@@ -19,7 +19,7 @@ const html = /* HTML */ `
     </button>
 
     <div class="off:hidden out:pointer-events-none w-full group" data-xt-toggle-target>
-      <div class="relative">
+      <div class="*** relative ***">
         <div
           class="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>
@@ -30,7 +30,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="off:hidden out:pointer-events-none w-full group" data-xt-toggle-target>
-      <div class="relative">
+      <div class="*** relative ***">
         <div
           class="*** xt-design *** rounded-full shadow *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"
         ></div>
