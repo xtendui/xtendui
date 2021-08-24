@@ -99,17 +99,17 @@ Layout.propTypes = {
 }
 
 /* access */
-
-const hash = decodeURI(location.hash.split('#')[1])
-
-if (localStorage.getItem('access') === 'clear' || hash === 'clear') {
-  localStorage.setItem('access', '')
-  window.access = ''
-  // eslint-disable-next-line no-console
-  console.debug('access cleared')
-} else if (localStorage.getItem('access') === 'admin' || hash === 'admin') {
-  localStorage.setItem('access', 'admin')
-  window.access = 'admin'
-  // eslint-disable-next-line no-console
-  console.debug('access admin')
+if (typeof window !== 'undefined') {
+  const hash = decodeURI(location.hash.split('#')[1])
+  if (localStorage.getItem('access') === 'clear' || hash === 'clear') {
+    localStorage.setItem('access', '')
+    window.access = ''
+    // eslint-disable-next-line no-console
+    console.debug('access cleared')
+  } else if (localStorage.getItem('access') === 'admin' || hash === 'admin') {
+    localStorage.setItem('access', 'admin')
+    window.access = 'admin'
+    // eslint-disable-next-line no-console
+    console.debug('access admin')
+  }
 }
