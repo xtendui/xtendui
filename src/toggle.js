@@ -2510,6 +2510,7 @@ class Toggle {
       // init
       Xt.frame({
         el: self.container,
+        ns: `${self.ns}Init`,
         func: () => {
           if (self.initial) {
             // remove class initial

@@ -21,6 +21,8 @@ Test one destroy and reinit and trigger 1st should execute event only one time o
 
 Test reinit multiple times, interaction should trigger events still one time per interaction (especially overlay in self mode).
 
+Test slider api initial activation dragger position instant with no transition.
+
 Test slider api initial activation wrap position.
 
 <demo>

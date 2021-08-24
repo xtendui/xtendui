@@ -591,8 +591,15 @@ class Slider extends Xt.Toggle {
    */
   eventInitHandler() {
     const self = this
-    // dragger initial
-    self.dragger.classList.remove('initial')
+    // raf because it fixes initial dragger transition not instant
+    Xt.frame({
+      el: self.container,
+      ns: `${self.ns}InitSlider`,
+      func: () => {
+        // dragger initial
+        self.dragger.classList.remove('initial')
+      },
+    })
   }
 
   /**
