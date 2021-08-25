@@ -11,10 +11,13 @@ const html = /* HTML */ `
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div
-        class="*** xt-media object-cover object-center cursor-pointer transition group-in:opacity-0 group-done:hidden ***"
-      >
-        <img src="https://img.youtube.com/vi/hNQFjqDvPhA/maxresdefault.jpg" loading="lazy" alt="" />
+      <div class="*** cursor-pointer transition group-in:opacity-0 group-done:hidden ***">
+        <img
+          class="xt-media object-cover object-center"
+          src="https://img.youtube.com/vi/hNQFjqDvPhA/hqdefault.jpg"
+          loading="lazy"
+          alt=""
+        />
         <div
           class="*** absolute inset-0 m-auto w-20 h-12 rounded-xl ${classes.overlayShadow()} bg-black bg-opacity-60 ${classes.bgBlur()} ***"
         >
