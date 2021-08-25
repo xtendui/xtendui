@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <div class="*** cursor-pointer transition group-in:opacity-0 group-done:hidden ***">
         <img
           class="xt-media object-cover object-center"
-          src="https://img.youtube.com/vi/hNQFjqDvPhA/hqdefault.jpg"
+          src="https://img.youtube.com/vi/hNQFjqDvPhA/maxresdefault.jpg"
           loading="lazy"
           alt=""
         />
