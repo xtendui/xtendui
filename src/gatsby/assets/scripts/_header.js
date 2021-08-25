@@ -13,13 +13,7 @@ Xt.mount({
     const overlay = ref
     const sidebar = document.querySelector('.gatsby_site-article_sidebar')
 
-    // overlay
-
-    if (overlay) {
-      overlay.scrollTop = window.keepSidebarScroll
-    }
-
-    // sidebar
+    // sidebarContain
 
     const sidebarContain = () => {
       const sidebar = document.querySelector('.gatsby_site-article_sidebar')
@@ -41,9 +35,17 @@ Xt.mount({
       }
     }
 
-    if (sidebar) {
-      sidebarContain()
+    // on
+
+    const on = () => {
+      overlay.scrollTop = window.keepSidebarScroll
+      if (sidebar) {
+        sidebarContain()
+      }
     }
+
+    overlay.addEventListener('on.xt.overlay', on)
+    on()
   },
 })
 

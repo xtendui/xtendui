@@ -2677,6 +2677,8 @@ class Toggle {
             if (appendOrigin) {
               appendOrigin.before(el)
               appendOrigin.remove()
+            } else {
+              el.remove()
             }
           }
         }

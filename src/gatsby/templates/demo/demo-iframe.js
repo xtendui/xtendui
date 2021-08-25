@@ -49,7 +49,6 @@ export default class DemoIframe extends React.Component {
     // iframe
     if (typeof window !== 'undefined') {
       document.documentElement.classList.add('gatsby_iframe-inside')
-      require('src/gatsby/assets/scripts/shared')
       document.documentElement.setAttribute('id', id)
     }
     // vanilla
