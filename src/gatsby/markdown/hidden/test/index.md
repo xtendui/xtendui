@@ -44,7 +44,7 @@ Test click should load iframe, it tests mount with root.
 
 ## Docs
 
-Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable.
+Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable after 3 changes (fix multiple initialization (e.g. mount inside sticky)).
 
 Test on mobile with menu mobile open resize to desktop should disable overlay and back should enable.
 

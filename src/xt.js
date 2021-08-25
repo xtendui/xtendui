@@ -38,11 +38,19 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {Function} params.func Function to execute
    * @param {String} params.state States separated by space, can be 'loading' 'interactive' 'complete'
+   * @param {Function} params.raf Use requestAnimationFrame if the state is instantly matched
    */
-  Xt.ready = ({ func, state = 'interactive complete' } = {}) => {
+  Xt.ready = ({ func, state = 'interactive complete', raf = true } = {}) => {
     const states = [...state.split(' ')]
     if (states.includes(document.readyState)) {
-      func()
+      if (raf) {
+        // raf because we need all functions defined after mount (e.g. toggle api and slider api)
+        requestAnimationFrame(() => {
+          func()
+        })
+      } else {
+        func()
+      }
     } else {
       const interactive = () => {
         if (states.includes(document.readyState)) {
@@ -68,26 +76,15 @@ if (typeof window !== 'undefined') {
         // added
         for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            // fix multiple initialization (e.g. mount inside sticky)
-            Xt.frame({
-              el: added,
-              ns: `Observer`,
-            })
-            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done
+            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done and multiple unmount with Xt.frame
             Xt.mountCheck({ added })
           }
         }
         // removed
         for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            // fix multiple initialization (e.g. mount inside sticky)
-            Xt.frame({
-              el: removed,
-              ns: `Observer`,
-              func: () => {
-                Xt.unmountCheck({ removed })
-              },
-            })
+            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done and multiple unmount with Xt.frame
+            Xt.unmountCheck({ removed })
           }
         }
       }
@@ -168,6 +165,11 @@ if (typeof window !== 'undefined') {
             continue
           }
           // fix multiple initialization (e.g. mount inside sticky)
+          Xt.frame({
+            el: ref,
+            ns: `Unmount`,
+          })
+          // fix multiple initialization (e.g. mount inside sticky)
           obj.done = obj.done ? obj.done : []
           if (obj.done.includes(ref)) {
             return
@@ -177,17 +179,24 @@ if (typeof window !== 'undefined') {
           const call = obj.mount({ ref, obj, index })
           // destroy
           if (call) {
-            Xt.unmount({
-              ref: ref,
-              matches: obj.matches,
-              ignore: obj.ignore,
-              unmount: call,
-              unmountRemove: () => {
-                // fix multiple initialization (e.g. mount inside sticky)
-                obj.done = obj.done.filter(x => x !== ref)
-                // unmount remove
-                Xt.unmountArr = Xt.unmountArr.filter(x => {
-                  return x.ref !== ref && x.matches !== obj.matches
+            // fix multiple initialization (e.g. mount inside sticky)
+            Xt.frame({
+              el: ref,
+              ns: `Unmount`,
+              func: () => {
+                Xt.unmount({
+                  ref,
+                  matches: obj.matches,
+                  ignore: obj.ignore,
+                  unmount: call,
+                  unmountRemove: () => {
+                    // fix multiple initialization (e.g. mount inside sticky)
+                    obj.done = obj.done.filter(x => x !== ref)
+                    // unmount remove
+                    Xt.unmountArr = Xt.unmountArr.filter(x => {
+                      return x.ref !== ref && x.matches !== obj.matches
+                    })
+                  },
                 })
               },
             })
