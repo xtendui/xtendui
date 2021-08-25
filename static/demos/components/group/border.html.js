@@ -20,12 +20,12 @@ const html = /* HTML */ `
           />
         </div>
 
-        <a
-          href="#"
+        <button
+          type="submit"
           class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} *** border border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
         >
           Search
-        </a>
+        </button>
       </div>
     </form>
   </div>

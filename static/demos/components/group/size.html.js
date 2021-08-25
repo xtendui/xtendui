@@ -21,12 +21,12 @@ const html = /* HTML */ `
             />
           </div>
 
-          <a
-            href="#"
+          <button
+            type="submit"
             class="xt-button *** ${classes.buttonSm()} *** rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Search
-          </a>
+          </button>
         </div>
       </form>
 
@@ -48,12 +48,12 @@ const html = /* HTML */ `
             />
           </div>
 
-          <a
-            href="#"
+          <button
+            type="submit"
             class="xt-button *** ${classes.buttonMd()} *** rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Search
-          </a>
+          </button>
         </div>
       </form>
 
@@ -75,12 +75,12 @@ const html = /* HTML */ `
             />
           </div>
 
-          <a
-            href="#"
+          <button
+            type="submit"
             class="xt-button *** ${classes.buttonLg()} *** rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           >
             Search
-          </a>
+          </button>
         </div>
       </form>
     </div>

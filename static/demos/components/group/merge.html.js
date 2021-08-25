@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <form class="text-sm">
       <div class="xt-list *** flex-nowrap ***">
-        <a href="#" type="submit" class="*** flex items-stretch group ***">
+        <button type="submit" class="*** flex items-stretch group ***">
           <div
             class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupButtonRadius()} *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} ${classes.buttonPrimaryAnimGroup()}"
           >
@@ -15,7 +15,7 @@ const html = /* HTML */ `
           >
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </div>
-        </a>
+        </button>
         <div class="inline-flex flex-auto">
           <input
             type="text"

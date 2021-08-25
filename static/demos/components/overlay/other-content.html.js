@@ -26,7 +26,7 @@ const html = /* HTML */ `
               <div class="xt-list flex-nowrap max-w-sm">
                 <div class="inline-flex flex-auto">
                   <button
-                    type="button"
+                    type="submit"
                     class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   >
                     ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -40,7 +40,7 @@ const html = /* HTML */ `
                 </div>
 
                 <button
-                  type="button"
+                  type="submit"
                   class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                 >
                   Search

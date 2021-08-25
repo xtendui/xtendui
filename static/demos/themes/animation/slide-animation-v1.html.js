@@ -11,6 +11,7 @@ const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
 const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
 const buttonText = () => `${classes.buttonTextAnim()}`
 const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
+const buttonGroupPrimary = () => `${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}`
 
 const html = /* HTML */ `
   <div class="demo--slide-animation-v1">
@@ -67,7 +68,7 @@ const html = /* HTML */ `
             <div class="xt-list flex-nowrap *** ${itemAnim()} ***">
               <div class="inline-flex flex-auto">
                 <button
-                  type="button"
+                  type="submit"
                   class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonGray()}"
                 >
                   ${classes.iconSearch({ classes: 'text-xl -my-1' })}
@@ -81,7 +82,7 @@ const html = /* HTML */ `
               </div>
 
               <button
-                type="button"
+                type="submit"
                 class="xt-button ${classes.buttonMd()} rounded-r${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
               >
                 Search
@@ -110,25 +111,25 @@ const html = /* HTML */ `
             <nav class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
               >
                 ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
               >
                 ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
               >
                 ${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
               >
                 ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
               </a>
@@ -153,7 +154,7 @@ const html = /* HTML */ `
             class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
           >
             <nav class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
                 <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconMail({ classes: 'xt-icon text-2xl text-primary-500' })}
@@ -164,7 +165,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </a>
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
                 <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconPhone({ classes: 'xt-icon text-2xl text-primary-500' })}
@@ -175,7 +176,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </a>
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
                 <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconUsers({ classes: 'xt-icon text-2xl text-primary-500' })}
