@@ -18,7 +18,7 @@ Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sen
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Variable                  | `Xt.usabilityHostnames:Boolean|String`              | `'localhost'`       | Enable usability checks **on hostnames separated by space**                  |
+| Variable                  | `Xt.usabilityHostnames:Boolean|String`              | `'127.0.0.1 localhost'`       | Enable usability checks **on hostnames separated by space**                  |
 | Variable                  | `Xt.usabilityIgnore:String`              | `'.sf-toolbar, .gm-style'`       | Disable usability checks **inside this query**                  |
 
 </div>

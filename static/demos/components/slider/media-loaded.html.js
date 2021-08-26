@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-slider" data-xt-slider="{ mediaLoaded: true, mediaLoadedReinit: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
-          class="xt-slides transition-all ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
+          class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
           data-xt-slider-dragger
         >
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>

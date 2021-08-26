@@ -7,7 +7,7 @@
 import { Xt } from './xt'
 
 Xt.usabilityIgnore = '.sf-toolbar, .gm-style'
-Xt.usabilityHostnames = 'localhost'
+Xt.usabilityHostnames = '127.0.0.1 localhost'
 
 Xt.frame({
   func: () => {
