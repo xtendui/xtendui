@@ -60,7 +60,7 @@ const mountSticky = ({ ref }) => {
   /***/
 
   /***/
-  const scrollTriggerBottom = ScrollTrigger.create({
+  ScrollTrigger.create({
     trigger: ref.querySelector('[data-node-sticky-stack-bottom]'),
     start: 'bottom bottom',
     endTrigger: 'html',
@@ -71,27 +71,13 @@ const mountSticky = ({ ref }) => {
   /***/
 
   /***/
-  // refresh ScrollTrigger
-  addEventListener('resize', () => {
-    scrollTriggerBottom.refresh()
-  })
-  /***/
-
-  /***/
-  const scrollTriggerBottomSecond = ScrollTrigger.create({
+  ScrollTrigger.create({
     trigger: ref.querySelector('[data-node-sticky-stack-bottomsecond]'),
     start: () => `bottom bottom-=${document.querySelector('[data-node-sticky-stack-bottom]').offsetHeight}px`,
     endTrigger: 'html',
     end: 'bottom top',
     pin: true,
     pinSpacing: false,
-  })
-  /***/
-
-  /***/
-  // refresh ScrollTrigger
-  addEventListener('resize', () => {
-    scrollTriggerBottomSecond.refresh()
   })
   /***/
 

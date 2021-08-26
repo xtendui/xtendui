@@ -42,7 +42,7 @@ const mountSticky = ({ ref }) => {
 
   const sticky = ref
 
-  // matchemdia
+  // matchmedia
 
   ScrollTrigger.matchMedia({
     '(max-width: 767px)': () => {

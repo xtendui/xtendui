@@ -58,6 +58,23 @@ Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2) to prev
   </div>
 </demo>
 
+## Setup
+
+- If you want **ScrollToPlugin to stop animation when user interact with the document scroll**, just use this code.
+
+Just need this code one time in the project.
+
+```js
+/* ScrollToPlugin fix stop scroll animation on user interaction */
+
+const stopScrolling = () => {
+  gsap.killTweensOf(document.scrollingElement)
+}
+
+addEventListener('touchstart', stopScrolling)
+addEventListener('wheel', stopScrolling)
+```
+
 ## Options
  
 Here are the main **javascript options**.

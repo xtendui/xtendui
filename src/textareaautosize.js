@@ -168,7 +168,10 @@ class Textareaautosize {
       self.disabled = true
       // size
       self.container.style.height = ''
-      Xt.frame({ el: self.container, ns: `${self.ns}Keychange` })
+      Xt.frame({
+        el: self.container,
+        ns: `${self.ns}Keychange`,
+      })
       // dispatch event
       if (!skipEvent) {
         self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
