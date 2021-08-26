@@ -1,3 +1,72 @@
+# [1.0.0-beta.39](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.38...v1.0.0-beta.39) (2021-08-26)
+
+
+### Bug Fixes
+
+* **css:** added touch action to xt-button and xt-slides ([f39b482](https://github.com/xtendui/xtendui/commit/f39b482ce115c74a643bb087876e27c75050e629))
+* **css:** removed touch action to xt-slides ([a310682](https://github.com/xtendui/xtendui/commit/a31068234b8a2fae2f0b1e8e99dbb9065a44711e))
+* **javascript:** fix loop mousefollow and Xt.friction ([a863dec](https://github.com/xtendui/xtendui/commit/a863decd0475961dc75d6eaa336de458d5ee99c9))
+* **javascript:** Xt.mount no raf on mountcheck for instant mount especially with automatic activations ([124a7a9](https://github.com/xtendui/xtendui/commit/124a7a98d5bc08ba13e0a99caf6ee50b246b1928))
+* **javascript:** Xt.on and Xt.off fix namespace ([020cf3b](https://github.com/xtendui/xtendui/commit/020cf3b54058ef0b4433987a2849d0bad5e3aba8))
+* **scrollto:** scrollto ignore empty hash links ([5fc4350](https://github.com/xtendui/xtendui/commit/5fc4350b9aaf8a4502f6f2b82ba5d854637e4ee8))
+* **slider:** fix initial dragger position no transition ([5dc7e42](https://github.com/xtendui/xtendui/commit/5dc7e42000c7467f8bcd49eac52660917c1efb34))
+* **slider:** fix initial wrap position when a slide is already activated + demos fix iframe js execution ([419c9f8](https://github.com/xtendui/xtendui/commit/419c9f81db12223fe9fe675933f8beda40853f18))
+* **slider:** fix wrap positions automatic scrolling ([1838058](https://github.com/xtendui/xtendui/commit/1838058fcbc9f9bd30d43c05cb14735e3dadf9b1))
+* **slider:** refactor slider wrap that fixes multiple issues and refactor slider draglock ([63a9a23](https://github.com/xtendui/xtendui/commit/63a9a232538beb9a784f570b016e6403363e3e0e))
+* **slider:** revert fix slider initial dragger transition frame ([70f1945](https://github.com/xtendui/xtendui/commit/70f19450db42cbcc978695e2e641bd3629265f4b))
+* fix autostart on initial ([2ea90cd](https://github.com/xtendui/xtendui/commit/2ea90cd58ba4bccd376cfdab95625b54e82aac97))
+* fix tooltip and drop popperjs custom modifiers ([3180e36](https://github.com/xtendui/xtendui/commit/3180e364b288e1622e119b7c6a8cf1e32f57c5d8))
+* **toggle:** fix medialoaded when using [data-xt-slider-content] ([09c8ae4](https://github.com/xtendui/xtendui/commit/09c8ae4ce4bc09821202fb41757de3e11a326cf9))
+
+
+### Code Refactoring
+
+* **css:** removed shadow-overlay shadow-drop shadow-tooltip ([aa1353f](https://github.com/xtendui/xtendui/commit/aa1353fd43ca86d09ce62439067a6127202f74c7))
+* **docs:** refactor docs structure ([bec5dc2](https://github.com/xtendui/xtendui/commit/bec5dc25a65f9ae6ceaa32419b3feeba9cb0dd43))
+* **googlelocator:** refactor locateRadius to searchRadius and used as minimum search radius ([6427db3](https://github.com/xtendui/xtendui/commit/6427db399b20c27d9e0062a19b02ade655dbd136))
+* **list:** removed xt-list-inner on another commit ([2083cb2](https://github.com/xtendui/xtendui/commit/2083cb23bc3c424061c0b17eb30026003a2a9210))
+* **scrollto:** added defaults options.space and options.duration and simplified demos ([7f933ce](https://github.com/xtendui/xtendui/commit/7f933ce78f7f0a33203efd5cbcde3c033dcf58da))
+* refactor raf code and mutation observer without Xt.ready and added Xt.ready argument frame optional and Xt.eventDelay arguments ([456b70b](https://github.com/xtendui/xtendui/commit/456b70b74fefb94a293f29c9f98ffe32c255fa6e))
+* separator is typography addon now ([c8aa175](https://github.com/xtendui/xtendui/commit/c8aa175a766d9b13496aaa9baa3cb2bdd3e997e0))
+
+
+### Documentation
+
+* refactor docs ([60b7673](https://github.com/xtendui/xtendui/commit/60b767359e6f97d3d4502d366db6390ff726a519))
+
+
+### Features
+
+* **javascript:** usability added Xt.usabilityHostnames enabled only on localhost ([1e822fc](https://github.com/xtendui/xtendui/commit/1e822fc4e2b6b8f259680eae30add75b26cc6a77))
+* **javascript:** Xt.on and Xt.off initial argument for instant animations ([425982a](https://github.com/xtendui/xtendui/commit/425982a917bbe0d04dc82db1b89add795302cb85))
+* **mousefollow:** added options.classSkip ([1424f9e](https://github.com/xtendui/xtendui/commit/1424f9e3f12cb903f1f828fcd840f14ae6e56a65))
+* **slider:** slider mode relative with css transition ([853de5f](https://github.com/xtendui/xtendui/commit/853de5fdb47f00251ec4c1f6df5affb62db6f68c))
+* **toggle:** toggle added scrolltoInit: false ([06794ec](https://github.com/xtendui/xtendui/commit/06794ec9832220f821f56c25a1de56547fe03603))
+* drop and tooltip inset positions ([fa9b2a3](https://github.com/xtendui/xtendui/commit/fa9b2a3d5c949dbd077e89a9f49bfbdd6f2b7e03))
+* self.autoblock to block auto ([26b46df](https://github.com/xtendui/xtendui/commit/26b46dfa4de775c6b855340d3268ed7c80fb9cbb))
+* **slider:** wrap can have value from 0 to 1 to check if activate depending on dragger width and added options.groupSame to disable groupSame calculations ([b034453](https://github.com/xtendui/xtendui/commit/b034453278e4991a493643fdd215907731ae9f78))
+* Xt.script now has defer and async ([b298b2b](https://github.com/xtendui/xtendui/commit/b298b2b9809bb86443e66a57a1b32a61ef8469af))
+
+
+### refactors
+
+* docs toolbar and removed flex-full use flex-auto instead ([9e6ec15](https://github.com/xtendui/xtendui/commit/9e6ec154148a8bfdc8773cf0f53acf23b181f96e))
+
+
+### BREAKING CHANGES
+
+* **googlelocator:** changed options.locateRadius to options.searchRadius
+* **list:** instead of 'xt-list-inner' use 'inline-flex flex-auto'
+* **scrollto:** scrollto duration and space are different now, if you didn't override it they will change
+* **toggle:** toggle options.scrollto doesn't automatically scroll on initialization now, use options.scrolltoInit: true to have that
+* **css:** use shadow-xl instead of shadow-overlay, use shadow-lg instead of shadow-drop, use shadow-md instead of shadow-tooltip
+* use flex-auto instead of flex-full
+* instead of 'xt-separator' use 'inline relative align-baseline'
+* **docs:** layout.css.js and javascript.css.js becomes global.css.js, if you extended xtendui.layout or xtendui.javascript move them to xtendui.global
+* Xt.eventDelay arguments { event, element } changed to { e, el }
+* **slider:** sliders relative mode set new option options.dragposition: true or use transition classes on dragger and remove js listen to event dragposition.xt.slider
+* changed cssinjs path theme.extend.xtendui.scroll to theme.extend.xtendui.scrolltrigger
+
 # [1.0.0-beta.38](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.37...v1.0.0-beta.38) (2021-08-02)
 
 
