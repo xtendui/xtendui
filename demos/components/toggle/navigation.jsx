@@ -8,28 +8,28 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ loop: true, navigation: '[data-xt-nav]' }">
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 0
         </button>
 
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 1
         </button>
 
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 2
         </button>
 
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 3
         </button>
@@ -38,7 +38,7 @@ export default function demo() {
           <div className="xt-list xt-list-3 items-center">
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
               data-xt-nav="-1"
               title="Previous slide">
               <svg
@@ -59,7 +59,7 @@ export default function demo() {
 
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
               data-xt-nav="1"
               title="Next slide">
               <svg
@@ -81,25 +81,25 @@ export default function demo() {
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 0
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 1
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 2
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 3
         </div>

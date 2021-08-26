@@ -6,8 +6,10 @@ const html = /* HTML */ `
       class="*** xt-tooltip *** p-2 relative inline-block *** on ***"
       data-xt-tooltip="{ closeOutside: false, classSkip: false }"
     >
-      <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
-        Lorem ipsum dolor sit amet
+      <div
+        class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+      >
+        <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
       </div>
     </div>
   </div>

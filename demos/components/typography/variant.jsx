@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="bg-primary-500 py-5 px-6 *** text-white xt-links-inverse ***">
+      <div className="xt-card p-7 sm:p-9 text-base rounded-2xl *** text-white xt-links-inverse *** bg-primary-500">
         <h2>Lorem Ipsum</h2>
 
         <p>
@@ -11,7 +11,7 @@ export default function demo() {
           vitae magna eget, vehicula scelerisque elit.
         </p>
 
-        <div className="bg-white py-5 px-6 *** text-black xt-links-default ***">
+        <div className="xt-card p-7 sm:p-9 text-base rounded-2xl *** text-gray-900 xt-links-default *** bg-white">
           <h2>Lorem Ipsum</h2>
 
           <p>

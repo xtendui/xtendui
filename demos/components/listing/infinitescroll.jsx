@@ -30,7 +30,7 @@ export default function demo() {
             <div className="xt-list xt-list-2 flex-col items-center">
               <button
                 type="button"
-                className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+                className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
@@ -68,99 +68,147 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="xt-row xt-row-6" data-xt-infinitescroll-items-container>
-            <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%]">
+          <div className="xt-row xt-row-4" data-xt-infinitescroll-items-container>
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Lorem ipsum</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Lorem ipsum</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
 
-            <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%]">
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Dolor sit amet</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
 
-            <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%]">
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Lorem ipsum</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Lorem ipsum</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
 
-            <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%]">
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Dolor sit amet</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
 
-            <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%]">
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Lorem Ipsum</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Lorem Ipsum</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
 
-            <div className="w-6/12 md:w-4/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%]">
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Dolor sit amet</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
 
-            <div className="w-6/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%] md:pb-[50%]">
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Lorem Ipsum</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Lorem Ipsum</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
 
-            <div className="w-6/12">
-              <a href="https://github.com/xtendui/xtendui" className="listing-item block text-black">
-                <div className="xt-media-container bg-gray-500 pb-[75%] md:pb-[50%]">
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
-                  <div className="xt-h5">Dolor sit amet</div>
-                  <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                  <div className="xt-h6">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                </div>
+                <div className="py-4">
+                  <div className="xt-h6">Lorem Ipsum</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                </div>
+                <div className="py-4">
+                  <div className="xt-h6">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                </div>
+                <div className="py-4">
+                  <div className="xt-h6">Lorem Ipsum</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                </div>
+              </a>
+            </div>
+
+            <div className="w-6/12 md:w-4/12 lg:w-3/12">
+              <a href="https://github.com/xtendui/xtendui" className="listing-item block">
+                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                </div>
+                <div className="py-4">
+                  <div className="xt-h6">Dolor sit amet</div>
+                  <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                 </div>
               </a>
             </div>
@@ -171,7 +219,7 @@ export default function demo() {
           <div className="xt-list xt-list-2 flex-col items-center">
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 

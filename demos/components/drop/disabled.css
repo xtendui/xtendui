@@ -25,11 +25,6 @@
         padding: 0;
       }
     }
-    > .xt-card > .xt-list {
-      > .xt-button, [data-xt-drop-element-nested] > .xt-button {
-        @apply px-0;
-      }
-    }
     > .xt-backdrop {
       display: none;
     }

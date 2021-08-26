@@ -1,20 +1,23 @@
 const html = /* HTML */ `
   <div class="demo--table-border">
-    <table class="my-4 xt-my-auto w-full rounded-xl *** border-2 border-gray-200 border-separate overflow-hidden ***">
+    <table
+      class="my-4 xt-my-auto w-full rounded-xl *** border-2 border-gray-200 border-separate overflow-hidden ***"
+      style="border-spacing: 0;"
+    >
       <thead>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border border-gray-200"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
           >
             #
           </th>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border border-gray-200"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
           >
             Description
           </th>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border border-gray-200"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
           >
             Value
           </th>
@@ -23,7 +26,7 @@ const html = /* HTML */ `
       <tbody>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border border-gray-200"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
           >
             1
           </th>
@@ -36,7 +39,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border border-gray-200"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
           >
             2
           </th>
@@ -45,7 +48,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border border-gray-200"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
           >
             3
           </th>
@@ -54,7 +57,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left border border-gray-200"
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
           >
             4
           </th>

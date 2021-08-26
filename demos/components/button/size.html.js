@@ -5,23 +5,23 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button *** ${classes.buttonSm()} ${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
+        class="xt-button *** ${classes.buttonSm()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
-        small
+        Small
       </button>
 
       <button
         type="button"
-        class="xt-button *** ${classes.buttonMd()} ${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
+        class="xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
-        medium
+        Medium
       </button>
 
       <button
         type="button"
-        class="xt-button *** ${classes.buttonLg()} ${classes.buttonRadius()} *** ${classes.buttonPrimary()}"
+        class="xt-button *** ${classes.buttonLg()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
       >
-        large
+        Large
       </button>
     </div>
   </div>

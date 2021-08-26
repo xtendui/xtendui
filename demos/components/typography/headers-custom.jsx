@@ -72,7 +72,7 @@ export default function demo() {
         eget, vehicula scelerisque elit.
       </p>
 
-      <div className="*** mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-100 text-center ***">
+      <div className="*** mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center ***">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit
       </div>
 

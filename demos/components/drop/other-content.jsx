@@ -8,18 +8,18 @@ export default function demo() {
       <div data-xt-drop>
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           data-xt-drop-element>
-          list group
+          Group
         </button>
 
-        <div className="xt-drop p-4" data-xt-drop-target>
-          <form className="rounded-md shadow-drop text-sm">
+        <div className="xt-drop p-3" data-xt-drop-target>
+          <form className="-md shadow-lg text-sm">
             <div className="xt-list flex-nowrap max-w-sm">
-              <div className="xt-list-inner flex-auto">
+              <div className="inline-flex flex-auto">
                 <button
-                  type="button"
-                  className="xt-button py-2.5 px-3.5 text-xs rounded-l-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
+                  type="submit"
+                  className="xt-button py-2.5 px-3.5 text-sm rounded-l-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-xl -my-1"
@@ -37,15 +37,15 @@ export default function demo() {
                 </button>
                 <input
                   type="text"
-                  className="block w-full py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+                  className="block w-full py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
                   aria-label="Search"
                   placeholder="Seach Catalog"
                 />
               </div>
 
               <button
-                type="button"
-                className="xt-button py-2.5 px-3.5 text-xs rounded-r-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+                type="submit"
+                className="xt-button py-2.5 px-3.5 text-sm rounded-r-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                 Search
               </button>
             </div>

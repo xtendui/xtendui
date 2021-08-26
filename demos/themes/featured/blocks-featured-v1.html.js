@@ -1,10 +1,12 @@
-const buttonLine = 'px-0 text-xs font-semibold leading-snug tracking-wider uppercase'
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
+const buttonLine = 'px-0 text-xs font-medium leading-snug tracking-wider uppercase'
 const buttonLineDesign = 'absolute w-4 border-t border-current opacity-50'
 const buttonLineContent = 'pl-8'
 
 const html = /* HTML */ `
   <div class="demo--blocks-featured-v1">
-    <div class="*** featured *** inline-block w-full bg-primary-900 text-white xt-links-inverse">
+    <div class="*** featured *** inline-block w-full bg-primary-900 ${classes.textInverse()}">
       <a href="#" class="*** featured-item *** block my-28">
         <div class="container">
           <div class="xt-row items-center">

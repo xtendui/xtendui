@@ -4,9 +4,9 @@ const html = /* HTML */ `
   <div>
     <div class="xt-row xt-row-6">
       <div class="w-full">
-        <div class="xt-card ${classes.cardRadius()} ${classes.cardDefault()}">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="md:xt-card-group">
-            <div class="${classes.cardMd()} md:w-7/12">
+            <div class="md:w-7/12 ${classes.cardMd()}">
               <div class="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -14,18 +14,12 @@ const html = /* HTML */ `
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
             </div>
-            <div class="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-400 ***">
-              <div class="${classes.cardSm()}">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                  turpis.
-                </p>
+            <div class="md:w-5/12 *** border-t md:border-t-0 md:border-l border-solid border-gray-300 ***">
+              <div class="${classes.cardMd()} ${classes.cardWhiteAccent()}">
+                <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
               </div>
-              <div class="${classes.cardMd()} *** border-t border-solid border-gray-400 ***">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                  turpis.
-                </p>
+              <div class="${classes.cardSm()} *** border-t border-solid border-gray-300 ***">
+                <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
               </div>
             </div>
           </div>

@@ -14,25 +14,26 @@ export default function demo() {
           <div className="xt-row xt-row-6 xt-row-stretch">
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block w-full">
-                <div className="*** listing-item-inner *** h-full">
-                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-100">
-                    <div className="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
+                <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
+                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
+                    <div className="xt-media-container bg-gray-300 w-full rounded-t-2xl h-40">
                       <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street 42, 00134 City, Nation</address>
                     </div>
-                    <div className="py-6 px-7 text-sm mt-auto pt-0">
+                    <div className="p-6 sm:p-8 text-sm mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+                        className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                        data-node-action>
                         More info
                       </button>
                     </div>
                   </div>
 
-                  <div className="*** listing-item-back *** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-100">
+                  <div className="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <button
                       type="button"
                       className="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
@@ -52,7 +53,7 @@ export default function demo() {
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
                     </button>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Contacts</div>
                       <div className="xt-p font-sm">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -84,25 +85,26 @@ export default function demo() {
 
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block w-full">
-                <div className="*** listing-item-inner *** h-full">
-                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-100">
-                    <div className="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
+                <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
+                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
+                    <div className="xt-media-container bg-gray-300 w-full rounded-t-2xl h-40">
                       <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
-                    <div className="py-6 px-7 text-sm mt-auto pt-0">
+                    <div className="p-6 sm:p-8 text-sm mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+                        className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                        data-node-action>
                         More info
                       </button>
                     </div>
                   </div>
 
-                  <div className="*** listing-item-back *** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-100">
+                  <div className="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <button
                       type="button"
                       className="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
@@ -122,7 +124,7 @@ export default function demo() {
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
                     </button>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Contacts</div>
                       <div className="xt-p font-sm">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -138,25 +140,26 @@ export default function demo() {
 
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block w-full">
-                <div className="*** listing-item-inner *** h-full">
-                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-100">
-                    <div className="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
+                <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
+                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
+                    <div className="xt-media-container bg-gray-300 w-full rounded-t-2xl h-40">
                       <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
-                    <div className="py-6 px-7 text-sm mt-auto pt-0">
+                    <div className="p-6 sm:p-8 text-sm mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+                        className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                        data-node-action>
                         More info
                       </button>
                     </div>
                   </div>
 
-                  <div className="*** listing-item-back *** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-100">
+                  <div className="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <button
                       type="button"
                       className="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
@@ -176,7 +179,7 @@ export default function demo() {
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
                     </button>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Contacts</div>
                       <div className="xt-p font-sm">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -208,25 +211,26 @@ export default function demo() {
 
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block w-full">
-                <div className="*** listing-item-inner *** h-full">
-                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-100">
-                    <div className="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
+                <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
+                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
+                    <div className="xt-media-container bg-gray-300 w-full rounded-t-2xl h-40">
                       <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                     </div>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
-                    <div className="py-6 px-7 text-sm mt-auto pt-0">
+                    <div className="p-6 sm:p-8 text-sm mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+                        className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                        data-node-action>
                         More info
                       </button>
                     </div>
                   </div>
 
-                  <div className="*** listing-item-back *** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-100">
+                  <div className="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <button
                       type="button"
                       className="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
@@ -246,7 +250,7 @@ export default function demo() {
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
                     </button>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Contacts</div>
                       <div className="xt-p font-sm">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -262,25 +266,26 @@ export default function demo() {
 
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block w-full">
-                <div className="*** listing-item-inner *** h-full">
-                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-md text-black xt-links-default bg-gray-100">
-                    <div className="xt-media-container bg-gray-500 w-full rounded-t-md h-40">
+                <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
+                  <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
+                    <div className="xt-media-container bg-gray-300 w-full rounded-t-2xl h-40">
                       <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                     </div>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
                       <address className="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
                     </div>
-                    <div className="py-6 px-7 text-sm mt-auto pt-0">
+                    <div className="p-6 sm:p-8 text-sm mt-auto pt-0">
                       <button
                         type="button"
-                        className="listing-action xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+                        className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                        data-node-action>
                         More info
                       </button>
                     </div>
                   </div>
 
-                  <div className="*** listing-item-back *** relative h-full xt-card rounded-md text-black xt-links-default bg-gray-100">
+                  <div className="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <button
                       type="button"
                       className="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
@@ -300,7 +305,7 @@ export default function demo() {
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
                     </button>
-                    <div className="py-6 px-7 text-sm">
+                    <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Contacts</div>
                       <div className="xt-p font-sm">
                         <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a>
@@ -358,7 +363,7 @@ const mountListing = ({ ref }) => {
   for (const item of items) {
     // vars
 
-    const actionBtn = item.querySelector('.listing-action')
+    const actionBtn = item.querySelector('[data-node-action]')
     const closeBtn = item.querySelector('.xt-dismiss')
 
     // click

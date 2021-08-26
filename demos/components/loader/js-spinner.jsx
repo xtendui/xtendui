@@ -11,8 +11,8 @@ export default function demo() {
   return (
     <div className="demo--loader-js-spinner-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center justify-center">
-        <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
-          <div className="py-6 px-7 text-sm">
+        <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
+          <div className="p-6 sm:p-8 text-sm">
             <div className="xt-h5">Small</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -56,7 +56,7 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
           Lorem ipsum
           <span
             className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"

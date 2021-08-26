@@ -5,17 +5,17 @@ import 'xtendui/src/tooltip'
 export default function demo() {
   return (
     <div>
-      <div className="relative py-4 px-6 bg-primary-500">
+      <div className="xt-card p-7 sm:p-9 text-base rounded-2xl text-white xt-links-inverse bg-primary-500">
         <div data-xt-tooltip>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             data-xt-tooltip-element>
             static
           </button>
 
           <div className="xt-tooltip *** xt-tooltip-static ***" data-xt-tooltip-target>
-            <div className="xt-card w-full shadow-drop text-black xt-links-default bg-white">
+            <div className="xt-card w-full shadow-lg text-gray-900 xt-links-default bg-white">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"
@@ -35,7 +35,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="py-8 px-9 text-base">
+              <div className="p-7 sm:p-9 text-base">
                 <div className="xt-h4">Tooltip static</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

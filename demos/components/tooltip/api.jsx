@@ -13,61 +13,61 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-first-element">
           1st element
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-first-target">
           1st target
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-first-element-off">
           off 1st element
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-first-target-off">
           off 1st target
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-add">
           Add
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-remove">
           Remove
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-reinit">
           Reinit
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-restart">
           Restart
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-destroy">
           Destroy
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--tooltip-api-unmount">
           Unmount
         </button>
@@ -76,34 +76,34 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center" id="tooltip--eventmethods" title="Object">
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           data-xt-tooltip-element>
           Tooltip 0
         </button>
 
-        <div className="xt-tooltip p-2" title="Target 0" data-xt-tooltip-target>
-          <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-            Lorem ipsum dolor sit amet
+        <div className="xt-tooltip p-3" title="Target 0" data-xt-tooltip-target>
+          <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+            <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           data-xt-tooltip-element>
           Tooltip 1
         </button>
 
-        <div className="xt-tooltip p-2" title="Target 1" data-xt-tooltip-target>
-          <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-            Lorem ipsum dolor sit amet
+        <div className="xt-tooltip p-3" title="Target 1" data-xt-tooltip-target>
+          <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+            <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </div>
 
-      <div className="xt-card rounded-md text-black xt-links-default bg-gray-100 mt-6">
+      <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100 mt-6">
         <div
-          className="py-6 px-7 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
+          className="p-6 sm:p-8 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
           id="card--tooltip-api-log"></div>
       </div>
     </div>
@@ -141,14 +141,13 @@ const mountEventmethods = ({ ref }) => {
 
   const log = document.querySelector('#card--tooltip-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 
@@ -212,7 +211,7 @@ const mountEventmethods = ({ ref }) => {
       const els = self.elements
       const indexEl = els.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
+        <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
           data-xt-tooltip-element>
           Tooltip ${indexEl}
         </button>
@@ -221,9 +220,9 @@ const mountEventmethods = ({ ref }) => {
       const trs = self.targets
       const indexTr = trs.length + 1
       const strTr = `
-        <div class="xt-tooltip p-2" title="Target ${indexTr}"
+        <div class="xt-tooltip p-3" title="Target ${indexTr}"
           data-xt-tooltip-target>
-          <div class="text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+          <div class="text-xs py-2 px-3.5 rounded-md shadow-lg font-medium text-white bg-black">
             Lorem ipsum dolor sit amet
           </div>
         </div>

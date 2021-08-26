@@ -1,4 +1,5 @@
 import { Xt } from 'xtendui'
+import 'xtendui/src/toggle'
 import 'xtendui/src/overlay'
 import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
@@ -39,14 +40,13 @@ const mountInteraction = ({ ref }) => {
       item.classList.add('overflow-hidden')
       const text = item.innerHTML
       item.innerHTML = ''
-      item.append(Xt.node({ str: `<span class="content"></span>` }))
+      item.append(Xt.node({ str: `<span class="content flex-auto"></span>` }))
       item.append(Xt.node({ str: `<span class="clone absolute"></span>` }))
       content = item.querySelector('.content')
       clone = item.querySelector('.clone')
       content.innerHTML = text
       clone.innerHTML = text
       gsap.set(clone, {
-        x: -cloneX,
         opacity: 0,
       })
     }
@@ -58,34 +58,36 @@ const mountInteraction = ({ ref }) => {
       const content = item.querySelector('.content')
       gsap.killTweensOf(content)
       gsap.set(content, {
-        transformOrigin: 'right center',
-      })
-      gsap.set(content, {
-        x: 0,
-        opacity: 1,
-      })
-      gsap.to(content, {
-        x: contentX,
-        opacity: 0,
-        duration: 0.5,
-        ease: 'quint.out',
-      })
-      // clone
-      const clone = item.querySelector('.clone')
-      gsap.killTweensOf(clone)
-      gsap.set(clone, {
         transformOrigin: 'left center',
       })
-      gsap.set(clone, {
+      gsap.set(content, {
         x: -cloneX,
         opacity: 0,
       })
-      gsap.to(clone, {
+      gsap.to(content, {
         x: 0,
         opacity: 1,
         duration: 0.5,
         ease: 'quint.out',
         delay: 0.2,
+      })
+      // clone
+      const clone = item.querySelector('.clone')
+      gsap.killTweensOf(clone)
+      gsap.set(clone, {
+        transformOrigin: 'right center',
+      })
+      gsap.set(clone, {
+        top: content.offsetTop,
+        left: content.offsetLeft,
+        x: 0,
+        opacity: 1,
+      })
+      gsap.to(clone, {
+        x: contentX,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'quint.out',
       })
     }
 

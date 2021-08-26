@@ -33,14 +33,13 @@ const mountEventmethods = ({ ref }) => {
 
   const log = ref.querySelector('#card--drop-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 
@@ -104,7 +103,7 @@ const mountEventmethods = ({ ref }) => {
       const els = self.elements
       const indexEl = els.length + 1
       const strEl = `
-        <button type="button" class="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+        <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           data-xt-drop-element>
           Drop ${indexEl}
         </button>
@@ -113,17 +112,17 @@ const mountEventmethods = ({ ref }) => {
       const trs = self.targets
       const indexTr = trs.length + 1
       const strTr = `
-        <div class="xt-drop p-4" title="Target ${indexTr}"
+        <div class="xt-drop p-3" title="Target ${indexTr}"
           data-xt-drop-target>
-          <div class="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
-            <nav class="list flex-col">
-              <a href="#" class="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+          <div class="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+            <nav class="xt-list flex-col p-3">
+              <a href="#" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
-              <button type="button" class="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+              <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 Dolor sit
               </button>
-              <button type="button" class="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+              <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 Amet
               </button>
             </nav>

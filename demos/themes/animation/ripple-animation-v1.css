@@ -6,7 +6,7 @@
     background: theme('colors.black');
   }
   /* custom */
-  .bg-primary-500 {
+  [class*="active:bg-primary-"] {
     > .xt-ripple-inner {
       opacity: .15;
       > .xt-ripple {

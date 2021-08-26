@@ -16,7 +16,7 @@ export default function demo() {
           <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
-                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-300 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
@@ -32,7 +32,7 @@ export default function demo() {
           <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
-                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-300 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
@@ -48,7 +48,7 @@ export default function demo() {
           <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
-                <div className="xt-media-container bg-gray-500 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-300 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
@@ -65,7 +65,7 @@ export default function demo() {
         <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div className="hero relative overflow-hidden bg-black">
             <div className="*** hero-inner ***">
-              <div className="xt-media-container bg-gray-500 w-full h-full absolute">
+              <div className="xt-media-container bg-gray-300 w-full h-full absolute">
                 <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div className="flex relative h-96">
@@ -83,7 +83,7 @@ export default function demo() {
           data-xt-slider-pagination>
           <button
             type="button"
-            className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+            className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
             data-xt-slider-element
             title="Slide xt-num"></button>
         </nav>
@@ -110,15 +110,14 @@ const mountSlider = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
+  let dragDuration
   const dragEase = 'quart.out'
-  let distance
-  let duration
 
   // slider
 
   /***/
   let self = new Xt.Slider(slider, {
-    duration: () => duration * 1000,
+    duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
   })
@@ -127,14 +126,13 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
+    // duration depending on dragger size
+    dragDuration = self.initial || self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
       position: self.drag.final,
-      duration: duration,
+      duration: dragDuration,
       ease: dragEase,
     })
   }
@@ -164,7 +162,7 @@ const mountSlider = ({ ref }) => {
     gsap.killTweensOf(cover)
     gsap.to(cover, {
       x: `${-100 * self.direction}%`,
-      duration: duration,
+      duration: dragDuration,
       ease: dragEase,
     })
   }
@@ -185,7 +183,7 @@ const mountSlider = ({ ref }) => {
       })
       gsap.to(mask, {
         x: 0,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       const maskInner = tr.querySelector('.hero-inner')
@@ -195,7 +193,7 @@ const mountSlider = ({ ref }) => {
       })
       gsap.to(maskInner, {
         x: 0,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       /***/
@@ -226,7 +224,7 @@ const mountSlider = ({ ref }) => {
       }
       gsap.to(cover, {
         x: `${-100 * self.direction}%`,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       // mask
@@ -234,14 +232,14 @@ const mountSlider = ({ ref }) => {
       gsap.killTweensOf(mask)
       gsap.to(mask, {
         x: `${-100 * self.direction}%`,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
       const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.to(maskInner, {
         x: `${100 * self.direction}%`,
-        duration: duration,
+        duration: dragDuration,
         ease: dragEase,
       })
     }

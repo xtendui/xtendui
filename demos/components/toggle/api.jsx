@@ -13,49 +13,49 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-first-element">
           1st element
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-first-target">
           1st target
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-add">
           Add
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-remove">
           Remove
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-reinit">
           Reinit
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-restart">
           Restart
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-destroy">
           Destroy
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-unmount">
           Unmount
         </button>
@@ -65,27 +65,27 @@ export default function demo() {
         <div className="xt-list xt-list-3 items-center mb-4" id="toggle--eventmethods-elements">
           <button
             type="button"
-            className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+            className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
             data-xt-toggle-element
             data-xt-group="0">
             Toggle Group 0
           </button>
           <button
             type="button"
-            className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+            className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
             data-xt-toggle-element
             data-xt-group="0">
             Toggle Group 0
           </button>
           <button
             type="button"
-            className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+            className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
             data-xt-toggle-element>
             Toggle 1
           </button>
           <button
             type="button"
-            className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+            className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
             data-xt-toggle-element>
             Toggle 2
           </button>
@@ -93,33 +93,33 @@ export default function demo() {
 
         <div className="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target
             data-xt-group="0">
             Target Group 0
           </div>
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target
             data-xt-group="0">
             Target Group 0b
           </div>
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow *** on ***"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow *** on ***"
             data-xt-toggle-target>
             Target 1
           </div>
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 2
           </div>
         </div>
       </div>
 
-      <div className="rounded-md text-black xt-links-default bg-gray-100 mt-6">
+      <div className="-2xl text-gray-900 xt-links-default bg-gray-100 mt-6">
         <div
-          className="py-6 px-7 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
+          className="p-6 sm:p-8 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
           id="card--toggle-api-log"></div>
       </div>
     </div>
@@ -153,14 +153,13 @@ const mountEventmethods = ({ ref }) => {
 
   const log = document.querySelector('#card--toggle-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 
@@ -198,10 +197,10 @@ const mountEventmethods = ({ ref }) => {
       logAdd('<strong>add</strong>')
       // elements
       const index = self.getElementsGroups().length
-      const strEl = `<button type="button" class="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500" data-xt-toggle-element>Toggle ${index}</button>`
+      const strEl = `<button type="button" class="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 on dir-before in done" data-xt-toggle-element>Toggle ${index}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.node({ str: strEl }))
       // targets
-      const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow" data-xt-toggle-target>Target ${index}</div>`
+      const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow on in done" data-xt-toggle-target>Target ${index}</div>`
       document.querySelector('#toggle--eventmethods-targets').append(Xt.node({ str: strTr }))
       // reinit
       logAdd('<strong>reinit</strong>')

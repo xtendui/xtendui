@@ -5,65 +5,65 @@ import 'xtendui/src/toggle'
 export default function demo() {
   return (
     <div>
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-100 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center">
         Mouseenter
       </div>
 
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ on: 'mouseenter', off: false }">
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 0
         </button>
 
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 1
         </button>
 
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 2
         </button>
 
         <button
           type="button"
-          className="xt-button rounded-full py-2.5 px-3.5 text-xs text-black font-semibold bg-gray-200 transition hover:bg-gray-300 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 transition"
+          className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 3
         </button>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 0
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 1
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 2
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 3
         </div>
       </div>
 
-      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md font-bold leading-tight tracking-tight normal-case text-lg text-black bg-gray-100 text-center">
+      <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center">
         Focus
       </div>
 
@@ -71,7 +71,7 @@ export default function demo() {
         <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ on: 'focus', off: false }">
           <input
             type="text"
-            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+            className="block w-full rounded-md py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
             aria-label="Toggle 0"
             placeholder="Toggle 0"
             data-xt-toggle-element
@@ -79,7 +79,7 @@ export default function demo() {
 
           <input
             type="text"
-            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+            className="block w-full rounded-md py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
             aria-label="Toggle 1"
             placeholder="Toggle 1"
             data-xt-toggle-element
@@ -87,39 +87,39 @@ export default function demo() {
 
           <input
             type="text"
-            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+            className="block w-full rounded-md py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
             aria-label="Toggle 2"
             placeholder="Toggle 2"
           />
 
           <input
             type="text"
-            className="block w-full rounded-md py-3 px-4 text-black placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+            className="block w-full rounded-md py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
             aria-label="Toggle 3"
             placeholder="Toggle 3"
             data-xt-toggle-element
           />
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 0
           </div>
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 1
           </div>
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 2
           </div>
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2.5 px-3.5 font-semibold shadow"
+            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 3
           </div>

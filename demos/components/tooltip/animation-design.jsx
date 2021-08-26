@@ -8,16 +8,16 @@ export default function demo() {
       <div data-xt-tooltip="{ duration: 300 }">
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           data-xt-tooltip-element>
-          tooltip
+          Tooltip
         </button>
 
-        <div className="xt-tooltip p-2 group" data-xt-tooltip-target>
-          <div className="relative">
-            <div className="*** xt-design *** rounded-sm shadow-tooltip bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
-            <div className="relative py-2 px-3.5 text-xs font-semibold text-white xt-links-inverse *** transition duration-300 opacity-0 group-in:opacity-100 ***">
-              Lorem ipsum dolor sit amet
+        <div className="xt-tooltip p-3 group" data-xt-tooltip-target>
+          <div className="*** relative ***">
+            <div className="*** xt-design *** rounded-md shadow-md bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***"></div>
+            <div className="*** xt-card *** font-medium text-white xt-links-inverse *** transition duration-300 opacity-0 group-in:opacity-100 ***">
+              <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
             </div>
           </div>
         </div>

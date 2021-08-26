@@ -5,18 +5,17 @@ export default function demo() {
       <nav className="*** truncate ***">
         <a
           href="#"
-          className="xt-button *** inline *** text-xs py-2 px-0 text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
-          {' '}
-          Home{' '}
+          className="xt-button *** inline *** py-1.5 px-2 text-2xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:opacity-75">
+          Home
         </a>
-        <span className="xt-separator before:content-['/'] mx-2"></span>
+        <span className="inline relative align-baseline before:content-['/'] mx-0.5 text-sm"></span>
         <a
           href="#"
-          className="xt-button *** inline *** text-xs py-2 px-0 text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100">
+          className="xt-button *** inline *** py-1.5 px-2 text-2xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:opacity-75">
           Lorem ipsum dolor sit amet
         </a>
-        <span className="xt-separator before:content-['/'] mx-2"></span>
-        <div className="xt-button text-xs py-2 px-0 text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100 pointer-events-none">
+        <span className="inline relative align-baseline before:content-['/'] mx-0.5 text-sm"></span>
+        <div className="xt-button py-1.5 px-2 text-2xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:opacity-75 pointer-events-none">
           Lorem ipsum
         </div>
       </nav>

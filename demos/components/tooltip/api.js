@@ -33,14 +33,13 @@ const mountEventmethods = ({ ref }) => {
 
   const log = document.querySelector('#card--tooltip-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 
@@ -104,7 +103,7 @@ const mountEventmethods = ({ ref }) => {
       const els = self.elements
       const indexEl = els.length + 1
       const strEl = `
-        <button type="button" class="xt-button text-xs py-2 px-3.5 rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
+        <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
           data-xt-tooltip-element>
           Tooltip ${indexEl}
         </button>
@@ -113,9 +112,9 @@ const mountEventmethods = ({ ref }) => {
       const trs = self.targets
       const indexTr = trs.length + 1
       const strTr = `
-        <div class="xt-tooltip p-2" title="Target ${indexTr}"
+        <div class="xt-tooltip p-3" title="Target ${indexTr}"
           data-xt-tooltip-target>
-          <div class="text-xs py-2 px-3.5 rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
+          <div class="text-xs py-2 px-3.5 rounded-md shadow-lg font-medium text-white bg-black">
             Lorem ipsum dolor sit amet
           </div>
         </div>

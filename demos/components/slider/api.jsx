@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
-import gsap from 'gsap'
 
 export default function demo() {
   const ref = useRef()
@@ -15,49 +14,49 @@ export default function demo() {
         <div className="xt-list xt-list-3 items-center">
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-first-element">
             1st element
           </button>
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-first-target">
             1st target
           </button>
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-add">
             Add
           </button>
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-remove">
             Remove
           </button>
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-reinit">
             Reinit
           </button>
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-restart">
             Restart
           </button>
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-destroy">
             Destroy
           </button>
           <button
             type="button"
-            className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-unmount">
             Unmount
           </button>
@@ -66,45 +65,48 @@ export default function demo() {
 
       <div className="xt-slider" id="slider--eventmethods">
         <div className="p-4 md:p-6 lg:p-8">
-          <div className="xt-slides xt-row xt-row-4" data-xt-slider-dragger id="slider--eventmethods-targets">
+          <div
+            className="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
+            data-xt-slider-dragger
+            id="slider--eventmethods-targets">
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">1</div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">2</div>
               </div>
             </div>
 
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">3</div>
               </div>
             </div>
 
             <div className="xt-slide w-full group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">4</div>
               </div>
             </div>
 
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">5</div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group *** on ***" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">6</div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">7</div>
               </div>
             </div>
@@ -113,7 +115,7 @@ export default function demo() {
           <nav className="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
               data-xt-nav="-1"
               title="Previous slide">
               <svg
@@ -132,14 +134,14 @@ export default function demo() {
             </button>
             <button
               type="button"
-              className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+              className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
               data-xt-slider-element
               title="Slide xt-num">
               xt-num
             </button>
             <button
               type="button"
-              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+              className="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
               data-xt-nav="1"
               title="Next slide">
               <svg
@@ -160,9 +162,9 @@ export default function demo() {
         </div>
 
         <div className="p-4 md:p-6 lg:p-8">
-          <div className="xt-card rounded-md text-black xt-links-default bg-gray-100">
+          <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
             <div
-              className="py-6 px-7 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
+              className="p-6 sm:p-8 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
               id="card--slider-api-log"></div>
           </div>
         </div>
@@ -190,57 +192,25 @@ const mountEventmethods = ({ ref }) => {
 
   const slider = ref.querySelector('#slider--eventmethods')
 
-  // vars
-
-  const dragEase = 'quart.out'
-  let distance
-  let duration
-
   // init
 
   /***/
   let self = new Xt.Slider(slider, {
     wrap: true,
-    group: 1,
   })
   /***/
-
-  // dragposition (set internal position to resume animation mid dragging)
-
-  const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
-    // position animation to keep updated with animation
-    gsap.killTweensOf(self.drag)
-    gsap.to(self.drag, {
-      position: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-    // dragger animation
-    gsap.killTweensOf(self.dragger)
-    gsap.to(self.dragger, {
-      x: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-  }
-
-  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // log
 
   const log = document.querySelector('#card--slider-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 
@@ -281,7 +251,7 @@ const mountEventmethods = ({ ref }) => {
       const indexTr = trs.length + 1
       const strTr = `
       <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-        <div class="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-300">
+        <div class="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
           <div class="xt-h4">${indexTr}</div>
         </div>
       </div>

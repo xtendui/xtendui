@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-gatsby-templates-pages-404-js","path":"/404/","result":{"data":{"menus":{"posts":[{"post":{"frontmatter":{"type":"Components","title":"Components","description":"Customizable components with an ecosystem of plugins."}}},{"post":{"frontmatter":{"type":"Themes","title":"Themes","description":"UI themes with advanced interactions and animations."}}}]}},"pageContext":{}},"staticQueryHashes":["364365266"]}
+{
+    "componentChunkName": "component---src-gatsby-templates-pages-404-js",
+    "path": "/404/",
+    "result": {"data":{"menus":{"posts":[{"post":{"frontmatter":{"type":"Intro","title":"Intro","description":"Project overview and instructions to get stated.","tags":null}}},{"post":{"frontmatter":{"type":"Components","title":"Components","description":"Customizable components with an ecosystem of plugins.","tags":null}}},{"post":{"frontmatter":{"type":"Themes","title":"Themes","description":"UX themes with advanced interactions and animations.","tags":null}}},{"post":{"frontmatter":{"type":"Hidden","title":"Hidden","description":"Hidden","tags":["hidden"]}}}]}},"pageContext":{}},
+    "staticQueryHashes": ["364365266"]}

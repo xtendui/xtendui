@@ -6,14 +6,14 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
-          closed fixed
+          Overlay
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <button
@@ -24,7 +24,7 @@ const html = /* HTML */ `
                 ${classes.iconX()}
               </button>
               <div
-                class="xt-card items-center justify-center ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}"
+                class="xt-card items-center justify-center rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
               >
                 <div class="${classes.cardMd()}">
                   <div class="xt-h4">Lorem ipsum</div>
@@ -106,14 +106,14 @@ const html = /* HTML */ `
       <div data-xt-overlay>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-overlay-element
         >
-          screen closed fixed
+          Screen
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black opacity-25"></div>
+          <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
           <div class="xt-overlay-container p-0">
             <div class="xt-overlay-inner">
               <button
@@ -123,7 +123,9 @@ const html = /* HTML */ `
               >
                 ${classes.iconX()}
               </button>
-              <div class="xt-card xt-min-h-screen items-center justify-center shadow-overlay ${classes.cardWhite()}">
+              <div
+                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
+              >
                 <div class="max-w-3xl">
                   <div class="${classes.cardMd()}">
                     <div class="xt-h4">Lorem ipsum</div>

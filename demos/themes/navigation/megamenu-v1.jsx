@@ -16,7 +16,7 @@ export default function demo() {
           className="*** megamenu-backdrop *** xt-backdrop z-below off:hidden out:pointer-events-none bg-black transition opacity-0 in:opacity-25"
           data-xt-duration="500"></div>
 
-        <div className="relative bg-primary-500 text-white">
+        <div className="relative bg-primary-500 text-white xt-links-inverse">
           {/* switcher for demo purpose remove this */}
           <form className="text-sm container pt-10">
             <label className="cursor-pointer inline-flex items-baseline">
@@ -36,34 +36,26 @@ export default function demo() {
               <div data-xt-drop-element>
                 <a
                   href="/"
-                  className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                   Menu #1
                 </a>
 
                 <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                   <div className="*** relative ***" data-xt-drop-inner>
-                    <div className="*** xt-design *** bg-primary-700 border-b-4 border-gray-400"></div>
+                    <div className="*** xt-design *** bg-primary-700 border-b-4 border-gray-300"></div>
                     <div className="*** xt-drop-content ***">
                       <div className="pt-16 pb-24 text-white xt-links-inverse">
                         <div className="container">
-                          <a
-                            href="#"
-                            className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Lorem ipsum
                           </a>
-                          <a
-                            href="#"
-                            className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Dolor sit amet
                           </a>
-                          <a
-                            href="#"
-                            className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Consectetur adipiscing elit
                           </a>
-                          <a
-                            href="#"
-                            className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Morbi nec mauris est
                           </a>
                           <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -80,24 +72,20 @@ export default function demo() {
               <div data-xt-drop-element>
                 <a
                   href="/"
-                  className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                   Menu #2
                 </a>
 
                 <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                   <div className="*** relative ***" data-xt-drop-inner>
-                    <div className="*** xt-design *** bg-gray-700 border-b-4 border-gray-400"></div>
+                    <div className="*** xt-design *** bg-gray-700 border-b-4 border-gray-300"></div>
                     <div className="*** xt-drop-content ***">
                       <div className="pt-16 pb-24 text-white xt-links-inverse">
                         <div className="container">
-                          <a
-                            href="#"
-                            className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Lorem ipsum
                           </a>
-                          <a
-                            href="#"
-                            className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Dolor sit amet
                           </a>
                           <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -113,60 +101,46 @@ export default function demo() {
 
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                 Link #3
               </a>
 
               <div data-xt-drop-element>
                 <a
                   href="/"
-                  className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                   Menu #4
                 </a>
 
                 <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                   <div className="*** relative ***" data-xt-drop-inner>
-                    <div className="*** xt-design *** bg-gray-100 border-b-4 border-gray-400"></div>
+                    <div className="*** xt-design *** bg-gray-100 border-b-4 border-gray-300"></div>
                     <div className="*** xt-drop-content ***">
-                      <div className="pt-16 pb-24 text-black xt-links-default">
+                      <div className="pt-16 pb-24 text-gray-900 xt-links-default ">
                         <div className="container">
                           <div className="xt-row xt-row-x-8">
                             <div className="w-full md:w-6/12">
-                              <a
-                                href="#"
-                                className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Lorem ipsum
                               </a>
-                              <a
-                                href="#"
-                                className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Dolor sit amet
                               </a>
-                              <a
-                                href="#"
-                                className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Consectetur adipiscing elit
                               </a>
-                              <a
-                                href="#"
-                                className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Morbi nec mauris est
                               </a>
                             </div>
                             <div className="w-full md:w-6/12">
-                              <a
-                                href="#"
-                                className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Dolor sit amet
                               </a>
-                              <a
-                                href="#"
-                                className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Consectetur adipiscing elit
                               </a>
-                              <a
-                                href="#"
-                                className="xt-button w-full text-left justify-start py-4 px-0 text-3xl font-medium tracking-normal normal-case">
+                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Morbi nec mauris est
                               </a>
                               <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
@@ -184,7 +158,7 @@ export default function demo() {
 
               <a
                 href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white font-semibold leading-snug tracking-wider uppercase rounded-md opacity-75 hover:opacity-100 on:opacity-100">
+                className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                 Link #5
               </a>
             </div>

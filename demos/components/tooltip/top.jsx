@@ -7,50 +7,104 @@ export default function demo() {
     <div>
       <div className="xt-list xt-list-3 items-center">
         <div data-xt-tooltip="{ position: 'top' }">
-          <button
-            type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
-            data-xt-tooltip-element>
-            top
-          </button>
+          <div data-xt-tooltip-element>
+            <button
+              type="button"
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              top
+            </button>
 
-          <div className="xt-tooltip p-2" data-xt-tooltip-target>
-            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet
+            <div className="xt-tooltip p-3" data-xt-tooltip-target>
+              <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+                <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+              </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
             </div>
-            <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
           </div>
         </div>
 
         <div data-xt-tooltip="{ position: 'top-start' }">
-          <button
-            type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
-            data-xt-tooltip-element>
-            top start
-          </button>
+          <div data-xt-tooltip-element>
+            <button
+              type="button"
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              top start
+            </button>
 
-          <div className="xt-tooltip p-2" data-xt-tooltip-target>
-            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet
+            <div className="xt-tooltip p-3" data-xt-tooltip-target>
+              <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+                <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+              </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
             </div>
-            <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
           </div>
         </div>
 
         <div data-xt-tooltip="{ position: 'top-end' }">
-          <button
-            type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
-            data-xt-tooltip-element>
-            top end
-          </button>
+          <div data-xt-tooltip-element>
+            <button
+              type="button"
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              top end
+            </button>
 
-          <div className="xt-tooltip p-2" data-xt-tooltip-target>
-            <div className="relative py-2 px-3.5 text-xs rounded-sm shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet
+            <div className="xt-tooltip p-3" data-xt-tooltip-target>
+              <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+                <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+              </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
             </div>
-            <div className="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+          </div>
+        </div>
+
+        <div data-xt-tooltip="{ position: 'top', inset: true }">
+          <div data-xt-tooltip-element>
+            <button
+              type="button"
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              top inset
+            </button>
+
+            <div className="xt-tooltip p-3" data-xt-tooltip-target>
+              <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+                <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+              </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-tooltip="{ position: 'top-start', inset: true }">
+          <div data-xt-tooltip-element>
+            <button
+              type="button"
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              top start inset
+            </button>
+
+            <div className="xt-tooltip p-3" data-xt-tooltip-target>
+              <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+                <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+              </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+            </div>
+          </div>
+        </div>
+
+        <div data-xt-tooltip="{ position: 'top-end', inset: true }">
+          <div data-xt-tooltip-element>
+            <button
+              type="button"
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              top end inset
+            </button>
+
+            <div className="xt-tooltip p-3" data-xt-tooltip-target>
+              <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+                <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+              </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+            </div>
           </div>
         </div>
       </div>

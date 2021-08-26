@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react'
-import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -14,7 +13,7 @@ export default function demo() {
   return (
     <div className="demo--products-listing-v1-react" ref={ref}>
       <div className="py-10">
-        <div className="xt-slider pb-10">
+        <div className="xt-slider pb-10" data-xt-slider="{ align: 'left', loop: true }">
           <div className="container">
             <div className="xt-h3 mb-8">
               <div className="xt-list xt-list-2 items-center">
@@ -22,7 +21,7 @@ export default function demo() {
 
                 <button
                   type="button"
-                  className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+                  className="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
                   data-xt-nav="-1"
                   aria-label="Previous slide">
                   <svg
@@ -43,7 +42,7 @@ export default function demo() {
 
                 <button
                   type="button"
-                  className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+                  className="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
                   data-xt-nav="1"
                   aria-label="Next slide">
                   <svg
@@ -64,141 +63,173 @@ export default function demo() {
               </div>
             </div>
 
-            <div className="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
-                      <div className="xt-list xt-list-3 items-center flex-nowrap">
-                        <div className="text-xl font-semibold">-35%</div>
-                        <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
-                          For Exhibition
-                          <br />
-                          Renewal
+            <div
+              className="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
+              data-xt-slider-dragger>
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                      <div className="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white xt-links-inverse">
+                        <div className="xt-list xt-list-3 items-center flex-nowrap">
+                          <div className="font-medium text-sm">-35%</div>
+                          <div className="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">
+                            For Exhibition Renewal
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img
-                      className="*** xt-media *** object-cover object-center"
-                      src="/img-alt.svg"
-                      loading="lazy"
-                      alt=""
-                    />
-                    <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
-                      <div className="xt-list xt-list-3 items-center flex-nowrap">
-                        <div className="text-xl font-semibold">-40%</div>
-                        <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
-                          Black
-                          <br />
-                          Friday
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img-alt.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                      <div className="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white xt-links-inverse">
+                        <div className="xt-list xt-list-3 items-center flex-nowrap">
+                          <div className="font-medium text-sm">-40%</div>
+                          <div className="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img
-                      className="*** xt-media *** object-cover object-center"
-                      src="/img-alt.svg"
-                      loading="lazy"
-                      alt=""
-                    />
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img-alt.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img
-                      className="*** xt-media *** object-cover object-center"
-                      src="/img-alt.svg"
-                      loading="lazy"
-                      alt=""
-                    />
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img-alt.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Lorem ipsum</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
 
-              <div className="xt-slide w-6/12 md:w-4/12" data-xt-slider-target>
-                <a href="#" className="*** listing-item *** block">
-                  <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
-                    <img
-                      className="*** xt-media *** object-cover object-center"
-                      src="/img-alt.svg"
-                      loading="lazy"
-                      alt=""
-                    />
-                  </div>
-                  <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
-                  </div>
-                </a>
+              <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
+                <div className="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
+                  <a href="#" className="*** listing-item *** block">
+                    <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
+                      <img
+                        className="*** xt-media *** object-cover object-center"
+                        src="/img-alt.svg"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div className="*** listing-item *** -content py-4">
+                      <div className="xt-h6">Dolor sit amet</div>
+                      <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -212,30 +243,28 @@ export default function demo() {
           <div className="container">
             <div className="xt-h2 mb-8">Category</div>
 
-            <div className="xt-row xt-row-6">
-              <div className="w-6/12 md:w-4/12">
+            <div className="xt-row xt-row-4">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
-                    <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
+                    <div className="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white xt-links-inverse">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
-                        <div className="text-xl font-semibold">-35%</div>
-                        <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
-                          For Exhibition
-                          <br />
-                          Renewal
+                        <div className="font-medium text-sm">-35%</div>
+                        <div className="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">
+                          For Exhibition Renewal
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
-              <div className="w-6/12 md:w-4/12">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img
@@ -244,37 +273,33 @@ export default function demo() {
                       loading="lazy"
                       alt=""
                     />
-                    <div className="absolute top-0 left-0 py-2 px-4 bg-black bg-opacity-50 text-white">
+                    <div className="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 text-white xt-links-inverse">
                       <div className="xt-list xt-list-3 items-center flex-nowrap">
-                        <div className="text-xl font-semibold">-40%</div>
-                        <div className="max-w-xs text-xs leading-tight uppercase opacity-50">
-                          Black
-                          <br />
-                          Friday
-                        </div>
+                        <div className="font-medium text-sm">-40%</div>
+                        <div className="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>
                       </div>
                     </div>
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
-              <div className="w-6/12 md:w-4/12">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
-              <div className="w-6/12 md:w-4/12">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img
@@ -285,25 +310,25 @@ export default function demo() {
                     />
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
-              <div className="w-6/12 md:w-4/12">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem Ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Lorem Ipsum</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
-              <div className="w-6/12 md:w-4/12">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img
@@ -314,25 +339,25 @@ export default function demo() {
                     />
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
-              <div className="w-6/12 md:w-4/12">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Lorem ipsum</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Lorem ipsum</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
 
-              <div className="w-6/12 md:w-4/12">
+              <div className="w-6/12 md:w-4/12 lg:w-3/12">
                 <a href="#" className="*** listing-item *** block">
                   <div className="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img
@@ -343,8 +368,8 @@ export default function demo() {
                     />
                   </div>
                   <div className="*** listing-item *** -content py-4">
-                    <div className="xt-h5">Dolor sit amet</div>
-                    <div className="-mt-2 text-sm font-semibold">3.772,00 €</div>
+                    <div className="xt-h6">Dolor sit amet</div>
+                    <div className="-mt-2 text-sm font-medium">3.772,00 €</div>
                   </div>
                 </a>
               </div>
@@ -359,64 +384,15 @@ export default function demo() {
 /* mount */
 
 const mount = ({ ref }) => {
-  const unmountSlider = mountSlider({ ref })
   const unmountMedia = mountMedia({ ref })
   const unmountFade = mountFade({ ref })
 
   // unmount
 
   return () => {
-    unmountSlider()
     unmountMedia()
     unmountFade()
   }
-}
-
-/* mountSlider */
-
-const mountSlider = ({ ref }) => {
-  // vars
-
-  const slider = ref.querySelector('.xt-slider')
-  const dragEase = 'quart.out'
-  let distance
-  let duration
-
-  // init
-
-  /***/
-  const self = new Xt.Slider(slider, {
-    align: 'left',
-  })
-  /***/
-
-  // dragposition (set internal position to resume animation mid dragging)
-
-  const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
-    // position animation to keep updated with animation
-    gsap.killTweensOf(self.drag)
-    gsap.to(self.drag, {
-      position: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-    // dragger animation
-    gsap.killTweensOf(self.dragger)
-    gsap.to(self.dragger, {
-      x: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-  }
-
-  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
-
-  // unmount
-
-  return () => {}
 }
 
 /* mountMedia */
@@ -548,7 +524,7 @@ const fade = ({ ref }) => {
         duration: 0.5,
         ease: 'quart.out',
         stagger: index => {
-          return Math.min(index * 0.15, 0.6)
+          return Math.min(0.6, index * 0.15)
         },
       })
     },

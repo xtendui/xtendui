@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <div className="*** xt-card py-8 px-9 text-base rounded-md text-black xt-links-default bg-gray-100 ***">
+      <div className="*** xt-card p-7 sm:p-9 text-base rounded-2xl text-gray-900 xt-links-default bg-gray-100 ***">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
           <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,

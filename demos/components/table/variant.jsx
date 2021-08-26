@@ -5,20 +5,20 @@ export default function demo() {
       <table className="my-4 xt-my-auto w-full">
         <thead>
           <tr>
-            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left">
+            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left">
               #
             </th>
-            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left">
+            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left">
               Description
             </th>
-            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left">
+            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left">
               Value
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
+            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
               1
             </th>
             <td className="py-2 px-4 text-sm align-top leading-snug *** border-t border-b border-gray-200 ***">
@@ -31,7 +31,7 @@ export default function demo() {
             </td>
           </tr>
           <tr>
-            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
+            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
               2
             </th>
             <td className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b border-gray-200 ***">
@@ -42,7 +42,7 @@ export default function demo() {
             </td>
           </tr>
           <tr>
-            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
+            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
               3
             </th>
             <td className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b border-gray-200 ***">
@@ -53,7 +53,7 @@ export default function demo() {
             </td>
           </tr>
           <tr>
-            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
+            <th className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-t border-b border-gray-200 ***">
               4
             </th>
             <td className="py-2 px-4 *** first:pl-0 last:pr-0 *** text-sm align-top leading-snug *** border-t border-b border-gray-200 ***">
@@ -69,20 +69,20 @@ export default function demo() {
       <table className="my-4 xt-my-auto w-full">
         <thead>
           <tr>
-            <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***">
+            <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***">
               #
             </th>
-            <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***">
+            <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***">
               Description
             </th>
-            <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***">
+            <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-500 text-white ***">
               Value
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***">
+            <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***">
               1
             </th>
             <td className="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 text-primary-500 ***">
@@ -95,7 +95,7 @@ export default function demo() {
             </td>
           </tr>
           <tr>
-            <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***">
+            <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***">
               2
             </th>
             <td className="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***">
@@ -106,7 +106,7 @@ export default function demo() {
             </td>
           </tr>
           <tr>
-            <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***">
+            <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 text-primary-500 ***">
               3
             </th>
             <td className="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 text-primary-500 ***">
@@ -117,7 +117,7 @@ export default function demo() {
             </td>
           </tr>
           <tr>
-            <th className="py-2 px-4 text-xs align-top font-semibold leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***">
+            <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***">
               4
             </th>
             <td className="py-2 px-4 text-sm align-top leading-snug *** border-2 border-primary-500 bg-primary-100 text-primary-500 ***">

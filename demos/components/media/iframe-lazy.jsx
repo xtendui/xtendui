@@ -9,15 +9,22 @@ export default function demo() {
 
   return (
     <div className="demo--media-iframe-lazy-react" ref={ref}>
-      <div className="xt-media-container bg-gray-500 pb-[56.2%] *** group ***">
+      <div className="xt-media-container bg-gray-300 pb-[56.2%] *** group ***">
         <iframe
           className="xt-media"
-          type="text/html"
           data-src="https://www.youtube.com/embed/hNQFjqDvPhA?autoPlay=1&showinfo=0&rel=0"
-          frameBorder="0"></iframe>
-        <div className="*** xt-media object-cover object-center cursor-pointer transition group-in:opacity-0 group-done:hidden ***">
-          <img src="https://img.youtube.com/vi/hNQFjqDvPhA/maxresdefault.jpg" loading="lazy" alt="" />
-          <div className="*** absolute inset-0 m-auto w-20 h-12 rounded-xl shadow-xl bg-black bg-opacity-60 backdrop-filter backdrop-blur ***">
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoPlay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen></iframe>
+        <div className="*** cursor-pointer transition group-in:opacity-0 group-done:hidden ***">
+          <img
+            className="xt-media object-cover object-center"
+            src="https://img.youtube.com/vi/hNQFjqDvPhA/maxresdefault.jpg"
+            loading="lazy"
+            alt=""
+          />
+          <div className="*** absolute inset-0 m-auto w-20 h-12 rounded-xl shadow-xl bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm backdrop-saturate-50 ***">
             <div className="*** absolute inset-0 w-0 h-0 m-auto border-l-[18px] border-b-[10px] border-t-[10px] border-transparent border-l-white ***"></div>
           </div>
         </div>

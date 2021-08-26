@@ -6,17 +6,17 @@ const html = /* HTML */ `
       <div data-xt-tooltip>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-tooltip-element
         >
-          small
+          Small
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipSm()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet
+            <div class="${classes.tooltipSm()}">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </div>
@@ -24,17 +24,17 @@ const html = /* HTML */ `
       <div data-xt-tooltip>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-tooltip-element
         >
-          medium
+          Medium
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipMd()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet
+            <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </div>
@@ -42,17 +42,17 @@ const html = /* HTML */ `
       <div data-xt-tooltip>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-tooltip-element
         >
-          large
+          Large
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipLg()} ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet
+            <div class="${classes.tooltipLg()}">Lorem ipsum dolor sit amet</div>
           </div>
         </div>
       </div>
@@ -60,19 +60,21 @@ const html = /* HTML */ `
       <div data-xt-tooltip>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-tooltip-element
         >
           max-width
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="relative *** ${classes.tooltipMd()} max-w-lg ${classes.tooltipRadius()} *** shadow-tooltip ${classes.cardBlack()}"
+            class="xt-card *** max-w-lg rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
-            fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
-            egestas congue.
+            <div class="${classes.tooltipMd()}">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
+              fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
+              egestas congue.
+            </div>
           </div>
         </div>
       </div>

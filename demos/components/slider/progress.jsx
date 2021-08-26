@@ -14,9 +14,11 @@ export default function demo() {
     <div className="demo--slider-progress-react" ref={ref}>
       <div className="xt-slider">
         <div className="p-4 md:p-6 lg:p-8" data-xt-mousefollow>
-          <div className="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+          <div
+            className="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
+            data-xt-slider-dragger>
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">1</div>
                 <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
                   <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -28,7 +30,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">2</div>
                 <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
                   <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -39,7 +41,7 @@ export default function demo() {
               </div>
             </div>
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">3</div>
                 <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
                   <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -51,7 +53,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide w-full group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">4</div>
                 <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
                   <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -63,7 +65,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">5</div>
                 <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
                   <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -75,7 +77,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">6</div>
                 <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
                   <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -87,7 +89,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
                 <div className="xt-h4">7</div>
                 <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
                   <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
@@ -102,7 +104,7 @@ export default function demo() {
           <nav className="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
             <button
               type="button"
-              className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+              className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
               data-xt-slider-element
               title="Slide xt-num">
               <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
@@ -171,10 +173,6 @@ const mountSlider = ({ ref }) => {
 
   // vars
 
-  const dragEase = 'quart.out'
-  let distance
-  let duration
-
   const spinnerTime = 0.25
   const spinnerEase = 'linear'
   const fillerTime = 0.25
@@ -190,30 +188,6 @@ const mountSlider = ({ ref }) => {
     },
   })
   /***/
-
-  // dragposition (set internal position to resume animation mid dragging)
-
-  const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
-    // position animation to keep updated with animation
-    gsap.killTweensOf(self.drag)
-    gsap.to(self.drag, {
-      position: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-    // dragger animation
-    gsap.killTweensOf(self.dragger)
-    gsap.to(self.dragger, {
-      x: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-  }
-
-  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // autostart
 
@@ -279,41 +253,6 @@ const mountSlider = ({ ref }) => {
   // autostop
 
   const autostop = () => {
-    // elements
-    const els = self.elements.filter(x => self.hasCurrent({ el: x }))
-    for (const el of els) {
-      const fillers = el.querySelectorAll('.xt-filler span:nth-child(2)')
-      for (const filler of fillers) {
-        gsap.killTweensOf(filler)
-        gsap.to(filler, {
-          height: 0,
-          top: 0,
-          duration: fillerTime,
-          ease: fillerEase,
-        })
-      }
-    }
-    // targets
-    const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
-    for (const tr of trs) {
-      const fillers = tr.querySelectorAll('.xt-filler span:nth-child(2)')
-      for (const filler of fillers) {
-        gsap.killTweensOf(filler)
-        gsap.to(filler, {
-          width: 0,
-          left: '100%',
-          duration: fillerTime,
-          ease: fillerEase,
-        })
-      }
-    }
-  }
-
-  self.container.addEventListener('autostop.xt.slider', autostop)
-
-  // autopause
-
-  const autopause = () => {
     // slider
     const spinner = self.container.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
     gsap.killTweensOf(spinner)
@@ -353,7 +292,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('autopause.xt.slider', autopause)
+  self.container.addEventListener('autostop.xt.slider', autostop)
 
   // unmount
 

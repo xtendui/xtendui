@@ -1,6 +1,5 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
-import gsap from 'gsap'
 
 Xt.mount({
   matches: '.demo--slider-api',
@@ -22,57 +21,25 @@ const mountEventmethods = ({ ref }) => {
 
   const slider = ref.querySelector('#slider--eventmethods')
 
-  // vars
-
-  const dragEase = 'quart.out'
-  let distance
-  let duration
-
   // init
 
   /***/
   let self = new Xt.Slider(slider, {
     wrap: true,
-    group: 1,
   })
   /***/
-
-  // dragposition (set internal position to resume animation mid dragging)
-
-  const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
-    // position animation to keep updated with animation
-    gsap.killTweensOf(self.drag)
-    gsap.to(self.drag, {
-      position: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-    // dragger animation
-    gsap.killTweensOf(self.dragger)
-    gsap.to(self.dragger, {
-      x: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-  }
-
-  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // log
 
   const log = document.querySelector('#card--slider-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 
@@ -113,7 +80,7 @@ const mountEventmethods = ({ ref }) => {
       const indexTr = trs.length + 1
       const strTr = `
       <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-        <div class="xt-card rounded-md text-base p-8 text-center text-black xt-links-default bg-gray-100 border-2 border-transparent transition group-in:border-gray-300">
+        <div class="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
           <div class="xt-h4">${indexTr}</div>
         </div>
       </div>

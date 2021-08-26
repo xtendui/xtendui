@@ -14,9 +14,9 @@ export default function demo() {
         <div className="container">
           <div className="xt-row xt-row-6 xt-row-stretch">
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="*** listing-item *** block relative overflow-hidden w-full">
-                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-500 h-40">
+              <div className="*** listing-item *** block relative overflow-hidden w-full group">
+                <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
+                  <div className="xt-media-container bg-gray-300 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -27,7 +27,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded-2xl">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -77,9 +77,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="*** listing-item *** block relative overflow-hidden w-full">
-                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-500 h-40">
+              <div className="*** listing-item *** block relative overflow-hidden w-full group">
+                <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
+                  <div className="xt-media-container bg-gray-300 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -90,7 +90,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded-2xl">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -124,9 +124,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="*** listing-item *** block relative overflow-hidden w-full">
-                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-500 h-40">
+              <div className="*** listing-item *** block relative overflow-hidden w-full group">
+                <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
+                  <div className="xt-media-container bg-gray-300 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -137,7 +137,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded-2xl">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -187,9 +187,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="*** listing-item *** block relative overflow-hidden w-full">
-                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-500 h-40">
+              <div className="*** listing-item *** block relative overflow-hidden w-full group">
+                <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
+                  <div className="xt-media-container bg-gray-300 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -200,7 +200,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded-2xl">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -234,9 +234,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="*** listing-item *** block relative overflow-hidden w-full">
-                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-500 h-40">
+              <div className="*** listing-item *** block relative overflow-hidden w-full group">
+                <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
+                  <div className="xt-media-container bg-gray-300 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -247,7 +247,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded-2xl">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -297,9 +297,9 @@ export default function demo() {
             </div>
 
             <div className="w-full md:w-6/12 lg:w-4/12">
-              <div className="*** listing-item *** block relative overflow-hidden w-full">
-                <div className="*** listing-item-front *** absolute inset-0 xt-card rounded-md text-black xt-links-default">
-                  <div className="xt-media-container bg-gray-500 h-40">
+              <div className="*** listing-item *** block relative overflow-hidden w-full group">
+                <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
+                  <div className="xt-media-container bg-gray-300 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -310,7 +310,7 @@ export default function demo() {
                   </div>
                 </div>
 
-                <div className="*** listing-item-back *** h-full xt-card rounded-md text-black xt-links-default">
+                <div className="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded-2xl">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"

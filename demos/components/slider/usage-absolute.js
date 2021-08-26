@@ -21,9 +21,6 @@ const mountSlider = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const dragEase = 'quart.out'
-  let distance
-  let duration
 
   // slider
 
@@ -36,15 +33,9 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
     // position animation to keep updated with animation
-    gsap.killTweensOf(self.drag)
-    gsap.to(self.drag, {
+    gsap.set(self.drag, {
       position: self.drag.final,
-      duration: duration,
-      ease: dragEase,
     })
   }
 

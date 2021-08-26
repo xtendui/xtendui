@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-overlay="{ targets: '#overlay--hash' }"
       >
         Overlay
@@ -13,17 +13,19 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-overlay="{ targets: '#overlay--hash' }"
       >
         Overlay same
       </button>
 
       <div class="xt-overlay" id="overlay--hash" data-xt-hash="demo--overlay-hash">
-        <div class="xt-backdrop z-below bg-black opacity-25"></div>
+        <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
-            <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()}">
+            <div
+              class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
+            >
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"

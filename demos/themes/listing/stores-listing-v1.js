@@ -23,7 +23,7 @@ const mountListing = ({ ref }) => {
   for (const item of items) {
     // vars
 
-    const actionBtn = item.querySelector('.listing-action')
+    const actionBtn = item.querySelector('[data-node-action]')
     const closeBtn = item.querySelector('.xt-dismiss')
 
     // click

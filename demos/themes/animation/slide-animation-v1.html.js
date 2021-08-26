@@ -1,251 +1,305 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const animDesign = () =>
-  '*** overflow-hidden opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4 ***'
-const animItem = () =>
-  '*** opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4 ***'
-const animItemOpacity = () =>
-  '*** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:ease-out-quint group-in:delay-100 group-in:opacity-100 ***'
+const designAnim = () =>
+  'overflow-hidden opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4'
+const itemAnim = () =>
+  'opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4'
+const itemAnimOpacity = () =>
+  'opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-100'
 
-const buttonDefault = () => classes.buttonDefault()
-const buttonPrimary = () => classes.buttonPrimary()
-const cardDefaultInteractive = () => classes.cardDefaultInteractive()
-const cardPrimaryInteractive = () => classes.cardPrimaryInteractive()
+const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
+const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
+const buttonText = () => `${classes.buttonTextAnim()}`
+const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
+const buttonGroupPrimary = () => `${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}`
 
 const html = /* HTML */ `
   <div class="demo--slide-animation-v1">
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Button</div>
+    <div class="${classes.hBlock()}">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonDefault()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGray()}"
+      >
         Gray
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+      >
         Primary
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} text-black ${classes.buttonText()}"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonUpper()} ${buttonText()}"
       >
         Text
       </button>
 
-      <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} xt-link">Link</button>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonUpper()} ${buttonRing()}"
+      >
+        Ring
+      </button>
+
+      <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link">
+        Link
+      </button>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Drop</div>
+    <div class="${classes.hBlock()}">Toggle</div>
 
-    <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ duration: 500 }">
+    <form class="text-sm">
+      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
-          data-xt-drop-element
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+          data-xt-toggle-element
         >
-          list
+          Group
         </button>
 
-        <div class="xt-drop p-4 group" data-xt-drop-target>
-          <div class="xt-card w-64 py-3.5 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ${animDesign()}">
-            <nav class="xt-list flex-col rounded-md ${animItem()}">
-              <a href="#" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        <div class="*** off:hidden out:pointer-events-none ** max-w-sm *** group ***" data-xt-toggle-target>
+          <div class="*** ${designAnim()} ***">
+            <div class="xt-list flex-nowrap *** ${itemAnim()} ***">
+              <div class="inline-flex flex-auto">
+                <button
+                  type="submit"
+                  class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${buttonGray()}"
+                >
+                  ${classes.iconSearch({ classes: 'text-xl -my-1' })}
+                </button>
+                <input
+                  type="text"
+                  class="${classes.input()} ${classes.inputGray()}"
+                  aria-label="Search"
+                  placeholder="Seach Catalog"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="xt-button ${classes.buttonMd()} rounded-r${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="${classes.hBlock()}">Drop</div>
+
+    <div class="xt-list xt-list-3 items-center">
+      <div data-xt-drop="{ position: 'auto-end', duration: 500 }">
+        <button
+          type="button"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          data-xt-drop-element
+        >
+          Nav
+        </button>
+        <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
+          <div
+            class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${designAnim()} ***"
+          >
+            <nav class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
+              <a
+                href="#"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
+              >
+                ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
               </a>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
-                Dolor sit
-              </button>
-              <button type="button" class="xt-button ${classes.buttonMdDrop()} ${classes.buttonDefaultDrop()}">
-                Amet
-              </button>
+              <a
+                href="#"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
+              >
+                ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
+              </a>
+              <a
+                href="#"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
+              >
+                ${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories
+              </a>
+              <a
+                href="#"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${buttonGroupPrimary()}"
+              >
+                ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
+              </a>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity()}"></div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** *** ${itemAnimOpacity()} group-in:opacity-100 *** ***"
+          ></div>
         </div>
       </div>
 
-      <div data-xt-drop="{ duration: 500 }">
+      <div data-xt-drop="{ position: 'auto-end', duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-drop-element
         >
-          card
+          Contact
         </button>
-
-        <div class="xt-drop p-4 group" data-xt-drop-target>
-          <div class="xt-card w-64 ${classes.cardRadius()} shadow-drop ${classes.cardWhite()} ${animDesign()}">
-            <button
-              type="button"
-              class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-              aria-label="Close"
+        <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
+          <div
+            class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
+          >
+            <nav class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
+              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
+                <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                  <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                    ${classes.iconMail({ classes: 'xt-icon text-2xl text-primary-500' })}
+                  </div>
+                  <div>
+                    <div class="font-medium">Email Us</div>
+                    <div class="text-xs opacity-50">We&apos;ll respond within 24 hours.</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
+                <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                  <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                    ${classes.iconPhone({ classes: 'xt-icon text-2xl text-primary-500' })}
+                  </div>
+                  <div>
+                    <div class="font-medium">Phone</div>
+                    <div class="text-xs opacity-50">Contact us on 24/7 support line.</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
+                <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
+                  <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                    ${classes.iconUsers({ classes: 'xt-icon text-2xl text-primary-500' })}
+                  </div>
+                  <div>
+                    <div class="font-medium">Support</div>
+                    <div class="text-xs opacity-50">Open a ticket on our support site.</div>
+                  </div>
+                </div>
+              </a>
+            </nav>
+            <div
+              class="p-5 text-xs rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto  *** ${itemAnim()} ***"
             >
-              ${classes.iconX()}
-            </button>
-            <div class="${classes.cardSm()} rounded-md ${animItem()}">
-              <div class="xt-h5">Lorem ipsum</div>
+              <p class="mb-1 font-bold text-sm">Didn&apos;t find what you was looking for?</p>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                suscipit, velit eu tristique mollis.
+                Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
+                <a href="mailto:info@info.com">info@info.com</a>.
               </p>
             </div>
           </div>
-          <div class="xt-arrow -inset-1 m-4 w-4 h-4 bg-white ${animItemOpacity()}"></div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** *** ${itemAnimOpacity()} group-in:opacity-100 *** ***"
+          ></div>
         </div>
       </div>
     </div>
 
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Tooltip</div>
+    <div class="${classes.hBlock()}">Tooltip</div>
 
-    <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ duration: 500 }">
-        <div data-xt-tooltip-element>
-          <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
-            tooltip
-          </button>
+    <div data-xt-tooltip="{ duration: 500 }">
+      Example tooltips
+      <span data-xt-tooltip-element>
+        <a href="#">product informations</a>
 
-          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
-            <div
-              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()} ${animDesign()}"
-            >
-              <div class="${animItem()}">Lorem ipsum dolor sit amet</div>
-            </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below ${animItemOpacity()}"></div>
-          </div>
-        </div>
-      </div>
-
-      <div data-xt-tooltip="{ duration: 500 }">
-        <div data-xt-tooltip-element>
-          <button type="button" class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}">
-            list group
-          </button>
-
-          <div class="xt-tooltip p-2 group" data-xt-tooltip-target>
-            <div class="${classes.tooltipRadius()} shadow-tooltip ${classes.cardWhite()} ${animDesign()}">
-              <form class="text-sm">
-                <div class="xt-list flex-nowrap max-w-sm ${animItem()}">
-                  <div class="xt-list-inner flex-auto">
-                    <button type="button" class="xt-button ${classes.buttonMd()} rounded-l-md ${buttonDefault()}">
-                      ${classes.iconSearch({ classes: 'text-xl -my-1' })}
-                    </button>
-                    <input
-                      type="text"
-                      class="${classes.input()} ${classes.inputDefault()}"
-                      aria-label="Search"
-                      placeholder="Seach Catalog"
-                    />
-                  </div>
-
-                  <button type="button" class="xt-button ${classes.buttonMd()} rounded-r-md ${buttonPrimary()}">
-                    Search
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-gray-300 z-below ${animItemOpacity()}"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Overlay</div>
-
-    <div class="xt-list xt-list-3 items-center">
-      <div data-xt-overlay="{ duration: 500 }">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
-          data-xt-overlay-element
-        >
-          screen full
-        </button>
-
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
-          <div class="xt-overlay-container p-0">
-            <button
-              type="button"
-              class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl ${animItem()}"
-              aria-label="Close"
-            >
-              ${classes.iconX()}
-            </button>
-            <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen items-center justify-center ${classes.cardWhite()} ${animDesign()}">
-                <div class="xt-media-container bg-gray-500 ${animItem()} pb-[100%]">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div data-xt-overlay="{ duration: 500 }">
-        <button
-          type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
-          data-xt-overlay-element
-        >
-          Menu
-        </button>
-
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
-          <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
-            <div class="xt-overlay-inner">
-              <div class="xt-card xt-min-h-screen ${classes.cardWhite()} ${animDesign()}">
-                <button
-                  type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                  aria-label="Close"
+        <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+          <div
+            class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} *** ${designAnim()} ***"
+          >
+            <div class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
+              <div>
+                <div
+                  class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
                 >
-                  ${classes.iconX()}
-                </button>
-                <div class="xt-list bg-primary-500 ${animItem()}">
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Menu</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Info</button>
-                  <button type="button" class="xt-button ${classes.buttonMd()} ${buttonPrimary()}">Account</button>
+                  <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                    ${classes.iconInfo({ classes: 'xt-icon text-2xl text-primary-500' })}
+                  </div>
+                  <div>
+                    <div class="font-medium">Shipping Limits</div>
+                    <div class="text-xs opacity-50">Delivery is EU and US only.</div>
+                  </div>
                 </div>
-                <div class="xt-media-container bg-gray-500 h-48 ${animItem()}">
-                  <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
-                </div>
-                <div class="${classes.cardMd()} ${animItem()}">
-                  <div class="xt-h4">Lorem ipsum</div>
-                  <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
-                    suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
-                    augue, sagittis vitae magna eget, vehicula scelerisque elit.
-                  </p>
-                </div>
-                <div class="${classes.cardSm()} bg-gray-200 mt-auto ${animItem()}">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
-                    turpis.
-                  </p>
+              </div>
+              <div>
+                <div
+                  class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()}"
+                >
+                  <div class="p-2 bg-primary-800 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                    ${classes.iconAlerttriangle({ classes: 'xt-icon text-2xl text-primary-500' })}
+                  </div>
+                  <div>
+                    <div class="font-medium">VAT Excluded</div>
+                    <div class="text-xs opacity-50">The prices is excluding VAT.</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** *** ${itemAnimOpacity()} group-in:opacity-100 *** ***"
+          ></div>
         </div>
-      </div>
+      </span>
+      and
+      <span data-xt-tooltip-element>
+        <a href="#">credit card CVV</a>
 
+        <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+          <div
+            class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
+          >
+            <div class="xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-32 *** ${itemAnim()} ***">
+              <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+            </div>
+            <div>
+              <div
+                class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap ${classes.groupButtonMd()} *** ${itemAnim()} ***"
+              >
+                <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
+                  ${classes.iconCreditcard({ classes: 'xt-icon text-2xl text-primary-500' })}
+                </div>
+                <div class="text-xs">
+                  The card security code is the three-digit number at the back of your debit card.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** *** ${itemAnimOpacity()} group-in:opacity-100 *** ***"
+          ></div>
+        </div>
+      </span>
+    </div>
+
+    <div class="${classes.hBlock()}">Overlay</div>
+
+    <div class="xt-list xt-list-3 items-center">
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
-          contact
+          Contact
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} ${animDesign()}">
+              <div
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -254,52 +308,52 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group rounded-md ${animItem()}">
-                  <div class="${classes.cardMd()} md:w-7/12">
+                <div class="md:xt-card-group rounded${classes.overlayRadius()} *** ${itemAnim()} ***">
+                  <div class="md:w-7/12 ${classes.cardMd()}">
                     <div class="xt-h4">Contact us</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Name </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Name </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Name"
                           />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Surname </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Surname </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Surname"
                           />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Email </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Email"
                           />
                         </div>
 
                         <div class="w-full md:w-6/12">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Telephone </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Telephone </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Telephone"
                           />
                         </div>
 
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Subject </label>
                           <select
-                            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} xt-select ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Subject"
                           >
                             <option selected value="">Select an option</option>
@@ -310,9 +364,9 @@ const html = /* HTML */ `
                         </div>
 
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Message </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Message </label>
                           <textarea
-                            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputDefault()} h-24 resize-vertical"
+                            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputGray()} h-24 resize-vertical"
                             aria-label="Message"
                           ></textarea>
                         </div>
@@ -321,11 +375,10 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
-                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                             />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
                               <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
@@ -334,7 +387,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Send
                           </button>
@@ -343,11 +396,13 @@ const html = /* HTML */ `
                     </form>
                   </div>
 
-                  <div class="md:w-5/12 flex flex-col ${animItem()}">
-                    <div class="xt-media-container bg-gray-500 h-48 md:pb-[100%]">
+                  <div class="md:w-5/12 flex flex-col *** ${itemAnim()} ***">
+                    <div class="xt-media-container bg-gray-300 h-48 md:pb-[100%]">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
-                    <div class="${classes.cardMd()} bg-gray-200 rounded-b-md md:rounded-bl-none flex-full">
+                    <div
+                      class="${classes.cardMd()} rounded-b${classes.overlayRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()} flex-auto"
+                    >
                       <p class="xt-h5">Didn&apos;t find what you was looking for?</p>
                       <p>
                         Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
@@ -365,17 +420,19 @@ const html = /* HTML */ `
       <div data-xt-overlay="{ duration: 500 }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
           data-xt-overlay-element
         >
-          newsletter
+          Newsletter
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-black transition opacity-0 group-in:opacity-25"></div>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
-              <div class="xt-card ${classes.cardRadius()} shadow-overlay ${classes.cardWhite()} ${animDesign()}">
+              <div
+                class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
+              >
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -384,38 +441,38 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="md:xt-card-group rounded-md ${animItem()}">
+                <div class="md:xt-card-group rounded${classes.overlayRadius()} *** ${itemAnim()} ***">
                   <div class="md:w-5/12 flex flex-col">
                     <div
-                      class="xt-media-container bg-gray-500 rounded-t-md md:rounded-tr-none h-48 lg:pb-[100%] md:flex-full"
+                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                   </div>
 
-                  <div class="${classes.cardMd()} md:w-7/12">
+                  <div class="md:w-7/12 ${classes.cardMd()}">
                     <div class="xt-h4">Subscribe to our newsletter</div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est.</p>
                     <form class="text-sm">
                       <div class="xt-row xt-row-x-6 xt-row-y-4">
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Email </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Email </label>
                           <input
                             type="text"
-                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputDefault()}"
+                            class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
                             aria-label="Email"
                           />
                         </div>
 
                         <div class="w-full">
-                          <label class="${classes.label()} mb-3 ${classes.labelDefault()}"> Subject </label>
+                          <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Subject </label>
 
                           <div class="xt-row xt-row-x-8 xt-row-y-2">
                             <div class="w-full sm:w-auto">
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
                                   checked
                                 />
@@ -427,7 +484,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
                                 />
                                 <span class="${classes.checkContent()}"> Option 2 </span>
@@ -438,7 +495,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioDefault()}"
+                                  class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
                                 />
                                 <span class="${classes.checkContent()}"> Option 3 </span>
@@ -451,11 +508,10 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
-                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkDefault()}"
+                              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                             />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">sales conditions</a> and the
                               <a href="#" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
@@ -464,7 +520,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <button
                             type="submit"
-                            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${buttonPrimary()}"
+                            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
                           >
                             Subscribe
                           </button>
@@ -474,43 +530,15 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="${classes.cardSm()} rounded-b-md bg-gray-200 ${animItem()}">
-                  <p>Receive <strong>free discount</strong> periodically on all our products.</p>
+                <div
+                  class="${classes.cardSm()} rounded-b${classes.overlayRadius()} ${classes.cardWhiteAccent()} *** ${itemAnim()} ***"
+                >
+                  <p>Subscribe and receive <strong>free discount</strong> periodically on all our products.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="${classes.hBlock()} text-black bg-gray-100 text-center">Card</div>
-
-    <div class="xt-row xt-row-6">
-      <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${classes.cardRadius()} ${cardDefaultInteractive()}">
-          <div class="${classes.cardMd()}">
-            <div class="xt-h4">Default</div>
-            <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-              tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae
-              magna eget, vehicula scelerisque elit.
-            </p>
-          </div>
-        </button>
-      </div>
-
-      <div class="w-full md:w-6/12">
-        <button type="button" class="xt-card ${classes.cardRadius()} ${cardPrimaryInteractive()}">
-          <div class="${classes.cardMd()}">
-            <div class="xt-h4">Primary</div>
-            <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Nullam suscipit, velit eu
-              tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae
-              magna eget, vehicula scelerisque elit.
-            </p>
-          </div>
-        </button>
       </div>
     </div>
   </div>

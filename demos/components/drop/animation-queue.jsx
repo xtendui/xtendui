@@ -9,28 +9,28 @@ export default function demo() {
         <div data-xt-drop-element>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
-            list
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+            Group
           </button>
 
           <div
-            className="xt-drop p-4 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+            className="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
             data-xt-drop-target>
-            <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
-              <nav className="xt-list flex-col">
+            <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+              <nav className="xt-list flex-col p-3">
                 <a
                   href="#"
-                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Dolor sit
                 </button>
                 <button
                   type="button"
-                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Amet
                 </button>
               </nav>
@@ -41,14 +41,14 @@ export default function demo() {
         <div data-xt-drop-element>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
-            card
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+            Card
           </button>
 
           <div
-            className="xt-drop p-4 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+            className="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
             data-xt-drop-target>
-            <div className="xt-card w-80 rounded-md shadow-drop text-black xt-links-default bg-white">
+            <div className="xt-card w-80 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl"
@@ -68,7 +68,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="py-8 px-9 text-base">
+              <div className="p-7 sm:p-9 text-base">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

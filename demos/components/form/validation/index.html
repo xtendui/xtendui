@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link data-identity="gatsby-global-css" href="/styles.4f3a71ed53c6ac03ad7b.css" rel="stylesheet" type="text/css"/><meta name="generator" content="Gatsby 3.12.0"/><title data-react-helmet="true">Xtend UI - demos/components/form/validation</title><meta data-react-helmet="true" name="description" content="demos/components/form/validation"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="Xtend UI - demos/components/form/validation"/><meta data-react-helmet="true" property="og:description" content="demos/components/form/validation"/><meta data-react-helmet="true" property="og:image" content="/social.png"/><meta data-react-helmet="true" name="twitter:card" content="/social.png"/><meta data-react-helmet="true" name="twitter:creator" content="Riccardo Caroli"/><meta data-react-helmet="true" name="twitter:title" content="Xtend UI - demos/components/form/validation"/><meta data-react-helmet="true" name="twitter:description" content="demos/components/form/validation"/><meta data-react-helmet="true" name="keywords" content="react, javascript, components, ui, html5, frontend, react-components, vanilla-javascript, tailwindcss"/><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=fcd1d420b49afc59852ea43dab7d44eb" type="image/png"/><link rel="icon" href="/favicon.svg?v=fcd1d420b49afc59852ea43dab7d44eb" type="image/svg+xml"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#0058C6"/><link rel="apple-touch-icon" sizes="512x512" href="./static/apple-touch-icon.png?v=fcd1d420b49afc59852ea43dab7d44eb"/><link as="script" rel="preload" href="/webpack-runtime-025a052b4aa09da1a0c8.js"/><link as="script" rel="preload" href="/framework-931105c35754abb735b1.js"/><link as="script" rel="preload" href="/app-40a55637a6bbfa6707e8.js"/><link as="fetch" rel="preload" href="/page-data/demos/components/form/validation/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/364365266.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class="xt-body text-gray-900 xt-links-default xl:text-lg" data-version="c7ef5160-066b-11ec-a6a0-2d25ccd4171c"><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="body-outer"><div id="gatsby_body-inner" class="gatsby_demo_source--from invisible relative xt-h-screen">
+  <div class="demo--form-validation">
+    <form class="text-sm">
+      <div class="xt-row xt-row-x-6 xt-row-y-4">
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Custom constrain </label>
+          <input
+            type="text"
+            class="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none input--constrains"
+            aria-label="Custom constrain"
+            placeholder="Custom constrain"
+          />
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Email </label>
+          <input
+            type="email"
+            class="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none valid-submit:!border-green-200 invalid-submit:!border-red-200"
+            aria-label="Email"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Number </label>
+          <input
+            type="number"
+            class="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
+            aria-label="Number"
+            placeholder="Number"
+            required
+            min="1"
+            max="10"
+          />
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Letters </label>
+          <input
+            type="text"
+            class="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
+            aria-label="Letters"
+            placeholder="Letters"
+            required
+            pattern="[A-Za-z]+"
+          />
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> File </label>
+          <input type="file" class="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none" aria-label="File" required />
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Textarea </label>
+          <textarea
+            class="block w-full h-20 max-h-48 py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none h-24 resize-vertical"
+            aria-label="Textarea"
+            placeholder="Textarea"
+            required
+          ></textarea>
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Select </label>
+          <select class="block w-full xt-select py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none" aria-label="Select" required>
+            <option selected value="">Select an option</option>
+            <option>Test</option>
+            <option>Test</option>
+            <option>Test</option>
+          </select>
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Select multiple </label>
+          <select
+            class="block w-full xt-select py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
+            aria-label="Select multiple"
+            multiple
+            required
+          >
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+          <div class="mt-3 text-red-500 text-xs leading-snug *** custom-validation-error ***">
+            Scroll to this error on page load
+          </div>
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Checkbox </label>
+
+          <div class="xt-row xt-row-x-8 xt-row-y-2">
+            <div class="w-full">
+              <label class="cursor-pointer inline-flex items-baseline">
+                <input
+                  type="checkbox"
+                  class="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                  required
+                  disabled
+                />
+                <span class="ml-4"
+                  ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
+                >
+              </label>
+            </div>
+
+            <div class="w-full">
+              <label class="cursor-pointer inline-flex items-baseline">
+                <input
+                  type="checkbox"
+                  class="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                  required
+                />
+                <span class="ml-4"
+                  ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
+                >
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Radio </label>
+
+          <div class="xt-row xt-row-x-8 xt-row-y-2">
+            <div class="w-full">
+              <label class="cursor-pointer inline-flex items-baseline">
+                <input
+                  type="radio"
+                  class="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                  name="radio-validation"
+                  required
+                />
+                <span class="ml-4"
+                  ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
+                >
+              </label>
+            </div>
+
+            <div class="w-full">
+              <label class="cursor-pointer inline-flex items-baseline">
+                <input
+                  type="radio"
+                  class="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                  name="radio-validation"
+                />
+                <span class="ml-4"
+                  ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
+                >
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full">
+          <label class="block mb-3 font-medium text-gray-700 label-required"> Switch </label>
+
+          <div class="xt-row xt-row-x-8 xt-row-y-2">
+            <div class="w-full">
+              <label class="cursor-pointer inline-flex items-baseline">
+                <input
+                  type="checkbox"
+                  class="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                  required
+                />
+                <span class="ml-4"
+                  ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
+                >
+              </label>
+            </div>
+
+            <div class="w-full">
+              <label class="cursor-pointer inline-flex items-baseline">
+                <input
+                  type="radio"
+                  class="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                  name="switch-validation"
+                  required
+                />
+                <span class="ml-4"
+                  ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
+                >
+              </label>
+            </div>
+
+            <div class="w-full">
+              <label class="cursor-pointer inline-flex items-baseline">
+                <input
+                  type="radio"
+                  class="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                  name="switch-validation"
+                />
+                <span class="ml-4"
+                  ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
+                  augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
+                >
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full">
+          <button
+            type="submit"
+            class="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+          >
+            submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/demos/components/form/validation/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-a039054229113505a2ec.js"],"app":["/app-40a55637a6bbfa6707e8.js"]};/*]]>*/</script><script src="/polyfill-a039054229113505a2ec.js" nomodule=""></script><script src="/app-40a55637a6bbfa6707e8.js" async=""></script><script src="/framework-931105c35754abb735b1.js" async=""></script><script src="/webpack-runtime-025a052b4aa09da1a0c8.js" async=""></script></body></html>

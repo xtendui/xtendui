@@ -10,65 +10,69 @@ export default function demo() {
 
   return (
     <div className="demo--drop-prevent-overflow-react" ref={ref}>
-      <div className="py-4 px-6 bg-primary-500">
-        <div className="xt-list xt-list-3 items-center">
+      <div
+        className="xt-card p-7 sm:p-9 text-base rounded-2xl text-white xt-links-inverse bg-primary-500"
+        data-node-boundary>
+        <div className="xt-list xt-list-3 items-center" data-node-drop>
           <div data-xt-drop-element>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
               Drop
             </button>
 
-            <div className="xt-drop p-4" data-xt-drop-target>
-              <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
-                <nav className="xt-list flex-col">
+            <div className="xt-drop p-3" data-xt-drop-target>
+              <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+                <nav className="xt-list flex-col p-3">
                   <a
                     href="#"
-                    className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </a>
                   <button
                     type="button"
-                    className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     Dolor sit
                   </button>
                   <button
                     type="button"
-                    className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     Amet
                   </button>
                 </nav>
               </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
             </div>
           </div>
 
           <div data-xt-drop-element>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
               Drop
             </button>
 
-            <div className="xt-drop p-4" data-xt-drop-target>
-              <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
-                <nav className="xt-list flex-col">
+            <div className="xt-drop p-3" data-xt-drop-target>
+              <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+                <nav className="xt-list flex-col p-3">
                   <a
                     href="#"
-                    className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit
                   </a>
                   <button
                     type="button"
-                    className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     Dolor sit
                   </button>
                   <button
                     type="button"
-                    className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                    className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     Amet
                   </button>
                 </nav>
               </div>
+              <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
             </div>
           </div>
         </div>
@@ -94,8 +98,8 @@ const mount = ({ ref }) => {
 const mountDrops = ({ ref }) => {
   // vars
 
-  const drop = ref.querySelector(':scope > * > .xt-list')
-  const boundary = ref.querySelector(':scope > *')
+  const drop = ref.querySelector('[data-node-drop]')
+  const boundary = ref.querySelector('[data-node-boundary]')
 
   // init
 

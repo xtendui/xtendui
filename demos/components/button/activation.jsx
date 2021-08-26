@@ -5,23 +5,29 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center">
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** on ***">
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** on ***">
           Gray
         </button>
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600 *** on ***">
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600 *** on ***">
           Primary
         </button>
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-sans font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-60 active:text-opacity-100 on:text-opacity-100 *** on ***">
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** on ***">
           Text
         </button>
 
-        <button type="button" className="xt-button py-2.5 px-3.5 text-xs rounded-md xt-link *** on ***">
+        <button
+          type="button"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300 *** on ***">
+          Ring
+        </button>
+
+        <button type="button" className="xt-button py-2.5 px-3.5 text-sm rounded-md xt-link *** on ***">
           Link
         </button>
       </div>

@@ -3,8 +3,8 @@ export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center justify-center">
-        <div className="xt-card rounded-md text-white xt-links-inverse bg-primary-500">
-          <div className="py-6 px-7 text-sm">
+        <div className="xt-card rounded-2xl text-white xt-links-inverse bg-primary-500">
+          <div className="p-6 sm:p-8 text-sm">
             <div className="xt-h5">Small</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -22,7 +22,7 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
           Lorem ipsum
           <span className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
             <span className="*** xt-filler absolute inset-0 m-auto text-white text-opacity-50 ***">

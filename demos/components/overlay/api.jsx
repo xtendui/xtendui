@@ -13,37 +13,37 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--overlay-api-first-element">
           1st element
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--overlay-api-first-target">
           1st target
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--overlay-api-reinit">
           Reinit
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--overlay-api-restart">
           Restart
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--overlay-api-destroy">
           Destroy
         </button>
         <button
           type="button"
-          className="xt-button py-1.5 px-2.5 text-3xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--overlay-api-unmount">
           Unmount
         </button>
@@ -52,23 +52,23 @@ export default function demo() {
       <div className="xt-list xt-list-3 items-center mb-4">
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
           id="overlay--eventmethods">
           Overlay
         </button>
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-xs rounded-md text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
           id="overlay--eventmethods-alt">
           Overlay same
         </button>
       </div>
 
       <div className="xt-overlay" id="overlay--nested">
-        <div className="xt-backdrop z-below bg-black opacity-25"></div>
+        <div className="xt-backdrop z-below bg-gray-800 opacity-25"></div>
         <div className="xt-overlay-container max-w-5xl">
           <div className="xt-overlay-inner">
-            <div className="xt-card rounded-md shadow-overlay text-black xt-links-default bg-white">
+            <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">
               <button
                 type="button"
                 className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -88,7 +88,7 @@ export default function demo() {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <div className="py-8 px-9 text-base md:text-lg md:p-10">
+              <div className="p-7 sm:p-9 text-base md:text-lg md:p-10">
                 <div className="xt-h3">Overlay</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -113,9 +113,9 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="xt-card rounded-md text-black xt-links-default bg-gray-100 mt-6">
+      <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100 mt-6">
         <div
-          className="py-6 px-7 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
+          className="p-6 sm:p-8 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
           id="card--overlay-api-log"></div>
       </div>
     </div>
@@ -160,14 +160,13 @@ const mountEventmethods = ({ ref }) => {
 
   const log = ref.querySelector('#card--overlay-api-log')
 
-  const logAdd = text => {
-    log.innerHTML += `${text}<br/>`
-    // scroll
-    log.scrollTo(0, log.scrollHeight)
+  const logAdd = str => {
+    log.append(Xt.node({ str: `<div>${str}</div>` }))
     // hr
     clearTimeout(window.logTimeout)
     window.logTimeout = setTimeout(() => {
-      log.innerHTML += '<hr class="my-4 border-gray-400"/>'
+      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+      log.scrollTo(0, log.scrollHeight)
     }, 1000)
   }
 

@@ -9,14 +9,14 @@ export default function demo() {
         <div data-xt-tooltip>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             data-xt-tooltip-element>
-            small
+            Small
           </button>
 
-          <div className="xt-tooltip p-2" data-xt-tooltip-target>
-            <div className="relative *** py-1 px-2 text-3xs rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet
+          <div className="xt-tooltip p-3" data-xt-tooltip-target>
+            <div className="xt-card *** rounded-md *** shadow-md text-white xt-links-inverse font-medium bg-black">
+              <div className="py-1 px-2 text-3xs">Lorem ipsum dolor sit amet</div>
             </div>
           </div>
         </div>
@@ -24,14 +24,14 @@ export default function demo() {
         <div data-xt-tooltip>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             data-xt-tooltip-element>
-            medium
+            Medium
           </button>
 
-          <div className="xt-tooltip p-2" data-xt-tooltip-target>
-            <div className="relative *** py-2 px-3.5 text-xs rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet
+          <div className="xt-tooltip p-3" data-xt-tooltip-target>
+            <div className="xt-card *** rounded-md *** shadow-md text-white xt-links-inverse font-medium bg-black">
+              <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
             </div>
           </div>
         </div>
@@ -39,14 +39,14 @@ export default function demo() {
         <div data-xt-tooltip>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             data-xt-tooltip-element>
-            large
+            Large
           </button>
 
-          <div className="xt-tooltip p-2" data-xt-tooltip-target>
-            <div className="relative *** py-2.5 px-4 text-base rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet
+          <div className="xt-tooltip p-3" data-xt-tooltip-target>
+            <div className="xt-card *** rounded-md *** shadow-md text-white xt-links-inverse font-medium bg-black">
+              <div className="py-2.5 px-4 text-base">Lorem ipsum dolor sit amet</div>
             </div>
           </div>
         </div>
@@ -54,16 +54,18 @@ export default function demo() {
         <div data-xt-tooltip>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600"
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             data-xt-tooltip-element>
             max-width
           </button>
 
-          <div className="xt-tooltip p-2" data-xt-tooltip-target>
-            <div className="relative *** py-2 px-3.5 text-xs max-w-lg rounded-sm *** shadow-tooltip font-semibold text-white xt-links-inverse bg-black">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut
-              fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium metus
-              egestas congue.
+          <div className="xt-tooltip p-3" data-xt-tooltip-target>
+            <div className="xt-card *** max-w-lg rounded-md *** shadow-md text-white xt-links-inverse font-medium bg-black">
+              <div className="py-2 px-2.5 text-xs">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc
+                ut fringilla nibh. Duis quis arcu quis neque tempor lobortis nec nec mauris. Proin vel elit pretium
+                metus egestas congue.
+              </div>
             </div>
           </div>
         </div>

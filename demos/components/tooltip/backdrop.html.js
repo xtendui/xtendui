@@ -7,19 +7,19 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-tooltip"
           >
             backdrop
           </button>
 
-          <div class="xt-tooltip p-2" data-xt-tooltip-target>
-            <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
+          <div class="xt-tooltip p-3" data-xt-tooltip-target>
+            <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
             <div
-              class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}"
+              class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
             >
-              Lorem ipsum dolor sit amet
+              <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
-            <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -27,18 +27,20 @@ const html = /* HTML */ `
       <div data-xt-tooltip="{ on: 'click', off: 'click', classSkip: false }">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} ${classes.buttonRadius()} ${classes.buttonPrimary()} on:z-tooltip"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-tooltip"
           data-xt-tooltip-element
         >
           backdrop click
         </button>
 
-        <div class="xt-tooltip p-2" data-xt-tooltip-target>
-          <div class="*** xt-backdrop z-below bg-black opacity-25 ***"></div>
-          <div class="relative ${classes.tooltipMd()} ${classes.tooltipRadius()} shadow-tooltip ${classes.cardBlack()}">
-            Lorem ipsum dolor sit amet
+        <div class="xt-tooltip p-3" data-xt-tooltip-target>
+          <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
+          <div
+            class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+          >
+            <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
           </div>
-          <div class="xt-arrow -inset-1 m-2 w-4 h-4 bg-black z-below"></div>
+          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
         </div>
       </div>
     </div>

@@ -9,48 +9,48 @@ export default function demo() {
         <div data-xt-drop-element>
           <button
             type="button"
-            className="xt-button py-2.5 px-3.5 text-xs rounded-md text-white font-semibold leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 active:bg-primary-700 on:bg-primary-600">
-            drop
+            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+            Drop
           </button>
 
-          <div className="xt-drop p-4" data-xt-drop-target>
-            <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-black xt-links-default bg-white">
-              <nav className="xt-list flex-col">
+          <div className="xt-drop p-3" data-xt-drop-target>
+            <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+              <nav className="xt-list flex-col p-3">
                 <a
                   href="#"
-                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
                 <button
                   type="button"
-                  className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Dolor sit
                 </button>
                 <div data-xt-drop="{ elements: '[data-xt-drop-element-nested]', targets: '[data-xt-drop-target-nested]' }">
                   <div data-xt-drop-element-nested>
                     <button
                       type="button"
-                      className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-black font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                      className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                       nested
                     </button>
 
-                    <div className="xt-drop p-4" data-xt-drop-target-nested>
-                      <div className="xt-backdrop z-below bg-black opacity-25"></div>
-                      <div className="xt-card w-64 py-3.5 rounded-md shadow-drop text-white xt-links-inverse bg-primary-500">
-                        <nav className="xt-list flex-col">
+                    <div className="xt-drop p-3" data-xt-drop-target-nested>
+                      <div className="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+                      <div className="xt-card w-64 rounded-md shadow-lg text-white xt-links-inverse bg-primary-500">
+                        <nav className="xt-list flex-col p-3">
                           <a
                             href="#"
-                            className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                            className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
                           </a>
                           <button
                             type="button"
-                            className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                            className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                             Dolor sit
                           </button>
                           <button
                             type="button"
-                            className="xt-button py-2 px-6 text-2xs w-full justify-start text-left text-white font-semibold leading-snug tracking-wider uppercase transition hover:text-opacity-75">
+                            className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                             Amet
                           </button>
                         </nav>

@@ -20,7 +20,7 @@ const mountTooltip = ({ ref }) => {
   // vars
 
   const tooltip = ref
-  const boundary = ref.querySelector(':scope > *')
+  const boundary = ref.querySelector('[data-node-boundary]')
 
   // init
 

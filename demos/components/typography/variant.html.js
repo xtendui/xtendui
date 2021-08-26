@@ -1,6 +1,10 @@
+const classes = require('src/gatsby/templates/snippets/classes').classes
+
 const html = /* HTML */ `
   <div>
-    <div class="bg-primary-500 py-5 px-6 *** text-white xt-links-inverse ***">
+    <div
+      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} *** ${classes.textInverse()} *** ${classes.cardPrimary()}"
+    >
       <h2>Lorem Ipsum</h2>
 
       <p>
@@ -9,7 +13,9 @@ const html = /* HTML */ `
         eget, vehicula scelerisque elit.
       </p>
 
-      <div class="bg-white py-5 px-6 *** text-black xt-links-default ***">
+      <div
+        class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} *** ${classes.textDefault()} *** ${classes.cardWhite()}"
+      >
         <h2>Lorem Ipsum</h2>
 
         <p>

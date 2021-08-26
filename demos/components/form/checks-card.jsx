@@ -7,8 +7,8 @@ export default function demo() {
     <div>
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
-            <div className="py-8 px-9 text-base">
+          <label className="*** xt-card *** rounded-2xl text-gray-900 xt-links-default bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="p-7 sm:p-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -27,8 +27,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
-            <div className="py-8 px-9 text-base">
+          <label className="*** xt-card *** rounded-2xl text-gray-900 xt-links-default bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="p-7 sm:p-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -45,8 +45,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer *** focus-within:outline-browser ***">
-            <div className="py-8 px-9 text-base">
+          <label className="*** xt-card *** rounded-2xl text-gray-900 xt-links-default bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer *** focus-within:outline-browser ***">
+            <div className="p-7 sm:p-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -64,8 +64,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer  *** focus-within:outline-browser ***">
-            <div className="py-8 px-9 text-base">
+          <label className="*** xt-card *** rounded-2xl text-gray-900 xt-links-default bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer *** focus-within:outline-browser ***">
+            <div className="p-7 sm:p-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -82,8 +82,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
-            <div className="py-8 px-9 text-base">
+          <label className="*** xt-card *** rounded-2xl text-gray-900 xt-links-default bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="p-7 sm:p-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -101,8 +101,8 @@ export default function demo() {
         </div>
 
         <div className="w-full md:w-6/12">
-          <label className="*** xt-card *** rounded-md text-black xt-links-default transform transition bg-gray-100 hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
-            <div className="py-8 px-9 text-base">
+          <label className="*** xt-card *** rounded-2xl text-gray-900 xt-links-default bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 cursor-pointer">
+            <div className="p-7 sm:p-9 text-base">
               <div className="xt-h4">Lorem ipsum</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

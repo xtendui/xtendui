@@ -13,46 +13,62 @@ export default function demo() {
     <div className="demo--slider-animation-js-react" ref={ref}>
       <div className="xt-slider">
         <div className="p-4 md:p-6 lg:p-8">
-          <div className="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
+          <div
+            className="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
+            data-xt-slider-dragger>
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-                <div className="xt-h4">1</div>
+              <div data-node-target-content>
+                <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">1</div>
+                </div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-                <div className="xt-h4">2</div>
+              <div data-node-target-content>
+                <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">2</div>
+                </div>
               </div>
             </div>
 
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-                <div className="xt-h4">3</div>
+              <div data-node-target-content>
+                <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">3</div>
+                </div>
               </div>
             </div>
 
             <div className="xt-slide w-full group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-                <div className="xt-h4">4</div>
+              <div data-node-target-content>
+                <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">4</div>
+                </div>
               </div>
             </div>
 
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-                <div className="xt-h4">5</div>
+              <div data-node-target-content>
+                <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">5</div>
+                </div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-                <div className="xt-h4">6</div>
+              <div data-node-target-content>
+                <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">6</div>
+                </div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card rounded-md p-8 text-base text-center text-black xt-links-default bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-                <div className="xt-h4">7</div>
+              <div data-node-target-content>
+                <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+                  <div className="xt-h4">7</div>
+                </div>
               </div>
             </div>
           </div>
@@ -60,7 +76,7 @@ export default function demo() {
           <nav className="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
             <button
               type="button"
-              className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-black font-semibold leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
+              className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
               data-xt-slider-element
               title="Slide xt-num"></button>
           </nav>
@@ -88,9 +104,6 @@ const mountSlider = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const dragEase = 'quart.out'
-  let distance
-  let duration
 
   const targetTimeOn = 0.5
   const targetEaseOn = 'quint.out'
@@ -103,52 +116,21 @@ const mountSlider = ({ ref }) => {
 
   /***/
   let self = new Xt.Slider(slider, {
+    wrap: true,
     duration: 500,
   })
   /***/
-
-  // dragposition (set internal position to resume animation mid dragging)
-
-  const dragposition = () => {
-    // duration depending on distance
-    distance = Math.abs(self.drag.position - self.drag.final)
-    duration = self.initial || self.drag.instant ? 0 : Math.min(Math.log(1 + distance / 125), 1.5)
-    // position animation to keep updated with animation
-    gsap.killTweensOf(self.drag)
-    gsap.to(self.drag, {
-      position: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-    // dragger animation
-    gsap.killTweensOf(self.dragger)
-    gsap.to(self.dragger, {
-      x: self.drag.final,
-      duration: duration,
-      ease: dragEase,
-    })
-  }
-
-  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // setup
 
   /***/
   const init = () => {
-    const trs = self.targets.filter(x => !self.hasCurrent(x, false, true))
+    const trs = self.targets.filter(x => !self.hasCurrent({ el: x }))
     for (const tr of trs) {
-      const index = self.getIndex({ el: tr })
-      if (index < self.index) {
-        gsap.set(tr, {
-          x: -1 * targetXOn,
-          opacity: 0,
-        })
-      } else if (index >= self.index) {
-        gsap.set(tr, {
-          x: 1 * targetXOn,
-          opacity: 0,
-        })
-      }
+      const content = tr.querySelector('[data-node-target-content]')
+      gsap.set(content, {
+        opacity: 0,
+      })
     }
   }
 
@@ -162,8 +144,13 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      gsap.killTweensOf(tr)
-      gsap.to(tr, {
+      // content
+      const content = tr.querySelector('[data-node-target-content]')
+      gsap.killTweensOf(content)
+      gsap.set(content, {
+        x: self.direction * targetXOn,
+      })
+      gsap.to(content, {
         x: 0,
         opacity: 1,
         duration: targetTimeOn,
@@ -182,8 +169,10 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      gsap.killTweensOf(tr)
-      gsap.to(tr, {
+      // content
+      const content = tr.querySelector('[data-node-target-content]')
+      gsap.killTweensOf(content)
+      gsap.to(content, {
         x: -self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,
