@@ -8,17 +8,21 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Mount Unmount
 
-TEST OFF on unmount this should not be called.
+TEST INITIAL ON 0 this should be `true true true true`.
 
-TEST UNMOUNT this should be called on change page.
+TEST INITIAL ON 1 this should be `true true true true`.
 
-TEST UNMOUNT this should not be called multiple times on changing page and resize.
+TEST INITIAL ON 2 this should be `true true false false`.
 
-TEST MOUNT should NOT be called twice (after 2 seconds).
+TEST MOUNT this should be called once and should NOT be called on overlay close.
 
-TEST MOUNT should be called once (after 2 seconds).
+TEST UNMOUNT 0 closeauto when overlay open and change page (browser location prev next) should be called on unmount and overlay should close.
 
-Test change page with browser location prev e next should close overlay automatically.
+TEST UNMOUNT 1 disableDeactivate when drop open and change page (browser location prev next) this should NOT be called.
+
+TEST UNMOUNT 2 this should be called on change page.
+
+TEST UNMOUNT this should NOT be called multiple times on changing page and resize.
 
 <demo>
   <demoinline src="demos/hidden/test/mount-unmount">
@@ -56,9 +60,9 @@ Test demos with all: inline and iframe and react inline and react iframe.
 
 Test demos changing demo should change hash.
 
-Test browser location prev e next should change demo.
+Test change page (browser location prev next) should change demo.
 
-Test demos initial activation on browser location.
+Test demos initial activation on page load (browser location prev next).
 
 Test demo show code in fullscreen after switching mode.
 

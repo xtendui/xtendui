@@ -84,17 +84,17 @@ Test prevent event.
 
 Test no hash must not add hash initial activation.
 
-Test initial activation on browser location, must remove initial `on` in targets.
+Test initial activation on page load (browser location prev next), must remove initial `on` in targets.
 
 Test hash activation.
 
-Test browser location prev e next.
+Test change page (browser location prev next).
 
 Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
 
 Test page should not scroll on change hash.
 
-Test overlay should reopen on browser location.
+Test overlay should reopen on change page (browser location prev next).
 
 Test overlay opened with hash on page load, closing it should not block page interaction (bug with multiple elemens same target).
 

@@ -16,7 +16,7 @@ Xt.mount({
 
     // overlay
 
-    new Xt.Overlay(button, {
+    let self = new Xt.Overlay(button, {
       targets: '#gatsby_menu--overlay',
       appendTo: '.gatsby_site-wrapper',
       duration: 500,
@@ -56,6 +56,13 @@ Xt.mount({
 
     overlay.addEventListener('on.xt.overlay', on)
     on()
+
+    // unmount
+
+    return () => {
+      self.destroy()
+      self = null
+    }
   },
 })
 
