@@ -39,7 +39,7 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `initialLocate:Boolean`                          | `false`        | Automatic locate on page load (**needs https**)            |
 | Option                    | `initialSearch:Boolean`                          | `false`        | Automatic search on page load            |
 | Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |
-| Option                    | `locateRadius:Number`                          | `25000`        | Radius for locate            |
+| Option                    | `searchRadius:Number`                          | `25000`        | Radius for locate and minimum radius for search (search uses location viewport given by google)            |
 | Option                    | `locateText:String`                          | `'Locate'`        | Locate text for input            |
 | Option                    | `elements.loader:Query`                          | `'[data-xt-googlelocator-loader]'`        | Container query for loader             |
 | Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Container query for searh input             |

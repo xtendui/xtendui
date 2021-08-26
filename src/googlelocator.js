@@ -183,7 +183,7 @@ class Googlelocator {
         // place
         self.position = place.geometry.location
         self.viewport = place.geometry.viewport
-        self.radius = null
+        self.radius = options.searchRadius
         self.submit()
         return
       }
@@ -192,7 +192,7 @@ class Googlelocator {
     if (self.locateCache && self.locateCache.value === self.searchInput.value) {
       self.position = self.locateCache.position
       self.viewport = null
-      self.radius = options.locateRadius
+      self.radius = options.searchRadius
       self.submit()
       return
     }
@@ -200,7 +200,7 @@ class Googlelocator {
     if (self.predictionCache && self.predictionCache.value === self.searchInput.value) {
       self.position = self.predictionCache.position
       self.viewport = self.predictionCache.viewport
-      self.radius = null
+      self.radius = options.searchRadius
       self.submit()
       return
     }
@@ -214,7 +214,7 @@ class Googlelocator {
           self.searchInput.value = place.formatted_address
           self.position = place.geometry.location
           self.viewport = place.geometry.viewport
-          self.radius = null
+          self.radius = options.searchRadius
           self.predictionCache = {
             value: self.searchInput.value,
             position: self.position,
@@ -317,7 +317,11 @@ class Googlelocator {
           options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng
         )
         const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
-        if ((!self.viewport || self.viewport.contains(latLng)) && (!self.radius || distance <= self.radius)) {
+        if (
+          (!self.radius && !self.viewport) ||
+          (self.radius && distance <= self.radius) ||
+          (self.viewport && self.viewport.contains(latLng))
+        ) {
           const loc = new google.maps.Marker({
             map: self.map,
             position: latLng,
@@ -512,7 +516,7 @@ class Googlelocator {
     self.searchInput.value = ''
     self.position = self.map.getCenter()
     self.viewport = null
-    self.radius = null
+    self.radius = options.searchRadius
     if (!empty || options.seachMapBounds) {
       self.radius = google.maps.geometry.spherical.computeDistanceBetween(
         self.position,
@@ -554,7 +558,7 @@ class Googlelocator {
     self.searchInput.value = options.locateText
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
     self.viewport = null
-    self.radius = options.locateRadius
+    self.radius = options.searchRadius
     self.locateCache = {
       value: self.searchInput.value,
       position: self.position,
@@ -706,7 +710,7 @@ Googlelocator.optionsDefault = {
   initialLocate: false,
   initialSearch: false,
   seachMapBounds: false,
-  locateRadius: 25000,
+  searchRadius: 25000,
   locateText: 'Locate',
   // element
   elements: {
