@@ -10,6 +10,10 @@ tags: ["wip"]
 
 @TODO
 
+## Prefers Reduced Motion
+
+See [animation setup](/components/animation#setup) to **disable css and js animations** when the the user has activated "Prefers Reduced Motion".
+
 ## Pagespeed optimizations
 
 - Media [iframe lazy loading](/components/media/addon#iframe-lazy).
