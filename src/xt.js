@@ -76,15 +76,26 @@ if (typeof window !== 'undefined') {
         // added
         for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done and multiple unmount with Xt.frame
+            // fix multiple initialization (e.g. mount inside sticky)
+            Xt.frame({
+              el: added,
+              ns: `xtUnmount`,
+            })
+            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done
             Xt.mountCheck({ added })
           }
         }
         // removed
         for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done and multiple unmount with Xt.frame
-            Xt.unmountCheck({ removed })
+            // fix multiple initialization (e.g. mount inside sticky)
+            Xt.frame({
+              el: removed,
+              ns: `xtUnmount`,
+              func: () => {
+                Xt.unmountCheck({ removed })
+              },
+            })
           }
         }
       }
@@ -165,11 +176,6 @@ if (typeof window !== 'undefined') {
             continue
           }
           // fix multiple initialization (e.g. mount inside sticky)
-          Xt.frame({
-            el: ref,
-            ns: `Unmount`,
-          })
-          // fix multiple initialization (e.g. mount inside sticky)
           obj.done = obj.done ? obj.done : []
           if (obj.done.includes(ref)) {
             return
@@ -179,24 +185,17 @@ if (typeof window !== 'undefined') {
           const call = obj.mount({ ref, obj, index })
           // destroy
           if (call) {
-            // fix multiple initialization (e.g. mount inside sticky)
-            Xt.frame({
-              el: ref,
-              ns: `Unmount`,
-              func: () => {
-                Xt.unmount({
-                  ref,
-                  matches: obj.matches,
-                  ignore: obj.ignore,
-                  unmount: call,
-                  unmountRemove: () => {
-                    // fix multiple initialization (e.g. mount inside sticky)
-                    obj.done = obj.done.filter(x => x !== ref)
-                    // unmount remove
-                    Xt.unmountArr = Xt.unmountArr.filter(x => {
-                      return x.ref !== ref && x.matches !== obj.matches
-                    })
-                  },
+            Xt.unmount({
+              ref,
+              matches: obj.matches,
+              ignore: obj.ignore,
+              unmount: call,
+              unmountRemove: () => {
+                // fix multiple initialization (e.g. mount inside sticky)
+                obj.done = obj.done.filter(x => x !== ref)
+                // unmount remove
+                Xt.unmountArr = Xt.unmountArr.filter(x => {
+                  return x.ref !== ref && x.matches !== obj.matches
                 })
               },
             })
@@ -538,7 +537,10 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.transform Use transforms instead of position
    */
   Xt.friction = ({ el, obj, transform = true } = {}) => {
-    Xt.frame({ el, ns: `xtFrictionFrame` })
+    Xt.frame({
+      el,
+      ns: `xtFrictionFrame`,
+    })
     Xt.frame({
       el,
       ns: `xtFrictionInitFrame`,
@@ -1017,7 +1019,10 @@ if (typeof window !== 'undefined') {
    * @param {Function} params.func Function to execute after transition or animation
    */
   Xt.eventDelay = ({ e, el, ns = '', duration, func } = {}) => {
-    Xt.frame({ el, ns: `${ns}EventDelayFrame` })
+    Xt.frame({
+      el,
+      ns: `${ns}EventDelayFrame`,
+    })
     clearTimeout(Xt.dataStorage.get(el, `${ns}eventDelayTimeout`))
     if (func) {
       if (e) {

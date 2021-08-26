@@ -96,7 +96,6 @@ export default function Header({ page }) {
                   <button
                     type="button"
                     className={`xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} gatsby_menu--button`}
-                    data-xt-overlay="{ targets: '#gatsby_menu--overlay', appendTo: '.gatsby_site-wrapper', duration: 500, closeauto: false, matches: { '(min-width: 1024px)': { disabled: true } } }"
                     aria-label="Menu">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -11,7 +11,17 @@ Xt.mount({
     // vars
 
     const overlay = ref
+    const button = document.querySelector('.gatsby_menu--button')
     const sidebar = document.querySelector('.gatsby_site-article_sidebar')
+
+    // overlay
+
+    new Xt.Overlay(button, {
+      targets: '#gatsby_menu--overlay',
+      appendTo: '.gatsby_site-wrapper',
+      duration: 500,
+      matches: { '(min-width: 1024px)': { disabled: true } },
+    })
 
     // sidebarContain
 
