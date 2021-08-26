@@ -6,12 +6,12 @@ gsap.registerPlugin(ScrollTrigger)
 /* menu overlay */
 
 Xt.mount({
-  matches: '#gatsby_menu--overlay',
+  matches: '.gatsby_menu--button',
   mount: ({ ref }) => {
     // vars
 
-    const overlay = ref
-    const button = document.querySelector('.gatsby_menu--button')
+    const button = ref
+    const overlay = document.querySelector('#gatsby_menu--overlay')
     const sidebar = document.querySelector('.gatsby_site-article_sidebar')
 
     // overlay
