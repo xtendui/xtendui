@@ -61,7 +61,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - run: git pull --no-rebase # fix pull semantic release commit https://github.com/actions/checkout/issues/439
     # setup/action.yml composite
     - name: Node setup
       uses: actions/setup-node@v1

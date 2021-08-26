@@ -33,11 +33,9 @@ menu: true
 
 return () => {}
 
-## Test
+## Markdown
 
-See [link if scrolls right](/components/slider/other#media-loaded).
-
-## Useful
+Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
 You can set activation styles by adding the class `.on`.
 
@@ -123,84 +121,3 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 | Option                    | `collapseHeight:String`                          | `false`        | Type of elements that collapse vertically, can be `elements`, `targets`, `elementsInner`, `targetsInner`           |
 
 </div>
-
-## Markdown
-
-Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
-
-<script type="text/plain" class="language-html">
-<a href="#" class="xt-button">
-  <!-- content -->
-</a>
-
-<button type="button" class="xt-button">
-  <!-- content -->
-</button>
-</script>
-
-```
-mkdir -p xtendui/
-cp -r node_modules/xtendui/dist/ xtendui/
-```
-
-```css
-body {
-  background: #ff0000;
-}
-
-.test > * {
-}
-```
-
-```jsx
-const test = 'test'
-```
-
-```js
-Xt.mount({
-  matches: '.demo--',
-  mount: ({ ref }) => {
-    const unmountDrops = mountDrops({ ref })
-
-    // unmount
-
-    return () => {
-      unmountDrops()
-    }
-  },
-})
-
-/* mountDrops */
-
-const mountDrops = ({ ref }) => {
-  // unmount
-
-  return () => {}
-}
-
-/* mountDrops */
-
-const mountDrops = ({ ref }) => {
-  // vars
-  
-  const buttons = ref.querySelectorAll('.xt-button')
-  const unmounts = []
-
-  for (const button of buttons) {
-    // unmount
-
-    unmounts.push(() => {
-      self.destroy()
-      self = null
-    })
-  }
-
-  // unmount
-
-  return () => {
-    for (const unmount of unmounts) {
-      unmount()
-    }
-  }
-}
-```
