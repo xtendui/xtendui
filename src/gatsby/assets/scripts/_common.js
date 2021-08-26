@@ -88,7 +88,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      Xt.on({ el: button, initial: true })
+      Xt.on({ el: button, raf: false, initial: true })
     }
   },
 })
@@ -125,7 +125,7 @@ Xt.mount({
     // init
 
     if (localStorage.getItem('mode') === mode) {
-      Xt.on({ el: button, initial: true })
+      Xt.on({ el: button, raf: false, initial: true })
     }
   },
 })

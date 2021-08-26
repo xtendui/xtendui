@@ -842,14 +842,8 @@ if (typeof window !== 'undefined') {
     el.classList.add('on')
     el.classList.remove('out')
     el.classList.remove('done')
-    if (initial) {
-      el.classList.add('initial')
-    }
     const func = () => {
       el.classList.add('in')
-      if (initial) {
-        el.classList.remove('initial')
-      }
       Xt.animTimeout({
         el,
         ns,
@@ -868,6 +862,19 @@ if (typeof window !== 'undefined') {
       Xt.frameDouble({ el, ns })
       func()
     }
+    // initial
+    if (initial) {
+      el.classList.add('initial')
+    }
+    Xt.frameDouble({
+      el,
+      ns: `${ns}Initial`,
+      func: () => {
+        if (initial) {
+          el.classList.remove('initial')
+        }
+      },
+    })
   }
 
   /**
@@ -883,16 +890,10 @@ if (typeof window !== 'undefined') {
     Xt.animTimeout({ el, ns })
     // must be outside inside raf or page jumps (e.g. noqueue)
     el.classList.remove('on')
-    if (initial) {
-      el.classList.add('initial')
-    }
     const func = () => {
       el.classList.remove('in')
       el.classList.add('out')
       el.classList.remove('done')
-      if (initial) {
-        el.classList.remove('initial')
-      }
       Xt.animTimeout({
         el,
         ns,
@@ -911,6 +912,19 @@ if (typeof window !== 'undefined') {
       Xt.frameDouble({ el, ns })
       func()
     }
+    // initial
+    if (initial) {
+      el.classList.add('initial')
+    }
+    Xt.frameDouble({
+      el,
+      ns: `${ns}Initial`,
+      func: () => {
+        if (initial) {
+          el.classList.remove('initial')
+        }
+      },
+    })
   }
 
   /**
