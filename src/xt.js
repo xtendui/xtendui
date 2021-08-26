@@ -882,7 +882,7 @@ if (typeof window !== 'undefined') {
   Xt.off = ({ el, ns = '', duration, raf = true, initial = false } = {}) => {
     Xt.animTimeout({ el, ns })
     // must be outside inside raf or page jumps (e.g. noqueue)
-    el.classList.remove('on', false)
+    el.classList.remove('on')
     if (initial) {
       el.classList.add('initial')
     }
