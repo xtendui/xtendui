@@ -1,5 +1,6 @@
 .demo--listcustom {
   ul {
+    padding-left: 0;
     > li {
       &:before {
         display: none;
