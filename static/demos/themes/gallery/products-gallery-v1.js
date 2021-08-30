@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollToPlugin)
 Xt.mount({
   matches: '.demo--products-gallery-v1',
   mount: ({ ref }) => {
-    const unmountScrollto = mountScrollto()
+    const unmountScrollto = mountScrollto({ ref })
     const unmountImages = mountImages({ ref })
     const unmountArrow = mountArrow({ ref })
 
@@ -54,9 +54,20 @@ const mountScrollto = () => {
 
   self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
+  // fix stop scroll animation on user interaction
+
+  const stopScrolling = () => {
+    gsap.killTweensOf(self.scroller)
+  }
+
+  addEventListener('touchstart', stopScrolling)
+  addEventListener('wheel', stopScrolling)
+
   // unmount
 
   return () => {
+    removeEventListener('touchstart', stopScrolling)
+    removeEventListener('wheel', stopScrolling)
     self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null

@@ -10,7 +10,7 @@ Xt.mount({
   matches: '.demo--scrollto',
   mount: ({ ref }) => {
     const unmountSticky = mountSticky({ ref })
-    const unmountScrollto = mountScrollto()
+    const unmountScrollto = mountScrollto({ ref })
 
     // unmount
 
@@ -66,6 +66,15 @@ const mountScrollto = () => {
 
   self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
+  // fix stop scroll animation on user interaction
+
+  const stopScrolling = () => {
+    gsap.killTweensOf(self.scroller)
+  }
+
+  addEventListener('touchstart', stopScrolling)
+  addEventListener('wheel', stopScrolling)
+
   // custom
 
   const buttons = self.container.querySelectorAll('.button--custom')
@@ -82,6 +91,8 @@ const mountScrollto = () => {
   // unmount
 
   return () => {
+    removeEventListener('touchstart', stopScrolling)
+    removeEventListener('wheel', stopScrolling)
     self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null

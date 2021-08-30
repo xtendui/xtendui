@@ -16,6 +16,8 @@ Initialize manually **within javascript** with `new Xt.Scrollto(document.querySe
 
 Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
 
+You can also scroll to a Node also if not anchored using the event `scrollto.trigger.xt.scrollto`.
+
 > This demo uses [scroll sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 > Do not assign **other components** to `anchors` or the components activations conflict.
@@ -24,6 +26,13 @@ Try the demo [on a new page](/demos/components/scrollto/usage#anchor-2) to previ
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scrollto/usage">
+  </div>
+</demo>
+
+You can also **set scroll position without gsap**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/components/scrollto/usage-simple">
   </div>
 </demo>
 
@@ -57,23 +66,6 @@ Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2) to prev
   <div class="gatsby_demo_item" data-iframe="demos/components/scrollto/toggle">
   </div>
 </demo>
-
-## Setup
-
-- If you want **ScrollToPlugin to stop animation when user interact with the document scroll**, just use this code.
-
-Just need this code one time in the project.
-
-```js
-/* ScrollToPlugin fix stop scroll animation on user interaction */
-
-const stopScrolling = () => {
-  gsap.killTweensOf(document.scrollingElement)
-}
-
-addEventListener('touchstart', stopScrolling)
-addEventListener('wheel', stopScrolling)
-```
 
 ## Options
  

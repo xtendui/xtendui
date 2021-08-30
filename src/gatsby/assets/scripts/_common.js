@@ -38,9 +38,20 @@ Xt.mount({
 
     self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
+    // fix stop scroll animation on user interaction
+
+    const stopScrolling = () => {
+      gsap.killTweensOf(self.scroller)
+    }
+
+    addEventListener('touchstart', stopScrolling)
+    addEventListener('wheel', stopScrolling)
+
     // unmount
 
     return () => {
+      removeEventListener('touchstart', stopScrolling)
+      removeEventListener('wheel', stopScrolling)
       self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
       self.destroy()
       self = null

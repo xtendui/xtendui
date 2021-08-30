@@ -93,8 +93,6 @@ Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [li
 
 **If you use gsap** add [this javascript](https://xtendui.com/components/animation#setup) to setup animations.
 
-**If you use Scrollto** add [this javascript](https://xtendui.com/components/scrollto#setup) to setup scrollto.
-
 ## Unsupported browsers
 
 If you want to show a warning on unsupported browser you can use [browser update](https://browser-update.org/) and target exactly [supported browsers](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
