@@ -1,5 +1,4 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/usability'
 import gsap from 'gsap'
 
 /* animation */
