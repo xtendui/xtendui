@@ -27,12 +27,3 @@ Use the [api](/components/slider/api#listen) and listen to events to make **slid
   <demoinline src="demos/components/slider/status">
   </demoinline>
 </demo>
-
-## Automatic Scrolling
-
-Infinite **automatic scrolling slider**, pauses on interaction and automatically disables if not enough space.
-
-<demo>
-  <demoinline src="demos/components/slider/automatic-scrolling">
-  </demoinline>
-</demo>
