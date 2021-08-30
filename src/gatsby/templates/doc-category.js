@@ -48,31 +48,24 @@ export default class Template extends React.Component {
                 <div className="gatsby_listing-items">
                   <div className="xt-row xt-row-stretch">
                     {category.posts.map(({ post }, z) =>
-                      post.frontmatter.link ? (
-                        <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
-                          <a
-                            href={post.frontmatter.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
-                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                              {post.frontmatter.title}
-                            </div>
-                            <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
-                          </a>
-                        </div>
-                      ) : post.frontmatter.parent === post.frontmatter.title ? (
-                        <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
-                          <Link
-                            to={markdownSlug(post)}
-                            className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
-                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                              {post.frontmatter.title}
-                            </div>
-                            <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
-                            {post.frontmatter.link}
-                          </Link>
-                        </div>
+                      post.frontmatter.parent === post.frontmatter.title ? (
+                        typeof window !== 'undefined' &&
+                        window.access !== 'admin' &&
+                        post.frontmatter.tags &&
+                        post.frontmatter.tags.includes('hidden') ? (
+                          ''
+                        ) : (
+                          <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
+                            <Link
+                              to={markdownSlug(post)}
+                              className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
+                              <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                                {post.frontmatter.title}
+                              </div>
+                              <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
+                            </Link>
+                          </div>
+                        )
                       ) : null
                     )}
                   </div>

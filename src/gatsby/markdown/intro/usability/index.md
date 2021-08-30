@@ -3,12 +3,10 @@ type: "Intro"
 category: "Other"
 parent: "Usability"
 title: "Usability"
-description: "@TODO"
+description: "Automatic Aria attributes on interaction components and other SEO and usability optimizations."
 date: "2005-10-10"
-tags: ["wip"]
+tags: ["hidden"]
 ---
-
-@TODO
 
 ## Prefers Reduced Motion
 
