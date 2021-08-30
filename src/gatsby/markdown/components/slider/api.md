@@ -38,11 +38,6 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | Event                   | `autostart.xt.slider`           | `container` | Auto start event             |
 | Event                   | `autostop.xt.slider`           | `container` | Auto stop event             |
 | Event                   | `autoheight.xt.slider`           | `targets` | Autoheight event             |
-| Event                   | `dragstart.xt.slider`           | `dragger` | Drag start event             |
-| Event                   | `dragend.xt.slider`           | `dragger` | Drag end event             |
-| Event                   | `drag.xt.slider`           | `dragger` | Drag event             |
-| Event                   | `dragposition.xt.slider`           | `dragger` | Drag position event             |
-| Event                   | `dragreset.xt.slider`           | `dragger` | Drag reset event             |
 | Event                   | `init.xt.slider`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.slider`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.slider`           | `container` | Restart event             |
@@ -102,11 +97,6 @@ const container = self.container
 | Property                   | `dragger:Node`       | Dragger node             |
 | Property                   | `drag.size:Number`       | Dragger size             |
 | Property                   | `drag.sizeContent:Number`       | Content size             |
-| Property                   | `drag.position:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
-| Property                   | `drag.final:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
-| Property                   | `drag.ratio:Number`       | Current drag ratio from 0 to 1             |
-| Property                   | `drag.ratioInverse:Number`       | Current drag inverse from 1 to 0             |
-| Property                   | `drag.instant:Boolean`       | Is `true` if is dragging activation or setup activation             |
 
 </div>
 
