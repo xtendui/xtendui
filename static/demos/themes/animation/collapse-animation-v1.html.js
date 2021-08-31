@@ -234,7 +234,7 @@ const html = /* HTML */ `
             class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
             data-xt-tooltip-inner
           >
-            <div class="xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-32 *** ${itemAnim()} ***">
+            <div class="xt-media-container bg-gray-200 rounded-t${classes.tooltipRadius()} h-32 *** ${itemAnim()} ***">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div>
@@ -375,7 +375,7 @@ const html = /* HTML */ `
 
                   <div class="md:w-5/12 *** flex flex-col *** *** ${itemAnim()} ***">
                     <div
-                      class="xt-media-container bg-gray-300 md:rounded-tr${classes.overlayRadius()} h-48 md:pb-[100%]"
+                      class="xt-media-container bg-gray-200 md:rounded-tr${classes.overlayRadius()} h-48 md:pb-[100%]"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -424,7 +424,7 @@ const html = /* HTML */ `
                 <div class="*** md:xt-card-group rounded${classes.overlayRadius()} *** *** ${itemAnim()} ***">
                   <div class="md:w-5/12 *** flex flex-col ***">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
+                      class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>

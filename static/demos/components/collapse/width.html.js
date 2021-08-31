@@ -25,7 +25,7 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
             <div
-              class="xt-media-container bg-gray-300 rounded${classes.cardRadius()} *** overflow-hidden *** pb-[37.5%]"
+              class="xt-media-container bg-gray-200 rounded${classes.cardRadius()} *** overflow-hidden *** pb-[37.5%]"
             >
               <div
                 class="absolute inset-0 rounded-inherit off:hidden out:pointer-events-none *** overflow-hidden transition-all ***"
@@ -40,7 +40,7 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
             <div
-              class="xt-media-container bg-gray-300 rounded${classes.cardRadius()} *** overflow-hidden *** pb-[37.5%]"
+              class="xt-media-container bg-gray-200 rounded${classes.cardRadius()} *** overflow-hidden *** pb-[37.5%]"
             >
               <div
                 class="absolute inset-0 rounded-inherit off:hidden out:pointer-events-none *** overflow-hidden transition-all ***"

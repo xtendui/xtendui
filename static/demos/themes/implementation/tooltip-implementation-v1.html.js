@@ -65,7 +65,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()} ***"
               >
-                <div class="*** xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-32 ***">
+                <div class="*** xt-media-container bg-gray-200 rounded-t${classes.tooltipRadius()} h-32 ***">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div>

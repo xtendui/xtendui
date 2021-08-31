@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--media-iframe-lazy">
-    <div class="xt-media-container bg-gray-300 pb-[56.2%] *** group ***">
+    <div class="xt-media-container bg-gray-200 pb-[56.2%] *** group ***">
       <iframe
         class="xt-media"
         data-src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=1&showinfo=0&rel=0"

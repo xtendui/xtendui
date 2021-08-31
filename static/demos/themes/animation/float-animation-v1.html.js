@@ -1,10 +1,10 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const transparentAnim = () =>
-  'transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md'
+  'transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md'
 const grayDesign = () => `${classes.textDefault()} bg-gray-100 border-transparent border`
 const grayAnim = () =>
-  'transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-300 active:translate-y-0 active:shadow-md on:bg-gray-300 on:translate-y-0 on:shadow-md'
+  'transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-200 active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md'
 const primaryDesign = () => `${classes.textInverse()} bg-primary-500 border-transparent border`
 const primaryAnim = () =>
   'transition hover:text-white hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:text-white active:bg-primary-700 active:translate-y-0 active:shadow-md on:text-white on:bg-primary-700 on:translate-y-0 on:shadow-md'
@@ -283,7 +283,7 @@ const html = /* HTML */ `
             ></div>
             <div class="xt-card w-80 ${classes.textDefault()}">
               <div
-                class="xt-media-container bg-gray-300 rounded-t${classes.tooltipRadius()} h-32 *** ${itemAnim()} ***"
+                class="xt-media-container bg-gray-200 rounded-t${classes.tooltipRadius()} h-32 *** ${itemAnim()} ***"
               >
                 <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
               </div>
@@ -426,7 +426,7 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 *** flex flex-col ***">
-                    <div class="xt-media-container bg-gray-300 h-48 md:pb-[100%]">
+                    <div class="xt-media-container bg-gray-200 h-48 md:pb-[100%]">
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
@@ -475,7 +475,7 @@ const html = /* HTML */ `
                 <div class="*** md:xt-card-group ***">
                   <div class="md:w-5/12 *** flex flex-col ***">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
+                      class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>

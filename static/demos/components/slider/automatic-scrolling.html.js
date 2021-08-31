@@ -69,43 +69,43 @@ const html = /* HTML */ `
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-2" data-xt-slider-dragger>
           <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300 pb-[37.5%]">
+            <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="eager" alt="" />
             </div>
           </div>
 
           <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300 pb-[37.5%]">
+            <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
           <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300 pb-[37.5%]">
+            <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
           <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300 pb-[37.5%]">
+            <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
           <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300 pb-[37.5%]">
+            <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
           <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300 pb-[37.5%]">
+            <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
           <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300 pb-[37.5%]">
+            <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>

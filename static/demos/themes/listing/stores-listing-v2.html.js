@@ -10,7 +10,7 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
-                <div class="xt-media-container bg-gray-300 h-40">
+                <div class="xt-media-container bg-gray-200 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -57,7 +57,7 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
-                <div class="xt-media-container bg-gray-300 h-40">
+                <div class="xt-media-container bg-gray-200 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -94,7 +94,7 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
-                <div class="xt-media-container bg-gray-300 h-40">
+                <div class="xt-media-container bg-gray-200 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -141,7 +141,7 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
-                <div class="xt-media-container bg-gray-300 h-40">
+                <div class="xt-media-container bg-gray-200 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -178,7 +178,7 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
-                <div class="xt-media-container bg-gray-300 h-40">
+                <div class="xt-media-container bg-gray-200 h-40">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">
@@ -225,7 +225,7 @@ const html = /* HTML */ `
               <div
                 class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}"
               >
-                <div class="xt-media-container bg-gray-300 h-40">
+                <div class="xt-media-container bg-gray-200 h-40">
                   <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div class="mt-6 flex flex-col">

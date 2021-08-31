@@ -119,7 +119,7 @@ const html = /* HTML */ `
 
                   <div class="md:w-5/12 *** flex flex-col ***">
                     <div
-                      class="xt-media-container bg-gray-300 h-48 md:pb-[100%] md:rounded-tr${classes.overlayRadius()} "
+                      class="xt-media-container bg-gray-200 h-48 md:pb-[100%] md:rounded-tr${classes.overlayRadius()} "
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
@@ -169,7 +169,7 @@ const html = /* HTML */ `
                 <div class="*** md:xt-card-group ***">
                   <div class="md:w-5/12 *** flex flex-col ***">
                     <div
-                      class="xt-media-container bg-gray-300 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
+                      class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
                     >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
