@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
           >
             <div class="${classes.tooltipSm()}">Lorem ipsum dolor sit amet</div>
           </div>
@@ -32,7 +32,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
           >
             <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
           </div>
@@ -50,7 +50,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
           >
             <div class="${classes.tooltipLg()}">Lorem ipsum dolor sit amet</div>
           </div>
@@ -68,7 +68,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="xt-card *** max-w-lg rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+            class="xt-card *** max-w-lg rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
           >
             <div class="${classes.tooltipMd()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie diam nec euismod commodo. Nunc ut

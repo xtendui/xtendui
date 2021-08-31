@@ -17,7 +17,7 @@ const html = /* HTML */ `
         data-xt-mousefollow-target
       >
         <div
-          class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} *** transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0 ***"
+          class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} *** transition duration-300 ease-in-out-quint opacity-0 translate-x-10 group-in:opacity-100 group-in:translate-x-0 ***"
         >
           <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
         </div>

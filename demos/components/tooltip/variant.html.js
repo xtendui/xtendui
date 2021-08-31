@@ -14,7 +14,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} ***"
+            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} ***"
           >
             <div class="${classes.tooltipMd()}">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin

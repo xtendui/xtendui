@@ -51,7 +51,7 @@ const html = /* HTML */ `
             <div>Man</div>
             <button
               type="button"
-              class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
               data-xt-toggle-element
               data-xt-group="initial"
             >
@@ -102,7 +102,7 @@ const html = /* HTML */ `
             <div>Man Shirt</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-0"
             >
@@ -137,7 +137,7 @@ const html = /* HTML */ `
             <div>Man Pant</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
               data-xt-toggle-element
               data-xt-group="cat-0"
             >
@@ -172,7 +172,7 @@ const html = /* HTML */ `
             <div>Woman</div>
             <button
               type="button"
-              class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
               data-xt-toggle-element
               data-xt-group="initial"
             >

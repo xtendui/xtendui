@@ -42,7 +42,7 @@ export default function demo() {
 
                 <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                   <div className="*** relative ***" data-xt-drop-inner>
-                    <div className="*** xt-design *** bg-primary-700 border-b-4 border-gray-300"></div>
+                    <div className="*** xt-design *** shadow-lg bg-black"></div>
                     <div className="*** xt-drop-content ***">
                       <div className="pt-16 pb-24 text-white xt-links-inverse">
                         <div className="container">
@@ -78,7 +78,7 @@ export default function demo() {
 
                 <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                   <div className="*** relative ***" data-xt-drop-inner>
-                    <div className="*** xt-design *** bg-gray-700 border-b-4 border-gray-300"></div>
+                    <div className="*** xt-design *** shadow-lg bg-primary-500"></div>
                     <div className="*** xt-drop-content ***">
                       <div className="pt-16 pb-24 text-white xt-links-inverse">
                         <div className="container">
@@ -99,22 +99,16 @@ export default function demo() {
                 </div>
               </div>
 
-              <a
-                href="/"
-                className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
-                Link #3
-              </a>
-
               <div data-xt-drop-element>
                 <a
                   href="/"
                   className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
-                  Menu #4
+                  Menu #3
                 </a>
 
                 <div className="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                   <div className="*** relative ***" data-xt-drop-inner>
-                    <div className="*** xt-design *** bg-gray-100 border-b-4 border-gray-300"></div>
+                    <div className="*** xt-design *** shadow-lg bg-gray-100"></div>
                     <div className="*** xt-drop-content ***">
                       <div className="pt-16 pb-24 text-gray-900 xt-links-default ">
                         <div className="container">
@@ -155,6 +149,12 @@ export default function demo() {
                   </div>
                 </div>
               </div>
+
+              <a
+                href="/"
+                className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
+                Link #4
+              </a>
 
               <a
                 href="/"

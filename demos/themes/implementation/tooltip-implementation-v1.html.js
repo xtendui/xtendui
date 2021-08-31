@@ -16,7 +16,7 @@ const html = /* HTML */ `
               data-xt-tooltip-target
             >
               <div
-                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} ***"
+                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} ***"
               >
                 <div class="xt-list xt-list-1 flex-col py-2">
                   <div>

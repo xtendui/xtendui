@@ -709,7 +709,7 @@ export default function demo() {
             <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner">
-                <div className="*** xt-design *** shadow-xl bg-primary-500 *** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
+                <div className="*** xt-design *** shadow-xl bg-black *** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
                 <div className="xt-card *** xt-min-h-screen *** text-white xt-links-inverse *** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <div className="xt-list">
                     <form className="text-sm flex-auto">
@@ -854,7 +854,7 @@ export default function demo() {
                       </div>
 
                       <div className="mt-auto">
-                        <div className="-mx-3.5 mt-6 pt-6 border-t border-primary-400">
+                        <div className="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
                           <nav className="xt-list xt-list-1 flex-col">
                             <a
                               href="#"
@@ -929,7 +929,7 @@ export default function demo() {
                         <div>Man</div>
                         <button
                           type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                           data-xt-toggle-element
                           data-xt-group="initial">
                           <svg
@@ -1013,7 +1013,7 @@ export default function demo() {
                         <div>Man Shirt</div>
                         <button
                           type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                           data-xt-toggle-element
                           data-xt-group="cat-0">
                           <svg
@@ -1057,7 +1057,7 @@ export default function demo() {
                         <div>Man Pant</div>
                         <button
                           type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                           data-xt-toggle-element
                           data-xt-group="cat-0">
                           <svg
@@ -1101,7 +1101,7 @@ export default function demo() {
                         <div>Woman</div>
                         <button
                           type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                           data-xt-toggle-element
                           data-xt-group="initial">
                           <svg
