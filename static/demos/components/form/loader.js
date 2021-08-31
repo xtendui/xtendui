@@ -43,7 +43,6 @@ const mountFormLoader = ({ ref }) => {
   // submit
 
   const submit = () => {
-    console.log(loadable, loadable.classList.contains('xt-loadable-ignore'))
     loadable.classList.add('xt-loading')
   }
 
