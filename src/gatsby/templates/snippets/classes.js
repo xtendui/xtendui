@@ -40,7 +40,7 @@ export const classes = {
   cardSm: () => 'p-6 sm:p-8 text-sm',
   cardMd: () => 'p-7 sm:p-9 text-base',
   cardLg: () => 'p-8 sm:p-10 text-base sm:text-lg',
-  cardBlack: () => 'font-medium bg-black',
+  cardBlack: () => 'bg-black',
   cardWhite: () => 'bg-white',
   cardWhiteAccent: () => 'bg-primary-100',
   cardGray: () => 'bg-gray-100',
@@ -64,6 +64,7 @@ export const classes = {
   tooltipSm: () => 'py-1 px-2 text-3xs',
   tooltipMd: () => 'py-2 px-2.5 text-xs',
   tooltipLg: () => 'py-2.5 px-4 text-base',
+  tooltipText: () => 'font-medium',
   // drop
   dropRadius: () => '-md',
   dropShadow: () => 'shadow-lg',

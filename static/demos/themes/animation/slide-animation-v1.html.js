@@ -208,7 +208,7 @@ const html = /* HTML */ `
 
         <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
           <div
-            class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()} *** ${designAnim()} ***"
+            class="xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} *** ${designAnim()} ***"
           >
             <div class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
               <div>
@@ -549,7 +549,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card *** xt-min-h-screen *** ${classes.overlayShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${designAnim()} ***"
+                class="xt-card *** xt-min-h-screen *** ${classes.overlayShadow()} ${classes.textInverse()} ${classes.cardBlack()} *** ${designAnim()} ***"
               >
                 <div class="xt-list *** ${itemAnim()} ***">
                   <form class="text-sm flex-auto">
@@ -648,7 +648,7 @@ const html = /* HTML */ `
                     </div>
 
                     <div class="mt-auto">
-                      <div class="-mx-3.5 mt-6 pt-6 border-t border-primary-400">
+                      <div class="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
                         <nav class="xt-list xt-list-1 flex-col">
                           <a
                             href="#"
@@ -682,7 +682,7 @@ const html = /* HTML */ `
                       <div>Man</div>
                       <button
                         type="button"
-                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
                         data-xt-toggle-element
                         data-xt-group="initial"
                       >
@@ -733,7 +733,7 @@ const html = /* HTML */ `
                       <div>Man Shirt</div>
                       <button
                         type="button"
-                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
                         data-xt-toggle-element
                         data-xt-group="cat-0"
                       >
@@ -768,7 +768,7 @@ const html = /* HTML */ `
                       <div>Man Pant</div>
                       <button
                         type="button"
-                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
                         data-xt-toggle-element
                         data-xt-group="cat-0"
                       >
@@ -803,7 +803,7 @@ const html = /* HTML */ `
                       <div>Woman</div>
                       <button
                         type="button"
-                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                        class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}"
                         data-xt-toggle-element
                         data-xt-group="initial"
                       >

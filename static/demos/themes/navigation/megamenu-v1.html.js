@@ -35,7 +35,7 @@ const html = /* HTML */ `
 
               <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                 <div class="*** relative ***" data-xt-drop-inner>
-                  <div class="*** xt-design *** bg-primary-700 border-b-4 border-gray-300"></div>
+                  <div class="*** xt-design *** ${classes.dropShadow()} ${classes.cardBlack()}"></div>
                   <div class="*** xt-drop-content ***">
                     <div class="pt-16 pb-24 ${classes.textInverse()}">
                       <div class="container">
@@ -69,7 +69,7 @@ const html = /* HTML */ `
 
               <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                 <div class="*** relative ***" data-xt-drop-inner>
-                  <div class="*** xt-design *** bg-gray-700 border-b-4 border-gray-300"></div>
+                  <div class="*** xt-design *** ${classes.dropShadow()} ${classes.cardPrimary()}"></div>
                   <div class="*** xt-drop-content ***">
                     <div class="pt-16 pb-24 ${classes.textInverse()}">
                       <div class="container">
@@ -87,24 +87,17 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <a
-              href="/"
-              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
-            >
-              Link #3
-            </a>
-
             <div data-xt-drop-element>
               <a
                 href="/"
                 class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
               >
-                Menu #4
+                Menu #3
               </a>
 
               <div class="*** xt-drop *** xt-drop-static" data-xt-drop-target>
                 <div class="*** relative ***" data-xt-drop-inner>
-                  <div class="*** xt-design *** bg-gray-100 border-b-4 border-gray-300"></div>
+                  <div class="*** xt-design *** ${classes.dropShadow()} ${classes.cardGray()}"></div>
                   <div class="*** xt-drop-content ***">
                     <div class="pt-16 pb-24 ${classes.textDefault()} ">
                       <div class="container">
@@ -142,6 +135,13 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
+
+            <a
+              href="/"
+              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+            >
+              Link #4
+            </a>
 
             <a
               href="/"

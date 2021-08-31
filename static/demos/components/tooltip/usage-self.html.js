@@ -7,7 +7,7 @@ const html = /* HTML */ `
       data-xt-tooltip="{ closeOutside: false, classSkip: false }"
     >
       <div
-        class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardBlack()}"
+        class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
       >
         <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
       </div>
