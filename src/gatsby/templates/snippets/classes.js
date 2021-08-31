@@ -79,7 +79,7 @@ export const classes = {
   badgePrimary: () => 'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500',
   // components
   slide: () => 'group',
-  loader: () => 'xt-loader absolute inset-0 rounded-inherit overflow-hidden',
+  loader: () => 'xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden',
   spinner: () => 'xt-spinner absolute inset-0 m-auto',
   filler: () => 'xt-filler absolute inset-0 m-auto',
   // form
