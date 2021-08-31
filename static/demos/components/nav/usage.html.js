@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** rounded-t${classes.groupButtonRadius()} *** ${classes.groupButton()} ${classes.buttonTextAnim()} *** on ***"
+        class="xt-button ${classes.groupButtonMd()} *** rounded-t${classes.groupButtonRadius()} *** ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()} *** on ***"
       >
         Lorem ipsum dolor sit amet
       </a>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
       >
         Consectetur adipiscing elit
       </a>
@@ -22,21 +22,21 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
         >Mauris mattis</a
       >
 
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.groupButtonMd()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
         >Purus odio</a
       >
 
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** rounded-b${classes.groupButtonRadius()} *** ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.groupButtonMd()} *** rounded-b${classes.groupButtonRadius()} *** ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
       >
         Et dictum felis vestibulum sed
       </a>

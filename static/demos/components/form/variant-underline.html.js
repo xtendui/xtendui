@@ -33,7 +33,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <label class="${classes.label()} *** mb-3 ${classes.labelGray()} ***"> Textarea </label>
           <textarea
-            class="${classes.input()} ${classes.textarea()} *** ${classes.inputUnderline()} *** h-24 resize-vertical"
+            class="${classes.input()} ${classes.textarea()} *** ${classes.inputUnderline()} *** resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
           ></textarea>

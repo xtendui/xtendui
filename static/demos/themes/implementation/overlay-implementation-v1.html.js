@@ -87,7 +87,7 @@ const html = /* HTML */ `
                         <div class="w-full">
                           <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Message </label>
                           <textarea
-                            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputGray()} h-24 resize-vertical"
+                            class="${classes.input()} ${classes.textarea()} ${classes.inputRadius()} ${classes.inputGray()} resize-vertical"
                             aria-label="Message"
                           ></textarea>
                         </div>
@@ -330,7 +330,7 @@ const html = /* HTML */ `
                       <nav class="xt-list xt-list-1 flex-col">
                         <button
                           type="button"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                           data-xt-toggle-element
                           data-xt-group="cat-0"
                         >
@@ -338,7 +338,7 @@ const html = /* HTML */ `
                         </button>
                         <button
                           type="button"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                           data-xt-toggle-element
                           data-xt-group="cat-1"
                         >
@@ -346,7 +346,7 @@ const html = /* HTML */ `
                         </button>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Kid
                         </a>
@@ -361,19 +361,19 @@ const html = /* HTML */ `
                       <nav class="xt-list xt-list-1 flex-col">
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           About
                         </a>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           News
                         </a>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Contact
                         </a>
@@ -385,19 +385,19 @@ const html = /* HTML */ `
                         <nav class="xt-list xt-list-1 flex-col">
                           <a
                             href="#"
-                            class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                            class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                           >
                             Support ${classes.iconMail({ classes: 'xt-icon text-lg ml-4' })}
                           </a>
                           <a
                             href="#"
-                            class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                            class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                           >
                             Login / Account ${classes.iconUsers({ classes: 'xt-icon text-lg ml-4' })}
                           </a>
                           <a
                             href="#"
-                            class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                            class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                           >
                             Language ${classes.iconGlobe({ classes: 'xt-icon text-lg ml-4' })}
                           </a>
@@ -427,7 +427,7 @@ const html = /* HTML */ `
                       <nav class="xt-list xt-list-1 flex-col">
                         <button
                           type="button"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                           data-xt-toggle-element
                           data-xt-group="cat-0a"
                         >
@@ -435,7 +435,7 @@ const html = /* HTML */ `
                         </button>
                         <button
                           type="button"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                           data-xt-toggle-element
                           data-xt-group="cat-0b"
                         >
@@ -443,13 +443,13 @@ const html = /* HTML */ `
                         </button>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Jacket
                         </a>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Underwear
                         </a>
@@ -478,13 +478,13 @@ const html = /* HTML */ `
                       <nav class="xt-list xt-list-1 flex-col">
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           T-Shirt
                         </a>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Polo
                         </a>
@@ -513,13 +513,13 @@ const html = /* HTML */ `
                       <nav class="xt-list xt-list-1 flex-col">
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Jeans
                         </a>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Short
                         </a>
@@ -548,13 +548,13 @@ const html = /* HTML */ `
                       <nav class="xt-list xt-list-1 flex-col">
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Shirt
                         </a>
                         <a
                           href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
                         >
                           Pant
                         </a>

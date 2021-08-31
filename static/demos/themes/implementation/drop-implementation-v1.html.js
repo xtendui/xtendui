@@ -21,25 +21,25 @@ const html = /* HTML */ `
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
               >
                 ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
               >
                 ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
               >
                 ${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
               >
                 ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
               </a>

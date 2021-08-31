@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** border border-b-0 border-gray-300 *** rounded-t${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.groupButtonMd()} *** border border-b-0 border-gray-300 *** rounded-t${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
       >
         Lorem ipsum dolor sit amet
       </a>
@@ -14,7 +14,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.groupButtonMd()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
       >
         Consectetur adipiscing elit
       </a>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.groupButtonMd()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
       >
         Mauris mattis
       </a>
@@ -30,7 +30,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.groupButtonMd()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button *** border border-b-0 border-gray-300 *** ${classes.groupButtonMd()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
       >
         purus odio
       </a>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button ${classes.groupButtonMd()} *** border border-gray-300 *** rounded-b${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+        class="xt-button ${classes.groupButtonMd()} *** border border-gray-300 *** rounded-b${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
       >
         Et dictum felis vestibulum sed
       </a>

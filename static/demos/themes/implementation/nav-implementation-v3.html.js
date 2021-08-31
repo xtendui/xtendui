@@ -17,27 +17,27 @@ const html = /* HTML */ `
                 <a
                   href="#description"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                 >
                   ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                 </a>
                 <a
                   href="#features"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                 >
                   ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
                 </a>
                 <a
                   href="#accessories"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   >${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories</a
                 >
                 <a
                   href="#manuals"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   >${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals</a
                 >
               </nav>

@@ -3,7 +3,6 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
 const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`
 const buttonText = () => `${classes.buttonTextAnim()}`
-const buttonRing = () => `${classes.buttonRing()} ${classes.buttonRingAnim()}`
 
 const html = /* HTML */ `
   <div class="demo--ripple-animation-v1">

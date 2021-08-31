@@ -55,7 +55,7 @@ export const classes = {
   groupButtonSm: () => 'py-1 px-2.5 text-xs',
   groupButtonMd: () => 'py-1.5 px-3 text-sm',
   groupButtonLg: () => 'py-2 px-3.5 text-base',
-  groupButton: () => 'flex-auto justify-start text-left font-medium leading-snug',
+  groupButton: () => 'flex-auto font-medium leading-snug',
   groupButtonGray: () => 'text-gray-900 bg-gray-100',
   groupButtonPrimary: () => 'text-white bg-primary-500',
   // tooltip
@@ -281,7 +281,7 @@ export const classes = {
   iconGlobe: ({ classes } = {}) => {
     classes = classes ? `${classes}` : ''
     classes = classes.search('xt-icon') !== -1 ? classes : `xt-icon ${classes}`
-    return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`
+    return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`
   },
   // other
   svgSpinner: ({ classes, dimension = 120, radius = 100, dash = 628 } = {}) => {
