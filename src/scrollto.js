@@ -188,25 +188,27 @@ class Scrollto {
   eventScrolltoLogic() {
     const self = this
     const options = self.options
-    // force no hashchange
-    self.hashchange = Xt.scrolltoHashforce ?? self.hashchange
-    Xt.scrolltoHashforce = null
-    // vars
-    self.position = options.position({ self })
-    self.space = options.space({ self })
-    self.duration = options.duration({ self })
-    self.position = self.position - self.space
-    // val
-    const min = 0
-    const max = self.scroller.scrollHeight - self.scroller.clientHeight
-    self.position = self.position < min ? min : self.position
-    self.position = self.position > max ? max : self.position
-    // fix activate also if scroll position remains the same
-    if (self.scroller.scrollTop === self.position) {
-      self.scroller.dispatchEvent(new CustomEvent('scroll'))
+    if (Xt.visible({ el: self.target })) {
+      // force no hashchange
+      self.hashchange = Xt.scrolltoHashforce ?? self.hashchange
+      Xt.scrolltoHashforce = null
+      // vars
+      self.position = options.position({ self })
+      self.space = options.space({ self })
+      self.duration = options.duration({ self })
+      self.position = self.position - self.space
+      // val
+      const min = 0
+      const max = self.scroller.scrollHeight - self.scroller.clientHeight
+      self.position = self.position < min ? min : self.position
+      self.position = self.position > max ? max : self.position
+      // fix activate also if scroll position remains the same
+      if (self.scroller.scrollTop === self.position) {
+        self.scroller.dispatchEvent(new CustomEvent('scroll'))
+      }
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
     }
-    // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
   }
 
   /**
