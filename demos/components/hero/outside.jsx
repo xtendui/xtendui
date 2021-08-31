@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <div className="hero relative overflow-hidden">
-        <div className="xt-media-container bg-gray-300 w-full h-96">
+        <div className="xt-media-container bg-gray-200 w-full h-96">
           <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
         </div>
         <div className="flex relative">

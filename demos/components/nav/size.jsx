@@ -7,35 +7,35 @@ export default function demo() {
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Lorem ipsum dolor sit amet
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Consectetur adipiscing elit
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Mauris mattis
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Purus odio
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1 px-2.5 text-xs *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Et dictum felis vestibulum sed
           </a>
         </nav>
@@ -44,35 +44,35 @@ export default function demo() {
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Lorem ipsum dolor sit amet
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Consectetur adipiscing elit
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Mauris mattis
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Purus odio
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-1.5 px-3 text-sm *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Et dictum felis vestibulum sed
           </a>
         </nav>
@@ -81,35 +81,35 @@ export default function demo() {
           <a
             href="#"
             type="button"
-            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Lorem ipsum dolor sit amet
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Consectetur adipiscing elit
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Mauris mattis
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Purus odio
           </a>
 
           <a
             href="#"
             type="button"
-            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            className="xt-button *** py-2 px-3.5 text-base *** rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
             Et dictum felis vestibulum sed
           </a>
         </nav>

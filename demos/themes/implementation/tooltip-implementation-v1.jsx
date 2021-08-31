@@ -80,7 +80,7 @@ export default function demo() {
                 className="xt-tooltip p-3 *** transition duration-300 opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
                 data-xt-tooltip-target>
                 <div className="*** xt-card w-80 rounded-md shadow-md text-gray-900 xt-links-default bg-white ***">
-                  <div className="*** xt-media-container bg-gray-300 rounded-t-md h-32 ***">
+                  <div className="*** xt-media-container bg-gray-200 rounded-t-md h-32 ***">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div>

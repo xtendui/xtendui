@@ -11,7 +11,7 @@ export default function demo() {
 
   return (
     <div className="demo--parallax-image-react" ref={ref}>
-      <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+      <div className="xt-media-container bg-gray-200 pb-[37.5%]">
         <img
           className="xt-media object-cover object-center"
           src="https://source.unsplash.com/wQLAGv4_OYs"
@@ -42,7 +42,7 @@ export default function demo() {
       <br />
       <br />
 
-      <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+      <div className="xt-media-container bg-gray-200 pb-[37.5%]">
         <img
           className="xt-media object-cover object-center"
           src="https://source.unsplash.com/Tyg0rVhOTrE"
@@ -73,7 +73,7 @@ export default function demo() {
       <br />
       <br />
 
-      <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+      <div className="xt-media-container bg-gray-200 pb-[37.5%]">
         <img
           className="xt-media object-cover object-center"
           src="https://source.unsplash.com/wEL2zPX3jDg"
@@ -104,7 +104,7 @@ export default function demo() {
       <br />
       <br />
 
-      <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+      <div className="xt-media-container bg-gray-200 pb-[37.5%]">
         <img
           className="xt-media object-cover object-center"
           src="https://source.unsplash.com/wQLAGv4_OYs"

@@ -12,7 +12,7 @@ export default function demo() {
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <div className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
+          <div className="*** xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden ***">
             <div className="*** xt-spinner absolute inset-0 m-auto w-6 h-6 text-white ***">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle
@@ -48,7 +48,7 @@ export default function demo() {
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
           Lorem ipsum
-          <span className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
+          <span className="*** xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden ***">
             <span className="*** xt-spinner absolute inset-0 m-auto w-6 h-6 text-white ***">
               <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                 <circle

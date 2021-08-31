@@ -6,14 +6,6 @@ export default function demo() {
         <div className="xt-media-container *** bg-gray-200 *** pb-[25%]"></div>
 
         <div className="xt-media-container *** bg-gray-500 *** pb-[25%]"></div>
-
-        <div className="xt-media-container *** bg-gray-200 media-container--skeleton *** pb-[25%]">
-          <img className="xt-media h-10 w-auto absolute inset-0 m-auto" src="/logo-white.svg" loading="lazy" alt="" />
-        </div>
-
-        <div className="xt-media-container *** bg-gray-500 media-container--skeleton *** pb-[25%]">
-          <img className="xt-media h-10 w-auto absolute inset-0 m-auto" src="/logo-white.svg" loading="lazy" alt="" />
-        </div>
       </div>
     </div>
   )

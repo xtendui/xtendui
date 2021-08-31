@@ -25,12 +25,6 @@ export default function demo() {
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase ring-2 ring-primary-200 transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300  *** xt-disabled ***">
-          Ring
-        </button>
-
-        <button
-          type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md xt-link *** xt-disabled ***"
           aria-disabled="true">
           link

@@ -9,7 +9,7 @@ export default function demo() {
 
   return (
     <div className="demo--media-iframe-lazy-react" ref={ref}>
-      <div className="xt-media-container bg-gray-300 pb-[56.2%] *** group ***">
+      <div className="xt-media-container bg-gray-200 pb-[56.2%] *** group ***">
         <iframe
           className="xt-media"
           data-src="https://www.youtube.com/embed/hNQFjqDvPhA?autoPlay=1&showinfo=0&rel=0"

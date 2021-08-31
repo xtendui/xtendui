@@ -18,13 +18,13 @@ export default function demo() {
               <div className="relative pt-6 md:py-6">
                 <div className="xt-list flex-col">
                   <div className="w-full">
-                    <div className="xt-media-container bg-gray-300">
+                    <div className="xt-media-container bg-gray-200">
                       <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
                   </div>
 
                   <div className="w-full">
-                    <div className="xt-media-container bg-gray-300">
+                    <div className="xt-media-container bg-gray-200">
                       <img
                         className="xt-media relative"
                         id="product-image-5"
@@ -36,13 +36,13 @@ export default function demo() {
                   </div>
 
                   <div className="w-full">
-                    <div className="xt-media-container bg-gray-300">
+                    <div className="xt-media-container bg-gray-200">
                       <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
                   </div>
 
                   <div className="w-full">
-                    <div className="xt-media-container bg-gray-300">
+                    <div className="xt-media-container bg-gray-200">
                       <img
                         className="xt-media relative"
                         id="product-image-5"
@@ -54,7 +54,7 @@ export default function demo() {
                   </div>
 
                   <div className="w-full">
-                    <div className="xt-media-container bg-gray-300">
+                    <div className="xt-media-container bg-gray-200">
                       <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
                     </div>
                   </div>

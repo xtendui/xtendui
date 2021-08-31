@@ -77,43 +77,43 @@ export default function demo() {
         <div className="p-4 md:p-6 lg:p-8">
           <div className="xt-slides xt-row xt-row-2" data-xt-slider-dragger>
             <div className="xt-slide group *** w-60 ***" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="eager" alt="" />
               </div>
             </div>
 
             <div className="xt-slide group *** w-60 ***" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
 
             <div className="xt-slide group *** w-60 ***" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
 
             <div className="xt-slide group *** w-60 ***" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
 
             <div className="xt-slide group *** w-60 ***" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
 
             <div className="xt-slide group *** w-60 ***" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
 
             <div className="xt-slide group *** w-60 ***" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300 pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 pb-[37.5%]">
                 <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>

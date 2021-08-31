@@ -21,7 +21,7 @@ const html = /* HTML */ `
                 <nav class="*** xt-list xt-list-1 flex-col p-3 ***">
                   <a
                     role="button"
-                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="description"
                   >
@@ -29,7 +29,7 @@ const html = /* HTML */ `
                   </a>
                   <a
                     role="button"
-                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="features"
                   >
@@ -37,7 +37,7 @@ const html = /* HTML */ `
                   </a>
                   <a
                     role="button"
-                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="accessories"
                     >${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories</a
@@ -45,7 +45,7 @@ const html = /* HTML */ `
                   <a
                     href="#"
                     type="button"
-                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} ${buttonAnim()}"
+                    class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="manuals"
                     >${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals</a

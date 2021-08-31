@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
-        <div className="xt-media-container bg-gray-300 rounded-t-2xl h-40">
+        <div className="xt-media-container bg-gray-200 rounded-t-2xl h-40">
           <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
         </div>
         <div className="*** md:xt-card-group ***">

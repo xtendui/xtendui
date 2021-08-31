@@ -16,7 +16,7 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full group">
                 <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
-                  <div className="xt-media-container bg-gray-300 h-40">
+                  <div className="xt-media-container bg-gray-200 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -79,7 +79,7 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full group">
                 <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
-                  <div className="xt-media-container bg-gray-300 h-40">
+                  <div className="xt-media-container bg-gray-200 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -126,7 +126,7 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full group">
                 <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
-                  <div className="xt-media-container bg-gray-300 h-40">
+                  <div className="xt-media-container bg-gray-200 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -189,7 +189,7 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full group">
                 <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
-                  <div className="xt-media-container bg-gray-300 h-40">
+                  <div className="xt-media-container bg-gray-200 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -236,7 +236,7 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full group">
                 <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
-                  <div className="xt-media-container bg-gray-300 h-40">
+                  <div className="xt-media-container bg-gray-200 h-40">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">
@@ -299,7 +299,7 @@ export default function demo() {
             <div className="w-full md:w-6/12 lg:w-4/12">
               <div className="*** listing-item *** block relative overflow-hidden w-full group">
                 <div className="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded-2xl">
-                  <div className="xt-media-container bg-gray-300 h-40">
+                  <div className="xt-media-container bg-gray-200 h-40">
                     <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
                   <div className="mt-6 flex flex-col">

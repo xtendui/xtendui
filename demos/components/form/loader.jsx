@@ -10,8 +10,8 @@ export default function demo() {
   return (
     <div className="demo--form-loader-react" ref={ref}>
       <script type="text/x-template" data-node-loader-template>
-        <div className="xt-loader absolute z-above inset-0 rounded-inherit overflow-hidden bg-black bg-opacity-30">
-          <div className="xt-spinner absolute inset-0 m-auto w-6 h-6">
+        <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-30">
+          <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-black">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
               <circle
                 className="stroke-current origin-center opacity-25"
@@ -27,7 +27,7 @@ export default function demo() {
             </svg>
             <svg viewBox="0 0 240 240">
               <circle
-                className="stroke-current origin-center relative animate-xt-spinner"
+                className="stroke-current origin-center relativext-icon animate-xt-spinner"
                 fill="none"
                 strokeWidth="30"
                 cx="120"
@@ -79,14 +79,14 @@ export default function demo() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** xt-loading-white ***">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
               submit
             </button>
           </div>
         </div>
       </form>
 
-      <form className="text-sm mt-12 ** xt-loading xt-loading-white ***">
+      <form className="text-sm mt-12 *** xt-loadable ***">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
             <label className="block mb-3 font-medium text-gray-700"> Email </label>
@@ -101,7 +101,7 @@ export default function demo() {
           <div className="w-full">
             <button
               type="submit"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button *** xt-loadable-ignore *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
               submit
             </button>
           </div>
@@ -130,7 +130,7 @@ const mountFormLoaders = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    matches: 'button[type="submit"]',
+    matches: 'button[type="submit"], .xt-loadable',
     mount: ({ ref }) => {
       return mountFormLoader({ ref })
     },
@@ -146,29 +146,31 @@ const mountFormLoaders = ({ ref }) => {
 const mountFormLoader = ({ ref }) => {
   // vars
 
-  const button = ref
-  const form = button.form
+  const loadable = ref
+  const form = loadable.form || loadable.closest('form')
   const loaderTemplate = document.querySelector('[data-node-loader-template]')
 
   // submit
 
   const submit = () => {
-    form.classList.add('loading')
+    loadable.classList.add('xt-loading')
   }
 
-  form.addEventListener('submit', submit)
+  if (!loadable.classList.contains('xt-loadable-ignore')) {
+    form.addEventListener('submit', submit)
+  }
 
   // inject
 
-  if (form.classList.contains('xt-loading')) {
-    form.append(Xt.node({ str: loaderTemplate.innerHTML }))
-  } else if (!button.classList.contains('xt-loading')) {
-    button.classList.add('xt-loading')
-    const text = button.innerHTML
-    button.innerHTML = ''
-    button.append(Xt.node({ str: `<span class="xt-loading-content"></span>` }))
-    button.append(Xt.node({ str: loaderTemplate.innerHTML }))
-    const content = button.querySelector('.xt-loading-content')
+  if (loadable.classList.contains('xt-loadable')) {
+    loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
+  } else {
+    loadable.classList.add('xt-loadable')
+    const text = loadable.innerHTML
+    loadable.innerHTML = ''
+    loadable.append(Xt.node({ str: `<span class="xt-loadable-content"></span>` }))
+    loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
+    const content = loadable.querySelector('.xt-loadable-content')
     content.innerHTML = text
   }
 

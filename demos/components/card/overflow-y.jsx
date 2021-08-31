@@ -5,7 +5,7 @@ export default function demo() {
       <div className="xt-row xt-row-6">
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100 *** overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-96 ***">
-            <div className="xt-media-container bg-gray-300 rounded-t-2xl pb-[37.5%]">
+            <div className="xt-media-container bg-gray-200 rounded-t-2xl pb-[37.5%]">
               <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div className="p-7 sm:p-9 text-base">
@@ -31,7 +31,7 @@ export default function demo() {
 
         <div className="w-full md:w-6/12">
           <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
-            <div className="xt-media-container bg-gray-300 rounded-t-2xl pb-[37.5%]">
+            <div className="xt-media-container bg-gray-200 rounded-t-2xl pb-[37.5%]">
               <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
             </div>
             <div className="p-7 sm:p-9 text-base overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-64">

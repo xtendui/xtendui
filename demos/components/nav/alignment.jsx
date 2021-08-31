@@ -6,7 +6,7 @@ export default function demo() {
         <a
           href="#"
           type="button"
-          className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+          className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify default (center)
           <br />
           Text default (center){' '}
@@ -29,7 +29,7 @@ export default function demo() {
         <a
           href="#"
           type="button"
-          className="xt-button py-1.5 px-3 text-sm rounded-md *** justify-center text-center *** flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+          className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-center text-center *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify center
           <br />
           Text center{' '}
@@ -52,7 +52,7 @@ export default function demo() {
         <a
           href="#"
           type="button"
-          className="xt-button py-1.5 px-3 text-sm rounded-md *** justify-start text-left *** flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+          className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-start text-left *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify start
           <br />
           Text left{' '}
@@ -75,7 +75,7 @@ export default function demo() {
         <a
           href="#"
           type="button"
-          className="xt-button py-1.5 px-3 text-sm rounded-md *** justify-end text-right *** flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+          className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-end text-right *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify end
           <br />
           Text right{' '}
@@ -98,7 +98,7 @@ export default function demo() {
         <a
           href="#"
           type="button"
-          className="xt-button py-1.5 px-3 text-sm rounded-md *** justify-between *** flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+          className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-between *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify between{' '}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +119,7 @@ export default function demo() {
         <a
           href="#"
           type="button"
-          className="xt-button py-1.5 px-3 text-sm rounded-md *** justify-around *** flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+          className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-around *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify around{' '}
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -14,7 +14,7 @@ export default function demo() {
                   <a
                     href="#"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                     data-xt-toggle-element
                     data-xt-hash="description">
                     <svg
@@ -36,7 +36,7 @@ export default function demo() {
                   <a
                     href="#"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                     data-xt-toggle-element
                     data-xt-hash="features">
                     <svg
@@ -61,7 +61,7 @@ export default function demo() {
                   <a
                     href="#"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                     data-xt-toggle-element
                     data-xt-hash="accessories">
                     <svg
@@ -85,7 +85,7 @@ export default function demo() {
                   <a
                     href="#"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                     data-xt-toggle-element
                     data-xt-hash="manuals">
                     <svg

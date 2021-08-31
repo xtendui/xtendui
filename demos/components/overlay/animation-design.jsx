@@ -39,7 +39,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="xt-media-container bg-gray-300 rounded-t-2xl pb-[37.5%]">
+                <div className="xt-media-container bg-gray-200 rounded-t-2xl pb-[37.5%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="p-7 sm:p-9 text-base">

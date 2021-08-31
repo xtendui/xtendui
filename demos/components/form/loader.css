@@ -1,28 +1,30 @@
 .demo--form-loader, .demo--form-loader-react {
-  .xt-loading {
+  .xt-loadable {
     @apply relative;
-    .xt-loading-content {
-      @apply transition;
-    }
-    .xt-loader {
+    > .xt-loader {
       @apply transition opacity-0 pointer-events-none;
     }
-  }
-  .xt-loading-white {
-    .xt-loader {
-      @apply bg-white bg-opacity-30;
-      .xt-spinner {
-        @apply text-black;
+    > .xt-loadable-content {
+      @apply transition;
+    }
+    /* variant */
+    &[class*="bg-primary-"] {
+      > .xt-loader {
+        @apply bg-black bg-opacity-30;
+        > .xt-spinner {
+          @apply text-white;
+        }
       }
     }
   }
-  .loading.xt-loading, .loading .xt-loading {
+
+  .xt-loadable.xt-loading {
     @apply pointer-events-none;
-    .xt-loading-content {
-      @apply transition opacity-0;
-    }
-    .xt-loader {
+    > .xt-loader {
       @apply opacity-100;
+    }
+    > .xt-loadable-content {
+      @apply transition opacity-0;
     }
   }
 }

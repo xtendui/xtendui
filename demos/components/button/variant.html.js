@@ -24,13 +24,6 @@ const html = /* HTML */ `
         Text
       </button>
 
-      <button
-        type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** ${classes.buttonUpper()} ${classes.buttonRing()} ${classes.buttonRingAnim()} ***"
-      >
-        Ring
-      </button>
-
       <button type="button" class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} *** xt-link ***">
         Link
       </button>

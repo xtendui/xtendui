@@ -40,7 +40,7 @@ const html = /* HTML */ `
           <div class="w-full">
             <label class="${classes.label()} *** mb-3 ${classes.labelPrimary()} ***"> Textarea </label>
             <textarea
-              class="${classes.input()} ${classes.textarea()} *** ${classes.inputRadius()} ${classes.inputPrimary()} *** h-24 resize-vertical"
+              class="${classes.input()} ${classes.textarea()} *** ${classes.inputRadius()} ${classes.inputPrimary()} *** resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"
             ></textarea>

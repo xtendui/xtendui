@@ -21,7 +21,7 @@ export default function demo() {
             </p>
           </div>
           <span
-            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
+            className="*** xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
             data-xt-duration="500">
             <span className="*** xt-filler absolute inset-0 m-auto *** text-primary-500 h-1 left-1/4 right-1/4">
               <span className="block absolute bg-current opacity-25 w-full h-full"></span>
@@ -35,7 +35,7 @@ export default function demo() {
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
           Lorem ipsum
           <span
-            className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
+            className="*** xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
             data-xt-duration="500">
             <span className="*** xt-filler absolute inset-0 m-auto *** text-primary-500 h-1 left-1/4 right-1/4">
               <span className="block absolute bg-current opacity-25 w-full h-full"></span>

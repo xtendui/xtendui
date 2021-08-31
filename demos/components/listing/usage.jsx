@@ -7,7 +7,7 @@ export default function demo() {
           <div className="*** xt-row xt-row-4 ***">
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -19,7 +19,7 @@ export default function demo() {
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -31,7 +31,7 @@ export default function demo() {
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -43,7 +43,7 @@ export default function demo() {
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -55,7 +55,7 @@ export default function demo() {
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -67,7 +67,7 @@ export default function demo() {
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -79,7 +79,7 @@ export default function demo() {
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -91,7 +91,7 @@ export default function demo() {
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="#" className="listing-item">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">

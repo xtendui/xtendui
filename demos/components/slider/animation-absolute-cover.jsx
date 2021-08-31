@@ -16,7 +16,7 @@ export default function demo() {
           <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
-                <div className="xt-media-container bg-gray-300 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-200 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
@@ -32,7 +32,7 @@ export default function demo() {
           <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
-                <div className="xt-media-container bg-gray-300 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-200 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
@@ -48,7 +48,7 @@ export default function demo() {
           <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
-                <div className="xt-media-container bg-gray-300 w-full h-full absolute">
+                <div className="xt-media-container bg-gray-200 w-full h-full absolute">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
@@ -65,7 +65,7 @@ export default function demo() {
         <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div className="hero relative overflow-hidden bg-black">
             <div className="*** hero-inner ***">
-              <div className="xt-media-container bg-gray-300 w-full h-full absolute">
+              <div className="xt-media-container bg-gray-200 w-full h-full absolute">
                 <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div className="flex relative h-96">

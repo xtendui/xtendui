@@ -24,7 +24,7 @@ export default function demo() {
                   <a
                     href="#description"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon text-lg opacity-50 mr-2"
@@ -44,7 +44,7 @@ export default function demo() {
                   <a
                     href="#features"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon text-lg opacity-50 mr-2"
@@ -67,7 +67,7 @@ export default function demo() {
                   <a
                     href="#accessories"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon text-lg opacity-50 mr-2"
@@ -89,7 +89,7 @@ export default function demo() {
                   <a
                     href="#manuals"
                     type="button"
-                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto justify-start text-left font-medium leading-snug transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                    className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="xt-icon text-lg opacity-50 mr-2"
@@ -236,9 +236,20 @@ const mountScrollto = () => {
 
   self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
+  // fix stop scroll animation on user interaction
+
+  const stopScrolling = () => {
+    gsap.killTweensOf(self.scroller)
+  }
+
+  addEventListener('touchstart', stopScrolling)
+  addEventListener('wheel', stopScrolling)
+
   // unmount
 
   return () => {
+    removeEventListener('touchstart', stopScrolling)
+    removeEventListener('wheel', stopScrolling)
     self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null

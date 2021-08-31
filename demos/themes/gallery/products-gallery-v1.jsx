@@ -35,7 +35,7 @@ export default function demo() {
                         className="*** product-image *** w-full"
                         id="product-image-1"
                         title="Expand image 1">
-                        <div className="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
+                        <div className="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -46,7 +46,7 @@ export default function demo() {
                         className="*** product-image *** w-full"
                         id="product-image-2"
                         title="Expand image 2">
-                        <div className="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
+                        <div className="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -57,7 +57,7 @@ export default function demo() {
                         className="*** product-image *** w-full"
                         id="product-image-3"
                         title="Expand image 3">
-                        <div className="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
+                        <div className="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -68,7 +68,7 @@ export default function demo() {
                         className="*** product-image *** w-full"
                         id="product-image-4"
                         title="Expand image 4">
-                        <div className="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
+                        <div className="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img-alt.svg" loading="eager" alt="" />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -79,7 +79,7 @@ export default function demo() {
                         className="*** product-image *** w-full"
                         id="product-image-5"
                         title="Expand image 5">
-                        <div className="xt-media-container bg-gray-300 overflow-hidden" data-xt-overlay-element>
+                        <div className="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                           <img className="xt-media relative" src="/img.svg" loading="eager" alt="" />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                         </div>
@@ -152,7 +152,7 @@ export default function demo() {
                         <div className="xt-overlay-inner">
                           <div className="xt-card items-center justify-center shadow-xl text-gray-900 xt-links-default bg-white">
                             <div className="w-full">
-                              <div className="xt-media-container bg-gray-300 overflow-hidden">
+                              <div className="xt-media-container bg-gray-200 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-1"
@@ -162,7 +162,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-300 overflow-hidden">
+                              <div className="xt-media-container bg-gray-200 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-2"
@@ -172,7 +172,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-300 overflow-hidden">
+                              <div className="xt-media-container bg-gray-200 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-3"
@@ -182,7 +182,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-300 overflow-hidden">
+                              <div className="xt-media-container bg-gray-200 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-4"
@@ -192,7 +192,7 @@ export default function demo() {
                                 />
                               </div>
 
-                              <div className="xt-media-container bg-gray-300 overflow-hidden">
+                              <div className="xt-media-container bg-gray-200 overflow-hidden">
                                 <img
                                   className="xt-media relative"
                                   id="product-image-overlay-5"
@@ -293,7 +293,7 @@ export default function demo() {
 /* mount */
 
 const mount = ({ ref }) => {
-  const unmountScrollto = mountScrollto()
+  const unmountScrollto = mountScrollto({ ref })
   const unmountImages = mountImages({ ref })
   const unmountArrow = mountArrow({ ref })
 
@@ -337,9 +337,20 @@ const mountScrollto = () => {
 
   self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
+  // fix stop scroll animation on user interaction
+
+  const stopScrolling = () => {
+    gsap.killTweensOf(self.scroller)
+  }
+
+  addEventListener('touchstart', stopScrolling)
+  addEventListener('wheel', stopScrolling)
+
   // unmount
 
   return () => {
+    removeEventListener('touchstart', stopScrolling)
+    removeEventListener('wheel', stopScrolling)
     self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null

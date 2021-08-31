@@ -9,7 +9,7 @@ export default function demo() {
 
   return (
     <div className="demo--media-video-matches-react" ref={ref}>
-      <div className="xt-media-container bg-gray-100 pb-[56.2%]">
+      <div className="xt-media-container bg-gray-200 pb-[56.2%]">
         <video className="xt-media" poster="/placeholder-1080.jpg" preload="metadata" muted playsInline loop autoPlay>
           <source type="video/mp4" media="(max-width: 767px)" data-src="/placeholder-720.mp4" />
           <source type="video/mp4" src="/placeholder-1080.mp4" />

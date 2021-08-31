@@ -34,7 +34,7 @@ export default function demo() {
                 data-xt-infinitescroll-up="-1">
                 <span className="content"> Load previous page </span>
 
-                <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden *** infinitescroll-spinner ***">
+                <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden *** infinitescroll-spinner ***">
                   <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -71,7 +71,7 @@ export default function demo() {
           <div className="xt-row xt-row-4" data-xt-infinitescroll-items-container>
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -83,7 +83,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -95,7 +95,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -107,7 +107,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -119,7 +119,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -131,7 +131,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -143,7 +143,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -155,7 +155,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -167,7 +167,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -179,7 +179,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -191,7 +191,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -203,7 +203,7 @@ export default function demo() {
 
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
-                <div className="xt-media-container bg-gray-300 pb-[75%]">
+                <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
@@ -223,7 +223,7 @@ export default function demo() {
               data-xt-infinitescroll-down="+1">
               <span className="content"> Show more products </span>
 
-              <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden *** infinitescroll-spinner ***">
+              <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden *** infinitescroll-spinner ***">
                 <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-white">
                   <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                     <circle

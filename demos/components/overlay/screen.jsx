@@ -98,7 +98,7 @@ export default function demo() {
                       <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                   </button>
-                  <div className="xt-media-container bg-gray-300 pb-[100%]">
+                  <div className="xt-media-container bg-gray-200 pb-[100%]">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>

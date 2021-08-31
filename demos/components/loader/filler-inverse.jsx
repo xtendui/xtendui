@@ -12,7 +12,7 @@ export default function demo() {
               vitae magna eget, vehicula scelerisque elit.
             </p>
           </div>
-          <span className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
+          <span className="*** xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden ***">
             <span className="*** xt-filler absolute inset-0 m-auto text-white text-opacity-50 ***">
               <span className="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
               <span className="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>
@@ -24,7 +24,7 @@ export default function demo() {
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
           Lorem ipsum
-          <span className="*** xt-loader absolute inset-0 rounded-inherit overflow-hidden ***">
+          <span className="*** xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden ***">
             <span className="*** xt-filler absolute inset-0 m-auto text-white text-opacity-50 ***">
               <span className="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
               <span className="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>

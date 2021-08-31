@@ -38,7 +38,7 @@ export default function demo() {
             <div className="w-full">
               <label className="block *** mb-3 font-medium text-white ***"> Textarea </label>
               <textarea
-                className="block w-full h-20 max-h-48 *** rounded-md py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none *** h-24 resize-vertical"
+                className="block w-full h-20 max-h-48 *** rounded-md py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none *** resize-vertical"
                 aria-label="Textarea"
                 placeholder="Textarea"></textarea>
             </div>

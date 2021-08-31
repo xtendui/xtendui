@@ -9,7 +9,7 @@ const html = /* HTML */ `
           data-xt-slider-dragger
         >
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300">
+            <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="/img.svg"
@@ -28,7 +28,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300">
+            <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="/img-ratio.svg"
@@ -47,7 +47,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300">
+            <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/ruJm3dBXCqw"
@@ -66,7 +66,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300">
+            <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/wQLAGv4_OYs"
@@ -85,7 +85,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300">
+            <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/OlTjeydUpQw"
@@ -104,7 +104,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300">
+            <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/wEL2zPX3jDg"
@@ -123,7 +123,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-300">
+            <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/Tyg0rVhOTrE"

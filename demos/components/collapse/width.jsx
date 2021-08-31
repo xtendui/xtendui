@@ -25,7 +25,7 @@ export default function demo() {
         <div className="xt-row xt-row-6">
           <div className="w-full md:w-6/12">
             <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
-              <div className="xt-media-container bg-gray-300 rounded-2xl *** overflow-hidden *** pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 rounded-2xl *** overflow-hidden *** pb-[37.5%]">
                 <div
                   className="absolute inset-0 rounded-inherit off:hidden out:pointer-events-none *** overflow-hidden transition-all ***"
                   data-xt-toggle-target>
@@ -37,7 +37,7 @@ export default function demo() {
 
           <div className="w-full md:w-6/12">
             <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
-              <div className="xt-media-container bg-gray-300 rounded-2xl *** overflow-hidden *** pb-[37.5%]">
+              <div className="xt-media-container bg-gray-200 rounded-2xl *** overflow-hidden *** pb-[37.5%]">
                 <div
                   className="absolute inset-0 rounded-inherit off:hidden out:pointer-events-none *** overflow-hidden transition-all ***"
                   data-xt-toggle-target>

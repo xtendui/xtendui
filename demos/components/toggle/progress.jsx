@@ -18,7 +18,7 @@ export default function demo() {
           className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 0
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-black text-opacity-50">
               <span className="block absolute bg-current opacity-0 w-full h-full"></span>
               <span className="block absolute bg-current w-full"></span>
@@ -31,7 +31,7 @@ export default function demo() {
           className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 1
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-black text-opacity-50">
               <span className="block absolute bg-current opacity-0 w-full h-full"></span>
               <span className="block absolute bg-current w-full"></span>
@@ -44,7 +44,7 @@ export default function demo() {
           className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 2
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-black text-opacity-50">
               <span className="block absolute bg-current opacity-0 w-full h-full"></span>
               <span className="block absolute bg-current w-full"></span>
@@ -57,7 +57,7 @@ export default function demo() {
           className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
           data-xt-toggle-element>
           Toggle 3
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-black text-opacity-50">
               <span className="block absolute bg-current opacity-0 w-full h-full"></span>
               <span className="block absolute bg-current w-full"></span>
@@ -69,7 +69,7 @@ export default function demo() {
           className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 0
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
               <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
               <span className="block absolute bg-current h-full bottom-0 left-0"></span>
@@ -81,7 +81,7 @@ export default function demo() {
           className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 1
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
               <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
               <span className="block absolute bg-current h-full bottom-0 left-0"></span>
@@ -93,7 +93,7 @@ export default function demo() {
           className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 2
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
               <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
               <span className="block absolute bg-current h-full bottom-0 left-0"></span>
@@ -105,7 +105,7 @@ export default function demo() {
           className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 3
-          <span className="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
+          <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
             <span className="xt-filler absolute inset-0 m-auto text-primary-500 h-1 top-auto">
               <span className="block absolute bg-current opacity-25 w-full h-full bottom-0 left-0"></span>
               <span className="block absolute bg-current h-full bottom-0 left-0"></span>

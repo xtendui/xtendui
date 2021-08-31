@@ -71,7 +71,7 @@ export default function demo() {
           <div className="w-full">
             <label className="block mb-3 font-medium text-gray-700 label-required"> Textarea </label>
             <textarea
-              className="block w-full h-20 max-h-48 py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none h-24 resize-vertical"
+              className="block w-full h-20 max-h-48 py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none resize-vertical"
               aria-label="Textarea"
               placeholder="Textarea"
               required></textarea>

@@ -1,6 +1,6 @@
 const html = /* HTML */ `
   <div>
-    <div class="xt-media-container bg-gray-100 pb-[56.2%]">
+    <div class="xt-media-container bg-gray-200 pb-[56.2%]">
       <iframe
         class="xt-media"
         src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&rel=0"

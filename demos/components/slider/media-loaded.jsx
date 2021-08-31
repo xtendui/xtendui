@@ -11,14 +11,14 @@ export default function demo() {
             className="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
             data-xt-slider-dragger>
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300">
+              <div className="xt-media-container bg-gray-200">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="/img.svg"
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -55,14 +55,14 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300">
+              <div className="xt-media-container bg-gray-200">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="/img-ratio.svg"
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -99,14 +99,14 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300">
+              <div className="xt-media-container bg-gray-200">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/ruJm3dBXCqw"
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -143,14 +143,14 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300">
+              <div className="xt-media-container bg-gray-200">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/wQLAGv4_OYs"
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -187,14 +187,14 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300">
+              <div className="xt-media-container bg-gray-200">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/OlTjeydUpQw"
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -231,14 +231,14 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300">
+              <div className="xt-media-container bg-gray-200">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/wEL2zPX3jDg"
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle
@@ -275,14 +275,14 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-300">
+              <div className="xt-media-container bg-gray-200">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/Tyg0rVhOTrE"
                   loading="lazy"
                   alt=""
                 />
-                <div className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
+                <div className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75">
                   <div className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
                     <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">
                       <circle

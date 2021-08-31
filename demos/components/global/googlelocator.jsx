@@ -205,7 +205,7 @@ export default function demo() {
         </div>
 
         <div
-          className="xt-loader absolute inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 off:hidden out:pointer-events-none z-10"
+          className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden bg-white bg-opacity-75 off:hidden out:pointer-events-none z-10"
           data-xt-googlelocator-loader>
           <span className="xt-spinner absolute inset-0 m-auto w-6 h-6 text-primary-500">
             <svg viewBox="0 0 240 240" className="absolute" preserveAspectRatio="xMinYMin meet">

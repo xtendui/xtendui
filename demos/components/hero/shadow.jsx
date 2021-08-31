@@ -3,7 +3,7 @@ export default function demo() {
   return (
     <div>
       <div className="hero relative overflow-hidden">
-        <div className="xt-media-container bg-gray-300 w-full h-full absolute">
+        <div className="xt-media-container bg-gray-200 w-full h-full absolute">
           <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           <div className="*** absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 ***"></div>
         </div>
@@ -23,7 +23,7 @@ export default function demo() {
       </div>
 
       <div className="hero relative overflow-hidden">
-        <div className="xt-media-container bg-gray-300 w-full h-full absolute">
+        <div className="xt-media-container bg-gray-200 w-full h-full absolute">
           <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
           <div className="*** absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50 ***"></div>
         </div>
@@ -43,7 +43,7 @@ export default function demo() {
       </div>
 
       <div className="hero relative overflow-hidden">
-        <div className="xt-media-container bg-gray-300 w-full h-full absolute">
+        <div className="xt-media-container bg-gray-200 w-full h-full absolute">
           <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
           <div className="*** absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50 ***"></div>
         </div>

@@ -20,7 +20,7 @@ export default function demo() {
               <nav className="xt-list flex-col p-3">
                 <a
                   href="#"
-                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-lg opacity-50 mr-2"
@@ -39,7 +39,7 @@ export default function demo() {
                 </a>
                 <a
                   href="#"
-                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-lg opacity-50 mr-2"
@@ -61,7 +61,7 @@ export default function demo() {
                 </a>
                 <a
                   href="#"
-                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-lg opacity-50 mr-2"
@@ -82,7 +82,7 @@ export default function demo() {
                 </a>
                 <a
                   href="#"
-                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="xt-icon text-lg opacity-50 mr-2"
