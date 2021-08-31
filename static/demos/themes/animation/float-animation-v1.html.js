@@ -51,13 +51,6 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonRing()} *** ${transparentAnim()} ***"
-      >
-        Ring
-      </button>
-
-      <button
-        type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link *** ${transparentAnim()} ***"
       >
         Link

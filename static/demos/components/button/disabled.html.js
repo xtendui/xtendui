@@ -28,13 +28,6 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonRing()} ${classes.buttonRingAnim()}  *** xt-disabled ***"
-      >
-        Ring
-      </button>
-
-      <button
-        type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link *** xt-disabled ***"
         aria-disabled="true"
       >
