@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--sticky-hide',
+  matches: '.demo--sticky-hide-direction',
   mount: ({ ref }) => {
     const unmountSticky = mountSticky({ ref })
 
@@ -22,7 +22,6 @@ const mountSticky = ({ ref }) => {
   // vars
 
   const sticky = ref.querySelector('.xt-sticky')
-  const sub = sticky.querySelector('[data-node-sticky-hide-sub]')
 
   // .scrolling-hide (always before pin ScrollTrigger)
 
@@ -43,12 +42,6 @@ const mountSticky = ({ ref }) => {
         })
       } else if (!self.isActive && self.direction > 0 && !sticky.classList.contains('scrolling-hide')) {
         sticky.classList.add('scrolling-hide')
-        gsap.killTweensOf(sticky)
-        gsap.to(sticky, {
-          y: -(sub.offsetTop + sub.offsetHeight),
-          duration: 0.5,
-          ease: 'quart.out',
-        })
       }
     },
   })
@@ -64,6 +57,35 @@ const mountSticky = ({ ref }) => {
     end: 'bottom top',
     pin: true,
     pinSpacing: false,
+    onUpdate: self => {
+      // scrolling-down depending on scroll direction
+      if (!self.getVelocity()) return // skip on initial
+      if (
+        sticky.classList.contains('scrolling-down') &&
+        sticky.classList.contains('scrolling-hide') &&
+        self.direction < 0
+      ) {
+        sticky.classList.remove('scrolling-down')
+        gsap.killTweensOf(sticky)
+        gsap.to(sticky, {
+          y: 0,
+          duration: 0.5,
+          ease: 'quart.out',
+        })
+      } else if (
+        !sticky.classList.contains('scrolling-down') &&
+        sticky.classList.contains('scrolling-hide') &&
+        self.direction > 0
+      ) {
+        sticky.classList.add('scrolling-down')
+        gsap.killTweensOf(sticky)
+        gsap.to(sticky, {
+          y: -(sticky.offsetTop + sticky.offsetHeight),
+          duration: 0.5,
+          ease: 'quart.out',
+        })
+      }
+    },
   })
   /***/
 

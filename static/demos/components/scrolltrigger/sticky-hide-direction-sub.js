@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 Xt.mount({
-  matches: '.demo--sticky-hide-sub',
+  matches: '.demo--sticky-hide-direction-sub',
   mount: ({ ref }) => {
     const unmountSticky = mountSticky({ ref })
 
@@ -24,7 +24,7 @@ const mountSticky = ({ ref }) => {
   const sticky = ref.querySelector('.xt-sticky')
   const sub = sticky.querySelector('[data-node-sticky-hide-sub]')
 
-  // hide depending on direction (always before pin ScrollTrigger)
+  // .scrolling-hide (always before pin ScrollTrigger)
 
   /***/
   ScrollTrigger.create({
@@ -32,6 +32,7 @@ const mountSticky = ({ ref }) => {
     start: -1, // needs -1 because start trigger is sticky
     end: () => `top top-=${sticky.offsetHeight}`,
     onUpdate: self => {
+      // show/hide depending on position
       if (self.isActive && self.direction < 0 && sticky.classList.contains('scrolling-hide')) {
         sticky.classList.remove('scrolling-hide')
         gsap.killTweensOf(sticky)
