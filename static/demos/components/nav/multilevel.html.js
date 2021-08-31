@@ -4,58 +4,54 @@ const html = /* HTML */ `
   <div class="demo--multilevel">
     <div class="xt-card rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}">
       <div class="relative" data-xt-toggle="{ min: 1, duration: 500, queue: false }">
-        <nav
-          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        <div
+          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** transition scale-95 opacity-0 in:delay-200 in:scale-100 in:opacity-100 out:scale-105 ***"
           data-xt-toggle-target
           data-xt-group="initial"
         >
           <div class="xt-h5 flex items-center justify-between">
-            <div>Menu</div>
-            <button type="button" data-xt-toggle-element data-xt-group="initial"></button>
+            <div>Collection</div>
+            <button type="button" class="hidden" data-xt-toggle-element data-xt-group="initial"></button>
           </div>
 
-          <nav class="xt-list flex-col">
-            <button
-              type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-              data-xt-toggle-element
-              data-xt-group="cat-0"
-            >
-              Category 0 ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
-            </button>
-            <button
-              type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-              data-xt-toggle-element
-              data-xt-group="cat-1"
-            >
-              Category 1 ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
-            </button>
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 0
-            </a>
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 1
-            </a>
-          </nav>
-        </nav>
+          <div class="-mx-3.5">
+            <nav class="xt-list xt-list-1 flex-col">
+              <button
+                type="button"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                data-xt-toggle-element
+                data-xt-group="cat-0"
+              >
+                Man ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
+              </button>
+              <button
+                type="button"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                data-xt-toggle-element
+                data-xt-group="cat-1"
+              >
+                Woman ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
+              </button>
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Kid
+              </a>
+            </nav>
+          </div>
+        </div>
 
-        <nav
-          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        <div
+          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** transition scale-95 opacity-0 in:delay-200 in:scale-100 in:opacity-100 out:scale-105 ***"
           data-xt-toggle-target
           data-xt-group="cat-0"
         >
-          <div class="xt-h5  flex items-center justify-between">
-            <div>Category 0</div>
+          <div class="xt-h5 flex items-center justify-between">
+            <div>Man</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="initial"
             >
@@ -63,45 +59,47 @@ const html = /* HTML */ `
             </button>
           </div>
 
-          <nav class="xt-list flex-col">
-            <button
-              type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-              data-xt-toggle-element
-              data-xt-group="cat-0a"
-            >
-              Category 0a ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
-            </button>
-            <button
-              type="button"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-              data-xt-toggle-element
-              data-xt-group="cat-0b"
-            >
-              Category 0b ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
-            </button>
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 0
-            </a>
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 1
-            </a>
-          </nav>
-        </nav>
+          <div class="-mx-3.5">
+            <nav class="xt-list xt-list-1 flex-col">
+              <button
+                type="button"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                data-xt-toggle-element
+                data-xt-group="cat-0a"
+              >
+                Shirt ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
+              </button>
+              <button
+                type="button"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                data-xt-toggle-element
+                data-xt-group="cat-0b"
+              >
+                Pant ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
+              </button>
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Jacket
+              </a>
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Underwear
+              </a>
+            </nav>
+          </div>
+        </div>
 
-        <nav
-          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        <div
+          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** transition scale-95 opacity-0 in:delay-200 in:scale-100 in:opacity-100 out:scale-105 ***"
           data-xt-toggle-target
           data-xt-group="cat-0a"
         >
-          <div class="xt-h5  flex items-center justify-between">
-            <div>Category 0a</div>
+          <div class="xt-h5 flex items-center justify-between">
+            <div>Man Shirt</div>
             <button
               type="button"
               class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -112,29 +110,31 @@ const html = /* HTML */ `
             </button>
           </div>
 
-          <nav class="xt-list flex-col">
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 0
-            </a>
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 1
-            </a>
-          </nav>
-        </nav>
+          <div class="-mx-3.5">
+            <nav class="xt-list xt-list-1 flex-col">
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                T-Shirt
+              </a>
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Polo
+              </a>
+            </nav>
+          </div>
+        </div>
 
-        <nav
-          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        <div
+          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** transition scale-95 opacity-0 in:delay-200 in:scale-100 in:opacity-100 out:scale-105 ***"
           data-xt-toggle-target
           data-xt-group="cat-0b"
         >
-          <div class="xt-h5  flex items-center justify-between">
-            <div>Category 0b</div>
+          <div class="xt-h5 flex items-center justify-between">
+            <div>Man Pant</div>
             <button
               type="button"
               class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -145,32 +145,34 @@ const html = /* HTML */ `
             </button>
           </div>
 
-          <nav class="xt-list flex-col">
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 0
-            </a>
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 1
-            </a>
-          </nav>
-        </nav>
+          <div class="-mx-3.5">
+            <nav class="xt-list xt-list-1 flex-col">
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Jeans
+              </a>
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Short
+              </a>
+            </nav>
+          </div>
+        </div>
 
-        <nav
-          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** transition -translate-x-10 opacity-0 in:delay-200 in:translate-x-0 in:opacity-100"
+        <div
+          class="*** ${classes.cardSm()} off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** transition scale-95 opacity-0 in:delay-200 in:scale-100 in:opacity-100 out:scale-105 ***"
           data-xt-toggle-target
           data-xt-group="cat-1"
         >
-          <div class="xt-h5  flex items-center justify-between">
-            <div>Category 1</div>
+          <div class="xt-h5 flex items-center justify-between">
+            <div>Woman</div>
             <button
               type="button"
-              class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              class="xt-button -mr-3.5 ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
               data-xt-toggle-element
               data-xt-group="initial"
             >
@@ -178,21 +180,23 @@ const html = /* HTML */ `
             </button>
           </div>
 
-          <nav class="xt-list flex-col">
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 0
-            </a>
-            <a
-              href="#"
-              class="xt-button w-full justify-between text-left ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
-              Link 1
-            </a>
-          </nav>
-        </nav>
+          <div class="-mx-3.5">
+            <nav class="xt-list xt-list-1 flex-col">
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Shirt
+              </a>
+              <a
+                href="#"
+                class="xt-button w-full justify-between text-left  ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+              >
+                Pant
+              </a>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
   </div>

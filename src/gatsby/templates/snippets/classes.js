@@ -46,6 +46,7 @@ export const classes = {
   cardGray: () => 'bg-gray-100',
   cardGrayInteractive: () => 'transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200',
   cardPrimary: () => 'bg-primary-500',
+  cardPrimaryAccent: () => 'bg-primary-600',
   cardPrimaryInteractive: () =>
     'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
   // group
@@ -275,7 +276,12 @@ export const classes = {
   iconCreditcard: ({ classes } = {}) => {
     classes = classes ? `${classes}` : ''
     classes = classes.search('xt-icon') !== -1 ? classes : `xt-icon ${classes}`
-    return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}"width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`
+    return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`
+  },
+  iconGlobe: ({ classes } = {}) => {
+    classes = classes ? `${classes}` : ''
+    classes = classes.search('xt-icon') !== -1 ? classes : `xt-icon ${classes}`
+    return `<svg xmlns="http://www.w3.org/2000/svg" class="${classes}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`
   },
   // other
   svgSpinner: ({ classes, dimension = 120, radius = 100, dash = 628 } = {}) => {

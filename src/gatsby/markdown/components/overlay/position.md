@@ -10,8 +10,6 @@ date: "2009-10-10"
 
 To make an **overlay full screen** use `.xt-overlay-container.p-0` and `.xt-card.xt-min-h-screen` and use **tailwind classes** (e.g. [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)) to position `.xt-card` content.
 
-You can also populate with other [card content](/components/card/content).
-
 <demo>
   <demoinline src="demos/components/overlay/screen">
   </demoinline>
@@ -20,8 +18,6 @@ You can also populate with other [card content](/components/card/content).
 ## Position
 
 To make an **overlay position** use `.xt-overlay-container.p-0` and `.xt-card.xt-min-h-screen` and use **tailwind classes** (e.g. [max-width](https://tailwindcss.com/docs/max-width), [margin](https://tailwindcss.com/docs/margin)) on `.xt-overlay-container`.
-
-You can also populate with other [card content](/components/card/content).
 
 <demo>
   <demoinline src="demos/components/overlay/position">
