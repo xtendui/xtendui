@@ -12,10 +12,15 @@ When images are loading the `.xt-media-container` background is shown.
 
 Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color)).
 
-You can also animate background to create a skeleton preload.
-
 <demo>
   <demoinline src="demos/components/media/variant">
+  </demoinline>
+</demo>
+
+You can also **animate background** or **add additional content** to create a skeleton when image is loading.
+
+<demo>
+  <demoinline src="demos/components/media/skeleton">
   </demoinline>
 </demo>
 
