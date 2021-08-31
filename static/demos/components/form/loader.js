@@ -20,7 +20,7 @@ const mountFormLoaders = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    matches: 'button[type="submit"]',
+    matches: 'button[type="submit"], .xt-loadable',
     mount: ({ ref }) => {
       return mountFormLoader({ ref })
     },
@@ -36,29 +36,32 @@ const mountFormLoaders = ({ ref }) => {
 const mountFormLoader = ({ ref }) => {
   // vars
 
-  const button = ref
-  const form = button.form
+  const loadable = ref
+  const form = loadable.form || loadable.closest('form')
   const loaderTemplate = document.querySelector('[data-node-loader-template]')
 
   // submit
 
   const submit = () => {
-    form.classList.add('loading')
+    console.log(loadable, loadable.classList.contains('xt-loadable-ignore'))
+    loadable.classList.add('xt-loading')
   }
 
-  form.addEventListener('submit', submit)
+  if (!loadable.classList.contains('xt-loadable-ignore')) {
+    form.addEventListener('submit', submit)
+  }
 
   // inject
 
-  if (form.classList.contains('xt-loading')) {
-    form.append(Xt.node({ str: loaderTemplate.innerHTML }))
-  } else if (!button.classList.contains('xt-loading')) {
-    button.classList.add('xt-loading')
-    const text = button.innerHTML
-    button.innerHTML = ''
-    button.append(Xt.node({ str: `<span class="xt-loading-content"></span>` }))
-    button.append(Xt.node({ str: loaderTemplate.innerHTML }))
-    const content = button.querySelector('.xt-loading-content')
+  if (loadable.classList.contains('xt-loadable')) {
+    loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
+  } else {
+    loadable.classList.add('xt-loadable')
+    const text = loadable.innerHTML
+    loadable.innerHTML = ''
+    loadable.append(Xt.node({ str: `<span class="xt-loadable-content"></span>` }))
+    loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
+    const content = loadable.querySelector('.xt-loadable-content')
     content.innerHTML = text
   }
 

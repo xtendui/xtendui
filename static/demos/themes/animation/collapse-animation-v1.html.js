@@ -31,7 +31,7 @@ const html = /* HTML */ `
         </button>
 
         <div
-          class="*** off:hidden out:pointer-events-none ** max-w-sm *** overflow-hidden transition-all *** *** group ***"
+          class="*** off:hidden out:pointer-events-none *** max-w-sm *** overflow-hidden transition-all *** *** group ***"
           data-xt-toggle-target
         >
           <div class="xt-list flex-nowrap *** ${itemAnimWidth()} ***">

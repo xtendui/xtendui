@@ -76,7 +76,7 @@ const html = /* HTML */ `
           Group
         </button>
 
-        <div class="*** off:hidden out:pointer-events-none ** max-w-sm *** group ***" data-xt-toggle-target>
+        <div class="*** off:hidden out:pointer-events-none *** max-w-sm *** group ***" data-xt-toggle-target>
           <div class="*** ${designAnim()} ***">
             <div class="xt-list flex-nowrap *** ${itemAnim()} ***">
               <div class="inline-flex flex-auto">
