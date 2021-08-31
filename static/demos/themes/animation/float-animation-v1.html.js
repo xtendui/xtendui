@@ -620,7 +620,7 @@ const html = /* HTML */ `
                   data-xt-toggle="{ min: 1, duration: 500, queue: false }"
                 >
                   <div
-                    class="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** ${itemAnimNogroup()} ***"
+                    class="*** flex flex-col flex-auto h-full py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** ${itemAnimNogroup()} ***"
                     data-xt-toggle-target
                     data-xt-group="initial"
                   >
@@ -681,6 +681,31 @@ const html = /* HTML */ `
                           Contact
                         </a>
                       </nav>
+                    </div>
+
+                    <div class="mt-auto">
+                      <div class="-mx-3.5 mt-6 pt-6 border-t border-primary-400">
+                        <nav class="xt-list xt-list-1 flex-col">
+                          <a
+                            href="#"
+                            class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          >
+                            Support ${classes.iconMail({ classes: 'xt-icon text-lg ml-4' })}
+                          </a>
+                          <a
+                            href="#"
+                            class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          >
+                            Login / Account ${classes.iconUsers({ classes: 'xt-icon text-lg ml-4' })}
+                          </a>
+                          <a
+                            href="#"
+                            class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
+                          >
+                            Language ${classes.iconGlobe({ classes: 'xt-icon text-lg ml-4' })}
+                          </a>
+                        </nav>
+                      </div>
                     </div>
                   </div>
 
@@ -835,35 +860,6 @@ const html = /* HTML */ `
                           class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
                         >
                           Pant
-                        </a>
-                      </nav>
-                    </div>
-                  </div>
-
-                  <div
-                    class="*** p-7 sm:p-9 text-base border-t border-primary-400 mt-auto *** *** off:hidden out:pointer-events-none *** *** ${itemAnimNogroup()} ***"
-                    data-xt-toggle-target
-                    data-xt-group="initial"
-                  >
-                    <div class="-mx-3.5">
-                      <nav class="xt-list xt-list-1 flex-col">
-                        <a
-                          href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
-                        >
-                          Support ${classes.iconMail({ classes: 'xt-icon text-lg ml-4' })}
-                        </a>
-                        <a
-                          href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
-                        >
-                          Login / Account ${classes.iconUsers({ classes: 'xt-icon text-lg ml-4' })}
-                        </a>
-                        <a
-                          href="#"
-                          class="xt-button w-full justify-between text-left ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} ${classes.buttonTextAnim()}"
-                        >
-                          Language ${classes.iconGlobe({ classes: 'xt-icon text-lg ml-4' })}
                         </a>
                       </nav>
                     </div>
