@@ -188,6 +188,7 @@ class Scrollto {
   eventScrolltoLogic() {
     const self = this
     const options = self.options
+    // fix when multiple self.targets use only visible (e.g. scrollto: 'elements')
     if (Xt.visible({ el: self.target })) {
       // force no hashchange
       self.hashchange = Xt.scrolltoHashforce ?? self.hashchange
