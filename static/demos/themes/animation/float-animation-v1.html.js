@@ -317,13 +317,13 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
+                class="*** xt-design *** rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
               ></div>
 
               <div class="xt-card ${classes.textDefault()} *** ${itemAnim()} ***">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}
@@ -418,7 +418,9 @@ const html = /* HTML */ `
                   </div>
 
                   <div class="md:w-5/12 *** flex flex-col ***">
-                    <div class="xt-media-container bg-gray-200 h-48 md:pb-[100%]">
+                    <div
+                      class="xt-media-container bg-gray-200 md:rounded-tr${classes.overlayRadius()} h-48 md:pb-[100%]"
+                    >
                       <img class="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
                     </div>
                     <div
@@ -452,13 +454,13 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="*** xt-design *** rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
+                class="*** xt-design *** rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.cardWhite()} *** ${designAnim()} ***"
               ></div>
 
               <div class="xt-card ${classes.textDefault()} *** ${itemAnim()} ***">
                 <button
                   type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
                   aria-label="Close"
                 >
                   ${classes.iconX()}

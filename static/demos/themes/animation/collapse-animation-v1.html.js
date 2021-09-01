@@ -421,7 +421,7 @@ const html = /* HTML */ `
                   ${classes.iconX()}
                 </button>
 
-                <div class="*** md:xt-card-group rounded${classes.overlayRadius()} *** *** ${itemAnim()} ***">
+                <div class="*** md:xt-card-group *** *** ${itemAnim()} ***">
                   <div class="md:w-5/12 *** flex flex-col ***">
                     <div
                       class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto"
