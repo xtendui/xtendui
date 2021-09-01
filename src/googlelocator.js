@@ -523,7 +523,6 @@ class Googlelocator {
     self.searchInput.value = ''
     self.position = self.map.getCenter()
     self.viewport = null
-    self.radius = options.searchRadius
     if (!empty || options.seachMapBounds) {
       self.radius = google.maps.geometry.spherical.computeDistanceBetween(
         self.position,
