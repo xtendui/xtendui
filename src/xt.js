@@ -1002,7 +1002,7 @@ if (typeof window !== 'undefined') {
     }
     if (!els.length) {
       // search element
-      return els.querySelectorAll(query)
+      return Array.from(els.querySelectorAll(query))
     } else {
       // search array
       const arr = []
