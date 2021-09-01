@@ -149,7 +149,7 @@ const html = /* HTML */ `
                     id="overlay--product-images"
                   >
                     <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
-                    <div class="xt-overlay-container p-0">
+                    <div class="xt-overlay-container *** p-0 ***">
                       <button
                         type="button"
                         class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
@@ -159,7 +159,7 @@ const html = /* HTML */ `
                       </button>
                       <div class="xt-overlay-inner">
                         <div
-                          class="xt-card items-center justify-center ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
+                          class="xt-card *** min-h-screen items-center justify-center *** ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
                         >
                           <div class="w-full">
                             <div class="xt-media-container bg-gray-200 overflow-hidden">
