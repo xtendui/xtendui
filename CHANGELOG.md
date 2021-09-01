@@ -1,3 +1,15 @@
+# [1.0.0-beta.41](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.40...v1.0.0-beta.41) (2021-09-01)
+
+
+### Bug Fixes
+
+* **googlelocator:** fix search radius on reset and initial ([0e3a629](https://github.com/xtendui/xtendui/commit/0e3a6298f829cf92a7837de8ebb03466ea0cf273))
+
+
+### Features
+
+* **googlelocator:** added options.autocompleteOptions and options.autocompleteServiceOptions ([0c23924](https://github.com/xtendui/xtendui/commit/0c23924b6779ce0881c0ea953874d7ebdc522ec9))
+
 # [1.0.0-beta.40](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.39...v1.0.0-beta.40) (2021-09-01)
 
 
