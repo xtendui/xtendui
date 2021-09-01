@@ -19,6 +19,8 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 You can also **animate background** or **add additional content** to create a skeleton when image is loading.
 
+> If you want the skeleton animated background only on jpg images for example, style `.xt-media[src*=".jpg"]`.
+
 <demo>
   <demoinline src="demos/components/media/skeleton">
   </demoinline>
