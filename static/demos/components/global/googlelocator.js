@@ -26,6 +26,7 @@ const initGooglelocator = ({ ref }) => {
 
   /***/
   const self = new Xt.Googlelocator(googlelocator, {
+    initialSearch: true,
     events: {
       animateMarkerResultClick: google.maps.Animation.BOUNCE,
     },
