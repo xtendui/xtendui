@@ -1,3 +1,10 @@
+# [1.0.0-beta.40](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.39...v1.0.0-beta.40) (2021-09-01)
+
+
+### Bug Fixes
+
+* **javascript:** fix Xt.queryAll array instead of NodeList, fixes some errors on toggle components ([1e7c253](https://github.com/xtendui/xtendui/commit/1e7c253cdd68b58cd5c490efa64d974e763442d4))
+
 # [1.0.0-beta.39](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.38...v1.0.0-beta.39) (2021-08-26)
 
 
