@@ -29,6 +29,8 @@ const initGooglelocator = ({ ref }) => {
     events: {
       animateMarkerResultClick: google.maps.Animation.BOUNCE,
     },
+    autocompleteOptions: { types: ['(regions)'] },
+    autocompleteServiceOptions: { types: ['(regions)'] },
     map: {
       center: { lat: 40, lng: -74 },
       zoom: 2.5,

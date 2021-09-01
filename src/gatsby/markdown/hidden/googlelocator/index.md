@@ -66,6 +66,9 @@ events: {
   infoWindowMarkerClick: true,
   infoWindowMarkerResultClick: false,
 },
+// autocomplete
+autocompleteOptions: false,
+autocompleteServiceOptions: false,
 // map
 map: {
   center: false,

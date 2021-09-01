@@ -71,7 +71,7 @@ class Googlelocator {
     self.mapElement = self.container.querySelector(options.elements.map)
     self.map = new google.maps.Map(self.mapElement, options.map)
     self.searchInput = self.container.querySelector(options.elements.searchInput)
-    self.search = new google.maps.places.Autocomplete(self.searchInput)
+    self.search = new google.maps.places.Autocomplete(self.searchInput, self.options.autocompleteOptions)
     const searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self.searchSubmit.bind(self))
     self.searchInput.addEventListener('keypress', searchHandler)
     // submit triggers places autocomplete
@@ -205,33 +205,39 @@ class Googlelocator {
       return
     }
     // new prediction
-    new google.maps.places.AutocompleteService().getPlacePredictions({ input: self.searchInput.value }, results => {
-      if (results && results.length) {
-        const placesPreview = document.createElement('div')
-        placesPreview.classList.add('hidden')
-        new google.maps.places.PlacesService(placesPreview).getDetails({ reference: results[0].reference }, results => {
-          place = results
-          self.searchInput.value = place.formatted_address
-          self.position = place.geometry.location
-          self.viewport = place.geometry.viewport
-          self.radius = options.searchRadius
-          self.predictionCache = {
-            value: self.searchInput.value,
-            position: self.position,
-            viewport: self.viewport,
-          }
-          self.submit()
-          placesPreview.remove()
-        })
-      } else {
-        self.locations = []
-        self.populateItems()
-        self.container.classList.add('noplace')
-        self.container.classList.remove('empty')
-        self.container.classList.remove('found')
-        self.container.classList.remove('error')
+    new google.maps.places.AutocompleteService().getPlacePredictions(
+      { input: self.searchInput.value, ...self.options.autocompleteServiceOptions },
+      results => {
+        if (results && results.length) {
+          const placesPreview = document.createElement('div')
+          placesPreview.classList.add('hidden')
+          new google.maps.places.PlacesService(placesPreview).getDetails(
+            { reference: results[0].reference },
+            results => {
+              place = results
+              self.searchInput.value = place.formatted_address
+              self.position = place.geometry.location
+              self.viewport = place.geometry.viewport
+              self.radius = options.searchRadius
+              self.predictionCache = {
+                value: self.searchInput.value,
+                position: self.position,
+                viewport: self.viewport,
+              }
+              self.submit()
+              placesPreview.remove()
+            }
+          )
+        } else {
+          self.locations = []
+          self.populateItems()
+          self.container.classList.add('noplace')
+          self.container.classList.remove('empty')
+          self.container.classList.remove('found')
+          self.container.classList.remove('error')
+        }
       }
-    })
+    )
   }
 
   /**
@@ -245,9 +251,10 @@ class Googlelocator {
     if (self.disabled) {
       return
     }
-    // prevent form submit on enter
+    // on enter
     const key = e.which || e.keyCode
     if (key === 13) {
+      // prevent form submit
       e.preventDefault()
       // reset map and submit
       if (self.searchInput.value === '') {
@@ -733,6 +740,9 @@ Googlelocator.optionsDefault = {
     infoWindowMarkerClick: true,
     infoWindowMarkerResultClick: false,
   },
+  // autocomplete
+  autocompleteOptions: false,
+  autocompleteServiceOptions: false,
   // map
   map: {
     center: false,
