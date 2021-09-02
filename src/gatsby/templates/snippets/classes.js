@@ -30,6 +30,8 @@ export const classes = {
     'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
   buttonPrimaryAnimGroup: () =>
     'group-hover:text-white group-hover:bg-primary-600 group-active:text-white group-active:bg-primary-700 group-on:text-white group-on:bg-primary-600',
+  buttonBorderGray: () =>
+    'text-gray-900 border-2 border-gray-200 hover:border-transparent active:border-transparent on:border-transparent',
   buttonTextAnim: () =>
     'transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
   buttonRing: () => 'ring-2 ring-primary-200',

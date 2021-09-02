@@ -31,23 +31,14 @@ const html = /* HTML */ `
         class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
-        <input
-          type="radio"
-          class="xt-check xt-radio top-auto ml-2 ${classes.radioRadius()} ${classes.radioGray()} sr-only"
-          name="radio-button"
-          checked
-        />
+        <input type="radio" class="sr-only" name="radio-button" checked />
       </label>
 
       <label
         class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} *** focus-within:outline-browser ***"
       >
         Lorem ipsum
-        <input
-          type="radio"
-          class="xt-check xt-radio top-auto ml-2 ${classes.radioRadius()} ${classes.radioGray()} sr-only"
-          name="radio-button"
-        />
+        <input type="radio" class="sr-only" name="radio-button" />
       </label>
 
       <label

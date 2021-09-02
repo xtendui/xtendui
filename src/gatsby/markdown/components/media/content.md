@@ -33,6 +33,8 @@ Use **tailwind classes** to assign object fit. (e.g. [object-position](https://t
   </demoinline>
   <demoinline src="demos/components/media/contain">
   </demoinline>
+  <demoinline src="demos/components/media/none">
+  </demoinline>
 </demo>
 
 You can also use **video** or **iframe** for media.

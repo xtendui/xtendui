@@ -44,3 +44,12 @@ Use this code to create a **toggle** in **multiple mode**.
   <demoinline src="demos/components/toggle/usage-multiple">
   </demoinline>
 </demo>
+
+## Implementation
+
+Check out [toggle themes](/themes/toggle) for **advanced implementations**.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/gallery/products-gallery-v1">
+  </div>
+</demo>

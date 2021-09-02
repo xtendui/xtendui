@@ -42,7 +42,8 @@ If you need to toggle **multiple elements or targets** with the **same element o
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `groupSeparator:String`                          | `','`        | Separator for multiple groups |     
+| Option                  | `groupSeparator:String`                          | `','`        | Separator for multiple groups |
+| Option                  | `groupSameAnimate:Boolean`                          | `false`        | Animate also if of same group on sequential activation |
 
 </div>
 

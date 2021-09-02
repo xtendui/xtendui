@@ -1607,6 +1607,9 @@ class Toggle {
       // must be outside inside raf or page jumps (e.g. noqueue, done outside for toggle inverse)
       el.classList.remove(...self.classes)
       el.classList.remove(...self.classesDone)
+      if (self.options.groupSameAnimate) {
+        el.classList.remove(...self.classesIn)
+      }
       // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
       Xt.frameDouble({
         el,
@@ -3427,6 +3430,7 @@ Toggle.optionsDefaultSuper = {
   classSkip: false,
   hash: 'data-xt-hash',
   groupSeparator: ',',
+  groupSameAnimate: false,
   groupElements: true,
   // quantity
   min: 0,

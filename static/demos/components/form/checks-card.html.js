@@ -56,12 +56,7 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input
-              type="radio"
-              class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()} sr-only"
-              name="radio-card"
-              checked
-            />
+            <input type="radio" class="sr-only" name="radio-card" checked />
           </div>
         </label>
       </div>
@@ -77,11 +72,7 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input
-              type="radio"
-              class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()} sr-only"
-              name="radio-card"
-            />
+            <input type="radio" class="sr-only" name="radio-card" />
           </div>
         </label>
       </div>
