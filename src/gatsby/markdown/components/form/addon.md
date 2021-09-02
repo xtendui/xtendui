@@ -68,7 +68,9 @@ Use [card](/components/card) with `label` to create **checks with card**.
 You can have a **loader on forms automatically on submit** injecting the loader with javascript, with no changes to markup.
 
 <demo>
-  <demoinline src="demos/components/form/loader">
+  <demoinline src="demos/components/form/loader-spinner">
+  </demoinline>
+  <demoinline src="demos/components/form/loader-filler">
   </demoinline>
 </demo>
 

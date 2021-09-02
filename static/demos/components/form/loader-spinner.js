@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 
 Xt.mount({
-  matches: '.demo--form-loader',
+  matches: '.demo--form-loader-spinner',
   mount: ({ ref }) => {
     const unmountFormLoaders = mountFormLoaders({ ref })
 
@@ -16,13 +16,17 @@ Xt.mount({
 /* mountFormLoaders */
 
 const mountFormLoaders = ({ ref }) => {
+  // vars
+
+  const loaderTemplate = ref.querySelector('[data-node-loader-template]')
+
   // mount granularly
 
   Xt.mount({
     root: ref,
     matches: 'button[type="submit"], .xt-loadable',
     mount: ({ ref }) => {
-      return mountFormLoader({ ref })
+      return mountFormLoader({ ref, loaderTemplate })
     },
   })
 
@@ -33,12 +37,11 @@ const mountFormLoaders = ({ ref }) => {
 
 /* mountFormLoader */
 
-const mountFormLoader = ({ ref }) => {
+const mountFormLoader = ({ ref, loaderTemplate }) => {
   // vars
 
   const loadable = ref
   const form = loadable.form || loadable.closest('form')
-  const loaderTemplate = document.querySelector('[data-node-loader-template]')
 
   // submit
 

@@ -1,7 +1,8 @@
 @import 'xtendui/static/demos/components/card/disabled.css';
 @import 'xtendui/static/demos/components/drop/animation-css.css';
 @import 'xtendui/static/demos/components/drop/disabled.css';
-@import 'xtendui/static/demos/components/form/loader.css';
+@import 'xtendui/static/demos/components/form/loader-filler.css';
+@import 'xtendui/static/demos/components/form/loader-spinner.css';
 @import 'xtendui/static/demos/components/form/validation.css';
 @import 'xtendui/static/demos/components/form/variant-primary.css';
 @import 'xtendui/static/demos/components/global/animation-css.css';
