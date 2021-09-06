@@ -1,8 +1,8 @@
 ---
 type: "Intro"
 category: "Introduction"
-parent: "Main Features"
-title: "Main Features"
+parent: "Features"
+title: "Features"
 description: "Overview of the main features."
 date: "2005-10-10"
 ---
@@ -39,7 +39,7 @@ See [drop interaction](/components/drop/interaction), [overlay interaction](/com
 
 #### Animation
 
-You can animate all **toggle components** with **tailwindcss variants** or **css** or **js**, whatever you prefer or need to use. Toggle advanced animation system support also **delay**, **queue**, **collapse**.
+You can animate all **toggle components** with **tailwindcss variants** or **css** or **js**, whatever you prefer or need to use. Toggle advanced animation system support also **delay**, **queue**, **[collapse](/components/collapse)**.
 
 See [drop animation](/components/drop/animation), [overlay animation](/components/overlay/animation), [slider animation](/components/slider/animation), [toggle animation](/components/toggle/animation), [tooltip animation](/components/tooltip/animation) for more info.
 
@@ -59,7 +59,7 @@ See [scrollto toggle](/components/scrollto#toggle) for more info.
 
 Many advanced usage of toggle components are in the addon pages.
 
-- Slider notable addons are **navigation sides**, **status**, **automatic scrolling**. See [slider addon](/components/slider/addon) for more info.
+- Slider notable addons are **navigation sides**, **status**. See [slider addon](/components/slider/addon) for more info.
 
 - Tooltip notable addons are **swap**. See [tooltip addon](/components/tooltip/addon) for more info.
 
@@ -69,7 +69,7 @@ Many advanced usage of toggle components are in the addon pages.
 
 Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sort of interaction on page scroll**.
 
-See [fade](/components/scrolltrigger/fade), [parallax](/components/scrolltrigger/parallax), [sticky](/components/scrolltrigger/sticky) for more info.
+See [fade](/components/scrolltrigger/fade), [sticky](/components/scrolltrigger/sticky), [parallax](/components/scrolltrigger/parallax) for more info.
 
 #### Scrollto
 
@@ -82,6 +82,34 @@ See [scrollto](/components/scrollto) for more info.
 Stickyflow is a plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
 
 See [stickyflow](/components/stickyflow) for more info.
+
+## Core
+
+All core components are **primitive UI elements** that can be nested inside one another to achieve your desired design.
+
+#### Card
+
+The **card component** is used in many other components to display content inside a box. It's simple, modular and fully customizable. See [card](/components/card) for more info.
+
+#### Link
+
+The **link component** has cssinjs customizzable styles for **automatic styling of blank html links**. See [link](/components/link) for more info.
+
+#### List and Row
+
+The **list and row components** are useful to space any element with margins or paddings, they also spaces vertically. When you want to **space child element within flex** they provide simple spacing classes for browsers that still don't support [flex gap](https://caniuse.com/flexbox-gap). See [list](/components/list), [row](/components/row) for more info.
+
+#### Media
+
+The **media component** is useful to enhance html assets. It can be used with `img`, `video`, `iframe` tags to properly **fit to aspect ratio**, display a **skeleton loader** or just as a base standard markup for animating assets.
+
+#### Typography
+
+The **typography component** has cssinjs customizzable styles for **automatic styling of blank html content tags**. See [typography content](/components/typography/content) for more info.
+
+#### Addon
+
+- The **media component** has some useful pagespeed optimization addon **iframe lazy loading** and **html5 video tag media matches**. See [media addon](/components/media/addon) for more info.
 
 ## Form
 
@@ -97,20 +125,12 @@ They **support various layout**. See [form layout](/components/form/layout) for 
 
 - You can have **automatic loader on all forms without changing a single line of html**. See [form loader](/components/form/addon#loader) for more info.
 
-## Design
+## Other
 
-#### Link
+#### Group Nav Tabs Toolbar
 
-The **link component** has cssinjs customizzable styles for **automatic and customizzable styling of blank html links**. See [link](/components/link) for more info.
-
-#### Typography
-
-The **typography component** has cssinjs customizzable styles for **automatic and customizzable styling of blank html content tags**. See [typography content](/components/typography/content) for more info.
-
-#### Addon
-
-- The **media component** has some useful addon **iframe lazy loading** and **html5 video tag media matches**. See [media addon](/components/media/addon) for more info.
+The **group nav tabs and toolbar components** are components that use [list](/components/list) to display buttons, inputs and other content in a certain way. See [group](/components/group), [nav](/components/nav), [tabs](/components/tabs), [toolbar](/components/toolbar) for more info.
 
 ## Themes
 
-Check out [themes](/themes) for **advanced implementations**.
+Xtend UI themes are focused on user experience, interaction and animation instead of design. See [themes](/themes) for more info.

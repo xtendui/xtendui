@@ -210,9 +210,9 @@ export default function Page() {
                       For an overview of the main features visit
                     </p>
                     <Link
-                      to="/intro/main-features"
+                      to="/intro/features"
                       className={`xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`}>
-                      Main Features
+                      Features
                     </Link>
                   </div>
                 </div>
