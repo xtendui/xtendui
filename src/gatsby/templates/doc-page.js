@@ -61,20 +61,20 @@ class Template extends React.Component {
                             <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
                               <button
                                 type="button"
-                                className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}
+                                className={`xt-card flex-col p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}
                                 data-gatsby-listing-toggle>
-                                <div>
-                                  <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                                    {adiacent.frontmatter.title
-                                      .split(/[\s-]+/)
-                                      .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
-                                      .join(' ')}
-                                  </div>
-                                  {data.media.items.map((assets, z) => {
+                                <div className="xt-h5 mb-auto text-base leading-tight md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight">
+                                  {adiacent.frontmatter.title
+                                    .split(/[\s-]+/)
+                                    .map(item => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+                                    .join(' ')}
+                                </div>
+                                {data.media.items.filter(x => x.item.title === adiacent.frontmatter.title).length ? (
+                                  data.media.items.map((assets, z) => {
                                     if (assets.item.title === adiacent.frontmatter.title) {
                                       return (
                                         <div
-                                          className="xt-media-container bg-gray-200 mt-3 rounded-md border-3 border-gray-100 pb-[56.2%]"
+                                          className="xt-media-container bg-gray-200 mt-1 rounded-md border-3 border-gray-100 pb-[56.2%]"
                                           key={z}>
                                           <video
                                             className="xt-media object-cover object-center"
@@ -88,8 +88,17 @@ class Template extends React.Component {
                                         </div>
                                       )
                                     }
-                                  })}
-                                </div>
+                                  })
+                                ) : (
+                                  <div className="xt-media-container bg-gray-200 mt-3 rounded-md border-3 border-gray-100 pb-[56.2%]">
+                                    <img
+                                      className="xt-media inset-0 m-auto w-32"
+                                      src="/logo-white.svg"
+                                      loading="lazy"
+                                      alt=""
+                                    />
+                                  </div>
+                                )}
                               </button>
                               <Demo>
                                 {adiacent.frontmatter.demos.map((demo, i) => {
