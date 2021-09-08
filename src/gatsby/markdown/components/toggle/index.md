@@ -50,6 +50,8 @@ Use this code to create a **toggle** in **multiple mode**.
 Check out [toggle themes](/themes/toggle) for **advanced implementations**.
 
 <demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/toggle-implementation-v1">
+  </div>
   <div class="gatsby_demo_item" data-iframe="demos/themes/gallery/products-gallery-v1">
   </div>
 </demo>

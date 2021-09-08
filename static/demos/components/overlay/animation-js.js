@@ -45,7 +45,7 @@ const mountOverlay = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // inner
-      const inner = tr.querySelector('.xt-overlay-inner')
+      const inner = tr.querySelector('[data-xt-overlay-inner]')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
         y: -self.direction * targetYOn,
@@ -73,7 +73,7 @@ const mountOverlay = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // inner
-      const inner = tr.querySelector('.xt-overlay-inner')
+      const inner = tr.querySelector('[data-xt-overlay-inner]')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
         y: self.direction * targetYOff,

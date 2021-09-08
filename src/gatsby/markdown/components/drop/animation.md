@@ -148,4 +148,20 @@ Use `.xt-design` when you want to **animate the design independently from the co
 
 ## Collapse
 
-Refer to [animation collapse](/components/collapse).
+Assign `options.collapseHeight` or `options.collapseWidth` and `overflow-hidden`, `transition-all` on collapse nodes.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `collapseHeight:String`                          | `false`        | Type of elements that collapse vertically, can be `elements`, `targets`, `elementsInner`, `targetsInner`           |
+| Option                    | `collapseWidth:String`                          | `false`        | Type of elements that collapse horizzontally, can be `elements`, `targets`, `elementsInner`, `targetsInner`           |
+
+</div>
+
+> On **collapse nodes do not to use margin or padding**.
+
+<demo>
+  <demoinline src="demos/components/drop/animation-collapse">
+  </demoinline>
+</demo>

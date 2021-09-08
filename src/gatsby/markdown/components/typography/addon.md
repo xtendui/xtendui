@@ -8,7 +8,7 @@ date: "1900-10-10"
 
 ## Collapse Text
 
-Refer to [collapse](/components/collapse).
+Refer to [toggle collapse](/components/toggle/animation#collapse).
 
 ## Separator
 

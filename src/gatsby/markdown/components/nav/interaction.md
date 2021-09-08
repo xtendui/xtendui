@@ -19,13 +19,11 @@ Use [toggle](/components/toggle) to **activate/deactivate and animate**.
 
 ## Toggle complex
 
-Use [collapse](/components/collapse) to **animate with collapse**.
-
 Use [scrollto toggle](/components/scrollto#toggle) to **automatically scroll on activation**.
 
 Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 
-> This demos use [collapse](/components/collapse) [scrollto](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
+> This demos use [scrollto](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v2">

@@ -3,7 +3,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ duration: 500 }">
+      <div
+        data-xt-drop="{ targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', position: 'auto-end', duration: 500 }"
+      >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -13,11 +15,12 @@ const html = /* HTML */ `
         </button>
 
         <div
-          class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="xt-drop p-3 *** group *** *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-drop-target
         >
           <div
-            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
+            class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** overflow-hidden transition-all ***"
+            data-xt-drop-inner
           >
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
@@ -43,7 +46,9 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ duration: 500 }">
+      <div
+        data-xt-drop="{ targetsInner: '[data-xt-drop-inner]', collapseHeight: 'targetsInner', position: 'auto-end', duration: 500 }"
+      >
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -53,11 +58,12 @@ const html = /* HTML */ `
         </button>
 
         <div
-          class="xt-drop p-3 *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          class="xt-drop p-3 *** group *** *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-drop-target
         >
           <div
-            class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
+            class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** overflow-hidden transition-all ***"
+            data-xt-drop-inner
           >
             <button type="button" class="xt-button xt-dismiss absolute top-0 right-0 p-5 text-xl" aria-label="Close">
               ${classes.iconX()}

@@ -1,6 +1,6 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-const tabsRadius = () => `-2xl`
+const tabsRadius = () => `-full`
 const tabsAnim = () =>
   `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
 
@@ -9,9 +9,9 @@ const html = /* HTML */ `
     <div class="max-w-xl mx-auto">
       <div class="*** xt-sticky ***" data-node-sticky>
         <div
-          class="xt-card rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
+          class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
         >
-          <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
+          <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
             <a
               href="#description"
               class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
@@ -40,8 +40,8 @@ const html = /* HTML */ `
       </div>
 
       <div class="mt-3" data-node-sticky-endtrigger>
-        <div class="*** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardWhite()} ***">
-          <div class="*** ${classes.cardSm()} border-t border-solid border-gray-300 ***" id="description">
+        <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardWhite()}">
+          <div class="*** ${classes.cardSm()} border-t border-gray-200 ***" id="description">
             <div class="xt-h5">Description</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -60,7 +60,7 @@ const html = /* HTML */ `
             </p>
           </div>
 
-          <div class="*** ${classes.cardSm()} border-t border-solid border-gray-300 ***" id="features">
+          <div class="*** ${classes.cardSm()} border-t border-gray-200 ***" id="features">
             <div class="xt-h5">Features</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -69,7 +69,7 @@ const html = /* HTML */ `
             </p>
           </div>
 
-          <div class="*** ${classes.cardSm()} border-t border-solid border-gray-300 ***" id="accessories">
+          <div class="*** ${classes.cardSm()} border-t border-gray-200 ***" id="accessories">
             <div class="xt-h5">Accessories</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -98,7 +98,7 @@ const html = /* HTML */ `
             </p>
           </div>
 
-          <div class="*** ${classes.cardSm()} border-t border-solid border-gray-300 ***" id="manuals">
+          <div class="*** ${classes.cardSm()} border-t border-gray-200 ***" id="manuals">
             <div class="xt-h5">Manuals</div>
             <p>
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
