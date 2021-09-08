@@ -6,8 +6,6 @@ export const classes = {
   gatsbyFloat: () =>
     'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
   cardToggle: () => 'rounded-full text-xs py-2 px-3 font-medium shadow',
-  cardSlide: () =>
-    'rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition',
   buttonSlider: () =>
     'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   buttonCode: () =>
@@ -51,6 +49,9 @@ export const classes = {
   cardPrimaryAccent: () => 'bg-primary-600',
   cardPrimaryInteractive: () =>
     'transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600',
+  cardSlideRadius: () => '-md',
+  cardSlideDesign: () => 'bg-gray-100 border-2 border-transparent transition group-in:border-gray-200',
+  cardSlideContent: () => 'p-8 text-base text-center',
   // group
   groupMd: () => 'p-3',
   groupButtonRadius: () => '-md',

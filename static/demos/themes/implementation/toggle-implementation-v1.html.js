@@ -2,7 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const toggle = () =>
   `xt-button *** w-full justify-start text-left *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}`
-const cardSize = () => `py-5 px-3 *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***`
+const cardSize = () =>
+  `py-5 px-3 *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***`
 
 const html = /* HTML */ `
   <div class="demo--toggle-implementation-v1">
