@@ -87,67 +87,6 @@ Xt.mount({
 })
 ```
 
-## Xt.node
-
-You can create **DOM node from string** with this method.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.node({ str:String })`                          | Create DOM node from string, returns `Node`             |
-| Method                  | `Xt.nodes({ str:String })`                          | Create DOM nodes from string, returns `NodeList`             |
-
-</div>
-
-## Xt.script
-
-You can **add external scripts to document** with this method that gets executed immediately.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.script({ url:String, callback:Function = null, defer:Boolean = true, async:Boolean = true })`                          | Add script to body             |
-
-</div>
-
-## Xt.queryAll
-
-You can **query multiple nodes at once** with this method.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.queryAll({ els:NodeList|Array, query:String })`                          | Query multiple nodes at once, returns `NodeList`             |
-
-</div>
-
-## Xt.visible
-
-You can **check if node is visible with `display`** with this method.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.visible({ el:Node })`                          | Check if node is visible with `display`, returns `Boolean`             |
-
-</div>
-
-## Xt.getTranslate
-
-You can get **translate values** with this method.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.getTranslate({ el:Node })`                          | Get `[x, y]` translate values on a DOM node, returns `Array`             |
-
-</div>
-
 ## Xt.on and Xt.off
 
 To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.
@@ -222,6 +161,67 @@ Xt.options['xt-drop'] = {
   duration: 500,
 }
 ```
+
+## Xt.node
+
+You can create **DOM node from string** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.node({ str:String })`                          | Create DOM node from string, returns `Node`             |
+| Method                  | `Xt.nodes({ str:String })`                          | Create DOM nodes from string, returns `NodeList`             |
+
+</div>
+
+## Xt.visible
+
+You can **check if node is visible with `display`** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.visible({ el:Node })`                          | Check if node is visible with `display`, returns `Boolean`             |
+
+</div>
+
+## Xt.script
+
+You can **add external scripts to document** with this method that gets executed immediately.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.script({ url:String, callback:Function = null, defer:Boolean = true, async:Boolean = true })`                          | Add script to body             |
+
+</div>
+
+## Xt.queryAll
+
+You can **query multiple nodes at once** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.queryAll({ els:NodeList|Array, query:String })`                          | Query multiple nodes at once, returns `NodeList`             |
+
+</div>
+
+## Xt.getTranslate
+
+You can get **translate values** with this method.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.getTranslate({ el:Node })`                          | Get `[x, y]` translate values on a DOM node, returns `Array`             |
+
+</div>
 
 ## Xt.innerHeight
 
