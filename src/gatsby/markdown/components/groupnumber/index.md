@@ -20,7 +20,15 @@ Initialize manually **within javascript** with `new Xt.Groupnumber(document.quer
 
 ## Usage
 
-You can add steps with `[data-xt-step="value"]` to set the amount to add (`+1`) or remove (`-1`) to the current value.
+The component uses the standard `input[type="number"]` attributes:
+
+- `input[min]` for **minimum value**.
+
+- `input[max]` for **maximum value**.
+
+- `input[step]` for **step increment and decrement**.
+
+On the steps buttons use `[data-xt-step="value"]` to set the amount to add (`+1`) or remove (`-1`) on click, if you set `input[step="value"]` the **increment and decrement steps are from `[step]`** but the **sign of step is from `[data-xt-step]`**.
 
 > This demos use [group](/components/group) see documentation for more info.
 
@@ -38,6 +46,8 @@ Here are the main **javascript options**.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
+| Option                    | `min:Number`                          | `1`        | Default value for minimum limit            |
+| Option                    | `max:Number`                          | `Infinity`        | Default value for maximum limit            |
 | Option                    | `inputs:Query`                          | `'input[type="number"]'`        | Inputs query            |
 | Option                    | `steps:Query`                          | `'[data-xt-step]'`        | Steps query            |
 
@@ -79,7 +89,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change`                        | `input` | Value change event             |
+| Event                   | `change`                        | `input` | Value change event redispatched after validation             |
 | Event                   | `init.xt.groupnumber`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.groupnumber`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.groupnumber`           | `container` | Destroy event             |
@@ -104,7 +114,7 @@ const container = self.container
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `inputs:Nodes`       | Inputs nodes             |
-| Property                   | `steps:Nodes`       | Steps node             |
+| Property                   | `steps:Nodes`       | Steps nodes             |
 
 </div>
 

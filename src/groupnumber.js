@@ -66,14 +66,13 @@ class Groupnumber {
     self.inputs = self.container.querySelectorAll(options.inputs)
     self.steps = self.container.querySelectorAll(options.steps)
     // steps
-    for (const step of self.steps) {
-      const qty = parseFloat(step.getAttribute('data-xt-step'))
-      const stepHandler = Xt.dataStorage.put(step, `change/${self.ns}`, self.eventChange.bind(self, qty))
-      step.addEventListener('click', stepHandler)
+    for (const button of self.steps) {
+      const buttonHandler = Xt.dataStorage.put(button, `change/${self.ns}`, self.eventChange.bind(self, { button }))
+      button.addEventListener('click', buttonHandler)
     }
     // inputs
     for (const input of self.inputs) {
-      const inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.eventChange.bind(self, 0))
+      const inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.eventChange.bind(self, {}))
       input.addEventListener('change', inputHandler)
     }
     // initial
@@ -111,7 +110,7 @@ class Groupnumber {
       return
     }
     // logic
-    self.eventChange.bind(self, 0)()
+    self.eventChange.bind(self)()
   }
 
   //
@@ -120,10 +119,11 @@ class Groupnumber {
 
   /**
    * change
-   * @param {Node|HTMLElement|EventTarget|Window} step
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.button
    * @param {Event} e
    */
-  eventChange(step, e) {
+  eventChange({ button } = {}, e) {
     const self = this
     // disabled
     if (self.disabled) {
@@ -131,45 +131,73 @@ class Groupnumber {
     }
     // trigger external events and skip internal events
     if (!e?.detail?.skip) {
-      const input = self.container.querySelector('input')
-      let val = parseFloat(input.value)
-      val = val + step
-      self.validate(val)
+      // inputs
+      for (const input of self.inputs) {
+        const inputStep = input.getAttribute('step')
+        const buttonStep = button?.getAttribute('data-xt-step')
+        const step =
+          inputStep && inputStep !== '' ? parseFloat(inputStep) * parseFloat(buttonStep) : parseFloat(buttonStep) ?? 1
+        let val = parseFloat(input.value)
+        val = isNaN(val) ? 0 : val
+        if (step) {
+          val += step
+        }
+        self.validate({ val, input })
+      }
+      // disabled
+      for (const button of self.steps) {
+        const enabled = Xt.dataStorage.get(button, `${self.ns}ButtonEnabled`)
+        if (enabled) {
+          button.removeAttribute('disabled')
+        } else {
+          button.setAttribute('disabled', 'disabled')
+        }
+        Xt.dataStorage.remove(button, `${self.ns}ButtonEnabled`)
+      }
     }
   }
 
   /**
    * validate
-   * @param {Number} val
+   * @param {Object} params
+   * @param {Number} params.val
+   * @param {Node|HTMLElement|EventTarget|Window} params.input
    */
-  validate(val) {
+  validate({ val, input } = {}) {
     const self = this
-    // logic
-    val = isNaN(val) ? 0 : val
-    for (const input of self.inputs) {
-      // check min and max
-      const inputMin = parseFloat(input.getAttribute('min')) ?? 1
-      const inputMax = parseFloat(input.getAttribute('max')) ?? Infinity
-      // disabled
-      for (const step of self.steps) {
-        const inputStep = parseFloat(step.getAttribute('data-xt-step')) ?? 1
-        const qty = inputStep
-        step.removeAttribute('disabled')
-        if (val <= inputMin && qty < 0) {
-          val = inputMin
-          step.setAttribute('disabled', 'disabled')
+    const options = self.options
+    // step
+    const inputStep = input.getAttribute('step')
+    const step = inputStep && inputStep !== '' ? parseFloat(inputStep) : null
+    if (step && val % step) {
+      val = Math.round(val / step) * step
+    }
+    // min and max and disabled
+    const inputMin = input.getAttribute('min')
+    const inputMax = input.getAttribute('max')
+    const min = inputMin && inputMin !== '' ? parseFloat(inputMin) : options.min
+    const max = inputMax && inputMax !== '' ? parseFloat(inputMax) : options.max
+    for (const button of self.steps) {
+      const buttonStep = button.getAttribute('data-xt-step')
+      if (buttonStep < 0) {
+        if (val <= min) {
+          val = min
+        } else {
+          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
         }
-        if (val >= inputMax && qty > 0) {
-          val = inputMax
-          step.setAttribute('disabled', 'disabled')
+      } else if (buttonStep > 0) {
+        if (val >= max) {
+          val = max
+        } else {
+          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
         }
       }
-      // set value
-      input.value = val
-      // trigger external events and skip internal events
-      if (!self.initial) {
-        input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
-      }
+    }
+    // set value
+    input.value = val
+    // trigger external events and skip internal events
+    if (!self.initial) {
+      input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
     }
   }
 
@@ -226,9 +254,9 @@ class Groupnumber {
   destroy() {
     const self = this
     // remove events
-    for (const step of self.steps) {
-      const stepHandler = Xt.dataStorage.get(step, `change/${self.ns}`)
-      step.removeEventListener('click', stepHandler)
+    for (const button of self.steps) {
+      const buttonHandler = Xt.dataStorage.get(button, `change/${self.ns}`)
+      button.removeEventListener('click', buttonHandler)
     }
     for (const input of self.inputs) {
       const inputHandler = Xt.dataStorage.get(input, `change/${self.ns}`)
@@ -254,6 +282,9 @@ class Groupnumber {
 Groupnumber.componentName = 'xt-groupnumber'
 Groupnumber.optionsDefault = {
   debug: false,
+  // quantity
+  min: 1,
+  max: 'Infinity',
   // elements
   inputs: 'input[type="number"]',
   steps: '[data-xt-step]',
