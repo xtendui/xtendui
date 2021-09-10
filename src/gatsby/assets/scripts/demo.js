@@ -719,7 +719,7 @@ window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
   const item = iframe.closest('.gatsby_demo_item')
   // populate
   require('src/gatsby/assets/scripts/demo').populateItem(item)
-  populateIframe(item, iframe, htmlSource, jsxSource, cssSource, jsSource)
+  populateIframe({ item, htmlSource, jsxSource, cssSource, jsSource })
   // spinner
   item.classList.add('loaded')
 }
@@ -788,7 +788,7 @@ const populateInline = async item => {
   })
 }
 
-const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, jsSource) => {
+const populateIframe = async ({ item, htmlSource, jsxSource, cssSource, jsSource }) => {
   const inner = item.querySelector('.gatsby_demo_item_switch')
   // clean
   for (const code of inner.querySelectorAll('.gatsby_demo_source')) {
@@ -826,6 +826,7 @@ const populateIframe = async (item, iframe, htmlSource, jsxSource, cssSource, js
   // populate
   const isReact = !!jsxSource
   const els = item.querySelectorAll('[data-lang]')
+  // fix only current demo
   for (const el of Array.from(els).filter(x => x.closest('.gatsby_demo_item--current'))) {
     try {
       await sourceAsync(item, el, isReact)

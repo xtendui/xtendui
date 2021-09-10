@@ -68,10 +68,11 @@ Xt.mount({
 
     const button = ref
     const mode = 'html'
+    const currentMode = localStorage.getItem('mode')
 
     // default
 
-    if (!localStorage.getItem('mode')) {
+    if (!currentMode) {
       localStorage.setItem('mode', mode)
     }
 
@@ -98,7 +99,7 @@ Xt.mount({
 
     // init
 
-    if (localStorage.getItem('mode') === mode) {
+    if (currentMode === mode) {
       Xt.on({ el: button, raf: false, initial: true })
     }
   },
@@ -111,6 +112,7 @@ Xt.mount({
 
     const button = ref
     const mode = 'react'
+    const currentMode = localStorage.getItem('mode')
 
     // click
 
@@ -135,7 +137,7 @@ Xt.mount({
 
     // init
 
-    if (localStorage.getItem('mode') === mode) {
+    if (currentMode === mode) {
       Xt.on({ el: button, raf: false, initial: true })
     }
   },

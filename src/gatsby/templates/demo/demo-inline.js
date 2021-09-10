@@ -27,7 +27,8 @@ export default class DemoInline extends React.Component {
   }
 
   refresh() {
-    this.setState({ mode: localStorage.getItem('mode') })
+    const currentMode = localStorage.getItem('mode')
+    this.setState({ mode: currentMode })
     // populate
     require('src/gatsby/assets/scripts/demo').populateItem(this.item)
   }
