@@ -46,8 +46,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum page number            |
 | Option                    | `events.scrollUp:Boolean`                          | `false`        | Automatically activate on scroll up            |
 | Option                    | `events.scrollDown:Boolean`                          | `false`        | Automatically activate on scroll down            |
-| Option                    | `events.trigger:String`                          | `'click'`        | Event to trigger infinite scroll            |
-| Option                    | `events.reset:String`                          | `'click'`        | Event to trigger infinite scroll reset            |
+| Option                    | `events.on:String\|false`                          | `'click'`        | List of space separated events to trigger infinite scroll            |
 | Option                    | `elements.itemsContainer:Query`                          | `false`        | Container query for items container            |
 | Option                    | `elements.item:Query`                          | `false`        | Items container query for items            |
 | Option                    | `elements.scrollUp:Query`                          | `false`        | Container query for trigger elements when scrolling up            |
@@ -118,8 +117,8 @@ const container = self.container
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `current:Number`       | Current page             |
-| Property                   | `elementsUp:Nodes`       | Trigger elements when scrolling up             |
-| Property                   | `elementsDown:Nodes`       | Trigger elements when scrolling down             |
+| Property                   | `triggersUp:Nodes`       | Trigger elements when scrolling up             |
+| Property                   | `triggersDown:Nodes`       | Trigger elements when scrolling down             |
 | Property                   | `itemsContainer:Node`       | Items container node             |
 | Property                   | `spaceAdditionals:Node`       | Nodes for space additional             |
 | Property                   | `paginations:Node`       | Paginations nodes             |

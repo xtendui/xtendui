@@ -70,8 +70,8 @@ class Infinitescroll {
     // vars
     self.initial = true
     // elements
-    self.elementsUp = self.container.querySelectorAll(options.elements.scrollUp)
-    self.elementsDown = self.container.querySelectorAll(options.elements.scrollDown)
+    self.triggersUp = self.container.querySelectorAll(options.elements.scrollUp)
+    self.triggersDown = self.container.querySelectorAll(options.elements.scrollDown)
     self.itemsContainer = self.container.querySelector(options.elements.itemsContainer)
     self.spaceAdditionals = self.container.querySelectorAll(options.elements.spaceAdditional)
     self.paginations = self.container.querySelectorAll(options.elements.pagination)
@@ -83,15 +83,18 @@ class Infinitescroll {
     const scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self.eventScroll.bind(self))
     addEventListener('scroll', scrollHandler)
     // trigger
-    for (const trigger of [...Array.from(self.elementsUp), ...Array.from(self.elementsDown)]) {
-      const triggerHandler = Xt.dataStorage.put(
-        trigger,
-        `${options.events.trigger}}/${self.ns}`,
-        self.eventTrigger.bind(self, { trigger })
-      )
-      const events = [...options.events.on.split(' ')]
-      for (const event of events) {
-        trigger.addEventListener(event, triggerHandler)
+    const events = options.events?.on ? [...options.events.on.split(' ')] : []
+    if (events.length) {
+      for (const trigger of [...Array.from(self.triggersUp), ...Array.from(self.triggersDown)]) {
+        const triggerHandler = Xt.dataStorage.put(
+          trigger,
+          `${options.events.on}/${self.ns}`,
+          self.eventTrigger.bind(self, { trigger })
+        )
+        console.log(trigger, events, triggerHandler)
+        for (const event of events) {
+          trigger.addEventListener(event, triggerHandler)
+        }
       }
     }
     // initial
@@ -256,22 +259,25 @@ class Infinitescroll {
       console.error('Error: Xt.Infinitescroll cannot set history with different origin', linkOrigin)
     }
     // triggers
-    if (options.events.scrollUp && self.scrollTopOld > scrollTop) {
-      for (const trigger of self.elementsUp) {
-        const top = trigger.offsetTop
-        if (scrollTop < top) {
-          const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.trigger}}/${self.ns}`)
-          triggerHandler({ target: trigger })
+    const events = options.events?.on ? [...options.events.on.split(' ')] : []
+    if (events.length) {
+      if (options.events.scrollUp && self.scrollTopOld > scrollTop) {
+        for (const trigger of self.triggersUp) {
+          const top = trigger.offsetTop
+          if (scrollTop < top) {
+            const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.on}/${self.ns}`)
+            triggerHandler({ target: trigger })
+          }
         }
       }
-    }
-    if (options.events.scrollDown && self.scrollTopOld < scrollTop) {
-      for (const trigger of self.elementsDown) {
-        const top = trigger.offsetTop
-        const bottom = top + trigger.offsetHeight
-        if (scrollTop + windowHeight > bottom) {
-          const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.trigger}}/${self.ns}`)
-          triggerHandler({ target: trigger })
+      if (options.events.scrollDown && self.scrollTopOld < scrollTop) {
+        for (const trigger of self.triggersDown) {
+          const top = trigger.offsetTop
+          const bottom = top + trigger.offsetHeight
+          if (scrollTop + windowHeight > bottom) {
+            const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.on}/${self.ns}`)
+            triggerHandler({ target: trigger })
+          }
         }
       }
     }
@@ -524,9 +530,9 @@ class Infinitescroll {
     removeEventListener('beforeunload', beforeunloadHandler)
     const scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
     removeEventListener('scroll', scrollHandler)
-    for (const trigger of [...Array.from(self.elementsUp), ...Array.from(self.elementsDown)]) {
-      const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.trigger}}/${self.ns}`)
-      trigger.removeEventListener(options.events.trigger, triggerHandler)
+    for (const trigger of [...Array.from(self.triggersUp), ...Array.from(self.triggersDown)]) {
+      const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.on}/${self.ns}`)
+      trigger.removeEventListener(options.events.on, triggerHandler)
     }
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
@@ -548,7 +554,7 @@ class Infinitescroll {
 Infinitescroll.componentName = 'xt-infinitescroll'
 Infinitescroll.optionsDefault = {
   debug: false,
-  // infiniteScroll
+  // infinitescroll
   get: false,
   // quantity
   min: 1,
