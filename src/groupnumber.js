@@ -159,16 +159,14 @@ class Groupnumber {
         self.validate({ val, input })
       }
       // disabled
-      if (options.limit) {
-        for (const button of self.steps) {
-          const enabled = Xt.dataStorage.get(button, `${self.ns}ButtonEnabled`)
-          if (enabled) {
-            button.removeAttribute('disabled')
-          } else {
-            button.setAttribute('disabled', 'disabled')
-          }
-          Xt.dataStorage.remove(button, `${self.ns}ButtonEnabled`)
+      for (const button of self.steps) {
+        const enabled = Xt.dataStorage.get(button, `${self.ns}ButtonEnabled`)
+        if (enabled) {
+          button.removeAttribute('disabled')
+        } else {
+          button.setAttribute('disabled', 'disabled')
         }
+        Xt.dataStorage.remove(button, `${self.ns}ButtonEnabled`)
       }
     }
   }
@@ -189,25 +187,27 @@ class Groupnumber {
       val = options.validate({ val, step })
     }
     // limit and disabled
-    if (options.limit) {
-      const inputMin = input.getAttribute('min')
-      const inputMax = input.getAttribute('max')
-      const min = inputMin && inputMin !== '' ? parseFloat(inputMin) : options.min
-      const max = inputMax && inputMax !== '' ? parseFloat(inputMax) : options.max
-      for (const button of self.steps) {
-        const buttonStep = button.getAttribute('data-xt-step')
-        if (buttonStep < 0) {
-          if (val <= min) {
+    const inputMin = input.getAttribute('min')
+    const inputMax = input.getAttribute('max')
+    const min = inputMin && inputMin !== '' ? parseFloat(inputMin) : options.min
+    const max = inputMax && inputMax !== '' ? parseFloat(inputMax) : options.max
+    for (const button of self.steps) {
+      const buttonStep = button.getAttribute('data-xt-step')
+      if (buttonStep < 0) {
+        if (val <= min) {
+          if (options.limit) {
             val = min
-          } else {
-            Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
           }
-        } else if (buttonStep > 0) {
-          if (val >= max) {
+        } else {
+          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
+        }
+      } else if (buttonStep > 0) {
+        if (val >= max) {
+          if (options.limit) {
             val = max
-          } else {
-            Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
           }
+        } else {
+          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
         }
       }
     }

@@ -47,7 +47,7 @@ Here are the main **javascript options**.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `limit:Boolean`                          | `true`        | Limit value with min and max attribute             |
-| Option                    | `validate:Function\|false`                          | `false`        | Function for validation on input change             |
+| Option                    | `validate:Function\|false`                          | `false`        | Validate value for on input change             |
 | Option                    | `min:Number`                          | `1`        | Default value for minimum limit            |
 | Option                    | `max:Number`                          | `Infinity`        | Default value for maximum limit            |
 | Option                    | `events.input:String\|false`                          | `'change'`        | List of space separated events on input to limit and validate            |
