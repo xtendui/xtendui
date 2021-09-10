@@ -91,7 +91,6 @@ class Infinitescroll {
           `${options.events.on}/${self.ns}`,
           self.eventTrigger.bind(self, { trigger })
         )
-        console.log(trigger, events, triggerHandler)
         for (const event of events) {
           trigger.addEventListener(event, triggerHandler)
         }
