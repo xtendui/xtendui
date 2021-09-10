@@ -10,7 +10,7 @@ const html = /* HTML */ `
     </button>
 
     <div
-      class="xt-tooltip p-3 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0"
+      class="xt-tooltip p-3 transition duration-300 opacity-0 -translate-y-2 in:opacity-100 in:translate-y-0"
       id="tooltip--swap-click">
       <div
         class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
@@ -19,7 +19,7 @@ const html = /* HTML */ `
     </div>
 
     <div
-      class="xt-tooltip p-3 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0 *** hidden ***"
+      class="xt-tooltip p-3 transition duration-300 opacity-0 -translate-y-2 in:opacity-100 in:translate-y-0 *** hidden ***"
       id="tooltip--swap-click-swap">
       <div
         class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
