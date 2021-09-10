@@ -12,23 +12,20 @@ const html = /* HTML */ `
       <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'targets' }">
         <div class="*** xt-sticky ***" data-node-sticky>
           <div
-            class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
-          >
+            class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
             <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
               <a
                 role="button"
                 class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
                 data-xt-toggle-element
-                data-xt-hash="description"
-              >
+                data-xt-hash="description">
                 ${classes.iconFile({ classes: 'xt-icon text-base opacity-50 mr-2' })} Description
               </a>
               <a
                 role="button"
                 class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
                 data-xt-toggle-element
-                data-xt-hash="features"
-              >
+                data-xt-hash="features">
                 ${classes.iconFiletext({ classes: 'xt-icon text-base opacity-50 mr-2' })} Features
               </a>
               <a

@@ -11,8 +11,7 @@ const html = /* HTML */ `
               type="text"
               class="${classes.input()} ${classes.inputUnderline()}"
               aria-label="Required one"
-              placeholder="Required one"
-            />
+              placeholder="Required one" />
           </div>
 
           <div class="w-full md:w-6/12">
@@ -21,8 +20,7 @@ const html = /* HTML */ `
               type="text"
               class="${classes.input()} ${classes.inputUnderline()}"
               aria-label="Required one"
-              placeholder="Required one"
-            />
+              placeholder="Required one" />
           </div>
         </div>
 
@@ -32,8 +30,7 @@ const html = /* HTML */ `
             type="text"
             class="${classes.input()} ${classes.inputUnderline()} input--constrains"
             aria-label="Custom constrain"
-            placeholder="Custom constrain"
-          />
+            placeholder="Custom constrain" />
         </div>
 
         <div class="w-full">
@@ -43,8 +40,7 @@ const html = /* HTML */ `
             class="${classes.input()} ${classes.inputUnderline()} valid-submit:!border-green-200 invalid-submit:!border-red-200"
             aria-label="Email"
             placeholder="Email"
-            required
-          />
+            required />
         </div>
 
         <div class="w-full">
@@ -56,8 +52,7 @@ const html = /* HTML */ `
             placeholder="Number"
             required
             min="1"
-            max="10"
-          />
+            max="10" />
         </div>
 
         <div class="w-full">
@@ -68,8 +63,7 @@ const html = /* HTML */ `
             aria-label="Letters"
             placeholder="Letters"
             required
-            pattern="[A-Za-z]+"
-          />
+            pattern="[A-Za-z]+" />
         </div>
 
         <div class="w-full">
@@ -83,8 +77,7 @@ const html = /* HTML */ `
             class="${classes.input()} ${classes.textarea()} ${classes.inputUnderline()} resize-vertical"
             aria-label="Textarea"
             placeholder="Textarea"
-            required
-          ></textarea>
+            required></textarea>
         </div>
 
         <div class="w-full">
@@ -103,8 +96,7 @@ const html = /* HTML */ `
             class="${classes.input()} xt-select ${classes.inputUnderline()}"
             aria-label="Select multiple"
             multiple
-            required
-          >
+            required>
             <option>Option 1</option>
             <option>Option 2</option>
             <option>Option 3</option>
@@ -124,8 +116,7 @@ const html = /* HTML */ `
                   type="checkbox"
                   class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                   required
-                  disabled
-                />
+                  disabled />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -139,8 +130,7 @@ const html = /* HTML */ `
                 <input
                   type="checkbox"
                   class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-                  required
-                />
+                  required />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -161,8 +151,7 @@ const html = /* HTML */ `
                   type="radio"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-validation"
-                  required
-                />
+                  required />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -176,8 +165,7 @@ const html = /* HTML */ `
                 <input
                   type="radio"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
-                  name="radio-validation"
-                />
+                  name="radio-validation" />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -197,8 +185,7 @@ const html = /* HTML */ `
                 <input
                   type="checkbox"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
-                  required
-                />
+                  required />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -213,8 +200,7 @@ const html = /* HTML */ `
                   type="radio"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-validation"
-                  required
-                />
+                  required />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -228,8 +214,7 @@ const html = /* HTML */ `
                 <input
                   type="radio"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
-                  name="switch-validation"
-                />
+                  name="switch-validation" />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -243,8 +228,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          >
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             submit
           </button>
         </div>

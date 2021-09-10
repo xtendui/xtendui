@@ -12,8 +12,7 @@ const html = /* HTML */ `
               </div>
               <div class="flex relative h-96">
                 <div
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center">
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1</h2>
                 </div>
               </div>
@@ -29,8 +28,7 @@ const html = /* HTML */ `
               </div>
               <div class="flex relative h-96">
                 <div
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center">
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2</h2>
                 </div>
               </div>
@@ -46,8 +44,7 @@ const html = /* HTML */ `
               </div>
               <div class="flex relative h-96">
                 <div
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center">
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">3</h2>
                 </div>
               </div>
@@ -63,8 +60,7 @@ const html = /* HTML */ `
               </div>
               <div class="flex relative h-96">
                 <div
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center">
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">4</h2>
                 </div>
               </div>
@@ -75,14 +71,12 @@ const html = /* HTML */ `
 
       <nav
         class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-content bottom-6"
-        data-xt-slider-pagination
-      >
+        data-xt-slider-pagination>
         <button
           type="button"
           class="xt-button ${classes.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"
-        ></button>
+          title="Slide xt-num"></button>
       </nav>
     </div>
   </div>

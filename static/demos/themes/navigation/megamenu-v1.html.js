@@ -5,8 +5,7 @@ const html = /* HTML */ `
     <div class="*** megamenu ***">
       <div
         class="*** megamenu-backdrop *** xt-backdrop z-below off:hidden out:pointer-events-none bg-black transition opacity-0 in:opacity-25"
-        data-xt-duration="500"
-      ></div>
+        data-xt-duration="500"></div>
 
       <div class="relative bg-primary-500 ${classes.textInverse()}">
         <!-- switcher for demo purpose remove this -->
@@ -15,8 +14,7 @@ const html = /* HTML */ `
             <input
               type="checkbox"
               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-              checked
-            />
+              checked />
             <span class="${classes.checkContent()}">Use mouse events</span>
           </label>
         </form>
@@ -28,8 +26,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
-              >
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #1
               </a>
 
@@ -62,8 +59,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
-              >
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #2
               </a>
 
@@ -90,8 +86,7 @@ const html = /* HTML */ `
             <div data-xt-drop-element>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
-              >
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
                 Menu #3
               </a>
 
@@ -138,15 +133,13 @@ const html = /* HTML */ `
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
-            >
+              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
               Link #4
             </a>
 
             <a
               href="/"
-              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
-            >
+              class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
               Link #5
             </a>
           </div>

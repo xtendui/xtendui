@@ -20,8 +20,7 @@ const html = /* HTML */ `
 
               <div
                 class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target
-              >
+                data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -50,8 +49,7 @@ const html = /* HTML */ `
 
               <div
                 class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target
-              >
+                data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -70,8 +68,7 @@ const html = /* HTML */ `
 
               <div
                 class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target
-              >
+                data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -110,8 +107,7 @@ const html = /* HTML */ `
 
               <div
                 class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target
-              >
+                data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

@@ -6,32 +6,28 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 0
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 1
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 2
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 3
       </button>
 
@@ -41,8 +37,7 @@ const html = /* HTML */ `
             type="button"
             class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="-1"
-            title="Previous slide"
-          >
+            title="Previous slide">
             ${classes.iconArrowLeft({ classes: 'text-xl -my-1' })}
           </button>
 
@@ -50,8 +45,7 @@ const html = /* HTML */ `
             type="button"
             class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="1"
-            title="Next slide"
-          >
+            title="Next slide">
             ${classes.iconArrowRight({ classes: 'text-xl -my-1' })}
           </button>
         </div>

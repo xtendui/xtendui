@@ -7,8 +7,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Left
         </button>
 
@@ -21,8 +20,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                    aria-label="Close"
-                  >
+                    aria-label="Close">
                     ${classes.iconX()}
                   </button>
                   <div class="${classes.cardMd()}">
@@ -56,8 +54,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Right
         </button>
 
@@ -70,8 +67,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                    aria-label="Close"
-                  >
+                    aria-label="Close">
                     ${classes.iconX()}
                   </button>
                   <div class="${classes.cardMd()}">

@@ -5,8 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full md:w-6/12">
         <label
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -19,16 +18,14 @@ const html = /* HTML */ `
               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
               name="checkbox-card-0"
               checked
-              disabled
-            />
+              disabled />
           </div>
         </label>
       </div>
 
       <div class="w-full md:w-6/12">
         <label
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -39,16 +36,14 @@ const html = /* HTML */ `
             <input
               type="checkbox"
               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-              name="checkbox-card-1"
-            />
+              name="checkbox-card-1" />
           </div>
         </label>
       </div>
 
       <div class="w-full md:w-6/12">
         <label
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer *** focus-within:outline-browser ***"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer *** focus-within:outline-browser ***">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -63,8 +58,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer *** focus-within:outline-browser ***"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer *** focus-within:outline-browser ***">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -79,8 +73,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <label
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -92,16 +85,14 @@ const html = /* HTML */ `
               type="radio"
               class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
               name="switch-card"
-              checked
-            />
+              checked />
           </div>
         </label>
       </div>
 
       <div class="w-full md:w-6/12">
         <label
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()} cursor-pointer">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Lorem ipsum</div>
             <p>
@@ -112,8 +103,7 @@ const html = /* HTML */ `
             <input
               type="radio"
               class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
-              name="switch-card"
-            />
+              name="switch-card" />
           </div>
         </label>
       </div>

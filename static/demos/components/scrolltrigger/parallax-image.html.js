@@ -5,8 +5,7 @@ const html = /* HTML */ `
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/wQLAGv4_OYs"
         loading="lazy"
-        alt=""
-      />
+        alt="" />
     </div>
 
     <br /><br /><br /><br /><br /><br /><br />
@@ -18,8 +17,7 @@ const html = /* HTML */ `
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/Tyg0rVhOTrE"
         loading="lazy"
-        alt=""
-      />
+        alt="" />
     </div>
 
     <br /><br /><br /><br /><br /><br /><br />
@@ -31,8 +29,7 @@ const html = /* HTML */ `
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/wEL2zPX3jDg"
         loading="lazy"
-        alt=""
-      />
+        alt="" />
     </div>
 
     <br /><br /><br /><br /><br /><br /><br />
@@ -44,8 +41,7 @@ const html = /* HTML */ `
         class="xt-media object-cover object-center"
         src="https://source.unsplash.com/wQLAGv4_OYs"
         loading="lazy"
-        alt=""
-      />
+        alt="" />
     </div>
   </div>
 `

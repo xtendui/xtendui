@@ -19,15 +19,13 @@ const html = /* HTML */ `
             type="email"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
             aria-label="Email"
-            placeholder="Email"
-          />
+            placeholder="Email" />
         </div>
 
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          >
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             submit
           </button>
         </div>
@@ -42,15 +40,13 @@ const html = /* HTML */ `
             type="email"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
             aria-label="Email"
-            placeholder="Email"
-          />
+            placeholder="Email" />
         </div>
 
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-          >
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
             submit
           </button>
         </div>
@@ -65,15 +61,13 @@ const html = /* HTML */ `
             type="email"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
             aria-label="Email"
-            placeholder="Email"
-          />
+            placeholder="Email" />
         </div>
 
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button *** xt-loadable-ignore *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          >
+            class="xt-button *** xt-loadable-ignore *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             submit
           </button>
         </div>

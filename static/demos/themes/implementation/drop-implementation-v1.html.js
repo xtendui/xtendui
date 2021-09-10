@@ -7,40 +7,33 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-drop-element
-        >
+          data-xt-drop-element>
           Nav
         </button>
         <div
           class="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-          data-xt-drop-target
-        >
+          data-xt-drop-target>
           <div
-            class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()}"
-          >
+            class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()}">
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
-              >
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
-              >
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
-              >
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories
               </a>
               <a
                 href="#"
-                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}"
-              >
+                class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
               </a>
             </nav>
@@ -53,17 +46,14 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-drop-element
-        >
+          data-xt-drop-element>
           Contact
         </button>
         <div
           class="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-          data-xt-drop-target
-        >
+          data-xt-drop-target>
           <div
-            class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-          >
+            class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
             <nav class="xt-list xt-list-1 flex-col *** py-2 ***">
               <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
                 <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">

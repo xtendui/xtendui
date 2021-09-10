@@ -19,8 +19,7 @@ const html = /* HTML */ `
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
               </div>
               <div
-                class="${classes.cardSm()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()} *** border-t border-gray-300 ***"
-              >
+                class="${classes.cardSm()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()} *** border-t border-gray-300 ***">
                 <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
               </div>
             </div>

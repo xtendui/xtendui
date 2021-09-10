@@ -3,14 +3,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div
-      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}"
-    >
+      class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}">
       <div data-xt-tooltip>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-tooltip-element
-        >
+          data-xt-tooltip-element>
           static
         </button>
 

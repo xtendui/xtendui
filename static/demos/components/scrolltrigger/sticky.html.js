@@ -25,8 +25,7 @@ const html = /* HTML */ `
 
     <div
       class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-      data-node-sticky-top-endtrigger
-    >
+      data-node-sticky-top-endtrigger>
       <div class="xt-h4">Lorem ipsum</div>
       <p>
         <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit

@@ -6,16 +6,14 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle
-      >
+        data-xt-toggle>
         Toggle
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle
-      >
+        data-xt-toggle>
         Toggle
       </button>
     </div>

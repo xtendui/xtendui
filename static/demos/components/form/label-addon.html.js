@@ -17,8 +17,7 @@ const html = /* HTML */ `
           <input
             type="text"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-            aria-label="Lorem ipsum"
-          />
+            aria-label="Lorem ipsum" />
         </div>
 
         <div class="w-full">
@@ -34,8 +33,7 @@ const html = /* HTML */ `
           <input
             type="text"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-            aria-label="Dolor sit amet"
-          />
+            aria-label="Dolor sit amet" />
         </div>
 
         <div class="w-full">
@@ -56,8 +54,7 @@ const html = /* HTML */ `
               <input
                 type="text"
                 class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-                aria-label="Lorem ipsum"
-              />
+                aria-label="Lorem ipsum" />
             </div>
           </div>
         </div>

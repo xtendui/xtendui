@@ -6,36 +6,31 @@ const html = /* HTML */ `
       <div data-xt-tooltip-element>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        >
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
           Group
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-          >
+            class="rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
             <form class="text-sm">
               <div class="xt-list flex-nowrap max-w-sm">
                 <div class="inline-flex flex-auto">
                   <button
                     type="submit"
-                    class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                  >
+                    class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
                     ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                   </button>
                   <input
                     type="text"
                     class="${classes.input()} ${classes.inputGray()}"
                     aria-label="Search"
-                    placeholder="Seach Catalog"
-                  />
+                    placeholder="Seach Catalog" />
                 </div>
 
                 <button
                   type="submit"
-                  class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-                >
+                  class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
                   Search
                 </button>
               </div>

@@ -17,8 +17,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group"
-          data-xt-toggle-element
-        >
+          data-xt-toggle-element>
           <span class="group-on:hidden"> Show more </span>
           <span class="hidden group-on:block"> Show less </span>
         </button>
@@ -38,8 +37,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group"
-          data-xt-toggle-element
-        >
+          data-xt-toggle-element>
           <span class="group-on:hidden"> Show more </span>
           <span class="hidden group-on:block"> Show less </span>
         </button>
@@ -53,8 +51,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group"
-          data-xt-toggle-element
-        >
+          data-xt-toggle-element>
           <span class="group-on:hidden"> Show more </span>
           <span class="hidden group-on:block"> Show less </span>
         </button>

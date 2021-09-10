@@ -6,28 +6,24 @@ const html = /* HTML */ `
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
-          data-xt-slider-dragger
-        >
+          data-xt-slider-dragger>
           <div class="xt-slide w-full sm:w-6/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div
-              class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}"
-            >
+              class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4">1</div>
             </div>
           </div>
 
           <div class="xt-slide w-full sm:w-6/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div
-              class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}"
-            >
+              class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4">2</div>
             </div>
           </div>
 
           <div class="xt-slide w-full sm:w-6/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
             <div
-              class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}"
-            >
+              class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4">3</div>
             </div>
           </div>
@@ -38,8 +34,7 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"
-          ></button>
+            title="Slide xt-num"></button>
         </nav>
       </div>
     </div>

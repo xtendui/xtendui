@@ -7,8 +7,7 @@ const html = /* HTML */ `
         <div class="inline-flex flex-auto">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded-tl${classes.groupButtonRadius()} md:rounded-l${classes.groupButtonRadius()} *** border border-b-0 md:border-b border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-          >
+            class="xt-button ${classes.buttonMd()} rounded-tl${classes.groupButtonRadius()} md:rounded-l${classes.groupButtonRadius()} *** border border-b-0 md:border-b border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </button>
 
@@ -16,14 +15,12 @@ const html = /* HTML */ `
             type="text"
             class="${classes.input()} *** border border-b-0 border-l-0 md:border-b md:border-r-0 border-gray-300 *** ${classes.inputGray()}"
             aria-label="Search"
-            placeholder="Seach Catalog"
-          />
+            placeholder="Seach Catalog" />
         </div>
 
         <button
           type="submit"
-          class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} *** border border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-        >
+          class="xt-button ${classes.buttonMd()} rounded-b${classes.groupButtonRadius()} md:rounded-bl-none md:rounded-r${classes.groupButtonRadius()} *** border border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
           Search
         </button>
       </div>

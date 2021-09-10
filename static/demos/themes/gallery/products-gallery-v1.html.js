@@ -17,8 +17,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-5/12 lg:w-6/12 xl:w-7/12">
             <div class="relative">
               <div
-                class="*** product-gallery *** overflow-y-auto overflow-x-hidden xt-overflow-sub h-96 xt-container-remove md:!m-0 md:!h-auto md:!overflow-hidden"
-              >
+                class="*** product-gallery *** overflow-y-auto overflow-x-hidden xt-overflow-sub h-96 xt-container-remove md:!m-0 md:!h-auto md:!overflow-hidden">
                 <div class="xt-list flex-col">
                   <a
                     href="#product-image-overlay-1"
@@ -26,18 +25,15 @@ const html = /* HTML */ `
                     id="product-image-1"
                     title="Expand image 1"
                     data-node-variants-target
-                    data-xt-group="red"
-                  >
+                    data-xt-group="red">
                     <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                       <img
                         class="xt-media relative"
                         src="https://source.unsplash.com/164_6wVEHfI"
                         loading="eager"
-                        alt=""
-                      />
+                        alt="" />
                       <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
-                      ></div>
+                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                     </div>
                   </a>
 
@@ -47,18 +43,15 @@ const html = /* HTML */ `
                     id="product-image-2"
                     title="Expand image 2"
                     data-node-variants-target
-                    data-xt-group="red"
-                  >
+                    data-xt-group="red">
                     <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                       <img
                         class="xt-media relative"
                         src="https://source.unsplash.com/j7zu2kpTnwY"
                         loading="eager"
-                        alt=""
-                      />
+                        alt="" />
                       <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
-                      ></div>
+                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                     </div>
                   </a>
 
@@ -68,18 +61,15 @@ const html = /* HTML */ `
                     id="product-image-3"
                     title="Expand image 3"
                     data-node-variants-target
-                    data-xt-group="green"
-                  >
+                    data-xt-group="green">
                     <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                       <img
                         class="xt-media relative"
                         src="https://source.unsplash.com/kP6knT7tjn4"
                         loading="eager"
-                        alt=""
-                      />
+                        alt="" />
                       <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
-                      ></div>
+                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                     </div>
                   </a>
 
@@ -89,18 +79,15 @@ const html = /* HTML */ `
                     id="product-image-4"
                     title="Expand image 4"
                     data-node-variants-target
-                    data-xt-group="blue"
-                  >
+                    data-xt-group="blue">
                     <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                       <img
                         class="xt-media relative"
                         src="https://source.unsplash.com/l8p1aWZqHvE"
                         loading="eager"
-                        alt=""
-                      />
+                        alt="" />
                       <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
-                      ></div>
+                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                     </div>
                   </a>
 
@@ -110,18 +97,15 @@ const html = /* HTML */ `
                     id="product-image-5"
                     title="Expand image 5"
                     data-node-variants-target
-                    data-xt-group="blue"
-                  >
+                    data-xt-group="blue">
                     <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                       <img
                         class="xt-media relative"
                         src="https://source.unsplash.com/gn07k9Kmx9c"
                         loading="eager"
-                        alt=""
-                      />
+                        alt="" />
                       <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
-                      ></div>
+                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                     </div>
                   </a>
 
@@ -131,18 +115,15 @@ const html = /* HTML */ `
                     id="product-image-6"
                     title="Expand image 6"
                     data-node-variants-target
-                    data-xt-group="red,green"
-                  >
+                    data-xt-group="red,green">
                     <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                       <img
                         class="xt-media relative"
                         src="https://source.unsplash.com/gpii_myxZG0"
                         loading="eager"
-                        alt=""
-                      />
+                        alt="" />
                       <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
-                      ></div>
+                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                     </div>
                   </a>
 
@@ -152,18 +133,15 @@ const html = /* HTML */ `
                     id="product-image-7"
                     title="Expand image 7"
                     data-node-variants-target
-                    data-xt-group="red,green"
-                  >
+                    data-xt-group="red,green">
                     <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                       <img
                         class="xt-media relative"
                         src="https://source.unsplash.com/DzoOduUanpQ"
                         loading="eager"
-                        alt=""
-                      />
+                        alt="" />
                       <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"
-                      ></div>
+                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                     </div>
                   </a>
                 </div>
@@ -175,11 +153,9 @@ const html = /* HTML */ `
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
                       title="Go to image 1"
                       data-node-variants-target
-                      data-xt-group="red"
-                    >
+                      data-xt-group="red">
                       <div
-                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
-                      ></div>
+                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"></div>
                     </a>
 
                     <a
@@ -187,11 +163,9 @@ const html = /* HTML */ `
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
                       title="Go to image 2"
                       data-node-variants-target
-                      data-xt-group="red"
-                    >
+                      data-xt-group="red">
                       <div
-                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
-                      ></div>
+                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"></div>
                     </a>
 
                     <a
@@ -199,11 +173,9 @@ const html = /* HTML */ `
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
                       title="Go to image 3"
                       data-node-variants-target
-                      data-xt-group="green"
-                    >
+                      data-xt-group="green">
                       <div
-                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
-                      ></div>
+                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"></div>
                     </a>
 
                     <a
@@ -211,11 +183,9 @@ const html = /* HTML */ `
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
                       title="Go to image 4"
                       data-node-variants-target
-                      data-xt-group="blue"
-                    >
+                      data-xt-group="blue">
                       <div
-                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
-                      ></div>
+                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"></div>
                     </a>
 
                     <a
@@ -223,11 +193,9 @@ const html = /* HTML */ `
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
                       title="Go to image 5"
                       data-node-variants-target
-                      data-xt-group="blue"
-                    >
+                      data-xt-group="blue">
                       <div
-                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
-                      ></div>
+                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"></div>
                     </a>
 
                     <a
@@ -235,11 +203,9 @@ const html = /* HTML */ `
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
                       title="Go to image 6"
                       data-node-variants-target
-                      data-xt-group="red,green"
-                    >
+                      data-xt-group="red,green">
                       <div
-                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
-                      ></div>
+                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"></div>
                     </a>
 
                     <a
@@ -247,11 +213,9 @@ const html = /* HTML */ `
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
                       title="Go to image 7"
                       data-node-variants-target
-                      data-xt-group="red,green"
-                    >
+                      data-xt-group="red,green">
                       <div
-                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"
-                      ></div>
+                        class="bg-black rounded-full border-2 border-transparent group-on:bg-transparent group-on:border-black w-[7px] h-[7px] group-on:w-[9px] group-on:h-[9px] transition-all"></div>
                     </a>
                   </div>
                 </div>
@@ -262,111 +226,95 @@ const html = /* HTML */ `
                     <button
                       type="button"
                       class="xt-button xt-dismiss fixed z-above top-0 right-0 p-3 text-2xl ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} *** ${itemAnimOpacity()} group-in:opacity-100 ***"
-                      aria-label="Close"
-                    >
+                      aria-label="Close">
                       ${classes.iconX()}
                     </button>
                     <div class="xt-overlay-inner">
                       <div
-                        class="xt-card *** min-h-screen items-center justify-center *** ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
-                      >
+                        class="xt-card *** min-h-screen items-center justify-center *** ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***">
                         <div class="w-full *** ${itemAnim()} ***">
                           <div
                             class="xt-media-container bg-gray-200 overflow-hidden *** off:hidden out:pointer-events-none ***"
                             data-node-variants-target
-                            data-xt-group="red"
-                          >
+                            data-xt-group="red">
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-1"
                               src="https://source.unsplash.com/164_6wVEHfI"
                               loading="lazy"
-                              alt=""
-                            />
+                              alt="" />
                           </div>
 
                           <div
                             class="xt-media-container bg-gray-200 overflow-hidden *** off:hidden out:pointer-events-none ***"
                             data-node-variants-target
-                            data-xt-group="red"
-                          >
+                            data-xt-group="red">
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-2"
                               src="https://source.unsplash.com/j7zu2kpTnwY"
                               loading="lazy"
-                              alt=""
-                            />
+                              alt="" />
                           </div>
 
                           <div
                             class="xt-media-container bg-gray-200 overflow-hidden *** off:hidden out:pointer-events-none ***"
                             data-node-variants-target
-                            data-xt-group="green"
-                          >
+                            data-xt-group="green">
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-3"
                               src="https://source.unsplash.com/kP6knT7tjn4"
                               loading="lazy"
-                              alt=""
-                            />
+                              alt="" />
                           </div>
 
                           <div
                             class="xt-media-container bg-gray-200 overflow-hidden *** off:hidden out:pointer-events-none ***"
                             data-node-variants-target
-                            data-xt-group="blue"
-                          >
+                            data-xt-group="blue">
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-4"
                               src="https://source.unsplash.com/l8p1aWZqHvE"
                               loading="eagelazyr"
-                              alt=""
-                            />
+                              alt="" />
                           </div>
 
                           <div
                             class="xt-media-container bg-gray-200 overflow-hidden *** off:hidden out:pointer-events-none ***"
                             data-node-variants-target
-                            data-xt-group="blue"
-                          >
+                            data-xt-group="blue">
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-5"
                               src="https://source.unsplash.com/gn07k9Kmx9c"
                               loading="lazy"
-                              alt=""
-                            />
+                              alt="" />
                           </div>
 
                           <div
                             class="xt-media-container bg-gray-200 overflow-hidden *** off:hidden out:pointer-events-none ***"
                             data-node-variants-target
-                            data-xt-group="red,green"
-                          >
+                            data-xt-group="red,green">
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-6"
                               src="https://source.unsplash.com/gpii_myxZG0"
                               loading="lazy"
-                              alt=""
-                            />
+                              alt="" />
                           </div>
 
                           <div
                             class="xt-media-container bg-gray-200 overflow-hidden *** off:hidden out:pointer-events-none ***"
                             data-node-variants-target
-                            data-xt-group="red,green"
-                          >
+                            data-xt-group="red,green">
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-7"
                               src="https://source.unsplash.com/DzoOduUanpQ"
                               loading="lazy"
-                              alt=""
-                            />
+                              alt="" />
                           </div>
                         </div>
                       </div>
@@ -380,8 +328,7 @@ const html = /* HTML */ `
           <div
             class="w-full md:w-7/12 lg:w-6/12 xl:w-5/12"
             id="product-arrow-target"
-            data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }"
-          >
+            data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }">
             <div class="*** pointer-events-none absolute md:relative ***" data-xt-stickyflow-filler></div>
             <div class="py-12 *** md:sticky ***" data-xt-stickyflow-el>
               <h1 class="xt-h2">Product Title</h1>
@@ -392,22 +339,19 @@ const html = /* HTML */ `
                   <span
                     class="*** off:hidden out:pointer-events-none ***"
                     data-node-variants-target
-                    data-xt-group="red"
-                  >
+                    data-xt-group="red">
                     Red
                   </span>
                   <span
                     class="*** off:hidden out:pointer-events-none ***"
                     data-node-variants-target
-                    data-xt-group="green"
-                  >
+                    data-xt-group="green">
                     Green
                   </span>
                   <span
                     class="*** off:hidden out:pointer-events-none ***"
                     data-node-variants-target
-                    data-xt-group="blue"
-                  >
+                    data-xt-group="blue">
                     Blue
                   </span>
                 </div>
@@ -415,8 +359,7 @@ const html = /* HTML */ `
 
               <div class="mb-4 xt-list xt-list-2">
                 <label
-                  class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonBorderGray()} ${classes.buttonTextAnim()}"
-                >
+                  class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonBorderGray()} ${classes.buttonTextAnim()}">
                   Red
                   <input
                     type="radio"
@@ -424,13 +367,11 @@ const html = /* HTML */ `
                     name="radio-button"
                     data-node-variants-element
                     data-xt-group="red"
-                    data-xt-hash="red"
-                  />
+                    data-xt-hash="red" />
                 </label>
 
                 <label
-                  class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonBorderGray()} ${classes.buttonTextAnim()}"
-                >
+                  class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonBorderGray()} ${classes.buttonTextAnim()}">
                   Green
                   <input
                     type="radio"
@@ -438,13 +379,11 @@ const html = /* HTML */ `
                     name="radio-button"
                     data-node-variants-element
                     data-xt-group="green"
-                    data-xt-hash="green"
-                  />
+                    data-xt-hash="green" />
                 </label>
 
                 <label
-                  class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonBorderGray()} ${classes.buttonTextAnim()}"
-                >
+                  class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonBorderGray()} ${classes.buttonTextAnim()}">
                   Blue
                   <input
                     type="radio"
@@ -452,8 +391,7 @@ const html = /* HTML */ `
                     name="radio-button"
                     data-node-variants-element
                     data-xt-group="blue"
-                    data-xt-hash="blue"
-                  />
+                    data-xt-hash="blue" />
                 </label>
               </div>
 
@@ -462,16 +400,14 @@ const html = /* HTML */ `
                   <div
                     class="*** off:hidden out:pointer-events-none *** font-bold text-2xl leading-none mb-6"
                     data-node-variants-target
-                    data-xt-group="red"
-                  >
+                    data-xt-group="red">
                     229,00&nbsp;€
                   </div>
 
                   <div
                     class="*** off:hidden out:pointer-events-none *** font-bold text-2xl leading-none mb-6"
                     data-node-variants-target
-                    data-xt-group="green"
-                  >
+                    data-xt-group="green">
                     <span class="mr-1 text-red-500"> 229,15&nbsp;€ </span>
                     <strike class="text-base"> 180,00&nbsp;€ </strike>
                   </div>
@@ -479,15 +415,13 @@ const html = /* HTML */ `
                   <div
                     class="*** off:hidden out:pointer-events-none *** font-bold text-2xl leading-none mb-6"
                     data-node-variants-target
-                    data-xt-group="blue"
-                  >
+                    data-xt-group="blue">
                     215,00&nbsp;€
                   </div>
 
                   <button
                     type="submit"
-                    class="xt-button w-full ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-                  >
+                    class="xt-button w-full ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
                     Add to cart
                   </button>
                 </div>

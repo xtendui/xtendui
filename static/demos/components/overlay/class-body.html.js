@@ -7,8 +7,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           class body
         </button>
 
@@ -17,13 +16,11 @@ const html = /* HTML */ `
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
                   ${classes.iconX()}
                 </button>
                 <div class="${classes.cardMd()}">
@@ -47,13 +44,11 @@ const html = /* HTML */ `
                   </p>
 
                   <div
-                    data-xt-overlay="{ elements: '[data-xt-overlay-element-nested]', targets: '[data-xt-overlay-target-nested]' }"
-                  >
+                    data-xt-overlay="{ elements: '[data-xt-overlay-element-nested]', targets: '[data-xt-overlay-target-nested]' }">
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-                      data-xt-overlay-element-nested
-                    >
+                      data-xt-overlay-element-nested>
                       Overlay
                     </button>
 
@@ -62,13 +57,11 @@ const html = /* HTML */ `
                       <div class="xt-overlay-container max-w-3xl">
                         <div class="xt-overlay-inner">
                           <div
-                            class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-                          >
+                            class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                             <button
                               type="button"
                               class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                              aria-label="Close"
-                            >
+                              aria-label="Close">
                               ${classes.iconX()}
                             </button>
                             <div class="${classes.cardMd()}">

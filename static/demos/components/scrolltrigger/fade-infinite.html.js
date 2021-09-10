@@ -5,8 +5,7 @@ const html = /* HTML */ `
     <div class="xt-row xt-row-6">
       <div class="w-full">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -18,8 +17,7 @@ const html = /* HTML */ `
 
       <div class="w-full">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -31,8 +29,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -44,8 +41,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -57,8 +53,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -70,8 +65,7 @@ const html = /* HTML */ `
 
       <div class="w-full md:w-6/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -83,8 +77,7 @@ const html = /* HTML */ `
 
       <div class="w-6/12 sm:w-4/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -96,8 +89,7 @@ const html = /* HTML */ `
 
       <div class="w-6/12 sm:w-4/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -109,8 +101,7 @@ const html = /* HTML */ `
 
       <div class="w-6/12 sm:w-4/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -122,8 +113,7 @@ const html = /* HTML */ `
 
       <div class="w-6/12 sm:w-4/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -135,8 +125,7 @@ const html = /* HTML */ `
 
       <div class="w-6/12 sm:w-4/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
@@ -148,8 +137,7 @@ const html = /* HTML */ `
 
       <div class="w-6/12 sm:w-4/12">
         <div
-          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-        >
+          class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
           <div class="xt-h5">Lorem ipsum</div>
           <p>
             <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,

@@ -8,32 +8,28 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 0
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 1
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 2
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 3
       </button>
 
@@ -55,31 +51,27 @@ const html = /* HTML */ `
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
           aria-label="Toggle 0"
           placeholder="Toggle 0"
-          data-xt-toggle-element
-        />
+          data-xt-toggle-element />
 
         <input
           type="text"
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
           aria-label="Toggle 1"
           placeholder="Toggle 1"
-          data-xt-toggle-element
-        />
+          data-xt-toggle-element />
 
         <input
           type="text"
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
           aria-label="Toggle 2"
-          placeholder="Toggle 2"
-        />
+          placeholder="Toggle 2" />
 
         <input
           type="text"
           class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
           aria-label="Toggle 3"
           placeholder="Toggle 3"
-          data-xt-toggle-element
-        />
+          data-xt-toggle-element />
 
         <div class="off:hidden out:pointer-events-none ${classes.cardToggle()}" data-xt-toggle-target>Target 0</div>
 

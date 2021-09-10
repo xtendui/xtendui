@@ -7,8 +7,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           screen
         </button>
 
@@ -21,8 +20,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
-                    aria-label="Close"
-                  >
+                    aria-label="Close">
                     ${classes.iconX()}
                   </button>
                   <div class="max-w-3xl">
@@ -58,8 +56,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Screen full
         </button>
 
@@ -72,8 +69,7 @@ const html = /* HTML */ `
                   <button
                     type="button"
                     class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
-                    aria-label="Close"
-                  >
+                    aria-label="Close">
                     ${classes.iconX()}
                   </button>
                   <div class="xt-media-container bg-gray-200 pb-[100%]">

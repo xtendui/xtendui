@@ -4,14 +4,12 @@ const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div
-        class="inline-block align-middle ${classes.badgeMd()} rounded${classes.badgeRadius()} *** ${classes.badgeGray()} ***"
-      >
+        class="inline-block align-middle ${classes.badgeMd()} rounded${classes.badgeRadius()} *** ${classes.badgeGray()} ***">
         Gray
       </div>
 
       <div
-        class="inline-block align-middle ${classes.badgeMd()} rounded${classes.badgeRadius()} *** ${classes.badgePrimary()} ***"
-      >
+        class="inline-block align-middle ${classes.badgeMd()} rounded${classes.badgeRadius()} *** ${classes.badgePrimary()} ***">
         Primary
       </div>
     </div>

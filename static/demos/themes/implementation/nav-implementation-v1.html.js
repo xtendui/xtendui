@@ -11,16 +11,14 @@ const html = /* HTML */ `
         <div class="xt-row xt-row-4 md:xt-row-8">
           <div class="w-full md:w-4/12">
             <div
-              class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
-            >
+              class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
               <nav class="*** xt-list xt-list-1 flex-col ***">
                 <a
                   href="#"
                   type="button"
                   class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   data-xt-toggle-element
-                  data-xt-hash="description"
-                >
+                  data-xt-hash="description">
                   ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                 </a>
                 <a
@@ -28,8 +26,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   data-xt-toggle-element
-                  data-xt-hash="features"
-                >
+                  data-xt-hash="features">
                   ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
                 </a>
                 <a
@@ -55,11 +52,9 @@ const html = /* HTML */ `
           <div class="w-full md:w-8/12">
             <div
               class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-              data-xt-toggle-target
-            >
+              data-xt-toggle-target>
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Description</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -81,11 +76,9 @@ const html = /* HTML */ `
 
             <div
               class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-              data-xt-toggle-target
-            >
+              data-xt-toggle-target>
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Features</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -97,11 +90,9 @@ const html = /* HTML */ `
 
             <div
               class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-              data-xt-toggle-target
-            >
+              data-xt-toggle-target>
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Accessories</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -133,11 +124,9 @@ const html = /* HTML */ `
 
             <div
               class="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-              data-xt-toggle-target
-            >
+              data-xt-toggle-target>
               <div
-                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Manuals</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

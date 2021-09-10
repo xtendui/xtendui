@@ -22,8 +22,7 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-      >
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
         Lorem ipsum
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-primary-500 *** h-1 top-auto ***">

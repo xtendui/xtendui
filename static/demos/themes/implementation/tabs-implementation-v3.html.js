@@ -9,19 +9,16 @@ const html = /* HTML */ `
     <div class="max-w-xl mx-auto">
       <div class="*** xt-sticky ***" data-node-sticky>
         <div
-          class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
-        >
+          class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
           <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
             <a
               href="#description"
-              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
-            >
+              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}">
               ${classes.iconFile({ classes: 'xt-icon text-base opacity-50 mr-2' })} Description
             </a>
             <a
               href="#features"
-              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
-            >
+              class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}">
               ${classes.iconFiletext({ classes: 'xt-icon text-base opacity-50 mr-2' })} Features
             </a>
             <a

@@ -6,32 +6,28 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 0
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 1
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 2
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 3
       </button>
 

@@ -6,15 +6,13 @@ const html = /* HTML */ `
       <a
         href="#"
         type="button"
-        class="xt-button flex-auto ${classes.buttonMd()} rounded-t${classes.buttonRadius()} md:rounded-tr-none md:rounded-l${classes.buttonRadius()} *** border md:border-b border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-      >
+        class="xt-button flex-auto ${classes.buttonMd()} rounded-t${classes.buttonRadius()} md:rounded-tr-none md:rounded-l${classes.buttonRadius()} *** border md:border-b border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
         Lorem ipsum
       </a>
       <a
         href="#"
         type="button"
-        class="xt-button flex-auto ${classes.buttonMd()} *** border border-t-0 md:border-t md:border-l-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-      >
+        class="xt-button flex-auto ${classes.buttonMd()} *** border border-t-0 md:border-t md:border-l-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
         dolor sit amet
       </a>
       <a

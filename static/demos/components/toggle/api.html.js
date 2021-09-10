@@ -6,57 +6,49 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-first-element"
-      >
+        id="button--toggle-api-first-element">
         1st element
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-first-target"
-      >
+        id="button--toggle-api-first-target">
         1st target
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-add"
-      >
+        id="button--toggle-api-add">
         Add
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-remove"
-      >
+        id="button--toggle-api-remove">
         Remove
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-reinit"
-      >
+        id="button--toggle-api-reinit">
         Reinit
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-restart"
-      >
+        id="button--toggle-api-restart">
         Restart
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-destroy"
-      >
+        id="button--toggle-api-destroy">
         Destroy
       </button>
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        id="button--toggle-api-unmount"
-      >
+        id="button--toggle-api-unmount">
         Unmount
       </button>
     </div>
@@ -67,30 +59,26 @@ const html = /* HTML */ `
           type="button"
           class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           data-xt-toggle-element
-          data-xt-group="0"
-        >
+          data-xt-group="0">
           Toggle Group 0
         </button>
         <button
           type="button"
           class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           data-xt-toggle-element
-          data-xt-group="0"
-        >
+          data-xt-group="0">
           Toggle Group 0
         </button>
         <button
           type="button"
           class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-          data-xt-toggle-element
-        >
+          data-xt-toggle-element>
           Toggle 1
         </button>
         <button
           type="button"
           class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-          data-xt-toggle-element
-        >
+          data-xt-toggle-element>
           Toggle 2
         </button>
       </div>
@@ -112,8 +100,7 @@ const html = /* HTML */ `
     <div class="${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} mt-6">
       <div
         class="${classes.cardSm()} overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
-        id="card--toggle-api-log"
-      ></div>
+        id="card--toggle-api-log"></div>
     </div>
   </div>
 `

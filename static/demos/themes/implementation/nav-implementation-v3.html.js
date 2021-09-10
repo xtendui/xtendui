@@ -11,21 +11,18 @@ const html = /* HTML */ `
         <div class="w-full md:w-4/12">
           <div class="*** xt-sticky md:py-4 ***" data-node-sticky>
             <div
-              class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}"
-            >
+              class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
               <nav class="*** xt-list xt-list-1 flex-col ***">
                 <a
                   href="#description"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
-                >
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}">
                   ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                 </a>
                 <a
                   href="#features"
                   type="button"
-                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
-                >
+                  class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}">
                   ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
                 </a>
                 <a

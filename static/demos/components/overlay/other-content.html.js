@@ -6,8 +6,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        data-xt-overlay-element
-      >
+        data-xt-overlay-element>
         Group
       </button>
 
@@ -17,8 +16,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
-            aria-label="Close"
-          >
+            aria-label="Close">
             ${classes.iconX()}
           </button>
           <div class="xt-overlay-inner">
@@ -27,22 +25,19 @@ const html = /* HTML */ `
                 <div class="inline-flex flex-auto">
                   <button
                     type="submit"
-                    class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                  >
+                    class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
                     ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                   </button>
                   <input
                     type="text"
                     class="${classes.input()} ${classes.inputGray()}"
                     aria-label="Search"
-                    placeholder="Seach Catalog"
-                  />
+                    placeholder="Seach Catalog" />
                 </div>
 
                 <button
                   type="submit"
-                  class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-                >
+                  class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
                   Search
                 </button>
               </div>

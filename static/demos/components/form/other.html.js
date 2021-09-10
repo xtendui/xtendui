@@ -14,8 +14,7 @@ const html = /* HTML */ `
             <input
               type="text"
               class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-              aria-label="Lorem ipsum"
-            />
+              aria-label="Lorem ipsum" />
             <div class="*** mt-3 ${classes.note()} ***">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
@@ -28,8 +27,7 @@ const html = /* HTML */ `
             <input
               type="text"
               class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-              aria-label="Dolor sit amet"
-            />
+              aria-label="Dolor sit amet" />
           </div>
 
           <div class="w-full">
@@ -39,8 +37,7 @@ const html = /* HTML */ `
                 <input
                   type="text"
                   class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-                  aria-label="Lorem ipsum"
-                />
+                  aria-label="Lorem ipsum" />
               </div>
 
               <div class="w-full md:w-auto">
@@ -48,8 +45,7 @@ const html = /* HTML */ `
                 <input
                   type="text"
                   class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-                  aria-label="Dolor sit amet"
-                />
+                  aria-label="Dolor sit amet" />
               </div>
             </div>
 
@@ -77,8 +73,7 @@ const html = /* HTML */ `
                   <input
                     type="checkbox"
                     class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-                    checked
-                  />
+                    checked />
                   <span class="${classes.checkContent()}"
                     ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -118,8 +113,7 @@ const html = /* HTML */ `
                       <input
                         type="checkbox"
                         class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-                        checked
-                      />
+                        checked />
                       <span class="${classes.checkContent()}"
                         ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
                         Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam.
@@ -133,8 +127,7 @@ const html = /* HTML */ `
                       <input
                         type="checkbox"
                         class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-                        checked
-                      />
+                        checked />
                       <span class="${classes.checkContent()}"
                         ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
                         Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam.
@@ -165,8 +158,7 @@ const html = /* HTML */ `
                   <input
                     type="checkbox"
                     class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-                    checked
-                  />
+                    checked />
                   <span class="${classes.checkContent()}">Lorem ipsum</span>
                 </label>
               </div>
@@ -189,8 +181,7 @@ const html = /* HTML */ `
           <div class="w-full">
             <button
               type="submit"
-              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
               submit
             </button>
           </div>

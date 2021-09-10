@@ -6,31 +6,27 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} *** xt-disabled ***"
-        aria-disabled="true"
-      >
+        aria-disabled="true">
         Gray
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} *** xt-disabled ***"
-        aria-disabled="true"
-      >
+        aria-disabled="true">
         Primary
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}  *** xt-disabled ***"
-      >
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonTextAnim()}  *** xt-disabled ***">
         Text
       </button>
 
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link *** xt-disabled ***"
-        aria-disabled="true"
-      >
+        aria-disabled="true">
         link
       </button>
     </div>

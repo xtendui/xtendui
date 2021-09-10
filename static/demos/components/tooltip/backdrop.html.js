@@ -7,16 +7,14 @@ const html = /* HTML */ `
         <div data-xt-tooltip-element>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-tooltip"
-          >
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-tooltip">
             backdrop
           </button>
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
             <div
-              class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-            >
+              class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
               <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
             <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
@@ -28,16 +26,14 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-tooltip"
-          data-xt-tooltip-element
-        >
+          data-xt-tooltip-element>
           backdrop click
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
           <div
-            class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-          >
+            class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
           </div>
           <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>

@@ -6,16 +6,14 @@ const html = /* HTML */ `
       <a
         href="/"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 0
       </a>
 
       <a
         href="/"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 1
       </a>
 
