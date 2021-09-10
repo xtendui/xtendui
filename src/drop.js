@@ -98,16 +98,16 @@ class Drop extends Xt.Toggle {
                 padding: options.spaceFlip,
               },
             },
-            arrow
-              ? {
-                  name: 'arrow',
-                  options: {
-                    element: arrow,
-                    padding: options.spaceArrow === false ? arrow.offsetHeight / 2 : options.spaceArrow,
-                  },
-                }
-              : {},
           ],
+        }
+        if (arrow) {
+          popperOptionsDefault.modifiers.push({
+            name: 'arrow',
+            options: {
+              element: arrow,
+              padding: options.spaceArrow === false ? arrow.offsetHeight / 2 : options.spaceArrow,
+            },
+          })
         }
         // inset
         if (options.inset) {
