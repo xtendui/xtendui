@@ -5,12 +5,14 @@ Xt.mount({
   matches: '.demo--form-validation',
   mount: ({ ref }) => {
     const unmountScrollToError = mountScrollToError({ ref })
+    const unmountValidationRequiredOne = mountValidationRequiredOne({ ref })
     const unmountValidationCustom = mountValidationCustom({ ref })
 
     // unmount
 
     return () => {
       unmountScrollToError()
+      unmountValidationRequiredOne()
       unmountValidationCustom()
     }
   },
@@ -29,6 +31,49 @@ const mountScrollToError = ({ ref }) => {
     el = el.parentNode
     const rect = el.getBoundingClientRect()
     window.scrollTo(window.scrollX, rect.top - Xt.innerHeight * Xt.formScrollWindowFactor)
+  }
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountValidationRequiredOne */
+
+const mountValidationRequiredOne = ({ ref }) => {
+  // vars
+
+  const container = ref.querySelector('[data-node-required-one]')
+  const inputs = container.querySelectorAll('input')
+
+  // validate
+
+  const validate = e => {
+    // skip revalidate
+    if (!e?.detail?.skip) {
+      let passed = false
+      for (const input of inputs) {
+        if (input.value && input.value !== '') {
+          passed = true
+          break
+        }
+      }
+      for (const input of inputs) {
+        if (passed) {
+          input.setCustomValidity('')
+        } else {
+          input.setCustomValidity(container.getAttribute('data-node-required-one'))
+        }
+        // revalidate
+        input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
+      }
+    }
+  }
+
+  for (const input of inputs) {
+    input.addEventListener('input', validate)
+    input.addEventListener('change', validate)
+    validate()
   }
 
   // unmount
