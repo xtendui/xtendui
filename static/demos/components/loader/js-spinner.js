@@ -4,64 +4,72 @@ import gsap from 'gsap'
 Xt.mount({
   matches: '.demo--loader-js-spinner',
   mount: ({ ref }) => {
-    const unmountLoader = mountLoader({ ref })
+    const unmountLoaders = mountLoaders({ ref })
 
     // unmount
 
     return () => {
-      unmountLoader()
+      unmountLoaders()
     }
   },
 })
+
+/* mountLoaders */
+
+const mountLoaders = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    raf: false,
+    matches: '.xt-loader',
+    mount: ({ ref }) => {
+      return mountLoader({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountLoader */
 
 const mountLoader = ({ ref }) => {
   // vars
 
-  const loaders = ref.querySelectorAll('.xt-loader')
-  const unmounts = []
+  const loader = ref
 
-  for (const loader of loaders) {
-    // init
+  // init
 
-    const loaderTimeout = () => {
-      const spinner = loader.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
-      if (loader.dataset.loaderTimeout) {
-        clearTimeout(loader.dataset.loaderTimeout)
-        delete loader.dataset.loaderTimeout
-        Xt.on({ el: loader })
-        gsap.set(spinner, {
-          strokeDashoffset: 628,
-        })
-        gsap
-          .to(spinner, {
-            strokeDashoffset: 0,
-            duration: 1,
-            ease: 'linear',
-            autoRound: false,
-          })
-          .eventCallback('onComplete', loaderTimeout)
-      } else {
-        Xt.off({ el: loader })
-        loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
-      }
-    }
-
-    loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
-
-    // unmount
-
-    unmounts.push(() => {
+  const loaderTimeout = () => {
+    const spinner = loader.querySelectorAll('.xt-spinner svg:nth-child(2) circle')
+    if (loader.dataset.loaderTimeout) {
       clearTimeout(loader.dataset.loaderTimeout)
-    })
+      delete loader.dataset.loaderTimeout
+      Xt.on({ el: loader })
+      gsap.set(spinner, {
+        strokeDashoffset: 628,
+      })
+      gsap
+        .to(spinner, {
+          strokeDashoffset: 0,
+          duration: 1,
+          ease: 'linear',
+          autoRound: false,
+        })
+        .eventCallback('onComplete', loaderTimeout)
+    } else {
+      Xt.off({ el: loader })
+      loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
+    }
   }
+
+  loader.dataset.loaderTimeout = setTimeout(loaderTimeout, 2000)
 
   // unmount
 
   return () => {
-    for (const unmount of unmounts) {
-      unmount()
-    }
+    clearTimeout(loader.dataset.loaderTimeout)
   }
 }

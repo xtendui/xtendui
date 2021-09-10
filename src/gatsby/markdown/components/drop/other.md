@@ -70,6 +70,15 @@ It's better to keep the start value like [the css one](https://github.com/xtendu
 
 </div>
 
+## Reset to Current
+
+**Resets to current** automatically on deactivation.
+
+<demo>
+  <demoinline src="demos/components/drop/reset-to-current">
+  </demoinline>
+</demo>
+
 ## Other
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

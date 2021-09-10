@@ -4,19 +4,19 @@ import 'xtendui/src/groupnumber'
 Xt.mount({
   matches: '.demo--groupnumber',
   mount: ({ ref }) => {
-    const unmountGroupnumber = mountGroupnumber({ ref })
+    const unmountGroupnumberCustom = mountGroupnumberCustom({ ref })
 
     // unmount
 
     return () => {
-      unmountGroupnumber()
+      unmountGroupnumberCustom()
     }
   },
 })
 
-/* mountGroupnumber */
+/* mountGroupnumberCustom */
 
-const mountGroupnumber = ({ ref }) => {
+const mountGroupnumberCustom = ({ ref }) => {
   // vars
 
   const groupnumber = ref.querySelector('[data-node-groupnumber-custom]')

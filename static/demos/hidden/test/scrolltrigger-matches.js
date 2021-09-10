@@ -24,6 +24,7 @@ const mountTest = ({ ref }) => {
 
   Xt.mount({
     root: ref,
+    raf: false,
     matches: '.xt-sticky',
     mount: ({ ref }) => {
       return mountSticky({ ref })

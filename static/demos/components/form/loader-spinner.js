@@ -24,6 +24,7 @@ const mountFormLoaders = ({ ref }) => {
 
   Xt.mount({
     root: ref,
+    raf: false,
     matches: 'button[type="submit"], .xt-loadable',
     mount: ({ ref }) => {
       return mountFormLoader({ ref, loaderTemplate })

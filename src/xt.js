@@ -128,6 +128,7 @@ if (typeof window !== 'undefined') {
   Xt.mount = obj => {
     Xt.mountArr.push(obj)
     Xt.ready({
+      raf: obj.raf,
       func: () => {
         Xt.mountCheck({ obj })
       },

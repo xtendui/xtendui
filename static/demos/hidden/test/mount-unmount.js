@@ -27,6 +27,7 @@ const mountTest = ({ ref }) => {
 
   Xt.mount({
     root: ref,
+    raf: false,
     matches: '.xt-overlay',
     mount: () => {
       // eslint-disable-next-line no-console

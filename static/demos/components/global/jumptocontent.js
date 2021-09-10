@@ -16,37 +16,45 @@ Xt.mount({
 /* mountJumptocontents */
 
 const mountJumptocontents = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    raf: false,
+    matches: '.jumptocontent',
+    mount: ({ ref }) => {
+      return mountJumptocontent({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountJumptocontent */
+
+const mountJumptocontent = ({ ref }) => {
   // vars
 
-  const jumptocontents = ref.querySelectorAll('.jumptocontent')
-  const unmounts = []
+  const jumptocontent = ref
 
-  for (const jumptocontent of jumptocontents) {
-    // focusIn
+  // focusIn
 
-    const focusIn = e => {
-      const active = jumptocontent.contains(e.target)
-      if (active) {
-        Xt.on({ el: jumptocontent })
-      } else {
-        Xt.off({ el: jumptocontent })
-      }
+  const focusIn = e => {
+    const active = jumptocontent.contains(e.target)
+    if (active) {
+      Xt.on({ el: jumptocontent })
+    } else {
+      Xt.off({ el: jumptocontent })
     }
-
-    document.addEventListener('focusin', focusIn)
-
-    // unmount
-
-    unmounts.push(() => {
-      document.removeEventListener('focusin', focusIn)
-    })
   }
+
+  document.addEventListener('focusin', focusIn)
 
   // unmount
 
   return () => {
-    for (const unmount of unmounts) {
-      unmount()
-    }
+    document.removeEventListener('focusin', focusIn)
   }
 }

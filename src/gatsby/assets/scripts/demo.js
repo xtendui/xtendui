@@ -372,7 +372,7 @@ export const populateDemo = container => {
     duration: 300,
   })
   swapToggle({
-    buttonSwap: btnCode,
+    ref: btnCode,
   })
   // only one time
   container.dataset.gatsbyDemoBuilt = 'true'
@@ -443,7 +443,7 @@ export const populateItem = item => {
     position: 'bottom-end',
     duration: 300,
   })
-  swapClick({ buttonSwap: btnClipboard })
+  swapClick({ ref: btnClipboard })
   // inject
   if (!item.getAttribute('data-iframe-fullscreen')) {
     if (!item.getAttribute('data-iframe')) {
@@ -478,11 +478,20 @@ export const populateItem = item => {
  * swapClick
  */
 
-const swapClick = ({ buttonSwap }) => {
+const swapClick = ({ ref }) => {
   // vars
 
-  const self = Xt.get({ name: 'xt-tooltip', el: buttonSwap })
-  const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
+  const tooltip = ref
+  let self
+  const target = tooltip.parentNode.querySelector('.xt-tooltip')
+
+  // init
+
+  const init = () => {
+    self = Xt.get({ name: 'xt-tooltip', el: tooltip })
+  }
+
+  tooltip.addEventListener('init.xt.tooltip', init)
 
   // swap
 
@@ -497,42 +506,51 @@ const swapClick = ({ buttonSwap }) => {
     self.targets[0].classList.add('hidden')
     self.targets[1].classList.remove('hidden')
     // open
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    target.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     // swap back
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
+    target.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
   }
 
   // resetTooltip: fix when swapping and moving away
 
   const resetTooltip = () => {
     // trigger our swap
-    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    target.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
     // trigger tooltip deactivation
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  buttonSwap.addEventListener('mouseleave', resetTooltip)
+  tooltip.addEventListener('mouseleave', resetTooltip)
 
   // click
 
   const click = () => {
     // swap
-    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    target.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  buttonSwap.addEventListener('click', click)
+  tooltip.addEventListener('click', click)
 }
 
 /**
  * swapToggle
  */
 
-const swapToggle = ({ buttonSwap }) => {
+const swapToggle = ({ ref }) => {
   // vars
 
-  const self = Xt.get({ name: 'xt-tooltip', el: buttonSwap })
-  const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
+  const tooltip = ref
+  let self
+  const target = tooltip.parentNode.querySelector('.xt-tooltip')
+
+  // init
+
+  const init = () => {
+    self = Xt.get({ name: 'xt-tooltip', el: tooltip })
+  }
+
+  tooltip.addEventListener('init.xt.tooltip', init)
 
   // swap
 
@@ -541,7 +559,7 @@ const swapToggle = ({ buttonSwap }) => {
     self.targets[0].classList.remove('hidden')
     self.targets[1].classList.add('hidden')
     // open
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    target.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   const swap = () => {
@@ -549,42 +567,42 @@ const swapToggle = ({ buttonSwap }) => {
     self.targets[0].classList.add('hidden')
     self.targets[1].classList.remove('hidden')
     // open
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    target.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   // resetTooltip: fix when swapping and moving away
 
   const resetTooltip = () => {
     // trigger our swap
-    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    target.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
     // trigger tooltip deactivation
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     // remove our listeners
-    tooltip.removeEventListener('offdone.xt.tooltip', swap)
-    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
+    target.removeEventListener('offdone.xt.tooltip', swap)
+    target.removeEventListener('offdone.xt.tooltip', swapBack)
   }
 
-  buttonSwap.addEventListener('mouseleave', resetTooltip)
+  tooltip.addEventListener('mouseleave', resetTooltip)
 
   // on
 
   const on = () => {
     // swap
-    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    target.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  buttonSwap.addEventListener('on.xt.toggle', on)
+  tooltip.addEventListener('on.xt.toggle', on)
 
   // off
 
   const off = () => {
     // swap back
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    target.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
+    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  buttonSwap.addEventListener('off.xt.toggle', off)
+  tooltip.addEventListener('off.xt.toggle', off)
 }
 
 /**

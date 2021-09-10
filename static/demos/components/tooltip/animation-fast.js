@@ -25,7 +25,6 @@ const mountTooltip = ({ ref }) => {
     // vars
 
     const container = tooltip.closest('[data-xt-tooltip]')
-    const self = Xt.get({ name: 'xt-tooltip', el: container })
     const delayReset = 500
     const durationFast = 100
 
@@ -37,6 +36,7 @@ const mountTooltip = ({ ref }) => {
     // on
 
     const on = e => {
+      const self = Xt.get({ name: 'xt-tooltip', el: container })
       // make other tooltips fast
       const tooltipsOther = Array.from(tooltips).filter(x => x !== e.target)
       for (const tooltip of tooltipsOther) {

@@ -3,51 +3,68 @@ import { Xt } from 'xtendui'
 Xt.mount({
   matches: '.demo--group-expand',
   mount: ({ ref }) => {
-    const unmountExpand = mountExpand({ ref })
+    const unmountExpands = mountExpands({ ref })
 
     // unmount
 
     return () => {
-      unmountExpand()
+      unmountExpands()
     }
   },
 })
+
+/* mountExpands */
+
+const mountExpands = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    raf: false,
+    matches: '.xt-list',
+    mount: ({ ref }) => {
+      return mountExpand({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountExpand */
 
 const mountExpand = ({ ref }) => {
   // vars
 
-  const lists = ref.querySelectorAll('.xt-list')
+  const list = ref
 
-  for (const list of lists) {
-    // on
+  // on
 
-    list.querySelector('input').addEventListener('focus', () => {
-      list.classList.add('expand')
-      list.classList.add('expand-focus')
-    })
+  list.querySelector('input').addEventListener('focus', () => {
+    list.classList.add('expand')
+    list.classList.add('expand-focus')
+  })
 
-    list.addEventListener('mouseenter', () => {
-      list.classList.add('expand-enter')
-    })
+  list.addEventListener('mouseenter', () => {
+    list.classList.add('expand-enter')
+  })
 
-    // off
+  // off
 
-    list.querySelector('input').addEventListener('blur', () => {
-      list.classList.remove('expand-focus')
-      if (!list.classList.contains('expand-enter')) {
-        list.classList.remove('expand')
-      }
-    })
+  list.querySelector('input').addEventListener('blur', () => {
+    list.classList.remove('expand-focus')
+    if (!list.classList.contains('expand-enter')) {
+      list.classList.remove('expand')
+    }
+  })
 
-    list.addEventListener('mouseleave', () => {
-      list.classList.remove('expand-enter')
-      if (!list.classList.contains('expand-focus')) {
-        list.classList.remove('expand')
-      }
-    })
-  }
+  list.addEventListener('mouseleave', () => {
+    list.classList.remove('expand-enter')
+    if (!list.classList.contains('expand-focus')) {
+      list.classList.remove('expand')
+    }
+  })
 
   // unmount
 

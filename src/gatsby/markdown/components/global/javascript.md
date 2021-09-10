@@ -51,6 +51,7 @@ You can return a function to execute when **the Node is removed from the DOM**.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `matches:Query`                          | `null`        | Query to match for mount            |
 | Option                    | `root:Node`                          | `null`        | Only if added nodes are inside a root node            |
+| Option                    | `raf:Boolean`                          | `true`        | Use requestAnimationFrame for mount `Xt.ready`            |
 | Option                    | `mount:Function`                          | `null`        | Function to execute on mount, returned function will be executed on unmount             |
 | Option                    | `ignore:Query\|false`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
 
