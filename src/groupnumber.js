@@ -71,9 +71,18 @@ class Groupnumber {
       button.addEventListener('click', buttonHandler)
     }
     // inputs
-    for (const input of self.inputs) {
-      const inputHandler = Xt.dataStorage.put(input, `change/${self.ns}`, self.eventChange.bind(self, {}))
-      input.addEventListener('change', inputHandler)
+    const events = options.events?.input ? [...options.events.input.split(' ')] : []
+    if (events.length) {
+      for (const input of self.inputs) {
+        const inputHandler = Xt.dataStorage.put(
+          input,
+          `${options.events.on}/${self.ns}`,
+          self.eventChange.bind(self, {})
+        )
+        for (const event of events) {
+          input.addEventListener(event, inputHandler)
+        }
+      }
     }
     // initial
     self.initStart()
@@ -125,6 +134,7 @@ class Groupnumber {
    */
   eventChange({ button } = {}, e) {
     const self = this
+    const options = self.options
     // disabled
     if (self.disabled) {
       return
@@ -136,23 +146,29 @@ class Groupnumber {
         const inputStep = input.getAttribute('step')
         const buttonStep = button?.getAttribute('data-xt-step')
         const step =
-          inputStep && inputStep !== '' ? parseFloat(inputStep) * parseFloat(buttonStep) : parseFloat(buttonStep) ?? 1
+          inputStep && inputStep !== ''
+            ? parseFloat(inputStep) * Math.sign(parseFloat(buttonStep))
+            : parseFloat(buttonStep) ?? 1
         let val = parseFloat(input.value)
         val = isNaN(val) ? 0 : val
         if (step) {
           val += step
+          // remove floating point up to step
+          val = parseFloat(val.toFixed(self.countDecimals({ num: step })))
         }
         self.validate({ val, input })
       }
       // disabled
-      for (const button of self.steps) {
-        const enabled = Xt.dataStorage.get(button, `${self.ns}ButtonEnabled`)
-        if (enabled) {
-          button.removeAttribute('disabled')
-        } else {
-          button.setAttribute('disabled', 'disabled')
+      if (options.limit) {
+        for (const button of self.steps) {
+          const enabled = Xt.dataStorage.get(button, `${self.ns}ButtonEnabled`)
+          if (enabled) {
+            button.removeAttribute('disabled')
+          } else {
+            button.setAttribute('disabled', 'disabled')
+          }
+          Xt.dataStorage.remove(button, `${self.ns}ButtonEnabled`)
         }
-        Xt.dataStorage.remove(button, `${self.ns}ButtonEnabled`)
       }
     }
   }
@@ -169,27 +185,29 @@ class Groupnumber {
     // step
     const inputStep = input.getAttribute('step')
     const step = inputStep && inputStep !== '' ? parseFloat(inputStep) : null
-    if (step && val % step) {
-      val = Math.round(val / step) * step
+    if (options.validate) {
+      val = options.validate({ val, step })
     }
-    // min and max and disabled
-    const inputMin = input.getAttribute('min')
-    const inputMax = input.getAttribute('max')
-    const min = inputMin && inputMin !== '' ? parseFloat(inputMin) : options.min
-    const max = inputMax && inputMax !== '' ? parseFloat(inputMax) : options.max
-    for (const button of self.steps) {
-      const buttonStep = button.getAttribute('data-xt-step')
-      if (buttonStep < 0) {
-        if (val <= min) {
-          val = min
-        } else {
-          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
-        }
-      } else if (buttonStep > 0) {
-        if (val >= max) {
-          val = max
-        } else {
-          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
+    // limit and disabled
+    if (options.limit) {
+      const inputMin = input.getAttribute('min')
+      const inputMax = input.getAttribute('max')
+      const min = inputMin && inputMin !== '' ? parseFloat(inputMin) : options.min
+      const max = inputMax && inputMax !== '' ? parseFloat(inputMax) : options.max
+      for (const button of self.steps) {
+        const buttonStep = button.getAttribute('data-xt-step')
+        if (buttonStep < 0) {
+          if (val <= min) {
+            val = min
+          } else {
+            Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
+          }
+        } else if (buttonStep > 0) {
+          if (val >= max) {
+            val = max
+          } else {
+            Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
+          }
         }
       }
     }
@@ -240,6 +258,16 @@ class Groupnumber {
   //
 
   /**
+   * countDecimals
+   * @param {Object} params
+   * @param {Boolean} params.num
+   */
+  countDecimals({ num }) {
+    if (Math.floor(num) === num) return 0
+    return num.toString().split('.')[1].length || 0
+  }
+
+  /**
    * reinit
    */
   reinit() {
@@ -282,9 +310,16 @@ class Groupnumber {
 Groupnumber.componentName = 'xt-groupnumber'
 Groupnumber.optionsDefault = {
   debug: false,
+  // groupnumber
+  limit: true,
+  validate: false,
   // quantity
-  min: 1,
+  min: '-Infinity',
   max: 'Infinity',
+  // event
+  events: {
+    input: 'change',
+  },
   // elements
   inputs: 'input[type="number"]',
   steps: '[data-xt-step]',

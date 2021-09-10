@@ -110,8 +110,8 @@ You can specify **on** and **off** events for the interactions.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on:String\|false`                              | `'mouseenter'`                     | Event to **listen for activation**           |
-| Option                  | `off:String\|false`                             | `'mouseleave'`                       | Event to **listen for deactivation**          |
+| Option                  | `on:String\|false`                              | `'mouseenter'`                     | List of space separated events to **listen for activation**           |
+| Option                  | `off:String\|false`                             | `'mouseleave'`                       | List of space separated events to **listen for deactivation**          |
 
 </div>
 

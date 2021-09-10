@@ -134,8 +134,8 @@ You can specify **on** and **off** events for the toggle.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `on:String\|false`                          | `'click'`        | Event to **listen for activation**            |
-| Option                  | `off:String\|false`                          | `'click'`        | Event to **listen for deactivation**            |
+| Option                  | `on:String\|false`                          | `'click'`        | List of space separated events to **listen for activation**            |
+| Option                  | `off:String\|false`                          | `'click'`        | List of space separated events to **listen for deactivation**            |
 
 </div>
 

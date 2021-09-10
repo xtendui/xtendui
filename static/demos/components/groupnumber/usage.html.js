@@ -1,8 +1,8 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
-    <div class="${classes.hBlock()}">Horizontal and no min limit</div>
+  <div class="demo--groupnumber">
+    <div class="${classes.hBlock()}">Horizontal design</div>
 
     <form class="text-sm">
       <div class="*** xt-list ***" data-xt-groupnumber>
@@ -18,7 +18,6 @@ const html = /* HTML */ `
             type="number"
             class="${classes.input()} w-16 text-center *** border border-l-0 border-gray-300 *** ${classes.inputGray()}"
             aria-label="Quantity"
-            min="-Infinity"
           />
           <button
             type="button"
@@ -31,29 +30,30 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Vertical and different <code>data-xt-step</code></div>
+    <div class="${classes.hBlock()}">Vertical design, input attributes and no limit</div>
 
     <form class="text-sm">
-      <div class="*** xt-list ***" data-xt-groupnumber>
+      <div class="*** xt-list ***" data-xt-groupnumber="{ limit: false }">
         <input
           type="number"
           class="${classes.input()} w-16 text-center *** rounded-tl${classes.groupButtonRadius()} rounded-bl${classes.groupButtonRadius()} border border-r-0 border-gray-300 *** ${classes.inputGray()}"
           aria-label="Quantity"
           min="0"
-          max="45"
+          max="4"
+          step="0.5"
         />
         <div class="*** inline-flex flex-col ***">
           <button
             type="button"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-tr${classes.groupButtonRadius()} border border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-            data-xt-step="7"
+            data-xt-step="1"
           >
             +
           </button>
           <button
             type="button"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-br${classes.groupButtonRadius()} border border-t-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-            data-xt-step="-10"
+            data-xt-step="-1"
           >
             -
           </button>
@@ -61,10 +61,10 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Responsive design and multiple inputs with different attributes</div>
+    <div class="${classes.hBlock()}">Responsive design, inputs attributes and custom validation</div>
 
     <form class="text-sm mt-6">
-      <div class="*** xt-list ***" data-xt-groupnumber>
+      <div class="*** xt-list ***" data-node-groupnumber-custom>
         <div class="*** inline-flex flex-col md:flex-row ***">
           <button
             type="button"
