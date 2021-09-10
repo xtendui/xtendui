@@ -134,7 +134,6 @@ class Groupnumber {
    */
   eventChange({ button } = {}, e) {
     const self = this
-    const options = self.options
     // disabled
     if (self.disabled) {
       return
