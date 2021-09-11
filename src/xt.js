@@ -188,15 +188,16 @@ if (typeof window !== 'undefined') {
           if (call) {
             Xt.unmount({
               ref,
+              root: obj.root,
               matches: obj.matches,
               ignore: obj.ignore,
               unmount: call,
-              unmountRemove: () => {
+              unmountRemove: function () {
                 // fix multiple initialization (e.g. mount inside sticky)
                 obj.done = obj.done.filter(x => x !== ref)
                 // unmount remove
                 Xt.unmountArr = Xt.unmountArr.filter(x => {
-                  return x.ref !== ref && x.matches !== obj.matches
+                  return x !== this // this is unmount object using function
                 })
               },
             })
@@ -215,6 +216,10 @@ if (typeof window !== 'undefined') {
     for (const obj of Xt.unmountArr) {
       // check
       if (removed === obj.ref || removed.contains(obj.ref)) {
+        // root
+        if (obj.root && !obj.root.contains(obj.ref)) {
+          continue
+        }
         // ignore
         const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
         if (ignoreStr && obj.ref.closest(ignoreStr)) {

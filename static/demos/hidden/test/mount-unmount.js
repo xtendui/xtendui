@@ -131,6 +131,8 @@ const mountTest = ({ ref }) => {
   return () => {
     // eslint-disable-next-line no-console
     console.log('TEST UNMOUNT 2 this should be called on change page.')
+    // eslint-disable-next-line no-console
+    console.log('TEST UNMOUNT 3 Xt.unmountArr.length should remain the same.', Xt.unmountArr.length)
     removeEventListener('resize', resize)
     self.destroy()
     self = null
