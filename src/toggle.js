@@ -243,11 +243,8 @@ class Toggle {
         el: self.container,
         ns: `${self.ns}Init`,
         func: () => {
-          // initialized class
-          if (!options.classSkip) {
-            // fix before initScope or slider absolute has multiple active and bugs initial calculations
-            self.container.setAttribute(`data-${self.componentName}-init`, '')
-          }
+          // fix before initScope or slider absolute has multiple active and bugs initial calculations
+          self.container.setAttribute(`data-${self.componentName}-init`, '')
           // dispatch event
           self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
           // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
@@ -2518,11 +2515,8 @@ class Toggle {
                 el.classList.remove(...self.classesInitial)
               }
             }
-            // initialized class
-            if (!options.classSkip) {
-              // fix before initScope or slider absolute has multiple active and bugs initial calculations
-              self.container.setAttribute(`data-${self.componentName}-init`, '')
-            }
+            // fix before initScope or slider absolute has multiple active and bugs initial calculations
+            self.container.setAttribute(`data-${self.componentName}-init`, '')
             // dispatch event
             self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
             // debug
@@ -3218,18 +3212,12 @@ class Toggle {
     if (self.disabled) {
       // enable
       self.disabled = false
-      if (!options.classSkip) {
-        self.container.removeAttribute(`data-${self.componentName}-disabled`)
+      self.container.removeAttribute(`data-${self.componentName}-disabled`)
+      for (const el of self.elements) {
+        el.removeAttribute(`data-${self.componentName}-disabled`)
       }
-      if (options.classSkip !== true && !options.classSkip.elements) {
-        for (const el of self.elements) {
-          el.removeAttribute(`data-${self.componentName}-disabled`)
-        }
-      }
-      if (options.classSkip !== true && !options.classSkip.targets) {
-        for (const tr of self.targets) {
-          tr.removeAttribute(`data-${self.componentName}-disabled`)
-        }
+      for (const tr of self.targets) {
+        tr.removeAttribute(`data-${self.componentName}-disabled`)
       }
       // aria
       if (options.aria === true || options.aria.activation) {
@@ -3265,18 +3253,12 @@ class Toggle {
       if (!skipEvent) {
         self.disabled = true
       }
-      if (!options.classSkip) {
-        self.container.setAttribute(`data-${self.componentName}-disabled`, '')
+      self.container.setAttribute(`data-${self.componentName}-disabled`, '')
+      for (const el of self.elements) {
+        el.setAttribute(`data-${self.componentName}-disabled`, '')
       }
-      if (options.classSkip !== true && !options.classSkip.elements) {
-        for (const el of self.elements) {
-          el.setAttribute(`data-${self.componentName}-disabled`, '')
-        }
-      }
-      if (options.classSkip !== true && !options.classSkip.targets) {
-        for (const tr of self.targets) {
-          tr.setAttribute(`data-${self.componentName}-disabled`, '')
-        }
+      for (const tr of self.targets) {
+        tr.setAttribute(`data-${self.componentName}-disabled`, '')
       }
       // aria
       if (options.aria === true || options.aria.activation) {
