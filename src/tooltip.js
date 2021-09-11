@@ -73,70 +73,80 @@ class Tooltip extends Xt.Toggle {
         })
         // popperjs
         const element = self.getElements({ el })[0]
-        const arrow = el.querySelector(':scope > .xt-arrow')
         const popperEl = options.positionInner ? element.querySelector(options.positionInner) ?? element : element
-        const popperOptionsDefault = {
-          placement: el.getAttribute('data-xt-position') || options.position,
-          strategy: options.strategy,
-          resize: false,
-          modifiers: [
-            {
-              name: 'computeStyles',
-              options: {
-                gpuAcceleration: false,
+        // fix element and target must be visible
+        if (Xt.visible({ el: popperEl }) && Xt.visible({ el })) {
+          popperEl.dataset.test = Xt.getuniqueId()
+          const arrow = el.querySelector(':scope > .xt-arrow')
+          const popperOptionsDefault = {
+            placement: el.getAttribute('data-xt-position') || options.position,
+            strategy: options.strategy,
+            resize: false,
+            modifiers: [
+              {
+                name: 'computeStyles',
+                options: {
+                  gpuAcceleration: false,
+                },
               },
-            },
-            {
-              name: 'preventOverflow',
-              options: {
-                padding: options.spaceOverflow,
+              {
+                name: 'preventOverflow',
+                options: {
+                  padding: options.spaceOverflow,
+                },
               },
-            },
-            {
-              name: 'flip',
-              options: {
-                padding: options.spaceFlip,
+              {
+                name: 'flip',
+                options: {
+                  padding: options.spaceFlip,
+                },
               },
-            },
-          ],
-        }
-        if (arrow) {
-          popperOptionsDefault.modifiers.push({
-            name: 'arrow',
-            options: {
-              element: arrow,
-              padding: options.spaceArrow === false ? arrow.offsetHeight / 2 : options.spaceArrow,
-            },
+            ],
+          }
+          if (arrow) {
+            popperOptionsDefault.modifiers.push({
+              name: 'arrow',
+              options: {
+                element: arrow,
+                padding: options.spaceArrow === false ? arrow.offsetHeight / 2 : options.spaceArrow,
+              },
+            })
+          }
+          // inset
+          if (options.inset) {
+            const inset = {
+              name: 'offset',
+              options: {
+                offset: ({ placement, popper }) => {
+                  if (placement.search('left') !== -1 || placement.search('right') !== -1) {
+                    return [0, -popper.width]
+                  }
+                  if (placement.search('top') !== -1 || placement.search('bottom') !== -1) {
+                    return [0, -popper.height]
+                  }
+                  return []
+                },
+              },
+            }
+            popperOptionsDefault.modifiers.push(inset)
+            el.setAttribute('data-popper-inset', 'true')
+          } else {
+            el.removeAttribute('data-popper-inset', 'true')
+          }
+          const popperOptions = Xt.merge([popperOptionsDefault, options.popperjs])
+          // init
+          let popperInstance = Xt.dataStorage.get(el, 'PopperInstance')
+          if (popperInstance) {
+            popperInstance.setOptions(popperOptions)
+          } else {
+            popperInstance = createPopper(popperEl, el, popperOptions)
+            Xt.dataStorage.set(el, 'PopperInstance', popperInstance)
+          }
+          // fix recalc position with new css depending on position
+          requestAnimationFrame(() => {
+            popperInstance.update()
           })
         }
-        // inset
-        if (options.inset) {
-          const inset = {
-            name: 'offset',
-            options: {
-              offset: ({ placement, popper }) => {
-                if (placement.search('left') !== -1 || placement.search('right') !== -1) {
-                  return [0, -popper.width]
-                }
-                if (placement.search('top') !== -1 || placement.search('bottom') !== -1) {
-                  return [0, -popper.height]
-                }
-                return []
-              },
-            },
-          }
-          popperOptionsDefault.modifiers.push(inset)
-          el.setAttribute('data-popper-inset', 'true')
-        } else {
-          el.removeAttribute('data-popper-inset', 'true')
-        }
-        const popperOptions = Xt.merge([popperOptionsDefault, options.popperjs])
-        const popperInstance = createPopper(popperEl, el, popperOptions)
-        Xt.dataStorage.set(el, 'PopperInstance', popperInstance)
-        // fix recalc position with new css depending on position
-        requestAnimationFrame(() => {
-          popperInstance.update()
-        })
       }
     }
   }

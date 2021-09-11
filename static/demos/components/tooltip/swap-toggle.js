@@ -40,7 +40,6 @@ const mountTooltip = ({ ref }) => {
 
   const tooltip = ref
   let self
-  const target = tooltip.parentNode.querySelector('.xt-tooltip')
 
   // init
 
@@ -54,30 +53,30 @@ const mountTooltip = ({ ref }) => {
 
   const swapBack = () => {
     // swap tooltip
-    self.targets[0].classList.remove('hidden')
-    self.targets[1].classList.add('hidden')
+    self.targets[0].classList.remove('!hidden')
+    self.targets[1].classList.add('!hidden')
     // open
-    target.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   const swap = () => {
     // swap
-    self.targets[0].classList.add('hidden')
-    self.targets[1].classList.remove('hidden')
+    self.targets[0].classList.add('!hidden')
+    self.targets[1].classList.remove('!hidden')
     // open
-    target.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   // resetTooltip: fix when swapping and moving away
 
   const resetTooltip = () => {
     // trigger our swap
-    target.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
     // trigger tooltip deactivation
-    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     // remove our listeners
-    target.removeEventListener('offdone.xt.tooltip', swap)
-    target.removeEventListener('offdone.xt.tooltip', swapBack)
+    tooltip.removeEventListener('offdone.xt.tooltip', swap)
+    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
   }
 
   tooltip.addEventListener('mouseleave', resetTooltip)
@@ -86,8 +85,8 @@ const mountTooltip = ({ ref }) => {
 
   const on = () => {
     // swap
-    target.addEventListener('offdone.xt.tooltip', swap, { once: true })
-    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
   tooltip.addEventListener('on.xt.toggle', on)
@@ -96,8 +95,8 @@ const mountTooltip = ({ ref }) => {
 
   const off = () => {
     // swap back
-    target.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
-    target.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
+    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
   tooltip.addEventListener('off.xt.toggle', off)
