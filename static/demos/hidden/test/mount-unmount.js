@@ -21,7 +21,7 @@ const mountTest = ({ ref }) => {
   // vars
 
   const drop = ref
-  const overlay = ref
+  const overlay = ref.querySelector('[data-xt-overlay]')
 
   // mount
 
@@ -37,9 +37,7 @@ const mountTest = ({ ref }) => {
 
   // init
 
-  let self = new Xt.Overlay(overlay, {
-    duration: 500,
-  })
+  let self = Xt.get({ name: 'xt-overlay', el: overlay })
 
   const selfDrop = new Xt.Drop(drop, {})
 
@@ -132,7 +130,11 @@ const mountTest = ({ ref }) => {
     // eslint-disable-next-line no-console
     console.log('TEST UNMOUNT 2 this should be called on change page.')
     // eslint-disable-next-line no-console
-    console.log('TEST UNMOUNT 3 Xt.unmountArr.length should remain the same.', Xt.unmountArr.length)
+    console.log(
+      'TEST UNMOUNT 3 Xt.unmountArr.length and xtNamespace should remain the same.',
+      Xt.unmountArr.length,
+      Xt.dataStorage.get(self.ns, 'xtNamespace').length
+    )
     removeEventListener('resize', resize)
     self.destroy()
     self = null

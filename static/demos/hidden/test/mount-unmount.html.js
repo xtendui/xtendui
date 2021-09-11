@@ -37,12 +37,12 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on"
-        data-xt-overlay-element>
+        data-xt-overlay="{ targets: '#overlay--mount-unmount', duration: 500 }">
         Overlay
       </button>
     </div>
 
-    <div class="xt-overlay group" data-xt-overlay-target>
+    <div class="xt-overlay group" id="overlay--mount-unmount">
       <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
       <div class="xt-overlay-container max-w-3xl">
         <div

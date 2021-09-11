@@ -24,7 +24,7 @@ TEST UNMOUNT 2 this should be called on change page.
 
 TEST UNMOUNT this should NOT be called multiple times on changing page and resize.
 
-TEST UNMOUNT 3 Xt.unmountArr.length should remain the same.
+TEST UNMOUNT 3 Xt.unmountArr.length and xtNamespace should remain the same
 
 <demo>
   <demoinline src="demos/hidden/test/mount-unmount">
