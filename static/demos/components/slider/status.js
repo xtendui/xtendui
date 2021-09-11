@@ -45,6 +45,14 @@ const mountStatus = ({ ref }) => {
   const current = slider.querySelector('[data-xt-slider-status-current]')
   const total = slider.querySelector('[data-xt-slider-status-total]')
 
+  // init
+
+  const init = () => {
+    self = Xt.get({ name: 'xt-slider', el: slider })
+  }
+
+  slider.addEventListener('init.xt.slider', init)
+
   // change
 
   const change = e => {
@@ -67,13 +75,7 @@ const mountStatus = ({ ref }) => {
     }
   }
 
-  // init
-
-  const init = () => {
-    self = Xt.get({ name: 'xt-slider', el: slider })
-  }
-
-  slider.addEventListener('init.xt.slider', init)
+  slider.addEventListener('init.xt.slider', change)
   slider.addEventListener('status.xt.slider', change)
   slider.addEventListener('on.xt.slider', change, true)
   addEventListener('resize', change)

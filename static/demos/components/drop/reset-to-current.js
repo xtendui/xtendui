@@ -39,35 +39,39 @@ const mountDrop = ({ ref }) => {
   // vars
 
   const drop = ref
+  let self
 
   // init
 
-  const init = e => {
-    const drop = e.target
-    const self = Xt.get({ name: 'xt-drop', el: drop })
+  const init = () => {
+    self = Xt.get({ name: 'xt-drop', el: drop })
+  }
 
-    // off
+  drop.addEventListener('init.xt.drop', init)
 
-    const off = e => {
-      const tr = e.target
-      /***/
-      // check because of event propagation
-      if (self.targets.includes(tr)) {
-        // reset to current when no activation
-        if (self.index === null) {
-          const current = self.targets.filter(x => x.classList.contains('current'))[0]
-          current.dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
-        }
+  // off
+
+  const off = e => {
+    const tr = e.target
+    /***/
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      // reset to current when no activation
+      if (self.index === null) {
+        const current = self.targets.filter(x => x.classList.contains('current'))[0]
+        current.dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
       }
-      /***/
     }
+    /***/
+  }
 
+  const initOff = () => {
     for (const tr of self.targets) {
       tr.addEventListener('off.xt.drop', off)
     }
   }
 
-  drop.addEventListener('init.xt.drop', init)
+  drop.addEventListener('init.xt.drop', initOff)
 
   // unmount
 

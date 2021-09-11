@@ -22,6 +22,7 @@ const mountTest = ({ ref }) => {
 
   const drop = ref
   const overlay = ref.querySelector('[data-xt-overlay]')
+  let self
 
   // mount
 
@@ -37,9 +38,13 @@ const mountTest = ({ ref }) => {
 
   // init
 
-  let self = Xt.get({ name: 'xt-overlay', el: overlay })
-
   const selfDrop = new Xt.Drop(drop, {})
+
+  const init = () => {
+    self = Xt.get({ name: 'xt-overlay', el: overlay })
+  }
+
+  overlay.addEventListener('init.xt.overlay', init)
 
   // on
 
@@ -69,17 +74,21 @@ const mountTest = ({ ref }) => {
     }
   }
 
-  for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-    // eslint-disable-next-line no-console
-    console.log(
-      'TEST INITIAL ON 0 this should be `true true true true`.',
-      tr.classList.contains('on'),
-      tr.classList.contains('in'),
-      tr.classList.contains('initial'),
-      self.initial
-    )
-    tr.addEventListener('on.xt.overlay', on)
+  const initOn = () => {
+    for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+      // eslint-disable-next-line no-console
+      console.log(
+        'TEST INITIAL ON 0 this should be `true true true true`.',
+        tr.classList.contains('on'),
+        tr.classList.contains('in'),
+        tr.classList.contains('initial'),
+        self.initial
+      )
+      tr.addEventListener('on.xt.overlay', on)
+    }
   }
+
+  overlay.addEventListener('init.xt.overlay', initOn)
 
   // off
 
@@ -94,9 +103,13 @@ const mountTest = ({ ref }) => {
     }
   }
 
-  for (const tr of self.targets) {
-    tr.addEventListener('off.xt.overlay', off)
+  const initOff = () => {
+    for (const tr of self.targets) {
+      tr.addEventListener('off.xt.overlay', off)
+    }
   }
+
+  overlay.addEventListener('init.xt.overlay', initOff)
 
   // off drop
 

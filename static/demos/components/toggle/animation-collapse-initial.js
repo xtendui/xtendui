@@ -42,8 +42,8 @@ const mountToggle = ({ ref }) => {
 
   // init
 
-  const init = e => {
-    const self = Xt.get({ name: 'xt-toggle', el: e.target })
+  const init = () => {
+    const self = Xt.get({ name: 'xt-toggle', el: toggle })
     // disable if not overflowing and not on
     for (const tr of self.targets) {
       if (tr.scrollHeight <= tr.clientHeight) {

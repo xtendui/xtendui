@@ -140,8 +140,9 @@ For example if you want to **get the drop object** on a particular node.
 
 ```js
 let self = Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') })
-const container = self.container
 ```
+
+> Xt.get **doesn't work instantly for components initialized within markup** with `data-xt-` when using react or other frameworks, in this case retrieve the value listening to the event `init`.
 
 ## Xt.options
 

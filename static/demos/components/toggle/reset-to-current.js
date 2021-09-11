@@ -39,35 +39,39 @@ const mountToggle = ({ ref }) => {
   // vars
 
   const toggle = ref
+  let self
 
   // init
 
-  const init = e => {
-    const toggle = e.target
-    const self = Xt.get({ name: 'xt-toggle', el: toggle })
+  const init = () => {
+    self = Xt.get({ name: 'xt-toggle', el: toggle })
+  }
 
-    // off
+  toggle.addEventListener('init.xt.toggle', init)
 
-    const off = e => {
-      const tr = e.target
-      /***/
-      // check because of event propagation
-      if (self.targets.includes(tr)) {
-        // reset to current when no activation
-        if (self.index === null) {
-          const current = self.targets.filter(x => x.classList.contains('current'))[0]
-          current.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
-        }
+  // off
+
+  const off = e => {
+    const tr = e.target
+    /***/
+    // check because of event propagation
+    if (self.targets.includes(tr)) {
+      // reset to current when no activation
+      if (self.index === null) {
+        const current = self.targets.filter(x => x.classList.contains('current'))[0]
+        current.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
       }
-      /***/
     }
+    /***/
+  }
 
+  const initOff = () => {
     for (const tr of self.targets) {
       tr.addEventListener('off.xt.toggle', off)
     }
   }
 
-  toggle.addEventListener('init.xt.toggle', init)
+  toggle.addEventListener('init.xt.toggle', initOff)
 
   // unmount
 
