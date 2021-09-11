@@ -226,7 +226,7 @@ pre {
   }
 }
 
-.button--show-code {
+.container--show-code {
   display: none;
   #gatsby_open-full & {
     display: inline-flex;

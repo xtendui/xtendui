@@ -241,7 +241,7 @@ export const populateDemo = container => {
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.node({
       str: `
-<div>
+<div class="container--show-code">
   <button type="button" class="xt-button button--show-code ${classes.buttonCode()}" aria-label="Toggle Code">
     ${classes.iconCode()}
   </button>
@@ -250,7 +250,7 @@ export const populateDemo = container => {
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group !hidden">
+  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
     <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Hide Code
     </div>
@@ -406,7 +406,7 @@ export const populateItem = item => {
             Copy to Clipboard
           </div>
         </div>
-        <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group !hidden">
+        <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
           <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
             Copied!
           </div>
@@ -493,14 +493,14 @@ const swapClick = ({ ref }) => {
 
   const swapBack = () => {
     // swap tooltip
-    self.targets[0].classList.remove('!hidden')
-    self.targets[1].classList.add('!hidden')
+    self.targets[0].classList.remove('hidden')
+    self.targets[1].classList.add('hidden')
   }
 
   const swap = () => {
     // swap
-    self.targets[0].classList.add('!hidden')
-    self.targets[1].classList.remove('!hidden')
+    self.targets[0].classList.add('hidden')
+    self.targets[1].classList.remove('hidden')
     // open
     tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     // swap back
@@ -551,16 +551,16 @@ const swapToggle = ({ ref }) => {
 
   const swapBack = () => {
     // swap tooltip
-    self.targets[0].classList.remove('!hidden')
-    self.targets[1].classList.add('!hidden')
+    self.targets[0].classList.remove('hidden')
+    self.targets[1].classList.add('hidden')
     // open
     tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   const swap = () => {
     // swap
-    self.targets[0].classList.add('!hidden')
-    self.targets[1].classList.remove('!hidden')
+    self.targets[0].classList.add('hidden')
+    self.targets[1].classList.remove('hidden')
     // open
     tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }

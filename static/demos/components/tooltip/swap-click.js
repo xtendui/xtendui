@@ -53,14 +53,14 @@ const mountTooltip = ({ ref }) => {
 
   const swapBack = () => {
     // swap tooltip
-    self.targets[0].classList.remove('!hidden')
-    self.targets[1].classList.add('!hidden')
+    self.targets[0].classList.remove('hidden')
+    self.targets[1].classList.add('hidden')
   }
 
   const swap = () => {
     // swap
-    self.targets[0].classList.add('!hidden')
-    self.targets[1].classList.remove('!hidden')
+    self.targets[0].classList.add('hidden')
+    self.targets[1].classList.remove('hidden')
     // open
     tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     // swap back
