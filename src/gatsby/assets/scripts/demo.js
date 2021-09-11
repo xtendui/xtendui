@@ -35,7 +35,7 @@ const demoHash = () => {
             return
           }
           // makeFullscreen
-          makeFullscreen(demo)
+          makeFullscreen(demo, item)
         }
       }
     } else {
@@ -339,8 +339,8 @@ export const populateDemo = container => {
   })
   for (const item of items) {
     item.addEventListener('on.xt.toggle', () => {
-      if (!self.initial) {
-        btnOpenIframe(item)
+      // only if demo opened
+      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
         // triggering e.detail.container (e.g. slider wrap)
         dispatchEvent(
           new CustomEvent('resize', {
@@ -350,6 +350,9 @@ export const populateDemo = container => {
             },
           })
         )
+      }
+      if (!self.initial) {
+        btnOpenIframe(item)
         // only if demo opened
         if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
           // hash
@@ -618,13 +621,13 @@ const btnOpenIframe = item => {
  * makeFullscreen
  */
 
-const makeFullscreen = container => {
+const makeFullscreen = (demo, item) => {
   const toggle = document.querySelector('#gatsby_open-full-trigger')
   const content = document.querySelector('#gatsby_open-full-content')
   // empty demo
   demoEmpty()
   // toggles
-  const listingToggle = container.previousSibling
+  const listingToggle = demo.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
     listingToggle.classList.add('on')
   }
@@ -632,24 +635,21 @@ const makeFullscreen = container => {
   toggle.classList.add('on')
   toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   // move code block
-  container.before(
+  demo.before(
     Xt.node({
-      str: `<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${container.offsetHeight}px"></div>`,
+      str: `<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${demo.offsetHeight}px"></div>`,
     })
   )
-  content.append(container)
-  // iframe
-  for (const item of container.querySelectorAll('.gatsby_demo_item.on')) {
-    // if themes
-    if (item.getAttribute('data-iframe-fullscreen')) {
-      // populate
-      item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
-      initializeIframe(item)
-      item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle', { detail: { force: true } }))
-    }
-    // spinner
-    item.classList.remove('loaded')
+  content.append(demo)
+  // if themes
+  if (item.getAttribute('data-iframe-fullscreen')) {
+    // populate
+    item.setAttribute('data-iframe', item.getAttribute('data-iframe-fullscreen'))
+    initializeIframe(item)
+    item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle', { detail: { force: true } }))
   }
+  // spinner
+  item.classList.remove('loaded')
 }
 
 const demoEmpty = ({ reset = false } = {}) => {
