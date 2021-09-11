@@ -36,6 +36,8 @@ export default class DemoIframe extends React.Component {
       } else {
         window.parent.initIframe(this.src, this.html, false, `/${this.src}.css`, `/${this.src}.js`)
       }
+      // close fullscreen and others
+      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
     }
   }
 
