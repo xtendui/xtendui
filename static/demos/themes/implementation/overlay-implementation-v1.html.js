@@ -1,5 +1,8 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
+const itemAnim = () => 'transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105'
+const itemAnimOpacity = () => 'opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100'
+
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
@@ -12,10 +15,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div
-              class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
+            <div class="xt-overlay-inner *** ${itemAnim()} ***">
               <div
                 class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <button
@@ -135,10 +137,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
-            <div
-              class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
+            <div class="xt-overlay-inner *** ${itemAnim()} ***">
               <div
                 class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <button
@@ -249,10 +250,9 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
-            <div
-              class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
+            <div class="xt-overlay-inner *** ${itemAnim()} ***">
               <div class="xt-card ${classes.overlayShadow()} ${classes.textInverse()} ${classes.cardBlack()}">
                 <div class="*** xt-min-h-screen ***">
                   <div class="xt-list">

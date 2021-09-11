@@ -1,5 +1,6 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
+const itemAnim = () => 'overflow-hidden transition-all'
 const tabsRadius = () => `-full`
 const tabsAnim = () =>
   `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
@@ -48,7 +49,7 @@ const html = /* HTML */ `
         </div>
 
         <div class="mt-3" data-node-sticky-endtrigger>
-          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
+          <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Description</div>
               <p>
@@ -69,7 +70,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
+          <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Features</div>
               <p>
@@ -80,7 +81,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
+          <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Accessories</div>
               <p>
@@ -111,7 +112,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***" data-xt-toggle-target>
+          <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Manuals</div>
               <p>

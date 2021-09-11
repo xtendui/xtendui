@@ -1,5 +1,8 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
+const itemAnim = () => 'transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105'
+const itemAnimOpacity = () => 'opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100'
+
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
@@ -10,11 +13,9 @@ const html = /* HTML */ `
           data-xt-drop-element>
           Nav
         </button>
-        <div
-          class="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-          data-xt-drop-target>
+        <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
-            class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()}">
+            class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${itemAnim()} ***">
             <nav class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="#"
@@ -38,7 +39,8 @@ const html = /* HTML */ `
               </a>
             </nav>
           </div>
-          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500"></div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </div>
 
@@ -49,11 +51,9 @@ const html = /* HTML */ `
           data-xt-drop-element>
           Contact
         </button>
-        <div
-          class="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-          data-xt-drop-target>
+        <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
-            class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
+            class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${itemAnim()} ***">
             <nav class="xt-list xt-list-1 flex-col *** py-2 ***">
               <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
                 <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
@@ -97,7 +97,8 @@ const html = /* HTML */ `
               </p>
             </div>
           </div>
-          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
+          <div
+            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </div>
     </div>

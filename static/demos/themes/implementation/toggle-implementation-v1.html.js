@@ -1,5 +1,6 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
+const itemAnim = () => 'overflow-hidden transition-all'
 const toggle = () =>
   `xt-button *** w-full justify-start text-left *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}`
 const cardSize = () =>
@@ -18,9 +19,7 @@ const html = /* HTML */ `
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </a>
 
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target>
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -47,9 +46,7 @@ const html = /* HTML */ `
                 mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </a>
 
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target>
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -66,9 +63,7 @@ const html = /* HTML */ `
                 purus consectetur.
               </a>
 
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target>
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -105,9 +100,7 @@ const html = /* HTML */ `
                 sit amet gravida nunc lectus id augue.
               </a>
 
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all group ***"
-                data-xt-toggle-target>
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

@@ -1,25 +1,39 @@
 .demo--tooltip-animation-css, .demo--tooltip-animation-css-react {
   .xt-tooltip {
     /* initial */
-    @apply opacity-0;
+    > * {
+      @apply opacity-0;
+    }
     &.dir-before {
-      @apply translate-x-4;
+      > * {
+        @apply translate-x-4;
+      }
     }
     &.dir-after {
-      @apply -translate-x-4;
+      > * {
+        @apply -translate-x-4;
+      }
     }
     /* in */
     &.in {
-      @apply transition duration-300 opacity-100 translate-x-0;
+      > * {
+        @apply transition duration-300 opacity-100 translate-x-0;
+      }
     }
     /* out */
     &.out {
-      @apply transition duration-300 opacity-0;
+      > * {
+        @apply transition duration-300 opacity-0;
+      }
       &.dir-before {
-        @apply -translate-x-4;
+        > * {
+          @apply -translate-x-4;
+        }
       }
       &.dir-after {
-        @apply translate-x-4;
+        > * {
+          @apply translate-x-4;
+        }
       }
     }
   }

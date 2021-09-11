@@ -1,5 +1,9 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
+const itemAnim = () =>
+  'transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105'
+const itemAnimOpacity = () => 'opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100'
+
 const html = /* HTML */ `
   <div>
     <div class="max-w-4xl mx-auto">
@@ -10,11 +14,9 @@ const html = /* HTML */ `
           <span data-xt-tooltip-element>
             <a href="#">product informations</a>
 
-            <div
-              class="xt-tooltip p-3 *** transition duration-300 opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-              data-xt-tooltip-target>
+            <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
               <div
-                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} ***">
+                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} *** *** ${itemAnim()} ***">
                 <div class="xt-list xt-list-1 flex-col py-2">
                   <div>
                     <div
@@ -44,18 +46,17 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </div>
-              <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+              <div
+                class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
             </div>
           </span>
           and
           <span data-xt-tooltip-element>
             <a href="#">credit card CVV</a>
 
-            <div
-              class="xt-tooltip p-3 *** transition duration-300 opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-              data-xt-tooltip-target>
+            <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
               <div
-                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()} ***">
+                class="*** xt-card w-80 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** *** ${itemAnim()} ***">
                 <div class="*** xt-media-container bg-gray-200 rounded-t${classes.tooltipRadius()} h-32 ***">
                   <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -72,7 +73,8 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </div>
-              <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
+              <div
+                class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
             </div>
           </span>
         </div>
