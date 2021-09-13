@@ -201,6 +201,7 @@ const html = /* HTML */ `
 
     <div data-xt-tooltip="{ duration: 500 }">
       Example tooltips
+
       <span data-xt-tooltip-element>
         <a href="#">product informations</a>
 
@@ -241,7 +242,9 @@ const html = /* HTML */ `
             class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </span>
+
       and
+
       <span data-xt-tooltip-element>
         <a href="#">credit card CVV</a>
 

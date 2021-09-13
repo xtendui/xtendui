@@ -7,6 +7,8 @@ tags: ["hidden"]
 menu: true
 ---
 
+> This hidden pages includes **work in progress and future features**, **do not use** because will have **breaking changes** on semversion.
+
 ## Classes not xt
 
 #### Components

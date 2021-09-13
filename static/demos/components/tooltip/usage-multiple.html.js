@@ -4,6 +4,7 @@ const html = /* HTML */ `
   <div>
     <div data-xt-tooltip>
       Lorem ipsum
+
       <span data-xt-tooltip-element>
         <a href="#">dolor</a>
 
@@ -14,7 +15,9 @@ const html = /* HTML */ `
           </div>
         </div>
       </span>
+
       sit
+
       <span data-xt-tooltip-element>
         <a href="#">amet</a>
 
