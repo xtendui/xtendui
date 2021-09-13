@@ -47,15 +47,25 @@ Here are the main **javascript options**.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `limit:Boolean`                          | `true`        | Limit value with min and max attribute             |
-| Option                    | `validate:Function\|false`                          | `false`        | Validate value for on input change             |
+| Option                    | `validate({ val, step }):Function\|false`                          | `<Function>`        | Validate value on input change             |
 | Option                    | `min:Number`                          | `1`        | Default value for minimum limit            |
 | Option                    | `max:Number`                          | `Infinity`        | Default value for maximum limit            |
-| Option                    | `events.input:String\|false`                          | `'change'`        | List of space separated events on input to limit and validate            |
+| Option                    | `events.input:String\|false`                          | `'change'`        | List of space separated events on input to limit and validate, return `Number`            |
 | Option                    | `inputs:Query`                          | `'input[type="number"]'`        | Inputs query            |
 | Option                    | `steps:Query`                          | `'[data-xt-step]'`        | Steps query            |
 
 </div>
 
+Default functions as follow.
+
+```js
+validate: ({ val, step }) => {
+  if (step && val % step) {
+    return Math.ceil(val / step) * step
+  }
+  return val
+},
+```
 ## Match Media
 
 You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.

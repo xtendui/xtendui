@@ -106,7 +106,7 @@ Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4) 
 | Option                  | `drag.dragger:Query`                          | `'[data-xt-slider-dragger]'`        | Query for dragger element             |	
 | Option                  | `drag.threshold:Number`                          | `50`        | Minumim drag size for activation and disable interactions on targets             |	
 | Option                  | `drag.factor:Number`                          | `1`        | Factor multiplier for drag             |	
-| Option                  | `drag.overflow:Function\|false`                          | `<Function>`        | Factor when dragging beyond the first and the last slide, return `Number`             |	
+| Option                  | `drag.overflow({ overflow }):Function\|false`                          | `<Function>`        | Factor when dragging beyond the first and the last slide, return `Number`             |	
 
 </div>
 

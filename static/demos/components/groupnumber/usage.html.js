@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--groupnumber">
+  <div>
     <div class="${classes.hBlock()}">Horizontal design</div>
 
     <form class="text-sm">
@@ -27,10 +27,10 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Vertical design, input attributes and no limit</div>
+    <div class="${classes.hBlock()}">Vertical design, input attributes and no limit and no validate</div>
 
     <form class="text-sm">
-      <div class="*** xt-list ***" data-xt-groupnumber="{ limit: false }">
+      <div class="*** xt-list ***" data-xt-groupnumber="{ limit: false, validate: false }">
         <input
           type="number"
           class="${classes.input()} w-16 text-center *** rounded-tl${classes.groupButtonRadius()} rounded-bl${classes.groupButtonRadius()} border border-r-0 border-gray-300 *** ${classes.inputGray()}"
@@ -55,10 +55,10 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Responsive design, inputs attributes and custom validation</div>
+    <div class="${classes.hBlock()}">Responsive design, multiple inputs and attributes</div>
 
     <form class="text-sm mt-6">
-      <div class="*** xt-list ***" data-node-groupnumber-custom>
+      <div class="*** xt-list ***" data-xt-groupnumber>
         <div class="*** inline-flex flex-col md:flex-row ***">
           <button
             type="button"

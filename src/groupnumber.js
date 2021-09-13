@@ -311,7 +311,12 @@ Groupnumber.optionsDefault = {
   debug: false,
   // groupnumber
   limit: true,
-  validate: false,
+  validate: ({ val, step }) => {
+    if (step && val % step) {
+      return Math.ceil(val / step) * step
+    }
+    return val
+  },
   // quantity
   min: '-Infinity',
   max: 'Infinity',

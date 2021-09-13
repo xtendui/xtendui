@@ -148,7 +148,7 @@ class Mousefollow {
       return
     }
     // check
-    if (!options.mouseCheck || options.mouseCheck.call(self)) {
+    if (!options.mouseCheck || options.mouseCheck({ self })) {
       for (const tr of self.targets) {
         // size
         const rect = tr.getBoundingClientRect()
@@ -189,7 +189,7 @@ class Mousefollow {
       return
     }
     // check
-    if (!options.mouseCheck || options.mouseCheck.call(self)) {
+    if (!options.mouseCheck || options.mouseCheck({ self })) {
       for (const tr of self.targets) {
         // class
         if (!options.classSkip) {
