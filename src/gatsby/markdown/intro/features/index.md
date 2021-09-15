@@ -85,7 +85,7 @@ See [stickyflow](/components/stickyflow) for more info.
 
 ## Core
 
-All core components are **primitive UI elements** that can be nested inside one another to achieve your desired design.
+All core components are **primitive UI elements** that promotes creativity with its support for complex design.
 
 #### Card
 

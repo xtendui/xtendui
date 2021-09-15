@@ -30,6 +30,8 @@ You can set activation styles by adding the class `.on`.
 Check out [nav themes](/themes/nav) for **advanced implementations**.
 
 <demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/navigation/multilevel-v1">
+  </div>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v1">
   </div>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v2">

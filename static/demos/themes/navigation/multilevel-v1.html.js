@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--multilevel">
+  <div class="flex-auto max-w-3xl mx-auto">
     <div class="xt-card rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}">
       <div class="relative" data-xt-toggle="{ min: 1, duration: 500, queue: false }">
         <div
@@ -182,4 +182,6 @@ const html = /* HTML */ `
 
 export const object = {
   html: html,
+  container: true,
+  gradient: true,
 }

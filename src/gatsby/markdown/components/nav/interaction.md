@@ -6,6 +6,17 @@ title: "Interaction"
 date: "2010-10-10"
 ---
 
+## Multilevel
+
+You can create a **multilevel nav** with [toggle group](/components/toggle/interaction#group).
+
+> This demos use [toggle](/components/toggle) see documentation for more info.
+
+<demo>
+  <div class="gatsby_demo_item" data-iframe="demos/themes/navigation/multilevel-v1">
+  </div>
+</demo>
+
 ## Toggle
 
 Use [toggle](/components/toggle) to **activate/deactivate and animate**.
@@ -41,15 +52,4 @@ Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v3">
   </div>
-</demo>
-
-## Multilevel
-
-You can create a **multilevel nav** with [toggle group](/components/toggle/interaction#group).
-
-> This demos use [toggle](/components/toggle) see documentation for more info.
-
-<demo>
-  <demoinline src="demos/components/nav/multilevel">
-  </demoinline>
 </demo>
