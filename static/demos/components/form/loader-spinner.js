@@ -54,6 +54,17 @@ const mountFormLoader = ({ ref, loaderTemplate }) => {
     form.addEventListener('submit', submit)
   }
 
+  // reset
+  // if you want to deactivate xt-loading on ajax use form.dispatchEvent(new CustomEvent('reset'))
+
+  const reset = () => {
+    loadable.classList.remove('xt-loading')
+  }
+
+  if (!loadable.classList.contains('xt-loadable-ignore')) {
+    form.addEventListener('reset', reset)
+  }
+
   // inject
 
   if (loadable.classList.contains('xt-loadable')) {
