@@ -21,7 +21,7 @@ const mountVideosMatches = ({ ref }) => {
   Xt.mount({
     root: ref,
     raf: false,
-    matches: 'video',
+    matches: 'video source[data-src]',
     mount: ({ ref }) => {
       return mountVideoMatches({ ref })
     },
@@ -37,7 +37,7 @@ const mountVideosMatches = ({ ref }) => {
 const mountVideoMatches = ({ ref }) => {
   // vars
 
-  const video = ref
+  const video = ref.closest('video')
 
   // resize
 
@@ -56,7 +56,7 @@ const mountVideoMatches = ({ ref }) => {
         video.src = srcNew
       }
     } else {
-      const srcDefault = video.querySelector('source[src]')?.getAttribute('src')
+      const srcDefault = video.querySelector('source[src]').getAttribute('src')
       if (srcDefault && src.indexOf(srcDefault) === -1) {
         video.src = srcDefault
       }
