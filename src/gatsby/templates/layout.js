@@ -11,7 +11,7 @@ import DocFullscreen from 'src/gatsby/templates/includes/doc-fullscreen'
 import 'src/gatsby/assets/styles/app.css'
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-export default function Layout({ children, page, seo }) {
+function Layout({ children, page, seo }) {
   const { site } = useSiteMetadata()
   // no useEffect cause bugs demos hash
   useLayoutEffect(() => {
@@ -97,6 +97,8 @@ Layout.propTypes = {
     }),
   }),
 }
+
+export default Layout
 
 /* access */
 if (typeof window !== 'undefined') {

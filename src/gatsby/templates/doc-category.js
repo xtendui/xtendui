@@ -16,67 +16,65 @@ const renderAst = new RehypeReact({
   components: { demo: Demo, demoinline: DemoInline },
 }).Compiler
 
-export default class Template extends React.Component {
-  render() {
-    const { data } = this.props
-    const seo = {}
-    seo.title = data.post.frontmatter.title
-    seo.title +=
-      data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title
-        ? data.post.frontmatter.parent
-        : ''
-    seo.title +=
-      data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title
-        ? data.post.frontmatter.category
-        : ''
-    seo.title +=
-      data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title
-        ? data.post.frontmatter.type
-        : ''
-    seo.description = data.post.frontmatter.description
-    return (
-      <Layout page={data}>
-        <SEO title={seo.title} description={seo.description} />
-        {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
-        <div className="gatsby_listing">
-          <div className="xt-row xt-row-6">
-            {data.categories.category.sort(typeSort).map((category, i) => (
-              <div className="gatsby_listing-group" key={i}>
-                <h2 className="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md bg-gray-100 text-center">
-                  {category.title.split('-').pop()}
-                </h2>
-                <div className="gatsby_listing-items">
-                  <div className="xt-row xt-row-stretch">
-                    {category.posts.map(({ post }, z) =>
-                      post.frontmatter.parent === post.frontmatter.title ? (
-                        typeof window !== 'undefined' &&
-                        window.access !== 'admin' &&
-                        post.frontmatter.tags &&
-                        post.frontmatter.tags.includes('hidden') ? (
-                          ''
-                        ) : (
-                          <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
-                            <Link
-                              to={markdownSlug(post)}
-                              className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
-                              <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                                {post.frontmatter.title}
-                              </div>
-                              <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
-                            </Link>
-                          </div>
-                        )
-                      ) : null
-                    )}
-                  </div>
+function Template(props) {
+  const { data } = props
+  const seo = {}
+  seo.title = data.post.frontmatter.title
+  seo.title +=
+    data.post.frontmatter.parent && data.post.frontmatter.parent !== data.post.frontmatter.title
+      ? data.post.frontmatter.parent
+      : ''
+  seo.title +=
+    data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title
+      ? data.post.frontmatter.category
+      : ''
+  seo.title +=
+    data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title
+      ? data.post.frontmatter.type
+      : ''
+  seo.description = data.post.frontmatter.description
+  return (
+    <Layout page={data}>
+      <SEO title={seo.title} description={seo.description} />
+      {data.post.htmlAst !== '<div></div>' ? renderAst(data.post.htmlAst) : null}
+      <div className="gatsby_listing">
+        <div className="xt-row xt-row-6">
+          {data.categories.category.sort(typeSort).map((category, i) => (
+            <div className="gatsby_listing-group" key={i}>
+              <h2 className="xt-h6 my-6 xt-my-auto py-4 px-6 rounded-md bg-gray-100 text-center">
+                {category.title.split('-').pop()}
+              </h2>
+              <div className="gatsby_listing-items">
+                <div className="xt-row xt-row-stretch">
+                  {category.posts.map(({ post }, z) =>
+                    post.frontmatter.parent === post.frontmatter.title ? (
+                      typeof window !== 'undefined' &&
+                      window.access !== 'admin' &&
+                      post.frontmatter.tags &&
+                      post.frontmatter.tags.includes('hidden') ? (
+                        ''
+                      ) : (
+                        <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={z}>
+                          <Link
+                            to={markdownSlug(post)}
+                            className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
+                            <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
+                              {post.frontmatter.title}
+                            </div>
+                            <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
+                          </Link>
+                        </div>
+                      )
+                    ) : null
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </Layout>
-    )
-  }
+      </div>
+    </Layout>
+  )
 }
 
 export const query = graphql`
@@ -253,3 +251,5 @@ Template.propTypes = {
     }),
   }),
 }
+
+export default Template

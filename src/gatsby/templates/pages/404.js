@@ -4,20 +4,18 @@ import { graphql } from 'gatsby'
 import SEO from 'src/gatsby/templates/seo'
 import Layout from 'src/gatsby/templates/layout'
 
-export default class Page extends React.Component {
-  render() {
-    const { data } = this.props
-    const seo = {}
-    seo.title = '404'
-    seo.description = 'Page not found'
-    return (
-      <Layout page={data} seo={seo}>
-        <SEO title={seo.title} description={seo.description} />
-        <h1>Error 404</h1>
-        <p>Page not found.</p>
-      </Layout>
-    )
-  }
+function Page(props) {
+  const { data } = props
+  const seo = {}
+  seo.title = '404'
+  seo.description = 'Page not found'
+  return (
+    <Layout page={data} seo={seo}>
+      <SEO title={seo.title} description={seo.description} />
+      <h1>Error 404</h1>
+      <p>Page not found.</p>
+    </Layout>
+  )
 }
 
 export const query = graphql`
@@ -58,3 +56,5 @@ Page.propTypes = {
     }),
   }),
 }
+
+export default Page

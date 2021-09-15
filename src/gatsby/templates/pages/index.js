@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
+import { useSiteContentful } from 'src/gatsby/templates/includes/siteContentful'
 import SEO from 'src/gatsby/templates/seo'
 import Layout from 'src/gatsby/templates/layout'
+import Video from 'src/gatsby/templates/includes/video'
 
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-export default function Page() {
+function Page() {
   const { site } = useSiteMetadata()
+  const { assets } = useSiteContentful()
   const seo = {}
   seo.title = 'Home'
   seo.description = ''
@@ -207,13 +210,20 @@ export default function Page() {
                       Features
                     </div>
                     <p className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl opacity-50">
-                      For an overview of the main features visit
+                      For an overview of the main features visit the <Link to="/intro/features">features page</Link>.
                     </p>
-                    <Link
-                      to="/intro/features"
-                      className={`xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`}>
-                      Features
-                    </Link>
+                  </div>
+                </div>
+                <div className="my-14 xt-my-auto">
+                  <div className="w-full text-left py-28 bg-black text-white xt-links-inverse">
+                    <div className="container">
+                      <div className="xt-row xt-row-12">
+                        <div className="w-full md:w-6/12 lg:w-5/12">test</div>
+                        <div className="w-full md:w-6/12 lg:w-7/12">
+                          <Video assets={assets} title="overlay-implementation-v1" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -398,3 +408,5 @@ export default function Page() {
     </Layout>
   )
 }
+
+export default Page

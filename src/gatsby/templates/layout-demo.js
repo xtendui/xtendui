@@ -6,7 +6,7 @@ import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 import 'src/gatsby/assets/styles/app.css'
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
-export default function LayoutDemo({ children }) {
+function LayoutDemo({ children }) {
   const { site } = useSiteMetadata()
   // no useEffect cause bugs demos hash
   useLayoutEffect(() => {
@@ -30,3 +30,5 @@ export default function LayoutDemo({ children }) {
 LayoutDemo.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+export default LayoutDemo

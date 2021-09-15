@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 
-export default function SEO({ title, description, lang, meta }) {
+function SEO({ title, description, lang, meta }) {
   const { site } = useSiteMetadata()
   let metaTitle = title === 'Home' ? site.siteMetadata.description : title || site.siteMetadata.description
   metaTitle = `${site.siteMetadata.title} - ${metaTitle}`
@@ -80,3 +80,5 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
 }
+
+export default SEO

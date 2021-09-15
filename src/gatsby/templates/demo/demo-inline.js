@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class DemoInline extends React.Component {
+class DemoInline extends React.Component {
   constructor(props) {
     super(props)
     this.ref = React.createRef()
@@ -106,3 +106,5 @@ export default class DemoInline extends React.Component {
 DemoInline.propTypes = {
   src: PropTypes.string.isRequired,
 }
+
+export default DemoInline

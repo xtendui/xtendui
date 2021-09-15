@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class Demo extends React.Component {
+class Demo extends React.Component {
   constructor() {
     super()
     this.demoRef = React.createRef()
@@ -29,3 +29,5 @@ export default class Demo extends React.Component {
 Demo.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+export default Demo

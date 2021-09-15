@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import SEO from 'src/gatsby/templates/seo'
 import LayoutDemo from 'src/gatsby/templates/layout-demo'
 
-export default class DemoIframe extends React.Component {
+class DemoIframe extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -100,3 +100,5 @@ export default class DemoIframe extends React.Component {
 DemoIframe.propTypes = {
   location: PropTypes.object.isRequired,
 }
+
+export default DemoIframe
