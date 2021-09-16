@@ -56,7 +56,7 @@ const mountVideoMatches = ({ ref }) => {
         video.src = srcNew
       }
     } else {
-      const srcDefault = video.querySelector('source[src]').getAttribute('src')
+      const srcDefault = video.querySelector('source[src]')?.getAttribute('src')
       if (srcDefault && src.indexOf(srcDefault) === -1) {
         video.src = srcDefault
       }
