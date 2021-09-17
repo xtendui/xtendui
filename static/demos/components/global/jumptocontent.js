@@ -20,7 +20,6 @@ const mountJumptocontents = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '.jumptocontent',
     mount: ({ ref }) => {
       return mountJumptocontent({ ref })

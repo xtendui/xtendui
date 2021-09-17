@@ -21,7 +21,6 @@ const mountDrops = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '[data-xt-drop]',
     mount: ({ ref }) => {
       return mountDrop({ ref })
@@ -39,15 +38,7 @@ const mountDrop = ({ ref }) => {
   // vars
 
   const drop = ref
-  let self
-
-  // init
-
-  const init = () => {
-    self = Xt.get({ name: 'xt-drop', el: drop })
-  }
-
-  drop.addEventListener('init.xt.drop', init)
+  const self = Xt.get({ name: 'xt-drop', el: drop })
 
   // off
 
@@ -65,13 +56,9 @@ const mountDrop = ({ ref }) => {
     /***/
   }
 
-  const initOff = () => {
-    for (const tr of self.targets) {
-      tr.addEventListener('off.xt.drop', off)
-    }
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.drop', off)
   }
-
-  drop.addEventListener('init.xt.drop', initOff)
 
   // unmount
 

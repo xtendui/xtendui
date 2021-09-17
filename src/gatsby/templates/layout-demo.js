@@ -11,7 +11,7 @@ function LayoutDemo({ children }) {
   // no useEffect cause bugs demos hash
   useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
-      require('src/gatsby/assets/scripts/shared')
+      require('src/gatsby/assets/scripts/setup')
     }
   }, [])
   return (

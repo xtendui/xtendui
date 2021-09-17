@@ -1,10 +1,10 @@
+import { Xt } from 'xtendui'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
-import { Xt } from 'xtendui'
-import 'xtendui/src/toggle.js'
-import 'xtendui/src/tooltip.js'
 import kebabCase from 'lodash.kebabcase'
 import DOMPurify from 'dompurify'
+import 'xtendui/src/toggle.js'
+import 'xtendui/src/tooltip.js'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
 require('prismjs/components/prism-jsx.min')
@@ -237,7 +237,7 @@ export const populateDemo = container => {
       str: '<div class="gatsby_demo_tabs bg-gray-100"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>',
     })
   )
-  const showCodeUid = Xt.getuniqueId()
+  const showCodeUid = Xt.uniqueId()
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.node({
       str: `
@@ -388,7 +388,7 @@ export const populateDemo = container => {
 export const populateItem = item => {
   const container = item.closest('.gatsby_demo')
   // tabs
-  const clipboardUid = Xt.getuniqueId()
+  const clipboardUid = Xt.uniqueId()
   if (item.querySelector('.gatsby_demo_code')) {
     item.querySelector('.gatsby_demo_code').remove()
   }
@@ -482,15 +482,7 @@ const swapClick = ({ ref }) => {
   // vars
 
   const tooltip = ref
-  let self
-
-  // init
-
-  const init = () => {
-    self = Xt.get({ name: 'xt-tooltip', el: tooltip })
-  }
-
-  tooltip.addEventListener('init.xt.tooltip', init)
+  const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
 
   // swap
 
@@ -540,15 +532,7 @@ const swapToggle = ({ ref }) => {
   // vars
 
   const tooltip = ref
-  let self
-
-  // init
-
-  const init = () => {
-    self = Xt.get({ name: 'xt-tooltip', el: tooltip })
-  }
-
-  tooltip.addEventListener('init.xt.tooltip', init)
+  const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
 
   // swap
 

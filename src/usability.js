@@ -24,7 +24,6 @@ Xt.frame({
       // images
 
       Xt.mount({
-        ignore: false,
         matches: 'img[src]:not([src^="data:"])',
         mount: ({ ref }) => {
           if (ref.closest(Xt.usabilityIgnore)) return
@@ -44,7 +43,6 @@ Xt.frame({
       // input
 
       Xt.mount({
-        ignore: false,
         matches: 'input:not([type="hidden"]), select, textarea',
         mount: ({ ref }) => {
           if (ref.closest(Xt.usabilityIgnore)) return
@@ -63,7 +61,6 @@ Xt.frame({
       // links
 
       Xt.mount({
-        ignore: false,
         matches: 'a[href]',
         mount: ({ ref }) => {
           if (ref.closest(Xt.usabilityIgnore)) return

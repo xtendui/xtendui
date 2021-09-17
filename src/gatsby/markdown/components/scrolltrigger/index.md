@@ -36,7 +36,17 @@ Examples to do **parallax animations on page scroll**. See [parallax](/component
 
 ## Fixes
 
-- If you are using `[data-xt-]` component initialization inside `pin: true`, sometimes the initialization can bug because of ScrollTrigger **adding and removing the element inside pin container**. To fix this **initialize the component with javascript instead of inside markup**.
+- As in all the demos, if you use **ScrollTrigger** with `pin: true` and you have inside `data-xt-` components or [Xt.mount](/components/global/javascript#xt-mount), to fix infinite mount/unmount loop you need to register ScrollTrigger plugin with `Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })`.
+
+> Be sure to `registerPlugin` **before any other Xtendui javascript imports** or the order of execution of initialization can mismatch mount/unmount on pinned nodes.
+
+```js
+import { Xt } from 'xtendui'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
+```
 
 - If you **trigger DOM height changes** showing/hiding content or if you are initializing ScrollTrigger inside **inside an element with `display: none`** you need to refresh ScrollTrigger after the elements are visibile on the page.
 
@@ -47,19 +57,6 @@ here your custom code that trigger height change or show/hide elements
 
 // refresh ScrollTrigger DOM
 ScrollTrigger.refresh()
-```
-
-- If you are using **single page app or route update** you have to refresh scrolltrigger on route update.
-
-```js
-/* ScrollToPlugin refresh on route update */
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
-
-requestAnimationFrame(() => {
-  ScrollTrigger.refresh()
-})
 ```
 
 - For proper resize and refresh ScrollTrigger positions, if you are using dynamic values inside `start` and `end` **remember to use functions** for `start: () => ` and `end: () => `. Also `invalidateOnRefresh: true` if you have dynamic values inside animations. See [Scrolltrigger faqs](https://greensock.com/st-mistakes/).

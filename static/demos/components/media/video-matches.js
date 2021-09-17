@@ -20,7 +20,6 @@ const mountVideosMatches = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: 'video source[data-src]',
     mount: ({ ref }) => {
       return mountVideoMatches({ ref })

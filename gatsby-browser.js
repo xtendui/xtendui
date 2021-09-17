@@ -47,14 +47,7 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
         window.overlayOpen = btn.classList.contains('on')
       }
       // close fullscreen and others
-      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
+      //dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
     }
   }
-}
-
-export const onRouteUpdate = () => {
-  /* ScrollToPlugin refresh on route update */
-  requestAnimationFrame(() => {
-    ScrollTrigger.refresh()
-  })
 }

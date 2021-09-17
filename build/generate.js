@@ -82,7 +82,7 @@ console.log(test)
             }
           }
           // remove xt if not used
-          const xts = strMethods.match(/(Xt\.)/g)
+          const xts = strImports.match(/(Xt\.)/g) || strMethods.match(/(Xt\.)/g)
           if (!xts) {
             strImports = strImports.replace(/(import { Xt } from 'xtendui'\n)/g, '')
           }
@@ -108,14 +108,15 @@ console.log(test)
         html = html.replace(/autoplay/g, 'autoPlay')
         html = html.replace(/frameborder/g, 'frameBorder')
         // str
+        // useLayoutEffect to have DOM ready like with Xt.ready or Xt.mount or some react demos break data-xt- is not initialized
         const str = `import React${
-          strMount !== '' ? `${refs ? `, { useRef, useEffect${test ? `, useState` : ''} }` : ''}` : ''
+          strMount !== '' ? `${refs ? `, { useRef, useLayoutEffect${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
 ${strImports}export default function demo() {${
           strMount !== ''
             ? `${test && refs ? 'const [count, setCount] = useState(0)' : ''}
   const ref = useRef()
-  useEffect(() => {
+  useLayoutEffect(() => {
     return mount({ ref: ref.current })
   }, [])
 `

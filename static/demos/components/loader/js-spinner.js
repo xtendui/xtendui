@@ -21,7 +21,6 @@ const mountLoaders = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '.xt-loader',
     mount: ({ ref }) => {
       return mountLoader({ ref })

@@ -22,7 +22,6 @@ const mountSliders = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '.xt-slider',
     mount: ({ ref }) => {
       return mountSlider({ ref })

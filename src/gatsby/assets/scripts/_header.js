@@ -2,6 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
 
 /* menu overlay */
 
@@ -11,14 +12,12 @@ Xt.mount({
     // vars
 
     const button = ref
-    const overlay = document.querySelector('#gatsby_menu--overlay')
     const sidebar = document.querySelector('.gatsby_site-article_sidebar')
 
     // overlay
 
     let self = new Xt.Overlay(button, {
       targets: '#gatsby_menu--overlay',
-      appendTo: '.gatsby_site-wrapper',
       duration: 500,
       matches: { '(min-width: 1024px)': { disabled: true } },
     })
@@ -47,6 +46,8 @@ Xt.mount({
 
     // on
 
+    const overlay = document.querySelector('#gatsby_menu--overlay')
+
     const on = () => {
       overlay.scrollTop = window.keepSidebarScroll
       if (sidebar) {
@@ -71,6 +72,10 @@ Xt.mount({
 Xt.mount({
   matches: '.gatsby_site-header',
   mount: ({ ref }) => {
+    // vars
+
+    const sticky = ref
+
     // match media
 
     ScrollTrigger.matchMedia({
@@ -78,7 +83,7 @@ Xt.mount({
         // sticky
 
         ScrollTrigger.create({
-          trigger: ref,
+          trigger: sticky,
           start: 'top top',
           endTrigger: 'html',
           end: 'bottom top',

@@ -17,6 +17,12 @@ class DemoIframe extends React.Component {
       // currentDemos
       window.parent.currentDemos.push(this)
     }
+    if (this.state.mode === 'html') {
+      try {
+        require(`static/${this.src}.js`).default
+        // eslint-disable-next-line no-empty
+      } catch (ex) {}
+    }
   }
 
   switchClean() {
@@ -69,11 +75,6 @@ class DemoIframe extends React.Component {
     if (this.state.mode === 'react') {
       // react
       Demo = require(`static/${this.src}.jsx`).default
-    } else {
-      try {
-        require(`static/${this.src}.js`).default
-        // eslint-disable-next-line no-empty
-      } catch (ex) {}
     }
     // render all
     return (

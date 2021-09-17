@@ -2,6 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
 
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
@@ -22,7 +23,7 @@ Xt.mount({
     // tooltip
 
     const close = document.querySelector('#gatsby_open-full > .xt-dismiss')
-    const closeUid = Xt.getuniqueId()
+    const closeUid = Xt.uniqueId()
     document.querySelector('#gatsby_open-full').append(
       Xt.node({
         str: `

@@ -22,13 +22,12 @@ const mountTest = ({ ref }) => {
 
   const drop = ref
   const overlay = ref.querySelector('[data-xt-overlay]')
-  let self
+  const self = Xt.get({ name: 'xt-overlay', el: overlay })
 
   // mount
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '.xt-overlay',
     mount: () => {
       // eslint-disable-next-line no-console
@@ -40,83 +39,38 @@ const mountTest = ({ ref }) => {
 
   const selfDrop = new Xt.Drop(drop, {})
 
-  const init = () => {
-    self = Xt.get({ name: 'xt-overlay', el: overlay })
-  }
+  // init
 
-  overlay.addEventListener('init.xt.overlay', init)
-
-  // on
-
-  const on = e => {
-    const tr = e.target
-    // check because of event propagation
-    if (self.targets.includes(tr)) {
-      tr.removeEventListener('on.xt.overlay', on)
+  for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+    tr.setAttribute('data-test-unique-id', self.uniqueId)
+    // eslint-disable-next-line no-console
+    console.log('TEST INITIAL xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
+    // eslint-disable-next-line no-console
+    console.log(
+      'TEST INITIAL 0 this should be `true true true true`.',
+      tr.classList.contains('on'),
+      tr.classList.contains('in'),
+      tr.classList.contains('initial'),
+      self.initial
+    )
+    requestAnimationFrame(() => {
       // eslint-disable-next-line no-console
       console.log(
-        'TEST INITIAL ON 1 this should be `true true true true`.',
+        'TEST INITIAL 1 this should be `true true false false`.',
         tr.classList.contains('on'),
         tr.classList.contains('in'),
         tr.classList.contains('initial'),
         self.initial
       )
-      requestAnimationFrame(() => {
-        // eslint-disable-next-line no-console
-        console.log(
-          'TEST INITIAL ON 2 this should be `true true false false`.',
-          tr.classList.contains('on'),
-          tr.classList.contains('in'),
-          tr.classList.contains('initial'),
-          self.initial
-        )
-      })
-    }
+    })
   }
-
-  const initOn = () => {
-    for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-      // eslint-disable-next-line no-console
-      console.log(
-        'TEST INITIAL ON 0 this should be `true true true true`.',
-        tr.classList.contains('on'),
-        tr.classList.contains('in'),
-        tr.classList.contains('initial'),
-        self.initial
-      )
-      tr.addEventListener('on.xt.overlay', on)
-    }
-  }
-
-  overlay.addEventListener('init.xt.overlay', initOn)
-
-  // off
-
-  const off = e => {
-    const tr = e.target
-    // check because of event propagation
-    if (self.targets.includes(tr)) {
-      // eslint-disable-next-line no-console
-      console.log(
-        'TEST UNMOUNT 0 closeauto when overlay open and change page (browser location prev next) should be called on unmount and overlay should close'
-      )
-    }
-  }
-
-  const initOff = () => {
-    for (const tr of self.targets) {
-      tr.addEventListener('off.xt.overlay', off)
-    }
-  }
-
-  overlay.addEventListener('init.xt.overlay', initOff)
 
   // off drop
 
   const offDrop = e => {
     const tr = e.target
     // check because of event propagation
-    if (self.targets.includes(tr)) {
+    if (selfDrop.targets.includes(tr)) {
       // eslint-disable-next-line no-console
       console.log(
         'TEST UNMOUNT 1 disableDeactivate when drop open and change page (browser location prev next) this should NOT be called.'
@@ -141,15 +95,11 @@ const mountTest = ({ ref }) => {
 
   return () => {
     // eslint-disable-next-line no-console
-    console.log('TEST UNMOUNT 2 this should be called on change page.')
-    // eslint-disable-next-line no-console
     console.log(
-      'TEST UNMOUNT 3 Xt.unmountArr.length and xtNamespace should remain the same.',
+      'TEST UNMOUNT 2 Xt.unmountArr should be the same and xtNamespace should be 0.',
       Xt.unmountArr.length,
       Xt.dataStorage.get(self.ns, 'xtNamespace').length
     )
     removeEventListener('resize', resize)
-    self.destroy()
-    self = null
   }
 }

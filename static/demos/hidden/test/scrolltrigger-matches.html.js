@@ -1,17 +1,17 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--mount-unmount">
+  <div class="demo--scrolltrigger-matches">
     <div class="xt-sticky">
-      <div class="xt-card ${classes.cardSm()} ${classes.textInverse()} ${classes.cardPrimary()}" data-xt-overlay>
+      <div class="xt-card ${classes.cardSm()} ${classes.textInverse()} ${classes.cardPrimary()}">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element>
+          data-xt-overlay="{ targets: '#overlay--scrolltrigger-matches' }">
           Overlay
         </button>
 
-        <div class="xt-overlay group" data-xt-overlay-target>
+        <div class="xt-overlay group" id="overlay--scrolltrigger-matches">
           <div class="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">

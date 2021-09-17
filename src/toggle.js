@@ -120,15 +120,14 @@ class Toggle {
     const options = self.options
     // mode
     self.containerTargets = self.container
+    self.uniqueId = self.uniqueId ?? Xt.uniqueId()
     if (options.targets && options.targets.indexOf('#') !== -1) {
       self.mode = 'unique'
       self.containerTargets = document.documentElement
       self.ns = `${self.componentName}-${options.targets.toString()}-${self.classes.toString()}`
     } else {
       self.mode = 'multiple'
-      const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
-      Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-      self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
+      self.ns = `${self.componentName}-${self.uniqueId}`
     }
     // final namespace
     self.ns = self.ns.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
@@ -411,7 +410,7 @@ class Toggle {
           if (options.aria === true || options.aria.labelledby || options.aria.controls) {
             const id = tr.getAttribute('id')
             if (!id) {
-              tr.setAttribute('id', Xt.getuniqueId())
+              tr.setAttribute('id', Xt.uniqueId())
             }
           }
         }
@@ -425,7 +424,7 @@ class Toggle {
           if (options.aria === true || options.aria.labelledby || options.aria.controls) {
             const id = el.getAttribute('id')
             if (!id) {
-              el.setAttribute('id', Xt.getuniqueId())
+              el.setAttribute('id', Xt.uniqueId())
             }
           }
           // controls
@@ -597,10 +596,12 @@ class Toggle {
       )
       const autostopHandler = Xt.dataStorage.put(self.container, `autostop/${self.ns}`, self.eventAutostop.bind(self))
       // focus
-      const focusHandler = Xt.dataStorage.put(window, `focus/auto/${self.ns}`, autostartHandler)
+      // Xt.dataStorage.set with window to fix unique mode same self.ns
+      const focusHandler = Xt.dataStorage.set(window, `focus/auto/${self.ns}`, autostartHandler)
       addEventListener('focus', focusHandler)
       // blur
-      const blurHandler = Xt.dataStorage.put(window, `blur/auto/${self.ns}`, autostopHandler)
+      // Xt.dataStorage.set with window to fix unique mode same self.ns
+      const blurHandler = Xt.dataStorage.set(window, `blur/auto/${self.ns}`, autostopHandler)
       addEventListener('blur', blurHandler)
       // event
       self.container.addEventListener(`autostart.trigger.${self.componentNs}`, autostartHandler)
@@ -718,11 +719,21 @@ class Toggle {
     }
     // closeauto
     if (options.closeauto) {
-      const closeautoHandler = Xt.dataStorage.put(window, `closeauto/${self.ns}`, self.eventCloseautoHandler.bind(self))
+      // Xt.dataStorage.set with window to fix unique mode same self.ns
+      const closeautoHandler = Xt.dataStorage.set(
+        window,
+        `closeauto.trigger.xt/${self.ns}`,
+        self.eventCloseautoHandler.bind(self)
+      )
       addEventListener('closeauto.trigger.xt', closeautoHandler, true)
     }
     if (options.openauto) {
-      const openautoHandler = Xt.dataStorage.put(window, `openauto/${self.ns}`, self.eventOpenautoHandler.bind(self))
+      // Xt.dataStorage.set with window to fix unique mode same self.ns
+      const openautoHandler = Xt.dataStorage.set(
+        window,
+        `openauto.trigger.xt/${self.ns}`,
+        self.eventOpenautoHandler.bind(self)
+      )
       addEventListener('openauto.trigger.xt', openautoHandler, true)
     }
     // mediaLoaded
@@ -1608,10 +1619,7 @@ class Toggle {
         el,
         func: () => {
           el.classList.remove(...self.classesIn)
-          // off but without classes
-          if (!self.disabled) {
-            el.classList.add(...self.classesOut)
-          }
+          el.classList.add(...self.classesOut)
         },
       })
       // direction
@@ -2509,16 +2517,16 @@ class Toggle {
         ns: `${self.ns}Init`,
         func: () => {
           if (self.initial) {
+            // fix before initScope or slider absolute has multiple active and bugs initial calculations
+            self.container.setAttribute(`data-${self.componentName}-init`, '')
+            // dispatch event
+            self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
             // remove class initial
             for (const type in obj) {
               for (const el of obj[type].queueEls) {
                 el.classList.remove(...self.classesInitial)
               }
             }
-            // fix before initScope or slider absolute has multiple active and bugs initial calculations
-            self.container.setAttribute(`data-${self.componentName}-init`, '')
-            // dispatch event
-            self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
             // debug
             if (options.debug) {
               // eslint-disable-next-line no-console
@@ -2658,21 +2666,19 @@ class Toggle {
         if (actionCurrent === 'In') {
           // appendTo
           const appendToTarget = document.querySelector(options.appendTo)
-          const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
+          const appendOrigin = document.querySelector(`[data-xt-origin="${self.uniqueId}"]`)
           if (!appendOrigin) {
-            el.before(Xt.node({ str: `<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>` }))
+            el.before(Xt.node({ str: `<div class="xt-ignore hidden" data-xt-origin="${self.uniqueId}"></div>` }))
           }
           appendToTarget.append(el)
         } else if (actionCurrent === 'Out') {
           // appendTo
-          if (options.appendTo) {
-            const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
-            if (appendOrigin) {
-              appendOrigin.before(el)
-              appendOrigin.remove()
-            } else {
-              el.remove()
-            }
+          const appendOrigin = document.querySelector(`[data-xt-origin="${self.uniqueId}"]`)
+          if (appendOrigin) {
+            appendOrigin.before(el)
+            appendOrigin.remove()
+          } else {
+            el.remove()
           }
         }
       }
@@ -3233,26 +3239,18 @@ class Toggle {
   /**
    * disable
    * @param {Object} params
-   * @param {Boolean} params.skipEvent Skip dispatch event
    */
   disable({ skipEvent = false } = {}) {
     const self = this
     const options = self.options
     if (!self.disabled) {
-      // off but without classes
-      if (skipEvent) {
-        // we disable if we need to skip event and other things that can throw errors (e.g. destroy)
-        self.disabled = true
-      }
-      if (options.disableDeactivate) {
-        for (const el of self.elements.filter(x => self.hasCurrent({ el: x }))) {
-          self.eventOff({ el, force: true })
-        }
+      // special
+      for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+        self.specialAppendto({ actionCurrent: 'Out', el: tr, type: 'targets' })
+        self.specialClassBody({ actionCurrent: 'Out', type: 'targets' })
       }
       // disable
-      if (!skipEvent) {
-        self.disabled = true
-      }
+      self.disabled = true
       self.container.setAttribute(`data-${self.componentName}-disabled`, '')
       for (const el of self.elements) {
         el.setAttribute(`data-${self.componentName}-disabled`, '')
@@ -3319,7 +3317,7 @@ class Toggle {
     const self = this
     // xtNamespace linked components
     if (self.mode === 'unique') {
-      const arr = Xt.dataStorage.get(self.ns, 'xtNamespace') || []
+      const arr = Xt.dataStorage.get(self.ns, 'xtNamespace') ?? []
       if (!arr.includes(self)) {
         arr.push(self)
         Xt.dataStorage.set(self.ns, 'xtNamespace', arr)
@@ -3466,7 +3464,6 @@ Toggle.optionsDefaultSuper = {
   matches: false,
   disabled: false,
   visibleReinit: false,
-  disableDeactivate: false,
   loop: false,
   jump: false,
   navigation: false,

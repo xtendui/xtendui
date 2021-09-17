@@ -16,7 +16,7 @@ function Layout({ children, page, seo }) {
   // no useEffect cause bugs demos hash
   useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
-      require('src/gatsby/assets/scripts/shared')
+      require('src/gatsby/assets/scripts/setup')
       require('src/gatsby/assets/scripts/app')
       require('src/gatsby/assets/scripts/demo').populateBlock()
       require('src/gatsby/assets/scripts/demo').makeDocument()

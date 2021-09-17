@@ -1495,7 +1495,6 @@ Slider.optionsDefault = {
   queue: false,
   // other
   visibleReinit: true,
-  disableDeactivate: true,
   jump: false,
   navigation: '[data-xt-nav]',
   keyboard: {

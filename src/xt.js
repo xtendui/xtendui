@@ -28,6 +28,9 @@ if (typeof window !== 'undefined') {
   Xt.autoTimescale = 1
   Xt.scrolltoHashforce = null
   Xt.formScrollWindowFactor = 0.2
+  Xt.mountIgnore = '.xt-ignore, .xt-ignore-mount'
+  Xt.unmountIgnore = '.xt-ignore, .xt-ignore-unmount'
+  Xt.registeredPlugins = []
 
   //
   // initialization
@@ -44,7 +47,7 @@ if (typeof window !== 'undefined') {
     const states = [...state.split(' ')]
     if (states.includes(document.readyState)) {
       if (raf) {
-        // raf because we need all functions defined after mount (e.g. toggle api and slider api)
+        // raf because we need all functions defined after mount (e.g. all html demos with mount)
         requestAnimationFrame(() => {
           func()
         })
@@ -76,26 +79,13 @@ if (typeof window !== 'undefined') {
         // added
         for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            // fix multiple initialization (e.g. mount inside sticky)
-            Xt.frame({
-              el: added,
-              ns: `xtUnmount`,
-            })
-            // no raf because instant initialization (e.g. menu mobile opened) we filter multiple mount with obj.done
             Xt.mountCheck({ added })
           }
         }
         // removed
         for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            // fix multiple initialization (e.g. mount inside sticky)
-            Xt.frame({
-              el: removed,
-              ns: `xtUnmount`,
-              func: () => {
-                Xt.unmountCheck({ removed })
-              },
-            })
+            Xt.unmountCheck({ removed })
           }
         }
       }
@@ -152,15 +142,6 @@ if (typeof window !== 'undefined') {
   Xt.mountCheck = ({ added = document.documentElement, obj } = {}) => {
     const arr = obj ? [obj] : Xt.mountArr
     for (const obj of arr) {
-      // ignore
-      const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
-      if (ignoreStr) {
-        const ignore = added.closest(ignoreStr)
-        if (ignore) {
-          Xt.ignoreOnce({ el: ignore }) // fix ignore once for mount when moving
-          continue
-        }
-      }
       // check
       const refs = []
       if (added.matches(obj.matches)) {
@@ -176,7 +157,15 @@ if (typeof window !== 'undefined') {
           if (obj.root && !obj.root.contains(ref)) {
             continue
           }
-          // fix multiple initialization (e.g. mount inside sticky)
+          // ignore
+          if (Xt.mountIgnore) {
+            const ignore = ref.closest(Xt.mountIgnore)
+            if (ignore) {
+              Xt.ignoreOnce({ el: ignore })
+              continue
+            }
+          }
+          // fix multiple mount needed sometimes (e.g. mount inside pin)
           obj.done = obj.done ? obj.done : []
           if (obj.done.includes(ref)) {
             return
@@ -190,10 +179,9 @@ if (typeof window !== 'undefined') {
               ref,
               root: obj.root,
               matches: obj.matches,
-              ignore: obj.ignore,
               unmount: call,
               unmountRemove: function () {
-                // fix multiple initialization (e.g. mount inside sticky)
+                // fix multiple mount needed sometimes (e.g. mount inside pin)
                 obj.done = obj.done.filter(x => x !== ref)
                 // unmount remove
                 Xt.unmountArr = Xt.unmountArr.filter(x => {
@@ -221,9 +209,12 @@ if (typeof window !== 'undefined') {
           continue
         }
         // ignore
-        const ignoreStr = obj.ignore ? obj.ignore : obj.ignore === false ? false : '.xt-ignore'
-        if (ignoreStr && obj.ref.closest(ignoreStr)) {
-          return
+        if (Xt.unmountIgnore) {
+          const ignore = obj.ref.closest(Xt.unmountIgnore)
+          if (ignore) {
+            Xt.ignoreOnce({ el: ignore })
+            continue
+          }
         }
         // call
         obj.unmount({ obj })
@@ -663,7 +654,7 @@ if (typeof window !== 'undefined') {
    * Get unique id
    * @return {String} Unique id
    */
-  Xt.getuniqueId = () => {
+  Xt.uniqueId = () => {
     Xt.uid = Xt.uid !== undefined ? Xt.uid : 0
     return `xt-${Xt.uid++}`
   }
@@ -769,20 +760,6 @@ if (typeof window !== 'undefined') {
       script.defer = defer
       script.async = async
       document.body.append(script)
-    }
-  }
-
-  /**
-   * ignoreOnce
-   * @param {Object} params
-   * @param {Node|HTMLElement|EventTarget|Window} params.el
-   */
-  Xt.ignoreOnce = ({ el } = {}) => {
-    if (el.classList.contains('xt-ignore-once')) {
-      // fix react when componentDidMount
-      requestAnimationFrame(() => {
-        el.classList.remove('xt-ignore', 'xt-ignore-once')
-      })
     }
   }
 
@@ -1168,6 +1145,99 @@ if (typeof window !== 'undefined') {
       Xt.innerHeightSet()
     },
   })
+
+  /**
+   * ignoreOnce
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  Xt.ignoreOnce = ({ el } = {}) => {
+    if (el.classList.contains('xt-ignore-once')) {
+      Xt.frame({
+        el,
+        ns: `xtIgnoreOnceFrame`,
+        func: () => {
+          el.classList.remove('xt-ignore-once', ...Xt.mountIgnore, ...Xt.unmountIgnore)
+        },
+      })
+    }
+  }
+
+  /**
+   * ignore for one frame
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {String} params.ns Namespace
+   */
+  Xt.ignore = ({ el, ns = '' } = {}) => {
+    el.classList.add('xt-ignore')
+    Xt.frame({
+      el,
+      ns: `${ns}IgnoreFrame`,
+      func: () => {
+        el.classList.remove('xt-ignore')
+      },
+    })
+  }
+
+  /**
+   * scrollTriggerPinRefresh
+   * @param {Object} params
+   * @param {Object} params.options
+   */
+  Xt.scrollTriggerPinRefresh = ({ options } = {}) => {
+    const ignore = options?.ignore ?? '.xt-sticky, .xt-pin'
+    if (ignore) {
+      const els = document.querySelectorAll(ignore)
+      for (const el of els) {
+        Xt.ignore({ el })
+      }
+    }
+  }
+
+  /**
+   * scrollTriggerPin
+   * @param {Object} params
+   * @param {Object} params.ScrollTrigger
+   * @param {Object} params.options
+   */
+  Xt.scrollTriggerPin = ({ ScrollTrigger, options } = {}) => {
+    // fix refresh mount/unmount
+    const refreshHandler = Xt.dataStorage.put(
+      window,
+      `xtScrollTriggerPin`,
+      Xt.scrollTriggerPinRefresh.bind(ScrollTrigger, { options })
+    )
+    ScrollTrigger.removeEventListener('refresh', refreshHandler)
+    ScrollTrigger.addEventListener('refresh', refreshHandler)
+    // fix initial mount of pin
+    const pin = options?.pin ?? '.pin-spacer'
+    if (pin) {
+      Xt.mount({
+        matches: pin,
+        mount: ({ ref }) => {
+          Xt.ignore({ el: ref })
+        },
+      })
+    }
+  }
+
+  /**
+   * registerPlugin
+   * @param {String} name
+   * @param {Object} plugin
+   * @param {Object} options
+   */
+  Xt.registerPlugin = function ({ name, plugin, options } = {}) {
+    // ScrollTrigger
+    const obj = arguments[0]
+    if (!Xt.registeredPlugins.filter(x => x.name === name).length) {
+      Xt.registeredPlugins.push(obj)
+      if (name === 'ScrollTrigger') {
+        Xt.scrollTriggerPin({ ScrollTrigger: plugin, options })
+      }
+    }
+  }
 
   //
 }

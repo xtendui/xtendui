@@ -20,7 +20,6 @@ const mountExpands = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '.xt-list',
     mount: ({ ref }) => {
       return mountExpand({ ref })

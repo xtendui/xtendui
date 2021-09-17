@@ -21,7 +21,6 @@ const mountTooltips = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '[data-xt-tooltip]',
     mount: ({ ref }) => {
       return mountTooltip({ ref })
@@ -39,15 +38,7 @@ const mountTooltip = ({ ref }) => {
   // vars
 
   const tooltip = ref
-  let self
-
-  // init
-
-  const init = () => {
-    self = Xt.get({ name: 'xt-tooltip', el: tooltip })
-  }
-
-  tooltip.addEventListener('init.xt.tooltip', init)
+  const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
 
   // swap
 

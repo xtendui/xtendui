@@ -2,6 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
 
 Xt.mount({
   matches: '.demo--sticky-matchmedia',
@@ -19,6 +20,10 @@ Xt.mount({
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // vars
+
+  const sticky = ref.querySelector('.xt-sticky')
+
   // match media
 
   /***/
@@ -27,7 +32,7 @@ const mountSticky = ({ ref }) => {
       // sticky
 
       ScrollTrigger.create({
-        trigger: ref.querySelector('.xt-sticky'),
+        trigger: sticky,
         start: 'top top',
         endTrigger: 'html',
         end: 'bottom top',

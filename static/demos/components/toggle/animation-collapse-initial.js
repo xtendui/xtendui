@@ -21,7 +21,6 @@ const mountToggles = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '[data-xt-toggle]',
     mount: ({ ref }) => {
       return mountToggle({ ref })

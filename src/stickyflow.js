@@ -51,9 +51,8 @@ class Stickyflow {
     const options = self.options
     // set self
     Xt.set({ name: self.componentName, el: self.container, self })
-    const uniqueId = Xt.dataStorage.get(self.container, 'xtUniqueId')
-    Xt.dataStorage.set(self.container, 'xtUniqueId', uniqueId || Xt.getuniqueId())
-    self.ns = `${self.componentName}-${Xt.dataStorage.get(self.container, 'xtUniqueId')}`
+    self.uniqueId = self.uniqueId ?? Xt.uniqueId()
+    self.ns = `${self.componentName}-${self.uniqueId}`
     // vars
     self.disabled = false
     // enable first for proper initial activation

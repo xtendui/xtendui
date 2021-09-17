@@ -21,7 +21,6 @@ const mountToggles = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '[data-xt-toggle]',
     mount: ({ ref }) => {
       return mountToggle({ ref })
@@ -39,15 +38,7 @@ const mountToggle = ({ ref }) => {
   // vars
 
   const toggle = ref
-  let self
-
-  // init
-
-  const init = () => {
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
-  }
-
-  toggle.addEventListener('init.xt.toggle', init)
+  const self = Xt.get({ name: 'xt-toggle', el: toggle })
 
   // off
 
@@ -65,13 +56,9 @@ const mountToggle = ({ ref }) => {
     /***/
   }
 
-  const initOff = () => {
-    for (const tr of self.targets) {
-      tr.addEventListener('off.xt.toggle', off)
-    }
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.toggle', off)
   }
-
-  toggle.addEventListener('init.xt.toggle', initOff)
 
   // unmount
 

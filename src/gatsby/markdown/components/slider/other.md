@@ -17,7 +17,6 @@ On slider disable/enable the component **automatically add/remove the class `hid
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
-| Option                  | `disableDeactivate:Boolean`                              | `true`                     | Deactivate automatically on disable           |
 | Option                  | `hideDisable:Query`                          | `'[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]'`        | Container query for items to hide on disable              |
 
 

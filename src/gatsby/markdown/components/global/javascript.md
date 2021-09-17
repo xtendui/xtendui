@@ -18,7 +18,7 @@ Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sen
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Variable                  | `Xt.usabilityHostnames:Boolean|String`              | `'127.0.0.1 localhost'`       | Enable usability checks **on hostnames separated by space**                  |
+| Variable                  | `Xt.usabilityHostnames:Boolean\|String`              | `'127.0.0.1 localhost'`       | Enable usability checks **on hostnames separated by space**                  |
 | Variable                  | `Xt.usabilityIgnore:String`              | `'.sf-toolbar, .gm-style'`       | Disable usability checks **inside this query**                  |
 
 </div>
@@ -53,7 +53,6 @@ You can return a function to execute when **the Node is removed from the DOM**.
 | Option                    | `root:Node`                          | `null`        | Only if added nodes are inside a root node            |
 | Option                    | `raf:Boolean`                          | `true`        | Use requestAnimationFrame for mount `Xt.ready`            |
 | Option                    | `mount:Function`                          | `null`        | Function to execute on mount, returned function will be executed on unmount             |
-| Option                    | `ignore:Query\|false`                          | `'.xt-ignore'`        | Ignore mount when this query matches closest (ref or parent of ref)             |
 
 </div>
 
@@ -68,8 +67,6 @@ Here's **mount function arguments**.
 | Variable                  | `index:Number`       | Mounted index on the same mount                 |
 
 </div>
-
-> Remember to **use `.xt-ignore` when moving object** to prevent **child multiple mount and unmount**. If you want to automatically remove the `.xt-ignore` class when done use `.xt-ignore.xt-ignore-once`.
 
 ```js
 Xt.mount({
@@ -87,6 +84,17 @@ Xt.mount({
   },
 })
 ```
+
+You can also use the class `.xt-ignore` when moving objects **to prevent mount and unmount**. It's customizable and if you want to have effect only for one time use also `.xt-ignore-once`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Variable                  | `Xt.mountIgnore:String`              | `'.xt-ignore, .xt-ignore-mount'`       | Do not mount if mounted node is **inside this query**                  |
+| Variable                  | `Xt.unmountIgnore:String`              | `'.xt-ignore, .xt-ignore-unmount'`       | Do not unmount if unmounted node is **inside this query**                  |
+
+</div>
 
 ## Xt.on and Xt.off
 
@@ -142,7 +150,7 @@ For example if you want to **get the drop object** on a particular node.
 let self = Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') })
 ```
 
-> Xt.get **doesn't work instantly for components initialized within markup** with `data-xt-` when using react or other frameworks, in this case retrieve the value listening to the event `init`.
+> The components initialization of `data-xt-` or `Xt.mount` **is ready after document ready**, so if you use react use `useLayoutEffect` hook or `Xt.ready` or `Xt.mount` or `init.xt.` event to access the data after document ready.
 
 ## Xt.options
 

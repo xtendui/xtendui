@@ -1,8 +1,9 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/slider'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
+import 'xtendui/src/slider'
 
 Xt.mount({
   matches: '.demo--products-listing-v2',

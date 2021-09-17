@@ -8,23 +8,19 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Mount Unmount
 
-TEST INITIAL ON 0 this should be `true true true true`.
+TEST INITIAL xtNamespace should be 1.
 
-TEST INITIAL ON 1 this should be `true true true true`.
+TEST INITIAL 0 this should be `true true true true`.
 
-TEST INITIAL ON 2 this should be `true true false false`.
+TEST INITIAL 1 this should be `true true false false`.
 
 TEST MOUNT this should be called once and should NOT be called on overlay close.
 
-TEST UNMOUNT 0 closeauto when overlay open and change page (browser location prev next) should be called on unmount and overlay should close.
-
 TEST UNMOUNT 1 disableDeactivate when drop open and change page (browser location prev next) this should NOT be called.
 
-TEST UNMOUNT 2 this should be called on change page.
+TEST UNMOUNT 2 Xt.unmountArr should be the same and xtNamespace should be 0.
 
 TEST UNMOUNT this should NOT be called multiple times on changing page and resize.
-
-TEST UNMOUNT 3 Xt.unmountArr.length and xtNamespace should remain the same
 
 <demo>
   <demoinline src="demos/hidden/test/mount-unmount">
@@ -34,6 +30,12 @@ TEST UNMOUNT 3 Xt.unmountArr.length and xtNamespace should remain the same
 ## ScrollTrigger Matches
 
 Test resize and open/close overlay should always work.
+
+TEST PIN MOUNT this should NOT be called on resize and xtNamespace should be 1.
+
+TEST PIN RESIZE this should be called one time on resize and Xt.mountArr should not increase.
+
+TEST PIN UNMOUNT this should NOT be called on resize and xtNamespace should be 0 on unmount.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/hidden/test/scrolltrigger-matches"></div>
@@ -50,7 +52,7 @@ Test click should load iframe, it tests mount with root.
 
 ## Docs
 
-Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable after 3 changes (fix multiple initialization (e.g. mount inside sticky)).
+Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable after 3 changes (fix multiple mount needed sometimes (e.g. mount inside pin)).
 
 Test on mobile with menu mobile open resize to desktop should disable overlay and back should enable.
 

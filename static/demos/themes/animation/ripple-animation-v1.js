@@ -22,7 +22,6 @@ const mountRipples = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    raf: false,
     matches: '.xt-button, .xt-card',
     mount: ({ ref }) => {
       return mountRipple({ ref })
