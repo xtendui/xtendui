@@ -7,23 +7,6 @@ gsap.registerPlugin(ScrollTrigger)
 import 'xtendui/src/overlay'
 import 'xtendui/src/scrollto'
 
-Xt.mount({
-  matches: '.demo--scrollto-overlay',
-  mount: ({ ref }) => {
-    const unmountSticky = mountSticky({ ref })
-    const unmountScrollto = mountScrollto({ ref })
-    const unmountSwitcher = mountSwitcher({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSticky()
-      unmountScrollto()
-      unmountSwitcher()
-    }
-  },
-})
-
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
@@ -151,3 +134,22 @@ const mountSwitcher = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--scrollto-overlay',
+  mount: ({ ref }) => {
+    const unmountSticky = mountSticky({ ref })
+    const unmountScrollto = mountScrollto({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSticky()
+      unmountScrollto()
+      unmountSwitcher()
+    }
+  },
+})

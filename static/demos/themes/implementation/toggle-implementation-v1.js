@@ -5,19 +5,6 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
-Xt.mount({
-  matches: '.demo--toggle-implementation-v1',
-  mount: ({ ref }) => {
-    const unmountScrollto = mountScrollto({ ref })
-
-    // unmount
-
-    return () => {
-      unmountScrollto()
-    }
-  },
-})
-
 /* mountScrollto */
 
 const mountScrollto = () => {
@@ -58,3 +45,18 @@ const mountScrollto = () => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--toggle-implementation-v1',
+  mount: ({ ref }) => {
+    const unmountScrollto = mountScrollto({ ref })
+
+    // unmount
+
+    return () => {
+      unmountScrollto()
+    }
+  },
+})

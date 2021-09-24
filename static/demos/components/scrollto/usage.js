@@ -6,21 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 import 'xtendui/src/scrollto'
 
-Xt.mount({
-  matches: '.demo--scrollto',
-  mount: ({ ref }) => {
-    const unmountSticky = mountSticky({ ref })
-    const unmountScrollto = mountScrollto({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSticky()
-      unmountScrollto()
-    }
-  },
-})
-
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
@@ -102,3 +87,20 @@ const mountScrollto = () => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--scrollto',
+  mount: ({ ref }) => {
+    const unmountSticky = mountSticky({ ref })
+    const unmountScrollto = mountScrollto({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSticky()
+      unmountScrollto()
+    }
+  },
+})

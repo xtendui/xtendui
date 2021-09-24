@@ -4,21 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 import 'xtendui/src/slider'
 
-Xt.mount({
-  matches: '.demo--products-listing-v2',
-  mount: ({ ref }) => {
-    const unmountMedia = mountMedia({ ref })
-    const unmountFade = mountFade({ ref })
-
-    // unmount
-
-    return () => {
-      unmountMedia()
-      unmountFade()
-    }
-  },
-})
-
 /* mountMedia */
 
 const mountMedia = ({ ref }) => {
@@ -202,3 +187,20 @@ const fade = ({ ref }) => {
   })
   /***/
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--products-listing-v2',
+  mount: ({ ref }) => {
+    const unmountMedia = mountMedia({ ref })
+    const unmountFade = mountFade({ ref })
+
+    // unmount
+
+    return () => {
+      unmountMedia()
+      unmountFade()
+    }
+  },
+})

@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 
-Xt.mount({
-  matches: '.demo--drop-reset-to-current',
-  mount: ({ ref }) => {
-    const unmountDrops = mountDrops({ ref })
-
-    // unmount
-
-    return () => {
-      unmountDrops()
-    }
-  },
-})
-
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
@@ -64,3 +51,18 @@ const mountDrop = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--drop-reset-to-current',
+  mount: ({ ref }) => {
+    const unmountDrops = mountDrops({ ref })
+
+    // unmount
+
+    return () => {
+      unmountDrops()
+    }
+  },
+})

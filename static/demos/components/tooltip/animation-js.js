@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--tooltip-animation-js',
-  mount: ({ ref }) => {
-    const unmountTooltip = mountTooltip({ ref })
-
-    // unmount
-
-    return () => {
-      unmountTooltip()
-    }
-  },
-})
-
 /* mountTooltips */
 
 const mountTooltip = ({ ref }) => {
@@ -95,3 +82,18 @@ const mountTooltip = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--tooltip-animation-js',
+  mount: ({ ref }) => {
+    const unmountTooltip = mountTooltip({ ref })
+
+    // unmount
+
+    return () => {
+      unmountTooltip()
+    }
+  },
+})

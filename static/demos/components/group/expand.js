@@ -1,18 +1,5 @@
 import { Xt } from 'xtendui'
 
-Xt.mount({
-  matches: '.demo--group-expand',
-  mount: ({ ref }) => {
-    const unmountExpands = mountExpands({ ref })
-
-    // unmount
-
-    return () => {
-      unmountExpands()
-    }
-  },
-})
-
 /* mountExpands */
 
 const mountExpands = ({ ref }) => {
@@ -69,3 +56,18 @@ const mountExpand = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--group-expand',
+  mount: ({ ref }) => {
+    const unmountExpands = mountExpands({ ref })
+
+    // unmount
+
+    return () => {
+      unmountExpands()
+    }
+  },
+})

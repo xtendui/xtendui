@@ -1,18 +1,5 @@
 import { Xt } from 'xtendui'
 
-Xt.mount({
-  matches: '.demo--stores-listing-v1',
-  mount: ({ ref }) => {
-    const unmountListing = mountListing({ ref })
-
-    // unmount
-
-    return () => {
-      unmountListing()
-    }
-  },
-})
-
 /* mountListing */
 
 const mountListing = ({ ref }) => {
@@ -49,3 +36,18 @@ const mountListing = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--stores-listing-v1',
+  mount: ({ ref }) => {
+    const unmountListing = mountListing({ ref })
+
+    // unmount
+
+    return () => {
+      unmountListing()
+    }
+  },
+})

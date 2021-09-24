@@ -8,23 +8,6 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
-Xt.mount({
-  matches: '.demo--products-gallery-v1',
-  mount: ({ ref }) => {
-    const unmountVariants = mountVariants({ ref })
-    const unmountScrollto = mountScrollto({ ref })
-    const unmountImages = mountImages({ ref })
-
-    // unmount
-
-    return () => {
-      unmountVariants()
-      unmountScrollto()
-      unmountImages()
-    }
-  },
-})
-
 /* mountVariants */
 
 const mountVariants = ({ ref }) => {
@@ -274,3 +257,22 @@ const mountImages = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--products-gallery-v1',
+  mount: ({ ref }) => {
+    const unmountVariants = mountVariants({ ref })
+    const unmountScrollto = mountScrollto({ ref })
+    const unmountImages = mountImages({ ref })
+
+    // unmount
+
+    return () => {
+      unmountVariants()
+      unmountScrollto()
+      unmountImages()
+    }
+  },
+})

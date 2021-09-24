@@ -1,18 +1,5 @@
 import { Xt } from 'xtendui'
 
-Xt.mount({
-  matches: '.demo--javascript-animation-css',
-  mount: ({ ref }) => {
-    const unmountActivation = mountActivation({ ref })
-
-    // unmount
-
-    return () => {
-      unmountActivation()
-    }
-  },
-})
-
 /* mountActivation */
 
 const mountActivation = ({ ref }) => {
@@ -38,3 +25,18 @@ const mountActivation = ({ ref }) => {
     clearTimeout(tr.dataset.interval)
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--javascript-animation-css',
+  mount: ({ ref }) => {
+    const unmountActivation = mountActivation({ ref })
+
+    // unmount
+
+    return () => {
+      unmountActivation()
+    }
+  },
+})

@@ -3,19 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount({
-  matches: '.demo--parallax-image',
-  mount: ({ ref }) => {
-    const unmountParallax = mountParallax({ ref })
-
-    // unmount
-
-    return () => {
-      unmountParallax()
-    }
-  },
-})
-
 /* mountParallax */
 
 const mountParallax = ({ ref }) => {
@@ -81,3 +68,18 @@ const parallax = ({ ref }) => {
       })
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--parallax-image',
+  mount: ({ ref }) => {
+    const unmountParallax = mountParallax({ ref })
+
+    // unmount
+
+    return () => {
+      unmountParallax()
+    }
+  },
+})

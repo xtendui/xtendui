@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--slider-automaticscroll',
-  mount: ({ ref }) => {
-    const unmountSliders = mountSliders({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSliders()
-    }
-  },
-})
-
 /* mountSliders */
 
 const mountSliders = ({ ref }) => {
@@ -166,3 +153,18 @@ const mountSlider = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-automaticscroll',
+  mount: ({ ref }) => {
+    const unmountSliders = mountSliders({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSliders()
+    }
+  },
+})

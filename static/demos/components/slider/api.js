@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 
-Xt.mount({
-  matches: '.demo--slider-api',
-  mount: ({ ref }) => {
-    const unmountEventmethods = mountEventmethods({ ref })
-
-    // unmount
-
-    return () => {
-      unmountEventmethods()
-    }
-  },
-})
-
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
@@ -226,3 +213,18 @@ const mountEventmethods = ({ ref }) => {
   }
   return unmount
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-api',
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
+
+    // unmount
+
+    return () => {
+      unmountEventmethods()
+    }
+  },
+})

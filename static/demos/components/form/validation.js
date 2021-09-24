@@ -1,23 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/form'
 
-Xt.mount({
-  matches: '.demo--form-validation',
-  mount: ({ ref }) => {
-    const unmountScrollToError = mountScrollToError({ ref })
-    const unmountValidationRequiredOne = mountValidationRequiredOne({ ref })
-    const unmountValidationCustom = mountValidationCustom({ ref })
-
-    // unmount
-
-    return () => {
-      unmountScrollToError()
-      unmountValidationRequiredOne()
-      unmountValidationCustom()
-    }
-  },
-})
-
 /* mountScrollToError */
 
 const mountScrollToError = ({ ref }) => {
@@ -108,3 +91,22 @@ const mountValidationCustom = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--form-validation',
+  mount: ({ ref }) => {
+    const unmountScrollToError = mountScrollToError({ ref })
+    const unmountValidationRequiredOne = mountValidationRequiredOne({ ref })
+    const unmountValidationCustom = mountValidationCustom({ ref })
+
+    // unmount
+
+    return () => {
+      unmountScrollToError()
+      unmountValidationRequiredOne()
+      unmountValidationCustom()
+    }
+  },
+})

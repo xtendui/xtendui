@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--loader-js-filler',
-  mount: ({ ref }) => {
-    const unmountLoaders = mountLoaders({ ref })
-
-    // unmount
-
-    return () => {
-      unmountLoaders()
-    }
-  },
-})
-
 /* mountLoaders */
 
 const mountLoaders = ({ ref }) => {
@@ -71,3 +58,18 @@ const mountLoader = ({ ref }) => {
     clearTimeout(loader.dataset.loaderTimeout)
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--loader-js-filler',
+  mount: ({ ref }) => {
+    const unmountLoaders = mountLoaders({ ref })
+
+    // unmount
+
+    return () => {
+      unmountLoaders()
+    }
+  },
+})

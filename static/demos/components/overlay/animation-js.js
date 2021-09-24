@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--overlay-animation-js',
-  mount: ({ ref }) => {
-    const unmountOverlay = mountOverlay({ ref })
-
-    // unmount
-
-    return () => {
-      unmountOverlay()
-    }
-  },
-})
-
 /* mountOverlay */
 
 const mountOverlay = ({ ref }) => {
@@ -96,3 +83,18 @@ const mountOverlay = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--overlay-animation-js',
+  mount: ({ ref }) => {
+    const unmountOverlay = mountOverlay({ ref })
+
+    // unmount
+
+    return () => {
+      unmountOverlay()
+    }
+  },
+})

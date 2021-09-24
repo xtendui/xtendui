@@ -2,19 +2,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/googlelocator'
 
-Xt.mount({
-  matches: '.demo--googlelocator',
-  mount: ({ ref }) => {
-    const unmountGooglelocator = mountGooglelocator({ ref })
-
-    // unmount
-
-    return () => {
-      unmountGooglelocator()
-    }
-  },
-})
-
 /* initGooglelocator */
 
 const initGooglelocator = ({ ref }) => {
@@ -230,3 +217,18 @@ const mountGooglelocator = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--googlelocator',
+  mount: ({ ref }) => {
+    const unmountGooglelocator = mountGooglelocator({ ref })
+
+    // unmount
+
+    return () => {
+      unmountGooglelocator()
+    }
+  },
+})

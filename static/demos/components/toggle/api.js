@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
-Xt.mount({
-  matches: '.demo--toggle-api',
-  mount: ({ ref }) => {
-    const unmountEventmethods = mountEventmethods({ ref })
-
-    // unmount
-
-    return () => {
-      unmountEventmethods()
-    }
-  },
-})
-
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
@@ -218,3 +205,18 @@ const mountEventmethods = ({ ref }) => {
   }
   return unmount
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--toggle-api',
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
+
+    // unmount
+
+    return () => {
+      unmountEventmethods()
+    }
+  },
+})

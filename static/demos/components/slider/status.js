@@ -1,21 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 
-Xt.mount({
-  matches: '.demo--slider-status',
-  mount: ({ ref }) => {
-    const unmountStatuses = mountStatuses({ ref })
-    const unmountSwitcher = mountSwitcher({ ref })
-
-    // unmount
-
-    return () => {
-      unmountStatuses()
-      unmountSwitcher()
-    }
-  },
-})
-
 /* mountStatuses */
 
 const mountStatuses = ({ ref }) => {
@@ -109,3 +94,20 @@ const mountSwitcher = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-status',
+  mount: ({ ref }) => {
+    const unmountStatuses = mountStatuses({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
+
+    // unmount
+
+    return () => {
+      unmountStatuses()
+      unmountSwitcher()
+    }
+  },
+})

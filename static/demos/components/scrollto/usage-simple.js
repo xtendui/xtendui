@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/scrollto'
 
-Xt.mount({
-  matches: '.demo--scrollto-simple',
-  mount: ({ ref }) => {
-    const unmountScrollto = mountScrollto({ ref })
-
-    // unmount
-
-    return () => {
-      unmountScrollto()
-    }
-  },
-})
-
 /* mountScrollto */
 
 const mountScrollto = () => {
@@ -42,3 +29,18 @@ const mountScrollto = () => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--scrollto-simple',
+  mount: ({ ref }) => {
+    const unmountScrollto = mountScrollto({ ref })
+
+    // unmount
+
+    return () => {
+      unmountScrollto()
+    }
+  },
+})

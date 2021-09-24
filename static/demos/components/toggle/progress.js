@@ -3,19 +3,6 @@ import 'xtendui/src/toggle'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--toggle-progress',
-  mount: ({ ref }) => {
-    const unmountToggle = mountToggle({ ref })
-
-    // unmount
-
-    return () => {
-      unmountToggle()
-    }
-  },
-})
-
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
@@ -150,3 +137,18 @@ const mountToggle = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--toggle-progress',
+  mount: ({ ref }) => {
+    const unmountToggle = mountToggle({ ref })
+
+    // unmount
+
+    return () => {
+      unmountToggle()
+    }
+  },
+})

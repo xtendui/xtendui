@@ -1,18 +1,5 @@
 import { Xt } from 'xtendui'
 
-Xt.mount({
-  matches: '.demo--media-iframe-lazy',
-  mount: ({ ref }) => {
-    const unmountIframesLazy = mountIframesLazy({ ref })
-
-    // unmount
-
-    return () => {
-      unmountIframesLazy()
-    }
-  },
-})
-
 /* mountIframesLazy */
 
 const mountIframesLazy = ({ ref }) => {
@@ -53,3 +40,18 @@ const mountIframeLazy = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--media-iframe-lazy',
+  mount: ({ ref }) => {
+    const unmountIframesLazy = mountIframesLazy({ ref })
+
+    // unmount
+
+    return () => {
+      unmountIframesLazy()
+    }
+  },
+})

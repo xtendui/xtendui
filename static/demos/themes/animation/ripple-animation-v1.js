@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/ripple'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--ripple-animation-v1',
-  mount: ({ ref }) => {
-    const unmountRipples = mountRipples({ ref })
-
-    // unmount
-
-    return () => {
-      unmountRipples()
-    }
-  },
-})
-
 /* mountRipples */
 
 const mountRipples = ({ ref }) => {
@@ -107,3 +94,18 @@ const mountRipple = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--ripple-animation-v1',
+  mount: ({ ref }) => {
+    const unmountRipples = mountRipples({ ref })
+
+    // unmount
+
+    return () => {
+      unmountRipples()
+    }
+  },
+})

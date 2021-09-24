@@ -1,18 +1,5 @@
 import { Xt } from 'xtendui'
 
-Xt.mount({
-  matches: '.demo--jumptocontent',
-  mount: ({ ref }) => {
-    const unmountJumptocontents = mountJumptocontents({ ref })
-
-    // unmount
-
-    return () => {
-      unmountJumptocontents()
-    }
-  },
-})
-
 /* mountJumptocontents */
 
 const mountJumptocontents = ({ ref }) => {
@@ -57,3 +44,18 @@ const mountJumptocontent = ({ ref }) => {
     document.removeEventListener('focusin', focusIn)
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--jumptocontent',
+  mount: ({ ref }) => {
+    const unmountJumptocontents = mountJumptocontents({ ref })
+
+    // unmount
+
+    return () => {
+      unmountJumptocontents()
+    }
+  },
+})

@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
-Xt.mount({
-  matches: '.demo--toggle-animation-duration-delay',
-  mount: ({ ref }) => {
-    const unmountToggle = mountToggle({ ref })
-
-    // unmount
-
-    return () => {
-      unmountToggle()
-    }
-  },
-})
-
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
@@ -54,3 +41,18 @@ const mountToggle = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--toggle-animation-duration-delay',
+  mount: ({ ref }) => {
+    const unmountToggle = mountToggle({ ref })
+
+    // unmount
+
+    return () => {
+      unmountToggle()
+    }
+  },
+})

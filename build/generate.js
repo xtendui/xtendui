@@ -55,11 +55,15 @@ console.log(test)
               //process.exit(1)
             }
           }
-          // imports
-          const imports = jsText.match(/([\s\S]+)(?=^Xt.mount)/gm)
-          if (imports) {
-            for (const meta of imports.entries()) {
-              strImports += meta[1]
+          // importsAndMethods
+          const importsAndMethods = jsText.match(/([\s\S]+?)(?=^\/\*)/gm)
+          if (importsAndMethods) {
+            for (const [i, meta] of importsAndMethods.entries()) {
+              if (i === 0) {
+                strImports += meta
+              } else {
+                strMethods += meta
+              }
             }
           } else {
             strImports = `${jsText}\n`
@@ -67,19 +71,14 @@ console.log(test)
           // mounts
           const mounts = jsText.match(/(?<= {2}mount:(.*?)$).*([\S\s]*?)[ ]*(?=^\s\s\})/gm)
           if (mounts) {
-            for (const meta of mounts.entries()) {
-              strMount += meta[1]
-              // only the first mount
-              break
+            // reverse because we need last occurrence of Xt.mount
+            for (const [i, meta] of mounts.reverse().entries()) {
+              if (i === 0) {
+                strMount += meta
+                break
+              }
             }
             strMount = strMount.replace(/^ {2}/gm, '')
-          }
-          // methods
-          const methods = jsText.match(/(?<=^}\)\n)([\s\S]+)/gm)
-          if (methods) {
-            for (const meta of methods.entries()) {
-              strMethods += meta[1]
-            }
           }
           // remove xt if not used
           const xts = strImports.match(/(Xt\.)/g) || strMethods.match(/(Xt\.)/g)
@@ -108,15 +107,14 @@ console.log(test)
         html = html.replace(/autoplay/g, 'autoPlay')
         html = html.replace(/frameborder/g, 'frameBorder')
         // str
-        // useLayoutEffect to have DOM ready like with Xt.ready or Xt.mount or some react demos break data-xt- is not initialized
         const str = `import React${
-          strMount !== '' ? `${refs ? `, { useRef, useLayoutEffect${test ? `, useState` : ''} }` : ''}` : ''
+          strMount !== '' ? `${refs ? `, { useRef, useEffect${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
 ${strImports}export default function demo() {${
           strMount !== ''
             ? `${test && refs ? 'const [count, setCount] = useState(0)' : ''}
   const ref = useRef()
-  useLayoutEffect(() => {
+  useEffect(() => {
     return mount({ ref: ref.current })
   }, [])
 `
@@ -127,12 +125,12 @@ ${strImports}export default function demo() {${
           strMount !== ''
             ? `
 
-/* mount */
+${strMethods !== '' ? `${strMethods}` : ''}/* mount */
 
 const mount = ({ ref }) => {${strMount}}`
             : ''
         }
-${strMethods !== '' ? `${strMethods}` : ''}`
+`
         const destination = `${src}.jsx`
         writeFile(destination, str)
       })

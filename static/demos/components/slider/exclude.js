@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 
-Xt.mount({
-  matches: '.demo--slider-exclude',
-  mount: ({ ref }) => {
-    const unmountToggle = mountToggle({ ref })
-
-    // unmount
-
-    return () => {
-      unmountToggle()
-    }
-  },
-})
-
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
@@ -67,3 +54,18 @@ const mountToggle = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-exclude',
+  mount: ({ ref }) => {
+    const unmountToggle = mountToggle({ ref })
+
+    // unmount
+
+    return () => {
+      unmountToggle()
+    }
+  },
+})

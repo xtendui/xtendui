@@ -3,19 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount({
-  matches: '.demo--sticky-hide',
-  mount: ({ ref }) => {
-    const unmountSticky = mountSticky({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSticky()
-    }
-  },
-})
-
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
@@ -71,3 +58,18 @@ const mountSticky = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--sticky-hide',
+  mount: ({ ref }) => {
+    const unmountSticky = mountSticky({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSticky()
+    }
+  },
+})

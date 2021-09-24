@@ -1,18 +1,5 @@
 import { Xt } from 'xtendui'
 
-Xt.mount({
-  matches: '.demo--form-loader-spinner',
-  mount: ({ ref }) => {
-    const unmountFormLoaders = mountFormLoaders({ ref })
-
-    // unmount
-
-    return () => {
-      unmountFormLoaders()
-    }
-  },
-})
-
 /* mountFormLoaders */
 
 const mountFormLoaders = ({ ref }) => {
@@ -82,3 +69,18 @@ const mountFormLoader = ({ ref, loaderTemplate }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--form-loader-spinner',
+  mount: ({ ref }) => {
+    const unmountFormLoaders = mountFormLoaders({ ref })
+
+    // unmount
+
+    return () => {
+      unmountFormLoaders()
+    }
+  },
+})

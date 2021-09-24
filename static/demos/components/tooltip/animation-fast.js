@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
-Xt.mount({
-  matches: '.demo--tooltip-animation-fast',
-  mount: ({ ref }) => {
-    const unmountTooltip = mountTooltip({ ref })
-
-    // unmount
-
-    return () => {
-      unmountTooltip()
-    }
-  },
-})
-
 /* mountTooltip */
 
 const mountTooltip = ({ ref }) => {
@@ -63,3 +50,18 @@ const mountTooltip = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--tooltip-animation-fast',
+  mount: ({ ref }) => {
+    const unmountTooltip = mountTooltip({ ref })
+
+    // unmount
+
+    return () => {
+      unmountTooltip()
+    }
+  },
+})

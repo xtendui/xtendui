@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--toggle-animation-js-multiple',
-  mount: ({ ref }) => {
-    const unmountToggle = mountToggle({ ref })
-
-    // unmount
-
-    return () => {
-      unmountToggle()
-    }
-  },
-})
-
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
@@ -91,3 +78,18 @@ const mountToggle = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--toggle-animation-js-multiple',
+  mount: ({ ref }) => {
+    const unmountToggle = mountToggle({ ref })
+
+    // unmount
+
+    return () => {
+      unmountToggle()
+    }
+  },
+})

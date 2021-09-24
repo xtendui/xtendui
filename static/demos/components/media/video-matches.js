@@ -1,18 +1,5 @@
 import { Xt } from 'xtendui'
 
-Xt.mount({
-  matches: '.demo--media-video-matches',
-  mount: ({ ref }) => {
-    const unmountVideosMatches = mountVideosMatches({ ref })
-
-    // unmount
-
-    return () => {
-      unmountVideosMatches()
-    }
-  },
-})
-
 /* mountVideosMatches */
 
 const mountVideosMatches = ({ ref }) => {
@@ -71,3 +58,18 @@ const mountVideoMatches = ({ ref }) => {
     removeEventListener('resize', resize)
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--media-video-matches',
+  mount: ({ ref }) => {
+    const unmountVideosMatches = mountVideosMatches({ ref })
+
+    // unmount
+
+    return () => {
+      unmountVideosMatches()
+    }
+  },
+})

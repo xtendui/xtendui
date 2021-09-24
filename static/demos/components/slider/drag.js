@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 
-Xt.mount({
-  matches: '.demo--slider-drag',
-  mount: ({ ref }) => {
-    const unmountSlider = mountSlider({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSlider()
-    }
-  },
-})
-
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
@@ -41,3 +28,18 @@ const mountSlider = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-drag',
+  mount: ({ ref }) => {
+    const unmountSlider = mountSlider({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSlider()
+    }
+  },
+})

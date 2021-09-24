@@ -3,19 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount({
-  matches: '.demo--fade-distance',
-  mount: ({ ref }) => {
-    const unmountFade = mountFade({ ref })
-
-    // unmount
-
-    return () => {
-      unmountFade()
-    }
-  },
-})
-
 /* mountFade */
 
 const mountFade = ({ ref }) => {
@@ -99,3 +86,18 @@ const fade = ({ ref }) => {
   })
   /***/
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--fade-distance',
+  mount: ({ ref }) => {
+    const unmountFade = mountFade({ ref })
+
+    // unmount
+
+    return () => {
+      unmountFade()
+    }
+  },
+})

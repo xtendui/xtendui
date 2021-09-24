@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
-Xt.mount({
-  matches: '.demo--toggle-reset-to-current',
-  mount: ({ ref }) => {
-    const unmountToggles = mountToggles({ ref })
-
-    // unmount
-
-    return () => {
-      unmountToggles()
-    }
-  },
-})
-
 /* mountToggles */
 
 const mountToggles = ({ ref }) => {
@@ -64,3 +51,18 @@ const mountToggle = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--toggle-reset-to-current',
+  mount: ({ ref }) => {
+    const unmountToggles = mountToggles({ ref })
+
+    // unmount
+
+    return () => {
+      unmountToggles()
+    }
+  },
+})

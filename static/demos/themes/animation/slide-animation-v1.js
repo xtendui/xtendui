@@ -5,19 +5,6 @@ import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--slide-animation-v1',
-  mount: ({ ref }) => {
-    const unmountInteraction = mountInteraction({ ref })
-
-    // unmount
-
-    return () => {
-      unmountInteraction()
-    }
-  },
-})
-
 /* mountInteraction */
 
 const mountInteraction = ({ ref }) => {
@@ -106,3 +93,18 @@ const mountInteraction = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slide-animation-v1',
+  mount: ({ ref }) => {
+    const unmountInteraction = mountInteraction({ ref })
+
+    // unmount
+
+    return () => {
+      unmountInteraction()
+    }
+  },
+})

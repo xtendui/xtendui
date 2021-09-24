@@ -2,21 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--slider-hero-v2',
-  mount: ({ ref }) => {
-    const unmountSlider = mountSlider({ ref })
-    const unmountSlide = mountSlide({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSlider()
-      unmountSlide()
-    }
-  },
-})
-
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
@@ -295,3 +280,20 @@ const mountSlide = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-hero-v2',
+  mount: ({ ref }) => {
+    const unmountSlider = mountSlider({ ref })
+    const unmountSlide = mountSlide({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSlider()
+      unmountSlide()
+    }
+  },
+})

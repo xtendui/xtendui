@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
-Xt.mount({
-  matches: '.demo--tooltip-swap-toggle',
-  mount: ({ ref }) => {
-    const unmountTooltips = mountTooltips({ ref })
-
-    // unmount
-
-    return () => {
-      unmountTooltips()
-    }
-  },
-})
-
 /* mountTooltips */
 
 const mountTooltips = ({ ref }) => {
@@ -96,3 +83,18 @@ const mountTooltip = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--tooltip-swap-toggle',
+  mount: ({ ref }) => {
+    const unmountTooltips = mountTooltips({ ref })
+
+    // unmount
+
+    return () => {
+      unmountTooltips()
+    }
+  },
+})
