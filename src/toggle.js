@@ -3244,11 +3244,6 @@ class Toggle {
     const self = this
     const options = self.options
     if (!self.disabled) {
-      // special
-      for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-        self.specialAppendto({ actionCurrent: 'Out', el: tr, type: 'targets' })
-        self.specialClassBody({ actionCurrent: 'Out', type: 'targets' })
-      }
       // disable
       self.disabled = true
       self.container.setAttribute(`data-${self.componentName}-disabled`, '')
@@ -3269,6 +3264,11 @@ class Toggle {
         for (const jump of self.targets) {
           jump.classList.remove('xt-jump')
         }
+      }
+      // special
+      for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+        self.specialAppendto({ actionCurrent: 'Out', el: tr, type: 'targets' })
+        self.specialClassBody({ actionCurrent: 'Out', type: 'targets' })
       }
       // intersection observer
       if (self.observer) {

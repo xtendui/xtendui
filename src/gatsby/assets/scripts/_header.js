@@ -2,7 +2,34 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
+
+/* sticky header */
+
+Xt.mount({
+  matches: '.gatsby_site-header',
+  mount: ({ ref }) => {
+    // vars
+
+    const sticky = ref
+
+    // match media
+
+    ScrollTrigger.matchMedia({
+      '(max-width: 1023px)': () => {
+        // sticky
+
+        ScrollTrigger.create({
+          trigger: sticky,
+          start: 'top top',
+          endTrigger: 'html',
+          end: 'bottom top',
+          pin: true,
+          pinSpacing: false,
+        })
+      },
+    })
+  },
+})
 
 /* menu overlay */
 
@@ -64,33 +91,5 @@ Xt.mount({
       self.destroy()
       self = null
     }
-  },
-})
-
-/* sticky header */
-
-Xt.mount({
-  matches: '.gatsby_site-header',
-  mount: ({ ref }) => {
-    // vars
-
-    const sticky = ref
-
-    // match media
-
-    ScrollTrigger.matchMedia({
-      '(max-width: 1023px)': () => {
-        // sticky
-
-        ScrollTrigger.create({
-          trigger: sticky,
-          start: 'top top',
-          endTrigger: 'html',
-          end: 'bottom top',
-          pin: true,
-          pinSpacing: false,
-        })
-      },
-    })
   },
 })

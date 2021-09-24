@@ -2,7 +2,6 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
 
 Xt.mount({
   matches: '.demo--sticky-hide-direction',

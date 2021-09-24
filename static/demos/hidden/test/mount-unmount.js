@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 import 'xtendui/src/overlay'
 
-Xt.mount({
-  matches: '.demo--mount-unmount',
-  mount: ({ ref }) => {
-    const unmountTest = mountTest({ ref })
-
-    // unmount
-
-    return () => {
-      unmountTest()
-    }
-  },
-})
-
 /* mountTest */
 
 const mountTest = ({ ref }) => {
@@ -103,3 +90,18 @@ const mountTest = ({ ref }) => {
     removeEventListener('resize', resize)
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--mount-unmount',
+  mount: ({ ref }) => {
+    const unmountTest = mountTest({ ref })
+
+    // unmount
+
+    return () => {
+      unmountTest()
+    }
+  },
+})

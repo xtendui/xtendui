@@ -4,7 +4,6 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
 import 'xtendui/src/toggle'
 import 'xtendui/src/scrollto'
 

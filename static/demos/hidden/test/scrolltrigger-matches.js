@@ -2,21 +2,7 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })
 import 'xtendui/src/overlay'
-
-Xt.mount({
-  matches: '.demo--scrolltrigger-matches',
-  mount: ({ ref }) => {
-    const unmountTest = mountTest({ ref })
-
-    // unmount
-
-    return () => {
-      unmountTest()
-    }
-  },
-})
 
 /* mountTest */
 
@@ -93,3 +79,18 @@ const mountSticky = ({ ref }) => {
     ScrollTrigger.removeEventListener('refresh', refresh)
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--scrolltrigger-matches',
+  mount: ({ ref }) => {
+    const unmountTest = mountTest({ ref })
+
+    // unmount
+
+    return () => {
+      unmountTest()
+    }
+  },
+})

@@ -10,8 +10,6 @@ class Demo extends React.Component {
   componentDidMount() {
     const container = this.demoRef.current
     if (typeof window !== 'undefined') {
-      // needs to be loaded before demo js or Xt.registerPlugin order breaks pinned items
-      require('src/gatsby/assets/scripts/setup')
       // populate
       const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
       populateDemo(container)

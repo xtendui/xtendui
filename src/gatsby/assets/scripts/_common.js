@@ -70,6 +70,9 @@ Xt.mount({
     const mode = 'html'
     const currentMode = localStorage.getItem('mode')
 
+    // eslint-disable-next-line no-console
+    console.debug('mode', currentMode)
+
     // default
 
     if (!currentMode) {

@@ -27,13 +27,11 @@ Activate usability logs with `import 'xtendui/src/usability'`. Xtend UI will sen
 
 You can execute a function on Document.readyState, **by default it listens when document is ready**.
 
-It has a `requestAnimationFrame` **if the state is instantly matched** to ensure **all the javascript are ready on function call**.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Variable                  | `Xt.ready:Function`              | `{ func:Function, state:String = 'interactive complete', raf:Boolean = true }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
+| Variable                  | `Xt.ready:Function`              | `{ func:Function, state:String = 'interactive complete', raf:Boolean = false }`       | **Execute a function on Document.readyState**, states separated by space, can be `'loading'` `'interactive'` `'complete'`                  |
 
 </div>
 
@@ -45,13 +43,19 @@ Mount listens and execute the query with [Mutation Obsever](https://developer.mo
 
 You can return a function to execute when **the Node is removed from the DOM**.
 
+You can also use the class `.xt-ignore` when moving objects **to prevent mount and unmount**.
+
+> `Xt.mount` **doesn't unmount/remount nodes not removed from `html`** (e.g. when moving nodes inside DOM).
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `matches:Query`                          | `null`        | Query to match for mount            |
 | Option                    | `root:Node`                          | `null`        | Only if added nodes are inside a root node            |
-| Option                    | `raf:Boolean`                          | `true`        | Use requestAnimationFrame for mount `Xt.ready`            |
+| Option                    | `raf:Boolean`                          | `false`        | Use requestAnimationFrame for mount as with `Xt.ready`            |
+| Option                    | `ignoreMount:Query\|false`                          | `'.xt-ignore'`        | Ignore mount on nodes with closest this query.            |
+| Option                    | `ignoreUnmount:Query\|false`                          | `'.xt-ignore'`        | Ignore unmount on nodes with closest this query.            |
 | Option                    | `mount:Function`                          | `null`        | Function to execute on mount, returned function will be executed on unmount             |
 
 </div>
@@ -84,17 +88,6 @@ Xt.mount({
   },
 })
 ```
-
-You can also use the class `.xt-ignore` when moving objects **to prevent mount and unmount**. It's customizable and if you want to have effect only for one time use also `.xt-ignore-once`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Variable                  | `Xt.mountIgnore:String`              | `'.xt-ignore, .xt-ignore-mount'`       | Do not mount if mounted node is **inside this query**                  |
-| Variable                  | `Xt.unmountIgnore:String`              | `'.xt-ignore, .xt-ignore-unmount'`       | Do not unmount if unmounted node is **inside this query**                  |
-
-</div>
 
 ## Xt.on and Xt.off
 

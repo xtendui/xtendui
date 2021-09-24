@@ -29,7 +29,7 @@ TEST UNMOUNT this should NOT be called multiple times on changing page and resiz
 
 ## ScrollTrigger Matches
 
-Test resize and open/close overlay should always work.
+Test resize and open/close overlay should always work (not disabled so not unmount/mount).
 
 TEST PIN MOUNT this should NOT be called on resize and xtNamespace should be 1.
 
@@ -52,7 +52,7 @@ Test click should load iframe, it tests mount with root.
 
 ## Docs
 
-Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be closeable after 3 changes (fix multiple mount needed sometimes (e.g. mount inside pin)).
+Test on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be able to close/open after 3 changes.
 
 Test on mobile with menu mobile open resize to desktop should disable overlay and back should enable.
 

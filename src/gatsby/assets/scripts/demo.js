@@ -880,7 +880,7 @@ export const makeDocument = () => {
   for (const el of document.querySelectorAll(
     '.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4'
   )) {
-    el.classList.add('gatsby_make-line')
+    el.classList.add('gatsby_make-line', 'xt-ignore')
   }
   for (const el of document.querySelectorAll('.gatsby_make-line')) {
     el.innerHTML = `<span class="gatsby_make-line_line">${el.innerHTML}</span>`
@@ -890,7 +890,7 @@ export const makeDocument = () => {
   for (const el of document.querySelectorAll(
     '.gatsby_site-article_content_inner > * > h2, .gatsby_site-article_content_inner > * > h4'
   )) {
-    el.classList.add('gatsby_make-line')
+    el.classList.add('gatsby_make-line', 'xt-ignore')
     // previous h2 if h4
     let prevElement
     if (el.tagName === 'H4') {
