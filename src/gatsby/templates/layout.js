@@ -114,4 +114,6 @@ if (typeof window !== 'undefined') {
     // eslint-disable-next-line no-console
     console.debug('access admin')
   }
+  // eslint-disable-next-line no-console
+  console.debug('mode', localStorage.getItem('mode'))
 }

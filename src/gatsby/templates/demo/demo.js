@@ -10,9 +10,7 @@ class Demo extends React.Component {
   componentDidMount() {
     const container = this.demoRef.current
     if (typeof window !== 'undefined') {
-      // populate
-      const populateDemo = require('src/gatsby/assets/scripts/demo').populateDemo
-      populateDemo(container)
+      require('src/gatsby/assets/scripts/demo').populateDemo(container)
     }
   }
 

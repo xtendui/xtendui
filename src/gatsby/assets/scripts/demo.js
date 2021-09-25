@@ -197,11 +197,6 @@ export const populateBlock = () => {
                 item.dispatchEvent(new CustomEvent('off.xt.toggle'))
               }
             }
-            // populate source
-            const sourceTo = content.querySelector('.gatsby_demo_source_populate')
-            if (sourceTo) {
-              sourceTo.innerHTML = ''
-            }
           }
           // btnOpenFull
           for (const btn of document.querySelectorAll('.button--open-full.on')) {
@@ -451,19 +446,6 @@ export const populateItem = item => {
   if (!item.getAttribute('data-iframe-fullscreen')) {
     if (!item.getAttribute('data-iframe')) {
       populateInline(item)
-    }
-  }
-  // populate source
-  const sourceTo = item.querySelector('.gatsby_demo_source_populate')
-  if (sourceTo) {
-    if (sourceTo.closest('.gatsby_listing-column')) {
-      // populate source disable
-      container.dataset.isFullscreenOnly = 'true'
-    } else {
-      const text = item.querySelector('script[type="text/plain"]')
-      if (text) {
-        sourceTo.innerHTML = text.innerHTML
-      }
     }
   }
   // .button--show-code reinit
@@ -728,10 +710,6 @@ window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
 window.switchClean = (item, src) => {
   item = item ?? document.querySelector(`iframe[data-src="/${src}"]`).closest('.gatsby_demo_item')
   // clean
-  const populate = item.querySelector('.gatsby_demo_source_populate')
-  if (populate) {
-    populate.innerHTML = ''
-  }
   const code = item.querySelector('.gatsby_demo_code_body_item')
   if (code) {
     code.innerHTML = ''

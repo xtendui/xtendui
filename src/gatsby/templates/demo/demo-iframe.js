@@ -1,101 +1,88 @@
-import React from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import SEO from 'src/gatsby/templates/seo'
 import LayoutDemo from 'src/gatsby/templates/layout-demo'
+import { Xt } from 'xtendui'
 
-class DemoIframe extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      mode: 'html',
+function DemoIframe(props) {
+  const { location } = props
+  const src = location.pathname.replace(/^\/|\/$/g, '') // replace leading and trailing slash if present
+  const id = src.split('/').join('-')
+  // seo
+  const seo = {}
+  seo.title = src
+  seo.description = seo.title
+  // vanilla
+  const object = require(`static/${src}.html.js`).object
+  const html = object.html
+  try {
+    require(`static/${src}.js`).default
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
+  // react
+  const Demo = require(`static/${src}.jsx`).default
+  // iframe
+  if (typeof window !== 'undefined') {
+    document.documentElement.classList.add('gatsby_iframe-inside')
+    document.documentElement.setAttribute('id', id)
+    if (object.container) {
+      document.documentElement.classList.add('gatsby_iframe-container')
+    }
+    if (object.gradient) {
+      document.documentElement.classList.add('gatsby_iframe-gradient')
     }
   }
-
-  componentDidMount() {
-    this.refresh()
+  // mode
+  const [mode, setMode] = useState(0)
+  const ref = useRef()
+  useEffect(() => {
+    const item = ref.current
+    const switchDemo = mode => {
+      // needs raf or useLayout inside demos is executed before mutation observer Xt.mountCheck({ added })
+      Xt.frame({
+        el: item,
+        func: () => {
+          setMode(mode)
+          // populate
+          if (window !== window.parent) {
+            if (mode === 'react') {
+              window.parent.initIframe(src, false, `/${src}.jsx`, `/${src}.css`)
+            } else if (mode === 'html') {
+              window.parent.initIframe(src, html, false, `/${src}.css`, `/${src}.js`)
+            }
+            // close fullscreen and others
+            dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
+          }
+        },
+      })
+    }
     if (window !== window.parent) {
-      // currentDemos
-      window.parent.currentDemos.push(this)
+      window.parent.switchDemos.push(switchDemo)
+    } else {
+      // eslint-disable-next-line no-console
+      console.debug('mode', mode)
     }
-    if (this.state.mode === 'html') {
-      try {
-        require(`static/${this.src}.js`).default
-        // eslint-disable-next-line no-empty
-      } catch (ex) {}
-    }
-  }
+    switchDemo(localStorage.getItem('mode'))
+  }, [])
 
-  switchClean() {
-    if (window !== window.parent) {
-      // clean react conditional rendering and generated nodes
-      window.parent.switchClean(null, this.src)
-    }
-  }
-
-  refresh() {
-    const currentMode = localStorage.getItem('mode')
-    this.setState({ mode: currentMode })
-    // populate
-    if (window !== window.parent) {
-      if (currentMode === 'react') {
-        window.parent.initIframe(this.src, false, `/${this.src}.jsx`, `/${this.src}.css`)
-      } else {
-        window.parent.initIframe(this.src, this.html, false, `/${this.src}.css`, `/${this.src}.js`)
-      }
-      // close fullscreen and others
-      dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
-    }
-  }
-
-  render() {
-    const { location } = this.props
-    this.src = location.pathname.replace(/^\/|\/$/g, '') // replace leading and trailing slash if present
-    const id = this.src.split('/').join('-')
-    // seo
-    const seo = {}
-    seo.title = this.src
-    seo.description = seo.title
-    // iframe
-    if (typeof window !== 'undefined') {
-      document.documentElement.classList.add('gatsby_iframe-inside')
-      document.documentElement.setAttribute('id', id)
-    }
-    // vanilla
-    const object = require(`static/${this.src}.html.js`).object
-    this.html = object.html
-    if (typeof window !== 'undefined') {
-      if (object.container) {
-        document.documentElement.classList.add('gatsby_iframe-container')
-      }
-      if (object.gradient) {
-        document.documentElement.classList.add('gatsby_iframe-gradient')
-      }
-    }
-    let Demo = null
-    if (this.state.mode === 'react') {
-      // react
-      Demo = require(`static/${this.src}.jsx`).default
-    }
-    // render all
-    return (
-      <LayoutDemo>
-        <SEO title={seo.title} description={seo.description} />
-        <div id="body-outer">
-          {this.state.mode === 'react' ? (
-            <div id="gatsby_body-inner" className="gatsby_demo_source--from invisible relative xt-h-screen">
-              <Demo />
-            </div>
-          ) : (
-            <div
-              id="gatsby_body-inner"
-              className="gatsby_demo_source--from invisible relative xt-h-screen"
-              dangerouslySetInnerHTML={{ __html: this.html }}
-            />
-          )}
-        </div>
-      </LayoutDemo>
-    )
-  }
+  return (
+    <LayoutDemo>
+      <SEO title={seo.title} description={seo.description} />
+      <div id="body-outer">
+        {mode === 'react' ? (
+          <div id="gatsby_body-inner" className="gatsby_demo_source--from relative xt-h-screen">
+            <Demo />
+          </div>
+        ) : mode === 'html' ? (
+          <div
+            id="gatsby_body-inner"
+            className="gatsby_demo_source--from relative xt-h-screen"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        ) : null}
+      </div>
+    </LayoutDemo>
+  )
 }
 
 DemoIframe.propTypes = {

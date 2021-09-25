@@ -70,9 +70,6 @@ Xt.mount({
     const mode = 'html'
     const currentMode = localStorage.getItem('mode')
 
-    // eslint-disable-next-line no-console
-    console.debug('mode', currentMode)
-
     // default
 
     if (!currentMode) {
@@ -81,13 +78,14 @@ Xt.mount({
 
     // click
 
-    const click = () => {
+    const click = ({ switchDemos = true } = {}) => {
       // mode
       localStorage.setItem('mode', mode)
-      // currentDemos
-      for (const demo of window.currentDemos) {
-        demo.switchClean()
-        demo.refresh()
+      // switchDemos
+      if (switchDemos) {
+        for (const switchDemo of window.switchDemos) {
+          switchDemo(mode)
+        }
       }
       // class
       for (const el of document.querySelectorAll('.button--switch-html')) {
@@ -103,7 +101,7 @@ Xt.mount({
     // init
 
     if (currentMode === mode) {
-      Xt.on({ el: button, raf: false, initial: true })
+      click({ switchDemos: false })
     }
   },
 })
@@ -119,13 +117,14 @@ Xt.mount({
 
     // click
 
-    const click = () => {
+    const click = ({ switchDemos = true } = {}) => {
       // mode
       localStorage.setItem('mode', mode)
-      // currentDemos
-      for (const demo of window.currentDemos) {
-        demo.switchClean()
-        demo.refresh()
+      // switchDemos
+      if (switchDemos) {
+        for (const switchDemo of window.switchDemos) {
+          switchDemo(mode)
+        }
       }
       // class
       for (const el of document.querySelectorAll('.button--switch-html')) {
@@ -141,7 +140,7 @@ Xt.mount({
     // init
 
     if (currentMode === mode) {
-      Xt.on({ el: button, raf: false, initial: true })
+      click({ switchDemos: false })
     }
   },
 })

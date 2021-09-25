@@ -1,10 +1,6 @@
 window.keepSidebarScroll = 0
 window.overlayOpen = false
-window.currentDemos = []
-
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+window.switchDemos = []
 
 export const shouldUpdateScroll = ({ routerProps: { location }, prevRouterProps }) => {
   const { location: prevLocation } = prevRouterProps ?? {}
@@ -33,8 +29,8 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
   if (prevLocation) {
     // if new page
     if (location.pathname !== prevLocation.pathname) {
-      // currentDemos
-      window.currentDemos = []
+      // switchDemos
+      window.switchDemos = []
       // close demo full
       const demoFull = document.querySelector('#gatsby_open-full-trigger.on')
       if (demoFull) {
