@@ -38,7 +38,7 @@ function DemoInline(props) {
   return (
     <div ref={ref} className={'gatsby_demo_item'} data-name={name} data-id={id} data-inline={src}>
       {mode === 'react' ? (
-        <div className={`gatsby_demo_item_switch gatsby_demo_item--current`}>
+        <div className={`gatsby_demo_item_body`}>
           <div
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
               object.overflow ? 'gatsby_demo_source--overflow' : ''
@@ -59,7 +59,7 @@ function DemoInline(props) {
           />
         </div>
       ) : mode === 'html' ? (
-        <div className={`gatsby_demo_item_switch gatsby_demo_item--current`}>
+        <div className={`gatsby_demo_item_body`}>
           <div
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
               object.overflow ? 'gatsby_demo_source--overflow' : ''

@@ -133,11 +133,7 @@ pre {
 
 .gatsby_demo_code {
   order: 2;
-  @media (max-width: calc(theme('screens.lg') - 1px)) {
-    display: none !important;
-  }
   #gatsby_open-full & {
-    @apply off:hidden out:pointer-events-none on:block in:block out:block !important;
     z-index: calc(theme('zIndex.above') + 1);
     order: -1;
     position: absolute;
@@ -179,7 +175,7 @@ pre {
   @apply off:hidden out:pointer-events-none;
   position: relative;
   height: 100%;
-  .gatsby_demo_item_switch {
+  .gatsby_demo_item_body {
     position: relative;
     #gatsby_open-full & {
       height: auto !important;
@@ -187,7 +183,7 @@ pre {
   }
   &[data-iframe] {
     &.loaded {
-      .gatsby_demo_item_switch > .xt-loader {
+      .gatsby_demo_item_body > .xt-loader {
         display: none;
       }
     }
@@ -217,19 +213,12 @@ pre {
   display: none;
 }
 
-.gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_switch, .gatsby_demo_item_switch iframe {
+.gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_body, .gatsby_demo_item_body iframe {
   display: flex;
   flex-direction: column;
   #gatsby_open-full & {
     flex: 1 1 auto;
     width: 100%;
-  }
-}
-
-.container--show-code {
-  display: none;
-  #gatsby_open-full & {
-    display: inline-flex;
   }
 }
 

@@ -55,7 +55,7 @@ Xt.ready({
  * highlightCode
  */
 
-const highlightCode = (pre, element, language, isReact = false) => {
+const highlightCode = (pre, element, language, isReactRename = false) => {
   const code = pre.querySelector('code')
   let text = element.innerHTML
   language = language ?? element.getAttribute('class') ?? 'language-sh'
@@ -69,7 +69,7 @@ const highlightCode = (pre, element, language, isReact = false) => {
     language = 'jsx'
   }
   // css refs
-  if (isReact) {
+  if (isReactRename) {
     text = text.replace(/\.demo--(.*?), /, '')
   } else {
     text = text.replace(/, \.demo--(.*?)-react/, '')
@@ -372,6 +372,10 @@ export const populateDemo = container => {
   swapToggle({
     ref: btnCode,
   })
+  // populateTabs
+  const handler = populateTabs.bind(container, { container })
+  btnCode.removeEventListener('on.xt.toggle', handler)
+  btnCode.addEventListener('on.xt.toggle', handler)
   // only one time
   container.dataset.gatsbyDemoBuilt = 'true'
 }
@@ -390,7 +394,7 @@ export const populateItem = item => {
   item.prepend(
     Xt.node({
       str: `
-<div class="gatsby_demo_code">
+<div class="gatsby_demo_code off:hidden out:pointer-events-none on:block in:block out:block">
 <div class="gatsby_demo_code_inner">
   <div class="gatsby_demo_code_tabs bg-code">
     <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
@@ -442,17 +446,11 @@ export const populateItem = item => {
     duration: 300,
   })
   swapClick({ ref: btnClipboard })
-  // inject
-  if (!item.getAttribute('data-iframe-fullscreen')) {
-    if (!item.getAttribute('data-iframe')) {
-      populateInline(item)
-    }
-  }
   // .button--show-code reinit
   const btnCode = container.querySelector('.button--show-code')
   const self = Xt.get({ name: 'xt-toggle', el: btnCode })
   if (self) {
-    self.reinit()
+    self.reinit({ save: false })
   }
 }
 
@@ -657,10 +655,10 @@ const initializeIframe = item => {
     const src = `/${item.getAttribute('data-iframe')}`
     item.append(
       Xt.node({
-        str: `<div class="gatsby_demo_item_switch gatsby_demo_item--current"><iframe data-src="${src}"></iframe></div>`,
+        str: `<div class="gatsby_demo_item_body"><iframe data-src="${src}"></iframe></div>`,
       })
     )
-    item.querySelector('.gatsby_demo_item_switch').append(
+    item.querySelector('.gatsby_demo_item_body').append(
       Xt.node({
         str: `
           <div class="${classes.loader()}">
@@ -720,7 +718,7 @@ window.switchClean = (item, src) => {
  * populate
  */
 
-const sourceAsync = async (item, el, isReact = false) => {
+const sourceAsync = async (item, el) => {
   const url = el.getAttribute('data-fetch')
   const version = document.querySelector('body').getAttribute('data-version')
   if (url) {
@@ -732,42 +730,48 @@ const sourceAsync = async (item, el, isReact = false) => {
     const response = await request
     const body = await response.text()
     if (response.ok && body.substring(0, 9) !== '<!DOCTYPE') {
-      // fix only current demo
-      if (el.closest('.gatsby_demo_item--current')) {
+      // do not if switched
+      if (el.closest('html')) {
         el.innerHTML = body
-        populateSources(item, el, isReact)
+        populateSources(item, el)
       }
     }
   } else {
-    populateSources(item, el, isReact)
+    populateSources(item, el)
   }
 }
 
-const populateInline = async item => {
-  const els = item.querySelectorAll('[data-lang]')
-  const isReact = !!item.querySelector('[data-lang="jsx"]')
-  // fix only current demo
-  for (const el of Array.from(els).filter(x => x.closest('.gatsby_demo_item--current'))) {
-    try {
-      await sourceAsync(item, el, isReact)
-    } catch (ex) {
-      console.error(ex)
+const populateTabs = async ({ container } = {}) => {
+  for (const item of container.querySelectorAll('.gatsby_demo_item')) {
+    // empty tabs
+    const tabs = item.querySelector('.gatsby_demo_code_tabs_left')
+    if (tabs) {
+      tabs.innerHTML = ''
     }
+    // populate tabs
+    for (const el of item.querySelectorAll('[data-lang]')) {
+      try {
+        await sourceAsync(item, el)
+      } catch (ex) {
+        console.error(ex)
+      }
+    }
+    // code toggle
+    new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
+      elements: '.gatsby_demo_code_tabs_left .xt-button',
+      targets: '.gatsby_demo_code_body_item',
+      min: 1,
+      queue: false,
+    })
   }
-  // code toggle
-  new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
-    elements: '.gatsby_demo_code_tabs_left .xt-button',
-    targets: '.gatsby_demo_code_body_item',
-    min: 1,
-    queue: false,
-  })
 }
 
-const populateIframe = async ({ item, htmlSource, jsxSource, cssSource, jsSource }) => {
-  const inner = item.querySelector('.gatsby_demo_item_switch')
-  // clean
-  for (const code of inner.querySelectorAll('.gatsby_demo_source')) {
-    code.remove()
+const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) => {
+  const inner = item.querySelector('.gatsby_demo_item_body')
+  // clear
+  const olds = inner.querySelectorAll('[data-lang]')
+  for (const old of olds) {
+    old.remove()
   }
   // inject code
   if (htmlSource) {
@@ -798,31 +802,13 @@ const populateIframe = async ({ item, htmlSource, jsxSource, cssSource, jsSource
       })
     )
   }
-  // populate
-  const isReact = !!jsxSource
-  const els = item.querySelectorAll('[data-lang]')
-  // fix only current demo
-  for (const el of Array.from(els).filter(x => x.closest('.gatsby_demo_item--current'))) {
-    try {
-      await sourceAsync(item, el, isReact)
-    } catch (ex) {
-      console.error(ex)
-    }
-  }
-  // code toggle
-  new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
-    elements: '.gatsby_demo_code_tabs_left .xt-button',
-    targets: '.gatsby_demo_code_body_item',
-    min: 1,
-    queue: false,
-  })
 }
 
 /**
  * sources
  */
 
-const populateSources = (item, element, isReact = false) => {
+const populateSources = (item, element) => {
   let lang = element.getAttribute('data-lang')
   // set text
   if (lang === 'language-html') {
@@ -835,10 +821,11 @@ const populateSources = (item, element, isReact = false) => {
     lang = 'jsx'
   }
   // populate tabs
+  const tabs = item.querySelector('.gatsby_demo_code_tabs_left')
   item
     .querySelector('.gatsby_demo_code_body')
     .append(Xt.node({ str: '<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>' }))
-  item.querySelector('.gatsby_demo_code_tabs_left').append(
+  tabs.append(
     Xt.node({
       str: DOMPurify.sanitize(
         `<button type="button" class="xt-button ${classes.textInverse()} ${classes.buttonCodeWhite()}">${lang}</button>`
@@ -848,7 +835,8 @@ const populateSources = (item, element, isReact = false) => {
   // format code
   const itemInside = item.querySelectorAll('.gatsby_demo_code_body .gatsby_demo_code_body_item')
   const pre = itemInside[itemInside.length - 1].querySelector('pre')
-  highlightCode(pre, element, lang, isReact)
+  const isReactRename = !!item.querySelector('[data-lang="jsx"]')
+  highlightCode(pre, element, lang, isReactRename)
 }
 
 /* makeDocument */
