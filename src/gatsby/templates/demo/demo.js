@@ -18,7 +18,7 @@ class Demo extends React.Component {
     const { children } = this.props
     return (
       <div className="gatsby_demo" ref={this.demoRef}>
-        {children}
+        <div className="gatsby_demo_inner">{children}</div>
       </div>
     )
   }

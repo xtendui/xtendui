@@ -21,7 +21,6 @@ const demoHash = () => {
   const full = document.querySelector('#gatsby_open-full')
   if (full) {
     if (location.hash) {
-      //full.dispatchEvent(new CustomEvent('off.xt.toggle'))
       // if hash activate demo from hash
       const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
       if (item) {
@@ -221,31 +220,31 @@ export const populateBlock = () => {
 
 export const populateDemo = container => {
   if (container.dataset.gatsbyDemoBuilt) return
+  const inner = container.querySelector('.gatsby_demo_inner')
   const items = container.querySelectorAll('.gatsby_demo_item')
   // fix demo index when changing page
   let i = parseFloat(document.documentElement.getAttribute('data-demo-index') ?? 0)
   i++
   document.documentElement.setAttribute('data-demo-index', i.toString())
   // multiple elements
-  container.prepend(
+  inner.prepend(
     Xt.node({
       str: '<div class="gatsby_demo_tabs bg-gray-100"><div class="gatsby_demo_tabs_left xt-list xt-list-1.5"></div><div class="gatsby_demo_tabs_right xt-list xt-list-1.5"></div></div>',
     })
   )
-  const showCodeUid = Xt.uniqueId()
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.node({
       str: `
-<div class="container--show-code">
-  <button type="button" class="xt-button button--show-code ${classes.buttonCode()}" aria-label="Toggle Code">
+<div>
+  <button type="button" class="xt-button button--show-code ${classes.buttonCode()}" aria-label="Toggle Code" data-xt-tooltip-element data-xt-group="all">
     ${classes.iconCode()}
   </button>
-  <div id="tooltip--show-code--on-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target data-xt-group="all">
     <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Show Code
     </div>
   </div>
-  <div id="tooltip--show-code--off-${showCodeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
+  <div class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-tooltip-target data-xt-group="all">
     <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
       Hide Code
     </div>
@@ -357,21 +356,17 @@ export const populateDemo = container => {
     })
   }
   // .button--show-code
-  const demoId = `gatsby_demo_${i}`
-  container.setAttribute('id', demoId)
   const btnCode = container.querySelector('.button--show-code')
-  new Xt.Toggle(btnCode, {
-    targets: `#${demoId} .gatsby_demo_code`,
+  new Xt.Toggle(inner, {
+    elements: '.button--show-code',
+    targets: `.gatsby_demo_code`,
     queue: false,
   })
-  new Xt.Tooltip(btnCode, {
-    targets: `#tooltip--show-code--on-${showCodeUid}, #tooltip--show-code--off-${showCodeUid}`,
+  new Xt.Tooltip(btnCode.parentNode, {
     position: 'bottom-end',
     duration: 300,
   })
-  swapToggle({
-    ref: btnCode,
-  })
+  swapToggle({ ref: btnCode.parentNode })
   // populateTabs
   const handler = populateTabs.bind(container, { container })
   btnCode.removeEventListener('on.xt.toggle', handler)
@@ -387,37 +382,36 @@ export const populateDemo = container => {
 export const populateItem = item => {
   const container = item.closest('.gatsby_demo')
   // tabs
-  const clipboardUid = Xt.uniqueId()
   if (item.querySelector('.gatsby_demo_code')) {
     item.querySelector('.gatsby_demo_code').remove()
   }
   item.prepend(
     Xt.node({
       str: `
-<div class="gatsby_demo_code off:hidden out:pointer-events-none on:block in:block out:block">
-<div class="gatsby_demo_code_inner">
-  <div class="gatsby_demo_code_tabs bg-code">
-    <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
-    <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
-      <div>
-        <button type="button" class="xt-button button--clipboard ${classes.textInverse()} ${classes.buttonCodeWhite()}" aria-label="Copy to Clipboard">
-          ${classes.iconCopy()}
-        </button>
-        <div id="tooltip--clipboard--on-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
-          <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-            Copy to Clipboard
+<div class="gatsby_demo_code off:hidden out:pointer-events-none on:block in:block out:block" data-xt-group="all">
+  <div class="gatsby_demo_code_inner">
+    <div class="gatsby_demo_code_tabs bg-code">
+      <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
+      <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
+        <div>
+          <button type="button" class="xt-button button--clipboard ${classes.textInverse()} ${classes.buttonCodeWhite()}" aria-label="Copy to Clipboard" data-xt-tooltip-element data-xt-group="all">
+            ${classes.iconCopy()}
+          </button>
+          <div class="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target data-xt-group="all">
+            <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+              Copy to Clipboard
+            </div>
           </div>
-        </div>
-        <div id="tooltip--clipboard--off-${clipboardUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group hidden">
-          <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-            Copied!
+          <div class="xt-tooltip xt-tooltip--gatsby p-2 group hidden" data-xt-tooltip-target data-xt-group="all">
+            <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
+              Copied!
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="gatsby_demo_code_body bg-code"></div>
   </div>
-  <div class="gatsby_demo_code_body bg-code"></div>
-</div>
 </div>`,
     })
   )
@@ -440,16 +434,15 @@ export const populateItem = item => {
       }
     })
   }
-  new Xt.Tooltip(btnClipboard, {
-    targets: `#tooltip--clipboard--on-${clipboardUid}, #tooltip--clipboard--off-${clipboardUid}`,
+  new Xt.Tooltip(btnClipboard.parentNode, {
     position: 'bottom-end',
     duration: 300,
   })
-  swapClick({ ref: btnClipboard })
+  swapClick({ ref: btnClipboard.parentNode })
   // .button--show-code reinit
-  const btnCode = container.querySelector('.button--show-code')
-  const self = Xt.get({ name: 'xt-toggle', el: btnCode })
+  const self = Xt.get({ name: 'xt-toggle', el: container.querySelector('.gatsby_demo_inner') })
   if (self) {
+    // needs save: false or useLayout inside demos is executed before mutation observer Xt.mountCheck({ added })
     self.reinit({ save: false })
   }
 }
@@ -463,6 +456,7 @@ const swapClick = ({ ref }) => {
 
   const tooltip = ref
   const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
+  const element = self.elements[0]
 
   // swap
 
@@ -477,31 +471,31 @@ const swapClick = ({ ref }) => {
     self.targets[0].classList.add('hidden')
     self.targets[1].classList.remove('hidden')
     // open
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
     // swap back
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
+    element.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
   }
 
   // resetTooltip: fix when swapping and moving away
 
   const resetTooltip = () => {
     // trigger our swap
-    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
     // trigger tooltip deactivation
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  tooltip.addEventListener('mouseleave', resetTooltip)
+  element.addEventListener('mouseleave', resetTooltip)
 
   // click
 
   const click = () => {
     // swap
-    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    element.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  tooltip.addEventListener('click', click)
+  element.addEventListener('click', click)
 }
 
 /**
@@ -513,6 +507,7 @@ const swapToggle = ({ ref }) => {
 
   const tooltip = ref
   const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
+  const element = self.elements[0]
 
   // swap
 
@@ -521,7 +516,7 @@ const swapToggle = ({ ref }) => {
     self.targets[0].classList.remove('hidden')
     self.targets[1].classList.add('hidden')
     // open
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   const swap = () => {
@@ -529,42 +524,42 @@ const swapToggle = ({ ref }) => {
     self.targets[0].classList.add('hidden')
     self.targets[1].classList.remove('hidden')
     // open
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
   }
 
   // resetTooltip: fix when swapping and moving away
 
   const resetTooltip = () => {
     // trigger our swap
-    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
     // trigger tooltip deactivation
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
     // remove our listeners
-    tooltip.removeEventListener('offdone.xt.tooltip', swap)
-    tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
+    element.removeEventListener('offdone.xt.tooltip', swap)
+    element.removeEventListener('offdone.xt.tooltip', swapBack)
   }
 
-  tooltip.addEventListener('mouseleave', resetTooltip)
+  element.addEventListener('mouseleave', resetTooltip)
 
   // on
 
   const on = () => {
     // swap
-    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    element.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  tooltip.addEventListener('on.xt.toggle', on)
+  element.addEventListener('on.xt.toggle', on)
 
   // off
 
   const off = () => {
     // swap back
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    element.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  tooltip.addEventListener('off.xt.toggle', off)
+  element.addEventListener('off.xt.toggle', off)
 }
 
 /**
@@ -695,7 +690,7 @@ window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
   const iframe = document.querySelector(`iframe[data-src="/${src}"]`)
   const item = iframe.closest('.gatsby_demo_item')
   // populate
-  require('src/gatsby/assets/scripts/demo').populateItem(item)
+  populateItem(item)
   populateIframe({ item, htmlSource, jsxSource, cssSource, jsSource })
   // spinner
   item.classList.add('loaded')
@@ -757,12 +752,16 @@ const populateTabs = async ({ container } = {}) => {
       }
     }
     // code toggle
-    new Xt.Toggle(item.querySelector('.gatsby_demo_code_inner'), {
-      elements: '.gatsby_demo_code_tabs_left .xt-button',
-      targets: '.gatsby_demo_code_body_item',
-      min: 1,
-      queue: false,
-    })
+    // with demo multiple iframe do this only when populated
+    const codeInner = item.querySelector('.gatsby_demo_code_inner')
+    if (codeInner) {
+      new Xt.Toggle(codeInner, {
+        elements: '.gatsby_demo_code_tabs_left .xt-button',
+        targets: '.gatsby_demo_code_body_item',
+        min: 1,
+        queue: false,
+      })
+    }
   }
 }
 

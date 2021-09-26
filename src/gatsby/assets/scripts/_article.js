@@ -3,8 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const classes = require('src/gatsby/templates/snippets/classes').classes
-
 /* #gatsby_open-full-trigger */
 
 Xt.mount({
@@ -14,27 +12,15 @@ Xt.mount({
 
     let self = new Xt.Toggle(ref, {
       targets: '#gatsby_open-full',
-      closeDeep: ':scope > .xt-dismiss',
+      closeDeep: '#gatsby_open-full_close',
       closeauto: true,
       classBody: 'xt-scrollbar-overlay demo-full-open',
     })
 
     // tooltip
 
-    const close = document.querySelector('#gatsby_open-full > .xt-dismiss')
-    const closeUid = Xt.uniqueId()
-    document.querySelector('#gatsby_open-full').append(
-      Xt.node({
-        str: `
-<div id="tooltip--close-${closeUid}" class="xt-tooltip xt-tooltip--gatsby p-2 group">
-  <div class="xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0">
-    Close Fullscreen
-  </div>
-</div>`,
-      })
-    )
-    new Xt.Tooltip(close, {
-      targets: `#tooltip--close-${closeUid}`,
+    const close = document.querySelector('#gatsby_open-full_close')
+    new Xt.Tooltip(close.parentNode, {
       position: 'bottom-end',
       duration: 300,
     })

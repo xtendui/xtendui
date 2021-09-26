@@ -213,7 +213,7 @@ pre {
   display: none;
 }
 
-.gatsby_demo, .gatsby_demo_item, .gatsby_demo_item_body, .gatsby_demo_item_body iframe {
+.gatsby_demo, .gatsby_demo_inner, .gatsby_demo_item, .gatsby_demo_item_body, .gatsby_demo_item_body iframe {
   display: flex;
   flex-direction: column;
   #gatsby_open-full & {
@@ -252,16 +252,6 @@ pre {
   @screen xl {
     margin-left: 20rem;
   }
-  > .xt-dismiss {
-    top: 0;
-    right: 0;
-    border-radius: 0;
-    padding: 10px;
-    .xt-icon {
-      width: 27px;
-      height: auto;
-    }
-  }
   .gatsby_demo_tabs_right {
     padding-right: 45px;
   }
@@ -270,6 +260,17 @@ pre {
   }
   .button--open-iframe-container.gatsby_with-iframe {
     display: block !important;
+  }
+}
+
+#gatsby_open-full_close {
+  top: 0;
+  right: 0;
+  border-radius: 0;
+  padding: 10px;
+  .xt-icon {
+    width: 27px;
+    height: auto;
   }
 }
 

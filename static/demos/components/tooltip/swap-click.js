@@ -26,6 +26,7 @@ const mountTooltip = ({ ref }) => {
 
   const tooltip = ref
   const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
+  const element = self.elements[0]
 
   // swap
 
@@ -40,31 +41,30 @@ const mountTooltip = ({ ref }) => {
     self.targets[0].classList.add('hidden')
     self.targets[1].classList.remove('hidden')
     // open
-    tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-    // swap back
-    tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
+    element.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    element.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
   }
 
   // resetTooltip: fix when swapping and moving away
 
   const resetTooltip = () => {
     // trigger our swap
-    tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
     // trigger tooltip deactivation
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  tooltip.addEventListener('mouseleave', resetTooltip)
+  element.addEventListener('mouseleave', resetTooltip)
 
   // click
 
   const click = () => {
     // swap
-    tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
-    tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    element.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
   }
 
-  tooltip.addEventListener('click', click)
+  element.addEventListener('click', click)
 
   // unmount
 
