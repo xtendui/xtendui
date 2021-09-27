@@ -43,6 +43,18 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          id="button--slider-api-disable">
+          Disable
+        </button>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          id="button--slider-api-enable">
+          Enable
+        </button>
+        <button
+          type="button"
+          class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           id="button--slider-api-destroy">
           Destroy
         </button>

@@ -30,6 +30,18 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+        id="button--overlay-api-disable">
+        Disable
+      </button>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+        id="button--overlay-api-enable">
+        Enable
+      </button>
+      <button
+        type="button"
+        class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         id="button--overlay-api-destroy">
         Destroy
       </button>

@@ -105,9 +105,6 @@ const mountEventmethods = ({ ref }) => {
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // restart
-      logAdd('<strong>restart</strong>')
-      self.restart()
     }, 200).toString()
   }
 
@@ -123,6 +120,28 @@ const mountEventmethods = ({ ref }) => {
   }
 
   restartBtn.addEventListener('click', restartFnc)
+
+  // disable
+
+  const disableBtn = document.querySelector('#button--toggle-api-disable')
+
+  const disableFnc = () => {
+    logAdd('<strong>disable</strong>')
+    self.disable()
+  }
+
+  disableBtn.addEventListener('click', disableFnc)
+
+  // enable
+
+  const enableBtn = document.querySelector('#button--toggle-api-enable')
+
+  const enableFnc = () => {
+    logAdd('<strong>enable</strong>')
+    self.enable()
+  }
+
+  enableBtn.addEventListener('click', enableFnc)
 
   // destroy
 
