@@ -25,6 +25,8 @@ Test slider api initial activation dragger position instant with no transition.
 
 Test slider api initial activation wrap position.
 
+Test slider api remove until 0 targets should not give errors.
+
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/toggle/api">
   </div>
