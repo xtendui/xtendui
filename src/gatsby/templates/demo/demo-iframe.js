@@ -50,7 +50,7 @@ function DemoIframe(props) {
             } else if (mode === 'html') {
               window.parent.initIframe(src, html, false, `/${src}.css`, `/${src}.js`)
             }
-            // close fullscreen and others
+            // close auto (e.g. overlay self when switching mode)
             dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
           }
         },

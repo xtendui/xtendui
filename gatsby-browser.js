@@ -42,8 +42,6 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
       if (btn) {
         window.overlayOpen = btn.classList.contains('on')
       }
-      // close fullscreen and others
-      //dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
     }
   }
 }
