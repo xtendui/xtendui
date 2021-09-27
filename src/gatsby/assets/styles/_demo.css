@@ -45,7 +45,7 @@ pre[class*="language-"] {
     @apply font-mono;
     font-size: .875em;
     line-height: 1.7142857;
-    white-space: pre-wrap;
+    /*white-space: pre-wrap;*/
   }
 }
 

@@ -1707,8 +1707,8 @@ class Toggle {
       return false
     }
     // toggle
+    // fix same event for on and off same namespace
     if (force || (self.checkOn({ el }) && (!e || !e.type || e.type !== `off.trigger.${self.componentNs}`))) {
-      // fix same event for on and off same namespace
       // auto
       self.eventAutostop()
       // fix groupElements and targets
