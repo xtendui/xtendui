@@ -737,30 +737,34 @@ const sourceAsync = async (item, el) => {
 }
 
 const populateTabs = async ({ container } = {}) => {
-  for (const item of container.querySelectorAll('.gatsby_demo_item')) {
-    // empty tabs
-    const tabs = item.querySelector('.gatsby_demo_code_tabs_left')
-    if (tabs) {
-      tabs.innerHTML = ''
-    }
-    // populate tabs
-    for (const el of item.querySelectorAll('[data-lang]')) {
-      try {
-        await sourceAsync(item, el)
-      } catch (ex) {
-        console.error(ex)
+  const mode = localStorage.getItem('mode')
+  if (container.getAttribute('data-code-fetched') !== mode) {
+    container.setAttribute('data-code-fetched', mode)
+    for (const item of container.querySelectorAll('.gatsby_demo_item')) {
+      // empty tabs
+      const tabs = item.querySelector('.gatsby_demo_code_tabs_left')
+      if (tabs) {
+        tabs.innerHTML = ''
       }
-    }
-    // code toggle
-    // with demo multiple iframe do this only when populated
-    const codeInner = item.querySelector('.gatsby_demo_code_inner')
-    if (codeInner) {
-      new Xt.Toggle(codeInner, {
-        elements: '.gatsby_demo_code_tabs_left .xt-button',
-        targets: '.gatsby_demo_code_body_item',
-        min: 1,
-        queue: false,
-      })
+      // populate tabs
+      for (const el of item.querySelectorAll('[data-lang]')) {
+        try {
+          await sourceAsync(item, el)
+        } catch (ex) {
+          console.error(ex)
+        }
+      }
+      // code toggle
+      // with demo multiple iframe do this only when populated
+      const codeInner = item.querySelector('.gatsby_demo_code_inner')
+      if (codeInner) {
+        new Xt.Toggle(codeInner, {
+          elements: '.gatsby_demo_code_tabs_left .xt-button',
+          targets: '.gatsby_demo_code_body_item',
+          min: 1,
+          queue: false,
+        })
+      }
     }
   }
 }
