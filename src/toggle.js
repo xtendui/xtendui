@@ -1511,14 +1511,15 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be activated
    * @param {String} params.type Type of element
+   * @param {Boolean} params.skipSame If skip activation classes and events
    */
-  activate({ el, type } = {}) {
+  activate({ el, type, skipSame } = {}) {
     const self = this
     const options = self.options
-    // input
-    el.checked = true
     // activation
-    if (options.classSkip !== true && !options.classSkip[type]) {
+    if (!skipSame && options.classSkip !== true && !options.classSkip[type]) {
+      // input
+      el.checked = true
       // activation
       el.classList.add(...self.classes)
       el.classList.remove(...self.classesOut)
@@ -1545,12 +1546,13 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
    * @param {String} params.type Type of element
+   * @param {Boolean} params.skipSame If skip activation classes and events
    */
-  activateDone({ el, type } = {}) {
+  activateDone({ el, type, skipSame } = {}) {
     const self = this
     const options = self.options
     // activation
-    if (options.classSkip !== true && !options.classSkip[type]) {
+    if (!skipSame && options.classSkip !== true && !options.classSkip[type]) {
       // fix need to repeat inside frameDouble in case we cancel
       Xt.frameDouble({ el })
       el.classList.add(...self.classesIn)
@@ -1600,14 +1602,15 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
    * @param {String} params.type Type of element
+   * @param {Boolean} params.skipSame If skip activation classes and events
    */
-  deactivate({ el, type } = {}) {
+  deactivate({ el, type, skipSame } = {}) {
     const self = this
     const options = self.options
-    // input
-    el.checked = false
     // activation
-    if (options.classSkip !== true && !options.classSkip[type]) {
+    if (!skipSame && options.classSkip !== true && !options.classSkip[type]) {
+      // input
+      el.checked = false
       // must be outside inside raf or page jumps (e.g. noqueue, done outside for toggle inverse)
       el.classList.remove(...self.classes)
       el.classList.remove(...self.classesDone)
@@ -1637,12 +1640,13 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
    * @param {String} params.type Type of element
+   * @param {Boolean} params.skipSame If skip activation classes and events
    */
-  deactivateDone({ el, type } = {}) {
+  deactivateDone({ el, type, skipSame } = {}) {
     const self = this
     const options = self.options
     // activation
-    if (options.classSkip !== true && !options.classSkip[type]) {
+    if (!skipSame && options.classSkip !== true && !options.classSkip[type]) {
       // fix need to repeat inside frameDouble in case we cancel
       Xt.frameDouble({ el })
       el.classList.remove(...self.classesIn)
@@ -1794,14 +1798,16 @@ class Toggle {
       const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
       const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       const obj = self.eventQueue({ elements, targets, elementsInner, targetsInner, force, e })
-      // skip obj nodes that are in off and on (e.g. group same slider animation-js)
-      if (!options.queue && objFilter) {
+      // fix groupSame do not deactivate/reactivate but do logic (e.g. group same slider animation-js and slider hash)
+      if (options.groupSame && !options.queue && objFilter) {
         for (const key in obj) {
           const item = obj[key]
           if (item.queueEls) {
             const itemFilter = objFilter[key]
             const queueEls = item.queueEls.filter(x => !itemFilter.queueEls.includes(x))
-            itemFilter.queueEls = itemFilter.queueEls.filter(x => !item.queueEls.includes(x))
+            // activation object skip nodes that should deactivate/reactivate
+            itemFilter.skipEls = itemFilter.queueEls.filter(x => item.queueEls.includes(x))
+            // deactivation object remove nodes that should deactivate/reactivate
             item.queueEls = queueEls
           }
         }
@@ -2118,6 +2124,8 @@ class Toggle {
     // delay
     const els = obj[type].queueEls
     for (const el of els) {
+      // fix groupSame do not deactivate/reactivate but do logic (e.g. group same slider animation-js and slider hash)
+      const skipSame = obj[type].skipEls?.includes(el)
       // delay
       let delay = self.initial
         ? false
@@ -2133,13 +2141,13 @@ class Toggle {
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}DelayTimeout`))
       clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
       if (!delay) {
-        self.queueDelayDone({ actionCurrent, actionOther, obj, el, type })
+        self.queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame })
       } else if (delay === 'raf') {
         Xt.frameDouble({
           el,
           ns: `${self.ns + type}QueueDelayDone`,
           func: () => {
-            self.queueDelayDone({ actionCurrent, actionOther, obj, el, type })
+            self.queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame })
           },
         })
       } else {
@@ -2147,7 +2155,7 @@ class Toggle {
           el,
           `${self.ns + type}DelayTimeout`,
           setTimeout(() => {
-            self.queueDelayDone({ actionCurrent, actionOther, obj, el, type })
+            self.queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame })
           }, delay)
         )
       }
@@ -2173,9 +2181,10 @@ class Toggle {
    * @param {Object} params.obj Queue object
    * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be deactivated
    * @param {String} params.type Type of elements
+   * @param {Boolean} params.skipSame If skip activation classes and events
    * @param {Boolean} params.skipQueue If skip queue
    */
-  queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipQueue = false } = {}) {
+  queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame, skipQueue = false } = {}) {
     const self = this
     const options = self.options
     // check if not already running or if force
@@ -2218,7 +2227,7 @@ class Toggle {
         }
       }
       // dispatch event
-      if (type !== 'elementsInner' && type !== 'targetsInner') {
+      if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
         Xt.frame({
           el,
           ns: `${self.ns}${actionCurrent}DelayDone`,
@@ -2252,7 +2261,7 @@ class Toggle {
       self.specialCollapse({ actionCurrent, el, type })
       self.specialClose({ actionCurrent, el, type, obj })
       // dispatch event
-      if (type !== 'elementsInner' && type !== 'targetsInner') {
+      if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
         // off but without classes
         if (!self.disabled) {
           Xt.frame({
@@ -2276,7 +2285,7 @@ class Toggle {
         el,
         ns: `${self.ns + type}QueueAnim`,
         func: () => {
-          self.queueAnim({ actionCurrent, actionOther, obj, el, type })
+          self.queueAnim({ actionCurrent, actionOther, obj, el, type, skipSame })
         },
       })
       // queue done
@@ -2298,8 +2307,9 @@ class Toggle {
    * @param {Object} params.obj Queue object
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
    * @param {String} params.type Type of element
+   * @param {Boolean} params.skipSame If skip activation classes and events
    */
-  queueAnim({ actionCurrent, actionOther, obj, el, type } = {}) {
+  queueAnim({ actionCurrent, actionOther, obj, el, type, skipSame } = {}) {
     const self = this
     const options = self.options
     // duration
@@ -2317,13 +2327,13 @@ class Toggle {
     // fnc
     clearTimeout(Xt.dataStorage.get(el, `${self.ns + type}AnimTimeout`))
     if (!duration) {
-      self.queueAnimDone({ actionCurrent, actionOther, obj, el, type })
+      self.queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipSame })
     } else if (duration === 'raf') {
       Xt.frameDouble({
         el,
         ns: `${self.ns + type}QueueAnimDone`,
         func: () => {
-          self.queueAnimDone({ actionCurrent, actionOther, obj, el, type })
+          self.queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipSame })
         },
       })
     } else {
@@ -2331,7 +2341,7 @@ class Toggle {
         el,
         `${self.ns + type}AnimTimeout`,
         setTimeout(() => {
-          self.queueAnimDone({ actionCurrent, actionOther, obj, el, type })
+          self.queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipSame })
         }, duration)
       )
     }
@@ -2345,9 +2355,10 @@ class Toggle {
    * @param {Object} params.obj Queue object
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element to be animated
    * @param {String} params.type Type of element
+   * @param {Boolean} params.skipSame If skip activation classes and events
    * @param {Boolean} params.skipQueue If skip queue
    */
-  queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipQueue = false } = {}) {
+  queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipSame, skipQueue = false } = {}) {
     const self = this
     const options = self.options
     // special
@@ -2368,7 +2379,7 @@ class Toggle {
       self.specialCollapse({ actionCurrent, el, type, reset: true })
       self.specialScrollto({ actionCurrent, el, type, obj })
       // dispatch event
-      if (type !== 'elementsInner' && type !== 'targetsInner') {
+      if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
         Xt.frame({
           el,
           ns: `${self.ns}${actionCurrent}AnimDone`,
@@ -2416,7 +2427,7 @@ class Toggle {
         }
       }
       // dispatch event
-      if (type !== 'elementsInner' && type !== 'targetsInner') {
+      if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
         // off but without classes
         if (!self.disabled) {
           Xt.frame({
