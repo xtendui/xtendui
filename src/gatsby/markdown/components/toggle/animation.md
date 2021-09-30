@@ -24,6 +24,8 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
+> If you want to animate from starting values different from `out:` values **assign `transition` to in: and out: variants**.
+
 <demo>
   <demoinline src="demos/components/toggle/animation">
   </demoinline>

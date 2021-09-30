@@ -20,6 +20,8 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 
 You can also customize `xt-backdrop` animations.
 
+> If you want to animate from starting values different from `out:` values **assign `transition` to in: and out: variants**.
+
 <demo>
   <demoinline src="demos/components/overlay/animation">
   </demoinline>

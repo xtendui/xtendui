@@ -20,6 +20,8 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
 
 > Do not transition or transform on `xt-drop` because of transform positioning, **transform and transition the content instead**.
 
+> If you want to animate from starting values different from `out:` values **assign `transition` to in: and out: variants**.
+
 <demo>
   <demoinline src="demos/components/drop/animation">
   </demoinline>

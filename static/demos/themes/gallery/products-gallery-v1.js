@@ -25,7 +25,7 @@ const mountVariants = ({ ref }) => {
     targets: '[data-node-variants-target]',
     on: 'change',
     off: false,
-    groupSameAnimate: true,
+    duration: 500,
   })
   /***/
 

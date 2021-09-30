@@ -2,9 +2,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const designAnim = () => 'transition opacity-0 group-in:opacity-100'
 const itemAnim = () =>
-  'transition opacity-0 translate-y-6 scale-95 group-in:opacity-100 group-in:translate-y-0 group-in:scale-100 group-out:translate-y-0 group-out:scale-100'
+  'opacity-0 translate-y-6 scale-95 group-in:transition group-in:opacity-100 group-in:translate-y-0 group-in:scale-100 group-out:transition group-out:translate-y-0 group-out:scale-100'
 const itemAnimNogroup = () =>
-  'transition opacity-0 translate-y-6 scale-95 in:opacity-100 in:translate-y-0 in:scale-100 out:duration-100 out:translate-y-0 out:scale-100'
+  'opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100'
 const itemAnimOpacity = () =>
   'opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint'
 
@@ -19,131 +19,124 @@ const html = /* HTML */ `
               <div
                 class="*** product-gallery *** overflow-y-auto overflow-x-hidden xt-overflow-sub h-96 xt-container-remove md:!m-0 md:!h-auto md:!overflow-hidden">
                 <div class="xt-list flex-col">
-                  <a
-                    href="#product-image-overlay-1"
+                  <div
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
-                    id="product-image-1"
-                    title="Expand image 1"
                     data-node-variants-target
                     data-xt-group="red">
-                    <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                      <img
-                        class="xt-media relative"
-                        src="https://source.unsplash.com/164_6wVEHfI"
-                        loading="eager"
-                        alt="" />
-                      <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
-                    </div>
-                  </a>
+                    <a href="#product-image-overlay-1" id="product-image-1" title="Expand image 1">
+                      <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
+                        <img
+                          class="xt-media relative"
+                          src="https://source.unsplash.com/164_6wVEHfI"
+                          loading="eager"
+                          alt="" />
+                        <div
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
+                      </div>
+                    </a>
+                  </div>
 
-                  <a
-                    href="#product-image-overlay-2"
+                  <div
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
-                    id="product-image-2"
-                    title="Expand image 2"
                     data-node-variants-target
                     data-xt-group="red">
-                    <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                      <img
-                        class="xt-media relative"
-                        src="https://source.unsplash.com/j7zu2kpTnwY"
-                        loading="eager"
-                        alt="" />
-                      <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
-                    </div>
-                  </a>
+                    <a href="#product-image-overlay-2" id="product-image-2" title="Expand image 2">
+                      <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
+                        <img
+                          class="xt-media relative"
+                          src="https://source.unsplash.com/j7zu2kpTnwY"
+                          loading="eager"
+                          alt="" />
+                        <div
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
+                      </div>
+                    </a>
+                  </div>
 
-                  <a
-                    href="#product-image-overlay-3"
+                  <div
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
-                    id="product-image-3"
-                    title="Expand image 3"
                     data-node-variants-target
                     data-xt-group="green">
-                    <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                      <img
-                        class="xt-media relative"
-                        src="https://source.unsplash.com/kP6knT7tjn4"
-                        loading="eager"
-                        alt="" />
-                      <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
-                    </div>
-                  </a>
+                    <a href="#product-image-overlay-3" id="product-image-3" title="Expand image 3">
+                      <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
+                        <img
+                          class="xt-media relative"
+                          src="https://source.unsplash.com/kP6knT7tjn4"
+                          loading="eager"
+                          alt="" />
+                        <div
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
+                      </div>
+                    </a>
+                  </div>
 
-                  <a
-                    href="#product-image-overlay-4"
+                  <div
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
-                    id="product-image-4"
-                    title="Expand image 4"
                     data-node-variants-target
                     data-xt-group="blue">
-                    <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                      <img
-                        class="xt-media relative"
-                        src="https://source.unsplash.com/l8p1aWZqHvE"
-                        loading="eager"
-                        alt="" />
-                      <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
-                    </div>
-                  </a>
+                    <a href="#product-image-overlay-4" id="product-image-4" title="Expand image 4">
+                      <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
+                        <img
+                          class="xt-media relative"
+                          src="https://source.unsplash.com/l8p1aWZqHvE"
+                          loading="eager"
+                          alt="" />
+                        <div
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
+                      </div>
+                    </a>
+                  </div>
 
-                  <a
-                    href="#product-image-overlay-5"
+                  <div
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
-                    id="product-image-5"
-                    title="Expand image 5"
                     data-node-variants-target
                     data-xt-group="blue">
-                    <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                      <img
-                        class="xt-media relative"
-                        src="https://source.unsplash.com/gn07k9Kmx9c"
-                        loading="eager"
-                        alt="" />
-                      <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
-                    </div>
-                  </a>
+                    <a href="#product-image-overlay-5" id="product-image-5" title="Expand image 5">
+                      <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
+                        <img
+                          class="xt-media relative"
+                          src="https://source.unsplash.com/gn07k9Kmx9c"
+                          loading="eager"
+                          alt="" />
+                        <div
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
+                      </div>
+                    </a>
+                  </div>
 
-                  <a
-                    href="#product-image-overlay-6"
+                  <div
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
-                    id="product-image-6"
-                    title="Expand image 6"
                     data-node-variants-target
                     data-xt-group="red,green">
-                    <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                      <img
-                        class="xt-media relative"
-                        src="https://source.unsplash.com/gpii_myxZG0"
-                        loading="eager"
-                        alt="" />
-                      <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
-                    </div>
-                  </a>
+                    <a href="#product-image-overlay-6" id="product-image-6" title="Expand image 6">
+                      <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
+                        <img
+                          class="xt-media relative"
+                          src="https://source.unsplash.com/gpii_myxZG0"
+                          loading="eager"
+                          alt="" />
+                        <div
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
+                      </div>
+                    </a>
+                  </div>
 
-                  <a
-                    href="#product-image-overlay-7"
+                  <div
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
-                    id="product-image-7"
-                    title="Expand image 7"
                     data-node-variants-target
                     data-xt-group="red,green">
-                    <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                      <img
-                        class="xt-media relative"
-                        src="https://source.unsplash.com/DzoOduUanpQ"
-                        loading="eager"
-                        alt="" />
-                      <div
-                        class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
-                    </div>
-                  </a>
+                    <a href="#product-image-overlay-7" id="product-image-7" title="Expand image 7">
+                      <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
+                        <img
+                          class="xt-media relative"
+                          src="https://source.unsplash.com/DzoOduUanpQ"
+                          loading="eager"
+                          alt="" />
+                        <div
+                          class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
 
                 <div class="absolute h-full bottom-0 right-0 md:hidden">

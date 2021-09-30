@@ -1522,8 +1522,7 @@ class Toggle {
       el.checked = true
       // activation
       el.classList.add(...self.classes)
-      el.classList.remove(...self.classesOut)
-      el.classList.remove(...self.classesDone)
+      el.classList.remove(...self.classesOut, ...self.classesDone)
       // needs TWO raf or sequential off/on flickr (e.g. display)
       Xt.frameDouble({
         el,
@@ -1555,8 +1554,7 @@ class Toggle {
     if (!skipSame && options.classSkip !== true && !options.classSkip[type]) {
       // fix need to repeat inside frameDouble in case we cancel
       Xt.frameDouble({ el })
-      el.classList.add(...self.classesIn)
-      el.classList.add(...self.classesDone)
+      el.classList.add(...self.classesIn, ...self.classesDone)
     }
   }
 
@@ -1612,11 +1610,7 @@ class Toggle {
       // input
       el.checked = false
       // must be outside inside raf or page jumps (e.g. noqueue, done outside for toggle inverse)
-      el.classList.remove(...self.classes)
-      el.classList.remove(...self.classesDone)
-      if (self.options.groupSameAnimate) {
-        el.classList.remove(...self.classesIn)
-      }
+      el.classList.remove(...self.classes, ...self.classesDone)
       // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
       Xt.frameDouble({
         el,
@@ -1649,8 +1643,7 @@ class Toggle {
     if (!skipSame && options.classSkip !== true && !options.classSkip[type]) {
       // fix need to repeat inside frameDouble in case we cancel
       Xt.frameDouble({ el })
-      el.classList.remove(...self.classesIn)
-      el.classList.remove(...self.classesOut)
+      el.classList.remove(...self.classesIn, ...self.classesOut)
     }
   }
 
@@ -3434,7 +3427,6 @@ Toggle.optionsDefaultSuper = {
   classSkip: false,
   hash: 'data-xt-hash',
   groupSeparator: ',',
-  groupSameAnimate: false,
   groupElements: true,
   // quantity
   min: 0,
