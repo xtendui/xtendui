@@ -1,3 +1,44 @@
+# [1.0.0-beta.42](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.41...v1.0.0-beta.42) (2021-10-01)
+
+
+### Bug Fixes
+
+* fix drop and tooltip popperjs console error ([613274c](https://github.com/xtendui/xtendui/commit/613274c2a7f851c6250cf38cd1b83f89f7c6acc3))
+* **javascript:** fix unmount not unmounting mounted object with the same ref and matches ([60574e0](https://github.com/xtendui/xtendui/commit/60574e08c6b2a0711bcf97e46f1541fc58a025ce))
+* **scrollto:** fix error not valid querySelector on scroll with not valid hash ([05992b1](https://github.com/xtendui/xtendui/commit/05992b11446ee4f7e482d8db9430fbc1459745de))
+* **toggle:** fix options.groupSame not triggering hash change, now same element deactivation/activation skip is only with options.groupSame and skips only on class and events activations ([642e6fc](https://github.com/xtendui/xtendui/commit/642e6fc47947c4340c4c585563000caaa731784f))
+
+
+### Code Refactoring
+
+* **groupnumber:** changed default min options and added limit and validation options ([51b3694](https://github.com/xtendui/xtendui/commit/51b3694152573bfb572a6f11c44cff550a14c25f))
+* **javascript:** refactor Xt.mount logic to fix unmount not working properly and refactor sticky pinned elements and refactor react demos with useLayoutEffect to wait for document ready and now disable doesn't deactivate ([e30c988](https://github.com/xtendui/xtendui/commit/e30c988b1d6bb6e8e8909c9b0c457b1587c4d4a8))
+* **javascript:** refactor Xt.ready now by default without requestAnimationFrame and Xt.mount refactor to aignore nodes not removed from DOM without using xt-ignore ([34760b9](https://github.com/xtendui/xtendui/commit/34760b9a896f0cf763025feb3f02d88af456adbe))
+* **javascript:** Xt.options note because Xt.ready has no raf ([d1c83e1](https://github.com/xtendui/xtendui/commit/d1c83e1f0be79d4593d79ace8947368174ab96ee))
+* **toggle:** little fix Xt.off classes and removed options.groupSameAnimate no more needed because depends on tailwind classes ([59bf255](https://github.com/xtendui/xtendui/commit/59bf2551a79b95d630fb3c82b4813b1d7ee95b70))
+
+
+### Features
+
+* **css:** added desktop first media queries -sm -md -lg -xl -2xl ([65152f1](https://github.com/xtendui/xtendui/commit/65152f1cc756c8dedf0b68d6739bd33388f954b3))
+* **groupnumber:** added input step attribute on groupnumber and supported multiple inputs and different steps ([18032a2](https://github.com/xtendui/xtendui/commit/18032a2a23400ad3ff000ca92bf4fd7c23d19f78))
+* **toggle:** added options.groupSameAnimate and docs gallery v1 ([039f7ee](https://github.com/xtendui/xtendui/commit/039f7eec8d766f6dc0ec97cd47bdac8ae9f00d3e))
+
+
+### BREAKING CHANGES
+
+* **javascript:** now because Xt.ready and Xt.mount has no requestAnimationFrame, to apply custom Xt.options they need to be imported before other components import or data-xt- initializations don't have those options
+* **toggle:** reverted the add of options.groupSameAnimate on this same release
+* **javascript:** now Xt.ready and Xt.mount are instant, be sure to reference functions and variables already initialized in javascript
+Instead of Xt.mountIgnore and Xt.unmountIgnore use Xt.mount argument ignoreMount and ignoreUnmount
+Removed previous commit of Xt.registerPlugin no longer needed
+* **javascript:** removed "options.disableDeactivate" because now the destroy and disable methods resets internally "appendTo" and "classBody", now components DONT disable on deactivation
+
+removed "Xt.mount" ignore argument and added "Xt.mountIgnore" and "Xt.unmountIgnore"
+
+IMPORTANT now you need to register ScrolltoPlugin with "Xt.registerPlugin({ name: 'ScrollTrigger', plugin: ScrollTrigger })" to fix infinite Xt.mount loop on pinned nodes
+* **groupnumber:** now options.min is -Infinity before was 1
+
 # [1.0.0-beta.41](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.40...v1.0.0-beta.41) (2021-09-01)
 
 
