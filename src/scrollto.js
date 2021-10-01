@@ -343,6 +343,12 @@ class Scrollto {
       // event
       const loc = new URL(el.getAttribute('href'), location)
       if (loc.hash) {
+        // fix error is not a valid selector (e.g. #C1385.02)
+        try {
+          document.createDocumentFragment().querySelector(loc.hash)
+        } catch {
+          continue
+        }
         self.target = document.querySelector(loc.hash)
         if (self.target && Xt.visible({ el: self.target })) {
           // vars
