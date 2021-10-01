@@ -110,7 +110,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // sticky
 
-    const heroParallax = {
+    const parallax = {
       trigger: ref,
       start: 0,
       end: 'bottom top',
@@ -124,9 +124,76 @@ Xt.mount({
     })
 
     gsap.to(ref, {
-      scrollTrigger: heroParallax,
-      scale: '0.9',
+      scrollTrigger: parallax,
+      scale: 0.9,
       opacity: 0,
+      ease: 'quart.out',
+    })
+  },
+})
+
+/* parallax feature */
+
+Xt.mount({
+  matches: '.gatsby_home-feature',
+  mount: ({ ref }) => {
+    // vars
+
+    const videos = ref.querySelectorAll('.gatsby_home-feature_video')
+    const videoLast = ref.querySelector('.gatsby_home-feature_video:last-child')
+    const text = ref.querySelectorAll('.gatsby_home-feature_text')
+
+    // videos
+
+    for (const video of videos) {
+      // sticky
+
+      const parallax = {
+        trigger: video,
+        start: 'center center',
+        end: 'center top',
+        pin: true,
+        pinSpacing: true,
+        scrub: 0.5,
+      }
+
+      gsap
+        .timeline({
+          scrollTrigger: parallax,
+        })
+        .to(video, {
+          scale: 1,
+          opacity: 1,
+          ease: 'quart.out',
+        })
+        .addPause(3)
+        .to(video, {
+          opacity: 0,
+          ease: 'quart.out',
+        })
+    }
+
+    // text
+
+    const parallax = {
+      trigger: text,
+      start: 'center center',
+      endTrigger: videoLast,
+      end: 'center top',
+      pin: true,
+      pinSpacing: true,
+      scrub: 0.5,
+      markers: true,
+    }
+
+    gsap.set(text, {
+      transformOrigin: 'top center',
+    })
+
+    gsap.to(text, {
+      scrollTrigger: parallax,
+      scale: 1,
+      opacity: 1,
       ease: 'quart.out',
     })
   },

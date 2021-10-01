@@ -89,7 +89,7 @@ All core components are **primitive UI elements** that promotes creativity with 
 
 #### Card
 
-The **card component** is used in many other components to display content inside a box. It's simple, modular and fully customizable. See [card](/components/card) for more info.
+The **card component** is used in many other components to display content inside a box. It's **simple, modular and fully customizable**. See [card](/components/card) for more info.
 
 #### Link
 

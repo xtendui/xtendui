@@ -210,17 +210,138 @@ function Page() {
                       Features
                     </div>
                     <p className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl opacity-50">
-                      For an overview of the main features visit the <Link to="/intro/features">features page</Link>.
+                      For an overview of the main features visit the{' '}
+                      <a href="/intro/features" target="_blank">
+                        features page
+                      </a>
+                      .
                     </p>
                   </div>
                 </div>
                 <div className="my-14 xt-my-auto">
-                  <div className="w-full text-left py-28 bg-black text-white xt-links-inverse">
+                  <div className="w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                    <div className="container">
+                      <div className="xt-row xt-row-12 justify-center text-center">
+                        <div className="w-full md:w-8/12 lg:w-7/12 gatsby_home-main_scroll">
+                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl">
+                            Modular Design Components
+                          </h3>
+                          <p>
+                            All core components are <strong>primitive UI elements</strong> that promotes creativity with
+                            its support for complex design.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="gatsby_home-feature w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
                     <div className="container">
                       <div className="xt-row xt-row-12">
-                        <div className="w-full md:w-6/12 lg:w-5/12">test</div>
-                        <div className="w-full md:w-6/12 lg:w-7/12">
-                          <Video assets={assets} title="overlay-implementation-v1" />
+                        <div className="w-full md:w-5/12 lg:w-4/12">
+                          <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
+                            <div className="gatsby_home-main_scroll">
+                              <p>
+                                For example the <strong>card component</strong> is used in many other components to
+                                display content inside a box. It's{' '}
+                                <strong>simple, modular and fully customizable</strong>.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-full md:w-7/12 lg:w-8/12">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="overlay-implementation-v1" />
+                          </div>
+                          <div className="-mb-80"></div>
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="drop-implementation-v1" />
+                          </div>
+                          <div className="-mb-80"></div>
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="tooltip-implementation-v1" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                    <div className="container">
+                      <div className="xt-row xt-row-12 justify-center text-center">
+                        <div className="w-full md:w-8/12 lg:w-7/12 gatsby_home-main_scroll">
+                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl">
+                            Customizable Animations
+                          </h3>
+                          <p>
+                            You can animate components with <strong>tailwindcss variants</strong> or{' '}
+                            <strong>css</strong> or <strong>js</strong>, whatever you prefer or need to use.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="gatsby_home-feature w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                    <div className="container">
+                      <div className="xt-row xt-row-12">
+                        <div className="w-full md:w-5/12 lg:w-4/12">
+                          <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
+                            <div className="gatsby_home-main_scroll">
+                              <p>Toggle advanced animation system support also **delay**, **queue**, **collapse**.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-full md:w-7/12 lg:w-8/12">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="float-animation-v1" />
+                          </div>
+                          <div className="-mb-80"></div>
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="collapse-animation-v1" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                    <div className="container">
+                      <div className="xt-row xt-row-12 justify-center text-center">
+                        <div className="w-full md:w-8/12 lg:w-7/12 gatsby_home-main_scroll">
+                          <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl">
+                            Complex Interactions
+                          </h3>
+                          <p>
+                            You can customize <strong>components interaction</strong> in many ways. We also use Gsap to
+                            make <strong>complex javascript animations and parallax effects</strong>.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="gatsby_home-feature w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                    <div className="container">
+                      <div className="xt-row xt-row-12">
+                        <div className="w-full md:w-5/12 lg:w-4/12">
+                          <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
+                            <div className="gatsby_home-main_scroll">
+                              <p>Lorem Ipsum</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-full md:w-7/12 lg:w-8/12">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="products-gallery-v1" />
+                          </div>
+                          <div className="-mb-80"></div>
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="multilevel-v1" />
+                          </div>
+                          <div className="-mb-80"></div>
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="products-listing-v2" />
+                          </div>
+                          <div className="-mb-80"></div>
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                            <Video assets={assets} title="blocks-featured-v1" />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -239,7 +360,7 @@ function Page() {
                       <div className="gatsby_home-main_scroll inline-block w-full text-left">
                         <div className="xt-row xt-row-4">
                           <div className="w-full md:w-6/12 lg:w-5/12">
-                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl">
                               Tailwind Css
                             </h3>
                           </div>
@@ -259,7 +380,7 @@ function Page() {
                       <div className="gatsby_home-main_scroll inline-block w-full text-left">
                         <div className="xt-row xt-row-4">
                           <div className="w-full md:w-6/12 lg:w-5/12">
-                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl">
                               Vanilla JS
                             </h3>
                           </div>
@@ -283,7 +404,7 @@ function Page() {
                       <div className="gatsby_home-main_scroll inline-block w-full text-left">
                         <div className="xt-row xt-row-4">
                           <div className="w-full md:w-6/12 lg:w-5/12">
-                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl flex items-center">
+                            <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl">
                               Gsap
                             </h3>
                           </div>
