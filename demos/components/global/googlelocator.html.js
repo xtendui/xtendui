@@ -15,20 +15,17 @@ const html = /* HTML */ `
                       class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputGray()}"
                       aria-label="Search"
                       placeholder="Search"
-                      data-xt-googlelocator-search-input
-                    />
+                      data-xt-googlelocator-search-input />
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                      data-xt-googlelocator-locate-btn
-                    >
+                      data-xt-googlelocator-locate-btn>
                       ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     </button>
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                      data-xt-googlelocator-search-btn
-                    >
+                      data-xt-googlelocator-search-btn>
                       ${classes.iconSearch({ classes: 'text-xl -my-1' })}
                     </button>
                   </div>
@@ -43,8 +40,7 @@ const html = /* HTML */ `
                     name="type-options"
                     value=""
                     data-xt-googlelocator-filter
-                    checked
-                  />
+                    checked />
                   <span class="${classes.checkContent()}">All types</span>
                 </label>
               </div>
@@ -56,8 +52,7 @@ const html = /* HTML */ `
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value="restaurant"
-                    data-xt-googlelocator-filter
-                  />
+                    data-xt-googlelocator-filter />
                   <span class="${classes.checkContent()}">Restaurant</span>
                 </label>
               </div>
@@ -69,8 +64,7 @@ const html = /* HTML */ `
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value="school"
-                    data-xt-googlelocator-filter
-                  />
+                    data-xt-googlelocator-filter />
                   <span class="${classes.checkContent()}">School</span>
                 </label>
               </div>
@@ -82,8 +76,7 @@ const html = /* HTML */ `
                     class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-fav"
                     value="fav"
-                    data-xt-googlelocator-filter
-                  />
+                    data-xt-googlelocator-filter />
                   <span class="${classes.checkContent()}">Favourite</span>
                 </label>
               </div>
@@ -134,16 +127,14 @@ const html = /* HTML */ `
       </div>
 
       <div
-        class="relative flex-auto min-h-full md:absolute md:inset-0 pointer-events-none invisible md:pointer-events-auto md:visible md:pl-[20rem] lg:pl-[25rem] xl:pl-[30rem]"
-      >
+        class="relative flex-auto min-h-full md:absolute md:inset-0 pointer-events-none invisible md:pointer-events-auto md:visible md:pl-[20rem] lg:pl-[25rem] xl:pl-[30rem]">
         <div class="relative w-full h-full">
           <div class="w-full h-full" data-xt-googlelocator-map></div>
 
           <button
             type="button"
             class="absolute z-10 top-4 left-4 xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-googlelocator-repeat-btn
-          >
+            data-xt-googlelocator-repeat-btn>
             Search in this area
           </button>
         </div>
@@ -151,8 +142,7 @@ const html = /* HTML */ `
 
       <div
         class="${classes.loader()} bg-white bg-opacity-75 off:hidden out:pointer-events-none z-10"
-        data-xt-googlelocator-loader
-      >
+        data-xt-googlelocator-loader>
         <span class="${classes.spinner()} w-6 h-6 text-primary-500">
           ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
         </span>

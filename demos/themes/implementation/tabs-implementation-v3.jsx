@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
-import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import 'xtendui/src/scrollto'
 
 export default function demo() {
   const ref = useRef()
@@ -17,11 +17,11 @@ export default function demo() {
     <div className="demo--tabs-implementation-v3-react" ref={ref}>
       <div className="max-w-xl mx-auto">
         <div className="*** xt-sticky ***" data-node-sticky>
-          <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
-            <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
+          <div className="xt-card p-1.5 rounded-full text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
+            <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
               <a
                 href="#description"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="xt-icon text-base opacity-50 mr-2"
@@ -40,7 +40,7 @@ export default function demo() {
               </a>
               <a
                 href="#features"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="xt-icon text-base opacity-50 mr-2"
@@ -62,7 +62,7 @@ export default function demo() {
               </a>
               <a
                 href="#accessories"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="xt-icon text-base opacity-50 mr-2"
@@ -84,7 +84,7 @@ export default function demo() {
               <a
                 href="#manuals"
                 type="button"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="xt-icon text-base opacity-50 mr-2"
@@ -107,8 +107,8 @@ export default function demo() {
         </div>
 
         <div className="mt-3" data-node-sticky-endtrigger>
-          <div className="*** xt-card rounded-2xl text-gray-900 xt-links-default bg-white ***">
-            <div className="*** p-6 sm:p-8 text-sm border-t border-solid border-gray-300 ***" id="description">
+          <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white">
+            <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="description">
               <div className="xt-h5">Description</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -127,7 +127,7 @@ export default function demo() {
               </p>
             </div>
 
-            <div className="*** p-6 sm:p-8 text-sm border-t border-solid border-gray-300 ***" id="features">
+            <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="features">
               <div className="xt-h5">Features</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -136,7 +136,7 @@ export default function demo() {
               </p>
             </div>
 
-            <div className="*** p-6 sm:p-8 text-sm border-t border-solid border-gray-300 ***" id="accessories">
+            <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="accessories">
               <div className="xt-h5">Accessories</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -165,7 +165,7 @@ export default function demo() {
               </p>
             </div>
 
-            <div className="*** p-6 sm:p-8 text-sm border-t border-solid border-gray-300 ***" id="manuals">
+            <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="manuals">
               <div className="xt-h5">Manuals</div>
               <p>
                 <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -188,20 +188,6 @@ export default function demo() {
       </div>
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountScrollto = mountScrollto({ ref })
-  const unmountSticky = mountSticky({ ref })
-
-  // unmount
-
-  return () => {
-    unmountScrollto()
-    unmountSticky()
-  }
 }
 
 /* mountScrollto */
@@ -268,4 +254,18 @@ const mountSticky = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountScrollto = mountScrollto({ ref })
+  const unmountSticky = mountSticky({ ref })
+
+  // unmount
+
+  return () => {
+    unmountScrollto()
+    unmountSticky()
+  }
 }

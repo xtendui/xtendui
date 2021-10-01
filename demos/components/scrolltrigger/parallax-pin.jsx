@@ -24,18 +24,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountParallax = mountParallax({ ref })
-
-  // unmount
-
-  return () => {
-    unmountParallax()
-  }
-}
-
 /* mountParallax */
 
 const mountParallax = ({ ref }) => {
@@ -120,4 +108,16 @@ const parallax = ({ ref }) => {
       x: '50vw',
       ease: 'quint.inOut',
     })
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountParallax = mountParallax({ ref })
+
+  // unmount
+
+  return () => {
+    unmountParallax()
+  }
 }

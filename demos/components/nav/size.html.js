@@ -7,16 +7,14 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Lorem ipsum dolor sit amet
         </a>
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Consectetur adipiscing elit
         </a>
 
@@ -37,8 +35,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Et dictum felis vestibulum sed
         </a>
       </nav>
@@ -47,16 +44,14 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Lorem ipsum dolor sit amet
         </a>
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Consectetur adipiscing elit
         </a>
 
@@ -77,8 +72,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Et dictum felis vestibulum sed
         </a>
       </nav>
@@ -87,16 +81,14 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Lorem ipsum dolor sit amet
         </a>
 
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Consectetur adipiscing elit
         </a>
 
@@ -117,8 +109,7 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
-        >
+          class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Et dictum felis vestibulum sed
         </a>
       </nav>

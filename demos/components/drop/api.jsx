@@ -62,6 +62,18 @@ export default function demo() {
         <button
           type="button"
           className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+          id="button--drop-api-disable">
+          Disable
+        </button>
+        <button
+          type="button"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+          id="button--drop-api-enable">
+          Enable
+        </button>
+        <button
+          type="button"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--drop-api-destroy">
           Destroy
         </button>
@@ -133,25 +145,13 @@ export default function demo() {
         </div>
       </div>
 
-      <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100 mt-6 mt-6">
+      <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100 mt-6">
         <div
           className="p-6 sm:p-8 text-sm overflow-y-auto overflow-x-hidden xt-overflow-sub max-h-56"
           id="card--drop-api-log"></div>
       </div>
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountEventmethods = mountEventmethods({ ref })
-
-  // unmount
-
-  return () => {
-    unmountEventmethods()
-  }
 }
 
 /* mountEventmethods */
@@ -307,9 +307,6 @@ const mountEventmethods = ({ ref }) => {
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // restart
-      logAdd('<strong>restart</strong>')
-      self.restart()
     }, 200).toString()
   }
 
@@ -325,6 +322,28 @@ const mountEventmethods = ({ ref }) => {
   }
 
   restartBtn.addEventListener('click', restartFnc)
+
+  // disable
+
+  const disableBtn = ref.querySelector('#button--drop-api-disable')
+
+  const disableFnc = () => {
+    logAdd('<strong>disable</strong>')
+    self.disable()
+  }
+
+  disableBtn.addEventListener('click', disableFnc)
+
+  // enable
+
+  const enableBtn = ref.querySelector('#button--drop-api-enable')
+
+  const enableFnc = () => {
+    logAdd('<strong>enable</strong>')
+    self.enable()
+  }
+
+  enableBtn.addEventListener('click', enableFnc)
 
   // destroy
 
@@ -406,4 +425,16 @@ const mountEventmethods = ({ ref }) => {
     self = null
   }
   return unmount
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountEventmethods = mountEventmethods({ ref })
+
+  // unmount
+
+  return () => {
+    unmountEventmethods()
+  }
 }

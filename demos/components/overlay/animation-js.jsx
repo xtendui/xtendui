@@ -36,10 +36,10 @@ export default function demo() {
           overlay 2
         </button>
 
-        <div className="xt-overlay group" data-xt-overlay-target data-xt-group="group0">
+        <div className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
           <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner">
+            <div className="xt-overlay-inner" data-xt-overlay-inner>
               <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">
                 <button
                   type="button"
@@ -110,10 +110,10 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-overlay group" data-xt-overlay-target data-xt-group="group1">
+        <div className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
           <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner">
+            <div className="xt-overlay-inner" data-xt-overlay-inner>
               <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">
                 <button
                   type="button"
@@ -184,10 +184,10 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-overlay group" data-xt-overlay-target data-xt-group="group2">
+        <div className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
           <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
-            <div className="xt-overlay-inner">
+            <div className="xt-overlay-inner" data-xt-overlay-inner>
               <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">
                 <button
                   type="button"
@@ -262,18 +262,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountOverlay = mountOverlay({ ref })
-
-  // unmount
-
-  return () => {
-    unmountOverlay()
-  }
-}
-
 /* mountOverlay */
 
 const mountOverlay = ({ ref }) => {
@@ -304,7 +292,7 @@ const mountOverlay = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // inner
-      const inner = tr.querySelector('.xt-overlay-inner')
+      const inner = tr.querySelector('[data-xt-overlay-inner]')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
         y: -self.direction * targetYOn,
@@ -332,7 +320,7 @@ const mountOverlay = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // inner
-      const inner = tr.querySelector('.xt-overlay-inner')
+      const inner = tr.querySelector('[data-xt-overlay-inner]')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
         y: self.direction * targetYOff,
@@ -353,5 +341,17 @@ const mountOverlay = ({ ref }) => {
   return () => {
     self.destroy()
     self = null
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountOverlay = mountOverlay({ ref })
+
+  // unmount
+
+  return () => {
+    unmountOverlay()
   }
 }

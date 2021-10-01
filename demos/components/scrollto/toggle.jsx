@@ -407,18 +407,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountScrollto = mountScrollto({ ref })
-
-  // unmount
-
-  return () => {
-    unmountScrollto()
-  }
-}
-
 /* mountScrollto */
 
 const mountScrollto = () => {
@@ -459,5 +447,17 @@ const mountScrollto = () => {
     self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
     self.destroy()
     self = null
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountScrollto = mountScrollto({ ref })
+
+  // unmount
+
+  return () => {
+    unmountScrollto()
   }
 }

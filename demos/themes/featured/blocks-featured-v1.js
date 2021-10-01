@@ -3,21 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-Xt.mount({
-  matches: '.demo--blocks-featured-v1',
-  mount: ({ ref }) => {
-    const unmountItemsParallax = mountItemsParallax({ ref })
-    const unmountButtonsLine = mountButtonsLine({ ref })
-
-    // unmount
-
-    return () => {
-      unmountItemsParallax()
-      unmountButtonsLine()
-    }
-  },
-})
-
 /* mountItemParallax */
 
 const mountItemsParallax = ({ ref }) => {
@@ -202,3 +187,20 @@ const mountButtonsLine = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--blocks-featured-v1',
+  mount: ({ ref }) => {
+    const unmountItemsParallax = mountItemsParallax({ ref })
+    const unmountButtonsLine = mountButtonsLine({ ref })
+
+    // unmount
+
+    return () => {
+      unmountItemsParallax()
+      unmountButtonsLine()
+    }
+  },
+})

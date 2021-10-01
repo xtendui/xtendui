@@ -81,18 +81,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountDrops = mountDrops({ ref })
-
-  // unmount
-
-  return () => {
-    unmountDrops()
-  }
-}
-
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
@@ -125,5 +113,17 @@ const mountDrops = ({ ref }) => {
   return () => {
     self.destroy()
     self = null
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountDrops = mountDrops({ ref })
+
+  // unmount
+
+  return () => {
+    unmountDrops()
   }
 }

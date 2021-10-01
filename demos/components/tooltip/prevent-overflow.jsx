@@ -49,18 +49,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountTooltip = mountTooltip({ ref })
-
-  // unmount
-
-  return () => {
-    unmountTooltip()
-  }
-}
-
 /* mountTooltips */
 
 const mountTooltip = ({ ref }) => {
@@ -93,5 +81,17 @@ const mountTooltip = ({ ref }) => {
   return () => {
     self.destroy()
     self = null
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountTooltip = mountTooltip({ ref })
+
+  // unmount
+
+  return () => {
+    unmountTooltip()
   }
 }

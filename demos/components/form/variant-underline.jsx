@@ -5,7 +5,7 @@ export default function demo() {
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Input </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Input </label>
             <input
               type="text"
               className="block w-full *** py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none ***"
@@ -15,7 +15,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Disabled </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Disabled </label>
             <input
               type="text"
               className="block w-full *** py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none ***"
@@ -26,7 +26,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> File </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> File </label>
             <input
               type="file"
               className="block w-full *** py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none ***"
@@ -35,7 +35,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Textarea </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Textarea </label>
             <textarea
               className="block w-full h-20 max-h-48 *** py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none *** resize-vertical"
               aria-label="Textarea"
@@ -43,7 +43,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Select </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Select </label>
             <select
               className="block w-full xt-select *** py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none ***"
               aria-label="Select">
@@ -55,7 +55,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Select multiple </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Select multiple </label>
             <select
               className="block w-full xt-select *** py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none ***"
               multiple
@@ -67,7 +67,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Checkbox </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -103,7 +103,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Radio </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -140,7 +140,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block *** mb-3 font-medium text-gray-700 ***"> Switch </label>
+            <label className="block *** mb-1 font-medium text-gray-700 ***"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">

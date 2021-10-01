@@ -54,16 +54,22 @@ export default function demo() {
   )
 }
 
-/* mount */
+/* mountToggles */
 
-const mount = ({ ref }) => {
-  const unmountToggle = mountToggle({ ref })
+const mountToggles = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    matches: '[data-xt-toggle]',
+    mount: ({ ref }) => {
+      return mountToggle({ ref })
+    },
+  })
 
   // unmount
 
-  return () => {
-    unmountToggle()
-  }
+  return () => {}
 }
 
 /* mountToggle */
@@ -71,16 +77,14 @@ const mount = ({ ref }) => {
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref.querySelector('[data-xt-toggle]')
-
-  // init
-
+  const toggle = ref
   const self = Xt.get({ name: 'xt-toggle', el: toggle })
 
   // off
 
   const off = e => {
     const tr = e.target
+    /***/
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // reset to current when no activation
@@ -89,6 +93,7 @@ const mountToggle = ({ ref }) => {
         current.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
       }
     }
+    /***/
   }
 
   for (const tr of self.targets) {
@@ -98,4 +103,16 @@ const mountToggle = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountToggles = mountToggles({ ref })
+
+  // unmount
+
+  return () => {
+    unmountToggles()
+  }
 }

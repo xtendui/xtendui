@@ -92,18 +92,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountTooltip = mountTooltip({ ref })
-
-  // unmount
-
-  return () => {
-    unmountTooltip()
-  }
-}
-
 /* mountTooltip */
 
 const mountTooltip = ({ ref }) => {
@@ -115,7 +103,6 @@ const mountTooltip = ({ ref }) => {
     // vars
 
     const container = tooltip.closest('[data-xt-tooltip]')
-    const self = Xt.get({ name: 'xt-tooltip', el: container })
     const delayReset = 500
     const durationFast = 100
 
@@ -127,6 +114,7 @@ const mountTooltip = ({ ref }) => {
     // on
 
     const on = e => {
+      const self = Xt.get({ name: 'xt-tooltip', el: container })
       // make other tooltips fast
       const tooltipsOther = Array.from(tooltips).filter(x => x !== e.target)
       for (const tooltip of tooltipsOther) {
@@ -152,4 +140,16 @@ const mountTooltip = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountTooltip = mountTooltip({ ref })
+
+  // unmount
+
+  return () => {
+    unmountTooltip()
+  }
 }

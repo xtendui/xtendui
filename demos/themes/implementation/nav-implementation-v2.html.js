@@ -1,12 +1,12 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
+const itemAnim = () => 'overflow-hidden transition-all'
 const navRadius = () => `-2xl`
 const buttonAnim = () =>
   `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
 
 const html = /* HTML */ `
   <div class="demo--nav-implementation-v2">
-    <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br />
 
@@ -16,23 +16,20 @@ const html = /* HTML */ `
           <div class="w-full md:w-4/12">
             <div class="*** xt-sticky md:py-4 ***" data-node-sticky>
               <div
-                class="*** xt-card rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()} ***"
-              >
-                <nav class="*** xt-list xt-list-1 flex-col p-3 ***">
+                class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
+                <nav class="*** xt-list xt-list-1 flex-col ***">
                   <a
                     role="button"
                     class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                     data-xt-toggle-element
-                    data-xt-hash="description"
-                  >
+                    data-xt-hash="description">
                     ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                   </a>
                   <a
                     role="button"
                     class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                     data-xt-toggle-element
-                    data-xt-hash="features"
-                  >
+                    data-xt-hash="features">
                     ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
                   </a>
                   <a
@@ -57,11 +54,8 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-8/12">
             <div class="md:py-4" data-node-sticky-endtrigger>
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
-                data-xt-toggle-target
-              >
-                <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
+                <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                   <div class="xt-h5">Description</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -81,11 +75,8 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
-                data-xt-toggle-target
-              >
-                <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
+                <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                   <div class="xt-h5">Features</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -95,11 +86,8 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
-                data-xt-toggle-target
-              >
-                <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
+                <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                   <div class="xt-h5">Accessories</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -129,11 +117,8 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div
-                class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
-                data-xt-toggle-target
-              >
-                <div class="*** xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()} ***">
+              <div class="*** off:hidden out:pointer-events-none ${itemAnim()} ***" data-xt-toggle-target>
+                <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                   <div class="xt-h5">Manuals</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -157,10 +142,6 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br />
-      <br /><br /><br /><br /><br /><br /><br />
       <br /><br /><br /><br /><br /><br /><br />
       <br /><br /><br /><br /><br /><br /><br />
     </div>

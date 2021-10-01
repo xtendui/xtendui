@@ -201,20 +201,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountSlider = mountSlider({ ref })
-  const unmountSlide = mountSlide({ ref })
-
-  // unmount
-
-  return () => {
-    unmountSlider()
-    unmountSlide()
-  }
-}
-
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
@@ -456,4 +442,18 @@ const mountSlide = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountSlider = mountSlider({ ref })
+  const unmountSlide = mountSlide({ ref })
+
+  // unmount
+
+  return () => {
+    unmountSlider()
+    unmountSlide()
+  }
 }

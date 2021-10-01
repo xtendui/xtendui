@@ -95,18 +95,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountSticky = mountSticky({ ref })
-
-  // unmount
-
-  return () => {
-    unmountSticky()
-  }
-}
-
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
@@ -184,4 +172,16 @@ const mountSticky = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountSticky = mountSticky({ ref })
+
+  // unmount
+
+  return () => {
+    unmountSticky()
+  }
 }

@@ -7,12 +7,12 @@ export default function demo() {
     <div>
       <div className="max-w-xl mx-auto">
         <div data-xt-toggle="{ min: 1, duration: 500 }">
-          <div className="*** xt-card rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50 ***">
-            <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
+          <div className="xt-card p-1.5 rounded-full text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
+            <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
               <a
                 href="#"
                 type="button"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="description">
                 <svg
@@ -34,7 +34,7 @@ export default function demo() {
               <a
                 href="#"
                 type="button"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="features">
                 <svg
@@ -59,7 +59,7 @@ export default function demo() {
               <a
                 href="#"
                 type="button"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="accessories">
                 <svg
@@ -83,7 +83,7 @@ export default function demo() {
               <a
                 href="#"
                 type="button"
-                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="manuals">
                 <svg
@@ -110,7 +110,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target>
-              <div className="*** xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Description</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -133,7 +133,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target>
-              <div className="*** xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Features</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -146,7 +146,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target>
-              <div className="*** xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Accessories</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -179,7 +179,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
               data-xt-toggle-target>
-              <div className="*** xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Manuals</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

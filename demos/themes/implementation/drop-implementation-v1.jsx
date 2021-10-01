@@ -13,10 +13,8 @@ export default function demo() {
             data-xt-drop-element>
             Nav
           </button>
-          <div
-            className="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-            data-xt-drop-target>
-            <div className="xt-card w-60 rounded-md shadow-lg text-white xt-links-inverse bg-primary-500">
+          <div className="xt-drop p-3 *** group ***" data-xt-drop-target>
+            <div className="xt-card w-60 rounded-md shadow-lg text-white xt-links-inverse bg-primary-500 *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
               <nav className="xt-list flex-col p-3">
                 <a
                   href="#"
@@ -102,7 +100,7 @@ export default function demo() {
                 </a>
               </nav>
             </div>
-            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500"></div>
+            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-100 ***"></div>
           </div>
         </div>
 
@@ -113,10 +111,8 @@ export default function demo() {
             data-xt-drop-element>
             Contact
           </button>
-          <div
-            className="xt-drop p-3 *** transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-            data-xt-drop-target>
-            <div className="xt-card w-80 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+          <div className="xt-drop p-3 *** group ***" data-xt-drop-target>
+            <div className="xt-card w-80 rounded-md shadow-lg text-gray-900 xt-links-default bg-white *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
               <nav className="xt-list xt-list-1 flex-col *** py-2 ***">
                 <a
                   href="#"
@@ -206,7 +202,7 @@ export default function demo() {
                 </p>
               </div>
             </div>
-            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
+            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-100 ***"></div>
           </div>
         </div>
       </div>

@@ -4,14 +4,12 @@ const html = /* HTML */ `
   <div class="demo--javascript-animation-css">
     <button
       type="button"
-      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} overflow-hidden"
-    >
+      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} overflow-hidden">
       Lorem ipsum
       <span
         class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 *** off:hidden out:pointer-events-none ***"
         data-xt-duration="1000"
-        data-node-target
-      >
+        data-node-target>
         Active
       </span>
     </button>

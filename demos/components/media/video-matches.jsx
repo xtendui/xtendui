@@ -12,23 +12,11 @@ export default function demo() {
       <div className="xt-media-container bg-gray-200 pb-[56.2%]">
         <video className="xt-media" poster="/placeholder-1080.jpg" preload="metadata" muted playsInline loop autoPlay>
           <source type="video/mp4" media="(max-width: 767px)" data-src="/placeholder-720.mp4" />
-          <source type="video/mp4" src="/placeholder-1080.mp4" />
+          <source type="video/mp4" media="(min-width: 768px)" data-src="/placeholder-1080.mp4" />
         </video>
       </div>
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountVideosMatches = mountVideosMatches({ ref })
-
-  // unmount
-
-  return () => {
-    unmountVideosMatches()
-  }
 }
 
 /* mountVideosMatches */
@@ -38,7 +26,7 @@ const mountVideosMatches = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    matches: 'video',
+    matches: 'video source[data-src]',
     mount: ({ ref }) => {
       return mountVideoMatches({ ref })
     },
@@ -54,7 +42,7 @@ const mountVideosMatches = ({ ref }) => {
 const mountVideoMatches = ({ ref }) => {
   // vars
 
-  const video = ref
+  const video = ref.closest('video')
 
   // resize
 
@@ -87,5 +75,17 @@ const mountVideoMatches = ({ ref }) => {
 
   return () => {
     removeEventListener('resize', resize)
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountVideosMatches = mountVideosMatches({ ref })
+
+  // unmount
+
+  return () => {
+    unmountVideosMatches()
   }
 }

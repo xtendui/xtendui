@@ -2,19 +2,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/googlelocator'
 
-Xt.mount({
-  matches: '.demo--googlelocator',
-  mount: ({ ref }) => {
-    const unmountGooglelocator = mountGooglelocator({ ref })
-
-    // unmount
-
-    return () => {
-      unmountGooglelocator()
-    }
-  },
-})
-
 /* initGooglelocator */
 
 const initGooglelocator = ({ ref }) => {
@@ -26,11 +13,12 @@ const initGooglelocator = ({ ref }) => {
 
   /***/
   const self = new Xt.Googlelocator(googlelocator, {
+    initialSearch: true,
     events: {
       animateMarkerResultClick: google.maps.Animation.BOUNCE,
     },
-    autocompleteOptions: { types: ['(regions)'] },
-    autocompleteServiceOptions: { types: ['(regions)'] },
+    autocompleteOptions: { types: ['(regions)'] }, // search autocomplete also with postal code
+    autocompleteServiceOptions: { types: ['(regions)'] }, // search autocomplete prediction also with postal code
     map: {
       center: { lat: 40, lng: -74 },
       zoom: 2.5,
@@ -229,3 +217,18 @@ const mountGooglelocator = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--googlelocator',
+  mount: ({ ref }) => {
+    const unmountGooglelocator = mountGooglelocator({ ref })
+
+    // unmount
+
+    return () => {
+      unmountGooglelocator()
+    }
+  },
+})

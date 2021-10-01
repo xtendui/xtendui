@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
-Xt.mount({
-  matches: '.demo--tooltip-prevent-overflow',
-  mount: ({ ref }) => {
-    const unmountTooltip = mountTooltip({ ref })
-
-    // unmount
-
-    return () => {
-      unmountTooltip()
-    }
-  },
-})
-
 /* mountTooltips */
 
 const mountTooltip = ({ ref }) => {
@@ -48,3 +35,18 @@ const mountTooltip = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--tooltip-prevent-overflow',
+  mount: ({ ref }) => {
+    const unmountTooltip = mountTooltip({ ref })
+
+    // unmount
+
+    return () => {
+      unmountTooltip()
+    }
+  },
+})

@@ -246,22 +246,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountDrops = mountDrops({ ref })
-  const unmountLine = mountLine({ ref })
-  const unmountSwitcher = mountSwitcher({ ref })
-
-  // unmount
-
-  return () => {
-    unmountDrops()
-    unmountLine()
-    unmountSwitcher()
-  }
-}
-
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
@@ -624,4 +608,20 @@ const mountSwitcher = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountDrops = mountDrops({ ref })
+  const unmountLine = mountLine({ ref })
+  const unmountSwitcher = mountSwitcher({ ref })
+
+  // unmount
+
+  return () => {
+    unmountDrops()
+    unmountLine()
+    unmountSwitcher()
+  }
 }

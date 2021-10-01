@@ -1,21 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/infinitescroll'
 
-Xt.mount({
-  matches: '.demo--infinitescroll',
-  mount: ({ ref }) => {
-    const unmountInfinitescroll = mountInfinitescroll({ ref })
-    const unmountSwitcher = mountSwitcher({ ref })
-
-    // unmount
-
-    return () => {
-      unmountInfinitescroll()
-      unmountSwitcher()
-    }
-  },
-})
-
 /* mountInfinitescroll */
 
 const mountInfinitescroll = ({ ref }) => {
@@ -88,3 +73,20 @@ const mountSwitcher = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--infinitescroll',
+  mount: ({ ref }) => {
+    const unmountInfinitescroll = mountInfinitescroll({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
+
+    // unmount
+
+    return () => {
+      unmountInfinitescroll()
+      unmountSwitcher()
+    }
+  },
+})

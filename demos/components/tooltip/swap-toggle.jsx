@@ -10,112 +10,124 @@ export default function demo() {
 
   return (
     <div className="demo--tooltip-swap-toggle-react" ref={ref}>
-      <button
-        type="button"
-        className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
-        data-xt-toggle
-        data-xt-tooltip="{ targets: '#tooltip--swap-toggle, #tooltip--swap-toggle-swap', duration: 300 }">
-        Swap toggle
-      </button>
+      <div data-xt-tooltip="{ duration: 300 }">
+        <button
+          type="button"
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+          data-xt-toggle
+          data-xt-tooltip-element
+          data-xt-group="all">
+          Swap toggle
+        </button>
 
-      <div
-        className="xt-tooltip p-3 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0"
-        id="tooltip--swap-toggle">
-        <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
-          <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+        <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target data-xt-group="all">
+          <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black *** transition duration-300 opacity-0 -translate-y-2 group-in:opacity-100 group-in:translate-y-0 ***">
+            <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
+          </div>
         </div>
-      </div>
 
-      <div
-        className="xt-tooltip p-3 transition duration-300 opacity-0 translate-y-2 in:opacity-100 in:translate-y-0 *** hidden ***"
-        id="tooltip--swap-toggle-swap">
-        <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
-          <div className="py-2 px-2.5 text-xs">Toggled!</div>
+        <div className="xt-tooltip p-3 *** group hidden ***" data-xt-tooltip-target data-xt-group="all">
+          <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black *** transition duration-300 opacity-0 -translate-y-2 group-in:opacity-100 group-in:translate-y-0 ***">
+            <div className="py-2 px-2.5 text-xs">Toggled!</div>
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-/* mount */
+/* mountTooltips */
 
-const mount = ({ ref }) => {
-  const unmountButtonsSwap = mountButtonsSwap({ ref })
+const mountTooltips = ({ ref }) => {
+  // mount granularly
 
-  // unmount
-
-  return () => {
-    unmountButtonsSwap()
-  }
-}
-
-/* mountButtonsSwap */
-
-const mountButtonsSwap = ({ ref }) => {
-  // vars
-
-  const buttonsSwap = ref.querySelectorAll(':scope > .xt-button')
-
-  for (const buttonSwap of buttonsSwap) {
-    // vars
-
-    const self = Xt.get({ name: 'xt-tooltip', el: buttonSwap })
-    const tooltip = buttonSwap.parentNode.querySelector('.xt-tooltip')
-
-    // swap
-
-    const swapBack = () => {
-      // swap tooltip
-      self.targets[0].classList.remove('hidden')
-      self.targets[1].classList.add('hidden')
-      // open
-      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-    }
-
-    const swap = () => {
-      // swap
-      self.targets[0].classList.add('hidden')
-      self.targets[1].classList.remove('hidden')
-      // open
-      tooltip.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-    }
-
-    // resetTooltip: fix when swapping and moving away
-
-    const resetTooltip = () => {
-      // trigger our swap
-      tooltip.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
-      // trigger tooltip deactivation
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-      // remove our listeners
-      tooltip.removeEventListener('offdone.xt.tooltip', swap)
-      tooltip.removeEventListener('offdone.xt.tooltip', swapBack)
-    }
-
-    buttonSwap.addEventListener('mouseleave', resetTooltip)
-
-    // on
-
-    const on = () => {
-      // swap
-      tooltip.addEventListener('offdone.xt.tooltip', swap, { once: true })
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-    }
-
-    buttonSwap.addEventListener('on.xt.toggle', on)
-
-    // off
-
-    const off = () => {
-      // swap back
-      tooltip.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
-      tooltip.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-    }
-
-    buttonSwap.addEventListener('off.xt.toggle', off)
-  }
+  Xt.mount({
+    root: ref,
+    matches: '[data-xt-tooltip]',
+    mount: ({ ref }) => {
+      return mountTooltip({ ref })
+    },
+  })
 
   // unmount
 
   return () => {}
+}
+
+/* mountTooltip */
+
+const mountTooltip = ({ ref }) => {
+  // vars
+
+  const tooltip = ref
+  const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
+  const element = self.elements[0]
+
+  // swap
+
+  const swapBack = () => {
+    // swap tooltip
+    self.targets[0].classList.remove('hidden')
+    self.targets[1].classList.add('hidden')
+    // open
+    element.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+  }
+
+  const swap = () => {
+    // swap
+    self.targets[0].classList.add('hidden')
+    self.targets[1].classList.remove('hidden')
+    // open
+    element.dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+  }
+
+  // resetTooltip: fix when swapping and moving away
+
+  const resetTooltip = () => {
+    // trigger our swap
+    element.dispatchEvent(new CustomEvent('offdone.xt.tooltip'))
+    // trigger tooltip deactivation
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    // remove our listeners
+    element.removeEventListener('offdone.xt.tooltip', swap)
+    element.removeEventListener('offdone.xt.tooltip', swapBack)
+  }
+
+  element.addEventListener('mouseleave', resetTooltip)
+
+  // on
+
+  const on = () => {
+    // swap
+    element.addEventListener('offdone.xt.tooltip', swap, { once: true })
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  element.addEventListener('on.xt.toggle', on)
+
+  // off
+
+  const off = () => {
+    // swap back
+    element.addEventListener('offdone.xt.tooltip', swapBack, { once: true })
+    element.dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+  }
+
+  element.addEventListener('off.xt.toggle', off)
+
+  // unmount
+
+  return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountTooltips = mountTooltips({ ref })
+
+  // unmount
+
+  return () => {
+    unmountTooltips()
+  }
 }

@@ -9,8 +9,7 @@ const html = /* HTML */ `
           <input
             type="text"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-            aria-label="Lorem ipsum"
-          />
+            aria-label="Lorem ipsum" />
         </div>
 
         <div class="*** w-full ***">
@@ -18,8 +17,7 @@ const html = /* HTML */ `
           <input
             type="text"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-            aria-label="Dolor sit amet"
-          />
+            aria-label="Dolor sit amet" />
         </div>
 
         <div class="*** w-full md:w-6/12 ***">
@@ -27,8 +25,7 @@ const html = /* HTML */ `
           <input
             type="text"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-            aria-label="Lorem ipsum"
-          />
+            aria-label="Lorem ipsum" />
         </div>
 
         <div class="*** w-full md:w-6/12 ***">
@@ -36,8 +33,7 @@ const html = /* HTML */ `
           <input
             type="text"
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
-            aria-label="Dolor sit amet"
-          />
+            aria-label="Dolor sit amet" />
         </div>
 
         <div class="*** w-full ***">
@@ -50,8 +46,7 @@ const html = /* HTML */ `
                   type="checkbox"
                   class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                   checked
-                  disabled
-                />
+                  disabled />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -83,8 +78,7 @@ const html = /* HTML */ `
                   type="radio"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-row"
-                  checked
-                />
+                  checked />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -98,8 +92,7 @@ const html = /* HTML */ `
                 <input
                   type="radio"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
-                  name="radio-row"
-                />
+                  name="radio-row" />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -131,8 +124,7 @@ const html = /* HTML */ `
                   type="radio"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-row"
-                  checked
-                />
+                  checked />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -146,8 +138,7 @@ const html = /* HTML */ `
                 <input
                   type="radio"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
-                  name="switch-row"
-                />
+                  name="switch-row" />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -161,8 +152,7 @@ const html = /* HTML */ `
         <div class="*** w-full ***">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          >
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             submit
           </button>
         </div>

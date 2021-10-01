@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
-Xt.mount({
-  matches: '.demo--tooltip-api',
-  mount: ({ ref }) => {
-    const unmountEventmethods = mountEventmethods({ ref })
-
-    // unmount
-
-    return () => {
-      unmountEventmethods()
-    }
-  },
-})
-
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
@@ -159,9 +146,6 @@ const mountEventmethods = ({ ref }) => {
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // restart
-      logAdd('<strong>restart</strong>')
-      self.restart()
     }, 200).toString()
   }
 
@@ -177,6 +161,28 @@ const mountEventmethods = ({ ref }) => {
   }
 
   restartBtn.addEventListener('click', restartFnc)
+
+  // disable
+
+  const disableBtn = document.querySelector('#button--tooltip-api-disable')
+
+  const disableFnc = () => {
+    logAdd('<strong>disable</strong>')
+    self.disable()
+  }
+
+  disableBtn.addEventListener('click', disableFnc)
+
+  // enable
+
+  const enableBtn = document.querySelector('#button--tooltip-api-enable')
+
+  const enableFnc = () => {
+    logAdd('<strong>enable</strong>')
+    self.enable()
+  }
+
+  enableBtn.addEventListener('click', enableFnc)
 
   // destroy
 
@@ -259,3 +265,18 @@ const mountEventmethods = ({ ref }) => {
   }
   return unmount
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--tooltip-api',
+  mount: ({ ref }) => {
+    const unmountEventmethods = mountEventmethods({ ref })
+
+    // unmount
+
+    return () => {
+      unmountEventmethods()
+    }
+  },
+})

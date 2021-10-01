@@ -7,15 +7,13 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-tooltip-element
-        >
+          data-xt-tooltip-element>
           bottom
         </button>
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-          >
+            class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
           <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
@@ -26,15 +24,13 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-tooltip-element
-        >
+          data-xt-tooltip-element>
           bottom start
         </button>
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-          >
+            class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
           <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
@@ -45,15 +41,13 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-tooltip-element
-        >
+          data-xt-tooltip-element>
           right end<br />...
         </button>
 
         <div class="xt-tooltip off:hidden out:pointer-events-none" data-xt-tooltip-target>
           <div
-            class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-          >
+            class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
           <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>

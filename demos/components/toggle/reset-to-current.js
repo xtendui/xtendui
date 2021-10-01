@@ -1,34 +1,37 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
-Xt.mount({
-  matches: '.demo--toggle-reset-to-current',
-  mount: ({ ref }) => {
-    const unmountToggle = mountToggle({ ref })
+/* mountToggles */
 
-    // unmount
+const mountToggles = ({ ref }) => {
+  // mount granularly
 
-    return () => {
-      unmountToggle()
-    }
-  },
-})
+  Xt.mount({
+    root: ref,
+    matches: '[data-xt-toggle]',
+    mount: ({ ref }) => {
+      return mountToggle({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref.querySelector('[data-xt-toggle]')
-
-  // init
-
+  const toggle = ref
   const self = Xt.get({ name: 'xt-toggle', el: toggle })
 
   // off
 
   const off = e => {
     const tr = e.target
+    /***/
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // reset to current when no activation
@@ -37,6 +40,7 @@ const mountToggle = ({ ref }) => {
         current.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
       }
     }
+    /***/
   }
 
   for (const tr of self.targets) {
@@ -47,3 +51,18 @@ const mountToggle = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--toggle-reset-to-current',
+  mount: ({ ref }) => {
+    const unmountToggles = mountToggles({ ref })
+
+    // unmount
+
+    return () => {
+      unmountToggles()
+    }
+  },
+})

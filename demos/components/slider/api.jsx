@@ -51,6 +51,18 @@ export default function demo() {
           <button
             type="button"
             className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+            id="button--slider-api-disable">
+            Disable
+          </button>
+          <button
+            type="button"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+            id="button--slider-api-enable">
+            Enable
+          </button>
+          <button
+            type="button"
+            className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
             id="button--slider-api-destroy">
             Destroy
           </button>
@@ -70,43 +82,43 @@ export default function demo() {
             data-xt-slider-dragger
             id="slider--eventmethods-targets">
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                 <div className="xt-h4">1</div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                 <div className="xt-h4">2</div>
               </div>
             </div>
 
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                 <div className="xt-h4">3</div>
               </div>
             </div>
 
             <div className="xt-slide w-full group" data-xt-slider-target>
-              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                 <div className="xt-h4">4</div>
               </div>
             </div>
 
             <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
-              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                 <div className="xt-h4">5</div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group *** on ***" data-xt-slider-target>
-              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                 <div className="xt-h4">6</div>
               </div>
             </div>
 
             <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-              <div className="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+              <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                 <div className="xt-h4">7</div>
               </div>
             </div>
@@ -171,18 +183,6 @@ export default function demo() {
       </div>
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountEventmethods = mountEventmethods({ ref })
-
-  // unmount
-
-  return () => {
-    unmountEventmethods()
-  }
 }
 
 /* mountEventmethods */
@@ -297,9 +297,6 @@ const mountEventmethods = ({ ref }) => {
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // restart
-      logAdd('<strong>restart</strong>')
-      self.restart()
     }, 200).toString()
   }
 
@@ -315,6 +312,28 @@ const mountEventmethods = ({ ref }) => {
   }
 
   restartBtn.addEventListener('click', restartFnc)
+
+  // disable
+
+  const disableBtn = document.querySelector('#button--slider-api-disable')
+
+  const disableFnc = () => {
+    logAdd('<strong>disable</strong>')
+    self.disable()
+  }
+
+  disableBtn.addEventListener('click', disableFnc)
+
+  // enable
+
+  const enableBtn = document.querySelector('#button--slider-api-enable')
+
+  const enableFnc = () => {
+    logAdd('<strong>enable</strong>')
+    self.enable()
+  }
+
+  enableBtn.addEventListener('click', enableFnc)
 
   // destroy
 
@@ -396,4 +415,16 @@ const mountEventmethods = ({ ref }) => {
     self = null
   }
   return unmount
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountEventmethods = mountEventmethods({ ref })
+
+  // unmount
+
+  return () => {
+    unmountEventmethods()
+  }
 }

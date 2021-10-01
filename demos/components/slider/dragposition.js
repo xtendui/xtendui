@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--slider-dragposition',
-  mount: ({ ref }) => {
-    const unmountSlider = mountSlider({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSlider()
-    }
-  },
-})
-
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
@@ -63,3 +50,18 @@ const mountSlider = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-dragposition',
+  mount: ({ ref }) => {
+    const unmountSlider = mountSlider({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSlider()
+    }
+  },
+})

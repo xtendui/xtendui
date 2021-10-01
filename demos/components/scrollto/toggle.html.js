@@ -8,28 +8,24 @@ const html = /* HTML */ `
     <div class="max-w-xl mx-auto">
       <div class="${classes.hBlock()}"><code>scrollto: true</code> and <code>scrolltoInit: true</code></div>
       <div
-        data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: true, scrolltoInit: true }"
-      >
+        data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: true, scrolltoInit: true }">
         <div class="xt-list xt-list-3 justify-center">
           <a
             role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #0
           </a>
           <a
             role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #1
           </a>
           <a
             role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #2
           </a>
         </div>
@@ -38,11 +34,9 @@ const html = /* HTML */ `
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-0"
-          >
+            data-xt-hash="anchor-0">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#0</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -66,11 +60,9 @@ const html = /* HTML */ `
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-1"
-          >
+            data-xt-hash="anchor-1">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#1</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -88,11 +80,9 @@ const html = /* HTML */ `
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-2"
-          >
+            data-xt-hash="anchor-2">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#2</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -125,28 +115,24 @@ const html = /* HTML */ `
     <div class="max-w-xl mx-auto" id="demo--scrollto-toggle-query">
       <div class="${classes.hBlock()}"><code>scrollto: Query</code></div>
       <div
-        data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: '#demo--scrollto-toggle-query' }"
-      >
+        data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: '#demo--scrollto-toggle-query' }">
         <div class="xt-list xt-list-3 justify-center">
           <a
             role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #0a
           </a>
           <a
             role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #1a
           </a>
           <a
             role="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #2a
           </a>
         </div>
@@ -155,11 +141,9 @@ const html = /* HTML */ `
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-0a"
-          >
+            data-xt-hash="anchor-0a">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#0a</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -183,11 +167,9 @@ const html = /* HTML */ `
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-1a"
-          >
+            data-xt-hash="anchor-1a">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#1a</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -205,11 +187,9 @@ const html = /* HTML */ `
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-2a"
-          >
+            data-xt-hash="anchor-2a">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#2a</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -246,18 +226,15 @@ const html = /* HTML */ `
           <a
             role="button"
             class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #0b
           </a>
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-0b"
-          >
+            data-xt-hash="anchor-0b">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#0b</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -281,19 +258,16 @@ const html = /* HTML */ `
           <a
             role="button"
             class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #1b
           </a>
 
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-1b"
-          >
+            data-xt-hash="anchor-1b">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#1b</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis
@@ -311,19 +285,16 @@ const html = /* HTML */ `
           <a
             role="button"
             class="xt-button w-full my-3 ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-toggle-element
-          >
+            data-xt-toggle-element>
             #2b
           </a>
 
           <div
             class="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
             data-xt-toggle-target
-            data-xt-hash="anchor-2b"
-          >
+            data-xt-hash="anchor-2b">
             <div
-              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}"
-            >
+              class="*** xt-card *** rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardGray()}">
               <div class="xt-h5">#2b</div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis purus odio, et dictum felis

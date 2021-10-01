@@ -88,18 +88,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountSlider = mountSlider({ ref })
-
-  // unmount
-
-  return () => {
-    unmountSlider()
-  }
-}
-
 /* mountSlider */
 
 const mountSlider = ({ ref }) => {
@@ -285,5 +273,17 @@ const mountSlider = ({ ref }) => {
   return () => {
     self.destroy()
     self = null
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountSlider = mountSlider({ ref })
+
+  // unmount
+
+  return () => {
+    unmountSlider()
   }
 }

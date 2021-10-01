@@ -163,7 +163,7 @@ export default function demo() {
                 </a>
               </nav>
             </div>
-            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
+            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-100 ***"></div>
           </div>
         </div>
 
@@ -267,7 +267,7 @@ export default function demo() {
                 </p>
               </div>
             </div>
-            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
+            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-100 ***"></div>
           </div>
         </div>
       </div>
@@ -338,7 +338,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
+            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-100 ***"></div>
           </div>
         </span>
         and
@@ -376,7 +376,7 @@ export default function demo() {
                 </div>
               </div>
             </div>
-            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-100 ***"></div>
+            <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-100 ***"></div>
           </div>
         </span>
       </div>
@@ -395,12 +395,12 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay *** group ***" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
-              <div
-                className="xt-overlay-inner rounded-2xl shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
-                data-xt-overlay-inner>
-                <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white">
+              <div className="xt-overlay-inner">
+                <div
+                  className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white rounded-2xl shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
+                  data-xt-overlay-inner>
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -537,12 +537,12 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay *** group ***" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
-              <div
-                className="xt-overlay-inner rounded-2xl shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
-                data-xt-overlay-inner>
-                <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white">
+              <div className="xt-overlay-inner">
+                <div
+                  className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white rounded-2xl shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
+                  data-xt-overlay-inner>
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -563,7 +563,7 @@ export default function demo() {
                     </svg>
                   </button>
 
-                  <div className="*** md:xt-card-group rounded-2xl *** *** opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
+                  <div className="*** md:xt-card-group *** *** opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                     <div className="md:w-5/12 *** flex flex-col ***">
                       <div className="xt-media-container bg-gray-200 rounded-t-2xl md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto">
                         <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
@@ -672,204 +672,262 @@ export default function demo() {
           </button>
 
           <div className="xt-overlay *** group ***" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
-              <div
-                className="xt-overlay-inner *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
-                data-xt-overlay-inner>
-                <div className="xt-card *** xt-min-h-screen *** shadow-xl text-white xt-links-inverse bg-black">
-                  <div className="xt-list *** opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
-                    <form className="text-sm flex-auto">
-                      <div className="xt-list flex-nowrap">
-                        <div className="inline-flex flex-auto">
-                          <button
-                            type="submit"
-                            className="xt-button py-2.5 px-3.5 text-sm font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="xt-icon text-xl -my-1"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round">
-                              <circle cx="11" cy="11" r="8"></circle>
-                              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                          </button>
-                          <input
-                            type="text"
-                            className="block w-full py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
-                            aria-label="Search"
-                            placeholder="Seach Catalog"
-                          />
-                          <button
-                            type="button"
-                            className="xt-button xt-dismiss p-3 text-2xl text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
-                            aria-label="Close">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="xt-icon "
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round">
-                              <line x1="18" y1="6" x2="6" y2="18"></line>
-                              <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                          </button>
+              <div className="xt-overlay-inner">
+                <div
+                  className="xt-card shadow-xl text-white xt-links-inverse bg-black *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
+                  data-xt-overlay-inner>
+                  <div className="*** xt-min-h-screen ***">
+                    <div className="xt-list *** opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
+                      <form className="text-sm flex-auto">
+                        <div className="xt-list flex-nowrap">
+                          <div className="inline-flex flex-auto">
+                            <button
+                              type="submit"
+                              className="xt-button py-2.5 px-3.5 text-sm font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="xt-icon text-xl -my-1"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                              </svg>
+                            </button>
+                            <input
+                              type="text"
+                              className="block w-full py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+                              aria-label="Search"
+                              placeholder="Seach Catalog"
+                            />
+                            <button
+                              type="button"
+                              className="xt-button xt-dismiss p-3 text-2xl text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200"
+                              aria-label="Close">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="xt-icon "
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                              </svg>
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                    </form>
-                  </div>
+                      </form>
+                    </div>
 
-                  <div
-                    className="*** relative flex flex-col flex-auto *** *** opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
-                    data-xt-toggle="{ min: 1, duration: 500, queue: false }">
                     <div
-                      className="*** flex flex-col flex-auto h-full py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
-                      data-xt-toggle-target
-                      data-xt-group="initial">
-                      <div className="xt-h5 flex items-center justify-between">
-                        <div>Collection</div>
-                        <button
-                          type="button"
-                          className="hidden"
-                          data-xt-toggle-element
-                          data-xt-group="initial"></button>
-                      </div>
-
-                      <div className="-mx-3.5">
-                        <nav className="xt-list xt-list-1 flex-col">
+                      className="*** relative flex flex-col flex-auto *** *** opacity-0 -translate-y-2 group-in:transition group-in:duration-300 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
+                      data-xt-toggle="{ min: 1, duration: 500, queue: false }">
+                      <div
+                        className="*** flex flex-col flex-auto h-full py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
+                        data-xt-toggle-target
+                        data-xt-group="initial">
+                        <div className="xt-h5 flex items-center justify-between">
+                          <div>Collection</div>
                           <button
                             type="button"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                            className="hidden"
                             data-xt-toggle-element
-                            data-xt-group="cat-0">
-                            Man{' '}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="xt-icon text-xl -my-1"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round">
-                              <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                          </button>
-                          <button
-                            type="button"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
-                            data-xt-toggle-element
-                            data-xt-group="cat-1">
-                            Woman{' '}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="xt-icon text-xl -my-1"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round">
-                              <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                          </button>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Kid
-                          </a>
-                        </nav>
-                      </div>
+                            data-xt-group="initial"></button>
+                        </div>
 
-                      <div className="xt-h5 flex items-center justify-between">
-                        <div>Company</div>
-                      </div>
+                        <div className="-mx-3.5">
+                          <nav className="xt-list xt-list-1 flex-col">
+                            <button
+                              type="button"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                              data-xt-toggle-element
+                              data-xt-group="cat-0">
+                              Man{' '}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="xt-icon text-xl -my-1"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                              </svg>
+                            </button>
+                            <button
+                              type="button"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                              data-xt-toggle-element
+                              data-xt-group="cat-1">
+                              Woman{' '}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="xt-icon text-xl -my-1"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                              </svg>
+                            </button>
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Kid
+                            </a>
+                          </nav>
+                        </div>
 
-                      <div className="-mx-3.5">
-                        <nav className="xt-list xt-list-1 flex-col">
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            About
-                          </a>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            News
-                          </a>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Contact
-                          </a>
-                        </nav>
-                      </div>
+                        <div className="xt-h5 flex items-center justify-between">
+                          <div>Company</div>
+                        </div>
 
-                      <div className="mt-auto">
-                        <div className="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
+                        <div className="-mx-3.5">
                           <nav className="xt-list xt-list-1 flex-col">
                             <a
                               href="#"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                              Support{' '}
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="xt-icon text-lg ml-4"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                              </svg>
+                              About
                             </a>
                             <a
                               href="#"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                              Login / Account{' '}
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="xt-icon text-lg ml-4"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                              </svg>
+                              News
                             </a>
                             <a
                               href="#"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                              Language{' '}
+                              Contact
+                            </a>
+                          </nav>
+                        </div>
+
+                        <div className="mt-auto">
+                          <div className="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
+                            <nav className="xt-list xt-list-1 flex-col">
+                              <a
+                                href="#"
+                                className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                                Support{' '}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="xt-icon text-lg ml-4"
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round">
+                                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                  <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                              </a>
+                              <a
+                                href="#"
+                                className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                                Login / Account{' '}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="xt-icon text-lg ml-4"
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round">
+                                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                  <circle cx="9" cy="7" r="4"></circle>
+                                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                              </a>
+                              <a
+                                href="#"
+                                className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                                Language{' '}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="xt-icon text-lg ml-4"
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round">
+                                  <circle cx="12" cy="12" r="10"></circle>
+                                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                              </a>
+                            </nav>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
+                        data-xt-toggle-target
+                        data-xt-group="cat-0">
+                        <div className="xt-h5 flex items-center justify-between">
+                          <div>Man</div>
+                          <button
+                            type="button"
+                            className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                            data-xt-toggle-element
+                            data-xt-group="initial">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="xt-icon mr-2 text-lg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round">
+                              <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>{' '}
+                            Back
+                          </button>
+                        </div>
+
+                        <div className="-mx-3.5">
+                          <nav className="xt-list xt-list-1 flex-col">
+                            <button
+                              type="button"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                              data-xt-toggle-element
+                              data-xt-group="cat-0a">
+                              Shirt{' '}
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="xt-icon text-lg ml-4"
+                                className="xt-icon text-xl -my-1"
                                 width="24"
                                 height="24"
                                 viewBox="0 0 24 24"
@@ -878,55 +936,57 @@ export default function demo() {
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                <polyline points="9 18 15 12 9 6"></polyline>
                               </svg>
+                            </button>
+                            <button
+                              type="button"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                              data-xt-toggle-element
+                              data-xt-group="cat-0b">
+                              Pant{' '}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="xt-icon text-xl -my-1"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                              </svg>
+                            </button>
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Jacket
+                            </a>
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Underwear
                             </a>
                           </nav>
                         </div>
                       </div>
-                    </div>
 
-                    <div
-                      className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
-                      data-xt-toggle-target
-                      data-xt-group="cat-0">
-                      <div className="xt-h5 flex items-center justify-between">
-                        <div>Man</div>
-                        <button
-                          type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
-                          data-xt-toggle-element
-                          data-xt-group="initial">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon mr-2 text-lg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                          </svg>{' '}
-                          Back
-                        </button>
-                      </div>
-
-                      <div className="-mx-3.5">
-                        <nav className="xt-list xt-list-1 flex-col">
+                      <div
+                        className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
+                        data-xt-toggle-target
+                        data-xt-group="cat-0a">
+                        <div className="xt-h5 flex items-center justify-between">
+                          <div>Man Shirt</div>
                           <button
                             type="button"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                            className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                             data-xt-toggle-element
-                            data-xt-group="cat-0a">
-                            Shirt{' '}
+                            data-xt-group="cat-0">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              className="xt-icon text-xl -my-1"
+                              className="xt-icon mr-2 text-lg"
                               width="24"
                               height="24"
                               viewBox="0 0 24 24"
@@ -935,18 +995,42 @@ export default function demo() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round">
-                              <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
+                              <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>{' '}
+                            Back
                           </button>
+                        </div>
+
+                        <div className="-mx-3.5">
+                          <nav className="xt-list xt-list-1 flex-col">
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              T-Shirt
+                            </a>
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Polo
+                            </a>
+                          </nav>
+                        </div>
+                      </div>
+
+                      <div
+                        className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
+                        data-xt-toggle-target
+                        data-xt-group="cat-0b">
+                        <div className="xt-h5 flex items-center justify-between">
+                          <div>Man Pant</div>
                           <button
                             type="button"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                            className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                             data-xt-toggle-element
-                            data-xt-group="cat-0b">
-                            Pant{' '}
+                            data-xt-group="cat-0">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              className="xt-icon text-xl -my-1"
+                              className="xt-icon mr-2 text-lg"
                               width="24"
                               height="24"
                               viewBox="0 0 24 24"
@@ -955,152 +1039,70 @@ export default function demo() {
                               strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round">
-                              <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
+                              <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>{' '}
+                            Back
                           </button>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Jacket
-                          </a>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Underwear
-                          </a>
-                        </nav>
-                      </div>
-                    </div>
+                        </div>
 
-                    <div
-                      className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
-                      data-xt-toggle-target
-                      data-xt-group="cat-0a">
-                      <div className="xt-h5 flex items-center justify-between">
-                        <div>Man Shirt</div>
-                        <button
-                          type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
-                          data-xt-toggle-element
-                          data-xt-group="cat-0">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon mr-2 text-lg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                          </svg>{' '}
-                          Back
-                        </button>
+                        <div className="-mx-3.5">
+                          <nav className="xt-list xt-list-1 flex-col">
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Jeans
+                            </a>
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Short
+                            </a>
+                          </nav>
+                        </div>
                       </div>
 
-                      <div className="-mx-3.5">
-                        <nav className="xt-list xt-list-1 flex-col">
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            T-Shirt
-                          </a>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Polo
-                          </a>
-                        </nav>
-                      </div>
-                    </div>
+                      <div
+                        className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
+                        data-xt-toggle-target
+                        data-xt-group="cat-1">
+                        <div className="xt-h5 flex items-center justify-between">
+                          <div>Woman</div>
+                          <button
+                            type="button"
+                            className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                            data-xt-toggle-element
+                            data-xt-group="initial">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="xt-icon mr-2 text-lg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round">
+                              <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>{' '}
+                            Back
+                          </button>
+                        </div>
 
-                    <div
-                      className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
-                      data-xt-toggle-target
-                      data-xt-group="cat-0b">
-                      <div className="xt-h5 flex items-center justify-between">
-                        <div>Man Pant</div>
-                        <button
-                          type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
-                          data-xt-toggle-element
-                          data-xt-group="cat-0">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon mr-2 text-lg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                          </svg>{' '}
-                          Back
-                        </button>
-                      </div>
-
-                      <div className="-mx-3.5">
-                        <nav className="xt-list xt-list-1 flex-col">
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Jeans
-                          </a>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Short
-                          </a>
-                        </nav>
-                      </div>
-                    </div>
-
-                    <div
-                      className="*** py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative *** *** opacity-0 -translate-y-2 in:transition in:duration-300 in:delay-200 in:opacity-100 in:translate-y-0 out:transition out:duration-300 out:ease-in-out-quint out:-translate-y-2 ***"
-                      data-xt-toggle-target
-                      data-xt-group="cat-1">
-                      <div className="xt-h5 flex items-center justify-between">
-                        <div>Woman</div>
-                        <button
-                          type="button"
-                          className="xt-button -mr-3.5 py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
-                          data-xt-toggle-element
-                          data-xt-group="initial">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="xt-icon mr-2 text-lg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                          </svg>{' '}
-                          Back
-                        </button>
-                      </div>
-
-                      <div className="-mx-3.5">
-                        <nav className="xt-list xt-list-1 flex-col">
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Shirt
-                          </a>
-                          <a
-                            href="#"
-                            className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                            Pant
-                          </a>
-                        </nav>
+                        <div className="-mx-3.5">
+                          <nav className="xt-list xt-list-1 flex-col">
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Shirt
+                            </a>
+                            <a
+                              href="#"
+                              className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+                              Pant
+                            </a>
+                          </nav>
+                        </div>
                       </div>
                     </div>
                   </div>

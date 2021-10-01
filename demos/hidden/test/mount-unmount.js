@@ -2,26 +2,14 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 import 'xtendui/src/overlay'
 
-Xt.mount({
-  matches: '.demo--mount-unmount',
-  mount: ({ ref }) => {
-    const unmountTest = mountTest({ ref })
-
-    // unmount
-
-    return () => {
-      unmountTest()
-    }
-  },
-})
-
 /* mountTest */
 
 const mountTest = ({ ref }) => {
   // vars
 
   const drop = ref
-  const overlay = ref
+  const overlay = ref.querySelector('[data-xt-overlay]')
+  const self = Xt.get({ name: 'xt-overlay', el: overlay })
 
   // mount
 
@@ -36,67 +24,32 @@ const mountTest = ({ ref }) => {
 
   // init
 
-  let self = new Xt.Overlay(overlay, {
-    duration: 500,
-  })
-
   const selfDrop = new Xt.Drop(drop, {})
 
-  // on
-
-  const on = e => {
-    const tr = e.target
-    // check because of event propagation
-    if (self.targets.includes(tr)) {
-      tr.removeEventListener('on.xt.overlay', on)
-      // eslint-disable-next-line no-console
-      console.log(
-        'TEST INITIAL ON 1 this should be `true true true true`.',
-        tr.classList.contains('on'),
-        tr.classList.contains('in'),
-        tr.classList.contains('initial'),
-        self.initial
-      )
-      requestAnimationFrame(() => {
-        // eslint-disable-next-line no-console
-        console.log(
-          'TEST INITIAL ON 2 this should be `true true false false`.',
-          tr.classList.contains('on'),
-          tr.classList.contains('in'),
-          tr.classList.contains('initial'),
-          self.initial
-        )
-      })
-    }
-  }
+  // init
 
   for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+    tr.setAttribute('data-test-unique-id', self.uniqueId)
+    // eslint-disable-next-line no-console
+    console.log('TEST INITIAL xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
     // eslint-disable-next-line no-console
     console.log(
-      'TEST INITIAL ON 0 this should be `true true true true`.',
+      'TEST INITIAL 0 this should be `true true true true`.',
       tr.classList.contains('on'),
       tr.classList.contains('in'),
       tr.classList.contains('initial'),
       self.initial
     )
-    tr.addEventListener('on.xt.overlay', on)
-  }
-
-  // off
-
-  const off = e => {
-    const tr = e.target
-    // check because of event propagation
-    if (self.targets.includes(tr)) {
+    requestAnimationFrame(() => {
       // eslint-disable-next-line no-console
       console.log(
-        'TEST UNMOUNT 0 closeauto when overlay open and change page (browser location prev next) should be called on unmount and overlay should close'
+        'TEST INITIAL 1 this should be `true true false false`.',
+        tr.classList.contains('on'),
+        tr.classList.contains('in'),
+        tr.classList.contains('initial'),
+        self.initial
       )
-    }
-  }
-
-  for (const tr of self.targets) {
-    tr.addEventListener('off.xt.overlay', off)
+    })
   }
 
   // off drop
@@ -104,7 +57,7 @@ const mountTest = ({ ref }) => {
   const offDrop = e => {
     const tr = e.target
     // check because of event propagation
-    if (self.targets.includes(tr)) {
+    if (selfDrop.targets.includes(tr)) {
       // eslint-disable-next-line no-console
       console.log(
         'TEST UNMOUNT 1 disableDeactivate when drop open and change page (browser location prev next) this should NOT be called.'
@@ -129,9 +82,26 @@ const mountTest = ({ ref }) => {
 
   return () => {
     // eslint-disable-next-line no-console
-    console.log('TEST UNMOUNT 2 this should be called on change page.')
+    console.log(
+      'TEST UNMOUNT 2 Xt.unmountArr should be the same and xtNamespace should be 0.',
+      Xt.unmountArr.length,
+      Xt.dataStorage.get(self.ns, 'xtNamespace').length
+    )
     removeEventListener('resize', resize)
-    self.destroy()
-    self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--mount-unmount',
+  mount: ({ ref }) => {
+    const unmountTest = mountTest({ ref })
+
+    // unmount
+
+    return () => {
+      unmountTest()
+    }
+  },
+})

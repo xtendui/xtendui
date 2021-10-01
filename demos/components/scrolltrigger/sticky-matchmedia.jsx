@@ -92,30 +92,21 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountSticky = mountSticky({ ref })
-
-  // unmount
-
-  return () => {
-    unmountSticky()
-  }
-}
-
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
+  // vars
+
+  const sticky = ref.querySelector('.xt-sticky')
+
   // match media
 
   /***/
   ScrollTrigger.matchMedia({
     '(max-width: 767px)': () => {
       // sticky
-
       ScrollTrigger.create({
-        trigger: ref.querySelector('.xt-sticky'),
+        trigger: sticky,
         start: 'top top',
         endTrigger: 'html',
         end: 'bottom top',
@@ -129,4 +120,16 @@ const mountSticky = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountSticky = mountSticky({ ref })
+
+  // unmount
+
+  return () => {
+    unmountSticky()
+  }
 }

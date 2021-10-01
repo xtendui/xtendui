@@ -4,18 +4,15 @@ const html = /* HTML */ `
       <thead>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
-          >
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">
             #
           </th>
           <th
-            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
-          >
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">
             Description
           </th>
           <th
-            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
-          >
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">
             Value
           </th>
         </tr>
@@ -23,8 +20,7 @@ const html = /* HTML */ `
       <tbody>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
-          >
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">
             1
           </th>
           <td class="py-2 px-4 text-sm align-top leading-snug border border-gray-200">
@@ -36,8 +32,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
-          >
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">
             2
           </th>
           <td class="py-2 px-4 text-sm align-top leading-snug border border-gray-200">Dolor sit amet</td>
@@ -45,8 +40,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
-          >
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">
             3
           </th>
           <td class="py-2 px-4 text-sm align-top leading-snug border border-gray-200">Consectetur adipiscing elit</td>
@@ -54,8 +48,7 @@ const html = /* HTML */ `
         </tr>
         <tr>
           <th
-            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200"
-          >
+            class="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">
             4
           </th>
           <td class="py-2 px-4 text-sm align-top leading-snug border border-gray-200">Lorem ipsum</td>

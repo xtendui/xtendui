@@ -44,18 +44,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountTooltip = mountTooltip({ ref })
-
-  // unmount
-
-  return () => {
-    unmountTooltip()
-  }
-}
-
 /* mountTooltips */
 
 const mountTooltip = ({ ref }) => {
@@ -86,12 +74,13 @@ const mountTooltip = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      gsap.killTweensOf(tr)
-      gsap.set(tr, {
+      const target = tr.querySelector(':scope > *')
+      gsap.killTweensOf(target)
+      gsap.set(target, {
         x: -self.direction * targetXOn,
         opacity: 0,
       })
-      gsap.to(tr, {
+      gsap.to(target, {
         x: 0,
         opacity: 1,
         duration: targetTimeOn,
@@ -112,8 +101,9 @@ const mountTooltip = ({ ref }) => {
     const tr = e.target
     // check because of event propagation
     if (self.targets.includes(tr)) {
-      gsap.killTweensOf(tr)
-      gsap.to(tr, {
+      const target = tr.querySelector(':scope > *')
+      gsap.killTweensOf(target)
+      gsap.to(target, {
         x: self.direction * targetXOff,
         opacity: 0,
         duration: targetTimeOff,
@@ -132,5 +122,17 @@ const mountTooltip = ({ ref }) => {
   return () => {
     self.destroy()
     self = null
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountTooltip = mountTooltip({ ref })
+
+  // unmount
+
+  return () => {
+    unmountTooltip()
   }
 }

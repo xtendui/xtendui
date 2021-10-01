@@ -10,4 +10,9 @@
       content: "*";
     }
   }
+  .label-required-one {
+    &:after {
+      content: "**";
+    }
+  }
 }

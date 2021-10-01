@@ -14,8 +14,7 @@ const html = /* HTML */ `
         </div>
         <span
           class="*** ${classes.loader()} *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
-          data-xt-duration="500"
-        >
+          data-xt-duration="500">
           <span class="*** ${classes.filler()} *** text-primary-500 h-1 left-1/4 right-1/4">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
             <span class="block absolute bg-current h-full"></span>
@@ -25,13 +24,11 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-      >
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
         Lorem ipsum
         <span
           class="*** ${classes.loader()} *** bg-white bg-opacity-75 *** off:hidden out:pointer-events-none opacity-0 transition in:opacity-100 ***"
-          data-xt-duration="500"
-        >
+          data-xt-duration="500">
           <span class="*** ${classes.filler()} *** text-primary-500 h-1 left-1/4 right-1/4">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
             <span class="block absolute bg-current h-full"></span>

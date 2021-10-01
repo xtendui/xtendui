@@ -1,19 +1,6 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--javascript-animation-js',
-  mount: ({ ref }) => {
-    const unmountActivation = mountActivation({ ref })
-
-    // unmount
-
-    return () => {
-      unmountActivation()
-    }
-  },
-})
-
 /* mountActivation */
 
 const mountActivation = ({ ref }) => {
@@ -65,3 +52,18 @@ const mountActivation = ({ ref }) => {
     clearTimeout(tr.dataset.interval)
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--javascript-animation-js',
+  mount: ({ ref }) => {
+    const unmountActivation = mountActivation({ ref })
+
+    // unmount
+
+    return () => {
+      unmountActivation()
+    }
+  },
+})

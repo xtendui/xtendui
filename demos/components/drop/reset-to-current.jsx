@@ -134,27 +134,30 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountDrops = mountDrops({ ref })
-
-  // unmount
-
-  return () => {
-    unmountDrops()
-  }
-}
-
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    matches: '[data-xt-drop]',
+    mount: ({ ref }) => {
+      return mountDrop({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountDrop */
+
+const mountDrop = ({ ref }) => {
   // vars
 
-  const drop = ref.querySelector('[data-xt-drop]')
-
-  // init
-
+  const drop = ref
   const self = Xt.get({ name: 'xt-drop', el: drop })
 
   // off
@@ -180,4 +183,16 @@ const mountDrops = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountDrops = mountDrops({ ref })
+
+  // unmount
+
+  return () => {
+    unmountDrops()
+  }
 }

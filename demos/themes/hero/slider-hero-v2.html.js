@@ -13,8 +13,7 @@ const html = /* HTML */ `
               <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl ${classes.textInverse()} text-center">
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">1. Lorem ipsum</h2>
                 </a>
               </div>
@@ -32,8 +31,7 @@ const html = /* HTML */ `
               <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left">
                   <h2 class="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">2. Dolor sit amet</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -55,8 +53,7 @@ const html = /* HTML */ `
               <div class="*** hero-content *** flex relative min-h-screen">
                 <a
                   href="/"
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left">
                   <h2 class="xt-h1">3. Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
                 </a>
               </div>
@@ -73,8 +70,7 @@ const html = /* HTML */ `
               </div>
               <div class="*** hero-content *** flex relative min-h-screen">
                 <div
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left">
                   <h2 class="xt-h1">4. Lorem ipsum dolor sit amet</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -82,8 +78,7 @@ const html = /* HTML */ `
                   </p>
                   <a
                     href="/"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-                  >
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
                     Lorem ipsum
                   </a>
                 </div>
@@ -101,8 +96,7 @@ const html = /* HTML */ `
               </div>
               <div class="*** hero-content *** flex relative min-h-screen">
                 <div
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:ml-0 max-w-2xl ${classes.textInverse()} text-center md:text-left">
                   <h2 class="xt-h1">5. Lorem ipsum dolor sit amet</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -110,8 +104,7 @@ const html = /* HTML */ `
                   </p>
                   <a
                     href="/"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-                  >
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
                     Lorem ipsum
                   </a>
                 </div>
@@ -129,8 +122,7 @@ const html = /* HTML */ `
               </div>
               <div class="*** hero-content *** flex relative min-h-screen">
                 <div
-                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:mr-0 max-w-2xl ${classes.textInverse()} text-center md:text-right"
-                >
+                  class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:mr-0 max-w-2xl ${classes.textInverse()} text-center md:text-right">
                   <h2 class="xt-h1">6. Lorem ipsum dolor sit amet</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non feugiat lorem, nec volutpat
@@ -138,8 +130,7 @@ const html = /* HTML */ `
                   </p>
                   <a
                     href="/"
-                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-                  >
+                    class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
                     Lorem ipsum
                   </a>
                 </div>
@@ -154,11 +145,9 @@ const html = /* HTML */ `
         type="button"
         class="*** absolute z-content top-0 left-0 h-full px-2 md:px-6 group ***"
         data-xt-nav="-1"
-        aria-label="Previous slide"
-      >
+        aria-label="Previous slide">
         <div
-          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group-hover:scale-125"
-        >
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group-hover:scale-125">
           ${classes.iconArrowLeft()}
         </div>
       </button>
@@ -167,25 +156,21 @@ const html = /* HTML */ `
         type="button"
         class="*** absolute z-content top-0 right-0 h-full px-2 md:px-6 text-2xl group ***"
         data-xt-nav="1"
-        aria-label="Next slide"
-      >
+        aria-label="Next slide">
         <div
-          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group-hover:scale-125"
-        >
+          class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} group-hover:scale-125">
           ${classes.iconArrowRight()}
         </div>
       </button>
 
       <nav
         class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-content bottom-6"
-        data-xt-slider-pagination
-      >
+        data-xt-slider-pagination>
         <button
           type="button"
           class="xt-button ${classes.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"
-        ></button>
+          title="Slide xt-num"></button>
       </nav>
     </div>
   </div>

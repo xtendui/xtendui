@@ -7,8 +7,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-overlay-element
-        data-xt-group="group0"
-      >
+        data-xt-group="group0">
         overlay 0
       </button>
 
@@ -16,8 +15,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-overlay-element
-        data-xt-group="group1"
-      >
+        data-xt-group="group1">
         overlay 1
       </button>
 
@@ -25,23 +23,20 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-overlay-element
-        data-xt-group="group2"
-      >
+        data-xt-group="group2">
         overlay 2
       </button>
 
-      <div class="xt-overlay group" data-xt-overlay-target data-xt-group="group0">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
-          <div class="xt-overlay-inner">
+          <div class="xt-overlay-inner" data-xt-overlay-inner>
             <div
-              class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-            >
+              class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                aria-label="Close"
-              >
+                aria-label="Close">
                 ${classes.iconX()}
               </button>
               <div class="${classes.cardMd()}">
@@ -68,8 +63,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group0"
-                  >
+                    data-xt-group="group0">
                     overlay 0
                   </button>
 
@@ -77,8 +71,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group1"
-                  >
+                    data-xt-group="group1">
                     overlay 1
                   </button>
 
@@ -86,8 +79,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group2"
-                  >
+                    data-xt-group="group2">
                     overlay 2
                   </button>
                 </div>
@@ -97,18 +89,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay group" data-xt-overlay-target data-xt-group="group1">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
-          <div class="xt-overlay-inner">
+          <div class="xt-overlay-inner" data-xt-overlay-inner>
             <div
-              class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-            >
+              class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                aria-label="Close"
-              >
+                aria-label="Close">
                 ${classes.iconX()}
               </button>
               <div class="${classes.cardMd()}">
@@ -135,8 +125,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group0"
-                  >
+                    data-xt-group="group0">
                     overlay 0
                   </button>
 
@@ -144,8 +133,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group1"
-                  >
+                    data-xt-group="group1">
                     overlay 1
                   </button>
 
@@ -153,8 +141,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group2"
-                  >
+                    data-xt-group="group2">
                     overlay 2
                   </button>
                 </div>
@@ -164,18 +151,16 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay group" data-xt-overlay-target data-xt-group="group2">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
-          <div class="xt-overlay-inner">
+          <div class="xt-overlay-inner" data-xt-overlay-inner>
             <div
-              class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-            >
+              class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                aria-label="Close"
-              >
+                aria-label="Close">
                 ${classes.iconX()}
               </button>
               <div class="${classes.cardMd()}">
@@ -202,8 +187,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group0"
-                  >
+                    data-xt-group="group0">
                     overlay 0
                   </button>
 
@@ -211,8 +195,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group1"
-                  >
+                    data-xt-group="group1">
                     overlay 1
                   </button>
 
@@ -220,8 +203,7 @@ const html = /* HTML */ `
                     type="button"
                     class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                     data-xt-overlay-element
-                    data-xt-group="group2"
-                  >
+                    data-xt-group="group2">
                     overlay 2
                   </button>
                 </div>

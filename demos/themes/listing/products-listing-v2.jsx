@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react'
-import 'xtendui/src/slider'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import 'xtendui/src/slider'
 
 export default function demo() {
   const ref = useRef()
@@ -389,20 +389,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountMedia = mountMedia({ ref })
-  const unmountFade = mountFade({ ref })
-
-  // unmount
-
-  return () => {
-    unmountMedia()
-    unmountFade()
-  }
-}
-
 /* mountMedia */
 
 const mountMedia = ({ ref }) => {
@@ -585,4 +571,18 @@ const fade = ({ ref }) => {
     },
   })
   /***/
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountMedia = mountMedia({ ref })
+  const unmountFade = mountFade({ ref })
+
+  // unmount
+
+  return () => {
+    unmountMedia()
+    unmountFade()
+  }
 }

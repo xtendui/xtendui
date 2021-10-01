@@ -49,8 +49,7 @@ const html = /* HTML */ `
 
           <div
             class="w-full md:w-6/12 lg:w-5/12"
-            data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }"
-          >
+            data-xt-stickyflow="{ element: '[data-xt-stickyflow-el]', filler: '[data-xt-stickyflow-filler]' }">
             <div class="*** pointer-events-none absolute md:relative ***" data-xt-stickyflow-filler></div>
             <div class="*** md:sticky md:py-12 ***" data-xt-stickyflow-el>
               <h1 class="xt-h2">Lorem ipsum dolor sit amet</h1>
@@ -59,8 +58,7 @@ const html = /* HTML */ `
 
               <a
                 href="#"
-                class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} mb-6 ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-              >
+                class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} mb-6 ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
                 Add to cart
               </a>
 

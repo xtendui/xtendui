@@ -13,10 +13,8 @@ export default function demo() {
             Tooltip
           </button>
 
-          <div
-            className="xt-tooltip p-3 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
-            data-xt-tooltip-target>
-            <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+          <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+            <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
               <div className="py-2 px-2.5 text-xs">Lorem ipsum dolor sit amet</div>
             </div>
           </div>
@@ -29,10 +27,8 @@ export default function demo() {
             Tooltip
           </button>
 
-          <div
-            className="xt-tooltip p-3 *** transition duration-300 opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
-            data-xt-tooltip-target>
-            <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
+          <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+            <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black *** transition duration-300 opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
               <div className="py-2 px-2.5 text-xs">Consectetur adipiscing elit</div>
             </div>
           </div>

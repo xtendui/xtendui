@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
-import 'xtendui/src/toggle'
-import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import 'xtendui/src/toggle'
+import 'xtendui/src/scrollto'
 
 export default function demo() {
   const ref = useRef()
@@ -30,21 +30,14 @@ export default function demo() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       <div className="max-w-xl mx-auto">
         <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'targets' }">
           <div className="*** xt-sticky ***" data-node-sticky>
-            <div className="*** xt-card rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50 ***">
-              <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap p-1 ***">
+            <div className="xt-card p-1.5 rounded-full text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
+              <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
                 <a
                   role="button"
-                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                   data-xt-toggle-element
                   data-xt-hash="description">
                   <svg
@@ -65,7 +58,7 @@ export default function demo() {
                 </a>
                 <a
                   role="button"
-                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                   data-xt-toggle-element
                   data-xt-hash="features">
                   <svg
@@ -89,7 +82,7 @@ export default function demo() {
                 </a>
                 <a
                   role="button"
-                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                   data-xt-toggle-element
                   data-xt-hash="accessories">
                   <svg
@@ -113,7 +106,7 @@ export default function demo() {
                 <a
                   href="#"
                   type="button"
-                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-2xl font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
+                  className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                   data-xt-toggle-element
                   data-xt-hash="manuals">
                   <svg
@@ -141,7 +134,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
               data-xt-toggle-target>
-              <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Description</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -164,7 +157,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
               data-xt-toggle-target>
-              <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Features</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -177,7 +170,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
               data-xt-toggle-target>
-              <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Accessories</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -210,7 +203,7 @@ export default function demo() {
             <div
               className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
               data-xt-toggle-target>
-              <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Manuals</div>
                 <p>
                   <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -247,50 +240,8 @@ export default function demo() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountScrollto = mountScrollto({ ref })
-  const unmountSticky = mountSticky({ ref })
-
-  // unmount
-
-  return () => {
-    unmountScrollto()
-    unmountSticky()
-  }
 }
 
 /* mountScrollto */
@@ -378,4 +329,18 @@ const mountSticky = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountScrollto = mountScrollto({ ref })
+  const unmountSticky = mountSticky({ ref })
+
+  // unmount
+
+  return () => {
+    unmountScrollto()
+    unmountSticky()
+  }
 }

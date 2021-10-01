@@ -9,7 +9,7 @@ export default function demo() {
 
   return (
     <div className="demo--jumptocontent-react" ref={ref}>
-      <div className="*** jumptocontent *** off:hidden out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
+      <div className="*** jumptocontent *** off:visibility-hidden off:pointer-events-none out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
         <a
           href="#jumptocontent"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
@@ -121,6 +121,51 @@ export default function demo() {
   )
 }
 
+/* mountJumptocontents */
+
+const mountJumptocontents = ({ ref }) => {
+  // mount granularly
+
+  Xt.mount({
+    root: ref,
+    matches: '.jumptocontent',
+    mount: ({ ref }) => {
+      return mountJumptocontent({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountJumptocontent */
+
+const mountJumptocontent = ({ ref }) => {
+  // vars
+
+  const jumptocontent = ref
+
+  // focusIn
+
+  const focusIn = e => {
+    const active = jumptocontent.contains(e.target)
+    if (active) {
+      Xt.on({ el: jumptocontent })
+    } else {
+      Xt.off({ el: jumptocontent })
+    }
+  }
+
+  document.addEventListener('focusin', focusIn)
+
+  // unmount
+
+  return () => {
+    document.removeEventListener('focusin', focusIn)
+  }
+}
+
 /* mount */
 
 const mount = ({ ref }) => {
@@ -130,43 +175,5 @@ const mount = ({ ref }) => {
 
   return () => {
     unmountJumptocontents()
-  }
-}
-
-/* mountJumptocontents */
-
-const mountJumptocontents = ({ ref }) => {
-  // vars
-
-  const jumptocontents = ref.querySelectorAll('.jumptocontent')
-  const unmounts = []
-
-  for (const jumptocontent of jumptocontents) {
-    // focusIn
-
-    const focusIn = e => {
-      const active = jumptocontent.contains(e.target)
-      if (active) {
-        Xt.on({ el: jumptocontent })
-      } else {
-        Xt.off({ el: jumptocontent })
-      }
-    }
-
-    document.addEventListener('focusin', focusIn)
-
-    // unmount
-
-    unmounts.push(() => {
-      document.removeEventListener('focusin', focusIn)
-    })
-  }
-
-  // unmount
-
-  return () => {
-    for (const unmount of unmounts) {
-      unmount()
-    }
   }
 }

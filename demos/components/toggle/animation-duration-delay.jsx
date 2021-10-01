@@ -87,18 +87,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountToggle = mountToggle({ ref })
-
-  // unmount
-
-  return () => {
-    unmountToggle()
-  }
-}
-
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
@@ -138,4 +126,16 @@ const mountToggle = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountToggle = mountToggle({ ref })
+
+  // unmount
+
+  return () => {
+    unmountToggle()
+  }
 }

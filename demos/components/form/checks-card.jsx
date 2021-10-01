@@ -53,12 +53,7 @@ export default function demo() {
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
-              <input
-                type="radio"
-                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
-                name="radio-card"
-                defaultChecked
-              />
+              <input type="radio" className="sr-only" name="radio-card" defaultChecked />
             </div>
           </label>
         </div>
@@ -72,11 +67,7 @@ export default function demo() {
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
-              <input
-                type="radio"
-                className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
-                name="radio-card"
-              />
+              <input type="radio" className="sr-only" name="radio-card" />
             </div>
           </label>
         </div>

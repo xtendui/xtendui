@@ -11,22 +11,19 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-2 items-center">
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGray()}"
-      >
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGray()}">
         Gray
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
-      >
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}">
         Primary
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()}"
-      >
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()}">
         Text
       </button>
 
@@ -41,8 +38,7 @@ const html = /* HTML */ `
       <div class="w-full md:w-6/12">
         <button
           type="button"
-          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()}"
-        >
+          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} ${classes.cardGrayInteractive()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Default</div>
             <p>
@@ -57,8 +53,7 @@ const html = /* HTML */ `
       <div class="w-full md:w-6/12">
         <button
           type="button"
-          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()} ${classes.cardPrimaryInteractive()}"
-        >
+          class="xt-card justify-start text-left rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()} ${classes.cardPrimaryInteractive()}">
           <div class="${classes.cardMd()}">
             <div class="xt-h4">Primary</div>
             <p>
@@ -81,8 +76,7 @@ const html = /* HTML */ `
             </p>
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
-            >
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}">
               Button
             </button>
           </div>
@@ -100,8 +94,7 @@ const html = /* HTML */ `
             </p>
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGray()}"
-            >
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonGray()}">
               Button
             </button>
           </div>

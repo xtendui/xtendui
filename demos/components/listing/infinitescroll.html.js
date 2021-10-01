@@ -12,8 +12,7 @@ const html = /* HTML */ `
             <input
               type="checkbox"
               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-              checked
-            />
+              checked />
             <span class="${classes.checkContent()}">Activate on scroll</span>
           </label>
         </form>
@@ -23,8 +22,7 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-              data-xt-infinitescroll-up="-1"
-            >
+              data-xt-infinitescroll-up="-1">
               <span class="content"> Load previous page </span>
 
               <span class="${classes.loader()} *** infinitescroll-spinner ***">
@@ -188,8 +186,7 @@ const html = /* HTML */ `
           <button
             type="button"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-infinitescroll-down="+1"
-          >
+            data-xt-infinitescroll-down="+1">
             <span class="content"> Show more products </span>
 
             <span class="${classes.loader()} *** infinitescroll-spinner ***">

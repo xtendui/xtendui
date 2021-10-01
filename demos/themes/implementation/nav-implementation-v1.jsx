@@ -9,8 +9,8 @@ export default function demo() {
         <div data-xt-toggle="{ min: 1, duration: 500 }">
           <div className="xt-row xt-row-4 md:xt-row-8">
             <div className="w-full md:w-4/12">
-              <div className="*** xt-card rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50 ***">
-                <nav className="*** xt-list xt-list-1 flex-col p-3 ***">
+              <div className="xt-card p-2 rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
+                <nav className="*** xt-list xt-list-1 flex-col ***">
                   <a
                     href="#"
                     type="button"
@@ -113,7 +113,7 @@ export default function demo() {
               <div
                 className="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
                 data-xt-toggle-target>
-                <div className="*** xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+                <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                   <div className="xt-h5">Description</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -136,7 +136,7 @@ export default function demo() {
               <div
                 className="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
                 data-xt-toggle-target>
-                <div className="*** xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+                <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                   <div className="xt-h5">Features</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -149,7 +149,7 @@ export default function demo() {
               <div
                 className="*** off:hidden out:pointer-events-none transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
                 data-xt-toggle-target>
-                <div className="*** xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+                <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                   <div className="xt-h5">Accessories</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam

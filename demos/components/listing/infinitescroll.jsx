@@ -265,20 +265,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountInfinitescroll = mountInfinitescroll({ ref })
-  const unmountSwitcher = mountSwitcher({ ref })
-
-  // unmount
-
-  return () => {
-    unmountInfinitescroll()
-    unmountSwitcher()
-  }
-}
-
 /* mountInfinitescroll */
 
 const mountInfinitescroll = ({ ref }) => {
@@ -350,4 +336,18 @@ const mountSwitcher = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountInfinitescroll = mountInfinitescroll({ ref })
+  const unmountSwitcher = mountSwitcher({ ref })
+
+  // unmount
+
+  return () => {
+    unmountInfinitescroll()
+    unmountSwitcher()
+  }
 }

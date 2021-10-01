@@ -7,8 +7,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Overlay
         </button>
 
@@ -17,13 +16,11 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card rounded${classes.overlayRadius()} md:rounded-tr-none ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100 ***"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
                   ${classes.iconX()}
                 </button>
                 <div class="${classes.cardMd()}">
@@ -56,8 +53,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Left
         </button>
 
@@ -66,13 +62,11 @@ const html = /* HTML */ `
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutsideAnim()} md:p-3 md:right-auto md:left-100 ***"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
                   ${classes.iconX()}
                 </button>
                 <div class="${classes.cardMd()}">
@@ -105,8 +99,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Right
         </button>
 
@@ -115,13 +108,11 @@ const html = /* HTML */ `
           <div class="xt-overlay-container p-0 w-screen max-w-md ml-auto mr-0">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card xt-min-h-screen ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** ${classes.buttonCloseOutsideAnim()} md:p-3 md:left-auto md:right-100 ***"
-                  aria-label="Close"
-                >
+                  aria-label="Close">
                   ${classes.iconX()}
                 </button>
                 <div class="${classes.cardMd()}">

@@ -1,34 +1,23 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-
-Xt.mount({
-  matches: '.demo--scrollto',
-  mount: ({ ref }) => {
-    const unmountSticky = mountSticky({ ref })
-    const unmountScrollto = mountScrollto({ ref })
-
-    // unmount
-
-    return () => {
-      unmountSticky()
-      unmountScrollto()
-    }
-  },
-})
+import 'xtendui/src/scrollto'
 
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
   /* sticky for demo purpose remove this */
+  // vars
+
+  const sticky = ref.querySelector('.xt-sticky')
+
   // sticky
 
   ScrollTrigger.create({
-    trigger: ref.querySelector('.xt-sticky'),
+    trigger: sticky,
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -98,3 +87,20 @@ const mountScrollto = () => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--scrollto',
+  mount: ({ ref }) => {
+    const unmountSticky = mountSticky({ ref })
+    const unmountScrollto = mountScrollto({ ref })
+
+    // unmount
+
+    return () => {
+      unmountSticky()
+      unmountScrollto()
+    }
+  },
+})

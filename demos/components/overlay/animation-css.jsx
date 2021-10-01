@@ -32,7 +32,7 @@ export default function demo() {
           overlay 2
         </button>
 
-        <div className="xt-overlay group" data-xt-overlay-target data-xt-group="group0">
+        <div className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
           <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
@@ -106,7 +106,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-overlay group" data-xt-overlay-target data-xt-group="group1">
+        <div className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
           <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
@@ -180,7 +180,7 @@ export default function demo() {
           </div>
         </div>
 
-        <div className="xt-overlay group" data-xt-overlay-target data-xt-group="group2">
+        <div className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
           <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">

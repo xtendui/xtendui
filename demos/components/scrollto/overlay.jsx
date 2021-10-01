@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
-import 'xtendui/src/overlay'
-import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import 'xtendui/src/overlay'
+import 'xtendui/src/scrollto'
 
 export default function demo() {
   const ref = useRef()
@@ -305,22 +305,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountSticky = mountSticky({ ref })
-  const unmountScrollto = mountScrollto({ ref })
-  const unmountSwitcher = mountSwitcher({ ref })
-
-  // unmount
-
-  return () => {
-    unmountSticky()
-    unmountScrollto()
-    unmountSwitcher()
-  }
-}
-
 /* mountSticky */
 
 const mountSticky = ({ ref }) => {
@@ -328,11 +312,12 @@ const mountSticky = ({ ref }) => {
   // vars
 
   const overlay = ref.querySelector('.xt-overlay')
+  const sticky = overlay.querySelector('.xt-sticky')
 
   // sticky
 
   const scrollTrigger = ScrollTrigger.create({
-    trigger: overlay.querySelector('.xt-sticky'),
+    trigger: sticky,
     start: 'top top',
     endTrigger: 'html',
     end: 'bottom top',
@@ -446,4 +431,20 @@ const mountSwitcher = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountSticky = mountSticky({ ref })
+  const unmountScrollto = mountScrollto({ ref })
+  const unmountSwitcher = mountSwitcher({ ref })
+
+  // unmount
+
+  return () => {
+    unmountSticky()
+    unmountScrollto()
+    unmountSwitcher()
+  }
 }

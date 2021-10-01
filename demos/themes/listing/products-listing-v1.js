@@ -1,23 +1,8 @@
 import { Xt } from 'xtendui'
-import 'xtendui/src/slider'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-
-Xt.mount({
-  matches: '.demo--products-listing-v1',
-  mount: ({ ref }) => {
-    const unmountMedia = mountMedia({ ref })
-    const unmountFade = mountFade({ ref })
-
-    // unmount
-
-    return () => {
-      unmountMedia()
-      unmountFade()
-    }
-  },
-})
+import 'xtendui/src/slider'
 
 /* mountMedia */
 
@@ -155,3 +140,20 @@ const fade = ({ ref }) => {
   })
   /***/
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--products-listing-v1',
+  mount: ({ ref }) => {
+    const unmountMedia = mountMedia({ ref })
+    const unmountFade = mountFade({ ref })
+
+    // unmount
+
+    return () => {
+      unmountMedia()
+      unmountFade()
+    }
+  },
+})

@@ -7,13 +7,11 @@ const html = /* HTML */ `
       <div class="*** xt-overlay-container *** max-w-3xl">
         <div class="*** xt-overlay-inner ***">
           <div
-            class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-          >
+            class="xt-card rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
             <button
               type="button"
               class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-              aria-label="Close"
-            >
+              aria-label="Close">
               ${classes.iconX()}
             </button>
             <div class="${classes.cardMd()}">

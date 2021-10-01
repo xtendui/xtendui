@@ -13,8 +13,7 @@ const html = /* HTML */ `
                 type="button"
                 class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                 data-xt-nav="-1"
-                aria-label="Previous slide"
-              >
+                aria-label="Previous slide">
                 ${classes.iconArrowLeft({
                   classes: 'xt-icon w-auto h-4',
                 })}
@@ -24,8 +23,7 @@ const html = /* HTML */ `
                 type="button"
                 class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                 data-xt-nav="1"
-                aria-label="Next slide"
-              >
+                aria-label="Next slide">
                 ${classes.iconArrowRight({
                   classes: 'xt-icon w-auto h-4',
                 })}
@@ -35,8 +33,7 @@ const html = /* HTML */ `
 
           <div
             class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
-            data-xt-slider-dragger
-          >
+            data-xt-slider-dragger>
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
                 <a href="#" class="*** listing-item *** block">

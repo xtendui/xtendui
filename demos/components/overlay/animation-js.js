@@ -2,19 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/overlay'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--overlay-animation-js',
-  mount: ({ ref }) => {
-    const unmountOverlay = mountOverlay({ ref })
-
-    // unmount
-
-    return () => {
-      unmountOverlay()
-    }
-  },
-})
-
 /* mountOverlay */
 
 const mountOverlay = ({ ref }) => {
@@ -45,7 +32,7 @@ const mountOverlay = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // inner
-      const inner = tr.querySelector('.xt-overlay-inner')
+      const inner = tr.querySelector('[data-xt-overlay-inner]')
       gsap.killTweensOf(inner)
       gsap.set(inner, {
         y: -self.direction * targetYOn,
@@ -73,7 +60,7 @@ const mountOverlay = ({ ref }) => {
     // check because of event propagation
     if (self.targets.includes(tr)) {
       // inner
-      const inner = tr.querySelector('.xt-overlay-inner')
+      const inner = tr.querySelector('[data-xt-overlay-inner]')
       gsap.killTweensOf(inner)
       gsap.to(inner, {
         y: self.direction * targetYOff,
@@ -96,3 +83,18 @@ const mountOverlay = ({ ref }) => {
     self = null
   }
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--overlay-animation-js',
+  mount: ({ ref }) => {
+    const unmountOverlay = mountOverlay({ ref })
+
+    // unmount
+
+    return () => {
+      unmountOverlay()
+    }
+  },
+})

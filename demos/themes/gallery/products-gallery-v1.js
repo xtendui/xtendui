@@ -1,4 +1,6 @@
 import { Xt } from 'xtendui'
+import 'xtendui/src/form'
+import 'xtendui/src/toggle'
 import 'xtendui/src/overlay'
 import 'xtendui/src/stickyflow'
 import 'xtendui/src/scrollto'
@@ -6,22 +8,50 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
-Xt.mount({
-  matches: '.demo--products-gallery-v1',
-  mount: ({ ref }) => {
-    const unmountScrollto = mountScrollto({ ref })
-    const unmountImages = mountImages({ ref })
-    const unmountArrow = mountArrow({ ref })
+/* mountVariants */
 
-    // unmount
+const mountVariants = ({ ref }) => {
+  // vars
 
-    return () => {
-      unmountScrollto()
-      unmountImages()
-      unmountArrow()
+  const form = ref.querySelector('form')
+  const gallery = ref.querySelector('.product-gallery')
+
+  // init
+
+  /***/
+  let self = new Xt.Toggle(form, {
+    min: 1,
+    elements: '[data-node-variants-element]',
+    targets: '[data-node-variants-target]',
+    on: 'change',
+    off: false,
+    duration: 500,
+  })
+  /***/
+
+  // on
+
+  const on = () => {
+    // scrollto
+    if (!self.initial) {
+      form.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+      gallery.scrollTo(0, 0)
     }
-  },
-})
+    // mobile dots activation
+    document.dispatchEvent(new CustomEvent('scroll'))
+  }
+
+  for (const element of self.elements) {
+    element.addEventListener('on.xt.toggle', on)
+  }
+
+  // unmount
+
+  return () => {
+    self.destroy()
+    self = null
+  }
+}
 
 /* mountScrollto */
 
@@ -31,11 +61,8 @@ const mountScrollto = () => {
   /***/
   let self = new Xt.Scrollto(document.documentElement, {
     scrollers: '.xt-overlay:not([data-xt-overlay-disabled]), .product-gallery',
-    duration: ({ self }) => {
-      const overlay = self.target.closest('.xt-overlay')
-      if (self.initial || self.hashchange || (overlay && !overlay.classList.contains('in'))) return 0
-      const distance = Math.abs(self.scroller.scrollTop - self.position)
-      return Math.min(1, Math.log(1 + distance / 200))
+    space: ({ self }) => {
+      return self.scroller.classList.contains(...['xt-overlay', 'product-gallery']) ? 0 : window.innerHeight / 6
     },
   })
   /***/
@@ -87,6 +114,7 @@ const mountImages = ({ ref }) => {
   /***/
   new Xt.Overlay(container, {
     targets: '#overlay--product-images',
+    duration: 500,
   })
   /***/
 
@@ -230,77 +258,21 @@ const mountImages = ({ ref }) => {
   return () => {}
 }
 
-/* mountArrow */
+/* mount */
 
-const mountArrow = ({ ref }) => {
-  // vars
+Xt.mount({
+  matches: '.demo--products-gallery-v1',
+  mount: ({ ref }) => {
+    const unmountVariants = mountVariants({ ref })
+    const unmountScrollto = mountScrollto({ ref })
+    const unmountImages = mountImages({ ref })
 
-  const arrow = ref.querySelector('.product-arrow')
-  const icon = arrow.querySelector('svg')
-  const posY = 15
+    // unmount
 
-  // interval
-
-  const move = () => {
-    gsap
-      .to(icon, {
-        y: 6,
-        duration: 0.5,
-        ease: 'back.out(4)',
-      })
-      .eventCallback('onComplete', () => {
-        gsap
-          .to(icon, {
-            y: 0,
-            duration: 0.5,
-            ease: 'quart.out',
-          })
-          .delay(0.25)
-      })
-  }
-
-  const interval = setInterval(move, 2000)
-
-  // scroll
-
-  const scroll = () => {
-    if (document.scrollingElement.scrollTop > 0) {
-      if (!arrow.classList.contains('deactivated')) {
-        gsap.killTweensOf(arrow)
-        arrow.classList.add('deactivated')
-        gsap
-          .to(arrow, {
-            y: posY,
-            opacity: 0,
-            duration: 0.25,
-            ease: 'quart.inOut',
-          })
-          .eventCallback('onComplete', () => {
-            arrow.classList.add('hidden')
-          })
-      }
-    } else {
-      if (arrow.classList.contains('deactivated')) {
-        arrow.classList.remove('deactivated')
-        arrow.classList.remove('hidden')
-        gsap.killTweensOf(arrow)
-        gsap.to(arrow, {
-          y: 0,
-          opacity: 1,
-          duration: 0.25,
-          ease: 'quart.inOut',
-        })
-      }
+    return () => {
+      unmountVariants()
+      unmountScrollto()
+      unmountImages()
     }
-  }
-
-  addEventListener('scroll', scroll)
-  scroll()
-
-  // unmount
-
-  return () => {
-    clearInterval(interval)
-    removeEventListener('scroll', scroll)
-  }
-}
+  },
+})

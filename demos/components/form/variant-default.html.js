@@ -10,8 +10,7 @@ const html = /* HTML */ `
             type="text"
             class="${classes.input()} *** ${classes.inputRadius()} ${classes.inputGray()} ***"
             aria-label="Input"
-            placeholder="Input"
-          />
+            placeholder="Input" />
         </div>
 
         <div class="w-full">
@@ -21,8 +20,7 @@ const html = /* HTML */ `
             class="${classes.input()} *** ${classes.inputRadius()} ${classes.inputGray()} ***"
             aria-label="Input"
             placeholder="Input"
-            disabled
-          />
+            disabled />
         </div>
 
         <div class="w-full">
@@ -30,8 +28,7 @@ const html = /* HTML */ `
           <input
             type="file"
             class="${classes.input()} *** ${classes.inputRadius()} ${classes.inputGray()} ***"
-            aria-label="File"
-          />
+            aria-label="File" />
         </div>
 
         <div class="w-full">
@@ -39,16 +36,14 @@ const html = /* HTML */ `
           <textarea
             class="${classes.input()} ${classes.textarea()} *** ${classes.inputRadius()} ${classes.inputGray()} *** resize-vertical"
             aria-label="Textarea"
-            placeholder="Textarea"
-          ></textarea>
+            placeholder="Textarea"></textarea>
         </div>
 
         <div class="w-full">
           <label class="${classes.label()} *** mb-3 ${classes.labelGray()} ***"> Select </label>
           <select
             class="${classes.input()} xt-select *** ${classes.inputRadius()} ${classes.inputGray()} ***"
-            aria-label="Select"
-          >
+            aria-label="Select">
             <option selected value="">Select an option</option>
             <option>Test</option>
             <option>Test</option>
@@ -61,8 +56,7 @@ const html = /* HTML */ `
           <select
             class="${classes.input()} xt-select *** ${classes.inputRadius()} ${classes.inputGray()} ***"
             multiple
-            aria-label="Select multiple"
-          >
+            aria-label="Select multiple">
             <option>Option 1</option>
             <option>Option 2</option>
             <option>Option 3</option>
@@ -79,8 +73,7 @@ const html = /* HTML */ `
                   type="checkbox"
                   class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkGray()} ***"
                   checked
-                  disabled
-                />
+                  disabled />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -93,8 +86,7 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="checkbox"
-                  class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkGray()} ***"
-                />
+                  class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkGray()} ***" />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -115,8 +107,7 @@ const html = /* HTML */ `
                   type="radio"
                   class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioGray()} ***"
                   name="radio-default"
-                  checked
-                />
+                  checked />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -130,8 +121,7 @@ const html = /* HTML */ `
                 <input
                   type="radio"
                   class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioGray()} ***"
-                  name="radio-default"
-                />
+                  name="radio-default" />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -150,8 +140,7 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="checkbox"
-                  class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchGray()} ***"
-                />
+                  class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchGray()} ***" />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -166,8 +155,7 @@ const html = /* HTML */ `
                   type="radio"
                   class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchGray()} ***"
                   name="switch-default"
-                  checked
-                />
+                  checked />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -181,8 +169,7 @@ const html = /* HTML */ `
                 <input
                   type="radio"
                   class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchGray()} ***"
-                  name="switch-default"
-                />
+                  name="switch-default" />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -196,8 +183,7 @@ const html = /* HTML */ `
         <div class="w-full">
           <button
             type="submit"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          >
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             submit
           </button>
         </div>

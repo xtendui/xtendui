@@ -148,18 +148,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountFade = mountFade({ ref })
-
-  // unmount
-
-  return () => {
-    unmountFade()
-  }
-}
-
 /* mountFade */
 
 const mountFade = ({ ref }) => {
@@ -212,4 +200,16 @@ const fade = ({ ref }) => {
     },
   })
   /***/
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountFade = mountFade({ ref })
+
+  // unmount
+
+  return () => {
+    unmountFade()
+  }
 }

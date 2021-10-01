@@ -1,29 +1,31 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 
-Xt.mount({
-  matches: '.demo--slider-status',
-  mount: ({ ref }) => {
-    const unmountStatus = mountStatus({ ref })
-    const unmountSwitcher = mountSwitcher({ ref })
+/* mountStatuses */
 
-    // unmount
+const mountStatuses = ({ ref }) => {
+  // mount granularly
 
-    return () => {
-      unmountStatus()
-      unmountSwitcher()
-    }
-  },
-})
+  Xt.mount({
+    root: ref,
+    matches: '.xt-slider',
+    mount: ({ ref }) => {
+      return mountStatus({ ref })
+    },
+  })
+
+  // unmount
+
+  return () => {}
+}
 
 /* mountStatus */
 
 const mountStatus = ({ ref }) => {
   // vars
 
-  const slider = ref.querySelector('.xt-slider')
+  const slider = ref
   const self = Xt.get({ name: 'xt-slider', el: slider })
-  if (!self) return () => {}
   const current = slider.querySelector('[data-xt-slider-status-current]')
   const total = slider.querySelector('[data-xt-slider-status-total]')
 
@@ -31,7 +33,7 @@ const mountStatus = ({ ref }) => {
 
   const change = e => {
     // check because of event propagation
-    if (e.target === slider || self.targets.includes(e.target)) {
+    if (self && (e.target === slider || self.elements.includes(e.target))) {
       // width
       const trs = self.targets.filter(x => self.hasCurrent({ el: x, same: window.demogroupedstatus })) // switcher window.demogroupedstatus true or false
       if (!trs.length) return
@@ -49,9 +51,9 @@ const mountStatus = ({ ref }) => {
     }
   }
 
-  slider.addEventListener('on.xt.slider', change, true)
   slider.addEventListener('init.xt.slider', change)
   slider.addEventListener('status.xt.slider', change)
+  slider.addEventListener('on.xt.slider', change, true)
   addEventListener('resize', change)
 
   // unmount
@@ -92,3 +94,20 @@ const mountSwitcher = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--slider-status',
+  mount: ({ ref }) => {
+    const unmountStatuses = mountStatuses({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
+
+    // unmount
+
+    return () => {
+      unmountStatuses()
+      unmountSwitcher()
+    }
+  },
+})

@@ -33,18 +33,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountIframesLazy = mountIframesLazy({ ref })
-
-  // unmount
-
-  return () => {
-    unmountIframesLazy()
-  }
-}
-
 /* mountIframesLazy */
 
 const mountIframesLazy = ({ ref }) => {
@@ -84,4 +72,16 @@ const mountIframeLazy = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountIframesLazy = mountIframesLazy({ ref })
+
+  // unmount
+
+  return () => {
+    unmountIframesLazy()
+  }
 }

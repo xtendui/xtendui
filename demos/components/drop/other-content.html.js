@@ -6,8 +6,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        data-xt-drop-element
-      >
+        data-xt-drop-element>
         Group
       </button>
 
@@ -17,22 +16,19 @@ const html = /* HTML */ `
             <div class="inline-flex flex-auto">
               <button
                 type="submit"
-                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-              >
+                class="xt-button ${classes.buttonMd()} rounded-l${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
                 ${classes.iconSearch({ classes: 'text-xl -my-1' })}
               </button>
               <input
                 type="text"
                 class="${classes.input()} ${classes.inputGray()}"
                 aria-label="Search"
-                placeholder="Seach Catalog"
-              />
+                placeholder="Seach Catalog" />
             </div>
 
             <button
               type="submit"
-              class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            >
+              class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
               Search
             </button>
           </div>

@@ -6,13 +6,11 @@ const html = /* HTML */ `
       <div class="xt-list *** flex-nowrap ***">
         <button type="submit" class="*** flex items-stretch group ***">
           <div
-            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupButtonRadius()} *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} ${classes.buttonPrimaryAnimGroup()}"
-          >
+            class="xt-button ${classes.buttonMd()} *** rounded-l${classes.groupButtonRadius()} *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} ${classes.buttonPrimaryAnimGroup()}">
             Search
           </div>
           <div
-            class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ${classes.buttonGrayAnimGroup()}"
-          >
+            class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ${classes.buttonGrayAnimGroup()}">
             ${classes.iconSearch({ classes: 'text-xl -my-1' })}
           </div>
         </button>
@@ -21,8 +19,7 @@ const html = /* HTML */ `
             type="text"
             class="${classes.input()} *** rounded-r${classes.groupButtonRadius()} *** ${classes.inputGray()}"
             aria-label="Search"
-            placeholder="Seach Catalog"
-          />
+            placeholder="Seach Catalog" />
         </div>
       </div>
     </form>

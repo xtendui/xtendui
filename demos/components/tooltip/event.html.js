@@ -6,15 +6,13 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        data-xt-tooltip-element
-      >
+        data-xt-tooltip-element>
         click
       </button>
 
       <div class="xt-tooltip p-3" data-xt-tooltip-target>
         <div
-          class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-        >
+          class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
           <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
         </div>
       </div>
@@ -26,13 +24,11 @@ const html = /* HTML */ `
             class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
             aria-label="Focus"
             placeholder="Focus"
-            data-xt-tooltip-element
-          />
+            data-xt-tooltip-element />
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
             <div
-              class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-            >
+              class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
               <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
           </div>

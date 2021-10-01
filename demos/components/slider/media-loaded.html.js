@@ -6,16 +6,14 @@ const html = /* HTML */ `
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
-          data-xt-slider-dragger
-        >
+          data-xt-slider-dragger>
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="/img.svg"
                 loading="lazy"
-                alt=""
-              />
+                alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
@@ -33,8 +31,7 @@ const html = /* HTML */ `
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="/img-ratio.svg"
                 loading="lazy"
-                alt=""
-              />
+                alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
@@ -52,8 +49,7 @@ const html = /* HTML */ `
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/ruJm3dBXCqw"
                 loading="lazy"
-                alt=""
-              />
+                alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
@@ -71,8 +67,7 @@ const html = /* HTML */ `
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/wQLAGv4_OYs"
                 loading="lazy"
-                alt=""
-              />
+                alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
@@ -90,8 +85,7 @@ const html = /* HTML */ `
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/OlTjeydUpQw"
                 loading="lazy"
-                alt=""
-              />
+                alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
@@ -109,8 +103,7 @@ const html = /* HTML */ `
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/wEL2zPX3jDg"
                 loading="lazy"
-                alt=""
-              />
+                alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
@@ -128,8 +121,7 @@ const html = /* HTML */ `
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/Tyg0rVhOTrE"
                 loading="lazy"
-                alt=""
-              />
+                alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}

@@ -7,15 +7,13 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-tooltip-element
-        >
+          data-xt-tooltip-element>
           Black
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} ***"
-          >
+            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} ***">
             <div class="${classes.tooltipMd()}">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
               molestie ${classes.iconLink()} diam nec euismod commodo.
@@ -28,15 +26,13 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-tooltip-element
-        >
+          data-xt-tooltip-element>
           Primary
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
-            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardPrimary()} ***"
-          >
+            class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardPrimary()} ***">
             <div class="${classes.tooltipMd()}">
               <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
               molestie ${classes.iconLink()} diam nec euismod commodo.

@@ -7,15 +7,13 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        >
+          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           Lorem ipsum
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        >
+          class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           dolor sit amet
         </a>
         <a
@@ -36,15 +34,13 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        >
+          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           Lorem ipsum
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        >
+          class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           dolor sit amet
         </a>
         <a
@@ -65,15 +61,13 @@ const html = /* HTML */ `
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        >
+          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           Lorem ipsum
         </a>
         <a
           href="#"
           type="button"
-          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        >
+          class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           dolor sit amet
         </a>
         <a

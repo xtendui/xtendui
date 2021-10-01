@@ -12,8 +12,32 @@ export default function demo() {
     <div className="demo--form-validation-react" ref={ref}>
       <form className="text-sm">
         <div className="xt-row xt-row-x-6 xt-row-y-4">
+          <div
+            className="xt-row xt-row-x-6 xt-row-y-4 *** flex-auto ***"
+            data-node-required-one="Fill one of the fields">
+            <div className="w-full md:w-6/12">
+              <label className="block mb-1 font-medium text-gray-700 label-required-one"> Required one </label>
+              <input
+                type="text"
+                className="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
+                aria-label="Required one"
+                placeholder="Required one"
+              />
+            </div>
+
+            <div className="w-full md:w-6/12">
+              <label className="block mb-1 font-medium text-gray-700 label-required-one"> Required one </label>
+              <input
+                type="text"
+                className="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
+                aria-label="Required one"
+                placeholder="Required one"
+              />
+            </div>
+          </div>
+
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Custom constrain </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Custom constrain </label>
             <input
               type="text"
               className="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none input--constrains"
@@ -23,7 +47,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Email </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Email </label>
             <input
               type="email"
               className="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none valid-submit:!border-green-200 invalid-submit:!border-red-200"
@@ -34,7 +58,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Number </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Number </label>
             <input
               type="number"
               className="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
@@ -47,7 +71,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Letters </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Letters </label>
             <input
               type="text"
               className="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
@@ -59,7 +83,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> File </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> File </label>
             <input
               type="file"
               className="block w-full py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
@@ -69,7 +93,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Textarea </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Textarea </label>
             <textarea
               className="block w-full h-20 max-h-48 py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none resize-vertical"
               aria-label="Textarea"
@@ -78,7 +102,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Select </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Select </label>
             <select
               className="block w-full xt-select py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
               aria-label="Select"
@@ -91,7 +115,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Select multiple </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Select multiple </label>
             <select
               className="block w-full xt-select py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
               aria-label="Select multiple"
@@ -107,7 +131,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Checkbox </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Checkbox </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -144,7 +168,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Radio </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Radio </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -181,7 +205,7 @@ export default function demo() {
           </div>
 
           <div className="w-full">
-            <label className="block mb-3 font-medium text-gray-700 label-required"> Switch </label>
+            <label className="block mb-1 font-medium text-gray-700 label-required"> Switch </label>
 
             <div className="xt-row xt-row-x-8 xt-row-y-2">
               <div className="w-full">
@@ -245,20 +269,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountScrollToError = mountScrollToError({ ref })
-  const unmountValidationCustom = mountValidationCustom({ ref })
-
-  // unmount
-
-  return () => {
-    unmountScrollToError()
-    unmountValidationCustom()
-  }
-}
-
 /* mountScrollToError */
 
 const mountScrollToError = ({ ref }) => {
@@ -272,6 +282,49 @@ const mountScrollToError = ({ ref }) => {
     el = el.parentNode
     const rect = el.getBoundingClientRect()
     window.scrollTo(window.scrollX, rect.top - Xt.innerHeight * Xt.formScrollWindowFactor)
+  }
+
+  // unmount
+
+  return () => {}
+}
+
+/* mountValidationRequiredOne */
+
+const mountValidationRequiredOne = ({ ref }) => {
+  // vars
+
+  const container = ref.querySelector('[data-node-required-one]')
+  const inputs = container.querySelectorAll('input')
+
+  // validate
+
+  const validate = e => {
+    // skip revalidate
+    if (!e?.detail?.skip) {
+      let passed = false
+      for (const input of inputs) {
+        if (input.value && input.value !== '') {
+          passed = true
+          break
+        }
+      }
+      for (const input of inputs) {
+        if (passed) {
+          input.setCustomValidity('')
+        } else {
+          input.setCustomValidity(container.getAttribute('data-node-required-one'))
+        }
+        // revalidate
+        input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
+      }
+    }
+  }
+
+  for (const input of inputs) {
+    input.addEventListener('input', validate)
+    input.addEventListener('change', validate)
+    validate()
   }
 
   // unmount
@@ -305,4 +358,20 @@ const mountValidationCustom = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountScrollToError = mountScrollToError({ ref })
+  const unmountValidationRequiredOne = mountValidationRequiredOne({ ref })
+  const unmountValidationCustom = mountValidationCustom({ ref })
+
+  // unmount
+
+  return () => {
+    unmountScrollToError()
+    unmountValidationRequiredOne()
+    unmountValidationCustom()
+  }
 }

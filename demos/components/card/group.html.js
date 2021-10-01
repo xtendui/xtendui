@@ -20,8 +20,7 @@ const html = /* HTML */ `
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
           <div
-            class="${classes.cardSm()} ${classes.textDefault()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()}"
-          >
+            class="${classes.cardSm()} ${classes.textDefault()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()}">
             <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
           </div>
         </div>

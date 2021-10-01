@@ -7,8 +7,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Overlay
         </button>
 
@@ -19,13 +18,11 @@ const html = /* HTML */ `
               <button
                 type="button"
                 class="xt-button xt-dismiss *** fixed *** z-last top-0 right-0 p-5 text-2xl"
-                aria-label="Close"
-              >
+                aria-label="Close">
                 ${classes.iconX()}
               </button>
               <div
-                class="xt-card items-center justify-center rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card items-center justify-center rounded${classes.overlayRadius()} ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="${classes.cardMd()}">
                   <div class="xt-h4">Lorem ipsum</div>
                   <p>
@@ -107,8 +104,7 @@ const html = /* HTML */ `
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-overlay-element
-        >
+          data-xt-overlay-element>
           Screen
         </button>
 
@@ -119,13 +115,11 @@ const html = /* HTML */ `
               <button
                 type="button"
                 class="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 text-2xl"
-                aria-label="Close"
-              >
+                aria-label="Close">
                 ${classes.iconX()}
               </button>
               <div
-                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}"
-              >
+                class="xt-card xt-min-h-screen items-center justify-center ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="max-w-3xl">
                   <div class="${classes.cardMd()}">
                     <div class="xt-h4">Lorem ipsum</div>

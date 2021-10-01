@@ -28,21 +28,12 @@ export default function demo() {
 
         <label className="*** xt-button *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** focus-within:outline-browser ***">
           Lorem ipsum
-          <input
-            type="radio"
-            className="xt-check xt-radio top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
-            name="radio-button"
-            defaultChecked
-          />
+          <input type="radio" className="sr-only" name="radio-button" defaultChecked />
         </label>
 
         <label className="*** xt-button *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** focus-within:outline-browser ***">
           Lorem ipsum
-          <input
-            type="radio"
-            className="xt-check xt-radio top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all sr-only"
-            name="radio-button"
-          />
+          <input type="radio" className="sr-only" name="radio-button" />
         </label>
 
         <label className="*** xt-button *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">

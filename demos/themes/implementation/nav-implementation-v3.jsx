@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
-import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import 'xtendui/src/scrollto'
 
 export default function demo() {
   const ref = useRef()
@@ -19,8 +19,8 @@ export default function demo() {
         <div className="xt-row xt-row-4 md:xt-row-8">
           <div className="w-full md:w-4/12">
             <div className="*** xt-sticky md:py-4 ***" data-node-sticky>
-              <div className="*** xt-card rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50 ***">
-                <nav className="*** xt-list xt-list-1 flex-col p-3 ***">
+              <div className="xt-card p-2 rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
+                <nav className="*** xt-list xt-list-1 flex-col ***">
                   <a
                     href="#description"
                     type="button"
@@ -114,8 +114,8 @@ export default function demo() {
 
           <div className="w-full md:w-8/12">
             <div className="md:py-4" data-node-sticky-endtrigger>
-              <div className="*** xt-card rounded-2xl text-gray-900 xt-links-default bg-white ***">
-                <div className="p-6 sm:p-8 text-sm border-t border-solid border-gray-300" id="description">
+              <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white">
+                <div className="p-6 sm:p-8 text-sm border-t border-gray-200" id="description">
                   <div className="xt-h5">Description</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -134,7 +134,7 @@ export default function demo() {
                   </p>
                 </div>
 
-                <div className="*** p-6 sm:p-8 text-sm border-t border-solid border-gray-300 ***" id="features">
+                <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="features">
                   <div className="xt-h5">Features</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -143,7 +143,7 @@ export default function demo() {
                   </p>
                 </div>
 
-                <div className="*** p-6 sm:p-8 text-sm border-t border-solid border-gray-300 ***" id="accessories">
+                <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="accessories">
                   <div className="xt-h5">Accessories</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -172,7 +172,7 @@ export default function demo() {
                   </p>
                 </div>
 
-                <div className="*** p-6 sm:p-8 text-sm border-t border-solid border-gray-300 ***" id="manuals">
+                <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="manuals">
                   <div className="xt-h5">Manuals</div>
                   <p>
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -197,20 +197,6 @@ export default function demo() {
       </div>
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountScrollto = mountScrollto({ ref })
-  const unmountSticky = mountSticky({ ref })
-
-  // unmount
-
-  return () => {
-    unmountScrollto()
-    unmountSticky()
-  }
 }
 
 /* mountScrollto */
@@ -279,4 +265,18 @@ const mountSticky = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountScrollto = mountScrollto({ ref })
+  const unmountSticky = mountSticky({ ref })
+
+  // unmount
+
+  return () => {
+    unmountScrollto()
+    unmountSticky()
+  }
 }

@@ -6,8 +6,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 0
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">
@@ -20,8 +19,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 1
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">
@@ -34,8 +32,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 2
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">
@@ -48,8 +45,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
-        data-xt-toggle-element
-      >
+        data-xt-toggle-element>
         Toggle 3
         <span class="${classes.loader()}">
           <span class="${classes.filler()} text-black text-opacity-50">
@@ -101,8 +97,7 @@ const html = /* HTML */ `
 
       <span class="*** xt-mousefollow fixed *** xt-loader group hover-none:hidden" data-xt-mousefollow-target>
         <span
-          class="${classes.spinner()} w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100  -mt-1 ml-4"
-        >
+          class="${classes.spinner()} w-6 h-6 text-primary-500 transition opacity-0 group-in:opacity-100  -mt-1 ml-4">
           ${classes.svgSpinner()}
         </span>
       </span>

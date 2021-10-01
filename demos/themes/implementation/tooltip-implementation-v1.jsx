@@ -12,10 +12,8 @@ export default function demo() {
             <span data-xt-tooltip-element>
               <a href="#">product informations</a>
 
-              <div
-                className="xt-tooltip p-3 *** transition duration-300 opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-                data-xt-tooltip-target>
-                <div className="*** xt-card w-80 rounded-md shadow-md text-white xt-links-inverse font-medium bg-black ***">
+              <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+                <div className="*** xt-card w-80 rounded-md shadow-md text-white xt-links-inverse font-medium bg-black *** *** transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
                   <div className="xt-list xt-list-1 flex-col py-2">
                     <div>
                       <div className="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap py-1.5 px-3 text-sm ***">
@@ -69,17 +67,15 @@ export default function demo() {
                     </div>
                   </div>
                 </div>
-                <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+                <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-100 ***"></div>
               </div>
             </span>
             and
             <span data-xt-tooltip-element>
               <a href="#">credit card CVV</a>
 
-              <div
-                className="xt-tooltip p-3 *** transition duration-300 opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105 ***"
-                data-xt-tooltip-target>
-                <div className="*** xt-card w-80 rounded-md shadow-md text-gray-900 xt-links-default bg-white ***">
+              <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
+                <div className="*** xt-card w-80 rounded-md shadow-md text-gray-900 xt-links-default bg-white *** *** transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
                   <div className="*** xt-media-container bg-gray-200 rounded-t-md h-32 ***">
                     <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -107,7 +103,7 @@ export default function demo() {
                     </div>
                   </div>
                 </div>
-                <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
+                <div className="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-100 ***"></div>
               </div>
             </span>
           </div>

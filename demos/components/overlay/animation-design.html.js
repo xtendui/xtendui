@@ -6,25 +6,22 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        data-xt-overlay-element
-      >
+        data-xt-overlay-element>
         Overlay
       </button>
 
-      <div class="xt-overlay group" data-xt-overlay-target>
+      <div class="xt-overlay *** group ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
-              class="*** xt-design *** rounded${classes.overlayRadius()} ${classes.overlayShadow()} bg-white *** transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"
-            ></div>
+              class="*** xt-design *** rounded${classes.overlayRadius()} ${classes.overlayShadow()} bg-white *** transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"></div>
 
             <div class="xt-card *** transition opacity-0 group-in:opacity-100 ***">
               <button
                 type="button"
                 class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
-                aria-label="Close"
-              >
+                aria-label="Close">
                 ${classes.iconX()}
               </button>
               <div class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} pb-[37.5%]">

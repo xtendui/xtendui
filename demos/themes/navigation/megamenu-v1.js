@@ -2,23 +2,6 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 import gsap from 'gsap'
 
-Xt.mount({
-  matches: '.demo--megamenu-v1',
-  mount: ({ ref }) => {
-    const unmountDrops = mountDrops({ ref })
-    const unmountLine = mountLine({ ref })
-    const unmountSwitcher = mountSwitcher({ ref })
-
-    // unmount
-
-    return () => {
-      unmountDrops()
-      unmountLine()
-      unmountSwitcher()
-    }
-  },
-})
-
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
@@ -382,3 +365,22 @@ const mountSwitcher = ({ ref }) => {
 
   return () => {}
 }
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--megamenu-v1',
+  mount: ({ ref }) => {
+    const unmountDrops = mountDrops({ ref })
+    const unmountLine = mountLine({ ref })
+    const unmountSwitcher = mountSwitcher({ ref })
+
+    // unmount
+
+    return () => {
+      unmountDrops()
+      unmountLine()
+      unmountSwitcher()
+    }
+  },
+})

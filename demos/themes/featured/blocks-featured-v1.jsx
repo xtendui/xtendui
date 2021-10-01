@@ -130,20 +130,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountItemsParallax = mountItemsParallax({ ref })
-  const unmountButtonsLine = mountButtonsLine({ ref })
-
-  // unmount
-
-  return () => {
-    unmountItemsParallax()
-    unmountButtonsLine()
-  }
-}
-
 /* mountItemParallax */
 
 const mountItemsParallax = ({ ref }) => {
@@ -327,4 +313,18 @@ const mountButtonsLine = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountItemsParallax = mountItemsParallax({ ref })
+  const unmountButtonsLine = mountButtonsLine({ ref })
+
+  // unmount
+
+  return () => {
+    unmountItemsParallax()
+    unmountButtonsLine()
+  }
 }

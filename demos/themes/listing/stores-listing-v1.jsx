@@ -341,18 +341,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountListing = mountListing({ ref })
-
-  // unmount
-
-  return () => {
-    unmountListing()
-  }
-}
-
 /* mountListing */
 
 const mountListing = ({ ref }) => {
@@ -388,4 +376,16 @@ const mountListing = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountListing = mountListing({ ref })
+
+  // unmount
+
+  return () => {
+    unmountListing()
+  }
 }

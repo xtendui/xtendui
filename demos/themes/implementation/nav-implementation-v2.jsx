@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
-import 'xtendui/src/toggle'
-import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import 'xtendui/src/toggle'
+import 'xtendui/src/scrollto'
 
 export default function demo() {
   const ref = useRef()
@@ -30,21 +30,14 @@ export default function demo() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
 
       <div className="max-w-4xl mx-auto">
         <div data-xt-toggle="{ collapseHeight: 'targets', min: 1, queue: false, duration: 500, scrollto: 'targets' }">
           <div className="xt-row xt-row-4 md:xt-row-8 *** items-stretch ***">
             <div className="w-full md:w-4/12">
               <div className="*** xt-sticky md:py-4 ***" data-node-sticky>
-                <div className="*** xt-card rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50 ***">
-                  <nav className="*** xt-list xt-list-1 flex-col p-3 ***">
+                <div className="xt-card p-2 rounded-2xl text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
+                  <nav className="*** xt-list xt-list-1 flex-col ***">
                     <a
                       role="button"
                       className="xt-button *** flex-auto *** py-1.5 px-3 text-sm rounded-2xl flex-auto font-medium leading-snug justify-start text-left transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
@@ -146,7 +139,7 @@ export default function demo() {
                 <div
                   className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
                   data-xt-toggle-target>
-                  <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+                  <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                     <div className="xt-h5">Description</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -169,7 +162,7 @@ export default function demo() {
                 <div
                   className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
                   data-xt-toggle-target>
-                  <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+                  <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                     <div className="xt-h5">Features</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -182,7 +175,7 @@ export default function demo() {
                 <div
                   className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
                   data-xt-toggle-target>
-                  <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+                  <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                     <div className="xt-h5">Accessories</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -215,7 +208,7 @@ export default function demo() {
                 <div
                   className="*** off:hidden out:pointer-events-none overflow-hidden transition-all ***"
                   data-xt-toggle-target>
-                  <div className="*** xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white ***">
+                  <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                     <div className="xt-h5">Manuals</div>
                     <p>
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -253,51 +246,9 @@ export default function demo() {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountScrollto = mountScrollto({ ref })
-  const unmountSticky = mountSticky({ ref })
-
-  // unmount
-
-  return () => {
-    unmountScrollto()
-    unmountSticky()
-  }
 }
 
 /* mountScrollto */
@@ -387,4 +338,18 @@ const mountSticky = ({ ref }) => {
   // unmount
 
   return () => {}
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountScrollto = mountScrollto({ ref })
+  const unmountSticky = mountSticky({ ref })
+
+  // unmount
+
+  return () => {
+    unmountScrollto()
+    unmountSticky()
+  }
 }

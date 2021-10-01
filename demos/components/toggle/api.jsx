@@ -50,6 +50,18 @@ export default function demo() {
         <button
           type="button"
           className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+          id="button--toggle-api-disable">
+          Disable
+        </button>
+        <button
+          type="button"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+          id="button--toggle-api-enable">
+          Enable
+        </button>
+        <button
+          type="button"
+          className="xt-button py-2 px-3 text-xs rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           id="button--toggle-api-destroy">
           Destroy
         </button>
@@ -124,18 +136,6 @@ export default function demo() {
       </div>
     </div>
   )
-}
-
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountEventmethods = mountEventmethods({ ref })
-
-  // unmount
-
-  return () => {
-    unmountEventmethods()
-  }
 }
 
 /* mountEventmethods */
@@ -242,9 +242,6 @@ const mountEventmethods = ({ ref }) => {
       // reinit
       logAdd('<strong>reinit</strong>')
       self.reinit()
-      // restart
-      logAdd('<strong>restart</strong>')
-      self.restart()
     }, 200).toString()
   }
 
@@ -260,6 +257,28 @@ const mountEventmethods = ({ ref }) => {
   }
 
   restartBtn.addEventListener('click', restartFnc)
+
+  // disable
+
+  const disableBtn = document.querySelector('#button--toggle-api-disable')
+
+  const disableFnc = () => {
+    logAdd('<strong>disable</strong>')
+    self.disable()
+  }
+
+  disableBtn.addEventListener('click', disableFnc)
+
+  // enable
+
+  const enableBtn = document.querySelector('#button--toggle-api-enable')
+
+  const enableFnc = () => {
+    logAdd('<strong>enable</strong>')
+    self.enable()
+  }
+
+  enableBtn.addEventListener('click', enableFnc)
 
   // destroy
 
@@ -341,4 +360,16 @@ const mountEventmethods = ({ ref }) => {
     self = null
   }
   return unmount
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountEventmethods = mountEventmethods({ ref })
+
+  // unmount
+
+  return () => {
+    unmountEventmethods()
+  }
 }

@@ -6,20 +6,17 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-        data-xt-tooltip-element
-      >
+        data-xt-tooltip-element>
         Tooltip
       </button>
 
       <div class="xt-tooltip p-3" data-xt-tooltip-target>
         <div
-          class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}"
-        >
+          class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
           <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
           <button
             type="button"
-            class="xt-button *** xt-dismiss *** ${classes.buttonMd()} rounded-b${classes.tooltipRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          >
+            class="xt-button *** xt-dismiss *** ${classes.buttonMd()} rounded-b${classes.tooltipRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             Close
           </button>
         </div>

@@ -9,8 +9,7 @@ const html = /* HTML */ `
 
           <div
             class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
-            data-xt-slider-dragger
-          >
+            data-xt-slider-dragger>
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 group-in:opacity-100 ***">
                 <a href="#" class="*** listing-item *** block group">
@@ -146,11 +145,9 @@ const html = /* HTML */ `
             type="button"
             class="absolute z-content top-0 left-0 h-full px-2 md:px-6 group transition duration-300"
             data-xt-nav="-1"
-            aria-label="Previous slide"
-          >
+            aria-label="Previous slide">
             <div
-              class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ${classes.buttonGrayAnimGroup()} group-hover:scale-125"
-            >
+              class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ${classes.buttonGrayAnimGroup()} group-hover:scale-125">
               ${classes.iconArrowLeft()}
             </div>
           </button>
@@ -159,11 +156,9 @@ const html = /* HTML */ `
             type="button"
             class="absolute z-content top-0 right-0 h-full px-2 md:px-6 group transition duration-300"
             data-xt-nav="1"
-            aria-label="Next slide"
-          >
+            aria-label="Next slide">
             <div
-              class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ${classes.buttonGrayAnimGroup()} group-hover:scale-125"
-            >
+              class="xt-button w-8 h-8 md:w-10 md:h-10 text-lg md:text-xl rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} ${classes.buttonGrayAnimGroup()} group-hover:scale-125">
               ${classes.iconArrowRight()}
             </div>
           </button>

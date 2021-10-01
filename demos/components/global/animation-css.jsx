@@ -24,18 +24,6 @@ export default function demo() {
   )
 }
 
-/* mount */
-
-const mount = ({ ref }) => {
-  const unmountActivation = mountActivation({ ref })
-
-  // unmount
-
-  return () => {
-    unmountActivation()
-  }
-}
-
 /* mountActivation */
 
 const mountActivation = ({ ref }) => {
@@ -59,5 +47,17 @@ const mountActivation = ({ ref }) => {
 
   return () => {
     clearTimeout(tr.dataset.interval)
+  }
+}
+
+/* mount */
+
+const mount = ({ ref }) => {
+  const unmountActivation = mountActivation({ ref })
+
+  // unmount
+
+  return () => {
+    unmountActivation()
   }
 }
