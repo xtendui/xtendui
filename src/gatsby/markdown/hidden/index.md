@@ -9,9 +9,7 @@ menu: true
 
 > This hidden pages includes **work in progress and future features**, **do not use** because will have **breaking changes** on semversion.
 
-## Classes not xt
-
-#### Components
+## Classes not xt Components
 
 .hero
 .listing
@@ -19,21 +17,11 @@ menu: true
 .slider
 .slider-navs-container
 
-#### Themes
+## Classes not xt Themes
 
 .product
 .featured
 .megamenu
-
-## Useful demos
-
-// check if already done for content added dinamically
-
-// mount granularly
-
-// unmount
-
-return () => {}
 
 ## Markdown
 
