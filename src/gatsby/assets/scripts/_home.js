@@ -116,7 +116,7 @@ Xt.mount({
       end: 'bottom top',
       pin: true,
       pinSpacing: false,
-      scrub: 0.5,
+      scrub: true,
     }
 
     gsap.set(ref, {
@@ -137,9 +137,12 @@ Xt.mount({
 Xt.mount({
   matches: '.gatsby_home-feature',
   mount: ({ ref }) => {
+    // match media
+
     // vars
 
     const videos = ref.querySelectorAll('.gatsby_home-feature_video')
+    const videoFirst = ref.querySelector('.gatsby_home-feature_video:first-child')
     const videoLast = ref.querySelector('.gatsby_home-feature_video:last-child')
     const text = ref.querySelectorAll('.gatsby_home-feature_text')
 
@@ -148,53 +151,75 @@ Xt.mount({
     for (const video of videos) {
       // sticky
 
-      const parallax = {
+      ScrollTrigger.create({
         trigger: video,
-        start: 'center center',
-        end: 'center top',
+        start: matchMedia('(max-width: 767px)').matches ? 'bottom+=25% bottom' : 'center center',
+        end: matchMedia('(max-width: 767px)').matches ? 'bottom+=25% top' : 'center top',
         pin: true,
         pinSpacing: true,
-        scrub: 0.5,
-      }
+        onEnter: () => {
+          gsap.killTweensOf(video)
+          gsap.to(video, {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: 'quart.out',
+          })
+        },
+        onLeave: () => {
+          if (video === videoLast) {
+            return
+          }
+          gsap.killTweensOf(video)
+          gsap.to(video, {
+            opacity: 0,
+            scale: 0.9,
+            duration: 1,
+            ease: 'quart.out',
+          })
+        },
+        onEnterBack: () => {
+          gsap.killTweensOf(video)
+          gsap.to(video, {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: 'quart.out',
+          })
+        },
+        onLeaveBack: () => {
+          if (video === videoFirst) {
+            return
+          }
+          gsap.killTweensOf(video)
+          gsap.to(video, {
+            opacity: 0,
+            scale: 0.9,
+            duration: 1,
+            ease: 'quart.out',
+          })
+        },
+      })
 
-      gsap
-        .timeline({
-          scrollTrigger: parallax,
-        })
-        .to(video, {
-          scale: 1,
-          opacity: 1,
-          ease: 'quart.out',
-        })
-        .addPause(3)
-        .to(video, {
+      // setup
+
+      if (video !== videoFirst) {
+        gsap.set(video, {
           opacity: 0,
-          ease: 'quart.out',
+          scale: 0.9,
         })
+      }
     }
 
     // text
 
-    const parallax = {
+    ScrollTrigger.create({
       trigger: text,
-      start: 'center center',
+      start: matchMedia('(max-width: 767px)').matches ? 'center+=50% center' : 'center center',
       endTrigger: videoLast,
       end: 'center top',
       pin: true,
-      pinSpacing: true,
-      scrub: 0.5,
-      markers: true,
-    }
-
-    gsap.set(text, {
-      transformOrigin: 'top center',
-    })
-
-    gsap.to(text, {
-      scrollTrigger: parallax,
-      scale: 1,
-      opacity: 1,
-      ease: 'quart.out',
+      pinSpacing: matchMedia('(max-width: 767px)').matches ? false : true,
     })
   },
 })

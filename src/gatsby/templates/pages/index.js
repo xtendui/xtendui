@@ -219,7 +219,7 @@ function Page() {
                   </div>
                 </div>
                 <div className="my-14 xt-my-auto">
-                  <div className="w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                  <div className="flex w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
                     <div className="container">
                       <div className="xt-row xt-row-12 justify-center text-center">
                         <div className="w-full md:w-8/12 lg:w-7/12 gatsby_home-main_scroll">
@@ -227,44 +227,71 @@ function Page() {
                             Modular Design Components
                           </h3>
                           <p>
-                            All core components are <strong>primitive UI elements</strong> that promotes creativity with
-                            its support for complex design.
+                            All components are <strong>primitive UI elements</strong> that promotes creativity with its
+                            support for complex design.
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="gatsby_home-feature w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                  <div className="gatsby_home-feature flex w-full text-left bg-primary-500 text-white xt-links-inverse">
                     <div className="container">
-                      <div className="xt-row xt-row-12">
+                      <div className="xt-row xt-row-12 text-center md:text-left">
                         <div className="w-full md:w-5/12 lg:w-4/12">
                           <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
                             <div className="gatsby_home-main_scroll">
                               <p>
-                                For example the <strong>card component</strong> is used in many other components to
-                                display content inside a box. It's{' '}
-                                <strong>simple, modular and fully customizable</strong>.
+                                For example the <strong>card, list and media components</strong> are used in interaction
+                                components and can be nested as{' '}
+                                <strong>simple, modular and fully customizable classes</strong>.
                               </p>
                             </div>
                           </div>
                         </div>
                         <div className="w-full md:w-7/12 lg:w-8/12">
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="overlay-implementation-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/overlay#demos-themes-implementation-overlay-implementation-v-1"
+                                target="_blank"
+                                rel="noreferrer">
+                                overlay-implementation-v1
+                              </a>
+                            </div>
                           </div>
                           <div className="-mb-80"></div>
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="drop-implementation-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/drop#demos-themes-implementation-drop-implementation-v-1"
+                                target="_blank"
+                                rel="noreferrer">
+                                drop-implementation-v1
+                              </a>
+                            </div>
                           </div>
                           <div className="-mb-80"></div>
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="tooltip-implementation-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/tooltip#demos-themes-implementation-tooltip-implementation-v-1"
+                                target="_blank"
+                                rel="noreferrer">
+                                tooltip-implementation-v1
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                  <div className="flex w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
                     <div className="container">
                       <div className="xt-row xt-row-12 justify-center text-center">
                         <div className="w-full md:w-8/12 lg:w-7/12 gatsby_home-main_scroll">
@@ -272,36 +299,57 @@ function Page() {
                             Customizable Animations
                           </h3>
                           <p>
-                            You can animate components with <strong>tailwindcss variants</strong> or{' '}
-                            <strong>css</strong> or <strong>js</strong>, whatever you prefer or need to use.
+                            You can animate components with <strong>TailwindCss variants</strong> or{' '}
+                            <strong>css</strong> or <strong>javascript</strong>, whatever you prefer or need to use.
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="gatsby_home-feature w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                  <div className="gatsby_home-feature flex w-full text-left bg-primary-500 text-white xt-links-inverse">
                     <div className="container">
-                      <div className="xt-row xt-row-12">
+                      <div className="xt-row xt-row-12 text-center md:text-left">
                         <div className="w-full md:w-5/12 lg:w-4/12">
                           <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
                             <div className="gatsby_home-main_scroll">
-                              <p>Toggle advanced animation system support also **delay**, **queue**, **collapse**.</p>
+                              <p>
+                                Use <strong>class based animations</strong> with css or custom TailwindCss variants, for
+                                more complex animations you can use javascript animations with Gsap.
+                              </p>
                             </div>
                           </div>
                         </div>
                         <div className="w-full md:w-7/12 lg:w-8/12">
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="float-animation-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/animation#demos-themes-animation-float-animation-v-1"
+                                target="_blank"
+                                rel="noreferrer">
+                                float-animation-v1
+                              </a>
+                            </div>
                           </div>
                           <div className="-mb-80"></div>
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="collapse-animation-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/animation#demos-themes-animation-collapse-animation-v-1"
+                                target="_blank"
+                                rel="noreferrer">
+                                collapse-animation-v1
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                  <div className="flex w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
                     <div className="container">
                       <div className="xt-row xt-row-12 justify-center text-center">
                         <div className="w-full md:w-8/12 lg:w-7/12 gatsby_home-main_scroll">
@@ -309,43 +357,70 @@ function Page() {
                             Complex Interactions
                           </h3>
                           <p>
-                            You can customize <strong>components interaction</strong> in many ways. We also use Gsap to
-                            make <strong>complex javascript animations and parallax effects</strong>.
+                            You can customize <strong>components interaction</strong> in many ways.
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="gatsby_home-feature w-full text-left py-28 bg-primary-500 text-white xt-links-inverse">
+                  <div className="gatsby_home-feature flex w-full text-left bg-primary-500 text-white xt-links-inverse">
                     <div className="container">
-                      <div className="xt-row xt-row-12">
+                      <div className="xt-row xt-row-12 text-center md:text-left">
                         <div className="w-full md:w-5/12 lg:w-4/12">
                           <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
                             <div className="gatsby_home-main_scroll">
-                              <p>Lorem Ipsum</p>
+                              <p>
+                                The <strong>interactive components</strong> supports many useful interactions managed
+                                internally, and <strong>integrate any custom code</strong> with well documented
+                                javascript API.
+                              </p>
                             </div>
                           </div>
                         </div>
                         <div className="w-full md:w-7/12 lg:w-8/12">
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="products-gallery-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/toggle#demos-themes-gallery-products-gallery-v-1"
+                                target="_blank"
+                                rel="noreferrer">
+                                products-gallery-v1
+                              </a>
+                            </div>
                           </div>
                           <div className="-mb-80"></div>
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="multilevel-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/toggle#demos-themes-navigation-multilevel-v-1"
+                                target="_blank"
+                                rel="noreferrer">
+                                multilevel-v1
+                              </a>
+                            </div>
                           </div>
                           <div className="-mb-80"></div>
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
+                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                             <Video assets={assets} title="products-listing-v2" />
-                          </div>
-                          <div className="-mb-80"></div>
-                          <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex opacity-0 scale-95">
-                            <Video assets={assets} title="blocks-featured-v1" />
+                            <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                              View live demo{' '}
+                              <a
+                                href="themes/scrolltrigger#demos-themes-listing-products-listing-v-2"
+                                target="_blank"
+                                rel="noreferrer">
+                                products-listing-v1
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div className="flex w-full text-left pt-28 bg-primary-500 text-white xt-links-inverse"></div>
                 </div>
               </div>
               <div className="my-28 text-center">
@@ -434,21 +509,23 @@ function Page() {
                   </div>
                   <div className="mt-14 mb-10 xt-my-auto">
                     <div className="gatsby_listing-items">
-                      <div className="xt-row flex-nowrap">
+                      <div className="xt-row xt-row-3.5 flex-nowrap">
                         <div className="w-6/12">
                           <button
                             type="button"
-                            className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()} group`}>
                             <span className="font-bold text-lg md:text-xl">Html</span>
-                            <span className="text-2xs md:text-xs opacity-50">Switch to Html</span>
+                            <span className="text-2xs md:text-xs opacity-50 group-on:hidden">Switch to Html</span>
+                            <span className="text-2xs md:text-xs opacity-50 hidden group-on:block">Html chosen</span>
                           </button>
                         </div>
                         <div className="w-6/12">
                           <button
                             type="button"
-                            className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()}`}>
+                            className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()} group`}>
                             <span className="font-bold text-lg md:text-xl">React</span>
-                            <span className="text-2xs md:text-xs opacity-50">Switch to React</span>
+                            <span className="text-2xs md:text-xs opacity-50 group-on:hidden">Switch to React</span>
+                            <span className="text-2xs md:text-xs opacity-50 hidden group-on:block">React chosen</span>
                           </button>
                         </div>
                       </div>
