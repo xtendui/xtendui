@@ -165,6 +165,8 @@ Xt.options['xt-drop'] = {
 }
 ```
 
+> Be sure to assing `Xt.options` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
+
 ## Xt.node
 
 You can create **DOM node from string** with this method.
