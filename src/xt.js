@@ -22,7 +22,7 @@ if (typeof window !== 'undefined') {
   Xt.unmountArr = []
   Xt.focusTrapArr = []
   Xt.scrollDelay = false
-  Xt.resizeDelay = 75
+  Xt.resizeDelay = 200
   Xt.medialoadedDelay = false
   Xt.durationTimescale = 1
   Xt.autoTimescale = 1
