@@ -17,6 +17,7 @@ function LayoutDemo({ children }) {
   return (
     <>
       <Helmet>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <body
           className={`xt-body ${classes.textDefault()} xl:text-lg`}
           data-version={encodeURIComponent(site.siteMetadata.uuid)}

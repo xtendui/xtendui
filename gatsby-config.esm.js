@@ -29,7 +29,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-postcss',
-    'gatsby-plugin-offline',
     // sitemap
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -37,7 +36,7 @@ module.exports = {
         excludes: ['/hidden/**/*', '/demos/**/*'],
       },
     },
-    // manifest
+    // webapp
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -46,19 +45,14 @@ module.exports = {
         background_color: '#0078ff',
         theme_color: '#0058C6',
         display: 'minimal-ui',
-        icon: './static/favicon.svg',
+        include_favicon: false, // favicon with helmet
+        icon: './static/apple-touch-icon.png', // icons generated with this 512x512
         icon_options: {
           purpose: 'maskable any',
         },
-        icons: [
-          {
-            src: './static/apple-touch-icon.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
       },
     },
+    'gatsby-plugin-offline',
     // resolve
     {
       resolve: 'gatsby-plugin-module-resolver',

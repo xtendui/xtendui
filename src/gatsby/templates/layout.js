@@ -25,6 +25,7 @@ function Layout({ children, page, seo }) {
   return (
     <>
       <Helmet>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <body
           className={`xt-body ${classes.textDefault()} xl:text-lg xt-overflow-main`}
           data-version={encodeURIComponent(site.siteMetadata.uuid)}
