@@ -1,3 +1,10 @@
+# [1.0.0-beta.43](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.42...v1.0.0-beta.43) (2021-10-02)
+
+
+### Reverts
+
+* Revert "docs: svgo" ([75a31e8](https://github.com/xtendui/xtendui/commit/75a31e822812cb8e42952822aac6088f98f6b8ac))
+
 # [1.0.0-beta.42](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.41...v1.0.0-beta.42) (2021-10-01)
 
 
