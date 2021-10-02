@@ -32,7 +32,7 @@ function Layout({ children, page, seo }) {
         />
       </Helmet>
       {seo && seo.title === 'Home' ? (
-        <div className="gatsby_site-wrapper overflow-hidden flex flex-col xt-min-h-screen">
+        <div className="gatsby_site-wrapper">
           <div className="gatsby_site-main flex flex-col flex-auto">
             <div className="gatsby_site-main_inner flex flex-col flex-auto">
               <div className="gatsby_site-article gatsby_site-article--home flex flex-col flex-auto prose max-w-none bg-white">
@@ -51,7 +51,7 @@ function Layout({ children, page, seo }) {
           </div>
         </div>
       ) : (
-        <div className="gatsby_site-wrapper overflow-hidden flex flex-col xt-min-h-screen">
+        <div className="gatsby_site-wrapper">
           <div className="gatsby_site-main flex flex-col flex-auto">
             <div className="gatsby_site-main_inner flex flex-col flex-auto">
               <Header page={page} />

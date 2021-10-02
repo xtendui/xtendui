@@ -532,7 +532,7 @@ const html = /* HTML */ `
               <div
                 class="*** xt-design *** ${classes.overlayShadow()} ${classes.cardBlack()} *** ${designAnim()} ***"></div>
               <div class="xt-card ${classes.textInverse()} *** ${itemAnim()} ***">
-                <div class="*** xt-min-h-screen ***">
+                <div class="*** min-h-screen ***">
                   <div class="xt-list">
                     <form class="text-sm flex-auto">
                       <div class="xt-list flex-nowrap">

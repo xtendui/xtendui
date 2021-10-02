@@ -17,7 +17,7 @@ function Page() {
   return (
     <Layout seo={seo}>
       <SEO title={seo.title} description={seo.description} />
-      <div className="gatsby_site-wrapper overflow-hidden flex flex-col xt-min-h-screen">
+      <div className="gatsby_site-wrapper">
         <div className="gatsby_site-main flex flex-col flex-auto">
           <div className="gatsby_site-main_inner flex flex-col flex-auto">
             <header className="gatsby_home-header xt-sticky">
