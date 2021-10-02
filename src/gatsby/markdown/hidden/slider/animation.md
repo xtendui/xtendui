@@ -1,6 +1,6 @@
 ---
 type: "Hidden"
-category: "Hidden"
+category: "Future"
 parent: "Slider"
 title: "Animation"
 date: "2010-10-09"

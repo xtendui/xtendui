@@ -1,6 +1,6 @@
 ---
 type: "Hidden"
-category: "Hidden"
+category: "Test"
 parent: "Test"
 title: "Other"
 ---

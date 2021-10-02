@@ -1,6 +1,6 @@
 ---
 type: "Hidden"
-category: "Hidden"
+category: "Future"
 parent: "Future"
 title: "Future"
 ---

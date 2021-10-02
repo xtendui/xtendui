@@ -1,6 +1,6 @@
 ---
 type: "Hidden"
-category: "Hidden"
+category: "Future"
 parent: "InfiniteScroll"
 title: "InfiniteScroll"
 description: "InfiniteScroll is a plugin that manages automating pagination loads with infinite scrolling."

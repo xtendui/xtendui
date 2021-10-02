@@ -1,6 +1,6 @@
 ---
 type: "Hidden"
-category: "Hidden"
+category: "Future"
 parent: "Slider"
 title: "API"
 date: "1980-05-05"

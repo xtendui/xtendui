@@ -1,6 +1,6 @@
 ---
 type: "Hidden"
-category: "Hidden"
+category: "Future"
 parent: "Slider"
 title: "Addon"
 date: "1900-10-10"
