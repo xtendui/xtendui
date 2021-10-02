@@ -74,29 +74,15 @@
 }
 
 .gatsby_site-header_logo {
-  line-height: 0;
-}
-
-.gatsby_logo-icon {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-  img {
-    width: 7rem;
-    @screen md {
-      width: 8.5rem;
-      .gatsby_home-header & {
-        width: 9.5rem;
-      }
-    }
+  width: 112px;
+  height: 27px;
+  @screen md {
+    width: 140px;
+    height: 35px;
   }
-  img {
-    @apply transition;
-  }
+  background-image: url('static/logo-white.svg');
   a&:hover {
-    img {
-      opacity: .9;
-    }
+    opacity: .9;
   }
 }
 

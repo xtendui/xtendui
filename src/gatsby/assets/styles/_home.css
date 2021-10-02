@@ -2,7 +2,7 @@
 
 .gatsby_home-header_content {
   .scrolling-down & {
-    .gatsby_logo-icon {
+    .gatsby_site-header_logo {
       @apply opacity-0 pointer-events-none;
     }
   }

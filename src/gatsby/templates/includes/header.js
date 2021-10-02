@@ -23,17 +23,10 @@ export default function Header({ page }) {
             className={`gatsby_site-header_inner container bg-primary-500 bg-opacity-80 ${classes.bgBlur()} lg:backdrop-filter-none`}>
             <div>
               <div className="gatsby_site-header_content">
-                <div className="gatsby_site-header_logo">
-                  <Link to="/" title="Xtend UI" className="gatsby_logo-icon">
-                    <img
-                      src={'/logo-white.svg'}
-                      loading="eager"
-                      alt={site.siteMetadata.title}
-                      width="300"
-                      height="72"
-                    />
-                  </Link>
-                </div>
+                <Link
+                  to="/"
+                  title="Xtend UI"
+                  className="gatsby_site-header_logo inline-block bg-contain transition"></Link>
                 <div className="gatsby_site-header_top_social_container">
                   <div className="gatsby_site-header_top_social">
                     <div data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">

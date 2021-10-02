@@ -25,15 +25,7 @@ function Page() {
                 <div
                   className={`gatsby_home-header_content relative z-20 pt-8 pb-10 ${classes.textInverse()} text-center transition-all duration-300 ease-out-quart`}>
                   <div className="container">
-                    <div className="gatsby_logo-icon mb-4 transition-all duration-300 ease-out-quart">
-                      <img
-                        src={'/logo-white.svg'}
-                        loading="eager"
-                        alt={site.siteMetadata.title}
-                        width="300"
-                        height="72"
-                      />
-                    </div>
+                    <div className="gatsby_site-header_logo inline-block bg-contain mb-2 transition-all duration-300 ease-out-quart"></div>
                     <div className="gatsby_home-header_actions">
                       <div className="xt-list md:xt-list-1 justify-center">
                         <Link to="/intro" className="xt-button">

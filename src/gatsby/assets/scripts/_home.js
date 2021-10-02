@@ -12,7 +12,7 @@ Xt.mount({
 
     const sticky = ref
     const background = ref.querySelector('.gatsby_home-header_background rect')
-    const inner = ref.querySelector('.gatsby_logo-icon')
+    const inner = ref.querySelector('.gatsby_site-header_logo')
 
     // methods
 
