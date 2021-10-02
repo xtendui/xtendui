@@ -3,106 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-/* sticky header */
-
-Xt.mount({
-  matches: '.gatsby_home-header',
-  mount: ({ ref }) => {
-    // vars
-
-    const sticky = ref
-    const background = ref.querySelector('.gatsby_home-header_background rect')
-    const inner = ref.querySelector('.gatsby_site-header_logo')
-
-    // methods
-
-    const straight = () => {
-      gsap.killTweensOf(background)
-      gsap.to(background, {
-        rx: '0%',
-        duration: 0.5,
-        ease: 'quart.out',
-      })
-    }
-
-    const curve = () => {
-      if (!sticky.classList.contains('scrolling-down')) {
-        gsap.killTweensOf(background)
-        gsap.to(background, {
-          rx: '50%',
-          duration: 0.5,
-          ease: 'quart.out',
-        })
-      }
-    }
-
-    // mouse events
-
-    sticky.addEventListener('mouseenter', straight)
-
-    sticky.addEventListener('mouseleave', curve)
-
-    // hide depending on inner (always before pin ScrollTrigger)
-
-    ScrollTrigger.create({
-      trigger: sticky,
-      start: -1, // needs -1 because start trigger is sticky
-      end: () => `top top-=${sticky.offsetHeight}`,
-      onUpdate: self => {
-        if (self.isActive && self.direction < 0 && sticky.classList.contains('scrolling-hide')) {
-          sticky.classList.remove('scrolling-hide')
-          curve()
-        } else if (!self.isActive && self.direction > 0 && !sticky.classList.contains('scrolling-hide')) {
-          sticky.classList.add('scrolling-hide')
-          straight()
-        }
-      },
-    })
-
-    // sticky
-
-    ScrollTrigger.create({
-      trigger: sticky,
-      start: 'top top',
-      endTrigger: 'html',
-      end: 'bottom top',
-      pin: true,
-      pinSpacing: false,
-      onUpdate: self => {
-        // scrolling-down depending on scroll direction
-        if (!self.getVelocity()) return // skip on initial
-        if (
-          sticky.classList.contains('scrolling-down') &&
-          sticky.classList.contains('scrolling-hide') &&
-          self.direction < 0
-        ) {
-          sticky.classList.remove('scrolling-down')
-          gsap.killTweensOf(sticky)
-          gsap.to(sticky, {
-            top: 0,
-            duration: 0.5,
-            ease: 'quart.out',
-          })
-          curve()
-        } else if (
-          !sticky.classList.contains('scrolling-down') &&
-          sticky.classList.contains('scrolling-hide') &&
-          self.direction > 0
-        ) {
-          sticky.classList.add('scrolling-down')
-          gsap.killTweensOf(sticky)
-          gsap.to(sticky, {
-            top: -(inner.offsetTop + inner.offsetHeight),
-            duration: 0.5,
-            ease: 'quart.out',
-          })
-          straight()
-        }
-      },
-    })
-  },
-})
-
 /* parallax head */
 
 Xt.mount({
@@ -153,8 +53,8 @@ Xt.mount({
 
       ScrollTrigger.create({
         trigger: video,
-        start: () => (matchMedia('(max-width: 767px)').matches ? 'bottom+=50% bottom' : 'center center'),
-        end: () => (matchMedia('(max-width: 767px)').matches ? 'bottom+=50% top' : 'center top'),
+        start: () => (matchMedia('(max-width: 767px)').matches ? 'center-=50% center' : 'center center'),
+        end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=50% top' : 'center top'),
         pin: true,
         pinSpacing: true,
         onEnter: () => {
@@ -217,7 +117,7 @@ Xt.mount({
       trigger: text,
       start: () => (matchMedia('(max-width: 767px)').matches ? 'center+=75% center' : 'center center'),
       endTrigger: videoLast,
-      end: () => (matchMedia('(max-width: 767px)').matches ? 'bottom+=50% top' : 'center top'),
+      end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=50% top' : 'center top'),
       pin: true,
       pinSpacing: false,
     })
@@ -266,6 +166,87 @@ Xt.mount({
           },
         })
       },
+    })
+  },
+})
+
+/* sticky header */
+
+Xt.mount({
+  matches: '.gatsby_home-header',
+  mount: ({ ref }) => {
+    // vars
+
+    const sticky = ref
+    const background = ref.querySelector('.gatsby_home-header_background rect')
+    const inner = ref.querySelector('.gatsby_site-header_logo')
+
+    // methods
+
+    const straight = () => {
+      gsap.killTweensOf(background)
+      gsap.to(background, {
+        rx: '0%',
+        duration: 0.5,
+        ease: 'quart.out',
+      })
+    }
+
+    const curve = () => {
+      if (!sticky.classList.contains('scrolling-down')) {
+        gsap.killTweensOf(background)
+        gsap.to(background, {
+          rx: '50%',
+          duration: 0.5,
+          ease: 'quart.out',
+        })
+      }
+    }
+
+    // mouse events
+
+    sticky.addEventListener('mouseenter', straight)
+
+    sticky.addEventListener('mouseleave', curve)
+
+    // hide depending on inner (always before pin ScrollTrigger)
+
+    ScrollTrigger.create({
+      trigger: sticky,
+      start: -1, // needs -1 because start trigger is sticky
+      end: () => `top top-=${sticky.offsetHeight}`,
+      onUpdate: self => {
+        if (self.isActive && self.direction < 0 && sticky.classList.contains('scrolling-hide')) {
+          sticky.classList.remove('scrolling-hide')
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quart.out',
+          })
+          curve()
+        } else if (!self.isActive && self.direction > 0 && !sticky.classList.contains('scrolling-hide')) {
+          sticky.classList.add('scrolling-hide')
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            y: -(inner.offsetTop + inner.offsetHeight),
+            duration: 0.5,
+            ease: 'quart.out',
+          })
+          straight()
+        }
+      },
+    })
+
+    // sticky
+
+    ScrollTrigger.create({
+      trigger: sticky,
+      start: 'top top',
+      endTrigger: 'html',
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
     })
   },
 })

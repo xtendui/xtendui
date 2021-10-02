@@ -1,20 +1,18 @@
 /* header */
 
 .gatsby_home-header_content {
-  .scrolling-down & {
+  .scrolling-hide & {
+    @apply relative pt-9 pb-5;
     .gatsby_site-header_logo {
       @apply opacity-0 pointer-events-none;
     }
-  }
-  .scrolling-down.scrolling-hide & {
-    @apply relative pt-9 pb-5;
   }
 }
 
 .gatsby_home-header_background {
   top: -105%;
-  left: -30%;
-  width: 160%;
+  left: -40%;
+  width: 180%;
   height: 205%;
   rect {
     fill: theme('colors.primary.500');
