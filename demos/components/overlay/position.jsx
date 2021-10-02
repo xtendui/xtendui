@@ -19,7 +19,7 @@ export default function demo() {
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card shadow-xl text-gray-900 xt-links-default bg-white">
-                  <div className="*** xt-min-h-screen ***">
+                  <div className="*** min-h-screen ***">
                     <button
                       type="button"
                       className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -79,7 +79,7 @@ export default function demo() {
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-auto mr-0 ***">
               <div className="xt-overlay-inner">
                 <div className="xt-card shadow-xl text-gray-900 xt-links-default bg-white">
-                  <div className="*** xt-min-h-screen ***">
+                  <div className="*** min-h-screen ***">
                     <button
                       type="button"
                       className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"

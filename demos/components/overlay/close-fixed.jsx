@@ -146,7 +146,7 @@ export default function demo() {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>
-                <div className="xt-card xt-min-h-screen items-center justify-center shadow-xl text-gray-900 xt-links-default bg-white">
+                <div className="xt-card min-h-screen items-center justify-center shadow-xl text-gray-900 xt-links-default bg-white">
                   <div className="max-w-3xl">
                     <div className="p-7 sm:p-9 text-base">
                       <div className="xt-h4">Lorem ipsum</div>

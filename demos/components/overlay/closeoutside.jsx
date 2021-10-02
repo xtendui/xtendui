@@ -76,7 +76,7 @@ export default function demo() {
             <div className="xt-backdrop z-below bg-gray-800 opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-0 mr-auto">
               <div className="xt-overlay-inner">
-                <div className="xt-card xt-min-h-screen shadow-xl text-gray-900 xt-links-default bg-white">
+                <div className="xt-card min-h-screen shadow-xl text-gray-900 xt-links-default bg-white">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** transition md:text-white md:bg-primary-500 md:hover:bg-primary-600 md:p-3 md:right-auto md:left-100 ***"
@@ -134,7 +134,7 @@ export default function demo() {
             <div className="xt-backdrop z-below bg-gray-800 opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-md ml-auto mr-0">
               <div className="xt-overlay-inner">
-                <div className="xt-card xt-min-h-screen shadow-xl text-gray-900 xt-links-default bg-white">
+                <div className="xt-card min-h-screen shadow-xl text-gray-900 xt-links-default bg-white">
                   <button
                     type="button"
                     className="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl *** transition md:text-white md:bg-primary-500 md:hover:bg-primary-600 md:p-3 md:left-auto md:right-100 ***"

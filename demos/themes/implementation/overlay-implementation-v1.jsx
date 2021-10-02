@@ -293,7 +293,7 @@ export default function demo() {
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
                 <div className="xt-card shadow-xl text-white xt-links-inverse bg-black">
-                  <div className="*** xt-min-h-screen ***">
+                  <div className="*** min-h-screen ***">
                     <div className="xt-list">
                       <form className="text-sm flex-auto">
                         <div className="xt-list flex-nowrap">

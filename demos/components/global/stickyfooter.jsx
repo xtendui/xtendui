@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div className="demo--stickyfooter-react">
-      <div className="*** flex flex-col xt-min-h-screen ***">
+      <div className="*** flex flex-col min-h-screen ***">
         <header>
           <div className="xt-card p-6 sm:p-8 text-sm text-white xt-links-inverse bg-primary-500">
             <div className="xt-h4">Header</div>

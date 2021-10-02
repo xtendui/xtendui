@@ -489,7 +489,7 @@ const html = /* HTML */ `
               <div
                 class="xt-card ${classes.overlayShadow()} ${classes.textInverse()} ${classes.cardBlack()} *** ${designAnim()} ***"
                 data-xt-overlay-inner>
-                <div class="*** xt-min-h-screen ***">
+                <div class="*** min-h-screen ***">
                   <div class="xt-list *** ${itemAnim()} ***">
                     <form class="text-sm flex-auto">
                       <div class="xt-list flex-nowrap">

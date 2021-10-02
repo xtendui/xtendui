@@ -711,7 +711,7 @@ export default function demo() {
               <div className="xt-overlay-inner">
                 <div className="*** xt-design *** shadow-xl bg-black *** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
                 <div className="xt-card text-white xt-links-inverse *** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
-                  <div className="*** xt-min-h-screen ***">
+                  <div className="*** min-h-screen ***">
                     <div className="xt-list">
                       <form className="text-sm flex-auto">
                         <div className="xt-list flex-nowrap">

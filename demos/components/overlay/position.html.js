@@ -16,7 +16,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-                <div class="*** xt-min-h-screen ***">
+                <div class="*** min-h-screen ***">
                   <button
                     type="button"
                     class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
@@ -63,7 +63,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-auto mr-0 ***">
             <div class="xt-overlay-inner">
               <div class="xt-card ${classes.overlayShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-                <div class="*** xt-min-h-screen ***">
+                <div class="*** min-h-screen ***">
                   <button
                     type="button"
                     class="xt-button xt-dismiss absolute z-above top-0 right-0 p-5 text-2xl"
