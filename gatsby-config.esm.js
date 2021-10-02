@@ -52,7 +52,6 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-offline',
     // resolve
     {
       resolve: 'gatsby-plugin-module-resolver',
