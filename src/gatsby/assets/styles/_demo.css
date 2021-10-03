@@ -3,7 +3,6 @@
 .gatsby_iframe-inside {
   #gatsby_body-inner {
     visibility: visible;
-    overflow: hidden;
     height: initial;
     max-width: none;
     min-height: 100vh;

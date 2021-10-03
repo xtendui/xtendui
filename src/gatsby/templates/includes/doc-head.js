@@ -6,7 +6,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 function DocHead(props) {
   const { page } = props
   return (
-    <header className="gatsby_site-article_hero overflow-hidden py-10 md:py-16 border-b border-gray-100">
+    <header className="gatsby_site-article_hero py-10 md:py-16 border-b border-gray-100">
       <div className="gatsby_site-article_hero-inner container">
         <div className="gatsby_site-article_hero-content">
           <div className="gatsby_site-article_hero-content-inner">
