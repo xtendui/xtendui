@@ -193,7 +193,7 @@ Xt.mount({
     }
 
     const curve = () => {
-      if (!sticky.classList.contains('scrolling-down')) {
+      if (!sticky.classList.contains('scrolling-hide')) {
         gsap.killTweensOf(background)
         gsap.to(background, {
           rx: '50%',
