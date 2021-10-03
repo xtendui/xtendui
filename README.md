@@ -1,71 +1,70 @@
+## This readme is from 1.0 beta version, when installing from npm use `xtendui@beta`. 
+
+<p></p>
+
 <p align="center">
   <a href="https://xtendui.com/" title="Xtend UI" style="display: inline-block;">
-    <img src="https://raw.githubusercontent.com/minimit/xtendui/master/static/logo.svg" loading="eager" alt="Xtend UI" width="200" height="47">
+    <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo.svg" loading="eager" alt="Xtend UI" width="200">
   </a>
 </p>
 
 <p align="center">
-  Powerful frontend library with Tailwind components and vanilla Javascript.
-  <br/>
-  <a href="https://xtendui.com/introduction/getting-started/setup">Setup</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
+  <a href="https://xtendui.com/intro">Intro</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/components">Components</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="https://xtendui.com/themes">Themes</a>
   <br/><br/>
-  <a href="https://github.com/minimit/xtendui/blob/master/LICENSE" title="License" style="display: inline-block;">
+  <a href="https://github.com/xtendui/xtendui/blob/beta/LICENSE" title="License" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg?style=flat-square" alt="License" loading="eager">
   </a>
-  <a href="https://github.com/minimit/xtendui/actions?query=workflow%3ARelease" title="Build Status" style="display: inline-block;">
-    <img src="https://img.shields.io/github/workflow/status/minimit/xtendui/Release?style=flat-square" alt="Build Status" loading="eager">
-  </a>
-  <a href="https://depfu.com/repos/github/minimit/xtendui" title="Dependencies" style="display: inline-block;">
-    <img src="https://img.shields.io/depfu/minimit/xtendui?style=flat-square" alt="Dependencies" loading="eager">
+  <a href="https://github.com/xtendui/xtendui/actions?query=workflow%3ARelease" title="Build Status" style="display: inline-block;">
+    <img src="https://img.shields.io/github/workflow/status/xtendui/xtendui/Release?style=flat-square" alt="Build Status" loading="eager">
   </a>
   <a href="https://www.npmjs.com/package/xtendui" title="Latest Release" style="display: inline-block;">
     <img src="https://img.shields.io/npm/v/xtendui.svg?style=flat-square" alt="Latest Release" loading="eager">
   </a>
 </p>
 
-## About
+## Complex UI made easy with simplicity and total freedom
 
-<@TODO intro>
-
-<@TODO phylosophy>
+Xtend UI is a powerful library to create advanced interfaces with custom tailwind components and advanced interactions and animations.
 
 * Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
+* Some animations and interactions with [Gsap](https://greensock.com/gsap/)
 * Positioning with [Popperjs](https://popper.js.org/)
-* Animations with [Gsap](https://greensock.com/gsap/)
+* Focus trap with [Focus Trap](https://github.com/focus-trap/focus-trap)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
+* Release with [Semantic Release](https://github.com/semantic-release/semantic-release)
+* Polyfill with [Babel](https://babeljs.io/) and [Core Js](https://github.com/zloirock/core-js)
 * Icons with [Feather Icons](https://feathericons.com/)
+* Hosting with [Github Pages](https://pages.github.com/) and [Cloudflare](https://www.cloudflare.com/)
 
-Supported browsers are as follow: **chrome 38**, **safari 10**, **ios 10**, **firefox 38**, **edge 12**, **opera 25**.
+[Supported browsers](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc) are browsers that supports `es6-module`, `es6-module-dynamic-import`, `css variables`, `css grid`, `async`.
 
 ## Setup
 
-For a complete css and js setup guide visit [online setup page](https://xtendui.com/introduction/getting-started/setup) or [github setup page](https://github.com/minimit/xtendui/blob/master/SETUP.md).
+For a complete css and js setup guide visit [online setup page](https://xtendui.com/intro/setup) or [github setup page](https://github.com/xtendui/xtendui/blob/beta/SETUP.md).
 
 ## Contributing
 
-Read our [contributing docs](https://github.com/minimit/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
+Read our [contributing docs](https://github.com/xtendui/xtendui/blob/beta/.github/CONTRIBUTING.md) before submitting a pull request.
 
 ## Documentation
 
-* Clone the repository `git clone https://github.com/minimit/xtendui.git --depth 1`
-* Install required npm packages with `npm install`
-* Create a **dummy contentful space** and create a root file `.env` file with `CONTENTFUL_SPACE=<value>` and `CONTENTFUL_ACCESS_TOKEN=<value>`
-* Use `npm run build` to build the docs in `/public`
-* Use `npm run dev` to serve a develop version
-* Use `npm run serve` to serve a production version
+* Clone the repository `git clone https://github.com/xtendui/xtendui.git --depth 1`
+* Install required npm packages with `yarn install`
+* Use `yarn generate` to generate react components
+* Use `yarn dev` to serve a develop version with watch
+* Use `yarn serve` to serve a production version
 
-## Browser Support
+## Sponsors
 
-```
-Chrome >= 38
-Safari >= 10
-iOS >= 10
-Firefox >= 38
-Edge >= 13
-Opera >= 25
-```
+<a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/1.0-dev/static/support/webgriffe.svg" loading="eager" alt="Webgriffe" width="130px">
+</a>
+&nbsp;&nbsp;
 
-## Copyright
+## Copyright and License
 
-Licensed under [MIT license](https://github.com/minimit/xtendui/blob/master/LICENSE).
-Docs licensed under [CC BY 3.0](https://github.com/minimit/xtendui/blob/master/LICENSE-DOCS).
+Copyright 2017 - 2021 Riccardo Caroli.
+
+Code licensed [MIT](https://github.com/xtendui/xtendui/blob/beta/LICENSE).
+
+Docs licensed [CC-BY-4.0](https://github.com/xtendui/xtendui/blob/beta/LICENSE-DOCS)
