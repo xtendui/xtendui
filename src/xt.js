@@ -1026,9 +1026,15 @@ if (typeof window !== 'undefined') {
         const container = document.documentElement
         let delay = e?.detail?.delay
         delay = duration ?? delay ? delay : Xt[`${e.type}Delay`]
+        let save
         if (e.type === 'resize') {
           const w = window.innerWidth
           const h = window.innerHeight
+          save = () => {
+            // save after a frame to execute all eventDelay
+            Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
+            Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
+          }
           // multiple calls check
           if (
             !e?.detail?.force && // not when setting delay on event
@@ -1038,15 +1044,6 @@ if (typeof window !== 'undefined') {
             // only width no height because it changes on scroll on mobile
             return
           }
-          // save after a frame to execute all eventDelay
-          Xt.frame({
-            el: container,
-            ns: `${ns}EventDelayFrame`,
-            func: () => {
-              Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
-              Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
-            },
-          })
         }
         // delay
         if (!delay) {
@@ -1054,6 +1051,9 @@ if (typeof window !== 'undefined') {
             el,
             ns: `${ns}EventDelayFrame`,
             func: () => {
+              if (save) {
+                save()
+              }
               func(e)
             },
           })
@@ -1062,7 +1062,9 @@ if (typeof window !== 'undefined') {
             el,
             `${ns}eventDelayTimeout`,
             setTimeout(() => {
-              // func
+              if (save) {
+                save()
+              }
               func(e)
             }, delay)
           )
