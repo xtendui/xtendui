@@ -1,3 +1,15 @@
+# [1.0.0-beta.44](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.43...v1.0.0-beta.44) (2021-10-04)
+
+
+### Bug Fixes
+
+* **css:** xt-body added overflow-x-hidden to prevent horizontal scrolling ([63f8f34](https://github.com/xtendui/xtendui/commit/63f8f3486bd2238bfd1ac6d32a35ecb12a95c86d))
+
+
+### Features
+
+* **javascript:** added Xt.scrolltriggerRerfreshFix for fix resize scrolltrigger on mobile ([0d98882](https://github.com/xtendui/xtendui/commit/0d9888280f0da086af233697555b3bf4b7ae83a5))
+
 # [1.0.0-beta.43](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.42...v1.0.0-beta.43) (2021-10-02)
 
 
