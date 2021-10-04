@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 import Header from 'src/gatsby/templates/includes/header'
+import HeaderHome from 'src/gatsby/templates/includes/header-home'
 import Footer from 'src/gatsby/templates/includes/footer'
 import DocHead from 'src/gatsby/templates/includes/doc-head'
 import DocFoot from 'src/gatsby/templates/includes/doc-foot'
@@ -33,46 +34,33 @@ function Layout({ children, page, seo }) {
       </Helmet>
       {seo && seo.title === 'Home' ? (
         <div className="gatsby_site-wrapper">
-          <div className="gatsby_site-main flex flex-col flex-auto">
-            <div className="gatsby_site-main_inner flex flex-col flex-auto">
-              <div className="gatsby_site-article gatsby_site-article--home flex flex-col flex-auto prose max-w-none bg-white">
-                <main className="flex flex-col flex-auto" id="gatsby_open-full-inner">
-                  <article className="gatsby_site-article_content flex-auto">
-                    <div className="gatsby_site-article_content_inner">{children}</div>
-                  </article>
-                  <footer className="gatsby_site-footer border-t border-gray-100">
-                    <div className="gatsby_site-footer_inner container py-4 lg:py-8">
-                      <Footer />
-                    </div>
-                  </footer>
-                </main>
-              </div>
+          <HeaderHome page={page} />
+          <main className="gatsby_home-main">{children}</main>
+          <footer className="gatsby_site-footer border-t border-gray-100">
+            <div className="gatsby_site-footer_inner container py-4 lg:py-8">
+              <Footer />
             </div>
-          </div>
+          </footer>
         </div>
       ) : (
         <div className="gatsby_site-wrapper">
-          <div className="gatsby_site-main flex flex-col flex-auto">
-            <div className="gatsby_site-main_inner flex flex-col flex-auto">
-              <Header page={page} />
-              <div className="gatsby_site-article gatsby_site-article--markdown flex flex-col flex-auto prose max-w-none bg-white">
-                <DocFullscreen />
-                <main className="flex flex-col flex-auto" id="gatsby_open-full-inner">
-                  {page && page.post ? <DocHead page={page} /> : null}
-                  <article className="gatsby_site-article_content flex-auto container py-10 md:py-20">
-                    <div className="gatsby_site-article_content_inner">{children}</div>
-                  </article>
-                  <footer className="gatsby_site-footer border-t border-gray-100">
-                    <div className="gatsby_site-footer_inner container py-4 lg:py-8">
-                      {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? (
-                        <DocFoot page={page} />
-                      ) : null}
-                      <Footer />
-                    </div>
-                  </footer>
-                </main>
-              </div>
-            </div>
+          <Header page={page} />
+          <div className="gatsby_site-article gatsby_site-article--markdown flex flex-col flex-auto prose max-w-none bg-white">
+            <DocFullscreen />
+            <main className="gatsby_site-main flex flex-col flex-auto" id="gatsby_open-full-inner">
+              {page && page.post ? <DocHead page={page} /> : null}
+              <article className="gatsby_site-article_content flex-auto container py-10 md:py-20">
+                <div className="gatsby_site-article_content_inner">{children}</div>
+              </article>
+              <footer className="gatsby_site-footer border-t border-gray-100">
+                <div className="gatsby_site-footer_inner container py-4 lg:py-8">
+                  {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? (
+                    <DocFoot page={page} />
+                  ) : null}
+                  <Footer />
+                </div>
+              </footer>
+            </main>
           </div>
         </div>
       )}
