@@ -219,7 +219,7 @@ function Page() {
                       </a>
                     </div>
                   </div>
-                  <div className="-mb-80"></div>
+                  <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="drop-implementation-v1" />
                     <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
@@ -232,7 +232,7 @@ function Page() {
                       </a>
                     </div>
                   </div>
-                  <div className="-mb-80"></div>
+                  <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="tooltip-implementation-v1" />
                     <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
@@ -290,7 +290,7 @@ function Page() {
                       </a>
                     </div>
                   </div>
-                  <div className="-mb-80"></div>
+                  <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="collapse-animation-v1" />
                     <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
@@ -347,7 +347,7 @@ function Page() {
                       </a>
                     </div>
                   </div>
-                  <div className="-mb-80"></div>
+                  <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="multilevel-v1" />
                     <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
@@ -357,7 +357,7 @@ function Page() {
                       </a>
                     </div>
                   </div>
-                  <div className="-mb-80"></div>
+                  <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="products-listing-v2" />
                     <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
@@ -456,7 +456,7 @@ function Page() {
             </div>
           </div>
           <div className="mt-14 mb-10 xt-my-auto">
-            <div className="gatsby_listing-items">
+            <div className="gatsby_listing-items gatsby_home-main_scroll">
               <div className="xt-row xt-row-3.5 flex-nowrap">
                 <div className="w-6/12">
                   <button
