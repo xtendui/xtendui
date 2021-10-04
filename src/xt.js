@@ -1147,4 +1147,32 @@ if (typeof window !== 'undefined') {
   })
 
   //
+  // plugins
+  //
+
+  /**
+   * scrolltriggerRerfreshFix fixes refresh on touch screen not on vertical resize
+   * @param {Object} params
+   * @param {Function} params.ScrollTrigger
+   */
+  Xt.scrolltriggerRerfreshFix = ({ ScrollTrigger } = {}) => {
+    // removed resize we trigger it manually
+    ScrollTrigger.config({
+      autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+    })
+    // window resize
+    const resize = e => {
+      Xt.eventDelay({
+        e,
+        ns: 'xtScrolltriggerRerfreshFix',
+        func: () => {
+          ScrollTrigger.refresh()
+        },
+      })
+    }
+    removeEventListener('resize', resize)
+    addEventListener('resize', resize)
+  }
+
+  //
 }

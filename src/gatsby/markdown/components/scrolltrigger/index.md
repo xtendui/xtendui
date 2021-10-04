@@ -36,6 +36,24 @@ Examples to do **parallax animations on page scroll**. See [parallax](/component
 
 ## Fixes
 
+- To fix **touch device ScrollTrigger refresh on vertical scroll**, you can use a fix that refreshes **only if window width changes on resize**. Just need this code one time in the project.
+
+```js
+/* ScrollTrigger refresh fix */
+
+Xt.scrolltriggerRerfreshFix({ ScrollTrigger })
+```
+
+Just remember to **refresh ScrollTriggers that are hooked on bottom on resize**.
+
+```js
+const scrollTriggerBottom = ScrollTrigger.create({ /* ScrollTrigger here */ })
+
+// refresh ScrollTrigger bottom
+
+addEventListener('resize', scrollTriggerBottom.refresh)
+```
+
 - If you **trigger DOM height changes** showing/hiding content or if you are initializing ScrollTrigger inside **inside an element with `display: none`** you need to refresh ScrollTrigger after the elements are visibile on the page.
 
 ```js
