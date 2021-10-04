@@ -23,7 +23,7 @@ const mountSticky = ({ ref }) => {
         sticky.classList.remove('scrolling-hide')
         gsap.killTweensOf(sticky)
         gsap.to(sticky, {
-          y: 0,
+          marginTop: 0, // use marginTop because ScrollTrigger sets top and translate
           duration: 0.5,
           ease: 'quart.out',
         })
@@ -55,7 +55,7 @@ const mountSticky = ({ ref }) => {
         sticky.classList.remove('scrolling-down')
         gsap.killTweensOf(sticky)
         gsap.to(sticky, {
-          y: 0,
+          marginTop: 0, // use marginTop because ScrollTrigger sets top and translate
           duration: 0.5,
           ease: 'quart.out',
         })
@@ -67,7 +67,7 @@ const mountSticky = ({ ref }) => {
         sticky.classList.add('scrolling-down')
         gsap.killTweensOf(sticky)
         gsap.to(sticky, {
-          y: -(sticky.offsetTop + sticky.offsetHeight),
+          marginTop: -(sticky.offsetTop + sticky.offsetHeight), // use marginTop because ScrollTrigger sets top and translate
           duration: 0.5,
           ease: 'quart.out',
         })

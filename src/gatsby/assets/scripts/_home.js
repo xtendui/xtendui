@@ -220,7 +220,7 @@ Xt.mount({
           sticky.classList.remove('scrolling-hide')
           gsap.killTweensOf(sticky)
           gsap.to(sticky, {
-            y: 0,
+            marginTop: 0, // use marginTop because ScrollTrigger sets top and translate
             duration: 0.5,
             ease: 'quart.out',
           })
@@ -229,7 +229,7 @@ Xt.mount({
           sticky.classList.add('scrolling-hide')
           gsap.killTweensOf(sticky)
           gsap.to(sticky, {
-            y: -(inner.offsetTop + inner.offsetHeight),
+            marginTop: -(inner.offsetTop + inner.offsetHeight), // use marginTop because ScrollTrigger sets top and translate
             duration: 0.5,
             ease: 'quart.out',
           })
