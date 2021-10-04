@@ -211,30 +211,40 @@ Xt.mount({
 
     // hide depending on inner (always before pin ScrollTrigger)
 
+    const update = ({ self, refresh } = {}) => {
+      if (self.isActive && self.direction < 0 && (refresh || sticky.classList.contains('scrolling-hide'))) {
+        sticky.classList.remove('scrolling-hide')
+        gsap.killTweensOf(sticky)
+        gsap.to(sticky, {
+          y: 0,
+          duration: refresh ? 0 : 0.5,
+          ease: 'quart.out',
+        })
+        curve()
+      } else if (!self.isActive && self.direction > 0 && (refresh || !sticky.classList.contains('scrolling-hide'))) {
+        sticky.classList.add('scrolling-hide')
+        gsap.killTweensOf(sticky)
+        gsap.to(sticky, {
+          y: -(inner.offsetTop + inner.offsetHeight),
+          duration: refresh ? 0 : 0.5,
+          ease: 'quart.out',
+        })
+        straight()
+      }
+    }
+
     ScrollTrigger.create({
       trigger: sticky,
       start: -1, // needs -1 because start trigger is sticky
       end: () => `top top-=${sticky.offsetHeight}`,
       onUpdate: self => {
-        if (self.isActive && self.direction < 0 && sticky.classList.contains('scrolling-hide')) {
-          sticky.classList.remove('scrolling-hide')
-          gsap.killTweensOf(sticky)
-          gsap.to(sticky, {
-            marginTop: 0, // use marginTop because ScrollTrigger sets top and translate
-            duration: 0.5,
-            ease: 'quart.out',
-          })
-          curve()
-        } else if (!self.isActive && self.direction > 0 && !sticky.classList.contains('scrolling-hide')) {
-          sticky.classList.add('scrolling-hide')
-          gsap.killTweensOf(sticky)
-          gsap.to(sticky, {
-            marginTop: -(inner.offsetTop + inner.offsetHeight), // use marginTop because ScrollTrigger sets top and translate
-            duration: 0.5,
-            ease: 'quart.out',
-          })
-          straight()
-        }
+        update({ self })
+      },
+      onRefresh: self => {
+        // need to update on refresh done
+        requestAnimationFrame(() => {
+          update({ self, refresh: true })
+        })
       },
     })
 
