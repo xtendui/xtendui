@@ -97,6 +97,7 @@ const mountButtonsLine = ({ ref }) => {
     const enter = () => {
       // media
       const media = link.querySelector('.xt-media-container')
+      gsap.killTweensOf(media)
       gsap.to(media, {
         opacity: mediaOpacityIn,
         scale: 1 - mediaScale,
@@ -104,14 +105,16 @@ const mountButtonsLine = ({ ref }) => {
         ease: 'expo.out',
       })
       const mediaInner = link.querySelector('.xt-media')
+      gsap.killTweensOf(mediaInner)
       gsap.to(mediaInner, {
         scale: 1 + mediaScale,
         duration: 1,
         ease: 'expo.out',
       })
-      // text
-      const text = buttonLine.querySelector('.button--line-content')
-      gsap.to(text, {
+      // content
+      const content = buttonLine.querySelector('.button--line-content')
+      gsap.killTweensOf(content)
+      gsap.to(content, {
         x: lineX,
         duration: 1,
         delay: 0.5,
@@ -119,6 +122,7 @@ const mountButtonsLine = ({ ref }) => {
       })
       // line
       const line = buttonLine.querySelector('.button--line-design')
+      gsap.killTweensOf(line)
       gsap.set(line, {
         width: 0,
         x: -lineWidthMax,
@@ -149,6 +153,7 @@ const mountButtonsLine = ({ ref }) => {
     const leave = () => {
       // media
       const media = link.querySelector('.xt-media-container')
+      gsap.killTweensOf(media)
       gsap.to(media, {
         opacity: mediaOpacityOut,
         scale: 1,
@@ -156,20 +161,23 @@ const mountButtonsLine = ({ ref }) => {
         ease: 'expo.inOut',
       })
       const mediaInner = link.querySelector('.xt-media')
+      gsap.killTweensOf(mediaInner)
       gsap.to(mediaInner, {
         scale: 1,
         duration: 1,
         ease: 'expo.inOut',
       })
-      // text
-      const text = ref.querySelector('.button--line-content')
-      gsap.to(text, {
+      // content
+      const content = link.querySelector('.button--line-content')
+      gsap.killTweensOf(content)
+      gsap.to(content, {
         x: 0,
         duration: 1,
         ease: 'expo.inOut',
       })
       // line
-      const line = ref.querySelector('.button--line-design')
+      const line = link.querySelector('.button--line-design')
+      gsap.killTweensOf(line)
       gsap.to(line, {
         width: lineWidth,
         x: 0,

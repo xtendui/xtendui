@@ -27,7 +27,7 @@ const mountSticky = ({ ref }) => {
   // sticky bottom
 
   /***/
-  ScrollTrigger.create({
+  const scrollTriggerBottom = ScrollTrigger.create({
     trigger: stickyBottom,
     start: 'bottom bottom',
     endTrigger: 'html',
@@ -35,11 +35,17 @@ const mountSticky = ({ ref }) => {
     pin: true,
     pinSpacing: false,
   })
+
+  // refresh ScrollTrigger bottom
+
+  addEventListener('resize', scrollTriggerBottom.refresh)
   /***/
 
   // unmount
 
-  return () => {}
+  return () => {
+    removeEventListener('resize', scrollTriggerBottom.refresh)
+  }
 }
 
 /* mount */
