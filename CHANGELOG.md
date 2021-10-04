@@ -1,3 +1,10 @@
+# [1.0.0-beta.45](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.44...v1.0.0-beta.45) (2021-10-04)
+
+
+### Bug Fixes
+
+* **javascript:** fix resize event components and scrollTrigger not triggering sometime ([87803e3](https://github.com/xtendui/xtendui/commit/87803e33281e33aaf46f86c7efdd2efc414482e7))
+
 # [1.0.0-beta.44](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.43...v1.0.0-beta.44) (2021-10-04)
 
 
