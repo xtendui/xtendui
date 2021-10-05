@@ -3,52 +3,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-/* fade items */
-
-Xt.mount({
-  matches: '.gatsby_home-main',
-  mount: ({ ref }) => {
-    // vars
-
-    const scrollY = 15
-    const scrollScale = 1.04
-
-    // check if already done for content added dinamically
-
-    const items = ref.querySelectorAll('.gatsby_home-main_scroll:not(.faded)')
-    for (const item of items) {
-      item.classList.add('faded')
-    }
-
-    // fade
-
-    ScrollTrigger.batch(items, {
-      once: true,
-      start: 'top bottom-=10%',
-      end: 'bottom top+=10%',
-      onEnter: (batch, scrollTriggers) => {
-        const direction = scrollTriggers[0].direction
-        const y = direction > 0 ? -scrollY : scrollY
-        gsap.killTweensOf(batch)
-        gsap.set(batch, {
-          y: y,
-          scale: scrollScale,
-        })
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          ease: 'quart.out',
-          stagger: index => {
-            return Math.min(0.6, index * 0.15)
-          },
-        })
-      },
-    })
-  },
-})
-
 /* sticky header (must be before .gatsby_home-feature pin spacing or android bugs position of .gatsby_home-feature pins) */
 
 Xt.mount({
@@ -258,6 +212,52 @@ Xt.mount({
       end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=50% top' : 'center top'),
       pin: true,
       pinSpacing: false,
+    })
+  },
+})
+
+/* fade items */
+
+Xt.mount({
+  matches: '.gatsby_home-main',
+  mount: ({ ref }) => {
+    // vars
+
+    const scrollY = 15
+    const scrollScale = 1.04
+
+    // check if already done for content added dinamically
+
+    const items = ref.querySelectorAll('.gatsby_home-main_scroll:not(.faded)')
+    for (const item of items) {
+      item.classList.add('faded')
+    }
+
+    // fade
+
+    ScrollTrigger.batch(items, {
+      once: true,
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: (batch, scrollTriggers) => {
+        const direction = scrollTriggers[0].direction
+        const y = direction > 0 ? -scrollY : scrollY
+        gsap.killTweensOf(batch)
+        gsap.set(batch, {
+          y: y,
+          scale: scrollScale,
+        })
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: index => {
+            return Math.min(0.6, index * 0.15)
+          },
+        })
+      },
     })
   },
 })
