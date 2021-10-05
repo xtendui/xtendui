@@ -195,7 +195,7 @@ function Page() {
           </div>
           <div className="gatsby_home-feature flex w-full text-left bg-primary-500 text-white xt-links-inverse">
             <div className="container">
-              <div className="xt-row xt-row-12 text-center md:text-left">
+              <div className="xt-row xt-row-6 md:xt-row-12 text-center md:text-left">
                 <div className="w-full md:w-5/12 lg:w-4/12">
                   <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
                     <div className="gatsby_home-main_scroll">
@@ -266,7 +266,7 @@ function Page() {
           </div>
           <div className="gatsby_home-feature flex w-full text-left bg-primary-500 text-white xt-links-inverse">
             <div className="container">
-              <div className="xt-row xt-row-12 text-center md:text-left">
+              <div className="xt-row xt-row-6 md:xt-row-12 text-center md:text-left">
                 <div className="w-full md:w-5/12 lg:w-4/12">
                   <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
                     <div className="gatsby_home-main_scroll">
@@ -323,7 +323,7 @@ function Page() {
           </div>
           <div className="gatsby_home-feature flex w-full text-left bg-primary-500 text-white xt-links-inverse">
             <div className="container">
-              <div className="xt-row xt-row-12 text-center md:text-left">
+              <div className="xt-row xt-row-6 md:xt-row-12 text-center md:text-left">
                 <div className="w-full md:w-5/12 lg:w-4/12">
                   <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
                     <div className="gatsby_home-main_scroll">

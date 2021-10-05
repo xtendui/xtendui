@@ -52,7 +52,7 @@
 
 /* main */
 
-.gatsby_home-header_inner, .gatsby_site-article--home {
+.gatsby_home-header_inner, .gatsby_home-main, .gatsby_home-footer {
   .container {
     @apply max-w-screen-lg !important;
   }

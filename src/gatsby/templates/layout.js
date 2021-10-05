@@ -36,7 +36,7 @@ function Layout({ children, page, seo }) {
         <div className="gatsby_site-wrapper">
           <HeaderHome page={page} />
           <main className="gatsby_home-main">{children}</main>
-          <footer className="gatsby_site-footer border-t border-gray-100">
+          <footer className="gatsby_home-footer gatsby_site-footer border-t border-gray-100">
             <div className="gatsby_site-footer_inner container py-4 lg:py-8">
               <Footer />
             </div>

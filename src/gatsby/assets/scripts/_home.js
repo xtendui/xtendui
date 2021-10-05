@@ -145,8 +145,8 @@ Xt.mount({
 
       ScrollTrigger.create({
         trigger: video,
-        start: () => (matchMedia('(max-width: 767px)').matches ? 'center-=50% center' : 'center center'),
-        end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=50% top' : 'center top'),
+        start: () => (matchMedia('(max-width: 767px)').matches ? 'center-=40% center' : 'center center'),
+        end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=40% top' : 'center top'),
         pin: true,
         pinSpacing: true,
         onEnter: () => {
@@ -207,9 +207,9 @@ Xt.mount({
 
     ScrollTrigger.create({
       trigger: text,
-      start: () => (matchMedia('(max-width: 767px)').matches ? 'center+=75% center' : 'center center'),
+      start: () => (matchMedia('(max-width: 767px)').matches ? 'center+=100% center' : 'center center'),
       endTrigger: videoLast,
-      end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=50% top' : 'center top'),
+      end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=40% top' : 'center top'),
       pin: true,
       pinSpacing: false,
     })
