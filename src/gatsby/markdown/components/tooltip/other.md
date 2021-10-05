@@ -15,6 +15,7 @@ If you want to **disable the component** use the `options.disabled`.
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `disabled:Boolean`                              | `false`                     | Disable the component           |
+| Option                  | `disableDeactivate:Boolean`                              | `true`                     | Deactivate automatically on disable and destroy           |
 
 </div>
 

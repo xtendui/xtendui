@@ -88,6 +88,7 @@ Overlay.optionsDefault = {
     targetsInner: true,
   },
   // other
+  disableDeactivate: true,
   appendTo: 'body',
   classBody: 'xt-scrollbar-overlay',
   focusLimit: true,

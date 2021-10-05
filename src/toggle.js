@@ -1699,8 +1699,9 @@ class Toggle {
   eventOn({ el, force = false }, e) {
     const self = this
     const options = self.options
+    force = force ? force : e?.detail?.force
     // disabled
-    if (self.disabled) {
+    if (self.disabled && !force) {
       return false
     }
     // toggle
@@ -1764,8 +1765,9 @@ class Toggle {
   eventOff({ el, force = false, objFilter } = {}, e) {
     const self = this
     const options = self.options
+    force = force ? force : e?.detail?.force
     // disabled
-    if (self.disabled) {
+    if (self.disabled && !force) {
       return false
     }
     // toggle
@@ -2120,9 +2122,10 @@ class Toggle {
       // fix groupSame do not deactivate/reactivate but do logic (e.g. group same slider animation-js and slider hash)
       const skipSame = obj[type].skipEls?.includes(el)
       // delay
-      let delay = self.initial
-        ? false
-        : Xt.delayTime({ el, duration: options.delay || options[`delay${actionCurrent}`], actionCurrent })
+      let delay =
+        self.initial || self.disabled // off from disable/destroy
+          ? false
+          : Xt.delayTime({ el, duration: options.delay || options[`delay${actionCurrent}`], actionCurrent })
       if (delay) {
         if (typeof delay === 'function') {
           const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
@@ -2181,10 +2184,7 @@ class Toggle {
     const self = this
     const options = self.options
     // check if not already running or if force
-    if (
-      actionCurrent === 'In' &&
-      (self.checkOnRunning({ obj }) || obj.elements.force || obj.elements.e?.detail?.force)
-    ) {
+    if (actionCurrent === 'In' && (self.checkOnRunning({ obj }) || obj.elements.force)) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.addCurrent({ el, running: true })
@@ -2221,22 +2221,22 @@ class Toggle {
       }
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.frame({
-          el,
-          ns: `${self.ns}${actionCurrent}DelayDone`,
-          func: () => {
-            el.dispatchEvent(
-              new CustomEvent(`on.${self.componentNs}`, {
-                detail: obj.elements.e,
-              })
-            )
-          },
-        })
+        // off from disable/destroy
+        if (!self.disabled) {
+          Xt.frame({
+            el,
+            ns: `${self.ns}${actionCurrent}DelayDone`,
+            func: () => {
+              el.dispatchEvent(
+                new CustomEvent(`on.${self.componentNs}`, {
+                  detail: obj.elements.e,
+                })
+              )
+            },
+          })
+        }
       }
-    } else if (
-      actionCurrent === 'Out' &&
-      (self.checkOffRunning({ obj }) || obj.elements.force || obj.elements.e?.detail?.force)
-    ) {
+    } else if (actionCurrent === 'Out' && (self.checkOffRunning({ obj }) || obj.elements.force)) {
       // only one time and if last element
       if (type === 'elements' && el === obj.elements.queueEls[0]) {
         self.removeCurrent({ el, running: true })
@@ -2255,7 +2255,7 @@ class Toggle {
       self.specialClose({ actionCurrent, el, type, obj })
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
-        // off but without classes
+        // off from disable/destroy
         if (!self.disabled) {
           Xt.frame({
             el,
@@ -2273,14 +2273,24 @@ class Toggle {
     }
     // queue
     if (!skipQueue) {
-      // needs ONE raf or sequential off/on flickr (e.g. toggle inverse)
-      Xt.frame({
-        el,
-        ns: `${self.ns + type}QueueAnim`,
-        func: () => {
-          self.queueAnim({ actionCurrent, actionOther, obj, el, type, skipSame })
-        },
-      })
+      // off from disable/destroy
+      // must be instant on destroy (e.g. overlay mobile)
+      if (self.disabled) {
+        Xt.frame({
+          el,
+          ns: `${self.ns + type}QueueAnim`,
+        })
+        self.queueAnim({ actionCurrent, actionOther, obj, el, type, skipSame })
+      } else {
+        // needs ONE raf or sequential off/on flickr (e.g. toggle inverse)
+        Xt.frame({
+          el,
+          ns: `${self.ns + type}QueueAnim`,
+          func: () => {
+            self.queueAnim({ actionCurrent, actionOther, obj, el, type, skipSame })
+          },
+        })
+      }
       // queue done
       if (!obj[type].instant && obj[type].instantType) {
         const els = obj[type].queueEls
@@ -2307,9 +2317,10 @@ class Toggle {
     const options = self.options
     // duration
     const els = obj[type].queueEls
-    let duration = self.initial
-      ? false
-      : Xt.animTime({ el, duration: options.duration || options[`duration${actionCurrent}`], actionCurrent })
+    let duration =
+      self.initial || self.disabled // off from disable/destroy
+        ? false
+        : Xt.animTime({ el, duration: options.duration || options[`duration${actionCurrent}`], actionCurrent })
     if (duration) {
       if (typeof duration === 'function') {
         const count = Xt.dataStorage.get(el, `${self.ns + actionCurrent}Count`) || els.findIndex(x => x === el)
@@ -2373,17 +2384,20 @@ class Toggle {
       self.specialScrollto({ actionCurrent, el, type, obj })
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
-        Xt.frame({
-          el,
-          ns: `${self.ns}${actionCurrent}AnimDone`,
-          func: () => {
-            el.dispatchEvent(
-              new CustomEvent(`ondone.${self.componentNs}`, {
-                detail: obj.elements.e,
-              })
-            )
-          },
-        })
+        // off from disable/destroy
+        if (!self.disabled) {
+          Xt.frame({
+            el,
+            ns: `${self.ns}${actionCurrent}AnimDone`,
+            func: () => {
+              el.dispatchEvent(
+                new CustomEvent(`ondone.${self.componentNs}`, {
+                  detail: obj.elements.e,
+                })
+              )
+            },
+          })
+        }
       }
     } else if (actionCurrent === 'Out') {
       // only one time and if last element
@@ -2421,7 +2435,7 @@ class Toggle {
       }
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
-        // off but without classes
+        // off from disable/destroy
         if (!self.disabled) {
           Xt.frame({
             el,
@@ -3248,8 +3262,15 @@ class Toggle {
     const self = this
     const options = self.options
     if (!self.disabled) {
-      // disable
       self.disabled = true
+      // off from disable/destroy
+      // need to deactivate on disable on some components (e.g.destroy overlay mobile, matches disable)
+      if (options.disableDeactivate) {
+        for (const el of self.elements.filter(x => self.hasCurrent({ el: x }))) {
+          self.eventOff({ el, force: true })
+        }
+      }
+      // disable
       self.container.setAttribute(`data-${self.componentName}-disabled`, '')
       for (const el of self.elements) {
         el.setAttribute(`data-${self.componentName}-disabled`, '')
@@ -3268,11 +3289,6 @@ class Toggle {
         for (const jump of self.targets) {
           jump.classList.remove('xt-jump')
         }
-      }
-      // special
-      for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-        self.specialAppendto({ actionCurrent: 'Out', el: tr, type: 'targets' })
-        self.specialClassBody({ actionCurrent: 'Out', type: 'targets' })
       }
       // intersection observer
       if (self.observer) {
@@ -3462,6 +3478,7 @@ Toggle.optionsDefaultSuper = {
     loop: true,
   },
   // other
+  disableDeactivate: false,
   scrollto: false,
   scrolltoInit: false,
   matches: false,

@@ -184,6 +184,7 @@ Drop.optionsDefault = {
     targetsInner: true,
   },
   // other
+  disableDeactivate: true,
   position: 'bottom-start',
   inset: false,
   positionInner: false,
