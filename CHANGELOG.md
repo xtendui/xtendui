@@ -1,3 +1,10 @@
+# [1.0.0-beta.46](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.45...v1.0.0-beta.46) (2021-10-05)
+
+
+### Bug Fixes
+
+* **javascript:** fix resize not triggering sometimes ([f5726e2](https://github.com/xtendui/xtendui/commit/f5726e2338193b6595417c0e0c632ac969c8b4b5))
+
 # [1.0.0-beta.45](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.44...v1.0.0-beta.45) (2021-10-04)
 
 
