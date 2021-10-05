@@ -1020,30 +1020,35 @@ if (typeof window !== 'undefined') {
       el,
       ns: `${ns}EventDelayFrame`,
     })
+    clearTimeout(Xt.dataStorage.get(window, `eventDelaySaveTimeout`))
     clearTimeout(Xt.dataStorage.get(el, `${ns}eventDelayTimeout`))
     if (func) {
       if (e) {
-        const container = document.documentElement
         let delay = e?.detail?.delay
         delay = duration ?? delay ? delay : Xt[`${e.type}Delay`]
-        let save
         if (e.type === 'resize') {
-          const w = window.innerWidth
-          const h = window.innerHeight
-          save = () => {
-            // save after a frame to execute all eventDelay
-            Xt.dataStorage.set(container, 'xtEventDelayWidth', w)
-            Xt.dataStorage.set(container, 'xtEventDelayHeight', h)
-          }
+          // we check also if outerWidth changes because on android doesn't change with ScrollTriggers
+          // we check also innerWidth for resize desktop (e.g. inspect and resize)
+          const w = window.innerWidth + window.outerWidth
+          const h = window.innerHeight + window.outerHeight
           // multiple calls check
           if (
             !e?.detail?.force && // not when setting delay on event
-            Xt.dataStorage.get(container, 'xtEventDelayWidth') === w && // when width changes
-            (matchMedia('(hover: none)').matches || Xt.dataStorage.get(container, 'xtEventDelayHeight') === h) // when height changes not touch
+            Xt.dataStorage.get(window, 'xtEventDelayWidth') === w && // when width changes
+            (matchMedia('(hover: none)').matches || Xt.dataStorage.get(window, 'xtEventDelayHeight') === h) // when height changes not touch
           ) {
             // only width no height because it changes on scroll on mobile
             return
           }
+          // save
+          Xt.dataStorage.set(
+            window,
+            `eventDelaySaveTimeout`,
+            setTimeout(() => {
+              Xt.dataStorage.set(window, 'xtEventDelayWidth', w)
+              Xt.dataStorage.set(window, 'xtEventDelayHeight', h)
+            }, Xt[`${e.type}Delay`])
+          )
         }
         // delay
         if (!delay) {
@@ -1051,9 +1056,6 @@ if (typeof window !== 'undefined') {
             el,
             ns: `${ns}EventDelayFrame`,
             func: () => {
-              if (save) {
-                save()
-              }
               func(e)
             },
           })
@@ -1062,9 +1064,6 @@ if (typeof window !== 'undefined') {
             el,
             `${ns}eventDelayTimeout`,
             setTimeout(() => {
-              if (save) {
-                save()
-              }
               func(e)
             }, delay)
           )
