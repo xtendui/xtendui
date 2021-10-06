@@ -7,7 +7,6 @@ import 'xtendui/src/overlay'
 const mountTest = ({ ref }) => {
   // vars
 
-  const drop = ref
   const overlay = ref.querySelector('[data-xt-overlay]')
   const self = Xt.get({ name: 'xt-overlay', el: overlay })
 
@@ -21,10 +20,6 @@ const mountTest = ({ ref }) => {
       console.log('TEST MOUNT this should be called once and should NOT be called on overlay close.')
     },
   })
-
-  // init
-
-  const selfDrop = new Xt.Drop(drop, {})
 
   // init
 
@@ -52,21 +47,21 @@ const mountTest = ({ ref }) => {
     })
   }
 
-  // off drop
+  // off
 
-  const offDrop = e => {
+  const off = e => {
     const tr = e.target
     // check because of event propagation
-    if (selfDrop.targets.includes(tr)) {
+    if (self.targets.includes(tr)) {
       // eslint-disable-next-line no-console
       console.log(
-        'TEST UNMOUNT 1 disableDeactivate when drop open and change page (browser location prev next) this should NOT be called.'
+        'TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
       )
     }
   }
 
-  for (const tr of selfDrop.targets) {
-    tr.addEventListener('off.xt.drop', offDrop)
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.overlay', off)
   }
 
   // resize
