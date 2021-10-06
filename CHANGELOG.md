@@ -1,3 +1,10 @@
+# [1.0.0-beta.47](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.46...v1.0.0-beta.47) (2021-10-06)
+
+
+### Bug Fixes
+
+* fake fix to release refactor didn't trigger semantic release added options.disableDeactivate on this commit 8ec207599de092c1375655bf3a873d907bfee4d9" ([1870898](https://github.com/xtendui/xtendui/commit/1870898fcaeb088ef11f3732370a99456bf2505a))
+
 # [1.0.0-beta.46](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.45...v1.0.0-beta.46) (2021-10-05)
 
 
