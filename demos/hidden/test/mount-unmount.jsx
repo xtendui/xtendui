@@ -11,44 +11,12 @@ export default function demo() {
 
   return (
     <div className="demo--mount-unmount-react" ref={ref}>
-      <div className="xt-list xt-list-3 items-center">
-        <div data-xt-drop-element>
-          <button
-            type="button"
-            className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
-            Drop
-          </button>
-
-          <div className="*** xt-drop *** p-4" data-xt-drop-target>
-            <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
-              <nav className="xt-list flex-col p-3">
-                <a
-                  href="#"
-                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </a>
-                <button
-                  type="button"
-                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                  Dolor sit
-                </button>
-                <button
-                  type="button"
-                  className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                  Amet
-                </button>
-              </nav>
-            </div>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600 on"
-          data-xt-overlay="{ targets: '#overlay--mount-unmount', duration: 500 }">
-          Overlay
-        </button>
-      </div>
+      <button
+        type="button"
+        className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600 on"
+        data-xt-overlay="{ targets: '#overlay--mount-unmount', duration: 500, matches: { '(max-width: 767px)': { disabled: true } } }">
+        Overlay
+      </button>
 
       <div className="xt-overlay group" id="overlay--mount-unmount">
         <div className="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
@@ -107,7 +75,6 @@ export default function demo() {
 const mountTest = ({ ref }) => {
   // vars
 
-  const drop = ref
   const overlay = ref.querySelector('[data-xt-overlay]')
   const self = Xt.get({ name: 'xt-overlay', el: overlay })
 
@@ -121,10 +88,6 @@ const mountTest = ({ ref }) => {
       console.log('TEST MOUNT this should be called once and should NOT be called on overlay close.')
     },
   })
-
-  // init
-
-  const selfDrop = new Xt.Drop(drop, {})
 
   // init
 
@@ -152,21 +115,21 @@ const mountTest = ({ ref }) => {
     })
   }
 
-  // off drop
+  // off
 
-  const offDrop = e => {
+  const off = e => {
     const tr = e.target
     // check because of event propagation
-    if (selfDrop.targets.includes(tr)) {
+    if (self.targets.includes(tr)) {
       // eslint-disable-next-line no-console
       console.log(
-        'TEST UNMOUNT 1 disableDeactivate when drop open and change page (browser location prev next) this should NOT be called.'
+        'TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
       )
     }
   }
 
-  for (const tr of selfDrop.targets) {
-    tr.addEventListener('off.xt.drop', offDrop)
+  for (const tr of self.targets) {
+    tr.addEventListener('off.xt.overlay', off)
   }
 
   // resize
