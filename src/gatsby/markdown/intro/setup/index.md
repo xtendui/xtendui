@@ -42,7 +42,7 @@ module.exports = {
     require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset'),
   ],
   purge: {
-    // put other purge content e.g.: './src/**/*.css', './src/**/*.js'
+    // put other purge content e.g.: './src/**/*.html', './src/**/*.css', './src/**/*.js'
     content: ['./node_modules/xtendui/src/*[!.css].js'],
   },
 }
