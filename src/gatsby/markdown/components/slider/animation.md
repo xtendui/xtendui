@@ -95,7 +95,6 @@ The queue option **controls sequential activations putting them in a queue**, or
   </demoinline>
 </demo>
 
-
 ## Css Animation
 
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.

@@ -20,7 +20,6 @@ On slider disable/enable the component **automatically add/remove the class `hid
 | Option                  | `disableDeactivate:Boolean`                              | `false`                     | Deactivate automatically on disable and destroy           |
 | Option                  | `hideDisable:Query`                          | `'[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]'`        | Container query for items to hide on disable              |
 
-
 </div>
 
 With nested selectors change the `elements` and `targets` query.

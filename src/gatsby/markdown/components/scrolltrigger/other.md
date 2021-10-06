@@ -16,7 +16,6 @@ Use [`ScrollTrigger.matchMedia`](https://greensock.com/docs/v3/Plugins/ScrollTri
 
 Example of **fade and sticky only on mobile** (**use narrow screen to see it in action**).
 
-
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-matchmedia"></div>
   <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/sticky-matchmedia"></div>
