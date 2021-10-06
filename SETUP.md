@@ -89,7 +89,7 @@ npm install @babel/core @babel/preset-env --save-dev
 
 Then in the root of your project set up polyfills with [babel.config.js](https://github.com/xtendui/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
 
-## Boilerplate
+## Global Styles
 
 Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles), [layout global styles](https://xtendui.com/components/global#global-styles), [typography global styles](https://xtendui.com/components/typography#global-styles).
 
