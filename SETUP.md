@@ -102,19 +102,19 @@ Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [li
 If you want to show a warning on unsupported browser you can use [browser update](https://browser-update.org/) and target exactly [supported browsers](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
 
 ```html
-  <script>
-    // put at the end of body tag https://browser-update.org/
-    var $buoop = {required:{e:79,f:67,o:50,s:11.1,c:63},api:2021.03 };
-    function $buo_f(){
-    var e = document.createElement("script");
-    e.src = "//browser-update.org/update.min.js";
-    e.async = true;
-    e.defer = true;
-    document.body.appendChild(e);
-    };
-    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-    catch(e){window.attachEvent("onload", $buo_f)}
-  </script>
+<script>
+  // put at the end of body tag https://browser-update.org/
+  var $buoop = {required:{e:79,f:67,o:50,s:11.1,c:63},api:2021.03 };
+  function $buo_f(){
+  var e = document.createElement("script");
+  e.src = "//browser-update.org/update.min.js";
+  e.async = true;
+  e.defer = true;
+  document.body.appendChild(e);
+  };
+  try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+  catch(e){window.attachEvent("onload", $buo_f)}
+</script>
 ```
 
 ## CDN
