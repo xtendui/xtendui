@@ -53,6 +53,8 @@ Try the demo [on a new page](/demos/components/scrollto/usage#anchor-2).
 
 Test clicking 2 should open overlay (bug with openauto and overlay on same element).
 
+Only anchor doesn't work when hash is already that..
+
 Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2).
 
 Test change page (browser location prev next).
