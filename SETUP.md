@@ -56,7 +56,7 @@ More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using
 
 #### Build
 
-Use [any compiler with postcss](https://github.com/postcss/postcss#usage), for examples checkout out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
+Use any compiler see [postcss usage](https://github.com/postcss/postcss#usage) or [tailwind installation](https://tailwindcss.com/docs/installation) or [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
 
 #### Customization
 
