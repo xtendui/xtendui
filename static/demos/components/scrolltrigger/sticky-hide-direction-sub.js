@@ -37,9 +37,10 @@ const mountSticky = ({ ref }) => {
       updateHide({ self })
     },
     onRefresh: self => {
+      sticky.classList.add('!transform-none')
       // need to update on refresh done
       requestAnimationFrame(() => {
-        sticky.classList.remove('scrolling-down')
+        sticky.classList.remove('!transform-none', 'scrolling-down')
         updateHide({ self, refresh: true })
       })
     },
