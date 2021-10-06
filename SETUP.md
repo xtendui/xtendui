@@ -54,6 +54,10 @@ Then you can use css with tailwind.
 
 More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors).
 
+#### Build
+
+Use [any compiler with postcss](https://github.com/postcss/postcss#usage), for examples checkout out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
+
 #### Customization
 
 You can [customize components css](https://xtendui.com/components/global/preset#customization), more info in Tailwind docs [tailwind theme](https://tailwindcss.com/docs/theme).
