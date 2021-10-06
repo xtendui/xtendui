@@ -44,7 +44,7 @@ Xt.mount({
 
     // hide depending on inner (always before pin ScrollTrigger)
 
-    const update = ({ self, refresh } = {}) => {
+    const updateHide = ({ self, refresh } = {}) => {
       if (self.isActive && self.direction < 0 && (refresh || sticky.classList.contains('scrolling-hide'))) {
         sticky.classList.remove('scrolling-hide')
         gsap.killTweensOf(sticky)
@@ -72,12 +72,12 @@ Xt.mount({
       end: () => `top top-=${sticky.offsetHeight}`,
       invalidateOnRefresh: true,
       onUpdate: self => {
-        update({ self })
+        updateHide({ self })
       },
       onRefresh: self => {
         // need to update on refresh done
         requestAnimationFrame(() => {
-          update({ self, refresh: true })
+          updateHide({ self, refresh: true })
         })
       },
     })
