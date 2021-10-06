@@ -52,11 +52,11 @@ Then you can use css with tailwind.
 @import "tailwindcss/utilities";
 ```
 
-More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors), [tailwind theme](https://tailwindcss.com/docs/theme).
+More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors).
 
 #### Customization
 
-You can [customize components css](https://xtendui.com/components/global/preset#customization).
+You can [customize components css](https://xtendui.com/components/global/preset#customization), more info in Tailwind docs [tailwind theme](https://tailwindcss.com/docs/theme).
 
 ## Javascript
 
