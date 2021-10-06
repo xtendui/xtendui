@@ -1,4 +1,4 @@
-If you want we have some boilerplate projects to start a project all ready to go! Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
+Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate) code for Encore, Gulp, Snowpack, Vite, Webpack ready to go!
 
 ## Installation
 
