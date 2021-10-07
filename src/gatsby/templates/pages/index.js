@@ -24,8 +24,8 @@ function Page() {
           </h3>
           <h1 className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl">
             <span className="opacity-50">
-              Xtend UI is a powerful frontend framework of tailwind components enhanced by vanilla js. It helps you build
-              interfaces with advanced interactions and animations.
+              Xtend UI is a powerful frontend framework of tailwind components enhanced by vanilla js. It helps you
+              build interfaces with advanced interactions and animations.
             </span>
           </h1>
           <div className="gatsby_home-main_social xt-list justify-center mt-6">
