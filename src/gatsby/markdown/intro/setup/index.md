@@ -82,7 +82,7 @@ import 'xtendui/src/toggle'
 
 #### Gsap
 
-This library uses [gsap](https://github.com/greensock/GSAP) for javascript animations.
+Xtend UI uses [gsap](https://github.com/greensock/GSAP) for javascript animations in some demos, but it's not included in the framework.
 
 ```sh
 npm install gsap@3 --save
