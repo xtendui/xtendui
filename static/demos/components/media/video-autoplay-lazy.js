@@ -30,12 +30,18 @@ const mountVideoAutoplayLazy = ({ ref }) => {
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (entry.intersectionRatio > 0 && video.paused) {
-        video.play()
+        // raf double because on change page or safari doesn't play video
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            video.play()
+          })
+        })
       } else if (entry.intersectionRatio == 0 && !video.paused) {
         video.pause()
       }
     }
   })
+
   observer.observe(video)
 
   // unmount
