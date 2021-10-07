@@ -24,20 +24,29 @@ const mountVideoAutoplayLazy = ({ ref }) => {
   // vars
 
   const video = ref
+  let paused = true
+  let playing = false // play is async need to check it before pause
+  let timeout
 
   // observer
 
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
-      if (entry.intersectionRatio > 0 && video.paused) {
-        // raf double because on change page or safari doesn't play video
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            video.play()
-          })
-        })
-      } else if (entry.intersectionRatio == 0 && !video.paused) {
+      if (entry.intersectionRatio > 0 && paused && !playing) {
+        paused = false
+        playing = video.play()
+        // fix safari safari doesn't play video when changing page
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
+          if (!video.playing) {
+            playing = video.play()
+          }
+        }, 50)
+      } else if (entry.intersectionRatio == 0 && !paused && playing) {
+        paused = true
+        playing = false
         video.pause()
+        clearTimeout(timeout)
       }
     }
   })
@@ -47,6 +56,7 @@ const mountVideoAutoplayLazy = ({ ref }) => {
   // unmount
 
   return () => {
+    clearTimeout(timeout)
     observer.disconnect()
   }
 }
