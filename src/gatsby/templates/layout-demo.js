@@ -18,6 +18,17 @@ function LayoutDemo({ children }) {
     <>
       <Helmet>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+          as="style"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
         <body
           className={`xt-body ${classes.textDefault()} xl:text-lg`}
           data-version={encodeURIComponent(site.siteMetadata.uuid)}
