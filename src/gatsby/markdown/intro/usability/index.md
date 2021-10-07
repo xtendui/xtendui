@@ -16,4 +16,6 @@ See [animation setup](/components/animation#setup) to **disable css and js anima
 
 - Media [iframe lazy loading](/components/media/addon#iframe-lazy).
 
-- Media [html5 video tag media matches](/components/media/addon#video-matches).
+- Media [html5 video autoplay lazy](/components/media/addon#video-autoplay-lazy).
+
+- Media [html5 video media matches](/components/media/addon#video-matches).

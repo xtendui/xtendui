@@ -13,12 +13,11 @@ function Video(props) {
                 className="xt-media-container bg-gray-200 mt-1 rounded-md border-3 border-gray-100 pb-[59.8%]"
                 key={z}>
                 <video
-                  className="xt-media object-cover object-center"
-                  preload="metadata"
+                  className="gatsby_site-video xt-media object-cover object-center"
+                  preload="none"
                   muted
                   playsInline
-                  loop
-                  autoPlay>
+                  loop>
                   <source type="video/mp4" src={files.item.file.url} />
                 </video>
               </div>

@@ -54,3 +54,33 @@ Xt.mount({
     })
   },
 })
+
+/* video autoplay lazy */
+
+Xt.mount({
+  matches: '.gatsby_site-video',
+  mount: ({ ref }) => {
+    // vars
+
+    const video = ref
+
+    // observer
+
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.intersectionRatio > 0 && video.paused) {
+          video.play()
+        } else if (entry.intersectionRatio == 0 && !video.paused) {
+          video.pause()
+        }
+      }
+    })
+    observer.observe(video)
+
+    // unmount
+
+    return () => {
+      observer.disconnect()
+    }
+  },
+})

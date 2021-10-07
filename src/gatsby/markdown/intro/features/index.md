@@ -109,7 +109,7 @@ The **typography component** has cssinjs customizzable styles for **automatic st
 
 #### Addon
 
-- The **media component** has some useful pagespeed optimization addon **iframe lazy loading** and **html5 video tag media matches**. See [media addon](/components/media/addon) for more info.
+- The **media component** has some useful pagespeed optimization addon **iframe lazy loading**, **html5 video autoplay lazy** and **html5 video media matches**. See [media addon](/components/media/addon) for more info.
 
 ## Form
 
