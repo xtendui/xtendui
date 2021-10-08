@@ -58,7 +58,7 @@ function Layout({ children, page, seo }) {
           <Header page={page} />
           <div className="gatsby_site-article gatsby_site-article--markdown flex flex-col flex-auto prose max-w-none bg-white">
             <DocFullscreen />
-            <main className="gatsby_site-main flex flex-col flex-auto" id="gatsby_open-full-inner">
+            <main className="gatsby_site-main flex flex-col flex-auto min-h-screen" id="gatsby_open-full-inner">
               {page && page.post ? <DocHead page={page} /> : null}
               <article className="gatsby_site-article_content flex-auto container py-10 md:py-20">
                 <div className="gatsby_site-article_content_inner">{children}</div>
