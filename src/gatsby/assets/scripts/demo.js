@@ -570,7 +570,7 @@ const btnOpenIframe = item => {
   const btn = item.closest('.gatsby_demo').querySelector('.button--open-iframe')
   if (iframe) {
     btn.closest('.button--open-iframe-container').classList.add('gatsby_with-iframe')
-    btn.setAttribute('href', iframe.getAttribute('data-src'))
+    btn.setAttribute('href', DOMPurify.sanitize(iframe.getAttribute('data-src')))
   } else {
     btn.closest('.button--open-iframe-container').classList.remove('gatsby_with-iframe')
   }
@@ -679,7 +679,7 @@ const initializeIframe = item => {
 }
 
 const loadIframe = iframe => {
-  iframe.setAttribute('src', iframe.getAttribute('data-src'))
+  iframe.setAttribute('src', DOMPurify.sanitize(iframe.getAttribute('data-src')))
 }
 
 const unloadIframe = iframe => {
