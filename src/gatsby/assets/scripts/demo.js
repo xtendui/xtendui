@@ -391,7 +391,7 @@ export const populateItem = item => {
 <div class="gatsby_demo_code off:hidden out:pointer-events-none on:block in:block out:block" data-xt-group="all">
   <div class="gatsby_demo_code_inner">
     <div class="gatsby_demo_code_tabs bg-code">
-      <div class="gatsby_demo_code_tabs_left xt-list xt-list-1.5"></div>
+      <div class="gatsby_demo_code_tabs_left !flex xt-list xt-list-1.5"></div>
       <div class="gatsby_demo_code_tabs_right xt-list xt-list-1.5">
         <div>
           <button type="button" class="xt-button button--clipboard ${classes.textInverse()} ${classes.buttonCodeWhite()}" aria-label="Copy to Clipboard" data-xt-tooltip-element data-xt-group="all">
