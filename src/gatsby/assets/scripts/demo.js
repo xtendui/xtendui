@@ -650,7 +650,7 @@ const initializeIframe = item => {
     const src = `/${item.getAttribute('data-iframe')}`
     item.append(
       Xt.node({
-        str: DOMPurify.sanitize(`<div class="gatsby_demo_item_body"><iframe data-src="${src}"></iframe></div>`),
+        str: `<div class="gatsby_demo_item_body"><iframe data-src="${src}"></iframe></div>`,
       })
     )
     item.querySelector('.gatsby_demo_item_body').append(
@@ -780,36 +780,28 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
   if (htmlSource) {
     inner.append(
       Xt.node({
-        str: DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`
-        ),
+        str: DOMPurify.sanitize(`<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`),
       })
     )
   }
   if (jsxSource) {
     inner.append(
       Xt.node({
-        str: DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`
-        ),
+        str: DOMPurify.sanitize(`<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`),
       })
     )
   }
   if (cssSource) {
     inner.append(
       Xt.node({
-        str: DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`
-        ),
+        str: DOMPurify.sanitize(`<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`),
       })
     )
   }
   if (jsSource) {
     inner.append(
       Xt.node({
-        str: DOMPurify.sanitize(
-          `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`
-        ),
+        str: DOMPurify.sanitize(`<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`),
       })
     )
   }
