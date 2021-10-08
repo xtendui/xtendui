@@ -1153,7 +1153,7 @@ export default function demo() {
           <div className="w-full md:w-6/12">
             <button
               type="button"
-              className="xt-card rounded-2xl rounded-2xl text-gray-900 xt-links-default bg-gray-100 *** transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-200 active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md ***">
+              className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100 *** transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-200 active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md ***">
               <div className="p-7 sm:p-9 text-base">
                 <div className="xt-h4">Default</div>
                 <p>
@@ -1168,7 +1168,7 @@ export default function demo() {
           <div className="w-full md:w-6/12">
             <button
               type="button"
-              className="xt-card rounded-2xl rounded-2xl text-white xt-links-inverse bg-primary-500 *** transition hover:text-white hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:text-white active:bg-primary-700 active:translate-y-0 active:shadow-md on:text-white on:bg-primary-700 on:translate-y-0 on:shadow-md ***">
+              className="xt-card rounded-2xl text-white xt-links-inverse bg-primary-500 *** transition hover:text-white hover:bg-primary-600 hover:border-primary-700 hover:-translate-y-1 hover:shadow-lg active:text-white active:bg-primary-700 active:translate-y-0 active:shadow-md on:text-white on:bg-primary-700 on:translate-y-0 on:shadow-md ***">
               <div className="p-7 sm:p-9 text-base">
                 <div className="xt-h4">Primary</div>
                 <p>
