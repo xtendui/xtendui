@@ -792,7 +792,7 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <button
             type="button"
-            class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} *** ${grayAnim()} ***">
+            class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()} *** ${grayAnim()} ***">
             <div class="${classes.cardMd()}">
               <div class="xt-h4">Default</div>
               <p>
@@ -807,7 +807,7 @@ const html = /* HTML */ `
         <div class="w-full md:w-6/12">
           <button
             type="button"
-            class="xt-card rounded${classes.cardRadius()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${primaryAnim()} ***">
+            class="xt-card rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${primaryAnim()} ***">
             <div class="${classes.cardMd()}">
               <div class="xt-h4">Primary</div>
               <p>
