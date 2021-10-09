@@ -180,6 +180,8 @@ You can create **DOM node from string** with this method.
 
 </div>
 
+> **Do not populate `str` with data from a DOM node** because it will be interpreted as HTML and can lead to a cross-site scripting vulnerability.
+
 ## Xt.visible
 
 You can **check if node is visible with `display`** with this method.
