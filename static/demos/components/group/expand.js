@@ -1,29 +1,11 @@
 import { Xt } from 'xtendui'
 
-/* mountExpands */
-
-const mountExpands = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-list',
-    mount: ({ ref }) => {
-      return mountExpand({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
 /* mountExpand */
 
 const mountExpand = ({ ref }) => {
   // vars
 
-  const list = ref
+  const list = ref.querySelector('.xt-list')
 
   // on
 
@@ -62,12 +44,12 @@ const mountExpand = ({ ref }) => {
 Xt.mount({
   matches: '.demo--group-expand',
   mount: ({ ref }) => {
-    const unmountExpands = mountExpands({ ref })
+    const unmountExpand = mountExpand({ ref })
 
     // unmount
 
     return () => {
-      unmountExpands()
+      unmountExpand()
     }
   },
 })

@@ -1,29 +1,11 @@
 import { Xt } from 'xtendui'
 
-/* mountJumptocontents */
-
-const mountJumptocontents = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '.jumptocontent',
-    mount: ({ ref }) => {
-      return mountJumptocontent({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
 /* mountJumptocontent */
 
 const mountJumptocontent = ({ ref }) => {
   // vars
 
-  const jumptocontent = ref
+  const jumptocontent = ref.querySelector('.jumptocontent')
 
   // focusIn
 
@@ -50,12 +32,12 @@ const mountJumptocontent = ({ ref }) => {
 Xt.mount({
   matches: '.demo--jumptocontent',
   mount: ({ ref }) => {
-    const unmountJumptocontents = mountJumptocontents({ ref })
+    const unmountJumptocontent = mountJumptocontent({ ref })
 
     // unmount
 
     return () => {
-      unmountJumptocontents()
+      unmountJumptocontent()
     }
   },
 })

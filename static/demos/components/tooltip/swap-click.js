@@ -1,30 +1,12 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
-/* mountTooltips */
-
-const mountTooltips = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '[data-xt-tooltip]',
-    mount: ({ ref }) => {
-      return mountTooltip({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
 /* mountTooltip */
 
 const mountTooltip = ({ ref }) => {
   // vars
 
-  const tooltip = ref
+  const tooltip = ref.querySelector('[data-xt-tooltip]')
   const self = Xt.get({ name: 'xt-tooltip', el: tooltip })
   const element = self.elements[0]
 
@@ -76,12 +58,12 @@ const mountTooltip = ({ ref }) => {
 Xt.mount({
   matches: '.demo--tooltip-swap-click',
   mount: ({ ref }) => {
-    const unmountTooltips = mountTooltips({ ref })
+    const unmountTooltip = mountTooltip({ ref })
 
     // unmount
 
     return () => {
-      unmountTooltips()
+      unmountTooltip()
     }
   },
 })

@@ -4,27 +4,9 @@ import 'xtendui/src/drop'
 /* mountDrops */
 
 const mountDrops = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '[data-xt-drop]',
-    mount: ({ ref }) => {
-      return mountDrop({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
-/* mountDrop */
-
-const mountDrop = ({ ref }) => {
   // vars
 
-  const drop = ref
+  const drop = ref.querySelector('[data-xt-drop]')
   const self = Xt.get({ name: 'xt-drop', el: drop })
 
   // off

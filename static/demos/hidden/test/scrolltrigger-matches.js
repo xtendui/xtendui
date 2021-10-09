@@ -7,27 +7,9 @@ import 'xtendui/src/overlay'
 /* mountTest */
 
 const mountTest = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-sticky',
-    mount: ({ ref }) => {
-      return mountSticky({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
-/* mountSticky */
-
-const mountSticky = ({ ref }) => {
   // vars
 
-  const sticky = ref
+  const sticky = ref.querySelector('.xt-sticky')
   const overlay = ref.querySelector('[data-xt-overlay]')
   const self = Xt.get({ name: 'xt-overlay', el: overlay })
 
