@@ -6,18 +6,6 @@ gsap.registerPlugin(ScrollTrigger)
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // init
-
-  fade({ ref })
-
-  // unmount
-
-  return () => {}
-}
-
-/* fade */
-
-const fade = ({ ref }) => {
   // check if already done for content added dinamically
 
   const items = ref.querySelectorAll('.xt-card:not(.faded)')
@@ -90,6 +78,10 @@ const fade = ({ ref }) => {
     },
   })
   /***/
+
+  // unmount
+
+  return () => {}
 }
 
 /* mount */
