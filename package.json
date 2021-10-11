@@ -1,7 +1,7 @@
 {
   "name": "xtendui",
   "version": "1.0.0-beta.47",
-  "description": "Xtend UI is a powerful frontend library to create advanced interfaces with custom tailwind components and advanced interactions and animations.",
+  "description": "Xtend UI is a powerful frontend library of tailwind components enhanced by vanilla js. It helps you build interfaces with advanced interactions and animations.",
   "homepage": "https://xtendui.com/",
   "license": "MIT",
   "author": "Riccardo Caroli <beaver82+xtendui@gmail.com>",
