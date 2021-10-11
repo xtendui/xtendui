@@ -5,64 +5,48 @@ import { Xt } from 'xtendui'
 const mountFormLoaders = ({ ref }) => {
   // vars
 
+  const loadables = ref.querySelectorAll('button[type="submit"], .xt-loadable')
   const loaderTemplate = ref.querySelector('[data-node-loader-template]')
 
-  // mount granularly
+  for (const loadable of loadables) {
+    // vars
 
-  Xt.mount({
-    root: ref,
-    matches: 'button[type="submit"], .xt-loadable',
-    mount: ({ ref }) => {
-      return mountFormLoader({ ref, loaderTemplate })
-    },
-  })
+    const form = loadable.form || loadable.closest('form')
 
-  // unmount
+    // submit
 
-  return () => {}
-}
+    const submit = () => {
+      loadable.classList.add('xt-loading')
+    }
 
-/* mountFormLoader */
+    if (!loadable.classList.contains('xt-loadable-ignore')) {
+      form.addEventListener('submit', submit)
+    }
 
-const mountFormLoader = ({ ref, loaderTemplate }) => {
-  // vars
+    // reset
+    // if you want to deactivate xt-loading on ajax use form.dispatchEvent(new CustomEvent('reset'))
 
-  const loadable = ref
-  const form = loadable.form || loadable.closest('form')
+    const reset = () => {
+      loadable.classList.remove('xt-loading')
+    }
 
-  // submit
+    if (!loadable.classList.contains('xt-loadable-ignore')) {
+      form.addEventListener('reset', reset)
+    }
 
-  const submit = () => {
-    loadable.classList.add('xt-loading')
-  }
+    // inject
 
-  if (!loadable.classList.contains('xt-loadable-ignore')) {
-    form.addEventListener('submit', submit)
-  }
-
-  // reset
-  // if you want to deactivate xt-loading on ajax use form.dispatchEvent(new CustomEvent('reset'))
-
-  const reset = () => {
-    loadable.classList.remove('xt-loading')
-  }
-
-  if (!loadable.classList.contains('xt-loadable-ignore')) {
-    form.addEventListener('reset', reset)
-  }
-
-  // inject
-
-  if (loadable.classList.contains('xt-loadable')) {
-    loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
-  } else {
-    loadable.classList.add('xt-loadable')
-    const text = loadable.innerHTML
-    loadable.innerHTML = ''
-    loadable.append(Xt.node({ str: `<span class="xt-loadable-content"></span>` }))
-    loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
-    const content = loadable.querySelector('.xt-loadable-content')
-    content.innerHTML = text
+    if (loadable.classList.contains('xt-loadable')) {
+      loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
+    } else {
+      loadable.classList.add('xt-loadable')
+      const text = loadable.innerHTML
+      loadable.innerHTML = ''
+      loadable.append(Xt.node({ str: `<span class="xt-loadable-content"></span>` }))
+      loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
+      const content = loadable.querySelector('.xt-loadable-content')
+      content.innerHTML = text
+    }
   }
 
   // unmount

@@ -10,7 +10,7 @@ const mountTest = ({ ref }) => {
   const overlay = ref.querySelector('[data-xt-overlay]')
   const self = Xt.get({ name: 'xt-overlay', el: overlay })
 
-  // mount
+  // mount granularly
 
   Xt.mount({
     root: ref,

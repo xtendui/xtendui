@@ -519,18 +519,6 @@ const mountMedia = ({ ref }) => {
 /* mountFade */
 
 const mountFade = ({ ref }) => {
-  // init
-
-  fade({ ref })
-
-  // unmount
-
-  return () => {}
-}
-
-/* fade */
-
-const fade = ({ ref }) => {
   // vars
 
   const scrollY = 15
@@ -571,6 +559,10 @@ const fade = ({ ref }) => {
     },
   })
   /***/
+
+  // unmount
+
+  return () => {}
 }
 
 /* mount */

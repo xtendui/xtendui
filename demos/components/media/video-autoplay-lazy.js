@@ -1,29 +1,11 @@
 import { Xt } from 'xtendui'
 
-/* mountVideosAutoplayLazy */
-
-const mountVideosAutoplayLazy = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: 'video[preload="none"]',
-    mount: ({ ref }) => {
-      return mountVideoAutoplayLazy({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
 /* mountVideoAutoplayLazy */
 
 const mountVideoAutoplayLazy = ({ ref }) => {
   // vars
 
-  const video = ref
+  const video = ref.querySelector('video[preload="none"]')
   let paused = true
   let playing = false // play is async need to check it before pause
   let timeout
@@ -66,12 +48,12 @@ const mountVideoAutoplayLazy = ({ ref }) => {
 Xt.mount({
   matches: '.demo--media-video-autoplay-lazy',
   mount: ({ ref }) => {
-    const unmountVideosAutoplayLazy = mountVideosAutoplayLazy({ ref })
+    const unmountVideoAutoplayLazy = mountVideoAutoplayLazy({ ref })
 
     // unmount
 
     return () => {
-      unmountVideosAutoplayLazy()
+      unmountVideoAutoplayLazy()
     }
   },
 })

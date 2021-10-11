@@ -90,30 +90,12 @@ export default function demo() {
   )
 }
 
-/* mountStatuses */
-
-const mountStatuses = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-slider',
-    mount: ({ ref }) => {
-      return mountStatus({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
 /* mountStatus */
 
 const mountStatus = ({ ref }) => {
   // vars
 
-  const slider = ref
+  const slider = ref.querySelector('.xt-slider')
   const self = Xt.get({ name: 'xt-slider', el: slider })
   const current = slider.querySelector('[data-xt-slider-status-current]')
   const total = slider.querySelector('[data-xt-slider-status-total]')
@@ -187,13 +169,13 @@ const mountSwitcher = ({ ref }) => {
 /* mount */
 
 const mount = ({ ref }) => {
-  const unmountStatuses = mountStatuses({ ref })
+  const unmountStatus = mountStatus({ ref })
   const unmountSwitcher = mountSwitcher({ ref })
 
   // unmount
 
   return () => {
-    unmountStatuses()
+    unmountStatus()
     unmountSwitcher()
   }
 }

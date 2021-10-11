@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react'
-import { Xt } from 'xtendui'
 
 export default function demo() {
   const ref = useRef()
@@ -19,30 +18,13 @@ export default function demo() {
   )
 }
 
-/* mountVideosMatches */
-
-const mountVideosMatches = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: 'video source[data-src]',
-    mount: ({ ref }) => {
-      return mountVideoMatches({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
 /* mountVideoMatches */
 
 const mountVideoMatches = ({ ref }) => {
   // vars
 
-  const video = ref.closest('video')
+  const source = ref.querySelector('video source[data-src]')
+  const video = source.closest('video')
 
   // resize
 
@@ -81,11 +63,11 @@ const mountVideoMatches = ({ ref }) => {
 /* mount */
 
 const mount = ({ ref }) => {
-  const unmountVideosMatches = mountVideosMatches({ ref })
+  const unmountVideoMatches = mountVideoMatches({ ref })
 
   // unmount
 
   return () => {
-    unmountVideosMatches()
+    unmountVideoMatches()
   }
 }

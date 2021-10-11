@@ -1,30 +1,12 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
-/* mountToggles */
-
-const mountToggles = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '[data-xt-toggle]',
-    mount: ({ ref }) => {
-      return mountToggle({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
 /* mountToggle */
 
 const mountToggle = ({ ref }) => {
   // vars
 
-  const toggle = ref
+  const toggle = ref.querySelector('[data-xt-toggle]')
   const self = Xt.get({ name: 'xt-toggle', el: toggle })
 
   // off
@@ -57,12 +39,12 @@ const mountToggle = ({ ref }) => {
 Xt.mount({
   matches: '.demo--toggle-reset-to-current',
   mount: ({ ref }) => {
-    const unmountToggles = mountToggles({ ref })
+    const unmountToggle = mountToggle({ ref })
 
     // unmount
 
     return () => {
-      unmountToggles()
+      unmountToggle()
     }
   },
 })
