@@ -70,12 +70,6 @@ Xt.mount({
     const mode = 'html'
     const currentMode = localStorage.getItem('mode')
 
-    // default
-
-    if (!currentMode) {
-      localStorage.setItem('mode', mode)
-    }
-
     // click
 
     const click = ({ switchDemos = true } = {}) => {
@@ -100,7 +94,11 @@ Xt.mount({
 
     // init
 
-    if (currentMode === mode) {
+    if (!currentMode) {
+      localStorage.setItem('mode', mode)
+    }
+
+    if (!currentMode || currentMode === mode) {
       click({ switchDemos: false })
     }
   },
