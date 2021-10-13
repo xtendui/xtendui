@@ -9,8 +9,19 @@ function DemoInline(props) {
   // vanilla
   const object = require(`static/${src}.html.js`).object
   const html = object.html
+  let hasCss
+  let hasJs
   try {
+    // must be first try/catch or yarn serve error
     require(`static/${src}.js`).default
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
+  try {
+    hasCss = require.resolve(`static/${src}.css`)
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
+  try {
+    hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   // react
@@ -51,12 +62,16 @@ function DemoInline(props) {
             data-lang="jsx"
             data-fetch={`/${src}.jsx`}
           />
-          <script
-            type="text/plain"
-            className="gatsby_demo_source xt-ignore hidden"
-            data-lang="css"
-            data-fetch={`/${src}.css`}
-          />
+          {hasCss ? (
+            <script
+              type="text/plain"
+              className="gatsby_demo_source xt-ignore hidden"
+              data-lang="css"
+              data-fetch={`/${src}.css`}
+            />
+          ) : (
+            ''
+          )}
         </div>
       ) : mode === 'html' ? (
         <div className={`gatsby_demo_item_body`}>
@@ -67,18 +82,26 @@ function DemoInline(props) {
             dangerouslySetInnerHTML={{ __html: html }}
           />
           <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: html }} />
-          <script
-            type="text/plain"
-            className="gatsby_demo_source xt-ignore hidden"
-            data-lang="css"
-            data-fetch={`/${src}.css`}
-          />
-          <script
-            type="text/plain"
-            className="gatsby_demo_source xt-ignore hidden"
-            data-lang="js"
-            data-fetch={`/${src}.js`}
-          />
+          {hasCss ? (
+            <script
+              type="text/plain"
+              className="gatsby_demo_source xt-ignore hidden"
+              data-lang="css"
+              data-fetch={`/${src}.css`}
+            />
+          ) : (
+            ''
+          )}
+          {hasJs ? (
+            <script
+              type="text/plain"
+              className="gatsby_demo_source xt-ignore hidden"
+              data-lang="js"
+              data-fetch={`/${src}.js`}
+            />
+          ) : (
+            ''
+          )}
         </div>
       ) : null}
     </div>

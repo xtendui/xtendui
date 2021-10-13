@@ -15,8 +15,19 @@ function DemoIframe(props) {
   // vanilla
   const object = require(`static/${src}.html.js`).object
   const html = object.html
+  let hasCss
+  let hasJs
   try {
+    // must be first try/catch or yarn serve error
     require(`static/${src}.js`).default
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
+  try {
+    hasCss = require.resolve(`static/${src}.css`)
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
+  try {
+    hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   // react
@@ -46,9 +57,9 @@ function DemoIframe(props) {
           // populate
           if (window !== window.parent) {
             if (mode === 'react') {
-              window.parent.initIframe(src, false, `/${src}.jsx`, `/${src}.css`)
+              window.parent.initIframe(src, null, `/${src}.jsx`, hasCss ? `/${src}.css` : null)
             } else if (mode === 'html') {
-              window.parent.initIframe(src, html, false, `/${src}.css`, `/${src}.js`)
+              window.parent.initIframe(src, html, null, hasCss ? `/${src}.css` : null, hasJs ? `/${src}.js` : null)
             }
             // close auto (e.g. overlay self when switching mode)
             dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
