@@ -66,7 +66,7 @@ class Groupnumber {
     self.steps = self.container.querySelectorAll(options.steps)
     // steps
     for (const button of self.steps) {
-      const buttonHandler = Xt.dataStorage.put(button, `change/${self.ns}`, self.eventChange.bind(self, { button }))
+      const buttonHandler = Xt.dataStorage.put(button, `click/${self.ns}`, self.eventChange.bind(self, { button }))
       button.addEventListener('click', buttonHandler)
     }
     // inputs
@@ -75,7 +75,7 @@ class Groupnumber {
       for (const input of self.inputs) {
         const inputHandler = Xt.dataStorage.put(
           input,
-          `${options.events.on}/${self.ns}`,
+          `${options.events.input}/${self.ns}`,
           self.eventChange.bind(self, {})
         )
         for (const event of events) {
@@ -139,6 +139,11 @@ class Groupnumber {
     }
     // trigger external events and skip internal events
     if (!e?.detail?.skip) {
+      if (e) {
+        e.preventDefault()
+        // prevent same listener because we retrigger 'change' after
+        e.stopImmediatePropagation()
+      }
       // inputs
       for (const input of self.inputs) {
         const inputStep = input.getAttribute('step')
@@ -213,6 +218,7 @@ class Groupnumber {
     input.value = val
     // trigger external events and skip internal events
     if (!self.initial) {
+      input.dispatchEvent(new Event('input', { detail: { skip: true } })) // needed to change value (e.g. x-model)
       input.dispatchEvent(new CustomEvent('change', { detail: { skip: true } }))
     }
   }
@@ -279,14 +285,20 @@ class Groupnumber {
    */
   destroy() {
     const self = this
+    const options = self.options
     // remove events
     for (const button of self.steps) {
-      const buttonHandler = Xt.dataStorage.get(button, `change/${self.ns}`)
+      const buttonHandler = Xt.dataStorage.get(button, `click/${self.ns}`)
       button.removeEventListener('click', buttonHandler)
     }
-    for (const input of self.inputs) {
-      const inputHandler = Xt.dataStorage.get(input, `change/${self.ns}`)
-      input.removeEventListener('change', inputHandler)
+    const events = options.events?.input ? [...options.events.input.split(' ')] : []
+    if (events.length) {
+      for (const input of self.inputs) {
+        const inputHandler = Xt.dataStorage.get(input, `${options.events.input}/${self.ns}`)
+        for (const event of events) {
+          input.removeEventListener(event, inputHandler)
+        }
+      }
     }
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)

@@ -50,7 +50,7 @@ Here are the main **javascript options**.
 | Option                    | `validate({ val, step }):Function\|false`                          | `<Function>`        | Validate value on input change             |
 | Option                    | `min:Number`                          | `1`        | Default value for minimum limit            |
 | Option                    | `max:Number`                          | `Infinity`        | Default value for maximum limit            |
-| Option                    | `events.input:String\|false`                          | `'change'`        | List of space separated events on input to limit and validate, return `Number`            |
+| Option                    | `events.input:String\|false`                          | `'change'`        | List of space separated events on input to limit and validate            |
 | Option                    | `inputs:Query`                          | `'input[type="number"]'`        | Inputs query            |
 | Option                    | `steps:Query`                          | `'[data-xt-step]'`        | Steps query            |
 
@@ -102,7 +102,8 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Event                   | `change`                        | `input` | Value change event redispatched after validation             |
+| Event                   | `input`                        | `input` | Value of input changed             |
+| Event                   | `change`                        | `input` | Value of input changed             |
 | Event                   | `init.xt.groupnumber`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.groupnumber`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.groupnumber`           | `container` | Destroy event             |
