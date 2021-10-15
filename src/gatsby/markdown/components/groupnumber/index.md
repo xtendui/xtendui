@@ -50,9 +50,10 @@ Here are the main **javascript options**.
 | Option                    | `validate({ val, step }):Function\|false`                          | `<Function>`        | Validate value on input change             |
 | Option                    | `min:Number`                          | `1`        | Default value for minimum limit            |
 | Option                    | `max:Number`                          | `Infinity`        | Default value for maximum limit            |
-| Option                    | `events.input:String\|false`                          | `'change'`        | List of space separated events on input to limit and validate            |
 | Option                    | `inputs:Query`                          | `'input[type="number"]'`        | Inputs query            |
 | Option                    | `steps:Query`                          | `'[data-xt-step]'`        | Steps query            |
+| Option                    | `events.input:String\|false`                          | `'change'`        | List of space separated events on input to listen            |
+| Option                    | `events.steps:String\|false`                          | `'click'`        | List of space separated events on steps to listen            |
 
 </div>
 

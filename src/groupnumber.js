@@ -65,20 +65,29 @@ class Groupnumber {
     self.inputs = self.container.querySelectorAll(options.inputs)
     self.steps = self.container.querySelectorAll(options.steps)
     // steps
-    for (const button of self.steps) {
-      const buttonHandler = Xt.dataStorage.put(button, `click/${self.ns}`, self.eventChange.bind(self, { button }))
-      button.addEventListener('click', buttonHandler)
+    const eventsSteps = options.events?.steps ? [...options.events.steps.split(' ')] : []
+    if (eventsSteps.length) {
+      for (const step of self.steps) {
+        const stepHandler = Xt.dataStorage.put(
+          step,
+          `${options.events.steps}/${self.ns}`,
+          self.eventChange.bind(self, { button: step })
+        )
+        for (const event of eventsSteps) {
+          step.addEventListener(event, stepHandler)
+        }
+      }
     }
     // inputs
-    const events = options.events?.input ? [...options.events.input.split(' ')] : []
-    if (events.length) {
+    const eventsInput = options.events?.input ? [...options.events.input.split(' ')] : []
+    if (eventsInput.length) {
       for (const input of self.inputs) {
         const inputHandler = Xt.dataStorage.put(
           input,
           `${options.events.input}/${self.ns}`,
           self.eventChange.bind(self, {})
         )
-        for (const event of events) {
+        for (const event of eventsInput) {
           input.addEventListener(event, inputHandler)
         }
       }
@@ -287,15 +296,20 @@ class Groupnumber {
     const self = this
     const options = self.options
     // remove events
-    for (const button of self.steps) {
-      const buttonHandler = Xt.dataStorage.get(button, `click/${self.ns}`)
-      button.removeEventListener('click', buttonHandler)
+    const eventsSteps = options.events?.steps ? [...options.events.steps.split(' ')] : []
+    if (eventsSteps.length) {
+      for (const step of self.steps) {
+        const stepHandler = Xt.dataStorage.get(step, `${options.events.steps}/${self.ns}`)
+        for (const event of eventsSteps) {
+          step.removeEventListener(event, stepHandler)
+        }
+      }
     }
-    const events = options.events?.input ? [...options.events.input.split(' ')] : []
-    if (events.length) {
+    const eventsInput = options.events?.input ? [...options.events.input.split(' ')] : []
+    if (eventsInput.length) {
       for (const input of self.inputs) {
         const inputHandler = Xt.dataStorage.get(input, `${options.events.input}/${self.ns}`)
-        for (const event of events) {
+        for (const event of eventsInput) {
           input.removeEventListener(event, inputHandler)
         }
       }
@@ -331,13 +345,14 @@ Groupnumber.optionsDefault = {
   // quantity
   min: '-Infinity',
   max: 'Infinity',
-  // event
-  events: {
-    input: 'change',
-  },
   // elements
   inputs: 'input[type="number"]',
   steps: '[data-xt-step]',
+  // event
+  events: {
+    input: 'change',
+    steps: 'click',
+  },
 }
 
 //
