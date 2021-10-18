@@ -7,27 +7,27 @@ const mountVideoAutoplayLazy = ({ ref }) => {
 
   const video = ref.querySelector('video[preload="none"]')
   let paused = true
-  let playing = false // play is async need to check it before pause
+  let playing = false
   let timeout
 
   // observer
 
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
-      if (entry.intersectionRatio > 0 && paused && !playing) {
-        paused = false
-        playing = video.play()
-        // fix safari safari doesn't play video when changing page
+      if (entry.intersectionRatio > 0 && paused) {
         clearTimeout(timeout)
+        // fix safari doesn't play video when changing page
         timeout = setTimeout(() => {
-          if (!video.playing) {
-            playing = video.play()
-          }
+          paused = false
+          playing = video.play()
         }, 50)
-      } else if (entry.intersectionRatio == 0 && !paused && playing) {
+      } else if (entry.intersectionRatio == 0 && !paused) {
         paused = true
-        playing = false
-        video.pause()
+        playing.then(() => {
+          // play is async need to check it before pause
+          video.pause()
+          playing = false
+        })
         clearTimeout(timeout)
       }
     }
