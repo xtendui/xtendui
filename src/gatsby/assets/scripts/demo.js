@@ -439,6 +439,9 @@ export const populateItem = item => {
     duration: 300,
   })
   swapClick({ ref: btnClipboard.parentNode })
+  // populateTabs
+  // need to reset or on iframe reload it doesn't reload code
+  container.removeAttribute('data-code-fetched')
   // .button--show-code reinit
   const self = Xt.get({ name: 'xt-toggle', el: container.querySelector('.gatsby_demo_inner') })
   if (self) {
