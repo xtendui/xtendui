@@ -16,13 +16,13 @@ class Infinitescroll {
    */
   #optionsCustom
   #optionsDefault
-  #componentName
   #componentNs
   #itemsFake
   #url
   #scrollResume
   #scrollTopOld
 
+  componentName
   uniqueId
   ns
   options
@@ -46,8 +46,8 @@ class Infinitescroll {
     const self = this
     self.container = object
     self.#optionsCustom = optionsCustom
-    self.#componentName = self.constructor.componentName
-    self.#componentNs = self.#componentName.replace('-', '.')
+    self.componentName = self.constructor.componentName
+    self.#componentNs = self.componentName.replace('-', '.')
     // init
     self.#initVars()
     self.#initLogic()
@@ -63,7 +63,7 @@ class Infinitescroll {
   #initVars() {
     const self = this
     // options
-    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.#componentName]])
+    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
     self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
     // vars
     const options = self.options
@@ -81,10 +81,10 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // set self
-    Xt.set({ name: self.#componentName, el: self.container, self })
+    Xt.set({ name: self.componentName, el: self.container, self })
     // namespace
     self.uniqueId = self.uniqueId ?? Xt.uniqueId()
-    self.ns = `${self.#componentName}-${self.uniqueId}`
+    self.ns = `${self.componentName}-${self.uniqueId}`
     // vars
     self.disabled = false
     // enable first for proper initial activation
@@ -131,14 +131,14 @@ class Infinitescroll {
       el: self.container,
       func: () => {
         // initialized class
-        self.container.setAttribute(`data-${self.#componentName}-init`, '')
+        self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
         self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
           // eslint-disable-next-line no-console
-          console.log(`${self.#componentName} init`, self)
+          console.log(`${self.componentName} init`, self)
         }
       },
       ns: `${self.ns}Init`,
@@ -555,9 +555,9 @@ class Infinitescroll {
       trigger.removeEventListener(options.events.on, triggerHandler)
     }
     // initialized class
-    self.container.removeAttribute(`data-${self.#componentName}-init`)
+    self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove({ name: self.#componentName, el: self.container })
+    Xt.remove({ name: self.componentName, el: self.container })
     // dispatch event
     self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
     // delete

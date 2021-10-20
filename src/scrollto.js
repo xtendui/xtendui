@@ -11,6 +11,29 @@ import { Xt } from './xt'
  */
 class Scrollto {
   /**
+   * fields
+   */
+  #optionsCustom
+  #optionsDefault
+  #componentNs
+  #classes
+
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled
+  container
+  hashchange
+  target
+  scrollers
+  scroller
+  position
+  space
+  duration
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
@@ -19,12 +42,12 @@ class Scrollto {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self.#optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self.#componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
-    self.initLogic()
+    self.#initVars()
+    self.#initLogic()
   }
 
   //
@@ -34,17 +57,17 @@ class Scrollto {
   /**
    * init vars
    */
-  initVars() {
+  #initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  #initLogic() {
     const self = this
     const options = self.options
     // set self
@@ -55,18 +78,18 @@ class Scrollto {
     // vars
     self.initial = true
     // class
-    self.classes = options.class ? [...options.class.split(' ')] : []
+    self.#classes = options.class ? [...options.class.split(' ')] : []
     // click
-    const changeHandler = Xt.dataStorage.put(self.container, `click/${self.ns}`, self.eventChange.bind(self, {}))
+    const changeHandler = Xt.dataStorage.put(self.container, `click/${self.ns}`, self.#eventChange.bind(self, {}))
     self.container.addEventListener('click', changeHandler)
     // scrollto
-    const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.eventScrollto.bind(self, {}))
-    addEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
+    const scrolltoHandler = Xt.dataStorage.put(window, `scrollto/${self.ns}`, self.#eventScrollto.bind(self, {}))
+    addEventListener(`scrollto.trigger.${self.#componentNs}`, scrolltoHandler, true)
     // hash
     const hashHandler = Xt.dataStorage.put(
       window,
       `hashchange/${self.ns}`,
-      self.eventChange.bind(self).bind(self, { hashchange: true })
+      self.#eventChange.bind(self).bind(self, { hashchange: true })
     )
     addEventListener('hashchange', hashHandler)
     // scroll
@@ -76,7 +99,7 @@ class Scrollto {
         const scrollHandler = Xt.dataStorage.put(
           scroller,
           `scroll/${self.ns}`,
-          self.eventActivationHandler.bind(self).bind(self, { scroller })
+          self.#eventActivationHandler.bind(self).bind(self, { scroller })
         )
         const events = options.events ? [...options.events.split(' ')] : []
         if (scroller === document.scrollingElement) {
@@ -96,11 +119,11 @@ class Scrollto {
       ns: `${self.ns}Init`,
       func: () => {
         // initial needs to be inside raf for content added (e.g. react)
-        self.initStart()
+        self.#initStart()
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -114,14 +137,14 @@ class Scrollto {
   /**
    * init start
    */
-  initStart() {
+  #initStart() {
     const self = this
     // initial scrollto
-    self.eventStart()
+    self.#eventStart()
     // initial activation
     for (const scroller of self.scrollers) {
       if (scroller) {
-        self.eventActivationHandler({ scroller })
+        self.#eventActivationHandler({ scroller })
       }
     }
   }
@@ -133,7 +156,7 @@ class Scrollto {
   /**
    * start trigger current location hash
    */
-  eventStart() {
+  #eventStart() {
     const self = this
     const options = self.options
     // hash trigger
@@ -141,7 +164,7 @@ class Scrollto {
     if (hash) {
       const el = self.container.querySelector(options.anchors.replace('{hash}', hash))
       if (el) {
-        self.eventChange({ el })
+        self.#eventChange({ el })
       }
     }
   }
@@ -153,7 +176,7 @@ class Scrollto {
    * @param {Node|HTMLElement|EventTarget|Window} params.tr target
    * @param {Event} e
    */
-  eventScrollto({ el, tr } = {}, e) {
+  #eventScrollto({ el, tr } = {}, e) {
     const self = this
     const options = self.options
     // element
@@ -176,7 +199,7 @@ class Scrollto {
           self.target.dispatchEvent(new CustomEvent('openauto.trigger.xt'))
         }
         // logic
-        self.eventScrolltoLogic()
+        self.#eventScrolltoLogic()
       }
     }
   }
@@ -184,7 +207,7 @@ class Scrollto {
   /**
    * scrollto logic
    */
-  eventScrolltoLogic() {
+  #eventScrolltoLogic() {
     const self = this
     const options = self.options
     // fix when multiple self.targets use only visible (e.g. scrollto: 'elements')
@@ -207,7 +230,7 @@ class Scrollto {
         self.scroller.dispatchEvent(new CustomEvent('scroll'))
       }
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`scrollto.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`scrollto.${self.#componentNs}`))
     }
   }
 
@@ -218,7 +241,7 @@ class Scrollto {
    * @param {Node|HTMLElement|EventTarget|Window} params.el Change element
    * @param {Event} e
    */
-  eventChange({ hashchange = false, el }, e) {
+  #eventChange({ hashchange = false, el }, e) {
     const self = this
     const options = self.options
     // hashchange
@@ -273,11 +296,11 @@ class Scrollto {
               const els = Array.from(self.container.querySelectorAll(options.anchors.replace('{hash}', '#')))
               // class
               for (const other of els) {
-                other.classList.remove(...self.classes)
+                other.classList.remove(...self.#classes)
               }
-              el.classList.add(...self.classes)
+              el.classList.add(...self.#classes)
               // scrollto
-              self.eventScrollto({ el, tr })
+              self.#eventScrollto({ el, tr })
             }
           }
         }
@@ -290,7 +313,7 @@ class Scrollto {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.scroller Scroller element
    */
-  eventActivationHandler({ scroller } = {}) {
+  #eventActivationHandler({ scroller } = {}) {
     const self = this
     const options = self.options
     // logic
@@ -301,7 +324,7 @@ class Scrollto {
         `${self.ns}ScrollTimeout`,
         setTimeout(() => {
           // handler
-          self.eventActivation({ scroller })
+          self.#eventActivation({ scroller })
         }, options.scrollDelay)
       )
     }
@@ -312,7 +335,7 @@ class Scrollto {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.scroller Scroller element
    */
-  eventActivation({ scroller } = {}) {
+  #eventActivation({ scroller } = {}) {
     const self = this
     const options = self.options
     // scroll
@@ -362,12 +385,12 @@ class Scrollto {
             found = !!currents.length
             // reset others
             for (const other of els.filter(x => !currents.includes(x))) {
-              other.classList.remove(...self.classes)
+              other.classList.remove(...self.#classes)
             }
             // class
             for (const current of currents) {
-              if (self.classes.length && !current.classList.contains(...self.classes)) {
-                current.classList.add(...self.classes)
+              if (self.#classes.length && !current.classList.contains(...self.#classes)) {
+                current.classList.add(...self.#classes)
               }
             }
           }
@@ -377,7 +400,41 @@ class Scrollto {
     // reset others when not found anchors and found target
     if (!found && self.target) {
       for (const el of els) {
-        el.classList.remove(...self.classes)
+        el.classList.remove(...self.#classes)
+      }
+    }
+  }
+
+  //
+  // status
+  //
+
+  /**
+   * enable
+   */
+  enable() {
+    const self = this
+    if (self.disabled) {
+      // enable
+      self.disabled = false
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
+    }
+  }
+
+  /**
+   * disable
+   * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
+   */
+  disable({ skipEvent = false } = {}) {
+    const self = this
+    if (!self.disabled) {
+      // disable
+      self.disabled = true
+      // dispatch event
+      if (!skipEvent) {
+        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
       }
     }
   }
@@ -392,7 +449,7 @@ class Scrollto {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self.#initLogic()
   }
 
   /**
@@ -426,7 +483,7 @@ class Scrollto {
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
     // delete
     delete this
   }

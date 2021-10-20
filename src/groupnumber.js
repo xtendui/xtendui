@@ -12,6 +12,23 @@ import RJSON from 'relaxed-json'
  */
 class Groupnumber {
   /**
+   * fields
+   */
+  #optionsCustom
+  #optionsDefault
+  #componentNs
+
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled
+  container
+  inputs
+  steps
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
@@ -20,12 +37,12 @@ class Groupnumber {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self.#optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self.#componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
-    self.initLogic()
+    self.#initVars()
+    self.#initLogic()
   }
 
   //
@@ -35,17 +52,17 @@ class Groupnumber {
   /**
    * init vars
    */
-  initVars() {
+  #initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  #initLogic() {
     const self = this
     const options = self.options
     // set self
@@ -71,7 +88,7 @@ class Groupnumber {
         const stepHandler = Xt.dataStorage.put(
           step,
           `${options.events.steps}/${self.ns}`,
-          self.eventChange.bind(self, { button: step })
+          self.#eventChange.bind(self, { button: step })
         )
         for (const event of eventsSteps) {
           step.addEventListener(event, stepHandler)
@@ -85,7 +102,7 @@ class Groupnumber {
         const inputHandler = Xt.dataStorage.put(
           input,
           `${options.events.input}/${self.ns}`,
-          self.eventChange.bind(self, {})
+          self.#eventChange.bind(self, {})
         )
         for (const event of eventsInput) {
           input.addEventListener(event, inputHandler)
@@ -93,7 +110,7 @@ class Groupnumber {
       }
     }
     // initial
-    self.initStart()
+    self.#initStart()
     // init
     Xt.frame({
       el: self.container,
@@ -102,7 +119,7 @@ class Groupnumber {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -120,14 +137,14 @@ class Groupnumber {
   /**
    * init start
    */
-  initStart() {
+  #initStart() {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // logic
-    self.eventChange.bind(self)()
+    self.#eventChange.bind(self)()
   }
 
   //
@@ -140,7 +157,7 @@ class Groupnumber {
    * @param {Node|HTMLElement|EventTarget|Window} params.button
    * @param {Event} e
    */
-  eventChange({ button } = {}, e) {
+  #eventChange({ button } = {}, e) {
     const self = this
     // disabled
     if (self.disabled) {
@@ -166,9 +183,9 @@ class Groupnumber {
         if (step) {
           val += step
           // remove floating point up to step
-          val = parseFloat(val.toFixed(self.countDecimals({ num: step })))
+          val = parseFloat(val.toFixed(self.#countDecimals({ num: step })))
         }
-        self.validate({ val, input })
+        self.#validate({ val, input })
       }
       // disabled
       for (const button of self.steps) {
@@ -189,7 +206,7 @@ class Groupnumber {
    * @param {Number} params.val
    * @param {Node|HTMLElement|EventTarget|Window} params.input
    */
-  validate({ val, input } = {}) {
+  #validate({ val, input } = {}) {
     const self = this
     const options = self.options
     // step
@@ -245,7 +262,7 @@ class Groupnumber {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
     }
   }
 
@@ -261,7 +278,7 @@ class Groupnumber {
       self.disabled = true
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
       }
     }
   }
@@ -275,7 +292,7 @@ class Groupnumber {
    * @param {Object} params
    * @param {Boolean} params.num
    */
-  countDecimals({ num }) {
+  #countDecimals({ num }) {
     if (Math.floor(num) === num) return 0
     return num.toString().split('.')[1].length || 0
   }
@@ -286,7 +303,7 @@ class Groupnumber {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self.#initLogic()
   }
 
   /**
@@ -319,7 +336,7 @@ class Groupnumber {
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
     // delete
     delete this
   }

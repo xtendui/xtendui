@@ -13,6 +13,24 @@ Xt.RJSON = RJSON
  */
 class Stickyflow {
   /**
+   * fields
+   */
+  #optionsCustom
+  #optionsDefault
+  #componentNs
+  #scrollTopOld
+
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled
+  container
+  element
+  filler
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
@@ -21,12 +39,12 @@ class Stickyflow {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self.#optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self.#componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
-    self.initLogic()
+    self.#initVars()
+    self.#initLogic()
   }
 
   //
@@ -36,17 +54,17 @@ class Stickyflow {
   /**
    * init vars
    */
-  initVars() {
+  #initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  #initLogic() {
     const self = this
     const options = self.options
     // set self
@@ -65,13 +83,13 @@ class Stickyflow {
     self.element = self.container.querySelector(options.element)
     self.filler = self.container.querySelector(options.filler)
     // vars
-    self.scrollTopOld = 0
+    self.#scrollTopOld = 0
     // events
-    const changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self.eventChange.bind(self))
+    const changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self.#eventChange.bind(self))
     addEventListener('scroll', changeHandler)
     addEventListener('resize', changeHandler)
     // initial
-    self.initStart()
+    self.#initStart()
     // init
     Xt.frame({
       el: self.container,
@@ -80,7 +98,7 @@ class Stickyflow {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -98,14 +116,14 @@ class Stickyflow {
   /**
    * init start
    */
-  initStart() {
+  #initStart() {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // initial
-    self.eventChange()
+    self.#eventChange()
   }
 
   //
@@ -117,7 +135,7 @@ class Stickyflow {
    * @param {Node|HTMLElement|EventTarget|Window} step
    * @param {Event} e
    */
-  eventChange() {
+  #eventChange() {
     const self = this
     // disabled
     if (self.disabled) {
@@ -132,7 +150,7 @@ class Stickyflow {
       self.element.style.top = '0'
       self.element.style.bottom = ''
     } else {
-      if (scrollTop > self.scrollTopOld) {
+      if (scrollTop > self.#scrollTopOld) {
         if (!self.element.classList.contains('xt-stickyflow-top')) {
           const pos = windowHeight - objectHeight
           const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
@@ -160,10 +178,10 @@ class Stickyflow {
       ns: `${self.ns}Change`,
       func: () => {
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`change.${self.#componentNs}`))
       },
     })
-    self.scrollTopOld = scrollTop
+    self.#scrollTopOld = scrollTop
   }
 
   //
@@ -179,7 +197,7 @@ class Stickyflow {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
     }
   }
 
@@ -201,7 +219,7 @@ class Stickyflow {
       self.element.classList.remove('xt-stickyflow-top')
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
       }
     }
   }
@@ -216,7 +234,7 @@ class Stickyflow {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self.#initLogic()
   }
 
   /**
@@ -233,7 +251,7 @@ class Stickyflow {
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
     // delete
     delete this
   }

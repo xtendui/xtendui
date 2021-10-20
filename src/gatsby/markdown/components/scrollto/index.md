@@ -182,12 +182,12 @@ const container = self.container
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `hashchange:Boolean`       | If browser hash change activation             |
-| Property                   | `position:Number`       | Current scroll position to scroll to             |
 | Property                   | `target:Node`       | Current scroll target             |
 | Property                   | `scrollers:Node`       | All scrolling element             |
 | Property                   | `scroller:Node`       | Current scrolling element             |
@@ -212,6 +212,8 @@ self = null
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.disable()`                          | Disable component             |
+| Method                  | `self.enable()`                          | Enable component             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

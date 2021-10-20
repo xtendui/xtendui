@@ -11,6 +11,28 @@ import { Xt } from './xt'
  */
 class Ripple {
   /**
+   * fields
+   */
+  #optionsCustom
+  #optionsDefault
+  #componentNs
+
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled
+  container
+  inner
+  targets
+  size
+  top
+  left
+  sizeFinal
+  scaleFinal
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
@@ -19,12 +41,12 @@ class Ripple {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self.#optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self.#componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
-    self.initLogic()
+    self.#initVars()
+    self.#initLogic()
   }
 
   //
@@ -34,17 +56,17 @@ class Ripple {
   /**
    * init vars
    */
-  initVars() {
+  #initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  #initLogic() {
     const self = this
     const options = self.options
     // set self
@@ -66,7 +88,7 @@ class Ripple {
       self.inner = self.container.querySelector(':scope > .xt-ripple-inner')
     }
     // on
-    const onHandler = Xt.dataStorage.put(self.container, `mousedown touchstart/${self.ns}`, self.eventStart.bind(self))
+    const onHandler = Xt.dataStorage.put(self.container, `mousedown touchstart/${self.ns}`, self.#eventStart.bind(self))
     self.container.addEventListener('mousedown', onHandler)
     self.container.addEventListener('touchstart', onHandler, { passive: true })
     // init
@@ -77,7 +99,7 @@ class Ripple {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -100,7 +122,7 @@ class Ripple {
    * eventStart
    * @param {Event} e
    */
-  eventStart(e) {
+  #eventStart(e) {
     const self = this
     const options = self.options
     // disabled
@@ -151,22 +173,22 @@ class Ripple {
       self.scaleFinal = scaleFinal
       // dispatch event
       self.container.dispatchEvent(
-        new CustomEvent(`on.${self.componentNs}`, {
+        new CustomEvent(`on.${self.#componentNs}`, {
           detail: e,
         })
       )
       // off
-      const endHandler = Xt.dataStorage.put(window, `mouseup touchend/${self.ns}`, self.eventEnd.bind(self))
+      const endHandler = Xt.dataStorage.put(window, `mouseup touchend/${self.ns}`, self.#eventEnd.bind(self))
       addEventListener('mouseup', endHandler)
       addEventListener('touchend', endHandler, { passive: true })
     }
   }
 
   /**
-   * eventStart
+   * eventEnd
    * @param {Event} e
    */
-  eventEnd(e) {
+  #eventEnd(e) {
     const self = this
     // disabled
     if (self.disabled) {
@@ -178,7 +200,7 @@ class Ripple {
     removeEventListener('touchend', endHandler)
     // dispatch event
     self.container.dispatchEvent(
-      new CustomEvent(`off.${self.componentNs}`, {
+      new CustomEvent(`off.${self.#componentNs}`, {
         detail: e,
       })
     )
@@ -197,7 +219,7 @@ class Ripple {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
     }
   }
 
@@ -213,7 +235,7 @@ class Ripple {
       self.disabled = true
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
       }
     }
   }
@@ -228,7 +250,7 @@ class Ripple {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self.#initLogic()
   }
 
   /**
@@ -253,7 +275,7 @@ class Ripple {
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
     // delete
     delete this
   }

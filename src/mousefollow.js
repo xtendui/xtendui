@@ -12,6 +12,24 @@ import RJSON from 'relaxed-json'
  */
 class Mousefollow {
   /**
+   * fields
+   */
+  #optionsCustom
+  #optionsDefault
+  #componentNs
+  #width
+  #height
+
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled
+  container
+  targets
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Node|HTMLElement|EventTarget|Window} container Container node
@@ -21,14 +39,14 @@ class Mousefollow {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self.#optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self.#componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
+    self.#initVars()
     // raf after automatic scroll on hash (fixes when you have mouse over self.container on page load and page automatically scrolls)
     requestAnimationFrame(() => {
-      self.initLogic()
+      self.#initLogic()
     })
   }
 
@@ -39,17 +57,17 @@ class Mousefollow {
   /**
    * init vars
    */
-  initVars() {
+  #initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  #initLogic() {
     const self = this
     const options = self.options
     // set self
@@ -68,11 +86,11 @@ class Mousefollow {
     // targets
     self.targets = self.container.querySelectorAll(options.targets)
     // events
-    const moveHandler = Xt.dataStorage.put(self.container, `mousemove/${self.ns}`, self.mousemove.bind(self))
+    const moveHandler = Xt.dataStorage.put(self.container, `mousemove/${self.ns}`, self.#mousemove.bind(self))
     self.container.addEventListener('mousemove', moveHandler)
-    const enterHandler = Xt.dataStorage.put(self.container, `mouseenter/${self.ns}`, self.mouseenter.bind(self))
+    const enterHandler = Xt.dataStorage.put(self.container, `mouseenter/${self.ns}`, self.#mouseenter.bind(self))
     self.container.addEventListener('mouseenter', enterHandler)
-    const leaveHandler = Xt.dataStorage.put(self.container, `mouseleave/${self.ns}`, self.mouseleave.bind(self))
+    const leaveHandler = Xt.dataStorage.put(self.container, `mouseleave/${self.ns}`, self.#mouseleave.bind(self))
     self.container.addEventListener('mouseleave', leaveHandler)
     // init
     Xt.frame({
@@ -82,7 +100,7 @@ class Mousefollow {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -104,7 +122,7 @@ class Mousefollow {
   /**
    * mousemove
    */
-  mousemove(e) {
+  #mousemove(e) {
     const self = this
     const options = self.options
     // disabled
@@ -112,16 +130,16 @@ class Mousefollow {
       return
     }
     // fix initial
-    if (self.width === undefined) {
-      self.mouseenter(e)
+    if (self.#width === undefined) {
+      self.#mouseenter(e)
     }
     // position
     for (const tr of self.targets) {
       Xt.friction({
         el: tr,
         obj: {
-          x: e.clientX - self.width / 2,
-          y: e.clientY - self.height / 2,
+          x: e.clientX - self.#width / 2,
+          y: e.clientY - self.#height / 2,
           friction: options.friction,
         },
         transform: options.transform,
@@ -129,7 +147,7 @@ class Mousefollow {
     }
     // dispatch event
     self.container.dispatchEvent(
-      new CustomEvent(`change.${self.componentNs}`, {
+      new CustomEvent(`change.${self.#componentNs}`, {
         detail: e,
       })
     )
@@ -139,7 +157,7 @@ class Mousefollow {
    * mouseenter
    * @param {Event} e
    */
-  mouseenter(e) {
+  #mouseenter(e) {
     const self = this
     const options = self.options
     // disabled
@@ -151,15 +169,15 @@ class Mousefollow {
       for (const tr of self.targets) {
         // size
         const rect = tr.getBoundingClientRect()
-        self.width = rect.width
-        self.height = rect.height
+        self.#width = rect.width
+        self.#height = rect.height
         // class
         if (!options.classSkip) {
           Xt.on({ el: tr })
         }
         // set
-        const x = e.clientX - self.width / 2
-        const y = e.clientY - self.height / 2
+        const x = e.clientX - self.#width / 2
+        const y = e.clientY - self.#height / 2
         if (options.transform) {
           tr.style.transform = `translateX(${x}px) translateY(${y}px)`
         } else {
@@ -169,7 +187,7 @@ class Mousefollow {
       }
       // dispatch event
       self.container.dispatchEvent(
-        new CustomEvent(`on.${self.componentNs}`, {
+        new CustomEvent(`on.${self.#componentNs}`, {
           detail: e,
         })
       )
@@ -180,7 +198,7 @@ class Mousefollow {
    * mouseleave
    * @param {Event} e
    */
-  mouseleave(e) {
+  #mouseleave(e) {
     const self = this
     const options = self.options
     // disabled
@@ -197,7 +215,7 @@ class Mousefollow {
       }
       // dispatch event
       self.container.dispatchEvent(
-        new CustomEvent(`off.${self.componentNs}`, {
+        new CustomEvent(`off.${self.#componentNs}`, {
           detail: e,
         })
       )
@@ -217,7 +235,7 @@ class Mousefollow {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
     }
   }
 
@@ -243,7 +261,7 @@ class Mousefollow {
       }
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
       }
     }
   }
@@ -258,7 +276,7 @@ class Mousefollow {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self.#initLogic()
   }
 
   /**
@@ -282,7 +300,7 @@ class Mousefollow {
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
     // delete
     delete this
   }

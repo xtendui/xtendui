@@ -13,6 +13,22 @@ Xt.RJSON = RJSON
  */
 class Textareaautosize {
   /**
+   * fields
+   */
+  #optionsCustom
+  #optionsDefault
+  #componentNs
+
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled
+  container
+  form
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
@@ -21,12 +37,12 @@ class Textareaautosize {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self.#optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self.#componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
-    self.initLogic()
+    self.#initVars()
+    self.#initLogic()
   }
 
   //
@@ -36,17 +52,17 @@ class Textareaautosize {
   /**
    * init vars
    */
-  initVars() {
+  #initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  #initLogic() {
     const self = this
     const options = self.options
     // set self
@@ -66,7 +82,7 @@ class Textareaautosize {
     const changeHandler = Xt.dataStorage.put(
       self.container,
       `keydown keyup reset/${self.ns}`,
-      self.keychange.bind(self)
+      self.#keychange.bind(self)
     )
     self.container.addEventListener('keydown', changeHandler)
     self.container.addEventListener('keyup', changeHandler)
@@ -75,7 +91,7 @@ class Textareaautosize {
       self.form.addEventListener('reset', changeHandler)
     }
     // initial
-    self.initStart()
+    self.#initStart()
     // init
     Xt.frame({
       el: self.container,
@@ -84,7 +100,7 @@ class Textareaautosize {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -102,14 +118,14 @@ class Textareaautosize {
   /**
    * init start
    */
-  initStart() {
+  #initStart() {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // logic
-    self.keychange.bind(self)()
+    self.#keychange.bind(self)()
   }
 
   //
@@ -119,7 +135,7 @@ class Textareaautosize {
   /**
    * keychange
    */
-  keychange() {
+  #keychange() {
     const self = this
     // disabled
     if (self.disabled) {
@@ -151,7 +167,7 @@ class Textareaautosize {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
     }
   }
 
@@ -173,7 +189,7 @@ class Textareaautosize {
       })
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
       }
     }
   }
@@ -188,7 +204,7 @@ class Textareaautosize {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self.#initLogic()
   }
 
   /**
@@ -210,7 +226,7 @@ class Textareaautosize {
     // set self
     Xt.remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
     // delete
     delete this
   }

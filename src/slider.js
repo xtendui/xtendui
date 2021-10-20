@@ -574,7 +574,7 @@ class Slider extends Xt.Toggle {
       ns: `${self.ns}InitDrag`,
       func: () => {
         // dispatch event
-        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.#componentNs}`))
       },
     })
     // super after
@@ -788,12 +788,12 @@ class Slider extends Xt.Toggle {
         self.drag.final = max - min + self.drag.position - maxCheck
         // dispatch event
         self.drag.instant = true
-        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.#componentNs}`))
       } else if (tr === first && (self.drag.direction > 0 || self.drag.position <= max)) {
         self.drag.final = min - max + self.drag.position + maxCheck
         // dispatch event
         self.drag.instant = true
-        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.#componentNs}`))
       }
     }
     // fix absolute multi step activation (only if not already applied fix)
@@ -809,7 +809,7 @@ class Slider extends Xt.Toggle {
         //console.debug(diff, remainder, self.drag.position, self.drag.final, self.drag.initial)
         // dispatch event
         self.drag.instant = true
-        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+        self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.#componentNs}`))
       }
     }
     // val
@@ -819,7 +819,7 @@ class Slider extends Xt.Toggle {
     self.drag.ratio = 1 - self.drag.ratioInverse
     // dispatch event
     self.drag.instant = false
-    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.#componentNs}`))
     // fix keep self.drag.instant
     self.drag.instant = isDrag
     Xt.frame({
@@ -844,7 +844,7 @@ class Slider extends Xt.Toggle {
         if (self.autoHeight.style.height !== groupHeight) {
           self.autoHeight.style.height = groupHeight
           // dispatch event
-          tr.dispatchEvent(new CustomEvent(`autoheight.${self.componentNs}`))
+          tr.dispatchEvent(new CustomEvent(`autoheight.${self.#componentNs}`))
         }
         if (self.keepHeight && self.initial) {
           self.keepHeight.style.height = groupHeight
@@ -1055,7 +1055,7 @@ class Slider extends Xt.Toggle {
     self.drag.old = self.drag.start
     self.drag.overflow = null
     // dispatch event
-    self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self.componentNs}`))
+    self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self.#componentNs}`))
   }
 
   /**
@@ -1086,7 +1086,7 @@ class Slider extends Xt.Toggle {
     // fix no drag change when click
     if (self.drag.start === self.drag.current) {
       // dispatch event
-      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
+      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.#componentNs}`))
       return
     }
     // raf because on.xt.slider event after all drag.xt.slider
@@ -1119,7 +1119,7 @@ class Slider extends Xt.Toggle {
       // auto
       self.eventAutostart()
       // dispatch event
-      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.componentNs}`))
+      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self.#componentNs}`))
     })
   }
 
@@ -1200,9 +1200,9 @@ class Slider extends Xt.Toggle {
       return
     }
     // dispatch event
-    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.#componentNs}`))
     // dispatch event
-    self.dragger.dispatchEvent(new CustomEvent(`drag.${self.componentNs}`))
+    self.dragger.dispatchEvent(new CustomEvent(`drag.${self.#componentNs}`))
     // reset
     self.inverse = null
     // activation
@@ -1232,9 +1232,9 @@ class Slider extends Xt.Toggle {
     self.drag.final = self.drag.initial
     // dispatch event
     self.drag.instant = false
-    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.componentNs}`))
+    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self.#componentNs}`))
     // dispatch event
-    self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.componentNs}`))
+    self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self.#componentNs}`))
     // reset
     self.inverse = null
     // auto
