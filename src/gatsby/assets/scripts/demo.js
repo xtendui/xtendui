@@ -357,10 +357,16 @@ export const populateDemo = container => {
   }
   // .button--show-code
   const btnCode = container.querySelector('.button--show-code')
-  new Xt.Toggle(inner, {
+  const selfCode = new Xt.Toggle(inner, {
     elements: '.button--show-code',
     targets: `.gatsby_demo_code`,
     queue: false,
+  })
+  btnCode.addEventListener('on.xt.toggle', () => {
+    const targetCode = selfCode.targets[0]
+    if (targetCode) {
+      targetCode.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+    }
   })
   new Xt.Tooltip(btnCode.parentNode, {
     position: 'bottom-end',
