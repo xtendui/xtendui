@@ -1148,9 +1148,7 @@ class Slider extends Xt.Toggle {
       }
     }
     // only if dragging enough
-    self.drag._lock = self.drag._lock
-      ? self.drag._lock
-      : Math.abs(self.drag._distance) > options.drag.threshold
+    self.drag._lock = self.drag._lock ? self.drag._lock : Math.abs(self.drag._distance) > options.drag.threshold
     // disable interaction
     if (self.drag._lock) {
       for (const tr of self.targets) {
