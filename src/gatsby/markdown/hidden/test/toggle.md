@@ -165,7 +165,3 @@ Test (not in fullscreen or it doesn't test boundary) arrow position and position
   <demoinline src="demos/components/tooltip/prevent-overflow">
   </demoinline>
 </demo>
-
-## Api
-
-Test [e.detail.skip = true](/components/toggle/api#trigger).
