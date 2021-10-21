@@ -2698,7 +2698,6 @@ class Toggle {
         } else if (actionCurrent === 'Out') {
           // appendTo
           const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
-          console.log(self.ns, appendOrigin, el)
           if (appendOrigin) {
             appendOrigin.before(el)
             appendOrigin.remove()
@@ -3509,6 +3508,7 @@ Toggle.optionsDefaultSuper = {
     initialFocus: false,
     preventScroll: true,
     allowOutsideClick: true,
+    fallbackFocus: document.documentElement, // needed to prevent error on deactivation sometimes
   },
   collapseHeight: false,
   collapseWidth: false,
