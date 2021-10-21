@@ -69,9 +69,6 @@ function DemoIframe(props) {
     }
     if (window !== window.parent) {
       window.parent.switchDemos.push(switchDemo)
-    } else {
-      // eslint-disable-next-line no-console
-      console.debug('mode', mode)
     }
     switchDemo(localStorage.getItem('mode'))
   }, [])

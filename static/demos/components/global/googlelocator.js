@@ -12,7 +12,7 @@ const initGooglelocator = ({ ref }) => {
   // init
 
   /***/
-  const self = new Xt.Googlelocator(googlelocator, {
+  new Xt.Googlelocator(googlelocator, {
     initialSearch: true,
     events: {
       animateMarkerResultClick: google.maps.Animation.BOUNCE,
@@ -185,14 +185,6 @@ const initGooglelocator = ({ ref }) => {
     ],
   })
   /***/
-
-  // change
-
-  const change = () => {
-    //console.debug(self.locations)
-  }
-
-  self.container.addEventListener('change.xt.googlelocator', change)
 }
 
 /* mountGooglelocator */

@@ -165,7 +165,7 @@ class Googlelocator {
         // debug
         if (options.debug) {
           // eslint-disable-next-line no-console
-          console.log(`${self.componentName} init`, self)
+          console.debug(`${self.componentName} init`, self)
         }
       },
     })
@@ -349,7 +349,6 @@ class Googlelocator {
     if (options.infoWindow) {
       self.info = new google.maps.InfoWindow(options.infoWindow)
     }
-    //console.debug('xt-googlelocator viewport and radius', self.viewport, self.radius)
     for (const marker of markers) {
       if (!self.filters.length || self._filterMarker({ marker })) {
         const latLng = new google.maps.LatLng(
@@ -414,8 +413,10 @@ class Googlelocator {
       self.container.classList.remove('found')
       self.container.classList.remove('error')
     }
-    // eslint-disable-next-line no-console
-    console.debug('xt-googlelocator locations', self.locations)
+    if (options.debug) {
+      // eslint-disable-next-line no-console
+      console.debug('xt-googlelocator locations', self.locations)
+    }
     // change
     Xt.frame({
       el: self.container,
@@ -602,8 +603,10 @@ class Googlelocator {
       value: self.searchInput.value,
       position: self.position,
     }
-    // eslint-disable-next-line no-console
-    console.debug('xt-googlelocator locate', pos, self.position)
+    if (options.debug) {
+      // eslint-disable-next-line no-console
+      console.debug('xt-googlelocator locate', pos, self.position)
+    }
     // submit on zoom only one time
     self.map.setCenter(self.position)
     self._submit()

@@ -389,7 +389,6 @@ class Slider extends Xt.Toggle {
             const targetTargets = self._groups[iLoop].targetsInitial[k]
             const width = Xt.dataStorage.get(targetTargets, `${self.ns}TrWidth`)
             usedWidth += width
-            //console.debug(tr, targetTargets, usedWidth, spaceRight)
             if (usedWidth <= spaceRight) {
               // add to current group this target
               groupCurrent.targets.push(targetTargets) // put at end
@@ -421,7 +420,6 @@ class Slider extends Xt.Toggle {
             const targetTargets = self._groups[iLoop].targetsInitial[k]
             const width = Xt.dataStorage.get(targetTargets, `${self.ns}TrWidth`)
             usedWidth += width
-            //console.debug(tr, targetTargets, usedWidth, spaceLeft)
             if (usedWidth <= spaceLeft) {
               // add to current group this target
               groupCurrent.targets.unshift(targetTargets) // put at start
@@ -807,14 +805,12 @@ class Slider extends Xt.Toggle {
     // fix absolute multi step activation (only if not already applied fix)
     if (options.mode === 'absolute' && !self.drag._instant && self.direction) {
       const diff = self.drag._initial - self.drag._position
-      //console.debug(diff, self.drag._initial, self.drag._position)
       if (Math.abs(diff) > maxCheck) {
         // remainder add or remove maxCheck depending on direction
         let remainder = diff % maxCheck
         remainder += maxCheck * self.direction
         // val
         self.drag._final = self.drag._initial - remainder
-        //console.debug(diff, remainder, self.drag._position, self.drag._final, self.drag._initial)
         // dispatch event
         self.drag._instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
@@ -1016,7 +1012,6 @@ class Slider extends Xt.Toggle {
         movingSpace += moveWidth + moveAlignFull
       }
     }
-    //console.debug(index, movingSpace, self.drag._size) // logicDragfind
     if (movingSpace <= self.drag._size) {
       self._eventMove({ index, direction, left: moveLeft, width: moveWidth, movingSpace })
     }
@@ -1190,7 +1185,6 @@ class Slider extends Xt.Toggle {
         self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
         const overflow = self.drag._current - self.drag._overflow
         final = overflow > 0 ? min + options.drag.overflow({ overflow }) : final
-        //console.debug(overflow, final)
       } else if (final < max && direction > 0) {
         self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
         const overflow = self.drag._current - self.drag._overflow
@@ -1220,7 +1214,6 @@ class Slider extends Xt.Toggle {
       // get nearest
       const found = self._logicDragfind({ index: self.index })
       if (found !== null && found !== self.index) {
-        //console.debug(found)
         super._eventOn({ el: self._groups[found].element, force: true })
         self._eventWrap({ index: found })
       }
@@ -1266,7 +1259,6 @@ class Slider extends Xt.Toggle {
         const tr = self._groups[i].target
         const left = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
         const width = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
-        //console.debug(direction, index, i, self.drag._final, left - width / 2)
         // first inside dragger on the left
         if (self.drag._final < left + width / 2) {
           return i
@@ -1285,7 +1277,6 @@ class Slider extends Xt.Toggle {
         const tr = self._groups[i].target
         const left = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
         const width = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
-        //console.debug(direction, index, i, self.drag._final, left - width / 2)
         // last inside dragger on the right
         if (self.drag._final > left - width / 2) {
           return i

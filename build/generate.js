@@ -7,7 +7,7 @@ const indentString = require('indent-string')
 const test = false
 /*
 test = true
-console.log(test)
+console.debug(test)
 */
 
 ;(async () => {

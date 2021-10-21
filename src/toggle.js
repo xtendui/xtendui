@@ -273,7 +273,7 @@ class Toggle {
           // debug
           if (options.debug) {
             // eslint-disable-next-line no-console
-            console.log(`${self.componentName} init`, self)
+            console.debug(`${self.componentName} init`, self)
           }
         },
       })
@@ -2031,7 +2031,6 @@ class Toggle {
    */
   _eventMediaLoadedReinit() {
     const self = this
-    //console.debug('mediaLoadedReinit', self.container)
     // reinit
     self.reinit()
   }
@@ -2041,7 +2040,6 @@ class Toggle {
    */
   _eventVisibleReinit() {
     const self = this
-    //console.debug('visibleReinit', self.container)
     // reinit
     self.reinit()
   }
@@ -2066,17 +2064,6 @@ class Toggle {
     if (obj && obj[type] && !obj[type].done) {
       const queueOther = self[`_queue${actionOther}`]
       const objOther = queueOther[queueOther.length - 1]
-      /*
-      if (objOther) {
-        if (objOther[type]) {
-          console.debug(actionCurrent, type, objOther[type].done)
-        } else {
-          console.debug(actionCurrent, type, 'no obj type')
-        }
-      } else {
-        console.debug(actionCurrent, type, 'no obj')
-      }
-      */
       if (!objOther || !objOther[type] || objOther[type].done) {
         // fix if initial must be instant, fixes queue
         if (self.initial || !options.queue) {
@@ -2575,7 +2562,7 @@ class Toggle {
             // debug
             if (options.debug) {
               // eslint-disable-next-line no-console
-              console.log(`${self.componentName} init`, self)
+              console.debug(`${self.componentName} init`, self)
             }
           }
           // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)

@@ -102,7 +102,7 @@ class Stickyflow {
         // debug
         if (options.debug) {
           // eslint-disable-next-line no-console
-          console.log(`${self.componentName} init`, self)
+          console.debug(`${self.componentName} init`, self)
         }
       },
     })
