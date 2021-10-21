@@ -21,7 +21,6 @@ class Stickyflow {
   _componentNs
   _scrollTopOld
   componentName
-  uniqueId
   ns
   options
   initial
@@ -69,8 +68,8 @@ class Stickyflow {
     const options = self.options
     // set self
     Xt._set({ name: self.componentName, el: self.container, self })
-    self.uniqueId = self.uniqueId ?? Xt.uniqueId()
-    self.ns = `${self.componentName}-${self.uniqueId}`
+    // namespace
+    self.ns = self.ns ?? Xt.uniqueId()
     // enable first for proper initial activation
     self.enable()
     // matches

@@ -44,7 +44,6 @@ class Toggle {
   _observer
   _focusTrap
   componentName
-  uniqueId
   ns
   options
   initial
@@ -148,14 +147,13 @@ class Toggle {
     const options = self.options
     // mode
     self._containerTargets = self.container
-    self.uniqueId = self.uniqueId ?? Xt.uniqueId()
     if (options.targets && options.targets.indexOf('#') !== -1) {
       self._mode = 'unique'
       self._containerTargets = document.documentElement
       self.ns = `${self.componentName}-${options.targets.toString()}-${self._classes.toString()}`
     } else {
       self._mode = 'multiple'
-      self.ns = `${self.componentName}-${self.uniqueId}`
+      self.ns = self.ns ?? Xt.uniqueId()
     }
     // final namespace
     self.ns = self.ns.replace(/^[^a-z]+|[ ,#_:.-]+/gi, '')
@@ -2692,14 +2690,15 @@ class Toggle {
         if (actionCurrent === 'In') {
           // appendTo
           const appendToTarget = document.querySelector(options.appendTo)
-          const appendOrigin = document.querySelector(`[data-xt-origin="${self.uniqueId}"]`)
+          const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
           if (!appendOrigin) {
-            el.before(Xt.node({ str: `<div class="xt-ignore hidden" data-xt-origin="${self.uniqueId}"></div>` }))
+            el.before(Xt.node({ str: `<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>` }))
           }
           appendToTarget.append(el)
         } else if (actionCurrent === 'Out') {
           // appendTo
-          const appendOrigin = document.querySelector(`[data-xt-origin="${self.uniqueId}"]`)
+          const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
+          console.log(self.ns, appendOrigin, el)
           if (appendOrigin) {
             appendOrigin.before(el)
             appendOrigin.remove()

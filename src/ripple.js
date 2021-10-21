@@ -18,7 +18,6 @@ class Ripple {
   _optionsInitial
   _componentNs
   componentName
-  uniqueId
   ns
   options
   initial
@@ -72,8 +71,7 @@ class Ripple {
     // set self
     Xt._set({ name: self.componentName, el: self.container, self })
     // namespace
-    self.uniqueId = self.uniqueId ?? Xt.uniqueId()
-    self.ns = `${self.componentName}-${self.uniqueId}`
+    self.ns = self.ns ?? Xt.uniqueId()
     // enable first for proper initial activation
     self.enable()
     // matches

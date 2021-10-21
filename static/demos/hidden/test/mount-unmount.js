@@ -24,7 +24,7 @@ const mountTest = ({ ref }) => {
   // init
 
   for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-    tr.setAttribute('data-test-unique-id', self.uniqueId)
+    tr.setAttribute('data-test-unique-id', self.ns)
     // eslint-disable-next-line no-console
     console.log('TEST INITIAL xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
     // eslint-disable-next-line no-console

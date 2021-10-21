@@ -76,7 +76,6 @@ class Tooltip extends Xt.Toggle {
         const popperEl = options.positionInner ? element.querySelector(options.positionInner) ?? element : element
         // fix element and target must be visible
         if (Xt.visible({ el: popperEl }) && Xt.visible({ el })) {
-          popperEl.dataset.test = Xt.uniqueId()
           const arrow = el.querySelector(':scope > .xt-arrow')
           const popperOptionsDefault = {
             placement: el.getAttribute('data-xt-position') || options.position,
