@@ -20,7 +20,6 @@ class Mousefollow {
   _componentNs
   _width
   _height
-
   componentName
   uniqueId
   ns
@@ -286,7 +285,7 @@ class Mousefollow {
     // disable
     self.disable({ skipEvent: true })
     // remove matches
-    Xt._removeMatches({ self })
+    Xt._removeMatches({ self, optionsInitial: self._optionsInitial })
     // remove events
     const moveHandler = Xt.dataStorage.get(self.container, `mousemove/${self.ns}`)
     self.container.removeEventListener('mousemove', moveHandler)

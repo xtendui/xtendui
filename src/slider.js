@@ -14,17 +14,6 @@ Xt.RJSON = RJSON
  */
 class Slider extends Xt.Toggle {
   /**
-   * fields
-   */
-  _usedWidth
-  _groups
-  _wrap
-  _keepHeight
-  _autoHeight
-
-  pags
-
-  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options

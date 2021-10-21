@@ -17,7 +17,6 @@ class Scrollto {
   _optionsDefault
   _componentNs
   _classes
-
   componentName
   uniqueId
   ns

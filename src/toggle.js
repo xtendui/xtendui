@@ -42,7 +42,6 @@ class Toggle {
   _hasHash
   _autorunning
   _observer
-
   componentName
   uniqueId
   ns
@@ -54,7 +53,15 @@ class Toggle {
   targets = []
   index
   direction
+
+  // slider
+  _usedWidth
+  _wrap
+  _keepHeight
+  _autoHeight
+  _groups
   drag = {}
+  pags
 
   /**
    * constructor
@@ -3412,7 +3419,7 @@ class Toggle {
     // disable
     self.disable({ skipEvent: true })
     // remove matches
-    Xt._removeMatches({ self })
+    Xt._removeMatches({ self, optionsInitial: self._optionsInitial })
     // remove events
     self._removeEvents()
     // namespace

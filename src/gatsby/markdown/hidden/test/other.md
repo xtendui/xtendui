@@ -5,15 +5,6 @@ parent: "Test"
 title: "Other"
 ---
 
-## Usability
-
-Test navigation and focus styles.
-
-<demo>
-  <demoinline src="demos/components/form/checks-card">
-  </demoinline>
-</demo>
-
 ## Infinitescroll
 
 Test change page (browser location prev next).
@@ -30,10 +21,7 @@ Test mobile initial activation.
 
 Test mobile scrollto activation.
 
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/gallery/products-gallery-v1">
-  </div>
-</demo>
+Try the demo [on a new page](/demos/themes/gallery/products-gallery-v1).
 
 Test activation classes on scroll.
 

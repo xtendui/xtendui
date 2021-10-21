@@ -19,7 +19,6 @@ class Textareaautosize {
   _optionsDefault
   _optionsInitial
   _componentNs
-
   componentName
   uniqueId
   ns

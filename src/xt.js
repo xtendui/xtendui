@@ -278,7 +278,7 @@ if (typeof window !== 'undefined') {
     if (self.initial === undefined) {
       // remove matches
       if (self.matches) {
-        Xt._removeMatches({ self })
+        Xt._removeMatches({ self, optionsInitial })
       }
       // matches
       if (options.matches) {
@@ -290,7 +290,7 @@ if (typeof window !== 'undefined') {
             const mql = matchMedia(key)
             self.matches.push({ mql, value })
             Xt._eventMatches({ self, mql, value, skipReinit: true, optionsInitial })
-            mql.addEventListener('change', Xt._eventMatches.bind(null, { self, mql, value }))
+            mql.addEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
           }
         }
       }
@@ -336,14 +336,14 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {Object} params.self Self object
    */
-  Xt._removeMatches = ({ self } = {}) => {
+  Xt._removeMatches = ({ self, optionsInitial } = {}) => {
     // remove matches
     if (self.matches?.length) {
       for (const obj of self.matches) {
         // matches
         const mql = obj.mql
         const value = obj.value
-        mql.removeEventListener('change', Xt._eventMatches.bind(null, { self, mql, value }))
+        mql.removeEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
       }
     }
   }

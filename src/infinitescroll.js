@@ -22,7 +22,6 @@ class Infinitescroll {
   _url
   _scrollResume
   _scrollTopOld
-
   componentName
   uniqueId
   ns

@@ -20,7 +20,6 @@ class Stickyflow {
   _optionsInitial
   _componentNs
   _scrollTopOld
-
   componentName
   uniqueId
   ns

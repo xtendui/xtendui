@@ -21,7 +21,6 @@ class Googlelocator {
   _locateCache
   _predictionCache
   _animatingLoc
-
   componentName
   uniqueId
   ns
@@ -95,7 +94,6 @@ class Googlelocator {
     Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     // vars
     self.initial = true
-    self._locateCache = null
     self.loaderElement = self.container.querySelector(options.elements.loader)
     self.itemsTemplate = self.container.querySelector(options.elements.itemsTemplate)
     self.itemsContainer = self.container.querySelector(options.elements.itemsContainer)
