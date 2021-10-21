@@ -1146,7 +1146,7 @@ class Toggle {
       }
     }
     if (found) {
-      self._eventOn({ el: found }, e)
+      self._eventOn({ el: found, force: true }, e)
     }
   }
 
