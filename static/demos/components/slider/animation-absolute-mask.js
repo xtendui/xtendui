@@ -30,6 +30,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // duration depending on dragger size
     dragDuration = self.initial || self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag._size / 400)))
+    console.log(dragDuration)
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -45,6 +46,7 @@ const mountSlider = ({ ref }) => {
 
   const drag = () => {
     const tr = self.targets.filter(x => self.hasCurrent({ el: x }))[0]
+    console.log(self.drag._ratio, self.direction)
     // mask
     const mask = tr.querySelector('.hero')
     gsap.killTweensOf(mask)

@@ -529,7 +529,7 @@ class Slider extends Xt.Toggle {
     super._initEvents()
     const self = this
     // init
-    const initHandler = Xt.dataStorage.put(self.container, `init/${self.ns}`, self.eventInitHandler.bind(self))
+    const initHandler = Xt.dataStorage.put(self.container, `init/${self.ns}`, self._eventInitHandler.bind(self))
     self.container.addEventListener('init.xt.slider', initHandler)
     // dragposition
     const dragpositionHandler = Xt.dataStorage.put(
@@ -561,7 +561,7 @@ class Slider extends Xt.Toggle {
    * @param {Object} params
    * @param {Boolean} params.save Save currents
    */
-  initStart({ save = false } = {}) {
+  _initStart({ save = false } = {}) {
     const self = this
     // init drag
     Xt.frame({
@@ -584,7 +584,7 @@ class Slider extends Xt.Toggle {
    * init handler
    * @param {Event} e
    */
-  eventInitHandler() {
+  _eventInitHandler() {
     const self = this
     // dragger initial
     self.dragger.classList.remove('initial')
