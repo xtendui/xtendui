@@ -143,12 +143,12 @@ const container = self.container
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `locations:Array`       | Current found locations             |
-| Property                   | `locateCache:Object`       | Locate cache object             |
 | Property                   | `loaderElement:Node`       | Loader node             |
 | Property                   | `itemsTemplate:Node`       | Items template node             |
 | Property                   | `itemsContainer:Node`       | Items container node             |
@@ -156,9 +156,15 @@ const container = self.container
 | Property                   | `foundElement:Node`       | Found node             |
 | Property                   | `mapElement:Node`       | Map node             |
 | Property                   | `map:Object`       | Map object             |
+| Property                   | `info:Object`       | InfoWindow object             |
+| Property                   | `cluster:Object`       | MarkerClusterer object             |
 | Property                   | `searchInput:Node`       | Search input node             |
 | Property                   | `search:Object`       | Search object             |
 | Property                   | `searchBtn:Node`       | Search button node             |
+| Property                   | `filters:Node`       | Filter nodes             |
+| Property                   | `position:Object`       | Current map position             |
+| Property                   | `viewport:Object`       | Current map viewport             |
+| Property                   | `radius:Number`       | Current map radius             |
 
 </div>
 
@@ -177,6 +183,8 @@ self = null
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.disable()`                          | Disable component             |
+| Method                  | `self.enable()`                          | Enable component             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

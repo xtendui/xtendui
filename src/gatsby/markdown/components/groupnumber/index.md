@@ -124,6 +124,7 @@ const container = self.container
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `disabled:Boolean`       | If component disabled            |
@@ -148,6 +149,8 @@ self = null
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.disable()`                          | Disable component             |
+| Method                  | `self.enable()`                          | Enable component             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

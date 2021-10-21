@@ -29,11 +29,11 @@ const mountSlider = ({ ref }) => {
 
   const dragposition = () => {
     // duration depending on dragger size
-    dragDuration = self.initial || self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
+    dragDuration = self.initial || self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag._size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
-      position: self.drag.final,
+      _position: self.drag._final,
       duration: dragDuration,
       ease: dragEase,
     })
@@ -49,13 +49,13 @@ const mountSlider = ({ ref }) => {
     const mask = tr.querySelector('.hero')
     gsap.killTweensOf(mask)
     gsap.set(mask, {
-      x: `${-maskPercent * self.drag.ratio * self.direction}%`,
+      x: `${-maskPercent * self.drag._ratio * self.direction}%`,
     })
     const maskInner = mask.querySelector('.hero-inner')
     gsap.killTweensOf(maskInner)
     gsap.set(maskInner, {
-      x: `${maskInnerPercent * self.drag.ratio * self.direction}%`,
-      opacity: 1 - maskInnerOpacity * self.drag.ratio,
+      x: `${maskInnerPercent * self.drag._ratio * self.direction}%`,
+      opacity: 1 - maskInnerOpacity * self.drag._ratio,
     })
     /***/
     // incomings
@@ -70,13 +70,13 @@ const mountSlider = ({ ref }) => {
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
-        x: `${maskPercent * self.drag.ratioInverse * self.direction}%`,
+        x: `${maskPercent * self.drag._ratioInverse * self.direction}%`,
       })
       const maskInner = mask.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
-        x: `${-maskInnerPercent * self.drag.ratioInverse * self.direction}%`,
-        opacity: 1 - maskInnerOpacity * self.drag.ratioInverse,
+        x: `${-maskInnerPercent * self.drag._ratioInverse * self.direction}%`,
+        opacity: 1 - maskInnerOpacity * self.drag._ratioInverse,
       })
     }
     /***/
@@ -104,7 +104,7 @@ const mountSlider = ({ ref }) => {
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
-        x: `${maskPercent * self.drag.ratioInverse * self.direction}%`,
+        x: `${maskPercent * self.drag._ratioInverse * self.direction}%`,
       })
       gsap.to(mask, {
         x: 0,
@@ -114,8 +114,8 @@ const mountSlider = ({ ref }) => {
       const maskInner = mask.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
-        x: `${-maskInnerPercent * self.drag.ratioInverse * self.direction}%`,
-        opacity: 1 - maskInnerOpacity * self.drag.ratioInverse,
+        x: `${-maskInnerPercent * self.drag._ratioInverse * self.direction}%`,
+        opacity: 1 - maskInnerOpacity * self.drag._ratioInverse,
       })
       gsap.to(maskInner, {
         x: 0,

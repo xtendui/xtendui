@@ -15,12 +15,12 @@ if (typeof window !== 'undefined') {
   // vars
   //
 
-  Xt.running = {}
-  Xt.currents = {} // Xt currents based on namespace (so shared between Xt objects)
+  Xt._running = {}
+  Xt._currents = {} // Xt currents based on namespace (so shared between Xt objects)
   Xt.options = {}
-  Xt.mountArr = []
-  Xt.unmountArr = []
-  Xt.focusTrapArr = []
+  Xt._mountArr = []
+  Xt._unmountArr = []
+  Xt._focusTrapArr = []
   Xt.scrollDelay = false
   Xt.resizeDelay = 200
   Xt.medialoadedDelay = false
@@ -70,19 +70,19 @@ if (typeof window !== 'undefined') {
   /**
    * init
    */
-  Xt.mutationObserver = new MutationObserver(mutationsList => {
+  Xt._mutationObserver = new MutationObserver(mutationsList => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // added
         for (const added of mutation.addedNodes) {
           if (added.nodeType === 1) {
-            Xt.mountCheck({ added })
+            Xt._mountCheck({ added })
           }
         }
         // removed
         for (const removed of mutation.removedNodes) {
           if (removed.nodeType === 1) {
-            Xt.unmountCheck({ removed })
+            Xt._unmountCheck({ removed })
           }
         }
       }
@@ -91,8 +91,8 @@ if (typeof window !== 'undefined') {
 
   Xt.ready({
     func: () => {
-      Xt.mutationObserver.disconnect()
-      Xt.mutationObserver.observe(document.documentElement, {
+      Xt._mutationObserver.disconnect()
+      Xt._mutationObserver.observe(document.documentElement, {
         characterData: false,
         attributes: false,
         childList: true,
@@ -105,7 +105,7 @@ if (typeof window !== 'undefined') {
    * refresh
    */
   Xt.refresh = () => {
-    Xt.mountCheck()
+    Xt._mountCheck()
   }
 
   /**
@@ -113,11 +113,11 @@ if (typeof window !== 'undefined') {
    * @param {Object} obj
    */
   Xt.mount = obj => {
-    Xt.mountArr.push(obj)
+    Xt._mountArr.push(obj)
     Xt.ready({
       raf: obj.raf,
       func: () => {
-        Xt.mountCheck({ obj })
+        Xt._mountCheck({ obj })
       },
     })
   }
@@ -127,7 +127,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} obj
    */
   Xt.unmount = obj => {
-    Xt.unmountArr.push(obj)
+    Xt._unmountArr.push(obj)
   }
 
   /**
@@ -136,13 +136,13 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} params.added
    * @param {Object} params.obj
    */
-  Xt.mountCheck = ({ added = document.documentElement, obj } = {}) => {
+  Xt._mountCheck = ({ added = document.documentElement, obj } = {}) => {
     // fix multiple mount
     // we do not mount if not in document, it happends for example when you mount ScrollTrigger after overlay menu
     if (!added.closest('html')) {
       return
     }
-    const arr = obj ? [obj] : Xt.mountArr
+    const arr = obj ? [obj] : Xt._mountArr
     for (const obj of arr) {
       // check
       const refs = []
@@ -184,7 +184,7 @@ if (typeof window !== 'undefined') {
                 // fix multiple mount
                 obj.done = obj.done.filter(x => x !== ref)
                 // unmount remove
-                Xt.unmountArr = Xt.unmountArr.filter(x => {
+                Xt._unmountArr = Xt._unmountArr.filter(x => {
                   return x !== this // this is unmount object using function
                 })
               },
@@ -200,13 +200,13 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.removed
    */
-  Xt.unmountCheck = ({ removed = document.documentElement } = {}) => {
+  Xt._unmountCheck = ({ removed = document.documentElement } = {}) => {
     // fix multiple mount
     // we do not mount if in document, it happends for example when you move nodes
     if (removed.closest('html')) {
       return
     }
-    for (const obj of Xt.unmountArr) {
+    for (const obj of Xt._unmountArr) {
       // check
       if (removed === obj.ref || removed.contains(obj.ref)) {
         // root
@@ -236,7 +236,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
    * @param {Object} params.self Component' self
    */
-  Xt.set = ({ name, el, self } = {}) => {
+  Xt._set = ({ name, el, self } = {}) => {
     Xt.dataStorage.set(el, name, self)
   }
 
@@ -258,7 +258,7 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
    * @return {Object}
    */
-  Xt.remove = ({ name, el } = {}) => {
+  Xt._remove = ({ name, el } = {}) => {
     return Xt.dataStorage.remove(el, name)
   }
 
@@ -270,14 +270,15 @@ if (typeof window !== 'undefined') {
    * init matches
    * @param {Object} params
    * @param {Object} params.self Self object
+   * @param {Object} params.optionsInitial Initial options
    */
-  Xt.initMatches = ({ self } = {}) => {
+  Xt._initMatches = ({ self, optionsInitial } = {}) => {
     const options = self.options
     // only on initialization not on reinit because the mql reinit
     if (self.initial === undefined) {
       // remove matches
       if (self.matches) {
-        Xt.removeMatches({ self })
+        Xt._removeMatches({ self, optionsInitial })
       }
       // matches
       if (options.matches) {
@@ -288,8 +289,8 @@ if (typeof window !== 'undefined') {
             // matches
             const mql = matchMedia(key)
             self.matches.push({ mql, value })
-            Xt.eventMatches({ self, mql, value, skipReinit: true })
-            mql.addEventListener('change', Xt.eventMatches.bind(null, { self, mql, value }))
+            Xt._eventMatches({ self, mql, value, skipReinit: true, optionsInitial })
+            mql.addEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
           }
         }
       }
@@ -304,7 +305,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} params.value Match media value
    * @param {Boolean} params.skipReinit Skip reinit
    */
-  Xt.eventMatches = ({ self, mql, value, skipReinit = false } = {}) => {
+  Xt._eventMatches = ({ self, mql, value, skipReinit = false, optionsInitial } = {}) => {
     // fix NEEDED for chrome not removing mql event listener
     if (!self.container.closest('html')) {
       return
@@ -315,7 +316,7 @@ if (typeof window !== 'undefined') {
       self.options = Xt.merge([self.options, value])
     } else {
       // set options value from initial
-      self.options = Xt.mergeReset({ start: self.options, reset: self.optionsInitial, check: value })
+      self.options = Xt.mergeReset({ start: self.options, reset: optionsInitial, check: value })
     }
     // reinit one time only with raf
     if (!skipReinit) {
@@ -324,7 +325,7 @@ if (typeof window !== 'undefined') {
         el: self.container,
         ns: `${self.ns}MatchFrame`,
         func: () => {
-          Xt.eventReinit({ self })
+          Xt._eventReinit({ self })
         },
       })
     }
@@ -335,14 +336,14 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {Object} params.self Self object
    */
-  Xt.removeMatches = ({ self } = {}) => {
+  Xt._removeMatches = ({ self, optionsInitial } = {}) => {
     // remove matches
     if (self.matches?.length) {
       for (const obj of self.matches) {
         // matches
         const mql = obj.mql
         const value = obj.value
-        mql.removeEventListener('change', Xt.eventMatches.bind(null, { self, mql, value }))
+        mql.removeEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
       }
     }
   }
@@ -353,7 +354,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} params.self Self object
    * @param {Event} e
    */
-  Xt.eventReinit = ({ self } = {}, e) => {
+  Xt._eventReinit = ({ self } = {}, e) => {
     // triggering e.detail.container
     if (!e?.detail?.container || e?.detail?.container.contains(self.container)) {
       Xt.eventDelay({
@@ -492,7 +493,7 @@ if (typeof window !== 'undefined') {
   // util to remember classBody state
   //
 
-  Xt.classBody = {
+  Xt._classBody = {
     /**
      * properties
      */
@@ -503,7 +504,7 @@ if (typeof window !== 'undefined') {
      * @param {Object} obj Object
      */
     add: obj => {
-      Xt.classBody.currents.push(obj)
+      Xt._classBody.currents.push(obj)
     },
 
     /**
@@ -511,7 +512,7 @@ if (typeof window !== 'undefined') {
      * @param {Object} obj Object
      */
     remove: obj => {
-      Xt.classBody.currents = Xt.classBody.currents.filter(x => x.c !== obj.c || x.ns !== obj.ns)
+      Xt._classBody.currents = Xt._classBody.currents.filter(x => x.c !== obj.c || x.ns !== obj.ns)
     },
 
     /**
@@ -520,7 +521,7 @@ if (typeof window !== 'undefined') {
      * @return {Array} Currents
      */
     get: obj => {
-      return Xt.classBody.currents.filter(x => x.c === obj.c)
+      return Xt._classBody.currents.filter(x => x.c === obj.c)
     },
   }
 
@@ -535,7 +536,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} params.obj Object with x and y values
    * @param {Boolean} params.transform Use transforms instead of position
    */
-  Xt.friction = ({ el, obj, transform = true } = {}) => {
+  Xt._friction = ({ el, obj, transform = true } = {}) => {
     Xt.frame({
       el,
       ns: `xtFrictionFrame`,
@@ -598,7 +599,7 @@ if (typeof window !== 'undefined') {
               func: () => {
                 if (Math.abs(xDist) >= frictionLimit || Math.abs(yDist) >= frictionLimit) {
                   // continue friction
-                  Xt.friction({ el, obj, transform })
+                  Xt._friction({ el, obj, transform })
                 } else {
                   // next interaction instant
                   Xt.dataStorage.remove(el, 'xtFrictionX')
@@ -1086,9 +1087,9 @@ if (typeof window !== 'undefined') {
   /**
    * Set scrollbar width of document
    */
-  Xt.setScrollbarWidth = () => {
+  Xt._setScrollbarWidth = () => {
     if (Xt.scrollbarWidth === undefined) {
-      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt.setScrollbarWidth)
+      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt._setScrollbarWidth)
       removeEventListener('resize', scrollbarWidthHandler)
       addEventListener('resize', scrollbarWidthHandler)
     }
@@ -1117,14 +1118,14 @@ if (typeof window !== 'undefined') {
 
   Xt.ready({
     func: () => {
-      Xt.setScrollbarWidth()
+      Xt._setScrollbarWidth()
     },
   })
 
   /**
-   * Xt.innerHeightSet and --vh
+   * Xt._innerHeightSet and --vh
    */
-  Xt.innerHeightSet = () => {
+  Xt._innerHeightSet = () => {
     Xt.innerHeight = window.innerHeight
     document.documentElement.style.setProperty('--vh', `${Xt.innerHeight * 0.01}px`)
   }
@@ -1136,14 +1137,14 @@ if (typeof window !== 'undefined') {
       ns: 'WindowHeightResize',
       duration: 0,
       func: () => {
-        Xt.innerHeightSet()
+        Xt._innerHeightSet()
       },
     })
   })
 
   Xt.ready({
     func: () => {
-      Xt.innerHeightSet()
+      Xt._innerHeightSet()
     },
   })
 

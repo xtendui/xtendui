@@ -22,7 +22,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // position animation to keep updated with animation
     gsap.set(self.drag, {
-      position: self.drag.final,
+      _position: self.drag._final,
     })
   }
 

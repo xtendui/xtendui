@@ -185,7 +185,7 @@ You can use navigation also inside targets as you can see in the demo.
 
 ## Jump
 
-Use `jump: true` to enable clicking on a **target** to jump to them, only when overflowing the `drag.dragger`.
+Use `jump: true` to enable clicking on a **target** to jump to them, only when overflowing the `dragger`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

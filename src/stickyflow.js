@@ -13,6 +13,24 @@ Xt.RJSON = RJSON
  */
 class Stickyflow {
   /**
+   * fields
+   */
+  _optionsCustom
+  _optionsDefault
+  _optionsInitial
+  _componentNs
+  _scrollTopOld
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled = false
+  container
+  element
+  filler
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
@@ -21,12 +39,12 @@ class Stickyflow {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self._optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self._componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
-    self.initLogic()
+    self._initVars()
+    self._initLogic()
   }
 
   //
@@ -36,42 +54,40 @@ class Stickyflow {
   /**
    * init vars
    */
-  initVars() {
+  _initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self._optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self._optionsInitial = self.options = Xt.merge([self._optionsDefault, self._optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  _initLogic() {
     const self = this
     const options = self.options
     // set self
-    Xt.set({ name: self.componentName, el: self.container, self })
+    Xt._set({ name: self.componentName, el: self.container, self })
     self.uniqueId = self.uniqueId ?? Xt.uniqueId()
     self.ns = `${self.componentName}-${self.uniqueId}`
-    // vars
-    self.disabled = false
     // enable first for proper initial activation
     self.enable()
     // matches
-    Xt.initMatches({ self })
+    Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     // vars
     self.initial = true
     // elements
     self.element = self.container.querySelector(options.element)
     self.filler = self.container.querySelector(options.filler)
     // vars
-    self.scrollTopOld = 0
+    self._scrollTopOld = 0
     // events
-    const changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self.eventChange.bind(self))
+    const changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self._eventChange.bind(self))
     addEventListener('scroll', changeHandler)
     addEventListener('resize', changeHandler)
     // initial
-    self.initStart()
+    self._initStart()
     // init
     Xt.frame({
       el: self.container,
@@ -80,17 +96,17 @@ class Stickyflow {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self._componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
           // eslint-disable-next-line no-console
-          console.log(`${self.componentName} init`, self)
+          console.debug(`${self.componentName} init`, self)
         }
       },
     })
     // disable last for proper options.disableDeactivate
-    if (self.options.disabled || self.disabledManual) {
+    if (self.options.disabled) {
       self.disable()
     }
   }
@@ -98,14 +114,14 @@ class Stickyflow {
   /**
    * init start
    */
-  initStart() {
+  _initStart() {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // initial
-    self.eventChange()
+    self._eventChange()
   }
 
   //
@@ -117,7 +133,7 @@ class Stickyflow {
    * @param {Node|HTMLElement|EventTarget|Window} step
    * @param {Event} e
    */
-  eventChange() {
+  _eventChange() {
     const self = this
     // disabled
     if (self.disabled) {
@@ -132,7 +148,7 @@ class Stickyflow {
       self.element.style.top = '0'
       self.element.style.bottom = ''
     } else {
-      if (scrollTop > self.scrollTopOld) {
+      if (scrollTop > self._scrollTopOld) {
         if (!self.element.classList.contains('xt-stickyflow-top')) {
           const pos = windowHeight - objectHeight
           const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
@@ -160,10 +176,10 @@ class Stickyflow {
       ns: `${self.ns}Change`,
       func: () => {
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`change.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`change.${self._componentNs}`))
       },
     })
-    self.scrollTopOld = scrollTop
+    self._scrollTopOld = scrollTop
   }
 
   //
@@ -179,7 +195,7 @@ class Stickyflow {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
     }
   }
 
@@ -201,7 +217,7 @@ class Stickyflow {
       self.element.classList.remove('xt-stickyflow-top')
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
       }
     }
   }
@@ -216,7 +232,7 @@ class Stickyflow {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self._initLogic()
   }
 
   /**
@@ -231,9 +247,9 @@ class Stickyflow {
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove({ name: self.componentName, el: self.container })
+    Xt._remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self._componentNs}`))
     // delete
     delete this
   }

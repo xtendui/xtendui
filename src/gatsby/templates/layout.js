@@ -106,14 +106,8 @@ if (typeof window !== 'undefined') {
   if (localStorage.getItem('access') === 'clear' || hash === 'clear') {
     localStorage.setItem('access', '')
     window.access = ''
-    // eslint-disable-next-line no-console
-    console.debug('access cleared')
   } else if (localStorage.getItem('access') === 'admin' || hash === 'admin') {
     localStorage.setItem('access', 'admin')
     window.access = 'admin'
-    // eslint-disable-next-line no-console
-    console.debug('access admin')
   }
-  // eslint-disable-next-line no-console
-  console.debug('mode', localStorage.getItem('mode'))
 }

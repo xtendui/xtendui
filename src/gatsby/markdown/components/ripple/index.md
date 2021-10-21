@@ -98,12 +98,18 @@ const container = self.container
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `initial:Boolean`       | If initial or reset activation             |
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `inner:Node`       | Inner node that contains the ripples             |
 | Property                   | `targets:Array`       | Targets nodes            |
+| Property                   | `size:Number`       | Initial size of ripple            |
+| Property                   | `top:Number`       | Initial top position of ripple            |
+| Property                   | `left:Number`       | Initial left position of ripple            |
+| Property                   | `sizeFinal:Number`       | Final size of ripple            |
+| Property                   | `scaleFinal:Number`       | Final scale of ripple            |
 
 </div>
 
@@ -122,6 +128,8 @@ self = null
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `self.reinit()`       | Reinit component             |
+| Method                  | `self.disable()`                          | Disable component             |
+| Method                  | `self.enable()`                          | Enable component             |
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>

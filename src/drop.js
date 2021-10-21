@@ -32,7 +32,7 @@ class Drop extends Xt.Toggle {
   /**
    * init aria
    */
-  initAriaRole() {
+  _initAriaRole() {
     const self = this
     const options = self.options
     // aria
@@ -59,8 +59,8 @@ class Drop extends Xt.Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} params.el Elements to be activated
    * @param {String} params.type Type of element
    */
-  activate({ el, type } = {}) {
-    super.activate({ el, type })
+  _activate({ el, type } = {}) {
+    super._activate({ el, type })
     const self = this
     const options = self.options
     // popperjs

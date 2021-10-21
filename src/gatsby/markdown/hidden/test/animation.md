@@ -103,9 +103,9 @@ Test height and width and maxHeight styles on activation and deactivation.
 Test overlay height inherit on animation done.
 
 <demo>
-  <demoinline src="demos/components/toggle/animation-collapse">
-  </demoinline>
   <demoinline src="demos/components/toggle/animation-collapse-initial">
+  </demoinline>
+  <demoinline src="demos/components/toggle/animation-collapse">
   </demoinline>
 </demo>
 

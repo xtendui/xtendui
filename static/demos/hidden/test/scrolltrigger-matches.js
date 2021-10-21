@@ -26,8 +26,8 @@ const mountTest = ({ ref }) => {
   const refresh = () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST PIN RESIZE this should be called one time on resize and Xt.mountArr should not increase.',
-      Xt.mountArr.length
+      'TEST PIN RESIZE this should be called one time on resize and Xt._mountArr should not increase.',
+      Xt._mountArr.length
     )
   }
 

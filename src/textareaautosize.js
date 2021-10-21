@@ -13,6 +13,22 @@ Xt.RJSON = RJSON
  */
 class Textareaautosize {
   /**
+   * fields
+   */
+  _optionsCustom
+  _optionsDefault
+  _optionsInitial
+  _componentNs
+  componentName
+  uniqueId
+  ns
+  options
+  initial
+  disabled = false
+  container
+  form
+
+  /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
    * @param {Object} optionsCustom User options
@@ -21,12 +37,12 @@ class Textareaautosize {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.optionsCustom = optionsCustom
+    self._optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.componentNs = self.componentName.replace('-', '.')
+    self._componentNs = self.componentName.replace('-', '.')
     // init
-    self.initVars()
-    self.initLogic()
+    self._initVars()
+    self._initLogic()
   }
 
   //
@@ -36,37 +52,35 @@ class Textareaautosize {
   /**
    * init vars
    */
-  initVars() {
+  _initVars() {
     const self = this
     // options
-    self.optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.optionsInitial = self.options = Xt.merge([self.optionsDefault, self.optionsCustom])
+    self._optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self._optionsInitial = self.options = Xt.merge([self._optionsDefault, self._optionsCustom])
   }
 
   /**
    * init logic
    */
-  initLogic() {
+  _initLogic() {
     const self = this
     const options = self.options
     // set self
-    Xt.set({ name: self.componentName, el: self.container, self })
+    Xt._set({ name: self.componentName, el: self.container, self })
     // namespace
     self.uniqueId = self.uniqueId ?? Xt.uniqueId()
     self.ns = `${self.componentName}-${self.uniqueId}`
-    // vars
-    self.disabled = false
     // enable first for proper initial activation
     self.enable()
     // matches
-    Xt.initMatches({ self })
+    Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     // vars
     self.initial = true
     // key
     const changeHandler = Xt.dataStorage.put(
       self.container,
       `keydown keyup reset/${self.ns}`,
-      self.keychange.bind(self)
+      self._keychange.bind(self)
     )
     self.container.addEventListener('keydown', changeHandler)
     self.container.addEventListener('keyup', changeHandler)
@@ -75,7 +89,7 @@ class Textareaautosize {
       self.form.addEventListener('reset', changeHandler)
     }
     // initial
-    self.initStart()
+    self._initStart()
     // init
     Xt.frame({
       el: self.container,
@@ -84,17 +98,17 @@ class Textareaautosize {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self._componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
           // eslint-disable-next-line no-console
-          console.log(`${self.componentName} init`, self)
+          console.debug(`${self.componentName} init`, self)
         }
       },
     })
     // disable last for proper options.disableDeactivate
-    if (self.options.disabled || self.disabledManual) {
+    if (self.options.disabled) {
       self.disable()
     }
   }
@@ -102,14 +116,14 @@ class Textareaautosize {
   /**
    * init start
    */
-  initStart() {
+  _initStart() {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // logic
-    self.keychange.bind(self)()
+    self._keychange.bind(self)()
   }
 
   //
@@ -119,7 +133,7 @@ class Textareaautosize {
   /**
    * keychange
    */
-  keychange() {
+  _keychange() {
     const self = this
     // disabled
     if (self.disabled) {
@@ -151,7 +165,7 @@ class Textareaautosize {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
     }
   }
 
@@ -173,7 +187,7 @@ class Textareaautosize {
       })
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
       }
     }
   }
@@ -188,7 +202,7 @@ class Textareaautosize {
   reinit() {
     const self = this
     // reinit
-    self.initLogic()
+    self._initLogic()
   }
 
   /**
@@ -208,9 +222,9 @@ class Textareaautosize {
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove({ name: self.componentName, el: self.container })
+    Xt._remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self._componentNs}`))
     // delete
     delete this
   }

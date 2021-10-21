@@ -25,11 +25,11 @@ const mountSlider = ({ ref }) => {
 
   const dragposition = () => {
     // duration depending on dragger size
-    dragDuration = self.initial || self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
+    dragDuration = self.initial || self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag._size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
-      position: self.drag.final,
+      _position: self.drag._final,
       duration: dragDuration,
       ease: dragEase,
     })
@@ -45,7 +45,7 @@ const mountSlider = ({ ref }) => {
     const cover = tr.querySelector('.hero-cover')
     gsap.killTweensOf(cover)
     gsap.set(cover, {
-      x: `${100 * self.drag.ratioInverse * self.direction}%`,
+      x: `${100 * self.drag._ratioInverse * self.direction}%`,
     })
   }
 
@@ -77,7 +77,7 @@ const mountSlider = ({ ref }) => {
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
-        x: `${100 * self.drag.ratioInverse * self.direction}%`,
+        x: `${100 * self.drag._ratioInverse * self.direction}%`,
       })
       gsap.to(mask, {
         x: 0,
@@ -87,7 +87,7 @@ const mountSlider = ({ ref }) => {
       const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
-        x: `${-100 * self.drag.ratioInverse * self.direction}%`,
+        x: `${-100 * self.drag._ratioInverse * self.direction}%`,
       })
       gsap.to(maskInner, {
         x: 0,
@@ -98,7 +98,7 @@ const mountSlider = ({ ref }) => {
       // dragposition (set internal position to instant position after on)
       gsap.killTweensOf(self.drag)
       gsap.set(self.drag, {
-        position: self.drag.final,
+        _position: self.drag._final,
       })
       /***/
     }
@@ -115,7 +115,7 @@ const mountSlider = ({ ref }) => {
       // cover
       const cover = tr.querySelector('.hero-cover')
       gsap.killTweensOf(cover)
-      if (!self.drag.instant) {
+      if (!self.drag._instant) {
         gsap.set(cover, {
           x: `${100 * self.direction}%`,
         })

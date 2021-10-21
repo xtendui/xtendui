@@ -451,7 +451,7 @@ export const populateItem = item => {
   // .button--show-code reinit
   const self = Xt.get({ name: 'xt-toggle', el: container.querySelector('.gatsby_demo_inner') })
   if (self) {
-    // needs save: false or useLayout inside demos is executed before mutation observer Xt.mountCheck({ added })
+    // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
     self.reinit({ save: false })
   }
 }
