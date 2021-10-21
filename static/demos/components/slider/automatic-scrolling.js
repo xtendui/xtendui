@@ -74,7 +74,7 @@ const mountSlider = ({ ref }) => {
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
-      position: self.drag._final,
+      _position: self.drag._final,
       duration: dragDuration,
       ease: dragEase,
     })

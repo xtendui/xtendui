@@ -36,7 +36,7 @@ const mountSlider = ({ ref }) => {
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
-      position: self.drag._final,
+      _position: self.drag._final,
       duration: dragDuration,
       ease: dragEase,
     })
@@ -148,7 +148,7 @@ const mountSlider = ({ ref }) => {
       // dragposition (set internal position to instant position after on)
       gsap.killTweensOf(self.drag)
       gsap.set(self.drag, {
-        position: self.drag._final,
+        _position: self.drag._final,
       })
       /***/
     }
