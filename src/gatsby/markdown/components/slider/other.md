@@ -50,13 +50,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Nooverflow
 
-The component automatically disable and apply classes to `drag.dragger` when the slides do not overflow the dragger. Use `nooverflow: false` to disable this behaviour.
+The component automatically disable and apply classes to `dragger` when the slides do not overflow the dragger. Use `nooverflow: false` to disable this behaviour.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `nooverflow:String\|false`                          | `'transform-none justify-center'`        | Classes applied to `drag.dragger` when the slides do not overflow the dragger           |
+| Option                  | `nooverflow:String\|false`                          | `'transform-none justify-center'`        | Classes applied to `dragger` when the slides do not overflow the dragger           |
 
 </div>
 

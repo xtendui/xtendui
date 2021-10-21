@@ -85,12 +85,15 @@ const container = self.container
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
+| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
 | Property                   | `options:Object`       | Final options             |
 | Property                   | `initial:Boolean`       | If initial or reset activation            |
+| Property                   | `index:Number`       | Current index of activation             |
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `elements:Array`       | Elements nodes             |
 | Property                   | `targets:Array`       | Targets nodes            |
+| Property                   | `pags:Array`       | Pagination nodes             |
 | Property                   | `wrap:Boolean`       | If wrap activation             |
 | Property                   | `direction:Number`       | Direction `1` or `-1`            |
 | Property                   | `autoblock:Boolean`       | Block all auto logic            |

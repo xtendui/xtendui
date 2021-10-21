@@ -20,7 +20,7 @@ TEST MOUNT this should be called once and should NOT be called on overlay close.
 
 TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.
 
-TEST UNMOUNT 2 Xt.unmountArr should be the same and xtNamespace should be 0.
+TEST UNMOUNT 2 Xt._unmountArr should be the same and xtNamespace should be 0.
 
 TEST UNMOUNT this should NOT be called multiple times on changing page and resize.
 
@@ -35,7 +35,7 @@ Test resize and open/close overlay should always work (not disabled so not unmou
 
 TEST PIN MOUNT this should NOT be called on resize and xtNamespace should be 1.
 
-TEST PIN RESIZE this should be called one time on resize and Xt.mountArr should not increase.
+TEST PIN RESIZE this should be called one time on resize and Xt._mountArr should not increase.
 
 TEST PIN UNMOUNT this should NOT be called on resize and xtNamespace should be 0 on unmount.
 

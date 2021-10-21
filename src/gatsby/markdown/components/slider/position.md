@@ -56,11 +56,11 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `wrap:Boolean\|Number`                          | `false`        | Wrap slides on start and end, if number activates only after checks available space based on available `drag.dragger` width factor from `0` to `1`             |
+| Option                  | `wrap:Boolean\|Number`                          | `false`        | Wrap slides on start and end, if number activates only after checks available space based on available `dragger` width factor from `0` to `1`             |
 
 </div>
 
-> Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**must have available width** same as `drag.dragger` width if `wrap: true` or a factor from `0` to `1`).
+> Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**must have available width** same as `dragger` width if `wrap: true` or a factor from `0` to `1`).
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
@@ -73,15 +73,15 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
 
 ## Group
 
-When `group` is enabled (set a number from 0 to 1) it **groups the slides activation and positions** when they are inside the `drag.dragger` width factor you specify.
+When `group` is enabled (set a number from 0 to 1) it **groups the slides activation and positions** when they are inside the `dragger` width factor you specify.
 
-When `groupSame` is enabled (default) it **groups the slides activation (not positions)** when when they are inside the `drag.dragger`.
+When `groupSame` is enabled (default) it **groups the slides activation (not positions)** when when they are inside the `dragger`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `group:Number`                          | `false`        | Set automatic grouping based on available `drag.dragger` width factor from `0` to `1`            |
+| Option                  | `group:Number`                          | `false`        | Set automatic grouping based on available `dragger` width factor from `0` to `1`            |
 | Option                  | `groupSame:Boolean`                          | `true`        | Group same activations            |
 
 </div>

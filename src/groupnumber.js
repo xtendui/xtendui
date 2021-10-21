@@ -14,16 +14,17 @@ class Groupnumber {
   /**
    * fields
    */
-  #optionsCustom
-  #optionsDefault
-  #componentNs
+  _optionsCustom
+  _optionsDefault
+  _optionsInitial
+  _componentNs
 
   componentName
   uniqueId
   ns
   options
   initial
-  disabled
+  disabled = false
   container
   inputs
   steps
@@ -37,12 +38,12 @@ class Groupnumber {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.#optionsCustom = optionsCustom
+    self._optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.#componentNs = self.componentName.replace('-', '.')
+    self._componentNs = self.componentName.replace('-', '.')
     // init
-    self.#initVars()
-    self.#initLogic()
+    self._initVars()
+    self._initLogic()
   }
 
   //
@@ -52,30 +53,28 @@ class Groupnumber {
   /**
    * init vars
    */
-  #initVars() {
+  _initVars() {
     const self = this
     // options
-    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
+    self._optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self._optionsInitial = self.options = Xt.merge([self._optionsDefault, self._optionsCustom])
   }
 
   /**
    * init logic
    */
-  #initLogic() {
+  _initLogic() {
     const self = this
     const options = self.options
     // set self
-    Xt.set({ name: self.componentName, el: self.container, self })
+    Xt._set({ name: self.componentName, el: self.container, self })
     // namespace
     self.uniqueId = self.uniqueId ?? Xt.uniqueId()
     self.ns = `${self.componentName}-${self.uniqueId}`
-    // vars
-    self.disabled = false
     // enable first for proper initial activation
     self.enable()
     // matches
-    Xt.initMatches({ self })
+    Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     // vars
     self.initial = true
     // elements
@@ -88,7 +87,7 @@ class Groupnumber {
         const stepHandler = Xt.dataStorage.put(
           step,
           `${options.events.steps}/${self.ns}`,
-          self.#eventChange.bind(self, { button: step })
+          self._eventChange.bind(self, { button: step })
         )
         for (const event of eventsSteps) {
           step.addEventListener(event, stepHandler)
@@ -102,7 +101,7 @@ class Groupnumber {
         const inputHandler = Xt.dataStorage.put(
           input,
           `${options.events.input}/${self.ns}`,
-          self.#eventChange.bind(self, {})
+          self._eventChange.bind(self, {})
         )
         for (const event of eventsInput) {
           input.addEventListener(event, inputHandler)
@@ -110,7 +109,7 @@ class Groupnumber {
       }
     }
     // initial
-    self.#initStart()
+    self._initStart()
     // init
     Xt.frame({
       el: self.container,
@@ -119,7 +118,7 @@ class Groupnumber {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self._componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -129,7 +128,7 @@ class Groupnumber {
       },
     })
     // disable last for proper options.disableDeactivate
-    if (self.options.disabled || self.disabledManual) {
+    if (self.options.disabled) {
       self.disable()
     }
   }
@@ -137,14 +136,14 @@ class Groupnumber {
   /**
    * init start
    */
-  #initStart() {
+  _initStart() {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
     // logic
-    self.#eventChange.bind(self)()
+    self._eventChange.bind(self)()
   }
 
   //
@@ -157,7 +156,7 @@ class Groupnumber {
    * @param {Node|HTMLElement|EventTarget|Window} params.button
    * @param {Event} e
    */
-  #eventChange({ button } = {}, e) {
+  _eventChange({ button } = {}, e) {
     const self = this
     // disabled
     if (self.disabled) {
@@ -183,9 +182,9 @@ class Groupnumber {
         if (step) {
           val += step
           // remove floating point up to step
-          val = parseFloat(val.toFixed(self.#countDecimals({ num: step })))
+          val = parseFloat(val.toFixed(self._countDecimals({ num: step })))
         }
-        self.#validate({ val, input })
+        self._validate({ val, input })
       }
       // disabled
       for (const button of self.steps) {
@@ -206,7 +205,7 @@ class Groupnumber {
    * @param {Number} params.val
    * @param {Node|HTMLElement|EventTarget|Window} params.input
    */
-  #validate({ val, input } = {}) {
+  _validate({ val, input } = {}) {
     const self = this
     const options = self.options
     // step
@@ -262,7 +261,7 @@ class Groupnumber {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
     }
   }
 
@@ -278,7 +277,7 @@ class Groupnumber {
       self.disabled = true
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
       }
     }
   }
@@ -292,7 +291,7 @@ class Groupnumber {
    * @param {Object} params
    * @param {Boolean} params.num
    */
-  #countDecimals({ num }) {
+  _countDecimals({ num }) {
     if (Math.floor(num) === num) return 0
     return num.toString().split('.')[1].length || 0
   }
@@ -303,7 +302,7 @@ class Groupnumber {
   reinit() {
     const self = this
     // reinit
-    self.#initLogic()
+    self._initLogic()
   }
 
   /**
@@ -334,9 +333,9 @@ class Groupnumber {
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove({ name: self.componentName, el: self.container })
+    Xt._remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self._componentNs}`))
     // delete
     delete this
   }

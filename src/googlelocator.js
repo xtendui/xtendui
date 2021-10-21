@@ -14,19 +14,20 @@ class Googlelocator {
   /**
    * fields
    */
-  #optionsCustom
-  #optionsDefault
-  #componentNs
-  #locateCache
-  #predictionCache
-  #animatingLoc
+  _optionsCustom
+  _optionsDefault
+  _optionsInitial
+  _componentNs
+  _locateCache
+  _predictionCache
+  _animatingLoc
 
   componentName
   uniqueId
   ns
   options
   initial
-  disabled
+  disabled = false
   container
   locations
   loaderElement
@@ -55,12 +56,12 @@ class Googlelocator {
   constructor(object, optionsCustom = {}) {
     const self = this
     self.container = object
-    self.#optionsCustom = optionsCustom
+    self._optionsCustom = optionsCustom
     self.componentName = self.constructor.componentName
-    self.#componentNs = self.componentName.replace('-', '.')
+    self._componentNs = self.componentName.replace('-', '.')
     // init
-    self.#initVars()
-    self.#initLogic()
+    self._initVars()
+    self._initLogic()
   }
 
   //
@@ -70,33 +71,31 @@ class Googlelocator {
   /**
    * init vars
    */
-  #initVars() {
+  _initVars() {
     const self = this
     // options
-    self.#optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
-    self.options = Xt.merge([self.#optionsDefault, self.#optionsCustom])
+    self._optionsDefault = Xt.merge([self.constructor.optionsDefault, Xt.options[self.componentName]])
+    self._optionsInitial = self.options = Xt.merge([self._optionsDefault, self._optionsCustom])
   }
 
   /**
    * init logic
    */
-  #initLogic() {
+  _initLogic() {
     const self = this
     const options = self.options
     // set self
-    Xt.set({ name: self.componentName, el: self.container, self })
+    Xt._set({ name: self.componentName, el: self.container, self })
     // namespace
     self.uniqueId = self.uniqueId ?? Xt.uniqueId()
     self.ns = `${self.componentName}-${self.uniqueId}`
-    // vars
-    self.disabled = false
     // enable first for proper initial activation
     self.enable()
     // matches
-    Xt.initMatches({ self })
+    Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     // vars
     self.initial = true
-    self.#locateCache = null
+    self._locateCache = null
     self.loaderElement = self.container.querySelector(options.elements.loader)
     self.itemsTemplate = self.container.querySelector(options.elements.itemsTemplate)
     self.itemsContainer = self.container.querySelector(options.elements.itemsContainer)
@@ -106,11 +105,11 @@ class Googlelocator {
     self.map = new google.maps.Map(self.mapElement, options.map)
     self.searchInput = self.container.querySelector(options.elements.searchInput)
     self.search = new google.maps.places.Autocomplete(self.searchInput, self.options.autocompleteOptions)
-    const searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self.#searchSubmit.bind(self))
+    const searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self._searchSubmit.bind(self))
     self.searchInput.addEventListener('keypress', searchHandler)
     // submit triggers places autocomplete
     self.searchBtn = self.container.querySelector(options.elements.searchBtn)
-    const submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self.#searchClick.bind(self))
+    const submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self._searchClick.bind(self))
     self.searchBtn.addEventListener('click', submitHandler)
     // minimum zoom
     if (options.map.zoomMin) {
@@ -123,12 +122,12 @@ class Googlelocator {
       })
     }
     // search place
-    google.maps.event.addListener(self.search, 'place_changed', self.#placeChanged.bind(self))
+    google.maps.event.addListener(self.search, 'place_changed', self._placeChanged.bind(self))
     // submitCurrent
     if (options.elements.repeatBtn) {
       self.repeatElement = self.container.querySelector(options.elements.repeatBtn)
       if (self.repeatElement) {
-        const repeatHandler = Xt.dataStorage.put(self.repeatElement, `click/${self.ns}`, self.#submitCurrent.bind(self))
+        const repeatHandler = Xt.dataStorage.put(self.repeatElement, `click/${self.ns}`, self._submitCurrent.bind(self))
         self.repeatElement.addEventListener('click', repeatHandler)
       }
     }
@@ -139,9 +138,9 @@ class Googlelocator {
         if (location.protocol === 'https:') {
           if (navigator.geolocation) {
             if (options.initialLocate) {
-              self.#locate({ initial: true })
+              self._locate({ initial: true })
             }
-            const locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self.#locate.bind(self))
+            const locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self._locate.bind(self))
             self.locateElement.addEventListener('click', locateHandler)
           } else {
             self.locateElement.style.display = 'none'
@@ -152,7 +151,7 @@ class Googlelocator {
       }
     }
     // initial
-    self.#initStart()
+    self._initStart()
     // init
     Xt.frame({
       el: self.container,
@@ -161,7 +160,7 @@ class Googlelocator {
         // initialized class
         self.container.setAttribute(`data-${self.componentName}-init`, '')
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self.#componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`init.${self._componentNs}`))
         self.initial = false
         // debug
         if (options.debug) {
@@ -171,7 +170,7 @@ class Googlelocator {
       },
     })
     // disable last for proper options.disableDeactivate
-    if (self.options.disabled || self.disabledManual) {
+    if (self.options.disabled) {
       self.disable()
     }
   }
@@ -179,7 +178,7 @@ class Googlelocator {
   /**
    * init start
    */
-  #initStart() {
+  _initStart() {
     const self = this
     const options = self.options
     // disabled
@@ -191,7 +190,7 @@ class Googlelocator {
       google.maps.event.addListenerOnce(self.map, 'idle', () => {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self.#submitCurrent({ empty: true })
+        self._submitCurrent({ empty: true })
       })
     }
   }
@@ -203,7 +202,7 @@ class Googlelocator {
   /**
    * placeChanged
    */
-  #placeChanged() {
+  _placeChanged() {
     const self = this
     const options = self.options
     // disabled
@@ -218,24 +217,24 @@ class Googlelocator {
         self.position = place.geometry.location
         self.viewport = place.geometry.viewport
         self.radius = options.searchRadius
-        self.#submit()
+        self._submit()
         return
       }
     }
     // locate prediction
-    if (self.#locateCache && self.#locateCache.value === self.searchInput.value) {
-      self.position = self.#locateCache.position
+    if (self._locateCache && self._locateCache.value === self.searchInput.value) {
+      self.position = self._locateCache.position
       self.viewport = null
       self.radius = options.searchRadius
-      self.#submit()
+      self._submit()
       return
     }
     // cached prediction
-    if (self.#predictionCache && self.#predictionCache.value === self.searchInput.value) {
-      self.position = self.#predictionCache.position
-      self.viewport = self.#predictionCache.viewport
+    if (self._predictionCache && self._predictionCache.value === self.searchInput.value) {
+      self.position = self._predictionCache.position
+      self.viewport = self._predictionCache.viewport
       self.radius = options.searchRadius
-      self.#submit()
+      self._submit()
       return
     }
     // new prediction
@@ -253,18 +252,18 @@ class Googlelocator {
               self.position = place.geometry.location
               self.viewport = place.geometry.viewport
               self.radius = options.searchRadius
-              self.#predictionCache = {
+              self._predictionCache = {
                 value: self.searchInput.value,
                 position: self.position,
                 viewport: self.viewport,
               }
-              self.#submit()
+              self._submit()
               placesPreview.remove()
             }
           )
         } else {
           self.locations = []
-          self.#populateItems()
+          self._populateItems()
           self.container.classList.add('noplace')
           self.container.classList.remove('empty')
           self.container.classList.remove('found')
@@ -278,7 +277,7 @@ class Googlelocator {
    * searchSubmit
    * @param {Event} e
    */
-  #searchSubmit(e) {
+  _searchSubmit(e) {
     const self = this
     const options = self.options
     // disabled
@@ -294,7 +293,7 @@ class Googlelocator {
       if (self.searchInput.value === '') {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self.#submitCurrent({ empty: true })
+        self._submitCurrent({ empty: true })
       }
     }
   }
@@ -303,7 +302,7 @@ class Googlelocator {
    * searchClick
    * @param {Event} e
    */
-  #searchClick(e) {
+  _searchClick(e) {
     const self = this
     const options = self.options
     // disabled
@@ -316,7 +315,7 @@ class Googlelocator {
     if (self.searchInput.value === '') {
       self.map.setCenter(options.map.center)
       self.map.setZoom(options.map.zoom)
-      self.#submitCurrent({ empty: true })
+      self._submitCurrent({ empty: true })
     } else {
       // submit triggers places autocomplete
       google.maps.event.trigger(self.search, 'place_changed')
@@ -326,7 +325,7 @@ class Googlelocator {
   /**
    * submit
    */
-  #submit() {
+  _submit() {
     const self = this
     const options = self.options
     // disabled
@@ -336,7 +335,7 @@ class Googlelocator {
     // fix .getBounds not ready
     if (!self.map.getBounds()) {
       google.maps.event.addListenerOnce(self.map, 'bounds_changed', () => {
-        self.#submit()
+        self._submit()
       })
       return false
     }
@@ -352,7 +351,7 @@ class Googlelocator {
     }
     //console.debug('xt-googlelocator viewport and radius', self.viewport, self.radius)
     for (const marker of markers) {
-      if (!self.filters.length || self.#filterMarker({ marker })) {
+      if (!self.filters.length || self._filterMarker({ marker })) {
         const latLng = new google.maps.LatLng(
           options.formatData.lat ? options.formatData.lat(self, marker) : marker.lat,
           options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng
@@ -376,7 +375,7 @@ class Googlelocator {
           bounds.extend(latLng)
           self.locations.push(loc)
           loc.addListener('click', () => {
-            self.#populateInfo({ loc, type: 'marker' })
+            self._populateInfo({ loc, type: 'marker' })
           })
           index++
         }
@@ -389,7 +388,7 @@ class Googlelocator {
     // order locations
     options.formatData.sort(self)
     // populate items after order
-    self.#populateItems()
+    self._populateItems()
     // markers
     if (options.map.cluster) {
       if (self.cluster) {
@@ -423,7 +422,7 @@ class Googlelocator {
       ns: `${self.ns}Change`,
       func: () => {
         // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`change.${self.#componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`change.${self._componentNs}`))
       },
     })
   }
@@ -431,7 +430,7 @@ class Googlelocator {
   /**
    * populateItems
    */
-  #populateItems() {
+  _populateItems() {
     const self = this
     // remove old
     const removes = self.container.querySelectorAll('.xt-googlelocator-clone')
@@ -440,7 +439,7 @@ class Googlelocator {
     }
     // populateItem
     for (const loc of self.locations) {
-      self.#populateItem({ loc })
+      self._populateItem({ loc })
     }
   }
 
@@ -449,7 +448,7 @@ class Googlelocator {
    * @param {Object} params
    * @param {Object} params.marker
    */
-  #filterMarker({ marker } = {}) {
+  _filterMarker({ marker } = {}) {
     const self = this
     const options = self.options
     // filter
@@ -461,7 +460,7 @@ class Googlelocator {
    * @param {Object} params
    * @param {Object} params.loc
    */
-  #populateItem({ loc } = {}) {
+  _populateItem({ loc } = {}) {
     const self = this
     const options = self.options
     // clone
@@ -482,7 +481,7 @@ class Googlelocator {
     }
     // info
     cloned.addEventListener('click', () => {
-      self.#populateInfo({ loc, type: 'result' })
+      self._populateInfo({ loc, type: 'result' })
     })
   }
 
@@ -492,13 +491,13 @@ class Googlelocator {
    * @param {Object} params.loc
    * @param {String} params.type
    */
-  #populateInfo({ loc, type } = {}) {
+  _populateInfo({ loc, type } = {}) {
     const self = this
     const options = self.options
     // stop animation
-    if (self.#animatingLoc) {
-      self.#animatingLoc.setAnimation(null)
-      self.#animatingLoc = null
+    if (self._animatingLoc) {
+      self._animatingLoc.setAnimation(null)
+      self._animatingLoc = null
     }
     // animation
     const anim =
@@ -509,7 +508,7 @@ class Googlelocator {
         : null
     if (anim) {
       loc.setAnimation(anim)
-      self.#animatingLoc = loc
+      self._animatingLoc = loc
     }
     // activation
     const item = self.itemsContainer.querySelector(`[data-xt-index="${loc.index}"]`)
@@ -550,7 +549,7 @@ class Googlelocator {
    * @param {Object} params
    * @param {Boolean} params.empty
    */
-  #submitCurrent({ empty = false } = {}) {
+  _submitCurrent({ empty = false } = {}) {
     const self = this
     const options = self.options
     // position
@@ -563,7 +562,7 @@ class Googlelocator {
         self.map.getBounds().getNorthEast()
       )
     }
-    self.#submit()
+    self._submit()
   }
 
   /**
@@ -571,7 +570,7 @@ class Googlelocator {
    * @param {Object} params
    * @param {Boolean} params.initial
    */
-  #locate({ initial = false } = {}) {
+  _locate({ initial = false } = {}) {
     const self = this
     // disabled
     if (self.disabled) {
@@ -579,27 +578,27 @@ class Googlelocator {
     }
     // loader
     if (!initial) {
-      self.#loaderShow()
+      self._loaderShow()
     }
     // locate
-    window.navigator.geolocation.getCurrentPosition(self.#locateSuccess.bind(self), self.#locateError.bind(self))
+    window.navigator.geolocation.getCurrentPosition(self._locateSuccess.bind(self), self._locateError.bind(self))
   }
 
   /**
    * locateSuccess
    * @param {Object} pos
    */
-  #locateSuccess(pos) {
+  _locateSuccess(pos) {
     const self = this
     const options = self.options
     // loader
-    self.#loaderHide()
+    self._loaderHide()
     // position
     self.searchInput.value = options.locateText
     self.position = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude)
     self.viewport = null
     self.radius = options.searchRadius
-    self.#locateCache = {
+    self._locateCache = {
       value: self.searchInput.value,
       position: self.position,
     }
@@ -607,17 +606,17 @@ class Googlelocator {
     console.debug('xt-googlelocator locate', pos, self.position)
     // submit on zoom only one time
     self.map.setCenter(self.position)
-    self.#submit()
+    self._submit()
   }
 
   /**
    * locateError
    * @param {String} error
    */
-  #locateError(error) {
+  _locateError(error) {
     const self = this
     // loader
-    self.#loaderHide()
+    self._loaderHide()
     // error
     console.error('Error: Xt.Googlelocator locate error', error)
   }
@@ -625,7 +624,7 @@ class Googlelocator {
   /**
    * loaderShow
    */
-  #loaderShow() {
+  _loaderShow() {
     const self = this
     Xt.on({ el: self.loaderElement })
   }
@@ -633,7 +632,7 @@ class Googlelocator {
   /**
    * loaderHide
    */
-  #loaderHide() {
+  _loaderHide() {
     const self = this
     Xt.off({ el: self.loaderElement })
   }
@@ -651,7 +650,7 @@ class Googlelocator {
       // enable
       self.disabled = false
       // dispatch event
-      self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
+      self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
     }
   }
 
@@ -667,7 +666,7 @@ class Googlelocator {
       self.disabled = true
       // dispatch event
       if (!skipEvent) {
-        self.container.dispatchEvent(new CustomEvent(`status.${self.#componentNs}`))
+        self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
       }
     }
   }
@@ -682,7 +681,7 @@ class Googlelocator {
   reinit() {
     const self = this
     // reinit
-    self.#initLogic()
+    self._initLogic()
   }
 
   /**
@@ -705,14 +704,14 @@ class Googlelocator {
       self.repeatElement.removeEventListener('click', repeatHandler)
     }
     // search place
-    google.maps.event.removeListener(self.search, 'place_changed', self.#placeChanged.bind(self))
+    google.maps.event.removeListener(self.search, 'place_changed', self._placeChanged.bind(self))
     // locate
     if (options.elements.locateBtn) {
       self.locateElement = self.container.querySelector(options.elements.locateBtn)
       if (self.locateElement) {
         if (location.protocol === 'https:') {
           if (navigator.geolocation) {
-            const locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self.#locate.bind(self))
+            const locateHandler = Xt.dataStorage.put(self.locateElement, `click/${self.ns}`, self._locate.bind(self))
             self.locateElement.removeEventListener('click', locateHandler)
           }
         }
@@ -731,9 +730,9 @@ class Googlelocator {
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
-    Xt.remove({ name: self.componentName, el: self.container })
+    Xt._remove({ name: self.componentName, el: self.container })
     // dispatch event
-    self.container.dispatchEvent(new CustomEvent(`destroy.${self.#componentNs}`))
+    self.container.dispatchEvent(new CustomEvent(`destroy.${self._componentNs}`))
     // delete
     delete this
   }

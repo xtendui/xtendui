@@ -32,7 +32,7 @@ function DemoInline(props) {
   useEffect(() => {
     const item = ref.current
     const switchDemo = mode => {
-      // needs raf or useLayout inside demos is executed before mutation observer Xt.mountCheck({ added })
+      // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,
         func: () => {

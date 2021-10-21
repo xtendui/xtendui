@@ -30,7 +30,7 @@ class Overlay extends Xt.Toggle {
   /**
    * init aria
    */
-  initAriaRole() {
+  _initAriaRole() {
     const self = this
     const options = self.options
     // aria

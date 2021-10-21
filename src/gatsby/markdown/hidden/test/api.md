@@ -17,7 +17,7 @@ Test activated on change > destroy > reinit.
 
 Test destroy remove all interaction and events.
 
-Test one destroy and reinit and trigger 1st should execute event only one time or it open and closes on one frame after (eventOnHandler called only one time).
+Test one destroy and reinit and trigger 1st should execute event only one time or it open and closes on one frame after (_eventOnHandler called only one time).
 
 Test reinit multiple times, interaction should trigger events still one time per interaction (especially overlay in self mode).
 

@@ -78,8 +78,8 @@ const mountTest = ({ ref }) => {
   return () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST UNMOUNT 2 Xt.unmountArr should be the same and xtNamespace should be 0.',
-      Xt.unmountArr.length,
+      'TEST UNMOUNT 2 Xt._unmountArr should be the same and xtNamespace should be 0.',
+      Xt._unmountArr.length,
       Xt.dataStorage.get(self.ns, 'xtNamespace').length
     )
     removeEventListener('resize', resize)
