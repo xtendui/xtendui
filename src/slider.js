@@ -1042,7 +1042,7 @@ class Slider extends Xt.Toggle {
     // vars
     self._autoblock = true
     self.drag._instant = true
-    self.drag._draglock = false
+    self.drag._lock = false
     self.drag._index = self.index
     self.drag._old = self.drag._start
     self.drag._overflow = null
@@ -1084,7 +1084,7 @@ class Slider extends Xt.Toggle {
     // raf because on.xt.slider event after all drag.xt.slider
     requestAnimationFrame(() => {
       // only if dragging enough
-      if (self.drag._draglock) {
+      if (self.drag._lock) {
         const index = self.index
         // if on the same slide as we started dragging
         if (index !== self.drag._index || Math.abs(self.drag._distance) >= self.drag._size) {
@@ -1148,11 +1148,11 @@ class Slider extends Xt.Toggle {
       }
     }
     // only if dragging enough
-    self.drag._draglock = self.drag._draglock
-      ? self.drag._draglock
+    self.drag._lock = self.drag._lock
+      ? self.drag._lock
       : Math.abs(self.drag._distance) > options.drag.threshold
     // disable interaction
-    if (self.drag._draglock) {
+    if (self.drag._lock) {
       for (const tr of self.targets) {
         tr.classList.add('pointer-events-none')
       }
@@ -1199,7 +1199,7 @@ class Slider extends Xt.Toggle {
     // reset
     self._inverse = null
     // activation
-    if (options.mode !== 'absolute' && self.drag._draglock) {
+    if (options.mode !== 'absolute' && self.drag._lock) {
       // get nearest
       const found = self._logicDragfind({ index: self.index })
       if (found !== null && found !== self.index) {
