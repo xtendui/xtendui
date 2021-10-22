@@ -96,7 +96,7 @@ Overlay.optionsDefault = {
     initialFocus: false,
     preventScroll: true,
     allowOutsideClick: true,
-    fallbackFocus: document.documentElement, // needed to prevent error on deactivation sometimes
+    fallbackFocus: 'body', // needed to prevent error on deactivation sometimes
   },
   zIndex: {
     targets: {

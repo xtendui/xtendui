@@ -1146,7 +1146,7 @@ class Toggle {
       }
     }
     if (found) {
-      self._eventOn({ el: found, force: true }, e)
+      self._eventOn({ el: found }, e)
     }
   }
 
@@ -3508,7 +3508,7 @@ Toggle.optionsDefaultSuper = {
     initialFocus: false,
     preventScroll: true,
     allowOutsideClick: true,
-    fallbackFocus: document.documentElement, // needed to prevent error on deactivation sometimes
+    fallbackFocus: 'body', // needed to prevent error on deactivation sometimes
   },
   collapseHeight: false,
   collapseWidth: false,
