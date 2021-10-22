@@ -26,30 +26,6 @@ class Tooltip extends Xt.Toggle {
   }
 
   //
-  // init
-  //
-
-  /**
-   * init aria
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      if (options.aria === true || options.aria.role) {
-        for (const el of self.elements) {
-          el.setAttribute('aria-haspopup', 'true')
-        }
-        for (const tr of self.targets) {
-          tr.setAttribute('role', 'tooltip')
-        }
-      }
-    }
-  }
-
-  //
   // event util
   //
 
@@ -202,6 +178,10 @@ Tooltip.optionsDefault = {
       start: 500, // same as options.zIndex.targets.start
       factor: -1,
     },
+  },
+  aria: {
+    role: 'tooltip',
+    label: true,
   },
 }
 

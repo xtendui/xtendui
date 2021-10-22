@@ -130,8 +130,8 @@ class Toggle {
     self._initSetup()
     Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     self._initScope()
-    self._initAria()
     self._initEvents()
+    self._initAria()
     self._initStart({ save })
     // disable last for proper options.disableDeactivate
     if (self.options.disabled || self._disabledManual) {
@@ -417,113 +417,6 @@ class Toggle {
     }
     // return
     return currents
-  }
-
-  /**
-   * init aria
-   */
-  _initAria() {
-    const self = this
-    const options = self.options
-    // role
-    self._initAriaRole()
-    // aria
-    if (options.aria) {
-      if (self.targets.length) {
-        // targets
-        for (const tr of self.targets) {
-          // id
-          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
-            const id = tr.getAttribute('id')
-            if (!id) {
-              tr.setAttribute('id', Xt.uniqueId())
-            }
-          }
-        }
-        // elements
-        for (const el of self.elements) {
-          // selected
-          if (options.aria === true || options.aria.activation) {
-            el.setAttribute('aria-selected', 'false')
-          }
-          // id
-          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
-            const id = el.getAttribute('id')
-            if (!id) {
-              el.setAttribute('id', Xt.uniqueId())
-            }
-          }
-          // controls
-          if (options.aria === true || options.aria.controls) {
-            const trs = self.getTargets({ el })
-            let str = ' '
-            str += ''
-            for (const tr of trs) {
-              str += ` ${tr.getAttribute('id')}`
-            }
-            el.setAttribute('aria-controls', str.trim())
-          }
-        }
-        // targets
-        for (const tr of self.targets) {
-          // expanded
-          if (options.aria === true || options.aria.activation) {
-            const role = tr.getAttribute('role')
-            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
-              tr.setAttribute('aria-expanded', 'false')
-            }
-          }
-          // describedby
-          if (options.aria === true || options.aria.describedby) {
-            const els = self.getElements({ el: tr })
-            let str = ' '
-            str += ''
-            for (const el of els) {
-              str += ` ${el.getAttribute('id')}`
-            }
-            tr.setAttribute('aria-describedby', str.trim())
-          }
-          // labelledby
-          if (options.aria === true || options.aria.labelledby) {
-            const els = self.getElements({ el: tr })
-            let str = ' '
-            str += ''
-            for (const el of els) {
-              str += ` ${el.getAttribute('id')}`
-            }
-            tr.setAttribute('aria-labelledby', str.trim())
-          }
-        }
-      }
-    }
-  }
-
-  /**
-   * init aria role
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      if (self.targets.length) {
-        // role
-        if (options.aria === true || options.aria.role) {
-          if (self._mode === 'multiple') {
-            self.container.setAttribute('role', 'tablist')
-            if (options.max > 1) {
-              self.container.setAttribute('aria-multiselectable', 'true')
-            }
-            for (const el of self.elements) {
-              el.setAttribute('role', 'tab')
-            }
-            for (const tr of self.targets) {
-              tr.setAttribute('role', 'tabpanel')
-            }
-          }
-        }
-      }
-    }
   }
 
   /**
@@ -1955,10 +1848,6 @@ class Toggle {
               self._eventAuto()
             }, time / Xt.autoTimescale)
           )
-          // aria
-          if (options.aria === true || options.aria.activation) {
-            self.container.setAttribute('aria-live', 'off')
-          }
           // dispatch event
           self.container.dispatchEvent(new CustomEvent(`autostart.${self._componentNs}`))
         }
@@ -1979,10 +1868,6 @@ class Toggle {
         self._autorunning = false
         // clear
         clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
-        // aria
-        if (options.aria === true || options.aria.activation) {
-          self.container.setAttribute('aria-live', 'polite')
-        }
         // dispatch event
         self.container.dispatchEvent(new CustomEvent(`autostop.${self._componentNs}`))
       }
@@ -2221,24 +2106,6 @@ class Toggle {
       } else {
         self._specialCollapse({ actionCurrent, el, type, reset: true })
       }
-      // aria
-      if (options.aria) {
-        if (type === 'elements') {
-          // selected
-          if (options.aria === true || options.aria.activation) {
-            el.setAttribute('aria-selected', 'true')
-          }
-        }
-        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-          // expanded
-          if (options.aria === true || options.aria.activation) {
-            const role = el.getAttribute('role')
-            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
-              el.setAttribute('aria-expanded', 'true')
-            }
-          }
-        }
-      }
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
         // off from disable/destroy
@@ -2435,24 +2302,6 @@ class Toggle {
       // special
       self._specialAppendto({ actionCurrent, el, type })
       self._specialCollapse({ actionCurrent, el, type, reset: true })
-      // aria
-      if (options.aria) {
-        // selected
-        if (type === 'elements') {
-          if (options.aria === true || options.aria.activation) {
-            el.setAttribute('aria-selected', 'false')
-          }
-        }
-        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-          // expanded
-          if (options.aria === true || options.aria.activation) {
-            const role = el.getAttribute('role')
-            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
-              el.setAttribute('aria-expanded', 'false')
-            }
-          }
-        }
-      }
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
         // off from disable/destroy
@@ -2569,8 +2418,8 @@ class Toggle {
       })
       // focusLimit
       if (options.focusLimit && !self._focusTrap) {
-        const els = self.targets.length ? self.targets : self.elements
-        self._focusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
+        const trs = self.targets.length ? self.targets : self.elements
+        self._focusTrap = focusTrap.createFocusTrap(trs, options.focusTrap)
         self._focusTrap.activate()
       }
     } else if (actionCurrent === 'Out') {
@@ -3238,7 +3087,6 @@ class Toggle {
    */
   enable() {
     const self = this
-    const options = self.options
     if (self.disabled) {
       // enable
       self.disabled = false
@@ -3248,12 +3096,6 @@ class Toggle {
       }
       for (const tr of self.targets) {
         tr.removeAttribute(`data-${self.componentName}-disabled`)
-      }
-      // aria
-      if (options.aria === true || options.aria.activation) {
-        for (const el of self.elements) {
-          el.removeAttribute('aria-disabled')
-        }
       }
       // dispatch event
       self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
@@ -3284,12 +3126,6 @@ class Toggle {
       for (const tr of self.targets) {
         tr.setAttribute(`data-${self.componentName}-disabled`, '')
       }
-      // aria
-      if (options.aria === true || options.aria.activation) {
-        for (const el of self.elements) {
-          el.setAttribute('aria-disabled', 'true')
-        }
-      }
       // jump
       if (options.jump) {
         for (const jump of self.targets) {
@@ -3306,6 +3142,273 @@ class Toggle {
       // dispatch event
       if (!skipEvent) {
         self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
+      }
+    }
+  }
+
+  //
+  // aria
+  //
+
+  /**
+   * init aria
+   */
+  _initAria() {
+    const self = this
+    const options = self.options
+    // aria
+    if (options.aria) {
+      self._initAriaRole()
+      if (self.targets.length) {
+        self._initAriaId()
+        self._initAriaSetup()
+      }
+      if (options.auto && options.auto.time) {
+        self._initAuto()
+      }
+      self._initAriaChange()
+      self._initStatus()
+    }
+  }
+
+  /**
+   * init aria role
+   */
+  _initAriaRole() {
+    const self = this
+    const options = self.options
+    const els = self.targets.length ? self.elements : []
+    const trs = self.targets.length ? self.targets : self.elements
+    if (options.aria.role) {
+      // dialog
+      if (options.aria.role === 'dialog') {
+        for (const el of els) {
+          el.setAttribute('aria-haspopup', 'dialog')
+        }
+        for (const tr of trs) {
+          tr.setAttribute('role', 'dialog')
+          tr.setAttribute('aria-modal', 'true')
+        }
+      }
+      // tooltip
+      if (options.aria.role === 'tooltip') {
+        for (const tr of trs) {
+          tr.setAttribute('role', 'tooltip')
+        }
+      }
+      // carousel
+      if (options.aria.role === 'carousel') {
+        for (const tr of trs) {
+          tr.setAttribute('role', 'group')
+          tr.setAttribute('aria-roledescription', 'slide')
+        }
+        self.container.setAttribute('aria-roledescription', 'carousel')
+      }
+    }
+    /*
+    if (self.targets.length) {
+      // role
+      if (options.aria.role) {
+        if (self._mode === 'multiple') {
+          self.container.setAttribute('role', 'tablist')
+          if (options.max > 1) {
+            self.container.setAttribute('aria-multiselectable', 'true')
+          }
+          for (const el of self.elements) {
+            el.setAttribute('role', 'tab')
+          }
+          for (const tr of self.targets) {
+            tr.setAttribute('role', 'tabpanel')
+          }
+        }
+      }
+    }*/
+  }
+
+  /**
+   * init aria id
+   */
+  _initAriaId() {
+    const self = this
+    const options = self.options
+    // id
+    if (options.aria.label || options.aria.controls) {
+      // targets
+      for (const tr of self.targets) {
+        const id = tr.getAttribute('id')
+        if (!id) {
+          tr.setAttribute('id', Xt.uniqueId())
+        }
+      }
+    }
+  }
+
+  /**
+   * init aria setup
+   */
+  _initAriaSetup() {
+    const self = this
+    const options = self.options
+    // aria-labelledby and aria-controls
+    if (options.aria.label || options.aria.controls) {
+      for (const el of self.elements) {
+        const trs = self.getTargets({ el })
+        let str = ''
+        for (const tr of trs) {
+          str += `${tr.getAttribute('id')} `
+        }
+        if (options.aria.label) {
+          el.setAttribute('aria-labelledby', str.trim())
+        }
+        if (options.aria.controls) {
+          el.setAttribute('aria-controls', str.trim())
+        }
+      }
+    }
+  }
+
+  /**
+   * init aria change
+   */
+  _initAriaChange() {
+    const self = this
+    const options = self.options
+    // aria-selected and aria-expanded
+    if (options.aria.selected || options.aria.expanded) {
+      for (const el of self.elements) {
+        el.setAttribute('aria-selected', 'false')
+        // on
+        const onHandler = Xt.dataStorage.put(
+          el,
+          `on.${self._componentNs}/selected/${self.ns}`,
+          self._eventAriaChangeOn.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`on.${self._componentNs}`, onHandler)
+        // off
+        const offHandler = Xt.dataStorage.put(
+          el,
+          `off.${self._componentNs}/selected/${self.ns}`,
+          self._eventAriaChangeOff.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`off.${self._componentNs}`, offHandler)
+      }
+    }
+  }
+
+  /**
+   * event aria change on
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventAriaChangeOn({ el }) {
+    const self = this
+    const options = self.options
+    // aria-selected and aria-expanded
+    if (options.aria.selected) {
+      el.setAttribute('aria-selected', 'true')
+    }
+    if (options.aria.expanded) {
+      el.setAttribute('aria-expanded', 'true')
+    }
+  }
+
+  /**
+   * event aria change off
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventAriaChangeOff({ el }) {
+    const self = this
+    const options = self.options
+    // aria-selected and aria-expanded
+    if (options.aria.selected) {
+      el.setAttribute('aria-selected', 'false')
+    }
+    if (options.aria.expanded) {
+      el.setAttribute('aria-expanded', 'false')
+    }
+  }
+
+  /**
+   * init aria auto
+   */
+  _initAuto() {
+    const self = this
+    const options = self.options
+    // aria-live
+    if (options.aria.live) {
+      const container = self.container
+      self.container.setAttribute('aria-live', 'polite')
+      // on
+      const onHandler = Xt.dataStorage.put(
+        container,
+        `on.${self._componentNs}/live/${self.ns}`,
+        self._eventAutoOn.bind(self).bind(self, { container })
+      )
+      container.addEventListener(`autostart.${self._componentNs}`, onHandler)
+      // off
+      const offHandler = Xt.dataStorage.put(
+        container,
+        `off.${self._componentNs}/live/${self.ns}`,
+        self._eventAutoOff.bind(self).bind(self, { container })
+      )
+      container.addEventListener(`autostop.${self._componentNs}`, offHandler)
+    }
+  }
+
+  /**
+   * event aria auto on
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container
+   */
+  _eventAutoOn({ container }) {
+    // aria-live
+    container.setAttribute('aria-live', 'off')
+  }
+
+  /**
+   * event aria auto off
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container
+   */
+  _eventAutoOff({ container }) {
+    // aria-live
+    container.setAttribute('aria-live', 'polite')
+  }
+
+  /**
+   * init aria status
+   */
+  _initStatus() {
+    const self = this
+    const options = self.options
+    // aria-disabled
+    if (options.aria.disabled) {
+      const container = self.container
+      // status
+      const statusHandler = Xt.dataStorage.put(
+        container,
+        `status.${self._componentNs}/status/${self.ns}`,
+        self._eventStatus
+      )
+      container.addEventListener(`status.${self._componentNs}`, statusHandler)
+    }
+  }
+
+  /**
+   * event aria status
+   * @param {Object} params
+   */
+  _eventStatus() {
+    const self = this
+    // aria-disabled
+    if (self.disabled) {
+      for (const el of self.elements) {
+        el.setAttribute('aria-disabled', 'true')
+      }
+    } else {
+      for (const el of self.elements) {
+        el.removeAttribute('aria-disabled')
       }
     }
   }
@@ -3513,11 +3616,7 @@ Toggle.optionsDefaultSuper = {
   collapseHeight: false,
   collapseWidth: false,
   aria: {
-    activation: false,
-    role: false,
-    controls: false,
-    describedby: false,
-    labelledby: false,
+    live: true,
   },
 }
 

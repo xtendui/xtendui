@@ -504,25 +504,6 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * init aria
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      if (options.aria === true || options.aria.role) {
-        for (const tr of self.targets) {
-          tr.setAttribute('role', 'group')
-          tr.setAttribute('aria-roledescription', 'slide')
-        }
-        self.container.setAttribute('aria-roledescription', 'carousel')
-      }
-    }
-  }
-
-  /**
    * init events
    */
   _initEvents() {
@@ -1493,6 +1474,10 @@ Slider.optionsDefault = {
       start: 200, // same as options.zIndex.targets.start
       factor: -1,
     },
+  },
+  aria: {
+    role: 'carousel',
+    controls: true,
   },
 }
 
