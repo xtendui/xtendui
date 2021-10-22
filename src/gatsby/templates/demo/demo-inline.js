@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import loadable from '@loadable/component'
 import { Xt } from 'xtendui'
 
 function DemoInline(props) {
@@ -9,12 +10,23 @@ function DemoInline(props) {
   // vanilla
   const object = require(`static/${src}.html.js`).object
   const html = object.html
+
+
+  import(`./mount-unmount.js`)
+    .catch(err => console.error(err))
+
+  import(`./${'mount-unmount'}.js`)
+    .catch(err => console.error(err))
+
+  import(`./${name}.js`)
+  .catch(err => console.error(err))
+
   try {
-    require(`static/${src}.js`).default
+    loadable(() => import(`static/${src}.js`))
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   // react
-  const Demo = require(`static/${src}.jsx`).default
+  const Demo = loadable(() => import(`static/${src}.jsx`))
   // mode
   const [mode, setMode] = useState(0)
   const ref = useRef()

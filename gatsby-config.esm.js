@@ -29,6 +29,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-postcss',
+    'gatsby-plugin-loadable-components-ssr',
     // sitemap
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -54,17 +55,27 @@ module.exports = {
     },
     // resolve
     {
-      resolve: 'gatsby-plugin-module-resolver',
+      resolve: 'gatsby-plugin-root-import',
       options: {
-        root: './',
-        aliases: {
-          src: './src',
-          static: './static',
+        src: path.join(__dirname, 'src'),
+        static: path.join(__dirname, 'static'),
+        // resolve xtendui import js and css
+        xtendui: path.resolve(__dirname, './'),
+      },
+    },
+    /*
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          src: path.join(__dirname, 'src'),
+          static: path.join(__dirname, 'static'),
           // resolve xtendui import js and css
           xtendui: path.resolve(__dirname, './'),
         },
       },
     },
+    */
     // filesystem
     {
       resolve: 'gatsby-source-filesystem',

@@ -7,6 +7,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
+        src: path.join(__dirname, 'src'),
+        static: path.join(__dirname, 'static'),
         // resolve xtendui import js and css
         xtendui: path.resolve(__dirname, './'),
       },
