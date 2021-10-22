@@ -28,7 +28,7 @@ const html = /* HTML */ `
                         <img
                           class="xt-media relative"
                           src="https://source.unsplash.com/164_6wVEHfI"
-                          loading="eager"
+                          loading="lazy"
                           alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -45,7 +45,7 @@ const html = /* HTML */ `
                         <img
                           class="xt-media relative"
                           src="https://source.unsplash.com/j7zu2kpTnwY"
-                          loading="eager"
+                          loading="lazy"
                           alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -62,7 +62,7 @@ const html = /* HTML */ `
                         <img
                           class="xt-media relative"
                           src="https://source.unsplash.com/kP6knT7tjn4"
-                          loading="eager"
+                          loading="lazy"
                           alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -79,7 +79,7 @@ const html = /* HTML */ `
                         <img
                           class="xt-media relative"
                           src="https://source.unsplash.com/l8p1aWZqHvE"
-                          loading="eager"
+                          loading="lazy"
                           alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -96,7 +96,7 @@ const html = /* HTML */ `
                         <img
                           class="xt-media relative"
                           src="https://source.unsplash.com/gn07k9Kmx9c"
-                          loading="eager"
+                          loading="lazy"
                           alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -113,7 +113,7 @@ const html = /* HTML */ `
                         <img
                           class="xt-media relative"
                           src="https://source.unsplash.com/gpii_myxZG0"
-                          loading="eager"
+                          loading="lazy"
                           alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -130,7 +130,7 @@ const html = /* HTML */ `
                         <img
                           class="xt-media relative"
                           src="https://source.unsplash.com/DzoOduUanpQ"
-                          loading="eager"
+                          loading="lazy"
                           alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
