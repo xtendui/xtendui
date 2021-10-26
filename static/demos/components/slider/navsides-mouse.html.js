@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-slider" data-xt-slider="{ loop: true }">
-      <div class="*** slider-navs-container inline-block w-full relative ***">
+      <div class="p-4 md:p-6 lg:p-8 *** slider-navs-container relative ***">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
           data-xt-slider-dragger>
@@ -88,19 +88,20 @@ const html = /* HTML */ `
             </div>
           </div>
         </button>
-      </div>
 
-      <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
-        <button
-          type="button"
-          class="xt-button ${classes.buttonSlider()} hidden"
-          data-xt-slider-element
-          title="Slide xt-num"></button>
-      </nav>
+        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+          <button
+            type="button"
+            class="xt-button ${classes.buttonSlider()} hidden"
+            data-xt-slider-element
+            title="Slide xt-num"></button>
+        </nav>
+      </div>
     </div>
   </div>
 `
 
 export const object = {
   html: html,
+  overflow: true,
 }
