@@ -254,7 +254,7 @@ class Scrollto {
         }
       }
     }
-    // check because of event propagation
+    // usecapture event propagation check
     el = el ?? e.target
     // not null and HTML element and not window
     if (el && el.nodeName && el !== window) {

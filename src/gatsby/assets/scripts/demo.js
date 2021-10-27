@@ -171,7 +171,7 @@ export const populateBlock = () => {
       })
     }
     full.addEventListener('off.xt.toggle', e => {
-      // check because of event propagation
+      // usecapture event propagation check
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
         if (content) {
