@@ -49,15 +49,11 @@ const mountTest = ({ ref }) => {
 
   // off
 
-  const off = e => {
-    const tr = e.target
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      // eslint-disable-next-line no-console
-      console.log(
-        'TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
-      )
-    }
+  const off = () => {
+    // eslint-disable-next-line no-console
+    console.log(
+      'TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
+    )
   }
 
   for (const tr of self.targets) {

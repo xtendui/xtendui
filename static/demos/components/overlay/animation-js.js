@@ -29,22 +29,19 @@ const mountOverlay = ({ ref }) => {
   /***/
   const on = e => {
     const tr = e.target
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      // inner
-      const inner = tr.querySelector('[data-xt-overlay-inner]')
-      gsap.killTweensOf(inner)
-      gsap.set(inner, {
-        y: -self.direction * targetYOn,
-        opacity: 0,
-      })
-      gsap.to(inner, {
-        y: 0,
-        opacity: 1,
-        duration: targetTimeOn,
-        ease: targetEaseOn,
-      })
-    }
+    // inner
+    const inner = tr.querySelector('[data-xt-overlay-inner]')
+    gsap.killTweensOf(inner)
+    gsap.set(inner, {
+      y: -self.direction * targetYOn,
+      opacity: 0,
+    })
+    gsap.to(inner, {
+      y: 0,
+      opacity: 1,
+      duration: targetTimeOn,
+      ease: targetEaseOn,
+    })
   }
 
   for (const tr of self.targets) {
@@ -57,18 +54,15 @@ const mountOverlay = ({ ref }) => {
   /***/
   const off = e => {
     const tr = e.target
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      // inner
-      const inner = tr.querySelector('[data-xt-overlay-inner]')
-      gsap.killTweensOf(inner)
-      gsap.to(inner, {
-        y: self.direction * targetYOff,
-        opacity: 0,
-        duration: targetTimeOff,
-        ease: targetEaseOff,
-      })
-    }
+    // inner
+    const inner = tr.querySelector('[data-xt-overlay-inner]')
+    gsap.killTweensOf(inner)
+    gsap.to(inner, {
+      y: self.direction * targetYOff,
+      opacity: 0,
+      duration: targetTimeOff,
+      ease: targetEaseOff,
+    })
   }
 
   for (const tr of self.targets) {

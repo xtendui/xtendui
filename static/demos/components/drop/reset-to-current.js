@@ -11,16 +11,12 @@ const mountDrops = ({ ref }) => {
 
   // off
 
-  const off = e => {
-    const tr = e.target
+  const off = () => {
     /***/
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      // reset to current when no activation
-      if (self.index === null) {
-        const current = self.targets.filter(x => x.classList.contains('current'))[0]
-        current.dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
-      }
+    // reset to current when no activation
+    if (self.index === null) {
+      const current = self.targets.filter(x => x.classList.contains('current'))[0]
+      current.dispatchEvent(new CustomEvent('on.trigger.xt.drop'))
     }
     /***/
   }

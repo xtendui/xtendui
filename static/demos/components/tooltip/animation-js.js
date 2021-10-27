@@ -30,21 +30,18 @@ const mountTooltip = ({ ref }) => {
   /***/
   const on = e => {
     const tr = e.target
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      const target = tr.querySelector(':scope > *')
-      gsap.killTweensOf(target)
-      gsap.set(target, {
-        x: -self.direction * targetXOn,
-        opacity: 0,
-      })
-      gsap.to(target, {
-        x: 0,
-        opacity: 1,
-        duration: targetTimeOn,
-        ease: targetEaseOn,
-      })
-    }
+    const target = tr.querySelector(':scope > *')
+    gsap.killTweensOf(target)
+    gsap.set(target, {
+      x: -self.direction * targetXOn,
+      opacity: 0,
+    })
+    gsap.to(target, {
+      x: 0,
+      opacity: 1,
+      duration: targetTimeOn,
+      ease: targetEaseOn,
+    })
   }
 
   for (const tr of self.targets) {
@@ -57,17 +54,14 @@ const mountTooltip = ({ ref }) => {
   /***/
   const off = e => {
     const tr = e.target
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      const target = tr.querySelector(':scope > *')
-      gsap.killTweensOf(target)
-      gsap.to(target, {
-        x: self.direction * targetXOff,
-        opacity: 0,
-        duration: targetTimeOff,
-        ease: targetEaseOff,
-      })
-    }
+    const target = tr.querySelector(':scope > *')
+    gsap.killTweensOf(target)
+    gsap.to(target, {
+      x: self.direction * targetXOff,
+      opacity: 0,
+      duration: targetTimeOff,
+      ease: targetEaseOff,
+    })
   }
 
   for (const tr of self.targets) {
