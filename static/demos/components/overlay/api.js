@@ -165,8 +165,8 @@ const mountEventmethods = ({ ref }) => {
     logAdd(str)
   }
 
-  ref.addEventListener('init.xt.overlay', events)
-  ref.addEventListener('destroy.xt.overlay', events)
+  overlay.addEventListener('init.xt.overlay', events)
+  overlay.addEventListener('destroy.xt.overlay', events)
   document.addEventListener('on.xt.overlay', events, true)
   document.addEventListener('off.xt.overlay', events, true)
 
@@ -179,8 +179,8 @@ const mountEventmethods = ({ ref }) => {
     restartBtn.removeEventListener('click', restartFnc)
     destroyBtn.removeEventListener('click', destroyFnc)
     unmountBtn.removeEventListener('click', unmountFnc)
-    ref.removeEventListener('init.xt.overlay', events)
-    ref.removeEventListener('destroy.xt.overlay', events)
+    overlay.removeEventListener('init.xt.overlay', events)
+    overlay.removeEventListener('destroy.xt.overlay', events)
     document.removeEventListener('on.xt.overlay', events, true)
     document.removeEventListener('off.xt.overlay', events, true)
     self.destroy()

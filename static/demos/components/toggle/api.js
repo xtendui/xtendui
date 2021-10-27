@@ -4,10 +4,14 @@ import 'xtendui/src/toggle'
 /* mountEventmethods */
 
 const mountEventmethods = ({ ref }) => {
+  // vars
+
+  const toggle = ref.querySelector('#toggle--eventmethods')
+
   // init
 
   /***/
-  let self = new Xt.Toggle(ref.querySelector('#toggle--eventmethods'), {
+  let self = new Xt.Toggle(toggle, {
     min: 1,
   })
   /***/
@@ -199,8 +203,8 @@ const mountEventmethods = ({ ref }) => {
     logAdd(str)
   }
 
-  ref.addEventListener('init.xt.toggle', events)
-  ref.addEventListener('destroy.xt.toggle', events)
+  toggle.addEventListener('init.xt.toggle', events)
+  toggle.addEventListener('destroy.xt.toggle', events)
   document.addEventListener('on.xt.toggle', events, true)
   document.addEventListener('off.xt.toggle', events, true)
 
@@ -215,8 +219,8 @@ const mountEventmethods = ({ ref }) => {
     restartBtn.removeEventListener('click', restartFnc)
     destroyBtn.removeEventListener('click', destroyFnc)
     unmountBtn.removeEventListener('click', unmountFnc)
-    ref.removeEventListener('init.xt.toggle', events)
-    ref.removeEventListener('destroy.xt.toggle', events)
+    toggle.removeEventListener('init.xt.toggle', events)
+    toggle.removeEventListener('destroy.xt.toggle', events)
     document.removeEventListener('on.xt.toggle', events, true)
     document.removeEventListener('off.xt.toggle', events, true)
     self.destroy()
