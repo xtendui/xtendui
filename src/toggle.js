@@ -3179,9 +3179,9 @@ class Toggle {
     const trs = self.targets.length ? self.targets : self.elements
     if (options.aria.role) {
       if (options.aria.role === 'tab') {
-        // tab
-        // not on self mode
-        if (els.length) {
+        // not when unique mode (because tab and tabpanel must be inside self.container) or self mode (no elements)
+        if (self._mode !== 'unique' && els.length) {
+          // tab
           self.container.setAttribute('role', 'tablist')
           for (const el of els) {
             el.setAttribute('role', 'tab')
@@ -3636,6 +3636,7 @@ Toggle.optionsDefaultSuper = {
     labelTargets: true,
     controls: true,
     selected: true,
+    expanded: false,
     live: true,
     disabled: true,
   },

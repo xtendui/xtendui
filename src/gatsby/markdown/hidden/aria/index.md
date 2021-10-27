@@ -11,15 +11,15 @@ title: "Aria"
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `aria:Object\|false`                          | `false`        | Aria options            |
-| Option                  | `aria.role:String\|false`                          | `null`        | Inject `role` and related attributes, can be `'dialog'`, `'tooltip'`, `'carousel'`            |
-| Option                  | `aria.labelElements:Boolean`                          | `null`        | Inject `aria-labelledby` attributes on elements (linking to targets)            |
-| Option                  | `aria.labelTargets:Boolean`                          | `null`        | Inject `aria-labelledby` attributes on targets (linking to elements)            |
-| Option                  | `aria.controls:Boolean`                          | `null`        | Inject `aria-controls` attributes            |
-| Option                  | `aria.selected:Boolean`                          | `null`        | Inject `aria-selected` attributes            |
-| Option                  | `aria.expanded:Boolean`                          | `null`        | Inject `aria-expanded` attributes            |
-| Option                  | `aria.live:Boolean`                          | `null`        | Inject `aria-live` attributes on auto            |
-| Option                  | `aria.disabled:Boolean`                          | `null`        | Inject `aria-disabled` attributes on enable/disable           |
+| Option                  | `aria:Object\|false`                          | `<Object>`        | Aria options            |
+| Option                  | `aria.role:String\|false`                          | `'tab'`        | Inject `role` and related attributes, can be `'dialog'`, `'tooltip'`, `'carousel'`            |
+| Option                  | `aria.labelElements:Boolean`                          | `false`        | Inject `aria-labelledby` attributes on elements (linking to targets)            |
+| Option                  | `aria.labelTargets:Boolean`                          | `true`        | Inject `aria-labelledby` attributes on targets (linking to elements)            |
+| Option                  | `aria.controls:Boolean`                          | `true`        | Inject `aria-controls` attributes            |
+| Option                  | `aria.selected:Boolean`                          | `true`        | Inject `aria-selected` attributes            |
+| Option                  | `aria.expanded:Boolean`                          | `false`        | Inject `aria-expanded` attributes            |
+| Option                  | `aria.live:Boolean`                          | `true`        | Inject `aria-live` attributes on auto            |
+| Option                  | `aria.disabled:Boolean`                          | `true`        | Inject `aria-disabled` attributes on enable/disable           |
 
 </div>
 

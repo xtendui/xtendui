@@ -15,6 +15,7 @@ Xt.mount({
       closeDeep: '#gatsby_open-full_close',
       closeauto: true,
       classBody: 'xt-scrollbar-overlay demo-full-open',
+      aria: false,
     })
 
     // tooltip

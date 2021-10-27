@@ -361,6 +361,7 @@ export const populateDemo = container => {
     elements: '.button--show-code',
     targets: `.gatsby_demo_code`,
     queue: false,
+    aria: false,
   })
   btnCode.addEventListener('on.xt.toggle', () => {
     const targetCode = selfCode.targets[0]
