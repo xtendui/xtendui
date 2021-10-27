@@ -3162,10 +3162,10 @@ class Toggle {
         self._initAriaSetup()
       }
       if (options.auto && options.auto.time) {
-        self._initAuto()
+        self._initAriaAuto()
       }
       self._initAriaChange()
-      self._initStatus()
+      self._initAriaStatus()
     }
   }
 
@@ -3178,8 +3178,20 @@ class Toggle {
     const els = self.targets.length ? self.elements : []
     const trs = self.targets.length ? self.targets : self.elements
     if (options.aria.role) {
-      // dialog
-      if (options.aria.role === 'dialog') {
+      if (options.aria.role === 'tab') {
+        // tab
+        // not on self mode
+        if (els.length) {
+          self.container.setAttribute('role', 'tablist')
+          for (const el of els) {
+            el.setAttribute('role', 'tab')
+          }
+          for (const tr of trs) {
+            tr.setAttribute('role', 'tabpanel')
+          }
+        }
+      } else if (options.aria.role === 'dialog') {
+        // dialog
         for (const el of els) {
           el.setAttribute('aria-haspopup', 'dialog')
         }
@@ -3187,15 +3199,13 @@ class Toggle {
           tr.setAttribute('role', 'dialog')
           tr.setAttribute('aria-modal', 'true')
         }
-      }
-      // tooltip
-      if (options.aria.role === 'tooltip') {
+      } else if (options.aria.role === 'tooltip') {
+        // tooltip
         for (const tr of trs) {
           tr.setAttribute('role', 'tooltip')
         }
-      }
-      // carousel
-      if (options.aria.role === 'carousel') {
+      } else if (options.aria.role === 'carousel') {
+        // carousel
         for (const tr of trs) {
           tr.setAttribute('role', 'group')
           tr.setAttribute('aria-roledescription', 'slide')
@@ -3203,24 +3213,6 @@ class Toggle {
         self.container.setAttribute('aria-roledescription', 'carousel')
       }
     }
-    /*
-    if (self.targets.length) {
-      // role
-      if (options.aria.role) {
-        if (self._mode === 'multiple') {
-          self.container.setAttribute('role', 'tablist')
-          if (options.max > 1) {
-            self.container.setAttribute('aria-multiselectable', 'true')
-          }
-          for (const el of self.elements) {
-            el.setAttribute('role', 'tab')
-          }
-          for (const tr of self.targets) {
-            tr.setAttribute('role', 'tabpanel')
-          }
-        }
-      }
-    }*/
   }
 
   /**
@@ -3230,12 +3222,21 @@ class Toggle {
     const self = this
     const options = self.options
     // id
-    if (options.aria.label || options.aria.controls) {
+    if (options.aria.labelElements || options.aria.controls) {
       // targets
       for (const tr of self.targets) {
         const id = tr.getAttribute('id')
         if (!id) {
           tr.setAttribute('id', Xt.uniqueId())
+        }
+      }
+    }
+    if (options.aria.labelTargets) {
+      // elements
+      for (const el of self.elements) {
+        const id = el.getAttribute('id')
+        if (!id) {
+          el.setAttribute('id', Xt.uniqueId())
         }
       }
     }
@@ -3248,19 +3249,30 @@ class Toggle {
     const self = this
     const options = self.options
     // aria-labelledby and aria-controls
-    if (options.aria.label || options.aria.controls) {
+    if (options.aria.labelElements || options.aria.controls) {
       for (const el of self.elements) {
         const trs = self.getTargets({ el })
         let str = ''
         for (const tr of trs) {
           str += `${tr.getAttribute('id')} `
         }
-        if (options.aria.label) {
+        if (options.aria.labelElements) {
           el.setAttribute('aria-labelledby', str.trim())
         }
         if (options.aria.controls) {
           el.setAttribute('aria-controls', str.trim())
         }
+      }
+    }
+    // aria-labelledby
+    if (options.aria.labelTargets) {
+      for (const tr of self.targets) {
+        const els = self.getElements({ el: tr })
+        let str = ''
+        for (const el of els) {
+          str += `${el.getAttribute('id')} `
+        }
+        tr.setAttribute('aria-labelledby', str.trim())
       }
     }
   }
@@ -3274,7 +3286,12 @@ class Toggle {
     // aria-selected and aria-expanded
     if (options.aria.selected || options.aria.expanded) {
       for (const el of self.elements) {
-        el.setAttribute('aria-selected', 'false')
+        if (options.aria.selected) {
+          el.setAttribute('aria-selected', 'false')
+        }
+        if (options.aria.expanded) {
+          el.setAttribute('aria-expanded', 'false')
+        }
         // on
         const onHandler = Xt.dataStorage.put(
           el,
@@ -3330,7 +3347,7 @@ class Toggle {
   /**
    * init aria auto
    */
-  _initAuto() {
+  _initAriaAuto() {
     const self = this
     const options = self.options
     // aria-live
@@ -3341,14 +3358,14 @@ class Toggle {
       const onHandler = Xt.dataStorage.put(
         container,
         `on.${self._componentNs}/live/${self.ns}`,
-        self._eventAutoOn.bind(self).bind(self, { container })
+        self._eventAriaAutoOn.bind(self).bind(self, { container })
       )
       container.addEventListener(`autostart.${self._componentNs}`, onHandler)
       // off
       const offHandler = Xt.dataStorage.put(
         container,
         `off.${self._componentNs}/live/${self.ns}`,
-        self._eventAutoOff.bind(self).bind(self, { container })
+        self._eventAriaAutoOff.bind(self).bind(self, { container })
       )
       container.addEventListener(`autostop.${self._componentNs}`, offHandler)
     }
@@ -3359,7 +3376,7 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.container
    */
-  _eventAutoOn({ container }) {
+  _eventAriaAutoOn({ container }) {
     // aria-live
     container.setAttribute('aria-live', 'off')
   }
@@ -3369,7 +3386,7 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.container
    */
-  _eventAutoOff({ container }) {
+  _eventAriaAutoOff({ container }) {
     // aria-live
     container.setAttribute('aria-live', 'polite')
   }
@@ -3377,7 +3394,7 @@ class Toggle {
   /**
    * init aria status
    */
-  _initStatus() {
+  _initAriaStatus() {
     const self = this
     const options = self.options
     // aria-disabled
@@ -3387,7 +3404,7 @@ class Toggle {
       const statusHandler = Xt.dataStorage.put(
         container,
         `status.${self._componentNs}/status/${self.ns}`,
-        self._eventStatus.bind(self)
+        self._eventAriaStatus.bind(self)
       )
       container.addEventListener(`status.${self._componentNs}`, statusHandler)
     }
@@ -3397,7 +3414,7 @@ class Toggle {
    * event aria status
    * @param {Object} params
    */
-  _eventStatus() {
+  _eventAriaStatus() {
     const self = this
     // aria-disabled
     if (self.disabled) {
@@ -3614,8 +3631,9 @@ Toggle.optionsDefaultSuper = {
   collapseHeight: false,
   collapseWidth: false,
   aria: {
-    role: false,
-    label: false,
+    role: 'tab',
+    labelElements: false,
+    labelTargets: true,
     controls: true,
     selected: true,
     live: true,

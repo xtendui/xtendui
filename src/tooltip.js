@@ -181,7 +181,8 @@ Tooltip.optionsDefault = {
   },
   aria: {
     role: 'tooltip',
-    label: true,
+    labelElements: true,
+    labelTargets: false,
     controls: false,
     selected: false,
     expanded: false,

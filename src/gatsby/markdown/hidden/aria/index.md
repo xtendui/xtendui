@@ -13,7 +13,8 @@ title: "Aria"
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `aria:Object\|false`                          | `false`        | Aria options            |
 | Option                  | `aria.role:String\|false`                          | `null`        | Inject `role` and related attributes, can be `'dialog'`, `'tooltip'`, `'carousel'`            |
-| Option                  | `aria.label:Boolean`                          | `null`        | Inject `aria-labelledby` attributes            |
+| Option                  | `aria.labelElements:Boolean`                          | `null`        | Inject `aria-labelledby` attributes on elements (linking to targets)            |
+| Option                  | `aria.labelTargets:Boolean`                          | `null`        | Inject `aria-labelledby` attributes on targets (linking to elements)            |
 | Option                  | `aria.controls:Boolean`                          | `null`        | Inject `aria-controls` attributes            |
 | Option                  | `aria.selected:Boolean`                          | `null`        | Inject `aria-selected` attributes            |
 | Option                  | `aria.expanded:Boolean`                          | `null`        | Inject `aria-expanded` attributes            |
