@@ -15,6 +15,8 @@ const html = /* HTML */ `
             </p>
             <input
               type="checkbox"
+              role="group"
+              aria-label="Lorem ipsum"
               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
               name="checkbox-card-0"
               checked
@@ -35,6 +37,8 @@ const html = /* HTML */ `
             </p>
             <input
               type="checkbox"
+              role="group"
+              aria-label="Lorem ipsum"
               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
               name="checkbox-card-1" />
           </div>
@@ -51,7 +55,7 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input type="radio" class="sr-only" name="radio-card" checked />
+            <input type="radio" role="radiogroup" aria-label="Lorem ipsum" class="sr-only" name="radio-card" checked />
           </div>
         </label>
       </div>
@@ -66,7 +70,7 @@ const html = /* HTML */ `
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
-            <input type="radio" class="sr-only" name="radio-card" />
+            <input type="radio" role="radiogroup" aria-label="Lorem ipsum" class="sr-only" name="radio-card" />
           </div>
         </label>
       </div>
@@ -83,6 +87,8 @@ const html = /* HTML */ `
             </p>
             <input
               type="radio"
+              role="radiogroup"
+              aria-label="Lorem ipsum"
               class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
               name="switch-card"
               checked />
@@ -102,6 +108,8 @@ const html = /* HTML */ `
             </p>
             <input
               type="radio"
+              role="radiogroup"
+              aria-label="Lorem ipsum"
               class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
               name="switch-card" />
           </div>

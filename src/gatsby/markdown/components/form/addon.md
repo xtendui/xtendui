@@ -24,6 +24,10 @@ You can style validation classes with `.valid-submit` and `.invalid-submit`, you
 
 It **automatically runs** on **form submit** and **automatically scrolls** on the **first invalid** form item.
 
+For usability purpose it automatically sets `[aria-invalid]`.
+
+If you have **custom backend validation** on submit add also the class `.invalid-submit`, and you can add javascript to automatically **scroll to the first validation** element on page load.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -31,8 +35,6 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 | Variable                  | `Xt.formScrollWindowFactor:Number\|false`              | `0.2`        | A number from `0` to `1` of the **window height factor to scroll to** on validation              |
 
 </div>
-
-If you have **custom backend validation** on submit, you can automatically **scroll to the first validation** element on page load.
 
 > Use **border on all form elements** if you want to **show validation with border color**.
 

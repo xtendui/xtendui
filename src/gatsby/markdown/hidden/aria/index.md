@@ -25,9 +25,9 @@ title: "Aria"
 
 > **Do not rely/use aria attributes**, they are generated and they can change anytime.
 
-> The overlay uses `aria: 'dialog'` so **aria attributes and keyboard interactions are managed automatically** following [aria dialog practices](https://www.w3.org/TR/2019/NOTE-wai-aria-practices-1.1-20190814/examples/dialog-modal/dialog.html).
+> The overlay uses `[aria: 'dialog']` so **aria attributes and keyboard interactions are managed automatically** following [aria dialog practices](https://www.w3.org/TR/2019/NOTE-wai-aria-practices-1.1-20190814/examples/dialog-modal/dialog.html).
 
-> For usability purpose **to bettere describe the content** add `aria-label` attribute or `aria-labelledby`/`aria-describedby` attributes.
+> For usability purpose **to bettere describe the content** add `[aria-label]` or `[aria-labelledby]`/`[aria-describedby]`.
 
 ## Keyboard
 

@@ -66,6 +66,8 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="checkbox"
+                  role="group"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkGray()} ***"
                   checked
                   disabled />
@@ -81,6 +83,8 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="checkbox"
+                  role="group"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkGray()} ***" />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -100,6 +104,8 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioGray()} ***"
                   name="radio-default"
                   checked />
@@ -115,6 +121,8 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioGray()} ***"
                   name="radio-default" />
                 <span class="*** ${classes.checkContent()} ***"
@@ -135,6 +143,8 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="checkbox"
+                  role="group"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchGray()} ***" />
                 <span class="*** ${classes.checkContent()} ***"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -148,6 +158,8 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchGray()} ***"
                   name="switch-default"
                   checked />
@@ -163,6 +175,8 @@ const html = /* HTML */ `
               <label class="*** ${classes.checkLabel()} ***">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchGray()} ***"
                   name="switch-default" />
                 <span class="*** ${classes.checkContent()} ***"

@@ -61,6 +61,8 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
+                  role="group"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                   checked
                   disabled />
@@ -74,7 +76,11 @@ const html = /* HTML */ `
 
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
+                <input
+                  type="checkbox"
+                  role="group"
+                  aria-label="Lorem ipsum"
+                  class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -93,6 +99,8 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-sm"
                   checked />
@@ -108,6 +116,8 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-sm" />
                 <span class="${classes.checkContent()}"
@@ -126,7 +136,11 @@ const html = /* HTML */ `
           <div class="xt-row xt-row-x-8 xt-row-y-2">
             <div class="w-full">
               <label class="${classes.checkLabel()}">
-                <input type="checkbox" class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}" />
+                <input
+                  type="checkbox"
+                  role="group"
+                  aria-label="Lorem ipsum"
+                  class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}" />
                 <span class="${classes.checkContent()}"
                   ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -139,6 +153,8 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-sm"
                   checked />
@@ -154,6 +170,8 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
+                  role="radiogroup"
+                  aria-label="Lorem ipsum"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-sm" />
                 <span class="${classes.checkContent()}"

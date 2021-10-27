@@ -72,6 +72,8 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="checkbox"
+                    role="group"
+                    aria-label="Lorem ipsum"
                     class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                     checked />
                   <span class="${classes.checkContent()}"
@@ -84,7 +86,11 @@ const html = /* HTML */ `
 
               <div class="w-full">
                 <label class="${classes.checkLabel()}">
-                  <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
+                  <input
+                    type="checkbox"
+                    role="group"
+                    aria-label="Lorem ipsum"
+                    class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                   <span class="${classes.checkContent()}"
                     ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
@@ -112,6 +118,8 @@ const html = /* HTML */ `
                     <label class="${classes.checkLabel()}">
                       <input
                         type="checkbox"
+                        role="group"
+                        aria-label="Lorem ipsum"
                         class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                         checked />
                       <span class="${classes.checkContent()}"
@@ -126,6 +134,8 @@ const html = /* HTML */ `
                     <label class="${classes.checkLabel()}">
                       <input
                         type="checkbox"
+                        role="group"
+                        aria-label="Lorem ipsum"
                         class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                         checked />
                       <span class="${classes.checkContent()}"
@@ -157,6 +167,8 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="checkbox"
+                    role="group"
+                    aria-label="Lorem ipsum"
                     class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                     checked />
                   <span class="${classes.checkContent()}">Lorem ipsum</span>
@@ -165,7 +177,11 @@ const html = /* HTML */ `
 
               <div class="w-full md:w-auto">
                 <label class="${classes.checkLabel()}">
-                  <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
+                  <input
+                    type="checkbox"
+                    role="group"
+                    aria-label="Lorem ipsum"
+                    class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                   <span class="${classes.checkContent()}">Lorem ipsum</span>
                 </label>
               </div>
