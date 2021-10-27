@@ -657,10 +657,10 @@ const demoEmpty = ({ reset = false } = {}) => {
 const initializeIframe = item => {
   if (!item.classList.contains('populated-iframe')) {
     item.classList.add('populated-iframe')
-    const src = `/${item.getAttribute('data-iframe')}`
+    const src = DOMPurify.sanitize(`/${item.getAttribute('data-iframe')}`)
     item.append(
       Xt.node({
-        str: `<div class="gatsby_demo_item_body"><iframe data-src="${DOMPurify.sanitize(src)}"></iframe></div>`,
+        str: `<div class="gatsby_demo_item_body"><iframe title="${src}" data-src="${src}"></iframe></div>`,
       })
     )
     item.querySelector('.gatsby_demo_item_body').append(
