@@ -1006,15 +1006,6 @@ class Slider extends Xt.Toggle {
     }
   }
 
-  /**
-   * medialoadedReinit
-   */
-  _eventMediaLoadedReinit() {
-    const self = this
-    // restart
-    self.reinit()
-  }
-
   //
   // logic
   //

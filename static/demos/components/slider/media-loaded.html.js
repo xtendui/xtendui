@@ -8,7 +8,7 @@ const html = /* HTML */ `
           class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
           data-xt-slider-dragger>
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200">
+            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="/img.svg"
@@ -26,7 +26,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200">
+            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="/img-ratio.svg"
@@ -44,7 +44,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200">
+            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/ruJm3dBXCqw"
@@ -62,7 +62,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200">
+            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/wQLAGv4_OYs"
@@ -80,7 +80,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200">
+            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/OlTjeydUpQw"
@@ -98,7 +98,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200">
+            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/wEL2zPX3jDg"
@@ -116,7 +116,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200">
+            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                 src="https://source.unsplash.com/Tyg0rVhOTrE"
@@ -135,7 +135,11 @@ const html = /* HTML */ `
         </div>
 
         <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
-          <button type="button" class="xt-button h-10 hidden" data-xt-slider-element title="Slide xt-num">
+          <button
+            type="button"
+            class="xt-button h-10 rounded-md overflow-hidden hidden"
+            data-xt-slider-element
+            title="Slide xt-num">
             xt-content
           </button>
         </nav>
