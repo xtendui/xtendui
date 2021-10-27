@@ -29,7 +29,7 @@ const mountOverlay = ({ ref }) => {
   /***/
   const on = e => {
     const tr = e.target
-    // check because of event propagation
+    // usecapture event propagation check
     if (self.targets.includes(tr)) {
       // inner
       const inner = tr.querySelector('[data-xt-overlay-inner]')
@@ -57,7 +57,7 @@ const mountOverlay = ({ ref }) => {
   /***/
   const off = e => {
     const tr = e.target
-    // check because of event propagation
+    // usecapture event propagation check
     if (self.targets.includes(tr)) {
       // inner
       const inner = tr.querySelector('[data-xt-overlay-inner]')

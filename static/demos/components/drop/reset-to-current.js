@@ -14,7 +14,7 @@ const mountDrops = ({ ref }) => {
   const off = e => {
     const tr = e.target
     /***/
-    // check because of event propagation
+    // usecapture event propagation check
     if (self.targets.includes(tr)) {
       // reset to current when no activation
       if (self.index === null) {

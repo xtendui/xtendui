@@ -261,7 +261,7 @@ Listen to events on a **single Node**.
 const node = document.querySelector('.my-node')
 
 const on = e => {
-  // check because of event propagation
+  // usecapture event propagation check
   if (e.target === node) {
     // logic
   }
@@ -275,7 +275,7 @@ Listen to events on **multiple Nodes**.
 ```js
 for (const node of document.querySelectorAll('.my-node')) {
   const on = e => {
-    // check because of event propagation
+    // usecapture event propagation check
     if (e.target === node) {
       // logic
     }
@@ -296,11 +296,11 @@ let self = Xt.get({ name: 'xt-componentname', el: container })
 
 const on = e => {
   const tr = e.target
-  // check because of event propagation
+  // usecapture event propagation check
   if (self.targets.includes(tr)) {
     // logic
   }
 }
 
-container.addEventListener('eventname.xt.componentname', on, true)
+container.addEventListener('eventname.xt.componentname', on, true) // usecapture event propagation
 ```

@@ -51,7 +51,7 @@ const mountTest = ({ ref }) => {
 
   const off = e => {
     const tr = e.target
-    // check because of event propagation
+    // usecapture event propagation check
     if (self.targets.includes(tr)) {
       // eslint-disable-next-line no-console
       console.log(
