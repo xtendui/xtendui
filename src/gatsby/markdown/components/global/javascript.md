@@ -253,18 +253,13 @@ Or also use css variables for viewport height `--vh`.
 
 ## Listeners
 
-We always check for `e.target` because **events propagate** and we want to listen to **only events originated in the same target we listen for Xtend UI components**.
-
 Listen to events on a **single Node**.
 
 ```js
 const node = document.querySelector('.my-node')
 
 const on = e => {
-  // usecapture event propagation check
-  if (e.target === node) {
-    // logic
-  }
+  // logic
 }
 
 node.addEventListener('eventname.xt.componentname', on)
@@ -275,10 +270,7 @@ Listen to events on **multiple Nodes**.
 ```js
 for (const node of document.querySelectorAll('.my-node')) {
   const on = e => {
-    // usecapture event propagation check
-    if (e.target === node) {
-      // logic
-    }
+    // logic
   }
 
   node.addEventListener('eventname.xt.componentname', on)
@@ -287,7 +279,7 @@ for (const node of document.querySelectorAll('.my-node')) {
 
 Listen to events on **multiple Nodes** with **events delegation useCapture**.
 
-This method is useful to capture events also if child nodes gets added in future.
+This method is useful to **capture events also if child nodes gets added in future**.
 
 ```js
 const container = document.querySelector('.my-container')
@@ -296,11 +288,11 @@ let self = Xt.get({ name: 'xt-componentname', el: container })
 
 const on = e => {
   const tr = e.target
-  // usecapture event propagation check
+  // useCapture event propagation check
   if (self.targets.includes(tr)) {
     // logic
   }
 }
 
-container.addEventListener('eventname.xt.componentname', on, true) // usecapture event propagation
+container.addEventListener('eventname.xt.componentname', on, true) // useCapture event propagation
 ```

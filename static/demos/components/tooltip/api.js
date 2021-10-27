@@ -242,8 +242,8 @@ const mountEventmethods = ({ ref }) => {
 
   tooltip.addEventListener('init.xt.tooltip', events)
   tooltip.addEventListener('destroy.xt.tooltip', events)
-  document.addEventListener('on.xt.tooltip', events, true) // usecapture event propagation
-  document.addEventListener('off.xt.tooltip', events, true) // usecapture event propagation
+  document.addEventListener('on.xt.tooltip', events, true) // useCapture event propagation
+  document.addEventListener('off.xt.tooltip', events, true) // useCapture event propagation
 
   // unmount
 
@@ -258,8 +258,8 @@ const mountEventmethods = ({ ref }) => {
     unmountBtn.removeEventListener('click', unmountFnc)
     tooltip.removeEventListener('init.xt.tooltip', events)
     tooltip.removeEventListener('destroy.xt.tooltip', events)
-    document.removeEventListener('on.xt.tooltip', events, true) // usecapture event propagation
-    document.removeEventListener('off.xt.tooltip', events, true) // usecapture event propagation
+    document.removeEventListener('on.xt.tooltip', events, true) // useCapture event propagation
+    document.removeEventListener('off.xt.tooltip', events, true) // useCapture event propagation
     self.destroy()
     self = null
   }

@@ -53,7 +53,7 @@ const mountDrops = ({ ref }) => {
 
   const on = e => {
     const tr = e.target
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // backdrop
       if (backdrop) {
@@ -121,13 +121,13 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('on.xt.drop', on, true) // usecapture event propagation
+  self.container.addEventListener('on.xt.drop', on, true) // useCapture event propagation
 
   // off
 
   const off = e => {
     const tr = e.target
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // backdrop
       if (backdrop) {
@@ -171,7 +171,7 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('off.xt.drop', off, true) // usecapture event propagation
+  self.container.addEventListener('off.xt.drop', off, true) // useCapture event propagation
 
   // leave
   // when want to close the drop on mouseleave also when using 'click'

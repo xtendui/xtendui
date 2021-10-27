@@ -14,7 +14,7 @@ const mountStatus = ({ ref }) => {
   // change
 
   const change = e => {
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self && (e.target === slider || self.elements.includes(e.target))) {
       // width
       const trs = self.targets.filter(x => self.hasCurrent({ el: x, same: window.demogroupedstatus })) // switcher window.demogroupedstatus true or false
@@ -35,7 +35,7 @@ const mountStatus = ({ ref }) => {
 
   slider.addEventListener('init.xt.slider', change)
   slider.addEventListener('status.xt.slider', change)
-  slider.addEventListener('on.xt.slider', change, true) // usecapture event propagation
+  slider.addEventListener('on.xt.slider', change, true) // useCapture event propagation
   addEventListener('resize', change)
 
   // unmount

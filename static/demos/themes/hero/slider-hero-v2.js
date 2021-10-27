@@ -97,7 +97,7 @@ const mountSlider = ({ ref }) => {
 
   const on = e => {
     const tr = e.target
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr) && !self.initial) {
       // mask
       const mask = tr.querySelector('.hero')
@@ -154,13 +154,13 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('on.xt.slider', on, true) // usecapture event propagation
+  self.container.addEventListener('on.xt.slider', on, true) // useCapture event propagation
 
   // off
 
   const off = e => {
     const tr = e.target
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // cover
       const cover = tr.querySelector('.hero-cover')
@@ -216,7 +216,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('off.xt.slider', off, true) // usecapture event propagation
+  self.container.addEventListener('off.xt.slider', off, true) // useCapture event propagation
 
   // unmount
 

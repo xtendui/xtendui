@@ -250,8 +250,8 @@ const mountEventmethods = ({ ref }) => {
 
   drop.addEventListener('init.xt.drop', events)
   drop.addEventListener('destroy.xt.drop', events)
-  document.addEventListener('on.xt.drop', events, true) // usecapture event propagation
-  document.addEventListener('off.xt.drop', events, true) // usecapture event propagation
+  document.addEventListener('on.xt.drop', events, true) // useCapture event propagation
+  document.addEventListener('off.xt.drop', events, true) // useCapture event propagation
 
   // unmount
 
@@ -266,8 +266,8 @@ const mountEventmethods = ({ ref }) => {
     unmountBtn.removeEventListener('click', unmountFnc)
     drop.removeEventListener('init.xt.drop', events)
     drop.removeEventListener('destroy.xt.drop', events)
-    document.removeEventListener('on.xt.drop', events, true) // usecapture event propagation
-    document.removeEventListener('off.xt.drop', events, true) // usecapture event propagation
+    document.removeEventListener('on.xt.drop', events, true) // useCapture event propagation
+    document.removeEventListener('off.xt.drop', events, true) // useCapture event propagation
     self.destroy()
     self = null
   }

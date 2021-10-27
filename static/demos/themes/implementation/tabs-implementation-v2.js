@@ -75,7 +75,7 @@ const mountSticky = ({ ref }) => {
   const refresh = e => {
     const tr = e.target
     const self = Xt.get({ name: 'xt-toggle', el: toggle })
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // timeout because fix bug scroll when using scrollTrigger.refresh and on browser location prev and next
       clearTimeout(parseFloat(toggle.dataset.refreshTimeout))
@@ -86,7 +86,7 @@ const mountSticky = ({ ref }) => {
     }
   }
 
-  toggle.addEventListener('ondone.xt.toggle', refresh, true) // usecapture event propagation
+  toggle.addEventListener('ondone.xt.toggle', refresh, true) // useCapture event propagation
   /***/
 
   // unmount
