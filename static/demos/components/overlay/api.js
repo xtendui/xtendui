@@ -167,8 +167,8 @@ const mountEventmethods = ({ ref }) => {
 
   overlay.addEventListener('init.xt.overlay', events)
   overlay.addEventListener('destroy.xt.overlay', events)
-  document.addEventListener('on.xt.overlay', events, true) // usecapture event propagation
-  document.addEventListener('off.xt.overlay', events, true) // usecapture event propagation
+  document.addEventListener('on.xt.overlay', events, true) // useCapture event propagation
+  document.addEventListener('off.xt.overlay', events, true) // useCapture event propagation
 
   // unmount
 
@@ -181,8 +181,8 @@ const mountEventmethods = ({ ref }) => {
     unmountBtn.removeEventListener('click', unmountFnc)
     overlay.removeEventListener('init.xt.overlay', events)
     overlay.removeEventListener('destroy.xt.overlay', events)
-    document.removeEventListener('on.xt.overlay', events, true) // usecapture event propagation
-    document.removeEventListener('off.xt.overlay', events, true) // usecapture event propagation
+    document.removeEventListener('on.xt.overlay', events, true) // useCapture event propagation
+    document.removeEventListener('off.xt.overlay', events, true) // useCapture event propagation
     self.destroy()
     self = null
   }

@@ -209,8 +209,8 @@ const mountEventmethods = ({ ref }) => {
 
   slider.addEventListener('init.xt.slider', events)
   slider.addEventListener('destroy.xt.slider', events)
-  document.addEventListener('on.xt.slider', events, true) // usecapture event propagation
-  document.addEventListener('off.xt.slider', events, true) // usecapture event propagation
+  document.addEventListener('on.xt.slider', events, true) // useCapture event propagation
+  document.addEventListener('off.xt.slider', events, true) // useCapture event propagation
 
   // unmount
 
@@ -225,8 +225,8 @@ const mountEventmethods = ({ ref }) => {
     unmountBtn.removeEventListener('click', unmountFnc)
     slider.removeEventListener('init.xt.slider', events)
     slider.removeEventListener('destroy.xt.slider', events)
-    document.removeEventListener('on.xt.slider', events, true) // usecapture event propagation
-    document.removeEventListener('off.xt.slider', events, true) // usecapture event propagation
+    document.removeEventListener('on.xt.slider', events, true) // useCapture event propagation
+    document.removeEventListener('off.xt.slider', events, true) // useCapture event propagation
     self.destroy()
     self = null
   }

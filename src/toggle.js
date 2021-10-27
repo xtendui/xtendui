@@ -751,7 +751,7 @@ class Toggle {
         `closeauto.trigger.xt/${self.ns}`,
         self._eventCloseautoHandler.bind(self)
       )
-      addEventListener('closeauto.trigger.xt', closeautoHandler, true) // usecapture event propagation
+      addEventListener('closeauto.trigger.xt', closeautoHandler, true) // useCapture event propagation
     }
     if (options.openauto) {
       // Xt.dataStorage.set with window to fix unique mode same self.ns
@@ -760,7 +760,7 @@ class Toggle {
         `openauto.trigger.xt/${self.ns}`,
         self._eventOpenautoHandler.bind(self)
       )
-      addEventListener('openauto.trigger.xt', openautoHandler, true) // usecapture event propagation
+      addEventListener('openauto.trigger.xt', openautoHandler, true) // useCapture event propagation
     }
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
@@ -769,7 +769,7 @@ class Toggle {
         self._destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
-            Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true) // usecapture event propagation
+            Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true) // useCapture event propagation
             if (!img.complete) {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
@@ -1033,7 +1033,7 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(el)) {
       // handler
       self._eventJump({ el }, e)
@@ -3383,7 +3383,7 @@ class Toggle {
                 const events = key.split('/')[0].split(' ')
                 for (const event of events) {
                   el.removeEventListener(event, handler)
-                  el.removeEventListener(event, handler, true) // usecapture event propagation
+                  el.removeEventListener(event, handler, true) // useCapture event propagation
                 }
                 // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times Xt.dataStorage.remove(element, key)
               }

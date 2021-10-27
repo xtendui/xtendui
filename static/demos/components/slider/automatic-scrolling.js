@@ -123,7 +123,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('mouseenter', pause, true) // usecapture event propagation
+  self.container.addEventListener('mouseenter', pause, true) // useCapture event propagation
   addEventListener('blur', pause)
 
   // resume
@@ -140,7 +140,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('mouseleave', resume, true) // usecapture event propagation
+  self.container.addEventListener('mouseleave', resume, true) // useCapture event propagation
   addEventListener('focus', resume)
 
   // unmount

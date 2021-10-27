@@ -30,7 +30,7 @@ const mountTooltip = ({ ref }) => {
   /***/
   const on = e => {
     const tr = e.target
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       const target = tr.querySelector(':scope > *')
       gsap.killTweensOf(target)
@@ -57,7 +57,7 @@ const mountTooltip = ({ ref }) => {
   /***/
   const off = e => {
     const tr = e.target
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       const target = tr.querySelector(':scope > *')
       gsap.killTweensOf(target)

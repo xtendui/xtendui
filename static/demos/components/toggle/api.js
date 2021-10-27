@@ -205,8 +205,8 @@ const mountEventmethods = ({ ref }) => {
 
   toggle.addEventListener('init.xt.toggle', events)
   toggle.addEventListener('destroy.xt.toggle', events)
-  document.addEventListener('on.xt.toggle', events, true) // usecapture event propagation
-  document.addEventListener('off.xt.toggle', events, true) // usecapture event propagation
+  document.addEventListener('on.xt.toggle', events, true) // useCapture event propagation
+  document.addEventListener('off.xt.toggle', events, true) // useCapture event propagation
 
   // unmount
 
@@ -221,8 +221,8 @@ const mountEventmethods = ({ ref }) => {
     unmountBtn.removeEventListener('click', unmountFnc)
     toggle.removeEventListener('init.xt.toggle', events)
     toggle.removeEventListener('destroy.xt.toggle', events)
-    document.removeEventListener('on.xt.toggle', events, true) // usecapture event propagation
-    document.removeEventListener('off.xt.toggle', events, true) // usecapture event propagation
+    document.removeEventListener('on.xt.toggle', events, true) // useCapture event propagation
+    document.removeEventListener('off.xt.toggle', events, true) // useCapture event propagation
     self.destroy()
     self = null
   }

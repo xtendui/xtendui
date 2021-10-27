@@ -14,7 +14,7 @@ const mountToggle = ({ ref }) => {
   const off = e => {
     const tr = e.target
     /***/
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // reset to current when no activation
       if (self.index === null) {

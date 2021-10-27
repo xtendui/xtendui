@@ -29,7 +29,7 @@ const mountDrops = ({ ref }) => {
   /***/
   const on = e => {
     const tr = e.target
-    // usecapture event propagation check
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       const target = tr.querySelector(':scope > *')
       gsap.killTweensOf(target)
@@ -56,17 +56,14 @@ const mountDrops = ({ ref }) => {
   /***/
   const off = e => {
     const tr = e.target
-    // usecapture event propagation check
-    if (self.targets.includes(tr)) {
-      const target = tr.querySelector(':scope > *')
-      gsap.killTweensOf(target)
-      gsap.to(target, {
-        x: self.direction * targetXOff,
-        opacity: 0,
-        duration: targetTimeOff,
-        ease: targetEaseOff,
-      })
-    }
+    const target = tr.querySelector(':scope > *')
+    gsap.killTweensOf(target)
+    gsap.to(target, {
+      x: self.direction * targetXOff,
+      opacity: 0,
+      duration: targetTimeOff,
+      ease: targetEaseOff,
+    })
   }
 
   for (const tr of self.targets) {
