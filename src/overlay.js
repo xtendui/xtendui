@@ -72,7 +72,12 @@ Overlay.optionsDefault = {
   },
   aria: {
     role: 'dialog',
+    label: false,
     controls: true,
+    selected: false,
+    expanded: false,
+    live: true,
+    disabled: true,
   },
 }
 

@@ -1477,7 +1477,12 @@ Slider.optionsDefault = {
   },
   aria: {
     role: 'carousel',
+    label: false,
     controls: true,
+    selected: false,
+    expanded: false,
+    live: true,
+    disabled: true,
   },
 }
 

@@ -2087,7 +2087,6 @@ class Toggle {
    */
   _queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame, skipQueue = false } = {}) {
     const self = this
-    const options = self.options
     // check if not already running or if force
     if (actionCurrent === 'In' && (self._checkOnRunning({ obj }) || obj.elements.force)) {
       // only one time and if last element
@@ -2251,7 +2250,6 @@ class Toggle {
    */
   _queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipSame, skipQueue = false } = {}) {
     const self = this
-    const options = self.options
     // special
     if (actionCurrent === 'In') {
       // only one time and if last element
@@ -3389,7 +3387,7 @@ class Toggle {
       const statusHandler = Xt.dataStorage.put(
         container,
         `status.${self._componentNs}/status/${self.ns}`,
-        self._eventStatus
+        self._eventStatus.bind(self)
       )
       container.addEventListener(`status.${self._componentNs}`, statusHandler)
     }
@@ -3616,7 +3614,12 @@ Toggle.optionsDefaultSuper = {
   collapseHeight: false,
   collapseWidth: false,
   aria: {
+    role: false,
+    label: false,
+    controls: true,
+    selected: true,
     live: true,
+    disabled: true,
   },
 }
 

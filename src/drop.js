@@ -177,8 +177,12 @@ Drop.optionsDefault = {
   },
   aria: {
     role: 'dialog',
+    label: false,
     controls: true,
+    selected: false,
     expanded: true,
+    live: true,
+    disabled: true,
   },
 }
 
