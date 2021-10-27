@@ -10,7 +10,7 @@ description: "Project informations."
 
 <p align="center">
   <a href="https://xtendui.com/" title="Xtend UI" style="display: inline-block;">
-    <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo.svg" loading="eager" alt="Xtend UI" width="200">
+    <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/logo-bg.svg" loading="eager" alt="Xtend UI" width="200">
   </a>
 </p>
 
@@ -69,7 +69,7 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/beta/.githu
 ## Sponsors
 
 <a href="https://www.webgriffe.com/" target="_blank" rel="noopener" title="Webgriffe" style="display: inline-block;">
-  <img src="https://raw.githubusercontent.com/xtendui/xtendui/1.0-dev/static/support/webgriffe.svg" loading="eager" alt="Webgriffe" width="130px">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/beta/static/support/webgriffe.svg" loading="eager" alt="Webgriffe" width="130px">
 </a>
 &nbsp;&nbsp;
 
