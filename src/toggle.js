@@ -2876,9 +2876,9 @@ class Toggle {
    * @param {Event} e
    */
   _eventSpecialclosedeepKeydownHandler({ closeElement }, e) {
-    const code = e.keyCode ? e.keyCode : e.which
+    const key = e.key
     // key enter or space
-    if (code === 13 || code === 32) {
+    if (key === 'Enter' || key === 'Space') {
       e.preventDefault()
       closeElement.dispatchEvent(new CustomEvent('click'))
     }
@@ -3482,12 +3482,15 @@ class Toggle {
   _eventAriaOn({ el }) {
     const self = this
     // keydown
-    const keydownHandler = Xt.dataStorage.put(
-      el,
-      `keydown/ariakeyboard/${self.ns}`,
-      self._eventAriaKeydown.bind(self).bind(self, { el })
-    )
+    const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventAriaKeydown.bind(self))
     el.addEventListener('keydown', keydownHandler)
+    // documentKeydown
+    const documentKeydownHandler = Xt.dataStorage.put(
+      el,
+      `keydown/ariakeyboard/document/${self.ns}`,
+      self._eventAriaDocumentKeydown.bind(self).bind(self, { el })
+    )
+    document.addEventListener('keydown', documentKeydownHandler)
   }
 
   /**
@@ -3500,6 +3503,9 @@ class Toggle {
     // keydown
     const keydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/${self.ns}`)
     el.removeEventListener('keydown', keydownHandler)
+    // keydown
+    const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
+    document.removeEventListener('keydown', documentKeydownHandler)
   }
 
   /**
@@ -3508,16 +3514,46 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Event} e
    */
-  _eventAriaKeydown({ el }, e) {
+  _eventAriaKeydown(e) {
+    const self = this
+    const options = self.options
+    // keydown
+    const key = e.key
+    let found
+    if (options.aria.vertical) {
+      if (key === 'ArrowUp') {
+        self.goToPrev()
+        found = true
+      } else if (key === 'ArrowDown') {
+        self.goToNext()
+        found = true
+      }
+    } else {
+      if (key === 'ArrowLeft') {
+        self.goToPrev()
+        found = true
+      } else if (key === 'ArrowRight') {
+        self.goToNext()
+        found = true
+      }
+    }
+    // prevent page scroll
+    if (found) {
+      e.preventDefault()
+    }
+  }
+
+  /**
+   * event aria document keydown
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Event} e
+   */
+  _eventAriaDocumentKeydown({ el }, e) {
     const self = this
     // keydown
-    const code = e.keyCode ? e.keyCode : e.which
-    if (code === 37) {
-      self.goToPrev()
-    } else if (code === 39) {
-      self.goToNext()
-    } else if (code === 27) {
-      console.log(el)
+    const key = e.key
+    if (key === 'Escape') {
       self._eventOff({ el })
     }
   }
@@ -3731,6 +3767,7 @@ Toggle.optionsDefaultSuper = {
     live: true,
     disabled: true,
     keyboard: true,
+    vertical: false,
   },
 }
 

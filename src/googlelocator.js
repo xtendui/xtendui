@@ -281,8 +281,8 @@ class Googlelocator {
       return
     }
     // on enter
-    const key = e.which || e.keyCode
-    if (key === 13) {
+    const key = e.key
+    if (key === 'Enter') {
       // prevent form submit
       e.preventDefault()
       // reset map and submit

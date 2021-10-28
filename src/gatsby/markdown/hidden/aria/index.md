@@ -20,6 +20,8 @@ title: "Aria"
 | Option                  | `aria.expanded:Boolean`                          | `false`        | Inject `aria-expanded` attributes            |
 | Option                  | `aria.live:Boolean`                          | `true`        | Inject `aria-live` attributes on auto            |
 | Option                  | `aria.disabled:Boolean`                          | `true`        | Inject `aria-disabled` attributes on enable/disable           |
+| Option                  | `aria.keyboard:Boolean`                          | `true`        | Automatic keyboard **next**, **previous** and **exit** interactions           |
+| Option                  | `aria.vertical:Boolean`                          | `false`        | **Vertical arrows** instead of **horizontal** for keyboard events           |
 
 </div>
 

@@ -80,6 +80,7 @@ Overlay.optionsDefault = {
     live: true,
     disabled: true,
     keyboard: true,
+    vertical: false,
   },
 }
 
