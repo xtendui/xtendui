@@ -3103,6 +3103,7 @@ class Toggle {
   /**
    * disable
    * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
    */
   disable({ skipEvent = false } = {}) {
     const self = this
@@ -3156,11 +3157,19 @@ class Toggle {
     const options = self.options
     // aria
     if (options.aria) {
-      self._initAriaRole()
+      // vars
+      let els = []
+      let trs = self.elements
       if (self.targets.length) {
-        self._initAriaId()
-        self._initAriaSetup()
+        // when not self mode
+        const elsInner = Xt.queryAll({ els: self.elements, query: options.elementsInner })
+        els = elsInner ? elsInner : self.elements
+        trs = self.targets
       }
+      // init
+      self._initAriaRole({ els, trs })
+      self._initAriaId({ els, trs })
+      self._initAriaSetup()
       if (options.auto && options.auto.time) {
         self._initAriaAuto()
       }
@@ -3171,16 +3180,17 @@ class Toggle {
 
   /**
    * init aria role
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   * @param {Node|HTMLElement|EventTarget|Window} params.trs
    */
-  _initAriaRole() {
+  _initAriaRole({ els, trs }) {
     const self = this
     const options = self.options
-    const els = self.targets.length ? self.elements : []
-    const trs = self.targets.length ? self.targets : self.elements
     if (options.aria.role) {
       if (options.aria.role === 'tab') {
-        // not when unique mode (because tab and tabpanel must be inside self.container) or self mode (no elements)
-        if (self._mode !== 'unique' && els.length) {
+        // not when unique mode (because tab and tabpanel must be inside self.container) or self mode (no targets)
+        if (self._mode !== 'unique' && self.targets.length) {
           // tab
           self.container.setAttribute('role', 'tablist')
           for (const el of els) {
@@ -3217,26 +3227,32 @@ class Toggle {
 
   /**
    * init aria id
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   * @param {Node|HTMLElement|EventTarget|Window} params.trs
    */
-  _initAriaId() {
+  _initAriaId({ els, trs }) {
     const self = this
     const options = self.options
-    // id
-    if (options.aria.labelElements || options.aria.controls) {
-      // targets
-      for (const tr of self.targets) {
-        const id = tr.getAttribute('id')
-        if (!id) {
-          tr.setAttribute('id', Xt.uniqueId())
+    // not when self mode (no targets)
+    if (self.targets.length) {
+      // id
+      if (options.aria.labelElements || options.aria.controls) {
+        // targets
+        for (const tr of trs) {
+          const id = tr.getAttribute('id')
+          if (!id) {
+            tr.setAttribute('id', Xt.uniqueId())
+          }
         }
       }
-    }
-    if (options.aria.labelTargets) {
-      // elements
-      for (const el of self.elements) {
-        const id = el.getAttribute('id')
-        if (!id) {
-          el.setAttribute('id', Xt.uniqueId())
+      if (options.aria.labelTargets) {
+        // elements
+        for (const el of els) {
+          const id = el.getAttribute('id')
+          if (!id) {
+            el.setAttribute('id', Xt.uniqueId())
+          }
         }
       }
     }
@@ -3248,31 +3264,40 @@ class Toggle {
   _initAriaSetup() {
     const self = this
     const options = self.options
-    // aria-labelledby and aria-controls
-    if (options.aria.labelElements || options.aria.controls) {
-      for (const el of self.elements) {
-        const trs = self.getTargets({ el })
-        let str = ''
-        for (const tr of trs) {
-          str += `${tr.getAttribute('id')} `
-        }
-        if (options.aria.labelElements) {
-          el.setAttribute('aria-labelledby', str.trim())
-        }
-        if (options.aria.controls) {
-          el.setAttribute('aria-controls', str.trim())
+    // not when self mode (no targets)
+    if (self.targets.length) {
+      // aria-labelledby and aria-controls
+      if (options.aria.labelElements || options.aria.controls) {
+        for (const el of self.elements) {
+          const trs = self.getTargets({ el })
+          let str = ''
+          for (const tr of trs) {
+            str += `${tr.getAttribute('id')} `
+          }
+          const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
+          for (const elInner of elsInner) {
+            if (options.aria.labelElements) {
+              elInner.setAttribute('aria-labelledby', str.trim())
+            }
+            if (options.aria.controls) {
+              elInner.setAttribute('aria-controls', str.trim())
+            }
+          }
         }
       }
-    }
-    // aria-labelledby
-    if (options.aria.labelTargets) {
-      for (const tr of self.targets) {
-        const els = self.getElements({ el: tr })
-        let str = ''
-        for (const el of els) {
-          str += `${el.getAttribute('id')} `
+      // aria-labelledby
+      if (options.aria.labelTargets) {
+        for (const tr of self.targets) {
+          const els = self.getElements({ el: tr })
+          let str = ''
+          for (const el of els) {
+            const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
+            for (const elInner of elsInner) {
+              str += `${elInner.getAttribute('id')} `
+            }
+          }
+          tr.setAttribute('aria-labelledby', str.trim())
         }
-        tr.setAttribute('aria-labelledby', str.trim())
       }
     }
   }
@@ -3286,24 +3311,28 @@ class Toggle {
     // aria-selected and aria-expanded
     if (options.aria.selected || options.aria.expanded) {
       for (const el of self.elements) {
-        if (options.aria.selected) {
-          el.setAttribute('aria-selected', 'false')
-        }
-        if (options.aria.expanded) {
-          el.setAttribute('aria-expanded', 'false')
+        const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
+        // init
+        for (const elInner of elsInner) {
+          if (options.aria.selected) {
+            elInner.setAttribute('aria-selected', 'false')
+          }
+          if (options.aria.expanded) {
+            elInner.setAttribute('aria-expanded', 'false')
+          }
         }
         // on
         const onHandler = Xt.dataStorage.put(
           el,
           `on.${self._componentNs}/selected/${self.ns}`,
-          self._eventAriaChangeOn.bind(self).bind(self, { el })
+          self._eventAriaChangeOn.bind(self).bind(self, { elsInner })
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
           `off.${self._componentNs}/selected/${self.ns}`,
-          self._eventAriaChangeOff.bind(self).bind(self, { el })
+          self._eventAriaChangeOff.bind(self).bind(self, { elsInner })
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
@@ -3313,34 +3342,38 @@ class Toggle {
   /**
    * event aria change on
    * @param {Object} params
-   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Node|HTMLElement|EventTarget|Window} params.elsInner
    */
-  _eventAriaChangeOn({ el }) {
+  _eventAriaChangeOn({ elsInner }) {
     const self = this
     const options = self.options
     // aria-selected and aria-expanded
-    if (options.aria.selected) {
-      el.setAttribute('aria-selected', 'true')
-    }
-    if (options.aria.expanded) {
-      el.setAttribute('aria-expanded', 'true')
+    for (const elInner of elsInner) {
+      if (options.aria.selected) {
+        elInner.setAttribute('aria-selected', 'true')
+      }
+      if (options.aria.expanded) {
+        elInner.setAttribute('aria-expanded', 'true')
+      }
     }
   }
 
   /**
    * event aria change off
    * @param {Object} params
-   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Node|HTMLElement|EventTarget|Window} params.elsInner
    */
-  _eventAriaChangeOff({ el }) {
+  _eventAriaChangeOff({ elsInner }) {
     const self = this
     const options = self.options
     // aria-selected and aria-expanded
-    if (options.aria.selected) {
-      el.setAttribute('aria-selected', 'false')
-    }
-    if (options.aria.expanded) {
-      el.setAttribute('aria-expanded', 'false')
+    for (const elInner of elsInner) {
+      if (options.aria.selected) {
+        elInner.setAttribute('aria-selected', 'false')
+      }
+      if (options.aria.expanded) {
+        elInner.setAttribute('aria-expanded', 'false')
+      }
     }
   }
 
