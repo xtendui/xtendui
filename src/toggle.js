@@ -197,6 +197,13 @@ class Toggle {
     if (!self.elements.length) {
       self.elements = [self.container]
     }
+    // elementsInner
+    if (options.elementsInner) {
+      for (const el of self.elements) {
+        const elements = Xt.queryAll({ els: el, query: options.elementsInner })
+        Xt.dataStorage.set(el, `elementsInner/${self.ns}`, elements)
+      }
+    }
   }
 
   /**
@@ -213,6 +220,13 @@ class Toggle {
       }
       self.targets = arr
       self._destroyElements.push(...self.targets)
+      // elementsInner
+      if (options.targetsInner) {
+        for (const tr of self.targets) {
+          const elements = Xt.queryAll({ els: tr, query: options.targetsInner })
+          Xt.dataStorage.set(tr, `targetsInner/${self.ns}`, elements)
+        }
+      }
     }
   }
 
@@ -342,18 +356,20 @@ class Toggle {
             )
           }
         }
-        if (options.classSkip !== true && !options.classSkip.elementsInner) {
-          const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-          for (const elInner of elsInner) {
-            elInner.classList.remove(
-              ...self._classes,
-              ...self._classesIn,
-              ...self._classesOut,
-              ...self._classesDone,
-              ...self._classesInitial,
-              ...self._classesBefore,
-              ...self._classesAfter
-            )
+        if (options.elementsInner) {
+          if (options.classSkip !== true && !options.classSkip.elementsInner) {
+            const elementsInner = Xt.dataStorage.get(el, `elementsInner/${self.ns}`)
+            for (const elementInner of elementsInner) {
+              elementInner.classList.remove(
+                ...self._classes,
+                ...self._classesIn,
+                ...self._classesOut,
+                ...self._classesDone,
+                ...self._classesInitial,
+                ...self._classesBefore,
+                ...self._classesAfter
+              )
+            }
           }
         }
       }
@@ -386,18 +402,20 @@ class Toggle {
               ...self._classesAfter
             )
           }
-          if (options.classSkip !== true && !options.classSkip.targetsInner) {
-            const trsInner = Xt.queryAll({ els: tr, query: options.targetsInner })
-            for (const trInner of trsInner) {
-              trInner.classList.remove(
-                ...self._classes,
-                ...self._classesIn,
-                ...self._classesOut,
-                ...self._classesDone,
-                ...self._classesInitial,
-                ...self._classesBefore,
-                ...self._classesAfter
-              )
+          if (options.targetsInner) {
+            if (options.classSkip !== true && !options.classSkip.targetsInner) {
+              const targetsInner = Xt.dataStorage.get(tr, `targetsInner/${self.ns}`)
+              for (const targetInner of targetsInner) {
+                targetInner.classList.remove(
+                  ...self._classes,
+                  ...self._classesIn,
+                  ...self._classesOut,
+                  ...self._classesDone,
+                  ...self._classesInitial,
+                  ...self._classesBefore,
+                  ...self._classesAfter
+                )
+              }
             }
           }
         }
@@ -609,31 +627,6 @@ class Toggle {
           )
           el.addEventListener('click', navHandler)
         }
-      }
-    }
-    // keyboard
-    if (options.keyboard && options.keyboard.selector) {
-      const keyboards =
-        options.keyboard.selector === 'object'
-          ? [self.container]
-          : self.container.querySelectorAll(options.keyboard.selector)
-      self._destroyElements.push(...keyboards)
-      for (const keyboard of keyboards) {
-        keyboard.setAttribute('tabindex', '0')
-        // focus
-        const keyboardfocusHandler = Xt.dataStorage.put(
-          keyboard,
-          `focus/keyboard/${self.ns}`,
-          self._eventKeyboardfocusHandler.bind(self)
-        )
-        keyboard.addEventListener('focus', keyboardfocusHandler)
-        // blur
-        const keyboardblurHandler = Xt.dataStorage.put(
-          keyboard,
-          `blur/keyboard/${self.ns}`,
-          self._eventKeyboardblurHandler.bind(self)
-        )
-        keyboard.addEventListener('blur', keyboardblurHandler)
       }
     }
     // closeauto
@@ -946,65 +939,6 @@ class Toggle {
   }
 
   /**
-   * keyboard focus handler
-   */
-  _eventKeyboardfocusHandler() {
-    const self = this
-    // handler
-    const keyboardHandler = Xt.dataStorage.put(
-      document,
-      `keyup/keyboard/${self.ns}`,
-      self._eventKeyboardHandler.bind(self)
-    )
-    document.addEventListener('keyup', keyboardHandler)
-  }
-
-  /**
-   * keyboard blur handler
-   */
-  _eventKeyboardblurHandler() {
-    const self = this
-    // handler
-    const keyboardHandler = Xt.dataStorage.get(document, `keyup/keyboard/${self.ns}`)
-    document.removeEventListener('keyup', keyboardHandler)
-  }
-
-  /**
-   * keyboard handler
-   * @param {Event} e
-   */
-  _eventKeyboardHandler(e) {
-    const self = this
-    const options = self.options
-    // key
-    const code = e.keyCode ? e.keyCode : e.which
-    let prev
-    let next
-    if (options.keyboard.vertical) {
-      if (options.keyboard.inverse) {
-        prev = 40
-        next = 38
-      } else {
-        prev = 38
-        next = 40
-      }
-    } else {
-      if (options.keyboard.inverse) {
-        prev = 39
-        next = 37
-      } else {
-        prev = 37
-        next = 39
-      }
-    }
-    if (code === prev) {
-      self.goToPrev({ amount: 1 })
-    } else if (code === next) {
-      self.goToNext({ amount: 1 })
-    }
-  }
-
-  /**
    * closeauto handler
    * @param {Event} e
    */
@@ -1251,6 +1185,50 @@ class Toggle {
       }
       return final
     }
+  }
+
+  /**
+   * Get elements inner
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els Elements
+   * @return {Array}
+   */
+  _getElementsInner({ els } = {}) {
+    const self = this
+    const options = self.options
+    // inners
+    let inners = []
+    if (options.elementsInner) {
+      for (const el of els) {
+        const inner = Xt.dataStorage.get(el, `elementsInner/${self.ns}`)
+        if (inner.length) {
+          inners = inners.concat(inner)
+        }
+      }
+    }
+    return inners
+  }
+
+  /**
+   * Get targets inner
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els Elements
+   * @return {Array}
+   */
+  _getTargetsInner({ els } = {}) {
+    const self = this
+    const options = self.options
+    // inners
+    const inners = []
+    if (options.targetsInner) {
+      for (const el of els) {
+        const inner = Xt.dataStorage.get(el, `targetsInner/${self.ns}`)
+        if (inner.length) {
+          inners.push(inner)
+        }
+      }
+    }
+    return inners
   }
 
   /**
@@ -1630,17 +1608,23 @@ class Toggle {
       self._eventAutostop()
       // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
+      el = elements[0]
+      // focus and blur
+      if (!self.initial) {
+        el.focus()
+      }
       // targets
       const targets = self.getTargets({ el, same: true })
+      // inner
+      const elementsInner = self._getElementsInner({ els: elements })
+      const targetsInner = self._getTargetsInner({ els: targets })
       // on
-      self._addCurrent({ el: elements[0] })
-      self._setIndex({ el: elements[0] })
+      self._addCurrent({ el })
+      self._setIndex({ el })
       self._setDirection()
       // queue obj
       const actionCurrent = 'In'
       const actionOther = 'Out'
-      const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-      const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       let obj = self._eventQueue({ elements, targets, elementsInner, targetsInner, force, e })
       // if currents > max
       const currents = self._getCurrents()
@@ -1693,15 +1677,18 @@ class Toggle {
     if (force || self._checkOff({ el })) {
       // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
-      // off
-      self._removeCurrent({ el: elements[0] })
-      // targets
-      const targets = self.getTargets({ el, same: true })
-      // fix sometimes blur is undefined
-      if (el.blur) {
-        // fix :focus styles
+      el = elements[0]
+      // focus and blur
+      if (!self.initial) {
         el.blur()
       }
+      // off
+      self._removeCurrent({ el })
+      // targets
+      const targets = self.getTargets({ el, same: true })
+      // inner
+      const elementsInner = self._getElementsInner({ els: elements })
+      const targetsInner = self._getTargetsInner({ els: targets })
       // auto
       if (!self._getCurrents().length) {
         self._eventAutostop()
@@ -1709,8 +1696,6 @@ class Toggle {
       // queue obj
       const actionCurrent = 'Out'
       const actionOther = 'In'
-      const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-      const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       const obj = self._eventQueue({ elements, targets, elementsInner, targetsInner, force, e })
       // fix groupSame do not deactivate/reactivate but do logic (e.g. group same slider animation-js and slider hash)
       if (options.groupSame && !options.queue && objFilter) {
@@ -2771,7 +2756,7 @@ class Toggle {
       // closeDeep
       if (options.closeDeep) {
         // fix when standalone !self.targets.length && type === 'elements'
-        if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.put(
@@ -2822,7 +2807,7 @@ class Toggle {
       // closeDeep
       if (options.closeDeep) {
         // fix when standalone !self.targets.length && type === 'elements'
-        if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
@@ -3162,19 +3147,18 @@ class Toggle {
       let trs = self.elements
       if (self.targets.length) {
         // when not self mode
-        const elsInner = Xt.queryAll({ els: self.elements, query: options.elementsInner })
-        els = elsInner ? elsInner : self.elements
+        const elementsInner = self._getElementsInner({ els: self.elements })
+        els = elementsInner.length ? elementsInner : self.elements
         trs = self.targets
       }
       // init
       self._initAriaRole({ els, trs })
       self._initAriaId({ els, trs })
       self._initAriaSetup()
-      if (options.auto && options.auto.time) {
-        self._initAriaAuto()
-      }
+      self._initAriaAuto()
       self._initAriaChange()
       self._initAriaStatus()
+      self._initAriaKeyboard({ els: self.elements })
     }
   }
 
@@ -3274,13 +3258,13 @@ class Toggle {
           for (const tr of trs) {
             str += `${tr.getAttribute('id')} `
           }
-          const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-          for (const elInner of elsInner) {
+          const elements = Xt.dataStorage.get(el, `elementsInner/${self.ns}`) ?? [el]
+          for (const element of elements) {
             if (options.aria.labelElements) {
-              elInner.setAttribute('aria-labelledby', str.trim())
+              element.setAttribute('aria-labelledby', str.trim())
             }
             if (options.aria.controls) {
-              elInner.setAttribute('aria-controls', str.trim())
+              element.setAttribute('aria-controls', str.trim())
             }
           }
         }
@@ -3291,9 +3275,9 @@ class Toggle {
           const els = self.getElements({ el: tr })
           let str = ''
           for (const el of els) {
-            const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-            for (const elInner of elsInner) {
-              str += `${elInner.getAttribute('id')} `
+            const elements = Xt.dataStorage.get(el, `elementsInner/${self.ns}`) ?? [el]
+            for (const element of elements) {
+              str += `${element.getAttribute('id')} `
             }
           }
           tr.setAttribute('aria-labelledby', str.trim())
@@ -3311,28 +3295,27 @@ class Toggle {
     // aria-selected and aria-expanded
     if (options.aria.selected || options.aria.expanded) {
       for (const el of self.elements) {
-        const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-        // init
-        for (const elInner of elsInner) {
+        const elements = Xt.dataStorage.get(el, `elementsInner/${self.ns}`) ?? [el]
+        for (const element of elements) {
           if (options.aria.selected) {
-            elInner.setAttribute('aria-selected', 'false')
+            element.setAttribute('aria-selected', 'false')
           }
           if (options.aria.expanded) {
-            elInner.setAttribute('aria-expanded', 'false')
+            element.setAttribute('aria-expanded', 'false')
           }
         }
         // on
         const onHandler = Xt.dataStorage.put(
           el,
-          `on.${self._componentNs}/selected/${self.ns}`,
-          self._eventAriaChangeOn.bind(self).bind(self, { elsInner })
+          `on.${self._componentNs}/ariaselected/${self.ns}`,
+          self._eventAriaChangeOn.bind(self).bind(self, { elements })
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
-          `off.${self._componentNs}/selected/${self.ns}`,
-          self._eventAriaChangeOff.bind(self).bind(self, { elsInner })
+          `off.${self._componentNs}/ariaselected/${self.ns}`,
+          self._eventAriaChangeOff.bind(self).bind(self, { elements })
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
@@ -3342,18 +3325,18 @@ class Toggle {
   /**
    * event aria change on
    * @param {Object} params
-   * @param {Node|HTMLElement|EventTarget|Window} params.elsInner
+   * @param {Node|HTMLElement|EventTarget|Window} params.elements
    */
-  _eventAriaChangeOn({ elsInner }) {
+  _eventAriaChangeOn({ elements }) {
     const self = this
     const options = self.options
     // aria-selected and aria-expanded
-    for (const elInner of elsInner) {
+    for (const element of elements) {
       if (options.aria.selected) {
-        elInner.setAttribute('aria-selected', 'true')
+        element.setAttribute('aria-selected', 'true')
       }
       if (options.aria.expanded) {
-        elInner.setAttribute('aria-expanded', 'true')
+        element.setAttribute('aria-expanded', 'true')
       }
     }
   }
@@ -3361,18 +3344,18 @@ class Toggle {
   /**
    * event aria change off
    * @param {Object} params
-   * @param {Node|HTMLElement|EventTarget|Window} params.elsInner
+   * @param {Node|HTMLElement|EventTarget|Window} params.elements
    */
-  _eventAriaChangeOff({ elsInner }) {
+  _eventAriaChangeOff({ elements }) {
     const self = this
     const options = self.options
     // aria-selected and aria-expanded
-    for (const elInner of elsInner) {
+    for (const element of elements) {
       if (options.aria.selected) {
-        elInner.setAttribute('aria-selected', 'false')
+        element.setAttribute('aria-selected', 'false')
       }
       if (options.aria.expanded) {
-        elInner.setAttribute('aria-expanded', 'false')
+        element.setAttribute('aria-expanded', 'false')
       }
     }
   }
@@ -3384,42 +3367,44 @@ class Toggle {
     const self = this
     const options = self.options
     // aria-live
-    if (options.aria.live) {
-      const container = self.container
-      self.container.setAttribute('aria-live', 'polite')
-      // on
-      const onHandler = Xt.dataStorage.put(
-        container,
-        `on.${self._componentNs}/live/${self.ns}`,
-        self._eventAriaAutoOn.bind(self).bind(self, { container })
-      )
-      container.addEventListener(`autostart.${self._componentNs}`, onHandler)
-      // off
-      const offHandler = Xt.dataStorage.put(
-        container,
-        `off.${self._componentNs}/live/${self.ns}`,
-        self._eventAriaAutoOff.bind(self).bind(self, { container })
-      )
-      container.addEventListener(`autostop.${self._componentNs}`, offHandler)
+    if (options.auto && options.auto.time) {
+      if (options.aria.live) {
+        const container = self.container
+        container.setAttribute('aria-live', 'polite')
+        // on
+        const onHandler = Xt.dataStorage.put(
+          container,
+          `autostart.${self._componentNs}/arialive/${self.ns}`,
+          self._eventAriaAutostart.bind(self).bind(self, { container })
+        )
+        container.addEventListener(`autostart.${self._componentNs}`, onHandler)
+        // off
+        const offHandler = Xt.dataStorage.put(
+          container,
+          `autostop.${self._componentNs}/arialive/${self.ns}`,
+          self._eventAriaAutostop.bind(self).bind(self, { container })
+        )
+        container.addEventListener(`autostop.${self._componentNs}`, offHandler)
+      }
     }
   }
 
   /**
-   * event aria auto on
+   * event aria autostart
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.container
    */
-  _eventAriaAutoOn({ container }) {
+  _eventAriaAutostart({ container }) {
     // aria-live
     container.setAttribute('aria-live', 'off')
   }
 
   /**
-   * event aria auto off
+   * event aria autostop
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.container
    */
-  _eventAriaAutoOff({ container }) {
+  _eventAriaAutostop({ container }) {
     // aria-live
     container.setAttribute('aria-live', 'polite')
   }
@@ -3436,7 +3421,7 @@ class Toggle {
       // status
       const statusHandler = Xt.dataStorage.put(
         container,
-        `status.${self._componentNs}/status/${self.ns}`,
+        `status.${self._componentNs}/ariastatus/${self.ns}`,
         self._eventAriaStatus.bind(self)
       )
       container.addEventListener(`status.${self._componentNs}`, statusHandler)
@@ -3445,7 +3430,6 @@ class Toggle {
 
   /**
    * event aria status
-   * @param {Object} params
    */
   _eventAriaStatus() {
     const self = this
@@ -3458,6 +3442,83 @@ class Toggle {
       for (const el of self.elements) {
         el.removeAttribute('aria-disabled')
       }
+    }
+  }
+
+  /**
+   * init aria keyboard
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   */
+  _initAriaKeyboard({ els }) {
+    const self = this
+    const options = self.options
+    // aria keyboard
+    if (options.aria.keyboard) {
+      for (const el of els) {
+        // on
+        const onHandler = Xt.dataStorage.put(
+          el,
+          `on.${self._componentNs}/ariakeyboard/${self.ns}`,
+          self._eventAriaOn.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`on.${self._componentNs}`, onHandler)
+        // off
+        const offHandler = Xt.dataStorage.put(
+          el,
+          `off.${self._componentNs}/ariakeyboard/${self.ns}`,
+          self._eventAriaOff.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`off.${self._componentNs}`, offHandler)
+      }
+    }
+  }
+
+  /**
+   * event aria on
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventAriaOn({ el }) {
+    const self = this
+    // keydown
+    const keydownHandler = Xt.dataStorage.put(
+      el,
+      `keydown/ariakeyboard/${self.ns}`,
+      self._eventAriaKeydown.bind(self).bind(self, { el })
+    )
+    el.addEventListener('keydown', keydownHandler)
+  }
+
+  /**
+   * event aria off
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventAriaOff({ el }) {
+    const self = this
+    // keydown
+    const keydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/${self.ns}`)
+    el.removeEventListener('keydown', keydownHandler)
+  }
+
+  /**
+   * event aria keydown
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Event} e
+   */
+  _eventAriaKeydown({ el }, e) {
+    const self = this
+    // keydown
+    const code = e.keyCode ? e.keyCode : e.which
+    if (code === 37) {
+      self.goToPrev()
+    } else if (code === 39) {
+      self.goToNext()
+    } else if (code === 27) {
+      console.log(el)
+      self._eventOff({ el })
     }
   }
 
@@ -3644,9 +3705,6 @@ Toggle.optionsDefaultSuper = {
   loop: false,
   jump: false,
   navigation: false,
-  keyboard: {
-    selector: false,
-  },
   appendTo: false,
   classBody: false,
   closeauto: false,
@@ -3672,6 +3730,7 @@ Toggle.optionsDefaultSuper = {
     expanded: false,
     live: true,
     disabled: true,
+    keyboard: true,
   },
 }
 

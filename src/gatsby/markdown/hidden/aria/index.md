@@ -28,20 +28,3 @@ title: "Aria"
 > The overlay uses `[aria: 'dialog']` so **aria attributes and keyboard interactions are managed automatically** following [aria dialog practices](https://www.w3.org/TR/2019/NOTE-wai-aria-practices-1.1-20190814/examples/dialog-modal/dialog.html).
 
 > For usability purpose **to bettere describe the content** add `[aria-label]` or `[aria-labelledby]`/`[aria-describedby]`.
-
-## Keyboard
-
-Use `keyboard: { selector: 'object' }` or `keyboard: { selector: Query }` to enable keyboard navigation on focus.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `keyboard.selector:Boolean`                          | `false`        | Elements that triggers the events            |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/toggle/usability-keyboard">
-  </demoinline>
-</demo>

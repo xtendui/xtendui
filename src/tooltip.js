@@ -188,6 +188,7 @@ Tooltip.optionsDefault = {
     expanded: false,
     live: true,
     disabled: true,
+    keyboard: true,
   },
 }
 

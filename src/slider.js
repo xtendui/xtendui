@@ -1457,9 +1457,6 @@ Slider.optionsDefault = {
   visibleReinit: true,
   jump: false,
   navigation: '[data-xt-nav]',
-  keyboard: {
-    selector: '[data-xt-slider-dragger]',
-  },
   zIndex: {
     targets: {
       start: 200, // same as options.zIndex.targets.start
@@ -1475,6 +1472,7 @@ Slider.optionsDefault = {
     expanded: false,
     live: true,
     disabled: true,
+    keyboard: true,
   },
 }
 
