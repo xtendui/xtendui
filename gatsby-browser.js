@@ -17,7 +17,7 @@ export const shouldUpdateScroll = ({ routerProps: { location }, prevRouterProps 
 
 export const onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_menu--button')
-  // demoHash
+  // use demoHashChange instead of hashchange
   dispatchEvent(new CustomEvent('demoHashChange'))
   // keepSidebarScroll
   const overlay = document.querySelector('#gatsby_menu--overlay')

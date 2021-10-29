@@ -29,12 +29,11 @@ const demoHash = () => {
         if (demo) {
           // trigger fullscreen or change tabs
           item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
-          // do not close full if change tab so already opened
-          if (item.closest('#gatsby_open-full-content')) {
-            return
+          // only if full opened
+          if (!item.closest('#gatsby_open-full-content')) {
+            // makeFullscreen
+            makeFullscreen(demo, item)
           }
-          // makeFullscreen
-          makeFullscreen(demo, item)
         }
       }
     } else {
@@ -46,6 +45,7 @@ const demoHash = () => {
 
 Xt.ready({
   func: () => {
+    // use demoHashChange instead of hashchange
     addEventListener('demoHashChange', demoHash)
   },
 })
@@ -333,8 +333,8 @@ export const populateDemo = container => {
   })
   for (const item of items) {
     item.addEventListener('on.xt.toggle', () => {
-      // only if demo opened
-      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
+      // only if full opened
+      if (!item.closest('#gatsby_open-full-content')) {
         // triggering e.detail.container (e.g. slider wrap)
         dispatchEvent(
           new CustomEvent('resize', {
@@ -347,8 +347,8 @@ export const populateDemo = container => {
       }
       if (!self.initial) {
         btnOpenIframe(item)
-        // only if demo opened
-        if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
+        // only if full opened
+        if (!item.closest('#gatsby_open-full-content')) {
           // hash
           location.hash = item.getAttribute('id')
         }
