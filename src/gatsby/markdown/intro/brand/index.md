@@ -1,9 +1,10 @@
 ---
 type: "Intro"
-category: "Other"
+category: "Introduction"
 parent: "Brand"
 title: "Brand"
 description: "Brand assets for sharing."
+date: "1900-10-10"
 ---
 
 Here are assets for sharing informations like in articles or other internet media.

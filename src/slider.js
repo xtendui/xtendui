@@ -1463,7 +1463,7 @@ Slider.optionsDefault = {
       factor: -1,
     },
   },
-  aria: {
+  a11y: {
     role: 'carousel',
     labelElements: false,
     labelTargets: true,

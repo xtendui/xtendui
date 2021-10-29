@@ -18,7 +18,7 @@ You can set activation styles by adding the class `.on`.
 
 > This demos use [list](/components/list) see documentation for more info.
 
-> For usability purpose use `<nav></nav>`.
+> For accessibility purpose use `<nav></nav>`.
 
 <demo>
   <demoinline src="demos/components/tabs/usage">

@@ -64,13 +64,13 @@ Overlay.optionsDefault = {
       factor: 0,
     },
   },
-  aria: {
+  a11y: {
     role: 'dialog',
     labelElements: false,
     labelTargets: false,
     controls: true,
     selected: false,
-    expanded: false,
+    expanded: true,
     live: true,
     disabled: true,
     keyboard: true,

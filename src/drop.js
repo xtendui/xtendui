@@ -175,7 +175,7 @@ Drop.optionsDefault = {
       factor: -1,
     },
   },
-  aria: {
+  a11y: {
     role: 'dialog',
     labelElements: false,
     labelTargets: false,

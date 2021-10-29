@@ -16,7 +16,7 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
 
 > This demos use [list](/components/list) see documentation for more info.
 
-> For usability purpose use `<nav></nav>`.
+> For accessibility purpose use `<nav></nav>`.
 
 <demo>
   <demoinline src="demos/components/toolbar/usage">

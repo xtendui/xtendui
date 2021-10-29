@@ -3177,14 +3177,14 @@ class Toggle {
   _initAriaRole({ els, trs }) {
     const self = this
     const options = self.options
-    if (options.aria.role) {
+    if (options.a11y.role) {
       // must be inside self.container
       let hasContainer = true
       if (self._mode === 'unique' || self.elements.includes(self.container)) {
         hasContainer = false
       }
       // aria-orientation
-      if (options.aria.vertical && hasContainer) {
+      if (options.a11y.vertical && hasContainer) {
         self.container.setAttribute('aria-orientation', 'vertical')
       }
       // aria-multiselectable
@@ -3192,7 +3192,7 @@ class Toggle {
         self.container.setAttribute('aria-multiselectable', 'true')
       }
       // tablist
-      if (options.aria.role === 'tablist' && hasContainer && self.targets.length) {
+      if (options.a11y.role === 'tablist' && hasContainer && self.targets.length) {
         // tab
         self.container.setAttribute('role', 'tablist')
         for (const el of els) {
@@ -3201,13 +3201,13 @@ class Toggle {
         for (const tr of trs) {
           tr.setAttribute('role', 'tabpanel')
         }
-      } else if (options.aria.role === 'listbox' && hasContainer && !self.targets.length) {
+      } else if (options.a11y.role === 'listbox' && hasContainer && !self.targets.length) {
         // listbox
         self.container.setAttribute('role', 'listbox')
         for (const tr of trs) {
           tr.setAttribute('role', 'option')
         }
-      } else if (options.aria.role === 'menu') {
+      } else if (options.a11y.role === 'menu') {
         // menu
         self.container.setAttribute('role', 'menubar')
         for (const el of els) {
@@ -3217,7 +3217,7 @@ class Toggle {
         for (const tr of trs) {
           tr.setAttribute('role', 'menu')
         }
-      } else if (options.aria.role === 'dialog') {
+      } else if (options.a11y.role === 'dialog') {
         // dialog
         for (const el of els) {
           el.setAttribute('aria-haspopup', 'dialog')
@@ -3226,12 +3226,12 @@ class Toggle {
           tr.setAttribute('role', 'dialog')
           tr.setAttribute('aria-modal', 'true')
         }
-      } else if (options.aria.role === 'tooltip') {
+      } else if (options.a11y.role === 'tooltip') {
         // tooltip
         for (const tr of trs) {
           tr.setAttribute('role', 'tooltip')
         }
-      } else if (options.aria.role === 'carousel' && hasContainer) {
+      } else if (options.a11y.role === 'carousel' && hasContainer) {
         // carousel
         self.container.setAttribute('aria-roledescription', 'carousel')
         for (const tr of trs) {
@@ -3254,7 +3254,7 @@ class Toggle {
     // not when self mode (no targets)
     if (self.targets.length) {
       // id
-      if (options.aria.labelElements || options.aria.controls) {
+      if (options.a11y.labelElements || options.a11y.controls) {
         // targets
         for (const tr of trs) {
           const id = tr.getAttribute('id')
@@ -3263,7 +3263,7 @@ class Toggle {
           }
         }
       }
-      if (options.aria.labelTargets) {
+      if (options.a11y.labelTargets) {
         // elements
         for (const el of els) {
           const id = el.getAttribute('id')
@@ -3284,7 +3284,7 @@ class Toggle {
     // not when self mode (no targets)
     if (self.targets.length) {
       // aria-labelledby and aria-controls
-      if (options.aria.labelElements || options.aria.controls) {
+      if (options.a11y.labelElements || options.a11y.controls) {
         for (const el of self.elements) {
           const trs = self.getTargets({ el })
           let str = ''
@@ -3294,18 +3294,18 @@ class Toggle {
           const elementsInner = self._getElementsInner({ els: [el] })
           const elements = elementsInner.length ? elementsInner : [el]
           for (const element of elements) {
-            if (options.aria.labelElements) {
+            if (options.a11y.labelElements) {
               element.setAttribute('aria-labelledby', str.trim())
               element.removeAttribute('aria-label')
             }
-            if (options.aria.controls) {
+            if (options.a11y.controls) {
               element.setAttribute('aria-controls', str.trim())
             }
           }
         }
       }
       // aria-labelledby
-      if (options.aria.labelTargets) {
+      if (options.a11y.labelTargets) {
         for (const tr of self.targets) {
           const els = self.getElements({ el: tr })
           let str = ''
@@ -3330,9 +3330,9 @@ class Toggle {
     const self = this
     const options = self.options
     // aria-selected and aria-expanded
-    if (options.aria.selected || options.aria.expanded) {
+    if (options.a11y.selected || options.a11y.expanded) {
       // aria-expanded
-      if (options.aria.expanded) {
+      if (options.a11y.expanded) {
         for (const tr of self.targets) {
           tr.setAttribute('aria-expanded', 'false')
         }
@@ -3341,7 +3341,7 @@ class Toggle {
       for (const el of self.elements) {
         const elementsInner = self._getElementsInner({ els: [el] })
         const elements = elementsInner.length ? elementsInner : [el]
-        if (options.aria.selected) {
+        if (options.a11y.selected) {
           for (const element of elements) {
             element.setAttribute('aria-selected', 'false')
           }
@@ -3374,13 +3374,13 @@ class Toggle {
     const self = this
     const options = self.options
     // aria-selected
-    if (options.aria.selected) {
+    if (options.a11y.selected) {
       for (const element of elements) {
         element.setAttribute('aria-selected', 'true')
       }
     }
     // aria-expanded
-    if (options.aria.expanded) {
+    if (options.a11y.expanded) {
       const trs = self.getTargets({ el })
       for (const tr of trs) {
         tr.setAttribute('aria-expanded', 'true')
@@ -3398,10 +3398,10 @@ class Toggle {
     const options = self.options
     // aria-selected and aria-expanded
     for (const element of elements) {
-      if (options.aria.selected) {
+      if (options.a11y.selected) {
         element.setAttribute('aria-selected', 'false')
       }
-      if (options.aria.expanded) {
+      if (options.a11y.expanded) {
         element.setAttribute('aria-expanded', 'false')
       }
     }
@@ -3415,7 +3415,7 @@ class Toggle {
     const options = self.options
     // aria-live
     if (options.auto && options.auto.time) {
-      if (options.aria.live) {
+      if (options.a11y.live) {
         const container = self.container
         container.setAttribute('aria-live', 'polite')
         // on
@@ -3463,7 +3463,7 @@ class Toggle {
     const self = this
     const options = self.options
     // aria-disabled
-    if (options.aria.disabled) {
+    if (options.a11y.disabled) {
       const container = self.container
       // status
       const statusHandler = Xt.dataStorage.put(
@@ -3501,7 +3501,7 @@ class Toggle {
     const self = this
     const options = self.options
     // aria keyboard
-    if (options.aria.keyboard) {
+    if (options.a11y.keyboard) {
       for (const el of els) {
         // on
         const onHandler = Xt.dataStorage.put(
@@ -3533,7 +3533,7 @@ class Toggle {
     const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventAriaKeydown.bind(self))
     el.addEventListener('keydown', keydownHandler, { passive: false })
     // documentKeydown
-    if (options.aria.role === 'dialog') {
+    if (options.a11y.role === 'dialog') {
       const documentKeydownHandler = Xt.dataStorage.put(
         el,
         `keydown/ariakeyboard/document/${self.ns}`,
@@ -3555,7 +3555,7 @@ class Toggle {
     const keydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/${self.ns}`)
     el.removeEventListener('keydown', keydownHandler)
     // documentKeydown
-    if (options.aria.role === 'dialog') {
+    if (options.a11y.role === 'dialog') {
       const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
       document.removeEventListener('keydown', documentKeydownHandler)
     }
@@ -3573,7 +3573,7 @@ class Toggle {
     // keydown
     const key = e.key
     let el
-    if (options.aria.vertical) {
+    if (options.a11y.vertical) {
       if (key === 'ArrowUp') {
         el = self.getPrev()
       } else if (key === 'ArrowDown') {
@@ -3809,7 +3809,7 @@ Toggle.optionsDefaultSuper = {
   },
   collapseHeight: false,
   collapseWidth: false,
-  aria: {
+  a11y: {
     role: 'tablist',
     labelElements: false,
     labelTargets: true,

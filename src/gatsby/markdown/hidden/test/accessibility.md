@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Test"
 parent: "Test"
-title: "Usability Test"
+title: "Accessibility Test"
 ---
 
 ## Toggle

@@ -179,7 +179,7 @@ Tooltip.optionsDefault = {
       factor: -1,
     },
   },
-  aria: {
+  a11y: {
     role: 'tooltip',
     labelElements: true,
     labelTargets: false,

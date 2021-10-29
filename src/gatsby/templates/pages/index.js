@@ -138,13 +138,10 @@ function Page() {
               <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                 <div className="text-left text-sm">
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                    Usability
-                    <div className={`inline-block text-3xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
-                      WIP
-                    </div>
+                    Accessibility
                   </h2>
                   <p className="xt-p text-sm leading-snug opacity-50">
-                    A keen eye on usability. Aria injected automaticaly with js.
+                    A11y standards with automatic Aria attributes and keyboard navigation.
                   </p>
                 </div>
               </div>
