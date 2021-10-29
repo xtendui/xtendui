@@ -10,12 +10,13 @@ Xt.mount({
   mount: ({ ref }) => {
     // init
 
-    let self = new Xt.Toggle(ref, {
+    let self = new Xt.Overlay(ref, {
       targets: '#gatsby_open-full',
       closeDeep: '#gatsby_open-full_close',
       closeauto: true,
+      closeInside: false,
       classBody: 'xt-scrollbar-overlay demo-full-open',
-      aria: false,
+      appendTo: false,
     })
 
     // tooltip

@@ -39,7 +39,7 @@ const demoHash = () => {
       }
     } else {
       // close demo full if no hash
-      full.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
+      full.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
     }
   }
 }
@@ -170,7 +170,7 @@ export const populateBlock = () => {
         location.hash = el.nextSibling.querySelector('.gatsby_demo_item').getAttribute('id')
       })
     }
-    full.addEventListener('off.xt.toggle', e => {
+    full.addEventListener('off.xt.overlay', e => {
       // useCapture event propagation check
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
@@ -591,19 +591,20 @@ const btnOpenIframe = item => {
  */
 
 const makeFullscreen = (demo, item) => {
-  const toggle = document.querySelector('#gatsby_open-full-trigger')
-  const content = document.querySelector('#gatsby_open-full-content')
   // empty demo
   demoEmpty()
   // toggles
+  const full = document.querySelector('#gatsby_open-full')
+  requestAnimationFrame(() => {
+    // raf or it doesn't open
+    full.dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
+  })
   const listingToggle = demo.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
     listingToggle.classList.add('on')
   }
-  // needs both or sometimes it doesn't open
-  toggle.classList.add('on')
-  toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   // move code block
+  const content = document.querySelector('#gatsby_open-full-content')
   demo.before(
     Xt.node({
       str: `<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${demo.offsetHeight}px"></div>`,

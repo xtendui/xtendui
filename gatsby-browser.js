@@ -34,7 +34,7 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
       // close demo full
       const demoFull = document.querySelector('#gatsby_open-full-trigger.on')
       if (demoFull) {
-        demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
+        demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
       }
       // fix demo index when changing page
       document.documentElement.setAttribute('data-demo-index', '0')
