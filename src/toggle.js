@@ -1609,10 +1609,6 @@ class Toggle {
       // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
       el = elements[0]
-      // focus and blur
-      if (!self.initial) {
-        el.focus()
-      }
       // targets
       const targets = self.getTargets({ el, same: true })
       // inner
@@ -1678,10 +1674,6 @@ class Toggle {
       // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
       el = elements[0]
-      // focus and blur
-      if (!self.initial) {
-        el.blur()
-      }
       // off
       self._removeCurrent({ el })
       // targets
@@ -3519,27 +3511,26 @@ class Toggle {
     const options = self.options
     // keydown
     const key = e.key
-    let found
+    let el
     if (options.aria.vertical) {
       if (key === 'ArrowUp') {
-        self.goToPrev()
-        found = true
+        el = self.getPrev()
       } else if (key === 'ArrowDown') {
-        self.goToNext()
-        found = true
+        el = self.getNext()
       }
     } else {
       if (key === 'ArrowLeft') {
-        self.goToPrev()
-        found = true
+        el = self.getPrev()
       } else if (key === 'ArrowRight') {
-        self.goToNext()
-        found = true
+        el = self.getNext()
       }
     }
-    // prevent page scroll
-    if (found) {
+    if (el) {
+      self._eventOn({ el })
+      // prevent page scroll
       e.preventDefault()
+      // focus and blur
+      el.focus()
     }
   }
 
