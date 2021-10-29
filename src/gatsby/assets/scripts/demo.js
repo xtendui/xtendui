@@ -29,7 +29,7 @@ const demoHash = () => {
         if (demo) {
           // trigger fullscreen or change tabs
           item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
-          // only if full opened
+          // only if not full opened
           if (!item.closest('#gatsby_open-full-content')) {
             // makeFullscreen
             makeFullscreen(demo, item)
@@ -45,7 +45,7 @@ const demoHash = () => {
 
 Xt.ready({
   func: () => {
-    // use demoHashChange instead of hashchange
+    // use demoHashChange instead of hashchange we control when page changes with no hash
     addEventListener('demoHashChange', demoHash)
   },
 })
@@ -334,7 +334,7 @@ export const populateDemo = container => {
   for (const item of items) {
     item.addEventListener('on.xt.toggle', () => {
       // only if full opened
-      if (!item.closest('#gatsby_open-full-content')) {
+      if (item.closest('#gatsby_open-full-content')) {
         // triggering e.detail.container (e.g. slider wrap)
         dispatchEvent(
           new CustomEvent('resize', {
@@ -348,9 +348,11 @@ export const populateDemo = container => {
       if (!self.initial) {
         btnOpenIframe(item)
         // only if full opened
-        if (!item.closest('#gatsby_open-full-content')) {
-          // hash
+        if (item.closest('#gatsby_open-full-content')) {
+          // hash and retain focus because on hashchange focus is automatically lost
+          const activeElement = document.activeElement
           location.hash = item.getAttribute('id')
+          activeElement.focus()
         }
       }
     })
