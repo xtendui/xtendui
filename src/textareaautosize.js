@@ -89,7 +89,8 @@ class Textareaautosize {
     // initial
     self._initStart()
     // init
-    Xt.frame({
+    // needs frameDouble after ondone
+    Xt.frameDouble({
       el: self.container,
       ns: `${self.ns}Init`,
       func: () => {

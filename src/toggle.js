@@ -278,7 +278,8 @@ class Toggle {
     // no currents
     if (currents === 0) {
       // init
-      Xt.frame({
+      // needs frameDouble after ondone
+      Xt.frameDouble({
         el: self.container,
         ns: `${self.ns}Init`,
         func: () => {
@@ -2360,7 +2361,8 @@ class Toggle {
     // logic
     if (actionCurrent === 'In') {
       // init
-      Xt.frame({
+      // needs frameDouble after ondone
+      Xt.frameDouble({
         el: self.container,
         ns: `${self.ns}Init`,
         func: () => {

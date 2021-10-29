@@ -89,7 +89,8 @@ class Mousefollow {
     const leaveHandler = Xt.dataStorage.put(self.container, `mouseleave/${self.ns}`, self._mouseleave.bind(self))
     self.container.addEventListener('mouseleave', leaveHandler)
     // init
-    Xt.frame({
+    // needs frameDouble after ondone
+    Xt.frameDouble({
       el: self.container,
       ns: `${self.ns}Init`,
       func: () => {

@@ -88,7 +88,8 @@ class Ripple {
     self.container.addEventListener('mousedown', onHandler)
     self.container.addEventListener('touchstart', onHandler, { passive: true })
     // init
-    Xt.frame({
+    // needs frameDouble after ondone
+    Xt.frameDouble({
       el: self.container,
       ns: `${self.ns}Init`,
       func: () => {
