@@ -26,7 +26,7 @@
   </a>
 </p>
 
-## Complex UI made easy with simplicity and total freedom
+## Custom UI made easy with simplicity and total freedom
 
 Xtend UI is a powerful frontend library of tailwind components enhanced by vanilla js. It helps you build interfaces with advanced interactions and animations.
 

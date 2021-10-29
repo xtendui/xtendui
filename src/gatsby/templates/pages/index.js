@@ -20,7 +20,7 @@ function Page() {
       <div className="gatsby_home-main_head xt-sticky xt-sticky-nozindex my-28 text-center">
         <div className="container">
           <h3 className="mt-10 mb-4 xt-my-auto font-black text-3xl md:text-5xl lg:text-6xl">
-            Complex UI made easy with simplicity and total freedom
+            Custom UI made easy with simplicity and total freedom
           </h3>
           <h1 className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl">
             <span className="opacity-50">
