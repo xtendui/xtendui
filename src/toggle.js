@@ -3264,7 +3264,8 @@ class Toggle {
           for (const tr of trs) {
             str += `${tr.getAttribute('id')} `
           }
-          const elements = Xt.dataStorage.get(el, `elementsInner/${self.ns}`) ?? [el]
+          const elementsInner = self._getElementsInner({ els: [el] })
+          const elements = elementsInner.length ? elementsInner : [el]
           for (const element of elements) {
             if (options.aria.labelElements) {
               element.setAttribute('aria-labelledby', str.trim())
@@ -3281,10 +3282,12 @@ class Toggle {
           const els = self.getElements({ el: tr })
           let str = ''
           for (const el of els) {
-            const elements = Xt.dataStorage.get(el, `elementsInner/${self.ns}`) ?? [el]
+            const elementsInner = self._getElementsInner({ els: [el] })
+            const elements = elementsInner.length ? elementsInner : [el]
             for (const element of elements) {
               str += `${element.getAttribute('id')} `
             }
+            console.log(str, el, elements)
           }
           tr.setAttribute('aria-labelledby', str.trim())
         }
@@ -3301,7 +3304,8 @@ class Toggle {
     // aria-selected and aria-expanded
     if (options.aria.selected || options.aria.expanded) {
       for (const el of self.elements) {
-        const elements = Xt.dataStorage.get(el, `elementsInner/${self.ns}`) ?? [el]
+        const elementsInner = self._getElementsInner({ els: [el] })
+        const elements = elementsInner.length ? elementsInner : [el]
         for (const element of elements) {
           if (options.aria.selected) {
             element.setAttribute('aria-selected', 'false')
