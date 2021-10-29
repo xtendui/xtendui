@@ -1591,10 +1591,11 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el To be activated
    * @param {Boolean} params.force
+   * @param {Boolean} params.focus
    * @param {Event} e
    * @return {Boolean} If activated
    */
-  _eventOn({ el, force = false }, e) {
+  _eventOn({ el, force = false, focus = false }, e) {
     const self = this
     const options = self.options
     force = force ? force : e?.detail?.force
@@ -1643,6 +1644,11 @@ class Toggle {
       for (const type in self[`_queue${actionCurrent}`][0]) {
         self._queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
+      // focus
+      if (focus) {
+        el = elementsInner[0] ?? el
+        el.focus()
+      }
       // return
       return true
     } else if ([...options.on.split(' ')].includes(e?.type)) {
@@ -1658,11 +1664,12 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el To be deactivated
    * @param {Boolean} params.force
+   * @param {Boolean} params.focus
    * @param {Object} params.objFilter Object to filter from
    * @param {Event} e
    * @return {Boolean} If deactivated
    */
-  _eventOff({ el, force = false, objFilter } = {}, e) {
+  _eventOff({ el, force = false, focus = false, objFilter } = {}, e) {
     const self = this
     const options = self.options
     force = force ? force : e?.detail?.force
@@ -1722,6 +1729,11 @@ class Toggle {
       // queue run
       for (const type in self[`_queue${actionCurrent}`][0]) {
         self._queueStart({ actionCurrent, actionOther, type, index: 0 })
+      }
+      // focus
+      if (focus) {
+        el = elementsInner[0] ?? el
+        el.focus()
       }
       // return
       if (objFilter) {
@@ -3475,16 +3487,19 @@ class Toggle {
    */
   _eventAriaOn({ el }) {
     const self = this
+    const options = self.options
     // keydown
     const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventAriaKeydown.bind(self))
-    el.addEventListener('keydown', keydownHandler)
+    el.addEventListener('keydown', keydownHandler, { passive: false })
     // documentKeydown
-    const documentKeydownHandler = Xt.dataStorage.put(
-      el,
-      `keydown/ariakeyboard/document/${self.ns}`,
-      self._eventAriaDocumentKeydown.bind(self).bind(self, { el })
-    )
-    document.addEventListener('keydown', documentKeydownHandler)
+    if (options.aria.role === 'dialog') {
+      const documentKeydownHandler = Xt.dataStorage.put(
+        el,
+        `keydown/ariakeyboard/document/${self.ns}`,
+        self._eventAriaDocumentKeydown.bind(self).bind(self, { el })
+      )
+      document.addEventListener('keydown', documentKeydownHandler)
+    }
   }
 
   /**
@@ -3494,12 +3509,15 @@ class Toggle {
    */
   _eventAriaOff({ el }) {
     const self = this
+    const options = self.options
     // keydown
     const keydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/${self.ns}`)
     el.removeEventListener('keydown', keydownHandler)
-    // keydown
-    const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
-    document.removeEventListener('keydown', documentKeydownHandler)
+    // documentKeydown
+    if (options.aria.role === 'dialog') {
+      const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
+      document.removeEventListener('keydown', documentKeydownHandler)
+    }
   }
 
   /**
@@ -3531,10 +3549,7 @@ class Toggle {
       // prevent page scroll
       e.preventDefault()
       // activation
-      self._eventOn({ el })
-      // focus
-      el = Xt.dataStorage.get(el, `elementsInner/${self.ns}`)[0] ?? el
-      el.focus()
+      self._eventOn({ el, focus: true })
     }
   }
 
@@ -3549,7 +3564,8 @@ class Toggle {
     // keydown
     const key = e.key
     if (key === 'Escape') {
-      self._eventOff({ el })
+      // activation
+      self._eventOff({ el, focus: true })
     }
   }
 
