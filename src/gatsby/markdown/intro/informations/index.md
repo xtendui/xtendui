@@ -20,12 +20,6 @@ description: "Project informations."
   <a href="https://github.com/xtendui/xtendui/blob/beta/LICENSE" target="_blank" title="License" style="display: inline-block;">
     <img src="https://img.shields.io/npm/l/xtendui.svg?style=flat-square" alt="License" loading="eager">
   </a>
-  <a href="https://github.com/xtendui/xtendui/actions?query=workflow%3ARelease" target="_blank" title="Build Status" style="display: inline-block;">
-    <img src="https://img.shields.io/github/workflow/status/xtendui/xtendui/Release?style=flat-square" alt="Build Status" loading="eager">
-  </a>
-  <a href="https://www.npmjs.com/package/xtendui" target="_blank" title="Latest Release" style="display: inline-block;">
-    <img src="https://img.shields.io/npm/v/xtendui.svg?style=flat-square" alt="Latest Release" loading="eager">
-  </a>
   <a href="https://twitter.com/intent/tweet?text=Xtend%20UI%20a%20new%20powerful%20frontend%20library%20of%20tailwind%20components%20enhanced%20by%20vanilla%20js&url=https://xtendui.com/&via=xtendui&hashtags=tailwindcss,javascript,UI" target="_blank" title="Tweet" style="display: inline-block;">
     <img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet" loading="eager">
   </a>
