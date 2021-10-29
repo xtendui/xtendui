@@ -3526,10 +3526,12 @@ class Toggle {
       }
     }
     if (el) {
-      self._eventOn({ el })
       // prevent page scroll
       e.preventDefault()
-      // focus and blur
+      // activation
+      self._eventOn({ el })
+      // focus
+      el = Xt.dataStorage.get(el, `elementsInner/${self.ns}`)[0] ?? el
       el.focus()
     }
   }
