@@ -1,3 +1,4 @@
+/* Done by gatsby-plugin-no-javascript-utils
 // https://github.com/gatsbyjs/gatsby/issues/1526
 // replace inline css with links
 
@@ -19,3 +20,4 @@ exports.onPreRenderHTML = ({ getHeadComponents }) => {
     }
   })
 }
+*/

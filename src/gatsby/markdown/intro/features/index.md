@@ -53,7 +53,7 @@ See [overlay hash](/components/overlay/interaction#hash), [slider hash](/compone
 
 Sometimes you need to **automatically scroll to the activated nodes**, you can use the [Scrollto component](/components/scrollto) in conjunction with any **toggle component**. It also integrates with the **toggle hash** interaction.
 
-See [scrollto toggle](/components/scrollto#toggle) for more info.
+See [scrollto toggle](/components/scrollto#toggle-integration) for more info.
 
 #### Addon
 

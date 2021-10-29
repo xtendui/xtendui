@@ -29,6 +29,17 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-no-javascript-utils',
+      options: {
+        noScript: true,
+        noSourcemaps: true,
+        removeGeneratorTag: true,
+        removeReactHelmetAttrs: true,
+        noInlineStyles: true,
+        removeGatsbyAnnouncer: true,
+      },
+    },
     // sitemap
     {
       resolve: 'gatsby-plugin-sitemap',

@@ -12,7 +12,7 @@ title: "Aria"
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `aria:Object\|false`                          | `<Object>`        | Aria options            |
-| Option                  | `aria.role:String\|false`                          | `'tab'`        | Inject `role` and related attributes, can be `'dialog'`, `'tooltip'`, `'carousel'`            |
+| Option                  | `aria.role:String\|false`                          | `'tablist'`        | Inject `role` and related attributes, can be `'tablist'`, `'listbox'`, `'menu'`, `'dialog'`, `'tooltip'`, `'carousel'`            |
 | Option                  | `aria.labelElements:Boolean`                          | `false`        | Inject `aria-labelledby` attributes on elements (linking to targets)            |
 | Option                  | `aria.labelTargets:Boolean`                          | `true`        | Inject `aria-labelledby` attributes on targets (linking to elements)            |
 | Option                  | `aria.controls:Boolean`                          | `true`        | Inject `aria-controls` attributes            |

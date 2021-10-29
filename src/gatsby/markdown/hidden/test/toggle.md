@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Test"
 parent: "Test"
-title: "Toggle"
+title: "Toggle Test"
 ---
 
 ## Usage

@@ -277,4 +277,4 @@ See [overlay class body](/components/overlay/interaction#class-body) for more in
 
 ## Scrollto
 
-See [scrollto toggle](/components/scrollto#toggle) for more info.
+See [scrollto toggle](/components/scrollto#toggle-integration) for more info.

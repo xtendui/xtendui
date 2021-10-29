@@ -1466,7 +1466,7 @@ Slider.optionsDefault = {
   aria: {
     role: 'carousel',
     labelElements: false,
-    labelTargets: false,
+    labelTargets: true,
     controls: true,
     selected: false,
     expanded: false,

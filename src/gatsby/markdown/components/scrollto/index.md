@@ -45,7 +45,7 @@ Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2) to pre
   </div>
 </demo>
 
-## Toggle
+## Toggle Integration
 
 You can use the Scrollto component in conjunction with any **toggle component** ([toggle](/components/toggle/interaction#hash), [drop](/components/drop/interaction#hash), [overlay](/components/overlay/interaction#hash), [slider](/components/slider/interaction#hash), [tooltip](/components/tooltip/interaction#hash)). It also integrates with the **toggle hash** interaction.
 

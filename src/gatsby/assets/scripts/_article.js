@@ -3,6 +3,36 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
+/* #gatsby_jumptocontent */
+
+Xt.mount({
+  matches: '#gatsby_jumptocontent',
+  mount: ({ ref }) => {
+    // vars
+
+    const jumptocontent = ref
+
+    // focusIn
+
+    const focusIn = e => {
+      const active = jumptocontent.contains(e.target)
+      if (active) {
+        Xt.on({ el: jumptocontent })
+      } else {
+        Xt.off({ el: jumptocontent })
+      }
+    }
+
+    document.addEventListener('focusin', focusIn)
+
+    // unmount
+
+    return () => {
+      document.removeEventListener('focusin', focusIn)
+    }
+  },
+})
+
 /* #gatsby_open-full-trigger */
 
 Xt.mount({

@@ -933,7 +933,7 @@ export const makeDocument = () => {
 <a href="#${encodeURIComponent(
               id
             )}" class="xt-button text-3xs py-0.5 px-3 ${classes.groupButton()} justify-start text-left ${classes.groupButtonGray()} ${classes.buttonGrayAnim()}">
-  <span class="py-px">${el.textContent.trim()}</span>
+  <span class="py-px">Scroll to ${el.textContent.trim()}</span>
 </a>`),
           })
         )

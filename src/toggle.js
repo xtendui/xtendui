@@ -3178,17 +3178,44 @@ class Toggle {
     const self = this
     const options = self.options
     if (options.aria.role) {
-      if (options.aria.role === 'tab') {
-        // not when unique mode (because tab and tabpanel must be inside self.container) or self mode (no targets)
-        if (self._mode !== 'unique' && self.targets.length) {
-          // tab
-          self.container.setAttribute('role', 'tablist')
-          for (const el of els) {
-            el.setAttribute('role', 'tab')
-          }
-          for (const tr of trs) {
-            tr.setAttribute('role', 'tabpanel')
-          }
+      // must be inside self.container
+      let hasContainer = true
+      if (self._mode === 'unique' || self.elements.includes(self.container)) {
+        hasContainer = false
+      }
+      // aria-orientation
+      if (options.aria.vertical && hasContainer) {
+        self.container.setAttribute('aria-orientation', 'vertical')
+      }
+      // aria-multiselectable
+      if (options.max > 1) {
+        self.container.setAttribute('aria-multiselectable', 'true')
+      }
+      // tablist
+      if (options.aria.role === 'tablist' && hasContainer && self.targets.length) {
+        // tab
+        self.container.setAttribute('role', 'tablist')
+        for (const el of els) {
+          el.setAttribute('role', 'tab')
+        }
+        for (const tr of trs) {
+          tr.setAttribute('role', 'tabpanel')
+        }
+      } else if (options.aria.role === 'listbox' && hasContainer && !self.targets.length) {
+        // listbox
+        self.container.setAttribute('role', 'listbox')
+        for (const tr of trs) {
+          tr.setAttribute('role', 'option')
+        }
+      } else if (options.aria.role === 'menu') {
+        // menu
+        self.container.setAttribute('role', 'menubar')
+        for (const el of els) {
+          el.setAttribute('aria-haspopup', 'menu')
+          el.setAttribute('role', 'menuitem')
+        }
+        for (const tr of trs) {
+          tr.setAttribute('role', 'menu')
         }
       } else if (options.aria.role === 'dialog') {
         // dialog
@@ -3204,13 +3231,13 @@ class Toggle {
         for (const tr of trs) {
           tr.setAttribute('role', 'tooltip')
         }
-      } else if (options.aria.role === 'carousel') {
+      } else if (options.aria.role === 'carousel' && hasContainer) {
         // carousel
+        self.container.setAttribute('aria-roledescription', 'carousel')
         for (const tr of trs) {
           tr.setAttribute('role', 'group')
           tr.setAttribute('aria-roledescription', 'slide')
         }
-        self.container.setAttribute('aria-roledescription', 'carousel')
       }
     }
   }
@@ -3269,6 +3296,7 @@ class Toggle {
           for (const element of elements) {
             if (options.aria.labelElements) {
               element.setAttribute('aria-labelledby', str.trim())
+              element.removeAttribute('aria-label')
             }
             if (options.aria.controls) {
               element.setAttribute('aria-controls', str.trim())
@@ -3287,9 +3315,9 @@ class Toggle {
             for (const element of elements) {
               str += `${element.getAttribute('id')} `
             }
-            console.log(str, el, elements)
           }
           tr.setAttribute('aria-labelledby', str.trim())
+          tr.removeAttribute('aria-label')
         }
       }
     }
@@ -3303,29 +3331,33 @@ class Toggle {
     const options = self.options
     // aria-selected and aria-expanded
     if (options.aria.selected || options.aria.expanded) {
+      // aria-expanded
+      if (options.aria.expanded) {
+        for (const tr of self.targets) {
+          tr.setAttribute('aria-expanded', 'false')
+        }
+      }
+      // aria-selected and aria-expanded
       for (const el of self.elements) {
         const elementsInner = self._getElementsInner({ els: [el] })
         const elements = elementsInner.length ? elementsInner : [el]
-        for (const element of elements) {
-          if (options.aria.selected) {
+        if (options.aria.selected) {
+          for (const element of elements) {
             element.setAttribute('aria-selected', 'false')
-          }
-          if (options.aria.expanded) {
-            element.setAttribute('aria-expanded', 'false')
           }
         }
         // on
         const onHandler = Xt.dataStorage.put(
           el,
           `on.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventAriaChangeOn.bind(self).bind(self, { elements })
+          self._eventAriaChangeOn.bind(self).bind(self, { el, elements })
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
           `off.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventAriaChangeOff.bind(self).bind(self, { elements })
+          self._eventAriaChangeOff.bind(self).bind(self, { el, elements })
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
@@ -3335,18 +3367,23 @@ class Toggle {
   /**
    * event aria change on
    * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Node|HTMLElement|EventTarget|Window} params.elements
    */
-  _eventAriaChangeOn({ elements }) {
+  _eventAriaChangeOn({ el, elements }) {
     const self = this
     const options = self.options
-    // aria-selected and aria-expanded
-    for (const element of elements) {
-      if (options.aria.selected) {
+    // aria-selected
+    if (options.aria.selected) {
+      for (const element of elements) {
         element.setAttribute('aria-selected', 'true')
       }
-      if (options.aria.expanded) {
-        element.setAttribute('aria-expanded', 'true')
+    }
+    // aria-expanded
+    if (options.aria.expanded) {
+      const trs = self.getTargets({ el })
+      for (const tr of trs) {
+        tr.setAttribute('aria-expanded', 'true')
       }
     }
   }
@@ -3773,12 +3810,12 @@ Toggle.optionsDefaultSuper = {
   collapseHeight: false,
   collapseWidth: false,
   aria: {
-    role: 'tab',
+    role: 'tablist',
     labelElements: false,
     labelTargets: true,
     controls: true,
     selected: true,
-    expanded: false,
+    expanded: true,
     live: true,
     disabled: true,
     keyboard: true,

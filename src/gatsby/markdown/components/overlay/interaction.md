@@ -190,4 +190,4 @@ You can set **body classes on activation**, remember to keep default `classBody`
 
 ## Scrollto
 
-See [scrollto toggle](/components/scrollto#toggle) for more info.
+See [scrollto toggle](/components/scrollto#toggle-integration) for more info.

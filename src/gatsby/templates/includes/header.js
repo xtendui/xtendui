@@ -248,6 +248,7 @@ export default function Header({ page }) {
                                                         <div className="gatsby_tooltip_outside_link" key={i}>
                                                           <Link
                                                             to={markdownSlug(adiacent)}
+                                                            title={`${adiacent.frontmatter.title} - ${post.frontmatter.title}`}
                                                             className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
                                                               page.post.frontmatter.title ===
                                                                 adiacent.frontmatter.title &&
