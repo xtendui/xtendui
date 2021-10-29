@@ -920,10 +920,12 @@ export const makeDocument = () => {
 </div>`,
             })
           )
-          activeText.setAttribute(
-            'data-xt-tooltip',
-            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
-          )
+          new Xt.Tooltip(activeText, {
+            elements: false,
+            position: 'right',
+            positionInner: '.gatsby_button-site_article_sidebar_text',
+            duration: 300,
+          })
           activeTooltip = activeText.querySelector('.xt-tooltip')
         }
         const activeList = activeTooltip.querySelector('.xt-list')
@@ -933,7 +935,7 @@ export const makeDocument = () => {
 <a href="#${encodeURIComponent(
               id
             )}" class="xt-button text-3xs py-0.5 px-3 ${classes.groupButton()} justify-start text-left ${classes.groupButtonGray()} ${classes.buttonGrayAnim()}">
-  <span class="py-px">Scroll to ${el.textContent.trim()}</span>
+  <span class="py-px">- ${el.textContent.trim()} -</span>
 </a>`),
           })
         )
