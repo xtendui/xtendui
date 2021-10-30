@@ -162,11 +162,12 @@ const html = /* HTML */ `
 
     <div class="${classes.hBlock()}">Tooltip</div>
 
-    <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
+    <div
+      data-xt-tooltip="{ mouseParent: true, targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', duration: 500 }">
       Example tooltips
 
-      <span data-xt-tooltip-element>
-        <a href="#">product informations</a>
+      <span>
+        <a href="#" data-xt-tooltip-element>product informations</a>
 
         <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
           <div
@@ -206,8 +207,8 @@ const html = /* HTML */ `
 
       and
 
-      <span data-xt-tooltip-element>
-        <a href="#">credit card CVV</a>
+      <span>
+        <a href="#" data-xt-tooltip-element>credit card CVV</a>
 
         <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
           <div

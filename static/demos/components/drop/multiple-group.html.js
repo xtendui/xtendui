@@ -2,11 +2,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-drop>
-      <div data-xt-drop-element data-xt-group="my-group">
+    <div class="xt-list xt-list-3 items-center" data-xt-drop="{ mouseParent: true }">
+      <div data-xt-group="my-group">
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          data-xt-drop-element>
           Group
         </button>
 
@@ -50,10 +51,11 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop-element>
+      <div>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          data-xt-drop-element>
           Drop
         </button>
 

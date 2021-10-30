@@ -1443,14 +1443,13 @@ Slider.optionsDefault = {
   elementsTemplate: 'hidden',
   elements: '[data-xt-slider-element]',
   targets: '[data-xt-slider-target]',
-  elementsInner: ':scope > a, :scope > button',
-  targetsInner: false,
   // quantity
   min: 1,
   max: 1,
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   // timing
   queue: false,
   // other

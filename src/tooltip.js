@@ -138,7 +138,6 @@ Tooltip.optionsDefault = {
   // element
   elements: '[data-xt-tooltip-element]',
   targets: '[data-xt-tooltip-target]',
-  elementsInner: ':scope > a, :scope > button',
   // class
   classSkip: {
     elements: true,
@@ -148,8 +147,9 @@ Tooltip.optionsDefault = {
   min: 0,
   max: 1,
   // event
-  on: 'mouseenter',
+  on: 'mouseenter focus',
   off: 'mouseleave',
+  mouseParent: false,
   eventLimit: '.xt-event-limit, .xt-tooltip',
   closeauto: true,
   openauto: false,

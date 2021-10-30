@@ -264,7 +264,8 @@ class Toggle {
           // toggle event if present because of custom listeners
           if (options.on) {
             const event = options.on.split(' ')[0]
-            el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+            const elEvent = self._getEventParent({ el, event })
+            elEvent.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
           } else {
             self._eventOn({ el, force: true })
           }
@@ -428,7 +429,8 @@ class Toggle {
         // toggle event if present because of custom listeners
         if (options.on) {
           const event = options.on.split(' ')[0]
-          el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+          const elEvent = self._getEventParent({ el, event })
+          elEvent.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
         } else {
           self._eventOn({ el, force: true })
         }
@@ -456,10 +458,18 @@ class Toggle {
       )
       el.addEventListener(`on.trigger.${self._componentNs}`, onHandlerCustom)
       if (options.on) {
-        const onHandler = Xt.dataStorage.put(el, `${options.on}/on/${self.ns}`, self._eventOnHandler.bind(self, { el }))
         const events = [...options.on.split(' ')]
         for (const event of events) {
-          el.addEventListener(event, onHandler)
+          const elEvent = self._getEventParent({ el, event })
+          if (elEvent !== el) {
+            self._destroyElements.push(elEvent)
+          }
+          const onHandler = Xt.dataStorage.put(
+            elEvent,
+            `${options.on}/on/${self.ns}`,
+            self._eventOnHandler.bind(self, { el })
+          )
+          elEvent.addEventListener(event, onHandler)
         }
       }
       // event off
@@ -470,16 +480,20 @@ class Toggle {
       )
       el.addEventListener(`off.trigger.${self._componentNs}`, offHandlerCustom)
       if (options.off) {
-        const offHandler = Xt.dataStorage.put(
-          el,
-          `${options.off}/off/${self.ns}`,
-          self._eventOffHandler.bind(self, { el })
-        )
         const events = [...options.off.split(' ')]
         for (const event of events) {
-          // fix same event for on and off same namespace
+          // same event for on and off same namespace
           if (![...options.on.split(' ')].includes(event)) {
-            el.addEventListener(event, offHandler)
+            const elEvent = self._getEventParent({ el, event })
+            if (elEvent !== el) {
+              self._destroyElements.push(elEvent)
+            }
+            const offHandler = Xt.dataStorage.put(
+              elEvent,
+              `${options.off}/off/${self.ns}`,
+              self._eventOffHandler.bind(self, { el })
+            )
+            elEvent.addEventListener(event, offHandler)
           }
         }
       }
@@ -1233,6 +1247,28 @@ class Toggle {
   }
 
   /**
+   * get event parent
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {String} params.event
+   * @return {Node|HTMLElement|EventTarget|Window}
+   */
+  _getEventParent({ el, event }) {
+    const self = this
+    const options = self.options
+    // getCurrents
+    if (options.mouseParent) {
+      if (['mouseenter', 'mouseleave', 'mousehover', 'mouseout'].includes(event)) {
+        if (typeof options.mouseParent === 'string') {
+          return el.closest(options.mouseParent)
+        } else {
+          return el.parentNode
+        }
+      }
+    }
+    return el
+  }
+  /**
    * get currents based on namespace (so shared between Xt objects)
    * @return {Array}
    */
@@ -1604,8 +1640,7 @@ class Toggle {
       return false
     }
     // toggle
-    // fix same event for on and off same namespace
-    if (force || (self._checkOn({ el }) && (!e || !e.type || e.type !== `off.trigger.${self._componentNs}`))) {
+    if (force || self._checkOn({ el })) {
       // auto
       self._eventAutostop()
       // fix groupElements and targets
@@ -1651,8 +1686,8 @@ class Toggle {
       }
       // return
       return true
-    } else if ([...options.on.split(' ')].includes(e?.type)) {
-      // fix same event for on and off same namespace
+    } else if ([...options.off.split(' ')].includes(e?.type)) {
+      // same event for on and off same namespace
       self._eventOff({ el }, e)
     }
     // return
@@ -3735,7 +3770,7 @@ Toggle.optionsDefaultSuper = {
   // element
   elements: '[data-xt-toggle-element]',
   targets: '[data-xt-toggle-target]',
-  elementsInner: ':scope > a, :scope > button',
+  elementsInner: false,
   targetsInner: false,
   exclude: false,
   // class
@@ -3756,6 +3791,7 @@ Toggle.optionsDefaultSuper = {
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   eventLimit: '.xt-event-limit',
   closeDeep: false,
   closeInside: false,

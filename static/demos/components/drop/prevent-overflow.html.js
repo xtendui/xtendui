@@ -5,11 +5,12 @@ const html = /* HTML */ `
     <div
       class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}"
       data-node-boundary>
-      <div class="xt-list xt-list-3 items-center" data-node-drop>
-        <div data-xt-drop-element>
+      <div class="xt-list xt-list-3 items-center" data-node-drop="{ mouseParent: true }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-drop-element>
             Drop
           </button>
 
@@ -38,10 +39,11 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div data-xt-drop-element>
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-drop-element>
             Drop
           </button>
 

@@ -18,8 +18,8 @@ The query is inside `container`, only when specifying **elements and targets wit
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `elements:Query`                          | `'[data-xt-drop-element]'`        | Elements query            |
 | Option                  | `targets:Query`                          | `'[data-xt-drop-target]'`        | Targets query            |
-| Option                  | `elementsInner:Query`                          | `':scope > a, :scope > button'`        | Inner elements query (scope inside elements)            |
-| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query (scope inside targets)           |
+| Option                  | `elementsInner:Query`                          | `false`        | Inner elements query, they **reflect elements activation**            |
+| Option                  | `targetsInner:Query`                          | `false`        | Inner targets query, they **reflect targets activation**           |
 | Option                  | `exclude:Query`                          | `false`        | **Exclude elements and targets** if they matches the query           |
 
 </div>
@@ -111,10 +111,13 @@ You can specify **on** and **off** events for the interactions.
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `on:String\|false`                              | `'click'`                     | List of space separated events to **listen for activation**           |
 | Option                  | `off:String\|false`                             | `'click'`                       | List of space separated events to **listen for deactivation**          |
+| Option                  | `mouseParent:String\|Boolean`                             | `false`                       | For mouse events use element `parentNode` or `closest` query           |
 
 </div>
 
-> When using `off: 'mouseleave'` and you want to interact with the targets **you need to put targets inside elements** so that `mouseleave` triggers when you leave both elements and targets.
+> When using `'mouseenter', 'mouseleave', 'mousehover', 'mouseout'` and you want to interact with the targets you need to use `mouseParent: true` or `mouseParent: '<Query>'` to **attach mouse events on a element's parent node that contains also the target node**. Non mouse events are attached on elements as usual.
+
+> For accessibility purpose instead of `on: 'mouseenter'` use `on: 'mouseenter focus'` to be navigable with keyboard.
 
 <demo>
   <demoinline src="demos/components/drop/event">

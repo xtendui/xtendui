@@ -2,11 +2,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
-      <div data-xt-drop-element>
+    <div data-xt-drop="{ mouseParent: true, on: 'mouseenter focus', off: 'mouseleave' }">
+      <div>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          data-xt-drop-element>
           mouse
         </button>
 
@@ -24,11 +25,12 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Dolor sit
               </button>
-              <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
-                <div data-xt-drop-element>
+              <div data-xt-drop="{ mouseParent: true, on: 'mouseenter focus', off: 'mouseleave', position: 'right-start' }">
+                <div>
                   <button
                     type="button"
-                    class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
+                    class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
+                    data-xt-drop-element>
                     nested
                   </button>
 

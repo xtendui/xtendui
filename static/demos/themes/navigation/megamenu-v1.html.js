@@ -25,10 +25,11 @@ const html = /* HTML */ `
 
         <div class="container">
           <div class="xt-list -mx-4">
-            <div data-xt-drop-element>
+            <div>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                data-xt-drop-element>
                 Menu #1
               </a>
 
@@ -58,10 +59,11 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <div data-xt-drop-element>
+            <div>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                data-xt-drop-element>
                 Menu #2
               </a>
 
@@ -85,10 +87,11 @@ const html = /* HTML */ `
               </div>
             </div>
 
-            <div data-xt-drop-element>
+            <div>
               <a
                 href="/"
-                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
+                class="xt-button text-sm py-6 px-4 button--line ${classes.textInverse()} font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                data-xt-drop-element>
                 Menu #3
               </a>
 

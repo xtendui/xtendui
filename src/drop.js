@@ -138,13 +138,13 @@ Drop.optionsDefault = {
   // element
   elements: '[data-xt-drop-element]',
   targets: '[data-xt-drop-target]',
-  elementsInner: ':scope > a, :scope > button',
   // quantity
   min: 0,
   max: 1,
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   eventLimit: '.xt-event-limit, .xt-drop',
   closeauto: true,
   openauto: false,

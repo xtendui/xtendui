@@ -37,11 +37,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
-        <div data-xt-drop-element>
+      <div data-xt-drop="{ mouseParent: true, on: 'mouseenter focus', off: 'mouseleave' }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-drop">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-drop"
+            data-xt-drop-element>
             backdrop mouse
           </button>
 

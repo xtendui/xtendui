@@ -33,13 +33,13 @@ Overlay.optionsDefault = {
   // element
   elements: '[data-xt-overlay-element]',
   targets: '[data-xt-overlay-target]',
-  elementsInner: ':scope > a, :scope > button',
   // quantity
   min: 0,
   max: 1,
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   eventLimit: '.xt-event-limit, .xt-overlay',
   closeauto: true,
   openauto: true,
