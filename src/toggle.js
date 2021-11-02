@@ -2052,7 +2052,6 @@ class Toggle {
       // fix groupSame do not deactivate/reactivate but do logic (e.g. group same slider animation-js and slider hash)
       const skipSame = obj[type].skipEls?.includes(el)
       // delay
-      console.log(el, obj, type)
       let delay =
         self.initial || self.disabled // off from disable/destroy
           ? false

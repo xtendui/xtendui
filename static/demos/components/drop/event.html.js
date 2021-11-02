@@ -25,7 +25,8 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Dolor sit
               </button>
-              <div data-xt-drop="{ mouseParent: true, on: 'mouseenter focus', off: 'mouseleave', position: 'right-start' }">
+              <div
+                data-xt-drop="{ mouseParent: true, on: 'mouseenter focus', off: 'mouseleave', position: 'right-start' }">
                 <div>
                   <button
                     type="button"
