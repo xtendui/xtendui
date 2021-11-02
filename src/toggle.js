@@ -131,7 +131,7 @@ class Toggle {
     Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     self._initScope()
     self._initEvents()
-    self._initAria()
+    self._initA11y()
     self._initStart({ save })
     // disable last for proper options.disableDeactivate
     if (self.options.disabled || self._disabledManual) {
@@ -3177,44 +3177,43 @@ class Toggle {
   }
 
   //
-  // aria
+  // a11y
   //
 
   /**
-   * init aria
+   * init a11y
    */
-  _initAria() {
+  _initA11y() {
     const self = this
     const options = self.options
-    // aria
-    if (options.aria) {
+    // a11y
+    if (options.a11y) {
       // vars
-      let els = []
-      let trs = self.elements
-      if (self.targets.length) {
-        // when not self mode
-        const elementsInner = self._getElementsInner({ els: self.elements })
-        els = elementsInner.length ? elementsInner : self.elements
-        trs = self.targets
+      let els = self.elements
+      let trs = self.targets
+      // when self mode
+      if (!self.targets.length) {
+        els = []
+        trs = self.elements
       }
       // init
-      self._initAriaRole({ els, trs })
-      self._initAriaId({ els, trs })
-      self._initAriaSetup()
-      self._initAriaAuto()
-      self._initAriaChange()
-      self._initAriaStatus()
-      self._initAriaKeyboard({ els: self.elements })
+      self._initA11yRole({ els, trs })
+      self._initA11yId({ els, trs })
+      self._initA11ySetup()
+      self._initA11yAuto()
+      self._initA11yChange()
+      self._initA11yStatus()
+      self._initA11yKeyboard({ els: self.elements })
     }
   }
 
   /**
-   * init aria role
+   * init a11y role
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.els
    * @param {Node|HTMLElement|EventTarget|Window} params.trs
    */
-  _initAriaRole({ els, trs }) {
+  _initA11yRole({ els, trs }) {
     const self = this
     const options = self.options
     if (options.a11y.role) {
@@ -3283,12 +3282,12 @@ class Toggle {
   }
 
   /**
-   * init aria id
+   * init a11y id
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.els
    * @param {Node|HTMLElement|EventTarget|Window} params.trs
    */
-  _initAriaId({ els, trs }) {
+  _initA11yId({ els, trs }) {
     const self = this
     const options = self.options
     // not when self mode (no targets)
@@ -3316,9 +3315,9 @@ class Toggle {
   }
 
   /**
-   * init aria setup
+   * init a11y setup
    */
-  _initAriaSetup() {
+  _initA11ySetup() {
     const self = this
     const options = self.options
     // not when self mode (no targets)
@@ -3364,9 +3363,9 @@ class Toggle {
   }
 
   /**
-   * init aria change
+   * init a11y change
    */
-  _initAriaChange() {
+  _initA11yChange() {
     const self = this
     const options = self.options
     // aria-selected and aria-expanded
@@ -3390,14 +3389,14 @@ class Toggle {
         const onHandler = Xt.dataStorage.put(
           el,
           `on.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventAriaChangeOn.bind(self).bind(self, { el, elements })
+          self._eventA11yChangeOn.bind(self).bind(self, { el, elements })
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
           `off.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventAriaChangeOff.bind(self).bind(self, { el, elements })
+          self._eventA11yChangeOff.bind(self).bind(self, { el, elements })
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
@@ -3405,12 +3404,12 @@ class Toggle {
   }
 
   /**
-   * event aria change on
+   * event a11y change on
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Node|HTMLElement|EventTarget|Window} params.elements
    */
-  _eventAriaChangeOn({ el, elements }) {
+  _eventA11yChangeOn({ el, elements }) {
     const self = this
     const options = self.options
     // aria-selected
@@ -3429,11 +3428,11 @@ class Toggle {
   }
 
   /**
-   * event aria change off
+   * event a11y change off
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.elements
    */
-  _eventAriaChangeOff({ elements }) {
+  _eventA11yChangeOff({ elements }) {
     const self = this
     const options = self.options
     // aria-selected and aria-expanded
@@ -3448,9 +3447,9 @@ class Toggle {
   }
 
   /**
-   * init aria auto
+   * init a11y auto
    */
-  _initAriaAuto() {
+  _initA11yAuto() {
     const self = this
     const options = self.options
     // aria-live
@@ -3462,14 +3461,14 @@ class Toggle {
         const onHandler = Xt.dataStorage.put(
           container,
           `autostart.${self._componentNs}/arialive/${self.ns}`,
-          self._eventAriaAutostart.bind(self).bind(self, { container })
+          self._eventA11yAutostart.bind(self).bind(self, { container })
         )
         container.addEventListener(`autostart.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           container,
           `autostop.${self._componentNs}/arialive/${self.ns}`,
-          self._eventAriaAutostop.bind(self).bind(self, { container })
+          self._eventA11yAutostop.bind(self).bind(self, { container })
         )
         container.addEventListener(`autostop.${self._componentNs}`, offHandler)
       }
@@ -3477,29 +3476,29 @@ class Toggle {
   }
 
   /**
-   * event aria autostart
+   * event a11y autostart
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.container
    */
-  _eventAriaAutostart({ container }) {
+  _eventA11yAutostart({ container }) {
     // aria-live
     container.setAttribute('aria-live', 'off')
   }
 
   /**
-   * event aria autostop
+   * event a11y autostop
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.container
    */
-  _eventAriaAutostop({ container }) {
+  _eventA11yAutostop({ container }) {
     // aria-live
     container.setAttribute('aria-live', 'polite')
   }
 
   /**
-   * init aria status
+   * init a11y status
    */
-  _initAriaStatus() {
+  _initA11yStatus() {
     const self = this
     const options = self.options
     // aria-disabled
@@ -3509,16 +3508,16 @@ class Toggle {
       const statusHandler = Xt.dataStorage.put(
         container,
         `status.${self._componentNs}/ariastatus/${self.ns}`,
-        self._eventAriaStatus.bind(self)
+        self._eventA11yStatus.bind(self)
       )
       container.addEventListener(`status.${self._componentNs}`, statusHandler)
     }
   }
 
   /**
-   * event aria status
+   * event a11y status
    */
-  _eventAriaStatus() {
+  _eventA11yStatus() {
     const self = this
     // aria-disabled
     if (self.disabled) {
@@ -3533,28 +3532,28 @@ class Toggle {
   }
 
   /**
-   * init aria keyboard
+   * init a11y keyboard
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.els
    */
-  _initAriaKeyboard({ els }) {
+  _initA11yKeyboard({ els }) {
     const self = this
     const options = self.options
-    // aria keyboard
+    // keyboard
     if (options.a11y.keyboard) {
       for (const el of els) {
         // on
         const onHandler = Xt.dataStorage.put(
           el,
           `on.${self._componentNs}/ariakeyboard/${self.ns}`,
-          self._eventAriaOn.bind(self).bind(self, { el })
+          self._eventA11yOn.bind(self).bind(self, { el })
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
           `off.${self._componentNs}/ariakeyboard/${self.ns}`,
-          self._eventAriaOff.bind(self).bind(self, { el })
+          self._eventA11yOff.bind(self).bind(self, { el })
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
@@ -3562,33 +3561,33 @@ class Toggle {
   }
 
   /**
-   * event aria on
+   * event a11y on
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  _eventAriaOn({ el }) {
+  _eventA11yOn({ el }) {
     const self = this
     const options = self.options
     // keydown
-    const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventAriaKeydown.bind(self))
+    const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventA11yKeydown.bind(self))
     el.addEventListener('keydown', keydownHandler, { passive: false })
     // documentKeydown
     if (options.a11y.role === 'dialog') {
       const documentKeydownHandler = Xt.dataStorage.put(
         el,
         `keydown/ariakeyboard/document/${self.ns}`,
-        self._eventAriaDocumentKeydown.bind(self).bind(self, { el })
+        self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
       )
       document.addEventListener('keydown', documentKeydownHandler)
     }
   }
 
   /**
-   * event aria off
+   * event a11y off
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  _eventAriaOff({ el }) {
+  _eventA11yOff({ el }) {
     const self = this
     const options = self.options
     // keydown
@@ -3602,12 +3601,12 @@ class Toggle {
   }
 
   /**
-   * event aria keydown
+   * event a11y keydown
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Event} e
    */
-  _eventAriaKeydown(e) {
+  _eventA11yKeydown(e) {
     const self = this
     const options = self.options
     // keydown
@@ -3635,12 +3634,12 @@ class Toggle {
   }
 
   /**
-   * event aria document keydown
+   * event a11y document keydown
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Event} e
    */
-  _eventAriaDocumentKeydown({ el }, e) {
+  _eventA11yDocumentKeydown({ el }, e) {
     const self = this
     // keydown
     const key = e.key
