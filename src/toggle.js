@@ -2642,7 +2642,7 @@ class Toggle {
   _specialCollapse({ actionCurrent, el, type, reset = false } = {}) {
     const self = this
     const options = self.options
-    if (el instanceof HTMLElement) {
+    if (options.collapseHeight) {
       if (actionCurrent === 'In') {
         if (options.collapseHeight === type) {
           if (reset) {
@@ -2665,31 +2665,6 @@ class Toggle {
               ns: `${self.ns}CollapseHeightFrame`,
               func: () => {
                 el.style.height = `${final}px`
-              },
-            })
-          }
-        }
-        if (options.collapseWidth === type) {
-          if (reset) {
-            el.style.width = 'inherit'
-            el.style.maxWidth = 'none'
-            el.classList.add('xt-collapse-reset')
-          } else {
-            el.classList.remove('xt-collapse-reset')
-            el.style.width = 'auto'
-            el.style.maxWidth = 'none'
-            const final = el.offsetWidth
-            el.style.width = ''
-            el.style.maxWidth = ''
-            let initial = el.offsetWidth
-            initial = initial === final ? 0 : initial
-            el.style.width = `${initial}px`
-            el.style.maxWidth = 'none'
-            Xt.frameDouble({
-              el,
-              ns: `${self.ns}CollapseWidthFrame`,
-              func: () => {
-                el.style.width = `${final}px`
               },
             })
           }
@@ -2719,6 +2694,36 @@ class Toggle {
             })
           }
         }
+      }
+    }
+    if (options.collapseWidth) {
+      if (actionCurrent === 'In') {
+        if (options.collapseWidth === type) {
+          if (reset) {
+            el.style.width = 'inherit'
+            el.style.maxWidth = 'none'
+            el.classList.add('xt-collapse-reset')
+          } else {
+            el.classList.remove('xt-collapse-reset')
+            el.style.width = 'auto'
+            el.style.maxWidth = 'none'
+            const final = el.offsetWidth
+            el.style.width = ''
+            el.style.maxWidth = ''
+            let initial = el.offsetWidth
+            initial = initial === final ? 0 : initial
+            el.style.width = `${initial}px`
+            el.style.maxWidth = 'none'
+            Xt.frameDouble({
+              el,
+              ns: `${self.ns}CollapseWidthFrame`,
+              func: () => {
+                el.style.width = `${final}px`
+              },
+            })
+          }
+        }
+      } else if (actionCurrent === 'Out') {
         if (options.collapseWidth === type) {
           if (reset) {
             el.style.width = ''
