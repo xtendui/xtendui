@@ -289,7 +289,7 @@ class Groupnumber {
    * @param {Object} params
    * @param {Boolean} params.num
    */
-  _countDecimals({ num }) {
+  _countDecimals({ num } = {}) {
     if (Math.floor(num) === num) return 0
     return num.toString().split('.')[1].length || 0
   }
