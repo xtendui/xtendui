@@ -124,7 +124,7 @@ You can specify **on** and **off** events for the interactions.
   </demoinline>
 </demo>
 
-You can have **links on elements on activation** with `preventEvent: true`, `on` event will be prevented if not already activated.
+If you have **links on elements** use `preventEvent: true`, and the **link will trigger only on the second interaction** (the first it the `on` event), works with mouse click, touch press and keyboard enter.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

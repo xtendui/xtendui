@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div data-xt-drop="{ mouseParent: true, preventEvent: true }">
       <div>
         <a
-          href="#drop-with-link-0"
+          href="/"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
           data-xt-drop-element>
           Drop

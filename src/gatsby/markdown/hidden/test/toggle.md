@@ -71,7 +71,7 @@ Test tooltip open and close nested.
   </demoinline>
 </demo>
 
-Test prevent event.
+Test prevent link on click, key enter, touch.
 
 <demo>
   <demoinline src="demos/components/toggle/prevent-event">

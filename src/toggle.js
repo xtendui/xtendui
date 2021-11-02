@@ -502,21 +502,23 @@ class Toggle {
         if (options.preventEvent) {
           const events = [...options.on.split(' ')]
           if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
-            // fix prevents click links on click until clicked two times
-            const preventeventStartTouchHandler = Xt.dataStorage.put(
+            // prevent touch links
+            const preventeventStartHandler = Xt.dataStorage.put(
               el,
               `touchend/preventevent/${self.ns}`,
               self._eventPreventeventStartHandler.bind(self, { el })
             )
-            el.addEventListener('touchend', preventeventStartTouchHandler)
+            el.addEventListener('touchend', preventeventStartHandler)
           }
           if (events.includes('click')) {
-            const preventeventStartMouseHandler = Xt.dataStorage.put(
+            // prevent click links
+            const preventeventStartHandler = Xt.dataStorage.put(
               el,
-              `mouseup/preventevent/${self.ns}`,
+              `mouseup keyup/preventevent/${self.ns}`,
               self._eventPreventeventStartHandler.bind(self, { el })
             )
-            el.addEventListener('mouseup', preventeventStartMouseHandler)
+            el.addEventListener('mouseup', preventeventStartHandler)
+            el.addEventListener('keyup', preventeventStartHandler)
           }
         }
         Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent({ el }))
@@ -791,14 +793,15 @@ class Toggle {
     const self = this
     // active
     Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent({ el }))
-    // event link
+    // prevent link but execute on.xt because added before
     const preventeventHandler = Xt.dataStorage.put(
       el,
-      `click/preventevent/${self.ns}`,
+      `click keypress/preventevent/${self.ns}`,
       self._eventPreventeventHandler.bind(self, { el })
     )
     el.addEventListener('click', preventeventHandler)
-    // event reset
+    el.addEventListener('keypress', preventeventHandler)
+    // reset prevent event
     const preventeventResetHandler = Xt.dataStorage.put(
       el,
       `off/preventevent/${self.ns}`,
@@ -831,6 +834,11 @@ class Toggle {
   _eventPreventeventHandler({ el }, e) {
     const self = this
     const active = Xt.dataStorage.get(el, `active/preventevent/${self.ns}`)
+    // only no key or key enter
+    if (e.key && e.key !== 'Enter') {
+      return
+    }
+    // logic
     if (!active && !Xt.dataStorage.get(el, `${self.ns}PreventeventDone`)) {
       Xt.dataStorage.set(el, `${self.ns}PreventeventDone`, true)
       // prevent default
