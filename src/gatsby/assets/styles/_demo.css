@@ -81,16 +81,23 @@ pre {
   @apply border-3 border-gray-100;
   #gatsby_open-full & {
     border: 0 !important;
-    .gatsby_demo_item:not(.populated-iframe) {
-      overflow-x: hidden;
-      overflow-y: scroll;
-      @apply xt-overflow-main;
-    }
     .gatsby_demo_tabs_right {
       > * {
         opacity: 1 !important;
         transform: initial !important;
       }
+    }
+  }
+}
+
+.gatsby_demo_item_body {
+  position: relative;
+  .gatsby_demo_item:not(.populated-iframe) & {
+    #gatsby_open-full & {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      @apply xt-overflow-main;
+      height: 0;
     }
   }
 }
@@ -175,12 +182,6 @@ pre {
   @apply off:hidden out:pointer-events-none;
   position: relative;
   height: 100%;
-  .gatsby_demo_item_body {
-    position: relative;
-    #gatsby_open-full & {
-      height: auto !important;
-    }
-  }
   &[data-iframe] {
     &.loaded {
       .gatsby_demo_item_body > .xt-loader {
