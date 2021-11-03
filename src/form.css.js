@@ -42,7 +42,6 @@ module.exports = {
       backgroundPosition: 'top center',
       '&:checked': {
         backgroundSize: '100%',
-        backgroundColor: 'currentColor',
       },
     },
     '.xt-radio': {
@@ -61,7 +60,6 @@ module.exports = {
       backgroundPosition: 'top center',
       '&:checked': {
         backgroundSize: '100%',
-        backgroundColor: 'currentColor',
       },
     },
     '.xt-switch': {
@@ -82,8 +80,6 @@ module.exports = {
       backgroundPosition: 'left center',
       '&:checked': {
         backgroundPosition: 'right center',
-        backgroundColor: 'currentColor',
-        borderColor: 'currentColor',
       },
     },
   }),
