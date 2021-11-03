@@ -48,6 +48,7 @@
     "relaxed-json": "^1.0.3"
   },
   "peerDependencies": {
+    "gsap": "^3.7.1",
     "tailwindcss": "^2.2.7"
   },
   "devDependencies": {
