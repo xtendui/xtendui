@@ -1003,10 +1003,6 @@
     querystring "^0.2.0"
     strip-ansi "^6.0.0"
 
-"@googlemaps/markerclustererplus@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@googlemaps/markerclustererplus/-/markerclustererplus-1.2.0.tgz#31b8f357fae1d402bec6ef68c1b2c713bd12a280"
-
 "@graphql-tools/batch-execute@^7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-7.1.2.tgz#35ba09a1e0f80f34f1ce111d23c40f039d4403a0"

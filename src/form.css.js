@@ -32,9 +32,9 @@ module.exports = {
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
-      top: '.2em',
-      width: '1.25em',
-      height: '1.25em',
+      top: '.25em',
+      width: '1.2375em',
+      height: '1.2375em',
       backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="${encodeURIComponent(
         theme('colors.white')
       )}" xmlns="http://www.w3.org/2000/svg"><path d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"/></svg>')`,
@@ -42,8 +42,6 @@ module.exports = {
       backgroundPosition: 'top center',
       '&:checked': {
         backgroundSize: '100%',
-        backgroundColor: 'currentColor',
-        borderColor: 'currentColor',
       },
     },
     '.xt-radio': {
@@ -52,9 +50,9 @@ module.exports = {
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
-      top: '.2em',
-      width: '1.25em',
-      height: '1.25em',
+      top: '.25em',
+      width: '1.2375em',
+      height: '1.2375em',
       backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="-6 -6 12 12" fill="${encodeURIComponent(
         theme('colors.white')
       )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
@@ -62,8 +60,6 @@ module.exports = {
       backgroundPosition: 'top center',
       '&:checked': {
         backgroundSize: '100%',
-        backgroundColor: 'currentColor',
-        borderColor: 'currentColor',
       },
     },
     '.xt-switch': {
@@ -72,9 +68,9 @@ module.exports = {
       position: 'relative',
       flexShrink: '0',
       backgroundRepeat: 'no-repeat',
-      top: '.2em',
+      top: '.25em',
       width: '2.25em',
-      height: '1.25em',
+      height: '1.2375em',
       backgroundImage: `url('data:image/svg+xml;utf8,<svg viewBox="0 0 36.3 36.3" fill="${encodeURIComponent(
         theme('colors.white')
       )}" stroke="${encodeURIComponent(
@@ -84,8 +80,6 @@ module.exports = {
       backgroundPosition: 'left center',
       '&:checked': {
         backgroundPosition: 'right center',
-        backgroundColor: 'currentColor',
-        borderColor: 'currentColor',
       },
     },
   }),
