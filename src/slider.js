@@ -101,6 +101,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // @PERF
     let sizeContent = 0
+    let trWidthMax = 0
     for (const tr of self.targets) {
       let trLeft
       let trWidth
@@ -112,6 +113,7 @@ class Slider extends Xt.Toggle {
         trWidth = tr.offsetWidth
       }
       sizeContent += trWidth
+      trWidthMax = trWidth > trWidthMax ? trWidth : trWidthMax
       Xt.dataStorage.set(tr, `${self.ns}TrLeftWrap`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrWidth`, trWidth)
@@ -134,11 +136,7 @@ class Slider extends Xt.Toggle {
     // initGroupsPosition
     self._initGroupsPosition()
     // wrap
-    if (
-      options.wrap !== false &&
-      options.mode !== 'absolute' &&
-      self.drag._availableSpace > self.drag._size * options.wrap
-    ) {
+    if (options.wrap !== false && options.mode !== 'absolute' && self.drag._availableSpace > trWidthMax) {
       self._wrap = true
     } else {
       self._wrap = false
