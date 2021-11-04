@@ -114,7 +114,7 @@ class Slider extends Xt.Toggle {
       }
       sizeContent += trWidth
       trWidthMax = trWidth > trWidthMax ? trWidth : trWidthMax
-      Xt.dataStorage.set(tr, `${self.ns}TrLeftWrap`, trLeft)
+      Xt.dataStorage.set(tr, `${self.ns}TrLeftInitial`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrWidth`, trWidth)
     }
@@ -932,7 +932,7 @@ class Slider extends Xt.Toggle {
     let translate
     const moveGroup = self._groups[index].targetsInitial
     const move = moveGroup[0]
-    const moveLeftWrap = Xt.dataStorage.get(move, `${self.ns}TrLeftWrap`)
+    const moveLeftWrap = Xt.dataStorage.get(move, `${self.ns}TrLeftInitial`)
     const moveWidth = Xt.dataStorage.get(move, `${self.ns}GroupWidth`)
     let moveLeft = left
     if (direction < 0) {
@@ -963,40 +963,37 @@ class Slider extends Xt.Toggle {
       Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, moveLeft)
     }
     // move translate
-    const moveAlignCenter = self.drag._size / 2 - width / 2
-    const moveAlignNone = 0
-    const moveAlignFull = self.drag._size - width
     if (options.align === 'center') {
-      translate += moveAlignCenter
+      translate += self.drag._size / 2 - width / 2
     } else if (options.align === 'left') {
-      translate += moveAlignNone
+      translate += 0
     } else if (options.align === 'right') {
-      translate += moveAlignFull
+      translate += self.drag._size - width
     }
     for (const tr of moveGroup) {
       tr.style.transform = `translateX(${translate}px)`
     }
     // set new translate position
     for (const tr of moveGroup) {
-      const trLeft = Xt.dataStorage.get(tr, `${self.ns}TrLeftWrap`)
+      const trLeft = Xt.dataStorage.get(tr, `${self.ns}TrLeftInitial`)
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft + translate)
     }
     // loop available width
     if (direction < 0) {
       if (options.align === 'center') {
-        movingSpace += moveWidth + moveAlignCenter
+        movingSpace += moveWidth + width / 2
       } else if (options.align === 'left') {
-        movingSpace += moveWidth + moveAlignFull
+        movingSpace += moveWidth + self.drag._size - width
       } else if (options.align === 'right') {
-        movingSpace += moveWidth + moveAlignNone
+        movingSpace += moveWidth
       }
     } else if (direction > 0) {
       if (options.align === 'center') {
-        movingSpace += moveWidth + moveAlignCenter
+        movingSpace += moveWidth + width / 2
       } else if (options.align === 'left') {
-        movingSpace += moveWidth + moveAlignNone
+        movingSpace += moveWidth
       } else if (options.align === 'right') {
-        movingSpace += moveWidth + moveAlignFull
+        movingSpace += moveWidth + self.drag._size - width
       }
     }
     if (movingSpace <= self.drag._size) {
