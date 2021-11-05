@@ -158,6 +158,7 @@ class Groupnumber {
    */
   _eventChange({ button } = {}, e) {
     const self = this
+    const options = self.options
     // disabled
     if (self.disabled) {
       return
@@ -187,14 +188,17 @@ class Groupnumber {
         self._validate({ val, input })
       }
       // disabled
-      for (const button of self.steps) {
-        const disabled = Xt.dataStorage.get(button, `${self.ns}ButtonDisabled`)
-        if (!disabled) {
-          button.removeAttribute('disabled')
-        } else {
-          button.setAttribute('disabled', 'disabled')
+      if (options.limit) {
+        for (const button of self.steps) {
+          // needs enable check instead of disabled because multiple inputs
+          const enabled = Xt.dataStorage.get(button, `${self.ns}ButtonEnabled`)
+          if (enabled) {
+            button.removeAttribute('disabled')
+          } else {
+            button.setAttribute('disabled', 'disabled')
+          }
+          Xt.dataStorage.remove(button, `${self.ns}ButtonEnabled`)
         }
-        Xt.dataStorage.remove(button, `${self.ns}ButtonDisabled`)
       }
     }
   }
@@ -222,18 +226,20 @@ class Groupnumber {
     for (const button of self.steps) {
       const buttonStep = button.getAttribute('data-xt-step')
       if (buttonStep < 0) {
-        if (options.limit) {
-          if (val <= min) {
+        if (val <= min) {
+          if (options.limit) {
             val = min
-            Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
           }
+        } else {
+          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
         }
       } else if (buttonStep > 0) {
-        if (options.limit) {
-          if (val >= max) {
+        if (val >= max) {
+          if (options.limit) {
             val = max
-            Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
           }
+        } else {
+          Xt.dataStorage.set(button, `${self.ns}ButtonEnabled`, true)
         }
       }
     }
