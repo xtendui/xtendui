@@ -29,12 +29,15 @@ const html = /* HTML */ `
 
     <div class="${classes.hBlock()}">Vertical design, input attributes and no limit and no validate</div>
 
+    <p>Pressing <code>Enter</code> does browser validation also if no limit and no validate on component.</p>
+
     <form class="text-sm">
       <div class="*** xt-list ***" data-xt-groupnumber="{ limit: false, validate: false }">
         <input
           type="number"
           class="${classes.input()} w-16 text-center *** rounded-tl${classes.groupButtonRadius()} rounded-bl${classes.groupButtonRadius()} border border-r-0 border-gray-300 *** ${classes.inputGray()}"
           aria-label="Quantity"
+          value="0"
           min="0"
           max="4"
           step="0.5" />
