@@ -150,7 +150,7 @@ export const populateBlock = () => {
     const language = el.getAttribute('class')
     el.after(
       Xt.node({
-        str: `<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`,
+        str: DOMPurify.sanitize(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`),
       })
     )
     el.remove()
