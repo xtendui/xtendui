@@ -150,7 +150,7 @@ export const populateBlock = () => {
     const language = el.getAttribute('class')
     el.after(
       Xt.node({
-        str: DOMPurify.sanitize(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`),
+        str: `<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`,
       })
     )
     el.remove()
@@ -434,7 +434,7 @@ export const populateItem = item => {
       },
     })
     clipboard.on('success', e => {
-      if (!Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
+      if (Xt.dataStorage.get(clipboard, 'ClipboardFrame') !== e.text) {
         Xt.dataStorage.set(clipboard, 'ClipboardFrame', e.text)
         e.clearSelection()
       }
