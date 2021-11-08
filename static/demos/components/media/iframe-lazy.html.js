@@ -12,7 +12,7 @@ const html = /* HTML */ `
         allowfullscreen></iframe>
       <div class="*** cursor-pointer transition group-in:opacity-0 group-done:hidden ***">
         <img
-          class="xt-media object-cover object-center"
+          class="xt-media object-cover"
           src="https://img.youtube.com/vi/hNQFjqDvPhA/maxresdefault.jpg"
           loading="lazy"
           alt="" />

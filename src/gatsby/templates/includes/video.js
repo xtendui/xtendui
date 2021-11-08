@@ -13,7 +13,7 @@ function Video(props) {
                 className="xt-media-container bg-gray-200 mt-1 rounded-md border-3 border-gray-100 pb-[59.8%]"
                 key={z}>
                 <video
-                  className="gatsby_site-video xt-media object-cover object-center"
+                  className="gatsby_site-video xt-media object-cover"
                   preload="none"
                   muted
                   playsInline
