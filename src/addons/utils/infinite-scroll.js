@@ -59,7 +59,23 @@ class Infinitescroll {
     // resume state
     const state = history.state
     if (state && state.scrollResume) {
-      document.scrollingElement.scrollTop = state.scrollResume
+      const scrollResume = state.scrollResume
+      // on page load
+      if (document.readyState === 'complete') {
+        requestAnimationFrame(() => {
+          document.scrollingElement.scrollTop = scrollResume
+        })
+      } else {
+        const interactive = () => {
+          if (document.readyState === 'complete') {
+            requestAnimationFrame(() => {
+              document.scrollingElement.scrollTop = scrollResume
+            })
+            document.removeEventListener('readystatechange', interactive)
+          }
+        }
+        document.addEventListener('readystatechange', interactive)
+      }
       // debug
       if (Xt.debug === true) {
         console.debug('Xt.debug: xt-infinitescroll scrollResume', state.scrollResume)
