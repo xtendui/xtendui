@@ -2,7 +2,7 @@ name: Release
 
 on:
   workflow_run:
-    workflows: ["Test"]
+    workflows: ["Test", "Codeql"]
     branches:
       - master
       - beta
