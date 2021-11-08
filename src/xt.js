@@ -998,23 +998,6 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * escape html entities
-   * @param {Object} params
-   * @param {String} params.str
-   * @return {String}
-   */
-  Xt.escapeHTML = ({ str } = {}) => {
-    const tagsToReplace = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-    }
-    return str.replace(/[&<>]/g, tag => {
-      return tagsToReplace[tag] || tag
-    })
-  }
-
-  /**
    * check element visibility
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
