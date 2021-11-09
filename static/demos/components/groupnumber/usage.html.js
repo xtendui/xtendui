@@ -38,9 +38,9 @@ const html = /* HTML */ `
           class="${classes.input()} w-16 text-center *** rounded-tl${classes.groupButtonRadius()} rounded-bl${classes.groupButtonRadius()} border border-r-0 border-gray-300 *** ${classes.inputGray()}"
           aria-label="Quantity"
           value="0"
-          min="0"
-          max="4"
-          step="0.5" />
+          min="22"
+          max="44"
+          step="11" />
         <div class="*** inline-flex flex-col ***">
           <button
             type="button"
@@ -58,10 +58,10 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Responsive design, multiple inputs and attributes</div>
+    <div class="${classes.hBlock()}">Responsive design, input attributes and voidable</div>
 
     <form class="text-sm mt-6">
-      <div class="*** xt-list ***" data-xt-groupnumber>
+      <div class="*** xt-list ***" data-xt-groupnumber="{ voidable: true }">
         <div class="*** inline-flex flex-col md:flex-row ***">
           <button
             type="button"
@@ -73,18 +73,10 @@ const html = /* HTML */ `
             type="number"
             class="${classes.input()} w-16 *** md:order-2 border-l border-r border-gray-300 md:border-l-0 md:border-r-0 md:border-t md:border-b *** text-center ${classes.inputGray()}"
             aria-label="Quantity"
-            value="10"
-            min="10"
-            max="50"
-            step="10" />
-          <input
-            type="number"
-            class="${classes.input()} w-16 *** md:order-2 border-l border-r border-gray-300 md:border-l-0 md:border-r-0 md:border-t md:border-b *** text-center ${classes.inputGray()}"
-            aria-label="Quantity"
-            value="35"
-            min="5"
-            max="35"
-            step="5" />
+            value="0"
+            min="22"
+            max="44"
+            step="11" />
           <button
             type="button"
             class="xt-button text-2xs py-1 px-2.5 *** md:order-1 rounded-b${classes.groupButtonRadius()} md:rounded-br-none md:rounded-tl${classes.groupButtonRadius()} border border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
