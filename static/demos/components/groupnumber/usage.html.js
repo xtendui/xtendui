@@ -16,7 +16,11 @@ const html = /* HTML */ `
           <input
             type="number"
             class="${classes.input()} w-16 text-center *** border border-l-0 border-gray-300 *** ${classes.inputGray()}"
-            aria-label="Quantity" />
+            aria-label="Quantity"
+            value="0"
+            min="22"
+            max="44"
+            step="11" />
           <button
             type="button"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-r${classes.groupButtonRadius()} border border-l-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
@@ -27,7 +31,7 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Vertical design, input attributes and no limit and no validate</div>
+    <div class="${classes.hBlock()}">Vertical design and no limit and no validate</div>
 
     <p>Pressing <code>Enter</code> does browser validation also if no limit and no validate on component.</p>
 
@@ -58,7 +62,7 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Responsive design, input attributes and voidable</div>
+    <div class="${classes.hBlock()}">Responsive design and voidable</div>
 
     <form class="text-sm mt-6">
       <div class="*** xt-list ***" data-xt-groupnumber="{ voidable: true }">
@@ -73,7 +77,6 @@ const html = /* HTML */ `
             type="number"
             class="${classes.input()} w-16 *** md:order-2 border-l border-r border-gray-300 md:border-l-0 md:border-r-0 md:border-t md:border-b *** text-center ${classes.inputGray()}"
             aria-label="Quantity"
-            value="0"
             min="22"
             max="44"
             step="11" />

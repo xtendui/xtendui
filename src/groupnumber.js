@@ -231,7 +231,7 @@ class Groupnumber {
             val = min
             if (options.voidable) {
               if (!buttonStepCurrent || buttonStepCurrent < 0) {
-                val = 0
+                val = ''
                 Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
               }
             } else {
@@ -241,7 +241,7 @@ class Groupnumber {
             Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
           }
         } else if (buttonStep > 0) {
-          if (val > max) {
+          if (val >= max) {
             val = max
             Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
           }
