@@ -1,12 +1,13 @@
 module.exports = {
   extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'cypress'],
   env: {
     browser: true,
     commonjs: true,
     es6: true,
     jest: true,
     node: true,
+    'cypress/globals': true,
   },
   parserOptions: {
     ecmaVersion: 13,

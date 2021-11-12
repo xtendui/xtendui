@@ -1,5 +1,3 @@
-/* global cy */
-
 describe('My First Test visit', () => {
   it('Visits test', () => {
     cy.visit('/hidden/test')
