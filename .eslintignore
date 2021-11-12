@@ -5,3 +5,5 @@ public
 # files
 **/*.min.js
 **/*.min.js.map
+
+demos-remove-eslintignore
