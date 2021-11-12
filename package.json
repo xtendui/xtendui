@@ -38,9 +38,9 @@
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js",
     "lint:generate": "eslint . --ext .jsx",
-    "test": "cypress run",
+    "test": "start-server-and-test serve http://localhost:8080 test:run",
+    "test:run": "cypress run",
     "test:open": "cypress open",
-    "test:run": "start-server-and-test serve http://localhost:8080 test",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
     "postversion": "yarn dist"
   },
