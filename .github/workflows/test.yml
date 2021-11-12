@@ -50,5 +50,5 @@ jobs:
     # test/action.yml composite
     - name: Test
       run: yarn test:run
-    - name: Lint
-      run: yarn lint
+      env:
+        START_SERVER_AND_TEST_INSECURE: 1
