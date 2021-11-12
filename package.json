@@ -38,7 +38,8 @@
     "release": "npx semantic-release --dry-run --no-ci",
     "lint": "eslint . --ext .js",
     "lint:generate": "eslint . --ext .jsx",
-    "test": "echo '@todo tests'",
+    "test": "cypress run",
+    "cypress": "cypress open",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
     "postversion": "yarn dist"
   },
@@ -69,6 +70,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
     "cssnano": "^5.0.8",
+    "cypress": "^9.0.0",
     "dompurify": "^2.3.1",
     "dotenv": "^10.0.0",
     "eslint": "8.0.1",
