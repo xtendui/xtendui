@@ -7,25 +7,25 @@ title: "Disabled"
 
 ## Disabled
 
-Test no interactions.
+TEST no interactions.
 
-Test reenable from disable.
+TEST reenable from disable.
 
-Test current desktop > mobile > desktop > mobile current activation should remain the same.
+TEST current desktop > mobile > desktop > mobile current activation should remain the same.
 
-Test initial position and initial activation when disabled.
+TEST initial position and initial activation when disabled.
 
-Test overlay open on mobile > resize desktop is disabled.
+TEST overlay open on mobile > resize desktop is disabled.
 
-Test nested check elements and targets length of nested parent components.
+TEST nested check elements and targets length of nested parent components.
 
-Test nested should disable only parent.
+TEST nested should disable only parent.
 
-Test nested close should close only child.
+TEST nested close should close only child.
 
-Test nested FocusTrap.
+TEST nested FocusTrap.
 
-Test slider instant position and wrap.
+TEST slider instant position and wrap.
 
 <demo>
   <demoinline src="demos/components/card/disabled">

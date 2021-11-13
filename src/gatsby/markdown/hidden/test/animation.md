@@ -7,13 +7,13 @@ title: "Animation"
 
 ## Class
 
-Test activations and animations.
+TEST activations and animations.
 
-Test toggle noqueue and toggle inverse should not jump page.
+TEST toggle noqueue and toggle inverse should not jump page.
 
-Test overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
+TEST overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
 
-Test slider animation no flick on change slide data-xt-group-same (bug with classes activation).
+TEST slider animation no flick on change slide data-xt-group-same (bug with classes activation).
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
@@ -40,7 +40,7 @@ Test slider animation no flick on change slide data-xt-group-same (bug with clas
 
 ## Inverse
 
-Test inverse animation.
+TEST inverse animation.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-inverse">
@@ -49,7 +49,7 @@ Test inverse animation.
 
 ## Duration and Delay
 
-Test duration and delay.
+TEST duration and delay.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-duration-delay">
@@ -58,11 +58,11 @@ Test duration and delay.
 
 ## Css
 
-Test animation.
+TEST animation.
 
-Test direction.
+TEST direction.
 
-Test queue timing.
+TEST queue timing.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
@@ -79,7 +79,7 @@ Test queue timing.
 
 ## Js
 
-Test direction and queue timing.
+TEST direction and queue timing.
 
 Slider test should not deactivate and reactivate if already activated (bug skip obj nodes that are in off and on)
 
@@ -98,9 +98,9 @@ Slider test should not deactivate and reactivate if already activated (bug skip 
 
 ## Collapse
 
-Test height and width and maxHeight styles on activation and deactivation.
+TEST height and width and maxHeight styles on activation and deactivation.
 
-Test overlay height inherit on animation done.
+TEST overlay height inherit on animation done.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-collapse-initial">
@@ -111,13 +111,10 @@ Test overlay height inherit on animation done.
 
 ## Megamenu
 
-Test move slightly over other and then target should not change with delay.
+TEST move slightly over other and then target should not change with delay.
 
-Test direction and zIndex sequential activation and zIndex reset.
+TEST direction and zIndex sequential activation and zIndex reset.
 
-Test backdrop should not flickr // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
+TEST backdrop should not flickr // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
 
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/navigation/megamenu-v1">
-  </div>
-</demo>
+[/demos/themes/navigation/megamenu-v1](/demos/themes/navigation/megamenu-v1).

@@ -7,11 +7,11 @@ title: "Matches"
 
 ## Matches
 
-Test matches.
+TEST matches.
 
-Test multiple matches in toggle.
+TEST multiple matches in toggle.
 
-Test matches should change only options in matches.
+TEST matches should change only options in matches.
 
 <demo>
   <demoinline src="demos/components/toggle/matches">

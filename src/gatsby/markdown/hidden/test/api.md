@@ -7,35 +7,32 @@ title: "Api"
 
 ## Api
 
-Test on event on init must log to test activation
+TEST on event on init must log to test activation
 
-Test add and remove.
+TEST add and remove.
 
-Test activated on change > reinit > change > restart.
+TEST activated on change > reinit > change > restart.
 
-Test activated on change > destroy > reinit.
+TEST activated on change > destroy > reinit.
 
-Test destroy remove all interaction and events.
+TEST destroy remove all interaction and events.
 
-Test one destroy and reinit and trigger 1st should execute event only one time or it open and closes on one frame after (_eventOnHandler called only one time).
+TEST one destroy and reinit and trigger 1st should execute event only one time or it open and closes on one frame after (_eventOnHandler called only one time).
 
-Test reinit multiple times, interaction should trigger events still one time per interaction (especially overlay in self mode).
+TEST reinit multiple times, interaction should trigger events still one time per interaction (especially overlay in self mode).
 
-Test slider api initial activation dragger position instant with no transition.
+TEST slider api initial activation dragger position instant with no transition.
 
-Test slider api initial activation wrap position.
+TEST slider api initial activation wrap position.
 
-Test slider api remove until 0 targets should not give errors.
+TEST slider api remove until 0 targets should not give errors.
 
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/toggle/api">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="demos/components/overlay/api">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="demos/components/drop/api">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="demos/components/tooltip/api">
-  </div>
-  <div class="gatsby_demo_item" data-iframe="demos/components/slider/api">
-  </div>
-</demo>
+[/demos/components/toggle/api](/demos/components/toggle/api).
+
+[/demos/components/overlay/api](/demos/components/overlay/api).
+
+[/demos/components/drop/api](/demos/components/drop/api).
+
+[/demos/components/tooltip/api](/demos/components/tooltip/api).
+
+[/demos/components/slider/api](/demos/components/slider/api).

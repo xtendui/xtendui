@@ -7,7 +7,7 @@ title: "Slider"
 
 ## Relative
 
-Test drag animations on drag and activation.
+TEST drag animations on drag and activation.
 
 <demo>
   <demoinline src="demos/components/slider/dragposition-false">
@@ -16,9 +16,9 @@ Test drag animations on drag and activation.
 
 ## Absolute
 
-Test direction and other drag values on initial, reset, drag looping and going back and forth, nav looping, pag jumping of 2 or more.
+TEST direction and other drag values on initial, reset, drag looping and going back and forth, nav looping, pag jumping of 2 or more.
 
-Test click should not change slide.
+TEST click should not change slide.
 
 <demo>
   <demoinline src="demos/components/slider/animation-absolute-cover">
@@ -29,7 +29,7 @@ Test click should not change slide.
 
 ## Align
 
-Test drag activation.
+TEST drag activation.
 
 <demo>
   <demoinline src="demos/components/slider/align-center">
@@ -42,7 +42,7 @@ Test drag activation.
 
 ## Contain
 
-Test grouping and drag activation.
+TEST grouping and drag activation.
 
 <demo>
   <demoinline src="demos/components/slider/contain-false-center">
@@ -55,13 +55,13 @@ Test grouping and drag activation.
 
 ## Wrap
 
-Test wrap drag activation.
+TEST wrap drag activation.
 
-Test group same on wrap.
+TEST group same on wrap.
 
-Test browser resize should keep activate.
+TEST browser resize should keep activate.
 
-Test browser resize should wrap on left or on right.
+TEST browser resize should wrap on left or on right.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
@@ -74,7 +74,7 @@ Test browser resize should wrap on left or on right.
 
 ## Group
 
-Test groups.
+TEST groups.
 
 <demo>
   <demoinline src="demos/components/slider/group">
@@ -85,39 +85,39 @@ Test groups.
 
 ## Interaction
 
-Test exclude.
+TEST exclude.
 
 <demo>
   <demoinline src="demos/components/slider/exclude">
   </demoinline>
 </demo>
 
-Test jump click.
+TEST jump click.
 
-Test jump classes only when overflowing.
+TEST jump classes only when overflowing.
 
 <demo>
   <demoinline src="demos/components/slider/jump">
   </demoinline>
 </demo>
 
-Test loop navigation.
+TEST loop navigation.
 
-Test loop dragging beyond.
+TEST loop dragging beyond.
 
 <demo>
   <demoinline src="demos/components/slider/navigation">
   </demoinline>
 </demo>
 
-Test pagination all elements should activate also on init.
+TEST pagination all elements should activate also on init.
 
 <demo>
   <demoinline src="demos/components/slider/pagination">
   </demoinline>
 </demo>
 
-Test autoheight.
+TEST autoheight.
 
 <demo>
   <demoinline src="demos/components/slider/autoheight">
@@ -126,9 +126,9 @@ Test autoheight.
 
 ## Auto
 
-Test auto.
+TEST auto.
 
-Test window blur and focus shouldn't start if no started and should pause and resume if started.
+TEST window blur and focus shouldn't start if no started and should pause and resume if started.
 
 <demo>
   <demoinline src="demos/components/slider/progress">
@@ -137,13 +137,13 @@ Test window blur and focus shouldn't start if no started and should pause and re
 
 ## Other
 
-Test position.
+TEST position.
 
-Test deactivation on resize.
+TEST deactivation on resize.
 
-Test on resize should keep dragger position and activate/deactivate targets and wrap (NOT POSSIBLE TO RETAIN ACTIVATION from disabled to enabled and different elements and disableDeactivate on targets).
+TEST on resize should keep dragger position and activate/deactivate targets and wrap (NOT POSSIBLE TO RETAIN ACTIVATION from disabled to enabled and different elements and disableDeactivate on targets).
 
-Test resize grouping.
+TEST resize grouping.
 
 <demo>
   <demoinline src="demos/components/slider/nooverflow">
@@ -152,14 +152,14 @@ Test resize grouping.
   </demoinline>
 </demo>
 
-Test medialoaded activation and position.
+TEST medialoaded activation and position.
 
 <demo>
   <demoinline src="demos/components/slider/media-loaded">
   </demoinline>
 </demo>
 
-Test activations.
+TEST activations.
 
 <demo>
   <demoinline src="demos/components/slider/automatic-scrolling">

@@ -7,26 +7,26 @@ title: "Toggle"
 
 ## Usage
 
-Test activation.
+TEST activation.
 
-Test overlay close on backdrop click.
+TEST overlay close on backdrop click.
 
-Test overlay no close clicking inside with eventLimit.
+TEST overlay no close clicking inside with eventLimit.
 
-Test overlay should close with event 'off.xt.trigger.overlay'.
+TEST overlay should close with event 'off.xt.trigger.overlay'.
+
+[/demos/components/overlay/usage-self](/demos/components/overlay/usage-self).
 
 <demo>
   <demoinline src="demos/components/toggle/usage-self">
   </demoinline>
-  <div class="gatsby_demo_item" data-iframe="demos/components/overlay/usage-self">
-  </div>
   <demoinline src="demos/components/drop/usage-self">
   </demoinline>
   <demoinline src="demos/components/tooltip/usage-self">
   </demoinline>
 </demo>
 
-Test activation and group activation.
+TEST activation and group activation.
 
 <demo>
   <demoinline src="demos/components/toggle/usage-unique">
@@ -41,11 +41,11 @@ Test activation and group activation.
 
 ## Interaction
 
-Test initial group activation.
+TEST initial group activation.
 
-Test initial custom activation.
+TEST initial custom activation.
 
-Test multiple raf should always have `on` class until event `init.xt` and then should have `in` class.
+TEST multiple raf should always have `on` class until event `init.xt` and then should have `in` class.
 
 <demo>
   <demoinline src="demos/components/toggle/class">
@@ -56,11 +56,11 @@ Test multiple raf should always have `on` class until event `init.xt` and then s
 
 ## Event
 
-Test toggle mouse should not close when clicking opened elements.
+TEST toggle mouse should not close when clicking opened elements.
 
-Test drop open and close nested.
+TEST drop open and close nested.
 
-Test tooltip open and close nested.
+TEST tooltip open and close nested.
 
 <demo>
   <demoinline src="demos/components/toggle/event">
@@ -71,7 +71,7 @@ Test tooltip open and close nested.
   </demoinline>
 </demo>
 
-Test prevent event.
+TEST prevent event.
 
 <demo>
   <demoinline src="demos/components/toggle/prevent-event">
@@ -82,29 +82,29 @@ Test prevent event.
 
 ## Hash
 
-Test no hash must not add hash initial activation.
+TEST no hash must not add hash initial activation.
 
-Test initial activation on page load (browser location prev next), must remove initial `on` in targets.
+TEST initial activation on page load (browser location prev next), must remove initial `on` in targets.
 
-Test hash activation.
+TEST hash activation.
 
-Test change page (browser location prev next).
+TEST change page (browser location prev next).
 
-Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
+[/demos/components/toggle/hash#demo--toggle-hash-group-1](/demos/components/toggle/hash#demo--toggle-hash-group-1).
 
-Test page should not scroll on change hash.
+TEST page should not scroll on change hash.
 
-Test overlay should reopen on change page (browser location prev next).
+TEST overlay should reopen on change page (browser location prev next).
 
-Test overlay opened with hash on page load, closing it should not block page interaction (bug with multiple elemens same target).
+TEST overlay opened with hash on page load, closing it should not block page interaction (bug with multiple elemens same target).
 
-Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
+[/demos/components/overlay/hash#demo--overlay-hash](/demos/components/overlay/hash#demo--overlay-hash).
 
-Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4).
+[/demos/components/slider/hash#demo--slider-hash-4](/demos/components/slider/hash#demo--slider-hash-4).
 
 ## Backdrop
 
-Test backdrop and no backdrop click.
+TEST backdrop and no backdrop click.
 
 <demo>
   <demoinline src="demos/components/overlay/variant">
@@ -117,7 +117,7 @@ Test backdrop and no backdrop click.
 
 ## Static
 
-Test position and visibility.
+TEST position and visibility.
 
 <demo>
   <demoinline src="demos/components/drop/static">
@@ -128,9 +128,9 @@ Test position and visibility.
 
 ## Class Body
 
-Test classes nested should not remove additional class.
+TEST classes nested should not remove additional class.
 
-Test close all should remove all class.
+TEST close all should remove all class.
 
 <demo>
   <demoinline src="demos/components/overlay/class-body">
@@ -139,16 +139,16 @@ Test close all should remove all class.
 
 ## Other
 
-Test no empty frame when switching from off to reset.
+TEST no empty frame when switching from off to reset.
 
 <demo>
   <demoinline src="demos/components/drop/reset-to-current">
   </demoinline>
 </demo>
 
-Test activation.
+TEST activation.
 
-Test animation fast duration with and without `data-xt-duration`.
+TEST animation fast duration with and without `data-xt-duration`.
 
 <demo>
   <demoinline src="demos/components/tooltip/swap-click">
@@ -159,7 +159,7 @@ Test animation fast duration with and without `data-xt-duration`.
   </demoinline>
 </demo>
 
-Test (not in fullscreen or it doesn't test boundary) arrow position and position inside boundary on first element for proper merge of popperjs options.
+TEST (not in fullscreen or it doesn't test boundary) arrow position and position inside boundary on first element for proper merge of popperjs options.
 
 <demo>
   <demoinline src="demos/components/tooltip/prevent-overflow">

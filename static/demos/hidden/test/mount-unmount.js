@@ -17,7 +17,7 @@ const mountTest = ({ ref }) => {
     matches: '.xt-overlay',
     mount: () => {
       // eslint-disable-next-line no-console
-      console.log('TEST MOUNT this should be called once and should NOT be called on overlay close.')
+      console.log('TEST mount this should be called once and should NOT be called on overlay close.')
     },
   })
 
@@ -26,10 +26,10 @@ const mountTest = ({ ref }) => {
   for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
     tr.setAttribute('data-test-unique-id', self.ns)
     // eslint-disable-next-line no-console
-    console.log('TEST INITIAL xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
+    console.log('TEST initial xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
     // eslint-disable-next-line no-console
     console.log(
-      'TEST INITIAL 0 this should be `true true true true`.',
+      'TEST initial 0 this should be `true true true true`.',
       tr.classList.contains('on'),
       tr.classList.contains('in'),
       tr.classList.contains('initial'),
@@ -38,7 +38,7 @@ const mountTest = ({ ref }) => {
     requestAnimationFrame(() => {
       // eslint-disable-next-line no-console
       console.log(
-        'TEST INITIAL 1 this should be `true true false false`.',
+        'TEST initial 1 this should be `true true false false`.',
         tr.classList.contains('on'),
         tr.classList.contains('in'),
         tr.classList.contains('initial'),
@@ -52,7 +52,7 @@ const mountTest = ({ ref }) => {
   const off = () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
+      'TEST unmount 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
     )
   }
 
@@ -64,7 +64,7 @@ const mountTest = ({ ref }) => {
 
   const resize = () => {
     // eslint-disable-next-line no-console
-    console.log('TEST UNMOUNT this should NOT be called multiple times on changing page and resize.')
+    console.log('TEST unmount this should NOT be called multiple times on changing page and resize.')
   }
 
   addEventListener('resize', resize)
@@ -74,7 +74,7 @@ const mountTest = ({ ref }) => {
   return () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST UNMOUNT 2 Xt._unmountArr should be the same and xtNamespace should be 0.',
+      'TEST unmount 2 Xt._unmountArr should be the same and xtNamespace should be 0.',
       Xt._unmountArr.length,
       Xt.dataStorage.get(self.ns, 'xtNamespace').length
     )

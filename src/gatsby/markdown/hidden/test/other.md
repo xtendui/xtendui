@@ -5,46 +5,82 @@ parent: "Test"
 title: "Other"
 ---
 
+## Mount Unmount
+
+`demos/hidden/test/mount-unmount`
+- TEST initial xtNamespace should be 1.
+
+TEST initial 0 this should be `true true true true`.
+
+TEST initial 1 this should be `true true false false`.
+
+TEST mount this should be called once and should NOT be called on overlay close.
+
+TEST unmount 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.
+
+TEST unmount 2 Xt._unmountArr should be the same and xtNamespace should be 0.
+
+TEST unmount this should NOT be called multiple times on changing page and resize.
+
+TEST on change page (browser location prev next) overlay should close automatically.
+
+<demo>
+  <demoinline src="demos/hidden/test/mount-unmount">
+  </demoinline>
+</demo>
+
+## ScrollTrigger Matches
+
+TEST resize and open/close overlay should always work (not disabled so not unmount/mount).
+
+TEST pin mount this should NOT be called on resize and xtNamespace should be 1.
+
+TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.
+
+TEST pin unmount this should NOT be called on resize and xtNamespace should be 0 on unmount.
+
+[/demos/hidden/test/scrolltrigger-matches](/demos/hidden/test/scrolltrigger-matches).
+
 ## Infinitescroll
 
-Test change page (browser location prev next).
+TEST change page (browser location prev next).
 
-Test initial activation on browser location.
+TEST initial activation on browser location.
 
-Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2).
+[/demos/components/listing/infinitescroll?false=2](/demos/components/listing/infinitescroll?false=2).
 
 ## Scroll
 
-Test desktop stickyflow position.
+TEST desktop stickyflow position.
 
-Test mobile initial activation.
+TEST mobile initial activation.
 
-Test mobile scrollto activation.
+TEST mobile scrollto activation.
 
-Try the demo [on a new page](/demos/themes/gallery/products-gallery-v1).
+[/demos/themes/gallery/products-gallery-v1](/demos/themes/gallery/products-gallery-v1).
 
-Test activation classes on scroll.
+TEST activation classes on scroll.
 
-Test scroll position on click elements.
+TEST scroll position on click elements.
 
-Test scroll position on click elements custom.
+TEST scroll position on click elements custom.
 
-Test activation classes and scroll position on page load and hash change.
+TEST activation classes and scroll position on page load and hash change.
 
-Test change page (browser location prev next).
+TEST change page (browser location prev next).
 
-Test initial scroll and overlay activation data-xt-scrollto-hash.
+TEST initial scroll and overlay activation data-xt-scrollto-hash.
 
-Test scroll and overlay activation data-xt-scrollto-hash close overlay and change page (browser location prev next).
+TEST scroll and overlay activation data-xt-scrollto-hash close overlay and change page (browser location prev next).
 
-Try the demo [on a new page](/demos/components/scrollto/usage#anchor-2).
+[/demos/components/scrollto/usage#anchor-2](/demos/components/scrollto/usage#anchor-2).
 
-Test clicking 2 should open overlay (bug with openauto and overlay on same element).
+TEST clicking 2 should open overlay (bug with openauto and overlay on same element).
 
-Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2).
+[/demos/components/scrollto/overlay#anchor-2](/demos/components/scrollto/overlay#anchor-2).
 
-Test change page (browser location prev next).
+TEST change page (browser location prev next).
 
-Test initial activation and scroll on page load when linking non scrolltoInit.
+TEST initial activation and scroll on page load when linking non scrolltoInit.
 
-Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2).
+[/demos/components/scrollto/toggle#anchor-2](/demos/components/scrollto/toggle#anchor-2).
