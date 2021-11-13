@@ -12,6 +12,14 @@ export const Xt = {}
 
 if (typeof window !== 'undefined') {
   //
+  // global
+  //
+
+  if (window.XtSetGlobal) {
+    global[typeof window.XtSetGlobal === 'string' ? window.XtSetGlobal : 'Xt'] = Xt
+  }
+
+  //
   // vars
   //
 

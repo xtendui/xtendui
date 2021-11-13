@@ -251,6 +251,18 @@ Or also use css variables for viewport height `--vh`.
 }
 ```
 
+## Globals
+
+If you need to access `Xt` variable in the global `window` use `window.XtSetGlobal` in a `script` tag before the main application or in your testing environment.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Variable                  | `window.XtSetGlobal:Boolean\|String`              | `null`       | Enable `window.Xt` global variable                  |
+
+</div>
+
 ## Listeners
 
 Listen to events on a **single Node**.
