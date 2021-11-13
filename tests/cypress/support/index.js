@@ -16,5 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+// set window variables
+Cypress.on('window:before:load', win => {
+  win.XtSetGlobal = true
+})

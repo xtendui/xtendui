@@ -8,8 +8,6 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc temp
 
 ## Mount Unmount
 
-TEST on change page (browser location prev next) overlay should close automatically.
-
 TEST INITIAL xtNamespace should be 1.
 
 TEST INITIAL 0 this should be `true true true true`.
@@ -23,6 +21,8 @@ TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser loca
 TEST UNMOUNT 2 Xt._unmountArr should be the same and xtNamespace should be 0.
 
 TEST UNMOUNT this should NOT be called multiple times on changing page and resize.
+
+TEST on change page (browser location prev next) overlay should close automatically.
 
 <demo>
   <demoinline src="demos/hidden/test/mount-unmount">
