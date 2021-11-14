@@ -16,20 +16,21 @@ const mountTest = ({ ref }) => {
     root: ref,
     matches: '.xt-overlay',
     mount: () => {
+      const count = parseFloat(ref.getAttribute('data-test-mountroot') ?? 0) + 1
+      ref.setAttribute('data-test-mountroot', count)
       // eslint-disable-next-line no-console
-      console.log('TEST mount this should be called once and should NOT be called on overlay close.')
+      console.log('TEST mount root once this should be 1 on init and should remain 1 on deactivation.', count)
     },
   })
 
   // init
 
   for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-    tr.setAttribute('data-test-unique-id', self.ns)
     // eslint-disable-next-line no-console
-    console.log('TEST initial xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
+    console.log('TEST init xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
     // eslint-disable-next-line no-console
     console.log(
-      'TEST initial 0 this should be `true true true true`.',
+      'TEST init classes and properties should be `true true true true`.',
       tr.classList.contains('on'),
       tr.classList.contains('in'),
       tr.classList.contains('initial'),
@@ -38,7 +39,7 @@ const mountTest = ({ ref }) => {
     requestAnimationFrame(() => {
       // eslint-disable-next-line no-console
       console.log(
-        'TEST initial 1 this should be `true true false false`.',
+        'TEST after init classes and properties should be `true true false false`.',
         tr.classList.contains('on'),
         tr.classList.contains('in'),
         tr.classList.contains('initial'),

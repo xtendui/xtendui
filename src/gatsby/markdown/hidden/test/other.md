@@ -8,13 +8,10 @@ title: "Other"
 ## Mount Unmount
 
 `demos/hidden/test/mount-unmount`
-- TEST initial xtNamespace should be 1.
-
-TEST initial 0 this should be `true true true true`.
-
-TEST initial 1 this should be `true true false false`.
-
-TEST mount this should be called once and should NOT be called on overlay close.
+- TEST mount root once this should be 1 on init and should remain 1 on deactivation.
+- TEST init xtNamespace should be 1.
+- TEST init classes and properties should be `true true true true`.
+- TEST after init classes and properties should be `true true false false`.
 
 TEST unmount 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.
 
