@@ -2684,7 +2684,7 @@ class Toggle {
   _specialAppendto({ actionCurrent, el, type } = {}) {
     const self = this
     const options = self.options
-    if (options.appendTo) {
+    if (options.appendTo && !self.initial) {
       // fix when standalone !self.targets.length && type === 'elements'
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         if (actionCurrent === 'In') {
