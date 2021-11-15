@@ -8,18 +8,13 @@ title: "Other"
 ## Mount Unmount
 
 `demos/hidden/test/mount-unmount`
-- TEST mount root once this should be 1 on init and should remain 1 on deactivation.
-- TEST init xtNamespace should be 1.
-- TEST init classes and properties should be `true true true true`.
-- TEST after init classes and properties should be `true true false false`.
-
-TEST unmount 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.
-
-TEST unmount 2 Xt._unmountArr should be the same and xtNamespace should be 0.
-
-TEST unmount this should NOT be called multiple times on changing page and resize.
-
-TEST on change page (browser location prev next) overlay should close automatically.
+- TEST mount root once, this should be 1 on init and should remain 1 on deactivation.
+- TEST init xtNamespace, should be 1.
+- TEST init classes and properties, should be `true true true true`.
+- TEST after init classes and properties, should be `true true false false`.
+- TEST unmount, this should increase by one on changing page and resize.
+- TEST unmount should disable on deactivate and should remove from dom overlay.
+- TEST unmount, unmountArr should be the same and xtNamespace should be 0.
 
 <demo>
   <demoinline src="demos/hidden/test/mount-unmount">
