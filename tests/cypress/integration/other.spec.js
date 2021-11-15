@@ -62,6 +62,7 @@ describe('demos/hidden/test/mount-unmount', function () {
       .get('.demo--mount-unmount')
       .should('be.visible')
       .as('demo')
+      .raf()
       .then(() => {
         cy.viewport('iphone-6')
           .raf()
