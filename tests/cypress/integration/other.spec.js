@@ -1,3 +1,5 @@
+const url = '/hidden/test/other'
+
 describe('demos/hidden/test/mount-unmount', function () {
   let win
   let Xt
@@ -7,8 +9,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   let tr
 
   beforeEach(function () {
-    cy.visit('/hidden/test/other')
-    cy.window().as('win')
+    cy.visit(url).window().as('win')
     cy.get('.demo--mount-unmount').as('demo')
     cy.get('@demo').find('[data-xt-overlay]').as('overlay')
   })
@@ -34,14 +35,19 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST init classes and properties, should be `true true true true`.', function () {
-    expect(tr.classList.contains('on')).to.equal(true)
-    expect(tr.classList.contains('in')).to.equal(true)
-    expect(tr.classList.contains('initial')).to.equal(true)
-    expect(self.initial).to.equal(true)
+    const initedRACECONDITION = overlay.getAttribute('data-xt-overlay-init')
+    if (initedRACECONDITION !== '') {
+      expect(initedRACECONDITION).to.equal(null)
+      expect(tr.classList.contains('on')).to.equal(true)
+      expect(tr.classList.contains('in')).to.equal(true)
+      expect(tr.classList.contains('initial')).to.equal(true)
+      expect(self.initial).to.equal(true)
+    }
   })
 
   it('TEST after init classes and properties, should be `true true false false`.', function () {
     cy.raf().then(() => {
+      expect(overlay.getAttribute('data-xt-overlay-init')).to.equal('')
       expect(tr.classList.contains('on')).to.equal(true)
       expect(tr.classList.contains('in')).to.equal(true)
       expect(tr.classList.contains('initial')).to.equal(false)
@@ -51,10 +57,11 @@ describe('demos/hidden/test/mount-unmount', function () {
 
   it('TEST unmount, this should increase by one on changing page and resize.', function () {
     cy.visit('/hidden/test')
-      .go('back')
+      .go(-1)
       // fix back wait for page to load
       .get('.demo--mount-unmount')
       .should('be.visible')
+      .as('demo')
       .then(() => {
         cy.viewport('iphone-6')
           .raf()
@@ -62,7 +69,7 @@ describe('demos/hidden/test/mount-unmount', function () {
             cy.viewport('macbook-13')
               .raf()
               .then(() => {
-                cy.get('.demo--mount-unmount').should('have.attr', 'data-test-resize', '2')
+                cy.get('@demo').should('have.attr', 'data-test-resize', '2')
               })
           })
       })

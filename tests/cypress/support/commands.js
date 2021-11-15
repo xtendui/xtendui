@@ -5,3 +5,9 @@ Cypress.Commands.add('raf', () => {
     requestAnimationFrame(resolve)
   })
 })
+
+Cypress.Commands.add('emptyWindow', () => {
+  cy.window().then(win => {
+    win.location.href = 'about:blank'
+  })
+})
