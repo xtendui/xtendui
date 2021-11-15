@@ -34,15 +34,12 @@ describe('demos/hidden/test/mount-unmount', function () {
     expect(xtNamespace.length).to.equal(1)
   })
 
-  it('TEST init classes and properties, should be `true true true true`.', function () {
-    const initedRACECONDITION = overlay.getAttribute('data-xt-overlay-init')
-    if (initedRACECONDITION !== '') {
-      expect(initedRACECONDITION).to.equal(null)
-      expect(tr.classList.contains('on')).to.equal(true)
-      expect(tr.classList.contains('in')).to.equal(true)
-      expect(tr.classList.contains('initial')).to.equal(true)
-      expect(self.initial).to.equal(true)
-    }
+  it('TEST init classes and properties, should be `true true true true`.', { retries: 3 }, function () {
+    expect(overlay.getAttribute('data-xt-overlay-init')).to.equal(null)
+    expect(tr.classList.contains('on')).to.equal(true)
+    expect(tr.classList.contains('in')).to.equal(true)
+    expect(tr.classList.contains('initial')).to.equal(true)
+    expect(self.initial).to.equal(true)
   })
 
   it('TEST after init classes and properties, should be `true true false false`.', function () {
@@ -58,11 +55,12 @@ describe('demos/hidden/test/mount-unmount', function () {
   it('TEST unmount, this should increase by one on changing page and resize.', function () {
     cy.visit('/hidden/test')
       .go(-1)
-      // fix back wait for page to load
+      // @RACECONDITION
       .get('.demo--mount-unmount')
       .should('be.visible')
       .as('demo')
       .raf()
+      // /@RACECONDITION
       .then(() => {
         cy.viewport('iphone-6')
           .raf()
