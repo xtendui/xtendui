@@ -2,7 +2,6 @@ import { Xt } from 'xtendui'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
 import kebabCase from 'lodash.kebabcase'
-import DOMPurify from 'dompurify'
 import 'xtendui/src/toggle.js'
 import 'xtendui/src/tooltip.js'
 
@@ -150,7 +149,7 @@ export const populateBlock = () => {
     const language = el.getAttribute('class')
     el.after(
       Xt.node({
-        str: DOMPurify.sanitize(`<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`),
+        str: `<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`,
       })
     )
     el.remove()
@@ -295,9 +294,7 @@ export const populateDemo = container => {
     item.setAttribute('id', kebabCase(id))
     container.querySelector('.gatsby_demo_tabs_left').append(
       Xt.node({
-        str: DOMPurify.sanitize(
-          `<button type="button" class="xt-button ${classes.textDefault()} ${classes.buttonCode()}">${name}</button>`
-        ),
+        str: `<button type="button" class="xt-button ${classes.textDefault()} ${classes.buttonCode()}">${name}</button>`,
       })
     )
     // if not iframe
@@ -579,7 +576,7 @@ const btnOpenIframe = item => {
   const btn = item.closest('.gatsby_demo').querySelector('.button--open-iframe')
   if (iframe) {
     btn.closest('.button--open-iframe-container').classList.add('gatsby_with-iframe')
-    btn.setAttribute('href', DOMPurify.sanitize(iframe.getAttribute('data-src')))
+    btn.setAttribute('href', iframe.getAttribute('data-src'))
   } else {
     btn.closest('.button--open-iframe-container').classList.remove('gatsby_with-iframe')
   }
@@ -659,7 +656,7 @@ const initializeIframe = item => {
     const src = `/${item.getAttribute('data-iframe')}`
     item.append(
       Xt.node({
-        str: `<div class="gatsby_demo_item_body"><iframe data-src="${DOMPurify.sanitize(src)}"></iframe></div>`,
+        str: `<div class="gatsby_demo_item_body"><iframe data-src="${src}"></iframe></div>`,
       })
     )
     item.querySelector('.gatsby_demo_item_body').append(
@@ -688,7 +685,7 @@ const initializeIframe = item => {
 }
 
 const loadIframe = iframe => {
-  iframe.setAttribute('src', DOMPurify.sanitize(iframe.getAttribute('data-src')))
+  iframe.setAttribute('src', iframe.getAttribute('data-src'))
 }
 
 const unloadIframe = iframe => {
@@ -789,36 +786,28 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
   if (htmlSource) {
     inner.append(
       Xt.node({
-        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${DOMPurify.sanitize(
-          htmlSource
-        )}</script>`,
+        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`,
       })
     )
   }
   if (jsxSource) {
     inner.append(
       Xt.node({
-        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${DOMPurify.sanitize(
-          jsxSource
-        )}></script>`,
+        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`,
       })
     )
   }
   if (cssSource) {
     inner.append(
       Xt.node({
-        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${DOMPurify.sanitize(
-          cssSource
-        )}></script>`,
+        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`,
       })
     )
   }
   if (jsSource) {
     inner.append(
       Xt.node({
-        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${DOMPurify.sanitize(
-          jsSource
-        )}></script>`,
+        str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`,
       })
     )
   }
@@ -847,9 +836,7 @@ const populateSources = (item, element) => {
     .append(Xt.node({ str: '<div class="gatsby_demo_code_body_item"><pre class="noedit"><code></code></pre></div>' }))
   tabs.append(
     Xt.node({
-      str: DOMPurify.sanitize(
-        `<button type="button" class="xt-button ${classes.textInverse()} ${classes.buttonCodeWhite()}">${lang}</button>`
-      ),
+      str: `<button type="button" class="xt-button ${classes.textInverse()} ${classes.buttonCodeWhite()}">${lang}</button>`,
     })
   )
   // format code
@@ -925,12 +912,12 @@ export const makeDocument = () => {
         const activeList = activeTooltip.querySelector('.xt-list')
         activeList.append(
           Xt.node({
-            str: DOMPurify.sanitize(`
+            str: `
 <a href="#${encodeURIComponent(
               id
             )}" class="xt-button text-3xs py-0.5 px-3 ${classes.groupButton()} justify-start text-left ${classes.groupButtonGray()} ${classes.buttonGrayAnim()}">
   <span class="py-px">${el.textContent.trim()}</span>
-</a>`),
+</a>`,
           })
         )
       }
