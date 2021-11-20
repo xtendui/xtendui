@@ -15,7 +15,7 @@ const mountTest = ({ ref }) => {
 
   Xt.mount({
     root: ref,
-    matches: '.xt-overlay',
+    matches: '[data-xt-overlay]',
     mount: () => {
       const count = parseFloat(ref.getAttribute('data-test-mountroot') ?? 0) + 1
       ref.setAttribute('data-test-mountroot', count)

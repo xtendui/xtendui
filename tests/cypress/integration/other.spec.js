@@ -76,7 +76,7 @@ describe('demos/hidden/test/mount-unmount', function () {
 
   it('TEST unmount should disable on deactivate and should remove from dom overlay.', function () {
     cy.raf().then(() => {
-      overlay.remove()
+      demo.remove()
       cy.get(tr).should('not.exist')
     })
   })
