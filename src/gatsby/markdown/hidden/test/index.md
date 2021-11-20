@@ -7,22 +7,15 @@ title: "Test"
 
 ## Docs
 
-TEST on change page menu mobile lib should not flickr and should retain scroll and should be scrollable and should be able to close/open after 3 changes.
+- TEST on change page menu mobile docs should not flickr and should be visible and should be scrollable and should be unique and to desktop should disable overlay.
+- TEST open code from demos should show code and switching mode should change code and copying code should be without highlight.
 
-TEST on mobile with menu mobile open resize to desktop should disable overlay and back should enable.
+TEST demos demos changing demo should change hash and browser location prev next should change demo and initial activation on page load.
 
-TEST on change page with any overlay open should close overlay because of closeauto.
-
-TEST copy code from demos and clicking copy should be without highlight.
-
-TEST demos with all: inline and iframe and react inline and react iframe.
-
-TEST demos changing demo should change hash.
-
-TEST change page (browser location prev next) should change demo.
-
-TEST demos initial activation on page load (browser location prev next).
-
-TEST demo show code in fullscreen after switching mode.
-
-TEST demo switcher initial and switched html class and code.
+<demo>
+  <demoinline src="demos/components/toggle/animation-queue">
+  </demoinline>
+  <demoinline src="demos/components/toggle/animation-noqueue">
+  </demoinline>
+  <div class="gatsby_demo_item" data-iframe="demos/components/stickyflow/usage"></div>
+</demo>

@@ -55,12 +55,10 @@ describe('demos/hidden/test/mount-unmount', function () {
   it('TEST unmount, this should increase by one on changing page and resize.', function () {
     cy.visit('/hidden/test')
       .go(-1)
-      // @RACECONDITION
       .get('.demo--mount-unmount')
-      .should('be.visible')
       .as('demo')
+      .should('be.visible') // @RACECONDITION
       .raf()
-      // /@RACECONDITION
       .then(() => {
         cy.viewport('iphone-6')
           .raf()
