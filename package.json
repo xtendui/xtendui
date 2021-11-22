@@ -108,7 +108,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "rehype-react": "^7.0.2",
+    "rehype-react": "^7.0.3",
     "remark-grid-tables": "^2.1.2",
     "semantic-release": "^17.4.7",
     "tailwindcss": "^2.2.15",
