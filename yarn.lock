@@ -10509,9 +10509,9 @@ regjsparser@^0.6.4:
   dependencies:
     jsesc "~0.5.0"
 
-rehype-react@^7.0.2:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/rehype-react/-/rehype-react-7.0.2.tgz#e5b3596ff804da38f9ece91fc169215acc06e0f9"
+rehype-react@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/rehype-react/-/rehype-react-7.0.3.tgz#9c96051de79a385fd44908597a52eb964e4b891a"
   dependencies:
     "@mapbox/hast-util-table-cell-style" "^0.2.0"
     "@types/hast" "^2.0.0"
