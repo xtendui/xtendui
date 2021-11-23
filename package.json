@@ -77,7 +77,7 @@
     "esm": "^3.2.25",
     "gatsby": "^3.13.0",
     "gatsby-plugin-catch-links": "^3.13.0",
-    "gatsby-plugin-image": "^1.13.0",
+    "gatsby-plugin-image": "^1.14.2",
     "gatsby-plugin-manifest": "^3.13.0",
     "gatsby-plugin-module-resolver": "^1.0.3",
     "gatsby-plugin-page-creator": "^3.13.0",
