@@ -123,7 +123,7 @@ export default function Header({ page }) {
                     className="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 pr-3 text-2xl"
                     aria-label="Close"
                     dangerouslySetInnerHTML={{ __html: classes.iconX() }}></div>
-                  <div className="mt-16 md:mt-0">
+                  <div className="mt-16 lg:mt-0">
                     <div className="gatsby_site-header_switcher_container">
                       <div className="xt-list xt-list-1 flex-nowrap">
                         <div className="flex-auto" data-xt-tooltip="{ position: 'bottom', duration: 300 }">

@@ -36,6 +36,7 @@ Xtend UI is a powerful frontend library of tailwind components enhanced by vanil
 * Some animations and interactions with [Gsap](https://greensock.com/gsap/)
 * Positioning with [Popperjs](https://popper.js.org/)
 * Focus trap with [Focus Trap](https://github.com/focus-trap/focus-trap)
+* Sanitize with [DOMPurify](https://github.com/cure53/DOMPurify)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
 * Release with [Semantic Release](https://github.com/semantic-release/semantic-release)
 * Polyfill with [Babel](https://babeljs.io/) and [Core Js](https://github.com/zloirock/core-js)

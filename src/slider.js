@@ -487,7 +487,7 @@ class Slider extends Xt.Toggle {
         if (html.search(regex) !== -1) {
           html = html.replace(regex, self._groups.length.toString())
         }
-        item.innerHTML = html
+        item.innerHTML = Xt.sanitize(html)
         if (classes.length) {
           item.children[0].classList.add(...classes)
         }

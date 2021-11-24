@@ -4,6 +4,8 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/beta/LICENSE.txt)
  */
 
+import DOMPurify from 'dompurify'
+
 //
 // constructor
 //
@@ -730,25 +732,37 @@ if (typeof window !== 'undefined') {
   }
 
   /**
+   * Purify html string
+   * @param {String} str String
+   * @return {String} Purified string
+   */
+
+  Xt.sanitize = str => {
+    return DOMPurify.sanitize(str)
+  }
+
+  /**
    * Create HTML element from html string
    * @param {Object} params
+   * @param {Boolean} params.sanitize Sanitize
    * @param {String} params.str String (only 1 root html tag)
    * @return {Node} HTML elements
    */
-  Xt.node = ({ str }) => {
+  Xt.node = ({ sanitize = true, str }) => {
     const template = document.createElement('template')
-    template.innerHTML = str.trim()
+    template.innerHTML = sanitize ? Xt.sanitize(str.trim()) : str.trim()
     return template.content.firstChild
   }
 
   /**
    * Create HTML elements from html string
-   * @param {String} str Html String
+   * @param {Boolean} params.sanitize Sanitize
+   * @param {String} params.str Html String
    * @return {Node} HTML elements
    */
-  Xt.nodes = ({ str }) => {
+  Xt.nodes = ({ sanitize = true, str }) => {
     const template = document.createElement('template')
-    template.innerHTML = str.trim()
+    template.innerHTML = sanitize ? Xt.sanitize(str.trim()) : str.trim()
     return template.content.childNodes
   }
 
