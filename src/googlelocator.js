@@ -462,7 +462,7 @@ class Googlelocator {
     const options = self.options
     // clone
     let cloned = document.createElement('div')
-    cloned.innerHTML = self.itemsTemplate.innerHTML
+    cloned.innerHTML = Xt.sanitize(self.itemsTemplate.innerHTML)
     cloned = cloned.querySelector(':scope > *')
     cloned.classList.add('xt-googlelocator-clone')
     cloned.setAttribute('data-xt-index', loc.index.toString())

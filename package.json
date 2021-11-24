@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.10.1",
+    "dompurify": "^2.3.3",
     "focus-trap": "^6.6.1",
     "relaxed-json": "^1.0.3"
   },

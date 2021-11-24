@@ -433,7 +433,7 @@ class Infinitescroll {
       if (html.search(regex) !== -1) {
         html = html.replace(regex, options.max)
       }
-      pagination.innerHTML = html
+      pagination.innerHTML = Xt.sanitize(html)
     }
   }
 

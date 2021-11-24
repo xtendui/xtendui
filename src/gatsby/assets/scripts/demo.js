@@ -269,6 +269,7 @@ export const populateDemo = container => {
   )
   container.querySelector('.gatsby_demo_tabs_right').append(
     Xt.node({
+      sanitize: false,
       str: `
 <div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
   <a href="#" target="_blank" class="xt-button button--open-iframe ${classes.buttonCode()}" aria-label="Open Iframe" data-xt-tooltip-element>
@@ -576,7 +577,7 @@ const btnOpenIframe = item => {
   const btn = item.closest('.gatsby_demo').querySelector('.button--open-iframe')
   if (iframe) {
     btn.closest('.button--open-iframe-container').classList.add('gatsby_with-iframe')
-    btn.setAttribute('href', iframe.getAttribute('data-src'))
+    btn.setAttribute('href', Xt.sanitize(iframe.getAttribute('data-src')))
   } else {
     btn.closest('.button--open-iframe-container').classList.remove('gatsby_with-iframe')
   }
@@ -656,7 +657,8 @@ const initializeIframe = item => {
     const src = `/${item.getAttribute('data-iframe')}`
     item.append(
       Xt.node({
-        str: `<div class="gatsby_demo_item_body"><iframe data-src="${src}"></iframe></div>`,
+        sanitize: false,
+        str: `<div class="gatsby_demo_item_body"><iframe data-src="${Xt.sanitize(src)}"></iframe></div>`,
       })
     )
     item.querySelector('.gatsby_demo_item_body').append(
@@ -685,7 +687,7 @@ const initializeIframe = item => {
 }
 
 const loadIframe = iframe => {
-  iframe.setAttribute('src', iframe.getAttribute('data-src'))
+  iframe.setAttribute('src', Xt.sanitize(iframe.getAttribute('data-src')))
 }
 
 const unloadIframe = iframe => {
@@ -786,6 +788,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
   if (htmlSource) {
     inner.append(
       Xt.node({
+        sanitize: false,
         str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`,
       })
     )
@@ -793,6 +796,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
   if (jsxSource) {
     inner.append(
       Xt.node({
+        sanitize: false,
         str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`,
       })
     )
@@ -800,6 +804,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
   if (cssSource) {
     inner.append(
       Xt.node({
+        sanitize: false,
         str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`,
       })
     )
@@ -807,6 +812,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
   if (jsSource) {
     inner.append(
       Xt.node({
+        sanitize: false,
         str: `<script type="text/plain" class="gatsby_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`,
       })
     )

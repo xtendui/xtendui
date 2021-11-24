@@ -39,8 +39,8 @@ const mountInteraction = ({ ref }) => {
       )
       content = item.querySelector('.content')
       clone = item.querySelector('.clone')
-      content.innerHTML = text
-      clone.innerHTML = text
+      content.innerHTML = Xt.sanitize(text)
+      clone.innerHTML = Xt.sanitize(text)
       gsap.set(clone, {
         opacity: 0,
       })

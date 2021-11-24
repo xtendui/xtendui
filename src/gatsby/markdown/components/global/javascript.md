@@ -167,20 +167,30 @@ Xt.options['xt-drop'] = {
 
 > Be sure to assing `Xt.options` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
 
-## Xt.node
+## Xt.sanitize
 
-You can create **DOM node from string** with this method.
+You can **sanitize a html string** with [DOMPurify](https://github.com/cure53/DOMPurify) using `Xt.sanitize`. This method is used also internally to sanitize content added to DOM.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.node({ str:String })`                          | Create DOM node from string, returns `Node`             |
-| Method                  | `Xt.nodes({ str:String })`                          | Create DOM nodes from string, returns `NodeList`             |
+| Method                  | `Xt.sanitize(str:String)`                          | Sanitize string with [DOMPurify](https://github.com/cure53/DOMPurify), returns `String`             |
 
 </div>
 
-> **Do not populate `str` with data from a DOM node** because it will be interpreted as HTML and can lead to a cross-site scripting vulnerability.
+## Xt.node
+
+You can create **DOM node from string** with this method. The string is automatically sanitized with `Xt.sanitize`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.node({ str:String, sanitize:Boolean = true })`                          | Create DOM node from string, returns `Node`             |
+| Method                  | `Xt.nodes({ str:String, sanitize:Boolean = true })`                          | Create DOM nodes from string, returns `NodeList`             |
+
+</div>
 
 ## Xt.visible
 
