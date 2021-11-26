@@ -49,7 +49,7 @@ Here are the main **javascript options**.
 | Option                    | `limit:Boolean`                          | `true`        | Limit value with min and max attribute             |
 | Option                    | `validate({ val, step }):Function\|false`                          | `<Function>`        | Validate value on input change             |
 | Option                    | `validateInitial:Boolean`                          | `false`        | Validate on initialization             |
-| Option                    | `voidable:Boolean`                          | `false`        | Input can be resetted to empty value if less than `[min]`             |
+| Option                    | `voidable:Boolean`                          | `true`        | Input can be resetted to null value if initialized with no initial `value`             |
 | Option                    | `min:Number`                          | `1`        | Default value for minimum limit            |
 | Option                    | `max:Number`                          | `Infinity`        | Default value for maximum limit            |
 | Option                    | `inputs:Query`                          | `'input[type="number"]'`        | Inputs query            |

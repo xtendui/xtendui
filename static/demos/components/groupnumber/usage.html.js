@@ -62,10 +62,10 @@ const html = /* HTML */ `
       </div>
     </form>
 
-    <div class="${classes.hBlock()}">Vertical design and voidable</div>
+    <div class="${classes.hBlock()}">Vertical design and no initial value</div>
 
     <form class="text-sm mt-6">
-      <div class="*** inline-flex flex-col ***" data-xt-groupnumber="{ voidable: true }">
+      <div class="*** inline-flex flex-col ***" data-xt-groupnumber>
         <button
           type="button"
           class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-b-none border border-gray-300 border-b-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"

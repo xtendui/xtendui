@@ -77,6 +77,10 @@ class Groupnumber {
     // elements
     self.inputs = self.container.querySelectorAll(options.inputs)
     self.steps = self.container.querySelectorAll(options.steps)
+    // voidable
+    for (const input of self.inputs) {
+      Xt.dataStorage.set(input, `voidable/${self.ns}`, input.value === null)
+    }
     // steps
     const eventsSteps = options.events?.steps ? [...options.events.steps.split(' ')] : []
     if (eventsSteps.length) {
@@ -220,6 +224,7 @@ class Groupnumber {
     }
     // limit
     if (options.limit) {
+      const voidable = Xt.dataStorage.get(input, `voidable/${self.ns}`)
       const inputMin = input.getAttribute('min')
       const inputMax = input.getAttribute('max')
       const min = inputMin && inputMin !== '' ? parseFloat(inputMin) : options.min
@@ -229,7 +234,7 @@ class Groupnumber {
         if (buttonStep < 0) {
           if (val < min) {
             val = min
-            if (options.voidable) {
+            if (voidable) {
               if (!buttonStepCurrent || buttonStepCurrent < 0) {
                 val = ''
                 Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
@@ -237,7 +242,7 @@ class Groupnumber {
             } else {
               Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
             }
-          } else if (!options.voidable && val === min) {
+          } else if (!voidable && val === min) {
             Xt.dataStorage.set(button, `${self.ns}ButtonDisabled`, true)
           }
         } else if (buttonStep > 0) {
@@ -361,7 +366,7 @@ Groupnumber.optionsDefault = {
   debug: false,
   // groupnumber
   limit: true,
-  voidable: false,
+  voidable: true,
   validateInitial: false,
   validate: ({ val, step }) => {
     if (step && val % step) {
