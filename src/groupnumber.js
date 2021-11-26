@@ -79,7 +79,7 @@ class Groupnumber {
     self.steps = self.container.querySelectorAll(options.steps)
     // voidable
     for (const input of self.inputs) {
-      Xt.dataStorage.set(input, `voidable/${self.ns}`, input.value === null)
+      Xt.dataStorage.set(input, `voidable/${self.ns}`, input.value === '')
     }
     // steps
     const eventsSteps = options.events?.steps ? [...options.events.steps.split(' ')] : []
