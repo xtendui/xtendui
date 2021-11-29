@@ -47,7 +47,7 @@ describe('demos/hidden/test', function () {
                         cy.viewport('macbook-13')
                           .get('@overlay')
                           .should('have.attr', 'data-xt-overlay-disabled', '') // @RACECONDITION
-                          .raf()
+                          .frame()
                           .then(() => {
                             expect(overlay.parentNode.tagName).to.not.equal('BODY')
                             expect(overlay.closest('body')).to.not.have.class('xt-scrollbar-overlay')

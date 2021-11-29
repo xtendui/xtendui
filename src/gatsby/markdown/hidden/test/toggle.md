@@ -165,3 +165,22 @@ TEST (not in fullscreen or it doesn't test boundary) arrow position and position
   <demoinline src="demos/components/tooltip/prevent-overflow">
   </demoinline>
 </demo>
+
+TEST focustrap should work and not give console error.
+
+<demo>
+  <demoinline src="demos/components/overlay/animation-queue">
+  </demoinline>
+</demo>
+
+TEST data-xt-group-same no flick on change slide (bug with classes activation).
+
+<demo>
+  <demoinline src="demos/components/slider/animation">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/slider/animation-queue">
+  </demoinline>
+</demo>

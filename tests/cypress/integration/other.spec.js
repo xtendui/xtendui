@@ -43,7 +43,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST after init classes and properties, should be `true true false false`.', function () {
-    cy.raf().then(() => {
+    cy.frame().then(() => {
       expect(overlay.getAttribute('data-xt-overlay-init')).to.equal('')
       expect(tr.classList.contains('on')).to.equal(true)
       expect(tr.classList.contains('in')).to.equal(true)
@@ -58,13 +58,13 @@ describe('demos/hidden/test/mount-unmount', function () {
       .get('.demo--mount-unmount')
       .as('demo')
       .should('be.visible') // @RACECONDITION
-      .raf()
+      .frame()
       .then(() => {
         cy.viewport('iphone-6')
-          .raf()
+          .frame()
           .then(() => {
             cy.viewport('macbook-13')
-              .raf()
+              .frame()
               .then(() => {
                 cy.get('@demo').should('have.attr', 'data-test-resize', '2')
               })
@@ -73,7 +73,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST unmount should disable on deactivate and should remove from dom overlay.', function () {
-    cy.raf().then(() => {
+    cy.frame().then(() => {
       demo.remove()
       cy.get(tr).should('not.exist')
     })
@@ -83,7 +83,7 @@ describe('demos/hidden/test/mount-unmount', function () {
     const count = Xt._unmountArr.length
     expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
     demo.remove()
-    cy.raf().then(() => {
+    cy.frame().then(() => {
       expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(0)
       expect(Xt._unmountArr.length).to.equal(count - 2)
     })

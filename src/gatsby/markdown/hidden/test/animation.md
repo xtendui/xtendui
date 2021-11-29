@@ -7,40 +7,37 @@ title: "Animation"
 
 ## Class
 
-TEST activations and animations.
-
-TEST toggle noqueue and toggle inverse should not jump page.
-
-TEST overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
-
-TEST slider animation no flick on change slide data-xt-group-same (bug with classes activation).
+TEST queue activations and should not jump page.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/toggle/animation-noqueue">
-  </demoinline>
   <demoinline src="demos/components/overlay/animation-queue">
-  </demoinline>
-  <demoinline src="demos/components/overlay/animation-noqueue">
   </demoinline>
   <demoinline src="demos/components/drop/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/drop/animation-noqueue">
-  </demoinline>
   <demoinline src="demos/components/tooltip/animation-queue">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-noqueue">
-  </demoinline>
-  <demoinline src="demos/components/slider/animation">
   </demoinline>
   <demoinline src="demos/components/slider/animation-queue">
   </demoinline>
 </demo>
 
-## Inverse
+TEST noqueue activations and should not jump page.
 
-TEST inverse animation.
+<demo>
+  <demoinline src="demos/components/toggle/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/drop/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation">
+  </demoinline>
+</demo>
+
+TEST inverse activations and should not jump page.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-inverse">

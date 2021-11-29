@@ -1,6 +1,6 @@
 // requestAnimationFrame
 
-Cypress.Commands.add('raf', () => {
+Cypress.Commands.add('frame', () => {
   return new Cypress.Promise(resolve => {
     requestAnimationFrame(resolve)
   })
