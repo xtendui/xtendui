@@ -55,7 +55,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.16.4",
-    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@fullhuman/postcss-purgecss": "^4.1.2",
     "@hot-loader/react-dom": "^17.0.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
