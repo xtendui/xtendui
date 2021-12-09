@@ -844,8 +844,9 @@ if (typeof window !== 'undefined') {
    * @param {Number} params.duration Duration
    * @param {Boolean} params.raf Use requestAnimationFrame
    * @param {Boolean} params.initial Instant animations with initial
+   * @param {Function} params.callback
    */
-  Xt.on = ({ el, ns = '', duration, raf = true, initial = false } = {}) => {
+  Xt.on = ({ el, ns = '', duration, raf = true, initial = false, callback } = {}) => {
     Xt.animTimeout({ el, ns })
     el.classList.add('on')
     el.classList.remove('out', 'done')
@@ -858,6 +859,9 @@ if (typeof window !== 'undefined') {
         actionCurrent: 'In',
         func: () => {
           el.classList.add('done')
+          if (callback) {
+            callback()
+          }
         },
       })
     }
@@ -892,8 +896,9 @@ if (typeof window !== 'undefined') {
    * @param {Number} params.duration Duration
    * @param {Boolean} params.raf Use requestAnimationFrame
    * @param {Boolean} params.initial Instant animations with initial
+   * @param {Function} params.callback
    */
-  Xt.off = ({ el, ns = '', duration, raf = true, initial = false } = {}) => {
+  Xt.off = ({ el, ns = '', duration, raf = true, initial = false, callback } = {}) => {
     Xt.animTimeout({ el, ns })
     // must be outside inside raf or page jumps (e.g. noqueue)
     el.classList.remove('on', 'done')
@@ -907,6 +912,9 @@ if (typeof window !== 'undefined') {
         actionCurrent: 'Out',
         func: () => {
           el.classList.remove('out')
+          if (callback) {
+            callback()
+          }
         },
       })
     }
