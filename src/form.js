@@ -16,6 +16,7 @@ Xt.mount({
     // vars
 
     const name = ref.getAttribute('name')
+    const form = ref.form
     const inputs = document.querySelectorAll(`[name="${name}"]`)
 
     // change
@@ -39,6 +40,7 @@ Xt.mount({
     }
 
     ref.addEventListener('change', change)
+    form.addEventListener('reset', change)
 
     if (ref.checked) {
       change()

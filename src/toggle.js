@@ -3270,7 +3270,7 @@ class Toggle {
     if (!self.disabled) {
       self.disabled = true
       // off from disable/destroy
-      // need to deactivate on disable on some components (e.g.destroy overlay mobile, matches disable)
+      // need to deactivate on disable on some components (e.g. destroy overlay mobile, matches disable)
       if (options.disableDeactivate) {
         for (const el of self.elements.filter(x => self.hasCurrent({ el: x }))) {
           self._eventOff({ el, force: true })
@@ -3321,6 +3321,13 @@ class Toggle {
    */
   reinit({ save = true } = {}) {
     const self = this
+    const options = self.options
+    // need to reset appendto
+    if (options.disableDeactivate) {
+      for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+        self._specialAppendto({ actionCurrent: 'Out', el: tr, type: 'targets' })
+      }
+    }
     // reinit
     self._initLogic({ save })
   }
