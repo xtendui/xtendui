@@ -139,15 +139,12 @@ class Groupnumber {
    */
   _initStart() {
     const self = this
-    const options = self.options
     // disabled
     if (self.disabled) {
       return
     }
     // logic
-    if (options.validateInitial) {
-      self._eventChange.bind(self)()
-    }
+    self._eventChange.bind(self)()
   }
 
   //
@@ -376,7 +373,6 @@ Groupnumber.optionsDefault = {
   // groupnumber
   limit: true,
   voidable: true,
-  validateInitial: false,
   validate: ({ val, step }) => {
     if (step && val % step) {
       return Math.ceil(val / step) * step
