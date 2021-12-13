@@ -26,6 +26,7 @@ module.exports = {
     uuid: require('uuid/v1')(),
   },
   plugins: [
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-postcss',
