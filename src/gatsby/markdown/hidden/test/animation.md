@@ -7,7 +7,8 @@ title: "Animation"
 
 ## Class
 
-TEST queue activations and should not jump page.
+`demos/components/toggle/animation-queue`
+- TEST queue activations and should not jump page.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
@@ -22,7 +23,8 @@ TEST queue activations and should not jump page.
   </demoinline>
 </demo>
 
-TEST noqueue activations and should not jump page.
+`demos/components/toggle/animation-noqueue`
+- TEST noqueue activations and should not jump page.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-noqueue">
@@ -37,7 +39,8 @@ TEST noqueue activations and should not jump page.
   </demoinline>
 </demo>
 
-TEST inverse activations and should not jump page.
+`demos/components/toggle/animation-inverse`
+- TEST inverse activations and should not jump page.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-inverse">

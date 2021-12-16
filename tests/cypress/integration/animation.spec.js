@@ -107,3 +107,46 @@ describe('demos/components/toggle/animation-noqueue', function () {
       })
   })
 })
+
+describe('demos/components/toggle/animation-inverse', function () {
+  let win
+  let Xt
+  let toggle
+  let self
+  let els
+  let trs
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--toggle-animation-animation-inverse').as('demo')
+    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    toggle = this.toggle[0]
+    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    els = self.elements
+    trs = self.targets
+  })
+
+  it.only('TEST inverse activations and should not jump page.', function () {
+    expect(win.Xt.visible({ el: trs[0] })).to.equal(true)
+    cy.get(els[0])
+      .click()
+      .wait(500) // after animation
+      .then(() => {
+        expect(win.Xt.visible({ el: trs[0] })).to.equal(false)
+        expect(trs[0].classList.contains('done')).to.equal(true)
+        expect(win.Xt.visible({ el: trs[1] })).to.equal(false)
+        cy.get(els[1])
+          .click()
+          .then(() => {
+            expect(win.Xt.visible({ el: trs[0] })).to.equal(true)
+            expect(trs[0].classList.contains('done')).to.equal(false)
+            expect(win.Xt.visible({ el: trs[1] })).to.equal(true)
+          })
+      })
+  })
+})
