@@ -14,7 +14,6 @@ module.exports = {
       display: 'flex',
       flexWrap: 'wrap',
       flexDirection: 'row',
-      alignItems: 'stretch',
       '&:empty': {
         display: 'none',
       },
