@@ -849,9 +849,10 @@ if (typeof window !== 'undefined') {
   Xt.on = ({ el, ns = '', duration, raf = true, initial = false, callback } = {}) => {
     Xt.animTimeout({ el, ns })
     el.classList.add('on')
-    el.classList.remove('out', 'done')
+    el.classList.remove('out')
     const func = () => {
       el.classList.add('in')
+      el.classList.remove('done')
       Xt.animTimeout({
         el,
         ns,
@@ -901,9 +902,9 @@ if (typeof window !== 'undefined') {
   Xt.off = ({ el, ns = '', duration, raf = true, initial = false, callback } = {}) => {
     Xt.animTimeout({ el, ns })
     // must be outside inside raf or page jumps (e.g. noqueue)
-    el.classList.remove('on', 'done')
+    el.classList.remove('on')
     const func = () => {
-      el.classList.remove('in')
+      el.classList.remove('in', 'done')
       el.classList.add('out')
       Xt.animTimeout({
         el,

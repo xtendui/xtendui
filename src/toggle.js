@@ -1548,12 +1548,13 @@ class Toggle {
       el.checked = true
       // activation
       el.classList.add(...self._classes)
-      el.classList.remove(...self._classesOut, ...self._classesDone)
+      el.classList.remove(...self._classesOut)
       // needs TWO raf or sequential off/on flickr (e.g. display)
       Xt.frameDouble({
         el,
         func: () => {
           el.classList.add(...self._classesIn)
+          el.classList.remove(...self._classesDone)
         },
       })
       // direction
@@ -1636,12 +1637,12 @@ class Toggle {
       // input
       el.checked = false
       // must be outside inside raf or page jumps (e.g. noqueue, done outside for toggle inverse)
-      el.classList.remove(...self._classes, ...self._classesDone)
+      el.classList.remove(...self._classes)
       // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
       Xt.frameDouble({
         el,
         func: () => {
-          el.classList.remove(...self._classesIn)
+          el.classList.remove(...self._classesIn, ...self._classesDone)
           el.classList.add(...self._classesOut)
         },
       })
