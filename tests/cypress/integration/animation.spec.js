@@ -131,7 +131,7 @@ describe('demos/components/toggle/animation-inverse', function () {
     trs = self.targets
   })
 
-  it.only('TEST inverse activations and should not jump page.', function () {
+  it('TEST inverse activations and should not jump page.', function () {
     expect(win.Xt.visible({ el: trs[0] })).to.equal(true)
     cy.get(els[0])
       .click()
@@ -146,6 +146,80 @@ describe('demos/components/toggle/animation-inverse', function () {
             expect(win.Xt.visible({ el: trs[0] })).to.equal(true)
             expect(trs[0].classList.contains('done')).to.equal(false)
             expect(win.Xt.visible({ el: trs[1] })).to.equal(true)
+          })
+      })
+  })
+})
+
+describe('demos/components/toggle/animation-duration-delay', function () {
+  let win
+  let Xt
+  let toggle
+  let self
+  let els
+  let trs
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--toggle-animation-duration-delay').as('demo')
+    cy.get('@demo').as('toggle')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    toggle = this.toggle[0]
+    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    els = self.elements
+    trs = self.targets
+  })
+
+  it('TEST duration and delay.', function () {
+    cy.get(els[0])
+      .click()
+      .get(els[1])
+      .click()
+      .wait(800) // after animation
+      .then(() => {
+        expect(win.Xt.visible({ el: trs[0] })).to.equal(false)
+        expect(trs[0].classList.contains('on')).to.equal(false)
+        expect(trs[0].classList.contains('in')).to.equal(false)
+        expect(trs[3].classList.contains('on')).to.equal(false)
+        expect(trs[3].classList.contains('in')).to.equal(false)
+        expect(win.Xt.visible({ el: trs[4] })).to.equal(true)
+        expect(trs[4].classList.contains('on')).to.equal(true)
+        expect(trs[4].classList.contains('in')).to.equal(true)
+        expect(trs[7].classList.contains('on')).to.equal(false)
+        expect(trs[7].classList.contains('in')).to.equal(false)
+        cy.get(els[0])
+          .click()
+          .wait(800) // after animation
+          .then(() => {
+            expect(win.Xt.visible({ el: trs[0] })).to.equal(true)
+            expect(trs[0].classList.contains('on')).to.equal(true)
+            expect(trs[0].classList.contains('in')).to.equal(true)
+            expect(trs[3].classList.contains('on')).to.equal(false)
+            expect(trs[3].classList.contains('in')).to.equal(false)
+            expect(win.Xt.visible({ el: trs[4] })).to.equal(false)
+            expect(trs[4].classList.contains('on')).to.equal(false)
+            expect(trs[4].classList.contains('in')).to.equal(false)
+            expect(trs[7].classList.contains('on')).to.equal(false)
+            expect(trs[7].classList.contains('in')).to.equal(false)
+            cy.get(els[0])
+              .click()
+              .wait(800) // after animation
+              .then(() => {
+                expect(win.Xt.visible({ el: trs[0] })).to.equal(false)
+                expect(trs[0].classList.contains('on')).to.equal(false)
+                expect(trs[0].classList.contains('in')).to.equal(false)
+                expect(trs[3].classList.contains('on')).to.equal(false)
+                expect(trs[3].classList.contains('in')).to.equal(false)
+                expect(win.Xt.visible({ el: trs[4] })).to.equal(false)
+                expect(trs[4].classList.contains('on')).to.equal(false)
+                expect(trs[4].classList.contains('in')).to.equal(false)
+                expect(trs[7].classList.contains('on')).to.equal(false)
+                expect(trs[7].classList.contains('in')).to.equal(false)
+              })
           })
       })
   })

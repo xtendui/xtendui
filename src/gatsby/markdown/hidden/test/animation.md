@@ -49,7 +49,8 @@ title: "Animation"
 
 ## Duration and Delay
 
-TEST duration and delay.
+`demos/components/toggle/animation-duration-delay`
+- TEST duration and delay.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-duration-delay">
