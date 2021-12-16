@@ -14,7 +14,6 @@ module.exports = {
       display: 'flex',
       flexWrap: 'wrap',
       flexDirection: 'row',
-      alignItems: 'flex-start',
       '> *': {
         // fix column flex shrink
         flex: '0 0 auto',
@@ -24,7 +23,6 @@ module.exports = {
       },
     },
     '.xt-row-stretch': {
-      alignItems: 'stretch',
       '> *': {
         display: 'flex',
         alignItems: 'stretch',
