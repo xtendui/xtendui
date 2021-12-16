@@ -59,11 +59,8 @@ title: "Animation"
 
 ## Css
 
-TEST animation.
-
-TEST direction.
-
-TEST queue timing.
+`demos/components/toggle/animation-css`
+- TEST direction.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
@@ -74,13 +71,17 @@ TEST queue timing.
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-css">
   </demoinline>
+</demo>
+
+<demo>
   <demoinline src="demos/components/slider/animation-css">
   </demoinline>
 </demo>
 
 ## Js
 
-TEST direction and queue timing.
+`demos/components/toggle/animation-js`
+- TEST direction.
 
 Slider test should not deactivate and reactivate if already activated (bug skip obj nodes that are in off and on)
 
@@ -93,6 +94,9 @@ Slider test should not deactivate and reactivate if already activated (bug skip 
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-js">
   </demoinline>
+</demo>
+
+<demo>
   <demoinline src="demos/components/slider/animation-js">
   </demoinline>
 </demo>

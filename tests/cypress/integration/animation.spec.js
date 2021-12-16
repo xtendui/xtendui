@@ -224,3 +224,120 @@ describe('demos/components/toggle/animation-duration-delay', function () {
       })
   })
 })
+
+describe('demos/components/toggle/animation-css', function () {
+  let win
+  let Xt
+  let toggle
+  let self
+  let els
+  let trs
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--toggle-animation-css').as('demo')
+    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    toggle = this.toggle[0]
+    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    els = self.elements
+    trs = self.targets
+  })
+
+  it('TEST direction.', function () {
+    cy.get(els[0])
+      .click()
+      .wait(500) // after animation
+      .then(() => {
+        expect(trs[0].classList.contains('on')).to.equal(true)
+        expect(trs[0].classList.contains('in')).to.equal(true)
+        expect(trs[0].classList.contains('dir-before')).to.equal(false)
+        expect(trs[0].classList.contains('dir-after')).to.equal(false)
+        cy.get(els[1])
+          .click()
+          .wait(500) // after animation
+          .then(() => {
+            expect(trs[0].classList.contains('on')).to.equal(false)
+            expect(trs[0].classList.contains('in')).to.equal(false)
+            expect(trs[0].classList.contains('dir-before')).to.equal(false)
+            expect(trs[0].classList.contains('dir-after')).to.equal(true)
+            expect(trs[1].classList.contains('on')).to.equal(true)
+            expect(trs[1].classList.contains('in')).to.equal(true)
+            expect(trs[1].classList.contains('dir-before')).to.equal(false)
+            expect(trs[1].classList.contains('dir-after')).to.equal(true)
+            cy.get(els[0])
+              .click()
+              .wait(1000) // after animation
+              .then(() => {
+                expect(trs[0].classList.contains('on')).to.equal(true)
+                expect(trs[0].classList.contains('in')).to.equal(true)
+                expect(trs[0].classList.contains('dir-before')).to.equal(true)
+                expect(trs[0].classList.contains('dir-after')).to.equal(false)
+                expect(trs[1].classList.contains('on')).to.equal(false)
+                expect(trs[1].classList.contains('in')).to.equal(false)
+                expect(trs[1].classList.contains('dir-before')).to.equal(true)
+                expect(trs[1].classList.contains('dir-after')).to.equal(false)
+              })
+          })
+      })
+  })
+})
+
+describe('demos/components/toggle/animation-js', function () {
+  let win
+  let Xt
+  let toggle
+  let self
+  let els
+  let trs
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--toggle-animation-js').as('demo')
+    cy.get('@demo').as('toggle')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    toggle = this.toggle[0]
+    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    els = self.elements
+    trs = self.targets
+  })
+
+  it('TEST direction.', function () {
+    cy.get(els[0])
+      .click()
+      .wait(500) // after animation
+      .then(() => {
+        expect(trs[0].classList.contains('on')).to.equal(true)
+        expect(trs[0].classList.contains('in')).to.equal(true)
+        expect(self.direction).to.equal(0)
+        cy.get(els[1])
+          .click()
+          .wait(500) // after animation
+          .then(() => {
+            expect(trs[0].classList.contains('on')).to.equal(false)
+            expect(trs[0].classList.contains('in')).to.equal(false)
+            expect(self.direction).to.equal(1)
+            expect(trs[1].classList.contains('on')).to.equal(true)
+            expect(trs[1].classList.contains('in')).to.equal(true)
+            cy.get(els[0])
+              .click()
+              .wait(1000) // after animation
+              .then(() => {
+                expect(trs[0].classList.contains('on')).to.equal(true)
+                expect(trs[0].classList.contains('in')).to.equal(true)
+                expect(self.direction).to.equal(-1)
+                expect(trs[1].classList.contains('on')).to.equal(false)
+                expect(trs[1].classList.contains('in')).to.equal(false)
+              })
+          })
+      })
+  })
+})
