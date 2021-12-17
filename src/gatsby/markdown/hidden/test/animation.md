@@ -60,7 +60,7 @@ title: "Animation"
 ## Css
 
 `demos/components/toggle/animation-css`
-- TEST direction.
+- TEST activation and direction.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
@@ -73,6 +73,9 @@ title: "Animation"
   </demoinline>
 </demo>
 
+`demos/components/slider/animation-css`
+- TEST slider should not deactivate and reactivate
+
 <demo>
   <demoinline src="demos/components/slider/animation-css">
   </demoinline>
@@ -81,9 +84,7 @@ title: "Animation"
 ## Js
 
 `demos/components/toggle/animation-js`
-- TEST direction.
-
-Slider test should not deactivate and reactivate if already activated (bug skip obj nodes that are in off and on)
+- TEST activation and direction.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-js">
@@ -96,6 +97,9 @@ Slider test should not deactivate and reactivate if already activated (bug skip 
   </demoinline>
 </demo>
 
+`demos/components/slider/animation-js`
+- TEST slider should not deactivate and reactivate
+
 <demo>
   <demoinline src="demos/components/slider/animation-js">
   </demoinline>
@@ -103,9 +107,8 @@ Slider test should not deactivate and reactivate if already activated (bug skip 
 
 ## Collapse
 
-TEST height and width and maxHeight styles on activation and deactivation.
-
-TEST overlay height inherit on animation done.
+`demos/components/toggle/animation-collapse-initial`
+- TEST height and maxHeight styles on activation and deactivation.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-collapse-initial">
@@ -113,13 +116,3 @@ TEST overlay height inherit on animation done.
   <demoinline src="demos/components/toggle/animation-collapse">
   </demoinline>
 </demo>
-
-## Megamenu
-
-TEST move slightly over other and then target should not change with delay.
-
-TEST direction and zIndex sequential activation and zIndex reset.
-
-TEST backdrop should not flickr // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
-
-[/demos/themes/navigation/megamenu-v1](/demos/themes/navigation/megamenu-v1).

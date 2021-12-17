@@ -21,6 +21,16 @@ title: "Other"
   </demoinline>
 </demo>
 
+## Megamenu
+
+TEST move slightly over other and then target should not change with delay.
+
+TEST direction and zIndex sequential activation and zIndex reset.
+
+TEST backdrop should not flickr // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
+
+[/demos/themes/navigation/megamenu-v1](/demos/themes/navigation/megamenu-v1).
+
 ## ScrollTrigger Matches
 
 TEST resize and open/close overlay should always work (not disabled so not unmount/mount).
