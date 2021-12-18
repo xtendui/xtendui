@@ -3,20 +3,20 @@ const url = '/hidden/test/animation'
 describe('demos/components/toggle/animation-queue', function () {
   let win
   let Xt
-  let toggle
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--toggle-animation-queue').as('demo')
-    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+    cy.get('@demo').find('[data-xt-toggle]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    toggle = this.toggle[0]
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
   it('TEST queue activations and should not jump page.', function () {
@@ -58,20 +58,20 @@ describe('demos/components/toggle/animation-queue', function () {
 describe('demos/components/toggle/animation-noqueue', function () {
   let win
   let Xt
-  let toggle
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--toggle-animation-noqueue').as('demo')
-    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+    cy.get('@demo').find('[data-xt-toggle]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    toggle = this.toggle[0]
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
   it('TEST noqueue activations and should not jump page.', function () {
@@ -103,20 +103,20 @@ describe('demos/components/toggle/animation-noqueue', function () {
 describe('demos/components/toggle/animation-inverse', function () {
   let win
   let Xt
-  let toggle
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--toggle-animation-animation-inverse').as('demo')
-    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+    cy.get('@demo').find('[data-xt-toggle]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    toggle = this.toggle[0]
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
   it('TEST inverse activations and should not jump page.', function () {
@@ -142,20 +142,20 @@ describe('demos/components/toggle/animation-inverse', function () {
 describe('demos/components/toggle/animation-duration-delay', function () {
   let win
   let Xt
-  let toggle
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--toggle-animation-duration-delay').as('demo')
-    cy.get('@demo').as('toggle')
+    cy.get('@demo').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    toggle = this.toggle[0]
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
   it.only('TEST duration and delay.', function () {
@@ -209,20 +209,20 @@ describe('demos/components/toggle/animation-duration-delay', function () {
 describe('demos/components/toggle/animation-css', function () {
   let win
   let Xt
-  let toggle
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--toggle-animation-css').as('demo')
-    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+    cy.get('@demo').find('[data-xt-toggle]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    toggle = this.toggle[0]
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
   it('TEST activation and direction.', function () {
@@ -266,20 +266,20 @@ describe('demos/components/toggle/animation-css', function () {
 describe('demos/components/slider/animation-css', function () {
   let win
   let Xt
-  let slider
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--slider-animation-css').as('demo')
-    cy.get('@demo').find('[data-xt-slider]').as('slider')
+    cy.get('@demo').find('[data-xt-slider]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    slider = this.slider[0]
-    self = Xt.get({ name: 'xt-slider', el: slider })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-slider', el: container })
   })
 
   it('TEST slider should not deactivate and reactivate.', function () {
@@ -306,20 +306,20 @@ describe('demos/components/slider/animation-css', function () {
 describe('demos/components/toggle/animation-js', function () {
   let win
   let Xt
-  let toggle
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--toggle-animation-js').as('demo')
-    cy.get('@demo').as('toggle')
+    cy.get('@demo').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    toggle = this.toggle[0]
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
   it('TEST activation and direction.', function () {
@@ -356,20 +356,20 @@ describe('demos/components/toggle/animation-js', function () {
 describe('demos/components/slider/animation-js', function () {
   let win
   let Xt
-  let slider
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--slider-animation-js').as('demo')
-    cy.get('@demo').find('.xt-slider').as('slider')
+    cy.get('@demo').find('.xt-slider').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    slider = this.slider[0]
-    self = Xt.get({ name: 'xt-slider', el: slider })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-slider', el: container })
   })
 
   it('TEST slider should not deactivate and reactivate.', function () {
@@ -398,20 +398,20 @@ describe('demos/components/slider/animation-js', function () {
 describe('demos/components/toggle/animation-collapse-initial', function () {
   let win
   let Xt
-  let toggle
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--collapse-initial').as('demo')
-    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+    cy.get('@demo').find('[data-xt-toggle]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
-    toggle = this.toggle[0]
-    self = Xt.get({ name: 'xt-toggle', el: toggle })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
   it('TEST height and maxHeight styles on activation and deactivation.', function () {

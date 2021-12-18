@@ -40,21 +40,21 @@ describe('docs', function () {
                   .frame()
                   .then(() => {
                     cy.get('.xt-overlay.on')
-                      .as('overlay')
+                      .as('container')
                       .then(() => {
-                        const overlay = this.overlay[0]
-                        expect(overlay.classList.contains('on')).to.equal(true)
-                        expect(overlay.classList.contains('in')).to.equal(true)
-                        expect(overlay.parentNode.tagName).to.equal('BODY')
-                        expect(overlay.parentNode).to.have.class('xt-scrollbar-overlay')
-                        expect(this.overlay.length).to.equal(1)
+                        const container = this.container[0]
+                        expect(container.classList.contains('on')).to.equal(true)
+                        expect(container.classList.contains('in')).to.equal(true)
+                        expect(container.parentNode.tagName).to.equal('BODY')
+                        expect(container.parentNode).to.have.class('xt-scrollbar-overlay')
+                        expect(this.container.length).to.equal(1)
                         cy.viewport('macbook-13')
-                          .get('@overlay')
+                          .get('@container')
                           .should('have.attr', 'data-xt-overlay-disabled', '') // @RACECONDITION
                           .frame()
                           .then(() => {
-                            expect(overlay.parentNode.tagName).to.not.equal('BODY')
-                            expect(overlay.closest('body')).to.not.have.class('xt-scrollbar-overlay')
+                            expect(container.parentNode.tagName).to.not.equal('BODY')
+                            expect(container.closest('body')).to.not.have.class('xt-scrollbar-overlay')
                           })
                       })
                   })

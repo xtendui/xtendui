@@ -4,26 +4,26 @@ describe('demos/hidden/test/mount-unmount', function () {
   let win
   let Xt
   let demo
-  let overlay
+  let container
   let self
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
     cy.get('.demo--mount-unmount').as('demo')
-    cy.get('@demo').find('[data-xt-overlay]').as('overlay')
+    cy.get('@demo').find('[data-xt-overlay]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
     Xt = win.Xt
     demo = this.demo[0]
-    overlay = this.overlay[0]
-    self = Xt.get({ name: 'xt-overlay', el: overlay })
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
   it('TEST mount root once, this should be 1 on init and should remain 1 on deactivation.', function () {
     expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
-    overlay.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
+    container.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
     expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
   })
 
@@ -33,7 +33,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST init classes and properties, should be `true true true true`.', { retries: 3 }, function () {
-    expect(overlay.getAttribute('data-xt-overlay-init')).to.equal(null)
+    expect(container.getAttribute('data-xt-overlay-init')).to.equal(null)
     expect(self.targets[0].classList.contains('on')).to.equal(true)
     expect(self.targets[0].classList.contains('in')).to.equal(true)
     expect(self.targets[0].classList.contains('initial')).to.equal(true)
@@ -42,7 +42,7 @@ describe('demos/hidden/test/mount-unmount', function () {
 
   it('TEST after init classes and properties, should be `true true false false`.', function () {
     cy.frame().then(() => {
-      expect(overlay.getAttribute('data-xt-overlay-init')).to.equal('')
+      expect(container.getAttribute('data-xt-overlay-init')).to.equal('')
       expect(self.targets[0].classList.contains('on')).to.equal(true)
       expect(self.targets[0].classList.contains('in')).to.equal(true)
       expect(self.targets[0].classList.contains('initial')).to.equal(false)
