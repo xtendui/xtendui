@@ -1,6 +1,6 @@
-const url = '/hidden/test'
+const url = '/hidden/test/docs'
 
-describe('demos/hidden/test', function () {
+describe('docs', function () {
   let win
 
   beforeEach(function () {
