@@ -6,7 +6,6 @@ describe('demos/hidden/test/mount-unmount', function () {
   let demo
   let overlay
   let self
-  let tr
 
   beforeEach(function () {
     cy.visit(url).window().as('win')
@@ -20,7 +19,6 @@ describe('demos/hidden/test/mount-unmount', function () {
     demo = this.demo[0]
     overlay = this.overlay[0]
     self = Xt.get({ name: 'xt-overlay', el: overlay })
-    tr = self.targets[0]
   })
 
   it('TEST mount root once, this should be 1 on init and should remain 1 on deactivation.', function () {
@@ -36,18 +34,18 @@ describe('demos/hidden/test/mount-unmount', function () {
 
   it('TEST init classes and properties, should be `true true true true`.', { retries: 3 }, function () {
     expect(overlay.getAttribute('data-xt-overlay-init')).to.equal(null)
-    expect(tr.classList.contains('on')).to.equal(true)
-    expect(tr.classList.contains('in')).to.equal(true)
-    expect(tr.classList.contains('initial')).to.equal(true)
+    expect(self.targets[0].classList.contains('on')).to.equal(true)
+    expect(self.targets[0].classList.contains('in')).to.equal(true)
+    expect(self.targets[0].classList.contains('initial')).to.equal(true)
     expect(self.initial).to.equal(true)
   })
 
   it('TEST after init classes and properties, should be `true true false false`.', function () {
     cy.frame().then(() => {
       expect(overlay.getAttribute('data-xt-overlay-init')).to.equal('')
-      expect(tr.classList.contains('on')).to.equal(true)
-      expect(tr.classList.contains('in')).to.equal(true)
-      expect(tr.classList.contains('initial')).to.equal(false)
+      expect(self.targets[0].classList.contains('on')).to.equal(true)
+      expect(self.targets[0].classList.contains('in')).to.equal(true)
+      expect(self.targets[0].classList.contains('initial')).to.equal(false)
       expect(self.initial).to.equal(false)
     })
   })
@@ -75,7 +73,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   it('TEST unmount should disable on deactivate and should remove from dom overlay.', function () {
     cy.frame().then(() => {
       demo.remove()
-      cy.get(tr).should('not.exist')
+      cy.get(self.targets[0]).should('not.exist')
     })
   })
 

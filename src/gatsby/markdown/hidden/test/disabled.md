@@ -7,37 +7,33 @@ title: "Disabled"
 
 ## Disabled
 
-TEST no interactions.
-
-TEST reenable from disable.
-
-TEST current desktop > mobile > desktop > mobile current activation should remain the same.
-
-TEST initial position and initial activation when disabled.
-
-TEST overlay open on mobile > resize desktop is disabled.
-
-TEST nested check elements and targets length of nested parent components.
-
-TEST nested should disable only parent.
-
-TEST nested close should close only child.
-
-TEST nested FocusTrap.
-
-TEST slider instant position and wrap.
+`demos/components/toggle/disabled`
+- TEST nested check elements and targets length of nested parent components.
+- TEST nested should disable only parent and no interactions on disabled.
 
 <demo>
-  <demoinline src="demos/components/card/disabled">
-  </demoinline>
   <demoinline src="demos/components/toggle/disabled">
-  </demoinline>
-  <demoinline src="demos/components/overlay/disabled">
   </demoinline>
   <demoinline src="demos/components/drop/disabled">
   </demoinline>
   <demoinline src="demos/components/tooltip/disabled">
   </demoinline>
+  <demoinline src="demos/components/card/disabled">
+  </demoinline>
+</demo>
+
+`demos/components/overlay/disabled`
+- TEST overlay nested classBody and desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.
+
+<demo>
+  <demoinline src="demos/components/overlay/disabled">
+  </demoinline>
+</demo>
+
+`demos/components/slider/disabled`
+- TEST slider instant position and wrap on resize and activation on resize.
+
+<demo>
   <demoinline src="demos/components/slider/disabled">
   </demoinline>
 </demo>

@@ -74,7 +74,7 @@ title: "Animation"
 </demo>
 
 `demos/components/slider/animation-css`
-- TEST slider should not deactivate and reactivate
+- TEST slider should not deactivate and reactivate.
 
 <demo>
   <demoinline src="demos/components/slider/animation-css">
@@ -98,7 +98,7 @@ title: "Animation"
 </demo>
 
 `demos/components/slider/animation-js`
-- TEST slider should not deactivate and reactivate
+- TEST slider should not deactivate and reactivate.
 
 <demo>
   <demoinline src="demos/components/slider/animation-js">
