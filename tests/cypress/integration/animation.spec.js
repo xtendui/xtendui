@@ -158,7 +158,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it.only('TEST duration and delay.', function () {
+  it('TEST duration and delay.', { retries: 5 }, function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
@@ -187,7 +187,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
                 expect(self.targets[7].classList.contains('in')).to.equal(false)
                 cy.get(self.elements[0])
                   .click()
-                  .wait(750) // after animation
+                  .wait(1000) // after animation
                   .then(() => {
                     expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
                     expect(self.targets[0].classList.contains('on')).to.equal(false)

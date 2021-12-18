@@ -32,7 +32,7 @@ describe('demos/hidden/test/mount-unmount', function () {
     expect(xtNamespace.length).to.equal(1)
   })
 
-  it('TEST init classes and properties, should be `true true true true`.', { retries: 3 }, function () {
+  it('TEST init classes and properties, should be `true true true true`.', { retries: 5 }, function () {
     expect(container.getAttribute('data-xt-overlay-init')).to.equal(null)
     expect(self.targets[0].classList.contains('on')).to.equal(true)
     expect(self.targets[0].classList.contains('in')).to.equal(true)
