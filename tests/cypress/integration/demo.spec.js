@@ -22,18 +22,22 @@ describe('demos/hidden/test', function () {
       .should('have.attr', 'data-xt-overlay-init', '') // @RACECONDITION
       .click()
       .should('have.class', 'done') // @RACECONDITION
+      .frame()
       .then(() => {
         cy.get('.gatsby_button-site-header_link')
           .eq(0)
           .click()
+          .frame()
           .then(() => {
             cy.get('.gatsby_button-site-header_link')
               .eq(1)
               .click()
+              .frame()
               .then(() => {
                 cy.get('.gatsby_button-site-header_link')
                   .eq(0)
                   .click()
+                  .frame()
                   .then(() => {
                     cy.get('.xt-overlay.on')
                       .as('overlay')
@@ -107,6 +111,7 @@ describe('demos/hidden/test', function () {
     cy.get('#gatsby_open-full')
       .as('full')
       .should('be.visible') // @RACECONDITION
+      .frame()
       .then(() => {
         const full = this.full[0]
         expect(full.classList.contains('on')).to.equal(true)

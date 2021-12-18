@@ -101,6 +101,7 @@ describe('demos/components/overlay/disabled', function () {
       .click()
       .get(overlay)
       .should('have.not.attr', 'data-xt-overlay-disabled') // @RACECONDITION
+      .frame()
       .then(() => {
         expect(overlay.getAttribute('data-xt-overlay-disabled')).to.equal(null)
         expect(overlay.closest('body')).to.have.class('xt-scrollbar-overlay')
@@ -161,6 +162,7 @@ describe('demos/components/slider/disabled', function () {
       cy.viewport('iphone-6')
         .get(slider)
         .should('have.not.attr', 'data-xt-slider-disabled') // @RACECONDITION
+        .frame()
         .then(() => {
           expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal(null)
           expect(self.targets[4].classList.contains('on')).to.equal(true)
