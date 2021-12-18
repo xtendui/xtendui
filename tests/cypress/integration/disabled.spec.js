@@ -37,7 +37,6 @@ describe('demos/components/toggle/disabled', function () {
     expect(self.targets[1].classList.contains('in')).to.equal(true)
     cy.get(self.elements[0])
       .click()
-      .frame()
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -53,7 +52,6 @@ describe('demos/components/toggle/disabled', function () {
         expect(self1.targets[1].classList.contains('in')).to.equal(false)
         cy.get(self1.elements[1])
           .click()
-          .frame()
           .then(() => {
             expect(win.Xt.visible({ el: self1.targets[0] })).to.equal(false)
             expect(self1.targets[0].classList.contains('on')).to.equal(false)
@@ -155,7 +153,7 @@ describe('demos/components/slider/disabled', function () {
     expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal('')
     expect(self.targets[4].classList.contains('on')).to.equal(true)
     expect(self.targets[5].classList.contains('on')).to.equal(true)
-    cy.frame().then(() => {
+    cy.then(() => {
       expect(self.targets[4].classList.contains('in')).to.equal(true)
       expect(self.targets[5].classList.contains('in')).to.equal(true)
       expect(slider.querySelector('.xt-slides').style.transform).to.equal('translateX(-1376px)')
@@ -172,11 +170,63 @@ describe('demos/components/slider/disabled', function () {
           expect(slider.querySelector('.xt-slides').style.transform).to.equal('translateX(-733px)')
           cy.get(self.elements[6])
             .click()
-            .frame()
             .then(() => {
               expect(self.targets[0].style.transform).to.equal('translateX(1313.5px)')
             })
         })
     })
+  })
+})
+
+describe('demos/components/toggle/matches', function () {
+  let win
+  let Xt
+  let toggle
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--toggle-matches').as('demo')
+    cy.get('@demo').find('[data-xt-toggle]').as('toggle')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    toggle = this.toggle[0]
+    self = Xt.get({ name: 'xt-toggle', el: toggle })
+  })
+
+  it.only('TEST slider instant position and wrap on resize and activation on resize.', function () {
+    expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+    expect(self.targets[0].classList.contains('on')).to.equal(true)
+    expect(self.targets[0].classList.contains('in')).to.equal(true)
+    expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
+    expect(self.targets[1].classList.contains('on')).to.equal(false)
+    expect(self.targets[1].classList.contains('in')).to.equal(false)
+    cy.get(self.elements[1])
+      .click()
+      .then(() => {
+        expect(self.options.max).to.equal(2)
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('in')).to.equal(true)
+        cy.viewport('iphone-6')
+          .get(self.targets[1])
+          .should('have.not.class', 'on') // @RACECONDITION
+          .frame()
+          .then(() => {
+            expect(self.options.max).to.equal(1)
+            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[0].classList.contains('in')).to.equal(true)
+            expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
+            expect(self.targets[1].classList.contains('on')).to.equal(false)
+            expect(self.targets[1].classList.contains('in')).to.equal(false)
+          })
+      })
   })
 })

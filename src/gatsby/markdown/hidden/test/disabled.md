@@ -40,11 +40,8 @@ title: "Disabled"
 
 ## Matches
 
-TEST matches.
-
-TEST multiple matches in toggle.
-
-TEST matches should change only options in matches.
+`demos/components/toggle/matches`
+- TEST matches.
 
 <demo>
   <demoinline src="demos/components/toggle/matches">
