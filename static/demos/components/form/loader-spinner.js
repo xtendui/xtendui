@@ -32,6 +32,7 @@ const mountFormLoaders = ({ ref }) => {
 
     if (!loadable.classList.contains('xt-loadable-ignore')) {
       form.addEventListener('reset', reset)
+      addEventListener('pageshow', reset)
     }
 
     // inject
