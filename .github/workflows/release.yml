@@ -21,7 +21,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        ref: beta # FIX TEMPORARY CHECKOUT WRONG BRANCH
+        ref: ${{ github.event.workflow_run.head_branch }}
     # setup/action.yml composite
     - name: Node setup
       uses: actions/setup-node@v1
@@ -65,7 +65,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        ref: beta # FIX TEMPORARY CHECKOUT WRONG BRANCH
+        ref: ${{ github.event.workflow_run.head_branch }}
     # setup/action.yml composite
     - name: Node setup
       uses: actions/setup-node@v1
