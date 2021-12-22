@@ -20,6 +20,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: beta # FIX TEMPORARY CHECKOUT WRONG BRANCH
     # setup/action.yml composite
     - name: Node setup
       uses: actions/setup-node@v1
@@ -62,6 +64,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: beta # FIX TEMPORARY CHECKOUT WRONG BRANCH
     # setup/action.yml composite
     - name: Node setup
       uses: actions/setup-node@v1
