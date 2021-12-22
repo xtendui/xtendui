@@ -40,22 +40,24 @@ title: "Toggle"
 
 ## Event
 
-TEST toggle mouse should not close when clicking opened elements.
-
-TEST drop open and close nested.
-
-TEST tooltip open and close nested.
+`demos/components/toggle/event`
+- TEST should not close when click or mouseleave > mouseenter active elements.
 
 <demo>
   <demoinline src="demos/components/toggle/event">
   </demoinline>
+</demo>
+
+`demos/components/drop/event`
+- TEST open and close nested.
+
+<demo>
   <demoinline src="demos/components/drop/event">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/event">
   </demoinline>
 </demo>
 
-TEST prevent event.
+`demos/components/toggle/prevent-event`
+- TEST prevent event.
 
 <demo>
   <demoinline src="demos/components/toggle/prevent-event">
