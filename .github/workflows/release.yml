@@ -48,7 +48,7 @@ jobs:
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
-        semantic_version: 18
+        branch: ${{ github.event.workflow_run.head_branch }}
         extra_plugins: |
             @semantic-release/commit-analyzer
             @semantic-release/git
