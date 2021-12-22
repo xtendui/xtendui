@@ -2,7 +2,7 @@ name: Release
 
 on:
   workflow_run:
-    workflows: ["Test", "Codeql"]
+    workflows: ["Test"]
     branches:
       - master
       - beta
@@ -20,6 +20,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.workflow_run.head_branch }}
     # setup/action.yml composite
     - name: Node setup
       uses: actions/setup-node@v1
