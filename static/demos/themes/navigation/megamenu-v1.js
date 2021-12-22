@@ -174,11 +174,13 @@ const mountDrops = ({ ref }) => {
   self.container.addEventListener('off.xt.drop', off, true) // useCapture event propagation
 
   // leave
-  // when want to close the drop on mouseleave also when using 'click'
 
   const leave = e => {
     const tr = e.target
-    tr.dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    // enhancement when want to close the drop on mouseleave also when using 'click'
+    if (self.options.on === 'click') {
+      tr.dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    }
   }
 
   for (const tr of self.targets) {

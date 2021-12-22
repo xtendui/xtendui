@@ -1772,7 +1772,7 @@ class Toggle {
       }
       // return
       return true
-    } else if ([...options.on.split(' ')].includes(e?.type)) {
+    } else if (options.off && [...options.off.split(' ')].includes(e?.type)) {
       // fix same event for on and off same namespace
       self._eventOff({ el }, e)
     }
