@@ -14,22 +14,27 @@ title: "Toggle"
 
 ## Interaction
 
-TEST initial and group activation.
-
-TEST multiple raf should always have `on` class until event `init.xt` and then should have `in` class.
-
-TEST initial custom activation.
+`demos/components/toggle/class`
+- TEST initial group activation, min max activation.
 
 <demo>
-  <demoinline src="demos/components/toggle/unique-nogroupelements">
-  </demoinline>
-  <demoinline src="demos/components/toggle/multiple-group">
-  </demoinline>
-  <demoinline src="demos/components/toggle/multiple-nogroupelements">
-  </demoinline>
   <demoinline src="demos/components/toggle/class">
   </demoinline>
-  <demoinline src="demos/components/toggle/class-custom">
+</demo>
+
+`demos/components/toggle/multiple-group`
+- TEST group activation.
+
+<demo>
+  <demoinline src="demos/components/toggle/multiple-group">
+  </demoinline>
+</demo>
+
+`demos/components/toggle/multiple-nogroupelements`
+- TEST group activation.
+
+<demo>
+  <demoinline src="demos/components/toggle/multiple-nogroupelements">
   </demoinline>
 </demo>
 
