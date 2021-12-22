@@ -8,8 +8,8 @@ title: "Disabled"
 ## Disabled
 
 `demos/components/toggle/disabled`
-- TEST nested check elements and targets length of nested parent components.
-- TEST nested should disable only parent and no interactions on disabled.
+- TEST nested check elements, targets length of nested parent components.
+- TEST nested should disable only parent, no interactions on disabled.
 
 <demo>
   <demoinline src="demos/components/toggle/disabled">
@@ -23,7 +23,7 @@ title: "Disabled"
 </demo>
 
 `demos/components/overlay/disabled`
-- TEST overlay nested classBody and desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.
+- TEST overlay nested classBody, desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.
 
 <demo>
   <demoinline src="demos/components/overlay/disabled">
@@ -31,7 +31,7 @@ title: "Disabled"
 </demo>
 
 `demos/components/slider/disabled`
-- TEST slider instant position and wrap on resize and activation on resize.
+- TEST slider instant position, wrap on resize and activation on resize.
 
 <demo>
   <demoinline src="demos/components/slider/disabled">

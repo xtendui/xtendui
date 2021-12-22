@@ -21,7 +21,7 @@ describe('demos/hidden/test/mount-unmount', function () {
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
-  it('TEST mount root once, this should be 1 on init and should remain 1 on deactivation.', function () {
+  it('TEST mount root once, this should be 1 on init, should remain 1 on deactivation.', function () {
     expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
     container.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
     expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
@@ -70,14 +70,14 @@ describe('demos/hidden/test/mount-unmount', function () {
       })
   })
 
-  it('TEST unmount should disable on deactivate and should remove from dom overlay.', function () {
+  it('TEST unmount should disable on deactivate, should remove from dom overlay.', function () {
     cy.frame().then(() => {
       demo.remove()
       cy.get(self.targets[0]).should('not.exist')
     })
   })
 
-  it('TEST unmount, unmountArr should be the same and xtNamespace should be 0.', function () {
+  it('TEST unmount, unmountArr should be the same, xtNamespace should be 0.', function () {
     const count = Xt._unmountArr.length
     expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
     demo.remove()

@@ -23,12 +23,12 @@ describe('demos/components/toggle/disabled', function () {
     self1 = Xt.get({ name: 'xt-toggle', el: container1 })
   })
 
-  it('TEST nested check elements and targets length of nested parent components.', function () {
+  it('TEST nested check elements, targets length of nested parent components.', function () {
     expect(self.elements.length).to.equal(2)
     expect(self.targets.length).to.equal(2)
   })
 
-  it('TEST nested should disable only parent and no interactions on disabled.', function () {
+  it('TEST nested should disable only parent, no interactions on disabled.', function () {
     expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
     expect(self.targets[0].classList.contains('on')).to.equal(false)
     expect(self.targets[0].classList.contains('in')).to.equal(false)
@@ -87,7 +87,7 @@ describe('demos/components/overlay/disabled', function () {
     self1 = Xt.get({ name: 'xt-overlay', el: container1 })
   })
 
-  it('TEST overlay nested classBody and desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.', function () {
+  it('TEST overlay nested classBody, desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.', function () {
     expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
     expect(container.getAttribute('data-xt-overlay-disabled')).to.equal('')
     expect(win.Xt.visible({ el: self1.targets[0] })).to.equal(false)
@@ -149,7 +149,7 @@ describe('demos/components/slider/disabled', function () {
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
-  it('TEST slider instant position and wrap on resize and activation on resize.', function () {
+  it('TEST slider instant position, wrap on resize and activation on resize.', function () {
     expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal('')
     expect(self.targets[4].classList.contains('on')).to.equal(true)
     expect(self.targets[5].classList.contains('on')).to.equal(true)

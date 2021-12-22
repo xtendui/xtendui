@@ -20,7 +20,7 @@ const mountTest = ({ ref }) => {
       const count = parseFloat(ref.getAttribute('data-test-mountroot') ?? 0) + 1
       ref.setAttribute('data-test-mountroot', count)
       // eslint-disable-next-line no-console
-      console.log('TEST mount root once, this should be 1 on init and should remain 1 on deactivation.', count)
+      console.log('TEST mount root once, this should be 1 on init, should remain 1 on deactivation.', count)
     },
   })
 
@@ -51,7 +51,7 @@ const mountTest = ({ ref }) => {
 
   const off = () => {
     // eslint-disable-next-line no-console
-    console.log('TEST unmount should disable on deactivate and should remove from dom overlay.')
+    console.log('TEST unmount should disable on deactivate, should remove from dom overlay.')
   }
 
   tr.addEventListener('off.xt.overlay', off)
@@ -72,7 +72,7 @@ const mountTest = ({ ref }) => {
   return () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST unmount, unmountArr should be the same and xtNamespace should be 0.',
+      'TEST unmount, unmountArr should be the same, xtNamespace should be 0.',
       Xt._unmountArr.length,
       Xt.dataStorage.get(self.ns, 'xtNamespace').length
     )

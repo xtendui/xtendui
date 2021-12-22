@@ -16,7 +16,7 @@ describe('docs', function () {
     cy.get('@consoleError').should('not.be.called')
   })
 
-  it('TEST on change page menu mobile docs should not flickr and should be visible and should be scrollable and should be unique and to desktop should disable overlay.', function () {
+  it('TEST on change page menu mobile docs should not flickr, should be visible, should be unique, to desktop should disable overlay.', function () {
     cy.viewport('iphone-6')
       .get('.gatsby_menu--button')
       .should('have.attr', 'data-xt-overlay-init', '') // @RACECONDITION
@@ -39,22 +39,21 @@ describe('docs', function () {
                   .click()
                   .frame()
                   .then(() => {
-                    cy.get('.xt-overlay.on')
-                      .as('container')
+                    cy.get('#gatsby_menu--overlay')
+                      .as('overlay')
                       .then(() => {
-                        const container = this.container[0]
-                        expect(container.classList.contains('on')).to.equal(true)
-                        expect(container.classList.contains('in')).to.equal(true)
-                        expect(container.parentNode.tagName).to.equal('BODY')
-                        expect(container.parentNode).to.have.class('xt-scrollbar-overlay')
-                        expect(this.container.length).to.equal(1)
+                        expect(this.overlay.length).to.equal(1)
+                        expect(this.overlay[0].classList.contains('on')).to.equal(true)
+                        expect(this.overlay[0].classList.contains('in')).to.equal(true)
+                        expect(this.overlay[0].parentNode.tagName).to.equal('BODY')
+                        expect(this.overlay[0].parentNode).to.have.class('xt-scrollbar-overlay')
                         cy.viewport('macbook-13')
-                          .get('@container')
+                          .get('@overlay')
                           .should('have.attr', 'data-xt-overlay-disabled', '') // @RACECONDITION
                           .frame()
                           .then(() => {
-                            expect(container.parentNode.tagName).to.not.equal('BODY')
-                            expect(container.closest('body')).to.not.have.class('xt-scrollbar-overlay')
+                            expect(this.overlay[0].parentNode.tagName).to.not.equal('BODY')
+                            expect(this.overlay[0].closest('body')).to.not.have.class('xt-scrollbar-overlay')
                           })
                       })
                   })
@@ -63,7 +62,7 @@ describe('docs', function () {
       })
   })
 
-  it('TEST open code from demos should show code and switching mode should change code and copying code should be without highlight.', function () {
+  it('TEST open code from demos should show code, switching mode should change code, copying code should be without highlight.', function () {
     cy.get('.button--show-code').eq(0).click()
     cy.get('.gatsby_demo_code_tabs_left')
       .eq(0)
@@ -99,7 +98,7 @@ describe('docs', function () {
       })
   })
 
-  it('TEST demos demos changing demo should change hash and browser location prev next should change demo and initial activation on page load.', function () {
+  it('TEST demos demos changing demo should change hash, browser location prev next should change demo, initial activation on page load.', function () {
     cy.get('.gatsby_demo_tabs_left button').eq(1).click()
     cy.get('.button--open-full').eq(0).click()
     cy.hash().should('eq', '#demos-components-toggle-animation-noqueue')

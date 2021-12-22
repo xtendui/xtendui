@@ -8,7 +8,7 @@ title: "Animation"
 ## Class
 
 `demos/components/toggle/animation-queue`
-- TEST queue activations and should not jump page.
+- TEST queue activation.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
@@ -24,7 +24,7 @@ title: "Animation"
 </demo>
 
 `demos/components/toggle/animation-noqueue`
-- TEST noqueue activations and should not jump page.
+- TEST noqueue activations.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-noqueue">
@@ -40,7 +40,7 @@ title: "Animation"
 </demo>
 
 `demos/components/toggle/animation-inverse`
-- TEST inverse activations and should not jump page.
+- TEST inverse activations.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-inverse">
@@ -50,7 +50,7 @@ title: "Animation"
 ## Duration and Delay
 
 `demos/components/toggle/animation-duration-delay`
-- TEST duration and delay.
+- TEST duration, delay.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-duration-delay">
@@ -60,7 +60,7 @@ title: "Animation"
 ## Css
 
 `demos/components/toggle/animation-css`
-- TEST activation and direction.
+- TEST activation, direction.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
@@ -84,7 +84,7 @@ title: "Animation"
 ## Js
 
 `demos/components/toggle/animation-js`
-- TEST activation and direction.
+- TEST activation, direction.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-js">

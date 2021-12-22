@@ -7,47 +7,26 @@ title: "Toggle"
 
 ## Usage
 
-TEST activation.
-
-TEST overlay close on backdrop click.
-
-TEST overlay no close clicking inside with eventLimit.
-
-TEST overlay should close with event 'off.xt.trigger.overlay'.
+`demos/components/overlay/usage-self`
+- TEST initial activation and overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.
 
 [/demos/components/overlay/usage-self](/demos/components/overlay/usage-self).
 
-<demo>
-  <demoinline src="demos/components/toggle/usage-self">
-  </demoinline>
-  <demoinline src="demos/components/drop/usage-self">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/usage-self">
-  </demoinline>
-</demo>
+## Interaction
 
-TEST activation and group activation.
+TEST initial and group activation.
+
+TEST multiple raf should always have `on` class until event `init.xt` and then should have `in` class.
+
+TEST initial custom activation.
 
 <demo>
-  <demoinline src="demos/components/toggle/usage-unique">
-  </demoinline>
   <demoinline src="demos/components/toggle/unique-nogroupelements">
   </demoinline>
   <demoinline src="demos/components/toggle/multiple-group">
   </demoinline>
   <demoinline src="demos/components/toggle/multiple-nogroupelements">
   </demoinline>
-</demo>
-
-## Interaction
-
-TEST initial group activation.
-
-TEST initial custom activation.
-
-TEST multiple raf should always have `on` class until event `init.xt` and then should have `in` class.
-
-<demo>
   <demoinline src="demos/components/toggle/class">
   </demoinline>
   <demoinline src="demos/components/toggle/class-custom">

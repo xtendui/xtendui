@@ -19,7 +19,7 @@ describe('demos/components/toggle/animation-queue', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST queue activations and should not jump page.', function () {
+  it('TEST queue activation.', function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
@@ -41,15 +41,12 @@ describe('demos/components/toggle/animation-queue', function () {
           .wait(500) // after animation
           .then(() => {
             expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
+            expect(self.targets[0].classList.contains('on')).to.equal(false)
+            expect(self.targets[0].classList.contains('in')).to.equal(false)
             expect(self.targets[0].classList.contains('out')).to.equal(false)
             expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
             expect(self.targets[1].classList.contains('on')).to.equal(true)
-            // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                expect(self.targets[1].classList.contains('in')).to.equal(true)
-              })
-            })
+            expect(self.targets[1].classList.contains('in')).to.equal(true)
           })
       })
   })
@@ -74,7 +71,7 @@ describe('demos/components/toggle/animation-noqueue', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST noqueue activations and should not jump page.', function () {
+  it('TEST noqueue activations.', function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
@@ -119,7 +116,7 @@ describe('demos/components/toggle/animation-inverse', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST inverse activations and should not jump page.', function () {
+  it('TEST inverse activations.', function () {
     expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
     cy.get(self.elements[0])
       .click()
@@ -158,7 +155,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST duration and delay.', { retries: 5 }, function () {
+  it('TEST duration, delay.', { retries: 5 }, function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
@@ -225,7 +222,7 @@ describe('demos/components/toggle/animation-css', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST activation and direction.', function () {
+  it('TEST activation, direction.', function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
@@ -322,7 +319,7 @@ describe('demos/components/toggle/animation-js', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST activation and direction.', function () {
+  it('TEST activation, direction.', function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
