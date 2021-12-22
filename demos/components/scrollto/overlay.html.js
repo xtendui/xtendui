@@ -31,12 +31,6 @@ const html = /* HTML */ `
             data-xt-scrollto-hash="true">
             #2
           </a>
-          <a
-            href="#anchor-2"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-scrollto-hash="true">
-            #2 only anchor
-          </a>
         </div>
       </div>
     </div>

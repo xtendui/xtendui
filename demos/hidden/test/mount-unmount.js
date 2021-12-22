@@ -24,7 +24,7 @@ const mountTest = ({ ref }) => {
   // init
 
   for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-    tr.setAttribute('data-test-unique-id', self.uniqueId)
+    tr.setAttribute('data-test-unique-id', self.ns)
     // eslint-disable-next-line no-console
     console.log('TEST INITIAL xtNamespace should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
     // eslint-disable-next-line no-console
@@ -49,15 +49,11 @@ const mountTest = ({ ref }) => {
 
   // off
 
-  const off = e => {
-    const tr = e.target
-    // check because of event propagation
-    if (self.targets.includes(tr)) {
-      // eslint-disable-next-line no-console
-      console.log(
-        'TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
-      )
-    }
+  const off = () => {
+    // eslint-disable-next-line no-console
+    console.log(
+      'TEST UNMOUNT 1 disableDeactivate when overlay open and change page (browser location prev next) overlay should close automatically and this should NOT be called.'
+    )
   }
 
   for (const tr of self.targets) {
@@ -78,8 +74,8 @@ const mountTest = ({ ref }) => {
   return () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST UNMOUNT 2 Xt.unmountArr should be the same and xtNamespace should be 0.',
-      Xt.unmountArr.length,
+      'TEST UNMOUNT 2 Xt._unmountArr should be the same and xtNamespace should be 0.',
+      Xt._unmountArr.length,
       Xt.dataStorage.get(self.ns, 'xtNamespace').length
     )
     removeEventListener('resize', resize)

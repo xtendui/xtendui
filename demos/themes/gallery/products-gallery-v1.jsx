@@ -34,7 +34,7 @@ export default function demo() {
                           <img
                             className="xt-media relative"
                             src="https://source.unsplash.com/164_6wVEHfI"
-                            loading="eager"
+                            loading="lazy"
                             alt=""
                           />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -51,7 +51,7 @@ export default function demo() {
                           <img
                             className="xt-media relative"
                             src="https://source.unsplash.com/j7zu2kpTnwY"
-                            loading="eager"
+                            loading="lazy"
                             alt=""
                           />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -68,7 +68,7 @@ export default function demo() {
                           <img
                             className="xt-media relative"
                             src="https://source.unsplash.com/kP6knT7tjn4"
-                            loading="eager"
+                            loading="lazy"
                             alt=""
                           />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -85,7 +85,7 @@ export default function demo() {
                           <img
                             className="xt-media relative"
                             src="https://source.unsplash.com/l8p1aWZqHvE"
-                            loading="eager"
+                            loading="lazy"
                             alt=""
                           />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -102,7 +102,7 @@ export default function demo() {
                           <img
                             className="xt-media relative"
                             src="https://source.unsplash.com/gn07k9Kmx9c"
-                            loading="eager"
+                            loading="lazy"
                             alt=""
                           />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -119,7 +119,7 @@ export default function demo() {
                           <img
                             className="xt-media relative"
                             src="https://source.unsplash.com/gpii_myxZG0"
-                            loading="eager"
+                            loading="lazy"
                             alt=""
                           />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -136,7 +136,7 @@ export default function demo() {
                           <img
                             className="xt-media relative"
                             src="https://source.unsplash.com/DzoOduUanpQ"
-                            loading="eager"
+                            loading="lazy"
                             alt=""
                           />
                           <div className="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
@@ -489,18 +489,19 @@ const mountVariants = ({ ref }) => {
 
   // on
 
-  const on = () => {
+  const ondone = () => {
     // scrollto
     if (!self.initial) {
+      // reset scroll
       form.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
       gallery.scrollTo(0, 0)
     }
-    // mobile dots activation
-    document.dispatchEvent(new CustomEvent('scroll'))
+    // initial mobile dots activation
+    gallery.dispatchEvent(new CustomEvent('scroll'))
   }
 
   for (const element of self.elements) {
-    element.addEventListener('on.xt.toggle', on)
+    element.addEventListener('ondone.xt.toggle', ondone)
   }
 
   // unmount

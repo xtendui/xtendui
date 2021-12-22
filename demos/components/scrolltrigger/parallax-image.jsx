@@ -12,12 +12,7 @@ export default function demo() {
   return (
     <div className="demo--parallax-image-react" ref={ref}>
       <div className="xt-media-container bg-gray-200 pb-[37.5%]">
-        <img
-          className="xt-media object-cover object-center"
-          src="https://source.unsplash.com/wQLAGv4_OYs"
-          loading="lazy"
-          alt=""
-        />
+        <img className="xt-media object-cover" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt="" />
       </div>
 
       <br />
@@ -43,12 +38,7 @@ export default function demo() {
       <br />
 
       <div className="xt-media-container bg-gray-200 pb-[37.5%]">
-        <img
-          className="xt-media object-cover object-center"
-          src="https://source.unsplash.com/Tyg0rVhOTrE"
-          loading="lazy"
-          alt=""
-        />
+        <img className="xt-media object-cover" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt="" />
       </div>
 
       <br />
@@ -74,12 +64,7 @@ export default function demo() {
       <br />
 
       <div className="xt-media-container bg-gray-200 pb-[37.5%]">
-        <img
-          className="xt-media object-cover object-center"
-          src="https://source.unsplash.com/wEL2zPX3jDg"
-          loading="lazy"
-          alt=""
-        />
+        <img className="xt-media object-cover" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt="" />
       </div>
 
       <br />
@@ -105,12 +90,7 @@ export default function demo() {
       <br />
 
       <div className="xt-media-container bg-gray-200 pb-[37.5%]">
-        <img
-          className="xt-media object-cover object-center"
-          src="https://source.unsplash.com/wQLAGv4_OYs"
-          loading="lazy"
-          alt=""
-        />
+        <img className="xt-media object-cover" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt="" />
       </div>
     </div>
   )

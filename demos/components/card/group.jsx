@@ -4,7 +4,7 @@ export default function demo() {
     <div>
       <div className="xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
         <div className="xt-media-container bg-gray-200 rounded-t-2xl h-40">
-          <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+          <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
         </div>
         <div className="*** md:xt-card-group ***">
           <div className="p-7 sm:p-9 text-base *** md:w-7/12 *** bg-gray-100 md:rounded-bl-2xl">

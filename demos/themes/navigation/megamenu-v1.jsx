@@ -22,7 +22,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 defaultChecked
               />
               <span className="ml-4">Use mouse events</span>
@@ -297,7 +297,7 @@ const mountDrops = ({ ref }) => {
 
   const on = e => {
     const tr = e.target
-    // check because of event propagation
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // backdrop
       if (backdrop) {
@@ -365,13 +365,13 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('on.xt.drop', on, true)
+  self.container.addEventListener('on.xt.drop', on, true) // useCapture event propagation
 
   // off
 
   const off = e => {
     const tr = e.target
-    // check because of event propagation
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // backdrop
       if (backdrop) {
@@ -415,7 +415,7 @@ const mountDrops = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('off.xt.drop', off, true)
+  self.container.addEventListener('off.xt.drop', off, true) // useCapture event propagation
 
   // leave
   // when want to close the drop on mouseleave also when using 'click'

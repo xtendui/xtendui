@@ -17,7 +17,7 @@ export default function demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -33,7 +33,7 @@ export default function demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -49,7 +49,7 @@ export default function demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -66,7 +66,7 @@ export default function demo() {
           <div className="hero relative overflow-hidden bg-black">
             <div className="*** hero-inner ***">
               <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div className="flex relative h-96">
                 <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -115,11 +115,11 @@ const mountSlider = ({ ref }) => {
 
   const dragposition = () => {
     // duration depending on dragger size
-    dragDuration = self.initial || self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
+    dragDuration = self.initial || self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag._size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
-      position: self.drag.final,
+      _position: self.drag._final,
       duration: dragDuration,
       ease: dragEase,
     })
@@ -135,7 +135,7 @@ const mountSlider = ({ ref }) => {
     const cover = tr.querySelector('.hero-cover')
     gsap.killTweensOf(cover)
     gsap.set(cover, {
-      x: `${100 * self.drag.ratioInverse * self.direction}%`,
+      x: `${100 * self.drag._ratioInverse * self.direction}%`,
     })
   }
 
@@ -161,13 +161,13 @@ const mountSlider = ({ ref }) => {
 
   const on = e => {
     const tr = e.target
-    // check because of event propagation
+    // useCapture event propagation check
     if (self.targets.includes(tr) && !self.initial) {
       // mask
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
       gsap.set(mask, {
-        x: `${100 * self.drag.ratioInverse * self.direction}%`,
+        x: `${100 * self.drag._ratioInverse * self.direction}%`,
       })
       gsap.to(mask, {
         x: 0,
@@ -177,7 +177,7 @@ const mountSlider = ({ ref }) => {
       const maskInner = tr.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
       gsap.set(maskInner, {
-        x: `${-100 * self.drag.ratioInverse * self.direction}%`,
+        x: `${-100 * self.drag._ratioInverse * self.direction}%`,
       })
       gsap.to(maskInner, {
         x: 0,
@@ -188,24 +188,24 @@ const mountSlider = ({ ref }) => {
       // dragposition (set internal position to instant position after on)
       gsap.killTweensOf(self.drag)
       gsap.set(self.drag, {
-        position: self.drag.final,
+        _position: self.drag._final,
       })
       /***/
     }
   }
 
-  self.container.addEventListener('on.xt.slider', on, true)
+  self.container.addEventListener('on.xt.slider', on, true) // useCapture event propagation
 
   // off
 
   const off = e => {
     const tr = e.target
-    // check because of event propagation
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // cover
       const cover = tr.querySelector('.hero-cover')
       gsap.killTweensOf(cover)
-      if (!self.drag.instant) {
+      if (!self.drag._instant) {
         gsap.set(cover, {
           x: `${100 * self.direction}%`,
         })
@@ -233,7 +233,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('off.xt.slider', off, true)
+  self.container.addEventListener('off.xt.slider', off, true) // useCapture event propagation
 
   // unmount
 

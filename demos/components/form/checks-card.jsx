@@ -17,7 +17,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 name="checkbox-card-0"
                 defaultChecked
                 disabled
@@ -37,7 +37,7 @@ export default function demo() {
               </p>
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 name="checkbox-card-1"
               />
             </div>
@@ -83,7 +83,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 name="switch-card"
                 defaultChecked
               />
@@ -102,7 +102,7 @@ export default function demo() {
               </p>
               <input
                 type="radio"
-                className="xt-check xt-switch rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 name="switch-card"
               />
             </div>

@@ -31,18 +31,19 @@ const mountVariants = ({ ref }) => {
 
   // on
 
-  const on = () => {
+  const ondone = () => {
     // scrollto
     if (!self.initial) {
+      // reset scroll
       form.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
       gallery.scrollTo(0, 0)
     }
-    // mobile dots activation
-    document.dispatchEvent(new CustomEvent('scroll'))
+    // initial mobile dots activation
+    gallery.dispatchEvent(new CustomEvent('scroll'))
   }
 
   for (const element of self.elements) {
-    element.addEventListener('on.xt.toggle', on)
+    element.addEventListener('ondone.xt.toggle', ondone)
   }
 
   // unmount

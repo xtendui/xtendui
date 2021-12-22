@@ -19,7 +19,7 @@ export default function demo() {
           allowFullScreen></iframe>
         <div className="*** cursor-pointer transition group-in:opacity-0 group-done:hidden ***">
           <img
-            className="xt-media object-cover object-center"
+            className="xt-media object-cover"
             src="https://img.youtube.com/vi/hNQFjqDvPhA/maxresdefault.jpg"
             loading="lazy"
             alt=""

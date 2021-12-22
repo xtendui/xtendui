@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
       <div class="xt-media-container bg-gray-200 rounded-t${classes.cardRadius()} h-40">
-        <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+        <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
       </div>
       <div class="*** ${classes.cardMd()} ***">
         <div class="xt-h4">Lorem ipsum</div>

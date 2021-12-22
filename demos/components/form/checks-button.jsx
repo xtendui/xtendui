@@ -10,7 +10,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="checkbox"
-            className="xt-check xt-checkbox top-auto ml-2 rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+            className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="checkbox-button-0"
             defaultChecked
             disabled
@@ -21,7 +21,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="checkbox"
-            className="xt-check xt-checkbox top-auto ml-2 rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+            className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="checkbox-button-1"
           />
         </label>
@@ -40,7 +40,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-switch top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+            className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="switch-button"
             defaultChecked
           />
@@ -50,7 +50,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="radio"
-            className="xt-check xt-switch top-auto ml-2 rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+            className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="switch-button"
           />
         </label>

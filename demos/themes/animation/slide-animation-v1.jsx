@@ -376,7 +376,7 @@ export default function demo() {
           <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
             <div className="xt-card w-80 rounded-md shadow-md text-gray-900 xt-links-default bg-white *** opacity-0 translate-y-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-y-2/4 ***">
               <div className="xt-media-container bg-gray-200 rounded-t-md h-32 *** opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4 ***">
-                <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div>
                 <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap py-1.5 px-3 text-sm *** opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4 ***">
@@ -510,7 +510,7 @@ export default function demo() {
                             <label className="cursor-pointer inline-flex items-baseline">
                               <input
                                 type="checkbox"
-                                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the
@@ -535,7 +535,7 @@ export default function demo() {
 
                     <div className="md:w-5/12 *** flex flex-col *** *** opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4 ***">
                       <div className="xt-media-container bg-gray-200 md:rounded-tr-2xl h-48 md:pb-[100%]">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                        <img className="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
                       </div>
                       <div className="*** p-7 sm:p-9 text-base rounded-b-2xl md:rounded-bl-none bg-primary-100 flex-auto ***">
                         <p className="xt-h5">Didn&apos;t find what you was looking for?</p>
@@ -588,7 +588,7 @@ export default function demo() {
                   <div className="*** md:xt-card-group rounded-2xl *** *** opacity-0 translate-y-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-y-1/4 ***">
                     <div className="md:w-5/12 *** flex flex-col ***">
                       <div className="xt-media-container bg-gray-200 rounded-t-2xl md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto">
-                        <img className="xt-media object-cover object-center" src="/img.svg" loading="eager" alt="" />
+                        <img className="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
                       </div>
                     </div>
 
@@ -614,7 +614,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
-                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                                     name="radio-usage"
                                     defaultChecked
                                   />
@@ -626,7 +626,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
-                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                                     name="radio-usage"
                                   />
                                   <span className="ml-4"> Option 2 </span>
@@ -637,7 +637,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
-                                    className="xt-check xt-radio rounded-full text-primary-500 bg-gray-200 border border-transparent transition-all"
+                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                                     name="radio-usage"
                                   />
                                   <span className="ml-4"> Option 3 </span>
@@ -650,7 +650,7 @@ export default function demo() {
                             <label className="cursor-pointer inline-flex items-baseline">
                               <input
                                 type="checkbox"
-                                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the

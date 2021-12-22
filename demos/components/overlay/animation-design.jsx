@@ -40,7 +40,7 @@ export default function demo() {
                   </svg>
                 </button>
                 <div className="xt-media-container bg-gray-200 rounded-t-2xl pb-[37.5%]">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Lorem ipsum</div>

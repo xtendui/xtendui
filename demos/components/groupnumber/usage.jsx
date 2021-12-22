@@ -19,6 +19,10 @@ export default function demo() {
               type="number"
               className="block w-full w-16 text-center *** border border-l-0 border-gray-300 *** py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Quantity"
+              defaultValue="0"
+              min="22"
+              max="44"
+              step="11"
             />
             <button
               type="button"
@@ -31,8 +35,12 @@ export default function demo() {
       </form>
 
       <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center">
-        Vertical design, input attributes and no limit and no validate
+        Vertical design and no limit and no validate
       </div>
+
+      <p>
+        Pressing <code>Enter</code> does browser validation also if no limit and no validate on component.
+      </p>
 
       <form className="text-sm">
         <div className="*** xt-list ***" data-xt-groupnumber="{ limit: false, validate: false }">
@@ -40,9 +48,10 @@ export default function demo() {
             type="number"
             className="block w-full w-16 text-center *** rounded-tl-md rounded-bl-md border border-r-0 border-gray-300 *** py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
             aria-label="Quantity"
-            min="0"
-            max="4"
-            step="0.5"
+            defaultValue="0"
+            min="22"
+            max="44"
+            step="11"
           />
           <div className="*** inline-flex flex-col ***">
             <button
@@ -62,11 +71,11 @@ export default function demo() {
       </form>
 
       <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center">
-        Responsive design, multiple inputs and attributes
+        Responsive design and voidable
       </div>
 
       <form className="text-sm mt-6">
-        <div className="*** xt-list ***" data-xt-groupnumber>
+        <div className="*** xt-list ***" data-xt-groupnumber="{ voidable: true }">
           <div className="*** inline-flex flex-col md:flex-row ***">
             <button
               type="button"
@@ -78,19 +87,9 @@ export default function demo() {
               type="number"
               className="block w-full w-16 *** md:order-2 border-l border-r border-gray-300 md:border-l-0 md:border-r-0 md:border-t md:border-b *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Quantity"
-              defaultValue="10"
-              min="10"
-              max="50"
-              step="10"
-            />
-            <input
-              type="number"
-              className="block w-full w-16 *** md:order-2 border-l border-r border-gray-300 md:border-l-0 md:border-r-0 md:border-t md:border-b *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
-              aria-label="Quantity"
-              defaultValue="35"
-              min="5"
-              max="35"
-              step="5"
+              min="22"
+              max="44"
+              step="11"
             />
             <button
               type="button"

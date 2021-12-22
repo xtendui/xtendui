@@ -11,7 +11,7 @@ export default function demo() {
             className="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
             data-xt-slider-dragger>
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-200">
+              <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="/img.svg"
@@ -55,7 +55,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-200">
+              <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="/img-ratio.svg"
@@ -99,7 +99,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-200">
+              <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/ruJm3dBXCqw"
@@ -143,7 +143,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-200">
+              <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/wQLAGv4_OYs"
@@ -187,7 +187,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-200">
+              <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/OlTjeydUpQw"
@@ -231,7 +231,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-200">
+              <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/wEL2zPX3jDg"
@@ -275,7 +275,7 @@ export default function demo() {
             </div>
 
             <div className="xt-slide group" data-xt-slider-target>
-              <div className="xt-media-container bg-gray-200">
+              <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
                   src="https://source.unsplash.com/Tyg0rVhOTrE"
@@ -320,7 +320,11 @@ export default function demo() {
           </div>
 
           <nav className="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
-            <button type="button" className="xt-button h-10 hidden" data-xt-slider-element title="Slide xt-num">
+            <button
+              type="button"
+              className="xt-button h-10 rounded-md overflow-hidden hidden"
+              data-xt-slider-element
+              title="Slide xt-num">
               xt-content
             </button>
           </nav>

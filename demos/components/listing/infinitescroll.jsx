@@ -19,7 +19,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 defaultChecked
               />
               <span className="ml-4">Activate on scroll</span>
@@ -72,7 +72,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem ipsum</div>
@@ -84,7 +84,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -96,7 +96,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem ipsum</div>
@@ -108,7 +108,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -120,7 +120,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem Ipsum</div>
@@ -132,7 +132,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -144,7 +144,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem Ipsum</div>
@@ -156,7 +156,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -168,7 +168,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem Ipsum</div>
@@ -180,7 +180,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -192,7 +192,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem Ipsum</div>
@@ -204,7 +204,7 @@ export default function demo() {
             <div className="w-6/12 md:w-4/12 lg:w-3/12">
               <a href="https://github.com/xtendui/xtendui" className="listing-item block">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>

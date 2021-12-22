@@ -17,7 +17,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
-                className="xt-check xt-checkbox rounded-md text-primary-500 bg-gray-200 border border-transparent transition-all"
+                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 defaultChecked
               />
               <span className="ml-4">Group Same</span>
@@ -103,7 +103,7 @@ const mountStatus = ({ ref }) => {
   // change
 
   const change = e => {
-    // check because of event propagation
+    // useCapture event propagation check
     if (self && (e.target === slider || self.elements.includes(e.target))) {
       // width
       const trs = self.targets.filter(x => self.hasCurrent({ el: x, same: window.demogroupedstatus })) // switcher window.demogroupedstatus true or false
@@ -124,7 +124,7 @@ const mountStatus = ({ ref }) => {
 
   slider.addEventListener('init.xt.slider', change)
   slider.addEventListener('status.xt.slider', change)
-  slider.addEventListener('on.xt.slider', change, true)
+  slider.addEventListener('on.xt.slider', change, true) // useCapture event propagation
   addEventListener('resize', change)
 
   // unmount

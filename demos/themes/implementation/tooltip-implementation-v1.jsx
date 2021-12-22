@@ -77,7 +77,7 @@ export default function demo() {
               <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
                 <div className="*** xt-card w-80 rounded-md shadow-md text-gray-900 xt-links-default bg-white *** *** transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
                   <div className="*** xt-media-container bg-gray-200 rounded-t-md h-32 ***">
-                    <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                   </div>
                   <div>
                     <div className="*** xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap py-1.5 px-3 text-sm ***">

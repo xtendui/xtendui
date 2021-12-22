@@ -17,7 +17,7 @@ export default function demo() {
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
                 <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
@@ -45,7 +45,7 @@ export default function demo() {
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
                 <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10 sm:order-1">
@@ -73,7 +73,7 @@ export default function demo() {
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
                 <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
@@ -103,7 +103,7 @@ export default function demo() {
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
                 <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">

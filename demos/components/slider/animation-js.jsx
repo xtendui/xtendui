@@ -122,7 +122,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('init.xt.slider', init, true)
+  self.container.addEventListener('init.xt.slider', init, true) // useCapture event propagation
   /***/
 
   // on
@@ -130,7 +130,7 @@ const mountSlider = ({ ref }) => {
   /***/
   const on = e => {
     const tr = e.target
-    // check because of event propagation
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // content
       const content = tr.querySelector('[data-node-target-content]')
@@ -147,7 +147,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('on.xt.slider', on, true)
+  self.container.addEventListener('on.xt.slider', on, true) // useCapture event propagation
   /***/
 
   // off
@@ -155,7 +155,7 @@ const mountSlider = ({ ref }) => {
   /***/
   const off = e => {
     const tr = e.target
-    // check because of event propagation
+    // useCapture event propagation check
     if (self.targets.includes(tr)) {
       // content
       const content = tr.querySelector('[data-node-target-content]')
@@ -169,7 +169,7 @@ const mountSlider = ({ ref }) => {
     }
   }
 
-  self.container.addEventListener('off.xt.slider', off, true)
+  self.container.addEventListener('off.xt.slider', off, true) // useCapture event propagation
   /***/
 
   // unmount

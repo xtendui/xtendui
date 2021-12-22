@@ -17,7 +17,7 @@ export default function demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="hero-inner">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto *** max-w-2xl *** text-white xt-links-inverse text-center">
@@ -32,7 +32,7 @@ export default function demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="hero-inner">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto *** max-w-2xl *** text-white xt-links-inverse text-center">
@@ -47,7 +47,7 @@ export default function demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="hero-inner">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto *** max-w-2xl *** text-white xt-links-inverse text-center">
@@ -63,7 +63,7 @@ export default function demo() {
           <div className="hero relative overflow-hidden bg-black">
             <div className="hero-inner">
               <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img className="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+                <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div className="flex relative h-96">
                 <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto *** max-w-2xl *** text-white xt-links-inverse text-center">
@@ -108,7 +108,7 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // position animation to keep updated with animation
     gsap.set(self.drag, {
-      position: self.drag.final,
+      _position: self.drag._final,
     })
   }
 

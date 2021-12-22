@@ -75,7 +75,7 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="checkbox"
-                      className="xt-check xt-checkbox *** rounded-md text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all ***"
+                      className="xt-check xt-checkbox *** rounded-md bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       defaultChecked
                       disabled
                     />
@@ -91,7 +91,7 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="checkbox"
-                      className="xt-check xt-checkbox *** rounded-md text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all ***"
+                      className="xt-check xt-checkbox *** rounded-md bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -111,7 +111,7 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
-                      className="xt-check xt-radio *** rounded-full text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all ***"
+                      className="xt-check xt-radio *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="radio-primary"
                       defaultChecked
                     />
@@ -127,7 +127,7 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
-                      className="xt-check xt-radio *** rounded-full text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all ***"
+                      className="xt-check xt-radio *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="radio-primary"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
@@ -148,7 +148,7 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="checkbox"
-                      className="xt-check xt-switch *** rounded-full text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all ***"
+                      className="xt-check xt-switch *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
                       <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
@@ -162,7 +162,7 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
-                      className="xt-check xt-switch *** rounded-full text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all ***"
+                      className="xt-check xt-switch *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="switch-primary"
                       defaultChecked
                     />
@@ -178,7 +178,7 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
-                      className="xt-check xt-switch *** rounded-full text-primary-600 bg-primary-800 bg-opacity-25 border border-transparent transition-all ***"
+                      className="xt-check xt-switch *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="switch-primary"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
