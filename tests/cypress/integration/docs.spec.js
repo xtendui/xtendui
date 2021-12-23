@@ -27,16 +27,22 @@ describe('docs', function () {
         cy.get('.gatsby_button-site-header_link')
           .eq(0)
           .click()
+          .url()
+          .should('include', '/intro')
           .frame()
           .then(() => {
             cy.get('.gatsby_button-site-header_link')
               .eq(1)
               .click()
+              .url()
+              .should('include', '/components')
               .frame()
               .then(() => {
                 cy.get('.gatsby_button-site-header_link')
                   .eq(0)
                   .click()
+                  .url()
+                  .should('include', '/intro')
                   .frame()
                   .then(() => {
                     cy.get('#gatsby_menu--overlay')

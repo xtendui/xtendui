@@ -369,7 +369,7 @@ describe('demos/components/slider/animation-js', function () {
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
-  it.only('TEST activation.', function () {
+  it('TEST activation.', function () {
     cy.wait(500) // after animation
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
