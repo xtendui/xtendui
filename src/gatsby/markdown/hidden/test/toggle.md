@@ -8,7 +8,7 @@ title: "Toggle"
 ## Usage
 
 `demos/components/overlay/usage-self`
-- TEST initial activation and overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.
+- TEST initial activation, overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.
 
 [/demos/components/overlay/usage-self](/demos/components/overlay/usage-self).
 
@@ -123,16 +123,18 @@ title: "Toggle"
   </demoinline>
 </demo>
 
-TEST (not in fullscreen or it doesn't test boundary) arrow position and position inside boundary on first element for proper merge of popperjs options.
+`demos/components/tooltip/prevent-overflow`
+- TEST position inside boundary on first element for proper merge of popperjs options, arrow position.
 
 <demo>
   <demoinline src="demos/components/tooltip/prevent-overflow">
   </demoinline>
 </demo>
 
-TEST focustrap should work and not give console error.
+`demos/components/overlay/animation-noqueue`
+- TEST focustrap should work, no console error.
 
 <demo>
-  <demoinline src="demos/components/overlay/animation-queue">
+  <demoinline src="demos/components/overlay/animation-noqueue">
   </demoinline>
 </demo>

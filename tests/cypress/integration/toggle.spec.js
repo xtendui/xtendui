@@ -18,7 +18,7 @@ describe('demos/components/overlay/usage-self', function () {
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
-  it('TEST initial activation and overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.', function () {
+  it('TEST initial activation, overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.', function () {
     expect(win.Xt.visible({ el: self.elements[0] })).to.equal(true)
     expect(self.elements[0].classList.contains('on')).to.equal(true)
     expect(self.elements[0].classList.contains('in')).to.equal(true)
@@ -1009,6 +1009,80 @@ describe('demos/components/tooltip/swap-toggle', function () {
                     expect(self.targets[1].classList.contains('hidden')).to.equal(true)
                   })
               })
+          })
+      })
+  })
+})
+
+describe('demos/components/tooltip/prevent-overflow', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--tooltip-prevent-overflow').as('demo')
+    cy.get('@demo').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-tooltip', el: container })
+  })
+
+  it('TEST position inside boundary on first element for proper merge of popperjs options, arrow position.', function () {
+    cy.get(self.elements[0])
+      .trigger('mouseenter')
+      .frame()
+      .then(() => {
+        expect(self.targets[0].style.inset).to.equal('197px 647.344px auto auto')
+        expect(self.targets[0].querySelector('.xt-arrow').style.left).to.equal('61px')
+      })
+  })
+})
+
+describe('demos/components/overlay/animation-noqueue', function () {
+  let win
+  let doc
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win').document().as('doc')
+    cy.get('.demo--overlay-animation-noqueue').as('demo')
+    cy.get('@demo').find('[data-xt-overlay]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    doc = this.doc
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  beforeEach(function () {
+    win = this.win
+    cy.spy(win.console, 'error').as('consoleError')
+  })
+
+  afterEach(() => {
+    cy.get('@consoleError').should('not.be.called')
+  })
+
+  it('TEST focustrap should work, no console error.', function () {
+    cy.get(self.elements[0])
+      .click()
+      .then(() => {
+        cy.get('@doc')
+          .trigger('keydown', { key: 'Tab' })
+          .then(() => {
+            expect(self.targets[0].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
+            // @TODO test usability navigation overlay
           })
       })
   })
