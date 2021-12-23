@@ -442,7 +442,7 @@ describe('demos/components/toggle/prevent-event', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST prevent event.', function () {
+  it.only('TEST prevent event.', function () {
     cy.get(self.elements[1])
       .click()
       .then(() => {
@@ -450,14 +450,7 @@ describe('demos/components/toggle/prevent-event', function () {
         expect(self.elements[1].classList.contains('in')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('in')).to.equal(true)
-        cy.get(self.elements[1])
-          .click()
-          .frame()
-          .then(() => {
-            cy.location().then(loc => {
-              expect(loc.pathname).to.not.equal(url)
-            })
-          })
+        cy.get(self.elements[1]).click().url().should('not.include', url)
       })
   })
 })
