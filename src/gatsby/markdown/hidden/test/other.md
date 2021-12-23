@@ -45,7 +45,7 @@ TEST pin unmount this should NOT be called on resize and xtNamespace should be 0
 
 ## Infinitescroll
 
-TEST change page (browser location prev next).
+TEST change page browser navigation.
 
 TEST initial activation on browser location.
 
@@ -69,11 +69,11 @@ TEST scroll position on click elements custom.
 
 TEST activation classes and scroll position on page load and hash change.
 
-TEST change page (browser location prev next).
+TEST change page browser navigation.
 
 TEST initial scroll and overlay activation data-xt-scrollto-hash.
 
-TEST scroll and overlay activation data-xt-scrollto-hash close overlay and change page (browser location prev next).
+TEST scroll and overlay activation data-xt-scrollto-hash close overlay and change page browser navigation.
 
 [/demos/components/scrollto/usage#anchor-2](/demos/components/scrollto/usage#anchor-2).
 
@@ -81,7 +81,7 @@ TEST clicking 2 should open overlay (bug with openauto and overlay on same eleme
 
 [/demos/components/scrollto/overlay#anchor-2](/demos/components/scrollto/overlay#anchor-2).
 
-TEST change page (browser location prev next).
+TEST change page browser navigation.
 
 TEST initial activation and scroll on page load when linking non scrolltoInit.
 

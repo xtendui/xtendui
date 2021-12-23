@@ -8,7 +8,6 @@ describe('demos/components/overlay/usage-self', function () {
 
   beforeEach(function () {
     cy.visit('/demos/components/overlay/usage-self').window().as('win')
-    cy.get('.demo--overlay-usage-self').as('demo')
     cy.get('[data-xt-overlay]').as('container') // not .get('@demo') because [data-xt-overlay] is already appended to body
   })
 
@@ -459,6 +458,440 @@ describe('demos/components/toggle/prevent-event', function () {
               expect(loc.pathname).to.not.equal(url)
             })
           })
+      })
+  })
+})
+
+describe('demos/components/toggle/hash', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit('demos/components/toggle/hash').window().as('win')
+    cy.get('[data-xt-toggle]').as('container') // not .get('@demo')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  it('TEST no hash must not add hash initial activation.', function () {
+    expect(self.elements[0].classList.contains('on')).to.equal(false)
+    expect(self.elements[0].classList.contains('in')).to.equal(false)
+    expect(self.elements[1].classList.contains('on')).to.equal(false)
+    expect(self.elements[1].classList.contains('in')).to.equal(false)
+    expect(self.elements[2].classList.contains('on')).to.equal(false)
+    expect(self.elements[2].classList.contains('in')).to.equal(false)
+    expect(self.elements[3].classList.contains('on')).to.equal(true)
+    expect(self.elements[3].classList.contains('in')).to.equal(true)
+    expect(self.elements[4].classList.contains('on')).to.equal(false)
+    expect(self.elements[4].classList.contains('in')).to.equal(false)
+    expect(self.elements[5].classList.contains('on')).to.equal(false)
+    expect(self.elements[5].classList.contains('in')).to.equal(false)
+    expect(self.targets[0].classList.contains('on')).to.equal(false)
+    expect(self.targets[0].classList.contains('in')).to.equal(false)
+    expect(self.targets[1].classList.contains('on')).to.equal(false)
+    expect(self.targets[1].classList.contains('in')).to.equal(false)
+    expect(self.targets[2].classList.contains('on')).to.equal(false)
+    expect(self.targets[2].classList.contains('in')).to.equal(false)
+    expect(self.targets[3].classList.contains('on')).to.equal(false)
+    expect(self.targets[3].classList.contains('in')).to.equal(false)
+    expect(self.targets[4].classList.contains('on')).to.equal(true)
+    expect(self.targets[4].classList.contains('in')).to.equal(true)
+    expect(self.targets[5].classList.contains('on')).to.equal(false)
+    expect(self.targets[5].classList.contains('in')).to.equal(false)
+  })
+})
+
+describe('demos/components/toggle/hash', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit('demos/components/toggle/hash#demo--toggle-hash-group-1').window().as('win')
+    cy.get('[data-xt-toggle]').as('container') // not .get('@demo')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  it('TEST initial activation, hash activation, browser navigation.', function () {
+    expect(self.elements[0].classList.contains('on')).to.equal(false)
+    expect(self.elements[0].classList.contains('in')).to.equal(false)
+    expect(self.elements[1].classList.contains('on')).to.equal(false)
+    expect(self.elements[1].classList.contains('in')).to.equal(false)
+    expect(self.elements[2].classList.contains('on')).to.equal(false)
+    expect(self.elements[2].classList.contains('in')).to.equal(false)
+    expect(self.elements[3].classList.contains('on')).to.equal(false)
+    expect(self.elements[3].classList.contains('in')).to.equal(false)
+    expect(self.elements[4].classList.contains('on')).to.equal(true)
+    expect(self.elements[4].classList.contains('in')).to.equal(true)
+    expect(self.elements[5].classList.contains('on')).to.equal(false)
+    expect(self.elements[5].classList.contains('in')).to.equal(false)
+    expect(self.targets[0].classList.contains('on')).to.equal(false)
+    expect(self.targets[0].classList.contains('in')).to.equal(false)
+    expect(self.targets[1].classList.contains('on')).to.equal(false)
+    expect(self.targets[1].classList.contains('in')).to.equal(false)
+    expect(self.targets[2].classList.contains('on')).to.equal(true)
+    expect(self.targets[2].classList.contains('in')).to.equal(true)
+    expect(self.targets[3].classList.contains('on')).to.equal(true)
+    expect(self.targets[3].classList.contains('in')).to.equal(true)
+    expect(self.targets[4].classList.contains('on')).to.equal(false)
+    expect(self.targets[4].classList.contains('in')).to.equal(false)
+    expect(self.targets[5].classList.contains('on')).to.equal(true)
+    expect(self.targets[5].classList.contains('in')).to.equal(true)
+    cy.get(self.elements[1])
+      .click()
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[0].classList.contains('in')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(true)
+        expect(self.elements[1].classList.contains('in')).to.equal(true)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('in')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('in')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('in')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('in')).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('in')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('in')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('in')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('in')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('in')).to.equal(false)
+        cy.go(-1).then(() => {
+          expect(self.elements[0].classList.contains('on')).to.equal(false)
+          expect(self.elements[0].classList.contains('in')).to.equal(false)
+          expect(self.elements[1].classList.contains('on')).to.equal(false)
+          expect(self.elements[1].classList.contains('in')).to.equal(false)
+          expect(self.elements[2].classList.contains('on')).to.equal(false)
+          expect(self.elements[2].classList.contains('in')).to.equal(false)
+          expect(self.elements[3].classList.contains('on')).to.equal(false)
+          expect(self.elements[3].classList.contains('in')).to.equal(false)
+          expect(self.elements[4].classList.contains('on')).to.equal(true)
+          expect(self.elements[4].classList.contains('in')).to.equal(true)
+          expect(self.elements[5].classList.contains('on')).to.equal(false)
+          expect(self.elements[5].classList.contains('in')).to.equal(false)
+          expect(self.targets[0].classList.contains('on')).to.equal(false)
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('on')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(self.targets[2].classList.contains('on')).to.equal(true)
+          expect(self.targets[2].classList.contains('in')).to.equal(true)
+          expect(self.targets[3].classList.contains('on')).to.equal(true)
+          expect(self.targets[3].classList.contains('in')).to.equal(true)
+          expect(self.targets[4].classList.contains('on')).to.equal(false)
+          expect(self.targets[4].classList.contains('in')).to.equal(false)
+          expect(self.targets[5].classList.contains('on')).to.equal(true)
+          expect(self.targets[5].classList.contains('in')).to.equal(true)
+          cy.go(1).then(() => {
+            expect(self.elements[0].classList.contains('on')).to.equal(false)
+            expect(self.elements[0].classList.contains('in')).to.equal(false)
+            expect(self.elements[1].classList.contains('on')).to.equal(true)
+            expect(self.elements[1].classList.contains('in')).to.equal(true)
+            expect(self.elements[2].classList.contains('on')).to.equal(false)
+            expect(self.elements[2].classList.contains('in')).to.equal(false)
+            expect(self.elements[3].classList.contains('on')).to.equal(false)
+            expect(self.elements[3].classList.contains('in')).to.equal(false)
+            expect(self.elements[4].classList.contains('on')).to.equal(false)
+            expect(self.elements[4].classList.contains('in')).to.equal(false)
+            expect(self.elements[5].classList.contains('on')).to.equal(false)
+            expect(self.elements[5].classList.contains('in')).to.equal(false)
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[0].classList.contains('in')).to.equal(true)
+            expect(self.targets[1].classList.contains('on')).to.equal(false)
+            expect(self.targets[1].classList.contains('in')).to.equal(false)
+            expect(self.targets[2].classList.contains('on')).to.equal(false)
+            expect(self.targets[2].classList.contains('in')).to.equal(false)
+            expect(self.targets[3].classList.contains('on')).to.equal(false)
+            expect(self.targets[3].classList.contains('in')).to.equal(false)
+            expect(self.targets[4].classList.contains('on')).to.equal(false)
+            expect(self.targets[4].classList.contains('in')).to.equal(false)
+            expect(self.targets[5].classList.contains('on')).to.equal(false)
+            expect(self.targets[5].classList.contains('in')).to.equal(false)
+          })
+        })
+      })
+  })
+})
+
+describe('demos/components/overlay/hash', function () {
+  let win
+  let Xt
+  let container
+  let container1
+  let self
+  let self1
+
+  beforeEach(function () {
+    cy.visit('demos/components/overlay/hash#demo--overlay-hash').window().as('win')
+    cy.get('[data-xt-overlay]').as('container') // not .get('@demo')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    container1 = this.container[1]
+    self = Xt.get({ name: 'xt-overlay', el: container })
+    self1 = Xt.get({ name: 'xt-overlay', el: container1 })
+  })
+
+  it('TEST opened with hash on page load, closing it should not block page interaction (bug with multiple elements same target), should reopen on change page browser navigation.', function () {
+    expect(self.elements[0].classList.contains('on')).to.equal(true)
+    expect(self.elements[0].classList.contains('in')).to.equal(true)
+    expect(self.targets[0].classList.contains('on')).to.equal(true)
+    expect(self.targets[0].classList.contains('in')).to.equal(true)
+    cy.get(self.targets[0].querySelector('.xt-dismiss'))
+      .click()
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[0].classList.contains('in')).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        cy.get(self1.elements[0])
+          .click()
+          .then(() => {
+            expect(self.elements[0].classList.contains('on')).to.equal(true)
+            expect(self.elements[0].classList.contains('in')).to.equal(true)
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[0].classList.contains('in')).to.equal(true)
+            cy.get(self.targets[0].querySelector('.xt-dismiss'))
+              .click()
+              .go(-1)
+              .then(() => {
+                expect(self.elements[0].classList.contains('on')).to.equal(true)
+                expect(self.elements[0].classList.contains('in')).to.equal(true)
+                expect(self.targets[0].classList.contains('on')).to.equal(true)
+                expect(self.targets[0].classList.contains('in')).to.equal(true)
+                cy.location().then(loc => {
+                  expect(loc.hash).to.equal('#demo--overlay-hash')
+                })
+              })
+          })
+      })
+  })
+})
+
+describe('demos/components/slider/hash', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit('demos/components/slider/hash#demo--slider-hash-4').window().as('win')
+    cy.get('[data-xt-slider]').as('container') // not .get('@demo')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  it('TEST initial activation, hash activation, browser navigation.', function () {
+    expect(self.targets[0].classList.contains('on')).to.equal(false)
+    expect(self.targets[0].classList.contains('in')).to.equal(false)
+    expect(self.targets[1].classList.contains('on')).to.equal(false)
+    expect(self.targets[1].classList.contains('in')).to.equal(false)
+    expect(self.targets[2].classList.contains('on')).to.equal(false)
+    expect(self.targets[2].classList.contains('in')).to.equal(false)
+    expect(self.targets[3].classList.contains('on')).to.equal(true)
+    expect(self.targets[3].classList.contains('in')).to.equal(true)
+    expect(self.targets[4].classList.contains('on')).to.equal(false)
+    expect(self.targets[4].classList.contains('in')).to.equal(false)
+    expect(self.targets[5].classList.contains('on')).to.equal(false)
+    expect(self.targets[5].classList.contains('in')).to.equal(false)
+    expect(self.targets[6].classList.contains('on')).to.equal(false)
+    expect(self.targets[6].classList.contains('in')).to.equal(false)
+    cy.get(self.elements[1])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('in')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('in')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('in')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('in')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('in')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('in')).to.equal(false)
+        cy.go(-1).then(() => {
+          expect(self.targets[0].classList.contains('on')).to.equal(false)
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('on')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(self.targets[2].classList.contains('on')).to.equal(false)
+          expect(self.targets[2].classList.contains('in')).to.equal(false)
+          expect(self.targets[3].classList.contains('on')).to.equal(true)
+          expect(self.targets[3].classList.contains('in')).to.equal(true)
+          expect(self.targets[4].classList.contains('on')).to.equal(false)
+          expect(self.targets[4].classList.contains('in')).to.equal(false)
+          expect(self.targets[5].classList.contains('on')).to.equal(false)
+          expect(self.targets[5].classList.contains('in')).to.equal(false)
+          expect(self.targets[6].classList.contains('on')).to.equal(false)
+          expect(self.targets[6].classList.contains('in')).to.equal(false)
+          cy.go(1).then(() => {
+            expect(self.targets[0].classList.contains('on')).to.equal(false)
+            expect(self.targets[0].classList.contains('in')).to.equal(false)
+            expect(self.targets[1].classList.contains('on')).to.equal(true)
+            expect(self.targets[1].classList.contains('in')).to.equal(true)
+            expect(self.targets[2].classList.contains('on')).to.equal(true)
+            expect(self.targets[2].classList.contains('in')).to.equal(true)
+            expect(self.targets[3].classList.contains('on')).to.equal(false)
+            expect(self.targets[3].classList.contains('in')).to.equal(false)
+            expect(self.targets[4].classList.contains('on')).to.equal(false)
+            expect(self.targets[4].classList.contains('in')).to.equal(false)
+            expect(self.targets[5].classList.contains('on')).to.equal(false)
+            expect(self.targets[5].classList.contains('in')).to.equal(false)
+            expect(self.targets[6].classList.contains('on')).to.equal(false)
+            expect(self.targets[6].classList.contains('in')).to.equal(false)
+          })
+        })
+      })
+  })
+})
+
+describe('demos/components/drop/backdrop', function () {
+  let win
+  let Xt
+  let container
+  let container1
+  let self
+  let self1
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--drop-backdrop').as('demo')
+    cy.get('@demo').find('[data-xt-drop]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    container1 = this.container[1]
+    self = Xt.get({ name: 'xt-drop', el: container })
+    self1 = Xt.get({ name: 'xt-drop', el: container1 })
+  })
+
+  it('TEST backdrop.', function () {
+    cy.get(self.elements[0])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        cy.get(self.targets[0])
+          .click()
+          .then(() => {
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[0].classList.contains('in')).to.equal(true)
+            cy.get(self.targets[0])
+              .find('.xt-backdrop')
+              .click()
+              .then(() => {
+                expect(self.targets[0].classList.contains('on')).to.equal(false)
+                expect(self.targets[0].classList.contains('in')).to.equal(false)
+              })
+          })
+      })
+  })
+
+  it('TEST backdrop hover.', function () {
+    cy.get(self1.elements[0])
+      .trigger('mouseenter')
+      .frame()
+      .then(() => {
+        expect(self1.targets[0].classList.contains('on')).to.equal(true)
+        expect(self1.targets[0].classList.contains('in')).to.equal(true)
+        cy.get(self1.targets[0])
+          .click()
+          .then(() => {
+            expect(self1.targets[0].classList.contains('on')).to.equal(true)
+            expect(self1.targets[0].classList.contains('in')).to.equal(true)
+            cy.get(self1.targets[0])
+              .find('.xt-backdrop')
+              .click()
+              .then(() => {
+                expect(self1.targets[0].classList.contains('on')).to.equal(false)
+                expect(self1.targets[0].classList.contains('in')).to.equal(false)
+              })
+          })
+      })
+  })
+})
+
+describe('demos/components/drop/reset-to-current', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--drop-reset-to-current').as('demo')
+    cy.get('@demo').find('[data-xt-drop]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-drop', el: container })
+  })
+
+  it('TEST no empty frame when switching from off to reset.', function () {
+    expect(self.targets[0].classList.contains('on')).to.equal(false)
+    expect(self.targets[0].classList.contains('in')).to.equal(false)
+    expect(self.targets[1].classList.contains('on')).to.equal(true)
+    expect(self.targets[1].classList.contains('in')).to.equal(true)
+    cy.get(self.elements[0])
+      .trigger('mouseenter')
+      .frame()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frame().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          cy.get(self.elements[0])
+            .trigger('mouseleave')
+            .frame()
+            .then(() => {
+              expect(self.targets[0].classList.contains('on')).to.equal(false)
+              expect(self.targets[1].classList.contains('on')).to.equal(true)
+              cy.frame().then(() => {
+                expect(self.targets[0].classList.contains('in')).to.equal(false)
+                expect(self.targets[1].classList.contains('in')).to.equal(true)
+              })
+            })
+        })
       })
   })
 })

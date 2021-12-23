@@ -98,7 +98,7 @@ describe('docs', function () {
       })
   })
 
-  it('TEST demos demos changing demo should change hash, browser location prev next should change demo, initial activation on page load.', function () {
+  it('TEST demos demos changing demo should change hash, browser navigation should change demo, initial activation on page load.', function () {
     cy.get('.gatsby_demo_tabs_left button').eq(1).click()
     cy.get('.button--open-full').eq(0).click()
     cy.hash().should('eq', '#demos-components-toggle-animation-noqueue')

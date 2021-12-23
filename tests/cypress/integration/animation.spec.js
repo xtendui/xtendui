@@ -279,7 +279,7 @@ describe('demos/components/slider/animation-css', function () {
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
-  it('TEST slider should not deactivate and reactivate.', function () {
+  it('TEST activation.', function () {
     expect(self.targets[1].classList.contains('on')).to.equal(true)
     cy.frame().then(() => {
       expect(self.targets[1].classList.contains('in')).to.equal(true)
@@ -369,12 +369,19 @@ describe('demos/components/slider/animation-js', function () {
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
-  it('TEST slider should not deactivate and reactivate.', function () {
+  it.only('TEST activation.', function () {
     cy.wait(500) // after animation
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
           'translate(0px, 0px)'
         )
+        expect(self.targets[0].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
+        expect(self.targets[1].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
+        expect(self.targets[2].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[3].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[4].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[5].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[6].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
       })
     cy.get(self.elements[1])
       .click()
@@ -382,12 +389,19 @@ describe('demos/components/slider/animation-js', function () {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
           'translate(0px, 0px)'
         )
-      })
-      .frame()
-      .then(() => {
-        expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
-          'translate(0px, 0px)'
-        )
+        cy.wait(500) // after animation
+          .then(() => {
+            expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
+              'translate(0px, 0px)'
+            )
+            expect(self.targets[0].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
+            expect(self.targets[1].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
+            expect(self.targets[2].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+            expect(self.targets[3].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+            expect(self.targets[4].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+            expect(self.targets[5].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+            expect(self.targets[6].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+          })
       })
   })
 })
