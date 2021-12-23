@@ -482,29 +482,31 @@ describe('demos/components/toggle/hash', function () {
 
   it('TEST no hash must not add hash initial activation.', function () {
     expect(self.elements[0].classList.contains('on')).to.equal(false)
-    expect(self.elements[0].classList.contains('in')).to.equal(false)
     expect(self.elements[1].classList.contains('on')).to.equal(false)
-    expect(self.elements[1].classList.contains('in')).to.equal(false)
     expect(self.elements[2].classList.contains('on')).to.equal(false)
-    expect(self.elements[2].classList.contains('in')).to.equal(false)
     expect(self.elements[3].classList.contains('on')).to.equal(true)
-    expect(self.elements[3].classList.contains('in')).to.equal(true)
     expect(self.elements[4].classList.contains('on')).to.equal(false)
-    expect(self.elements[4].classList.contains('in')).to.equal(false)
     expect(self.elements[5].classList.contains('on')).to.equal(false)
-    expect(self.elements[5].classList.contains('in')).to.equal(false)
     expect(self.targets[0].classList.contains('on')).to.equal(false)
-    expect(self.targets[0].classList.contains('in')).to.equal(false)
     expect(self.targets[1].classList.contains('on')).to.equal(false)
-    expect(self.targets[1].classList.contains('in')).to.equal(false)
     expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[2].classList.contains('in')).to.equal(false)
     expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('in')).to.equal(false)
     expect(self.targets[4].classList.contains('on')).to.equal(true)
-    expect(self.targets[4].classList.contains('in')).to.equal(true)
     expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('in')).to.equal(false)
+    cy.frame().then(() => {
+      expect(self.elements[0].classList.contains('in')).to.equal(false)
+      expect(self.elements[1].classList.contains('in')).to.equal(false)
+      expect(self.elements[2].classList.contains('in')).to.equal(false)
+      expect(self.elements[3].classList.contains('in')).to.equal(true)
+      expect(self.elements[4].classList.contains('in')).to.equal(false)
+      expect(self.elements[5].classList.contains('in')).to.equal(false)
+      expect(self.targets[0].classList.contains('in')).to.equal(false)
+      expect(self.targets[1].classList.contains('in')).to.equal(false)
+      expect(self.targets[2].classList.contains('in')).to.equal(false)
+      expect(self.targets[3].classList.contains('in')).to.equal(false)
+      expect(self.targets[4].classList.contains('in')).to.equal(true)
+      expect(self.targets[5].classList.contains('in')).to.equal(false)
+    })
   })
 })
 
@@ -892,6 +894,122 @@ describe('demos/components/drop/reset-to-current', function () {
               })
             })
         })
+      })
+  })
+})
+
+describe('demos/components/tooltip/swap-click', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--tooltip-swap-click').as('demo')
+    cy.get('@demo').find('[data-xt-tooltip]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-tooltip', el: container })
+  })
+
+  it('TEST no empty frame when switching from off to reset.', function () {
+    cy.get(self.elements[0])
+      .trigger('mouseenter')
+      .frame()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('hidden')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('hidden')).to.equal(true)
+        cy.get(self.elements[0])
+          .click()
+          .wait(500) // after animation
+          .then(() => {
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[0].classList.contains('hidden')).to.equal(true)
+            expect(self.targets[1].classList.contains('on')).to.equal(true)
+            expect(self.targets[1].classList.contains('hidden')).to.equal(false)
+            cy.get(self.elements[0])
+              .click()
+              .wait(500) // after animation
+              .then(() => {
+                expect(self.targets[0].classList.contains('on')).to.equal(true)
+                expect(self.targets[0].classList.contains('hidden')).to.equal(true)
+                expect(self.targets[1].classList.contains('on')).to.equal(true)
+                expect(self.targets[1].classList.contains('hidden')).to.equal(false)
+                cy.get(self.elements[0])
+                  .trigger('mouseleave')
+                  .then(() => {
+                    expect(self.targets[0].classList.contains('on')).to.equal(false)
+                    expect(self.targets[0].classList.contains('hidden')).to.equal(false)
+                    expect(self.targets[1].classList.contains('on')).to.equal(false)
+                    expect(self.targets[1].classList.contains('hidden')).to.equal(true)
+                  })
+              })
+          })
+      })
+  })
+})
+
+describe('demos/components/tooltip/swap-toggle', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--tooltip-swap-toggle').as('demo')
+    cy.get('@demo').find('[data-xt-tooltip]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-tooltip', el: container })
+  })
+
+  it('TEST no empty frame when switching from off to reset.', function () {
+    cy.get(self.elements[0])
+      .trigger('mouseenter')
+      .frame()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('hidden')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('hidden')).to.equal(true)
+        cy.get(self.elements[0])
+          .click()
+          .wait(500) // after animation
+          .then(() => {
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[0].classList.contains('hidden')).to.equal(true)
+            expect(self.targets[1].classList.contains('on')).to.equal(true)
+            expect(self.targets[1].classList.contains('hidden')).to.equal(false)
+            cy.get(self.elements[0])
+              .click()
+              .wait(500) // after animation
+              .then(() => {
+                expect(self.targets[0].classList.contains('on')).to.equal(true)
+                expect(self.targets[0].classList.contains('hidden')).to.equal(false)
+                expect(self.targets[1].classList.contains('on')).to.equal(true)
+                expect(self.targets[1].classList.contains('hidden')).to.equal(true)
+                cy.get(self.elements[0])
+                  .trigger('mouseleave')
+                  .then(() => {
+                    expect(self.targets[0].classList.contains('on')).to.equal(false)
+                    expect(self.targets[0].classList.contains('hidden')).to.equal(false)
+                    expect(self.targets[1].classList.contains('on')).to.equal(false)
+                    expect(self.targets[1].classList.contains('hidden')).to.equal(true)
+                  })
+              })
+          })
       })
   })
 })

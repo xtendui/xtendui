@@ -107,16 +107,19 @@ title: "Toggle"
   </demoinline>
 </demo>
 
-TEST activation.
-
-TEST animation fast duration with and without `data-xt-duration`.
+`demos/components/tooltip/swap-click`
+- TEST activation.
 
 <demo>
   <demoinline src="demos/components/tooltip/swap-click">
   </demoinline>
+</demo>
+
+`demos/components/tooltip/swap-toggle`
+- TEST activation.
+
+<demo>
   <demoinline src="demos/components/tooltip/swap-toggle">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-fast">
   </demoinline>
 </demo>
 
