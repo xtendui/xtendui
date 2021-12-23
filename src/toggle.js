@@ -368,7 +368,8 @@ class Toggle {
         }
         // check if activated
         // fix check options.max for currents of _hashChange current reset if hash has current
-        if ((activated && currents < options.max) || obj.arr.some(x => self.getElements({ el: tr }).includes(x))) {
+        const els = self.getElements({ el: tr })
+        if ((activated && currents < options.max) || obj.arr.some(x => els.includes(x))) {
           // instant animation
           tr.classList.add(...self._classes)
           tr.classList.add(...self._classesIn)
