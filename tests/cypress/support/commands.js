@@ -6,6 +6,12 @@ Cypress.Commands.add('frame', () => {
   })
 })
 
+Cypress.Commands.add('frameDouble', () => {
+  return new Cypress.Promise(resolve => {
+    requestAnimationFrame(() => requestAnimationFrame(resolve))
+  })
+})
+
 Cypress.Commands.add('emptyWindow', () => {
   cy.window().then(win => {
     win.location.href = 'about:blank'

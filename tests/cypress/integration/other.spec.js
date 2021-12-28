@@ -87,3 +87,124 @@ describe('demos/hidden/test/mount-unmount', function () {
     })
   })
 })
+
+describe('demos/themes/navigation/megamenu-v1', function () {
+  let win
+  let Xt
+  let container
+  let self
+  let backdrop
+
+  beforeEach(function () {
+    cy.visit('/demos/themes/navigation/megamenu-v1').window().as('win')
+    cy.get('.megamenu').as('container') // not .get('@demo')
+    cy.get('@container').find('.xt-backdrop').as('backdrop')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-drop', el: container })
+    backdrop = this.backdrop[0]
+  })
+
+  it('TEST direction and zIndex sequential activation and zIndex reset.', function () {
+    cy.get(self.elements[0])
+      .trigger('mouseenter')
+      .wait(150) // after delay
+      .then(() => {
+        expect(self.targets[0].style.zIndex).to.equal('399')
+        expect(self.direction).to.equal(0)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+        })
+        cy.get(self.elements[1])
+          .trigger('mouseenter')
+          .wait(150) // after delay
+          .then(() => {
+            expect(self.targets[1].style.zIndex).to.equal('398')
+            expect(self.direction).to.equal(1)
+            expect(self.targets[0].classList.contains('on')).to.equal(false)
+            expect(self.targets[1].classList.contains('on')).to.equal(true)
+            cy.frameDouble().then(() => {
+              expect(self.targets[0].classList.contains('in')).to.equal(false)
+              expect(self.targets[1].classList.contains('in')).to.equal(true)
+            })
+            cy.get(self.elements[0])
+              .trigger('mouseenter')
+              .wait(150) // after delay
+              .then(() => {
+                expect(self.targets[0].style.zIndex).to.equal('397')
+                expect(self.direction).to.equal(-1)
+                expect(self.targets[0].classList.contains('on')).to.equal(true)
+                expect(self.targets[1].classList.contains('on')).to.equal(false)
+                cy.frameDouble().then(() => {
+                  expect(self.targets[0].classList.contains('in')).to.equal(true)
+                  expect(self.targets[1].classList.contains('in')).to.equal(false)
+                })
+                cy.get(self.elements[0])
+                  .trigger('mouseleave')
+                  .wait(150) // after delay
+                  .wait(750) // after animation
+                  .then(() => {
+                    expect(self.targets[0].style.zIndex).to.equal('400')
+                    expect(self.targets[1].style.zIndex).to.equal('400')
+                    expect(self.direction).to.equal(0)
+                    expect(self.targets[0].classList.contains('on')).to.equal(false)
+                    expect(self.targets[1].classList.contains('on')).to.equal(false)
+                    cy.frameDouble().then(() => {
+                      expect(self.targets[0].classList.contains('in')).to.equal(false)
+                      expect(self.targets[1].classList.contains('in')).to.equal(false)
+                    })
+                  })
+              })
+          })
+      })
+  })
+
+  it('TEST move slightly over other and then target should not change with delay, backdrop should not flickr.', function () {
+    cy.get(self.elements[0])
+      .trigger('mouseenter')
+      .wait(150) // after delay
+      .then(() => {
+        expect(self.direction).to.equal(0)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(backdrop.classList.contains('on')).to.equal(true)
+          cy.frameDouble().then(() => {
+            expect(backdrop.classList.contains('in')).to.equal(true)
+          })
+        })
+        cy.get(self.elements[1])
+          .trigger('mouseenter')
+          .then(() => {
+            cy.frameDouble().then(() => {
+              expect(backdrop.classList.contains('on')).to.equal(true)
+              cy.frameDouble().then(() => {
+                expect(backdrop.classList.contains('in')).to.equal(true)
+              })
+            })
+          })
+          .get(self.elements[0])
+          .trigger('mouseenter')
+          .then(() => {
+            expect(self.direction).to.equal(-1)
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[1].classList.contains('on')).to.equal(false)
+            cy.frameDouble().then(() => {
+              expect(self.targets[0].classList.contains('in')).to.equal(true)
+              expect(self.targets[1].classList.contains('in')).to.equal(false)
+              expect(backdrop.classList.contains('on')).to.equal(true)
+              cy.frameDouble().then(() => {
+                expect(backdrop.classList.contains('in')).to.equal(true)
+              })
+            })
+          })
+      })
+  })
+})

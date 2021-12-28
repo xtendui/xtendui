@@ -40,25 +40,29 @@ describe('demos/components/toggle/disabled', function () {
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
-        expect(self.targets[0].classList.contains('in')).to.equal(false)
         expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
-        expect(self.targets[1].classList.contains('in')).to.equal(true)
         expect(win.Xt.visible({ el: self1.targets[0] })).to.equal(true)
         expect(self1.targets[0].classList.contains('on')).to.equal(true)
-        expect(self1.targets[0].classList.contains('in')).to.equal(true)
         expect(win.Xt.visible({ el: self1.targets[1] })).to.equal(false)
         expect(self1.targets[1].classList.contains('on')).to.equal(false)
-        expect(self1.targets[1].classList.contains('in')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+          expect(self1.targets[0].classList.contains('in')).to.equal(true)
+          expect(self1.targets[1].classList.contains('in')).to.equal(false)
+        })
         cy.get(self1.elements[1])
           .click()
           .then(() => {
             expect(win.Xt.visible({ el: self1.targets[0] })).to.equal(false)
             expect(self1.targets[0].classList.contains('on')).to.equal(false)
-            expect(self1.targets[0].classList.contains('in')).to.equal(false)
             expect(win.Xt.visible({ el: self1.targets[1] })).to.equal(true)
             expect(self1.targets[1].classList.contains('on')).to.equal(true)
-            expect(self1.targets[1].classList.contains('in')).to.equal(true)
+            cy.frameDouble().then(() => {
+              expect(self1.targets[0].classList.contains('in')).to.equal(false)
+              expect(self1.targets[1].classList.contains('in')).to.equal(true)
+            })
           })
       })
   })
@@ -153,7 +157,7 @@ describe('demos/components/slider/disabled', function () {
     expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal('')
     expect(self.targets[4].classList.contains('on')).to.equal(true)
     expect(self.targets[5].classList.contains('on')).to.equal(true)
-    cy.frame().then(() => {
+    cy.frameDouble().then(() => {
       expect(self.targets[4].classList.contains('in')).to.equal(true)
       expect(self.targets[5].classList.contains('in')).to.equal(true)
       expect(container.querySelector('.xt-slides').style.transform).to.equal('translateX(-1376px)')
@@ -164,10 +168,12 @@ describe('demos/components/slider/disabled', function () {
         .then(() => {
           expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal(null)
           expect(self.targets[4].classList.contains('on')).to.equal(true)
-          expect(self.targets[4].classList.contains('in')).to.equal(true)
           expect(self.targets[5].classList.contains('on')).to.equal(false)
-          expect(self.targets[5].classList.contains('in')).to.equal(false)
           expect(container.querySelector('.xt-slides').style.transform).to.equal('translateX(-733px)')
+          cy.frameDouble().then(() => {
+            expect(self.targets[4].classList.contains('in')).to.equal(true)
+            expect(self.targets[5].classList.contains('in')).to.equal(false)
+          })
           cy.get(self.elements[6])
             .click()
             .then(() => {

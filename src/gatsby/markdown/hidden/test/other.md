@@ -23,11 +23,9 @@ title: "Other"
 
 ## Megamenu
 
-TEST move slightly over other and then target should not change with delay.
-
-TEST direction and zIndex sequential activation and zIndex reset.
-
-TEST backdrop should not flickr // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
+`demos/themes/navigation/megamenu-v1`
+- TEST direction and zIndex sequential activation and zIndex reset.
+- TEST move slightly over other and then target should not change with delay, backdrop should not flickr.
 
 [/demos/themes/navigation/megamenu-v1](/demos/themes/navigation/megamenu-v1).
 
