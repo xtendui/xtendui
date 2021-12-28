@@ -64,7 +64,7 @@ describe('demos/hidden/test/mount-unmount', function () {
             cy.viewport('macbook-13')
               .frame()
               .then(() => {
-                cy.get('@demo').should('have.attr', 'data-test-resize', '2')
+                cy.get(demo).should('have.attr', 'data-test-resize', '2')
               })
           })
       })
@@ -85,6 +85,95 @@ describe('demos/hidden/test/mount-unmount', function () {
       expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(0)
       expect(Xt._unmountArr.length).to.equal(count - 2)
     })
+  })
+})
+
+describe('demos/hidden/test/scrolltrigger-matches', function () {
+  let win
+  let Xt
+  let demo
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit('/demos/hidden/test/scrolltrigger-matches').window().as('win')
+    cy.get('.demo--scrolltrigger-matches').as('demo')
+    cy.get('@demo').find('[data-xt-overlay]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    demo = this.demo[0]
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  it('TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.', function () {
+    expect(Xt._mountArr.length).to.equal(6)
+    cy.viewport('iphone-6')
+      .frame()
+      .then(() => {
+        expect(Xt._mountArr.length).to.equal(6)
+        cy.get(demo)
+          .should('have.attr', 'data-test-refresh', '1')
+          .then(() => {
+            cy.viewport('macbook-13')
+              .frame()
+              .then(() => {
+                expect(Xt._mountArr.length).to.equal(6)
+                cy.get(demo).should('have.attr', 'data-test-refresh', '2')
+              })
+          })
+      })
+  })
+
+  it.only('TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.', function () {
+    expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+    cy.get(demo)
+      .should('have.attr', 'data-test-mount', '1')
+      .get(self.elements[0])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        cy.viewport('iphone-6')
+          .frame()
+          .then(() => {
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[0].classList.contains('in')).to.equal(true)
+            expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+            cy.get(self.targets[0].querySelector('.xt-dismiss'))
+              .click()
+              .then(() => {
+                expect(self.targets[0].classList.contains('on')).to.equal(false)
+                expect(self.targets[0].classList.contains('in')).to.equal(false)
+                cy.get(demo)
+                  .should('have.attr', 'data-test-mount', '1')
+                  .then(() => {
+                    cy.viewport('macbook-13')
+                      .frame()
+                      .then(() => {
+                        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+                        cy.get(self.elements[0])
+                          .click()
+                          .then(() => {
+                            expect(self.targets[0].classList.contains('on')).to.equal(true)
+                            expect(self.targets[0].classList.contains('in')).to.equal(true)
+                            cy.get(demo)
+                              .should('have.attr', 'data-test-mount', '1')
+                              .then(() => {
+                                demo.remove()
+                                cy.frame().then(() => {
+                                  expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(0)
+                                })
+                              })
+                          })
+                      })
+                  })
+              })
+          })
+      })
   })
 })
 

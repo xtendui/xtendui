@@ -21,6 +21,14 @@ title: "Other"
   </demoinline>
 </demo>
 
+## ScrollTrigger Matches
+
+`demos/hidden/test/scrolltrigger-matches`
+- TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.
+- TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.
+
+[/demos/hidden/test/scrolltrigger-matches](/demos/hidden/test/scrolltrigger-matches).
+
 ## Megamenu
 
 `demos/themes/navigation/megamenu-v1`
@@ -28,18 +36,6 @@ title: "Other"
 - TEST move slightly over other and then target should not change with delay, backdrop should not flickr.
 
 [/demos/themes/navigation/megamenu-v1](/demos/themes/navigation/megamenu-v1).
-
-## ScrollTrigger Matches
-
-TEST resize and open/close overlay should always work (not disabled so not unmount/mount).
-
-TEST pin mount this should NOT be called on resize and xtNamespace should be 1.
-
-TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.
-
-TEST pin unmount this should NOT be called on resize and xtNamespace should be 0 on unmount.
-
-[/demos/hidden/test/scrolltrigger-matches](/demos/hidden/test/scrolltrigger-matches).
 
 ## Infinitescroll
 
