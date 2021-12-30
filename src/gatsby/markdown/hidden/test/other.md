@@ -56,8 +56,7 @@ title: "Other"
 
 ## Infinitescroll
 
-TEST change page browser navigation.
-
-TEST initial activation on browser location.
+`demos/components/listing/infinitescroll`
+- TEST initial activation and scroll position, scroll activation, browser navigation.
 
 [/demos/components/listing/infinitescroll?false=2](/demos/components/listing/infinitescroll?false=2).

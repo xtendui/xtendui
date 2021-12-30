@@ -102,7 +102,7 @@ describe('demos/components/overlay/disabled', function () {
       .get(self1.elements[0])
       .click()
       .get(container)
-      .should('have.not.attr', 'data-xt-overlay-disabled') // @RACECONDITION
+      .should('have.not.attr', 'data-xt-overlay-disabled') // racecondition
       .frame()
       .then(() => {
         expect(container.getAttribute('data-xt-overlay-disabled')).to.equal(null)
@@ -119,7 +119,7 @@ describe('demos/components/overlay/disabled', function () {
                   .click()
                   .viewport('macbook-13')
                   .get(container)
-                  .should('have.attr', 'data-xt-overlay-disabled', '') // @RACECONDITION
+                  .should('have.attr', 'data-xt-overlay-disabled', '') // racecondition
                   .frame()
                   .then(() => {
                     expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
@@ -163,7 +163,7 @@ describe('demos/components/slider/disabled', function () {
       expect(container.querySelector('.xt-slides').style.transform).to.equal('translateX(-1376px)')
       cy.viewport('iphone-6')
         .get(container)
-        .should('have.not.attr', 'data-xt-slider-disabled') // @RACECONDITION
+        .should('have.not.attr', 'data-xt-slider-disabled') // racecondition
         .frame()
         .then(() => {
           expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal(null)
@@ -218,7 +218,7 @@ describe('demos/components/toggle/matches', function () {
         expect(self.targets[1].classList.contains('on')).to.equal(true)
         cy.viewport('iphone-6')
           .get(self.targets[1])
-          .should('have.not.class', 'on') // @RACECONDITION
+          .should('have.not.class', 'on') // racecondition
           .frame()
           .then(() => {
             expect(self.options.max).to.equal(1)

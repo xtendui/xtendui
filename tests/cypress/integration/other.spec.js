@@ -55,7 +55,7 @@ describe('demos/hidden/test/mount-unmount', function () {
       .go(-1)
       .get('.demo--mount-unmount')
       .as('demo')
-      .should('be.visible') // @RACECONDITION
+      .should('be.visible') // racecondition
       .frame()
       .then(() => {
         cy.viewport('iphone-6')
@@ -523,6 +523,60 @@ describe('demos/components/scrollto/toggle', function () {
               })
             })
           })
+      })
+    })
+  })
+})
+
+describe('demos/components/listing/infinitescroll', function () {
+  let win
+  let doc
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit('/demos/components/listing/infinitescroll?false=2').window().as('win').document().as('doc')
+    cy.get('.demo--infinitescroll').as('demo')
+    cy.get('@demo').find('.infinitescroll').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    doc = this.doc
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-infinitescroll', el: container })
+  })
+
+  it.only('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {
+    expect(self.paginations[0].innerText).to.equal('Page 2 of 4')
+    expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
+    expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
+    doc.scrollingElement.scrollTo(0, 1000)
+    cy.wait(500).then(() => {
+      win.dispatchEvent(new Event('scroll'))
+      cy.addEventListener(container, 'populate.xt.infinitescroll', () => {
+        cy.frame().then(() => {
+          expect(self.paginations[0].innerText).to.equal('Page 3 of 4')
+          expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
+          expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
+          cy.visit(url).then(() => {
+            cy.go(-1)
+              .get('[data-xt-infinitescroll-pagination]') // racecondition
+              .document()
+              .then(doc => {
+                expect(doc.scrollingElement.scrollTop).to.closeTo(399, 10)
+                doc.scrollingElement.scrollTo(0, 0)
+                cy.wait(500).then(() => {
+                  win.dispatchEvent(new Event('scroll'))
+                  expect(doc.querySelector('[data-xt-infinitescroll-pagination]').innerText).to.equal('Page 2 of 4')
+                  expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-up]') })).to.equal(true)
+                  expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-down]') })).to.equal(true)
+                })
+              })
+          })
+        })
       })
     })
   })

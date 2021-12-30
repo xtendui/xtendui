@@ -19,9 +19,9 @@ describe('docs', function () {
   it('TEST on change page menu mobile docs should not flickr, should be visible, should be unique, to desktop should disable overlay.', function () {
     cy.viewport('iphone-6')
       .get('.gatsby_menu--button')
-      .should('have.attr', 'data-xt-overlay-init', '') // @RACECONDITION
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .click()
-      .should('have.class', 'done') // @RACECONDITION
+      .should('have.class', 'done') // racecondition
       .frame()
       .then(() => {
         cy.get('.gatsby_button-site-header_link')
@@ -55,7 +55,7 @@ describe('docs', function () {
                         expect(this.overlay[0].parentNode).to.have.class('xt-scrollbar-overlay')
                         cy.viewport('macbook-13')
                           .get('@overlay')
-                          .should('have.attr', 'data-xt-overlay-disabled', '') // @RACECONDITION
+                          .should('have.attr', 'data-xt-overlay-disabled', '') // racecondition
                           .frame()
                           .then(() => {
                             expect(this.overlay[0].parentNode.tagName).to.not.equal('BODY')
@@ -115,7 +115,7 @@ describe('docs', function () {
     cy.reload()
     cy.get('#gatsby_open-full')
       .as('full')
-      .should('be.visible') // @RACECONDITION
+      .should('be.visible') // racecondition
       .frame()
       .then(() => {
         const full = this.full[0]

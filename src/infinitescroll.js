@@ -290,7 +290,7 @@ class Infinitescroll {
           }
         }
       }
-      if (options.events.scrollDown && self._scrollTopOld < scrollTop) {
+      if (options.events.scrollDown && self._scrollTopOld <= scrollTop) {
         for (const trigger of self.scrollDown) {
           const top = trigger.offsetTop
           const bottom = top + trigger.offsetHeight
