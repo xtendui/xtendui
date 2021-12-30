@@ -118,8 +118,8 @@ const container = self.container
 | Property                   | `disabled:Boolean`       | If component disabled            |
 | Property                   | `container:Node`       | Container node             |
 | Property                   | `current:Number`       | Current page             |
-| Property                   | `triggersUp:Nodes`       | Trigger elements when scrolling up             |
-| Property                   | `triggersDown:Nodes`       | Trigger elements when scrolling down             |
+| Property                   | `scrollUp:Nodes`       | Trigger elements when scrolling up             |
+| Property                   | `scrollDown:Nodes`       | Trigger elements when scrolling down             |
 | Property                   | `itemsContainer:Node`       | Items container node             |
 | Property                   | `spaceAdditionals:Node`       | Nodes for space additional             |
 | Property                   | `paginations:Node`       | Paginations nodes             |
