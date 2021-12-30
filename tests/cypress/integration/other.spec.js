@@ -406,7 +406,8 @@ describe('demos/components/scrollto/overlay', function () {
       })
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
-      .visit('/demos/components/scrollto/overlay#')
+      .get(this.links[1])
+      .click()
       .go(-1)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
