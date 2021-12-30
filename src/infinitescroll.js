@@ -423,17 +423,20 @@ class Infinitescroll {
     const options = self.options
     // paginate
     for (const pagination of self.paginations) {
-      pagination.dataset.html = pagination.dataset.html ? pagination.dataset.html : pagination.innerHTML
-      let html = pagination.dataset.html
-      let regex = new RegExp('xt-num', 'ig')
-      if (html.search(regex) !== -1) {
-        html = html.replace(regex, self.current)
+      if (!pagination.dataset.current || self.current > parseFloat(pagination.dataset.current)) {
+        pagination.dataset.current = self.current
+        pagination.dataset.html = pagination.dataset.html ? pagination.dataset.html : pagination.innerHTML
+        let html = pagination.dataset.html
+        let regex = new RegExp('xt-num', 'ig')
+        if (html.search(regex) !== -1) {
+          html = html.replace(regex, self.current)
+        }
+        regex = new RegExp('xt-tot', 'ig')
+        if (html.search(regex) !== -1) {
+          html = html.replace(regex, options.max)
+        }
+        pagination.innerHTML = Xt.sanitize(html)
       }
-      regex = new RegExp('xt-tot', 'ig')
-      if (html.search(regex) !== -1) {
-        html = html.replace(regex, options.max)
-      }
-      pagination.innerHTML = Xt.sanitize(html)
     }
   }
 
