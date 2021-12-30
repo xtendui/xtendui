@@ -51,7 +51,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST unmount, this should increase by one on changing page and resize.', function () {
-    cy.visit('/hidden/test')
+    cy.visit('/hidden/test/other')
       .go(-1)
       .get('.demo--mount-unmount')
       .as('demo')
@@ -64,7 +64,7 @@ describe('demos/hidden/test/mount-unmount', function () {
             cy.viewport('macbook-13')
               .frame()
               .then(() => {
-                cy.get(demo).should('have.attr', 'data-test-resize', '2')
+                cy.get('@demo').should('have.attr', 'data-test-resize', '2')
               })
           })
       })
@@ -115,22 +115,22 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
       .frame()
       .then(() => {
         expect(Xt._mountArr.length).to.equal(6)
-        cy.get(demo)
+        cy.get('@demo')
           .should('have.attr', 'data-test-refresh', '1')
           .then(() => {
             cy.viewport('macbook-13')
               .frame()
               .then(() => {
                 expect(Xt._mountArr.length).to.equal(6)
-                cy.get(demo).should('have.attr', 'data-test-refresh', '2')
+                cy.get('@demo').should('have.attr', 'data-test-refresh', '2')
               })
           })
       })
   })
 
-  it.only('TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.', function () {
+  it('TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.', function () {
     expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
-    cy.get(demo)
+    cy.get('@demo')
       .should('have.attr', 'data-test-mount', '1')
       .get(self.elements[0])
       .click()
@@ -148,7 +148,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
               .then(() => {
                 expect(self.targets[0].classList.contains('on')).to.equal(false)
                 expect(self.targets[0].classList.contains('in')).to.equal(false)
-                cy.get(demo)
+                cy.get('@demo')
                   .should('have.attr', 'data-test-mount', '1')
                   .then(() => {
                     cy.viewport('macbook-13')
@@ -160,7 +160,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
                           .then(() => {
                             expect(self.targets[0].classList.contains('on')).to.equal(true)
                             expect(self.targets[0].classList.contains('in')).to.equal(true)
-                            cy.get(demo)
+                            cy.get('@demo')
                               .should('have.attr', 'data-test-mount', '1')
                               .then(() => {
                                 demo.remove()
@@ -295,5 +295,235 @@ describe('demos/themes/navigation/megamenu-v1', function () {
             })
           })
       })
+  })
+})
+
+describe('demos/components/scrollto/usage', function () {
+  let doc
+
+  beforeEach(function () {
+    cy.visit('/demos/components/scrollto/usage#anchor-2').document().as('doc')
+    cy.get('.demo--scrollto').as('demo')
+    cy.get('a').as('links')
+    cy.get('.button--custom').as('buttons')
+  })
+
+  beforeEach(function () {
+    doc = this.doc
+  })
+
+  it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
+    cy.frameDouble().then(() => {
+      expect(this.links[0].classList.contains('on')).to.equal(false)
+      expect(this.links[1].classList.contains('on')).to.equal(false)
+      expect(this.links[2].classList.contains('on')).to.equal(true)
+      expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 10)
+      doc.scrollingElement.scrollTo(0, 0)
+      cy.wait(500).then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(true)
+        expect(this.links[1].classList.contains('on')).to.equal(false)
+        expect(this.links[2].classList.contains('on')).to.equal(false)
+        cy.get(this.links[1])
+          .click()
+          .wait(1000) // after animation
+          .then(() => {
+            expect(this.links[0].classList.contains('on')).to.equal(false)
+            expect(this.links[1].classList.contains('on')).to.equal(true)
+            expect(this.links[2].classList.contains('on')).to.equal(false)
+            expect(doc.scrollingElement.scrollTop).to.closeTo(801, 10)
+            cy.go(-1).then(() => {
+              expect(this.links[0].classList.contains('on')).to.equal(false)
+              expect(this.links[1].classList.contains('on')).to.equal(false)
+              expect(this.links[2].classList.contains('on')).to.equal(true)
+              expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 10)
+              cy.go(1).then(() => {
+                expect(this.links[0].classList.contains('on')).to.equal(false)
+                expect(this.links[1].classList.contains('on')).to.equal(true)
+                expect(this.links[2].classList.contains('on')).to.equal(false)
+                expect(doc.scrollingElement.scrollTop).to.closeTo(801, 10)
+                cy.get(this.buttons[0])
+                  .click()
+                  .wait(1000) // after animation
+                  .then(() => {
+                    expect(this.links[0].classList.contains('on')).to.equal(false)
+                    expect(this.links[1].classList.contains('on')).to.equal(true)
+                    expect(this.links[2].classList.contains('on')).to.equal(false)
+                    expect(doc.scrollingElement.scrollTop).to.closeTo(1633, 10)
+                  })
+              })
+            })
+          })
+      })
+    })
+  })
+})
+
+describe('demos/components/scrollto/overlay', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit('/demos/components/scrollto/overlay#anchor-2').window().as('win')
+    cy.get('.demo--scrollto-overlay').as('demo')
+    cy.get('@demo').find('[data-xt-overlay]').as('container')
+    cy.get('a').as('links')
+    cy.get('.button--custom').as('buttons')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
+    cy.frameDouble().then(() => {
+      expect(self.targets[0].classList.contains('on')).to.equal(true)
+      cy.frameDouble().then(() => {
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+      })
+      expect(this.links[0].classList.contains('on')).to.equal(false)
+      expect(this.links[1].classList.contains('on')).to.equal(false)
+      expect(this.links[2].classList.contains('on')).to.equal(true)
+      expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
+      self.targets[0].scrollTo(0, 0)
+      cy.wait(500).then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(true)
+        expect(this.links[1].classList.contains('on')).to.equal(false)
+        expect(this.links[2].classList.contains('on')).to.equal(false)
+        cy.get(this.links[4])
+          .click()
+          .wait(1000) // after animation
+          .then(() => {
+            expect(this.links[0].classList.contains('on')).to.equal(false)
+            expect(this.links[1].classList.contains('on')).to.equal(true)
+            expect(this.links[2].classList.contains('on')).to.equal(false)
+            expect(self.targets[0].scrollTop).to.closeTo(801, 10)
+            cy.get(self.targets[0].querySelector('.xt-dismiss'))
+              .click()
+              .then(() => {
+                cy.visit('/demos/components/scrollto/overlay#').then(() => {
+                  cy.go(-1).then(() => {
+                    expect(self.targets[0].classList.contains('on')).to.equal(true)
+                    cy.frameDouble().then(() => {
+                      expect(self.targets[0].classList.contains('in')).to.equal(true)
+                    })
+                    expect(this.links[0].classList.contains('on')).to.equal(false)
+                    expect(this.links[1].classList.contains('on')).to.equal(false)
+                    expect(this.links[2].classList.contains('on')).to.equal(true)
+                    expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
+                    cy.get(self.targets[0].querySelector('.xt-dismiss'))
+                      .click()
+                      .then(() => {
+                        expect(self.targets[0].classList.contains('on')).to.equal(false)
+                        cy.frameDouble().then(() => {
+                          expect(self.targets[0].classList.contains('in')).to.equal(false)
+                        })
+                        cy.get(this.links[2])
+                          .click()
+                          .then(() => {
+                            expect(self.targets[0].classList.contains('on')).to.equal(true)
+                            cy.frameDouble().then(() => {
+                              expect(self.targets[0].classList.contains('in')).to.equal(true)
+                            })
+                            expect(this.links[0].classList.contains('on')).to.equal(false)
+                            expect(this.links[1].classList.contains('on')).to.equal(false)
+                            expect(this.links[2].classList.contains('on')).to.equal(true)
+                            expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
+                            cy.get(this.buttons[1])
+                              .click()
+                              .wait(1000) // after animation
+                              .then(() => {
+                                expect(this.links[0].classList.contains('on')).to.equal(false)
+                                expect(this.links[1].classList.contains('on')).to.equal(true)
+                                expect(this.links[2].classList.contains('on')).to.equal(false)
+                                expect(self.targets[0].scrollTop).to.closeTo(1633, 10)
+                              })
+                          })
+                      })
+                  })
+                })
+              })
+          })
+      })
+    })
+  })
+})
+
+describe('demos/components/scrollto/toggle', function () {
+  let win
+  let doc
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit('/demos/components/scrollto/toggle#anchor-2').window().as('win').document().as('doc')
+    cy.get('.demo--scrollto-toggle').as('demo')
+    cy.get('@demo').find('[data-xt-toggle]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    doc = this.doc
+    Xt = win.Xt
+    container = this.container[0]
+    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements.', function () {
+    cy.frameDouble().then(() => {
+      expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+      expect(self.targets[0].classList.contains('on')).to.equal(false)
+      expect(self.targets[1].classList.contains('on')).to.equal(false)
+      expect(self.targets[2].classList.contains('on')).to.equal(true)
+      cy.frameDouble().then(() => {
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        expect(self.targets[1].classList.contains('in')).to.equal(false)
+        expect(self.targets[2].classList.contains('in')).to.equal(true)
+      })
+      doc.scrollingElement.scrollTo(0, 0)
+      cy.wait(500).then(() => {
+        cy.get(self.elements[0])
+          .click()
+          .wait(1000) // after animation
+          .then(() => {
+            expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(self.targets[1].classList.contains('on')).to.equal(false)
+            expect(self.targets[2].classList.contains('on')).to.equal(false)
+            cy.frameDouble().then(() => {
+              expect(self.targets[0].classList.contains('in')).to.equal(true)
+              expect(self.targets[1].classList.contains('in')).to.equal(false)
+              expect(self.targets[2].classList.contains('in')).to.equal(false)
+            })
+            cy.go(-1).then(() => {
+              expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+              expect(self.targets[0].classList.contains('on')).to.equal(false)
+              expect(self.targets[1].classList.contains('on')).to.equal(false)
+              expect(self.targets[2].classList.contains('on')).to.equal(true)
+              cy.frameDouble().then(() => {
+                expect(self.targets[0].classList.contains('in')).to.equal(false)
+                expect(self.targets[1].classList.contains('in')).to.equal(false)
+                expect(self.targets[2].classList.contains('in')).to.equal(true)
+              })
+              cy.go(1).then(() => {
+                expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+                expect(self.targets[0].classList.contains('on')).to.equal(true)
+                expect(self.targets[1].classList.contains('on')).to.equal(false)
+                expect(self.targets[2].classList.contains('on')).to.equal(false)
+                cy.frameDouble().then(() => {
+                  expect(self.targets[0].classList.contains('in')).to.equal(true)
+                  expect(self.targets[1].classList.contains('in')).to.equal(false)
+                  expect(self.targets[2].classList.contains('in')).to.equal(false)
+                })
+              })
+            })
+          })
+      })
+    })
   })
 })
