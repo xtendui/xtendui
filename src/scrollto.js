@@ -176,6 +176,8 @@ class Scrollto {
   _eventScrollto({ el, tr } = {}, e) {
     const self = this
     const options = self.options
+    // hashchange
+    self.hashchange = el ? self.hashchange : false
     // element
     el = el ?? e.target
     // not null and HTML element and not window
@@ -507,7 +509,7 @@ Scrollto.optionsDefault = {
   // event
   events: 'scroll off.xt.overlay',
   scrollActivation: true,
-  scrollDelay: 150,
+  scrollDelay: 200,
   hash: false,
   // scroll
   position: ({ self }) => {
