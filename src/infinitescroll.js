@@ -29,8 +29,8 @@ class Infinitescroll {
   disabled = false
   container
   current
-  triggersUp
-  triggersDown
+  scrollUp
+  scrollDown
   itemsContainer
   spaceAdditionals
   paginations
@@ -90,8 +90,8 @@ class Infinitescroll {
     // vars
     self.initial = true
     // elements
-    self.triggersUp = self.container.querySelectorAll(options.elements.scrollUp)
-    self.triggersDown = self.container.querySelectorAll(options.elements.scrollDown)
+    self.scrollUp = self.container.querySelectorAll(options.elements.scrollUp)
+    self.scrollDown = self.container.querySelectorAll(options.elements.scrollDown)
     self.itemsContainer = self.container.querySelector(options.elements.itemsContainer)
     self.spaceAdditionals = self.container.querySelectorAll(options.elements.spaceAdditional)
     self.paginations = self.container.querySelectorAll(options.elements.pagination)
@@ -109,7 +109,7 @@ class Infinitescroll {
     // trigger
     const events = options.events?.on ? [...options.events.on.split(' ')] : []
     if (events.length) {
-      for (const trigger of [...Array.from(self.triggersUp), ...Array.from(self.triggersDown)]) {
+      for (const trigger of [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]) {
         const triggerHandler = Xt.dataStorage.put(
           trigger,
           `${options.events.on}/${self.ns}`,
@@ -282,7 +282,7 @@ class Infinitescroll {
     const events = options.events?.on ? [...options.events.on.split(' ')] : []
     if (events.length) {
       if (options.events.scrollUp && self._scrollTopOld > scrollTop) {
-        for (const trigger of self.triggersUp) {
+        for (const trigger of self.scrollUp) {
           const top = trigger.offsetTop
           if (scrollTop < top) {
             const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.on}/${self.ns}`)
@@ -291,7 +291,7 @@ class Infinitescroll {
         }
       }
       if (options.events.scrollDown && self._scrollTopOld < scrollTop) {
-        for (const trigger of self.triggersDown) {
+        for (const trigger of self.scrollDown) {
           const top = trigger.offsetTop
           const bottom = top + trigger.offsetHeight
           if (scrollTop + windowHeight > bottom) {
@@ -546,7 +546,7 @@ class Infinitescroll {
     removeEventListener('beforeunload', beforeunloadHandler)
     const scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
     removeEventListener('scroll', scrollHandler)
-    for (const trigger of [...Array.from(self.triggersUp), ...Array.from(self.triggersDown)]) {
+    for (const trigger of [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]) {
       const triggerHandler = Xt.dataStorage.get(trigger, `${options.events.on}/${self.ns}`)
       trigger.removeEventListener(options.events.on, triggerHandler)
     }
