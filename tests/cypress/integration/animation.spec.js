@@ -28,32 +28,32 @@ describe('demos/components/toggle/animation-queue', function () {
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
         })
-        cy.get(self.elements[1])
-          .wait(500) // after animation
-          .click()
-          .then(() => {
-            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
-            expect(self.targets[0].classList.contains('on')).to.equal(false)
-            expect(self.targets[0].classList.contains('out')).to.equal(true)
-            expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
-            expect(self.targets[1].classList.contains('on')).to.equal(false)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(false)
-              expect(self.targets[1].classList.contains('in')).to.equal(false)
-            })
-          })
-          .wait(500) // after animation
-          .then(() => {
-            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
-            expect(self.targets[0].classList.contains('on')).to.equal(false)
-            expect(self.targets[0].classList.contains('out')).to.equal(false)
-            expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
-            expect(self.targets[1].classList.contains('on')).to.equal(true)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(false)
-              expect(self.targets[1].classList.contains('in')).to.equal(true)
-            })
-          })
+      })
+      .get(self.elements[1])
+      .wait(500) // after animation
+      .click()
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('out')).to.equal(true)
+        expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+        })
+      })
+      .wait(500) // after animation
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('out')).to.equal(false)
+        expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+        })
       })
   })
 })
@@ -86,23 +86,23 @@ describe('demos/components/toggle/animation-noqueue', function () {
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
         })
-        cy.get(self.elements[1])
-          .click()
-          .then(() => {
-            expect(self.targets[0].classList.contains('on')).to.equal(false)
-            expect(self.targets[0].classList.contains('out')).to.equal(true)
-            expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
-            expect(self.targets[1].classList.contains('on')).to.equal(true)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(false)
-              expect(self.targets[1].classList.contains('in')).to.equal(true)
-            })
-          })
-          .wait(500) // after animation
-          .then(() => {
-            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
-            expect(self.targets[0].classList.contains('out')).to.equal(false)
-          })
+      })
+      .get(self.elements[1])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('out')).to.equal(true)
+        expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+        })
+      })
+      .wait(500) // after animation
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
+        expect(self.targets[0].classList.contains('out')).to.equal(false)
       })
   })
 })
@@ -135,13 +135,13 @@ describe('demos/components/toggle/animation-inverse', function () {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
         expect(self.targets[0].classList.contains('done')).to.equal(true)
         expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
-        cy.get(self.elements[1])
-          .click()
-          .then(() => {
-            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
-            expect(self.targets[0].classList.contains('done')).to.equal(false)
-            expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
-          })
+      })
+      .get(self.elements[1])
+      .click()
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+        expect(self.targets[0].classList.contains('done')).to.equal(false)
+        expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
       })
   })
 })
@@ -174,49 +174,49 @@ describe('demos/components/toggle/animation-duration-delay', function () {
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
         })
-        cy.get(self.elements[1])
-          .click()
-          .wait(750) // after animation
-          .then(() => {
-            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
-            expect(self.targets[3].classList.contains('on')).to.equal(false)
-            expect(win.Xt.visible({ el: self.targets[4] })).to.equal(true)
-            expect(self.targets[4].classList.contains('on')).to.equal(true)
-            cy.frameDouble().then(() => {
-              expect(self.targets[3].classList.contains('in')).to.equal(false)
-              expect(self.targets[4].classList.contains('in')).to.equal(true)
-            })
-            cy.get(self.elements[0])
-              .click()
-              .wait(750) // after animation
-              .then(() => {
-                expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
-                expect(self.targets[0].classList.contains('on')).to.equal(true)
-                expect(win.Xt.visible({ el: self.targets[4] })).to.equal(false)
-                expect(self.targets[7].classList.contains('on')).to.equal(false)
-                cy.frameDouble().then(() => {
-                  expect(self.targets[0].classList.contains('in')).to.equal(true)
-                  expect(self.targets[7].classList.contains('in')).to.equal(false)
-                })
-                cy.get(self.elements[0])
-                  .click()
-                  .wait(1000) // after animation
-                  .then(() => {
-                    expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
-                    expect(self.targets[0].classList.contains('on')).to.equal(false)
-                    expect(self.targets[3].classList.contains('on')).to.equal(false)
-                    expect(win.Xt.visible({ el: self.targets[4] })).to.equal(false)
-                    expect(self.targets[4].classList.contains('on')).to.equal(false)
-                    expect(self.targets[7].classList.contains('on')).to.equal(false)
-                    cy.frameDouble().then(() => {
-                      expect(self.targets[0].classList.contains('in')).to.equal(false)
-                      expect(self.targets[3].classList.contains('in')).to.equal(false)
-                      expect(self.targets[4].classList.contains('in')).to.equal(false)
-                      expect(self.targets[7].classList.contains('in')).to.equal(false)
-                    })
-                  })
-              })
-          })
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(750) // after animation
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(win.Xt.visible({ el: self.targets[4] })).to.equal(true)
+        expect(self.targets[4].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[3].classList.contains('in')).to.equal(false)
+          expect(self.targets[4].classList.contains('in')).to.equal(true)
+        })
+      })
+      .get(self.elements[0])
+      .click()
+      .wait(750) // after animation
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(win.Xt.visible({ el: self.targets[4] })).to.equal(false)
+        expect(self.targets[7].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[7].classList.contains('in')).to.equal(false)
+        })
+      })
+      .get(self.elements[0])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(win.Xt.visible({ el: self.targets[4] })).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[7].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[3].classList.contains('in')).to.equal(false)
+          expect(self.targets[4].classList.contains('in')).to.equal(false)
+          expect(self.targets[7].classList.contains('in')).to.equal(false)
+        })
       })
   })
 })
@@ -250,36 +250,36 @@ describe('demos/components/toggle/animation-css', function () {
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
         })
-        cy.get(self.elements[1])
-          .click()
-          .wait(1000) // after animation
-          .then(() => {
-            expect(self.targets[0].classList.contains('on')).to.equal(false)
-            expect(self.targets[0].classList.contains('dir-before')).to.equal(false)
-            expect(self.targets[0].classList.contains('dir-after')).to.equal(true)
-            expect(self.targets[1].classList.contains('on')).to.equal(true)
-            expect(self.targets[1].classList.contains('dir-before')).to.equal(false)
-            expect(self.targets[1].classList.contains('dir-after')).to.equal(true)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(false)
-              expect(self.targets[1].classList.contains('in')).to.equal(true)
-            })
-            cy.get(self.elements[0])
-              .click()
-              .wait(1000) // after animation
-              .then(() => {
-                expect(self.targets[0].classList.contains('on')).to.equal(true)
-                expect(self.targets[0].classList.contains('dir-before')).to.equal(true)
-                expect(self.targets[0].classList.contains('dir-after')).to.equal(false)
-                expect(self.targets[1].classList.contains('on')).to.equal(false)
-                expect(self.targets[1].classList.contains('dir-before')).to.equal(true)
-                expect(self.targets[1].classList.contains('dir-after')).to.equal(false)
-                cy.frameDouble().then(() => {
-                  expect(self.targets[0].classList.contains('in')).to.equal(true)
-                  expect(self.targets[1].classList.contains('in')).to.equal(false)
-                })
-              })
-          })
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('dir-before')).to.equal(false)
+        expect(self.targets[0].classList.contains('dir-after')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('dir-before')).to.equal(false)
+        expect(self.targets[1].classList.contains('dir-after')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+        })
+      })
+      .get(self.elements[0])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('dir-before')).to.equal(true)
+        expect(self.targets[0].classList.contains('dir-after')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('dir-before')).to.equal(true)
+        expect(self.targets[1].classList.contains('dir-after')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+        })
       })
   })
 })
@@ -305,10 +305,11 @@ describe('demos/components/slider/animation-css', function () {
 
   it('TEST activation.', function () {
     expect(self.targets[1].classList.contains('on')).to.equal(true)
-    cy.frameDouble().then(() => {
-      expect(self.targets[1].classList.contains('in')).to.equal(true)
-    })
-    cy.get(self.elements[1])
+    cy.frameDouble()
+      .then(() => {
+        expect(self.targets[1].classList.contains('in')).to.equal(true)
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -356,30 +357,30 @@ describe('demos/components/toggle/animation-js', function () {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
         })
         expect(self.direction).to.equal(0)
-        cy.get(self.elements[1])
-          .click()
-          .wait(1000) // after animation
-          .then(() => {
-            expect(self.targets[0].classList.contains('on')).to.equal(false)
-            expect(self.direction).to.equal(1)
-            expect(self.targets[1].classList.contains('on')).to.equal(true)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(false)
-              expect(self.targets[1].classList.contains('in')).to.equal(true)
-            })
-            cy.get(self.elements[0])
-              .click()
-              .wait(1000) // after animation
-              .then(() => {
-                expect(self.targets[0].classList.contains('on')).to.equal(true)
-                expect(self.direction).to.equal(-1)
-                expect(self.targets[1].classList.contains('on')).to.equal(false)
-                cy.frameDouble().then(() => {
-                  expect(self.targets[0].classList.contains('in')).to.equal(true)
-                  expect(self.targets[1].classList.contains('in')).to.equal(false)
-                })
-              })
-          })
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.direction).to.equal(1)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+        })
+      })
+      .get(self.elements[0])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.direction).to.equal(-1)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+        })
       })
   })
 })
@@ -417,25 +418,25 @@ describe('demos/components/slider/animation-js', function () {
         expect(self.targets[5].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
         expect(self.targets[6].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
       })
-    cy.get(self.elements[1])
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
           'translate(0px, 0px)'
         )
-        cy.wait(500) // after animation
-          .then(() => {
-            expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
-              'translate(0px, 0px)'
-            )
-            expect(self.targets[0].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
-            expect(self.targets[1].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
-            expect(self.targets[2].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
-            expect(self.targets[3].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
-            expect(self.targets[4].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
-            expect(self.targets[5].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
-            expect(self.targets[6].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
-          })
+      })
+      .wait(500) // after animation
+      .then(() => {
+        expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
+          'translate(0px, 0px)'
+        )
+        expect(self.targets[0].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
+        expect(self.targets[1].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
+        expect(self.targets[2].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[3].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[4].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[5].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
+        expect(self.targets[6].querySelector('[data-node-target-content]').style.opacity).to.equal('0')
       })
   })
 })
@@ -465,22 +466,22 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
       .then(() => {
         expect(self.targets[0].style.height).to.contains('px')
         expect(self.targets[0].style.maxHeight).to.equal('none')
-        cy.wait(500) // after animation
-          .then(() => {
-            expect(self.targets[0].style.height).to.equal('inherit')
-            expect(self.targets[0].style.maxHeight).to.equal('none')
-          })
-          .get(self.elements[0])
-          .click()
-          .then(() => {
-            expect(self.targets[0].style.height).to.contains('px')
-            expect(self.targets[0].style.maxHeight).to.equal('none')
-            cy.wait(500) // after animation
-              .then(() => {
-                expect(self.targets[0].style.height).to.equal('')
-                expect(self.targets[0].style.maxHeight).to.equal('')
-              })
-          })
+      })
+      .wait(500) // after animation
+      .then(() => {
+        expect(self.targets[0].style.height).to.equal('inherit')
+        expect(self.targets[0].style.maxHeight).to.equal('none')
+      })
+      .get(self.elements[0])
+      .click()
+      .then(() => {
+        expect(self.targets[0].style.height).to.contains('px')
+        expect(self.targets[0].style.maxHeight).to.equal('none')
+      })
+      .wait(500) // after animation
+      .then(() => {
+        expect(self.targets[0].style.height).to.equal('')
+        expect(self.targets[0].style.maxHeight).to.equal('')
       })
   })
 })

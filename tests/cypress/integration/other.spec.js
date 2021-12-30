@@ -51,23 +51,18 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST unmount, this should increase by one on changing page and resize.', function () {
-    cy.visit('/hidden/test/other')
+    cy.visit('/hidden/test')
       .go(-1)
       .get('.demo--mount-unmount')
       .as('demo')
       .should('be.visible') // racecondition
       .frame()
-      .then(() => {
-        cy.viewport('iphone-6')
-          .frame()
-          .then(() => {
-            cy.viewport('macbook-13')
-              .frame()
-              .then(() => {
-                cy.get('@demo').should('have.attr', 'data-test-resize', '2')
-              })
-          })
-      })
+      .viewport('iphone-6')
+      .frame()
+      .viewport('macbook-13')
+      .frame()
+      .get('@demo')
+      .should('have.attr', 'data-test-resize', '2')
   })
 
   it('TEST unmount should disable on deactivate, should remove from dom overlay.', function () {
@@ -115,17 +110,16 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
       .frame()
       .then(() => {
         expect(Xt._mountArr.length).to.equal(6)
-        cy.get('@demo')
-          .should('have.attr', 'data-test-refresh', '1')
-          .then(() => {
-            cy.viewport('macbook-13')
-              .frame()
-              .then(() => {
-                expect(Xt._mountArr.length).to.equal(6)
-                cy.get('@demo').should('have.attr', 'data-test-refresh', '2')
-              })
-          })
       })
+      .get('@demo')
+      .should('have.attr', 'data-test-refresh', '1')
+      .viewport('macbook-13')
+      .frame()
+      .then(() => {
+        expect(Xt._mountArr.length).to.equal(6)
+      })
+      .get('@demo')
+      .should('have.attr', 'data-test-refresh', '2')
   })
 
   it('TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.', function () {
@@ -137,42 +131,41 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('in')).to.equal(true)
-        cy.viewport('iphone-6')
-          .frame()
-          .then(() => {
-            expect(self.targets[0].classList.contains('on')).to.equal(true)
-            expect(self.targets[0].classList.contains('in')).to.equal(true)
-            expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
-            cy.get(self.targets[0].querySelector('.xt-dismiss'))
-              .click()
-              .then(() => {
-                expect(self.targets[0].classList.contains('on')).to.equal(false)
-                expect(self.targets[0].classList.contains('in')).to.equal(false)
-                cy.get('@demo')
-                  .should('have.attr', 'data-test-mount', '1')
-                  .then(() => {
-                    cy.viewport('macbook-13')
-                      .frame()
-                      .then(() => {
-                        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
-                        cy.get(self.elements[0])
-                          .click()
-                          .then(() => {
-                            expect(self.targets[0].classList.contains('on')).to.equal(true)
-                            expect(self.targets[0].classList.contains('in')).to.equal(true)
-                            cy.get('@demo')
-                              .should('have.attr', 'data-test-mount', '1')
-                              .then(() => {
-                                demo.remove()
-                                cy.frame().then(() => {
-                                  expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(0)
-                                })
-                              })
-                          })
-                      })
-                  })
-              })
-          })
+      })
+      .viewport('iphone-6')
+      .frame()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+      })
+      .get(self.targets[0].querySelector('.xt-dismiss'))
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+      })
+      .get('@demo')
+      .should('have.attr', 'data-test-mount', '1')
+      .viewport('macbook-13')
+      .frame()
+      .then(() => {
+        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+      })
+      .get(self.elements[0])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+      })
+      .get('@demo')
+      .should('have.attr', 'data-test-mount', '1')
+      .then(() => {
+        demo.remove()
+      })
+      .frame()
+      .then(() => {
+        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(0)
       })
   })
 })
@@ -211,47 +204,47 @@ describe('demos/themes/navigation/megamenu-v1', function () {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
           expect(self.targets[1].classList.contains('in')).to.equal(false)
         })
-        cy.get(self.elements[1])
-          .trigger('mouseenter')
-          .wait(150) // after delay
-          .then(() => {
-            expect(self.targets[1].style.zIndex).to.equal('398')
-            expect(self.direction).to.equal(1)
-            expect(self.targets[0].classList.contains('on')).to.equal(false)
-            expect(self.targets[1].classList.contains('on')).to.equal(true)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(false)
-              expect(self.targets[1].classList.contains('in')).to.equal(true)
-            })
-            cy.get(self.elements[0])
-              .trigger('mouseenter')
-              .wait(150) // after delay
-              .then(() => {
-                expect(self.targets[0].style.zIndex).to.equal('397')
-                expect(self.direction).to.equal(-1)
-                expect(self.targets[0].classList.contains('on')).to.equal(true)
-                expect(self.targets[1].classList.contains('on')).to.equal(false)
-                cy.frameDouble().then(() => {
-                  expect(self.targets[0].classList.contains('in')).to.equal(true)
-                  expect(self.targets[1].classList.contains('in')).to.equal(false)
-                })
-                cy.get(self.elements[0])
-                  .trigger('mouseleave')
-                  .wait(150) // after delay
-                  .wait(750) // after animation
-                  .then(() => {
-                    expect(self.targets[0].style.zIndex).to.equal('400')
-                    expect(self.targets[1].style.zIndex).to.equal('400')
-                    expect(self.direction).to.equal(0)
-                    expect(self.targets[0].classList.contains('on')).to.equal(false)
-                    expect(self.targets[1].classList.contains('on')).to.equal(false)
-                    cy.frameDouble().then(() => {
-                      expect(self.targets[0].classList.contains('in')).to.equal(false)
-                      expect(self.targets[1].classList.contains('in')).to.equal(false)
-                    })
-                  })
-              })
-          })
+      })
+      .get(self.elements[1])
+      .trigger('mouseenter')
+      .wait(150) // after delay
+      .then(() => {
+        expect(self.targets[1].style.zIndex).to.equal('398')
+        expect(self.direction).to.equal(1)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+        })
+      })
+      .get(self.elements[0])
+      .trigger('mouseenter')
+      .wait(150) // after delay
+      .then(() => {
+        expect(self.targets[0].style.zIndex).to.equal('397')
+        expect(self.direction).to.equal(-1)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+        })
+      })
+      .get(self.elements[0])
+      .trigger('mouseleave')
+      .wait(150) // after delay
+      .wait(750) // after animation
+      .then(() => {
+        expect(self.targets[0].style.zIndex).to.equal('400')
+        expect(self.targets[1].style.zIndex).to.equal('400')
+        expect(self.direction).to.equal(0)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+        })
       })
   })
 
@@ -269,31 +262,31 @@ describe('demos/themes/navigation/megamenu-v1', function () {
             expect(backdrop.classList.contains('in')).to.equal(true)
           })
         })
-        cy.get(self.elements[1])
-          .trigger('mouseenter')
-          .then(() => {
-            cy.frameDouble().then(() => {
-              expect(backdrop.classList.contains('on')).to.equal(true)
-              cy.frameDouble().then(() => {
-                expect(backdrop.classList.contains('in')).to.equal(true)
-              })
-            })
+      })
+      .get(self.elements[1])
+      .trigger('mouseenter')
+      .then(() => {
+        cy.frameDouble().then(() => {
+          expect(backdrop.classList.contains('on')).to.equal(true)
+          cy.frameDouble().then(() => {
+            expect(backdrop.classList.contains('in')).to.equal(true)
           })
-          .get(self.elements[0])
-          .trigger('mouseenter')
-          .then(() => {
-            expect(self.direction).to.equal(-1)
-            expect(self.targets[0].classList.contains('on')).to.equal(true)
-            expect(self.targets[1].classList.contains('on')).to.equal(false)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(true)
-              expect(self.targets[1].classList.contains('in')).to.equal(false)
-              expect(backdrop.classList.contains('on')).to.equal(true)
-              cy.frameDouble().then(() => {
-                expect(backdrop.classList.contains('in')).to.equal(true)
-              })
-            })
+        })
+      })
+      .get(self.elements[0])
+      .trigger('mouseenter')
+      .then(() => {
+        expect(self.direction).to.equal(-1)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(backdrop.classList.contains('on')).to.equal(true)
+          cy.frameDouble().then(() => {
+            expect(backdrop.classList.contains('in')).to.equal(true)
           })
+        })
       })
   })
 })
@@ -313,48 +306,52 @@ describe('demos/components/scrollto/usage', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
-    cy.frameDouble().then(() => {
-      expect(this.links[0].classList.contains('on')).to.equal(false)
-      expect(this.links[1].classList.contains('on')).to.equal(false)
-      expect(this.links[2].classList.contains('on')).to.equal(true)
-      expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 10)
-      doc.scrollingElement.scrollTo(0, 0)
-      cy.wait(500).then(() => {
+    cy.frameDouble()
+      .then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(false)
+        expect(this.links[2].classList.contains('on')).to.equal(true)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 10)
+        doc.scrollingElement.scrollTo(0, 0)
+      })
+      .wait(500)
+      .then(() => {
         expect(this.links[0].classList.contains('on')).to.equal(true)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(false)
-        cy.get(this.links[1])
-          .click()
-          .wait(1000) // after animation
-          .then(() => {
-            expect(this.links[0].classList.contains('on')).to.equal(false)
-            expect(this.links[1].classList.contains('on')).to.equal(true)
-            expect(this.links[2].classList.contains('on')).to.equal(false)
-            expect(doc.scrollingElement.scrollTop).to.closeTo(801, 10)
-            cy.go(-1).then(() => {
-              expect(this.links[0].classList.contains('on')).to.equal(false)
-              expect(this.links[1].classList.contains('on')).to.equal(false)
-              expect(this.links[2].classList.contains('on')).to.equal(true)
-              expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 10)
-              cy.go(1).then(() => {
-                expect(this.links[0].classList.contains('on')).to.equal(false)
-                expect(this.links[1].classList.contains('on')).to.equal(true)
-                expect(this.links[2].classList.contains('on')).to.equal(false)
-                expect(doc.scrollingElement.scrollTop).to.closeTo(801, 10)
-                cy.get(this.buttons[0])
-                  .click()
-                  .wait(1000) // after animation
-                  .then(() => {
-                    expect(this.links[0].classList.contains('on')).to.equal(false)
-                    expect(this.links[1].classList.contains('on')).to.equal(true)
-                    expect(this.links[2].classList.contains('on')).to.equal(false)
-                    expect(doc.scrollingElement.scrollTop).to.closeTo(1633, 10)
-                  })
-              })
-            })
-          })
       })
-    })
+      .get(this.links[1])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(true)
+        expect(this.links[2].classList.contains('on')).to.equal(false)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(801, 10)
+      })
+      .go(-1)
+      .then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(false)
+        expect(this.links[2].classList.contains('on')).to.equal(true)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 10)
+      })
+      .go(1)
+      .then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(true)
+        expect(this.links[2].classList.contains('on')).to.equal(false)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(801, 10)
+      })
+      .get(this.buttons[0])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(true)
+        expect(this.links[2].classList.contains('on')).to.equal(false)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(1633, 10)
+      })
   })
 })
 
@@ -380,76 +377,76 @@ describe('demos/components/scrollto/overlay', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
-    cy.frameDouble().then(() => {
-      expect(self.targets[0].classList.contains('on')).to.equal(true)
-      cy.frameDouble().then(() => {
-        expect(self.targets[0].classList.contains('in')).to.equal(true)
+    cy.frameDouble()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+        })
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(false)
+        expect(this.links[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
+        self.targets[0].scrollTo(0, 0)
       })
-      expect(this.links[0].classList.contains('on')).to.equal(false)
-      expect(this.links[1].classList.contains('on')).to.equal(false)
-      expect(this.links[2].classList.contains('on')).to.equal(true)
-      expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
-      self.targets[0].scrollTo(0, 0)
-      cy.wait(500).then(() => {
+      .wait(500)
+      .then(() => {
         expect(this.links[0].classList.contains('on')).to.equal(true)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(false)
-        cy.get(this.links[4])
-          .click()
-          .wait(1000) // after animation
-          .then(() => {
-            expect(this.links[0].classList.contains('on')).to.equal(false)
-            expect(this.links[1].classList.contains('on')).to.equal(true)
-            expect(this.links[2].classList.contains('on')).to.equal(false)
-            expect(self.targets[0].scrollTop).to.closeTo(801, 10)
-            cy.get(self.targets[0].querySelector('.xt-dismiss'))
-              .click()
-              .then(() => {
-                cy.visit('/demos/components/scrollto/overlay#').then(() => {
-                  cy.go(-1).then(() => {
-                    expect(self.targets[0].classList.contains('on')).to.equal(true)
-                    cy.frameDouble().then(() => {
-                      expect(self.targets[0].classList.contains('in')).to.equal(true)
-                    })
-                    expect(this.links[0].classList.contains('on')).to.equal(false)
-                    expect(this.links[1].classList.contains('on')).to.equal(false)
-                    expect(this.links[2].classList.contains('on')).to.equal(true)
-                    expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
-                    cy.get(self.targets[0].querySelector('.xt-dismiss'))
-                      .click()
-                      .then(() => {
-                        expect(self.targets[0].classList.contains('on')).to.equal(false)
-                        cy.frameDouble().then(() => {
-                          expect(self.targets[0].classList.contains('in')).to.equal(false)
-                        })
-                        cy.get(this.links[2])
-                          .click()
-                          .then(() => {
-                            expect(self.targets[0].classList.contains('on')).to.equal(true)
-                            cy.frameDouble().then(() => {
-                              expect(self.targets[0].classList.contains('in')).to.equal(true)
-                            })
-                            expect(this.links[0].classList.contains('on')).to.equal(false)
-                            expect(this.links[1].classList.contains('on')).to.equal(false)
-                            expect(this.links[2].classList.contains('on')).to.equal(true)
-                            expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
-                            cy.get(this.buttons[1])
-                              .click()
-                              .wait(1000) // after animation
-                              .then(() => {
-                                expect(this.links[0].classList.contains('on')).to.equal(false)
-                                expect(this.links[1].classList.contains('on')).to.equal(true)
-                                expect(this.links[2].classList.contains('on')).to.equal(false)
-                                expect(self.targets[0].scrollTop).to.closeTo(1633, 10)
-                              })
-                          })
-                      })
-                  })
-                })
-              })
-          })
       })
-    })
+      .get(this.links[4])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(true)
+        expect(this.links[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].scrollTop).to.closeTo(801, 10)
+      })
+      .get(self.targets[0].querySelector('.xt-dismiss'))
+      .click()
+      .visit('/demos/components/scrollto/overlay#')
+      .go(-1)
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+        })
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(false)
+        expect(this.links[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
+      })
+      .get(self.targets[0].querySelector('.xt-dismiss'))
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+        })
+      })
+      .get(this.links[2])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+        })
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(false)
+        expect(this.links[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].scrollTop).to.closeTo(1987, 10)
+      })
+      .get(this.buttons[1])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(this.links[0].classList.contains('on')).to.equal(false)
+        expect(this.links[1].classList.contains('on')).to.equal(true)
+        expect(this.links[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].scrollTop).to.closeTo(1633, 10)
+      })
   })
 })
 
@@ -475,56 +472,58 @@ describe('demos/components/scrollto/toggle', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements.', function () {
-    cy.frameDouble().then(() => {
-      expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
-      expect(self.targets[0].classList.contains('on')).to.equal(false)
-      expect(self.targets[1].classList.contains('on')).to.equal(false)
-      expect(self.targets[2].classList.contains('on')).to.equal(true)
-      cy.frameDouble().then(() => {
-        expect(self.targets[0].classList.contains('in')).to.equal(false)
-        expect(self.targets[1].classList.contains('in')).to.equal(false)
-        expect(self.targets[2].classList.contains('in')).to.equal(true)
+    cy.frameDouble()
+      .then(() => {
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(self.targets[2].classList.contains('in')).to.equal(true)
+        })
+        doc.scrollingElement.scrollTo(0, 0)
       })
-      doc.scrollingElement.scrollTo(0, 0)
-      cy.wait(500).then(() => {
-        cy.get(self.elements[0])
-          .click()
-          .wait(1000) // after animation
-          .then(() => {
-            expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
-            expect(self.targets[0].classList.contains('on')).to.equal(true)
-            expect(self.targets[1].classList.contains('on')).to.equal(false)
-            expect(self.targets[2].classList.contains('on')).to.equal(false)
-            cy.frameDouble().then(() => {
-              expect(self.targets[0].classList.contains('in')).to.equal(true)
-              expect(self.targets[1].classList.contains('in')).to.equal(false)
-              expect(self.targets[2].classList.contains('in')).to.equal(false)
-            })
-            cy.go(-1).then(() => {
-              expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
-              expect(self.targets[0].classList.contains('on')).to.equal(false)
-              expect(self.targets[1].classList.contains('on')).to.equal(false)
-              expect(self.targets[2].classList.contains('on')).to.equal(true)
-              cy.frameDouble().then(() => {
-                expect(self.targets[0].classList.contains('in')).to.equal(false)
-                expect(self.targets[1].classList.contains('in')).to.equal(false)
-                expect(self.targets[2].classList.contains('in')).to.equal(true)
-              })
-              cy.go(1).then(() => {
-                expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
-                expect(self.targets[0].classList.contains('on')).to.equal(true)
-                expect(self.targets[1].classList.contains('on')).to.equal(false)
-                expect(self.targets[2].classList.contains('on')).to.equal(false)
-                cy.frameDouble().then(() => {
-                  expect(self.targets[0].classList.contains('in')).to.equal(true)
-                  expect(self.targets[1].classList.contains('in')).to.equal(false)
-                  expect(self.targets[2].classList.contains('in')).to.equal(false)
-                })
-              })
-            })
-          })
+      .wait(500)
+      .get(self.elements[0])
+      .click()
+      .wait(1000) // after animation
+      .then(() => {
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(self.targets[2].classList.contains('in')).to.equal(false)
+        })
       })
-    })
+      .go(-1)
+      .then(() => {
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(self.targets[2].classList.contains('in')).to.equal(true)
+        })
+      })
+      .go(1)
+      .then(() => {
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 10)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(self.targets[2].classList.contains('in')).to.equal(false)
+        })
+      })
   })
 })
 
@@ -549,7 +548,7 @@ describe('demos/components/listing/infinitescroll', function () {
     self = Xt.get({ name: 'xt-infinitescroll', el: container })
   })
 
-  it.only('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {
+  it('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {
     expect(self.paginations[0].innerText).to.equal('Page 2 of 4')
     expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
     expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
@@ -557,11 +556,14 @@ describe('demos/components/listing/infinitescroll', function () {
     cy.wait(500).then(() => {
       win.dispatchEvent(new Event('scroll'))
       cy.addEventListener(container, 'populate.xt.infinitescroll', () => {
-        cy.frame().then(() => {
-          expect(self.paginations[0].innerText).to.equal('Page 3 of 4')
-          expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
-          expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
-          cy.visit(url).then(() => {
+        cy.frame()
+          .then(() => {
+            expect(self.paginations[0].innerText).to.equal('Page 3 of 4')
+            expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
+            expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
+          })
+          .visit(url)
+          .then(() => {
             cy.go(-1)
               .get('[data-xt-infinitescroll-pagination]') // racecondition
               .document()
@@ -576,7 +578,6 @@ describe('demos/components/listing/infinitescroll', function () {
                 })
               })
           })
-        })
       })
     })
   })
