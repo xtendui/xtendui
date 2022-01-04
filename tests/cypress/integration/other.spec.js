@@ -358,13 +358,12 @@ describe('demos/components/scrollto/usage', function () {
 
 describe('demos/components/scrollto/overlay', function () {
   let win
-  let doc
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/scrollto/overlay#anchor-2').window().as('win').document().as('doc')
+    cy.visit('/demos/components/scrollto/overlay#anchor-2').window().as('win')
     cy.get('.demo--scrollto-overlay').as('demo')
     cy.get('@demo').find('[data-xt-overlay]').as('container')
     cy.get('a').as('links')
@@ -373,7 +372,6 @@ describe('demos/components/scrollto/overlay', function () {
 
   beforeEach(function () {
     win = this.win
-    doc = this.doc
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
