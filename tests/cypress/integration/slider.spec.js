@@ -850,11 +850,11 @@ describe('demos/components/slider/autoheight', function () {
   })
 
   it('TEST autoheight.', function () {
-    expect(container.querySelector('[data-xt-slider-autoheight]').style.height).to.equal('101px')
+    expect(parseFloat(container.querySelector('[data-xt-slider-autoheight]').style.height)).to.closeTo(101, 10)
     cy.get(self.elements[2])
       .click()
       .then(() => {
-        expect(container.querySelector('[data-xt-slider-autoheight]').style.height).to.equal('128px')
+        expect(parseFloat(container.querySelector('[data-xt-slider-autoheight]').style.height)).to.closeTo(128, 10)
       })
   })
 })
