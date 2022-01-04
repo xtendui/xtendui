@@ -368,7 +368,8 @@ class Toggle {
         }
         // check if activated
         // fix check options.max for currents of _hashChange current reset if hash has current
-        const els = self.getElements({ el: tr })
+        // fix check tr with same activation
+        const els = self.getElements({ el: tr, same: true })
         if ((activated && currents < options.max) || obj.arr.some(x => els.includes(x))) {
           // instant animation
           tr.classList.add(...self._classes)
@@ -407,6 +408,8 @@ class Toggle {
       if (activated && currents < options.max) {
         // initial
         currents++
+        // fix check tr with same activation
+        obj.arr.push(el)
         // toggle event if present because of custom listeners
         if (options.on) {
           const event = options.on.split(' ')[0]
