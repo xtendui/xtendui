@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--slider-group">
     <div class="xt-slider" data-xt-slider="{ group: 1, wrap: true, matches: { '(min-width: 768px)': { group: 0.8 } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div

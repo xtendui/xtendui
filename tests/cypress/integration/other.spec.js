@@ -196,8 +196,8 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       .trigger('mouseenter')
       .wait(150) // after delay
       .then(() => {
-        expect(self.targets[0].style.zIndex).to.equal('399')
         expect(self.direction).to.equal(0)
+        expect(self.targets[0].style.zIndex).to.equal('399')
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         cy.frameDouble().then(() => {
@@ -209,8 +209,8 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       .trigger('mouseenter')
       .wait(150) // after delay
       .then(() => {
-        expect(self.targets[1].style.zIndex).to.equal('398')
         expect(self.direction).to.equal(1)
+        expect(self.targets[1].style.zIndex).to.equal('398')
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
         cy.frameDouble().then(() => {
@@ -222,8 +222,8 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       .trigger('mouseenter')
       .wait(150) // after delay
       .then(() => {
-        expect(self.targets[0].style.zIndex).to.equal('397')
         expect(self.direction).to.equal(-1)
+        expect(self.targets[0].style.zIndex).to.equal('397')
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         cy.frameDouble().then(() => {
@@ -236,9 +236,9 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       .wait(150) // after delay
       .wait(750) // after animation
       .then(() => {
+        expect(self.direction).to.equal(0)
         expect(self.targets[0].style.zIndex).to.equal('400')
         expect(self.targets[1].style.zIndex).to.equal('400')
-        expect(self.direction).to.equal(0)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         cy.frameDouble().then(() => {

@@ -352,18 +352,18 @@ describe('demos/components/toggle/animation-js', function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
+        expect(self.direction).to.equal(0)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
         })
-        expect(self.direction).to.equal(0)
       })
       .get(self.elements[1])
       .click()
       .wait(1000) // after animation
       .then(() => {
-        expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.direction).to.equal(1)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(false)
@@ -374,8 +374,8 @@ describe('demos/components/toggle/animation-js', function () {
       .click()
       .wait(1000) // after animation
       .then(() => {
-        expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.direction).to.equal(-1)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(true)

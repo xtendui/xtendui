@@ -986,7 +986,7 @@ describe('demos/components/tooltip/swap-click', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('hidden')).to.equal(true)
@@ -995,7 +995,7 @@ describe('demos/components/tooltip/swap-click', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('hidden')).to.equal(true)
@@ -1004,6 +1004,7 @@ describe('demos/components/tooltip/swap-click', function () {
       })
       .get(self.elements[0])
       .trigger('mouseleave')
+      .frame()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
@@ -1043,7 +1044,7 @@ describe('demos/components/tooltip/swap-toggle', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('hidden')).to.equal(true)
@@ -1052,7 +1053,7 @@ describe('demos/components/tooltip/swap-toggle', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
