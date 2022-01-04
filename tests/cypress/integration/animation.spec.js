@@ -16,6 +16,7 @@ describe('demos/components/toggle/animation-queue', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -74,6 +75,7 @@ describe('demos/components/toggle/animation-noqueue', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -123,6 +125,7 @@ describe('demos/components/toggle/animation-inverse', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -162,6 +165,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -237,6 +241,7 @@ describe('demos/components/toggle/animation-css', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -300,6 +305,7 @@ describe('demos/components/slider/animation-css', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -345,6 +351,7 @@ describe('demos/components/toggle/animation-js', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -360,7 +367,7 @@ describe('demos/components/toggle/animation-js', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(1250) // after animation
+      .wait(1500) // after animation
       .then(() => {
         expect(self.direction).to.equal(1)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -372,7 +379,7 @@ describe('demos/components/toggle/animation-js', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(1250) // after animation
+      .wait(1500) // after animation
       .then(() => {
         expect(self.direction).to.equal(-1)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -401,6 +408,7 @@ describe('demos/components/slider/animation-js', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -457,6 +465,7 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 

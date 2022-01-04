@@ -18,6 +18,7 @@ describe('demos/hidden/test/mount-unmount', function () {
     Xt = win.Xt
     demo = this.demo[0]
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
@@ -97,23 +98,24 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
     Xt = win.Xt
     demo = this.demo[0]
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
   it('TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.', function () {
     cy.frame().then(() => {
-      expect(Xt._mountArr.length).to.equal(6)
+      const count = Xt._mountArr.length
       cy.viewport('iphone-6')
         .frame()
         .then(() => {
-          expect(Xt._mountArr.length).to.equal(6)
+          expect(Xt._mountArr.length).to.equal(count)
         })
         .get('@demo')
         .should('have.attr', 'data-test-refresh', '1')
         .viewport('macbook-13')
         .frame()
         .then(() => {
-          expect(Xt._mountArr.length).to.equal(6)
+          expect(Xt._mountArr.length).to.equal(count)
         })
         .get('@demo')
         .should('have.attr', 'data-test-refresh', '2')
@@ -185,6 +187,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-drop', el: container })
     backdrop = this.backdrop[0]
   })
@@ -371,6 +374,7 @@ describe('demos/components/scrollto/overlay', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
@@ -467,6 +471,7 @@ describe('demos/components/scrollto/toggle', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -544,6 +549,7 @@ describe('demos/components/listing/infinitescroll', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-infinitescroll', el: container })
   })
 

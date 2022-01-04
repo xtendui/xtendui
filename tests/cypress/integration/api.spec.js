@@ -18,6 +18,7 @@ describe('demos/components/toggle/disabled', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
     container1 = this.container[1]
     self1 = Xt.get({ name: 'xt-toggle', el: container1 })
@@ -86,6 +87,7 @@ describe('demos/components/overlay/disabled', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-overlay', el: container })
     container1 = this.container[1]
     self1 = Xt.get({ name: 'xt-overlay', el: container1 })
@@ -150,6 +152,7 @@ describe('demos/components/slider/disabled', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -201,6 +204,7 @@ describe('demos/components/toggle/matches', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -247,6 +251,7 @@ describe('demos/components/toggle/api', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -349,6 +354,7 @@ describe('demos/components/overlay/api', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
@@ -392,6 +398,7 @@ describe('demos/components/slider/api', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 

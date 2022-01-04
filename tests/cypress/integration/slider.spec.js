@@ -16,6 +16,7 @@ describe('demos/components/slider/align-center', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -59,6 +60,7 @@ describe('demos/components/slider/align-left', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -102,6 +104,7 @@ describe('demos/components/slider/align-right', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -145,6 +148,7 @@ describe('demos/components/slider/contain-false-center', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -188,6 +192,7 @@ describe('demos/components/slider/contain-false-left', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -231,6 +236,7 @@ describe('demos/components/slider/contain-false-right', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -274,6 +280,7 @@ describe('demos/components/slider/wrap-center', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -331,6 +338,7 @@ describe('demos/components/slider/wrap-left', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -388,6 +396,7 @@ describe('demos/components/slider/wrap-right', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -445,6 +454,7 @@ describe('demos/components/slider/group', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -524,6 +534,7 @@ describe('demos/components/slider/group-same-false', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -585,48 +596,52 @@ describe('demos/components/slider/exclude', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
     toggles = this.toggles
     slides = this.slides
   })
 
   it('TEST activation exclude.', function () {
-    cy.frame().then(() => {
-      expect(self.targets.length).to.equal(5)
-      expect(slides[0].classList.contains('on')).to.equal(true)
-      expect(slides[1].classList.contains('on')).to.equal(true)
-      expect(slides[2].classList.contains('on')).to.equal(true)
-      expect(slides[3].classList.contains('on')).to.equal(false)
-      expect(slides[4].classList.contains('on')).to.equal(false)
-      expect(slides[5].classList.contains('on')).to.equal(false)
-      expect(slides[6].classList.contains('on')).to.equal(false)
-      expect(slides[0].classList.contains('hidden')).to.equal(false)
-      expect(slides[1].classList.contains('hidden')).to.equal(false)
-      expect(slides[2].classList.contains('hidden')).to.equal(true)
-      expect(slides[3].classList.contains('hidden')).to.equal(false)
-      expect(slides[4].classList.contains('hidden')).to.equal(true)
-      expect(slides[5].classList.contains('hidden')).to.equal(false)
-      expect(slides[6].classList.contains('hidden')).to.equal(false)
-      cy.get(toggles[0])
-        .click()
-        .then(() => {
-          expect(self.targets.length).to.equal(4)
-          expect(slides[0].classList.contains('on')).to.equal(true)
-          expect(slides[1].classList.contains('on')).to.equal(true)
-          expect(slides[2].classList.contains('on')).to.equal(true)
-          expect(slides[3].classList.contains('on')).to.equal(false)
-          expect(slides[4].classList.contains('on')).to.equal(false)
-          expect(slides[5].classList.contains('on')).to.equal(false)
-          expect(slides[6].classList.contains('on')).to.equal(false)
-          expect(slides[0].classList.contains('hidden')).to.equal(true)
-          expect(slides[1].classList.contains('hidden')).to.equal(false)
-          expect(slides[2].classList.contains('hidden')).to.equal(false)
-          expect(slides[3].classList.contains('hidden')).to.equal(true)
-          expect(slides[4].classList.contains('hidden')).to.equal(false)
-          expect(slides[5].classList.contains('hidden')).to.equal(false)
-          expect(slides[6].classList.contains('hidden')).to.equal(true)
-        })
-    })
+    cy.get('@demo')
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .frame()
+      .then(() => {
+        expect(self.targets.length).to.equal(5)
+        expect(slides[0].classList.contains('on')).to.equal(true)
+        expect(slides[1].classList.contains('on')).to.equal(true)
+        expect(slides[2].classList.contains('on')).to.equal(true)
+        expect(slides[3].classList.contains('on')).to.equal(false)
+        expect(slides[4].classList.contains('on')).to.equal(false)
+        expect(slides[5].classList.contains('on')).to.equal(false)
+        expect(slides[6].classList.contains('on')).to.equal(false)
+        expect(slides[0].classList.contains('hidden')).to.equal(false)
+        expect(slides[1].classList.contains('hidden')).to.equal(false)
+        expect(slides[2].classList.contains('hidden')).to.equal(true)
+        expect(slides[3].classList.contains('hidden')).to.equal(false)
+        expect(slides[4].classList.contains('hidden')).to.equal(true)
+        expect(slides[5].classList.contains('hidden')).to.equal(false)
+        expect(slides[6].classList.contains('hidden')).to.equal(false)
+      })
+      .get(toggles[0])
+      .click()
+      .then(() => {
+        expect(self.targets.length).to.equal(4)
+        expect(slides[0].classList.contains('on')).to.equal(true)
+        expect(slides[1].classList.contains('on')).to.equal(true)
+        expect(slides[2].classList.contains('on')).to.equal(true)
+        expect(slides[3].classList.contains('on')).to.equal(false)
+        expect(slides[4].classList.contains('on')).to.equal(false)
+        expect(slides[5].classList.contains('on')).to.equal(false)
+        expect(slides[6].classList.contains('on')).to.equal(false)
+        expect(slides[0].classList.contains('hidden')).to.equal(true)
+        expect(slides[1].classList.contains('hidden')).to.equal(false)
+        expect(slides[2].classList.contains('hidden')).to.equal(false)
+        expect(slides[3].classList.contains('hidden')).to.equal(true)
+        expect(slides[4].classList.contains('hidden')).to.equal(false)
+        expect(slides[5].classList.contains('hidden')).to.equal(false)
+        expect(slides[6].classList.contains('hidden')).to.equal(true)
+      })
   })
 })
 
@@ -646,6 +661,7 @@ describe('demos/components/slider/navigation', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -725,6 +741,7 @@ describe('demos/components/slider/pagination', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
     toggles = this.toggles
   })
@@ -790,6 +807,7 @@ describe('demos/components/slider/jump', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -846,6 +864,7 @@ describe('demos/components/slider/autoheight', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -875,15 +894,19 @@ describe('demos/components/slider/progress', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
   it('TEST auto on change.', function () {
-    cy.window()
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .window()
       .trigger('blur')
       .window()
       .trigger('focus')
-      .wait(4000)
+      .wait(4250)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -895,7 +918,7 @@ describe('demos/components/slider/progress', function () {
       })
       .get(self.elements[4])
       .click()
-      .wait(4000)
+      .wait(4250)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -924,6 +947,7 @@ describe('demos/components/slider/nooverflow', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -962,6 +986,7 @@ describe('demos/components/slider/nooverflow-false', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -1010,6 +1035,7 @@ describe('demos/components/slider/media-loaded', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 

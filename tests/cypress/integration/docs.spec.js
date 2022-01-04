@@ -126,7 +126,9 @@ describe('docs', function () {
       .then(() => {
         const full = this.full[0]
         expect(full.classList.contains('on')).to.equal(true)
-        expect(full.classList.contains('in')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(full.classList.contains('in')).to.equal(true)
+        })
       })
   })
 })

@@ -15,6 +15,7 @@ describe('demos/components/overlay/usage-self', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
@@ -79,6 +80,7 @@ describe('demos/components/toggle/class', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -159,6 +161,7 @@ describe('demos/components/toggle/multiple-group', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -242,6 +245,7 @@ describe('demos/components/toggle/multiple-nogroupelements', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -325,6 +329,7 @@ describe('demos/components/toggle/event', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -390,6 +395,7 @@ describe('demos/components/drop/event', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     container1 = this.container[1]
     self = Xt.get({ name: 'xt-drop', el: container })
     self1 = Xt.get({ name: 'xt-drop', el: container1 })
@@ -471,6 +477,7 @@ describe('demos/components/toggle/prevent-event', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -507,6 +514,7 @@ describe('demos/components/toggle/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -555,6 +563,7 @@ describe('demos/components/toggle/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
@@ -691,6 +700,7 @@ describe('demos/components/overlay/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     container1 = this.container[1]
     self = Xt.get({ name: 'xt-overlay', el: container })
     self1 = Xt.get({ name: 'xt-overlay', el: container1 })
@@ -754,6 +764,7 @@ describe('demos/components/slider/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
@@ -851,6 +862,7 @@ describe('demos/components/drop/backdrop', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     container1 = this.container[1]
     self = Xt.get({ name: 'xt-drop', el: container })
     self1 = Xt.get({ name: 'xt-drop', el: container1 })
@@ -923,6 +935,7 @@ describe('demos/components/drop/reset-to-current', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-drop', el: container })
   })
 
@@ -972,6 +985,7 @@ describe('demos/components/tooltip/swap-click', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-tooltip', el: container })
   })
 
@@ -1030,6 +1044,7 @@ describe('demos/components/tooltip/swap-toggle', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-tooltip', el: container })
   })
 
@@ -1087,6 +1102,7 @@ describe('demos/components/tooltip/prevent-overflow', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-tooltip', el: container })
   })
 
@@ -1119,6 +1135,7 @@ describe('demos/components/overlay/animation-noqueue', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
+    cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-overlay', el: container })
   })
 
