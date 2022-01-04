@@ -358,12 +358,13 @@ describe('demos/components/scrollto/usage', function () {
 
 describe('demos/components/scrollto/overlay', function () {
   let win
+  let doc
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/scrollto/overlay#anchor-2').window().as('win')
+    cy.visit('/demos/components/scrollto/overlay#anchor-2').window().as('win').document().as('doc')
     cy.get('.demo--scrollto-overlay').as('demo')
     cy.get('@demo').find('[data-xt-overlay]').as('container')
     cy.get('a').as('links')
@@ -372,6 +373,7 @@ describe('demos/components/scrollto/overlay', function () {
 
   beforeEach(function () {
     win = this.win
+    doc = this.doc
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
@@ -381,6 +383,8 @@ describe('demos/components/scrollto/overlay', function () {
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .closest('html')
+      .should('have.attr', 'data-xt-scrollto-init', '') // racecondition
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         cy.frameDouble().then(() => {
