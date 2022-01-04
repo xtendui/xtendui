@@ -557,36 +557,38 @@ describe('demos/components/listing/infinitescroll', function () {
   })
 
   it('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {
-    expect(self.paginations[0].innerText).to.equal('Page 2 of 4')
-    expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
-    expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
-    doc.scrollingElement.scrollTo(0, 1000)
-    cy.wait(500).then(() => {
-      cy.addEventListener(container, 'populate.xt.infinitescroll', () => {
-        cy.frame()
-          .then(() => {
-            expect(self.paginations[0].innerText).to.equal('Page 3 of 4')
-            expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
-            expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
-          })
-          .visit(url)
-          .then(() => {
-            cy.go(-1)
-              .get('[data-xt-infinitescroll-pagination]') // racecondition
-              .document()
-              .then(doc => {
-                expect(doc.scrollingElement.scrollTop).to.closeTo(399, 100)
-                doc.scrollingElement.scrollTo(0, 0)
-                cy.wait(500).then(() => {
-                  win.dispatchEvent(new Event('scroll'))
-                  expect(doc.querySelector('[data-xt-infinitescroll-pagination]').innerText).to.equal('Page 2 of 4')
-                  expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-up]') })).to.equal(true)
-                  expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-down]') })).to.equal(true)
+    cy.get(container)
+      .should('have.attr', 'data-xt-infinitescroll-init', '') // racecondition
+      .then(() => {
+        expect(self.paginations[0].innerText).to.equal('Page 2 of 4')
+        expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
+        expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
+        cy.addEventListener(container, 'populate.xt.infinitescroll', () => {
+          cy.frame()
+            .then(() => {
+              expect(self.paginations[0].innerText).to.equal('Page 3 of 4')
+              expect(win.Xt.visible({ el: self.scrollUp[0] })).to.equal(true)
+              expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
+            })
+            .visit(url)
+            .then(() => {
+              cy.go(-1)
+                .get('[data-xt-infinitescroll-pagination]') // racecondition
+                .document()
+                .then(doc => {
+                  expect(doc.scrollingElement.scrollTop).to.closeTo(399, 100)
+                  doc.scrollingElement.scrollTo(0, 0)
+                  cy.wait(500).then(() => {
+                    win.dispatchEvent(new Event('scroll'))
+                    expect(doc.querySelector('[data-xt-infinitescroll-pagination]').innerText).to.equal('Page 2 of 4')
+                    expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-up]') })).to.equal(true)
+                    expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-down]') })).to.equal(true)
+                  })
                 })
-              })
-          })
+            })
+        })
+        doc.scrollingElement.scrollTo(0, 1000)
+        win.dispatchEvent(new Event('scroll'))
       })
-      win.dispatchEvent(new Event('scroll'))
-    })
   })
 })
