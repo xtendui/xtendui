@@ -1096,7 +1096,7 @@ describe('demos/components/tooltip/prevent-overflow', function () {
       .then(() => {
         expect(self.targets[0].offsetWidth).to.be.closeTo(189, 10)
         expect(self.targets[0].offsetHeight).to.be.closeTo(44, 10)
-        expect(self.targets[0].querySelector('.xt-arrow').style.left).to.equal('61px')
+        expect(parseFloat(self.targets[0].querySelector('.xt-arrow').style.left)).to.closeTo(61, 10)
       })
   })
 })

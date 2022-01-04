@@ -165,7 +165,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it('TEST duration, delay.', { retries: 5 }, function () {
+  it('TEST duration, delay.', function () {
     cy.get(self.elements[0])
       .click()
       .then(() => {
@@ -360,7 +360,7 @@ describe('demos/components/toggle/animation-js', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(1000) // after animation
+      .wait(1250) // after animation
       .then(() => {
         expect(self.direction).to.equal(1)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -372,7 +372,7 @@ describe('demos/components/toggle/animation-js', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(1000) // after animation
+      .wait(1250) // after animation
       .then(() => {
         expect(self.direction).to.equal(-1)
         expect(self.targets[0].classList.contains('on')).to.equal(true)

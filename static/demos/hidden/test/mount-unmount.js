@@ -36,6 +36,10 @@ const mountTest = ({ ref }) => {
     tr.classList.contains('initial'),
     self.initial
   )
+  ref.setAttribute(
+    'data-test-initial',
+    `${tr.classList.contains('on')} ${tr.classList.contains('in')} ${tr.classList.contains('initial')} ${self.initial}`
+  )
   requestAnimationFrame(() => {
     // eslint-disable-next-line no-console
     console.log(
