@@ -769,7 +769,7 @@ class Toggle {
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
       for (const el of self.elements) {
-        const imgs = Array.from(el.querySelectorAll('img')).filter(x => !x.closest('.xt-clone'))
+        const imgs = Array.from(el.querySelectorAll('img'))
         self._destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
@@ -788,7 +788,7 @@ class Toggle {
         }
       }
       for (const tr of self.targets) {
-        const imgs = Array.from(tr.querySelectorAll('img')).filter(x => !x.closest('.xt-clone'))
+        const imgs = Array.from(tr.querySelectorAll('img'))
         self._destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
@@ -796,7 +796,7 @@ class Toggle {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 `load/media/${self.ns}`,
-                self._eventMedialoadedHandler.bind(self).bind(self, { img, el: tr, deferred: true })
+                self._eventMedialoadedHandler.bind(self).bind(self, { img, el: tr, deferred: true, reinit: true })
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
@@ -1160,14 +1160,15 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} params.img
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Boolean} params.deferred
+   * @param {Boolean} params.reinit
    */
-  _eventMedialoadedHandler({ img, el, deferred = false } = {}) {
+  _eventMedialoadedHandler({ img, el, deferred = false, reinit = false } = {}) {
     const self = this
     const options = self.options
     // fix multiple calls
     Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true)
     // mediaLoadedReinit
-    if (options.mediaLoadedReinit && deferred) {
+    if (options.mediaLoadedReinit && deferred && reinit) {
       Xt.eventDelay({
         e: { detail: { delay: Xt.medialoadedDelay } },
         el: self.container,
