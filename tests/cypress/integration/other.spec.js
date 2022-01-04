@@ -379,7 +379,8 @@ describe('demos/components/scrollto/overlay', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
-    cy.frameDouble()
+    cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         cy.frameDouble().then(() => {
@@ -559,7 +560,6 @@ describe('demos/components/listing/infinitescroll', function () {
     expect(win.Xt.visible({ el: self.scrollDown[0] })).to.equal(true)
     doc.scrollingElement.scrollTo(0, 1000)
     cy.wait(500).then(() => {
-      win.dispatchEvent(new Event('scroll'))
       cy.addEventListener(container, 'populate.xt.infinitescroll', () => {
         cy.frame()
           .then(() => {
@@ -584,6 +584,7 @@ describe('demos/components/listing/infinitescroll', function () {
               })
           })
       })
+      win.dispatchEvent(new Event('scroll'))
     })
   })
 })
