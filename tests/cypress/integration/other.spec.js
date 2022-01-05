@@ -432,9 +432,9 @@ describe('demos/components/scrollto/overlay', function () {
           expect(self.targets[0].classList.contains('in')).to.equal(false)
         })
       })
-      .frame()
       .get(this.links[2])
       .click()
+      .wait(500)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         cy.frameDouble().then(() => {
