@@ -9,7 +9,7 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
         Jump to content
       </a>
-    </nav>
+    </div>
 
     <div class="xt-row xt-row-6">
       <div class="w-full">
