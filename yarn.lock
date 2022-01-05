@@ -6364,10 +6364,10 @@ gatsby-core-utils@^3.3.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.4.0.tgz#6d5658dc045dcf60a314d4f2d0bc85e260659837"
-  integrity sha512-dYQpyo1BLGJzxQOXgGs1Fbj7jzGj5cKAIPYz2hz2l4Aus6skwjjaUlOjZlrWIahNHoLkx3mH0f5y6E8205T/aQ==
+gatsby-core-utils@^3.5.0-next.3:
+  version "3.5.0-next.3"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.5.0-next.3.tgz#4389de013066e9409e0ccf18f38458d2038f65c9"
+  integrity sha512-zBez1v4SdJu1gTv1e7JNOSG/Ke0MR2y+2Bvu8xSzUMBVpSFrqN3E717up6Eg6YCYLgO6W87nhh4s/Nh9TqrCFg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -6375,6 +6375,7 @@ gatsby-core-utils@^3.4.0:
     file-type "^16.5.3"
     fs-extra "^10.0.0"
     got "^11.8.3"
+    lock "^1.1.0"
     node-object-hash "^2.3.10"
     proper-lockfile "^4.1.2"
     tmp "^0.2.1"
@@ -6532,10 +6533,10 @@ gatsby-plugin-utils@^2.3.0:
     "@babel/runtime" "^7.15.4"
     joi "^17.4.2"
 
-gatsby-plugin-utils@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-2.4.0.tgz#392e4a7706f8ee67067fddd86fba8510e1d85f79"
-  integrity sha512-0+hN/Rfq7J+SwZZ2j+Sc9WiNd8XequDoM389/ORFTE82GXtPHDWtMV1LIF6yg/SkdANzChLUW9Eo/edgLiOOHA==
+gatsby-plugin-utils@^2.5.0-next.1:
+  version "2.5.0-next.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-2.5.0-next.1.tgz#d8d6b87eb5981b941b6f237ac3c03995b0b9d13e"
+  integrity sha512-Rk6ZTaKUTeNc7+9nBHpohQD+c93L6LRtnNoRap5TQs1XiQ2gPZGs85sdvxrRIamSXn1QOdC6BP2+VBVPXvXscQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     joi "^17.4.2"
@@ -6636,10 +6637,10 @@ gatsby-remark-external-links@^0.0.4:
     unist-util-find "^1.0.1"
     unist-util-visit "^1.1.3"
 
-gatsby-source-contentful@7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-7.2.0.tgz#f799df1d6a9ab95279b28cee9a7209393c52a2cb"
-  integrity sha512-tkB4z22iNE7jT0vGqvLBvVQCq4M4wTrqL3ke3x0xBKo+NvyB7D7Z53OxL34L+gEz4l8JS/qUSlIMIORDClts7A==
+gatsby-source-contentful@^7.3.0-next.5:
+  version "7.3.0-next.5"
+  resolved "https://registry.yarnpkg.com/gatsby-source-contentful/-/gatsby-source-contentful-7.3.0-next.5.tgz#4d2a9c407772f2b4bbfe42684c587c029ab20859"
+  integrity sha512-3LwVKAaRlvL8Rqp88nVQy+hy1adFR1T/SzIVG4LAUiPOL/iCnbpCjoX7HetaeFNcV0r3WHgdhPdlak/SFJ6iyg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@contentful/rich-text-react-renderer" "^14.1.3"
@@ -6651,9 +6652,9 @@ gatsby-source-contentful@7.2.0:
     common-tags "^1.8.2"
     contentful "^8.5.8"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.4.0"
-    gatsby-plugin-utils "^2.4.0"
-    gatsby-source-filesystem "^4.4.0"
+    gatsby-core-utils "^3.5.0-next.3"
+    gatsby-plugin-utils "^2.5.0-next.1"
+    gatsby-source-filesystem "^4.5.0-next.3"
     is-online "^8.5.1"
     json-stringify-safe "^5.0.1"
     lodash "^4.17.21"
@@ -6681,17 +6682,17 @@ gatsby-source-filesystem@^4.0.0, gatsby-source-filesystem@^4.3.0:
     valid-url "^1.0.9"
     xstate "^4.25.0"
 
-gatsby-source-filesystem@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.4.0.tgz#9921ac0600166e4ee0cd561d194c2df89a42e11d"
-  integrity sha512-tN+aJdOnBf92V9oHXaGzPB6gL0EhpYH0mh/dfszroy25CtSq07fZu8SynS/B3ClJVi22MkD0imcDVMlPJGSQ3w==
+gatsby-source-filesystem@^4.5.0-next.3:
+  version "4.5.0-next.3"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-4.5.0-next.3.tgz#215f2fe76407fb1ca9fddda1ed9a2ac0b51f974a"
+  integrity sha512-wvJ4HFCnewwuItfFnfCy8kIrx3pNl8TINLIlAmRlQEhBKeLnm/369JvbzY4+KpchIJftlb6j3YxAHDstjx1SHw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     chokidar "^3.5.2"
     fastq "^1.13.0"
     file-type "^16.5.3"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.4.0"
+    gatsby-core-utils "^3.5.0-next.3"
     got "^9.6.0"
     md5-file "^5.0.0"
     mime "^2.5.2"
@@ -9033,7 +9034,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lock@^1.0.0:
+lock@^1.0.0, lock@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/lock/-/lock-1.1.0.tgz#53157499d1653b136ca66451071fca615703fa55"
   integrity sha1-UxV0mdFlOxNspmRRBx/KYVcD+lU=
