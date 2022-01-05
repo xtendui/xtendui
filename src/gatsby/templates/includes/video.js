@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function Video(props) {
   const { assets, title } = props
   return (
-    <div>
+    <div className="w-full">
       {assets.items.filter(x => x.item.title === title).length ? (
         assets.items.map((files, z) => {
           if (files.item.title === title) {
