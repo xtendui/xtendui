@@ -1,5 +1,26 @@
 const url = '/hidden/test/docs-test'
 
+describe('home', function () {
+  let win
+
+  beforeEach(function () {
+    cy.visit('/').window().as('win')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    cy.spy(win.console, 'error').as('consoleError')
+  })
+
+  afterEach(() => {
+    cy.get('@consoleError').should('not.be.called')
+  })
+
+  it('TEST homepage scroll all and no console errors.', function () {
+    cy.scrollTo('bottom')
+  })
+})
+
 describe('docs', function () {
   let win
 
