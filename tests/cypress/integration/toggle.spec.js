@@ -1195,16 +1195,29 @@ describe('demos/components/overlay/animation-noqueue', function () {
     cy.get('@consoleError').should('not.be.called')
   })
 
-  it('TEST focustrap should work, no console error.', function () {
+  it.only('TEST focustrap should work, no console error, navigation tabs.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .get(self.elements[0])
       .click()
-      .get('@doc')
-      .trigger('keydown', { key: 'Tab' })
+      .get('body')
+      .tab()
       .then(() => {
         expect(self.targets[0].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
-        // @TODO test usability navigation overlay
+      })
+      .tab()
+      .tab()
+      .tab()
+      .then(() => {
+        expect(self.elements[4]).to.equal(doc.activeElement)
+      })
+      .get(self.elements[4])
+      .click()
+      .wait(500) // after animation
+      .get('body')
+      .tab()
+      .then(() => {
+        expect(self.targets[1].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
       })
   })
 })

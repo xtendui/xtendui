@@ -17,7 +17,7 @@ describe('home', function () {
   })
 
   it('TEST homepage scroll all and no console errors.', function () {
-    cy.scrollTo('bottom')
+    cy.scrollTo('center').scrollTo('bottom')
   })
 })
 
