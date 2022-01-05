@@ -432,6 +432,7 @@ describe('demos/components/scrollto/overlay', function () {
           expect(self.targets[0].classList.contains('in')).to.equal(false)
         })
       })
+      .frame()
       .get(this.links[2])
       .click()
       .then(() => {
