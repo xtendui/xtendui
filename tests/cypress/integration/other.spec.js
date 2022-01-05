@@ -317,7 +317,9 @@ describe('demos/components/scrollto/usage', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
-    cy.frameDouble()
+    cy.get('@demo')
+      .closest('html')
+      .should('have.attr', 'data-xt-scrollto-init', '') // racecondition
       .then(() => {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
@@ -477,7 +479,9 @@ describe('demos/components/scrollto/toggle', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements.', function () {
-    cy.frameDouble()
+    cy.get(container)
+      .closest('html')
+      .should('have.attr', 'data-xt-scrollto-init', '') // racecondition
       .then(() => {
         expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
