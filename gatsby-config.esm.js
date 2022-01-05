@@ -122,12 +122,13 @@ module.exports = {
 
 // contenful
 
-if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
+if (process.env.NODE_ENV !== 'development' && process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
   module.exports.plugins.push({
     resolve: 'gatsby-source-contentful',
     options: {
       spaceId: process.env.CONTENTFUL_SPACE_ID,
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      downloadLocal: true,
     },
   })
 }

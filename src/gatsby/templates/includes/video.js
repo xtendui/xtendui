@@ -4,16 +4,16 @@ import PropTypes from 'prop-types'
 function Video(props) {
   const { assets, title } = props
   return (
-    <div>
+    <div className="w-full">
       {assets.items.filter(x => x.item.title === title).length ? (
         assets.items.map((files, z) => {
-          if (files.item.title === title) {
+          if (files.item.title === title && files.item.localFile) {
             return (
               <div
                 className="xt-media-container bg-gray-200 mt-1 rounded-md border-3 border-gray-100 pb-[59.8%]"
                 key={z}>
                 <video className="gatsby_site-video xt-media object-cover" preload="none" muted playsInline loop>
-                  <source type="video/mp4" src={files.item.file.url} />
+                  <source type="video/mp4" src={files.item.localFile.publicURL} />
                 </video>
               </div>
             )
@@ -34,6 +34,9 @@ Video.propTypes = {
       PropTypes.shape({
         item: PropTypes.shape({
           title: PropTypes.string.isRequired,
+          localFile: PropTypes.shape({
+            publicURL: PropTypes.string.isRequired,
+          }),
           file: PropTypes.shape({
             url: PropTypes.string.isRequired,
           }),
