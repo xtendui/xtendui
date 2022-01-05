@@ -19,8 +19,7 @@ export default function Header({ page }) {
       <div className="gatsby_site-article_sidebar_inner">
         <header className="gatsby_site-header xt-sticky relative">
           <div className="xt-backdrop absolute pointer-events-none bg-black transition opacity-25 !right-auto"></div>
-          <div
-            className={`gatsby_site-header_inner container bg-primary-500 bg-opacity-80 ${classes.bgBlur()} lg:backdrop-filter-none`}>
+          <div className={`gatsby_site-header_inner container bg-primary-500`}>
             <div>
               <div className="gatsby_site-header_content">
                 <Link
@@ -111,12 +110,12 @@ export default function Header({ page }) {
             </div>
           </div>
 
-          <div className={`xt-overlay group ${overlayOpen ? 'on' : ''}`} id="gatsby_menu--overlay">
+          <div className={`xt-overlay group ${overlayOpen ? 'on' : ''}`} id="gatsby_menu--overlay" aria-label="Menu">
             <div className="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
               <div className="xt-overlay-inner">
                 <div
-                  className={`*** xt-design *** bg-primary-500 bg-opacity-80 ${classes.bgBlur()} lg:backdrop-filter-none opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:transform-none`}></div>
+                  className={`xt-design bg-primary-500 opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:transform-none`}></div>
                 <div
                   className={`xt-card min-h-screen lg:min-h-0 ${classes.textInverse()} opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:transform-none`}>
                   <div
@@ -197,7 +196,9 @@ export default function Header({ page }) {
                         {page.categories.category.sort(typeSort).map((category, i) => (
                           <div key={i}>
                             <div className="gatsby_site-header_cat">
-                              <div className="gatsby_cat--site_article_sidebar">{category.title.split('-').pop()}</div>
+                              <div className="gatsby_cat--site_article_sidebar font-semibold text-xl">
+                                {category.title.split('-').pop()}
+                              </div>
                               <div className="gatsby_site-header_sub">
                                 <div className="gatsby_site-header_sub_inner">
                                   <div className="gatsby_site-header_item">

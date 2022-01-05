@@ -92,7 +92,7 @@ function Template(props) {
                               <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                                 {adiacent.frontmatter.title}
                               </div>
-                              <p className="xt-p text-sm leading-snug opacity-50">
+                              <p className="xt-p text-sm leading-snug opacity-70">
                                 {adiacent.frontmatter.description
                                   ? adiacent.frontmatter.description
                                   : `${adiacent.frontmatter.parent}'s ${adiacent.frontmatter.title}`}

@@ -158,7 +158,6 @@
 }
 
 .gatsby_cat--site_article_sidebar {
-  font-weight: theme('fontWeight.semibold');
   margin-top: 1rem !important;
   margin-bottom: 0.5rem !important;
   .gatsby_site-header_listing > *:first-child & {
@@ -214,7 +213,7 @@
   padding-bottom: 2px;
   @apply w-full justify-start text-left border-0;
   .gatsby_button-site_article_sidebar_inner {
-    @apply transition duration-300 ease-out-quint text-white text-opacity-[70%];
+    @apply transition duration-300 ease-out-quint text-white text-opacity-[90%];
     border-radius: 6px;
     padding: 6px 9px;
     font-weight: theme('fontWeight.semibold');

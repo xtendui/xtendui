@@ -37,7 +37,7 @@ function DocHead(props) {
                 : null}
             </h1>
             {page.post.frontmatter.description ? (
-              <h2 className="-mt-2 mb-2 md:text-lg opacity-50">{page.post.frontmatter.description}</h2>
+              <h2 className="-mt-2 mb-2 md:text-lg opacity-70">{page.post.frontmatter.description}</h2>
             ) : null}
           </div>
         </div>
