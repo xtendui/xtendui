@@ -476,7 +476,7 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
         expect(self.targets[0].style.height).to.contains('px')
         expect(self.targets[0].style.maxHeight).to.equal('none')
       })
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].style.height).to.equal('inherit')
         expect(self.targets[0].style.maxHeight).to.equal('none')
@@ -487,7 +487,7 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
         expect(self.targets[0].style.height).to.contains('px')
         expect(self.targets[0].style.maxHeight).to.equal('none')
       })
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].style.height).to.equal('')
         expect(self.targets[0].style.maxHeight).to.equal('')

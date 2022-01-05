@@ -18,12 +18,17 @@ function DemoIframe(props) {
   let hasCss
   let hasJs
   try {
+    // must be first try/catch or yarn serve error
+    require(`static/${src}.js`).default
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
+  try {
     hasCss = require.resolve(`static/${src}.css`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
     // must be first try/catch or yarn serve error
-    hasJs = require(`static/${src}.js`).default
+    hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   // react
