@@ -59,20 +59,17 @@ const mountEventmethods = ({ ref }) => {
   const addBtn = document.querySelector('#button--toggle-api-add')
 
   const addFnc = () => {
-    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
-    ref.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>add</strong>')
-      // elements
-      const index = self.getElementsGroups().length
-      const strEl = `<button type="button" class="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 on dir-before in done" data-xt-toggle-element>Toggle ${index}</button>`
-      document.querySelector('#toggle--eventmethods-elements').append(Xt.node({ str: strEl }))
-      // targets
-      const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow on in done" data-xt-toggle-target>Target ${index}</div>`
-      document.querySelector('#toggle--eventmethods-targets').append(Xt.node({ str: strTr }))
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    logAdd('<strong>add</strong>')
+    // elements
+    const index = self.getElementsGroups().length
+    const strEl = `<button type="button" class="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 on dir-before in done" data-xt-toggle-element>Toggle ${index}</button>`
+    document.querySelector('#toggle--eventmethods-elements').append(Xt.node({ str: strEl }))
+    // targets
+    const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow on in done" data-xt-toggle-target>Target ${index}</div>`
+    document.querySelector('#toggle--eventmethods-targets').append(Xt.node({ str: strTr }))
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   addBtn.addEventListener('click', addFnc)
@@ -82,19 +79,16 @@ const mountEventmethods = ({ ref }) => {
   const removeBtn = document.querySelector('#button--toggle-api-remove')
 
   const removeFnc = () => {
-    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
-    ref.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>remove</strong>')
-      // element
-      const els = self.elements
-      els[els.length - 1].remove()
-      // element
-      const trs = self.targets
-      trs[trs.length - 1].remove()
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    logAdd('<strong>remove</strong>')
+    // element
+    const els = self.elements
+    els[els.length - 1].remove()
+    // element
+    const trs = self.targets
+    trs[trs.length - 1].remove()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   removeBtn.addEventListener('click', removeFnc)
@@ -104,12 +98,9 @@ const mountEventmethods = ({ ref }) => {
   const reinitBtn = document.querySelector('#button--toggle-api-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
-    ref.dataset.reinitTimeout = setTimeout(() => {
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   reinitBtn.addEventListener('click', reinitFnc)

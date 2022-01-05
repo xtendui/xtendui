@@ -66,12 +66,9 @@ const mountEventmethods = ({ ref }) => {
   const reinitBtn = ref.querySelector('#button--overlay-api-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
-    ref.dataset.reinitTimeout = setTimeout(() => {
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   reinitBtn.addEventListener('click', reinitFnc)

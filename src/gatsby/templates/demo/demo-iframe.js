@@ -49,6 +49,8 @@ function DemoIframe(props) {
   useEffect(() => {
     const item = ref.current
     const switchDemo = mode => {
+      // fix cypress
+      mode = mode ?? 'html'
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,

@@ -47,9 +47,10 @@ jobs:
           ${{ steps.yarn-cache-dir-path.outputs.dir }}
           **/node_modules
           ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
+          ~/.cache/Cypress
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn1-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
@@ -66,5 +67,5 @@ jobs:
     # test/action.yml composite
     - name: Test
       run: yarn test
-    - name: Lint
-      run: yarn lint
+      env:
+        START_SERVER_AND_TEST_INSECURE: 1

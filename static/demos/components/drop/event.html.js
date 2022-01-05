@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--drop-event">
     <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
       <div data-xt-drop-element>
         <button
@@ -24,7 +24,7 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Dolor sit
               </button>
-              <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave', position: 'right-start' }">
+              <div data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
                 <div data-xt-drop-element>
                   <button
                     type="button"

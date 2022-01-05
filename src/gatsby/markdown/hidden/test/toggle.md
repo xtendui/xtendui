@@ -7,72 +7,57 @@ title: "Toggle"
 
 ## Usage
 
+`demos/components/overlay/usage-self`
+- TEST initial activation, overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.
 
-Test activation.
-
-Test overlay close on backdrop click.
-
-Test overlay no close clicking inside with eventLimit.
-
-Test overlay should close with event 'off.xt.trigger.overlay'.
-
-<demo>
-  <demoinline src="demos/components/toggle/usage-self">
-  </demoinline>
-  <div class="gatsby_demo_item" data-iframe="demos/components/overlay/usage-self">
-  </div>
-  <demoinline src="demos/components/drop/usage-self">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/usage-self">
-  </demoinline>
-</demo>
-
-Test activation and group activation.
-
-<demo>
-  <demoinline src="demos/components/toggle/usage-unique">
-  </demoinline>
-  <demoinline src="demos/components/toggle/unique-nogroupelements">
-  </demoinline>
-  <demoinline src="demos/components/toggle/multiple-group">
-  </demoinline>
-  <demoinline src="demos/components/toggle/multiple-nogroupelements">
-  </demoinline>
-</demo>
+[/demos/components/overlay/usage-self](/demos/components/overlay/usage-self).
 
 ## Interaction
 
-Test initial group activation.
-
-Test initial custom activation.
-
-Test multiple raf should always have `on` class until event `init.xt` and then should have `in` class.
+`demos/components/toggle/class`
+- TEST initial group activation, min max activation.
 
 <demo>
   <demoinline src="demos/components/toggle/class">
   </demoinline>
-  <demoinline src="demos/components/toggle/class-custom">
+</demo>
+
+`demos/components/toggle/multiple-group`
+- TEST group activation.
+
+<demo>
+  <demoinline src="demos/components/toggle/multiple-group">
+  </demoinline>
+</demo>
+
+`demos/components/toggle/multiple-nogroupelements`
+- TEST group activation.
+
+<demo>
+  <demoinline src="demos/components/toggle/multiple-nogroupelements">
   </demoinline>
 </demo>
 
 ## Event
 
-Test toggle mouse should not close when clicking opened elements.
-
-Test drop open and close nested.
-
-Test tooltip open and close nested.
+`demos/components/toggle/event`
+- TEST should not close when click or mouseleave > mouseenter active elements.
 
 <demo>
   <demoinline src="demos/components/toggle/event">
   </demoinline>
+</demo>
+
+`demos/components/drop/event`
+- TEST open and close nested.
+
+<demo>
   <demoinline src="demos/components/drop/event">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/event">
   </demoinline>
 </demo>
 
-Test prevent event.
+`demos/components/toggle/prevent-event`
+- TEST prevent event.
 
 <demo>
   <demoinline src="demos/components/toggle/prevent-event">
@@ -83,86 +68,73 @@ Test prevent event.
 
 ## Hash
 
-Test no hash must not add hash initial activation.
+`demos/components/toggle/hash`
+- TEST no hash must not add hash initial activation.
+- TEST initial activation, hash activation, browser navigation.
 
-Test initial activation on page load (browser location prev next), must remove initial `on` in targets.
+[/demos/components/toggle/hash#demo--toggle-hash-group-1](/demos/components/toggle/hash#demo--toggle-hash-group-1).
 
-Test hash activation.
+`demos/components/overlay/hash`
+- TEST opened with hash on page load, closing it should not block page interaction (bug with multiple elements same target), should reopen on change page browser navigation.
 
-Test change page (browser location prev next).
+[/demos/components/overlay/hash#demo--overlay-hash](/demos/components/overlay/hash#demo--overlay-hash).
 
-Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1).
+`demos/components/slider/hash`
+- TEST initial activation, hash activation, browser navigation.
 
-Test page should not scroll on change hash.
-
-Test overlay should reopen on change page (browser location prev next).
-
-Test overlay opened with hash on page load, closing it should not block page interaction (bug with multiple elemens same target).
-
-Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash).
-
-Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4).
+[/demos/components/slider/hash#demo--slider-hash-4](/demos/components/slider/hash#demo--slider-hash-4).
 
 ## Backdrop
 
-Test backdrop and no backdrop click.
+`demos/components/drop/backdrop`
+- TEST backdrop.
+- TEST backdrop hover.
 
 <demo>
-  <demoinline src="demos/components/overlay/variant">
-  </demoinline>
   <demoinline src="demos/components/drop/backdrop">
   </demoinline>
   <demoinline src="demos/components/tooltip/backdrop">
   </demoinline>
 </demo>
 
-## Static
-
-Test position and visibility.
-
-<demo>
-  <demoinline src="demos/components/drop/static">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/static">
-  </demoinline>
-</demo>
-
-## Class Body
-
-Test classes nested should not remove additional class.
-
-Test close all should remove all class.
-
-<demo>
-  <demoinline src="demos/components/overlay/class-body">
-  </demoinline>
-</demo>
-
 ## Other
 
-Test no empty frame when switching from off to reset.
+`demos/components/drop/reset-to-current`
+- TEST no empty frame when switching from off to reset.
 
 <demo>
   <demoinline src="demos/components/drop/reset-to-current">
   </demoinline>
 </demo>
 
-Test activation.
-
-Test animation fast duration with and without `data-xt-duration`.
+`demos/components/tooltip/swap-click`
+- TEST activation.
 
 <demo>
   <demoinline src="demos/components/tooltip/swap-click">
   </demoinline>
+</demo>
+
+`demos/components/tooltip/swap-toggle`
+- TEST activation.
+
+<demo>
   <demoinline src="demos/components/tooltip/swap-toggle">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-fast">
   </demoinline>
 </demo>
 
-Test (not in fullscreen or it doesn't test boundary) arrow position and position inside boundary on first element for proper merge of popperjs options.
+`demos/components/tooltip/prevent-overflow`
+- TEST position inside boundary on first element for proper merge of popperjs options, arrow position.
 
 <demo>
   <demoinline src="demos/components/tooltip/prevent-overflow">
+  </demoinline>
+</demo>
+
+`demos/components/overlay/animation-noqueue`
+- TEST focustrap should work, no console error.
+
+<demo>
+  <demoinline src="demos/components/overlay/animation-noqueue">
   </demoinline>
 </demo>

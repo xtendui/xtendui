@@ -15,7 +15,8 @@ const html = /* HTML */ `
           <a
             href="#anchor-1"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }">
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
+            data-xt-scrollto-hash="true">
             #1
           </a>
           <button
