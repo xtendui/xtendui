@@ -2,14 +2,15 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--jumptocontent">
-    <div
-      class="*** jumptocontent *** off:opacity-0 off:pointer-events-none out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
+    <nav
+      class="*** jumptocontent *** off:opacity-0 off:pointer-events-none out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0"
+      aria-label="Jump to content">
       <a
         href="#jumptocontent"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
         Jump to content
       </a>
-    </div>
+    </nav>
 
     <div class="xt-row xt-row-6">
       <div class="w-full">

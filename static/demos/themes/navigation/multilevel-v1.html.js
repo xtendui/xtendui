@@ -14,7 +14,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <button
                 type="button"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -54,7 +54,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <button
                 type="button"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -99,7 +99,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <a
                 href="#"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
@@ -130,7 +130,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <a
                 href="#"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
@@ -161,7 +161,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <a
                 href="#"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">

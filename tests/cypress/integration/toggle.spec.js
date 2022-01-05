@@ -1195,7 +1195,7 @@ describe('demos/components/overlay/animation-noqueue', function () {
     cy.get('@consoleError').should('not.be.called')
   })
 
-  it.only('TEST focustrap should work, no console error, navigation tabs.', function () {
+  it('TEST focustrap should work, no console error, navigation tabs.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .get(self.elements[0])

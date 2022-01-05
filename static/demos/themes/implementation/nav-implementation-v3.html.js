@@ -12,7 +12,7 @@ const html = /* HTML */ `
           <div class="*** xt-sticky md:py-4 ***" data-node-sticky>
             <div
               class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
-              <nav class="*** xt-list xt-list-1 flex-col ***">
+              <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col ***">
                 <a
                   href="#description"
                   type="button"

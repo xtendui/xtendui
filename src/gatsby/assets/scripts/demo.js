@@ -907,7 +907,7 @@ export const makeDocument = () => {
               str: `
 <div class="xt-tooltip px-5 group" data-xt-tooltip-target>
   <div class="relative py-2 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} bg-gray-100 transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100">
-    <nav class="xt-list flex-col">
+    <nav aria-label="Page navigation scroll" class="xt-list flex-col">
     </nav>
   </div>
 </div>`,

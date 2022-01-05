@@ -163,7 +163,7 @@ export default function Header({ page }) {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-4">
+                  <nav aria-label="Menu" className="mt-4">
                     <div className="gatsby_site-header_links_container">
                       <div className="gatsby_site-header_links">
                         {page.menus.posts.map(({ post }, i) =>
@@ -193,7 +193,7 @@ export default function Header({ page }) {
                       </div>
                     </div>
                     {page && page.post ? (
-                      <nav className="gatsby_site-header_listing">
+                      <div className="gatsby_site-header_listing">
                         {page.categories.category.sort(typeSort).map((category, i) => (
                           <div key={i}>
                             <div className="gatsby_site-header_cat">
@@ -287,9 +287,9 @@ export default function Header({ page }) {
                             </div>
                           </div>
                         ))}
-                      </nav>
+                      </div>
                     ) : null}
-                  </div>
+                  </nav>
                 </div>
               </div>
             </div>

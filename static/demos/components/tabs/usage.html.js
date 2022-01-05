@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <nav class="*** xt-list flex-col md:flex-row md:flex-nowrap ***">
+    <nav aria-label="Navigation" class="*** xt-list flex-col md:flex-row md:flex-nowrap ***">
       <a
         href="#"
         type="button"

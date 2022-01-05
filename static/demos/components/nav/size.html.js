@@ -3,7 +3,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 flex-col">
-      <nav class="xt-list *** xt-list-1 *** flex-col *** max-w-xs ***">
+      <nav aria-label="Navigation" class="xt-list *** xt-list-1 *** flex-col *** max-w-xs ***">
         <a
           href="#"
           type="button"
@@ -40,7 +40,7 @@ const html = /* HTML */ `
         </a>
       </nav>
 
-      <nav class="xt-list *** xt-list-2 *** flex-col *** max-w-sm ***">
+      <nav aria-label="Navigation" class="xt-list *** xt-list-2 *** flex-col *** max-w-sm ***">
         <a
           href="#"
           type="button"
@@ -77,7 +77,7 @@ const html = /* HTML */ `
         </a>
       </nav>
 
-      <nav class="xt-list *** xt-list-3 *** flex-col *** max-w-md ***">
+      <nav aria-label="Navigation" class="xt-list *** xt-list-3 *** flex-col *** max-w-md ***">
         <a
           href="#"
           type="button"

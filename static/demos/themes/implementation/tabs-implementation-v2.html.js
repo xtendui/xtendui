@@ -14,7 +14,7 @@ const html = /* HTML */ `
         <div class="*** xt-sticky ***" data-node-sticky>
           <div
             class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
-            <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
+            <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
               <a
                 role="button"
                 class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"

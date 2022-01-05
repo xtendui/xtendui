@@ -11,7 +11,7 @@ const html = /* HTML */ `
       <div data-xt-toggle="{ min: 1, duration: 500 }">
         <div
           class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
-          <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
+          <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
             <a
               href="#"
               type="button"

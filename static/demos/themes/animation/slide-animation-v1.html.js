@@ -93,7 +93,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${designAnim()} ***">
-            <nav class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
+            <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
               <a
                 href="#"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
@@ -131,7 +131,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***">
-            <nav class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
               <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
                 <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
@@ -554,7 +554,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <button
                             type="button"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -582,7 +582,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
                             href="#"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
@@ -603,7 +603,7 @@ const html = /* HTML */ `
 
                       <div class="mt-auto">
                         <div class="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
-                          <nav class="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                             <a
                               href="#"
                               class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
@@ -640,7 +640,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <button
                             type="button"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -685,7 +685,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
                             href="#"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
@@ -716,7 +716,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
                             href="#"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
@@ -747,7 +747,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
                             href="#"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">

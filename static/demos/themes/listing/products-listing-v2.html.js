@@ -163,7 +163,7 @@ const html = /* HTML */ `
             </div>
           </button>
 
-          <nav class="hidden" data-xt-slider-pagination>
+          <nav aria-label="Slider Navigation" class="hidden" data-xt-slider-pagination>
             <button type="button" class="xt-button hidden" data-xt-slider-element></button>
           </nav>
         </div>

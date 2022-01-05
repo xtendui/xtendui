@@ -13,7 +13,7 @@ const html = /* HTML */ `
           <div class="w-full md:w-4/12">
             <div
               class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
-              <nav class="*** xt-list xt-list-1 flex-col ***">
+              <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col ***">
                 <a
                   href="#"
                   type="button"

@@ -16,7 +16,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${itemAnim()} ***">
-            <nav class="xt-list flex-col ${classes.groupMd()}">
+            <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="#"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
@@ -54,7 +54,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${itemAnim()} ***">
-            <nav class="xt-list xt-list-1 flex-col *** py-2 ***">
+            <nav aria-label="Drop" class="xt-list xt-list-1 flex-col *** py-2 ***">
               <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
                 <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
