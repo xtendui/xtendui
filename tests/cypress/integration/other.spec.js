@@ -385,9 +385,6 @@ describe('demos/components/scrollto/overlay', function () {
       .should('have.attr', 'data-xt-scrollto-init', '') // racecondition
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
-        cy.frameDouble().then(() => {
-          expect(self.targets[0].classList.contains('in')).to.equal(true)
-        })
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
@@ -416,9 +413,6 @@ describe('demos/components/scrollto/overlay', function () {
       .go(-1)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
-        cy.frameDouble().then(() => {
-          expect(self.targets[0].classList.contains('in')).to.equal(true)
-        })
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
@@ -428,18 +422,11 @@ describe('demos/components/scrollto/overlay', function () {
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
-        cy.frameDouble().then(() => {
-          expect(self.targets[0].classList.contains('in')).to.equal(false)
-        })
       })
       .get(this.links[2])
       .click()
-      .wait(500)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
-        cy.frameDouble().then(() => {
-          expect(self.targets[0].classList.contains('in')).to.equal(true)
-        })
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
