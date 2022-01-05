@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--toggle-prevent-event">
     <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ min: 1, preventEvent: true }">
       <a
         href="/"

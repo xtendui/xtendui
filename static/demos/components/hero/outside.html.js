@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-200 w-full h-96">
-        <img class="xt-media object-cover object-center" src="/img-alt.svg" loading="lazy" alt="" />
+        <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
       </div>
       <div class="flex relative">
         <a href="#" class="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mx-auto max-w-2xl text-center group">

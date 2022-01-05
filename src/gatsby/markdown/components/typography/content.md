@@ -133,9 +133,9 @@ You can use definition lists **classes or tags** with customizable styles.
   </demoinline>
 </demo>
 
-## Figure
+## Other
 
-You can use figure and figcaption **classes or tags** with customizable styles.
+You can use figure and figcaption and hr **classes or tags** with customizable styles.
 
 > To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Tags `figure` and `figcaption` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/global/preset#customization) check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/beta/src/typography.css.js) for default styles.
 
@@ -145,11 +145,12 @@ You can use figure and figcaption **classes or tags** with customizable styles.
 | ----------------------- | ---------------------------- | -----------------| ----------------------------- |----------------------------- |
 | Utility                  | `figure` or `.xt-figure`       | `xt-figure`                | `responsive`                | Tag styles            |
 | Utility                  | `figcaption` or `.xt-figcaption`       | `xt-figcaption`                | `responsive`                | Tag styles            |
+| Utility                  | `hr` or `.xt-hr`       | `xt-hr`                | `responsive`                | Tag styles            |
 
 </div>
 
 <demo>
-  <demoinline src="demos/components/typography/figure">
+  <demoinline src="demos/components/typography/other">
   </demoinline>
 </demo>
 

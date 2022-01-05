@@ -95,7 +95,7 @@ To **show/hide and animate nodes** we use **custom tailwind variants that react 
 
 Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
 
-Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
+Alternatively you can use your own custom style, for example `off:invisible off:pointer-events-none out:pointer-events-none`.
 
 Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
 
@@ -105,8 +105,8 @@ You can **toggle activations with javascript**.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number\|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Activate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
-| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number\|null = null, raf:Boolean = true, initial:Boolean = false })`                          | Dectivate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
+| Method                  | `Xt.on({ el:Node, ns:String = '', duration:Number\|null = null, raf:Boolean = true, initial:Boolean = false, callback:Function\|null })`                          | Activate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
+| Method                  | `Xt.off({ el:Node, ns:String = '', duration:Number\|null = null, raf:Boolean = true, initial:Boolean = false, callback:Function\|null })`                          | Dectivate node with `.on` `.in` `.out` `.done`, set initial for instant animations             |
 
 </div>
 
@@ -167,20 +167,30 @@ Xt.options['xt-drop'] = {
 
 > Be sure to assing `Xt.options` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
 
-## Xt.node
+## Xt.sanitize
 
-You can create **DOM node from string** with this method.
+You can **sanitize a html string** with [DOMPurify](https://github.com/cure53/DOMPurify) using `Xt.sanitize`. This method is used also internally to sanitize content added to DOM.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.node({ str:String })`                          | Create DOM node from string, returns `Node`             |
-| Method                  | `Xt.nodes({ str:String })`                          | Create DOM nodes from string, returns `NodeList`             |
+| Method                  | `Xt.sanitize(str:String)`                          | Sanitize string with [DOMPurify](https://github.com/cure53/DOMPurify), returns `String`             |
 
 </div>
 
-> **Do not populate `str` with data from a DOM node** because it will be interpreted as HTML and can lead to a cross-site scripting vulnerability.
+## Xt.node
+
+You can create **DOM node from string** with this method. The string is automatically sanitized with `Xt.sanitize`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.node({ str:String, sanitize:Boolean = true })`                          | Create DOM node from string, returns `Node`             |
+| Method                  | `Xt.nodes({ str:String, sanitize:Boolean = true })`                          | Create DOM nodes from string, returns `NodeList`             |
+
+</div>
 
 ## Xt.visible
 
@@ -250,6 +260,18 @@ Or also use css variables for viewport height `--vh`.
   height: calc(var(--vh, 1vh) * 100);
 }
 ```
+
+## Globals
+
+If you need to access `Xt` variable in the global `window` use `window.XtSetGlobal` in a `script` tag before the main application or in your testing environment.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Variable                  | `window.XtSetGlobal:Boolean\|String`              | `null`       | Enable `window.Xt` global variable                  |
+
+</div>
 
 ## Listeners
 

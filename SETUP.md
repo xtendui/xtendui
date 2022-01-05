@@ -29,14 +29,11 @@ Create a `tailwind.config.js` and add **xtendui preset**, with this purge config
 
 ```jsx
 module.exports = {
-  mode: 'jit',
   presets: [
     require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset'),
   ],
-  purge: {
-    // put other purge content e.g.: './src/**/*.html', './src/**/*.css', './src/**/*.js'
-    content: ['./node_modules/xtendui/src/*[!.css].js'],
-  },
+  // put other purge content e.g.: './src/**/*.{html,js}'
+  content: ['./node_modules/xtendui/src/*[!.css].js'],
 }
 ```
 
@@ -121,6 +118,7 @@ If you want to show a warning on unsupported browser you can use [browser update
 
 If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@beta/), the css and js are inside the `dist/` folder.
 
-The CDN `dist/` files are large because they include all styles and components, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
+The css CDN `dist/` includes only the styles used in the documentation demos.
 
-Please note that many of the features that make Xtend UI great **are not available without incorporating Xtend UI into your build process**.
+The js CDN `dist/` files are large because they include all styles and components, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
+

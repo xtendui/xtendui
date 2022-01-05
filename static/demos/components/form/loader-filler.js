@@ -32,6 +32,7 @@ const mountFormLoaders = ({ ref }) => {
 
     if (!loadable.classList.contains('xt-loadable-ignore')) {
       form.addEventListener('reset', reset)
+      addEventListener('pageshow', reset)
     }
 
     // inject
@@ -45,7 +46,7 @@ const mountFormLoaders = ({ ref }) => {
       loadable.append(Xt.node({ str: `<span class="xt-loadable-content"></span>` }))
       loadable.append(Xt.node({ str: loaderTemplate.innerHTML }))
       const content = loadable.querySelector('.xt-loadable-content')
-      content.innerHTML = text
+      content.innerHTML = Xt.sanitize(text)
     }
   }
 

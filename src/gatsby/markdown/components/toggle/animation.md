@@ -12,7 +12,7 @@ To **show/hide and animate nodes** we use **custom tailwind variants that react 
 
 Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
 
-Alternatively you can use your own custom style, for example `off:visibility-hidden off:pointer-events-none out:pointer-events-none`.
+Alternatively you can use your own custom style, for example `off:invisible off:pointer-events-none out:pointer-events-none`.
 
 Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
 

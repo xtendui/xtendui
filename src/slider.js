@@ -101,6 +101,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // @PERF
     let sizeContent = 0
+    let trWidthMax = 0
     for (const tr of self.targets) {
       let trLeft
       let trWidth
@@ -112,7 +113,8 @@ class Slider extends Xt.Toggle {
         trWidth = tr.offsetWidth
       }
       sizeContent += trWidth
-      Xt.dataStorage.set(tr, `${self.ns}TrLeftWrap`, trLeft)
+      trWidthMax = trWidth > trWidthMax ? trWidth : trWidthMax
+      Xt.dataStorage.set(tr, `${self.ns}TrLeftInitial`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrWidth`, trWidth)
     }
@@ -134,11 +136,7 @@ class Slider extends Xt.Toggle {
     // initGroupsPosition
     self._initGroupsPosition()
     // wrap
-    if (
-      options.wrap !== false &&
-      options.mode !== 'absolute' &&
-      self.drag._availableSpace > self.drag._size * options.wrap
-    ) {
+    if (options.wrap !== false && options.mode !== 'absolute' && self.drag._availableSpace > trWidthMax) {
       self._wrap = true
     } else {
       self._wrap = false
@@ -489,7 +487,7 @@ class Slider extends Xt.Toggle {
         if (html.search(regex) !== -1) {
           html = html.replace(regex, self._groups.length.toString())
         }
-        item.innerHTML = html
+        item.innerHTML = Xt.sanitize(html)
         if (classes.length) {
           item.children[0].classList.add(...classes)
         }
@@ -858,8 +856,8 @@ class Slider extends Xt.Toggle {
     // logic
     if (self._wrap) {
       const tr = self._groups[index].target
-      const left = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
-      const width = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
+      const wrapLeft = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
+      const previousWidth = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
       // only one call
       let direction = self.direction
       if (!direction) {
@@ -869,7 +867,7 @@ class Slider extends Xt.Toggle {
       if (self.drag._wrapDir !== direction || self.drag._wrapIndex !== index) {
         self.drag._wrapDir = direction
         self.drag._wrapIndex = index
-        self._eventMove({ index, direction, left, width, movingSpace: width })
+        self._eventMove({ index, direction, wrapLeft, previousWidth, wrapSpace: previousWidth })
       }
     }
   }
@@ -879,11 +877,11 @@ class Slider extends Xt.Toggle {
    * @param {Object} params
    * @param {Number} params.index
    * @param {Number} params.direction
-   * @param {Number} params.left
-   * @param {Number} params.width
-   * @param {Number} params.movingSpace
+   * @param {Number} params.wrapLeft
+   * @param {Number} params.previousWidth
+   * @param {Number} params.wrapSpace
    */
-  _eventMove({ index, direction, left, width, movingSpace } = {}) {
+  _eventMove({ index, direction, wrapLeft, previousWidth, wrapSpace } = {}) {
     const self = this
     const options = self.options
     // index
@@ -913,77 +911,88 @@ class Slider extends Xt.Toggle {
     if (index === null) return
     // logic
     let translate
-    const moveGroup = self._groups[index].targetsInitial
-    const move = moveGroup[0]
-    const moveLeftWrap = Xt.dataStorage.get(move, `${self.ns}TrLeftWrap`)
-    const moveWidth = Xt.dataStorage.get(move, `${self.ns}GroupWidth`)
-    let moveLeft = left
+    let left = wrapLeft
+    const group = self._groups[index].targetsInitial
+    const tr = group[0]
+    const leftInitial = Xt.dataStorage.get(tr, `${self.ns}TrLeftInitial`)
+    const width = Xt.dataStorage.get(tr, `${self.ns}GroupWidth`)
+    // calculate left (left position of the dragger when tr activated)
+    // values are inverted (+ is going left, - is going right)
+    // we need different calculation depending on direction because the line is on the left or on the right of tr
     if (direction < 0) {
-      // move translate
-      translate = -left - moveLeftWrap - moveWidth
-      // set new activation position
       if (options.align === 'center') {
-        moveLeft += width / 2 + moveWidth / 2
+        // left is the center position of current tr
+        left += previousWidth / 2 + width / 2
       } else if (options.align === 'left') {
-        moveLeft += moveWidth
+        // left is the left position of current tr
+        left += width
       } else if (options.align === 'right') {
-        moveLeft += width
+        // left is the right position of current tr
+        left += previousWidth
       }
     } else if (direction > 0) {
-      // move translate
-      translate = -left - moveLeftWrap + width
-      // set new activation position
       if (options.align === 'center') {
-        moveLeft -= width / 2 + moveWidth / 2
+        // left is the center position of current tr
+        left -= previousWidth / 2 + width / 2
       } else if (options.align === 'left') {
-        moveLeft -= width
+        // left is the left position of current tr
+        left -= previousWidth
       } else if (options.align === 'right') {
-        moveLeft -= moveWidth
+        // left is the right position of current tr
+        left -= width
       }
     }
-    // set new activation position
-    for (const tr of moveGroup) {
-      Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, moveLeft)
+    for (const tr of group) {
+      Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, left)
     }
-    // move translate
-    const moveAlignCenter = self.drag._size / 2 - width / 2
-    const moveAlignNone = 0
-    const moveAlignFull = self.drag._size - width
+    // calculate translate (translate position of the tr)
+    // values are inverted (+ is going left, - is going right)
+    if (direction < 0) {
+      // translate is the difference from current wrapLeft and tr initial left and tr width
+      translate = wrapLeft + leftInitial + width
+    } else if (direction > 0) {
+      // translate is the difference from current wrapLeft and tr initial left and previous tr width
+      translate = wrapLeft + leftInitial - previousWidth
+    }
     if (options.align === 'center') {
-      translate += moveAlignCenter
+      // remove the space between left drag position and final position
+      // remove from translate the difference between half drag size and half previous tr width
+      translate -= self.drag._size / 2 - previousWidth / 2
     } else if (options.align === 'left') {
-      translate += moveAlignNone
+      // remove the space between left drag position and final position
+      translate -= 0
     } else if (options.align === 'right') {
-      translate += moveAlignFull
+      // remove the space between left drag position and final position
+      // remove from translate the difference from drag size and previous tr width
+      translate -= self.drag._size - previousWidth
     }
-    for (const tr of moveGroup) {
-      tr.style.transform = `translateX(${translate}px)`
+    for (const tr of group) {
+      const trLeftInitial = Xt.dataStorage.get(tr, `${self.ns}TrLeftInitial`)
+      Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeftInitial - translate)
+      tr.style.transform = `translateX(${-translate}px)`
     }
-    // set new translate position
-    for (const tr of moveGroup) {
-      const trLeft = Xt.dataStorage.get(tr, `${self.ns}TrLeftWrap`)
-      Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft + translate)
-    }
-    // loop available width
+    // calculate space (current wrap space difference of activation to check against drag size)
+    // we need different calculation depending on direction because the line is on the left or on the right of tr
     if (direction < 0) {
       if (options.align === 'center') {
-        movingSpace += moveWidth + moveAlignCenter
+        wrapSpace += width + previousWidth / 2
       } else if (options.align === 'left') {
-        movingSpace += moveWidth + moveAlignFull
+        wrapSpace += width + self.drag._size - previousWidth
       } else if (options.align === 'right') {
-        movingSpace += moveWidth + moveAlignNone
+        wrapSpace += width
       }
     } else if (direction > 0) {
       if (options.align === 'center') {
-        movingSpace += moveWidth + moveAlignCenter
+        wrapSpace += width + previousWidth / 2
       } else if (options.align === 'left') {
-        movingSpace += moveWidth + moveAlignNone
+        wrapSpace += width
       } else if (options.align === 'right') {
-        movingSpace += moveWidth + moveAlignFull
+        wrapSpace += width + self.drag._size - previousWidth
       }
     }
-    if (movingSpace <= self.drag._size) {
-      self._eventMove({ index, direction, left: moveLeft, width: moveWidth, movingSpace })
+    // continue moving only if wrapSpace is smaller than drag
+    if (wrapSpace <= self.drag._size) {
+      self._eventMove({ index, direction, wrapLeft: left, previousWidth: width, wrapSpace })
     }
   }
 

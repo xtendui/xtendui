@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--overlay-animation-noqueue">
     <div class="xt-list xt-list-3 items-center" data-xt-overlay="{ queue: false, duration: 500 }">
       <button
         type="button"

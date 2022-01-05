@@ -23,7 +23,6 @@ module.exports = {
       position: 'relative',
       display: 'flex',
       flexWrap: 'nowrap',
-      alignItems: 'flex-start',
       // prevent browser selection
       '-webkit-user-select': 'none',
       '-moz-user-select': 'none',

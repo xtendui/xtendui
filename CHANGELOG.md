@@ -1,3 +1,55 @@
+# [1.0.0-beta.48](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.47...v1.0.0-beta.48) (2021-12-22)
+
+
+### Bug Fixes
+
+* fix focustrap error on deactivation sometimes with fallbackFocus ([683232b](https://github.com/xtendui/xtendui/commit/683232b5739bcf9713d7b9196ed3ca2c0f6e7f1d))
+* fix openauto no force and fix focustrap fallback focus ([7003eb4](https://github.com/xtendui/xtendui/commit/7003eb41701dbe526307c39f8218128c46503396))
+* **form:** trigger change checks labels on form reset ([32220d0](https://github.com/xtendui/xtendui/commit/32220d03be625f4ab835163af5cd03f814049a42))
+* **groupnumber:** fix groupnumber voidable with min and max below or above 0 ([59fd762](https://github.com/xtendui/xtendui/commit/59fd762d57c69ecccd41a878f16355a0e5d33158))
+* **groupnumber:** fix unmount events + trigger also input event on validation + fix double change event call on validation ([3f73afc](https://github.com/xtendui/xtendui/commit/3f73afc1416735e153e76e96933f5d397e834ee5))
+* **groupnumber:** fixed disabled steps with options.limit false ([70b535b](https://github.com/xtendui/xtendui/commit/70b535b95b09173dfe30d63b779ec816c78effb6))
+* **inputnumber:** options.voidable reset to empty value instead of 0 ([f4832cb](https://github.com/xtendui/xtendui/commit/f4832cb68028b12834aa2a8d87b124faf07cf508))
+* **overlay:** fix on matches and reinit specialAppendTo reset ([5e2c198](https://github.com/xtendui/xtendui/commit/5e2c198133428b7b47907456c0bdd4ec72f90825))
+* **scrollto:** fix destroy remove custom event listener scrollto.trigger.xt.scrollto ([8b3a57c](https://github.com/xtendui/xtendui/commit/8b3a57c9e401f282642d9c1a2f1e76814ce87160))
+* **slider:** fix align center and wrap true positioning on wrap ([b7b8fda](https://github.com/xtendui/xtendui/commit/b7b8fda15e74bc36db3acf5c80fd392b6e40d383))
+* **slider:** fix slider wrap depending on max target width instead of total width ([7afbc5d](https://github.com/xtendui/xtendui/commit/7afbc5decda55bd76e871440862d391e5913c4e9))
+
+
+### Code Refactoring
+
+* **form:** form radio checkbox and switch do set border color on check and round down size ([11a4def](https://github.com/xtendui/xtendui/commit/11a4defead0eaf1ca811356895c120c8cade72ee))
+* **form:** refactor form styles ([83855be](https://github.com/xtendui/xtendui/commit/83855beed3f47a8b4f1b6b7476ee052ae2b96289))
+* **row:** clean default align-items and justify-content values and  row default and slides default align items ([04aea2e](https://github.com/xtendui/xtendui/commit/04aea2e4d01d0eefc5d9fa21ef1df78ed58f4f44))
+
+
+### Features
+
+* class fields and private properties and methods ([db559a2](https://github.com/xtendui/xtendui/commit/db559a2f2fa2decfda47cd4b519a0b79736f7383))
+* **groupnumber:** added options.validateInitial and no validation on initialization to behave like browser input numbers + no disabled steps on limit false ([ebb1065](https://github.com/xtendui/xtendui/commit/ebb10655a5fadf78e81fd9865dadc5ce4abf4fda))
+* **groupnumber:** options.events.steps added with default 'click' ([3dce6c0](https://github.com/xtendui/xtendui/commit/3dce6c016109d910a6bac8d7d81ba444fdd06a57))
+* **groupnumber:** removed options.validateInitial ([7cc35b6](https://github.com/xtendui/xtendui/commit/7cc35b6089c9c7b4838f74f57aba75a3b55070db))
+* **javascript:** added window.XtSetGlobal to set global Xt variable ([93c6a16](https://github.com/xtendui/xtendui/commit/93c6a1625c0a799a59dd001fe6f80609697d7ed5))
+* **javascript:** added Xt.sanitize to sanitize html and Xt.node and Xt.nodes now sanitize string by default ([f2fc630](https://github.com/xtendui/xtendui/commit/f2fc6307d6561f9a70cdcb20e94dcf842a18ada0))
+* **javascript:** Xt.on and Xt.off added argument callback ([46f4e93](https://github.com/xtendui/xtendui/commit/46f4e93194a56ee19d745ad01b07721b9281531c))
+
+
+### Reverts
+
+* Revert "fix(toggle): fix openauto without force or sometimes get triggered multiple times" ([b56957c](https://github.com/xtendui/xtendui/commit/b56957c66e7c0b24c8bda336899bb74005d59e10))
+
+
+### BREAKING CHANGES
+
+* **row:** now .xt-row and .xt-slides has default align-items: stretch instead of align-items: flex-start
+* **javascript:** Xt.node and Xt.nodes now sanitize string argument, check if anithing breaks and add sanitize: false to disable html sanitize on Xt.node and Xt.nodes
+* **groupnumber:** use options.validateInitial to validate on initialization if needed but shouldn't if you assign input value already, or new behavior is ok like browser input number
+* **form:** if you want to change background-color on radio checkbox and switch checked use variant checked: with a bg- color value like the old text- color and remove text- color is not more needed
+* **form:** if you want to change border-color on radio checkbox and switch checked use variant, now it remains the same
+
+rounded values for radio and checkbox and switch size and alignment, check but it should only make better position and size for xt-check
+* to properly polyfill use babel > 7.14, to properly lint use eslint > 8.0 and `ecmaVersion: 13`
+
 # [1.0.0-beta.47](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.46...v1.0.0-beta.47) (2021-10-06)
 
 

@@ -81,7 +81,7 @@ Here are the main **javascript options**.
 | Option                    | `class:String`                          | `'on'`        | Activation class for anchors              |
 | Option                    | `events:String\|false`                          | `'scroll off.xt.overlay'`        | Events of `self.scrollers` that triggers activation              |
 | Option                    | `scrollActivation:Boolean`                          | `true`        | Activate anchors automatically on scroll             |
-| Option                    | `scrollDelay:Number`                          | `150`        | Delay on scroll checks             |
+| Option                    | `scrollDelay:Number`                          | `200`        | Delay on scroll checks             |
 | Option                    | `hash:Boolean`                          | `false`        | Update url with hash on anchors, if false you can use `[data-xt-scrollto-hash="true"]` or `[data-xt-scrollto-hash="false"]` on **each link**             |
 | Option                    | `position({ self }):Function`             | `<Function>`        | Positioning function that sets `self.position`, return `Number`             |
 | Option                    | `space({ self }):Function`                          | `<Function>`        | Positioning space window top that sets `self.space`, return `Number`             |

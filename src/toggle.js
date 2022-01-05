@@ -386,7 +386,9 @@ class Toggle {
         }
         // check if activated
         // fix check options.max for currents of _hashChange current reset if hash has current
-        if ((activated && currents < options.max) || obj.arr.includes(el)) {
+        // fix check tr with same activation
+        const els = self.getElements({ el: tr, same: true })
+        if ((activated && currents < options.max) || obj.arr.some(x => els.includes(x))) {
           // instant animation
           tr.classList.add(...self._classes)
           tr.classList.add(...self._classesIn)
@@ -426,6 +428,8 @@ class Toggle {
       if (activated && currents < options.max) {
         // initial
         currents++
+        // fix check tr with same activation
+        obj.arr.push(el)
         // toggle event if present because of custom listeners
         if (options.on) {
           const event = options.on.split(' ')[0]
@@ -668,7 +672,7 @@ class Toggle {
     // mediaLoaded
     if (options.mediaLoaded || options.mediaLoadedReinit) {
       for (const el of self.elements) {
-        const imgs = Array.from(el.querySelectorAll('img')).filter(x => !x.closest('.xt-clone'))
+        const imgs = Array.from(el.querySelectorAll('img'))
         self._destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
@@ -687,7 +691,7 @@ class Toggle {
         }
       }
       for (const tr of self.targets) {
-        const imgs = Array.from(tr.querySelectorAll('img')).filter(x => !x.closest('.xt-clone'))
+        const imgs = Array.from(tr.querySelectorAll('img'))
         self._destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
@@ -695,7 +699,7 @@ class Toggle {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 `load/media/${self.ns}`,
-                self._eventMedialoadedHandler.bind(self).bind(self, { img, el: tr, deferred: true })
+                self._eventMedialoadedHandler.bind(self).bind(self, { img, el: tr, deferred: true, reinit: true })
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
@@ -1006,14 +1010,15 @@ class Toggle {
    * @param {Node|HTMLElement|EventTarget|Window} params.img
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    * @param {Boolean} params.deferred
+   * @param {Boolean} params.reinit
    */
-  _eventMedialoadedHandler({ img, el, deferred = false } = {}) {
+  _eventMedialoadedHandler({ img, el, deferred = false, reinit = false } = {}) {
     const self = this
     const options = self.options
     // fix multiple calls
     Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true)
     // mediaLoadedReinit
-    if (options.mediaLoadedReinit && deferred) {
+    if (options.mediaLoadedReinit && deferred && reinit) {
       Xt.eventDelay({
         e: { detail: { delay: Xt.medialoadedDelay } },
         el: self.container,
@@ -1464,12 +1469,13 @@ class Toggle {
       el.checked = true
       // activation
       el.classList.add(...self._classes)
-      el.classList.remove(...self._classesOut, ...self._classesDone)
+      el.classList.remove(...self._classesOut)
       // needs TWO raf or sequential off/on flickr (e.g. display)
       Xt.frameDouble({
         el,
         func: () => {
           el.classList.add(...self._classesIn)
+          el.classList.remove(...self._classesDone)
         },
       })
       // direction
@@ -1552,12 +1558,12 @@ class Toggle {
       // input
       el.checked = false
       // must be outside inside raf or page jumps (e.g. noqueue, done outside for toggle inverse)
-      el.classList.remove(...self._classes, ...self._classesDone)
+      el.classList.remove(...self._classes)
       // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
       Xt.frameDouble({
         el,
         func: () => {
-          el.classList.remove(...self._classesIn)
+          el.classList.remove(...self._classesIn, ...self._classesDone)
           el.classList.add(...self._classesOut)
         },
       })
@@ -1694,8 +1700,8 @@ class Toggle {
       }
       // return
       return true
-    } else if ([...options.off.split(' ')].includes(e?.type)) {
-      // same event for on and off same namespace
+    } else if (options.off && [...options.off.split(' ')].includes(e?.type)) {
+      // fix same event for on and off same namespace
       self._eventOff({ el }, e)
     }
     // return
@@ -3150,7 +3156,7 @@ class Toggle {
     if (!self.disabled) {
       self.disabled = true
       // off from disable/destroy
-      // need to deactivate on disable on some components (e.g.destroy overlay mobile, matches disable)
+      // need to deactivate on disable on some components (e.g. destroy overlay mobile, matches disable)
       if (options.disableDeactivate) {
         for (const el of self.elements.filter(x => self.hasCurrent({ el: x }))) {
           self._eventOff({ el, force: true })
@@ -3657,6 +3663,13 @@ class Toggle {
    */
   reinit({ save = true } = {}) {
     const self = this
+    const options = self.options
+    // need to reset appendto
+    if (options.disableDeactivate) {
+      for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+        self._specialAppendto({ actionCurrent: 'Out', el: tr, type: 'targets' })
+      }
+    }
     // reinit
     self._initLogic({ save })
   }

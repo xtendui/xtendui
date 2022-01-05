@@ -12,7 +12,7 @@ Xt.usabilityHostnames = '127.0.0.1 localhost'
 Xt.frame({
   func: () => {
     if (
-      !Xt.usabilityHostnames === false &&
+      Xt.usabilityHostnames !== false &&
       (Xt.usabilityHostnames === true || [...Xt.usabilityHostnames.split(' ')].includes(location.hostname))
     ) {
       // eslint-disable-next-line no-console

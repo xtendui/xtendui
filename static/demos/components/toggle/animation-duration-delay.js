@@ -14,24 +14,24 @@ const mountToggle = ({ ref }) => {
   new Xt.Toggle(toggle, {
     durationIn: ({ current, total, el, self }) => {
       if (self.elements.includes(el)) return
-      const val = (total - current) * 300
+      const val = (total - current) * 200
       el.style.transitionDuration = `${val}ms`
       return val
     },
     delayIn: ({ current, el, self }) => {
       if (self.elements.includes(el)) return
-      const val = current * 300
+      const val = current * 200
       return val
     },
     durationOut: ({ current, el, self }) => {
       if (self.elements.includes(el)) return
-      const val = current * 150
+      const val = current * 100
       el.style.transitionDuration = `${val}ms`
       return val
     },
     delayOut: ({ current, total, el, self }) => {
       if (self.elements.includes(el)) return
-      const val = (total - current) * 150
+      const val = (total - current) * 100
       return val
     },
   })

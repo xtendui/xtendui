@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--slider-wrap-right">
     <div class="xt-slider" data-xt-slider="{ align: 'right', wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div

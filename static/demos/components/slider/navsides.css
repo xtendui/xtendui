@@ -1,13 +1,14 @@
 .demo--slider-navsides, .demo--slider-navsides-react {
   .slider-navs-container {
-    @screen md {
-      [data-xt-nav] {
-        opacity: 0;
+    [data-xt-nav] {
+      opacity: 0;
+      @media (hover: none) {
+        display: none;
       }
-      &:hover {
-        [data-xt-nav] {
-          opacity: 100;
-        }
+    }
+    &:hover {
+      [data-xt-nav] {
+        opacity: 100;
       }
     }
   }

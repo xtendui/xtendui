@@ -73,7 +73,7 @@ const html = /* HTML */ `
                     ${classes.iconX()}
                   </button>
                   <div class="xt-media-container bg-gray-200 pb-[100%]">
-                    <img class="xt-media object-cover object-center" src="/img.svg" loading="lazy" alt="" />
+                    <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                   </div>
                 </div>
               </div>
