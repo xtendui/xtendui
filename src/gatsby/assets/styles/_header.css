@@ -216,7 +216,7 @@
     @apply transition duration-300 ease-out-quint text-white text-opacity-[90%];
     border-radius: 6px;
     padding: 6px 9px;
-    font-weight: theme('fontWeight.semibold');
+    font-weight: theme('fontWeight.normal');
     font-size: 14px;
     line-height: 1;
     letter-spacing: theme('letterSpacing.wide');
@@ -225,7 +225,7 @@
   &.gatsby_button-site-header_link {
     .gatsby_button-site_article_sidebar_inner {
       @apply w-full;
-      font-weight: theme('fontWeight.bold');
+      font-weight: theme('fontWeight.semibold');
       text-transform: uppercase;
     }
   }
@@ -259,7 +259,7 @@
     .gatsby_button-site_article_sidebar_inner {
       @apply bg-primary-900 bg-opacity-50 text-opacity-100;
       transform: none;
-      font-weight: theme('fontWeight.bold');
+      font-weight: theme('fontWeight.semibold');
     }
   }
 }
