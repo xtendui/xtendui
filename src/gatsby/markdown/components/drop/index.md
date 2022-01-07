@@ -18,17 +18,6 @@ Initialize automatically **within markup** with `[data-xt-drop="{ <options> }"]`
 
 Initialize manually **within javascript** with `new Xt.Drop(document.querySelector('.my-container'), {/* options */})`.
 
-## Usage Self
-
-Use this code to create a **drop** in **self mode**.
-
-Just use the class `on` if you want to automatically open, or use the [api](/components/drop/api).
-
-<demo>
-  <demoinline src="demos/components/drop/usage-self">
-  </demoinline>
-</demo>
-
 ## Usage Unique
 
 Use this code to create a **drop** in **unique mode**.

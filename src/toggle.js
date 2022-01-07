@@ -3556,19 +3556,16 @@ class Toggle {
    */
   _eventA11yOn({ el } = {}) {
     const self = this
-    const options = self.options
     // keydown
     const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventA11yKeydown.bind(self))
     el.addEventListener('keydown', keydownHandler, { passive: false })
     // documentKeydown
-    if (options.a11y.role === 'dialog') {
-      const documentKeydownHandler = Xt.dataStorage.put(
-        el,
-        `keydown/ariakeyboard/document/${self.ns}`,
-        self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
-      )
-      document.addEventListener('keydown', documentKeydownHandler)
-    }
+    const documentKeydownHandler = Xt.dataStorage.put(
+      el,
+      `keydown/ariakeyboard/document/${self.ns}`,
+      self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
+    )
+    document.addEventListener('keydown', documentKeydownHandler)
   }
 
   /**
@@ -3578,15 +3575,12 @@ class Toggle {
    */
   _eventA11yOff({ el } = {}) {
     const self = this
-    const options = self.options
     // keydown
     const keydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/${self.ns}`)
     el.removeEventListener('keydown', keydownHandler)
     // documentKeydown
-    if (options.a11y.role === 'dialog') {
-      const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
-      document.removeEventListener('keydown', documentKeydownHandler)
-    }
+    const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
+    document.removeEventListener('keydown', documentKeydownHandler)
   }
 
   /**
@@ -3598,6 +3592,10 @@ class Toggle {
   _eventA11yKeydown(e) {
     const self = this
     const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // keydown
     const key = e.key
     let el
@@ -3630,11 +3628,18 @@ class Toggle {
    */
   _eventA11yDocumentKeydown({ el } = {}, e) {
     const self = this
+    // disabled
+    if (self.disabled) {
+      return
+    }
     // keydown
     const key = e.key
-    if (key === 'Escape') {
-      // activation
-      self._eventOff({ el, focus: true })
+    const options = self.options
+    if (options.a11y.role === 'popup' || options.a11y.role === 'dialog') {
+      if (key === 'Escape') {
+        // activation
+        self._eventOff({ el, focus: true })
+      }
     }
   }
 
