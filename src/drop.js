@@ -187,6 +187,7 @@ Drop.optionsDefault = {
     disabled: true,
     keyboard: true,
     vertical: false,
+    items: 'a, button',
   },
 }
 

@@ -2939,7 +2939,7 @@ class Toggle {
   _eventSpecialclosedeepKeydownHandler({ closeElement }, e) {
     const key = e.key
     // key enter or space
-    if (key === 'Enter' || key === 'Space') {
+    if (key === 'Enter' || key === ' ') {
       e.preventDefault()
       closeElement.dispatchEvent(new CustomEvent('click'))
     }
@@ -3561,10 +3561,11 @@ class Toggle {
     el.addEventListener('keydown', keydownHandler, { passive: false })
     // documentKeydown
     const documentKeydownHandler = Xt.dataStorage.put(
-      el,
+      document,
       `keydown/ariakeyboard/document/${self.ns}`,
       self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
     )
+    document.removeEventListener('keydown', documentKeydownHandler)
     document.addEventListener('keydown', documentKeydownHandler)
   }
 
@@ -3596,27 +3597,33 @@ class Toggle {
     if (self.disabled) {
       return
     }
-    // keydown
+    // logic
     const key = e.key
+    const prevKey = options.a11y.vertical ? 'ArrowUp' : 'ArrowLeft'
+    const nextKey = options.a11y.vertical ? 'ArrowDown' : 'ArrowRight'
+    // navigate elements
     let el
     if (options.a11y.vertical) {
-      if (key === 'ArrowUp') {
+      if (key === prevKey) {
         el = self.getPrev()
-      } else if (key === 'ArrowDown') {
+      } else if (key === nextKey) {
         el = self.getNext()
       }
-    } else {
-      if (key === 'ArrowLeft') {
-        el = self.getPrev()
-      } else if (key === 'ArrowRight') {
-        el = self.getNext()
-      }
-    }
-    if (el) {
       // prevent page scroll
       e.preventDefault()
+    } else {
+      if (key === prevKey) {
+        el = self.getPrev()
+      } else if (key === nextKey) {
+        el = self.getNext()
+      }
+      // prevent page scroll
+      e.preventDefault()
+    }
+    if (el) {
       // activation
       self._eventOn({ el, focus: true })
+      return
     }
   }
 
@@ -3628,18 +3635,56 @@ class Toggle {
    */
   _eventA11yDocumentKeydown({ el } = {}, e) {
     const self = this
+    const options = self.options
     // disabled
     if (self.disabled) {
       return
     }
-    // keydown
+    // logic
     const key = e.key
-    const options = self.options
-    if (options.a11y.role === 'popup' || options.a11y.role === 'dialog') {
-      if (key === 'Escape') {
+    const prevKey = options.a11y.vertical ? 'ArrowLeft' : 'ArrowUp'
+    const nextKey = options.a11y.vertical ? 'ArrowRight' : 'ArrowDown'
+    // Escape
+    if (key === 'Escape' || key === ' ') {
+      if (options.a11y.role === 'popup' || options.a11y.role === 'dialog') {
         // activation
         self._eventOff({ el, focus: true })
+        return
       }
+    }
+    // navigate items
+    let item
+    const items = []
+    const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
+    for (const tr of trs) {
+      items.push(...tr.querySelectorAll(options.a11y.items))
+    }
+    const current = items.indexOf(document.activeElement)
+    if (key === prevKey) {
+      if (current === -1) {
+        item = items[items.length - 1]
+      } else {
+        const prev = (current - 1 + items.length) % items.length
+        item = items[prev]
+      }
+      // prevent page scroll
+      e.preventDefault()
+    } else if (key === nextKey) {
+      if (current === -1) {
+        item = items[0]
+      } else {
+        const next = (current + 1) % items.length
+        item = items[next]
+      }
+      // prevent page scroll
+      e.preventDefault()
+    } else {
+      //item = items[items.length - 1]
+    }
+    if (item) {
+      // focus
+      item.focus()
+      return
     }
   }
 
@@ -3861,6 +3906,7 @@ Toggle.optionsDefaultSuper = {
     disabled: true,
     keyboard: true,
     vertical: false,
+    items: false,
   },
 }
 

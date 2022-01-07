@@ -190,6 +190,7 @@ Tooltip.optionsDefault = {
     disabled: true,
     keyboard: true,
     vertical: false,
+    items: false,
   },
 }
 

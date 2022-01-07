@@ -27,6 +27,7 @@ This components follows A11y standards so **aria attributes and keyboard interac
 | Option                  | `a11y.disabled:Boolean`                          | `true`        | Inject `aria-disabled` attributes on enable/disable           |
 | Option                  | `a11y.keyboard:Boolean`                          | `true`        | Automatic keyboard **next**, **previous** and **exit** interactions           |
 | Option                  | `a11y.vertical:Boolean`                          | `false`        | **Vertical arrows** instead of **horizontal** for keyboard events           |
+| Option                  | `a11y.items:String\|false`                          | `'a, button'`        | Navigate current active target query with focus           |
 
 </div>
 
@@ -81,6 +82,19 @@ Use `on:z-drop` to have the button above the backdrop.
   <demoinline src="demos/components/drop/backdrop">
   </demoinline>
 </demo>
+
+## Focus Limit
+
+For accessibility purpose **on activation you can limit the focus inside the current activated targets**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `focusLimit:Boolean`                          | `true`        | Automatically limit focus on activation inside current targets            |
+| Option                  | `focusTrap:Object`                          | `{ initialFocus: false, preventScroll: true, allowOutsideClick: true }`        | Options to pass to [Focus Trap](https://github.com/focus-trap/focus-trap)            |
+
+</div>
 
 ## Zindex
 
