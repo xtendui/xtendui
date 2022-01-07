@@ -13,7 +13,7 @@ const html = /* HTML */ `
           Example tooltips
 
           <span>
-            <a href="#" data-xt-tooltip-element>product informations</a>
+            <a href="/" data-xt-tooltip-element>product informations</a>
 
             <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
               <div
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           and
 
           <span>
-            <a href="#" data-xt-tooltip-element>credit card CVV</a>
+            <a href="/" data-xt-tooltip-element>credit card CVV</a>
 
             <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
               <div

@@ -123,7 +123,7 @@ const html = /* HTML */ `
                     <address class="not-italic" data-xt-populate="address"></address>
                     <div data-xt-populate="additional"></div>
                   </div>
-                  <a href="#" target="_blank" rel="noopener" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
+                  <a href="/" target="_blank" rel="noopener" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
                     ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     <span data-xt-populate="distance"></span>
                   </a>

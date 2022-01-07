@@ -18,7 +18,7 @@ const html = /* HTML */ `
         </div>
 
         <a
-          href="#"
+          href="/"
           class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
           Search
         </a>

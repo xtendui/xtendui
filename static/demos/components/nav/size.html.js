@@ -5,35 +5,35 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 flex-col">
       <nav aria-label="Navigation" class="xt-list *** xt-list-1 *** flex-col *** max-w-xs ***">
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Lorem ipsum dolor sit amet
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Consectetur adipiscing elit
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
           >Mauris mattis</a
         >
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
           >Purus odio</a
         >
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Et dictum felis vestibulum sed
@@ -42,35 +42,35 @@ const html = /* HTML */ `
 
       <nav aria-label="Navigation" class="xt-list *** xt-list-2 *** flex-col *** max-w-sm ***">
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Lorem ipsum dolor sit amet
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Consectetur adipiscing elit
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
           >Mauris mattis</a
         >
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
           >Purus odio</a
         >
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Et dictum felis vestibulum sed
@@ -79,35 +79,35 @@ const html = /* HTML */ `
 
       <nav aria-label="Navigation" class="xt-list *** xt-list-3 *** flex-col *** max-w-md ***">
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Lorem ipsum dolor sit amet
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Consectetur adipiscing elit
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
           >Mauris mattis</a
         >
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}"
           >Purus odio</a
         >
 
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
           Et dictum felis vestibulum sed

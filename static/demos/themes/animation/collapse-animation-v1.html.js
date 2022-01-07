@@ -72,22 +72,22 @@ const html = /* HTML */ `
             data-xt-drop-inner>
             <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
                 ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
                 ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
                 ${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
                 ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
               </a>
@@ -111,7 +111,7 @@ const html = /* HTML */ `
             class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${designAnim()} ***"
             data-xt-drop-inner>
             <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col py-2 *** ${itemAnim()} ***">
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
+              <a href="/" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
                 <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconMail({ classes: 'xt-icon text-2xl text-primary-500' })}
@@ -122,7 +122,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </a>
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
+              <a href="/" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
                 <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconPhone({ classes: 'xt-icon text-2xl text-primary-500' })}
@@ -133,7 +133,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </a>
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
+              <a href="/" class="xt-button ${classes.groupButtonMd()} ${buttonText()}">
                 <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconUsers({ classes: 'xt-icon text-2xl text-primary-500' })}
@@ -167,7 +167,7 @@ const html = /* HTML */ `
       Example tooltips
 
       <span>
-        <a href="#" data-xt-tooltip-element>product informations</a>
+        <a href="/" data-xt-tooltip-element>product informations</a>
 
         <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
           <div
@@ -208,7 +208,7 @@ const html = /* HTML */ `
       and
 
       <span>
-        <a href="#" data-xt-tooltip-element>credit card CVV</a>
+        <a href="/" data-xt-tooltip-element>credit card CVV</a>
 
         <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
           <div
@@ -326,7 +326,7 @@ const html = /* HTML */ `
                               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+                              <a href="/" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
                         </div>
@@ -458,7 +458,7 @@ const html = /* HTML */ `
                               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+                              <a href="/" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
                         </div>
@@ -555,7 +555,7 @@ const html = /* HTML */ `
                             Woman ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
                           </button>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Kid
                           </a>
@@ -569,17 +569,17 @@ const html = /* HTML */ `
                       <div class="-mx-3.5">
                         <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             About
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             News
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Contact
                           </a>
@@ -590,17 +590,17 @@ const html = /* HTML */ `
                         <div class="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
                           <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                             <a
-                              href="#"
+                              href="/"
                               class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                               Support ${classes.iconMail({ classes: 'xt-icon text-lg ml-4' })}
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                               Login / Account ${classes.iconUsers({ classes: 'xt-icon text-lg ml-4' })}
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                               Language ${classes.iconGlobe({ classes: 'xt-icon text-lg ml-4' })}
                             </a>
@@ -641,12 +641,12 @@ const html = /* HTML */ `
                             Pant ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
                           </button>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Jacket
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Underwear
                           </a>
@@ -672,12 +672,12 @@ const html = /* HTML */ `
                       <div class="-mx-3.5">
                         <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             T-Shirt
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Polo
                           </a>
@@ -703,12 +703,12 @@ const html = /* HTML */ `
                       <div class="-mx-3.5">
                         <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Jeans
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Short
                           </a>
@@ -734,12 +734,12 @@ const html = /* HTML */ `
                       <div class="-mx-3.5">
                         <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Shirt
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Pant
                           </a>

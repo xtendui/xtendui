@@ -272,7 +272,7 @@ export const populateDemo = container => {
       sanitize: false,
       str: `
 <div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
-  <a href="#" target="_blank" class="xt-button button--open-iframe ${classes.buttonCode()}" aria-label="Open Iframe" data-xt-tooltip-element>
+  <a href="/" target="_blank" class="xt-button button--open-iframe ${classes.buttonCode()}" aria-label="Open Iframe" data-xt-tooltip-element>
     ${classes.iconExternal()}
   </a>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
@@ -939,7 +939,7 @@ export const makeDocument = () => {
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')
     // wrapInner
-    const link = Xt.node({ str: `<a href="#"></a>` })
+    const link = Xt.node({ str: `<a href="/"></a>` })
     link.setAttribute('href', `#${encodeURIComponent(id)}`)
     el.classList.add('xt-ignore')
     el.before(link)

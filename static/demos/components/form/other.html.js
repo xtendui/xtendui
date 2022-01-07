@@ -16,7 +16,7 @@ const html = /* HTML */ `
               class="${classes.input()} ${classes.inputRadius()} ${classes.inputGray()}"
               aria-label="Lorem ipsum" />
             <div class="*** mt-3 ${classes.note()} ***">
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </div>
@@ -50,7 +50,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="*** mt-3 ${classes.note()} ***">
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </div>
@@ -77,7 +77,7 @@ const html = /* HTML */ `
                     class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                     checked />
                   <span class="${classes.checkContent()}"
-                    ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                   >
@@ -92,13 +92,13 @@ const html = /* HTML */ `
                     aria-label="Lorem ipsum"
                     class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                   <span class="${classes.checkContent()}"
-                    ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                   >
                 </label>
                 <div class="*** mt-3 ${classes.note()} ***">
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </div>
@@ -123,7 +123,7 @@ const html = /* HTML */ `
                         class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                         checked />
                       <span class="${classes.checkContent()}"
-                        ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                        ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
                         Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam.
                         Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                       >
@@ -139,13 +139,13 @@ const html = /* HTML */ `
                         class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                         checked />
                       <span class="${classes.checkContent()}"
-                        ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                        ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
                         Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam.
                         Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                       >
                     </label>
                     <div class="*** mt-3 ${classes.note()} ***">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </div>
@@ -188,7 +188,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="*** mt-3 ${classes.note()} ***">
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </div>

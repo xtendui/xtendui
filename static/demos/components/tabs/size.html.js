@@ -5,25 +5,25 @@ const html = /* HTML */ `
     <div class="xt-list xt-list-3 flex-col">
       <nav aria-label="Navigation" class="xt-list *** xt-list-1 *** flex-col md:flex-row md:flex-nowrap">
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           Lorem ipsum
         </a>
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           dolor sit amet
         </a>
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           >Consectetur</a
         >
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonSm()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           >adipiscing elit</a
@@ -32,25 +32,25 @@ const html = /* HTML */ `
 
       <nav aria-label="Navigation" class="xt-list *** xt-list-2 *** flex-col md:flex-row md:flex-nowrap">
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           Lorem ipsum
         </a>
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           dolor sit amet
         </a>
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           >Consectetur</a
         >
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonMd()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           >adipiscing elit</a
@@ -59,25 +59,25 @@ const html = /* HTML */ `
 
       <nav aria-label="Navigation" class="xt-list *** xt-list-3 *** flex-col md:flex-row md:flex-nowrap">
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           Lorem ipsum
         </a>
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}">
           dolor sit amet
         </a>
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           >Consectetur</a
         >
         <a
-          href="#"
+          href="/"
           type="button"
           class="xt-button flex-auto *** ${classes.buttonLg()} *** rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"
           >adipiscing elit</a

@@ -18,22 +18,22 @@ const html = /* HTML */ `
             class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${itemAnim()} ***">
             <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
               </a>
@@ -55,7 +55,7 @@ const html = /* HTML */ `
           <div
             class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${itemAnim()} ***">
             <nav aria-label="Drop" class="xt-list xt-list-1 flex-col *** py-2 ***">
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+              <a href="/" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
                 <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconMail({ classes: 'xt-icon text-2xl text-primary-500' })}
@@ -66,7 +66,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </a>
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+              <a href="/" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
                 <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconPhone({ classes: 'xt-icon text-2xl text-primary-500' })}
@@ -77,7 +77,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </a>
-              <a href="#" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
+              <a href="/" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
                 <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconUsers({ classes: 'xt-icon text-2xl text-primary-500' })}

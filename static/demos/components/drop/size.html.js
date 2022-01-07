@@ -15,7 +15,7 @@ const html = /* HTML */ `
             class="xt-card *** w-64 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
             <nav aria-label="Drop" class="xt-list flex-col *** ${classes.groupMd()} ***">
               <a
-                href="#"
+                href="/"
                 class="xt-button *** ${classes.groupButtonSm()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
@@ -46,7 +46,7 @@ const html = /* HTML */ `
             class="xt-card *** w-80 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
             <nav aria-label="Drop" class="xt-list flex-col *** ${classes.groupMd()} ***">
               <a
-                href="#"
+                href="/"
                 class="xt-button *** ${classes.groupButtonMd()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>
@@ -77,7 +77,7 @@ const html = /* HTML */ `
             class="xt-card *** w-96 *** rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
             <nav aria-label="Drop" class="xt-list flex-col *** ${classes.groupMd()} ***">
               <a
-                href="#"
+                href="/"
                 class="xt-button *** ${classes.groupButtonLg()} *** rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </a>

@@ -101,7 +101,7 @@ const mountEventmethods = ({ ref }) => {
         data-xt-drop-target>
         <div class="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
           <nav aria-label="Drop" class="xt-list flex-col p-3">
-            <a href="#" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+            <a href="/" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>
             <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">

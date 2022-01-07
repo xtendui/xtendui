@@ -6,7 +6,7 @@ const html = /* HTML */ `
       Lorem ipsum
 
       <span>
-        <a href="#" data-xt-tooltip-element data-xt-group="my-group">dolor</a>
+        <a href="/" data-xt-tooltip-element data-xt-group="my-group">dolor</a>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target data-xt-group="my-group">
           <div
@@ -26,7 +26,7 @@ const html = /* HTML */ `
       sit
 
       <span>
-        <a href="#" data-xt-tooltip-element>amet</a>
+        <a href="/" data-xt-tooltip-element>amet</a>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div

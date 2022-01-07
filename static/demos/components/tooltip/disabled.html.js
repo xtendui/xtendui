@@ -6,7 +6,7 @@ const html = /* HTML */ `
       Lorem ipsum
 
       <span>
-        <a href="#" data-xt-tooltip-element>dolor</a>
+        <a href="/" data-xt-tooltip-element>dolor</a>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
@@ -18,7 +18,7 @@ const html = /* HTML */ `
                 class="inline-block"
                 data-xt-tooltip="{ mouseParent: true, elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }">
                 <span>
-                  <a href="#" data-xt-tooltip-element-nested>dolor</a>
+                  <a href="/" data-xt-tooltip-element-nested>dolor</a>
 
                   <div class="xt-tooltip p-3" data-xt-tooltip-target-nested>
                     <div
