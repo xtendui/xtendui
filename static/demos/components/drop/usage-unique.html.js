@@ -29,7 +29,7 @@ const html = /* HTML */ `
             <button
               type="button"
               class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
-              Dolor sit
+              A Dolor sit
             </button>
             <button
               type="button"

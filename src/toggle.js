@@ -44,6 +44,7 @@ class Toggle {
   _observer
   _focusTrap
   _hasContainer
+  _search = ''
   componentName
   ns
   options
@@ -3556,17 +3557,20 @@ class Toggle {
    */
   _eventA11yOn({ el } = {}) {
     const self = this
+    const options = self.options
     // keydown
     const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventA11yKeydown.bind(self))
     el.addEventListener('keydown', keydownHandler, { passive: false })
     // documentKeydown
-    const documentKeydownHandler = Xt.dataStorage.put(
-      document,
-      `keydown/ariakeyboard/document/${self.ns}`,
-      self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
-    )
-    document.removeEventListener('keydown', documentKeydownHandler)
-    document.addEventListener('keydown', documentKeydownHandler)
+    if (options.a11y.role === 'popup' || options.a11y.role === 'dialog' || options.a11y.items) {
+      const documentKeydownHandler = Xt.dataStorage.put(
+        document,
+        `keydown/ariakeyboard/document/${self.ns}`,
+        self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
+      )
+      document.removeEventListener('keydown', documentKeydownHandler)
+      document.addEventListener('keydown', documentKeydownHandler)
+    }
   }
 
   /**
@@ -3653,38 +3657,55 @@ class Toggle {
       }
     }
     // navigate items
-    let item
-    const items = []
-    const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
-    for (const tr of trs) {
-      items.push(...tr.querySelectorAll(options.a11y.items))
-    }
-    const current = items.indexOf(document.activeElement)
-    if (key === prevKey) {
-      if (current === -1) {
-        item = items[items.length - 1]
-      } else {
-        const prev = (current - 1 + items.length) % items.length
-        item = items[prev]
+    if (options.a11y.items) {
+      let item
+      const items = []
+      const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
+      for (const tr of trs) {
+        items.push(...tr.querySelectorAll(options.a11y.items))
       }
-      // prevent page scroll
-      e.preventDefault()
-    } else if (key === nextKey) {
-      if (current === -1) {
-        item = items[0]
-      } else {
-        const next = (current + 1) % items.length
-        item = items[next]
+      if (items.length) {
+        const current = items.indexOf(document.activeElement)
+        if (key === prevKey) {
+          if (current === -1) {
+            item = items[items.length - 1]
+          } else {
+            const prev = (current - 1 + items.length) % items.length
+            item = items[prev]
+          }
+          // prevent page scroll
+          e.preventDefault()
+        } else if (key === nextKey) {
+          if (current === -1) {
+            item = items[0]
+          } else {
+            const next = (current + 1) % items.length
+            item = items[next]
+          }
+          // prevent page scroll
+          e.preventDefault()
+        } else {
+          self._search = self._search + e.key.toLowerCase()
+          const found = items.filter(x => x.innerText?.toLowerCase().startsWith(self._search))
+          if (found.length) {
+            item = found[0]
+          }
+          // clear
+          clearTimeout(Xt.dataStorage.get(document, `${self.ns}SearchTimeout`))
+          Xt.dataStorage.set(
+            document,
+            `${self.ns}SearchTimeout`,
+            setTimeout(() => {
+              self._search = ''
+            }, 500)
+          )
+        }
+        if (item) {
+          // focus
+          item.focus()
+          return
+        }
       }
-      // prevent page scroll
-      e.preventDefault()
-    } else {
-      //item = items[items.length - 1]
-    }
-    if (item) {
-      // focus
-      item.focus()
-      return
     }
   }
 
