@@ -161,6 +161,7 @@ Drop.optionsDefault = {
   },
   // other
   disableDeactivate: true,
+  focusLimit: true,
   position: 'bottom-start',
   inset: false,
   positionInner: false,
