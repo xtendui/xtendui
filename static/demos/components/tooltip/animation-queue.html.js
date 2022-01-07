@@ -2,11 +2,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-list xt-list-3 items-center" data-xt-tooltip="{ duration: 300 }">
-      <div data-xt-tooltip-element>
+    <div class="xt-list xt-list-3 items-center" data-xt-tooltip="{ mouseParent: true, duration: 300 }">
+      <div>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          data-xt-tooltip-element>
           Tooltip
         </button>
 
@@ -18,10 +19,11 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip-element>
+      <div>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+          data-xt-tooltip-element>
           Tooltip
         </button>
 

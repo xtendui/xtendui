@@ -14,7 +14,7 @@ const html = /* HTML */ `
         <div class="*** xt-sticky ***" data-node-sticky>
           <div
             class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
-            <nav class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
+            <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
               <a
                 role="button"
                 class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
@@ -37,7 +37,7 @@ const html = /* HTML */ `
                 >${classes.iconPackage({ classes: 'xt-icon text-base opacity-50 mr-2' })} Accessories</a
               >
               <a
-                href="#"
+                href="/"
                 type="button"
                 class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
                 data-xt-toggle-element
@@ -53,7 +53,7 @@ const html = /* HTML */ `
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Description</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
@@ -74,7 +74,7 @@ const html = /* HTML */ `
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Features</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
@@ -85,7 +85,7 @@ const html = /* HTML */ `
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Accessories</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
@@ -116,7 +116,7 @@ const html = /* HTML */ `
             <div class="xt-card ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
               <div class="xt-h5">Manuals</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>

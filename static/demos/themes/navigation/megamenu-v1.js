@@ -30,11 +30,12 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(megamenu, {
+    mouseParent: true,
     queue: false,
     duration: 500,
     preventEvent: true,
     // activated by switcher
-    //on: 'mouseenter',
+    //on: 'mouseenter focus',
     //off: 'mouseleave',
     //delay: 150,
   })
@@ -220,7 +221,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'on.xt.drop') {
-      el = el.closest('[data-xt-drop-element]').querySelector(':scope > .button--line')
+      el = el.parentNode.querySelector(':scope > .button--line')
     } else {
       btnOn = true
     }
@@ -264,7 +265,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'off.xt.drop') {
-      el = el.closest('[data-xt-drop-element]').querySelector(':scope > .button--line')
+      el = el.parentNode.querySelector(':scope > .button--line')
     } else {
       btnOn = false
     }
@@ -344,7 +345,7 @@ const mountSwitcher = ({ ref }) => {
     const self = Xt.get({ name: 'xt-drop', el: megamenu })
     if (self) {
       if (switcher.checked) {
-        self.options.on = 'mouseenter'
+        self.options.on = 'mouseenter focus'
         self.options.off = 'mouseleave'
         self.options.delay = 150
       } else {

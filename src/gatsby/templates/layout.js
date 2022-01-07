@@ -43,10 +43,22 @@ function Layout({ children, page, seo }) {
           data-version={encodeURIComponent(site.siteMetadata.uuid)}
         />
       </Helmet>
+      <nav
+        className="off:opacity-0 off:pointer-events-none out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0"
+        aria-label="Jump to content"
+        id="gatsby_jumptocontent">
+        <a
+          href="#gatsby_jumptocontent_target"
+          className={`xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`}>
+          Jump to content
+        </a>
+      </nav>
       {seo && seo.title === 'Home' ? (
         <div className="gatsby_site-wrapper">
           <HeaderHome page={page} />
-          <main className="gatsby_home-main">{children}</main>
+          <main className="gatsby_home-main" id="gatsby_jumptocontent_target">
+            {children}
+          </main>
           <footer className="gatsby_home-footer gatsby_site-footer border-t border-gray-100">
             <div className="gatsby_site-footer_inner container py-4 lg:py-8">
               <Footer />
@@ -57,10 +69,11 @@ function Layout({ children, page, seo }) {
         <div className="gatsby_site-wrapper">
           <Header page={page} />
           <div className="gatsby_site-article gatsby_site-article--markdown flex flex-col flex-auto prose max-w-none bg-white">
-            <DocFullscreen />
             <main className="gatsby_site-main flex flex-col flex-auto min-h-screen" id="gatsby_open-full-inner">
               {page && page.post ? <DocHead page={page} /> : null}
-              <article className="gatsby_site-article_content flex-auto container py-10 md:py-20">
+              <article
+                className="gatsby_site-article_content flex-auto container py-10 md:py-20"
+                id="gatsby_jumptocontent_target">
                 <div className="gatsby_site-article_content_inner">{children}</div>
               </article>
               <footer className="gatsby_site-footer border-t border-gray-100">
@@ -71,6 +84,7 @@ function Layout({ children, page, seo }) {
                   <Footer />
                 </div>
               </footer>
+              <DocFullscreen />
             </main>
           </div>
         </div>

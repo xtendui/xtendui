@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Test"
 parent: "Test"
-title: "Other"
+title: "Other Test"
 ---
 
 ## Mount Unmount

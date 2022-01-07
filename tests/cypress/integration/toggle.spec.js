@@ -1,4 +1,4 @@
-const url = '/hidden/test/toggle'
+const url = '/hidden/test/toggle-test'
 
 describe('demos/components/overlay/usage-self', function () {
   let win
@@ -20,10 +20,16 @@ describe('demos/components/overlay/usage-self', function () {
   })
 
   it('TEST initial activation, overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.', function () {
-    expect(win.Xt.visible({ el: self.elements[0] })).to.equal(true)
-    expect(self.elements[0].classList.contains('on')).to.equal(true)
-    expect(self.elements[0].classList.contains('in')).to.equal(true)
     cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .then(() => {
+        expect(win.Xt.visible({ el: self.elements[0] })).to.equal(true)
+        expect(self.elements[0].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.elements[0].classList.contains('in')).to.equal(true)
+        })
+      })
+      .get(container)
       .find('.xt-overlay-inner')
       .click()
       .then(() => {
@@ -85,7 +91,8 @@ describe('demos/components/toggle/class', function () {
   })
 
   it('TEST initial group activation, min max activation.', function () {
-    cy.frame()
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
         expect(self.elements[0].classList.contains('in')).to.equal(true)
@@ -166,7 +173,9 @@ describe('demos/components/toggle/multiple-group', function () {
   })
 
   it('TEST group activation.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
@@ -250,7 +259,9 @@ describe('demos/components/toggle/multiple-nogroupelements', function () {
   })
 
   it('TEST group activation.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
@@ -334,7 +345,9 @@ describe('demos/components/toggle/event', function () {
   })
 
   it('TEST should not close when mouseenter > click or mouseleave > mouseenter active elements.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .trigger('mouseenter')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
@@ -402,7 +415,9 @@ describe('demos/components/drop/event', function () {
   })
 
   it('TEST open and close nested.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-drop-init', '') // racecondition
+      .get(self.elements[0])
       .trigger('mouseenter')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
@@ -482,7 +497,9 @@ describe('demos/components/toggle/prevent-event', function () {
   })
 
   it('TEST prevent event.', function () {
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.elements[1].classList.contains('on')).to.equal(true)
@@ -519,32 +536,36 @@ describe('demos/components/toggle/hash', function () {
   })
 
   it('TEST no hash must not add hash initial activation.', function () {
-    expect(self.elements[0].classList.contains('on')).to.equal(false)
-    expect(self.elements[1].classList.contains('on')).to.equal(false)
-    expect(self.elements[2].classList.contains('on')).to.equal(false)
-    expect(self.elements[3].classList.contains('on')).to.equal(true)
-    expect(self.elements[4].classList.contains('on')).to.equal(false)
-    expect(self.elements[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[0].classList.contains('on')).to.equal(false)
-    expect(self.targets[1].classList.contains('on')).to.equal(false)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(true)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    cy.frameDouble().then(() => {
-      expect(self.elements[0].classList.contains('in')).to.equal(false)
-      expect(self.elements[1].classList.contains('in')).to.equal(false)
-      expect(self.elements[2].classList.contains('in')).to.equal(false)
-      expect(self.elements[3].classList.contains('in')).to.equal(true)
-      expect(self.elements[4].classList.contains('in')).to.equal(false)
-      expect(self.elements[5].classList.contains('in')).to.equal(false)
-      expect(self.targets[0].classList.contains('in')).to.equal(false)
-      expect(self.targets[1].classList.contains('in')).to.equal(false)
-      expect(self.targets[2].classList.contains('in')).to.equal(false)
-      expect(self.targets[3].classList.contains('in')).to.equal(false)
-      expect(self.targets[4].classList.contains('in')).to.equal(true)
-      expect(self.targets[5].classList.contains('in')).to.equal(false)
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(true)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(true)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.elements[0].classList.contains('in')).to.equal(false)
+          expect(self.elements[1].classList.contains('in')).to.equal(false)
+          expect(self.elements[2].classList.contains('in')).to.equal(false)
+          expect(self.elements[3].classList.contains('in')).to.equal(true)
+          expect(self.elements[4].classList.contains('in')).to.equal(false)
+          expect(self.elements[5].classList.contains('in')).to.equal(false)
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+          expect(self.targets[2].classList.contains('in')).to.equal(false)
+          expect(self.targets[3].classList.contains('in')).to.equal(false)
+          expect(self.targets[4].classList.contains('in')).to.equal(true)
+          expect(self.targets[5].classList.contains('in')).to.equal(false)
+        })
+      })
   })
 })
 
@@ -568,31 +589,35 @@ describe('demos/components/toggle/hash', function () {
   })
 
   it('TEST initial activation, hash activation, browser navigation.', function () {
-    expect(self.elements[0].classList.contains('on')).to.equal(false)
-    expect(self.elements[0].classList.contains('in')).to.equal(false)
-    expect(self.elements[1].classList.contains('on')).to.equal(false)
-    expect(self.elements[1].classList.contains('in')).to.equal(false)
-    expect(self.elements[2].classList.contains('on')).to.equal(false)
-    expect(self.elements[2].classList.contains('in')).to.equal(false)
-    expect(self.elements[3].classList.contains('on')).to.equal(false)
-    expect(self.elements[3].classList.contains('in')).to.equal(false)
-    expect(self.elements[4].classList.contains('on')).to.equal(true)
-    expect(self.elements[4].classList.contains('in')).to.equal(true)
-    expect(self.elements[5].classList.contains('on')).to.equal(false)
-    expect(self.elements[5].classList.contains('in')).to.equal(false)
-    expect(self.targets[0].classList.contains('on')).to.equal(false)
-    expect(self.targets[0].classList.contains('in')).to.equal(false)
-    expect(self.targets[1].classList.contains('on')).to.equal(false)
-    expect(self.targets[1].classList.contains('in')).to.equal(false)
-    expect(self.targets[2].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('in')).to.equal(true)
-    expect(self.targets[3].classList.contains('on')).to.equal(true)
-    expect(self.targets[3].classList.contains('in')).to.equal(true)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('in')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(true)
-    expect(self.targets[5].classList.contains('in')).to.equal(true)
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[0].classList.contains('in')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('in')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('in')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('in')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(true)
+        expect(self.elements[4].classList.contains('in')).to.equal(true)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('in')).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('in')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('in')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('in')).to.equal(true)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('in')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(true)
+        expect(self.targets[5].classList.contains('in')).to.equal(true)
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
@@ -707,11 +732,15 @@ describe('demos/components/overlay/hash', function () {
   })
 
   it('TEST opened with hash on page load, closing it should not block page interaction (bug with multiple elements same target), should reopen on change page browser navigation.', function () {
-    expect(self.elements[0].classList.contains('on')).to.equal(true)
-    expect(self.elements[0].classList.contains('in')).to.equal(true)
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[0].classList.contains('in')).to.equal(true)
-    cy.get(self.targets[0].querySelector('.xt-dismiss'))
+    cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(true)
+        expect(self.elements[0].classList.contains('in')).to.equal(true)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+      })
+      .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
@@ -769,21 +798,25 @@ describe('demos/components/slider/hash', function () {
   })
 
   it('TEST initial activation, hash activation, browser navigation.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(false)
-    expect(self.targets[0].classList.contains('in')).to.equal(false)
-    expect(self.targets[1].classList.contains('on')).to.equal(false)
-    expect(self.targets[1].classList.contains('in')).to.equal(false)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[2].classList.contains('in')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(true)
-    expect(self.targets[3].classList.contains('in')).to.equal(true)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('in')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('in')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('in')).to.equal(false)
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('in')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('in')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('in')).to.equal(true)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('in')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('in')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('in')).to.equal(false)
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -869,7 +902,9 @@ describe('demos/components/drop/backdrop', function () {
   })
 
   it('TEST backdrop.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-drop-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -891,7 +926,9 @@ describe('demos/components/drop/backdrop', function () {
   })
 
   it('TEST backdrop hover.', function () {
-    cy.get(self1.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-drop-init', '') // racecondition
+      .get(self1.elements[0])
       .trigger('mouseenter')
       .then(() => {
         expect(self1.targets[0].classList.contains('on')).to.equal(true)
@@ -940,11 +977,15 @@ describe('demos/components/drop/reset-to-current', function () {
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(false)
-    expect(self.targets[0].classList.contains('in')).to.equal(false)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('in')).to.equal(true)
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-drop-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('in')).to.equal(true)
+      })
+      .get(self.elements[0])
       .trigger('mouseenter')
       .frame()
       .then(() => {
@@ -990,7 +1031,9 @@ describe('demos/components/tooltip/swap-click', function () {
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
+      .get(self.elements[0])
       .trigger('mouseenter')
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -1049,7 +1092,9 @@ describe('demos/components/tooltip/swap-toggle', function () {
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
+      .get(self.elements[0])
       .trigger('mouseenter')
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -1107,7 +1152,9 @@ describe('demos/components/tooltip/prevent-overflow', function () {
   })
 
   it('TEST position inside boundary on first element for proper merge of popperjs options, arrow position.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
+      .get(self.elements[0])
       .trigger('mouseenter')
       .then(() => {
         expect(self.targets[0].offsetWidth).to.be.closeTo(189, 10)
@@ -1148,14 +1195,29 @@ describe('demos/components/overlay/animation-noqueue', function () {
     cy.get('@consoleError').should('not.be.called')
   })
 
-  it('TEST focustrap should work, no console error.', function () {
-    cy.get(self.elements[0])
+  it('TEST focustrap should work, no console error, navigation tabs.', function () {
+    cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .get(self.elements[0])
       .click()
-      .get('@doc')
-      .trigger('keydown', { key: 'Tab' })
+      .get('body')
+      .tab()
       .then(() => {
         expect(self.targets[0].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
-        // @TODO test usability navigation overlay
+      })
+      .tab()
+      .tab()
+      .tab()
+      .then(() => {
+        expect(self.elements[4]).to.equal(doc.activeElement)
+      })
+      .get(self.elements[4])
+      .click()
+      .wait(500) // after animation
+      .get('body')
+      .tab()
+      .then(() => {
+        expect(self.targets[1].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
       })
   })
 })

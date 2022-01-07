@@ -40,7 +40,11 @@ const html = /* HTML */ `
     <div class="container">
       <form class="text-sm mt-4">
         <label class="${classes.checkLabel()}">
-          <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
+          <input
+            type="checkbox"
+            role="group"
+            aria-label="Deactivate classes"
+            class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
           <span class="${classes.checkContent()}">Deactivate classes</span>
         </label>
       </form>

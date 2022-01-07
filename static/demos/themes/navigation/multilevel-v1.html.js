@@ -14,7 +14,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <button
                 type="button"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -30,7 +30,7 @@ const html = /* HTML */ `
                 Woman ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
               </button>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Kid
               </a>
@@ -54,7 +54,7 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <button
                 type="button"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -70,12 +70,12 @@ const html = /* HTML */ `
                 Pant ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
               </button>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Jacket
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Underwear
               </a>
@@ -99,14 +99,14 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 T-Shirt
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Polo
               </a>
@@ -130,14 +130,14 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Jeans
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Short
               </a>
@@ -161,14 +161,14 @@ const html = /* HTML */ `
           </div>
 
           <div class="-mx-3.5">
-            <nav class="xt-list xt-list-1 flex-col">
+            <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Shirt
               </a>
               <a
-                href="#"
+                href="/"
                 class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                 Pant
               </a>

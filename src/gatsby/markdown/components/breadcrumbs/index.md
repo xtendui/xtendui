@@ -13,7 +13,9 @@ The `truncate` class gives ellipses if the breadcrumbs are too long, but it need
 
 > This demos use [separator](/components/typography/addon#separator) see documentation for more info.
 
-> For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+> For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
+
+> For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <demo>
   <demoinline src="demos/components/breadcrumbs/usage">

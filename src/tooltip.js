@@ -26,30 +26,6 @@ class Tooltip extends Xt.Toggle {
   }
 
   //
-  // init
-  //
-
-  /**
-   * init aria
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      if (options.aria === true || options.aria.role) {
-        for (const el of self.elements) {
-          el.setAttribute('aria-haspopup', 'true')
-        }
-        for (const tr of self.targets) {
-          tr.setAttribute('role', 'tooltip')
-        }
-      }
-    }
-  }
-
-  //
   // event util
   //
 
@@ -162,7 +138,6 @@ Tooltip.optionsDefault = {
   // element
   elements: '[data-xt-tooltip-element]',
   targets: '[data-xt-tooltip-target]',
-  elementsInner: ':scope > a, :scope > button',
   // class
   classSkip: {
     elements: true,
@@ -172,8 +147,9 @@ Tooltip.optionsDefault = {
   min: 0,
   max: 1,
   // event
-  on: 'mouseenter',
+  on: 'mouseenter focus',
   off: 'mouseleave',
+  mouseParent: false,
   eventLimit: '.xt-event-limit, .xt-tooltip',
   closeauto: true,
   openauto: false,
@@ -202,6 +178,19 @@ Tooltip.optionsDefault = {
       start: 500, // same as options.zIndex.targets.start
       factor: -1,
     },
+  },
+  a11y: {
+    role: 'tooltip',
+    labelElements: true,
+    labelTargets: false,
+    controls: false,
+    selected: false,
+    expanded: false,
+    live: true,
+    disabled: true,
+    keyboard: true,
+    vertical: false,
+    items: false,
   },
 }
 

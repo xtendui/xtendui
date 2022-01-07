@@ -73,6 +73,8 @@
     "css-loader": "^6.5.1",
     "cssnano": "^5.0.12",
     "cypress": "^9.0.0",
+    "cypress-axe": "^0.14.0",
+    "cypress-plugin-tab": "^1.0.5",
     "dompurify": "^2.3.1",
     "dotenv": "^10.0.0",
     "eslint": "8.4.1",

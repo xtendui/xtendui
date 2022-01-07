@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Test"
 parent: "Test"
-title: "Toggle"
+title: "Toggle Test"
 ---
 
 ## Usage
@@ -132,7 +132,7 @@ title: "Toggle"
 </demo>
 
 `demos/components/overlay/animation-noqueue`
-- TEST focustrap should work, no console error.
+- TEST focustrap should work, no console error, navigation tabs.
 
 <demo>
   <demoinline src="demos/components/overlay/animation-noqueue">

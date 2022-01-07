@@ -3,11 +3,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ positionInner: 'span' }">
-        <div data-xt-tooltip-element>
+      <div data-xt-tooltip="{ mouseParent: true, positionInner: 'span' }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-tooltip-element>
             <span class="m-4">relative to this span</span>
           </button>
 

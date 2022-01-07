@@ -2,7 +2,7 @@
 type: "Hidden"
 category: "Test"
 parent: "Test"
-title: "Api"
+title: "Api Test"
 ---
 
 ## Disabled

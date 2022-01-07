@@ -1,4 +1,4 @@
-const url = '/hidden/test/api'
+const url = '/hidden/test/api-test'
 
 describe('demos/components/toggle/disabled', function () {
   let win
@@ -256,10 +256,8 @@ describe('demos/components/toggle/api', function () {
   })
 
   it('TEST on init event, add and remove, activated on change > reinit > change > restart, activated on change > destroy > reinit, destroy remove all interactions.', function () {
-    cy.frame()
-      .then(() => {
-        expect(container.getAttribute('data-xt-toggle-init')).to.equal('')
-      })
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
       .get('#button--toggle-api-add')
       .click()
       .then(() => {

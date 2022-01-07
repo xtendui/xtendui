@@ -22,7 +22,7 @@ const html = /* HTML */ `
               <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
@@ -49,7 +49,7 @@ const html = /* HTML */ `
               <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
@@ -66,7 +66,7 @@ const html = /* HTML */ `
               <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
@@ -95,7 +95,7 @@ const html = /* HTML */ `
             </div>
 
             <div>
-              <a href="#" type="button" class="${toggle()}" data-xt-toggle-element data-xt-hash="faq-3">
+              <a href="/" type="button" class="${toggle()}" data-xt-toggle-element data-xt-hash="faq-3">
                 Cras tincidunt quis ipsum et luctus. Cras venenatis, justo in euismod lacinia, urna leo hendrerit enim,
                 sit amet gravida nunc lectus id augue.
               </a>
@@ -103,7 +103,7 @@ const html = /* HTML */ `
               <div class="*** off:hidden out:pointer-events-none ${itemAnim()} group ***" data-xt-toggle-target>
                 <div class="xt-card ${cardSize()}">
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>

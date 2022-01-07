@@ -17,7 +17,7 @@ const html = /* HTML */ `
         Overlay same
       </button>
 
-      <div class="*** xt-overlay ***" id="overlay--unique">
+      <div aria-label="Modal" class="*** xt-overlay ***" id="overlay--unique">
         <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
         <div class="*** xt-overlay-container *** max-w-3xl">
           <div class="*** xt-overlay-inner ***">
@@ -32,7 +32,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>

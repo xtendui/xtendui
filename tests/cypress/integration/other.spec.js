@@ -1,4 +1,4 @@
-const url = '/hidden/test/other'
+const url = '/hidden/test/other-test'
 
 describe('demos/hidden/test/mount-unmount', function () {
   let win
@@ -38,7 +38,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST after init classes and properties, should be `true true false false`.', function () {
-    cy.frame().then(() => {
+    cy.frameDouble().then(() => {
       expect(container.getAttribute('data-xt-overlay-init')).to.equal('')
       expect(self.targets[0].classList.contains('on')).to.equal(true)
       expect(self.targets[0].classList.contains('in')).to.equal(true)
@@ -130,20 +130,26 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
-        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+        })
       })
       .viewport('iphone-6')
       .frame()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
-        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+        })
         expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
       })
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
-        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+        })
       })
       .get('@demo')
       .should('have.attr', 'data-test-mount', '1')
@@ -156,7 +162,9 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
-        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+        })
       })
       .get('@demo')
       .should('have.attr', 'data-test-mount', '1')
@@ -193,9 +201,11 @@ describe('demos/themes/navigation/megamenu-v1', function () {
   })
 
   it('TEST direction and zIndex sequential activation and zIndex reset.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-drop-init', '') // racecondition
+      .get(self.elements[0])
       .trigger('mouseenter')
-      .wait(150) // after delay
+      .wait(200) // after delay
       .then(() => {
         expect(self.direction).to.equal(0)
         expect(self.targets[0].style.zIndex).to.equal('399')
@@ -208,7 +218,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       })
       .get(self.elements[1])
       .trigger('mouseenter')
-      .wait(150) // after delay
+      .wait(200) // after delay
       .then(() => {
         expect(self.direction).to.equal(1)
         expect(self.targets[1].style.zIndex).to.equal('398')
@@ -221,7 +231,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       })
       .get(self.elements[0])
       .trigger('mouseenter')
-      .wait(150) // after delay
+      .wait(200) // after delay
       .then(() => {
         expect(self.direction).to.equal(-1)
         expect(self.targets[0].style.zIndex).to.equal('397')
@@ -234,8 +244,8 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       })
       .get(self.elements[0])
       .trigger('mouseleave')
-      .wait(150) // after delay
-      .wait(750) // after animation
+      .wait(200) // after delay
+      .wait(1000) // after animation
       .then(() => {
         expect(self.direction).to.equal(0)
         expect(self.targets[0].style.zIndex).to.equal('400')
@@ -307,12 +317,14 @@ describe('demos/components/scrollto/usage', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
-    cy.frameDouble()
+    cy.get('@demo')
+      .closest('html')
+      .should('have.attr', 'data-xt-scrollto-init', '') // racecondition
       .then(() => {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
-        expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 150)
         doc.scrollingElement.scrollTo(0, 0)
       })
       .wait(500)
@@ -328,21 +340,21 @@ describe('demos/components/scrollto/usage', function () {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(true)
         expect(this.links[2].classList.contains('on')).to.equal(false)
-        expect(doc.scrollingElement.scrollTop).to.closeTo(801, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(801, 150)
       })
       .go(-1)
       .then(() => {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
-        expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 150)
       })
       .go(1)
       .then(() => {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(true)
         expect(this.links[2].classList.contains('on')).to.equal(false)
-        expect(doc.scrollingElement.scrollTop).to.closeTo(801, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(801, 150)
       })
       .get(this.buttons[0])
       .click()
@@ -351,7 +363,7 @@ describe('demos/components/scrollto/usage', function () {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(true)
         expect(this.links[2].classList.contains('on')).to.equal(false)
-        expect(doc.scrollingElement.scrollTop).to.closeTo(1633, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(1633, 150)
       })
   })
 })
@@ -388,7 +400,7 @@ describe('demos/components/scrollto/overlay', function () {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
-        expect(self.targets[0].scrollTop).to.closeTo(1987, 100)
+        expect(self.targets[0].scrollTop).to.closeTo(1987, 150)
         self.targets[0].scrollTo(0, 0)
       })
       .wait(500)
@@ -404,7 +416,7 @@ describe('demos/components/scrollto/overlay', function () {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(true)
         expect(this.links[2].classList.contains('on')).to.equal(false)
-        expect(self.targets[0].scrollTop).to.closeTo(801, 100)
+        expect(self.targets[0].scrollTop).to.closeTo(801, 150)
       })
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
@@ -416,7 +428,7 @@ describe('demos/components/scrollto/overlay', function () {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
-        expect(self.targets[0].scrollTop).to.closeTo(1987, 100)
+        expect(self.targets[0].scrollTop).to.closeTo(1987, 150)
       })
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
@@ -430,7 +442,7 @@ describe('demos/components/scrollto/overlay', function () {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
         expect(this.links[2].classList.contains('on')).to.equal(true)
-        expect(self.targets[0].scrollTop).to.closeTo(1987, 100)
+        expect(self.targets[0].scrollTop).to.closeTo(1987, 150)
       })
       .get(this.buttons[1])
       .click()
@@ -439,7 +451,7 @@ describe('demos/components/scrollto/overlay', function () {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(true)
         expect(this.links[2].classList.contains('on')).to.equal(false)
-        expect(self.targets[0].scrollTop).to.closeTo(1633, 100)
+        expect(self.targets[0].scrollTop).to.closeTo(1633, 150)
       })
   })
 })
@@ -467,9 +479,11 @@ describe('demos/components/scrollto/toggle', function () {
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements.', function () {
-    cy.frameDouble()
+    cy.get(container)
+      .closest('html')
+      .should('have.attr', 'data-xt-scrollto-init', '') // racecondition
       .then(() => {
-        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         expect(self.targets[2].classList.contains('on')).to.equal(true)
@@ -485,7 +499,7 @@ describe('demos/components/scrollto/toggle', function () {
       .click()
       .wait(1000) // after animation
       .then(() => {
-        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         expect(self.targets[2].classList.contains('on')).to.equal(false)
@@ -497,7 +511,7 @@ describe('demos/components/scrollto/toggle', function () {
       })
       .go(-1)
       .then(() => {
-        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         expect(self.targets[2].classList.contains('on')).to.equal(true)
@@ -509,7 +523,7 @@ describe('demos/components/scrollto/toggle', function () {
       })
       .go(1)
       .then(() => {
-        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 100)
+        expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         expect(self.targets[2].classList.contains('on')).to.equal(false)
@@ -564,7 +578,7 @@ describe('demos/components/listing/infinitescroll', function () {
                 .get('[data-xt-infinitescroll-pagination]') // racecondition
                 .document()
                 .then(doc => {
-                  expect(doc.scrollingElement.scrollTop).to.closeTo(399, 100)
+                  expect(doc.scrollingElement.scrollTop).to.closeTo(399, 150)
                   doc.scrollingElement.scrollTo(0, 0)
                   cy.wait(500).then(() => {
                     win.dispatchEvent(new Event('scroll'))

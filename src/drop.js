@@ -26,30 +26,6 @@ class Drop extends Xt.Toggle {
   }
 
   //
-  // init
-  //
-
-  /**
-   * init aria
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      if (options.aria === true || options.aria.role) {
-        for (const el of self.elements) {
-          el.setAttribute('aria-haspopup', 'true')
-        }
-        for (const tr of self.targets) {
-          tr.setAttribute('role', 'listbox')
-        }
-      }
-    }
-  }
-
-  //
   // event util
   //
 
@@ -162,13 +138,13 @@ Drop.optionsDefault = {
   // element
   elements: '[data-xt-drop-element]',
   targets: '[data-xt-drop-target]',
-  elementsInner: ':scope > a, :scope > button',
   // quantity
   min: 0,
   max: 1,
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   eventLimit: '.xt-event-limit, .xt-drop',
   closeauto: true,
   openauto: false,
@@ -198,6 +174,19 @@ Drop.optionsDefault = {
       start: 400, // same as options.zIndex.targets.start
       factor: -1,
     },
+  },
+  a11y: {
+    role: 'popup',
+    labelElements: false,
+    labelTargets: false,
+    controls: true,
+    selected: false,
+    expanded: true,
+    live: true,
+    disabled: true,
+    keyboard: true,
+    vertical: false,
+    items: 'a, button',
   },
 }
 

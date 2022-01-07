@@ -3,11 +3,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-tooltip="{ position: 'bottom' }">
-        <div data-xt-tooltip-element>
+      <div data-xt-tooltip="{ mouseParent: true, position: 'bottom' }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-tooltip-element>
             bottom
           </button>
 
@@ -21,11 +22,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'bottom-start' }">
-        <div data-xt-tooltip-element>
+      <div data-xt-tooltip="{ mouseParent: true, position: 'bottom-start' }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-tooltip-element>
             bottom start
           </button>
 
@@ -39,11 +41,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'bottom-end' }">
-        <div data-xt-tooltip-element>
+      <div data-xt-tooltip="{ mouseParent: true, position: 'bottom-end' }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-tooltip-element>
             bottom end
           </button>
 
@@ -57,11 +60,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'bottom', inset: true }">
-        <div data-xt-tooltip-element>
+      <div data-xt-tooltip="{ mouseParent: true, position: 'bottom', inset: true }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-tooltip-element>
             bottom inset
           </button>
 
@@ -75,11 +79,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'bottom-start', inset: true }">
-        <div data-xt-tooltip-element>
+      <div data-xt-tooltip="{ mouseParent: true, position: 'bottom-start', inset: true }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-tooltip-element>
             bottom start inset
           </button>
 
@@ -93,11 +98,12 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-tooltip="{ position: 'bottom-end', inset: true }">
-        <div data-xt-tooltip-element>
+      <div data-xt-tooltip="{ mouseParent: true, position: 'bottom-end', inset: true }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-tooltip-element>
             bottom end inset
           </button>
 

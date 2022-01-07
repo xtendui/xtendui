@@ -1,4 +1,4 @@
-const url = '/hidden/test/animation'
+const url = '/hidden/test/animation-test'
 
 describe('demos/components/toggle/animation-queue', function () {
   let win
@@ -21,7 +21,9 @@ describe('demos/components/toggle/animation-queue', function () {
   })
 
   it('TEST queue activation.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
@@ -80,7 +82,9 @@ describe('demos/components/toggle/animation-noqueue', function () {
   })
 
   it('TEST noqueue activations.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
@@ -130,8 +134,12 @@ describe('demos/components/toggle/animation-inverse', function () {
   })
 
   it('TEST inverse activations.', function () {
-    expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .then(() => {
+        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+      })
+      .get(self.elements[0])
       .click()
       .wait(500) // after animation
       .then(() => {
@@ -170,7 +178,9 @@ describe('demos/components/toggle/animation-duration-delay', function () {
   })
 
   it('TEST duration, delay.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
@@ -246,7 +256,9 @@ describe('demos/components/toggle/animation-css', function () {
   })
 
   it('TEST activation, direction.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -310,8 +322,12 @@ describe('demos/components/slider/animation-css', function () {
   })
 
   it('TEST activation.', function () {
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    cy.frameDouble()
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+      })
+      .frameDouble()
       .then(() => {
         expect(self.targets[1].classList.contains('in')).to.equal(true)
       })
@@ -356,7 +372,9 @@ describe('demos/components/toggle/animation-js', function () {
   })
 
   it('TEST activation, direction.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(self.direction).to.equal(0)
@@ -413,7 +431,9 @@ describe('demos/components/slider/animation-js', function () {
   })
 
   it('TEST activation.', function () {
-    cy.wait(500) // after animation
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .frame()
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
           'translate(0px, 0px)'
@@ -470,13 +490,15 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
   })
 
   it('TEST height and maxHeight styles on activation and deactivation.', function () {
-    cy.get(self.elements[0])
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.elements[0])
       .click()
       .then(() => {
         expect(self.targets[0].style.height).to.contains('px')
         expect(self.targets[0].style.maxHeight).to.equal('none')
       })
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].style.height).to.equal('inherit')
         expect(self.targets[0].style.maxHeight).to.equal('none')
@@ -487,7 +509,7 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
         expect(self.targets[0].style.height).to.contains('px')
         expect(self.targets[0].style.maxHeight).to.equal('none')
       })
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].style.height).to.equal('')
         expect(self.targets[0].style.maxHeight).to.equal('')

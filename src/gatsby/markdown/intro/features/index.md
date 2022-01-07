@@ -4,10 +4,24 @@ category: "Introduction"
 parent: "Features"
 title: "Features"
 description: "Overview of the main features."
-date: "2005-10-10"
+date: "2009-10-10"
 ---
 
 Interactions and animations are not easy at all. Here's why **Xtend UI is not the usual frontend library**, it's designed to **make hard javascript task effortless**, that could take days or even months to implement and that needs various iterations and complex use case to do properly.
+
+## Accessibility
+
+A11y standards with **automatic Aria attributes and keyboard navigation**.
+
+For more info on **accessibility practices** used in Xtend UI see [ARIA Design Pattern Examples](https://www.w3.org/TR/wai-aria-practices-1.1/examples/), [digitala11y](https://www.digitala11y.com/).
+
+#### Toggle
+
+Toggle components **have automatic a11y attributes and keyboard navigations**, and they can be customized granularly, see [drop accessibility](/components/drop/other#accessibility), [overlay accessibility](/components/overlay/other#accessibility), [slider accessibility](/components/slider/other#accessibility), [toggle accessibility](/components/toggle/other#accessibility), [tooltip accessibility](/components/tooltip/other#accessibility).
+
+#### Prefers Reduced Motion
+
+See [animation setup](/components/animation#setup) to **disable css and js animations** when the the user has activated "Prefers Reduced Motion".
 
 ## Global
 
@@ -53,7 +67,7 @@ See [overlay hash](/components/overlay/interaction#hash), [slider hash](/compone
 
 Sometimes you need to **automatically scroll to the activated nodes**, you can use the [Scrollto component](/components/scrollto) in conjunction with any **toggle component**. It also integrates with the **toggle hash** interaction.
 
-See [scrollto toggle](/components/scrollto#toggle) for more info.
+See [scrollto toggle](/components/scrollto#toggle-integration) for more info.
 
 #### Addon
 
@@ -130,6 +144,14 @@ They **support various layout**. See [form layout](/components/form/layout) for 
 #### Group Nav Tabs Toolbar
 
 The **group nav tabs and toolbar components** are components that use [list](/components/list) to display buttons, inputs and other content in a certain way. See [group](/components/group), [nav](/components/nav), [tabs](/components/tabs), [toolbar](/components/toolbar) for more info.
+
+## Pagespeed optimizations
+
+- Media [iframe lazy loading](/components/media/addon#iframe-lazy).
+
+- Media [html5 video autoplay lazy](/components/media/addon#video-autoplay-lazy).
+
+- Media [html5 video media matches](/components/media/addon#video-matches).
 
 ## Themes
 

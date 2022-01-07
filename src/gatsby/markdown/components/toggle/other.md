@@ -6,6 +6,31 @@ title: "Other"
 date: "2005-10-10"
 ---
 
+## Accessibility
+
+This components follows A11y standards so **aria attributes and keyboard interactions are managed automatically**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `a11y:Object\|false`                          | `<Object>`        | Aria options            |
+| Option                  | `a11y.role:String\|false`                          | `'tablist'`        | Inject `role` and related attributes, can be `'tablist'`, `'popup'`, `'dialog'`, `'tooltip'`, `'carousel'`            |
+| Option                  | `a11y.labelElements:Boolean`                          | `false`        | Inject `aria-labelledby` attributes on elements (linking to targets)            |
+| Option                  | `a11y.labelTargets:Boolean`                          | `true`        | Inject `aria-labelledby` attributes on targets (linking to elements)            |
+| Option                  | `a11y.controls:Boolean`                          | `true`        | Inject `aria-controls` attributes            |
+| Option                  | `a11y.selected:Boolean`                          | `true`        | Inject `aria-selected` attributes            |
+| Option                  | `a11y.expanded:Boolean`                          | `false`        | Inject `aria-expanded` attributes            |
+| Option                  | `a11y.live:Boolean`                          | `true`        | Inject `aria-live` attributes on auto            |
+| Option                  | `a11y.disabled:Boolean`                          | `true`        | Inject `aria-disabled` attributes on enable/disable           |
+| Option                  | `a11y.keyboard:Boolean`                          | `true`        | Automatic keyboard **next**, **previous** and **exit** interactions           |
+| Option                  | `a11y.vertical:Boolean`                          | `false`        | **Vertical arrows** instead of **horizontal** for keyboard events           |
+| Option                  | `a11y.items:String\|false`                          | `false`        | Navigate activated target with arrows and search when typing           |
+
+</div>
+
+> **Do not rely/use aria attributes**, they are generated and they can change anytime.
+
 ## Disabled and Nested
 
 If you want to **disable the component** use the `options.disabled`.
@@ -85,7 +110,7 @@ You can **automatically move targets on activation inside the DOM**.
 
 ## Focus Limit
 
-For usability purpose **on activation you can limit the focus inside the current activated targets**.
+For accessibility purpose **on activation you can limit the focus inside the current activated targets**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

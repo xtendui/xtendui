@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div class="demo--toggle-prevent-event-hover">
     <div
       class="xt-list xt-list-3 items-center"
-      data-xt-toggle="{ min: 1, on: 'mouseenter', off: 'mouseleave', preventEvent: true }">
+      data-xt-toggle="{ min: 1, on: 'mouseenter focus', off: 'mouseleave', preventEvent: true }">
       <a
         href="/"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"

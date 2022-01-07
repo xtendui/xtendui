@@ -2,11 +2,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--tooltip-disable">
-    <div data-xt-tooltip>
+    <div data-xt-tooltip="{ mouseParent: true }">
       Lorem ipsum
 
-      <span data-xt-tooltip-element>
-        <a href="#">dolor</a>
+      <span>
+        <a href="/" data-xt-tooltip-element>dolor</a>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
           <div
@@ -16,9 +16,9 @@ const html = /* HTML */ `
 
               <div
                 class="inline-block"
-                data-xt-tooltip="{ elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }">
-                <span data-xt-tooltip-element-nested>
-                  <a href="#">dolor</a>
+                data-xt-tooltip="{ mouseParent: true, elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }">
+                <span>
+                  <a href="/" data-xt-tooltip-element-nested>dolor</a>
 
                   <div class="xt-tooltip p-3" data-xt-tooltip-target-nested>
                     <div

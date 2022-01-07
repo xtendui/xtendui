@@ -10,7 +10,7 @@ function DocHead(props) {
       <div className="gatsby_site-article_hero-inner container">
         <div className="gatsby_site-article_hero-content">
           <div className="gatsby_site-article_hero-content-inner">
-            <h2 className="xt-h1">
+            <h1 className="xt-h1">
               {page.post.frontmatter.title}{' '}
               {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
                 <span className="font-normal text-primary-200">
@@ -35,12 +35,10 @@ function DocHead(props) {
                     )
                   })
                 : null}
-            </h2>
+            </h1>
             {page.post.frontmatter.description ? (
-              <h1 className="-mt-2 mb-2 md:text-lg opacity-50">{page.post.frontmatter.description}</h1>
-            ) : (
-              <h1 className="-mt-2 mb-2 md:text-lg opacity-50">{page.parent.frontmatter.description}</h1>
-            )}
+              <h2 className="-mt-2 mb-2 md:text-lg opacity-70">{page.post.frontmatter.description}</h2>
+            ) : null}
           </div>
         </div>
       </div>

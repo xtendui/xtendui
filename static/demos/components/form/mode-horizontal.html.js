@@ -76,11 +76,13 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="checkbox"
+                      role="group"
+                      aria-label="Lorem ipsum"
                       class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                       checked
                       disabled />
                     <span class="${classes.checkContent()}"
-                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                     >
@@ -91,9 +93,11 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="checkbox"
+                      role="group"
+                      aria-label="Lorem ipsum"
                       class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                     <span class="${classes.checkContent()}"
-                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                     >
@@ -116,11 +120,13 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
+                      role="radiogroup"
+                      aria-label="Lorem ipsum"
                       class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                       name="radio-horizontal"
                       checked />
                     <span class="${classes.checkContent()}"
-                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                     >
@@ -131,10 +137,12 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
+                      role="radiogroup"
+                      aria-label="Lorem ipsum"
                       class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                       name="radio-horizontal" />
                     <span class="${classes.checkContent()}"
-                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                     >
@@ -157,9 +165,11 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="checkbox"
+                      role="group"
+                      aria-label="Lorem ipsum"
                       class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}" />
                     <span class="${classes.checkContent()}"
-                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                     >
@@ -170,10 +180,12 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
+                      role="radiogroup"
+                      aria-label="Lorem ipsum"
                       class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                       name="switch-horizontal" />
                     <span class="${classes.checkContent()}"
-                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                     >
@@ -184,10 +196,12 @@ const html = /* HTML */ `
                   <label class="${classes.checkLabel()}">
                     <input
                       type="radio"
+                      role="radiogroup"
+                      aria-label="Lorem ipsum"
                       class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                       name="switch-horizontal" />
                     <span class="${classes.checkContent()}"
-                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      ><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.</span
                     >

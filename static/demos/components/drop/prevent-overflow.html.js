@@ -5,20 +5,21 @@ const html = /* HTML */ `
     <div
       class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}"
       data-node-boundary>
-      <div class="xt-list xt-list-3 items-center" data-node-drop>
-        <div data-xt-drop-element>
+      <div class="xt-list xt-list-3 items-center" data-node-drop="{ mouseParent: true }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-drop-element>
             Drop
           </button>
 
           <div class="xt-drop p-3" data-xt-drop-target>
             <div
               class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-              <nav class="xt-list flex-col ${classes.groupMd()}">
+              <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
                 <a
-                  href="#"
+                  href="/"
                   class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
@@ -38,19 +39,20 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div data-xt-drop-element>
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-drop-element>
             Drop
           </button>
 
           <div class="xt-drop p-3" data-xt-drop-target>
             <div
               class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-              <nav class="xt-list flex-col ${classes.groupMd()}">
+              <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
                 <a
-                  href="#"
+                  href="/"
                   class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>

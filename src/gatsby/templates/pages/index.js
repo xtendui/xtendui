@@ -23,7 +23,7 @@ function Page() {
             Custom UI made easy with simplicity and total freedom
           </h3>
           <h1 className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl">
-            <span className="opacity-50">
+            <span className="opacity-70">
               Xtend UI is a powerful frontend library of tailwind components enhanced by vanilla js. It helps you build
               interfaces with advanced interactions and animations.
             </span>
@@ -100,7 +100,7 @@ function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Framework agnostic
                   </h2>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Use it on vanilla html or in any popular javascript framework.
                   </p>
                 </div>
@@ -110,7 +110,7 @@ function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Custom Design
                   </h2>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Customizzable components that supports a wide range of designs.
                   </p>
                 </div>
@@ -120,7 +120,7 @@ function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Complex Interaction
                   </h2>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Complex interaction logic managed internally by components.
                   </p>
                 </div>
@@ -130,7 +130,7 @@ function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     User Experience
                   </h2>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Support for advanced interaction and animations with simple usage.
                   </p>
                 </div>
@@ -138,13 +138,10 @@ function Page() {
               <div className="w-6/12 md:w-2/6 gatsby_home-main_scroll">
                 <div className="text-left text-sm">
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
-                    Usability
-                    <div className={`inline-block text-3xs font-medium leading-snug tracking-wider uppercase ml-1.5`}>
-                      WIP
-                    </div>
+                    Accessibility
                   </h2>
-                  <p className="xt-p text-sm leading-snug opacity-50">
-                    A keen eye on usability. Aria injected automaticaly with js.
+                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                    A11y standards with automatic Aria attributes and keyboard navigation.
                   </p>
                 </div>
               </div>
@@ -153,7 +150,7 @@ function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     UX Themes
                   </h2>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Themes focused on user experience instead of design.
                   </p>
                 </div>
@@ -168,7 +165,7 @@ function Page() {
             <div className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-4xl md:text-5xl lg:text-6xl">
               Features
             </div>
-            <p className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl opacity-50">
+            <p className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl">
               For an overview of the main features visit the{' '}
               <a href="/intro/features" target="_blank">
                 features page
@@ -209,7 +206,7 @@ function Page() {
                 <div className="w-full md:w-7/12 lg:w-8/12">
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="overlay-implementation-v1" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a
                         href="themes/overlay#demos-themes-implementation-overlay-implementation-v-1"
@@ -222,7 +219,7 @@ function Page() {
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="drop-implementation-v1" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a
                         href="themes/drop#demos-themes-implementation-drop-implementation-v-1"
@@ -235,7 +232,7 @@ function Page() {
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="tooltip-implementation-v1" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a
                         href="themes/tooltip#demos-themes-implementation-tooltip-implementation-v-1"
@@ -280,7 +277,7 @@ function Page() {
                 <div className="w-full md:w-7/12 lg:w-8/12">
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="float-animation-v1" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a
                         href="themes/animation#demos-themes-animation-float-animation-v-1"
@@ -293,7 +290,7 @@ function Page() {
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="collapse-animation-v1" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a
                         href="themes/animation#demos-themes-animation-collapse-animation-v-1"
@@ -337,7 +334,7 @@ function Page() {
                 <div className="w-full md:w-7/12 lg:w-8/12">
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="products-gallery-v1" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a
                         href="themes/toggle#demos-themes-gallery-products-gallery-v-1"
@@ -350,7 +347,7 @@ function Page() {
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="multilevel-v1" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a href="themes/toggle#demos-themes-navigation-multilevel-v-1" target="_blank" rel="noreferrer">
                         multilevel-v1
@@ -360,7 +357,7 @@ function Page() {
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <Video assets={assets} title="products-listing-v2" />
-                    <div className="mt-3 text-white text-opacity-50 text-xs leading-snug">
+                    <div className="mt-3 text-white text-opacity-[90%] text-xs leading-snug">
                       View live demo{' '}
                       <a
                         href="themes/scrolltrigger#demos-themes-listing-products-listing-v-2"
@@ -463,8 +460,8 @@ function Page() {
                     type="button"
                     className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()} group`}>
                     <span className="font-bold text-lg md:text-xl">Html</span>
-                    <span className="text-2xs md:text-xs opacity-50 group-on:hidden">Switch to Html</span>
-                    <span className="text-2xs md:text-xs opacity-50 hidden group-on:block">Html chosen</span>
+                    <span className="text-2xs md:text-xs opacity-[90%] group-on:hidden">Switch to Html</span>
+                    <span className="text-2xs md:text-xs opacity-[90%] hidden group-on:block">Html chosen</span>
                   </button>
                 </div>
                 <div className="w-6/12">
@@ -472,8 +469,8 @@ function Page() {
                     type="button"
                     className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()} group`}>
                     <span className="font-bold text-lg md:text-xl">React</span>
-                    <span className="text-2xs md:text-xs opacity-50 group-on:hidden">Switch to React</span>
-                    <span className="text-2xs md:text-xs opacity-50 hidden group-on:block">React chosen</span>
+                    <span className="text-2xs md:text-xs opacity-[90%] group-on:hidden">Switch to React</span>
+                    <span className="text-2xs md:text-xs opacity-[90%] hidden group-on:block">React chosen</span>
                   </button>
                 </div>
               </div>
@@ -487,7 +484,7 @@ function Page() {
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Intro
                     </div>
-                    <p className="xt-p text-sm leading-snug opacity-50">
+                    <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                       Project overview and instructions to get stated.
                     </p>
                   </Link>
@@ -497,7 +494,7 @@ function Page() {
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Components
                     </div>
-                    <p className="xt-p text-sm leading-snug opacity-50">
+                    <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                       Customizable components with an ecosystem of plugins.
                     </p>
                   </Link>
@@ -507,7 +504,7 @@ function Page() {
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Themes
                     </div>
-                    <p className="xt-p text-sm leading-snug opacity-50">
+                    <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
                       UX themes with advanced interactions and animations.
                     </p>
                   </Link>

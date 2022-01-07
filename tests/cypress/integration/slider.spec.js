@@ -1,4 +1,4 @@
-const url = '/hidden/test/slider'
+const url = '/hidden/test/slider-test'
 
 describe('demos/components/slider/align-center', function () {
   let win
@@ -21,15 +21,19 @@ describe('demos/components/slider/align-center', function () {
   })
 
   it('TEST grouping and drag activation.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(true)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -65,15 +69,19 @@ describe('demos/components/slider/align-left', function () {
   })
 
   it('TEST grouping and drag activation.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(true)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -109,15 +117,19 @@ describe('demos/components/slider/align-right', function () {
   })
 
   it('TEST grouping and drag activation.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(true)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -153,15 +165,19 @@ describe('demos/components/slider/contain-false-center', function () {
   })
 
   it('TEST grouping and drag activation.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -197,15 +213,19 @@ describe('demos/components/slider/contain-false-left', function () {
   })
 
   it('TEST grouping and drag activation.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(true)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -241,15 +261,19 @@ describe('demos/components/slider/contain-false-right', function () {
   })
 
   it('TEST grouping and drag activation.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(false)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(576px)')
-    cy.get(self.elements[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(576px)')
+      })
+      .get(self.elements[1])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -285,22 +309,26 @@ describe('demos/components/slider/wrap-center', function () {
   })
 
   it('TEST grouping and drag activation, wrap position.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(true)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
-    expect(self.targets[0].style.transform).to.equal('')
-    expect(self.targets[1].style.transform).to.equal('')
-    expect(self.targets[2].style.transform).to.equal('')
-    expect(self.targets[3].style.transform).to.equal('')
-    expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
-    cy.get(self.elements[6])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(true)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
+        expect(self.targets[0].style.transform).to.equal('')
+        expect(self.targets[1].style.transform).to.equal('')
+        expect(self.targets[2].style.transform).to.equal('')
+        expect(self.targets[3].style.transform).to.equal('')
+        expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
+      })
+      .get(self.elements[6])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -343,22 +371,26 @@ describe('demos/components/slider/wrap-left', function () {
   })
 
   it('TEST grouping and drag activation, wrap position.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(true)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
-    expect(self.targets[0].style.transform).to.equal('')
-    expect(self.targets[1].style.transform).to.equal('')
-    expect(self.targets[2].style.transform).to.equal('')
-    expect(self.targets[3].style.transform).to.equal('')
-    expect(self.targets[4].style.transform).to.equal('')
-    expect(self.targets[5].style.transform).to.equal('')
-    expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
-    cy.get(self.elements[6])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
+        expect(self.targets[0].style.transform).to.equal('')
+        expect(self.targets[1].style.transform).to.equal('')
+        expect(self.targets[2].style.transform).to.equal('')
+        expect(self.targets[3].style.transform).to.equal('')
+        expect(self.targets[4].style.transform).to.equal('')
+        expect(self.targets[5].style.transform).to.equal('')
+        expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
+      })
+      .get(self.elements[6])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -401,22 +433,26 @@ describe('demos/components/slider/wrap-right', function () {
   })
 
   it('TEST grouping and drag activation, wrap position.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(false)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(true)
-    expect(self.targets[6].classList.contains('on')).to.equal(true)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(576px)')
-    expect(self.targets[0].style.transform).to.equal('')
-    expect(self.targets[1].style.transform).to.equal('')
-    expect(self.targets[2].style.transform).to.equal('')
-    expect(self.targets[3].style.transform).to.equal('')
-    expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
-    cy.get(self.elements[6])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(true)
+        expect(self.targets[6].classList.contains('on')).to.equal(true)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(576px)')
+        expect(self.targets[0].style.transform).to.equal('')
+        expect(self.targets[1].style.transform).to.equal('')
+        expect(self.targets[2].style.transform).to.equal('')
+        expect(self.targets[3].style.transform).to.equal('')
+        expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
+      })
+      .get(self.elements[6])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -459,22 +495,26 @@ describe('demos/components/slider/group', function () {
   })
 
   it('TEST group responsive.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(true)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(192px)')
-    expect(self.targets[0].style.transform).to.equal('')
-    expect(self.targets[1].style.transform).to.equal('')
-    expect(self.targets[2].style.transform).to.equal('')
-    expect(self.targets[3].style.transform).to.equal('')
-    expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
-    cy.viewport('iphone-6')
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(true)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(192px)')
+        expect(self.targets[0].style.transform).to.equal('')
+        expect(self.targets[1].style.transform).to.equal('')
+        expect(self.targets[2].style.transform).to.equal('')
+        expect(self.targets[3].style.transform).to.equal('')
+        expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
+      })
+      .viewport('iphone-6')
       .get(self.targets[6])
       .should('have.not.class', 'on') // racecondition
       .frame()
@@ -539,22 +579,26 @@ describe('demos/components/slider/group-same-false', function () {
   })
 
   it('TEST group.', function () {
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(false)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(self.targets[3].classList.contains('on')).to.equal(false)
-    expect(self.targets[4].classList.contains('on')).to.equal(false)
-    expect(self.targets[5].classList.contains('on')).to.equal(false)
-    expect(self.targets[6].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
-    expect(self.targets[0].style.transform).to.equal('')
-    expect(self.targets[1].style.transform).to.equal('')
-    expect(self.targets[2].style.transform).to.equal('')
-    expect(self.targets[3].style.transform).to.equal('')
-    expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
-    expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
-    cy.get(self.elements[6])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(self.targets[6].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
+        expect(self.targets[0].style.transform).to.equal('')
+        expect(self.targets[1].style.transform).to.equal('')
+        expect(self.targets[2].style.transform).to.equal('')
+        expect(self.targets[3].style.transform).to.equal('')
+        expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
+        expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
+      })
+      .get(self.elements[6])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -605,7 +649,6 @@ describe('demos/components/slider/exclude', function () {
   it('TEST activation exclude.', function () {
     cy.get('@demo')
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
-      .frame()
       .then(() => {
         expect(self.targets.length).to.equal(5)
         expect(slides[0].classList.contains('on')).to.equal(true)
@@ -666,7 +709,9 @@ describe('demos/components/slider/navigation', function () {
   })
 
   it('TEST loop navigation, loop dragging beyond.', function () {
-    cy.get('[data-xt-nav="-1"]')
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .get('[data-xt-nav="-1"]')
       .first()
       .click()
       .then(() => {
@@ -747,26 +792,30 @@ describe('demos/components/slider/pagination', function () {
   })
 
   it('TEST pagination elements activation also on init.', function () {
-    expect(self.elements.length).to.equal(40)
-    expect(toggles[0].classList.contains('on')).to.equal(true)
-    expect(toggles[1].classList.contains('on')).to.equal(false)
-    expect(toggles[2].classList.contains('on')).to.equal(false)
-    expect(toggles[3].classList.contains('on')).to.equal(false)
-    expect(toggles[4].classList.contains('on')).to.equal(false)
-    expect(toggles[5].classList.contains('on')).to.equal(false)
-    expect(toggles[6].classList.contains('on')).to.equal(true)
-    expect(toggles[7].classList.contains('on')).to.equal(false)
-    expect(toggles[8].classList.contains('on')).to.equal(false)
-    expect(toggles[9].classList.contains('on')).to.equal(false)
-    expect(toggles[10].classList.contains('on')).to.equal(false)
-    expect(toggles[11].classList.contains('on')).to.equal(false)
-    expect(toggles[12].classList.contains('on')).to.equal(true)
-    expect(toggles[13].classList.contains('on')).to.equal(false)
-    expect(toggles[14].classList.contains('on')).to.equal(false)
-    expect(toggles[15].classList.contains('on')).to.equal(false)
-    expect(toggles[16].classList.contains('on')).to.equal(false)
-    expect(toggles[17].classList.contains('on')).to.equal(false)
-    cy.get(toggles[1])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.elements.length).to.equal(40)
+        expect(toggles[0].classList.contains('on')).to.equal(true)
+        expect(toggles[1].classList.contains('on')).to.equal(false)
+        expect(toggles[2].classList.contains('on')).to.equal(false)
+        expect(toggles[3].classList.contains('on')).to.equal(false)
+        expect(toggles[4].classList.contains('on')).to.equal(false)
+        expect(toggles[5].classList.contains('on')).to.equal(false)
+        expect(toggles[6].classList.contains('on')).to.equal(true)
+        expect(toggles[7].classList.contains('on')).to.equal(false)
+        expect(toggles[8].classList.contains('on')).to.equal(false)
+        expect(toggles[9].classList.contains('on')).to.equal(false)
+        expect(toggles[10].classList.contains('on')).to.equal(false)
+        expect(toggles[11].classList.contains('on')).to.equal(false)
+        expect(toggles[12].classList.contains('on')).to.equal(true)
+        expect(toggles[13].classList.contains('on')).to.equal(false)
+        expect(toggles[14].classList.contains('on')).to.equal(false)
+        expect(toggles[15].classList.contains('on')).to.equal(false)
+        expect(toggles[16].classList.contains('on')).to.equal(false)
+        expect(toggles[17].classList.contains('on')).to.equal(false)
+      })
+      .get(toggles[1])
       .click()
       .then(() => {
         expect(toggles[0].classList.contains('on')).to.equal(false)
@@ -812,7 +861,9 @@ describe('demos/components/slider/jump', function () {
   })
 
   it('TEST jump and not jump click.', function () {
-    cy.get(self.targets[2])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .get(self.targets[2])
       .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -869,8 +920,12 @@ describe('demos/components/slider/autoheight', function () {
   })
 
   it('TEST autoheight.', function () {
-    expect(parseFloat(container.querySelector('[data-xt-slider-autoheight]').style.height)).to.closeTo(101, 10)
-    cy.get(self.elements[2])
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(parseFloat(container.querySelector('[data-xt-slider-autoheight]').style.height)).to.closeTo(101, 10)
+      })
+      .get(self.elements[2])
       .click()
       .then(() => {
         expect(parseFloat(container.querySelector('[data-xt-slider-autoheight]').style.height)).to.closeTo(128, 10)
@@ -952,12 +1007,16 @@ describe('demos/components/slider/nooverflow', function () {
   })
 
   it('TEST deactivation and position, activation on resize.', function () {
-    expect(container.getAttribute('data-xt-slider-disabled')).to.equal('')
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(true)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(192px)')
-    cy.viewport('iphone-6')
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(container.getAttribute('data-xt-slider-disabled')).to.equal('')
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(192px)')
+      })
+      .viewport('iphone-6')
       .get(container)
       .should('have.not.attr', 'data-xt-slider-disabled') // racecondition
       .frame()
@@ -991,12 +1050,16 @@ describe('demos/components/slider/nooverflow-false', function () {
   })
 
   it('TEST on resize grouping and wrap.', function () {
-    expect(container.getAttribute('data-xt-slider-disabled')).to.equal(null)
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(self.targets[1].classList.contains('on')).to.equal(true)
-    expect(self.targets[2].classList.contains('on')).to.equal(false)
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
-    cy.viewport('iphone-6')
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(container.getAttribute('data-xt-slider-disabled')).to.equal(null)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
+      })
+      .viewport('iphone-6')
       .get(self.targets[1])
       .should('have.not.class', 'on') // racecondition
       .frame()
@@ -1041,6 +1104,8 @@ describe('demos/components/slider/media-loaded', function () {
 
   it('TEST activation and position on change.', function () {
     cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .get(container)
       .scrollIntoView()
       .find('[data-xt-slider-element]')
       .should('have.class', 'xt-medialoaded') // racecondition

@@ -36,6 +36,8 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
+                    role="radiogroup"
+                    aria-label="All types"
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value=""
@@ -49,6 +51,8 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
+                    role="radiogroup"
+                    aria-label="Restaurant"
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value="restaurant"
@@ -61,6 +65,8 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
+                    role="radiogroup"
+                    aria-label="School"
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
                     value="school"
@@ -73,6 +79,8 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="checkbox"
+                    role="group"
+                    aria-label="Favourite"
                     class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-fav"
                     value="fav"
@@ -115,7 +123,7 @@ const html = /* HTML */ `
                     <address class="not-italic" data-xt-populate="address"></address>
                     <div data-xt-populate="additional"></div>
                   </div>
-                  <a href="#" target="_blank" rel="noopener" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
+                  <a href="/" target="_blank" rel="noopener" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
                     ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     <span data-xt-populate="distance"></span>
                   </a>

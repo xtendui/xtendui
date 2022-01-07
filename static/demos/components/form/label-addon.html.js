@@ -9,8 +9,8 @@ const html = /* HTML */ `
             Lorem ipsum
             <div class="ml-4">
               <div class="xt-list xt-list-3 items-center">
-                <a href="#" class="xt-button xt-link"> link #1 </a>
-                <a href="#" class="xt-button xt-link"> link #2 </a>
+                <a href="/" class="xt-button xt-link"> link #1 </a>
+                <a href="/" class="xt-button xt-link"> link #2 </a>
               </div>
             </div>
           </label>
@@ -25,8 +25,8 @@ const html = /* HTML */ `
             Dolor sit amet
             <div class="ml-auto">
               <div class="xt-list xt-list-3 items-center">
-                <a href="#" class="xt-button xt-link"> link #1 </a>
-                <a href="#" class="xt-button xt-link"> link #2 </a>
+                <a href="/" class="xt-button xt-link"> link #1 </a>
+                <a href="/" class="xt-button xt-link"> link #2 </a>
               </div>
             </div>
           </label>
@@ -43,8 +43,8 @@ const html = /* HTML */ `
                 Lorem ipsum
                 <div class="mt-1">
                   <div class="xt-list xt-list-3 items-center">
-                    <a href="#" class="xt-button xt-link"> link #1 </a>
-                    <a href="#" class="xt-button xt-link"> link #2 </a>
+                    <a href="/" class="xt-button xt-link"> link #1 </a>
+                    <a href="/" class="xt-button xt-link"> link #2 </a>
                   </div>
                 </div>
               </label>

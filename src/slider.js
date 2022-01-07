@@ -502,25 +502,6 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * init aria
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      if (options.aria === true || options.aria.role) {
-        for (const tr of self.targets) {
-          tr.setAttribute('role', 'group')
-          tr.setAttribute('aria-roledescription', 'slide')
-        }
-        self.container.setAttribute('aria-roledescription', 'carousel')
-      }
-    }
-  }
-
-  /**
    * init events
    */
   _initEvents() {
@@ -1471,28 +1452,37 @@ Slider.optionsDefault = {
   elementsTemplate: 'hidden',
   elements: '[data-xt-slider-element]',
   targets: '[data-xt-slider-target]',
-  elementsInner: ':scope > a, :scope > button',
-  targetsInner: false,
   // quantity
   min: 1,
   max: 1,
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   // timing
   queue: false,
   // other
   visibleReinit: true,
   jump: false,
   navigation: '[data-xt-nav]',
-  keyboard: {
-    selector: '[data-xt-slider-dragger]',
-  },
   zIndex: {
     targets: {
       start: 200, // same as options.zIndex.targets.start
       factor: -1,
     },
+  },
+  a11y: {
+    role: 'carousel',
+    labelElements: false,
+    labelTargets: true,
+    controls: true,
+    selected: false,
+    expanded: false,
+    live: true,
+    disabled: true,
+    keyboard: true,
+    vertical: false,
+    items: false,
   },
 }
 

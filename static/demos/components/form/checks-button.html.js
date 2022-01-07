@@ -8,6 +8,8 @@ const html = /* HTML */ `
         Lorem ipsum
         <input
           type="checkbox"
+          role="group"
+          aria-label="Lorem ipsum"
           class="xt-check xt-checkbox top-auto ml-2 ${classes.checkRadius()} ${classes.checkGray()}"
           name="checkbox-button-0"
           checked
@@ -19,6 +21,8 @@ const html = /* HTML */ `
         Lorem ipsum
         <input
           type="checkbox"
+          role="group"
+          aria-label="Lorem ipsum"
           class="xt-check xt-checkbox top-auto ml-2 ${classes.checkRadius()} ${classes.checkGray()}"
           name="checkbox-button-1" />
       </label>
@@ -26,13 +30,13 @@ const html = /* HTML */ `
       <label
         class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} *** focus-within:outline-browser ***">
         Lorem ipsum
-        <input type="radio" class="sr-only" name="radio-button" checked />
+        <input type="radio" role="radiogroup" aria-label="Lorem ipsum" class="sr-only" name="radio-button" checked />
       </label>
 
       <label
         class="*** xt-button *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()} *** focus-within:outline-browser ***">
         Lorem ipsum
-        <input type="radio" class="sr-only" name="radio-button" />
+        <input type="radio" role="radiogroup" aria-label="Lorem ipsum" class="sr-only" name="radio-button" />
       </label>
 
       <label
@@ -40,6 +44,8 @@ const html = /* HTML */ `
         Lorem ipsum
         <input
           type="radio"
+          role="radiogroup"
+          aria-label="Lorem ipsum"
           class="xt-check xt-switch top-auto ml-2 ${classes.switchRadius()} ${classes.switchGray()}"
           name="switch-button"
           checked />
@@ -50,6 +56,8 @@ const html = /* HTML */ `
         Lorem ipsum
         <input
           type="radio"
+          role="radiogroup"
+          aria-label="Lorem ipsum"
           class="xt-check xt-switch top-auto ml-2 ${classes.switchRadius()} ${classes.switchGray()}"
           name="switch-button" />
       </label>

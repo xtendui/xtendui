@@ -6,7 +6,7 @@ import 'xtendui/src/form'
 const mountScrollToError = ({ ref }) => {
   // vars
 
-  let el = ref.querySelector('.custom-validation-error')
+  let el = ref.querySelector('.custom-backend-error')
 
   // init
 

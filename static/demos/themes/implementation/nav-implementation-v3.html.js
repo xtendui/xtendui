@@ -12,7 +12,7 @@ const html = /* HTML */ `
           <div class="*** xt-sticky md:py-4 ***" data-node-sticky>
             <div
               class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
-              <nav class="*** xt-list xt-list-1 flex-col ***">
+              <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col ***">
                 <a
                   href="#description"
                   type="button"
@@ -48,7 +48,7 @@ const html = /* HTML */ `
               <div class="${classes.cardSm()} border-t border-gray-200" id="description">
                 <div class="xt-h5">Description</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -67,7 +67,7 @@ const html = /* HTML */ `
               <div class="*** ${classes.cardSm()} border-t border-gray-200 ***" id="features">
                 <div class="xt-h5">Features</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -76,7 +76,7 @@ const html = /* HTML */ `
               <div class="*** ${classes.cardSm()} border-t border-gray-200 ***" id="accessories">
                 <div class="xt-h5">Accessories</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -105,7 +105,7 @@ const html = /* HTML */ `
               <div class="*** ${classes.cardSm()} border-t border-gray-200 ***" id="manuals">
                 <div class="xt-h5">Manuals</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>

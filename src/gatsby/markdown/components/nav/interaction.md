@@ -17,7 +17,7 @@ You can create a **multilevel nav** with [toggle group](/components/toggle/inter
   </div>
 </demo>
 
-## Toggle
+## Toggle simple
 
 Use [toggle](/components/toggle) to **activate/deactivate and animate**.
 
@@ -30,7 +30,7 @@ Use [toggle](/components/toggle) to **activate/deactivate and animate**.
 
 ## Toggle complex
 
-Use [scrollto toggle](/components/scrollto#toggle) to **automatically scroll on activation**.
+Use [scrollto toggle](/components/scrollto#toggle-integration) to **automatically scroll on activation**.
 
 Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 
@@ -43,7 +43,7 @@ Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 
 ## Scrollto
 
-Use [scrollto](/components/scrollto#toggle) to **automatically scroll with hash links**.
+Use [scrollto](/components/scrollto#toggle-integration) to **automatically scroll with hash links**.
 
 Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 

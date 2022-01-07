@@ -43,6 +43,8 @@ class Toggle {
   _autorunning
   _observer
   _focusTrap
+  _hasContainer
+  _search = ''
   componentName
   ns
   options
@@ -130,8 +132,8 @@ class Toggle {
     self._initSetup()
     Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     self._initScope()
-    self._initAria()
     self._initEvents()
+    self._initA11y()
     self._initStart({ save })
     // disable last for proper options.disableDeactivate
     if (self.options.disabled || self._disabledManual) {
@@ -197,6 +199,13 @@ class Toggle {
     if (!self.elements.length) {
       self.elements = [self.container]
     }
+    // elementsInner
+    if (options.elementsInner) {
+      for (const el of self.elements) {
+        const elements = Xt.queryAll({ els: el, query: options.elementsInner })
+        Xt.dataStorage.set(el, `elementsInner/${self.ns}`, elements)
+      }
+    }
   }
 
   /**
@@ -213,6 +222,13 @@ class Toggle {
       }
       self.targets = arr
       self._destroyElements.push(...self.targets)
+      // elementsInner
+      if (options.targetsInner) {
+        for (const tr of self.targets) {
+          const elements = Xt.queryAll({ els: tr, query: options.targetsInner })
+          Xt.dataStorage.set(tr, `targetsInner/${self.ns}`, elements)
+        }
+      }
     }
   }
 
@@ -250,7 +266,8 @@ class Toggle {
           // toggle event if present because of custom listeners
           if (options.on) {
             const event = options.on.split(' ')[0]
-            el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+            const elEvent = self._getEventParent({ el, event })
+            elEvent.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
           } else {
             self._eventOn({ el, force: true })
           }
@@ -264,7 +281,8 @@ class Toggle {
     // no currents
     if (currents === 0) {
       // init
-      Xt.frame({
+      // needs frameDouble after ondone
+      Xt.frameDouble({
         el: self.container,
         ns: `${self.ns}Init`,
         func: () => {
@@ -342,18 +360,20 @@ class Toggle {
             )
           }
         }
-        if (options.classSkip !== true && !options.classSkip.elementsInner) {
-          const elsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-          for (const elInner of elsInner) {
-            elInner.classList.remove(
-              ...self._classes,
-              ...self._classesIn,
-              ...self._classesOut,
-              ...self._classesDone,
-              ...self._classesInitial,
-              ...self._classesBefore,
-              ...self._classesAfter
-            )
+        if (options.elementsInner) {
+          if (options.classSkip !== true && !options.classSkip.elementsInner) {
+            const elementsInner = Xt.dataStorage.get(el, `elementsInner/${self.ns}`)
+            for (const elementInner of elementsInner) {
+              elementInner.classList.remove(
+                ...self._classes,
+                ...self._classesIn,
+                ...self._classesOut,
+                ...self._classesDone,
+                ...self._classesInitial,
+                ...self._classesBefore,
+                ...self._classesAfter
+              )
+            }
           }
         }
       }
@@ -388,18 +408,20 @@ class Toggle {
               ...self._classesAfter
             )
           }
-          if (options.classSkip !== true && !options.classSkip.targetsInner) {
-            const trsInner = Xt.queryAll({ els: tr, query: options.targetsInner })
-            for (const trInner of trsInner) {
-              trInner.classList.remove(
-                ...self._classes,
-                ...self._classesIn,
-                ...self._classesOut,
-                ...self._classesDone,
-                ...self._classesInitial,
-                ...self._classesBefore,
-                ...self._classesAfter
-              )
+          if (options.targetsInner) {
+            if (options.classSkip !== true && !options.classSkip.targetsInner) {
+              const targetsInner = Xt.dataStorage.get(tr, `targetsInner/${self.ns}`)
+              for (const targetInner of targetsInner) {
+                targetInner.classList.remove(
+                  ...self._classes,
+                  ...self._classesIn,
+                  ...self._classesOut,
+                  ...self._classesDone,
+                  ...self._classesInitial,
+                  ...self._classesBefore,
+                  ...self._classesAfter
+                )
+              }
             }
           }
         }
@@ -413,7 +435,8 @@ class Toggle {
         // toggle event if present because of custom listeners
         if (options.on) {
           const event = options.on.split(' ')[0]
-          el.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
+          const elEvent = self._getEventParent({ el, event })
+          elEvent.dispatchEvent(new CustomEvent(event, { detail: { force: true } }))
         } else {
           self._eventOn({ el, force: true })
         }
@@ -421,113 +444,6 @@ class Toggle {
     }
     // return
     return currents
-  }
-
-  /**
-   * init aria
-   */
-  _initAria() {
-    const self = this
-    const options = self.options
-    // role
-    self._initAriaRole()
-    // aria
-    if (options.aria) {
-      if (self.targets.length) {
-        // targets
-        for (const tr of self.targets) {
-          // id
-          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
-            const id = tr.getAttribute('id')
-            if (!id) {
-              tr.setAttribute('id', Xt.uniqueId())
-            }
-          }
-        }
-        // elements
-        for (const el of self.elements) {
-          // selected
-          if (options.aria === true || options.aria.activation) {
-            el.setAttribute('aria-selected', 'false')
-          }
-          // id
-          if (options.aria === true || options.aria.labelledby || options.aria.controls) {
-            const id = el.getAttribute('id')
-            if (!id) {
-              el.setAttribute('id', Xt.uniqueId())
-            }
-          }
-          // controls
-          if (options.aria === true || options.aria.controls) {
-            const trs = self.getTargets({ el })
-            let str = ' '
-            str += ''
-            for (const tr of trs) {
-              str += ` ${tr.getAttribute('id')}`
-            }
-            el.setAttribute('aria-controls', str.trim())
-          }
-        }
-        // targets
-        for (const tr of self.targets) {
-          // expanded
-          if (options.aria === true || options.aria.activation) {
-            const role = tr.getAttribute('role')
-            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
-              tr.setAttribute('aria-expanded', 'false')
-            }
-          }
-          // describedby
-          if (options.aria === true || options.aria.describedby) {
-            const els = self.getElements({ el: tr })
-            let str = ' '
-            str += ''
-            for (const el of els) {
-              str += ` ${el.getAttribute('id')}`
-            }
-            tr.setAttribute('aria-describedby', str.trim())
-          }
-          // labelledby
-          if (options.aria === true || options.aria.labelledby) {
-            const els = self.getElements({ el: tr })
-            let str = ' '
-            str += ''
-            for (const el of els) {
-              str += ` ${el.getAttribute('id')}`
-            }
-            tr.setAttribute('aria-labelledby', str.trim())
-          }
-        }
-      }
-    }
-  }
-
-  /**
-   * init aria role
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      if (self.targets.length) {
-        // role
-        if (options.aria === true || options.aria.role) {
-          if (self._mode === 'multiple') {
-            self.container.setAttribute('role', 'tablist')
-            if (options.max > 1) {
-              self.container.setAttribute('aria-multiselectable', 'true')
-            }
-            for (const el of self.elements) {
-              el.setAttribute('role', 'tab')
-            }
-            for (const tr of self.targets) {
-              tr.setAttribute('role', 'tabpanel')
-            }
-          }
-        }
-      }
-    }
   }
 
   /**
@@ -548,10 +464,18 @@ class Toggle {
       )
       el.addEventListener(`on.trigger.${self._componentNs}`, onHandlerCustom)
       if (options.on) {
-        const onHandler = Xt.dataStorage.put(el, `${options.on}/on/${self.ns}`, self._eventOnHandler.bind(self, { el }))
         const events = [...options.on.split(' ')]
         for (const event of events) {
-          el.addEventListener(event, onHandler)
+          const elEvent = self._getEventParent({ el, event })
+          if (elEvent !== el) {
+            self._destroyElements.push(elEvent)
+          }
+          const onHandler = Xt.dataStorage.put(
+            elEvent,
+            `${options.on}/on/${self.ns}`,
+            self._eventOnHandler.bind(self, { el })
+          )
+          elEvent.addEventListener(event, onHandler)
         }
       }
       // event off
@@ -562,16 +486,20 @@ class Toggle {
       )
       el.addEventListener(`off.trigger.${self._componentNs}`, offHandlerCustom)
       if (options.off) {
-        const offHandler = Xt.dataStorage.put(
-          el,
-          `${options.off}/off/${self.ns}`,
-          self._eventOffHandler.bind(self, { el })
-        )
         const events = [...options.off.split(' ')]
         for (const event of events) {
-          // fix same event for on and off same namespace
+          // same event for on and off same namespace
           if (![...options.on.split(' ')].includes(event)) {
-            el.addEventListener(event, offHandler)
+            const elEvent = self._getEventParent({ el, event })
+            if (elEvent !== el) {
+              self._destroyElements.push(elEvent)
+            }
+            const offHandler = Xt.dataStorage.put(
+              elEvent,
+              `${options.off}/off/${self.ns}`,
+              self._eventOffHandler.bind(self, { el })
+            )
+            elEvent.addEventListener(event, offHandler)
           }
         }
       }
@@ -580,21 +508,23 @@ class Toggle {
         if (options.preventEvent) {
           const events = [...options.on.split(' ')]
           if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
-            // fix prevents click links on click until clicked two times
-            const preventeventStartTouchHandler = Xt.dataStorage.put(
+            // prevent touch links
+            const preventeventStartHandler = Xt.dataStorage.put(
               el,
               `touchend/preventevent/${self.ns}`,
               self._eventPreventeventStartHandler.bind(self, { el })
             )
-            el.addEventListener('touchend', preventeventStartTouchHandler)
+            el.addEventListener('touchend', preventeventStartHandler)
           }
           if (events.includes('click')) {
-            const preventeventStartMouseHandler = Xt.dataStorage.put(
+            // prevent click links
+            const preventeventStartHandler = Xt.dataStorage.put(
               el,
-              `mouseup/preventevent/${self.ns}`,
+              `mouseup keyup/preventevent/${self.ns}`,
               self._eventPreventeventStartHandler.bind(self, { el })
             )
-            el.addEventListener('mouseup', preventeventStartMouseHandler)
+            el.addEventListener('mouseup', preventeventStartHandler)
+            el.addEventListener('keyup', preventeventStartHandler)
           }
         }
         Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent({ el }))
@@ -720,31 +650,6 @@ class Toggle {
           )
           el.addEventListener('click', navHandler)
         }
-      }
-    }
-    // keyboard
-    if (options.keyboard && options.keyboard.selector) {
-      const keyboards =
-        options.keyboard.selector === 'object'
-          ? [self.container]
-          : self.container.querySelectorAll(options.keyboard.selector)
-      self._destroyElements.push(...keyboards)
-      for (const keyboard of keyboards) {
-        keyboard.setAttribute('tabindex', '0')
-        // focus
-        const keyboardfocusHandler = Xt.dataStorage.put(
-          keyboard,
-          `focus/keyboard/${self.ns}`,
-          self._eventKeyboardfocusHandler.bind(self)
-        )
-        keyboard.addEventListener('focus', keyboardfocusHandler)
-        // blur
-        const keyboardblurHandler = Xt.dataStorage.put(
-          keyboard,
-          `blur/keyboard/${self.ns}`,
-          self._eventKeyboardblurHandler.bind(self)
-        )
-        keyboard.addEventListener('blur', keyboardblurHandler)
       }
     }
     // closeauto
@@ -894,14 +799,15 @@ class Toggle {
     const self = this
     // active
     Xt.dataStorage.put(el, `active/preventevent/${self.ns}`, self.hasCurrent({ el }))
-    // event link
+    // prevent link but execute on.xt because added before
     const preventeventHandler = Xt.dataStorage.put(
       el,
-      `click/preventevent/${self.ns}`,
+      `click keypress/preventevent/${self.ns}`,
       self._eventPreventeventHandler.bind(self, { el })
     )
     el.addEventListener('click', preventeventHandler)
-    // event reset
+    el.addEventListener('keypress', preventeventHandler)
+    // reset prevent event
     const preventeventResetHandler = Xt.dataStorage.put(
       el,
       `off/preventevent/${self.ns}`,
@@ -934,6 +840,11 @@ class Toggle {
   _eventPreventeventHandler({ el }, e) {
     const self = this
     const active = Xt.dataStorage.get(el, `active/preventevent/${self.ns}`)
+    // only no key or key enter
+    if (e.key && e.key !== 'Enter') {
+      return
+    }
+    // logic
     if (!active && !Xt.dataStorage.get(el, `${self.ns}PreventeventDone`)) {
       Xt.dataStorage.set(el, `${self.ns}PreventeventDone`, true)
       // prevent default
@@ -1054,65 +965,6 @@ class Toggle {
     const self = this
     // handler
     self._eventNav({ el }, e)
-  }
-
-  /**
-   * keyboard focus handler
-   */
-  _eventKeyboardfocusHandler() {
-    const self = this
-    // handler
-    const keyboardHandler = Xt.dataStorage.put(
-      document,
-      `keyup/keyboard/${self.ns}`,
-      self._eventKeyboardHandler.bind(self)
-    )
-    document.addEventListener('keyup', keyboardHandler)
-  }
-
-  /**
-   * keyboard blur handler
-   */
-  _eventKeyboardblurHandler() {
-    const self = this
-    // handler
-    const keyboardHandler = Xt.dataStorage.get(document, `keyup/keyboard/${self.ns}`)
-    document.removeEventListener('keyup', keyboardHandler)
-  }
-
-  /**
-   * keyboard handler
-   * @param {Event} e
-   */
-  _eventKeyboardHandler(e) {
-    const self = this
-    const options = self.options
-    // key
-    const code = e.keyCode ? e.keyCode : e.which
-    let prev
-    let next
-    if (options.keyboard.vertical) {
-      if (options.keyboard.inverse) {
-        prev = 40
-        next = 38
-      } else {
-        prev = 38
-        next = 40
-      }
-    } else {
-      if (options.keyboard.inverse) {
-        prev = 39
-        next = 37
-      } else {
-        prev = 37
-        next = 39
-      }
-    }
-    if (code === prev) {
-      self.goToPrev({ amount: 1 })
-    } else if (code === next) {
-      self.goToNext({ amount: 1 })
-    }
   }
 
   /**
@@ -1365,6 +1217,72 @@ class Toggle {
     }
   }
 
+  /**
+   * Get elements inner
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els Elements
+   * @return {Array}
+   */
+  _getElementsInner({ els } = {}) {
+    const self = this
+    const options = self.options
+    // inners
+    let inners = []
+    if (options.elementsInner) {
+      for (const el of els) {
+        const inner = Xt.dataStorage.get(el, `elementsInner/${self.ns}`)
+        if (inner.length) {
+          inners = inners.concat(inner)
+        }
+      }
+    }
+    return inners
+  }
+
+  /**
+   * Get targets inner
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els Elements
+   * @return {Array}
+   */
+  _getTargetsInner({ els } = {}) {
+    const self = this
+    const options = self.options
+    // inners
+    let inners = []
+    if (options.targetsInner) {
+      for (const el of els) {
+        const inner = Xt.dataStorage.get(el, `targetsInner/${self.ns}`)
+        if (inner.length) {
+          inners = inners.concat(inner)
+        }
+      }
+    }
+    return inners
+  }
+
+  /**
+   * get event parent
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {String} params.event
+   * @return {Node|HTMLElement|EventTarget|Window}
+   */
+  _getEventParent({ el, event } = {}) {
+    const self = this
+    const options = self.options
+    // getCurrents
+    if (options.mouseParent) {
+      if (['mouseenter', 'mouseleave', 'mousehover', 'mouseout'].includes(event)) {
+        if (typeof options.mouseParent === 'string') {
+          return el.closest(options.mouseParent)
+        } else {
+          return el.parentNode
+        }
+      }
+    }
+    return el
+  }
   /**
    * get currents based on namespace (so shared between Xt objects)
    * @return {Array}
@@ -1725,10 +1643,11 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el To be activated
    * @param {Boolean} params.force
+   * @param {Boolean} params.focus
    * @param {Event} e
    * @return {Boolean} If activated
    */
-  _eventOn({ el, force = false }, e) {
+  _eventOn({ el, force = false, focus = false }, e) {
     const self = this
     const options = self.options
     force = force ? force : e?.detail?.force
@@ -1737,23 +1656,24 @@ class Toggle {
       return false
     }
     // toggle
-    // fix same event for on and off same namespace
-    if (force || (self._checkOn({ el }) && (!e || !e.type || e.type !== `off.trigger.${self._componentNs}`))) {
+    if (force || self._checkOn({ el })) {
       // auto
       self._eventAutostop()
       // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
+      el = elements[0]
       // targets
       const targets = self.getTargets({ el, same: true })
+      // inner
+      const elementsInner = self._getElementsInner({ els: elements })
+      const targetsInner = self._getTargetsInner({ els: targets })
       // on
-      self._addCurrent({ el: elements[0] })
-      self._setIndex({ el: elements[0] })
+      self._addCurrent({ el })
+      self._setIndex({ el })
       self._setDirection()
       // queue obj
       const actionCurrent = 'In'
       const actionOther = 'Out'
-      const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-      const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       let obj = self._eventQueue({ elements, targets, elementsInner, targetsInner, force, e })
       // if currents > max
       const currents = self._getCurrents()
@@ -1775,6 +1695,11 @@ class Toggle {
       for (const type in self[`_queue${actionCurrent}`][0]) {
         self._queueStart({ actionCurrent, actionOther, type, index: 0 })
       }
+      // focus
+      if (focus) {
+        el = elementsInner[0] ?? el
+        el.focus()
+      }
       // return
       return true
     } else if (options.off && [...options.off.split(' ')].includes(e?.type)) {
@@ -1790,11 +1715,12 @@ class Toggle {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el To be deactivated
    * @param {Boolean} params.force
+   * @param {Boolean} params.focus
    * @param {Object} params.objFilter Object to filter from
    * @param {Event} e
    * @return {Boolean} If deactivated
    */
-  _eventOff({ el, force = false, objFilter } = {}, e) {
+  _eventOff({ el, force = false, focus = false, objFilter } = {}, e) {
     const self = this
     const options = self.options
     force = force ? force : e?.detail?.force
@@ -1806,15 +1732,14 @@ class Toggle {
     if (force || self._checkOff({ el })) {
       // fix groupElements and targets
       const elements = options.groupElements || self.targets.includes(el) ? self.getElements({ el, same: true }) : [el]
+      el = elements[0]
       // off
-      self._removeCurrent({ el: elements[0] })
+      self._removeCurrent({ el })
       // targets
       const targets = self.getTargets({ el, same: true })
-      // fix sometimes blur is undefined
-      if (el.blur) {
-        // fix :focus styles
-        el.blur()
-      }
+      // inner
+      const elementsInner = self._getElementsInner({ els: elements })
+      const targetsInner = self._getTargetsInner({ els: targets })
       // auto
       if (!self._getCurrents().length) {
         self._eventAutostop()
@@ -1822,8 +1747,6 @@ class Toggle {
       // queue obj
       const actionCurrent = 'Out'
       const actionOther = 'In'
-      const elementsInner = Xt.queryAll({ els: el, query: options.elementsInner })
-      const targetsInner = Xt.queryAll({ els: targets, query: options.targetsInner })
       const obj = self._eventQueue({ elements, targets, elementsInner, targetsInner, force, e })
       // fix groupSame do not deactivate/reactivate but do logic (e.g. group same slider animation-js and slider hash)
       if (options.groupSame && !options.queue && objFilter) {
@@ -1857,6 +1780,11 @@ class Toggle {
       // queue run
       for (const type in self[`_queue${actionCurrent}`][0]) {
         self._queueStart({ actionCurrent, actionOther, type, index: 0 })
+      }
+      // focus
+      if (focus) {
+        el = elementsInner[0] ?? el
+        el.focus()
       }
       // return
       if (objFilter) {
@@ -1961,10 +1889,6 @@ class Toggle {
               self._eventAuto()
             }, time / Xt.autoTimescale)
           )
-          // aria
-          if (options.aria === true || options.aria.activation) {
-            self.container.setAttribute('aria-live', 'off')
-          }
           // dispatch event
           self.container.dispatchEvent(new CustomEvent(`autostart.${self._componentNs}`))
         }
@@ -1985,10 +1909,6 @@ class Toggle {
         self._autorunning = false
         // clear
         clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
-        // aria
-        if (options.aria === true || options.aria.activation) {
-          self.container.setAttribute('aria-live', 'polite')
-        }
         // dispatch event
         self.container.dispatchEvent(new CustomEvent(`autostop.${self._componentNs}`))
       }
@@ -2208,7 +2128,6 @@ class Toggle {
    */
   _queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame, skipQueue = false } = {}) {
     const self = this
-    const options = self.options
     // check if not already running or if force
     if (actionCurrent === 'In' && (self._checkOnRunning({ obj }) || obj.elements.force)) {
       // only one time and if last element
@@ -2226,24 +2145,6 @@ class Toggle {
         self._specialCollapse({ actionCurrent, el, type })
       } else {
         self._specialCollapse({ actionCurrent, el, type, reset: true })
-      }
-      // aria
-      if (options.aria) {
-        if (type === 'elements') {
-          // selected
-          if (options.aria === true || options.aria.activation) {
-            el.setAttribute('aria-selected', 'true')
-          }
-        }
-        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-          // expanded
-          if (options.aria === true || options.aria.activation) {
-            const role = el.getAttribute('role')
-            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
-              el.setAttribute('aria-expanded', 'true')
-            }
-          }
-        }
       }
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
@@ -2390,7 +2291,6 @@ class Toggle {
    */
   _queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipSame, skipQueue = false } = {}) {
     const self = this
-    const options = self.options
     // special
     if (actionCurrent === 'In') {
       // only one time and if last element
@@ -2441,24 +2341,6 @@ class Toggle {
       // special
       self._specialAppendto({ actionCurrent, el, type })
       self._specialCollapse({ actionCurrent, el, type, reset: true })
-      // aria
-      if (options.aria) {
-        // selected
-        if (type === 'elements') {
-          if (options.aria === true || options.aria.activation) {
-            el.setAttribute('aria-selected', 'false')
-          }
-        }
-        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
-          // expanded
-          if (options.aria === true || options.aria.activation) {
-            const role = el.getAttribute('role')
-            if (role === 'tabpanel' || role === 'listbox' || role === 'tooltip' || role === 'dialog') {
-              el.setAttribute('aria-expanded', 'false')
-            }
-          }
-        }
-      }
       // dispatch event
       if (!skipSame && type !== 'elementsInner' && type !== 'targetsInner') {
         // off from disable/destroy
@@ -2542,7 +2424,8 @@ class Toggle {
     // logic
     if (actionCurrent === 'In') {
       // init
-      Xt.frame({
+      // needs frameDouble after ondone
+      Xt.frameDouble({
         el: self.container,
         ns: `${self.ns}Init`,
         func: () => {
@@ -2575,8 +2458,8 @@ class Toggle {
       })
       // focusLimit
       if (options.focusLimit && !self._focusTrap) {
-        const els = self.targets.length ? self.targets : self.elements
-        self._focusTrap = focusTrap.createFocusTrap(els, options.focusTrap)
+        const trs = self.targets.length ? self.targets : self.elements
+        self._focusTrap = focusTrap.createFocusTrap(trs, options.focusTrap)
         self._focusTrap.activate()
       }
     } else if (actionCurrent === 'Out') {
@@ -2775,7 +2658,7 @@ class Toggle {
   _specialCollapse({ actionCurrent, el, type, reset = false } = {}) {
     const self = this
     const options = self.options
-    if (el instanceof HTMLElement) {
+    if (options.collapseHeight) {
       if (actionCurrent === 'In') {
         if (options.collapseHeight === type) {
           if (reset) {
@@ -2798,31 +2681,6 @@ class Toggle {
               ns: `${self.ns}CollapseHeightFrame`,
               func: () => {
                 el.style.height = `${final}px`
-              },
-            })
-          }
-        }
-        if (options.collapseWidth === type) {
-          if (reset) {
-            el.style.width = 'inherit'
-            el.style.maxWidth = 'none'
-            el.classList.add('xt-collapse-reset')
-          } else {
-            el.classList.remove('xt-collapse-reset')
-            el.style.width = 'auto'
-            el.style.maxWidth = 'none'
-            const final = el.offsetWidth
-            el.style.width = ''
-            el.style.maxWidth = ''
-            let initial = el.offsetWidth
-            initial = initial === final ? 0 : initial
-            el.style.width = `${initial}px`
-            el.style.maxWidth = 'none'
-            Xt.frameDouble({
-              el,
-              ns: `${self.ns}CollapseWidthFrame`,
-              func: () => {
-                el.style.width = `${final}px`
               },
             })
           }
@@ -2852,6 +2710,36 @@ class Toggle {
             })
           }
         }
+      }
+    }
+    if (options.collapseWidth) {
+      if (actionCurrent === 'In') {
+        if (options.collapseWidth === type) {
+          if (reset) {
+            el.style.width = 'inherit'
+            el.style.maxWidth = 'none'
+            el.classList.add('xt-collapse-reset')
+          } else {
+            el.classList.remove('xt-collapse-reset')
+            el.style.width = 'auto'
+            el.style.maxWidth = 'none'
+            const final = el.offsetWidth
+            el.style.width = ''
+            el.style.maxWidth = ''
+            let initial = el.offsetWidth
+            initial = initial === final ? 0 : initial
+            el.style.width = `${initial}px`
+            el.style.maxWidth = 'none'
+            Xt.frameDouble({
+              el,
+              ns: `${self.ns}CollapseWidthFrame`,
+              func: () => {
+                el.style.width = `${final}px`
+              },
+            })
+          }
+        }
+      } else if (actionCurrent === 'Out') {
         if (options.collapseWidth === type) {
           if (reset) {
             el.style.width = ''
@@ -2930,7 +2818,7 @@ class Toggle {
       // closeDeep
       if (options.closeDeep) {
         // fix when standalone !self.targets.length && type === 'elements'
-        if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.put(
@@ -2981,7 +2869,7 @@ class Toggle {
       // closeDeep
       if (options.closeDeep) {
         // fix when standalone !self.targets.length && type === 'elements'
-        if (type === 'targets' || type === 'targetsInner' || (!self.targets.length && type === 'elements')) {
+        if (type === 'targets' || (!self.targets.length && type === 'elements')) {
           const closeElements = el.querySelectorAll(options.closeDeep)
           for (const closeElement of closeElements) {
             const specialclosedeepHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
@@ -3050,9 +2938,9 @@ class Toggle {
    * @param {Event} e
    */
   _eventSpecialclosedeepKeydownHandler({ closeElement }, e) {
-    const code = e.keyCode ? e.keyCode : e.which
+    const key = e.key
     // key enter or space
-    if (code === 13 || code === 32) {
+    if (key === 'Enter' || key === ' ') {
       e.preventDefault()
       closeElement.dispatchEvent(new CustomEvent('click'))
     }
@@ -3244,7 +3132,6 @@ class Toggle {
    */
   enable() {
     const self = this
-    const options = self.options
     if (self.disabled) {
       // enable
       self.disabled = false
@@ -3255,12 +3142,6 @@ class Toggle {
       for (const tr of self.targets) {
         tr.removeAttribute(`data-${self.componentName}-disabled`)
       }
-      // aria
-      if (options.aria === true || options.aria.activation) {
-        for (const el of self.elements) {
-          el.removeAttribute('aria-disabled')
-        }
-      }
       // dispatch event
       self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
     }
@@ -3269,6 +3150,7 @@ class Toggle {
   /**
    * disable
    * @param {Object} params
+   * @param {Boolean} params.skipEvent Skip dispatch event
    */
   disable({ skipEvent = false } = {}) {
     const self = this
@@ -3290,12 +3172,6 @@ class Toggle {
       for (const tr of self.targets) {
         tr.setAttribute(`data-${self.componentName}-disabled`, '')
       }
-      // aria
-      if (options.aria === true || options.aria.activation) {
-        for (const el of self.elements) {
-          el.setAttribute('aria-disabled', 'true')
-        }
-      }
       // jump
       if (options.jump) {
         for (const jump of self.targets) {
@@ -3312,6 +3188,521 @@ class Toggle {
       // dispatch event
       if (!skipEvent) {
         self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
+      }
+    }
+  }
+
+  //
+  // a11y
+  //
+
+  /**
+   * init a11y
+   */
+  _initA11y() {
+    const self = this
+    const options = self.options
+    // a11y
+    if (options.a11y) {
+      // vars
+      let els = self.elements
+      let trs = self.targets
+      // when self mode
+      if (!self.targets.length) {
+        els = []
+        trs = self.elements
+      }
+      // inside self.container
+      self._hasContainer = self._mode === 'unique' || self.elements.includes(self.container) ? false : true
+      // init
+      self._initA11yRole({ els, trs })
+      self._initA11yId({ els, trs })
+      self._initA11ySetup()
+      self._initA11yAuto()
+      self._initA11yChange()
+      self._initA11yStatus({ els })
+      self._initA11yKeyboard({ els: self.elements })
+    }
+  }
+
+  /**
+   * init a11y role
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   * @param {Node|HTMLElement|EventTarget|Window} params.trs
+   */
+  _initA11yRole({ els, trs } = {}) {
+    const self = this
+    const options = self.options
+    if (options.a11y.role) {
+      // aria-orientation
+      if (options.a11y.vertical && self._hasContainer) {
+        self.container.setAttribute('aria-orientation', 'vertical')
+      }
+      // aria-multiselectable
+      if (options.max > 1) {
+        self.container.setAttribute('aria-multiselectable', 'true')
+      }
+      // tablist
+      if (options.a11y.role === 'tablist' && self._hasContainer && self.targets.length) {
+        // tab
+        self.container.setAttribute('role', 'tablist')
+        for (const el of els) {
+          el.setAttribute('role', 'tab')
+        }
+        for (const tr of trs) {
+          tr.setAttribute('role', 'tabpanel')
+        }
+      } else if (options.a11y.role === 'popup') {
+        // popup
+        for (const el of els) {
+          el.setAttribute('aria-haspopup', true)
+        }
+      } else if (options.a11y.role === 'dialog') {
+        // dialog
+        for (const el of els) {
+          el.setAttribute('aria-haspopup', 'dialog')
+        }
+        for (const tr of trs) {
+          tr.setAttribute('role', 'dialog')
+          tr.setAttribute('aria-modal', 'true')
+        }
+      } else if (options.a11y.role === 'tooltip') {
+        // tooltip
+        for (const tr of trs) {
+          tr.setAttribute('role', 'tooltip')
+        }
+      } else if (options.a11y.role === 'carousel' && self._hasContainer) {
+        // carousel
+        self.container.setAttribute('role', 'group')
+        self.container.setAttribute('aria-roledescription', 'carousel')
+        for (const tr of trs) {
+          tr.setAttribute('role', 'group')
+          tr.setAttribute('aria-roledescription', 'slide')
+        }
+      }
+    }
+  }
+
+  /**
+   * init a11y id
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   * @param {Node|HTMLElement|EventTarget|Window} params.trs
+   */
+  _initA11yId({ els, trs } = {}) {
+    const self = this
+    const options = self.options
+    // not when self mode (no targets)
+    if (self.targets.length) {
+      // id
+      if (options.a11y.labelElements || options.a11y.controls) {
+        // targets
+        for (const tr of trs) {
+          const id = tr.getAttribute('id')
+          if (!id) {
+            tr.setAttribute('id', Xt.uniqueId())
+          }
+        }
+      }
+      if (options.a11y.labelTargets) {
+        // elements
+        for (const el of els) {
+          const id = el.getAttribute('id')
+          if (!id) {
+            el.setAttribute('id', Xt.uniqueId())
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * init a11y setup
+   */
+  _initA11ySetup() {
+    const self = this
+    const options = self.options
+    // not when self mode (no targets)
+    if (self.targets.length) {
+      // aria-labelledby and aria-controls
+      if (options.a11y.labelElements || options.a11y.controls) {
+        for (const el of self.elements) {
+          const trs = self.getTargets({ el })
+          let str = ''
+          for (const tr of trs) {
+            str += `${tr.getAttribute('id')} `
+          }
+          if (options.a11y.labelElements) {
+            el.setAttribute('aria-labelledby', str.trim())
+            el.removeAttribute('aria-label')
+          }
+          if (options.a11y.controls) {
+            el.setAttribute('aria-controls', str.trim())
+          }
+        }
+      }
+      // aria-labelledby
+      if (options.a11y.labelTargets) {
+        for (const tr of self.targets) {
+          const els = self.getElements({ el: tr })
+          let str = ''
+          for (const el of els) {
+            str += `${el.getAttribute('id')} `
+          }
+          tr.setAttribute('aria-labelledby', str.trim())
+          tr.removeAttribute('aria-label')
+        }
+      }
+    }
+  }
+
+  /**
+   * init a11y change
+   */
+  _initA11yChange() {
+    const self = this
+    const options = self.options
+    // aria-selected and aria-expanded
+    if (options.a11y.selected || options.a11y.expanded) {
+      if (options.a11y.expanded) {
+        for (const tr of self.targets) {
+          tr.setAttribute('aria-expanded', 'false')
+        }
+      }
+      for (const el of self.elements) {
+        if (options.a11y.selected && self._hasContainer && self.targets.length) {
+          el.setAttribute('aria-selected', 'false')
+        }
+        // on
+        const onHandler = Xt.dataStorage.put(
+          el,
+          `on.${self._componentNs}/ariaselected/${self.ns}`,
+          self._eventA11yChangeOn.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`on.${self._componentNs}`, onHandler)
+        // off
+        const offHandler = Xt.dataStorage.put(
+          el,
+          `off.${self._componentNs}/ariaselected/${self.ns}`,
+          self._eventA11yChangeOff.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`off.${self._componentNs}`, offHandler)
+      }
+    }
+  }
+
+  /**
+   * event a11y change on
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventA11yChangeOn({ el } = {}) {
+    const self = this
+    const options = self.options
+    // aria-expanded
+    if (options.a11y.expanded) {
+      const trs = self.getTargets({ el })
+      for (const tr of trs) {
+        tr.setAttribute('aria-expanded', 'true')
+      }
+    }
+    // aria-selected
+    if (options.a11y.selected && self._hasContainer && self.targets.length) {
+      el.setAttribute('aria-selected', 'true')
+    }
+  }
+
+  /**
+   * event a11y change off
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventA11yChangeOff({ el } = {}) {
+    const self = this
+    const options = self.options
+    // aria-expanded
+    if (options.a11y.expanded) {
+      const trs = self.getTargets({ el })
+      for (const tr of trs) {
+        tr.setAttribute('aria-expanded', 'false')
+      }
+    }
+    // aria-selected
+    if (options.a11y.selected && self._hasContainer && self.targets.length) {
+      el.setAttribute('aria-selected', 'false')
+    }
+  }
+
+  /**
+   * init a11y auto
+   */
+  _initA11yAuto() {
+    const self = this
+    const options = self.options
+    // aria-live
+    if (options.auto && options.auto.time) {
+      if (options.a11y.live) {
+        const container = self.container
+        container.setAttribute('aria-live', 'polite')
+        // on
+        const onHandler = Xt.dataStorage.put(
+          container,
+          `autostart.${self._componentNs}/arialive/${self.ns}`,
+          self._eventA11yAutostart.bind(self).bind(self, { container })
+        )
+        container.addEventListener(`autostart.${self._componentNs}`, onHandler)
+        // off
+        const offHandler = Xt.dataStorage.put(
+          container,
+          `autostop.${self._componentNs}/arialive/${self.ns}`,
+          self._eventA11yAutostop.bind(self).bind(self, { container })
+        )
+        container.addEventListener(`autostop.${self._componentNs}`, offHandler)
+      }
+    }
+  }
+
+  /**
+   * event a11y autostart
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container
+   */
+  _eventA11yAutostart({ container } = {}) {
+    // aria-live
+    container.setAttribute('aria-live', 'off')
+  }
+
+  /**
+   * event a11y autostop
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container
+   */
+  _eventA11yAutostop({ container } = {}) {
+    // aria-live
+    container.setAttribute('aria-live', 'polite')
+  }
+
+  /**
+   * init a11y status
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   */
+  _initA11yStatus({ els } = {}) {
+    const self = this
+    const options = self.options
+    // aria-disabled
+    if (options.a11y.disabled) {
+      const container = self.container
+      // status
+      const statusHandler = Xt.dataStorage.put(
+        container,
+        `status.${self._componentNs}/ariastatus/${self.ns}`,
+        self._eventA11yStatus.bind(self).bind(self, { els })
+      )
+      container.addEventListener(`status.${self._componentNs}`, statusHandler)
+    }
+  }
+
+  /**
+   * event a11y status
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   */
+  _eventA11yStatus({ els } = {}) {
+    const self = this
+    // aria-disabled
+    for (const el of els) {
+      if (self.disabled) {
+        el.setAttribute('aria-disabled', 'true')
+      } else {
+        el.removeAttribute('aria-disabled')
+      }
+    }
+  }
+
+  /**
+   * init a11y keyboard
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.els
+   */
+  _initA11yKeyboard({ els } = {}) {
+    const self = this
+    const options = self.options
+    // keyboard
+    if (options.a11y.keyboard) {
+      for (const el of els) {
+        // on
+        const onHandler = Xt.dataStorage.put(
+          el,
+          `on.${self._componentNs}/ariakeyboard/${self.ns}`,
+          self._eventA11yOn.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`on.${self._componentNs}`, onHandler)
+        // off
+        const offHandler = Xt.dataStorage.put(
+          el,
+          `off.${self._componentNs}/ariakeyboard/${self.ns}`,
+          self._eventA11yOff.bind(self).bind(self, { el })
+        )
+        el.addEventListener(`off.${self._componentNs}`, offHandler)
+      }
+    }
+  }
+
+  /**
+   * event a11y on
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventA11yOn({ el } = {}) {
+    const self = this
+    const options = self.options
+    // keydown
+    const keydownHandler = Xt.dataStorage.put(el, `keydown/ariakeyboard/${self.ns}`, self._eventA11yKeydown.bind(self))
+    el.addEventListener('keydown', keydownHandler, { passive: false })
+    // documentKeydown
+    if (options.a11y.role === 'popup' || options.a11y.role === 'dialog' || options.a11y.items) {
+      const documentKeydownHandler = Xt.dataStorage.put(
+        document,
+        `keydown/ariakeyboard/document/${self.ns}`,
+        self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
+      )
+      document.removeEventListener('keydown', documentKeydownHandler)
+      document.addEventListener('keydown', documentKeydownHandler)
+    }
+  }
+
+  /**
+   * event a11y off
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   */
+  _eventA11yOff({ el } = {}) {
+    const self = this
+    // keydown
+    const keydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/${self.ns}`)
+    el.removeEventListener('keydown', keydownHandler)
+    // documentKeydown
+    const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
+    document.removeEventListener('keydown', documentKeydownHandler)
+  }
+
+  /**
+   * event a11y keydown
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Event} e
+   */
+  _eventA11yKeydown(e) {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // logic
+    const key = e.key
+    const prevKey = options.a11y.vertical ? 'ArrowUp' : 'ArrowLeft'
+    const nextKey = options.a11y.vertical ? 'ArrowDown' : 'ArrowRight'
+    // navigate elements
+    let el
+    if (options.a11y.vertical) {
+      if (key === prevKey) {
+        el = self.getPrev()
+      } else if (key === nextKey) {
+        el = self.getNext()
+      }
+    } else {
+      if (key === prevKey) {
+        el = self.getPrev()
+      } else if (key === nextKey) {
+        el = self.getNext()
+      }
+    }
+    if (el) {
+      // activation
+      self._eventOn({ el, focus: true })
+      // prevent page scroll
+      e.preventDefault()
+      return
+    }
+  }
+
+  /**
+   * event a11y document keydown
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.el
+   * @param {Event} e
+   */
+  _eventA11yDocumentKeydown({ el } = {}, e) {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // logic
+    const key = e.key
+    const prevKey = options.a11y.vertical ? 'ArrowLeft' : 'ArrowUp'
+    const nextKey = options.a11y.vertical ? 'ArrowRight' : 'ArrowDown'
+    // Escape
+    if (key === 'Escape' || key === ' ') {
+      if (options.a11y.role === 'popup' || options.a11y.role === 'dialog') {
+        // activation
+        self._eventOff({ el, focus: true })
+        return
+      }
+    }
+    // navigate items
+    if (options.a11y.items) {
+      let item
+      const items = []
+      const trs = self.targets.filter(x => self.hasCurrent({ el: x }))
+      for (const tr of trs) {
+        items.push(...tr.querySelectorAll(options.a11y.items))
+      }
+      if (items.length) {
+        const current = items.indexOf(document.activeElement)
+        if (key === prevKey) {
+          if (current === -1) {
+            item = items[items.length - 1]
+          } else {
+            const prev = (current - 1 + items.length) % items.length
+            item = items[prev]
+          }
+          // prevent page scroll
+          e.preventDefault()
+        } else if (key === nextKey) {
+          if (current === -1) {
+            item = items[0]
+          } else {
+            const next = (current + 1) % items.length
+            item = items[next]
+          }
+          // prevent page scroll
+          e.preventDefault()
+        } else {
+          self._search = self._search + e.key.toLowerCase()
+          const found = items.filter(x => x.innerText?.toLowerCase().startsWith(self._search))
+          if (found.length) {
+            item = found[0]
+          }
+          // clear
+          clearTimeout(Xt.dataStorage.get(document, `${self.ns}SearchTimeout`))
+          Xt.dataStorage.set(
+            document,
+            `${self.ns}SearchTimeout`,
+            setTimeout(() => {
+              self._search = ''
+            }, 500)
+          )
+        }
+        if (item) {
+          // focus
+          item.focus()
+          return
+        }
       }
     }
   }
@@ -3448,7 +3839,7 @@ Toggle.optionsDefaultSuper = {
   // element
   elements: '[data-xt-toggle-element]',
   targets: '[data-xt-toggle-target]',
-  elementsInner: ':scope > a, :scope > button',
+  elementsInner: false,
   targetsInner: false,
   exclude: false,
   // class
@@ -3469,6 +3860,7 @@ Toggle.optionsDefaultSuper = {
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   eventLimit: '.xt-event-limit',
   closeDeep: false,
   closeInside: false,
@@ -3506,9 +3898,6 @@ Toggle.optionsDefaultSuper = {
   loop: false,
   jump: false,
   navigation: false,
-  keyboard: {
-    selector: false,
-  },
   appendTo: false,
   classBody: false,
   closeauto: false,
@@ -3525,12 +3914,18 @@ Toggle.optionsDefaultSuper = {
   },
   collapseHeight: false,
   collapseWidth: false,
-  aria: {
-    activation: false,
-    role: false,
-    controls: false,
-    describedby: false,
-    labelledby: false,
+  a11y: {
+    role: 'tablist',
+    labelElements: false,
+    labelTargets: true,
+    controls: true,
+    selected: true,
+    expanded: true,
+    live: true,
+    disabled: true,
+    keyboard: true,
+    vertical: false,
+    items: false,
   },
 }
 

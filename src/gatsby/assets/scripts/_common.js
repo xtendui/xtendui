@@ -4,15 +4,6 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
-/* prevent href="#" links */
-
-document.addEventListener('click', e => {
-  const href = e.target.getAttribute('href')
-  if (href === '#') {
-    e.preventDefault()
-  }
-})
-
 /* xt-scrollto */
 
 Xt.mount({

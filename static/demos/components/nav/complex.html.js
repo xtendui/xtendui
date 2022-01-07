@@ -2,9 +2,9 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <nav class="xt-list xt-list-1 flex-col">
+    <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
       <a
-        href="#"
+        href="/"
         class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.buttonTextAnim()}">
         <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
           <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
@@ -17,7 +17,7 @@ const html = /* HTML */ `
         </div>
       </a>
       <a
-        href="#"
+        href="/"
         class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.buttonTextAnim()}">
         <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
           <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
@@ -30,7 +30,7 @@ const html = /* HTML */ `
         </div>
       </a>
       <a
-        href="#"
+        href="/"
         class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.buttonTextAnim()}">
         <div class="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
           <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">

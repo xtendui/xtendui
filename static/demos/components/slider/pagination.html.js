@@ -11,7 +11,10 @@ const html = /* HTML */ `
             <div
               class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4" data-xt-slider-content>1</div>
-              <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+              <nav
+                aria-label="Slider Navigation"
+                class="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                data-xt-slider-pagination>
                 <button
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
@@ -27,7 +30,10 @@ const html = /* HTML */ `
             <div
               class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4" data-xt-slider-content>2</div>
-              <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+              <nav
+                aria-label="Slider Navigation"
+                class="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                data-xt-slider-pagination>
                 <button
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
@@ -43,7 +49,10 @@ const html = /* HTML */ `
             <div
               class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4" data-xt-slider-content>3</div>
-              <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+              <nav
+                aria-label="Slider Navigation"
+                class="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                data-xt-slider-pagination>
                 <button
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
@@ -59,7 +68,10 @@ const html = /* HTML */ `
             <div
               class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4" data-xt-slider-content>4</div>
-              <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+              <nav
+                aria-label="Slider Navigation"
+                class="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                data-xt-slider-pagination>
                 <button
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
@@ -75,7 +87,10 @@ const html = /* HTML */ `
             <div
               class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4" data-xt-slider-content>5</div>
-              <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+              <nav
+                aria-label="Slider Navigation"
+                class="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                data-xt-slider-pagination>
                 <button
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
@@ -91,7 +106,10 @@ const html = /* HTML */ `
             <div
               class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4" data-xt-slider-content>6</div>
-              <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+              <nav
+                aria-label="Slider Navigation"
+                class="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                data-xt-slider-pagination>
                 <button
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
@@ -107,7 +125,10 @@ const html = /* HTML */ `
             <div
               class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
               <div class="xt-h4" data-xt-slider-content>7</div>
-              <nav class="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+              <nav
+                aria-label="Slider Navigation"
+                class="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                data-xt-slider-pagination>
                 <button
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
@@ -120,7 +141,10 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+        <nav
+          aria-label="Slider Navigation"
+          class="w-full xt-list xt-list-2 pt-4 items-center justify-center"
+          data-xt-slider-pagination>
           <button
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
