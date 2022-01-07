@@ -99,7 +99,7 @@ const html = /* HTML */ `
         </div>
 
         <nav
-          aria-label="Slider Navigation"
+          aria-label="Slider Progress Navigation"
           class="w-full xt-list xt-list-2 pt-4 items-center justify-center"
           data-xt-slider-pagination>
           <button

@@ -3613,20 +3613,18 @@ class Toggle {
       } else if (key === nextKey) {
         el = self.getNext()
       }
-      // prevent page scroll
-      e.preventDefault()
     } else {
       if (key === prevKey) {
         el = self.getPrev()
       } else if (key === nextKey) {
         el = self.getNext()
       }
-      // prevent page scroll
-      e.preventDefault()
     }
     if (el) {
       // activation
       self._eventOn({ el, focus: true })
+      // prevent page scroll
+      e.preventDefault()
       return
     }
   }
