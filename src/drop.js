@@ -176,7 +176,7 @@ Drop.optionsDefault = {
     },
   },
   a11y: {
-    role: 'dialog',
+    role: 'popup',
     labelElements: false,
     labelTargets: false,
     controls: true,

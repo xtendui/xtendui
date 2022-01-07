@@ -43,6 +43,7 @@ class Toggle {
   _autorunning
   _observer
   _focusTrap
+  _hasContainer
   componentName
   ns
   options
@@ -3210,6 +3211,8 @@ class Toggle {
         els = []
         trs = self.elements
       }
+      // inside self.container
+      self._hasContainer = self._mode === 'unique' || self.elements.includes(self.container) ? false : true
       // init
       self._initA11yRole({ els, trs })
       self._initA11yId({ els, trs })
@@ -3231,13 +3234,8 @@ class Toggle {
     const self = this
     const options = self.options
     if (options.a11y.role) {
-      // must be inside self.container
-      let hasContainer = true
-      if (self._mode === 'unique' || self.elements.includes(self.container)) {
-        hasContainer = false
-      }
       // aria-orientation
-      if (options.a11y.vertical && hasContainer) {
+      if (options.a11y.vertical && self._hasContainer) {
         self.container.setAttribute('aria-orientation', 'vertical')
       }
       // aria-multiselectable
@@ -3245,7 +3243,7 @@ class Toggle {
         self.container.setAttribute('aria-multiselectable', 'true')
       }
       // tablist
-      if (options.a11y.role === 'tablist' && hasContainer && self.targets.length) {
+      if (options.a11y.role === 'tablist' && self._hasContainer && self.targets.length) {
         // tab
         self.container.setAttribute('role', 'tablist')
         for (const el of els) {
@@ -3254,21 +3252,10 @@ class Toggle {
         for (const tr of trs) {
           tr.setAttribute('role', 'tabpanel')
         }
-      } else if (options.a11y.role === 'listbox' && hasContainer && !self.targets.length) {
-        // listbox
-        self.container.setAttribute('role', 'listbox')
-        for (const tr of trs) {
-          tr.setAttribute('role', 'option')
-        }
-      } else if (options.a11y.role === 'menu') {
-        // menu
-        self.container.setAttribute('role', 'menubar')
+      } else if (options.a11y.role === 'popup') {
+        // popup
         for (const el of els) {
-          el.setAttribute('aria-haspopup', 'menu')
-          el.setAttribute('role', 'menuitem')
-        }
-        for (const tr of trs) {
-          tr.setAttribute('role', 'menu')
+          el.setAttribute('aria-haspopup', true)
         }
       } else if (options.a11y.role === 'dialog') {
         // dialog
@@ -3284,8 +3271,9 @@ class Toggle {
         for (const tr of trs) {
           tr.setAttribute('role', 'tooltip')
         }
-      } else if (options.a11y.role === 'carousel' && hasContainer) {
+      } else if (options.a11y.role === 'carousel' && self._hasContainer) {
         // carousel
+        self.container.setAttribute('role', 'group')
         self.container.setAttribute('aria-roledescription', 'carousel')
         for (const tr of trs) {
           tr.setAttribute('role', 'group')
@@ -3376,15 +3364,13 @@ class Toggle {
     const options = self.options
     // aria-selected and aria-expanded
     if (options.a11y.selected || options.a11y.expanded) {
-      // aria-expanded
       if (options.a11y.expanded) {
         for (const tr of self.targets) {
           tr.setAttribute('aria-expanded', 'false')
         }
       }
-      // aria-selected and aria-expanded
       for (const el of self.elements) {
-        if (options.a11y.selected) {
+        if (options.a11y.selected && self._hasContainer && self.targets.length) {
           el.setAttribute('aria-selected', 'false')
         }
         // on
@@ -3413,16 +3399,16 @@ class Toggle {
   _eventA11yChangeOn({ el } = {}) {
     const self = this
     const options = self.options
-    // aria-selected
-    if (options.a11y.selected) {
-      el.setAttribute('aria-selected', 'true')
-    }
     // aria-expanded
     if (options.a11y.expanded) {
       const trs = self.getTargets({ el })
       for (const tr of trs) {
         tr.setAttribute('aria-expanded', 'true')
       }
+    }
+    // aria-selected
+    if (options.a11y.selected && self._hasContainer && self.targets.length) {
+      el.setAttribute('aria-selected', 'true')
     }
   }
 
@@ -3434,16 +3420,16 @@ class Toggle {
   _eventA11yChangeOff({ el } = {}) {
     const self = this
     const options = self.options
-    // aria-selected
-    if (options.a11y.selected) {
-      el.setAttribute('aria-selected', 'false')
-    }
     // aria-expanded
     if (options.a11y.expanded) {
       const trs = self.getTargets({ el })
       for (const tr of trs) {
         tr.setAttribute('aria-expanded', 'false')
       }
+    }
+    // aria-selected
+    if (options.a11y.selected && self._hasContainer && self.targets.length) {
+      el.setAttribute('aria-selected', 'false')
     }
   }
 

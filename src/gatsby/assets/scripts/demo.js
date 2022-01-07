@@ -662,7 +662,7 @@ const initializeIframe = item => {
     item.append(
       Xt.node({
         sanitize: false,
-        str: `<div class="gatsby_demo_item_body"><iframe data-src="${Xt.sanitize(src)}"></iframe></div>`,
+        str: `<div class="gatsby_demo_item_body"><iframe title="Demo" data-src="${Xt.sanitize(src)}"></iframe></div>`,
       })
     )
     item.querySelector('.gatsby_demo_item_body').append(
@@ -914,7 +914,8 @@ export const makeDocument = () => {
             })
           )
           new Xt.Tooltip(activeText, {
-            elements: false,
+            elements: ':scope > a',
+            mouseParent: true,
             position: 'right',
             positionInner: '.gatsby_button-site_article_sidebar_text',
             duration: 300,

@@ -68,6 +68,7 @@ validate: ({ val, step }) => {
   return val
 },
 ```
+
 ## Match Media
 
 You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.
@@ -79,6 +80,21 @@ You can add **additional options** that gets added on **match media query**. You
 | Option                  | `matches:Object`                              | `false`                     | Add additional options on match media query           |
 
 </div>
+
+## Accessibility
+
+This components follows A11y standards so **aria attributes and keyboard interactions are managed automatically**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `a11y:Object\|false`                          | `<Object>`        | Aria options            |
+| Option                  | `a11y.controls:Boolean`                          | `true`        | Inject `aria-controls` attributes            |
+
+</div>
+
+> **Do not rely/use aria attributes**, they are generated and they can change anytime.
 
 ## Util
 

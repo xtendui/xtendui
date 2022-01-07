@@ -109,6 +109,8 @@ class Groupnumber {
         }
       }
     }
+    // ally
+    self._initA11y()
     // initial
     self._initStart()
     // init
@@ -304,6 +306,60 @@ class Groupnumber {
   }
 
   //
+  // a11y
+  //
+
+  /**
+   * init a11y
+   */
+  _initA11y() {
+    const self = this
+    const options = self.options
+    // a11y
+    if (options.a11y) {
+      // init
+      self._initA11yId()
+      self._initA11ySetup()
+    }
+  }
+
+  /**
+   * init a11y id
+   * @param {Object} params
+   */
+  _initA11yId() {
+    const self = this
+    const options = self.options
+    // id
+    if (options.a11y.controls) {
+      for (const input of self.inputs) {
+        const id = input.getAttribute('id')
+        if (!id) {
+          input.setAttribute('id', Xt.uniqueId())
+        }
+      }
+    }
+  }
+
+  /**
+   * init a11y setup
+   */
+  _initA11ySetup() {
+    const self = this
+    const options = self.options
+    // aria-controls
+    if (options.a11y.controls) {
+      let str = ''
+      for (const input of self.inputs) {
+        str += `${input.getAttribute('id')} `
+      }
+      for (const step of self.steps) {
+        step.setAttribute('aria-controls', str.trim())
+      }
+    }
+  }
+
+  //
   // util
   //
 
@@ -390,6 +446,10 @@ Groupnumber.optionsDefault = {
   events: {
     input: 'change',
     steps: 'click',
+  },
+  // other
+  a11y: {
+    controls: true,
   },
 }
 

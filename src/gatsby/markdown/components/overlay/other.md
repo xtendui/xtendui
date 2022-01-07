@@ -10,12 +10,14 @@ date: "2005-10-10"
 
 This components follows A11y standards so **aria attributes and keyboard interactions are managed automatically**.
 
+> For accessibility purpose use an accessible name assigning `[aria-label]` or `[aria-labelledby]` on `.xt-overlay`.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `a11y:Object\|false`                          | `<Object>`        | Aria options            |
-| Option                  | `a11y.role:String\|false`                          | `'dialog'`        | Inject `role` and related attributes, can be `'tablist'`, `'listbox'`, `'menu'`, `'dialog'`, `'tooltip'`, `'carousel'`            |
+| Option                  | `a11y.role:String\|false`                          | `'dialog'`        | Inject `role` and related attributes, can be `'tablist'`, `'popup'`, `'dialog'`, `'tooltip'`, `'carousel'`            |
 | Option                  | `a11y.labelElements:Boolean`                          | `false`        | Inject `aria-labelledby` attributes on elements (linking to targets)            |
 | Option                  | `a11y.labelTargets:Boolean`                          | `false`        | Inject `aria-labelledby` attributes on targets (linking to elements)            |
 | Option                  | `a11y.controls:Boolean`                          | `true`        | Inject `aria-controls` attributes            |

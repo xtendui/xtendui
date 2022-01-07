@@ -47,9 +47,9 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 > This demos use [loader](/components/loader) see documentation for more info.
 
-> For accessibility purpose use `<nav></nav>`.
+> For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 
-> For accessibility purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+> For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
 

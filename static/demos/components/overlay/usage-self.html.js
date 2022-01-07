@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--overlay-usage-self">
-    <div class="*** xt-overlay *** *** on ***" data-xt-overlay>
+    <div aria-label="Modal" class="*** xt-overlay *** *** on ***" data-xt-overlay>
       <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
       <div class="*** xt-overlay-container *** max-w-3xl">
         <div class="*** xt-overlay-inner ***">
