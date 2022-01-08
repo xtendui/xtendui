@@ -11,6 +11,7 @@ import DOMPurify from 'dompurify'
 //
 
 export const Xt = {}
+Xt.DOMPurify = DOMPurify
 
 if (typeof window !== 'undefined') {
   //
