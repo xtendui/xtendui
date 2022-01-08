@@ -15,7 +15,7 @@ This components follows A11y standards so **aria attributes and keyboard interac
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `a11y:Object\|false`                          | `<Object>`        | Aria options            |
-| Option                  | `a11y.role:String\|false`                          | `'tooltip'`        | Inject `role` and related attributes, can be `'popup'`, `'dialog'`, `'tooltip'`, `'carousel'`, `'tablist'`, `'menu'`, `'listbox'`            |
+| Option                  | `a11y.role:String\|false`                          | `'tooltip'`        | Inject `role` and related attributes, can be `'popup'`, `'dialog'`, `'tooltip'`, `'carousel'`, also if has container and targets and no divs between `'tablist'`, `'menu'`, `'listbox'`            |
 | Option                  | `a11y.labelElements:Boolean`                          | `true`        | Inject `aria-labelledby` attributes on elements (linking to targets)            |
 | Option                  | `a11y.labelTargets:Boolean`                          | `false`        | Inject `aria-labelledby` attributes on targets (linking to elements)            |
 | Option                  | `a11y.controls:Boolean`                          | `false`        | Inject `aria-controls` attributes            |
