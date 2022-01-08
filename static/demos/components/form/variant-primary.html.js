@@ -73,7 +73,6 @@ const html = /* HTML */ `
                 <label class="*** ${classes.checkLabel()} ***">
                   <input
                     type="checkbox"
-                    role="group"
                     aria-label="Lorem ipsum"
                     class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkPrimary()} ***"
                     checked
@@ -90,7 +89,6 @@ const html = /* HTML */ `
                 <label class="*** ${classes.checkLabel()} ***">
                   <input
                     type="checkbox"
-                    role="group"
                     aria-label="Lorem ipsum"
                     class="xt-check xt-checkbox *** ${classes.checkRadius()} ${classes.checkPrimary()} ***" />
                   <span class="*** ${classes.checkContent()} *** ${classes.textInverse()}"
@@ -111,7 +109,6 @@ const html = /* HTML */ `
                 <label class="*** ${classes.checkLabel()} ***">
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Lorem ipsum"
                     class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioPrimary()} ***"
                     name="radio-primary"
@@ -128,7 +125,6 @@ const html = /* HTML */ `
                 <label class="*** ${classes.checkLabel()} ***">
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Lorem ipsum"
                     class="xt-check xt-radio *** ${classes.radioRadius()} ${classes.radioPrimary()} ***"
                     name="radio-primary" />
@@ -150,7 +146,6 @@ const html = /* HTML */ `
                 <label class="*** ${classes.checkLabel()} ***">
                   <input
                     type="checkbox"
-                    role="group"
                     aria-label="Lorem ipsum"
                     class="xt-check xt-switch *** ${classes.radioRadius()} ${classes.radioPrimary()} ***" />
                   <span class="*** ${classes.checkContent()} *** ${classes.textInverse()}"
@@ -165,7 +160,6 @@ const html = /* HTML */ `
                 <label class="*** ${classes.checkLabel()} ***">
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Lorem ipsum"
                     class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchPrimary()} ***"
                     name="switch-primary"
@@ -182,7 +176,6 @@ const html = /* HTML */ `
                 <label class="*** ${classes.checkLabel()} ***">
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Lorem ipsum"
                     class="xt-check xt-switch *** ${classes.switchRadius()} ${classes.switchPrimary()} ***"
                     name="switch-primary" />

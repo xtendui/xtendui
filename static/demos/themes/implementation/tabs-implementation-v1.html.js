@@ -13,32 +13,28 @@ const html = /* HTML */ `
           class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
           <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
             <a
-              href="/"
-              type="button"
+              role="button"
               class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="description">
               ${classes.iconFile({ classes: 'xt-icon text-base opacity-50 mr-2' })} Description
             </a>
             <a
-              href="/"
-              type="button"
+              role="button"
               class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="features">
               ${classes.iconFiletext({ classes: 'xt-icon text-base opacity-50 mr-2' })} Features
             </a>
             <a
-              href="/"
-              type="button"
+              role="button"
               class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="accessories"
               >${classes.iconPackage({ classes: 'xt-icon text-base opacity-50 mr-2' })} Accessories</a
             >
             <a
-              href="/"
-              type="button"
+              role="button"
               class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
               data-xt-toggle-element
               data-xt-hash="manuals"

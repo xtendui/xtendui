@@ -356,7 +356,6 @@ const html = /* HTML */ `
                   Red
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Red"
                     class="sr-only"
                     name="radio-button"
@@ -370,7 +369,6 @@ const html = /* HTML */ `
                   Green
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Green"
                     class="sr-only"
                     name="radio-button"
@@ -384,7 +382,6 @@ const html = /* HTML */ `
                   Blue
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Blue"
                     class="sr-only"
                     name="radio-button"

@@ -66,7 +66,6 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  role="group"
                   aria-label="Lorem ipsum"
                   class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                   checked
@@ -83,7 +82,6 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  role="group"
                   aria-label="Lorem ipsum"
                   class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
                   disabled />
@@ -105,7 +103,6 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  role="radiogroup"
                   aria-label="Lorem ipsum"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-usage"
@@ -123,7 +120,6 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  role="radiogroup"
                   aria-label="Lorem ipsum"
                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                   name="radio-usage"
@@ -146,7 +142,6 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="checkbox"
-                  role="group"
                   aria-label="Lorem ipsum"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   disabled />
@@ -162,7 +157,6 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  role="radiogroup"
                   aria-label="Lorem ipsum"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-usage"
@@ -180,7 +174,6 @@ const html = /* HTML */ `
               <label class="${classes.checkLabel()}">
                 <input
                   type="radio"
-                  role="radiogroup"
                   aria-label="Lorem ipsum"
                   class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                   name="switch-usage"

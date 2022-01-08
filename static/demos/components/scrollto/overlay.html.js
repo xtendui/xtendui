@@ -42,7 +42,6 @@ const html = /* HTML */ `
         <label class="${classes.checkLabel()}">
           <input
             type="checkbox"
-            role="group"
             aria-label="Deactivate classes"
             class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
           <span class="${classes.checkContent()}">Deactivate classes</span>

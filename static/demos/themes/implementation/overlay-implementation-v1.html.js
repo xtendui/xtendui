@@ -88,7 +88,6 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
-                              role="group"
                               aria-label="privacy policy"
                               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                             <span class="${classes.checkContent()}">
@@ -180,7 +179,6 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  role="radiogroup"
                                   aria-label="Option 1"
                                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
@@ -193,7 +191,6 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  role="radiogroup"
                                   aria-label="Option 2"
                                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage" />
@@ -205,7 +202,6 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
-                                  role="radiogroup"
                                   aria-label="Option 3"
                                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage" />
@@ -219,7 +215,6 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
-                              role="group"
                               aria-label="privacy policy"
                               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                             <span class="${classes.checkContent()}">

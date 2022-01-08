@@ -40,8 +40,7 @@ const html = /* HTML */ `
                     >${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories</a
                   >
                   <a
-                    href="/"
-                    type="button"
+                    role="button"
                     class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                     data-xt-toggle-element
                     data-xt-hash="manuals"

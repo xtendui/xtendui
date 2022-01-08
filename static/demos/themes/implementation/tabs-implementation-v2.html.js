@@ -37,8 +37,7 @@ const html = /* HTML */ `
                 >${classes.iconPackage({ classes: 'xt-icon text-base opacity-50 mr-2' })} Accessories</a
               >
               <a
-                href="/"
-                type="button"
+                role="button"
                 class="xt-button *** flex-auto *** ${classes.buttonSm()} rounded${tabsRadius()} ${classes.buttonUpper()} ${tabsAnim()}"
                 data-xt-toggle-element
                 data-xt-hash="manuals"

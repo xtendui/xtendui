@@ -16,7 +16,7 @@ Import the **javascript** file with `import 'xtendui/src/form'`.
 
 ## Usage
 
-> For accessibility purpose[label form controls](https://www.w3.org/WAI/tutorials/forms/labels/) on `input, select, textarea, checkbox, radio`, we use `[aria-label="Label"]` and `[role="group"]` on checkbox and `[role="radiogroup"]` on radio.
+> For accessibility purpose[label form controls](https://www.w3.org/WAI/tutorials/forms/labels/) on `input, select, textarea, checkbox, radio`, we use `[aria-label="Label"]`.
 
 <demo>
   <demoinline src="demos/components/form/usage">

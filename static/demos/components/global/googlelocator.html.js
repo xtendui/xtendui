@@ -36,7 +36,6 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="All types"
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
@@ -51,7 +50,6 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="Restaurant"
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
@@ -65,7 +63,6 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="radio"
-                    role="radiogroup"
                     aria-label="School"
                     class="xt-check xt-radio ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-options"
@@ -79,7 +76,6 @@ const html = /* HTML */ `
                 <label class="${classes.checkLabel()}">
                   <input
                     type="checkbox"
-                    role="group"
                     aria-label="Favourite"
                     class="xt-check xt-switch ${classes.switchRadius()} ${classes.switchGray()}"
                     name="type-fav"

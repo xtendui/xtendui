@@ -3235,25 +3235,13 @@ class Toggle {
     const self = this
     const options = self.options
     if (options.a11y.role) {
+      let multi = false
       // aria-orientation
       if (options.a11y.vertical && self._hasContainer) {
         self.container.setAttribute('aria-orientation', 'vertical')
       }
-      // aria-multiselectable
-      if (options.max > 1) {
-        self.container.setAttribute('aria-multiselectable', 'true')
-      }
-      // tablist
-      if (options.a11y.role === 'tablist' && self._hasContainer && self.targets.length) {
-        // tab
-        self.container.setAttribute('role', 'tablist')
-        for (const el of els) {
-          el.setAttribute('role', 'tab')
-        }
-        for (const tr of trs) {
-          tr.setAttribute('role', 'tabpanel')
-        }
-      } else if (options.a11y.role === 'popup') {
+      // role
+      if (options.a11y.role === 'popup') {
         // popup
         for (const el of els) {
           el.setAttribute('aria-haspopup', true)
@@ -3280,6 +3268,36 @@ class Toggle {
           tr.setAttribute('role', 'group')
           tr.setAttribute('aria-roledescription', 'slide')
         }
+      } else if (options.a11y.role === 'tablist' && self._hasContainer && self.targets.length) {
+        // tab
+        multi = true
+        self.container.setAttribute('role', 'tablist')
+        for (const el of els) {
+          el.setAttribute('role', 'tab')
+        }
+        for (const tr of trs) {
+          tr.setAttribute('role', 'tabpanel')
+        }
+      } else if (options.a11y.role === 'menu' && self._hasContainer && self.targets.length) {
+        // menu
+        self.container.setAttribute('role', 'menu')
+        for (const el of els) {
+          el.setAttribute('role', 'menuitem')
+        }
+        for (const tr of trs) {
+          tr.setAttribute('role', 'menu')
+        }
+      } else if (options.a11y.role === 'listbox' && self._hasContainer && self.targets.length) {
+        // listbox
+        multi = true
+        self.container.setAttribute('role', 'listbox')
+        for (const el of els) {
+          el.setAttribute('role', 'option')
+        }
+      }
+      // aria-multiselectable
+      if (multi && options.max > 1) {
+        self.container.setAttribute('aria-multiselectable', 'true')
       }
     }
   }
@@ -3915,11 +3933,11 @@ Toggle.optionsDefaultSuper = {
   collapseHeight: false,
   collapseWidth: false,
   a11y: {
-    role: 'tablist',
+    role: false,
     labelElements: false,
     labelTargets: true,
     controls: true,
-    selected: true,
+    selected: false,
     expanded: true,
     live: true,
     disabled: true,
