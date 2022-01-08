@@ -261,6 +261,27 @@ Or also use css variables for viewport height `--vh`.
 }
 ```
 
+## resize.xt
+
+For `resize` event we use a special event `resize.xt` that gets **triggered only once after a delay**. Also **fixes interaction jumping on mobile devices** because it doesn't trigger on vertical scroll/resize on mobile when viewport width doesn't change and `matchMedia('(hover: none)').matches`.
+
+To force the `resize.xt` event you can dispatch `resize` event with `detail.force = true`.
+
+```js
+dispatchEvent(new CustomEvent('resize', { detail: { force: true } }))
+```
+
+You can customize the delay of **resize** and **medialoaded** events.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Variable                  | `Xt.resizeDelay:Number\|false`              | `200`        | Delay for the `resize.xt` event            |
+| Variable                  | `Xt.medialoadedDelay:Number\|false`              | `false`        | Delay for the `mediaLoaded` event            |
+
+</div>
+
 ## Globals
 
 If you need to access `Xt` variable in the global `window` use `window.XtSetGlobal` in a `script` tag before the main application or in your testing environment.

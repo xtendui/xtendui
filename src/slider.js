@@ -532,7 +532,7 @@ class Slider extends Xt.Toggle {
     self.dragger.addEventListener('dragstart', dragstartFixHandler)
     // resize
     const reinitHandler = Xt.dataStorage.put(window, `resize/reinit/${self.ns}`, Xt._eventReinit.bind(null, { self }))
-    addEventListener('resize', reinitHandler)
+    addEventListener('resize.xt', reinitHandler)
   }
 
   /**

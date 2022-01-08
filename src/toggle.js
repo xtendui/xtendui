@@ -1021,15 +1021,14 @@ class Toggle {
     Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true)
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred && reinit) {
-      Xt.eventDelay({
-        e: { detail: { delay: Xt.medialoadedDelay } },
-        el: self.container,
-        ns: `${self.ns}MedialoadedReinit`,
-        func: () => {
-          // mediaLoaded
+      clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}MedialoadedTimeout`))
+      Xt.dataStorage.set(
+        self.container,
+        `${self.ns}MedialoadedTimeout`,
+        setTimeout(() => {
           self._eventMediaLoadedReinit()
-        },
-      })
+        }, Xt.medialoadedDelay)
+      )
     }
     // mediaLoaded
     if (options.mediaLoaded) {
