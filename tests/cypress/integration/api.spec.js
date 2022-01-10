@@ -179,11 +179,13 @@ describe('demos/components/slider/disabled', function () {
           expect(self.targets[4].classList.contains('in')).to.equal(true)
           expect(self.targets[5].classList.contains('in')).to.equal(false)
         })
-        cy.get(self.elements[6])
-          .click()
-          .then(() => {
-            expect(self.targets[0].style.transform).to.equal('translateX(1313.5px)')
-          })
+      })
+      .wait(500)
+      .get('[data-xt-slider-element]')
+      .eq(6)
+      .click()
+      .then(() => {
+        expect(self.targets[0].style.transform).to.equal('translateX(1313.5px)')
       })
   })
 })
