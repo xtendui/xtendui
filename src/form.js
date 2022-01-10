@@ -40,7 +40,9 @@ Xt.mount({
     }
 
     ref.addEventListener('change', change)
-    form.addEventListener('reset', change)
+    if (form) {
+      form.addEventListener('reset', change)
+    }
 
     if (ref.checked) {
       change()
