@@ -7,6 +7,19 @@ title: "Animation Test"
 
 ## Class
 
+<demo>
+  <demoinline src="demos/components/toggle/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/drop/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation-direction">
+  </demoinline>
+</demo>
+
 `demos/components/toggle/animation-queue`
 - TEST queue activation.
 

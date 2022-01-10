@@ -209,106 +209,32 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
-    addVariant('group-dir-before', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.dir-before .${e(`group-dir-before${separator}${className}`)}`
-      })
-    })
-
-    addVariant('group-dir-after', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.dir-after .${e(`group-dir-after${separator}${className}`)}`
-      })
-    })
-
-    addVariant('group-off', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group:not(.on):not(.in):not(.out) .${e(`group-off${separator}${className}`)}`
-      })
-    })
-
-    addVariant('group-on', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.on .${e(`group-on${separator}${className}`)}`
-      })
-    })
-
-    addVariant('group-in', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.in .${e(`group-in${separator}${className}`)}`
-      })
-    })
-
-    addVariant('group-out', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.out .${e(`group-out${separator}${className}`)}`
-      })
-    })
-
-    addVariant('group-done', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group.done .${e(`group-done${separator}${className}`)}`
-      })
-    })
-
-    addVariant('group-active', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group:active .${e(`group-active${separator}${className}`)}`
-      })
-    })
-
-    addVariant('dir-before', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`dir-before${separator}${className}`)}.dir-before`
-      })
-    })
-
-    addVariant('dir-after', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`dir-after${separator}${className}`)}.dir-after`
-      })
-    })
-
-    addVariant('off', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`off${separator}${className}`)}:not(.on):not(.in):not(.out)`
-      })
-    })
-
-    addVariant('on', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`on${separator}${className}`)}.on`
-      })
-    })
-
-    addVariant('in', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`in${separator}${className}`)}.in`
-      })
-    })
-
-    addVariant('out', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`out${separator}${className}`)}.out`
-      })
-    })
-
-    addVariant('done', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`done${separator}${className}`)}.done`
-      })
-    })
-
-    addVariant('valid-submit', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`valid-submit${separator}${className}`)}.valid-submit`
-      })
-    })
-
-    addVariant('invalid-submit', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`invalid-submit${separator}${className}`)}.invalid-submit`
-      })
-    })
+    addVariant('group-dir-before', '.group.dir-before &')
+    addVariant('group-dir-after', '.group.dir-after &')
+    addVariant('group-off-before', '.group.dir-before:not(.on):not(.in):not(.out) &')
+    addVariant('group-off-after', '.group.dir-after:not(.on):not(.in):not(.out) &')
+    addVariant('group-on-before', '.group.on.dir-before &')
+    addVariant('group-on-after', '.group.on.dir-after &')
+    addVariant('group-in-before', '.group.in.dir-before &')
+    addVariant('group-in-after', '.group.in.dir-after &')
+    addVariant('group-out-before', '.group.out.dir-before &')
+    addVariant('group-out-after', '.group.out.dir-after &')
+    addVariant('group-done-before', '.group.done.dir-before &')
+    addVariant('group-done-after', '.group.done.dir-after &')
+    addVariant('group-off', '.group:not(.on):not(.in):not(.out) &')
+    addVariant('group-on', '.group.on &')
+    addVariant('group-in', '.group.in &')
+    addVariant('group-out', '.group.out &')
+    addVariant('group-done', '.group.done &')
+    addVariant('group-active', '.group:active &')
+    addVariant('dir-before', '&.dir-before')
+    addVariant('dir-after', '&.dir-after')
+    addVariant('off', '&:not(.on):not(.in):not(.out)')
+    addVariant('on', '&.on')
+    addVariant('in', '&.in')
+    addVariant('out', '&.out')
+    addVariant('done', '&.done')
+    addVariant('valid-submit', '&.valid-submit')
+    addVariant('invalid-submit', '&.invalid-submit')
   }
 })

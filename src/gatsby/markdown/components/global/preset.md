@@ -25,7 +25,7 @@ The following theme values are added with the preset:
 
 Xtend UI add **custom tailwind variants**.
 
-- added variants to style **activation classes** with `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `done:`, `group-done:`
+- added variants to style **activation classes** with `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `dir-before:`, `group-dir-before:`, `dir-after:`, `group-dir-after:`, `done:`, `group-done:`
 
 - added variants to style [form validation after form submit](/components/form/addon#validation) with `valid-submit:` and `invalid-submit:`.
 

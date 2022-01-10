@@ -24,10 +24,19 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
-> If you want to animate from starting values different from `out:` values **assign `transition` to in: and out: variants**.
+> If you want to **animate from starting values different from `out:` values** assign `transition` to in: and out: variants.
 
 <demo>
   <demoinline src="demos/components/toggle/animation">
+  </demoinline>
+</demo>
+
+Use **tailwind variants** `dir-before:`, `group-dir-before:`, `group-off-before:`, `group-on-before:`, `group-in-before:`, `group-out-before:`, `dir-after:`, `group-dir-after:`, `group-off-after:`, `group-on-after:`, `group-in-after:`, `group-out-after:` to assign animations.
+
+> Direction needs [multiple mode](/components/toggle#usage-multiple) to work.
+
+<demo>
+  <demoinline src="demos/components/toggle/animation-direction">
   </demoinline>
 </demo>
 
@@ -118,15 +127,6 @@ The queue option **controls sequential activations putting them in a queue**, or
 ## Css Animation
 
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Name                          | Description                   |
-| ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.dir-before`       |  Class name for **before** direction activation            |
-| Class                  | `.dir-after`       |  Class name for **after** direction activation            |
-
-</div>
 
 > Direction needs [multiple mode](/components/drop#usage-multiple) to work.
 

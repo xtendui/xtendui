@@ -114,7 +114,7 @@ You can also **assign duration on single nodes** with `data-xt-duration="Millise
 
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
-You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`.
+You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.
 
 <demo>
   <demoinline src="demos/components/global/animation">
