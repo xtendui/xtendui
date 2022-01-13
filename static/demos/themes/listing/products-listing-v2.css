@@ -1,0 +1,6 @@
+.demo--products-listing-v2, .demo--products-listing-v2-react {
+  .listing-item {
+    opacity: 0;
+  }
+}
+

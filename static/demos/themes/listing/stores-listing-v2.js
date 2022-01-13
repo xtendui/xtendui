@@ -1,68 +1,103 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
-/**
- * .listing activation
- */
+/* mountListing */
 
-Xt.mount.push({
-  matches: '#iframe--stores-listing-v2 body .listing', // add your own selector instead of body to contain the code
-  mount: object => {
-    // vars
+const mountListing = ({ ref }) => {
+  // vars
 
-    const items = object.querySelectorAll('.listing-item')
+  const items = ref.querySelectorAll('.listing-item')
 
-    // click
+  // click
 
-    const eventOn = tr => {
-      if (!tr.classList.contains('active')) {
-        // class
-        tr.classList.add('active')
-        // front
-        const front = tr.querySelector('.listing-front')
-        gsap.to(front, { opacity: 0, duration: 0.5, ease: 'expo.out' })
-        // front
-        const back = tr.querySelector('.listing-back')
-        gsap.set(back, { y: 40, opacity: 0 })
-        gsap.to(back, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
-      } else {
-        eventOff(tr)
-      }
-    }
-
-    const eventOff = tr => {
-      if (tr.classList.contains('active')) {
-        // class
-        tr.classList.remove('active')
-        // front
-        const front = tr.querySelector('.listing-front')
-        gsap.set(front, { y: -40, opacity: 0 })
-        gsap.to(front, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' })
-        // front
-        const back = tr.querySelector('.listing-back')
-        gsap.to(back, { y: 0, opacity: 0, duration: 0.5, ease: 'expo.out' })
-      }
-    }
-
-    const eventClick = e => {
-      const tr = e.target.closest('.listing-item')
-      // disable on mobile
-      if (matchMedia('(max-width: 767px)').matches) {
-        return
-      }
-      // deactivate
-      for (const other of Array.from(items).filter(x => x !== tr)) {
-        eventOff(other)
-      }
-      // activate
-      eventOn(tr)
-    }
-
-    for (const item of items) {
-      item.querySelector('.listing-front').addEventListener('click', eventClick)
-      item.querySelector('.btn-close').addEventListener('click', () => {
-        eventOff(item)
+  const on = tr => {
+    if (!tr.classList.contains('on')) {
+      // class
+      Xt.on({ el: tr })
+      // front
+      const front = tr.querySelector('.listing-item-front')
+      gsap.to(front, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'expo.out',
       })
+      // front
+      const back = tr.querySelector('.listing-item-back')
+      gsap.set(back, {
+        y: 40,
+        opacity: 0,
+      })
+      gsap.to(back, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
+    } else {
+      off(tr)
+    }
+  }
+
+  const off = tr => {
+    if (tr.classList.contains('on')) {
+      // class
+      Xt.off({ el: tr })
+      // front
+      const front = tr.querySelector('.listing-item-front')
+      gsap.set(front, {
+        y: -40,
+        opacity: 0,
+      })
+      gsap.to(front, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
+      // front
+      const back = tr.querySelector('.listing-item-back')
+      gsap.to(back, {
+        y: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
+    }
+  }
+
+  const click = e => {
+    const tr = e.target.closest('.listing-item')
+    // deactivate
+    for (const other of Array.from(items).filter(x => x !== tr)) {
+      off(other)
+    }
+    // activate
+    on(tr)
+  }
+
+  for (const item of items) {
+    item.querySelector('.listing-item-front').addEventListener('click', click)
+    item.querySelector('.xt-dismiss').addEventListener('click', () => {
+      off(item)
+    })
+  }
+
+  // unmount
+
+  return () => {}
+}
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--stores-listing-v2',
+  mount: ({ ref }) => {
+    const unmountListing = mountListing({ ref })
+
+    // unmount
+
+    return () => {
+      unmountListing()
     }
   },
 })

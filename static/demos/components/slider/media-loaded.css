@@ -1,0 +1,24 @@
+.demo--slider-media-loaded, .demo--slider-media-loaded-react {
+  .xt-slide {
+    /* full width when loading */
+    width: 100%;
+    &.xt-medialoaded {
+      width: auto;
+    }
+    /* hide loader on mediaLoaded */
+    &.xt-medialoaded {
+      .xt-loader {
+        @apply transition opacity-0;
+      }
+    }
+    /* animate media on mediaLoaded */
+    .xt-media {
+      @apply transition opacity-0;
+    }
+    &.xt-medialoaded {
+      .xt-media {
+        @apply opacity-100;
+      }
+    }
+  }
+}

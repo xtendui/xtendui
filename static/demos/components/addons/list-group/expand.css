@@ -1,7 +1,0 @@
- .demo--group-expand {
-  @apply transition-all;
-  &.expand {
-    @apply max-w-md;
-  }
-}
-

@@ -1,0 +1,90 @@
+/* header */
+
+.gatsby_home-header_content {
+  .scrolling-hide & {
+    @apply relative pt-9 pb-5;
+    .gatsby_site-header_logo {
+      @apply opacity-0 pointer-events-none;
+    }
+  }
+}
+
+.gatsby_home-header_background {
+  top: -105%;
+  left: -40%;
+  width: 180%;
+  height: 205%;
+  rect {
+    fill: theme('colors.primary.500');
+    width: 100%;
+    height: 100%;
+  }
+  @screen sm {
+    left: -20%;
+    width: 140%;
+  }
+  @screen lg {
+    left: -8%;
+    width: 116%;
+  }
+}
+
+.gatsby_home-header_actions {
+  .xt-button {
+    @apply text-white text-opacity-[90%] transition duration-300 ease-out-quint;
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-weight: theme('fontWeight.semibold');
+    font-size: 13px;
+    @screen md {
+      font-size: 14px;
+    }
+    line-height: 1;
+    letter-spacing: theme('letterSpacing.wide');
+    text-transform: uppercase;
+    &:hover {
+      @apply bg-primary-900 bg-opacity-50;
+      color: theme('colors.white');
+    }
+  }
+}
+
+/* main */
+
+.gatsby_home-header_inner, .gatsby_home-main, .gatsby_home-footer {
+  .container {
+    @apply max-w-screen-lg !important;
+  }
+}
+
+/* social */
+
+.gatsby_home-main_social {
+  svg {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+.gatsby_home-main_social_btn {
+  margin-top: -5px;
+  margin-bottom: -5px;
+  padding: 5px;
+  border-radius: 0;
+  line-height: 1;
+  &:last-child {
+    padding-right: 0;
+  }
+  @apply transition;
+  opacity: .25;
+  &:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+/* scroll */
+
+.gatsby_home-main_scroll {
+  opacity: 0;
+}

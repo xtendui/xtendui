@@ -1,0 +1,16 @@
+.demo--card-disabled, .demo--card-disabled-react {
+  .xt-card {
+    @apply xt-links-default;
+    border-width: 0;
+    background-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    padding: 0;
+    > .xt-dismiss {
+      display: none;
+    }
+    > * {
+      padding: 0;
+    }
+  }
+}

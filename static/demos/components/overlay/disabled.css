@@ -1,0 +1,41 @@
+.demo--overlay-disable, .demo--overlay-disable-react {
+  a[data-xt-overlay-disabled], button[data-xt-overlay-disabled] {
+    display: none;
+  }
+  .xt-overlay[data-xt-overlay-disabled] {
+    display: flex !important;
+    position: static;
+    z-index: auto;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    .xt-overlay-container {
+      padding: 0;
+      width: 100%;
+      min-height: auto;
+      max-width: none;
+    }
+    .xt-overlay-inner {
+      > .xt-card {
+        border-width: 0;
+        background-color: transparent;
+        box-shadow: none;
+        color: inherit;
+        padding: 0;
+        > .xt-dismiss {
+          display: none;
+        }
+        > * {
+          padding: 0;
+        }
+      }
+    }
+    .xt-backdrop {
+      display: none;
+    }
+  }
+}

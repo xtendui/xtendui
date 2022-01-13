@@ -15,10 +15,14 @@ module.exports = plugin.withOptions(() => {
       const componentBase = componentsBase[component] || {}
       const componentCustom = componentsCustom[component] || {}
       if (componentCustom !== false && componentCustom.component !== false) {
-        const base = typeof componentBase.component === 'function' ? componentBase.component(theme) : componentBase.component
-        const custom = typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
+        const base =
+          typeof componentBase.component === 'function' ? componentBase.component(theme) : componentBase.component
+        const custom =
+          typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
         const css = merge(...castArray(base || {}), custom || {})
-        addComponents(css)
+        addComponents(css, {
+          respectPrefix: false,
+        })
       }
     }
 
@@ -31,7 +35,8 @@ module.exports = plugin.withOptions(() => {
       const componentCustom = componentsCustom[component] || {}
       if (componentCustom !== false && componentCustom.utility !== false) {
         const base = typeof componentBase.utility === 'function' ? componentBase.utility(theme) : componentBase.utility
-        const custom = typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
+        const custom =
+          typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
         const variants = merge(componentBase.variants || [], componentCustom.variants || [])
         const options = merge(...castArray(base || {}), custom || {})
         const utilities = Object.keys(options)
@@ -39,66 +44,88 @@ module.exports = plugin.withOptions(() => {
           if (componentsCustom[utility] !== false) {
             if (component === 'list' && utility === 'space') {
               // list space
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
-                css[`.list-${e(name)}`] = {
-                  margin: `-${value}`,
-                  '> *': {
-                    margin: `${value}`,
-                  },
-                }
-                css[`.list-x-${e(name)}`] = {
-                  marginLeft: `-${value}`,
-                  marginRight: `-${value}`,
-                  '> *': {
-                    marginLeft: `${value}`,
-                    marginRight: `${value}`,
-                  },
-                }
-                css[`.list-y-${e(name)}`] = {
+                const value = options[utility][name]
+                css[`.${e(`xt-list-${name}`)}`] = {
                   marginTop: `-${value}`,
-                  marginBottom: `-${value}`,
+                  marginLeft: `-${value}`,
                   '> *': {
                     marginTop: `${value}`,
-                    marginBottom: `${value}`,
+                    marginLeft: `${value}`,
+                  },
+                }
+                css[`.${e(`xt-list-x-${name}`)}`] = {
+                  marginLeft: `-${value}`,
+                  '> *': {
+                    marginLeft: `${value}`,
+                  },
+                }
+                css[`.${e(`xt-list-y-${name}`)}`] = {
+                  marginTop: `-${value}`,
+                  '> *': {
+                    marginTop: `${value}`,
                   },
                 }
               })
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             } else if (component === 'row' && utility === 'space') {
               // row space
-              let css = {}
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
-                css[`.row-${e(name)}`] = {
-                  margin: `-${value}`,
-                  '> *': {
-                    padding: `${value}`,
-                  },
-                }
-                css[`.row-x-${e(name)}`] = {
-                  marginLeft: `-${value}`,
-                  marginRight: `-${value}`,
-                  '> *': {
-                    paddingLeft: `${value}`,
-                    paddingRight: `${value}`,
-                  },
-                }
-                css[`.row-y-${e(name)}`] = {
+                const value = options[utility][name]
+                css[`.${e(`xt-row-${name}`)}`] = {
                   marginTop: `-${value}`,
-                  marginBottom: `-${value}`,
+                  marginLeft: `-${value}`,
                   '> *': {
                     paddingTop: `${value}`,
-                    paddingBottom: `${value}`,
+                    paddingLeft: `${value}`,
+                  },
+                }
+                css[`.${e(`xt-row-x-${name}`)}`] = {
+                  marginLeft: `-${value}`,
+                  '> *': {
+                    paddingLeft: `${value}`,
+                  },
+                }
+                css[`.${e(`xt-row-y-${name}`)}`] = {
+                  marginTop: `-${value}`,
+                  '> *': {
+                    paddingTop: `${value}`,
                   },
                 }
               })
-              addComponents(css, variants)
-            } else if (component === 'layout' && utility === '.container-y') {
-              let css = {}
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
+            } else if (component === 'overlay' && utility === '.xt-overlay-container') {
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
+                if (name === 'DEFAULT') {
+                  css[utility] = {
+                    padding: value,
+                  }
+                } else {
+                  css[utility] = {
+                    ...css[utility],
+                    [`@screen ${name}`]: {
+                      padding: value,
+                    },
+                  }
+                }
+              })
+              addComponents(css, {
+                respectPrefix: false,
+              })
+            } else if (component === 'global' && utility === '.xt-container-y') {
+              const css = {}
+              Object.keys(options[utility]).forEach(name => {
+                const value = options[utility][name]
                 if (name === 'DEFAULT') {
                   css[utility] = {
                     paddingTop: value,
@@ -114,11 +141,14 @@ module.exports = plugin.withOptions(() => {
                   }
                 }
               })
-              addComponents(css, variants)
-            } else if (component === 'layout' && utility === '.-container') {
-              let css = {}
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
+            } else if (component === 'global' && utility === '.xt-container-remove') {
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 if (name === 'DEFAULT') {
                   css[utility] = {
                     marginLeft: `-${value}`,
@@ -134,11 +164,14 @@ module.exports = plugin.withOptions(() => {
                   }
                 }
               })
-              addComponents(css, variants)
-            } else if (component === 'layout' && utility === '.-container-y') {
-              let css = {}
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
+            } else if (component === 'global' && utility === '.xt-container-y-remove') {
+              const css = {}
               Object.keys(options[utility]).forEach(name => {
-                let value = options[utility][name]
+                const value = options[utility][name]
                 if (name === 'DEFAULT') {
                   css[utility] = {
                     marginTop: `-${value}`,
@@ -154,12 +187,18 @@ module.exports = plugin.withOptions(() => {
                   }
                 }
               })
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             } else {
               // all others
-              let css = {}
+              const css = {}
               css[utility] = options[utility]
-              addComponents(css, variants)
+              addComponents(css, {
+                variants: variants,
+                respectPrefix: false,
+              })
             }
           }
         }
@@ -170,16 +209,32 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
-    addVariant('group-active', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.group:active .${e(`group-active${separator}${className}`)},.group.active .${e(`group-active${separator}${className}`)}`
-      })
-    })
-
-    addVariant('active', ({ modifySelectors, separator }) => {
-      modifySelectors(({ className }) => {
-        return `.${e(`active${separator}${className}`)}:active,.${e(`active${separator}${className}`)}.active`
-      })
-    })
+    addVariant('group-dir-before', '.group.dir-before &')
+    addVariant('group-dir-after', '.group.dir-after &')
+    addVariant('group-off-before', '.group.dir-before:not(.on):not(.in):not(.out) &')
+    addVariant('group-off-after', '.group.dir-after:not(.on):not(.in):not(.out) &')
+    addVariant('group-on-before', '.group.on.dir-before &')
+    addVariant('group-on-after', '.group.on.dir-after &')
+    addVariant('group-in-before', '.group.in.dir-before &')
+    addVariant('group-in-after', '.group.in.dir-after &')
+    addVariant('group-out-before', '.group.out.dir-before &')
+    addVariant('group-out-after', '.group.out.dir-after &')
+    addVariant('group-done-before', '.group.done.dir-before &')
+    addVariant('group-done-after', '.group.done.dir-after &')
+    addVariant('group-off', '.group:not(.on):not(.in):not(.out) &')
+    addVariant('group-on', '.group.on &')
+    addVariant('group-in', '.group.in &')
+    addVariant('group-out', '.group.out &')
+    addVariant('group-done', '.group.done &')
+    addVariant('group-active', '.group:active &')
+    addVariant('dir-before', '&.dir-before')
+    addVariant('dir-after', '&.dir-after')
+    addVariant('off', '&:not(.on):not(.in):not(.out)')
+    addVariant('on', '&.on')
+    addVariant('in', '&.in')
+    addVariant('out', '&.out')
+    addVariant('done', '&.done')
+    addVariant('valid-submit', '&.valid-submit')
+    addVariant('invalid-submit', '&.invalid-submit')
   }
 })

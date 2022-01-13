@@ -1,0 +1,32 @@
+.demo--drop-disable, .demo--drop-disable-react {
+  [data-xt-drop-element][data-xt-drop-disabled] {
+    > a, > button {
+      display: none;
+    }
+  }
+  .xt-drop[data-xt-drop-disabled] {
+    display: inline-block !important;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: 0;
+    > .xt-card {
+      border-width: 0;
+      background-color: transparent;
+      color: inherit;
+      box-shadow: none;
+      padding: 0;
+      > .xt-dismiss {
+        display: none;
+      }
+      > * {
+        padding: 0;
+      }
+    }
+    > .xt-backdrop {
+      display: none;
+    }
+  }
+}

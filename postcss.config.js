@@ -18,8 +18,9 @@ module.exports = {
         return arr.join('/')
       },
     }),
-    require(`tailwindcss`),
-    require('postcss-nested'),
+    require('tailwindcss/nesting'),
+    require('tailwindcss'),
     require('autoprefixer'),
+    require('cssnano'),
   ],
 }

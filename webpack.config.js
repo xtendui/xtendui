@@ -1,9 +1,6 @@
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-require('./build/css.js')
-require('./build/js.js')
 
 module.exports = {
   mode: 'production',
@@ -29,18 +26,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    useBuiltIns: 'entry',
-                    corejs: 3,
-                  },
-                ],
-              ],
-              plugins: [require.resolve('@babel/plugin-transform-runtime')],
-            },
           },
         ],
       },
@@ -53,12 +38,15 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
               url: false,
+              sourceMap: false,
             },
           },
           {
             loader: 'postcss-loader',
+            options: {
+              sourceMap: false,
+            },
           },
         ],
       },
@@ -77,19 +65,7 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimizer: [
-      new TerserJSPlugin({
-        extractComments: false,
-      }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          },
-        },
-      }),
-    ],
+    minimizer: [new TerserJSPlugin()],
   },
   devtool: 'source-map',
 }

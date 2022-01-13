@@ -1,8 +1,0 @@
-import 'xtendui/src/addons/googlelocator.js'
-import 'xtendui/src/addons/groupnumber.js'
-import 'xtendui/src/addons/infinitescroll.js'
-import 'xtendui/src/addons/mousefollow.js'
-import 'xtendui/src/addons/ripple.js'
-import 'xtendui/src/addons/scrolltoanchor.js'
-import 'xtendui/src/addons/stickyflow.js'
-import 'xtendui/src/addons/textareaautosize.js'

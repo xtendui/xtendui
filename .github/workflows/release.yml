@@ -1,79 +1,29 @@
 name: Release
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Test"]
     branches:
       - master
       - beta
       - 1.0-stable
+    types:
+      - completed
 
 env:
-  NODE: 12.x
+  NODE: 14.x
 
 jobs:
-  lint:
-    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
+  release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-    - name: Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: "${{ env.NODE }}"
-    - name: Yarn Cache Path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - name: Yarn Cache
-      uses: actions/cache@v2
-      id: yarn-cache
-      with:
-        path: |
-          ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          **/node_modules
-          ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
-    - name: Yarn
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
-    - name: Lint
-      run: yarn lint
-  codeql:
-    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['javascript']
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        fetch-depth: 2
-    - run: git checkout HEAD^2
-      if: ${{ github.event_name == 'pull_request' }}
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
-      with:
-        languages: ${{ matrix.language }}
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
-  build:
-    if: ${{ !contains(github.event.commits[0].message, '[skip ci]') }}
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-    - name: Node
+        ref: ${{ github.event.workflow_run.head_branch }}
+    # setup/action.yml composite
+    - name: Node setup
       uses: actions/setup-node@v1
       with:
         node-version: "${{ env.NODE }}"
@@ -88,57 +38,14 @@ jobs:
           ${{ steps.yarn-cache-dir-path.outputs.dir }}
           **/node_modules
           ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          ~/.cache/Cypress
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn1-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
-    - name: Build Cache
-      uses: actions/cache@v2
-      id: build-cache
-      with:
-        path: |
-          public
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('src/**/**') }}
-        restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-build-
-    - name: Build
-      if: steps.build-cache.outputs.cache-hit != 'true'
-      run: yarn build
-      env:
-        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
-        CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-  release:
-    runs-on: ubuntu-latest
-    needs: [lint, codeql, build]
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-    - name: Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: "${{ env.NODE }}"
-    - name: Yarn Cache Path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - name: Yarn Cache
-      uses: actions/cache@v2
-      id: yarn-cache
-      with:
-        path: |
-          ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          **/node_modules
-          ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
-    - name: Yarn
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile --prefer-offline
+    # release/action.yml composite
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
       with:
@@ -153,14 +60,12 @@ jobs:
   deploy:
     if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/beta' }}
     runs-on: ubuntu-latest
-    needs: [lint, codeql, build, release]
+    needs: [release]
     steps:
-    - name: Checkout
+    - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-    - name: Node
+    # setup/action.yml composite
+    - name: Node setup
       uses: actions/setup-node@v1
       with:
         node-version: "${{ env.NODE }}"
@@ -175,27 +80,24 @@ jobs:
           ${{ steps.yarn-cache-dir-path.outputs.dir }}
           **/node_modules
           ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          ~/.cache/Cypress
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn1-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
-    - name: Build Cache
-      uses: actions/cache@v2
-      id: build-cache
-      with:
-        path: |
-          public
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-build-${{ hashFiles('src/**/**') }}
-        restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-build-
+      run: yarn install --frozen-lockfile --prefer-offline
+    # build/action.yml composite
+    - name: Generate demos
+      run: yarn generate
+    - name: Check files changes
+      run: echo "Use 'yarn generate' and commit if files changed:" && git diff --name-only --exit-code && echo "No files changed during lint."
     - name: Build
-      if: steps.build-cache.outputs.cache-hit != 'true'
       run: yarn build
       env:
-        CONTENTFUL_SPACE: ${{ secrets.CONTENTFUL_SPACE }}
+        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
         CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+    # deploy/action.yml composite
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

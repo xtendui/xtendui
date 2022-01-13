@@ -1,107 +1,76 @@
 module.exports = {
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1.5rem',
-        sm: '2rem',
-        md: '3rem',
-        lg: '4rem',
-        xl: '5rem',
-      },
-    },
     extend: {
-      colors: {
-        success: '#48bb78',
-        error: '#f56565',
-        accent: {
-          50: '#F2F8FF',
-          100: '#E6F2FF',
-          200: '#BFDDFF',
-          300: '#99C9FF',
-          400: '#4DA1FF',
-          500: '#0078FF',
-          600: '#006CE6',
-          700: '#004899',
-          800: '#003673',
-          900: '#00244D',
-        },
+      screens: {
+        '-2xl': { max: '1535px' },
+        '-xl': { max: '1279px' },
+        '-lg': { max: '1023px' },
+        '-md': { max: '767px' },
+        '-sm': { max: '639px' },
+        'hover-none': { raw: '(hover: none)' },
+        'hover-hover': { raw: '(hover: hover)' },
       },
       fontSize: {
-        xs: ['0.75rem', { lineHeight: '1.4' }],
-        sm: ['0.875rem', { lineHeight: '1.5' }],
-        base: ['1rem', { lineHeight: '1.6' }],
-        lg: ['1.125rem', { lineHeight: '1.6' }],
-        xl: ['1.25rem', { lineHeight: '1.5' }],
-        '2xl': ['1.5rem', { lineHeight: '1.4' }],
-        '3xl': ['1.875rem', { lineHeight: '1.3' }],
-        '4xl': ['2.25rem', { lineHeight: '1.2' }],
-        '5xl': ['3rem', { lineHeight: '1.1' }],
-        '6xl': ['3.75rem', { lineHeight: '1' }],
-        '7xl': ['4.5rem', { lineHeight: '1' }],
-        '8xl': ['6rem', { lineHeight: '1' }],
-        '9xl': ['8rem', { lineHeight: '1' }],
+        '4xs': ['0.625rem', { lineHeight: '1rem' }], // 10px
+        '3xs': ['0.6875rem', { lineHeight: '1rem' }], // 11px
+        '2xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
+        xs: ['0.8125rem', { lineHeight: '1rem' }], // 13px
+      },
+      colors: {
+        primary: {
+          50: '#f0f7ff',
+          100: '#d6e9ff',
+          200: '#a3ceff',
+          300: '#6bb0ff',
+          400: '#3895ff',
+          500: '#0067dd',
+          600: '#0057bb',
+          700: '#004799',
+          800: '#003066',
+          900: '#001833',
+        },
       },
       zIndex: {
-        base: '0',
-        active: '25',
-        top: '50',
-        backdrop: '500',
-        drop: '600', // do not change: same as javascript and decreses with sequential drop
-        tooltip: '650', // do not change: same as javascript and decreses with sequential tooltip
-        sticky: '800', // do not change: same as javascript and decreses with sequential sticky
-        overlay: '900',
-        last: '1000',
+        below: '-1',
+        slide: '200', // same as options.zIndex.targets.start
+        content: '300', // above all page content
+        drop: '400', // same as options.zIndex.targets.start
+        tooltip: '500', // same as options.zIndex.targets.start
+        sticky: '900',
+        above: '1000', // above all page components
+        overlay: '5000', // same as options.zIndex.targets.start
+        last: '10000', // this is the z-index above all
       },
       inset: {
         100: '100%',
       },
-      boxShadow: {
-        ...require('./src/core/drop.css.js').boxShadow,
-        ...require('./src/core/overlay.css.js').boxShadow,
-        ...require('./src/core/tooltip.css.js').boxShadow,
+      borderRadius: {
+        inherit: 'inherit',
+        xs: '0.125rem', // 2px
+        sm: '0.1875rem', // 3px
+      },
+      cursor: {
+        none: 'none',
+      },
+      outline: {
+        browser: '5px auto Highlight',
       },
       transitionDelay: {
-        ...require('./src/core/animation.css.js').transitionDelay,
+        ...require('./src/animation.css.js').transitionDelay,
       },
       transitionDuration: {
-        ...require('./src/core/animation.css.js').transitionDuration,
+        ...require('./src/animation.css.js').transitionDuration,
       },
       transitionTimingFunction: {
-        ...require('./src/core/animation.css.js').transitionTimingFunction,
+        ...require('./src/animation.css.js').transitionTimingFunction,
       },
       animation: {
-        ...require('./src/core/animation.css.js').animation,
+        ...require('./src/animation.css.js').animation,
       },
       keyframes: theme => ({
-        ...require('./src/core/animation.css.js').keyframes(theme),
+        ...require('./src/animation.css.js').keyframes(theme),
       }),
     },
-  },
-  variants: {
-    backgroundColor: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    gradientColorStops: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    backgroundOpacity: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    borderColor: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    borderOpacity: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    boxShadow: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    opacity: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    textColor: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    textOpacity: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    textDecoration: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    scale: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    rotate: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    translate: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    skew: ({ after }) => after(['group-active'], 'group-hover', after(['active'], 'hover')),
-    transitionProperty: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
-    transitionTimingFunction: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
-    transitionDuration: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
-    transitionDelay: ({ after }) =>
-      after(['group-active'], 'group-hover', after(['active'], 'hover', after(['group-hover'], 'hover', after(['hover'], 'responsive')))),
-    zIndex: ({ after }) => after(['group-active'], 'active', after(['active'], 'responsive')),
   },
   plugins: [require('./tailwind.plugin')],
 }

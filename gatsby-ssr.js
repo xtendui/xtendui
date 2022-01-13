@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
-
 // https://github.com/gatsbyjs/gatsby/issues/1526
 // replace inline css with links
 

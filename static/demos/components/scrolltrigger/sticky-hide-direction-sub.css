@@ -1,0 +1,16 @@
+.demo--sticky-hide-direction-sub, .demo--sticky-hide-direction-sub-react {
+  .xt-card.p-6 {
+    @apply transition-all ease-in-out-quint;
+  }
+  .xt-h4 {
+    @apply transition-all ease-in-out-quint;
+  }
+  .xt-sticky.scrolling-down.scrolling-hide {
+    .xt-card.p-6 {
+      @apply p-4;
+    }
+    .xt-h4 {
+      @apply text-xl;
+    }
+  }
+}

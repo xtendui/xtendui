@@ -1,33 +1,53 @@
 import { Xt } from 'xtendui'
 
-/**
- * .listing-item activation
- */
+/* mountListing */
 
-Xt.mount.push({
-  matches: '#iframe--stores-listing-v1 body .listing-item', // add your own selector instead of body to contain the code
-  mount: object => {
+const mountListing = ({ ref }) => {
+  // vars
+
+  const items = ref.querySelectorAll('.listing-item')
+
+  for (const item of items) {
     // vars
 
-    const actionBtn = object.querySelector('.listing-action')
-    const closeBtn = object.querySelector('.btn-close')
+    const actionBtn = item.querySelector('[data-node-action]')
+    const closeBtn = item.querySelector('.xt-dismiss')
 
-    // eventClick
+    // click
 
-    const eventClick = e => {
+    const click = e => {
       e.stopPropagation()
-      object.classList.add('active')
+      Xt.on({ el: item })
     }
 
-    actionBtn.addEventListener('click', eventClick)
+    actionBtn.addEventListener('click', click)
 
-    // eventClose
+    // close
 
-    const eventClose = e => {
+    const close = e => {
       e.stopPropagation()
-      object.classList.remove('active')
+      Xt.off({ el: item })
     }
 
-    closeBtn.addEventListener('click', eventClose)
+    closeBtn.addEventListener('click', close)
+  }
+
+  // unmount
+
+  return () => {}
+}
+
+/* mount */
+
+Xt.mount({
+  matches: '.demo--stores-listing-v1',
+  mount: ({ ref }) => {
+    const unmountListing = mountListing({ ref })
+
+    // unmount
+
+    return () => {
+      unmountListing()
+    }
   },
 })

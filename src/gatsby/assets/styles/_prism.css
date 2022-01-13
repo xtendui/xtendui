@@ -1,130 +1,109 @@
 /**
- * Tailwind CSS theme for `prism.js`
- * Based on the syntax theme used in the Tailwind CSS docs, which is based on Atom's
- * `atom-dark` theme: https://github.com/atom/atom-dark-syntax
- * @author Taylor Bryant
+ * a11y-dark theme for JavaScript, CSS, and HTML
+ * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
+ * @author ericwbailey
  */
 
  code[class*="language-"],
  pre[class*="language-"] {
-   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-   -webkit-overflow-scrolling: touch;
-   -webkit-font-smoothing: auto;
-   -moz-osx-font-smoothing: auto;
-   color: #fff;
-   color: #edf2f7;
-   direction: ltr;
+   color: #f8f8f2;
+   background: none;
+   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
    text-align: left;
    white-space: pre;
    word-spacing: normal;
    word-break: normal;
+   word-wrap: normal;
    line-height: 1.5;
+
+   -moz-tab-size: 4;
+   -o-tab-size: 4;
    tab-size: 4;
+
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
    hyphens: none;
  }
 
+ /* Code blocks */
  pre[class*="language-"] {
+   padding: 1em;
+   margin: 0.5em 0;
    overflow: auto;
-   padding: 1rem;
-   border-radius: 0.5rem;
+   border-radius: 0.3em;
  }
 
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-   background-color: #2d3748;
-   font-size: 0.875rem;
+   background: #2b2b2b;
  }
 
- code.language-js .token.regex,
- pre.language-js .token.regex,
- .token.selector,
- .token.attr-name,
- .token.property,
- .token.regex,
- .token.class-name,
- .token.entity {
-   color: #ffe484;
- }
-
- code.language-diff,
- pre.language-diff {
-   color: #cbd5e0;
- }
-
- code.language-diff .token.inserted,
- pre.language-diff .token.inserted,
- .token.url,
- .token.attr-value,
- .token.char,
- .token.string,
- .token.builtin,
- .token.inserted,
- .token.boolean,
- .token.constant {
-   color: #b5f4a5;
- }
-
+ /* Inline code */
  :not(pre) > code[class*="language-"] {
    padding: 0.1em;
    border-radius: 0.3em;
+   white-space: normal;
  }
 
  .token.comment,
  .token.prolog,
  .token.doctype,
  .token.cdata {
-   color: #a0aec0;
+   color: #d4d0ab;
  }
 
- .namespace {
-   opacity: 0.7;
+ .token.punctuation {
+   color: #fefefe;
  }
 
- .token.symbol,
- .token.deleted,
+ .token.property,
  .token.tag,
- .token.number,
- code.language-js .token.boolean,
- pre.language-js .token.boolean {
-   color: #ff8383;
+ .token.constant,
+ .token.symbol,
+ .token.deleted {
+   color: #ffa07a;
  }
 
- .token.unit,
- .token.function,
- .token.punctuation,
- .token.hexcode,
+ .token.boolean,
+ .token.number {
+   color: #00e0e0;
+ }
+
+ .token.selector,
+ .token.attr-name,
+ .token.string,
+ .token.char,
+ .token.builtin,
+ .token.inserted {
+   color: #abe338;
+ }
+
  .token.operator,
- code.language-js .token.operator,
- pre.language-js .token.operator {
-   color: #93ddfd;
+ .token.entity,
+ .token.url,
+ .language-css .token.string,
+ .style .token.string,
+ .token.variable {
+   color: #00e0e0;
  }
 
  .token.atrule,
- .token.atrule > .token.property,
- .token.atrule > .token.property + .token.punctuation,
- .token.atrule
-   > .token.property
-   + .token.punctuation
-   + .token.number
-   + .token.unit,
- .token.atrule > .token.number,
- .token.atrule > .token.unit,
- code.language-js .token.punctuation,
- pre.language-js .token.punctuation,
- code.language-js .token.keyword,
- pre.language-js .token.keyword,
- code.language-bash .token.function,
- pre.language-bash .token.function {
-   color: #fff;
+ .token.attr-value,
+ .token.function {
+   color: #ffd700;
  }
 
- .token.rule,
+ .token.keyword {
+   color: #00e0e0;
+ }
+
+ .token.regex,
+ .token.important {
+   color: #ffd700;
+ }
+
  .token.important,
- .token.variable {
-   font-weight: inherit;
-   color: #d9a9ff;
- }
-
  .token.bold {
    font-weight: bold;
  }
@@ -135,4 +114,48 @@
 
  .token.entity {
    cursor: help;
+ }
+
+ @media screen and (-ms-high-contrast: active) {
+   code[class*="language-"],
+   pre[class*="language-"] {
+     color: windowText;
+     background: window;
+   }
+
+   :not(pre) > code[class*="language-"],
+   pre[class*="language-"] {
+     background: window;
+   }
+
+   .token.important {
+     background: highlight;
+     color: window;
+     font-weight: normal;
+   }
+
+   .token.atrule,
+   .token.attr-value,
+   .token.function,
+   .token.keyword,
+   .token.operator,
+   .token.selector {
+     font-weight: bold;
+   }
+
+   .token.attr-value,
+   .token.comment,
+   .token.doctype,
+   .token.function,
+   .token.keyword,
+   .token.operator,
+   .token.property,
+   .token.string {
+     color: highlight;
+   }
+
+   .token.attr-value,
+   .token.url {
+     font-weight: normal;
+   }
  }

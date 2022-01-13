@@ -4,7 +4,8 @@ category: "By Component"
 parent: "Card"
 title: "slide-animation-v1"
 date: "2020-10-10"
+tags: ["hidden"]
 demos: [
-  "iframe/themes/animation/slide-animation-v1"
+  "themes/animation/slide-animation-v1"
 ]
 ---

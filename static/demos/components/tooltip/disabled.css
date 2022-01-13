@@ -1,0 +1,5 @@
+.demo--tooltip-disable, .demo--tooltip-disable-react {
+  .xt-tooltip[data-xt-tooltip-disabled] {
+    display: none;
+  }
+}

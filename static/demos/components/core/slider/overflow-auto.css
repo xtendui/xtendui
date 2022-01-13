@@ -1,7 +1,0 @@
-.demo--slider-overflow-auto {
-  &.xt-overflow-auto {
-    .slides-inner {
-      justify-content: center;
-    }
-  }
-}

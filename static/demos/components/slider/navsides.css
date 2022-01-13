@@ -1,0 +1,15 @@
+.demo--slider-navsides, .demo--slider-navsides-react {
+  .slider-navs-container {
+    [data-xt-nav] {
+      opacity: 0;
+      @media (hover: none) {
+        display: none;
+      }
+    }
+    &:hover {
+      [data-xt-nav] {
+        opacity: 100;
+      }
+    }
+  }
+}

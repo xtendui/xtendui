@@ -1,0 +1,14 @@
+.demo--slider-expand, .demo--slider-expand-react {
+  @media (max-width: calc(theme('screens.md') - 1px)) {
+    .xt-slides {
+      overflow: visible !important;
+      height: auto !important;
+      flex-wrap: wrap !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    [data-xt-slider-pagination] {
+      display: none !important;
+    }
+  }
+}

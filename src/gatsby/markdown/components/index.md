@@ -1,7 +1,7 @@
 ---
 type: "Components"
 title: "Components"
-description: "Tailwind components with cssinjs and classes for customization, and vanilla javascript components."
+description: "Customizable components with an ecosystem of plugins."
 date: "2020-11-10"
 menu: true
 ---

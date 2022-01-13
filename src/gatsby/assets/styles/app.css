@@ -1,19 +1,16 @@
-/**
- * import
- */
-
 @import "tailwindcss/base";
 
 @import "tailwindcss/components";
 
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap);
 @import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.css";
 @import "./_prism.css";
-@import "./_shared.css";
+
+@import "xtendui/dist/xtend-demos.css";
+
+@import "./_common.css";
 @import "./_header.css";
-@import "./_footer.css";
-@import "./_main.css";
+@import "./_home.css";
+@import "./_article.css";
 @import "./_demo.css";
-@import "xtendui/build/xtend-demos.css";
 
 @import "tailwindcss/utilities";

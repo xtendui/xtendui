@@ -1,0 +1,71 @@
+/* prevent horizontal overflow */
+
+.gatsby_site-header, .gatsby_site-main, .gatsby_site-footer {
+  @apply w-full;
+}
+
+/* layout */
+
+.gatsby_site-article_hero {
+  background: theme('colors.gray.100');
+  background: linear-gradient(225deg, theme('colors.gray.50') 33%, theme('colors.gray.100') 100%);
+}
+
+.gatsby_site-footer {
+  background: theme('colors.gray.100');
+  background: linear-gradient(225deg, theme('colors.gray.50') 33%, theme('colors.gray.100') 100%);
+}
+
+.gatsby_site-article--markdown {
+  @screen lg {
+    margin-left: 20rem;
+  }
+  @screen xl {
+    margin-left: 20rem;
+  }
+  .gatsby_site-article_hero-inner, .gatsby_site-article_content, .gatsby_site-footer_inner {
+    margin-left: 0 !important;
+    max-width: 1152px !important;
+  }
+}
+
+.gatsby_site-article_hero-inner {
+  position: relative;
+}
+
+.gatsby_site-article_hero-content-inner {
+  max-width: 70rem;
+}
+
+/* listing */
+
+.gatsby_listing {
+  @apply mt-10 md:mt-20 xt-mt-auto;
+  div:empty + & {
+    @apply mt-0;
+  }
+}
+
+.gatsby_listing-group {
+  @apply w-full;
+}
+
+.gatsby_listing-items {
+  @apply w-full text-left;
+  .gatsby_listing .xt-h6 + & {
+    @apply my-5 sm:my-10;
+  }
+  .gatsby_listing-group:last-child & {
+    @apply mb-0;
+  }
+  > .xt-row {
+    /* row same as card */
+    @apply -m-3.5 md:-m-5 lg:-m-6;
+    .gatsby_site-article_foot & {
+      @apply my-0 !important;
+      .gatsby_listing-column {
+        @apply mb-4 !important;
+      }
+    }
+  }
+}

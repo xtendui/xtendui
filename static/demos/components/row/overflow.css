@@ -1,0 +1,13 @@
+.demo--row-overflow, .demo--row-overflow-react {
+  .xt-row {
+    @apply xt-overflow-sub;
+    @media (max-width: calc(theme('screens.md') - 1px)) {
+      overflow-w: auto;
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+      > * {
+        width: 280px !important;
+      }
+    }
+  }
+}

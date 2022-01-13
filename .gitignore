@@ -73,3 +73,10 @@ public
 **/*.min.css.map
 **/*.min.js
 **/*.min.js.map
+**/*.LICENSE.txt
+static/demos/**/**.jsx
+
+# test
+tests/cypress/videos/
+tests/cypress/screenshots/
+tests/cypress/downloads/

@@ -1,6 +1,0 @@
-import 'xtendui/src/core/drop.js'
-import 'xtendui/src/core/form.js'
-import 'xtendui/src/core/overlay.js'
-import 'xtendui/src/core/slider.js'
-import 'xtendui/src/core/toggle.js'
-import 'xtendui/src/core/tooltip.js'

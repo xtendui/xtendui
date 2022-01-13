@@ -1,0 +1,17 @@
+.demo--ripple-animation-v1, .demo--ripple-animation-v1-react {
+  .xt-ripple-inner {
+    opacity: .075;
+  }
+  .xt-ripple {
+    background: theme('colors.black');
+  }
+  /* custom */
+  [class*="active:bg-primary-"] {
+    > .xt-ripple-inner {
+      opacity: .15;
+      > .xt-ripple {
+        background: theme('colors.white');
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.demo--overlay-animation-css, .demo--overlay-animation-css-react {
+  .xt-overlay {
+    /* initial */
+    .xt-backdrop {
+      @apply opacity-0;
+    }
+    .xt-overlay-inner {
+      @apply opacity-0;
+    }
+    &.dir-before {
+      .xt-overlay-inner {
+        @apply translate-y-4;
+      }
+    }
+    &.dir-after {
+      .xt-overlay-inner {
+        @apply -translate-y-4;
+      }
+    }
+    /* in */
+    &.in {
+      .xt-backdrop {
+        @apply transition opacity-25;
+      }
+      .xt-overlay-inner {
+        @apply transition opacity-100 translate-y-0;
+      }
+    }
+    /* out */
+    &.out {
+      .xt-backdrop {
+        @apply transition opacity-0;
+      }
+      .xt-overlay-inner {
+        @apply transition opacity-0;
+      }
+      &.dir-before {
+        .xt-overlay-inner {
+          @apply -translate-y-4;
+        }
+      }
+      &.dir-after {
+        .xt-overlay-inner {
+          @apply translate-y-4;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.demo--toggle-class-custom, .demo--toggle-class-custom-react {
+  .on--toggle-custom-class {
+    color: red;
+  }
+}

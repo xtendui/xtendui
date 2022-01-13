@@ -3,5 +3,5 @@ type: "Themes"
 category: "By Component"
 parent: "Slider"
 title: "Slider"
-description: "Create visually stunning sliders with a comprehensive javascript api."
+description: "Slider is a toggle plugin for drag interactions and for interfaces that slide on one axis."
 ---

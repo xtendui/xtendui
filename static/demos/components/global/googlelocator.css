@@ -1,0 +1,103 @@
+.demo--googlelocator, .demo--googlelocator-react {
+  .googlelocator-item-content {
+    a {
+      word-break: break-all;
+    }
+  }
+
+  /* results */
+
+  .googlelocator-result {
+    display: none;
+  }
+  .googlelocator-result--initial {
+    display: block;
+  }
+
+  &.found {
+    .googlelocator-result {
+      display: none;
+    }
+    .googlelocator-result--founds {
+      display: block;
+    }
+  }
+
+  &.noplace {
+    .googlelocator-result {
+      display: none;
+    }
+    .googlelocator-result--noplace {
+      display: block;
+    }
+  }
+
+  &.empty {
+    .googlelocator-result {
+      display: none;
+    }
+    .googlelocator-result--empty {
+      display: block;
+    }
+  }
+
+  &.error {
+    .googlelocator-result {
+      display: none;
+    }
+    .googlelocator-result--error {
+      display: block;
+    }
+  }
+
+  /* infoWindow */
+
+  .gm-style {
+    /* reset */
+    .gm-style-iw-d {
+      overflow: visible !important;
+      max-width: none !important;
+      max-height: none !important;
+    }
+    /* arrow */
+    .gm-style-iw-t {
+      &:after {
+        background: theme('colors.white');
+      }
+    }
+    /* box */
+    .gm-style-iw-c {
+      @apply p-4 !important;
+      border: 0;
+      border-radius: 0;
+      background: theme('colors.white');
+      /* scroll */
+      @apply xt-overflow-sub;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      max-height: 15rem !important;
+    }
+    /* close */
+    .gm-style-iw-d + button {
+      top: 0 !important;
+      right: 0 !important;
+      width: 2rem !important;
+      height: 2rem !important;
+      background: theme('colors.primary.500') !important;
+      border-bottom-left-radius: 0.7rem;
+      font-size: 25px;
+      color: theme('colors.white') !important;
+      line-height: 0;
+      text-align: center;
+      opacity: 1 !important;
+      &:before {
+        content: '×';
+        position: relative;
+        top: -2px;
+      }
+      img {
+        display: none !important;
+      }
+    }
+  }
+}

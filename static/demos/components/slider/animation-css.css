@@ -1,0 +1,40 @@
+.demo--slider-animation-css, .demo--slider-animation-css-react {
+  .xt-slide {
+    /* initial */
+    [data-node-target-content] {
+      @apply opacity-0;
+    }
+    &.dir-before {
+      [data-node-target-content] {
+        @apply -translate-x-12;
+      }
+    }
+    &.dir-after {
+      [data-node-target-content] {
+        @apply translate-x-12;
+      }
+    }
+    /* in */
+    &.in {
+      [data-node-target-content] {
+        @apply transition opacity-100 translate-x-0;
+      }
+    }
+    /* out */
+    &.out {
+      [data-node-target-content] {
+        @apply transition opacity-0;
+      }
+      &.dir-before {
+        [data-node-target-content] {
+          @apply translate-x-12;
+        }
+      }
+      &.dir-after {
+        [data-node-target-content] {
+          @apply -translate-x-12;
+        }
+      }
+    }
+  }
+}
