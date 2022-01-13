@@ -48,6 +48,9 @@
     "@popperjs/core": "^2.11.2",
     "dompurify": "^2.3.4",
     "focus-trap": "^6.7.1",
+    "lodash.castarray": "^4.4.0",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.merge": "^4.6.2",
     "relaxed-json": "^1.0.3"
   },
   "peerDependencies": {
@@ -100,9 +103,6 @@
     "gh-pages": "^3.2.3",
     "glob": "^7.2.0",
     "gsap": "^3.9.1",
-    "lodash.castarray": "^4.4.0",
-    "lodash.kebabcase": "^4.1.1",
-    "lodash.merge": "^4.6.2",
     "mini-css-extract-plugin": "^2.4.6",
     "path": "^0.12.7",
     "postcss": "^8.4.5",
