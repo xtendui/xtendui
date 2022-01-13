@@ -1,4 +1,4 @@
-import kebabCase from 'lodash.kebabcase'
+import kebabCase from 'lodash/kebabcase'
 
 export const markdownSlug = page => {
   const slugType = kebabCase(page.frontmatter.type)

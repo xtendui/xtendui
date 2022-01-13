@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
-import kebabCase from 'lodash.kebabcase'
+import kebabCase from 'lodash/kebabcase'
 import 'xtendui/src/toggle.js'
 import 'xtendui/src/tooltip.js'
 

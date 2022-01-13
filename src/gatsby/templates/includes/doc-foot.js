@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import kebabCase from 'lodash.kebabcase'
+import kebabCase from 'lodash/kebabcase'
 
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
