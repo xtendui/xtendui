@@ -50,12 +50,12 @@ jobs:
           **/node_modules
           ~/.npm
           ~/.cache/Cypress
-        key: ${{ runner.os }}-node${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn-0.1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node${{ env.NODE }}-yarn-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn-0.1-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile --prefer-offline
+      run: yarn install --frozen-lockfile
     # build/action.yml composite
     - name: Generate demos
       run: yarn generate
