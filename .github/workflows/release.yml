@@ -39,12 +39,12 @@ jobs:
           **/node_modules
           ~/.npm
           ~/.cache/Cypress
-        key: ${{ runner.os }}-node${{ env.NODE }}-yarn-0.1-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node${{ env.NODE }}-yarn-0.1-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile --prefer-offline
     # release/action.yml composite
     - name: Release
       uses: cycjimmy/semantic-release-action@v2
@@ -81,12 +81,12 @@ jobs:
           **/node_modules
           ~/.npm
           ~/.cache/Cypress
-        key: ${{ runner.os }}-node${{ env.NODE }}-yarn-0.1-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node${{ env.NODE }}-yarn-0.1-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
-      run: yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile --prefer-offline
     # build/action.yml composite
     - name: Generate demos
       run: yarn generate

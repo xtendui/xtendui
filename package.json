@@ -96,7 +96,6 @@
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-source-contentful": "^7.3.0",
     "gatsby-source-filesystem": "^4.5.0",
-    "gatsby-source-prismic": "^5.2.5",
     "gatsby-transformer-remark": "^5.5.0",
     "gh-pages": "^3.2.3",
     "glob": "^7.2.0",
