@@ -1,6 +1,6 @@
 const plugin = require('tailwindcss/plugin')
-const merge = require('lodash/merge')
-const castArray = require('lodash/castArray')
+const merge = require('lodash.merge')
+const castArray = require('lodash.castArray')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addVariant, e, theme }) {
