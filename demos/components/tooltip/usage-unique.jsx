@@ -6,11 +6,11 @@ export default function demo() {
   return (
     <div>
       Lorem ipsum{' '}
-      <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique' }">
+      <a href="/" data-xt-tooltip="{ targets: '#tooltip--unique' }">
         dolor
       </a>{' '}
       sit
-      <a href="#" data-xt-tooltip="{ targets: '#tooltip--unique' }">
+      <a href="/" data-xt-tooltip="{ targets: '#tooltip--unique' }">
         amet
       </a>
       <div className="*** xt-tooltip p-3 ***" id="tooltip--unique">

@@ -15,18 +15,22 @@ const mountTest = ({ ref }) => {
 
   // init
 
+  const count = parseFloat(ref.getAttribute('data-test-mount') ?? 0) + 1
+  ref.setAttribute('data-test-mount', count)
   // eslint-disable-next-line no-console
   console.log(
-    'TEST PIN MOUNT this should NOT be called on resize and xtNamespace should be 1.',
+    'TEST pin mount this should NOT be called on resize and xtNamespace should be 1.',
     Xt.dataStorage.get(self.ns, 'xtNamespace').length
   )
 
   // resize
 
   const refresh = () => {
+    const count = parseFloat(ref.getAttribute('data-test-refresh') ?? 0) + 1
+    ref.setAttribute('data-test-refresh', count)
     // eslint-disable-next-line no-console
     console.log(
-      'TEST PIN RESIZE this should be called one time on resize and Xt._mountArr should not increase.',
+      'TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.',
       Xt._mountArr.length
     )
   }
@@ -55,7 +59,7 @@ const mountTest = ({ ref }) => {
   return () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST PIN UNMOUNT this should NOT be called on resize and xtNamespace should be 0 on unmount.',
+      'TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.',
       Xt.dataStorage.get(self.ns, 'xtNamespace').length
     )
     ScrollTrigger.removeEventListener('refresh', refresh)

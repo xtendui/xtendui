@@ -10,18 +10,18 @@ const html = /* HTML */ `
         <div class="${classes.cardMd()} *** md:w-7/12 *** bg-gray-100 md:rounded-bl${classes.cardRadius()}">
           <div class="xt-h4">Lorem ipsum</div>
           <p>
-            <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+            <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
             velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
         <div class="*** flex flex-col md:w-5/12 ***">
           <div class="*** flex-auto *** ${classes.cardSm()}">
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.</p>
           </div>
           <div
             class="${classes.cardSm()} ${classes.textDefault()} rounded-b${classes.cardRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()}">
-            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.</p>
+            <p><strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.</p>
           </div>
         </div>
       </div>

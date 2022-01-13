@@ -29,7 +29,8 @@ export default function demo() {
             <a
               href="#anchor-1"
               className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
-              data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }">
+              data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
+              data-xt-scrollto-hash="true">
               #1
             </a>
             <button
@@ -55,6 +56,7 @@ export default function demo() {
           <label className="cursor-pointer inline-flex items-baseline">
             <input
               type="checkbox"
+              aria-label="Deactivate classes"
               className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             />
             <span className="ml-4">Deactivate classes</span>

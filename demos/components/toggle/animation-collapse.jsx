@@ -20,7 +20,7 @@ export default function demo() {
               data-xt-toggle-target>
               <div className="xt-card py-5 px-3 *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -42,7 +42,7 @@ export default function demo() {
               data-xt-toggle-target>
               <div className="xt-card py-5 px-3 *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -62,7 +62,7 @@ export default function demo() {
 
           <div>
             <a
-              href="#"
+              href="/"
               type="button"
               className="xt-button *** w-full justify-start text-left *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
               data-xt-toggle-element>

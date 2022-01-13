@@ -2,7 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <nav className="xt-list xt-list-3 flex-col">
+      <nav aria-label="Navigation" className="xt-list xt-list-3 flex-col">
         <div>
           <div className="xt-list xt-list-3 *** items-end ***">
             <div>

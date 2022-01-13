@@ -6,11 +6,12 @@ export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-tooltip="{ positionInner: 'span' }">
-          <div data-xt-tooltip-element>
+        <div data-xt-tooltip="{ mouseParent: true, positionInner: 'span' }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               <span className="m-4">relative to this span</span>
             </button>
 

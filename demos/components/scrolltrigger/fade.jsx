@@ -16,7 +16,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -27,7 +27,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -38,7 +38,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -49,7 +49,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -60,7 +60,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -71,7 +71,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -82,7 +82,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -93,7 +93,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -104,7 +104,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -115,7 +115,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -126,7 +126,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -137,7 +137,7 @@ export default function demo() {
           <div className="*** xt-card *** rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h5">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>

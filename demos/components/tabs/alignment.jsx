@@ -2,9 +2,9 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <nav className="xt-list xt-list-2 flex-col">
+      <nav aria-label="Navigation" className="xt-list xt-list-2 flex-col">
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify default (center)
@@ -27,7 +27,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md *** justify-center text-center *** font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify center
@@ -50,7 +50,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md *** justify-start text-left *** font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify start
@@ -73,7 +73,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md *** justify-end text-right *** font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify end
@@ -96,7 +96,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md *** justify-between *** font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify between{' '}
@@ -117,7 +117,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md *** justify-around *** font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify around{' '}

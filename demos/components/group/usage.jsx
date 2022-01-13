@@ -44,7 +44,7 @@ export default function demo() {
         <div className="*** xt-list ***">
           <div className="*** inline-flex flex-col md:flex-row md:flex-nowrap ***">
             <a
-              href="#"
+              href="/"
               className="xt-button text-2xs py-1 px-2.5 *** rounded-t-md md:rounded-tl-none md:rounded-r-md md:order-3 *** font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
               +
             </a>
@@ -57,7 +57,7 @@ export default function demo() {
               max="100"
             />
             <a
-              href="#"
+              href="/"
               className="xt-button text-2xs py-1 px-2.5 *** rounded-b-md md:rounded-br-none md:rounded-l-md md:order-1 *** font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
               -
             </a>

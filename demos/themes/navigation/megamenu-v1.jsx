@@ -22,6 +22,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
+                aria-label="Use mouse events"
                 className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 defaultChecked
               />
@@ -33,10 +34,11 @@ export default function demo() {
 
           <div className="container">
             <div className="xt-list -mx-4">
-              <div data-xt-drop-element>
+              <div>
                 <a
                   href="/"
-                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
+                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                  data-xt-drop-element>
                   Menu #1
                 </a>
 
@@ -46,19 +48,19 @@ export default function demo() {
                     <div className="*** xt-drop-content ***">
                       <div className="pt-16 pb-24 text-white xt-links-inverse">
                         <div className="container">
-                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                          <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Lorem ipsum
                           </a>
-                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                          <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Dolor sit amet
                           </a>
-                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                          <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Consectetur adipiscing elit
                           </a>
-                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                          <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Morbi nec mauris est
                           </a>
-                          <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
+                          <a href="/" className="xt-button xt-link text-lg mt-6 py-2 px-0">
                             {' '}
                             Show all{' '}
                           </a>
@@ -69,10 +71,11 @@ export default function demo() {
                 </div>
               </div>
 
-              <div data-xt-drop-element>
+              <div>
                 <a
                   href="/"
-                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
+                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                  data-xt-drop-element>
                   Menu #2
                 </a>
 
@@ -82,13 +85,13 @@ export default function demo() {
                     <div className="*** xt-drop-content ***">
                       <div className="pt-16 pb-24 text-white xt-links-inverse">
                         <div className="container">
-                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                          <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Lorem ipsum
                           </a>
-                          <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                          <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                             Dolor sit amet
                           </a>
-                          <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
+                          <a href="/" className="xt-button xt-link text-lg mt-6 py-2 px-0">
                             {' '}
                             Show all{' '}
                           </a>
@@ -99,10 +102,11 @@ export default function demo() {
                 </div>
               </div>
 
-              <div data-xt-drop-element>
+              <div>
                 <a
                   href="/"
-                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100">
+                  className="xt-button text-sm py-6 px-4 button--line text-white xt-links-inverse font-medium leading-snug tracking-wider uppercase opacity-75 hover:opacity-100 on:opacity-100"
+                  data-xt-drop-element>
                   Menu #3
                 </a>
 
@@ -114,30 +118,30 @@ export default function demo() {
                         <div className="container">
                           <div className="xt-row xt-row-x-8">
                             <div className="w-full md:w-6/12">
-                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                              <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Lorem ipsum
                               </a>
-                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                              <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Dolor sit amet
                               </a>
-                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                              <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Consectetur adipiscing elit
                               </a>
-                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                              <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Morbi nec mauris est
                               </a>
                             </div>
                             <div className="w-full md:w-6/12">
-                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                              <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Dolor sit amet
                               </a>
-                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                              <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Consectetur adipiscing elit
                               </a>
-                              <a href="#" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
+                              <a href="/" className="xt-button w-full text-left justify-start py-4 px-0 text-3xl">
                                 Morbi nec mauris est
                               </a>
-                              <a href="#" className="xt-button xt-link text-lg mt-6 py-2 px-0">
+                              <a href="/" className="xt-button xt-link text-lg mt-6 py-2 px-0">
                                 {' '}
                                 Show all{' '}
                               </a>
@@ -274,11 +278,12 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(megamenu, {
+    mouseParent: true,
     queue: false,
     duration: 500,
     preventEvent: true,
     // activated by switcher
-    //on: 'mouseenter',
+    //on: 'mouseenter focus',
     //off: 'mouseleave',
     //delay: 150,
   })
@@ -418,11 +423,13 @@ const mountDrops = ({ ref }) => {
   self.container.addEventListener('off.xt.drop', off, true) // useCapture event propagation
 
   // leave
-  // when want to close the drop on mouseleave also when using 'click'
 
   const leave = e => {
     const tr = e.target
-    tr.dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    // enhancement when want to close the drop on mouseleave also when using 'click'
+    if (self.options.on === 'click') {
+      tr.dispatchEvent(new CustomEvent('off.trigger.xt.drop'))
+    }
   }
 
   for (const tr of self.targets) {
@@ -462,7 +469,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'on.xt.drop') {
-      el = el.closest('[data-xt-drop-element]').querySelector(':scope > .button--line')
+      el = el.parentNode.querySelector(':scope > .button--line')
     } else {
       btnOn = true
     }
@@ -506,7 +513,7 @@ const mountLine = ({ ref }) => {
     let el = e.target
     /***/
     if (e.type === 'off.xt.drop') {
-      el = el.closest('[data-xt-drop-element]').querySelector(':scope > .button--line')
+      el = el.parentNode.querySelector(':scope > .button--line')
     } else {
       btnOn = false
     }
@@ -586,7 +593,7 @@ const mountSwitcher = ({ ref }) => {
     const self = Xt.get({ name: 'xt-drop', el: megamenu })
     if (self) {
       if (switcher.checked) {
-        self.options.on = 'mouseenter'
+        self.options.on = 'mouseenter focus'
         self.options.off = 'mouseleave'
         self.options.delay = 150
       } else {

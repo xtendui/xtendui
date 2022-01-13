@@ -36,7 +36,7 @@ const html = /* HTML */ `
             data-xt-slider-dragger>
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                     <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
@@ -58,7 +58,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                     <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
@@ -78,7 +78,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -92,7 +92,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -106,7 +106,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -120,7 +120,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -134,7 +134,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                   </div>
@@ -148,7 +148,7 @@ const html = /* HTML */ `
 
             <div class="xt-slide w-6/12 md:w-4/12 lg:w-3/12 ${classes.slide()}" data-xt-slider-target>
               <div class="*** transition opacity-0 scale-90 group-in:opacity-100 group-in:scale-100 ***">
-                <a href="#" class="*** listing-item *** block">
+                <a href="/" class="*** listing-item *** block">
                   <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                     <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                   </div>
@@ -161,7 +161,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <nav class="hidden" data-xt-slider-pagination>
+          <nav aria-label="Slider Navigation" class="hidden" data-xt-slider-pagination>
             <button type="button" class="xt-button hidden" data-xt-slider-element></button>
           </nav>
         </div>
@@ -173,7 +173,7 @@ const html = /* HTML */ `
 
           <div class="xt-row xt-row-4">
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                   <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
@@ -191,7 +191,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                   <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
@@ -209,7 +209,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -221,7 +221,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -233,7 +233,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -245,7 +245,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -257,7 +257,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -269,7 +269,7 @@ const html = /* HTML */ `
             </div>
 
             <div class="w-6/12 md:w-4/12 lg:w-3/12">
-              <a href="#" class="*** listing-item *** block">
+              <a href="/" class="*** listing-item *** block">
                 <div class="*** xt-media-container *** bg-gray-500 overflow-hidden pb-[75%]">
                   <img class="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>

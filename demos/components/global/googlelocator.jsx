@@ -72,6 +72,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
+                      aria-label="All types"
                       className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       name="type-options"
                       defaultValue=""
@@ -86,6 +87,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
+                      aria-label="Restaurant"
                       className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       name="type-options"
                       defaultValue="restaurant"
@@ -99,6 +101,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="radio"
+                      aria-label="School"
                       className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       name="type-options"
                       defaultValue="school"
@@ -112,6 +115,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
+                      aria-label="Favourite"
                       className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       name="type-fav"
                       defaultValue="fav"
@@ -162,7 +166,7 @@ export default function demo() {
                       <div data-xt-populate="additional"></div>
                     </div>
                     <a
-                      href="#"
+                      href="/"
                       target="_blank"
                       rel="noopener"
                       className="text-2xs uppercase xt-list xt-list-2 flex-col items-center"

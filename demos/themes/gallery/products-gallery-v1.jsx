@@ -212,7 +212,7 @@ export default function demo() {
                     </div>
                   </div>
 
-                  <div className="xt-overlay group" id="overlay--product-images">
+                  <div aria-label="Modal" className="xt-overlay group" id="overlay--product-images">
                     <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
                     <div className="xt-overlay-container *** p-0 ***">
                       <button
@@ -373,6 +373,7 @@ export default function demo() {
                     Red
                     <input
                       type="radio"
+                      aria-label="Red"
                       className="sr-only"
                       name="radio-button"
                       data-node-variants-element
@@ -385,6 +386,7 @@ export default function demo() {
                     Green
                     <input
                       type="radio"
+                      aria-label="Green"
                       className="sr-only"
                       name="radio-button"
                       data-node-variants-element
@@ -397,6 +399,7 @@ export default function demo() {
                     Blue
                     <input
                       type="radio"
+                      aria-label="Blue"
                       className="sr-only"
                       name="radio-button"
                       data-node-variants-element

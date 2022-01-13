@@ -10,6 +10,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="checkbox"
+            aria-label="Lorem ipsum"
             className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="checkbox-button-0"
             defaultChecked
@@ -21,6 +22,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="checkbox"
+            aria-label="Lorem ipsum"
             className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="checkbox-button-1"
           />
@@ -28,18 +30,19 @@ export default function demo() {
 
         <label className="*** xt-button *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** focus-within:outline-browser ***">
           Lorem ipsum
-          <input type="radio" className="sr-only" name="radio-button" defaultChecked />
+          <input type="radio" aria-label="Lorem ipsum" className="sr-only" name="radio-button" defaultChecked />
         </label>
 
         <label className="*** xt-button *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200 *** focus-within:outline-browser ***">
           Lorem ipsum
-          <input type="radio" className="sr-only" name="radio-button" />
+          <input type="radio" aria-label="Lorem ipsum" className="sr-only" name="radio-button" />
         </label>
 
         <label className="*** xt-button *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-gray-900 bg-gray-100 transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200">
           Lorem ipsum
           <input
             type="radio"
+            aria-label="Lorem ipsum"
             className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="switch-button"
             defaultChecked
@@ -50,6 +53,7 @@ export default function demo() {
           Lorem ipsum
           <input
             type="radio"
+            aria-label="Lorem ipsum"
             className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
             name="switch-button"
           />

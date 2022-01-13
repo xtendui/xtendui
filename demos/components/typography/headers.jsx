@@ -5,7 +5,7 @@ export default function demo() {
       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
 
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
         eget, vehicula scelerisque elit.
       </p>
@@ -13,7 +13,7 @@ export default function demo() {
       <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
 
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
         eget, vehicula scelerisque elit.
       </p>
@@ -21,7 +21,7 @@ export default function demo() {
       <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
 
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
         eget, vehicula scelerisque elit.
       </p>
@@ -29,7 +29,7 @@ export default function demo() {
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
 
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
         eget, vehicula scelerisque elit.
       </p>
@@ -37,7 +37,7 @@ export default function demo() {
       <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h5>
 
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
         eget, vehicula scelerisque elit.
       </p>
@@ -45,7 +45,7 @@ export default function demo() {
       <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
 
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
         eget, vehicula scelerisque elit.
       </p>
@@ -53,7 +53,7 @@ export default function demo() {
       <h3 className="xt-h6 sm:xt-h5 md:xt-h4">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
 
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit, velit
+        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
         eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
         eget, vehicula scelerisque elit.
       </p>

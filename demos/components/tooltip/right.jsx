@@ -6,11 +6,12 @@ export default function demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">
-        <div data-xt-tooltip="{ position: 'right' }">
-          <div data-xt-tooltip-element>
+        <div data-xt-tooltip="{ mouseParent: true, position: 'right' }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               right
               <br />
               ...
@@ -25,11 +26,12 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-tooltip="{ position: 'right-start' }">
-          <div data-xt-tooltip-element>
+        <div data-xt-tooltip="{ mouseParent: true, position: 'right-start' }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               right start
               <br />
               ...
@@ -44,11 +46,12 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-tooltip="{ position: 'right-end' }">
-          <div data-xt-tooltip-element>
+        <div data-xt-tooltip="{ mouseParent: true, position: 'right-end' }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               right end
               <br />
               ...
@@ -63,11 +66,12 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-tooltip="{ position: 'right', inset: true }">
-          <div data-xt-tooltip-element>
+        <div data-xt-tooltip="{ mouseParent: true, position: 'right', inset: true }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               right inset
               <br />
               ...
@@ -82,11 +86,12 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-tooltip="{ position: 'right-start', inset: true }">
-          <div data-xt-tooltip-element>
+        <div data-xt-tooltip="{ mouseParent: true, position: 'right-start', inset: true }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               right start inset
               <br />
               ...
@@ -101,11 +106,12 @@ export default function demo() {
           </div>
         </div>
 
-        <div data-xt-tooltip="{ position: 'right-end', inset: true }">
-          <div data-xt-tooltip-element>
+        <div data-xt-tooltip="{ mouseParent: true, position: 'right-end', inset: true }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               right end inset
               <br />
               ...

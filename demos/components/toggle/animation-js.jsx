@@ -10,7 +10,7 @@ export default function demo() {
   }, [])
 
   return (
-    <div className="demo--toggle-animation-js-multiple-react" ref={ref}>
+    <div className="demo--toggle-animation-js-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center">
         <button
           type="button"

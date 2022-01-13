@@ -16,9 +16,9 @@ export default function demo() {
 
           <div className="xt-drop p-3 *** group ***" data-xt-drop-target>
             <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white *** transition opacity-0 -translate-x-4 group-in:opacity-100 group-in:translate-x-0 group-out:translate-x-4 ***">
-              <nav className="xt-list flex-col p-3">
+              <nav aria-label="Drop" className="xt-list flex-col p-3">
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 </a>
@@ -69,7 +69,7 @@ export default function demo() {
               <div className="p-7 sm:p-9 text-base">
                 <div className="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>

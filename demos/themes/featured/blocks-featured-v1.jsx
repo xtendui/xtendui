@@ -12,7 +12,7 @@ export default function demo() {
   return (
     <div className="demo--blocks-featured-v1-react" ref={ref}>
       <div className="*** featured *** inline-block w-full bg-primary-900 text-white xt-links-inverse">
-        <a href="#" className="*** featured-item *** block my-28">
+        <a href="/" className="*** featured-item *** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
@@ -40,7 +40,7 @@ export default function demo() {
           </div>
         </a>
 
-        <a href="#" className="*** featured-item *** block my-28">
+        <a href="/" className="*** featured-item *** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
@@ -68,7 +68,7 @@ export default function demo() {
           </div>
         </a>
 
-        <a href="#" className="*** featured-item *** block my-28">
+        <a href="/" className="*** featured-item *** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
@@ -98,7 +98,7 @@ export default function demo() {
       </div>
 
       <div className="*** featured *** inline-block w-full bg-white">
-        <a href="#" className="*** featured-item *** block my-28">
+        <a href="/" className="*** featured-item *** block my-28">
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">

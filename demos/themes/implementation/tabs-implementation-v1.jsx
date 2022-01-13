@@ -8,10 +8,9 @@ export default function demo() {
       <div className="max-w-xl mx-auto">
         <div data-xt-toggle="{ min: 1, duration: 500 }">
           <div className="xt-card p-1.5 rounded-full text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
-            <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
+            <nav aria-label="Navigation" className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
               <a
-                href="#"
-                type="button"
+                role="button"
                 className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="description">
@@ -32,8 +31,7 @@ export default function demo() {
                 Description
               </a>
               <a
-                href="#"
-                type="button"
+                role="button"
                 className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="features">
@@ -57,8 +55,7 @@ export default function demo() {
                 Features
               </a>
               <a
-                href="#"
-                type="button"
+                role="button"
                 className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="accessories">
@@ -81,8 +78,7 @@ export default function demo() {
                 Accessories
               </a>
               <a
-                href="#"
-                type="button"
+                role="button"
                 className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                 data-xt-toggle-element
                 data-xt-hash="manuals">
@@ -113,7 +109,7 @@ export default function demo() {
               <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Description</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -136,7 +132,7 @@ export default function demo() {
               <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Features</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -149,7 +145,7 @@ export default function demo() {
               <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Accessories</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -182,7 +178,7 @@ export default function demo() {
               <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
                 <div className="xt-h5">Manuals</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>

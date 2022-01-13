@@ -9,20 +9,22 @@ export default function demo() {
 
   return (
     <div className="demo--jumptocontent-react" ref={ref}>
-      <div className="*** jumptocontent *** off:opacity-0 off:pointer-events-none out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
+      <nav
+        className="*** jumptocontent *** off:opacity-0 off:pointer-events-none out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0"
+        aria-label="Jump to content">
         <a
           href="#jumptocontent"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
           Jump to content
         </a>
-      </div>
+      </nav>
 
       <div className="xt-row xt-row-6">
         <div className="w-full">
           <div className="xt-card rounded-2xl p-6 text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h4">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -33,7 +35,7 @@ export default function demo() {
           <div className="xt-card rounded-2xl p-6 text-gray-900 xt-links-default bg-gray-100">
             <div className="xt-h4">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>

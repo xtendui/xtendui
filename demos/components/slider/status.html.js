@@ -9,6 +9,7 @@ const html = /* HTML */ `
           <label class="${classes.checkLabel()}">
             <input
               type="checkbox"
+              aria-label="Group Same"
               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
               checked />
             <span class="${classes.checkContent()}">Group Same</span>
@@ -77,7 +78,7 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <nav class="hidden" data-xt-slider-pagination>
+        <nav aria-label="Slider Navigation" class="hidden" data-xt-slider-pagination>
           <button type="button" class="xt-button hidden" data-xt-slider-element></button>
         </nav>
       </div>

@@ -7,10 +7,12 @@ export default function demo() {
     <div>
       <div className="max-w-4xl mx-auto">
         <div className="xt-card rounded-2xl p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-white">
-          <div data-xt-tooltip="{ duration: 500 }">
+          <div data-xt-tooltip="{ mouseParent: true, duration: 500 }">
             Example tooltips
-            <span data-xt-tooltip-element>
-              <a href="#">product informations</a>
+            <span>
+              <a href="/" data-xt-tooltip-element>
+                product informations
+              </a>
 
               <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
                 <div className="*** xt-card w-80 rounded-md shadow-md text-white xt-links-inverse font-medium bg-black *** *** transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
@@ -71,8 +73,10 @@ export default function demo() {
               </div>
             </span>
             and
-            <span data-xt-tooltip-element>
-              <a href="#">credit card CVV</a>
+            <span>
+              <a href="/" data-xt-tooltip-element>
+                credit card CVV
+              </a>
 
               <div className="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
                 <div className="*** xt-card w-80 rounded-md shadow-md text-gray-900 xt-links-default bg-white *** *** transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">

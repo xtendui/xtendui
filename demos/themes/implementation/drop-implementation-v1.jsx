@@ -15,9 +15,9 @@ export default function demo() {
           </button>
           <div className="xt-drop p-3 *** group ***" data-xt-drop-target>
             <div className="xt-card w-60 rounded-md shadow-lg text-white xt-links-inverse bg-primary-500 *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
-              <nav className="xt-list flex-col p-3">
+              <nav aria-label="Drop" className="xt-list flex-col p-3">
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ export default function demo() {
                   Description
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export default function demo() {
                   Features
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ export default function demo() {
                   Accessories
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug justify-start text-left text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -113,9 +113,9 @@ export default function demo() {
           </button>
           <div className="xt-drop p-3 *** group ***" data-xt-drop-target>
             <div className="xt-card w-80 rounded-md shadow-lg text-gray-900 xt-links-default bg-white *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
-              <nav className="xt-list xt-list-1 flex-col *** py-2 ***">
+              <nav aria-label="Drop" className="xt-list xt-list-1 flex-col *** py-2 ***">
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   <div className="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                     <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">
@@ -141,7 +141,7 @@ export default function demo() {
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   <div className="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                     <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">
@@ -166,7 +166,7 @@ export default function demo() {
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   <div className="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                     <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">

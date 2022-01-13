@@ -22,7 +22,7 @@ export default function demo() {
             Overlay
           </button>
 
-          <div className="xt-overlay group" id="overlay--scrolltrigger-matches">
+          <div aria-label="Modal" className="xt-overlay group" id="overlay--scrolltrigger-matches">
             <div className="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container max-w-3xl">
               <div className="xt-overlay-inner">
@@ -49,7 +49,7 @@ export default function demo() {
                   <div className="p-7 sm:p-9 text-base">
                     <div className="xt-h4">Overlay 0</div>
                     <p>
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
@@ -76,7 +76,7 @@ export default function demo() {
       <div className="xt-card p-6 sm:p-8 text-sm text-gray-900 xt-links-default bg-gray-100">
         <div className="xt-h4">Lorem ipsum</div>
         <p>
-          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+          <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
           velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
           vitae magna eget, vehicula scelerisque elit.
         </p>
@@ -159,18 +159,22 @@ const mountTest = ({ ref }) => {
 
   // init
 
+  const count = parseFloat(ref.getAttribute('data-test-mount') ?? 0) + 1
+  ref.setAttribute('data-test-mount', count)
   // eslint-disable-next-line no-console
   console.log(
-    'TEST PIN MOUNT this should NOT be called on resize and xtNamespace should be 1.',
+    'TEST pin mount this should NOT be called on resize and xtNamespace should be 1.',
     Xt.dataStorage.get(self.ns, 'xtNamespace').length
   )
 
   // resize
 
   const refresh = () => {
+    const count = parseFloat(ref.getAttribute('data-test-refresh') ?? 0) + 1
+    ref.setAttribute('data-test-refresh', count)
     // eslint-disable-next-line no-console
     console.log(
-      'TEST PIN RESIZE this should be called one time on resize and Xt._mountArr should not increase.',
+      'TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.',
       Xt._mountArr.length
     )
   }
@@ -199,7 +203,7 @@ const mountTest = ({ ref }) => {
   return () => {
     // eslint-disable-next-line no-console
     console.log(
-      'TEST PIN UNMOUNT this should NOT be called on resize and xtNamespace should be 0 on unmount.',
+      'TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.',
       Xt.dataStorage.get(self.ns, 'xtNamespace').length
     )
     ScrollTrigger.removeEventListener('refresh', refresh)

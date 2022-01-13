@@ -50,7 +50,7 @@ export default function demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="/img.svg" loading="lazy" alt="" />
+                <img className="h-full w-auto" src="/img.svg" loading="eager" alt="" />
               </div>
             </div>
 
@@ -94,7 +94,7 @@ export default function demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="/img-ratio.svg" loading="lazy" alt="" />
+                <img className="h-full w-auto" src="/img-ratio.svg" loading="eager" alt="" />
               </div>
             </div>
 
@@ -138,7 +138,7 @@ export default function demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="https://source.unsplash.com/ruJm3dBXCqw" loading="lazy" alt="" />
+                <img className="h-full w-auto" src="https://source.unsplash.com/ruJm3dBXCqw" loading="eager" alt="" />
               </div>
             </div>
 
@@ -182,7 +182,7 @@ export default function demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="https://source.unsplash.com/wQLAGv4_OYs" loading="lazy" alt="" />
+                <img className="h-full w-auto" src="https://source.unsplash.com/wQLAGv4_OYs" loading="eager" alt="" />
               </div>
             </div>
 
@@ -226,7 +226,7 @@ export default function demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="https://source.unsplash.com/OlTjeydUpQw" loading="lazy" alt="" />
+                <img className="h-full w-auto" src="https://source.unsplash.com/OlTjeydUpQw" loading="eager" alt="" />
               </div>
             </div>
 
@@ -270,7 +270,7 @@ export default function demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="https://source.unsplash.com/wEL2zPX3jDg" loading="lazy" alt="" />
+                <img className="h-full w-auto" src="https://source.unsplash.com/wEL2zPX3jDg" loading="eager" alt="" />
               </div>
             </div>
 
@@ -314,12 +314,15 @@ export default function demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="lazy" alt="" />
+                <img className="h-full w-auto" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="eager" alt="" />
               </div>
             </div>
           </div>
 
-          <nav className="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+          <nav
+            aria-label="Slider Navigation"
+            className="w-full xt-list xt-list-2 pt-4 items-center justify-center"
+            data-xt-slider-pagination>
             <button
               type="button"
               className="xt-button h-10 rounded-md overflow-hidden hidden"

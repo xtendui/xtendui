@@ -117,7 +117,7 @@ export default function demo() {
           <div className="w-full">
             <label className="block mb-1 font-medium text-gray-700 label-required"> Select multiple </label>
             <select
-              className="block w-full xt-select py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none"
+              className="block w-full xt-select py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none *** invalid-submit ***"
               aria-label="Select multiple"
               multiple
               required>
@@ -125,8 +125,8 @@ export default function demo() {
               <option>Option 2</option>
               <option>Option 3</option>
             </select>
-            <div className="mt-3 text-red-500 text-xs leading-snug *** custom-validation-error ***">
-              Scroll to this error on page load
+            <div className="mt-3 text-red-500 text-xs leading-snug *** custom-backend-error ***">
+              Backend custom error it scrolls to this on page load
             </div>
           </div>
 
@@ -138,12 +138,13 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     required
                     disabled
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -154,11 +155,12 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     required
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -175,12 +177,13 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="radio-validation"
                     required
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -191,11 +194,12 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="radio-validation"
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -212,11 +216,12 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     required
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -227,12 +232,13 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="switch-validation"
                     required
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -243,11 +249,12 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="switch-validation"
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -274,7 +281,7 @@ export default function demo() {
 const mountScrollToError = ({ ref }) => {
   // vars
 
-  let el = ref.querySelector('.custom-validation-error')
+  let el = ref.querySelector('.custom-backend-error')
 
   // init
 

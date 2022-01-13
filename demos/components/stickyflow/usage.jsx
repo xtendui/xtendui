@@ -72,7 +72,7 @@ export default function demo() {
                 <div className="xt-h5 mb-6">€&nbsp;229,00</div>
 
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-3 px-4 text-base rounded-md mb-6 font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
                   Add to cart
                 </a>

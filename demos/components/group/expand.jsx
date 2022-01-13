@@ -38,7 +38,7 @@ export default function demo() {
           </div>
 
           <a
-            href="#"
+            href="/"
             className="xt-button py-2.5 px-3.5 text-sm rounded-r-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
             Search
           </a>

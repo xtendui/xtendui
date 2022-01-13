@@ -4,7 +4,7 @@ import 'xtendui/src/toggle'
 
 export default function demo() {
   return (
-    <div>
+    <div className="demo--toggle-animation-queue-react">
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
         <button
           type="button"

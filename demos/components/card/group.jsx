@@ -10,7 +10,7 @@ export default function demo() {
           <div className="p-7 sm:p-9 text-base *** md:w-7/12 *** bg-gray-100 md:rounded-bl-2xl">
             <div className="xt-h4">Lorem ipsum</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
@@ -18,12 +18,12 @@ export default function demo() {
           <div className="*** flex flex-col md:w-5/12 ***">
             <div className="*** flex-auto *** p-6 sm:p-8 text-sm">
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
               </p>
             </div>
             <div className="p-6 sm:p-8 text-sm text-gray-900 xt-links-default rounded-b-2xl md:rounded-bl-none bg-primary-100">
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
               </p>
             </div>
           </div>

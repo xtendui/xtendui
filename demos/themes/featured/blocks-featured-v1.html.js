@@ -7,7 +7,7 @@ const buttonLineContent = 'pl-8'
 const html = /* HTML */ `
   <div class="demo--blocks-featured-v1">
     <div class="*** featured *** inline-block w-full bg-primary-900 ${classes.textInverse()}">
-      <a href="#" class="*** featured-item *** block my-28">
+      <a href="/" class="*** featured-item *** block my-28">
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0">
@@ -35,7 +35,7 @@ const html = /* HTML */ `
         </div>
       </a>
 
-      <a href="#" class="*** featured-item *** block my-28">
+      <a href="/" class="*** featured-item *** block my-28">
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0 sm:order-2">
@@ -63,7 +63,7 @@ const html = /* HTML */ `
         </div>
       </a>
 
-      <a href="#" class="*** featured-item *** block my-28">
+      <a href="/" class="*** featured-item *** block my-28">
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0">
@@ -93,7 +93,7 @@ const html = /* HTML */ `
     </div>
 
     <div class="*** featured *** inline-block w-full bg-white">
-      <a href="#" class="*** featured-item *** block my-28">
+      <a href="/" class="*** featured-item *** block my-28">
         <div class="container">
           <div class="xt-row items-center">
             <div class="w-full md:w-5/12 z-0 sm:order-2">

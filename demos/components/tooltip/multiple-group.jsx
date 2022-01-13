@@ -5,10 +5,12 @@ import 'xtendui/src/tooltip'
 export default function demo() {
   return (
     <div>
-      <div data-xt-tooltip>
+      <div data-xt-tooltip="{ mouseParent: true }">
         Lorem ipsum
-        <span data-xt-tooltip-element data-xt-group="my-group">
-          <a href="#">dolor</a>
+        <span>
+          <a href="/" data-xt-tooltip-element data-xt-group="my-group">
+            dolor
+          </a>
 
           <div className="xt-tooltip p-3" data-xt-tooltip-target data-xt-group="my-group">
             <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
@@ -23,8 +25,10 @@ export default function demo() {
           </div>
         </span>
         sit
-        <span data-xt-tooltip-element>
-          <a href="#">amet</a>
+        <span>
+          <a href="/" data-xt-tooltip-element>
+            amet
+          </a>
 
           <div className="xt-tooltip p-3" data-xt-tooltip-target>
             <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">

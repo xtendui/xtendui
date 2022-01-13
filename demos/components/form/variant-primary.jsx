@@ -75,12 +75,13 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="checkbox"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-checkbox *** rounded-md bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       defaultChecked
                       disabled
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
@@ -91,10 +92,11 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="checkbox"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-checkbox *** rounded-md bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
@@ -111,12 +113,13 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-radio *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="radio-primary"
                       defaultChecked
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
@@ -127,11 +130,12 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-radio *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="radio-primary"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
@@ -148,10 +152,11 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="checkbox"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-switch *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
@@ -162,12 +167,13 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-switch *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="switch-primary"
                       defaultChecked
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
@@ -178,11 +184,12 @@ export default function demo() {
                   <label className="*** cursor-pointer inline-flex items-baseline ***">
                     <input
                       type="radio"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-switch *** rounded-full bg-primary-800 bg-opacity-25 border border-transparent transition-all defaultChecked:bg-primary-600 ***"
                       name="switch-primary"
                     />
                     <span className="*** ml-4 *** text-white xt-links-inverse">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>

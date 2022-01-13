@@ -15,7 +15,7 @@ export default function demo() {
             Contact
           </button>
 
-          <div className="xt-overlay *** group ***" data-xt-overlay-target>
+          <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
             <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
@@ -105,11 +105,12 @@ export default function demo() {
                             <label className="cursor-pointer inline-flex items-baseline">
                               <input
                                 type="checkbox"
+                                aria-label="privacy policy"
                                 className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the
-                                <a href="#" target="_blank" rel="noopener">
+                                <a href="/" target="_blank" rel="noopener">
                                   privacy policy
                                 </a>
                                 .
@@ -155,7 +156,7 @@ export default function demo() {
             Newsletter
           </button>
 
-          <div className="xt-overlay *** group ***" data-xt-overlay-target>
+          <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
             <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
@@ -209,6 +210,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
+                                    aria-label="Option 1"
                                     className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                                     name="radio-usage"
                                     defaultChecked
@@ -221,6 +223,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
+                                    aria-label="Option 2"
                                     className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                                     name="radio-usage"
                                   />
@@ -232,6 +235,7 @@ export default function demo() {
                                 <label className="cursor-pointer inline-flex items-baseline">
                                   <input
                                     type="radio"
+                                    aria-label="Option 3"
                                     className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                                     name="radio-usage"
                                   />
@@ -245,11 +249,12 @@ export default function demo() {
                             <label className="cursor-pointer inline-flex items-baseline">
                               <input
                                 type="checkbox"
+                                aria-label="privacy policy"
                                 className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the
-                                <a href="#" target="_blank" rel="noopener">
+                                <a href="/" target="_blank" rel="noopener">
                                   privacy policy
                                 </a>
                                 .
@@ -288,7 +293,7 @@ export default function demo() {
             Menu
           </button>
 
-          <div className="xt-overlay *** group ***" data-xt-overlay-target>
+          <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
             <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
@@ -363,7 +368,7 @@ export default function demo() {
                         </div>
 
                         <div className="-mx-3.5">
-                          <nav className="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                             <button
                               type="button"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
@@ -405,7 +410,7 @@ export default function demo() {
                               </svg>
                             </button>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Kid
                             </a>
@@ -417,19 +422,19 @@ export default function demo() {
                         </div>
 
                         <div className="-mx-3.5">
-                          <nav className="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               About
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               News
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Contact
                             </a>
@@ -438,9 +443,9 @@ export default function demo() {
 
                         <div className="mt-auto">
                           <div className="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
-                            <nav className="xt-list xt-list-1 flex-col">
+                            <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                               <a
-                                href="#"
+                                href="/"
                                 className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                                 Support{' '}
                                 <svg
@@ -459,7 +464,7 @@ export default function demo() {
                                 </svg>
                               </a>
                               <a
-                                href="#"
+                                href="/"
                                 className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                                 Login / Account{' '}
                                 <svg
@@ -480,7 +485,7 @@ export default function demo() {
                                 </svg>
                               </a>
                               <a
-                                href="#"
+                                href="/"
                                 className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                                 Language{' '}
                                 <svg
@@ -533,7 +538,7 @@ export default function demo() {
                         </div>
 
                         <div className="-mx-3.5">
-                          <nav className="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                             <button
                               type="button"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
@@ -575,12 +580,12 @@ export default function demo() {
                               </svg>
                             </button>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Jacket
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Underwear
                             </a>
@@ -617,14 +622,14 @@ export default function demo() {
                         </div>
 
                         <div className="-mx-3.5">
-                          <nav className="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               T-Shirt
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Polo
                             </a>
@@ -661,14 +666,14 @@ export default function demo() {
                         </div>
 
                         <div className="-mx-3.5">
-                          <nav className="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Jeans
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Short
                             </a>
@@ -705,14 +710,14 @@ export default function demo() {
                         </div>
 
                         <div className="-mx-3.5">
-                          <nav className="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Shirt
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                               Pant
                             </a>

@@ -41,7 +41,7 @@ export default function demo() {
                   <div className="p-7 sm:p-9 text-base">
                     <div className="xt-h4">Lorem ipsum</div>
                     <p>
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
@@ -58,7 +58,7 @@ export default function demo() {
                       justo.
                     </p>
                     <p>
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
@@ -75,7 +75,7 @@ export default function demo() {
                       justo.
                     </p>
                     <p>
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
@@ -92,7 +92,7 @@ export default function demo() {
                       justo.
                     </p>
                     <p>
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </p>
@@ -151,7 +151,7 @@ export default function demo() {
                     <div className="p-7 sm:p-9 text-base">
                       <div className="xt-h4">Lorem ipsum</div>
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                         suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                         mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
@@ -168,7 +168,7 @@ export default function demo() {
                         justo.
                       </p>
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                         suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                         mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
@@ -185,7 +185,7 @@ export default function demo() {
                         justo.
                       </p>
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                         suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                         mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>
@@ -202,7 +202,7 @@ export default function demo() {
                         justo.
                       </p>
                       <p>
-                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                         suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                         mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </p>

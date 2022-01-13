@@ -6,7 +6,7 @@ export default function demo() {
         <div className="container">
           <div className="*** xt-row xt-row-4 ***">
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -18,7 +18,7 @@ export default function demo() {
             </div>
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -30,7 +30,7 @@ export default function demo() {
             </div>
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -42,7 +42,7 @@ export default function demo() {
             </div>
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -54,7 +54,7 @@ export default function demo() {
             </div>
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -66,7 +66,7 @@ export default function demo() {
             </div>
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>
@@ -78,7 +78,7 @@ export default function demo() {
             </div>
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
                 </div>
@@ -90,7 +90,7 @@ export default function demo() {
             </div>
 
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
-              <a href="#" className="listing-item">
+              <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
                   <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                 </div>

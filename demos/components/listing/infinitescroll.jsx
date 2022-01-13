@@ -19,6 +19,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
+                aria-label="Activate on scroll"
                 className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 defaultChecked
               />

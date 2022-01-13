@@ -4,7 +4,7 @@ import 'xtendui/src/toggle'
 
 export default function demo() {
   return (
-    <div>
+    <div className="demo--toggle-prevent-event-react">
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ min: 1, preventEvent: true }">
         <a
           href="/"

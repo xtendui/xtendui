@@ -63,12 +63,13 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     defaultChecked
                     disabled
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -79,10 +80,11 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -99,12 +101,13 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="radio-md"
                     defaultChecked
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -115,11 +118,12 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="radio-md"
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -136,10 +140,11 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="checkbox"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -150,12 +155,13 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="switch-md"
                     defaultChecked
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>
@@ -166,11 +172,12 @@ export default function demo() {
                 <label className="cursor-pointer inline-flex items-baseline">
                   <input
                     type="radio"
+                    aria-label="Lorem ipsum"
                     className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     name="switch-md"
                   />
                   <span className="ml-4">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </span>

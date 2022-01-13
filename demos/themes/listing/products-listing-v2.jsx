@@ -22,7 +22,7 @@ export default function demo() {
               data-xt-slider-dragger>
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -42,7 +42,7 @@ export default function demo() {
 
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -62,7 +62,7 @@ export default function demo() {
 
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -77,7 +77,7 @@ export default function demo() {
 
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -92,7 +92,7 @@ export default function demo() {
 
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -107,7 +107,7 @@ export default function demo() {
 
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -122,7 +122,7 @@ export default function demo() {
 
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -137,7 +137,7 @@ export default function demo() {
 
               <div className="xt-slide w-6/12 md:w-4/12 lg:w-3/12 group" data-xt-slider-target>
                 <div className="*** transition opacity-0 group-in:opacity-100 ***">
-                  <a href="#" className="*** listing-item *** block group">
+                  <a href="/" className="*** listing-item *** block group">
                     <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                       <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                       <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -197,7 +197,7 @@ export default function demo() {
               </div>
             </button>
 
-            <nav className="hidden" data-xt-slider-pagination>
+            <nav aria-label="Slider Navigation" className="hidden" data-xt-slider-pagination>
               <button type="button" className="xt-button hidden" data-xt-slider-element></button>
             </nav>
           </div>
@@ -209,7 +209,7 @@ export default function demo() {
 
             <div className="xt-row xt-row-4">
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -227,7 +227,7 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -245,7 +245,7 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -258,7 +258,7 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -271,7 +271,7 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -284,7 +284,7 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -297,7 +297,7 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
@@ -310,7 +310,7 @@ export default function demo() {
               </div>
 
               <div className="w-6/12 md:w-4/12 lg:w-3/12">
-                <a href="#" className="*** listing-item *** block group">
+                <a href="/" className="*** listing-item *** block group">
                   <div className="*** xt-media-container *** bg-gray-500 pb-[125%] overflow-hidden">
                     <img className="*** xt-media *** object-cover" src="/img-alt.svg" loading="lazy" alt="" />
                     <div className="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>

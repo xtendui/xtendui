@@ -103,7 +103,7 @@ export default function demo() {
               <div className="p-7 sm:p-9 text-base md:text-lg md:p-10">
                 <div className="xt-h3">Overlay</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -199,12 +199,9 @@ const mountEventmethods = ({ ref }) => {
   const reinitBtn = ref.querySelector('#button--overlay-api-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(ref.dataset.reinitTimeout))
-    ref.dataset.reinitTimeout = setTimeout(() => {
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   reinitBtn.addEventListener('click', reinitFnc)

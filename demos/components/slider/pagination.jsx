@@ -4,7 +4,7 @@ import 'xtendui/src/slider'
 
 export default function demo() {
   return (
-    <div>
+    <div className="demo--slider-pagination-react">
       <div className="xt-slider" data-xt-slider>
         <div className="p-4 md:p-6 lg:p-8">
           <div
@@ -15,7 +15,10 @@ export default function demo() {
                 <div className="xt-h4" data-xt-slider-content>
                   1
                 </div>
-                <nav className="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+                <nav
+                  aria-label="Slider Navigation"
+                  className="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                  data-xt-slider-pagination>
                   <button
                     type="button"
                     className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
@@ -32,7 +35,10 @@ export default function demo() {
                 <div className="xt-h4" data-xt-slider-content>
                   2
                 </div>
-                <nav className="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+                <nav
+                  aria-label="Slider Navigation"
+                  className="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                  data-xt-slider-pagination>
                   <button
                     type="button"
                     className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
@@ -49,7 +55,10 @@ export default function demo() {
                 <div className="xt-h4" data-xt-slider-content>
                   3
                 </div>
-                <nav className="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+                <nav
+                  aria-label="Slider Navigation"
+                  className="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                  data-xt-slider-pagination>
                   <button
                     type="button"
                     className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
@@ -66,7 +75,10 @@ export default function demo() {
                 <div className="xt-h4" data-xt-slider-content>
                   4
                 </div>
-                <nav className="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+                <nav
+                  aria-label="Slider Navigation"
+                  className="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                  data-xt-slider-pagination>
                   <button
                     type="button"
                     className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
@@ -83,7 +95,10 @@ export default function demo() {
                 <div className="xt-h4" data-xt-slider-content>
                   5
                 </div>
-                <nav className="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+                <nav
+                  aria-label="Slider Navigation"
+                  className="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                  data-xt-slider-pagination>
                   <button
                     type="button"
                     className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
@@ -100,7 +115,10 @@ export default function demo() {
                 <div className="xt-h4" data-xt-slider-content>
                   6
                 </div>
-                <nav className="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+                <nav
+                  aria-label="Slider Navigation"
+                  className="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                  data-xt-slider-pagination>
                   <button
                     type="button"
                     className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
@@ -117,7 +135,10 @@ export default function demo() {
                 <div className="xt-h4" data-xt-slider-content>
                   7
                 </div>
-                <nav className="w-full xt-list xt-list-1 pt-4 items-center justify-center" data-xt-slider-pagination>
+                <nav
+                  aria-label="Slider Navigation"
+                  className="w-full xt-list xt-list-1 pt-4 items-center justify-center"
+                  data-xt-slider-pagination>
                   <button
                     type="button"
                     className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"
@@ -130,7 +151,10 @@ export default function demo() {
             </div>
           </div>
 
-          <nav className="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+          <nav
+            aria-label="Slider Navigation"
+            className="w-full xt-list xt-list-2 pt-4 items-center justify-center"
+            data-xt-slider-pagination>
             <button
               type="button"
               className="xt-button p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all hidden"

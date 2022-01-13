@@ -4,12 +4,12 @@ import 'xtendui/src/toggle'
 
 export default function demo() {
   return (
-    <div>
+    <div className="demo--toggle-event-react">
       <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center">
         Mouseenter
       </div>
 
-      <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ on: 'mouseenter', off: false }">
+      <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ on: 'mouseenter focus', off: false }">
         <button
           type="button"
           className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"

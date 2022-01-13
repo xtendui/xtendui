@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-gatsby-templates-pages-404-js",
     "path": "/404.html",
     "result": {"data":{"menus":{"posts":[{"post":{"frontmatter":{"type":"Intro","title":"Intro","description":"Project overview and instructions to get stated.","tags":null}}},{"post":{"frontmatter":{"type":"Components","title":"Components","description":"Customizable components with an ecosystem of plugins.","tags":null}}},{"post":{"frontmatter":{"type":"Themes","title":"Themes","description":"UX themes with advanced interactions and animations.","tags":null}}},{"post":{"frontmatter":{"type":"Hidden","title":"Hidden","description":"Hidden","tags":["hidden"]}}}]}},"pageContext":{}},
-    "staticQueryHashes": ["1057888390","364365266"]}
+    "staticQueryHashes": ["1074071125","364365266"]}

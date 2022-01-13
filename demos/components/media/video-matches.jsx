@@ -50,13 +50,13 @@ const mountVideoMatches = ({ ref }) => {
     }
   }
 
-  addEventListener('resize', resize)
+  addEventListener('resize.xt', resize)
   resize()
 
   // unmount
 
   return () => {
-    removeEventListener('resize', resize)
+    removeEventListener('resize.xt', resize)
   }
 }
 

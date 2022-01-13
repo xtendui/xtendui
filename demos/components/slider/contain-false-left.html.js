@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--slider-contain-false-left">
     <div class="xt-slider" data-xt-slider="{ align: 'left', contain: false }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
@@ -57,7 +57,10 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+        <nav
+          aria-label="Slider Navigation"
+          class="w-full xt-list xt-list-2 pt-4 items-center justify-center"
+          data-xt-slider-pagination>
           <button
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"

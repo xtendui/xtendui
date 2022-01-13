@@ -14,10 +14,11 @@ export default function demo() {
         className="xt-card p-7 sm:p-9 text-base rounded-2xl text-white xt-links-inverse bg-primary-500"
         data-node-boundary>
         <div className="xt-list xt-list-3 items-center">
-          <div data-xt-tooltip-element>
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               Tooltip
             </button>
 
@@ -29,10 +30,11 @@ export default function demo() {
             </div>
           </div>
 
-          <div data-xt-tooltip-element>
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-tooltip-element>
               Tooltip
             </button>
 
@@ -61,6 +63,7 @@ const mountTooltip = ({ ref }) => {
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
+    mouseParent: true,
     position: 'bottom-end',
     popperjs: {
       strategy: 'fixed',

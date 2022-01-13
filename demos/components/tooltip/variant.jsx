@@ -17,7 +17,7 @@ export default function demo() {
           <div className="xt-tooltip p-3" data-xt-tooltip-target>
             <div className="xt-card rounded-md *** shadow-md text-white xt-links-inverse font-medium bg-black ***">
               <div className="py-2 px-2.5 text-xs">
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
                 <br />
                 Proin molestie{' '}
                 <svg
@@ -51,7 +51,7 @@ export default function demo() {
           <div className="xt-tooltip p-3" data-xt-tooltip-target>
             <div className="xt-card rounded-md *** shadow-md text-white xt-links-inverse bg-primary-500 ***">
               <div className="py-2 px-2.5 text-xs">
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
                 <br />
                 Proin molestie{' '}
                 <svg

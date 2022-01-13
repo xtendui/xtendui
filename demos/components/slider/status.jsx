@@ -17,6 +17,7 @@ export default function demo() {
             <label className="cursor-pointer inline-flex items-baseline">
               <input
                 type="checkbox"
+                aria-label="Group Same"
                 className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                 defaultChecked
               />
@@ -81,7 +82,7 @@ export default function demo() {
             </div>
           </div>
 
-          <nav className="hidden" data-xt-slider-pagination>
+          <nav aria-label="Slider Navigation" className="hidden" data-xt-slider-pagination>
             <button type="button" className="xt-button hidden" data-xt-slider-element></button>
           </nav>
         </div>

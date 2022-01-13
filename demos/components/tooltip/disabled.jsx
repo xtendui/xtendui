@@ -5,10 +5,12 @@ import 'xtendui/src/tooltip'
 export default function demo() {
   return (
     <div className="demo--tooltip-disable-react">
-      <div data-xt-tooltip>
+      <div data-xt-tooltip="{ mouseParent: true }">
         Lorem ipsum
-        <span data-xt-tooltip-element>
-          <a href="#">dolor</a>
+        <span>
+          <a href="/" data-xt-tooltip-element>
+            dolor
+          </a>
 
           <div className="xt-tooltip p-3" data-xt-tooltip-target>
             <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">
@@ -16,9 +18,11 @@ export default function demo() {
                 Lorem ipsum dolor sit amet
                 <div
                   className="inline-block"
-                  data-xt-tooltip="{ elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }">
-                  <span data-xt-tooltip-element-nested>
-                    <a href="#">dolor</a>
+                  data-xt-tooltip="{ mouseParent: true, elements: '[data-xt-tooltip-element-nested]', targets: '[data-xt-tooltip-target-nested]', matches: { '(min-width: 768px)': { disabled: true } } }">
+                  <span>
+                    <a href="/" data-xt-tooltip-element-nested>
+                      dolor
+                    </a>
 
                     <div className="xt-tooltip p-3" data-xt-tooltip-target-nested>
                       <div className="xt-card rounded-md shadow-md text-white xt-links-inverse font-medium bg-black">

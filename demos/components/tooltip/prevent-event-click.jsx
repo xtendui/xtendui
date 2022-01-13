@@ -7,7 +7,7 @@ export default function demo() {
     <div>
       <div data-xt-tooltip="{ on: 'click', off: 'click', preventEvent: true }">
         <a
-          href="#tooltip-with-link-0"
+          href="/"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
           data-xt-tooltip-element>
           Tooltip

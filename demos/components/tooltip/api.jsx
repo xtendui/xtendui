@@ -204,22 +204,20 @@ const mountEventmethods = ({ ref }) => {
   const addBtn = document.querySelector('#button--tooltip-api-add')
 
   const addFnc = () => {
-    clearTimeout(parseFloat(tooltip.dataset.reinitTimeout))
-    tooltip.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>add</strong>')
-      // elements
-      const els = self.elements
-      const indexEl = els.length + 1
-      const strEl = `
+    logAdd('<strong>add</strong>')
+    // elements
+    const els = self.elements
+    const indexEl = els.length + 1
+    const strEl = `
         <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
           data-xt-tooltip-element>
           Tooltip ${indexEl}
         </button>
       `
-      tooltip.append(Xt.node({ str: strEl }))
-      const trs = self.targets
-      const indexTr = trs.length + 1
-      const strTr = `
+    tooltip.append(Xt.node({ str: strEl }))
+    const trs = self.targets
+    const indexTr = trs.length + 1
+    const strTr = `
         <div class="xt-tooltip p-3" title="Target ${indexTr}"
           data-xt-tooltip-target>
           <div class="text-xs py-2 px-3.5 rounded-md shadow-lg font-medium text-white bg-black">
@@ -227,12 +225,11 @@ const mountEventmethods = ({ ref }) => {
           </div>
         </div>
       `
-      tooltip.append(Xt.node({ str: strTr }))
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.restart()
-      self.reinit()
-    }, 200).toString()
+    tooltip.append(Xt.node({ str: strTr }))
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.restart()
+    self.reinit()
   }
 
   addBtn.addEventListener('click', addFnc)
@@ -242,17 +239,14 @@ const mountEventmethods = ({ ref }) => {
   const removeBtn = document.querySelector('#button--tooltip-api-remove')
 
   const removeFnc = () => {
-    clearTimeout(parseFloat(tooltip.dataset.reinitTimeout))
-    tooltip.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>remove</strong>')
-      // element
-      const els = self.elements
-      els[els.length - 1].remove()
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.restart()
-      self.reinit()
-    }, 200).toString()
+    logAdd('<strong>remove</strong>')
+    // element
+    const els = self.elements
+    els[els.length - 1].remove()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.restart()
+    self.reinit()
   }
 
   removeBtn.addEventListener('click', removeFnc)
@@ -262,12 +256,9 @@ const mountEventmethods = ({ ref }) => {
   const reinitBtn = document.querySelector('#button--tooltip-api-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(tooltip.dataset.reinitTimeout))
-    tooltip.dataset.reinitTimeout = setTimeout(() => {
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   reinitBtn.addEventListener('click', reinitFnc)

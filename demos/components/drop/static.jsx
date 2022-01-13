@@ -6,11 +6,12 @@ export default function demo() {
   return (
     <div>
       <div className="xt-card p-7 sm:p-9 text-base rounded-2xl text-white xt-links-inverse bg-primary-500">
-        <div className="xt-list xt-list-3 items-center" data-xt-drop>
-          <div data-xt-drop-element>
+        <div className="xt-list xt-list-3 items-center" data-xt-drop="{ mouseParent: true }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-drop-element>
               Drop
             </button>
 
@@ -38,7 +39,7 @@ export default function demo() {
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Drop static 0</div>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
@@ -47,10 +48,11 @@ export default function demo() {
             </div>
           </div>
 
-          <div data-xt-drop-element>
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-drop-element>
               Drop
             </button>
 
@@ -78,7 +80,7 @@ export default function demo() {
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Drop static 1</div>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>
@@ -87,10 +89,11 @@ export default function demo() {
             </div>
           </div>
 
-          <div data-xt-drop-element>
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-drop-element>
               Drop
             </button>
 
@@ -118,7 +121,7 @@ export default function demo() {
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Drop static 2</div>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>

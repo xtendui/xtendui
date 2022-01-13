@@ -11,11 +11,14 @@ export default function demo() {
   return (
     <div className="demo--drop-reset-to-current-react" ref={ref}>
       <div className="xt-card p-7 sm:p-9 text-base rounded-2xl text-white xt-links-inverse bg-primary-500">
-        <div className="xt-list items-center" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
-          <div data-xt-drop-element>
+        <div
+          className="xt-list items-center"
+          data-xt-drop="{ mouseParent: true, on: 'mouseenter focus', off: 'mouseleave' }">
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-drop-element>
               Drop
             </button>
 
@@ -43,7 +46,7 @@ export default function demo() {
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Drop static 0</div>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
                   </p>
                 </div>
@@ -51,10 +54,11 @@ export default function demo() {
             </div>
           </div>
 
-          <div data-xt-drop-element>
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-drop-element>
               Drop
             </button>
 
@@ -82,7 +86,7 @@ export default function demo() {
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Drop static 1</div>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
                   </p>
                 </div>
@@ -90,10 +94,11 @@ export default function demo() {
             </div>
           </div>
 
-          <div data-xt-drop-element>
+          <div>
             <button
               type="button"
-              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
+              className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+              data-xt-drop-element>
               Drop
             </button>
 
@@ -121,7 +126,7 @@ export default function demo() {
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Drop static 2</div>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis.
                   </p>
                 </div>

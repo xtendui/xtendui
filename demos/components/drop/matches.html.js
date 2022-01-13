@@ -13,9 +13,9 @@ const html = /* HTML */ `
       <div class="xt-drop p-3" data-xt-drop-target>
         <div
           class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-          <nav class="xt-list flex-col ${classes.groupMd()}">
+          <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
             <a
-              href="#"
+              href="/"
               class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </a>

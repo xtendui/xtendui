@@ -80,6 +80,7 @@ export default function demo() {
                     <label className="cursor-pointer inline-flex items-baseline">
                       <input
                         type="checkbox"
+                        aria-label="Lorem ipsum"
                         className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                         defaultChecked
                         disabled
@@ -92,6 +93,7 @@ export default function demo() {
                     <label className="cursor-pointer inline-flex items-baseline">
                       <input
                         type="checkbox"
+                        aria-label="Lorem ipsum"
                         className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       />
                       <span className="ml-4">Lorem ipsum</span>
@@ -114,6 +116,7 @@ export default function demo() {
                     <label className="cursor-pointer inline-flex items-baseline">
                       <input
                         type="radio"
+                        aria-label="Lorem ipsum"
                         className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                         name="radio-horizontal"
                         defaultChecked
@@ -126,6 +129,7 @@ export default function demo() {
                     <label className="cursor-pointer inline-flex items-baseline">
                       <input
                         type="radio"
+                        aria-label="Lorem ipsum"
                         className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                         name="radio-horizontal"
                       />
@@ -149,6 +153,7 @@ export default function demo() {
                     <label className="cursor-pointer inline-flex items-baseline">
                       <input
                         type="checkbox"
+                        aria-label="Lorem ipsum"
                         className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       />
                       <span className="ml-4">Lorem ipsum</span>
@@ -159,6 +164,7 @@ export default function demo() {
                     <label className="cursor-pointer inline-flex items-baseline">
                       <input
                         type="radio"
+                        aria-label="Lorem ipsum"
                         className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                         name="switch-horizontal"
                       />
@@ -170,6 +176,7 @@ export default function demo() {
                     <label className="cursor-pointer inline-flex items-baseline">
                       <input
                         type="radio"
+                        aria-label="Lorem ipsum"
                         className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                         name="switch-horizontal"
                       />

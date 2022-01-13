@@ -13,6 +13,7 @@ const mountTooltip = ({ ref }) => {
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
+    mouseParent: true,
     position: 'bottom-end',
     popperjs: {
       strategy: 'fixed',

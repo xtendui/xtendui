@@ -20,6 +20,7 @@ const mountTooltip = ({ ref }) => {
 
   /***/
   let self = new Xt.Tooltip(tooltip, {
+    mouseParent: true,
     duration: 300,
     delay: 50,
   })

@@ -18,7 +18,7 @@ export default function demo() {
       <div className="max-w-xl mx-auto">
         <div className="*** xt-sticky ***" data-node-sticky>
           <div className="xt-card p-1.5 rounded-full text-gray-900 xt-links-default bg-white bg-opacity-80 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
-            <nav className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
+            <nav aria-label="Navigation" className="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
               <a
                 href="#description"
                 className="xt-button *** flex-auto *** py-2 px-3 text-xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
@@ -111,7 +111,7 @@ export default function demo() {
             <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="description">
               <div className="xt-h5">Description</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
@@ -130,7 +130,7 @@ export default function demo() {
             <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="features">
               <div className="xt-h5">Features</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
@@ -139,7 +139,7 @@ export default function demo() {
             <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="accessories">
               <div className="xt-h5">Accessories</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>
@@ -168,7 +168,7 @@ export default function demo() {
             <div className="*** p-6 sm:p-8 text-sm border-t border-gray-200 ***" id="manuals">
               <div className="xt-h5">Manuals</div>
               <p>
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </p>

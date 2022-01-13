@@ -2,9 +2,9 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <nav className="xt-list xt-list-1 flex-col">
+      <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
         <a
-          href="#"
+          href="/"
           className="xt-button py-1.5 px-3 text-sm rounded-md transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
             <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">
@@ -30,7 +30,7 @@ export default function demo() {
           </div>
         </a>
         <a
-          href="#"
+          href="/"
           className="xt-button py-1.5 px-3 text-sm rounded-md transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
             <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">
@@ -55,7 +55,7 @@ export default function demo() {
           </div>
         </a>
         <a
-          href="#"
+          href="/"
           className="xt-button py-1.5 px-3 text-sm rounded-md transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
             <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">

@@ -16,8 +16,8 @@ export default function demo() {
                 className="block w-full rounded-md py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
                 aria-label="Lorem ipsum"
               />
-              <div className="*** mt-3 text-gray-900 text-opacity-50 text-xs leading-snug ***">
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+              <div className="*** mt-3 text-gray-900 text-opacity-[90%] text-xs leading-snug ***">
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </div>
@@ -53,8 +53,8 @@ export default function demo() {
                 </div>
               </div>
 
-              <div className="*** mt-3 text-gray-900 text-opacity-50 text-xs leading-snug ***">
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+              <div className="*** mt-3 text-gray-900 text-opacity-[90%] text-xs leading-snug ***">
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </div>
@@ -76,11 +76,12 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       defaultChecked
                     />
                     <span className="ml-4">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
@@ -91,16 +92,17 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     />
                     <span className="ml-4">
-                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                       suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                       mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                     </span>
                   </label>
-                  <div className="*** mt-3 text-gray-900 text-opacity-50 text-xs leading-snug ***">
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <div className="*** mt-3 text-gray-900 text-opacity-[90%] text-xs leading-snug ***">
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </div>
@@ -120,11 +122,12 @@ export default function demo() {
                       <label className="cursor-pointer inline-flex items-baseline">
                         <input
                           type="checkbox"
+                          aria-label="Lorem ipsum"
                           className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                           defaultChecked
                         />
                         <span className="ml-4">
-                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
                           Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac
                           diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                         </span>
@@ -135,17 +138,18 @@ export default function demo() {
                       <label className="cursor-pointer inline-flex items-baseline">
                         <input
                           type="checkbox"
+                          aria-label="Lorem ipsum"
                           className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                           defaultChecked
                         />
                         <span className="ml-4">
-                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.
+                          <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.
                           Nullam suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac
                           diam. Sed mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                         </span>
                       </label>
-                      <div className="*** mt-3 text-gray-900 text-opacity-50 text-xs leading-snug ***">
-                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                      <div className="*** mt-3 text-gray-900 text-opacity-[90%] text-xs leading-snug ***">
+                        <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                         suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed
                         mauris augue, sagittis vitae magna eget, vehicula scelerisque elit.
                       </div>
@@ -167,6 +171,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                       defaultChecked
                     />
@@ -178,6 +183,7 @@ export default function demo() {
                   <label className="cursor-pointer inline-flex items-baseline">
                     <input
                       type="checkbox"
+                      aria-label="Lorem ipsum"
                       className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
                     />
                     <span className="ml-4">Lorem ipsum</span>
@@ -185,8 +191,8 @@ export default function demo() {
                 </div>
               </div>
 
-              <div className="*** mt-3 text-gray-900 text-opacity-50 text-xs leading-snug ***">
-                <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+              <div className="*** mt-3 text-gray-900 text-opacity-[90%] text-xs leading-snug ***">
+                <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                 suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                 augue, sagittis vitae magna eget, vehicula scelerisque elit.
               </div>

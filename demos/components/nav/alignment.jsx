@@ -2,9 +2,9 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <nav className="xt-list xt-list-2 flex-col">
+      <nav aria-label="Navigation" className="xt-list xt-list-2 flex-col">
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify default (center)
@@ -27,7 +27,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-center text-center *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify center
@@ -50,7 +50,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-start text-left *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify start
@@ -73,7 +73,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-end text-right *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify end
@@ -96,7 +96,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-between *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify between{' '}
@@ -117,7 +117,7 @@ export default function demo() {
         </a>
 
         <a
-          href="#"
+          href="/"
           type="button"
           className="xt-button py-1.5 px-3 text-sm rounded-md flex-auto font-medium leading-snug *** justify-around *** transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
           Justify around{' '}

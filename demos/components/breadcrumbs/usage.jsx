@@ -2,15 +2,15 @@ import React from 'react'
 export default function demo() {
   return (
     <div>
-      <nav className="*** truncate ***">
+      <nav aria-label="Breadcrumbs" className="*** truncate ***">
         <a
-          href="#"
+          href="/"
           className="xt-button *** inline *** py-1.5 px-2 text-2xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:opacity-75">
           Home
         </a>
         <span className="inline relative align-baseline before:content-['/'] mx-0.5 text-sm"></span>
         <a
-          href="#"
+          href="/"
           className="xt-button *** inline *** py-1.5 px-2 text-2xs rounded-full font-medium leading-snug tracking-wider uppercase transition hover:opacity-75">
           Lorem ipsum dolor sit amet
         </a>

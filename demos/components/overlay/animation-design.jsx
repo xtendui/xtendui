@@ -13,7 +13,7 @@ export default function demo() {
           Overlay
         </button>
 
-        <div className="xt-overlay *** group ***" data-xt-overlay-target>
+        <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
           <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
@@ -45,7 +45,7 @@ export default function demo() {
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Lorem ipsum</div>
                   <p>
-                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                    <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                     suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                     augue, sagittis vitae magna eget, vehicula scelerisque elit.
                   </p>

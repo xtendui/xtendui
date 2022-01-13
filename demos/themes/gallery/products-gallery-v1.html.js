@@ -213,7 +213,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
 
-                <div class="xt-overlay group" id="overlay--product-images">
+                <div aria-label="Modal" class="xt-overlay group" id="overlay--product-images">
                   <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
                   <div class="xt-overlay-container *** p-0 ***">
                     <button
@@ -356,6 +356,7 @@ const html = /* HTML */ `
                   Red
                   <input
                     type="radio"
+                    aria-label="Red"
                     class="sr-only"
                     name="radio-button"
                     data-node-variants-element
@@ -368,6 +369,7 @@ const html = /* HTML */ `
                   Green
                   <input
                     type="radio"
+                    aria-label="Green"
                     class="sr-only"
                     name="radio-button"
                     data-node-variants-element
@@ -380,6 +382,7 @@ const html = /* HTML */ `
                   Blue
                   <input
                     type="radio"
+                    aria-label="Blue"
                     class="sr-only"
                     name="radio-button"
                     data-node-variants-element

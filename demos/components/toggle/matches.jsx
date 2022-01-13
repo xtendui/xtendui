@@ -4,10 +4,10 @@ import 'xtendui/src/toggle'
 
 export default function demo() {
   return (
-    <div>
+    <div className="demo--toggle-matches-react">
       <div
         className="xt-list xt-list-3 items-center"
-        data-xt-toggle="{ matches: { '(max-width: 767px)': { max: 2 }, '(min-width: 768px)': { max: 3 } } }">
+        data-xt-toggle="{ min: 1, matches: { '(max-width: 767px)': { max: 1 }, '(min-width: 768px)': { max: 2 } } }">
         <button
           type="button"
           className="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"

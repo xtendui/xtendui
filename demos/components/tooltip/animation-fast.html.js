@@ -52,11 +52,14 @@ const html = /* HTML */ `
       </div>
 
       <div>
-        <div class="xt-list xt-list-3 items-center" data-xt-tooltip="{ position: 'bottom', delay: 50 }">
-          <div data-xt-tooltip-element>
+        <div
+          class="xt-list xt-list-3 items-center"
+          data-xt-tooltip="{ mouseParent: true, position: 'bottom', delay: 50 }">
+          <div>
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              data-xt-tooltip-element>
               tooltip multiple
             </button>
 
@@ -68,10 +71,11 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div data-xt-tooltip-element>
+          <div>
             <button
               type="button"
-              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+              class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+              data-xt-tooltip-element>
               tooltip multiple
             </button>
 

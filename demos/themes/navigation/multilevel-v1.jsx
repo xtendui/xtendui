@@ -17,7 +17,7 @@ export default function demo() {
             </div>
 
             <div className="-mx-3.5">
-              <nav className="xt-list xt-list-1 flex-col">
+              <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                 <button
                   type="button"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
@@ -59,7 +59,7 @@ export default function demo() {
                   </svg>
                 </button>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Kid
                 </a>
@@ -96,7 +96,7 @@ export default function demo() {
             </div>
 
             <div className="-mx-3.5">
-              <nav className="xt-list xt-list-1 flex-col">
+              <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                 <button
                   type="button"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
@@ -138,12 +138,12 @@ export default function demo() {
                   </svg>
                 </button>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Jacket
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Underwear
                 </a>
@@ -180,14 +180,14 @@ export default function demo() {
             </div>
 
             <div className="-mx-3.5">
-              <nav className="xt-list xt-list-1 flex-col">
+              <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   T-Shirt
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Polo
                 </a>
@@ -224,14 +224,14 @@ export default function demo() {
             </div>
 
             <div className="-mx-3.5">
-              <nav className="xt-list xt-list-1 flex-col">
+              <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Jeans
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Short
                 </a>
@@ -268,14 +268,14 @@ export default function demo() {
             </div>
 
             <div className="-mx-3.5">
-              <nav className="xt-list xt-list-1 flex-col">
+              <nav aria-label="Navigation" className="xt-list xt-list-1 flex-col">
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Shirt
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="xt-button py-2 px-3.5 text-base rounded-md flex-auto font-medium leading-snug justify-between text-left transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
                   Pant
                 </a>

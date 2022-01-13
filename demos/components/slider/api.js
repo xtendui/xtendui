@@ -59,24 +59,21 @@ const mountEventmethods = ({ ref }) => {
   const addBtn = document.querySelector('#button--slider-api-add')
 
   const addFnc = () => {
-    clearTimeout(parseFloat(slider.dataset.reinitTimeout))
-    slider.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>add</strong>')
-      // targets
-      const trs = self.targets
-      const indexTr = trs.length + 1
-      const strTr = `
+    logAdd('<strong>add</strong>')
+    // targets
+    const trs = self.targets
+    const indexTr = trs.length + 1
+    const strTr = `
       <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
         <div class="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
           <div class="xt-h4">${indexTr}</div>
         </div>
       </div>
       `
-      document.querySelector('#slider--eventmethods-targets').append(Xt.node({ str: strTr }))
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    document.querySelector('#slider--eventmethods-targets').append(Xt.node({ str: strTr }))
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   addBtn.addEventListener('click', addFnc)
@@ -86,19 +83,16 @@ const mountEventmethods = ({ ref }) => {
   const removeBtn = document.querySelector('#button--slider-api-remove')
 
   const removeFnc = () => {
-    clearTimeout(parseFloat(slider.dataset.reinitTimeout))
-    slider.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>remove</strong>')
-      // elements
-      const els = self.elements
-      els[els.length - 1].remove()
-      // targets
-      const trs = self.targets
-      trs[trs.length - 1].remove()
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    logAdd('<strong>remove</strong>')
+    // elements
+    const els = self.elements
+    els[els.length - 1].remove()
+    // targets
+    const trs = self.targets
+    trs[trs.length - 1].remove()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   removeBtn.addEventListener('click', removeFnc)
@@ -108,12 +102,9 @@ const mountEventmethods = ({ ref }) => {
   const reinitBtn = document.querySelector('#button--slider-api-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(slider.dataset.reinitTimeout))
-    slider.dataset.reinitTimeout = setTimeout(() => {
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   reinitBtn.addEventListener('click', reinitFnc)

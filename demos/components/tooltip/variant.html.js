@@ -15,7 +15,7 @@ const html = /* HTML */ `
           <div
             class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} ***">
             <div class="${classes.tooltipMd()}">
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.<br />Proin
               molestie ${classes.iconLink()} diam nec euismod commodo.
             </div>
           </div>
@@ -34,7 +34,7 @@ const html = /* HTML */ `
           <div
             class="xt-card rounded${classes.tooltipRadius()} *** ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.cardPrimary()} ***">
             <div class="${classes.tooltipMd()}">
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit.<br />Proin
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit.<br />Proin
               molestie ${classes.iconLink()} diam nec euismod commodo.
             </div>
           </div>

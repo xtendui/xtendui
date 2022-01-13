@@ -9,11 +9,11 @@ export default function demo() {
               Lorem ipsum
               <div className="ml-4">
                 <div className="xt-list xt-list-3 items-center">
-                  <a href="#" className="xt-button xt-link">
+                  <a href="/" className="xt-button xt-link">
                     {' '}
                     link #1{' '}
                   </a>
-                  <a href="#" className="xt-button xt-link">
+                  <a href="/" className="xt-button xt-link">
                     {' '}
                     link #2{' '}
                   </a>
@@ -32,11 +32,11 @@ export default function demo() {
               Dolor sit amet
               <div className="ml-auto">
                 <div className="xt-list xt-list-3 items-center">
-                  <a href="#" className="xt-button xt-link">
+                  <a href="/" className="xt-button xt-link">
                     {' '}
                     link #1{' '}
                   </a>
-                  <a href="#" className="xt-button xt-link">
+                  <a href="/" className="xt-button xt-link">
                     {' '}
                     link #2{' '}
                   </a>
@@ -57,11 +57,11 @@ export default function demo() {
                   Lorem ipsum
                   <div className="mt-1">
                     <div className="xt-list xt-list-3 items-center">
-                      <a href="#" className="xt-button xt-link">
+                      <a href="/" className="xt-button xt-link">
                         {' '}
                         link #1{' '}
                       </a>
-                      <a href="#" className="xt-button xt-link">
+                      <a href="/" className="xt-button xt-link">
                         {' '}
                         link #2{' '}
                       </a>

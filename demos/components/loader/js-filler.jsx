@@ -15,7 +15,7 @@ export default function demo() {
           <div className="p-6 sm:p-8 text-sm">
             <div className="xt-h5">Small</div>
             <p>
-              <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam suscipit,
+              <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit,
               velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis
               vitae magna eget, vehicula scelerisque elit.
             </p>
