@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import kebabCase from 'lodash/kebabcase'
+import _ from 'lodash'
 
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
@@ -52,7 +52,7 @@ function DocFoot(props) {
             {page.post.frontmatter.type !== 'Components' && postsComponents.length ? (
               <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                 <Link
-                  to={`/components/${kebabCase(page.post.frontmatter.parent)}`}
+                  to={`/components/${_.kebabCase(page.post.frontmatter.parent)}`}
                   className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Visit the Components pages
@@ -85,7 +85,7 @@ function DocFoot(props) {
             {page.post.frontmatter.type !== 'Themes' && postsThemes.length ? (
               <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6">
                 <Link
-                  to={`/themes/${kebabCase(page.post.frontmatter.parent)}`}
+                  to={`/themes/${_.kebabCase(page.post.frontmatter.parent)}`}
                   className={`xt-card p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}>
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Visit the Themes pages

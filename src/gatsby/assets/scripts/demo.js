@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
-import kebabCase from 'lodash/kebabcase'
+import _ from 'lodash'
 import 'xtendui/src/toggle.js'
 import 'xtendui/src/tooltip.js'
 
@@ -21,7 +21,7 @@ const demoHash = () => {
   if (full) {
     if (location.hash) {
       // if hash activate demo from hash
-      const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
+      const item = document.querySelector(`[id="${_.kebabCase(location.hash)}"]`)
       if (item) {
         // demo
         const demo = item.closest('.gatsby_demo')
@@ -292,7 +292,7 @@ export const populateDemo = container => {
       item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
     name = id.split('/').pop().split('-').join(' ')
     id = id.split('/').join('-')
-    item.setAttribute('id', kebabCase(id))
+    item.setAttribute('id', _.kebabCase(id))
     container.querySelector('.gatsby_demo_tabs_left').append(
       Xt.node({
         str: `<button type="button" class="xt-button ${classes.textDefault()} ${classes.buttonCode()}">${name}</button>`,
@@ -317,7 +317,7 @@ export const populateDemo = container => {
   }
   // get hash
   if (location.hash) {
-    const item = container.querySelector(`[id="${kebabCase(location.hash)}"]`)
+    const item = container.querySelector(`[id="${_.kebabCase(location.hash)}"]`)
     if (item) {
       item.classList.add('on')
       demoHash()
