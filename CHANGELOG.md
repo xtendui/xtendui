@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/xtendui/xtendui/compare/v1.0.0...v1.0.1) (2022-01-13)
+
+
+### Bug Fixes
+
+* test semantic release with a fix ([05082da](https://github.com/xtendui/xtendui/commit/05082da8984b89a42905da70d1d5fce74526f369))
+
 # [1.0.0](https://github.com/xtendui/xtendui/compare/v0.16.12...v1.0.0) (2022-01-13)
 
 
