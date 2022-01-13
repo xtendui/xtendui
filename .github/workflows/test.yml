@@ -11,6 +11,7 @@ env:
 
 jobs:
   codeql:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     permissions:
       security-events: write
@@ -27,6 +28,7 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
   test:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
