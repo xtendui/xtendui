@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/xtendui/xtendui/compare/v1.0.2...v1.0.3) (2022-01-13)
+
+
+### Bug Fixes
+
+* fix compilation lodash dependency ([55c1cb4](https://github.com/xtendui/xtendui/commit/55c1cb40d5e43ea1230042d31dfc1d6d643fb3b5))
+* fix compilation on vite and snowpack ([d42f5be](https://github.com/xtendui/xtendui/commit/d42f5be9689c3288bf0104813b7d9415e34fbe25))
+* refactor yarn cache ([4d57fb3](https://github.com/xtendui/xtendui/commit/4d57fb3dc589be45ae5964ea2726bbb19950e73e))
+
 ## [1.0.2](https://github.com/xtendui/xtendui/compare/v1.0.1...v1.0.2) (2022-01-13)
 
 
