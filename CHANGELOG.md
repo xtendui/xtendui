@@ -1,3 +1,37 @@
+# [1.0.0-beta.49](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.48...v1.0.0-beta.49) (2022-01-13)
+
+
+### Bug Fixes
+
+* **form:** fix form checks labels when no form ([3c2dcb4](https://github.com/xtendui/xtendui/commit/3c2dcb4829c0824f1ae9d6e862302f1b7f80eca6))
+* **infinitescroll:** fix pagination do not call always on scroll ([cf05fc3](https://github.com/xtendui/xtendui/commit/cf05fc35276b87b7c6ba44838d586a13064b8626))
+* **overlay:** fix mount on appendTo when iactivated on initial ([962a0d0](https://github.com/xtendui/xtendui/commit/962a0d04633c36042398c3f9b0e863317dcd208c))
+* **scrollto:** fixed non instant animation on custom scrollto.trigger.xt.scrollto and refactor options.scrollDelay from 150 to 200 ([de48bbb](https://github.com/xtendui/xtendui/commit/de48bbbf57b5904dd6223f94aa4db7f80377b519))
+* **slider:** fix reinit on class on same targets ([9b63d6b](https://github.com/xtendui/xtendui/commit/9b63d6b4feab34853f9675bb27625f43ac11d90b))
+* **toggle:** fix hash on class activation on groups ([4c62b8b](https://github.com/xtendui/xtendui/commit/4c62b8bdba150ff559c35169fb93f2277e0d811c))
+* **toggle:** fix off event called also with no options.off ([0524f2d](https://github.com/xtendui/xtendui/commit/0524f2daeb299c3281c478317d603f7aa0eff0f2))
+* **toggle:** fix Xt.on and Xt.off and toggle inverse activation no jumping with .done class ([bcf63d7](https://github.com/xtendui/xtendui/commit/bcf63d75df6c6051ad0686e9992888388f2fcc04))
+* **toggle:** refactor medialoaded option with fix xt-medialoaded class on elements and reinit only on targets ([8f95a4e](https://github.com/xtendui/xtendui/commit/8f95a4e038654a5d06c024ae4379490c521c9cb0))
+
+
+* feat/usability (#41) ([29448cd](https://github.com/xtendui/xtendui/commit/29448cd18b384b17f3bb3a8b64d1fdb204e88b20)), closes [#41](https://github.com/xtendui/xtendui/issues/41)
+
+
+### Performance Improvements
+
+* **toggle:** activation targets perf ([6bb0685](https://github.com/xtendui/xtendui/commit/6bb06851ec00d2964c3a4c3bafee73d3f07c14df))
+
+
+### BREAKING CHANGES
+
+* revision on mouse events and elementsInner
+
+non breaking but improvement, when using `on: 'mouseenter'` add also focus for accessibility `on: 'mouseenter focus'`
+
+changed defaults options.elementsInner now is false, now instead of using targets inside elements, assign element to the real element (link, button) and use `mouseParent: true` or `mouseParent: '<Query>'` to have mouse event on the element parent node.
+
+* feat(toggle): toggle preventEvent also on focus and key enter
+
 # [1.0.0-beta.48](https://github.com/xtendui/xtendui/compare/v1.0.0-beta.47...v1.0.0-beta.48) (2021-12-22)
 
 
