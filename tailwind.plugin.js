@@ -1,6 +1,5 @@
 const plugin = require('tailwindcss/plugin')
-const merge = require('lodash/merge')
-const castArray = require('lodash/castArray')
+const _ = require('lodash')
 
 module.exports = plugin.withOptions(() => {
   return function ({ addComponents, addVariant, e, theme }) {
@@ -19,7 +18,7 @@ module.exports = plugin.withOptions(() => {
           typeof componentBase.component === 'function' ? componentBase.component(theme) : componentBase.component
         const custom =
           typeof componentCustom.component === 'function' ? componentCustom.component(theme) : componentCustom.component
-        const css = merge(...castArray(base || {}), custom || {})
+        const css = _.merge(..._.castArray(base || {}), custom || {})
         addComponents(css, {
           respectPrefix: false,
         })
@@ -37,8 +36,8 @@ module.exports = plugin.withOptions(() => {
         const base = typeof componentBase.utility === 'function' ? componentBase.utility(theme) : componentBase.utility
         const custom =
           typeof componentCustom.utility === 'function' ? componentCustom.utility(theme) : componentCustom.utility
-        const variants = merge(componentBase.variants || [], componentCustom.variants || [])
-        const options = merge(...castArray(base || {}), custom || {})
+        const variants = _.merge(componentBase.variants || [], componentCustom.variants || [])
+        const options = _.merge(..._.castArray(base || {}), custom || {})
         const utilities = Object.keys(options)
         for (const utility of utilities) {
           if (componentsCustom[utility] !== false) {

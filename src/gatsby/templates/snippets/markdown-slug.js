@@ -1,10 +1,10 @@
-const kebabCase = require('lodash/kebabcase')
+const _ = require('lodash')
 
 module.exports = {
   markdownSlug: page => {
-    const slugType = kebabCase(page.frontmatter.type)
-    const slugParent = kebabCase(page.frontmatter.parent)
-    const slugTitle = kebabCase(page.frontmatter.title)
+    const slugType = _.kebabCase(page.frontmatter.type)
+    const slugParent = _.kebabCase(page.frontmatter.parent)
+    const slugTitle = _.kebabCase(page.frontmatter.title)
     let slug = ''
     if (page.frontmatter.type) {
       slug += `/${slugType}`
