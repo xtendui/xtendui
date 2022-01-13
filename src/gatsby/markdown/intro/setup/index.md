@@ -13,7 +13,7 @@ Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate) 
 Install **xtendui**.
 
 ```sh
-npm install xtendui@1 --save
+npm install xtendui --save
 ```
 
 ## Css
@@ -125,7 +125,7 @@ If you want to show a warning on unsupported browser you can use [browser update
 
 ## CDN
 
-If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@1/), the css and js are inside the `dist/` folder.
+If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
 
 The css CDN `dist/` includes only the styles used in the documentation demos.
 
