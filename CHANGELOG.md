@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/xtendui/xtendui/compare/v1.0.1...v1.0.2) (2022-01-13)
+
+
+### Bug Fixes
+
+* fix compilation on vite and snowpack ([84a5d1e](https://github.com/xtendui/xtendui/commit/84a5d1efdfb8c50621cc1152710e310622c5383b))
+
 ## [1.0.1](https://github.com/xtendui/xtendui/compare/v1.0.0...v1.0.1) (2022-01-13)
 
 
