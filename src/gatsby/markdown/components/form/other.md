@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Disabled
 
-Use **component classes** to style **disabled**. Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/beta/src/global.css.js) for default styles.
+Use **component classes** to style **disabled**. Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/master/src/global.css.js) for default styles.
 
 > For accessibility purpose use `[aria-disabled="true"]` when using the **class** `.xt-disabled`.
 

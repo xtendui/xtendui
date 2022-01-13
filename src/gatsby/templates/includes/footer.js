@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           {site.siteMetadata.title} v{site.siteMetadata.version}{' '}
           <a
-            href="https://github.com/xtendui/xtendui/blob/beta/LICENSE.txt"
+            href="https://github.com/xtendui/xtendui/blob/master/LICENSE.txt"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium underline">
@@ -17,7 +17,7 @@ export default function Footer() {
           </a>{' '}
           Docs{' '}
           <a
-            href="https://github.com/xtendui/xtendui/blob/beta/LICENSE-DOCS.txt"
+            href="https://github.com/xtendui/xtendui/blob/master/LICENSE-DOCS.txt"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium underline">

@@ -8,7 +8,7 @@ description: "Scrolltrigger component contains interactions for all sort of inte
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll` see [css customization](/components/global/preset#customization). Check [xtendui/src/scrolltrigger.css.js](https://github.com/xtendui/xtendui/blob/beta/src/scrolltrigger.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.scroll` see [css customization](/components/global/preset#customization). Check [xtendui/src/scrolltrigger.css.js](https://github.com/xtendui/xtendui/blob/master/src/scrolltrigger.css.js) for default styles.
 
 ## Javascript
 

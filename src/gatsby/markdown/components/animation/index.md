@@ -8,7 +8,7 @@ description: "Animation is a component with animation setup and utils."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.animation` see [css customization](/components/global/preset#customization). Check [xtendui/src/animation.css.js](https://github.com/xtendui/xtendui/blob/beta/src/animation.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.animation` see [css customization](/components/global/preset#customization). Check [xtendui/src/animation.css.js](https://github.com/xtendui/xtendui/blob/master/src/animation.css.js) for default styles.
 
 ## Global Styles
 

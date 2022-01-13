@@ -37,7 +37,7 @@ Xtend UI add **custom tailwind variants**.
 
 You can **customize components css** inside `tailwind.config.js`, use `theme.extend` to change Xtend UI preset default.
 
-Check [xtendui/tailwind.preset.js](https://github.com/xtendui/xtendui/blob/beta/tailwind.preset.js) for default preset.
+Check [xtendui/tailwind.preset.js](https://github.com/xtendui/xtendui/blob/master/tailwind.preset.js) for default preset.
 
 ```jsx
 module.exports = {
@@ -65,7 +65,7 @@ module.exports = {
 
 You can **customize components** inside `tailwind.config.js`, use `theme.extend` to change Xtend UI default component styles.
 
-Check [xtendui/tailwind.components.js](https://github.com/xtendui/xtendui/blob/beta/tailwind.components.js) for default component styles.
+Check [xtendui/tailwind.components.js](https://github.com/xtendui/xtendui/blob/master/tailwind.components.js) for default component styles.
 
 ```jsx
 module.exports = {

@@ -8,7 +8,7 @@ description: "Ripple is a plugin that achieve Material ripple animation."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple` see [css customization](/components/global/preset#customization). Check [xtendui/src/ripple.css.js](https://github.com/xtendui/xtendui/blob/beta/src/ripple.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple` see [css customization](/components/global/preset#customization). Check [xtendui/src/ripple.css.js](https://github.com/xtendui/xtendui/blob/master/src/ripple.css.js) for default styles.
 
 ## Javascript
 

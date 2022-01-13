@@ -8,7 +8,7 @@ description: "Link is a component to style default links, can also be applied to
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.link` see [css customization](/components/global/preset#customization). Check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.link` see [css customization](/components/global/preset#customization). Check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/master/src/link.css.js) for default styles.
 
 ## Global Styles
 
@@ -26,7 +26,7 @@ Use `a` without classes or `.xt-link` to create a **link**.
 
 </div>
 
-> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/global/preset#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/beta/src/link.css.js) for default styles.
+> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/global/preset#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/master/src/link.css.js) for default styles.
 
 > Links `a` with `target="_blank"` needs `rel="noopener"` or `rel="noreferrer"` to avoid [cross-origin issues](https://web.dev/external-anchors-use-rel-noopener/).
 

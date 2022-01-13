@@ -8,7 +8,7 @@ description: "Form is a component for all form content has multiple layouts, cus
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.form` see [css customization](/components/global/preset#customization). Check [xtendui/src/form.css.js](https://github.com/xtendui/xtendui/blob/beta/src/form.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.form` see [css customization](/components/global/preset#customization). Check [xtendui/src/form.css.js](https://github.com/xtendui/xtendui/blob/master/src/form.css.js) for default styles.
 
 ## Javascript
 

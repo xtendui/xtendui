@@ -19,7 +19,7 @@ Use **tailwind classes** to assign variant (e.g. [border-color](https://tailwind
 
 ## Size
 
-The padding of `.xt-overlay-container` is set as a utility. Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/beta/src/overlay.css.js) for default styles.
+The padding of `.xt-overlay-container` is set as a utility. Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/master/src/overlay.css.js) for default styles.
 
 Use **tailwind classes** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 

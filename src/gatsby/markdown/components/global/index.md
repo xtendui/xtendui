@@ -8,7 +8,7 @@ description: "Global is a component with global styles and javascript."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout` see [css customization](/components/global/preset#customization). Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/beta/src/global.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout` see [css customization](/components/global/preset#customization). Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/master/src/global.css.js) for default styles.
 
 ## Global Styles
 

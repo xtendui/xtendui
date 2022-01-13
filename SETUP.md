@@ -5,7 +5,7 @@ Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate) 
 Install **xtendui**.
 
 ```sh
-npm install xtendui@beta --save
+npm install xtendui@1 --save
 ```
 
 ## Css
@@ -84,7 +84,7 @@ You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@
 npm install @babel/core @babel/preset-env --save-dev
 ```
 
-Then in the root of your project set up polyfills with [babel.config.js](https://github.com/xtendui/xtendui/blob/beta/babel.config.js) and [.browserslistrc](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
+Then in the root of your project set up polyfills with [babel.config.js](https://github.com/xtendui/xtendui/blob/master/babel.config.js) and [.browserslistrc](https://github.com/xtendui/xtendui/blob/master/.browserslistrc).
 
 ## Global Styles
 
@@ -96,7 +96,7 @@ Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [li
 
 ## Unsupported browsers
 
-If you want to show a warning on unsupported browser you can use [browser update](https://browser-update.org/) and target exactly [supported browsers](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc).
+If you want to show a warning on unsupported browser you can use [browser update](https://browser-update.org/) and target exactly [supported browsers](https://github.com/xtendui/xtendui/blob/master/.browserslistrc).
 
 ```html
 <script>
@@ -116,7 +116,7 @@ If you want to show a warning on unsupported browser you can use [browser update
 
 ## CDN
 
-If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@beta/), the css and js are inside the `dist/` folder.
+If you need to do a **fast installation** of css and js use [xtendui CDN](https://unpkg.com/xtendui@1/), the css and js are inside the `dist/` folder.
 
 The css CDN `dist/` includes only the styles used in the documentation demos.
 

@@ -1,7 +1,7 @@
 /*!
  * Xtend UI (https://xtendui.com/)
  * @copyright (c) 2017 - 2021 Riccardo Caroli
- * @license MIT (https://github.com/xtendui/xtendui/blob/beta/LICENSE.txt)
+ * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
 import DOMPurify from 'dompurify'
