@@ -4,11 +4,12 @@ const html = /* HTML */ `
   <div class="demo--drop-reset-to-current">
     <div
       class="xt-card ${classes.cardMd()} rounded${classes.cardRadius()} ${classes.textInverse()} ${classes.cardPrimary()}">
-      <div class="xt-list items-center" data-xt-drop="{ on: 'mouseenter', off: 'mouseleave' }">
-        <div data-xt-drop-element>
+      <div class="xt-list items-center" data-xt-drop="{ mouseParent: true, on: 'mouseenter focus', off: 'mouseleave' }">
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-drop-element>
             Drop
           </button>
 
@@ -20,7 +21,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Drop static 0</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis.
                 </p>
               </div>
@@ -28,10 +29,11 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div data-xt-drop-element>
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-drop-element>
             Drop
           </button>
 
@@ -43,7 +45,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Drop static 1</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis.
                 </p>
               </div>
@@ -51,10 +53,11 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <div data-xt-drop-element>
+        <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+            data-xt-drop-element>
             Drop
           </button>
 
@@ -66,7 +69,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Drop static 2</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis.
                 </p>
               </div>

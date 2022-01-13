@@ -12,7 +12,7 @@ export default function Footer() {
             href="https://github.com/xtendui/xtendui/blob/beta/LICENSE.txt"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium no-underline hover:underline">
+            className="font-medium underline">
             MIT
           </a>{' '}
           Docs{' '}
@@ -20,7 +20,7 @@ export default function Footer() {
             href="https://github.com/xtendui/xtendui/blob/beta/LICENSE-DOCS.txt"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium no-underline hover:underline">
+            className="font-medium underline">
             CC-BY-4.0
           </a>{' '}
         </div>

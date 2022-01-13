@@ -33,6 +33,8 @@ Use **tailwind variants** `active:`, `group-active:`, `on:`, `group-on:` to assi
 
 Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
+Use **tailwind variants** `dir-before:`, `group-dir-before:`, `group-off-before:`, `group-on-before:`, `group-in-before:`, `group-out-before:`, `dir-after:`, `group-dir-after:`, `group-off-after:`, `group-on-after:`, `group-in-after:`, `group-out-after:` to assign animations.
+
 Use **component classes** to style **disabled**. Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/beta/src/global.css.js) for default styles.
 
 Use **component utility** `.xt-card-group` to stack card content **horizontally**.
@@ -47,15 +49,9 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 
 > This demos use [loader](/components/loader) see documentation for more info.
 
-> For usability purpose use `<nav></nav>`.
+> For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 
-> For usability purpose use `role="toolbar"`.
-
-> For usability purpose use `aria-disabled="true"` when using the class `.xt-disabled`.
-
-> For usability purpose use `aria-label="<Description>"` on `input:not([type="hidden"]), select, textarea`.
-
-> For usability purpose use `<nav></nav>`. For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
+> For seo purpose add [breadscrumb metadata](https://developers.google.com/search/docs/data-types/breadcrumb).
 
 <!-- For seo purpose add product metadata https://developers.google.com/search/docs/data-types/product -->
 
@@ -76,15 +72,6 @@ Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindc
 |                      | Syntax                          | Mixin            | Variants               | Description                   |
 | ----------------------- | ----------------------------------------- | -----------------------------| ----------------------------- | ----------------------------- |
 | Utility                  | `.xt-card-group`       | `xt-card-group`                | `responsive`                | Card stack horizontal wrapper           |
-
-</div>
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Name                          | Description                   |
-| ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.dir-before`       |  Class name for **before** direction activation            |
-| Class                  | `.dir-after`       |  Class name for **after** direction activation            |
 
 </div>
 

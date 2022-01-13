@@ -30,7 +30,7 @@ function DocFoot(props) {
                 <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                   Problems getting it to work?
                 </div>
-                <p className="xt-p text-sm leading-snug opacity-50">
+                <p className="xt-p text-sm leading-snug opacity-70">
                   Check out the <strong>Setup</strong> page.
                 </p>
               </Link>
@@ -42,7 +42,7 @@ function DocFoot(props) {
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Visit the Components pages
                   </div>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-sm leading-snug opacity-70">
                     Check out the <strong>Components</strong> pages.
                   </p>
                 </Link>
@@ -57,7 +57,7 @@ function DocFoot(props) {
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Visit the Components pages
                   </div>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-sm leading-snug opacity-70">
                     There {postsComponents.length === 1 ? 'is' : 'are'}{' '}
                     <strong>
                       {postsComponents.length} Components page
@@ -75,7 +75,7 @@ function DocFoot(props) {
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Visit the Themes pages
                   </div>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-sm leading-snug opacity-70">
                     Check out the <strong>Themes</strong> pages.
                   </p>
                 </Link>
@@ -90,7 +90,7 @@ function DocFoot(props) {
                   <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Visit the Themes pages
                   </div>
-                  <p className="xt-p text-sm leading-snug opacity-50">
+                  <p className="xt-p text-sm leading-snug opacity-70">
                     There {postsThemes.length === 1 ? 'is' : 'are'}{' '}
                     <strong>
                       {postsThemes.length} theme

@@ -21,7 +21,7 @@ const mountVideoAutoplayLazy = ({ ref }) => {
           paused = false
           playing = video.play()
         }, 50)
-      } else if (entry.intersectionRatio == 0 && !paused) {
+      } else if (entry.intersectionRatio == 0 && !paused && playing) {
         paused = true
         playing.then(() => {
           // play is async need to check it before pause

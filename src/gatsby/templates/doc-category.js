@@ -61,7 +61,7 @@ function Template(props) {
                             <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                               {post.frontmatter.title}
                             </div>
-                            <p className="xt-p text-sm leading-snug opacity-50">{post.frontmatter.description}</p>
+                            <p className="xt-p text-sm leading-snug opacity-70">{post.frontmatter.description}</p>
                           </Link>
                         </div>
                       )

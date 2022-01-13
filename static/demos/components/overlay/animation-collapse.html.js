@@ -11,7 +11,7 @@ const html = /* HTML */ `
         Overlay
       </button>
 
-      <div class="xt-overlay *** group ***" data-xt-overlay-target>
+      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -28,7 +28,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Lorem ipsum</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>

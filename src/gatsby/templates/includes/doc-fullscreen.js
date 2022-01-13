@@ -6,7 +6,7 @@ function DocFullscreen() {
   return (
     <>
       <div id="gatsby_open-full-trigger"></div>
-      <div id="gatsby_open-full" className="off:hidden out:pointer-events-none">
+      <div id="gatsby_open-full" className="off:hidden out:pointer-events-none" aria-label="Fullscreen Demo">
         <div>
           <button
             type="button"

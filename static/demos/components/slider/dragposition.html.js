@@ -55,7 +55,10 @@ const html = /* HTML */ `
           </div>
         </div>
 
-        <nav class="w-full xt-list xt-list-2 pt-4 items-center justify-center" data-xt-slider-pagination>
+        <nav
+          aria-label="Slider Navigation"
+          class="w-full xt-list xt-list-2 pt-4 items-center justify-center"
+          data-xt-slider-pagination>
           <button
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"

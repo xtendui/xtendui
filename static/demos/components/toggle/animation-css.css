@@ -1,4 +1,4 @@
-.demo--toggle-animation, .demo--toggle-animation-react {
+.demo--toggle-animation-css, .demo--toggle-animation-css-react {
   [data-xt-toggle-target] {
     /* initial */
     @apply opacity-0;

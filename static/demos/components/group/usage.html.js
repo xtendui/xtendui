@@ -30,7 +30,7 @@ const html = /* HTML */ `
       <div class="*** xt-list ***">
         <div class="*** inline-flex flex-col md:flex-row md:flex-nowrap ***">
           <a
-            href="#"
+            href="/"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-t${classes.groupButtonRadius()} md:rounded-tl-none md:rounded-r${classes.groupButtonRadius()} md:order-3 *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             +
           </a>
@@ -42,7 +42,7 @@ const html = /* HTML */ `
             min="0"
             max="100" />
           <a
-            href="#"
+            href="/"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-b${classes.groupButtonRadius()} md:rounded-br-none md:rounded-l${classes.groupButtonRadius()} md:order-1 *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             -
           </a>

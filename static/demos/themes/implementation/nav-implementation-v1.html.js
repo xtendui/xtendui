@@ -13,34 +13,30 @@ const html = /* HTML */ `
           <div class="w-full md:w-4/12">
             <div
               class="xt-card p-2 rounded${navRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
-              <nav class="*** xt-list xt-list-1 flex-col ***">
+              <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col ***">
                 <a
-                  href="#"
-                  type="button"
+                  role="button"
                   class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="description">
                   ${classes.iconFile({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Description
                 </a>
                 <a
-                  href="#"
-                  type="button"
+                  role="button"
                   class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="features">
                   ${classes.iconFiletext({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Features
                 </a>
                 <a
-                  href="#"
-                  type="button"
+                  role="button"
                   class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="accessories"
                   >${classes.iconPackage({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Accessories</a
                 >
                 <a
-                  href="#"
-                  type="button"
+                  role="button"
                   class="xt-button *** flex-auto *** ${classes.groupButtonMd()} rounded${navRadius()} ${classes.groupButton()} justify-start text-left ${buttonAnim()}"
                   data-xt-toggle-element
                   data-xt-hash="manuals"
@@ -56,7 +52,7 @@ const html = /* HTML */ `
                 class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Description</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -78,7 +74,7 @@ const html = /* HTML */ `
                 class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Features</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -90,7 +86,7 @@ const html = /* HTML */ `
                 class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Accessories</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -122,7 +118,7 @@ const html = /* HTML */ `
                 class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
                 <div class="xt-h5">Manuals</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>

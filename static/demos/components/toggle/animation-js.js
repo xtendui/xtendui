@@ -76,7 +76,7 @@ const mountToggle = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--toggle-animation-js-multiple',
+  matches: '.demo--toggle-animation-js',
   mount: ({ ref }) => {
     const unmountToggle = mountToggle({ ref })
 

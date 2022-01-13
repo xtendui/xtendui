@@ -83,44 +83,41 @@ const mountEventmethods = ({ ref }) => {
   const addBtn = ref.querySelector('#button--drop-api-add')
 
   const addFnc = () => {
-    clearTimeout(parseFloat(drop.dataset.reinitTimeout))
-    drop.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>add</strong>')
-      // elements
-      const els = self.elements
-      const indexEl = els.length + 1
-      const strEl = `
-        <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
-          data-xt-drop-element>
-          Drop ${indexEl}
-        </button>
-      `
-      drop.append(Xt.node({ str: strEl }))
-      const trs = self.targets
-      const indexTr = trs.length + 1
-      const strTr = `
-        <div class="xt-drop p-3" title="Target ${indexTr}"
-          data-xt-drop-target>
-          <div class="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
-            <nav class="xt-list flex-col p-3">
-              <a href="#" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-              </a>
-              <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                Dolor sit
-              </button>
-              <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
-                Amet
-              </button>
-            </nav>
-          </div>
+    logAdd('<strong>add</strong>')
+    // elements
+    const els = self.elements
+    const indexEl = els.length + 1
+    const strEl = `
+      <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"
+        data-xt-drop-element>
+        Drop ${indexEl}
+      </button>
+    `
+    drop.append(Xt.node({ str: strEl }))
+    const trs = self.targets
+    const indexTr = trs.length + 1
+    const strTr = `
+      <div class="xt-drop p-3" title="Target ${indexTr}"
+        data-xt-drop-target>
+        <div class="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
+          <nav aria-label="Drop" class="xt-list flex-col p-3">
+            <a href="/" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </a>
+            <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+              Dolor sit
+            </button>
+            <button type="button" class="xt-button py-1.5 px-3 text-sm rounded-md flex-auto justify-start text-left font-medium leading-snug transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500">
+              Amet
+            </button>
+          </nav>
         </div>
-      `
-      drop.append(Xt.node({ str: strTr }))
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+      </div>
+    `
+    drop.append(Xt.node({ str: strTr }))
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   addBtn.addEventListener('click', addFnc)
@@ -130,16 +127,13 @@ const mountEventmethods = ({ ref }) => {
   const removeBtn = ref.querySelector('#button--drop-api-remove')
 
   const removeFnc = () => {
-    clearTimeout(parseFloat(drop.dataset.reinitTimeout))
-    drop.dataset.reinitTimeout = setTimeout(() => {
-      logAdd('<strong>remove</strong>')
-      // element
-      const els = self.elements
-      els[els.length - 1].remove()
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    logAdd('<strong>remove</strong>')
+    // element
+    const els = self.elements
+    els[els.length - 1].remove()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   removeBtn.addEventListener('click', removeFnc)
@@ -149,12 +143,9 @@ const mountEventmethods = ({ ref }) => {
   const reinitBtn = ref.querySelector('#button--drop-api-reinit')
 
   const reinitFnc = () => {
-    clearTimeout(parseFloat(drop.dataset.reinitTimeout))
-    drop.dataset.reinitTimeout = setTimeout(() => {
-      // reinit
-      logAdd('<strong>reinit</strong>')
-      self.reinit()
-    }, 200).toString()
+    // reinit
+    logAdd('<strong>reinit</strong>')
+    self.reinit()
   }
 
   reinitBtn.addEventListener('click', reinitFnc)

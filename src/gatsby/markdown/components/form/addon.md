@@ -24,6 +24,8 @@ You can style validation classes with `.valid-submit` and `.invalid-submit`, you
 
 It **automatically runs** on **form submit** and **automatically scrolls** on the **first invalid** form item.
 
+If you have **custom backend validation** on submit add also the class `.invalid-submit`, and you can add javascript to automatically **scroll to the first validation** element on page load.
+
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -31,8 +33,6 @@ It **automatically runs** on **form submit** and **automatically scrolls** on th
 | Variable                  | `Xt.formScrollWindowFactor:Number\|false`              | `0.2`        | A number from `0` to `1` of the **window height factor to scroll to** on validation              |
 
 </div>
-
-If you have **custom backend validation** on submit, you can automatically **scroll to the first validation** element on page load.
 
 > Use **border on all form elements** if you want to **show validation with border color**.
 
@@ -45,9 +45,9 @@ If you have **custom backend validation** on submit, you can automatically **scr
 
 You can have custom design that contains the `input[type="checkbox"]` or `input[type="radio"]`, just add the tag `label` and then you can use **tailwind variants** `on:`, `group-on:` to assign animations.
 
-> For usability purpose **hide the input inside** with `sr-only`, **don't assign `display: none`**.
+> For accessibility purpose **hide the input inside** with `sr-only`, **don't assign `display: none`**.
 
-> For usability purpose you can to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`, or wait for [focus-visible-within](https://github.com/WICG/focus-visible/issues/151).
+> For accessibility purposeyou can to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`, or wait for [focus-visible-within](https://github.com/WICG/focus-visible/issues/151).
 
 Use [button](/components/button) with `label` to create **checks with button**.
 

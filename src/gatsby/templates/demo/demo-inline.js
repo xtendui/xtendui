@@ -21,6 +21,7 @@ function DemoInline(props) {
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
+    // must be first try/catch or yarn serve error
     hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}

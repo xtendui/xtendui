@@ -14,7 +14,7 @@ const html = /* HTML */ `
           Contact
         </button>
 
-        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner *** ${itemAnim()} ***">
@@ -88,10 +88,11 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
+                              aria-label="privacy policy"
                               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+                              <a href="/" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
                         </div>
@@ -136,7 +137,7 @@ const html = /* HTML */ `
           Newsletter
         </button>
 
-        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner *** ${itemAnim()} ***">
@@ -178,6 +179,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
+                                  aria-label="Option 1"
                                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage"
                                   checked />
@@ -189,6 +191,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
+                                  aria-label="Option 2"
                                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage" />
                                 <span class="${classes.checkContent()}"> Option 2 </span>
@@ -199,6 +202,7 @@ const html = /* HTML */ `
                               <label class="${classes.checkLabel()}">
                                 <input
                                   type="radio"
+                                  aria-label="Option 3"
                                   class="xt-check xt-radio ${classes.radioRadius()} ${classes.radioGray()}"
                                   name="radio-usage" />
                                 <span class="${classes.checkContent()}"> Option 3 </span>
@@ -211,10 +215,11 @@ const html = /* HTML */ `
                           <label class="${classes.checkLabel()}">
                             <input
                               type="checkbox"
+                              aria-label="privacy policy"
                               class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
                             <span class="${classes.checkContent()}">
                               I <strong>read and accept</strong> the
-                              <a href="#" target="_blank" rel="noopener">privacy policy</a>.
+                              <a href="/" target="_blank" rel="noopener">privacy policy</a>.
                             </span>
                           </label>
                         </div>
@@ -249,7 +254,7 @@ const html = /* HTML */ `
           Menu
         </button>
 
-        <div class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner *** ${itemAnim()} ***">
@@ -293,7 +298,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <button
                             type="button"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -309,7 +314,7 @@ const html = /* HTML */ `
                             Woman ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
                           </button>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Kid
                           </a>
@@ -321,19 +326,19 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             About
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             News
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Contact
                           </a>
@@ -342,19 +347,19 @@ const html = /* HTML */ `
 
                       <div class="mt-auto">
                         <div class="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
-                          <nav class="xt-list xt-list-1 flex-col">
+                          <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                             <a
-                              href="#"
+                              href="/"
                               class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                               Support ${classes.iconMail({ classes: 'xt-icon text-lg ml-4' })}
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                               Login / Account ${classes.iconUsers({ classes: 'xt-icon text-lg ml-4' })}
                             </a>
                             <a
-                              href="#"
+                              href="/"
                               class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                               Language ${classes.iconGlobe({ classes: 'xt-icon text-lg ml-4' })}
                             </a>
@@ -379,7 +384,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <button
                             type="button"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}"
@@ -395,12 +400,12 @@ const html = /* HTML */ `
                             Pant ${classes.iconChevronRight({ classes: 'xt-icon text-xl -my-1' })}
                           </button>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Jacket
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Underwear
                           </a>
@@ -424,14 +429,14 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             T-Shirt
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Polo
                           </a>
@@ -455,14 +460,14 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Jeans
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Short
                           </a>
@@ -486,14 +491,14 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="-mx-3.5">
-                        <nav class="xt-list xt-list-1 flex-col">
+                        <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Shirt
                           </a>
                           <a
-                            href="#"
+                            href="/"
                             class="xt-button ${classes.groupButtonLg()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-between text-left ${classes.buttonTextAnim()}">
                             Pant
                           </a>

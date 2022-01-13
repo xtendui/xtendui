@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--overlay-animation-noqueue">
     <div class="xt-list xt-list-3 items-center" data-xt-overlay="{ queue: false, duration: 500 }">
       <button
         type="button"
@@ -27,7 +27,7 @@ const html = /* HTML */ `
         overlay 2
       </button>
 
-      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
+      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -43,7 +43,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Overlay 0</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -90,7 +90,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
+      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -106,7 +106,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Overlay 1</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>
@@ -153,7 +153,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
+      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
         <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -169,7 +169,7 @@ const html = /* HTML */ `
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Overlay 2</div>
                 <p>
-                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Nullam
+                  <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
                   suscipit, velit eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris
                   augue, sagittis vitae magna eget, vehicula scelerisque elit.
                 </p>

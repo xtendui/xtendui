@@ -22,40 +22,6 @@ class Overlay extends Xt.Toggle {
   constructor(object, optionsCustom = {}) {
     super(object, optionsCustom)
   }
-
-  //
-  // init
-  //
-
-  /**
-   * init aria
-   */
-  _initAriaRole() {
-    const self = this
-    const options = self.options
-    // aria
-    if (options.aria) {
-      // role
-      if (options.aria === true || options.aria.role) {
-        if (self.targets.length) {
-          for (const el of self.elements) {
-            el.setAttribute('aria-haspopup', 'dialog')
-          }
-          for (const tr of self.targets) {
-            tr.setAttribute('role', 'dialog')
-            tr.setAttribute('aria-modal', 'true')
-          }
-        } else {
-          for (const el of self.elements) {
-            el.setAttribute('role', 'dialog')
-            el.setAttribute('aria-modal', 'true')
-          }
-        }
-      }
-    }
-  }
-
-  //
 }
 
 //
@@ -67,13 +33,13 @@ Overlay.optionsDefault = {
   // element
   elements: '[data-xt-overlay-element]',
   targets: '[data-xt-overlay-target]',
-  elementsInner: ':scope > a, :scope > button',
   // quantity
   min: 0,
   max: 1,
   // event
   on: 'click',
   off: 'click',
+  mouseParent: false,
   eventLimit: '.xt-event-limit, .xt-overlay',
   closeauto: true,
   openauto: true,
@@ -92,17 +58,24 @@ Overlay.optionsDefault = {
   appendTo: 'body',
   classBody: 'xt-scrollbar-overlay',
   focusLimit: true,
-  focusTrap: {
-    initialFocus: false,
-    preventScroll: true,
-    allowOutsideClick: true,
-    fallbackFocus: 'body', // needed to prevent error on deactivation sometimes
-  },
   zIndex: {
     targets: {
       start: 5000, // same as options.zIndex.targets.start
       factor: 0,
     },
+  },
+  a11y: {
+    role: 'dialog',
+    labelElements: false,
+    labelTargets: false,
+    controls: true,
+    selected: false,
+    expanded: true,
+    live: true,
+    disabled: true,
+    keyboard: true,
+    vertical: false,
+    items: false,
   },
 }
 

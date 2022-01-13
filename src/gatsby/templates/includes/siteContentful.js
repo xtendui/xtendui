@@ -6,6 +6,9 @@ export const useSiteContentful = () => {
         items: edges {
           item: node {
             title
+            localFile {
+              publicURL
+            }
             file {
               url
             }

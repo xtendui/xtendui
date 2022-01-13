@@ -27,6 +27,7 @@ function DemoIframe(props) {
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
+    // must be first try/catch or yarn serve error
     hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
@@ -49,6 +50,8 @@ function DemoIframe(props) {
   useEffect(() => {
     const item = ref.current
     const switchDemo = mode => {
+      // fix cypress
+      mode = mode ?? 'html'
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,

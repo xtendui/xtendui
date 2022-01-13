@@ -28,23 +28,23 @@ const demoHash = () => {
         if (demo) {
           // trigger fullscreen or change tabs
           item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
-          // do not close full if change tab so already opened
-          if (item.closest('#gatsby_open-full-content')) {
-            return
+          // only if not full opened
+          if (!item.closest('#gatsby_open-full-content')) {
+            // makeFullscreen
+            makeFullscreen(demo, item)
           }
-          // makeFullscreen
-          makeFullscreen(demo, item)
         }
       }
     } else {
       // close demo full if no hash
-      full.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
+      full.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
     }
   }
 }
 
 Xt.ready({
   func: () => {
+    // use demoHashChange instead of hashchange we control when page changes with no hash
     addEventListener('demoHashChange', demoHash)
   },
 })
@@ -169,7 +169,7 @@ export const populateBlock = () => {
         location.hash = el.nextSibling.querySelector('.gatsby_demo_item').getAttribute('id')
       })
     }
-    full.addEventListener('off.xt.toggle', e => {
+    full.addEventListener('off.xt.overlay', e => {
       // useCapture event propagation check
       if (e.target === full) {
         const content = document.querySelector('#gatsby_open-full-content')
@@ -272,7 +272,7 @@ export const populateDemo = container => {
       sanitize: false,
       str: `
 <div class="button--open-iframe-container" data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">
-  <a href="#" target="_blank" class="xt-button button--open-iframe ${classes.buttonCode()}" aria-label="Open Iframe" data-xt-tooltip-element>
+  <a href="/" target="_blank" class="xt-button button--open-iframe ${classes.buttonCode()}" aria-label="Open Iframe" data-xt-tooltip-element>
     ${classes.iconExternal()}
   </a>
   <div class="xt-tooltip xt-tooltip--gatsby p-2 group"
@@ -331,8 +331,8 @@ export const populateDemo = container => {
   })
   for (const item of items) {
     item.addEventListener('on.xt.toggle', () => {
-      // only if demo opened
-      if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
+      // only if full opened
+      if (item.closest('#gatsby_open-full-content')) {
         // triggering e.detail.container (e.g. slider wrap)
         dispatchEvent(
           new CustomEvent('resize', {
@@ -345,10 +345,12 @@ export const populateDemo = container => {
       }
       if (!self.initial) {
         btnOpenIframe(item)
-        // only if demo opened
-        if (document.querySelector('#gatsby_open-full-trigger').classList.contains('on')) {
-          // hash
+        // only if full opened
+        if (item.closest('#gatsby_open-full-content')) {
+          // hash and retain focus because on hashchange focus is automatically lost
+          const activeElement = document.activeElement
           location.hash = item.getAttribute('id')
+          activeElement.focus()
         }
       }
     })
@@ -359,6 +361,7 @@ export const populateDemo = container => {
     elements: '.button--show-code',
     targets: `.gatsby_demo_code`,
     queue: false,
+    a11y: false,
   })
   btnCode.addEventListener('on.xt.toggle', () => {
     const targetCode = selfCode.targets[0]
@@ -588,19 +591,20 @@ const btnOpenIframe = item => {
  */
 
 const makeFullscreen = (demo, item) => {
-  const toggle = document.querySelector('#gatsby_open-full-trigger')
-  const content = document.querySelector('#gatsby_open-full-content')
   // empty demo
   demoEmpty()
   // toggles
+  const full = document.querySelector('#gatsby_open-full')
+  requestAnimationFrame(() => {
+    // raf or it doesn't open
+    full.dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
+  })
   const listingToggle = demo.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-gatsby-listing-toggle')) {
     listingToggle.classList.add('on')
   }
-  // needs both or sometimes it doesn't open
-  toggle.classList.add('on')
-  toggle.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
   // move code block
+  const content = document.querySelector('#gatsby_open-full-content')
   demo.before(
     Xt.node({
       str: `<div class="gatsby_demo xt-ignore" data-xt-origin="gatsby_open-full-content" style="height: ${demo.offsetHeight}px"></div>`,
@@ -658,7 +662,7 @@ const initializeIframe = item => {
     item.append(
       Xt.node({
         sanitize: false,
-        str: `<div class="gatsby_demo_item_body"><iframe data-src="${Xt.sanitize(src)}"></iframe></div>`,
+        str: `<div class="gatsby_demo_item_body"><iframe title="Demo" data-src="${Xt.sanitize(src)}"></iframe></div>`,
       })
     )
     item.querySelector('.gatsby_demo_item_body').append(
@@ -903,16 +907,19 @@ export const makeDocument = () => {
               str: `
 <div class="xt-tooltip px-5 group" data-xt-tooltip-target>
   <div class="relative py-2 rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} bg-gray-100 transition duration-300 opacity-0 scale-95 group-in:opacity-100 group-in:scale-100">
-    <nav class="xt-list flex-col">
+    <nav aria-label="Page navigation scroll" class="xt-list flex-col">
     </nav>
   </div>
 </div>`,
             })
           )
-          activeText.setAttribute(
-            'data-xt-tooltip',
-            `{ elements: false, position: 'right', positionInner: '.gatsby_button-site_article_sidebar_text', duration: 300 }`
-          )
+          new Xt.Tooltip(activeText, {
+            elements: ':scope > a',
+            mouseParent: true,
+            position: 'right',
+            positionInner: '.gatsby_button-site_article_sidebar_text',
+            duration: 300,
+          })
           activeTooltip = activeText.querySelector('.xt-tooltip')
         }
         const activeList = activeTooltip.querySelector('.xt-list')
@@ -922,7 +929,7 @@ export const makeDocument = () => {
 <a href="#${encodeURIComponent(
               id
             )}" class="xt-button text-3xs py-0.5 px-3 ${classes.groupButton()} justify-start text-left ${classes.groupButtonGray()} ${classes.buttonGrayAnim()}">
-  <span class="py-px">${el.textContent.trim()}</span>
+  <span class="py-px">- ${el.textContent.trim()} -</span>
 </a>`,
           })
         )
@@ -932,7 +939,7 @@ export const makeDocument = () => {
     el.setAttribute('id', id)
     el.classList.add('gatsby_make-anchor')
     // wrapInner
-    const link = Xt.node({ str: `<a href="#"></a>` })
+    const link = Xt.node({ str: `<a href="/"></a>` })
     link.setAttribute('href', `#${encodeURIComponent(id)}`)
     el.classList.add('xt-ignore')
     el.before(link)

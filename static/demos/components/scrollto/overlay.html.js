@@ -15,7 +15,8 @@ const html = /* HTML */ `
           <a
             href="#anchor-1"
             class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }">
+            data-xt-overlay="{ targets: '#overlay--scrollto', classSkip: { elements: true } }"
+            data-xt-scrollto-hash="true">
             #1
           </a>
           <button
@@ -39,7 +40,10 @@ const html = /* HTML */ `
     <div class="container">
       <form class="text-sm mt-4">
         <label class="${classes.checkLabel()}">
-          <input type="checkbox" class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
+          <input
+            type="checkbox"
+            aria-label="Deactivate classes"
+            class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
           <span class="${classes.checkContent()}">Deactivate classes</span>
         </label>
       </form>

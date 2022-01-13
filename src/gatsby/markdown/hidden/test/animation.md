@@ -2,45 +2,58 @@
 type: "Hidden"
 category: "Test"
 parent: "Test"
-title: "Animation"
+title: "Animation Test"
 ---
 
 ## Class
 
-Test activations and animations.
+<demo>
+  <demoinline src="demos/components/toggle/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/drop/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation-direction">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation-direction">
+  </demoinline>
+</demo>
 
-Test toggle noqueue and toggle inverse should not jump page.
-
-Test overlay multiple, opening another overlay inside the overlay FocusTrap should work and not give console error.
-
-Test slider animation no flick on change slide data-xt-group-same (bug with classes activation).
+`demos/components/toggle/animation-queue`
+- TEST queue activation.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/toggle/animation-noqueue">
-  </demoinline>
   <demoinline src="demos/components/overlay/animation-queue">
-  </demoinline>
-  <demoinline src="demos/components/overlay/animation-noqueue">
   </demoinline>
   <demoinline src="demos/components/drop/animation-queue">
   </demoinline>
-  <demoinline src="demos/components/drop/animation-noqueue">
-  </demoinline>
   <demoinline src="demos/components/tooltip/animation-queue">
-  </demoinline>
-  <demoinline src="demos/components/tooltip/animation-noqueue">
-  </demoinline>
-  <demoinline src="demos/components/slider/animation">
   </demoinline>
   <demoinline src="demos/components/slider/animation-queue">
   </demoinline>
 </demo>
 
-## Inverse
+`demos/components/toggle/animation-noqueue`
+- TEST noqueue activations.
 
-Test inverse animation.
+<demo>
+  <demoinline src="demos/components/toggle/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/overlay/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/drop/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/tooltip/animation-noqueue">
+  </demoinline>
+  <demoinline src="demos/components/slider/animation">
+  </demoinline>
+</demo>
+
+`demos/components/toggle/animation-inverse`
+- TEST inverse activations.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-inverse">
@@ -49,7 +62,8 @@ Test inverse animation.
 
 ## Duration and Delay
 
-Test duration and delay.
+`demos/components/toggle/animation-duration-delay`
+- TEST duration, delay.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-duration-delay">
@@ -58,11 +72,8 @@ Test duration and delay.
 
 ## Css
 
-Test animation.
-
-Test direction.
-
-Test queue timing.
+`demos/components/toggle/animation-css`
+- TEST activation, direction.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
@@ -73,15 +84,20 @@ Test queue timing.
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-css">
   </demoinline>
+</demo>
+
+`demos/components/slider/animation-css`
+- TEST activation.
+
+<demo>
   <demoinline src="demos/components/slider/animation-css">
   </demoinline>
 </demo>
 
 ## Js
 
-Test direction and queue timing.
-
-Slider test should not deactivate and reactivate if already activated (bug skip obj nodes that are in off and on)
+`demos/components/toggle/animation-js`
+- TEST activation, direction.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-js">
@@ -92,32 +108,24 @@ Slider test should not deactivate and reactivate if already activated (bug skip 
   </demoinline>
   <demoinline src="demos/components/tooltip/animation-js">
   </demoinline>
+</demo>
+
+`demos/components/slider/animation-js`
+- TEST activation.
+
+<demo>
   <demoinline src="demos/components/slider/animation-js">
   </demoinline>
 </demo>
 
 ## Collapse
 
-Test height and width and maxHeight styles on activation and deactivation.
-
-Test overlay height inherit on animation done.
+`demos/components/toggle/animation-collapse-initial`
+- TEST height and maxHeight styles on activation and deactivation.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-collapse-initial">
   </demoinline>
   <demoinline src="demos/components/toggle/animation-collapse">
   </demoinline>
-</demo>
-
-## Megamenu
-
-Test move slightly over other and then target should not change with delay.
-
-Test direction and zIndex sequential activation and zIndex reset.
-
-Test backdrop should not flickr // needs TWO raf or sequential off/on flickr (e.g. backdrop megamenu)
-
-<demo>
-  <div class="gatsby_demo_item" data-iframe="demos/themes/navigation/megamenu-v1">
-  </div>
 </demo>

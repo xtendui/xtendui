@@ -1,10 +1,10 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--toggle-event">
     <div class="${classes.hBlock()}">Mouseenter</div>
 
-    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ on: 'mouseenter', off: false }">
+    <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ on: 'mouseenter focus', off: false }">
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded-full ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}"

@@ -19,8 +19,7 @@ export default function Header({ page }) {
       <div className="gatsby_site-article_sidebar_inner">
         <header className="gatsby_site-header xt-sticky relative">
           <div className="xt-backdrop absolute pointer-events-none bg-black transition opacity-25 !right-auto"></div>
-          <div
-            className={`gatsby_site-header_inner container bg-primary-500 bg-opacity-80 ${classes.bgBlur()} lg:backdrop-filter-none`}>
+          <div className={`gatsby_site-header_inner container bg-primary-500`}>
             <div>
               <div className="gatsby_site-header_content">
                 <Link
@@ -111,12 +110,12 @@ export default function Header({ page }) {
             </div>
           </div>
 
-          <div className={`xt-overlay group ${overlayOpen ? 'on' : ''}`} id="gatsby_menu--overlay">
+          <div className={`xt-overlay group ${overlayOpen ? 'on' : ''}`} id="gatsby_menu--overlay" aria-label="Menu">
             <div className="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
               <div className="xt-overlay-inner">
                 <div
-                  className={`*** xt-design *** bg-primary-500 bg-opacity-80 ${classes.bgBlur()} lg:backdrop-filter-none opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:transform-none`}></div>
+                  className={`xt-design bg-primary-500 opacity-0 translate-x-full group-in:duration-300 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:delay-100 group-out:ease-in-out-cubic group-out:translate-x-2/4 lg:opacity-100 lg:transform-none`}></div>
                 <div
                   className={`xt-card min-h-screen lg:min-h-0 ${classes.textInverse()} opacity-0 translate-x-2/4 group-in:transition group-in:duration-500 group-in:ease-out-cubic group-in:opacity-100 group-in:translate-x-0 group-out:transition group-out:duration-300 group-out:ease-in-out-cubic group-out:translate-x-1/4 lg:opacity-100 lg:transform-none`}>
                   <div
@@ -126,11 +125,14 @@ export default function Header({ page }) {
                   <div className="mt-16 lg:mt-0">
                     <div className="gatsby_site-header_switcher_container">
                       <div className="xt-list xt-list-1 flex-nowrap">
-                        <div className="flex-auto" data-xt-tooltip="{ position: 'bottom', duration: 300 }">
-                          <div className="w-full" data-xt-tooltip-element>
+                        <div
+                          className="flex-auto"
+                          data-xt-tooltip="{ mouseParent: true, position: 'bottom', duration: 300 }">
+                          <div className="w-full">
                             <button
                               type="button"
-                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}
+                              data-xt-tooltip-element>
                               Html
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
@@ -142,10 +144,11 @@ export default function Header({ page }) {
                           </div>
                         </div>
                         <div className="flex-auto" data-xt-tooltip="{ position: 'bottom', duration: 300 }">
-                          <div className="w-full" data-xt-tooltip-element>
+                          <div className="w-full">
                             <button
                               type="button"
-                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}>
+                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}
+                              data-xt-tooltip-element>
                               React
                             </button>
                             <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
@@ -159,7 +162,7 @@ export default function Header({ page }) {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-4">
+                  <nav aria-label="Menu" className="mt-4">
                     <div className="gatsby_site-header_links_container">
                       <div className="gatsby_site-header_links">
                         {page.menus.posts.map(({ post }, i) =>
@@ -189,11 +192,13 @@ export default function Header({ page }) {
                       </div>
                     </div>
                     {page && page.post ? (
-                      <nav className="gatsby_site-header_listing">
+                      <div className="gatsby_site-header_listing">
                         {page.categories.category.sort(typeSort).map((category, i) => (
                           <div key={i}>
                             <div className="gatsby_site-header_cat">
-                              <div className="gatsby_cat--site_article_sidebar">{category.title.split('-').pop()}</div>
+                              <div className="gatsby_cat--site_article_sidebar font-semibold text-xl">
+                                {category.title.split('-').pop()}
+                              </div>
                               <div className="gatsby_site-header_sub">
                                 <div className="gatsby_site-header_sub_inner">
                                   <div className="gatsby_site-header_item">
@@ -248,6 +253,7 @@ export default function Header({ page }) {
                                                         <div className="gatsby_tooltip_outside_link" key={i}>
                                                           <Link
                                                             to={markdownSlug(adiacent)}
+                                                            title={`${adiacent.frontmatter.title} - ${post.frontmatter.title}`}
                                                             className={`xt-button gatsby_button-site_article_sidebar gatsby_button-site_article_sidebar--adiacent ${
                                                               page.post.frontmatter.title ===
                                                                 adiacent.frontmatter.title &&
@@ -282,9 +288,9 @@ export default function Header({ page }) {
                             </div>
                           </div>
                         ))}
-                      </nav>
+                      </div>
                     ) : null}
-                  </div>
+                  </nav>
                 </div>
               </div>
             </div>

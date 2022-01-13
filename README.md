@@ -35,7 +35,7 @@ Xtend UI is a powerful frontend library of tailwind components enhanced by vanil
 * Icons with [Feather Icons](https://feathericons.com/)
 * Hosting with [Github Pages](https://pages.github.com/) and [Cloudflare](https://www.cloudflare.com/)
 
-[Supported browsers](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc) are browsers that supports `es6-module`, `es6-module-dynamic-import`, `css variables`, `css grid`, `async`.
+[Supported browsers](https://github.com/xtendui/xtendui/blob/beta/.browserslistrc) are browsers that supports mainly `es6-module`, `es6-module-dynamic-import`, `css variables`, `css grid`, `async`, `event.key`.
 
 ## Setup
 
@@ -51,7 +51,7 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/beta/.githu
 * Install required npm packages with `yarn install`
 * Use `yarn generate` to generate react components
 * Use `yarn dev` to serve a develop version with watch
-* Use `yarn serve` to serve a production version
+* Use `yarn build && yarn serve` to serve a production version
 
 ## Sponsors
 

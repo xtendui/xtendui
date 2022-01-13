@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div data-xt-tooltip="{ preventEvent: true }">
       <a
-        href="#tooltip-with-link-1"
+        href="/"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
         data-xt-tooltip-element>
         Tooltip

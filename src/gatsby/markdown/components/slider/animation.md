@@ -25,6 +25,13 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
   </demoinline>
 </demo>
 
+Use **tailwind variants** `dir-before:`, `group-dir-before:`, `group-off-before:`, `group-on-before:`, `group-in-before:`, `group-out-before:`, `dir-after:`, `group-dir-after:`, `group-off-after:`, `group-on-after:`, `group-in-after:`, `group-out-after:` to assign animations.
+
+<demo>
+  <demoinline src="demos/components/slider/animation-direction">
+  </demoinline>
+</demo>
+
 > When you use animations you need to **specity the duration of the animation** for proper interactions.
 
 You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/global/javascript#xt-options).
@@ -98,15 +105,6 @@ The queue option **controls sequential activations putting them in a queue**, or
 ## Css Animation
 
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                      | Name                          | Description                   |
-| ----------------------- | ---------------------------- | ----------------------------- |
-| Class                  | `.dir-before`       |  Class name for **before** direction activation            |
-| Class                  | `.dir-after`       |  Class name for **after** direction activation            |
-
-</div>
 
 <demo>
   <demoinline src="demos/components/slider/animation-css">

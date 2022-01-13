@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div>
+  <div class="demo--toggle-multiple-nogroupelements">
     <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ groupElements: false }">
       <button
         type="button"

@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <a href="#" type="button" class="xt-list flex-col *** group ***">
+    <a href="/" type="button" class="xt-list flex-col *** group ***">
       <div
         class="xt-button ${classes.groupButtonMd()} rounded-t${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()} ${classes.buttonPrimaryAnimGroup()}">
         Lorem ipsum dolor sit amet

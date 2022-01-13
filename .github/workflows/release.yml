@@ -38,9 +38,10 @@ jobs:
           ${{ steps.yarn-cache-dir-path.outputs.dir }}
           **/node_modules
           ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
+          ~/.cache/Cypress
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn1-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
@@ -63,8 +64,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.workflow_run.head_branch }}
     # setup/action.yml composite
     - name: Node setup
       uses: actions/setup-node@v1
@@ -81,9 +80,10 @@ jobs:
           ${{ steps.yarn-cache-dir-path.outputs.dir }}
           **/node_modules
           ~/.npm
-        key: ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
+          ~/.cache/Cypress
+        key: ${{ runner.os }}-node${{ env.NODE }}-yarn1-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-node-v${{ env.NODE }}-yarn1-
+          ${{ runner.os }}-node${{ env.NODE }}-yarn1-
     - name: Yarn
       if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline

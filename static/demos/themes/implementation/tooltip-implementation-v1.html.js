@@ -9,11 +9,11 @@ const html = /* HTML */ `
     <div class="max-w-4xl mx-auto">
       <div
         class="xt-card rounded${classes.cardRadius()} ${classes.cardSm()} ${classes.textDefault()} ${classes.cardWhite()}">
-        <div data-xt-tooltip="{ duration: 500 }">
+        <div data-xt-tooltip="{ mouseParent: true, duration: 500 }">
           Example tooltips
 
-          <span data-xt-tooltip-element>
-            <a href="#">product informations</a>
+          <span>
+            <a href="/" data-xt-tooltip-element>product informations</a>
 
             <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
               <div
@@ -54,8 +54,8 @@ const html = /* HTML */ `
 
           and
 
-          <span data-xt-tooltip-element>
-            <a href="#">credit card CVV</a>
+          <span>
+            <a href="/" data-xt-tooltip-element>credit card CVV</a>
 
             <div class="xt-tooltip p-3 *** group ***" data-xt-tooltip-target>
               <div

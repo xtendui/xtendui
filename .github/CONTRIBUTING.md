@@ -16,11 +16,7 @@ Ask first before starting work on any significant new features.
 
 - Generate and fix code formatting with `yarn generate`.
 
-- Until we have javascript tests don't make complex javascript code changes.
-
-<!--
-- Make sure all tests pass with `yarn test`.
--->
+- Make sure all tests pass with `yarn lint && yarn build && yarn test`.
 
 ## Committing Changes
 

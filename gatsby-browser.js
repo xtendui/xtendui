@@ -17,7 +17,7 @@ export const shouldUpdateScroll = ({ routerProps: { location }, prevRouterProps 
 
 export const onPreRouteUpdate = ({ location, prevLocation }) => {
   const btn = document.querySelector('.gatsby_menu--button')
-  // demoHash
+  // use demoHashChange instead of hashchange we control when page changes with no hash
   dispatchEvent(new CustomEvent('demoHashChange'))
   // keepSidebarScroll
   const overlay = document.querySelector('#gatsby_menu--overlay')
@@ -34,7 +34,7 @@ export const onPreRouteUpdate = ({ location, prevLocation }) => {
       // close demo full
       const demoFull = document.querySelector('#gatsby_open-full-trigger.on')
       if (demoFull) {
-        demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.toggle'))
+        demoFull.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
       }
       // fix demo index when changing page
       document.documentElement.setAttribute('data-demo-index', '0')

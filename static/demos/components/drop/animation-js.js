@@ -20,6 +20,7 @@ const mountDrops = ({ ref }) => {
 
   /***/
   let self = new Xt.Drop(drop, {
+    mouseParent: true,
     duration: 500,
   })
   /***/

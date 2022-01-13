@@ -11,6 +11,7 @@ import DOMPurify from 'dompurify'
 //
 
 export const Xt = {}
+Xt.DOMPurify = DOMPurify
 
 if (typeof window !== 'undefined') {
   //
@@ -30,8 +31,6 @@ if (typeof window !== 'undefined') {
   Xt.options = {}
   Xt._mountArr = []
   Xt._unmountArr = []
-  Xt._focusTrapArr = []
-  Xt.scrollDelay = false
   Xt.resizeDelay = 200
   Xt.medialoadedDelay = false
   Xt.durationTimescale = 1
@@ -367,15 +366,8 @@ if (typeof window !== 'undefined') {
   Xt._eventReinit = ({ self } = {}, e) => {
     // triggering e.detail.container
     if (!e?.detail?.container || e?.detail?.container.contains(self.container)) {
-      Xt.eventDelay({
-        e,
-        el: self.container,
-        ns: `${self.ns}Reinit`,
-        func: () => {
-          // handler
-          self.reinit()
-        },
-      })
+      // handler
+      self.reinit()
     }
   }
 
@@ -849,9 +841,10 @@ if (typeof window !== 'undefined') {
   Xt.on = ({ el, ns = '', duration, raf = true, initial = false, callback } = {}) => {
     Xt.animTimeout({ el, ns })
     el.classList.add('on')
-    el.classList.remove('out', 'done')
+    el.classList.remove('out')
     const func = () => {
       el.classList.add('in')
+      el.classList.remove('done')
       Xt.animTimeout({
         el,
         ns,
@@ -901,9 +894,9 @@ if (typeof window !== 'undefined') {
   Xt.off = ({ el, ns = '', duration, raf = true, initial = false, callback } = {}) => {
     Xt.animTimeout({ el, ns })
     // must be outside inside raf or page jumps (e.g. noqueue)
-    el.classList.remove('on', 'done')
+    el.classList.remove('on')
     const func = () => {
-      el.classList.remove('in')
+      el.classList.remove('in', 'done')
       el.classList.add('out')
       Xt.animTimeout({
         el,
@@ -1038,83 +1031,6 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * Fix resize event multiple calls and adds delay on resize and scroll events
-   * @param {Object} params
-   * @param {Event|Object} params.e Event
-   * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
-   * @param {String} params.ns Namespace
-   * @param {Number} params.duration Duration
-   * @param {Function} params.func Function to execute after transition or animation
-   */
-  Xt.eventDelay = ({ e, el, ns = '', duration, func } = {}) => {
-    Xt.frame({
-      el,
-      ns: `${ns}EventDelayFrame`,
-    })
-    clearTimeout(Xt.dataStorage.get(window, `eventDelaySaveTimeout`))
-    clearTimeout(Xt.dataStorage.get(el, `${ns}eventDelayTimeout`))
-    if (func) {
-      if (e) {
-        let delay = e?.detail?.delay
-        delay = duration ?? delay ? delay : Xt[`${e.type}Delay`]
-        if (e.type === 'resize') {
-          // we check also if outerWidth changes because on android doesn't change with ScrollTriggers
-          // we check also innerWidth for resize desktop (e.g. inspect and resize)
-          const w = window.innerWidth + window.outerWidth
-          const h = window.innerHeight + window.outerHeight
-          // multiple calls check
-          if (
-            !e?.detail?.force && // not when setting delay on event
-            Xt.dataStorage.get(window, 'xtEventDelayWidth') === w && // when width changes
-            (matchMedia('(hover: none)').matches || Xt.dataStorage.get(window, 'xtEventDelayHeight') === h) // when height changes not touch
-          ) {
-            // only width no height because it changes on scroll on mobile
-            return
-          }
-          // save
-          Xt.dataStorage.set(
-            window,
-            `eventDelaySaveTimeout`,
-            setTimeout(() => {
-              Xt.dataStorage.set(window, 'xtEventDelayWidth', w)
-              Xt.dataStorage.set(window, 'xtEventDelayHeight', h)
-            }, Xt[`${e.type}Delay`])
-          )
-        }
-        // delay
-        if (!delay) {
-          Xt.frame({
-            el,
-            ns: `${ns}EventDelayFrame`,
-            func: () => {
-              func(e)
-            },
-          })
-        } else {
-          Xt.dataStorage.set(
-            el,
-            `${ns}eventDelayTimeout`,
-            setTimeout(() => {
-              func(e)
-            }, delay)
-          )
-        }
-      } else {
-        Xt.frame({
-          el,
-          ns: `${ns}EventDelayFrame`,
-          func: () => {
-            func(e)
-          },
-        })
-      }
-    }
-  }
-
-  Xt.dataStorage.set(document.documentElement, 'xtEventDelayWidth', window.innerWidth)
-  Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
-
-  /**
    * Set scrollbar width of document
    */
   Xt._setScrollbarWidth = () => {
@@ -1153,6 +1069,37 @@ if (typeof window !== 'undefined') {
   })
 
   /**
+   * resize.xt
+   */
+
+  addEventListener('resize', e => {
+    // we check also if outerWidth changes because on android doesn't change with ScrollTriggers
+    // we check also innerWidth for resize desktop (e.g. inspect and resize)
+    const w = window.innerWidth + window.outerWidth
+    const h = window.innerHeight + window.outerHeight
+    if (
+      !e?.detail?.force && // not when setting delay on event
+      Xt.dataStorage.get(window, 'xtEventDelayWidth') === w && // when width changes
+      (matchMedia('(hover: none)').matches || Xt.dataStorage.get(window, 'xtEventDelayHeight') === h) // when height changes not touch
+    ) {
+      // only width no height because it changes on scroll on mobile
+      return
+    }
+    Xt.dataStorage.set(
+      window,
+      `eventDelaySaveTimeout`,
+      setTimeout(() => {
+        Xt.dataStorage.set(window, 'xtEventDelayWidth', w)
+        Xt.dataStorage.set(window, 'xtEventDelayHeight', h)
+        dispatchEvent(new CustomEvent('resize.xt', { detail: e?.detail }))
+      }, Xt.resizeDelay)
+    )
+  })
+
+  Xt.dataStorage.set(document.documentElement, 'xtEventDelayWidth', window.innerWidth)
+  Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
+
+  /**
    * Xt._innerHeightSet and --vh
    */
   Xt._innerHeightSet = () => {
@@ -1160,16 +1107,8 @@ if (typeof window !== 'undefined') {
     document.documentElement.style.setProperty('--vh', `${Xt.innerHeight * 0.01}px`)
   }
 
-  addEventListener('resize', e => {
-    Xt.eventDelay({
-      e,
-      el: document.documentElement,
-      ns: 'WindowHeightResize',
-      duration: 0,
-      func: () => {
-        Xt._innerHeightSet()
-      },
-    })
+  addEventListener('resize.xt', () => {
+    Xt._innerHeightSet()
   })
 
   Xt.ready({
@@ -1193,17 +1132,11 @@ if (typeof window !== 'undefined') {
       autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
     })
     // window resize
-    const resize = e => {
-      Xt.eventDelay({
-        e,
-        ns: 'xtScrolltriggerRerfreshFix',
-        func: () => {
-          ScrollTrigger.refresh()
-        },
-      })
+    const resize = () => {
+      ScrollTrigger.refresh()
     }
-    removeEventListener('resize', resize)
-    addEventListener('resize', resize)
+    removeEventListener('resize.xt', resize)
+    addEventListener('resize.xt', resize)
   }
 
   //

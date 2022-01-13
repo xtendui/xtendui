@@ -1,0 +1,16 @@
+{
+  "projectId": "d4b2fy",
+  "baseUrl": "http://localhost:8080",
+  "viewportWidth": 1280,
+  "viewportHeight": 800,
+  "retries": 2,
+  "screenshotOnRunFailure": false,
+  "video": false,
+  "fixturesFolder": "tests/cypress/fixtures",
+  "integrationFolder": "tests/cypress/integration",
+  "pluginsFile": "tests/cypress/plugins/index.js",
+  "screenshotsFolder": "tests/cypress/screenshots",
+  "videosFolder": "tests/cypress/videos",
+  "downloadsFolder": "tests/cypress/downloads",
+  "supportFile": "tests/cypress/support/index.js"
+}

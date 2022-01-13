@@ -40,7 +40,9 @@ Xt.mount({
     }
 
     ref.addEventListener('change', change)
-    form.addEventListener('reset', change)
+    if (form) {
+      form.addEventListener('reset', change)
+    }
 
     if (ref.checked) {
       change()
@@ -66,6 +68,7 @@ Xt.mount({
       if (item.dataset.xtValidate === 'true') {
         item.classList.add('valid-submit')
         item.classList.remove('invalid-submit')
+        item.removeAttribute('aria-invalid')
         item.checkValidity()
       }
     }
@@ -85,6 +88,7 @@ Xt.mount({
       const item = e.target
       item.classList.remove('valid-submit')
       item.classList.add('invalid-submit')
+      item.setAttribute('aria-invalid', true)
       item.dataset.xtValidate = 'true'
       // scroll to views
       if (Xt.formScrollWindowFactor) {
