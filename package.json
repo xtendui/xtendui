@@ -1,6 +1,6 @@
 {
   "name": "xtendui",
-  "version": "1.0.0-beta.49",
+  "version": "1.0.0",
   "description": "Xtend UI is a powerful frontend library of tailwind components enhanced by vanilla js. It helps you build interfaces with advanced interactions and animations.",
   "homepage": "https://xtendui.com/",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "serve": "gatsby serve -p 8080",
     "deploy": "gh-pages -d public",
     "dist": "yarn setup && cross-env DIST=true webpack --progress",
-    "release": "npx semantic-release --dry-run --debug",
+    "release": "npx semantic-release --no-ci",
     "lint": "eslint . --ext .js",
     "lint:generate": "eslint . --ext .jsx",
     "test": "start-server-and-test serve http://localhost:8080 test:run",
