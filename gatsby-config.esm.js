@@ -23,7 +23,7 @@ module.exports = {
     github: 'https://github.com/xtendui/xtendui',
     twitter: 'https://twitter.com/xtendui',
     download: 'https://github.com/xtendui/xtendui/releases',
-    uuid: require('uuid/v1')(),
+    uuid: require('uuid').v1(),
   },
   plugins: [
     'gatsby-plugin-image',
