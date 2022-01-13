@@ -21,7 +21,7 @@ npm install xtendui --save
 Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```sh
-npm install tailwindcss@2 --save
+npm install tailwindcss --save
 npm install postcss postcss-import autoprefixer --save-dev
 ```
 
