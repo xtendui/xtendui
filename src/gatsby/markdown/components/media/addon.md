@@ -8,7 +8,7 @@ date: "1900-10-10"
 
 ## Iframe Lazy
 
-Use this code to create a **iframe lazy that loads on click**.
+Use this code to create a **youtube and vimeo embed videos** lazy that loads on click.
 
 Just change `iframe[data-src]` and `img[src]` attributes of the iframe and image with the content you want.
 
