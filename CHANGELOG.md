@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/xtendui/xtendui/compare/v1.0.3...v1.0.4) (2022-01-14)
+
+
+### Bug Fixes
+
+* fix action pipeline ([6379d89](https://github.com/xtendui/xtendui/commit/6379d8974c61c2af590d1569cb3902d8444b1db2))
+* test new deploy action ([152e26f](https://github.com/xtendui/xtendui/commit/152e26f3b5bbda62daec9ed1376983252ce98282))
+
 ## [1.0.3](https://github.com/xtendui/xtendui/compare/v1.0.2...v1.0.3) (2022-01-13)
 
 
