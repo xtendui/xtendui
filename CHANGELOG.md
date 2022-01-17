@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/xtendui/xtendui/compare/v1.0.4...v1.0.5) (2022-01-17)
+
+
+### Bug Fixes
+
+* **toggle:** fix options.a11y.keyboad don't close on space ([36b2602](https://github.com/xtendui/xtendui/commit/36b2602e95ed2c035f941a1b0c1a19788312e05e))
+
 ## [1.0.4](https://github.com/xtendui/xtendui/compare/v1.0.3...v1.0.4) (2022-01-14)
 
 
