@@ -3664,7 +3664,7 @@ class Toggle {
     const prevKey = options.a11y.vertical ? 'ArrowLeft' : 'ArrowUp'
     const nextKey = options.a11y.vertical ? 'ArrowRight' : 'ArrowDown'
     // Escape
-    if (key === 'Escape' || key === ' ') {
+    if (key === 'Escape') {
       if (options.a11y.role === 'popup' || options.a11y.role === 'dialog') {
         // activation
         self._eventOff({ el, focus: true })
