@@ -26,6 +26,9 @@ const mountVariants = ({ ref }) => {
     on: 'change',
     off: false,
     duration: 500,
+    a11y: {
+      keyboard: false,
+    },
   })
   /***/
 
