@@ -29,11 +29,11 @@ const html = /* HTML */ `
     <form class="text-sm mt-6">
       <div class="*** xt-list ***">
         <div class="*** inline-flex flex-col md:flex-row md:flex-nowrap ***">
-          <a
-            href="/"
+          <button
+            type="button"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-t${classes.groupButtonRadius()} md:rounded-tl-none md:rounded-r${classes.groupButtonRadius()} md:order-3 *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             +
-          </a>
+          </button>
           <input
             type="number"
             class="${classes.input()} w-16 text-center ${classes.inputGray()} *** md:order-2 ***"
@@ -41,11 +41,11 @@ const html = /* HTML */ `
             value="1"
             min="0"
             max="100" />
-          <a
-            href="/"
+          <button
+            type="button"
             class="xt-button text-2xs py-1 px-2.5 *** rounded-b${classes.groupButtonRadius()} md:rounded-br-none md:rounded-l${classes.groupButtonRadius()} md:order-1 *** ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
             -
-          </a>
+          </button>
         </div>
       </div>
     </form>
