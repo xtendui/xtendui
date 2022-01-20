@@ -99,13 +99,13 @@ console.debug(test)
           )
         }
         // react stuff
-        html = html.replace(/<*(class=")(?=[^:])(?=.*>)/g, 'className="')
-        html = html.replace(/<*(checked)(?=[^:])(?=.*>)/g, 'defaultChecked')
-        html = html.replace(/<*(value)(?=[^:])(?=.*>)>/g, 'defaultValue')
-        html = html.replace(/<*(selected)(?=[^:])(?=.*>)/g, '')
-        html = html.replace(/<*(playsinline)(?=[^:])(?=.*>)/g, 'playsInline')
-        html = html.replace(/<*(autoplay)(?=[^:])(?=.*>)/g, 'autoPlay')
-        html = html.replace(/<*(frameborder)(?=[^:])(?=.*>)/g, 'frameBorder')
+        html = html.replace(/<*(class=")(?=[^:])(?=[\S\s]*?>)/g, 'className="')
+        html = html.replace(/<*(checked)(?=[^:])(?=[\S\s]*?>)/g, 'defaultChecked')
+        html = html.replace(/<*(value)(?=[^:])(?=[\S\s]*?>)/g, 'defaultValue')
+        html = html.replace(/<*(selected)(?=[^:])(?=[\S\s]*?>)/g, '')
+        html = html.replace(/<*(playsinline)(?=[^:])(?=[\S\s]*?>)/g, 'playsInline')
+        html = html.replace(/<*(autoplay)(?=[^:])(?=[\S\s]*?>)/g, 'autoPlay')
+        html = html.replace(/<*(frameborder)(?=[^:])(?=[\S\s]*?>)/g, 'frameBorder')
         // str
         const str = `import React${
           strMount !== '' ? `${refs ? `, { useRef, useEffect${test ? `, useState` : ''} }` : ''}` : ''
