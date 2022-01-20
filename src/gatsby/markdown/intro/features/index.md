@@ -115,7 +115,7 @@ The **list and row components** are useful to space any element with margins or 
 
 #### Media
 
-The **media component** is useful to enhance html assets. It can be used with `img`, `video`, `iframe` tags to properly **fit to aspect ratio**, display a **skeleton loader** or just as a base standard markup for animating assets.
+The **media component** is useful to enhance html assets. It can be used with `img`, `video`, `iframe` tags to properly **fit to aspect ratio**, display a **skeleton loader** or just as a base standard markup for animating assets. See [media](/components/media) for more info.
 
 #### Typography
 
