@@ -662,17 +662,15 @@ const initializeIframe = item => {
     item.append(
       Xt.node({
         sanitize: false,
-        str: `<div class="gatsby_demo_item_body"><iframe title="Demo" data-src="${Xt.sanitize(src)}"></iframe></div>`,
-      })
-    )
-    item.querySelector('.gatsby_demo_item_body').append(
-      Xt.node({
         str: `
-          <div class="${classes.loader()}">
+        <div class="gatsby_demo_item_body">
+          <div class="xt-loader absolute inset-0 rounded-inherit overflow-hidden">
             <div class="${classes.spinner()} w-6 h-6 text-primary-500">
               ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
             </div>
-          </div>`,
+          </div>
+          <iframe class="relative" title="Demo" data-src="${Xt.sanitize(src)}"></iframe>
+        </div>`,
       })
     )
     // load
@@ -705,7 +703,9 @@ window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
   populateItem(item)
   populateIframe({ item, htmlSource, jsxSource, cssSource, jsSource })
   // spinner
-  item.classList.add('loaded')
+  requestAnimationFrame(() => {
+    item.classList.add('loaded')
+  })
 }
 
 /**
