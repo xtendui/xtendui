@@ -49,7 +49,7 @@ export default function demo() {
                   <input
                     type="checkbox"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     defaultChecked
                     disabled
                   />
@@ -66,7 +66,7 @@ export default function demo() {
                   <input
                     type="checkbox"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                   />
                   <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
@@ -87,7 +87,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="radio-row"
                     defaultChecked
                   />
@@ -104,7 +104,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="radio-row"
                   />
                   <span className="ml-4">
@@ -126,7 +126,7 @@ export default function demo() {
                   <input
                     type="checkbox"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                   />
                   <span className="ml-4">
                     <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam
@@ -141,7 +141,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="switch-row"
                     defaultChecked
                   />
@@ -158,7 +158,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="switch-row"
                   />
                   <span className="ml-4">

@@ -57,7 +57,7 @@ export default function demo() {
             <input
               type="checkbox"
               aria-label="Deactivate classes"
-              className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+              className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
             />
             <span className="ml-4">Deactivate classes</span>
           </label>

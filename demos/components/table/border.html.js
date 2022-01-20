@@ -1,8 +1,6 @@
 const html = /* HTML */ `
   <div class="demo--table-border">
-    <table
-      class="my-4 xt-my-auto w-full rounded-xl *** border-2 border-gray-200 border-separate overflow-hidden ***"
-      style="border-spacing: 0;">
+    <table class="my-4 xt-my-auto w-full rounded-xl *** border-2 border-gray-200 border-separate overflow-hidden ***">
       <thead>
         <tr>
           <th

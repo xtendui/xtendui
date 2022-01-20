@@ -2,9 +2,7 @@ import React from 'react'
 export default function demo() {
   return (
     <div className="demo--table-border-react">
-      <table
-        className="my-4 xt-my-auto w-full rounded-xl *** border-2 border-gray-200 border-separate overflow-hidden ***"
-        style="border-spacing: 0;">
+      <table className="my-4 xt-my-auto w-full rounded-xl *** border-2 border-gray-200 border-separate overflow-hidden ***">
         <thead>
           <tr>
             <th className="py-2 px-4 text-xs align-top font-medium leading-snug tracking-wider uppercase text-left border border-gray-200">

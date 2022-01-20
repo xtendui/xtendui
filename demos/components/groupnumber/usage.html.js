@@ -15,7 +15,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="number"
-            class="${classes.input()} w-16 text-center *** border border-gray-300 *** ${classes.inputGray()}"
+            class="block w-16 text-center *** border border-gray-300 *** ${classes.inputGray()}"
             aria-label="Quantity"
             value="22"
             min="-22"
@@ -39,7 +39,7 @@ const html = /* HTML */ `
       <div class="*** xt-list flex-nowrap ***" data-xt-groupnumber="{ limit: false, validate: false }">
         <input
           type="number"
-          class="${classes.input()} w-16 text-center *** rounded${classes.groupButtonRadius()} rounded-r-none border border-r-0 border-gray-300 *** ${classes.inputGray()}"
+          class="block w-16 text-center *** rounded${classes.groupButtonRadius()} rounded-r-none border border-r-0 border-gray-300 *** ${classes.inputGray()}"
           aria-label="Quantity"
           value="22"
           min="-22"
@@ -75,7 +75,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="number"
-            class="${classes.input()} w-16 *** border border-gray-300 *** text-center ${classes.inputGray()}"
+            class="block w-16 *** border border-gray-300 *** text-center ${classes.inputGray()}"
             aria-label="Quantity"
             min="-22"
             max="-11"
@@ -99,7 +99,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="number"
-            class="${classes.input()} w-16 *** border border-gray-300 *** text-center ${classes.inputGray()}"
+            class="block w-16 *** border border-gray-300 *** text-center ${classes.inputGray()}"
             aria-label="Quantity"
             min="11"
             max="22"
@@ -123,7 +123,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="number"
-            class="${classes.input()} w-16 *** border border-gray-300 *** text-center ${classes.inputGray()}"
+            class="block w-16 *** border border-gray-300 *** text-center ${classes.inputGray()}"
             aria-label="Quantity"
             min="-22"
             max="22"

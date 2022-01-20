@@ -11,7 +11,7 @@ export default function demo() {
           <input
             type="checkbox"
             aria-label="Lorem ipsum"
-            className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+            className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
             name="checkbox-button-0"
             defaultChecked
             disabled
@@ -23,7 +23,7 @@ export default function demo() {
           <input
             type="checkbox"
             aria-label="Lorem ipsum"
-            className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+            className="xt-check xt-checkbox top-auto ml-2 rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
             name="checkbox-button-1"
           />
         </label>
@@ -43,7 +43,7 @@ export default function demo() {
           <input
             type="radio"
             aria-label="Lorem ipsum"
-            className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+            className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
             name="switch-button"
             defaultChecked
           />
@@ -54,7 +54,7 @@ export default function demo() {
           <input
             type="radio"
             aria-label="Lorem ipsum"
-            className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+            className="xt-check xt-switch top-auto ml-2 rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
             name="switch-button"
           />
         </label>

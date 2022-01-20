@@ -17,7 +17,7 @@ export default function demo() {
             </button>
             <input
               type="number"
-              className="block w-full w-16 text-center *** border border-gray-300 *** py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+              className="block w-16 text-center *** border border-gray-300 *** py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Quantity"
               defaultValue="22"
               min="-22"
@@ -46,7 +46,7 @@ export default function demo() {
         <div className="*** xt-list flex-nowrap ***" data-xt-groupnumber="{ limit: false, validate: false }">
           <input
             type="number"
-            className="block w-full w-16 text-center *** rounded-md rounded-r-none border border-r-0 border-gray-300 *** py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+            className="block w-16 text-center *** rounded-md rounded-r-none border border-r-0 border-gray-300 *** py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
             aria-label="Quantity"
             defaultValue="22"
             min="-22"
@@ -85,7 +85,7 @@ export default function demo() {
             </button>
             <input
               type="number"
-              className="block w-full w-16 *** border border-gray-300 *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+              className="block w-16 *** border border-gray-300 *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Quantity"
               min="-22"
               max="-11"
@@ -110,7 +110,7 @@ export default function demo() {
             </button>
             <input
               type="number"
-              className="block w-full w-16 *** border border-gray-300 *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+              className="block w-16 *** border border-gray-300 *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Quantity"
               min="11"
               max="22"
@@ -135,7 +135,7 @@ export default function demo() {
             </button>
             <input
               type="number"
-              className="block w-full w-16 *** border border-gray-300 *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
+              className="block w-16 *** border border-gray-300 *** text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none"
               aria-label="Quantity"
               min="-22"
               max="22"

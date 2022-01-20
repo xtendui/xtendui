@@ -43,24 +43,24 @@ export default function demo() {
       <form className="text-sm mt-6">
         <div className="*** xt-list ***">
           <div className="*** inline-flex flex-col md:flex-row md:flex-nowrap ***">
-            <a
-              href="/"
+            <button
+              type="button"
               className="xt-button text-2xs py-1 px-2.5 *** rounded-t-md md:rounded-tl-none md:rounded-r-md md:order-3 *** font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
               +
-            </a>
+            </button>
             <input
               type="number"
-              className="block w-full w-16 text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none *** md:order-2 ***"
+              className="block w-16 text-center py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none *** md:order-2 ***"
               aria-label="Quantity"
               defaultValue="1"
               min="0"
               max="100"
             />
-            <a
-              href="/"
+            <button
+              type="button"
               className="xt-button text-2xs py-1 px-2.5 *** rounded-b-md md:rounded-br-none md:rounded-l-md md:order-1 *** font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600">
               -
-            </a>
+            </button>
           </div>
         </div>
       </form>

@@ -519,7 +519,7 @@ export default function demo() {
                               <input
                                 type="checkbox"
                                 aria-label="privacy policy"
-                                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the
@@ -624,7 +624,7 @@ export default function demo() {
                                   <input
                                     type="radio"
                                     aria-label="Option 1"
-                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                                     name="radio-usage"
                                     defaultChecked
                                   />
@@ -637,7 +637,7 @@ export default function demo() {
                                   <input
                                     type="radio"
                                     aria-label="Option 2"
-                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                                     name="radio-usage"
                                   />
                                   <span className="ml-4"> Option 2 </span>
@@ -649,7 +649,7 @@ export default function demo() {
                                   <input
                                     type="radio"
                                     aria-label="Option 3"
-                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                                     name="radio-usage"
                                   />
                                   <span className="ml-4"> Option 3 </span>
@@ -663,7 +663,7 @@ export default function demo() {
                               <input
                                 type="checkbox"
                                 aria-label="privacy policy"
-                                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                                className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                               />
                               <span className="ml-4">
                                 I <strong>read and accept</strong> the

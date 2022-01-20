@@ -139,7 +139,7 @@ export default function demo() {
                   <input
                     type="checkbox"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     required
                     disabled
                   />
@@ -156,7 +156,7 @@ export default function demo() {
                   <input
                     type="checkbox"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-checkbox rounded-md bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     required
                   />
                   <span className="ml-4">
@@ -178,7 +178,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="radio-validation"
                     required
                   />
@@ -195,7 +195,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-radio rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="radio-validation"
                   />
                   <span className="ml-4">
@@ -217,7 +217,7 @@ export default function demo() {
                   <input
                     type="checkbox"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     required
                   />
                   <span className="ml-4">
@@ -233,7 +233,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="switch-validation"
                     required
                   />
@@ -250,7 +250,7 @@ export default function demo() {
                   <input
                     type="radio"
                     aria-label="Lorem ipsum"
-                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all defaultChecked:bg-primary-500"
+                    className="xt-check xt-switch rounded-full bg-gray-200 border border-transparent transition-all checked:bg-primary-500"
                     name="switch-validation"
                   />
                   <span className="ml-4">
