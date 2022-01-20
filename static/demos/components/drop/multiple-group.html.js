@@ -3,11 +3,12 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 items-center" data-xt-drop="{ mouseParent: true }">
-      <div data-xt-group="my-group">
+      <div>
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
-          data-xt-drop-element>
+          data-xt-drop-element
+          data-xt-group="my-group">
           Group
         </button>
 
