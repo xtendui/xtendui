@@ -183,14 +183,6 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more info.
 
-## Jump
-
-See [toggle jump](/components/toggle/interaction#jump) for more info.
-
-## Auto	
-
-See [toggle auto](/components/toggle/interaction#auto) for more info.
-
 ## Class Body
 
 See [overlay class body](/components/overlay/interaction#class-body) for more info.

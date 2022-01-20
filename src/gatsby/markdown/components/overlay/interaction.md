@@ -164,14 +164,6 @@ Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash) 
 
 See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more info.
 
-## Jump
-
-See [toggle jump](/components/toggle/interaction#jump) for more info.
-
-## Auto	
-
-See [toggle auto](/components/toggle/interaction#auto) for more info.
-
 ## Class Body
 
 You can set **body classes on activation**, remember to keep default `classBody` classes.
