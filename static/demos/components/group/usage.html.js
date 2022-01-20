@@ -36,7 +36,7 @@ const html = /* HTML */ `
           </button>
           <input
             type="number"
-            class="${classes.input()} w-16 text-center ${classes.inputGray()} *** md:order-2 ***"
+            class="block w-16 text-center ${classes.inputGray()} *** md:order-2 ***"
             aria-label="Quantity"
             value="1"
             min="0"
