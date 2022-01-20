@@ -118,6 +118,15 @@ describe('docs', function () {
       .then(() => {
         const clipboard = win.Xt.dataStorage.get(this.pre[0], 'sourceCode')
         expect(clipboard).to.not.match(/\*\*\*/)
+        expect(clipboard.length).be.gte(1000)
+      })
+      .get('.button--open-full')
+      .eq(0)
+      .click()
+      .then(() => {
+        const clipboard = win.Xt.dataStorage.get(this.pre[0], 'sourceCode')
+        expect(clipboard).to.not.match(/\*\*\*/)
+        expect(clipboard.length).be.gte(1000)
       })
   })
 
