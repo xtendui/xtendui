@@ -355,29 +355,6 @@ export const populateDemo = container => {
       }
     })
   }
-  // .button--show-code
-  const btnCode = container.querySelector('.button--show-code')
-  const selfCode = new Xt.Toggle(inner, {
-    elements: '.button--show-code',
-    targets: `.gatsby_demo_code`,
-    queue: false,
-    a11y: false,
-  })
-  btnCode.addEventListener('on.xt.toggle', () => {
-    const targetCode = selfCode.targets[0]
-    if (targetCode) {
-      targetCode.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
-    }
-  })
-  new Xt.Tooltip(btnCode.parentNode, {
-    position: 'bottom-end',
-    duration: 300,
-  })
-  swapToggle({ ref: btnCode.parentNode })
-  // populateTabs
-  const handler = populateTabs.bind(container, { container })
-  btnCode.removeEventListener('on.xt.toggle', handler)
-  btnCode.addEventListener('on.xt.toggle', handler)
   // only one time
   container.dataset.gatsbyDemoBuilt = 'true'
 }
@@ -449,12 +426,34 @@ export const populateItem = item => {
   // populateTabs
   // need to reset or on iframe reload it doesn't reload code
   container.removeAttribute('data-code-fetched')
-  // .button--show-code reinit
-  const self = Xt.get({ name: 'xt-toggle', el: container.querySelector('.gatsby_demo_inner') })
-  if (self) {
+  // .button--show-code
+  const btnCode = container.querySelector('.button--show-code')
+  const inner = container.querySelector('.gatsby_demo_inner')
+  let selfCode = Xt.get({ name: 'xt-toggle', el: inner })
+  if (selfCode) {
     // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
-    self.reinit({ save: false })
+    selfCode.reinit({ save: false })
+  } else {
+    selfCode = new Xt.Toggle(inner, {
+      elements: '.button--show-code',
+      targets: `.gatsby_demo_code`,
+      queue: false,
+      a11y: false,
+    })
+    // populateTabs
+    btnCode.addEventListener('on.xt.toggle', populateTabs.bind(container, { container }))
   }
+  btnCode.addEventListener('on.xt.toggle', () => {
+    const targetCode = selfCode.targets[0]
+    if (targetCode) {
+      targetCode.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+    }
+  })
+  new Xt.Tooltip(btnCode.parentNode, {
+    position: 'bottom-end',
+    duration: 300,
+  })
+  swapToggle({ ref: btnCode.parentNode })
 }
 
 /**

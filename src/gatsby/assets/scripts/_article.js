@@ -47,6 +47,8 @@ Xt.mount({
       closeInside: false,
       classBody: 'xt-scrollbar-overlay demo-full-open',
       appendTo: false,
+      focusLimit: false,
+      a11y: false,
     })
 
     // tooltip
