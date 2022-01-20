@@ -55,6 +55,10 @@ Use negative [margin](https://tailwindcss.com/docs/margin) on icons if the icon 
   </demoinline>
 </demo>
 
+## Checks
+
+Refer to [form checks custom](/components/form/addon#checks-custom).
+
 ## Group
 
 Refer to [group](/components/group).
@@ -66,7 +70,3 @@ Refer to [nav](/components/nav).
 ## Toolbar
 
 Refer to [toolbar](/components/toolbar).
-
-## Checks
-
-Refer to [form checks custom](/components/form/addon#checks-custom).

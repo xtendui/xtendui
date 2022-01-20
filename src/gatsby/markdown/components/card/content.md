@@ -111,19 +111,3 @@ Use **tailwind classes** to assign size (e.g. [padding](https://tailwindcss.com/
 ## Checks
 
 Refer to [form checks custom](/components/form/addon#checks-custom).
-
-## Content Group
-
-Refer to [group other content](/components/group/content#other-content).
-
-## Content Nav
-
-Refer to [nav other content](/components/nav/content#other-content).
-
-## Content Tabs
-
-Refer to [tabs other content](/components/tabs/content#other-content).
-
-## Content Toolbar
-
-Refer to [toolbar other content](/components/toolbar/content#other-content).
