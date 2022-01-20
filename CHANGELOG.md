@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/xtendui/xtendui/compare/v1.0.5...v1.0.6) (2022-01-20)
+
+
+### Bug Fixes
+
+* **scrollto:** fix destroy remove scrollto.trigger.xt.scrollto listener ([f8186ad](https://github.com/xtendui/xtendui/commit/f8186ad25a6e8e0c5cb6e12e011e7ddf75dcaa89))
+
 ## [1.0.5](https://github.com/xtendui/xtendui/compare/v1.0.4...v1.0.5) (2022-01-17)
 
 
