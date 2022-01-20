@@ -463,10 +463,11 @@ class Scrollto {
     self.container.removeEventListener('click', changeHandler)
     // scrollto
     const scrolltoHandler = Xt.dataStorage.get(window, `scrollto/${self.ns}`)
-    removeEventListener(`scrollto.trigger.${self.componentNs}`, scrolltoHandler, true)
+    removeEventListener(`scrollto.trigger.${self._componentNs}`, scrolltoHandler, true)
     // hash
     const hashHandler = Xt.dataStorage.get(window, `hashchange/${self.ns}`)
     removeEventListener('hashchange', hashHandler)
+    // scroll
     for (const scroller of self.scrollers) {
       if (scroller) {
         const scrollHandler = Xt.dataStorage.get(scroller, `scroll/${self.ns}`)
