@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/xtendui/xtendui/compare/v1.0.6...v1.0.7) (2022-01-21)
+
+
+### Bug Fixes
+
+* **tooltip:** tooltip now has options.preventEvent true ([c664045](https://github.com/xtendui/xtendui/commit/c66404587c52a51ca5d35390baa45a79b345e85b))
+
 ## [1.0.6](https://github.com/xtendui/xtendui/compare/v1.0.5...v1.0.6) (2022-01-20)
 
 
