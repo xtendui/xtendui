@@ -54,12 +54,17 @@ function Template(props) {
                   <div className="xt-row xt-row-stretch">
                     {data.postsAdiacent.posts.map(({ post: adiacent }, i) =>
                       adiacent.frontmatter.parent !== adiacent.frontmatter.title ? (
-                        (typeof window === 'undefined' || window.access !== 'admin') &&
-                        adiacent.frontmatter.tags &&
-                        adiacent.frontmatter.tags.includes('hidden') ? (
-                          ''
-                        ) : adiacent.frontmatter.demos ? (
-                          <div className="gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6" key={i}>
+                        adiacent.frontmatter.demos ? (
+                          <div
+                            className={`gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6 ${
+                              typeof window !== 'undefined' &&
+                              window.access !== 'admin' &&
+                              adiacent.frontmatter.tags &&
+                              adiacent.frontmatter.tags.includes('hidden')
+                                ? 'hidden'
+                                : ''
+                            }`}
+                            key={i}>
                             <button
                               type="button"
                               className={`xt-card flex-col p-3.5 sm:p-5 lg:p-6 ${classes.gatsbyFloat()}`}
