@@ -5,7 +5,7 @@ import 'xtendui/src/tooltip'
 export default function demo() {
   return (
     <div>
-      <div data-xt-tooltip="{ on: 'click', off: 'click', preventEvent: true }">
+      <div data-xt-tooltip="{ on: 'click', off: 'click' }">
         <a
           href="/"
           className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase text-white bg-primary-500 transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600"

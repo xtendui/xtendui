@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div data-xt-tooltip="{ on: 'click', off: 'click', preventEvent: true }">
+    <div data-xt-tooltip="{ on: 'click', off: 'click' }">
       <a
         href="/"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
