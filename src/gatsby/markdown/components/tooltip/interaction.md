@@ -130,7 +130,7 @@ If you have **links on elements** use `preventEvent: true`, and the **link will 
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `preventEvent:Boolean`                          | `false`        | **Prevent links on elements or other interactions** until activated.            |
+| Option                  | `preventEvent:Boolean`                          | `true`        | **Prevent links on elements or other interactions** until activated.            |
 
 </div>
 

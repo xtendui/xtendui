@@ -156,7 +156,7 @@ Tooltip.optionsDefault = {
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop',
   closeOutside: 'body',
-  preventEvent: false,
+  preventEvent: true,
   // timing
   queue: {
     elements: false,
