@@ -31,7 +31,7 @@ See [animation setup](/components/animation#setup) to **disable css and js anima
 
 - Animate nodes with **tailwindcss variants** with [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off).
 
-- **Customizzable default options for all components of the same type** with [Xt.options](/components/global/javascript#xt-options).
+- **Customizable default options for all components of the same type** with [Xt.options](/components/global/javascript#xt-options).
 
 ## Toggle
 
@@ -107,7 +107,7 @@ The **card component** is used in many other components to display content insid
 
 #### Link
 
-The **link component** has cssinjs customizzable styles for **automatic styling of blank html links**. See [link](/components/link) for more info.
+The **link component** has cssinjs customizable styles for **automatic styling of blank html links**. See [link](/components/link) for more info.
 
 #### List and Row
 
@@ -119,7 +119,7 @@ The **media component** is useful to enhance html assets. It can be used with `i
 
 #### Typography
 
-The **typography component** has cssinjs customizzable styles for **automatic styling of blank html content tags**. See [typography content](/components/typography/content) for more info.
+The **typography component** has cssinjs customizable styles for **automatic styling of blank html content tags**. See [typography content](/components/typography/content) for more info.
 
 #### Addon
 

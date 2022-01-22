@@ -111,7 +111,7 @@ function Page() {
                     Custom Design
                   </h2>
                   <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
-                    Customizzable components that supports a wide range of designs.
+                    Customizable components that supports a wide range of designs.
                   </p>
                 </div>
               </div>
@@ -385,7 +385,7 @@ function Page() {
                         Ecosystem of <strong>vanilla javascript plugins</strong> that does the hard things for you.
                       </li>
                       <li>
-                        <strong>Strong API</strong> with customizzable behaviours.
+                        <strong>Strong API</strong> with customizable behaviours.
                       </li>
                     </ul>
                   </div>
