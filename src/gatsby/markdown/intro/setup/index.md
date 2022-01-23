@@ -18,6 +18,8 @@ npm install xtendui --save
 
 ## Css
 
+Setup compilation using any compiler see [postcss usage](https://github.com/postcss/postcss#usage) or [tailwind installation](https://tailwindcss.com/docs/installation/framework-guides) or [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
+
 Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```sh
@@ -25,7 +27,7 @@ npm install tailwindcss --save
 npm install postcss postcss-import autoprefixer --save-dev
 ```
 
-Then in `postcss.config.js` set up compilation.
+Then in `postcss.config.js` set up compilation (more info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors)).
 
 ```jsx
 module.exports = {
@@ -45,7 +47,7 @@ module.exports = {
 }
 ```
 
-Then you can use css with tailwind.
+Create your css.
 
 ```css
 @import "tailwindcss/base";
@@ -57,18 +59,11 @@ Then you can use css with tailwind.
 @import "tailwindcss/utilities";
 ```
 
-More info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors).
-
-#### Build
-
-Use any compiler see [postcss usage](https://github.com/postcss/postcss#usage) or [tailwind installation](https://tailwindcss.com/docs/installation) or [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
-
-
-#### Customization
-
 You can [customize components css](https://xtendui.com/components/global/preset#customization), more info in Tailwind docs [tailwind theme](https://tailwindcss.com/docs/theme).
 
 ## Javascript
+
+Setup compilation using any compiler see [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
 
 You can import the **components you need** as described in the demos.
 
