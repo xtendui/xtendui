@@ -1,9 +1,9 @@
 ---
 type: "Intro"
 category: "Introduction"
-parent: "Informations"
-title: "Informations"
-description: "Project informations."
+parent: "Information"
+title: "Information"
+description: "Project information."
 ---
 
 <p></p>

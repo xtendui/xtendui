@@ -17,7 +17,7 @@ For more info on **accessibility practices** used in Xtend UI see [ARIA Design P
 
 #### Toggle
 
-Toggle components **have automatic a11y attributes and keyboard navigations**, and they can be customized granularly, see [drop accessibility](/components/drop/other#accessibility), [overlay accessibility](/components/overlay/other#accessibility), [slider accessibility](/components/slider/other#accessibility), [toggle accessibility](/components/toggle/other#accessibility), [tooltip accessibility](/components/tooltip/other#accessibility).
+Toggle components **have automatic a11y attributes and keyboard navigation**, and they can be customized granularly, see [drop accessibility](/components/drop/other#accessibility), [overlay accessibility](/components/overlay/other#accessibility), [slider accessibility](/components/slider/other#accessibility), [toggle accessibility](/components/toggle/other#accessibility), [tooltip accessibility](/components/tooltip/other#accessibility).
 
 #### Prefers Reduced Motion
 
