@@ -57,8 +57,7 @@ function Template(props) {
                         adiacent.frontmatter.demos ? (
                           <div
                             className={`gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6 ${
-                              typeof window !== 'undefined' &&
-                              window.access !== 'admin' &&
+                              (typeof window === 'undefined' || window.access !== 'admin') &&
                               adiacent.frontmatter.tags &&
                               adiacent.frontmatter.tags.includes('hidden')
                                 ? 'hidden'

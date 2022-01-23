@@ -50,8 +50,7 @@ function Template(props) {
                     post.frontmatter.parent === post.frontmatter.title ? (
                       <div
                         className={`gatsby_listing-column w-2/4 md:w-2/6 lg:w-2/4 xl:w-2/6 ${
-                          typeof window !== 'undefined' &&
-                          window.access !== 'admin' &&
+                          (typeof window === 'undefined' || window.access !== 'admin') &&
                           post.frontmatter.tags &&
                           post.frontmatter.tags.includes('hidden')
                             ? 'hidden'
