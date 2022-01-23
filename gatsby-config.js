@@ -18,7 +18,7 @@ module.exports = {
     description: description,
     keywords: keywords,
     author: 'Riccardo Caroli',
-    image: '/social.png',
+    image: '/social-v1.png',
     npm: 'https://www.npmjs.com/package/xtendui',
     github: 'https://github.com/xtendui/xtendui',
     twitter: 'https://twitter.com/xtendui',
