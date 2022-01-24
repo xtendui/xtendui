@@ -35,6 +35,19 @@ module.exports = {
 };
 ```
 
+For `nextjs` and other frameworks you might need to use this syntax instead.
+
+```jsx
+module.exports = {
+  plugins: {
+    'postcss-import': {},
+    'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
 Create a `tailwind.config.js` and add **xtendui preset**, with this purge configuration.
 
 ```jsx
@@ -82,13 +95,67 @@ npm install gsap --save
 
 #### Polyfill
 
-You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env).
+You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [core-js](https://www.npmjs.com/package/core-js), [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime).
 
 ```sh
-npm install @babel/core @babel/preset-env --save-dev
+npm install @babel/core @babel/preset-env core-js regenerator-runtime --save-dev
 ```
 
-Then in the root of your project set up polyfills with [babel.config.js](https://github.com/xtendui/xtendui/blob/master/babel.config.js) and [.browserslistrc](https://github.com/xtendui/xtendui/blob/master/.browserslistrc).
+Create on the root of the project `babel.config.js` with:
+
+```js
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        useBuiltIns: 'entry',
+        corejs: '3.20', // check must be the same minor version of installed core-js version
+      },
+    ],
+  ],
+}
+```
+
+For `nextjs` and other frameworks you might need to use this syntax instead.
+
+```jsx
+module.exports = {
+  presets: [
+    [
+      'next/babel',
+      {
+        '@babel/preset-env': {
+          useBuiltIns: 'entry',
+          corejs: '3.20', // check must be the same minor version of installed core-js version
+        }
+      },
+    ],
+  ],
+}
+```
+
+You must import the `core-js` and `regenerator-runtime` for **babel entry polyfill**.
+
+```jsx
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+```
+
+Create on the root of the project `.browserslistrc` with:
+
+```
+> 1%
+not ie 11
+not edge <= 18
+not op_mini all
+Edge >= 79
+Firefox >= 67
+Chrome >= 63
+Safari >= 11.1
+Opera >= 50
+iOS >= 11
+```
 
 ## Global Styles
 
