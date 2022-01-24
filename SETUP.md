@@ -46,7 +46,7 @@ Create your css.
 
 @import "tailwindcss/components";
 
-@import "./custom.css"; /* custom css here */
+@import "./_custom.css"; /* custom css here */
 
 @import "tailwindcss/utilities";
 ```
