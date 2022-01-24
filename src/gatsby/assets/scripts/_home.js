@@ -208,7 +208,7 @@ Xt.mount({
     ScrollTrigger.create({
       trigger: text,
       start: () => (matchMedia('(max-width: 767px)').matches ? 'center+=100% center' : 'center center'),
-      endTrigger: videoLast,
+      endTrigger: videoLast.closest('.pin-spacer')?.previousSibling,
       end: () => (matchMedia('(max-width: 767px)').matches ? 'center-=40% top' : 'center top'),
       pin: true,
       pinSpacing: false,
