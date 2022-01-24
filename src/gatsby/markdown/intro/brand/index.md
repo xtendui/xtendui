@@ -50,7 +50,7 @@ Here are assets for sharing informations like in articles or other internet medi
 <p></p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/xtendui/xtendui/master/static/social-v1.png" loading="eager" alt="Xtend UI" width="200">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/master/static/social.png" loading="eager" alt="Xtend UI" width="200">
 </p>
 
-[download png logo background](https://raw.githubusercontent.com/xtendui/xtendui/master/static/social-v1.png)
+[download png logo background](https://raw.githubusercontent.com/xtendui/xtendui/master/static/social.png)
