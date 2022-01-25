@@ -4,8 +4,8 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt'
-import './toggle'
+import { Xt } from './xt.mjs'
+import './toggle.mjs'
 import RJSON from 'relaxed-json'
 Xt.RJSON = RJSON
 

@@ -4,7 +4,7 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt'
+import { Xt } from './xt.mjs'
 import RJSON from 'relaxed-json'
 import * as focusTrap from 'focus-trap'
 Xt.RJSON = RJSON

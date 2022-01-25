@@ -17,8 +17,27 @@
     "vanilla-javascript",
     "tailwindcss"
   ],
-  "main": "src/xt.js",
-  "module": "src/xt.js",
+  "main": "src/xt.mjs",
+  "exports": {
+    ".": "./src/xt.mjs",
+    "./src/xt": "./src/xt.mjs",
+    "./tailwind.preset": "./tailwind.preset.js",
+    "./src/drop": "./src/drop.mjs",
+    "./src/form": "./src/form.mjs",
+    "./src/googlelocator": "./src/googlelocator.mjs",
+    "./src/groupnumber": "./src/groupnumber.mjs",
+    "./src/infinitescroll": "./src/infinitescroll.mjs",
+    "./src/mousefollow": "./src/mousefollow.mjs",
+    "./src/overlay": "./src/overlay.mjs",
+    "./src/ripple": "./src/ripple.mjs",
+    "./src/scrollto": "./src/scrollto.mjs",
+    "./src/slider": "./src/slider.mjs",
+    "./src/stickyflow": "./src/stickyflow.mjs",
+    "./src/textareaautosize": "./src/textareaautosize.mjs",
+    "./src/toggle": "./src/toggle.mjs",
+    "./src/tooltip": "./src/tooltip.mjs",
+    "./src/usability": "./src/usability.mjs"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -5,7 +5,7 @@
  */
 
 /* global google MarkerClusterer */
-import { Xt } from './xt'
+import { Xt } from './xt.mjs'
 
 /**
  * Googlelocator

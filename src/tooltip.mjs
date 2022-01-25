@@ -4,17 +4,17 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt'
-import './toggle'
+import { Xt } from './xt.mjs'
+import './toggle.mjs'
 import RJSON from 'relaxed-json'
 import { createPopper } from '@popperjs/core'
 Xt.RJSON = RJSON
 Xt.createPopper = createPopper
 
 /**
- * Drop
+ * Tooltip
  */
-class Drop extends Xt.Toggle {
+class Tooltip extends Xt.Toggle {
   /**
    * constructor
    * @param {Node|HTMLElement|EventTarget|Window} object Base node
@@ -133,25 +133,30 @@ class Drop extends Xt.Toggle {
 // options
 //
 
-Drop.componentName = 'xt-drop'
-Drop.optionsDefault = {
+Tooltip.componentName = 'xt-tooltip'
+Tooltip.optionsDefault = {
   // element
-  elements: '[data-xt-drop-element]',
-  targets: '[data-xt-drop-target]',
+  elements: '[data-xt-tooltip-element]',
+  targets: '[data-xt-tooltip-target]',
+  // class
+  classSkip: {
+    elements: true,
+    elementsInner: true,
+  },
   // quantity
   min: 0,
   max: 1,
   // event
-  on: 'click',
-  off: 'click',
+  on: 'mouseenter focus',
+  off: 'mouseleave',
   mouseParent: false,
-  eventLimit: '.xt-event-limit, .xt-drop',
+  eventLimit: '.xt-event-limit, .xt-tooltip',
   closeauto: true,
   openauto: false,
   closeDeep: '.xt-dismiss',
   closeInside: '.xt-backdrop',
   closeOutside: 'body',
-  preventEvent: false,
+  preventEvent: true,
   // timing
   queue: {
     elements: false,
@@ -161,8 +166,7 @@ Drop.optionsDefault = {
   },
   // other
   disableDeactivate: true,
-  position: 'bottom-start',
-  inset: false,
+  position: 'top',
   positionInner: false,
   strategy: 'absolute',
   spaceOverflow: 15,
@@ -171,22 +175,22 @@ Drop.optionsDefault = {
   popperjs: true,
   zIndex: {
     targets: {
-      start: 400, // same as options.zIndex.targets.start
+      start: 500, // same as options.zIndex.targets.start
       factor: -1,
     },
   },
   a11y: {
-    role: 'popup',
-    labelElements: false,
+    role: 'tooltip',
+    labelElements: true,
     labelTargets: false,
-    controls: true,
+    controls: false,
     selected: false,
-    expanded: true,
+    expanded: false,
     live: true,
     disabled: true,
     keyboard: true,
     vertical: false,
-    items: 'a, button',
+    items: false,
   },
 }
 
@@ -194,7 +198,7 @@ Drop.optionsDefault = {
 // export
 //
 
-Xt.Drop = Drop
+Xt.Tooltip = Tooltip
 
 //
 // observe
@@ -202,16 +206,16 @@ Xt.Drop = Drop
 
 if (typeof window !== 'undefined') {
   Xt.mount({
-    matches: `[data-${Xt.Drop.componentName}]`,
+    matches: `[data-${Xt.Tooltip.componentName}]`,
     mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = ref.getAttribute(`data-${Xt.Drop.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Tooltip.componentName}`)
       const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Drop(ref, options)
+      let self = new Xt.Tooltip(ref, options)
 
       // unmount
 

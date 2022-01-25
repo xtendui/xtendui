@@ -4,14 +4,14 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt'
+import { Xt } from './xt.mjs'
 import RJSON from 'relaxed-json'
 Xt.RJSON = RJSON
 
 /**
- * Stickyflow
+ * Textareaautosize
  */
-class Stickyflow {
+class Textareaautosize {
   /**
    * fields
    */
@@ -19,15 +19,13 @@ class Stickyflow {
   _optionsDefault
   _optionsInitial
   _componentNs
-  _scrollTopOld
   componentName
   ns
   options
   initial
   disabled = false
   container
-  element
-  filler
+  form
 
   /**
    * constructor
@@ -76,15 +74,18 @@ class Stickyflow {
     Xt._initMatches({ self, optionsInitial: self._optionsInitial })
     // vars
     self.initial = true
-    // elements
-    self.element = self.container.querySelector(options.element)
-    self.filler = self.container.querySelector(options.filler)
-    // vars
-    self._scrollTopOld = 0
-    // events
-    const changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self._eventChange.bind(self))
-    addEventListener('scroll', changeHandler)
-    addEventListener('resize', changeHandler)
+    // key
+    const changeHandler = Xt.dataStorage.put(
+      self.container,
+      `keydown keyup reset/${self.ns}`,
+      self._keychange.bind(self)
+    )
+    self.container.addEventListener('keydown', changeHandler)
+    self.container.addEventListener('keyup', changeHandler)
+    self.form = self.container.closest('form')
+    if (self.form) {
+      self.form.addEventListener('reset', changeHandler)
+    }
     // initial
     self._initStart()
     // init
@@ -120,8 +121,8 @@ class Stickyflow {
     if (self.disabled) {
       return
     }
-    // initial
-    self._eventChange()
+    // logic
+    self._keychange.bind(self)()
   }
 
   //
@@ -129,57 +130,25 @@ class Stickyflow {
   //
 
   /**
-   * eventChange
-   * @param {Node|HTMLElement|EventTarget|Window} step
-   * @param {Event} e
+   * keychange
    */
-  _eventChange() {
+  _keychange() {
     const self = this
     // disabled
     if (self.disabled) {
       return
     }
-    // position
-    const scrollTop = document.scrollingElement.scrollTop
-    const windowHeight = window.innerHeight
-    const objectHeight = self.element.offsetHeight
-    if (objectHeight < windowHeight) {
-      self.filler.style.height = ''
-      self.element.style.top = '0'
-      self.element.style.bottom = ''
-    } else {
-      if (scrollTop > self._scrollTopOld) {
-        if (!self.element.classList.contains('xt-stickyflow-top')) {
-          const pos = windowHeight - objectHeight
-          const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
-          self.filler.style.height = `${height}px`
-          self.element.style.top = `${pos}px`
-          self.element.style.bottom = ''
-          self.element.classList.remove('xt-stickyflow-bottom')
-          self.element.classList.add('xt-stickyflow-top')
-        }
-      } else {
-        if (!self.element.classList.contains('xt-stickyflow-bottom')) {
-          const pos = windowHeight - objectHeight
-          const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
-          self.filler.style.height = `${height}px`
-          self.element.style.top = ''
-          self.element.style.bottom = `${pos}px`
-          self.element.classList.add('xt-stickyflow-bottom')
-          self.element.classList.remove('xt-stickyflow-top')
-        }
-      }
-    }
-    // change
+    // size
+    self.container.style.height = '5px'
+    self.container.style.height = `${self.container.scrollHeight}px` // fixes both safari RAF and form reset
     Xt.frame({
       el: self.container,
-      ns: `${self.ns}Change`,
+      ns: `${self.ns}Keychange`,
       func: () => {
-        // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`change.${self._componentNs}`))
+        self.container.style.height = '5px' // fixes both safari RAF and form reset
+        self.container.style.height = `${self.container.scrollHeight}px`
       },
     })
-    self._scrollTopOld = scrollTop
   }
 
   //
@@ -209,12 +178,12 @@ class Stickyflow {
     if (!self.disabled) {
       // disable
       self.disabled = true
-      // position
-      self.filler.style.height = ''
-      self.element.style.top = ''
-      self.element.style.bottom = ''
-      self.element.classList.remove('xt-stickyflow-bottom')
-      self.element.classList.remove('xt-stickyflow-top')
+      // size
+      self.container.style.height = ''
+      Xt.frame({
+        el: self.container,
+        ns: `${self.ns}Keychange`,
+      })
       // dispatch event
       if (!skipEvent) {
         self.container.dispatchEvent(new CustomEvent(`status.${self._componentNs}`))
@@ -240,10 +209,15 @@ class Stickyflow {
    */
   destroy() {
     const self = this
+    // reset
+    self.container.style.height = ''
     // remove events
-    const changeHandler = Xt.dataStorage.get(window, `scroll resize/${self.ns}`)
-    removeEventListener('scroll', changeHandler)
-    removeEventListener('resize', changeHandler)
+    const changeHandler = Xt.dataStorage.get(self.container, `keydown keyup reset/${self.ns}`)
+    self.container.removeEventListener('keydown', changeHandler)
+    self.container.removeEventListener('keyup', changeHandler)
+    if (self.form) {
+      self.form.removeEventListener('reset', changeHandler)
+    }
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self
@@ -261,19 +235,16 @@ class Stickyflow {
 // options
 //
 
-Stickyflow.componentName = 'xt-stickyflow'
-Stickyflow.optionsDefault = {
+Textareaautosize.componentName = 'xt-textareaautosize'
+Textareaautosize.optionsDefault = {
   debug: false,
-  // elements
-  element: false,
-  filler: false,
 }
 
 //
 // export
 //
 
-Xt.Stickyflow = Stickyflow
+Xt.Textareaautosize = Textareaautosize
 
 //
 // observe
@@ -281,16 +252,16 @@ Xt.Stickyflow = Stickyflow
 
 if (typeof window !== 'undefined') {
   Xt.mount({
-    matches: `[data-${Xt.Stickyflow.componentName}]`,
+    matches: `[data-${Xt.Textareaautosize.componentName}]`,
     mount: ({ ref }) => {
       // vars
 
-      const optionsMarkup = ref.getAttribute(`data-${Xt.Stickyflow.componentName}`)
+      const optionsMarkup = ref.getAttribute(`data-${Xt.Textareaautosize.componentName}`)
       const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 
-      let self = new Xt.Stickyflow(ref, options)
+      let self = new Xt.Textareaautosize(ref, options)
 
       // unmount
 

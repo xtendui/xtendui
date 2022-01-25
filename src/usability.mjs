@@ -4,7 +4,7 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt'
+import { Xt } from './xt.mjs'
 
 Xt.usabilityIgnore = '.sf-toolbar, .gm-style'
 Xt.usabilityHostnames = '127.0.0.1 localhost'
