@@ -2,8 +2,8 @@ import { Xt } from 'xtendui'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
 import _ from 'lodash'
-import 'xtendui/src/toggle.js'
-import 'xtendui/src/tooltip.js'
+import 'xtendui/src/toggle'
+import 'xtendui/src/tooltip'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
 require('prismjs/components/prism-jsx.min')
