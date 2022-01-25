@@ -738,9 +738,9 @@ describe('demos/components/slider/navigation', function () {
       .get(self.targets[0])
       .trigger('mousedown', { which: 1 })
       .trigger('mousemove', { clientX: 900, clientY: 0 })
-      .wait(50)
+      .wait(100)
       .trigger('mouseup', { force: true })
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -753,9 +753,9 @@ describe('demos/components/slider/navigation', function () {
       .get(self.targets[6])
       .trigger('mousedown', { which: 1 })
       .trigger('mousemove', { clientX: 900, clientY: 0 })
-      .wait(50)
+      .wait(100)
       .trigger('mouseup', { force: true })
-      .wait(500) // after animation
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
