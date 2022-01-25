@@ -1,3 +1,11 @@
+## [1.0.9](https://github.com/xtendui/xtendui/compare/v1.0.8...v1.0.9) (2022-01-25)
+
+
+### Bug Fixes
+
+* fix module import docs ([73aa79e](https://github.com/xtendui/xtendui/commit/73aa79e7c735dde70367a93e720549ae57ad6d7c))
+* fix module import on each js use .mjs extension, no breaking changes if you imported js scripts without extension like in documentation ([d30fe39](https://github.com/xtendui/xtendui/commit/d30fe39f4b27aa9d838f56a71a49931e16eca4d7))
+
 ## [1.0.8](https://github.com/xtendui/xtendui/compare/v1.0.7...v1.0.8) (2022-01-25)
 
 
