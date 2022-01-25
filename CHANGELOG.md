@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/xtendui/xtendui/compare/v1.0.7...v1.0.8) (2022-01-25)
+
+
+### Bug Fixes
+
+* fix dist js with polyfills and docs with polyfills ([0eb8f01](https://github.com/xtendui/xtendui/commit/0eb8f01f3d5e877bf99e4005d6b4f5bcc334ede7))
+* package json module entry for esm module import ([0047a2f](https://github.com/xtendui/xtendui/commit/0047a2f32279f50caff5bc5669f08945857d7341))
+
 ## [1.0.7](https://github.com/xtendui/xtendui/compare/v1.0.6...v1.0.7) (2022-01-21)
 
 
