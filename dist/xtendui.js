@@ -1,7 +1,7 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
-import 'xtendui'
+import { Xt } from 'xtendui'
 import 'xtendui/dist/xtend-components'
 
 // export UMD
