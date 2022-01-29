@@ -56,7 +56,7 @@
     "deploy": "gh-pages -d public",
     "dist": "yarn setup && cross-env DIST=true webpack --progress",
     "release": "npx semantic-release --no-ci --dry-run --debug",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint . --ext .js,.mjs",
     "lint:generate": "eslint . --ext .jsx",
     "test": "start-server-and-test serve http://localhost:8080 test:run",
     "test:run": "cypress run",
