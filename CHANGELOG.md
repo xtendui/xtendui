@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/xtendui/xtendui/compare/v1.0.9...v1.0.10) (2022-01-29)
+
+
+### Bug Fixes
+
+* fix cdn dist xtendui.min.js now working properly ([af9492b](https://github.com/xtendui/xtendui/commit/af9492bba9b9bdac8c43747c1a7592db2da58ab9))
+
 ## [1.0.9](https://github.com/xtendui/xtendui/compare/v1.0.8...v1.0.9) (2022-01-25)
 
 
