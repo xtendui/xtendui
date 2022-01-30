@@ -768,6 +768,7 @@ if (typeof window !== 'undefined') {
    */
   Xt.script = ({ url, callback, defer = true, async = true } = {}) => {
     if (!document.querySelector(`script[src="${url}"]`)) {
+      const asyncfix = async
       const script = document.createElement('script')
       if (callback) {
         script.onload = callback
@@ -775,7 +776,7 @@ if (typeof window !== 'undefined') {
       script.type = 'text/javascript'
       script.src = url
       script.defer = defer
-      script.async = async
+      script.async = asyncfix
       document.body.append(script)
     }
   }
