@@ -1,4 +1,4 @@
-Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate) code for Encore, Gulp, Parcel, Snowpack, Vite, Webpack ready to go!
+**Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate)** code for Encore, Gulp, Parcel, Snowpack, Vite, Webpack ready to go!
 
 ## Installation
 
@@ -10,7 +10,7 @@ npm install xtendui --save
 
 ## Css
 
-Setup compilation using any compiler see [postcss usage](https://github.com/postcss/postcss#usage) or [tailwind installation](https://tailwindcss.com/docs/installation/framework-guides) or [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
+**Setup compilation using any compiler** see [postcss usage](https://github.com/postcss/postcss#usage) or [tailwind installation](https://tailwindcss.com/docs/installation/framework-guides) or [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
 
 Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
@@ -68,7 +68,7 @@ You can [customize components css](https://xtendui.com/components/global/preset#
 
 ## Javascript
 
-Setup compilation using any compiler see [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
+**Setup compilation using any compiler** see [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
 
 You can import the **components you need** as described in the demos.
 
