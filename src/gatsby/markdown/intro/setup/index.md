@@ -56,7 +56,7 @@ module.exports = {
     require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset'),
   ],
   // put other purge content e.g.: './src/**/*.{html,js}'
-  content: ['./node_modules/xtendui/src/*[!.css].js'],
+  content: ['./node_modules/xtendui/src/*.mjs'],
 }
 ```
 
@@ -110,7 +110,7 @@ module.exports = {
       '@babel/preset-env',
       {
         useBuiltIns: 'entry',
-        corejs: '3.20', // check must be the same minor version of installed core-js version
+        corejs: require('core-js/package.json').version
       },
     ],
   ],
@@ -127,7 +127,7 @@ module.exports = {
       {
         '@babel/preset-env': {
           useBuiltIns: 'entry',
-          corejs: '3.20', // check must be the same minor version of installed core-js version
+          corejs: require('core-js/package.json').version
         }
       },
     ],

@@ -4,7 +4,7 @@ module.exports = {
       '@babel/preset-env',
       {
         useBuiltIns: 'entry',
-        corejs: '3.20',
+        corejs: require('core-js/package.json').version,
       },
     ],
   ],
