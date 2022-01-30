@@ -85,6 +85,8 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 ```
 
+> Some bundlers doesn't support `package.json#exports` if you get module not found use the extensions `.mjs` (e.g. `import 'xtendui/src/toggle.mjs'`).
+
 #### Gsap
 
 Xtend UI uses [gsap](https://github.com/greensock/GSAP) for javascript animations in some demos, but it's not included in the library.
