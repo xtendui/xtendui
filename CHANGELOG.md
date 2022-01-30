@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/xtendui/xtendui/compare/v1.0.10...v1.0.11) (2022-01-30)
+
+
+### Bug Fixes
+
+* fix parcel error ([8e47307](https://github.com/xtendui/xtendui/commit/8e47307470092148f9b7cae3ff1c10744aa94628))
+
 ## [1.0.10](https://github.com/xtendui/xtendui/compare/v1.0.9...v1.0.10) (2022-01-29)
 
 
