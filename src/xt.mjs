@@ -1097,8 +1097,8 @@ if (typeof window !== 'undefined') {
     )
   })
 
-  Xt.dataStorage.set(document.documentElement, 'xtEventDelayWidth', window.innerWidth)
-  Xt.dataStorage.set(document.documentElement, 'xtEventDelayHeight', window.innerHeight)
+  Xt.dataStorage.set(window, 'xtEventDelayWidth', window.innerWidth + window.outerWidth)
+  Xt.dataStorage.set(window, 'xtEventDelayHeight', window.innerHeight + window.outerHeight)
 
   /**
    * Xt._innerHeightSet and --vh
