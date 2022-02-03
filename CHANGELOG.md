@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/xtendui/xtendui/compare/v1.0.11...v1.0.12) (2022-02-03)
+
+
+### Bug Fixes
+
+* **scrolltrigger:** fix initial value of width and height do not trigger scrolltrigger one time too much ([8e5e01f](https://github.com/xtendui/xtendui/commit/8e5e01fc9530c032ef528eb9b13459be67d9aa3d))
+
 ## [1.0.11](https://github.com/xtendui/xtendui/compare/v1.0.10...v1.0.11) (2022-01-30)
 
 
