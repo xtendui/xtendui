@@ -19,6 +19,8 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 You can also **animate background** and **add additional content inside background** to create a skeleton when image is loading. This demo shows **skeleton loading with jpg images** with custom logo and animated gradient as `background-image`.
 
+> **Use sparingly this skeleton** because if you put this animation on many images the cpu load gets high.
+
 <demo>
   <demoinline src="demos/components/media/skeleton">
   </demoinline>
