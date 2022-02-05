@@ -23,6 +23,10 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
+        exclude: {
+          and: [/node_modules/],
+          not: [/node_modules\/xtendui/],
+        },
         use: [
           {
             loader: 'babel-loader',

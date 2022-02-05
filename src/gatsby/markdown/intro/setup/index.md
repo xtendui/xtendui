@@ -111,7 +111,7 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        useBuiltIns: 'entry',
+        useBuiltIns: 'usage',
         corejs: require('core-js/package.json').version
       },
     ],
@@ -119,29 +119,19 @@ module.exports = {
 }
 ```
 
-For `nextjs` and other frameworks you might need to use this syntax instead.
+Be sure to transpile `mjs` extension and exclude `node_modules` but include `xtendui`, for example with `babel-loader`:
 
-```jsx
-module.exports = {
-  presets: [
-    [
-      'next/babel',
-      {
-        '@babel/preset-env': {
-          useBuiltIns: 'entry',
-          corejs: require('core-js/package.json').version
-        }
-      },
-    ],
-  ],
-}
-```
-
-You must import the `core-js` and `regenerator-runtime` for **babel entry polyfill**.
-
-```jsx
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
+```js
+{
+  test: /\.m?js$/,
+  exclude: {
+    and: [/node_modules/],
+    not: [/node_modules\/xtendui/],
+  },
+  use: {
+    loader: 'babel-loader',
+  },
+},
 ```
 
 Create on the root of the project `.browserslistrc` with:

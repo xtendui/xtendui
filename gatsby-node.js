@@ -21,8 +21,8 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPreset({
     name: `@babel/preset-env`,
     options: {
-      useBuiltIns: 'entry',
-      corejs: 3,
+      useBuiltIns: 'usage',
+      corejs: require('core-js/package.json').version,
     },
   })
 }

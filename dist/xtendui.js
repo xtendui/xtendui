@@ -1,6 +1,3 @@
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
-
 import { Xt } from 'xtendui'
 import 'xtendui/dist/xtend-components'
 
