@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       Lorem ipsum <span className="*** inline relative align-baseline before:content-['-'] mx-2 ***"></span> dolor sit

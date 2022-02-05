@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/drop'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div data-xt-drop="{ mouseParent: true, preventEvent: true }">

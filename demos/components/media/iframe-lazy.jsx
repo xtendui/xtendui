@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })

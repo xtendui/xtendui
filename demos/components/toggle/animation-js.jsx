@@ -3,7 +3,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 import gsap from 'gsap'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })
@@ -27,13 +27,13 @@ export default function demo() {
         </button>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow w-full"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow w-full"
           data-xt-toggle-target>
           Target 0
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow w-full"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow w-full"
           data-xt-toggle-target>
           Target 1
         </div>

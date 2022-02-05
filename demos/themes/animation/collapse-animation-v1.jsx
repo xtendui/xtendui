@@ -5,7 +5,7 @@ import 'xtendui/src/overlay'
 import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center">

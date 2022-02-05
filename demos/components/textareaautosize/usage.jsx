@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/textareaautosize'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <form className="text-sm">

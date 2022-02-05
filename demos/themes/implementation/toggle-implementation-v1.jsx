@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 gsap.registerPlugin(ScrollToPlugin)
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })

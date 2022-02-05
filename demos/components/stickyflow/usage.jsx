@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/stickyflow'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <header className="site-header">

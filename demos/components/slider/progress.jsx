@@ -4,7 +4,7 @@ import 'xtendui/src/slider'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })

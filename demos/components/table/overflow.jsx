@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="*** xt-overflow-sub overflow-y-hidden overflow-x-scroll *** my-5 xt-my-auto w-full">

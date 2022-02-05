@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/form'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="xt-row xt-row-6">

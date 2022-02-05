@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/overlay'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div data-xt-overlay="{ targetsInner: '[data-xt-overlay-inner]', collapseHeight: 'targetsInner', position: 'auto-end', duration: 500 }">

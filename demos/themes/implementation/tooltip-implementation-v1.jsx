@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/tooltip'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="max-w-4xl mx-auto">

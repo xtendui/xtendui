@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--toggle-animation-animation-inverse-react">
       <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ queue: false, duration: 500 }">
@@ -28,20 +28,20 @@ export default function demo() {
         </button>
 
         <div
-          className="*** done:hidden *** rounded-full text-xs py-2 px-3 font-medium shadow w-full *** transition opacity-100 translate-x-0 on:opacity-0 on:translate-x-4 out:transition-none out:opacity-0 out:-translate-x-4 ***"
+          className="*** done:hidden *** bg-white rounded-full text-xs py-2 px-3 font-medium shadow w-full *** transition opacity-100 translate-x-0 on:opacity-0 on:translate-x-4 out:transition-none out:opacity-0 out:-translate-x-4 ***"
           data-xt-toggle-target
           data-xt-duration-out="raf">
           Target 0
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow w-full *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow w-full *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-toggle-target>
           Target 1
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow w-full *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow w-full *** transition opacity-0 -translate-x-4 in:opacity-100 in:translate-x-0 out:translate-x-4 ***"
           data-xt-toggle-target>
           Target 2
         </div>

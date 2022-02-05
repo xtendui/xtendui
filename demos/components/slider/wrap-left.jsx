@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/slider'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--slider-wrap-left-react">
       <div className="xt-slider" data-xt-slider="{ align: 'left', wrap: true }">

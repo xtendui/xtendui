@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/slider'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--slider-media-loaded-react">
       <div className="xt-slider" data-xt-slider="{ mediaLoaded: true, mediaLoadedReinit: true }">

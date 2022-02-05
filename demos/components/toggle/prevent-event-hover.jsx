@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--toggle-prevent-event-hover-react">
       <div
@@ -23,13 +23,13 @@ export default function demo() {
         </a>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 1 hover
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 2 hover
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--card-disabled-react">
       <div className="xt-row xt-row-6">

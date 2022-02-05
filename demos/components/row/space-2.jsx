@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="xt-row *** xt-row-2 ***">

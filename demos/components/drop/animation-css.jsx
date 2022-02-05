@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/drop'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--drop-animation-css-react">
       <div className="xt-list xt-list-3 items-center" data-xt-drop="{ mouseParent: true, duration: 500 }">

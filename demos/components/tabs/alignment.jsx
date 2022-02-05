@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <nav aria-label="Navigation" className="xt-list xt-list-2 flex-col">

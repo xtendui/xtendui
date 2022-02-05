@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="flex-auto max-w-3xl mx-auto">
       <div className="xt-card rounded-2xl text-white xt-links-inverse bg-primary-500">

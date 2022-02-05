@@ -3,7 +3,7 @@ import 'xtendui'
 import 'xtendui/src/overlay'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center">

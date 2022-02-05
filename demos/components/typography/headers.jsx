@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>

@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/overlay'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--overlay-disable-react">
       <div data-xt-overlay="{ appendTo: false, matches: { '(min-width: 768px)': { disabled: true } } }">

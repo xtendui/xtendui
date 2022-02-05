@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/overlay'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--overlay-usage-self-react">
       <div aria-label="Modal" className="*** xt-overlay *** *** on ***" data-xt-overlay>

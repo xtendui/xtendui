@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--toggle-event-react">
       <div className="mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center">
@@ -39,25 +39,25 @@ export default function demo() {
         </button>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 0
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 1
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 2
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 3
         </div>
@@ -101,25 +101,25 @@ export default function demo() {
           />
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 0
           </div>
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 1
           </div>
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 2
           </div>
 
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 3
           </div>

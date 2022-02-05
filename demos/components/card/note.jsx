@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="*** xt-card text-sm py-4 px-5 rounded-2xl my-4 xt-my-auto text-gray-900 xt-links-default bg-gray-100 ***">

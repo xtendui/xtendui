@@ -4,7 +4,7 @@ import 'xtendui/src/toggle'
 import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })
@@ -66,7 +66,7 @@ export default function demo() {
         </button>
 
         <div
-          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none relative bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 0
           <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
@@ -78,7 +78,7 @@ export default function demo() {
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none relative bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 1
           <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
@@ -90,7 +90,7 @@ export default function demo() {
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none relative bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 2
           <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">
@@ -102,7 +102,7 @@ export default function demo() {
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none relative rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none relative bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 3
           <span className="xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden">

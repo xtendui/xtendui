@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center" data-xt-toggle>
@@ -28,19 +28,19 @@ export default function demo() {
         </button>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 0
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 1
         </div>
 
         <div
-          className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+          className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
           data-xt-toggle-target>
           Target 2
         </div>

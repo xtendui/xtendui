@@ -3,7 +3,7 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 import 'xtendui/src/overlay'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })

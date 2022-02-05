@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/tooltip'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div data-xt-tooltip="{ targetsInner: '[data-xt-tooltip-inner]', collapseHeight: 'targetsInner', position: 'auto-end', duration: 300 }">

@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/drop'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--drop-backdrop-react">
       <div className="xt-list xt-list-3 items-center">

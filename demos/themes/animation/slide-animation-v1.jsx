@@ -6,7 +6,7 @@ import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })

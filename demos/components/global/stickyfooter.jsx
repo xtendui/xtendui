@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--stickyfooter-react">
       <div className="*** flex flex-col min-h-screen ***">

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })

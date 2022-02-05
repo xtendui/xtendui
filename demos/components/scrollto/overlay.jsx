@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 import 'xtendui/src/overlay'
 import 'xtendui/src/scrollto'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })

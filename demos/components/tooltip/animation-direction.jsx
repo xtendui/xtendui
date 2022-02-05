@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/tooltip'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="xt-list xt-list-3 items-center" data-xt-tooltip="{ mouseParent: true, duration: 300, delay: 50 }">

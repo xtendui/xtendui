@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/slider'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div className="xt-slider" data-xt-slider>

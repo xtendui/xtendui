@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/slider'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--slider-disabled-react">
       <div className="xt-slider" data-xt-slider="{ wrap: true, matches: { '(min-width: 768px)': { disabled: true } } }">

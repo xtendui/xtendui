@@ -3,7 +3,7 @@ import 'xtendui'
 import 'xtendui/src/tooltip'
 import 'xtendui/src/mousefollow'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div data-xt-tooltip="{ duration: 300, popperjs: false }" data-xt-mousefollow="{ classSkip: true }">

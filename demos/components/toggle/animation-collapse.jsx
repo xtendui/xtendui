@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div>
       <div data-xt-toggle="{ collapseHeight: 'targets', queue: false, duration: 500 }">

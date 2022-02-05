@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   const ref = useRef()
   useEffect(() => {
     return mount({ ref: ref.current })
@@ -105,24 +105,24 @@ export default function demo() {
 
         <div className="xt-list xt-list-3 items-center" id="toggle--eventmethods-targets">
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target
             data-xt-group="0">
             Target Group 0
           </div>
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target
             data-xt-group="0">
             Target Group 0b
           </div>
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow *** on ***"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow *** on ***"
             data-xt-toggle-target>
             Target 1
           </div>
           <div
-            className="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow"
+            className="off:hidden out:pointer-events-none bg-white rounded-full text-xs py-2 px-3 font-medium shadow"
             data-xt-toggle-target>
             Target 2
           </div>

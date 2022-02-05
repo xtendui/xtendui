@@ -2,7 +2,7 @@ import React from 'react'
 import 'xtendui'
 import 'xtendui/src/toggle'
 
-export default function demo() {
+export default function Demo() {
   return (
     <div className="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 500 }">
       <button

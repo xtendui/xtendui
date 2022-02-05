@@ -1,5 +1,5 @@
 import React from 'react'
-export default function demo() {
+export default function Demo() {
   return (
     <div className="demo--table-border-react">
       <table className="my-4 xt-my-auto w-full rounded-xl *** border-2 border-gray-200 border-separate overflow-hidden ***">
