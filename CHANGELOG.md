@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/xtendui/xtendui/compare/v1.0.14...v1.0.15) (2022-02-05)
+
+
+### Bug Fixes
+
+* fix ssr importing form or usability ([c8055bb](https://github.com/xtendui/xtendui/commit/c8055bbd423d25e45d4c7f3b3da2add221b45aef))
+
 ## [1.0.14](https://github.com/xtendui/xtendui/compare/v1.0.13...v1.0.14) (2022-02-05)
 
 
