@@ -5,7 +5,7 @@
  */
 
 import { Xt } from './xt.mjs'
-import RJSON from 'relaxed-json'
+import JSON5 from 'json5/dist/index.mjs'
 
 /**
  * Infinitescroll
@@ -613,7 +613,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Infinitescroll.componentName}`)
-      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 

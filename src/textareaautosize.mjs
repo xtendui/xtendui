@@ -5,8 +5,8 @@
  */
 
 import { Xt } from './xt.mjs'
-import RJSON from 'relaxed-json'
-Xt.RJSON = RJSON
+import JSON5 from 'json5/dist/index.mjs'
+Xt.JSON5 = JSON5
 
 /**
  * Textareaautosize
@@ -257,7 +257,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Textareaautosize.componentName}`)
-      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 

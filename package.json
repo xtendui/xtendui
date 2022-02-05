@@ -68,8 +68,8 @@
     "@popperjs/core": "^2.11.2",
     "dompurify": "^2.3.4",
     "focus-trap": "^6.7.1",
-    "lodash": "^4.17.21",
-    "relaxed-json": "^1.0.3"
+    "json5": "^2.2.0",
+    "lodash": "^4.17.21"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.12"

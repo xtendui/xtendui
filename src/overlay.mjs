@@ -6,8 +6,8 @@
 
 import { Xt } from './xt.mjs'
 import './toggle.mjs'
-import RJSON from 'relaxed-json'
-Xt.RJSON = RJSON
+import JSON5 from 'json5/dist/index.mjs'
+Xt.JSON5 = JSON5
 
 /**
  * Overlay
@@ -96,7 +96,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Overlay.componentName}`)
-      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
