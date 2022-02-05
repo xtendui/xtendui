@@ -1,9 +1,13 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-gsap.registerPlugin(ScrollToPlugin)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollToPlugin)
+}
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 import 'xtendui/src/scrollto'
 
 /* mountScrollto */

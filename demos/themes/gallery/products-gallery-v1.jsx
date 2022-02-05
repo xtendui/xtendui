@@ -7,7 +7,9 @@ import 'xtendui/src/stickyflow'
 import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-gsap.registerPlugin(ScrollToPlugin)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollToPlugin)
+}
 
 export default function Demo() {
   const ref = useRef()
