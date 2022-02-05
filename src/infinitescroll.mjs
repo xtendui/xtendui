@@ -6,6 +6,7 @@
 
 import { Xt } from './xt.mjs'
 import JSON5 from 'json5/dist/index.mjs'
+Xt.JSON5 = JSON5
 
 /**
  * Infinitescroll
