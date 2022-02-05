@@ -245,7 +245,7 @@ function Page() {
                     Customizable Animations
                   </h3>
                   <p>
-                    You can animate components with <strong>TailwindCss variants</strong> or <strong>css</strong> or{' '}
+                    You can animate components with <strong>Tailwind CSS variants</strong> or <strong>css</strong> or{' '}
                     <strong>javascript</strong>, whatever you prefer or need to use.
                   </p>
                 </div>
@@ -259,7 +259,7 @@ function Page() {
                   <div className="gatsby_home-feature_text xt-sticky xt-sticky-nozindex">
                     <div className="gatsby_home-main_scroll">
                       <p>
-                        Use <strong>class based animations</strong> with css or custom TailwindCss variants, for more
+                        Use <strong>class based animations</strong> with css or custom Tailwind CSS variants, for more
                         complex animations you can use javascript animations with Gsap.
                       </p>
                     </div>
@@ -355,7 +355,7 @@ function Page() {
                 <div className="xt-row xt-row-4">
                   <div className="w-full md:w-6/12 lg:w-5/12">
                     <h3 className="mt-10 mb-4 xt-my-auto font-black tracking-tight text-3xl lg:text-4xl">
-                      Tailwind Css
+                      Tailwind CSS
                     </h3>
                   </div>
                   <div className="w-full md:w-6/12 lg:w-7/12">

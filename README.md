@@ -24,7 +24,7 @@
 
 Xtend UI is a powerful frontend library of tailwind components enhanced by vanilla js. It helps you build interfaces with advanced interactions and animations.
 
-* Css with [TailwindCss](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
+* Css with [Tailwind CSS](https://tailwindcss.com/) and [Postcss](https://postcss.org/)
 * Some animations and interactions with [Gsap](https://greensock.com/gsap/)
 * Positioning with [Popperjs](https://popper.js.org/)
 * Focus trap with [Focus Trap](https://github.com/focus-trap/focus-trap)
