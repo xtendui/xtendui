@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/xtendui/xtendui/compare/v1.0.12...v1.0.13) (2022-02-05)
+
+
+### Bug Fixes
+
+* fix imports es6 modules when using browser field entry in package.json and use json5 instead of relaxed-json ([3a6b2de](https://github.com/xtendui/xtendui/commit/3a6b2de7d9ee31a8cf702b2e6437f272b5a40701))
+
 ## [1.0.12](https://github.com/xtendui/xtendui/compare/v1.0.11...v1.0.12) (2022-02-03)
 
 
