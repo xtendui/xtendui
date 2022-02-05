@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/xtendui/xtendui/compare/v1.0.13...v1.0.14) (2022-02-05)
+
+
+### Bug Fixes
+
+* fix es6 module package ([6c297c8](https://github.com/xtendui/xtendui/commit/6c297c89f2ec29d25d40818203ac808a37562442))
+
 ## [1.0.13](https://github.com/xtendui/xtendui/compare/v1.0.12...v1.0.13) (2022-02-05)
 
 
