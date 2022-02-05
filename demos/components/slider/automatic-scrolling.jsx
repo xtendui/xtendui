@@ -59,9 +59,9 @@ export default function demo() {
             </div>
           </div>
 
-          <div className="*** absolute inset-y-0 left-0 w-16 bg-gradient-to-l from-transparent to-white ***"></div>
+          <div className="*** absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white ***"></div>
 
-          <div className="*** absolute inset-y-0 right-0 w-16 bg-gradient-to-r from-transparent to-white ***"></div>
+          <div className="*** absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white ***"></div>
 
           <nav
             aria-label="Slider Navigation"

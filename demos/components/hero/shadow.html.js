@@ -5,7 +5,7 @@ const html = /* HTML */ `
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-200 w-full h-full absolute">
         <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
-        <div class="*** absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 ***"></div>
+        <div class="*** absolute inset-0 bg-gradient-to-t from-black opacity-50 ***"></div>
       </div>
       <div class="flex relative min-h-screen">
         <div
@@ -26,7 +26,7 @@ const html = /* HTML */ `
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-200 w-full h-full absolute">
         <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
-        <div class="*** absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50 ***"></div>
+        <div class="*** absolute inset-0 bg-gradient-to-r from-black opacity-50 ***"></div>
       </div>
       <div class="flex relative min-h-screen">
         <div
@@ -47,7 +47,7 @@ const html = /* HTML */ `
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-200 w-full h-full absolute">
         <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
-        <div class="*** absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50 ***"></div>
+        <div class="*** absolute inset-0 bg-gradient-to-l from-black opacity-50 ***"></div>
       </div>
       <div class="flex relative min-h-screen">
         <div

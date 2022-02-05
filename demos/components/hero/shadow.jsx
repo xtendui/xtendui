@@ -5,7 +5,7 @@ export default function demo() {
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-200 w-full h-full absolute">
           <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
-          <div className="*** absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 ***"></div>
+          <div className="*** absolute inset-0 bg-gradient-to-t from-black opacity-50 ***"></div>
         </div>
         <div className="flex relative min-h-screen">
           <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group">
@@ -25,7 +25,7 @@ export default function demo() {
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-200 w-full h-full absolute">
           <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
-          <div className="*** absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-50 ***"></div>
+          <div className="*** absolute inset-0 bg-gradient-to-r from-black opacity-50 ***"></div>
         </div>
         <div className="flex relative min-h-screen">
           <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left group">
@@ -45,7 +45,7 @@ export default function demo() {
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-200 w-full h-full absolute">
           <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
-          <div className="*** absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50 ***"></div>
+          <div className="*** absolute inset-0 bg-gradient-to-l from-black opacity-50 ***"></div>
         </div>
         <div className="flex relative min-h-screen">
           <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right group">
