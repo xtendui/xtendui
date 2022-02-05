@@ -4,7 +4,7 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import DOMPurify from 'dompurify/dist/purify.es.js'
+import DOMPurify from 'dompurify'
 
 //
 // constructor

@@ -5,7 +5,7 @@
  */
 
 import { Xt } from './xt.mjs'
-import JSON5 from 'json5/dist/index.mjs'
+import JSON5 from 'json5'
 import * as focusTrap from 'focus-trap'
 Xt.JSON5 = JSON5
 Xt.focusTrap = focusTrap
