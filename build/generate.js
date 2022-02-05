@@ -110,7 +110,7 @@ console.debug(test)
         const str = `import React${
           strMount !== '' ? `${refs ? `, { useRef, useEffect${test ? `, useState` : ''} }` : ''}` : ''
         } from 'react'
-${strImports}export default function demo() {${
+${strImports}export default function Demo() {${
           strMount !== ''
             ? `${test && refs ? 'const [count, setCount] = useState(0)' : ''}
   const ref = useRef()
