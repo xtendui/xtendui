@@ -87,7 +87,7 @@ Xtend UI uses [gsap](https://github.com/greensock/GSAP) for javascript animation
 npm install gsap --save
 ```
 
-For `nextjs` and other frameworks, if you use **gsap plugins** remember to **fix SSR errors** by checking if window is undefined.
+For `nextjs` and other frameworks, if you use **gsap plugins** remember to **fix SSR errors** by checking `window`.
 
 ```js
 if (typeof window !== 'undefined') {
