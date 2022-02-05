@@ -6,8 +6,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 /* animation */
 
-gsap.config({ force3D: false }) // smoother pixels animations
-
 // accessibility
 
 if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {

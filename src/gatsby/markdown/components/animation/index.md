@@ -20,16 +20,6 @@ Add to the `body` the class `xt-body` to have this features:
 
 ## Setup
 
-* Set gsap `force3D: false` for smoother pixels animations.
-
-```js
-import gsap from 'gsap'
-
-/* animation */
-
-gsap.config({ force3D: false }) // smoother pixels animations
-```
-
 * **If you want custom easing** in gsap use this code with your custom easing.
 
 ```js
