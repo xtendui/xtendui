@@ -1,7 +1,9 @@
 import { Xt } from 'xtendui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 /* sticky header (must be before .gatsby_home-feature pin spacing or android bugs position of .gatsby_home-feature pins) */
 

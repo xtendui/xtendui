@@ -2,7 +2,9 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/scrollto'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-gsap.registerPlugin(ScrollToPlugin)
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollToPlugin)
+}
 
 /* xt-scrollto */
 
