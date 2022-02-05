@@ -6,7 +6,7 @@ title: "Setup"
 description: "Installation instructions."
 ---
 
-**Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate)** code for Encore, Gulp, Parcel, Snowpack, Vite, Webpack ready to go!
+**Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate)** code for Weback Encore, Parcel, Snowpack, Vite, Webpack ready to go!
 
 ## Installation
 
