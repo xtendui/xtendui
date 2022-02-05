@@ -6,111 +6,113 @@
 
 import { Xt } from './xt.mjs'
 
-/**
- * checks labels .on
- */
+if (typeof window !== 'undefined') {
+  /**
+   * checks labels .on
+   */
 
-Xt.mount({
-  matches: 'label input[type="checkbox"], label input[type="radio"]',
-  mount: ({ ref }) => {
-    // vars
+  Xt.mount({
+    matches: 'label input[type="checkbox"], label input[type="radio"]',
+    mount: ({ ref }) => {
+      // vars
 
-    const name = ref.getAttribute('name')
-    const form = ref.form
-    const inputs = document.querySelectorAll(`[name="${name}"]`)
+      const name = ref.getAttribute('name')
+      const form = ref.form
+      const inputs = document.querySelectorAll(`[name="${name}"]`)
 
-    // change
+      // change
 
-    const toggle = input => {
-      const label = input.closest('label')
-      if (input.checked) {
-        Xt.on({ el: label })
-      } else {
-        Xt.off({ el: label })
-      }
-    }
-
-    const change = () => {
-      // fix execute after activation/deactivation because sometimes component toggle is initialized after this javascript
-      requestAnimationFrame(() => {
-        for (const input of inputs) {
-          toggle(input)
+      const toggle = input => {
+        const label = input.closest('label')
+        if (input.checked) {
+          Xt.on({ el: label })
+        } else {
+          Xt.off({ el: label })
         }
-      })
-    }
-
-    ref.addEventListener('change', change)
-    if (form) {
-      form.addEventListener('reset', change)
-    }
-
-    if (ref.checked) {
-      change()
-    }
-  },
-})
-
-/**
- * Validation
- */
-
-Xt.mount({
-  matches: 'form:not([novalidate])',
-  mount: ({ ref }) => {
-    // vars
-
-    const items = ref.elements
-
-    // valid
-
-    const change = e => {
-      const item = e.target
-      if (item.dataset.xtValidate === 'true') {
-        item.classList.add('valid-submit')
-        item.classList.remove('invalid-submit')
-        item.removeAttribute('aria-invalid')
-        item.checkValidity()
       }
-    }
 
-    for (const item of items) {
-      item.addEventListener('input', change)
-      item.addEventListener('change', change)
-    }
-
-    // invalid
-
-    const scroll = () => {
-      window.scrollTo(window.scrollX, window.scrollY - Xt.innerHeight * Xt.formScrollWindowFactor)
-    }
-
-    const invalid = e => {
-      const item = e.target
-      item.classList.remove('valid-submit')
-      item.classList.add('invalid-submit')
-      item.setAttribute('aria-invalid', true)
-      item.dataset.xtValidate = 'true'
-      // scroll to views
-      if (Xt.formScrollWindowFactor) {
-        addEventListener('scroll', scroll, { once: true })
+      const change = () => {
+        // fix execute after activation/deactivation because sometimes component toggle is initialized after this javascript
+        requestAnimationFrame(() => {
+          for (const input of inputs) {
+            toggle(input)
+          }
+        })
       }
-    }
 
-    const submit = () => {
+      ref.addEventListener('change', change)
+      if (form) {
+        form.addEventListener('reset', change)
+      }
+
+      if (ref.checked) {
+        change()
+      }
+    },
+  })
+
+  /**
+   * Validation
+   */
+
+  Xt.mount({
+    matches: 'form:not([novalidate])',
+    mount: ({ ref }) => {
+      // vars
+
+      const items = ref.elements
+
+      // valid
+
+      const change = e => {
+        const item = e.target
+        if (item.dataset.xtValidate === 'true') {
+          item.classList.add('valid-submit')
+          item.classList.remove('invalid-submit')
+          item.removeAttribute('aria-invalid')
+          item.checkValidity()
+        }
+      }
+
       for (const item of items) {
-        delete item.dataset.xtValidate
+        item.addEventListener('input', change)
+        item.addEventListener('change', change)
       }
-    }
 
-    for (const item of items) {
-      item.addEventListener('invalid', invalid)
-      item.addEventListener('submit', submit)
-    }
+      // invalid
 
-    // unmount
+      const scroll = () => {
+        window.scrollTo(window.scrollX, window.scrollY - Xt.innerHeight * Xt.formScrollWindowFactor)
+      }
 
-    return () => {
-      removeEventListener('scroll', scroll)
-    }
-  },
-})
+      const invalid = e => {
+        const item = e.target
+        item.classList.remove('valid-submit')
+        item.classList.add('invalid-submit')
+        item.setAttribute('aria-invalid', true)
+        item.dataset.xtValidate = 'true'
+        // scroll to views
+        if (Xt.formScrollWindowFactor) {
+          addEventListener('scroll', scroll, { once: true })
+        }
+      }
+
+      const submit = () => {
+        for (const item of items) {
+          delete item.dataset.xtValidate
+        }
+      }
+
+      for (const item of items) {
+        item.addEventListener('invalid', invalid)
+        item.addEventListener('submit', submit)
+      }
+
+      // unmount
+
+      return () => {
+        removeEventListener('scroll', scroll)
+      }
+    },
+  })
+}
