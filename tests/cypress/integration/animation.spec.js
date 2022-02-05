@@ -436,7 +436,7 @@ describe('demos/components/slider/animation-js', function () {
       .frame()
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
-          'translate(0px, 0px)'
+          'translate3d(0px, 0px, 0px)'
         )
         expect(self.targets[0].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
         expect(self.targets[1].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
@@ -450,13 +450,13 @@ describe('demos/components/slider/animation-js', function () {
       .click()
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
-          'translate(0px, 0px)'
+          'translate3d(0px, 0px, 0px)'
         )
       })
       .wait(500) // after animation
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.equal(
-          'translate(0px, 0px)'
+          'translate3d(0px, 0px, 0px)'
         )
         expect(self.targets[0].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
         expect(self.targets[1].querySelector('[data-node-target-content]').style.opacity).to.equal('1')
