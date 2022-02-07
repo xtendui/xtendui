@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/xtendui/xtendui/compare/v1.0.15...v1.0.16) (2022-02-07)
+
+
+### Bug Fixes
+
+* **javascript:** fix resize.xt event vertical on some mobile touch devices that has false positive, added to hover: none also pointer: coarse ([76500c1](https://github.com/xtendui/xtendui/commit/76500c175e75b39f87620a903dd62f9bf0f146d9))
+
 ## [1.0.15](https://github.com/xtendui/xtendui/compare/v1.0.14...v1.0.15) (2022-02-05)
 
 
