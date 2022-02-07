@@ -31,6 +31,7 @@ if (typeof window !== 'undefined') {
   Xt.options = {}
   Xt._mountArr = []
   Xt._unmountArr = []
+  Xt.resizeSkip = () => matchMedia('(hover: none), (pointer: coarse)').matches
   Xt.resizeDelay = 200
   Xt.medialoadedDelay = false
   Xt.durationTimescale = 1
@@ -1081,7 +1082,7 @@ if (typeof window !== 'undefined') {
     if (
       !e?.detail?.force && // not when setting delay on event
       Xt.dataStorage.get(window, 'xtEventDelayWidth') === w && // when width changes
-      (matchMedia('(hover: none)').matches || Xt.dataStorage.get(window, 'xtEventDelayHeight') === h) // when height changes not touch
+      (Xt.resizeSkip() || Xt.dataStorage.get(window, 'xtEventDelayHeight') === h) // when height changes not touch
     ) {
       // only width no height because it changes on scroll on mobile
       return

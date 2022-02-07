@@ -277,6 +277,7 @@ You can customize the delay of **resize** and **medialoaded** events.
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Variable                  | `Xt.resizeSkip:Function`              | `() => matchMedia('(hover: none), (pointer: coarse)').matches`        | **Skip trigger `resize.xt`** on **vertical only resize** if this condition is met            |
 | Variable                  | `Xt.resizeDelay:Number\|false`              | `200`        | Delay for the `resize.xt` event            |
 | Variable                  | `Xt.medialoadedDelay:Number\|false`              | `false`        | Delay for the `mediaLoaded` event            |
 
