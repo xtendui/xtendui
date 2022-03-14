@@ -8,7 +8,7 @@ module.exports = {
         '-md': { max: '767px' },
         '-sm': { max: '639px' },
         'hover-none': { raw: '(hover: none), (pointer: coarse)' },
-        'hover-hover': { raw: '(hover: hover)' },
+        'hover-hover': { raw: '(hover: hover), not (pointer: coarse)' },
       },
       fontSize: {
         '4xs': ['0.625rem', { lineHeight: '1rem' }], // 10px
