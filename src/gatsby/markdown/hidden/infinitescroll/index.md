@@ -27,6 +27,8 @@ Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2) t
 
 If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) or other code on content added dynamically**, just **check if already done for content added dinamically**.
 
+> Depending on website content the load more content may retain website scroll, use `body { overflow-anchor: none; }` to prevent that.
+
 ## Options
 
 Here are the main **javascript options**.

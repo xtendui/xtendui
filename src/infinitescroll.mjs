@@ -97,8 +97,6 @@ class Infinitescroll {
     self.spaceAdditionals = self.container.querySelectorAll(options.elements.spaceAdditional)
     self.paginations = self.container.querySelectorAll(options.elements.pagination)
     // events
-    const unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self._eventUnload.bind(self))
-    addEventListener('unload', unloadHandler)
     const beforeunloadHandler = Xt.dataStorage.put(
       window,
       `beforeunload/${self.ns}`,
@@ -171,8 +169,16 @@ class Infinitescroll {
     const add = self._additionalSpace()
     const state = history.state
     if (state && state[`scrollResume${self._componentNs}`]) {
-      const found = self.itemsContainer.querySelector(options.elements.item)
-      document.scrollingElement.scrollTop = state[`scrollResume${self._componentNs}`] + found.offsetTop + add
+      // need readyState complete to properly scroll after page load browsers scrolling
+      Xt.ready({
+        state: 'complete',
+        func: () => {
+          requestAnimationFrame(() => {
+            const found = self.itemsContainer.querySelector(options.elements.item)
+            document.scrollingElement.scrollTop = state[`scrollResume${self._componentNs}`] + found.offsetTop + add
+          })
+        },
+      })
     }
   }
 
@@ -209,21 +215,6 @@ class Infinitescroll {
         self.inverse = !!up
         self._request()
       }
-    }
-  }
-
-  /**
-   * unload
-   */
-  _eventUnload() {
-    const self = this
-    // disabled
-    if (self.disabled) {
-      return
-    }
-    // save scroll position
-    if (self._scrollResume) {
-      document.scrollingElement.scrollTop = 0
     }
   }
 
@@ -389,14 +380,15 @@ class Infinitescroll {
     // current page
     items[0].setAttribute('data-item-first', self.current)
     // populate dom
-    const all = self.itemsContainer.querySelectorAll(`${options.elements.item}`)
-    const first = all[0]
     let last
+    const all = self.itemsContainer.querySelectorAll(`${options.elements.item}`)
     for (const item of items) {
       if (self.inverse) {
+        const first = all[0]
         first.before(item)
       } else {
-        // querySelector here because it always needs to be the last inside loop
+        // repeat code querySelectorAll because it always needs to be the last inside loop
+        const all = self.itemsContainer.querySelectorAll(`${options.elements.item}`)
         last = all[all.length - 1]
         last.after(item)
       }
@@ -546,8 +538,6 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // events
-    const unloadHandler = Xt.dataStorage.get(window, `unload/${self.ns}`)
-    removeEventListener('unload', unloadHandler)
     const beforeunloadHandler = Xt.dataStorage.get(window, `beforeunload/${self.ns}`)
     removeEventListener('beforeunload', beforeunloadHandler)
     const scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
