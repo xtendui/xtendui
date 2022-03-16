@@ -7,7 +7,7 @@ on:
     branches: ['*']
 
 env:
-  NODE: 14.x
+  NODE: 16.x
 
 jobs:
   lint:
