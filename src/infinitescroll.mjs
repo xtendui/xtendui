@@ -389,14 +389,15 @@ class Infinitescroll {
     // current page
     items[0].setAttribute('data-item-first', self.current)
     // populate dom
-    const first = self.itemsContainer.querySelector(`${options.elements.item}:first-child`)
+    const all = self.itemsContainer.querySelectorAll(`${options.elements.item}`)
+    const first = all[0]
     let last
     for (const item of items) {
       if (self.inverse) {
         first.before(item)
       } else {
         // querySelector here because it always needs to be the last inside loop
-        last = self.itemsContainer.querySelector(`${options.elements.item}:last-child`)
+        last = all[all.length - 1]
         last.after(item)
       }
     }
