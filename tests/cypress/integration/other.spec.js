@@ -559,7 +559,6 @@ describe('demos/components/listing/infinitescroll', function () {
   })
 
   it.only('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {
-    console.log(Cypress.browser.majorVersion)
     cy.get(container)
       .should('have.attr', 'data-xt-infinitescroll-init', '') // racecondition
       .then(() => {
