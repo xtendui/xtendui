@@ -2664,6 +2664,7 @@ class Toggle {
             el.style.height = 'inherit'
             el.style.maxHeight = 'none'
             el.classList.add('xt-collapse-reset')
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseHeightFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             el.style.height = 'auto'
@@ -2689,6 +2690,7 @@ class Toggle {
           if (reset) {
             el.style.height = ''
             el.style.maxHeight = ''
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseHeightFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             const current = el.offsetHeight // fix keep current off initial
@@ -2718,6 +2720,7 @@ class Toggle {
             el.style.width = 'inherit'
             el.style.maxWidth = 'none'
             el.classList.add('xt-collapse-reset')
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseWidthFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             el.style.width = 'auto'
@@ -2743,6 +2746,7 @@ class Toggle {
           if (reset) {
             el.style.width = ''
             el.style.maxWidth = ''
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseWidthFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             const current = el.offsetWidth // fix keep current off initial
