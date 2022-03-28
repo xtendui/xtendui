@@ -57,7 +57,7 @@ const html = /* HTML */ `
         </div>
 
         <div>
-          <a href="/" type="button" class="${toggle()}" data-xt-toggle-element>
+          <a role="button" class="${toggle()}" data-xt-toggle-element>
             Cras tincidunt quis ipsum et luctus. Cras venenatis, justo in euismod lacinia, urna leo hendrerit enim, sit
             amet gravida nunc lectus id augue.
           </a>
