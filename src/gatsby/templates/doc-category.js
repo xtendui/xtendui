@@ -196,7 +196,7 @@ Template.propTypes = {
                   parent: PropTypes.string,
                   title: PropTypes.string.isRequired,
                   description: PropTypes.string,
-                  tags: PropTypes.Array,
+                  tags: PropTypes.array,
                 }),
               }),
             })
