@@ -11,7 +11,7 @@ Messages must be matched by the following regex.
 
 The format is this.
 
-```sh
+```
 <type>(<scope>): <subject>
 <BLANK LINE>
 <body>
@@ -21,19 +21,19 @@ The format is this.
 
 An example commit message for **fix** on the **button component**.
 
-```sh
+```
 fix(button): <subject>
 ```
 
 An example commit message for **feature** on the **slider component**.
 
-```sh
+```
 feat(slider): <subject>
 ```
 
 An example commit message for **docs**, that **closes the issue #28**.
 
-```sh
+```
 docs: <subject>
 
 close #28
@@ -49,6 +49,6 @@ BREAKING CHANGE: <description>
 
 An example **generic hidden** commit message.
 
-```sh
+```
 chore: <subject>
 ```

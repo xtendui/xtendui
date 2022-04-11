@@ -8,7 +8,7 @@ Current tested **node version** is 16.
 
 Install **xtendui**.
 
-```sh
+```
 npm install xtendui --save
 ```
 
@@ -18,7 +18,7 @@ npm install xtendui --save
 
 Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
 
-```sh
+```
 npm install tailwindcss --save
 npm install postcss postcss-import autoprefixer --save-dev
 ```
@@ -87,7 +87,7 @@ import 'xtendui/src/toggle'
 
 Xtend UI uses [gsap](https://github.com/greensock/GSAP) for javascript animations in some demos, but it's not included in the library.
 
-```sh
+```
 npm install gsap --save
 ```
 
@@ -95,7 +95,7 @@ npm install gsap --save
 
 You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [core-js](https://www.npmjs.com/package/core-js), [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime).
 
-```sh
+```
 npm install @babel/core @babel/preset-env core-js regenerator-runtime --save-dev
 ```
 
