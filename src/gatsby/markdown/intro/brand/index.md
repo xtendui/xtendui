@@ -14,12 +14,10 @@ Here are assets for sharing informations like in articles or other internet medi
 <p></p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/xtendui/xtendui/master/static/logo-icon.svg" loading="eager" alt="Xtend UI" width="50">
+  <img src="https://raw.githubusercontent.com/xtendui/xtendui/master/static/favicon.svg" loading="eager" alt="Xtend UI" width="50">
 </p>
 
-[download svg icon](https://raw.githubusercontent.com/xtendui/xtendui/master/static/logo-icon.svg)
-
-[download svg icon white](https://raw.githubusercontent.com/xtendui/xtendui/master/static/logo-icon-white.svg)
+[download svg icon](https://raw.githubusercontent.com/xtendui/xtendui/master/static/favicon.svg)
 
 ## Logo
 
