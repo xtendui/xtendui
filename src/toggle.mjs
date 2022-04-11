@@ -3941,7 +3941,7 @@ Toggle.optionsDefaultSuper = {
     labelTargets: true,
     controls: true,
     selected: false,
-    expanded: true,
+    expanded: false,
     live: true,
     disabled: true,
     keyboard: true,
