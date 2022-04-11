@@ -14,7 +14,7 @@ Refer to [toggle collapse](/components/toggle/animation#collapse).
 
 Assign separator content with `before:content-['<content>']`.
 
-Use **tailwind classes** to assign styles (e.g. [margin](https://tailwindcss.com/docs/margin), [text-color](https://tailwindcss.com/docs/text-color), [font-size](https://tailwindcss.com/docs/font-size)).
+Use **Tailwind CSS** to assign styles (e.g. [margin](https://tailwindcss.com/docs/margin), [text-color](https://tailwindcss.com/docs/text-color), [font-size](https://tailwindcss.com/docs/font-size)).
 
 <demo>
   <demoinline src="demos/components/typography/separator">

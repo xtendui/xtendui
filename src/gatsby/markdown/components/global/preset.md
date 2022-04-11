@@ -23,7 +23,7 @@ The following theme values are added with the preset:
 
 ## Variants
 
-Xtend UI add **custom tailwind variants**.
+Xtend UI add **custom Tailwind CSS variants**.
 
 - added variants to style **activation classes** with `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `dir-before:`, `group-dir-before:`, `dir-after:`, `group-dir-after:`, `done:`, `group-done:`
 

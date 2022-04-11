@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 When images are loading the `.xt-media-container` background is shown.
 
-Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color)).
+Use **Tailwind CSS** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color)).
 
 <demo>
   <demoinline src="demos/components/media/variant">
@@ -28,7 +28,7 @@ You can also **animate background** and **add additional content inside backgrou
 
 ## Object fit
 
-Use **tailwind classes** to assign object fit. (e.g. [object-position](https://tailwindcss.com/docs/object-position)).
+Use **Tailwind CSS** to assign object fit. (e.g. [object-position](https://tailwindcss.com/docs/object-position)).
 
 <demo>
   <demoinline src="demos/components/media/cover">
@@ -88,7 +88,7 @@ If you want to assign `width` **assign it to a parent node** of `.xt-media-conta
 
 #### Relative
 
-Or use **tailwind classes** `.relative` on `.xt-media` to assign relative position. The result is a **responsive media**.
+Or use **Tailwind CSS** `.relative` on `.xt-media` to assign relative position. The result is a **responsive media**.
 
 The result is the **same as putting width on the asset**.
 

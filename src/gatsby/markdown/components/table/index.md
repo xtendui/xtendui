@@ -13,7 +13,7 @@ description: "Table is a component with basic styles for tables."
   </demoinline>
 </demo>
 
-Use **tailwind classes** to assign [table-layout](https://tailwindcss.com/docs/table-layout).
+Use **Tailwind CSS** to assign [table-layout](https://tailwindcss.com/docs/table-layout).
 
 <demo>
   <demoinline src="demos/components/table/usage-fixed">

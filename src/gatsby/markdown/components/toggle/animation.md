@@ -8,7 +8,7 @@ date: "2010-10-09"
 
 ## Activation
 
-To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.
+To **show/hide and animate nodes** we use **custom Tailwind CSS variants that react to classes**.
 
 Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
 
@@ -20,9 +20,9 @@ Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute
 
 ## Animation
 
-Use **tailwind classes** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
+Use **Tailwind CSS** to assign animation (e.g. [translate](https://tailwindcss.com/docs/translate), [transition-property](https://tailwindcss.com/docs/transition-property), [transition-duration](https://tailwindcss.com/docs/transition-duration), [transition-timing-function](https://tailwindcss.com/docs/transition-timing-function)).
 
-Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+Use **Tailwind CSS variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 > If you want to **animate from starting values different from `out:` values** assign `transition` to in: and out: variants.
 
@@ -31,7 +31,7 @@ Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `grou
   </demoinline>
 </demo>
 
-Use **tailwind variants** `dir-before:`, `group-dir-before:`, `group-off-before:`, `group-on-before:`, `group-in-before:`, `group-out-before:`, `dir-after:`, `group-dir-after:`, `group-off-after:`, `group-on-after:`, `group-in-after:`, `group-out-after:` to assign animations.
+Use **Tailwind CSS variants** `dir-before:`, `group-dir-before:`, `group-off-before:`, `group-on-before:`, `group-in-before:`, `group-out-before:`, `dir-after:`, `group-dir-after:`, `group-off-after:`, `group-on-after:`, `group-in-after:`, `group-out-after:` to assign animations.
 
 > Direction needs [multiple mode](/components/toggle#usage-multiple) to work.
 
@@ -40,7 +40,7 @@ Use **tailwind variants** `dir-before:`, `group-dir-before:`, `group-off-before:
   </demoinline>
 </demo>
 
-For **inverse animation** you can use also **tailwind variants** `done:`, `group-done:`. Remember to use `data-xt-duration-out="raf"` on inverse targets for proper animations.
+For **inverse animation** you can use also **Tailwind CSS variants** `done:`, `group-done:`. Remember to use `data-xt-duration-out="raf"` on inverse targets for proper animations.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-inverse">
@@ -185,7 +185,7 @@ Assign `options.collapseHeight` or `options.collapseWidth` and `overflow-hidden`
 
 You can use also with **initial values** for height and width.
 
-Use **tailwind classes** to assign size (e.g. [max-height](https://tailwindcss.com/docs/max-height)).
+Use **Tailwind CSS** to assign size (e.g. [max-height](https://tailwindcss.com/docs/max-height)).
 
 Just use the class `on` if you want to automatically open instantly.
 

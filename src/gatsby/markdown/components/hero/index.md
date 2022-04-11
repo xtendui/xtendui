@@ -19,7 +19,7 @@ Assing the desired `min-height` instead of `min-h-screen`, assing the desired `m
 
 ## Direction
 
-Use **tailwind classes** to customize **content direction**.
+Use **Tailwind CSS** to customize **content direction**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/hero/direction">
@@ -28,7 +28,7 @@ Use **tailwind classes** to customize **content direction**.
 
 ## Shadow
 
-Use **tailwind classes** to **add shadow**.
+Use **Tailwind CSS** to **add shadow**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/hero/shadow">
@@ -37,7 +37,7 @@ Use **tailwind classes** to **add shadow**.
 
 ## Outside
 
-Use **tailwind classes** to **position content outside**.
+Use **Tailwind CSS** to **position content outside**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/hero/outside">

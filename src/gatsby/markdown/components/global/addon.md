@@ -8,7 +8,7 @@ date: "1900-10-10"
 
 ## Sticky Footer
 
-Use **tailwind classes** to create a **sticky footer**.
+Use **Tailwind CSS** to create a **sticky footer**.
 
 <demo>
   <div class="gatsby_demo_item" data-iframe="demos/components/global/stickyfooter">

@@ -24,8 +24,8 @@ function Page() {
           </h3>
           <h1 className="mt-5 mb-3 xt-my-auto text-lg lg:text-xl">
             <span className="opacity-70">
-              Xtend UI is a powerful frontend library of tailwind components enhanced by vanilla js. It helps you build
-              interfaces with advanced interactions and animations.
+              Xtend UI is a powerful frontend library of Tailwind CSS components enhanced by vanilla js. It helps you
+              build interfaces with advanced interactions and animations.
             </span>
           </h1>
           <div className="gatsby_home-main_social xt-list justify-center mt-6">
@@ -361,10 +361,10 @@ function Page() {
                   <div className="w-full md:w-6/12 lg:w-7/12">
                     <ul>
                       <li>
-                        <strong>Tailwind components</strong> class based with flexible design.
+                        <strong>Tailwind CSS components</strong> class based with flexible design.
                       </li>
                       <li>
-                        <strong>Tailwind custom variants</strong> for simple class based activations and animations.
+                        <strong>Tailwind CSS custom variants</strong> for simple class based activations and animations.
                       </li>
                     </ul>
                   </div>

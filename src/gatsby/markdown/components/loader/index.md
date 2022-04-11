@@ -8,7 +8,7 @@ description: "Loader is a component to create animated loaders."
 
 ## Spinner
 
-Use **tailwind classes** to assign variant (e.g. [stroke](https://tailwindcss.com/docs/stroke), [opacity](https://tailwindcss.com/docs/opacity)).
+Use **Tailwind CSS** to assign variant (e.g. [stroke](https://tailwindcss.com/docs/stroke), [opacity](https://tailwindcss.com/docs/opacity)).
 
 Use `.animate-xt-spinner` to assing spinner animation.
 
@@ -31,7 +31,7 @@ Use `.animate-xt-spinner` to assing spinner animation.
 
 #### Direction
 
-Use **tailwind classes** to assign size (e.g. [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height)).
+Use **Tailwind CSS** to assign size (e.g. [width](https://tailwindcss.com/docs/width), [height](https://tailwindcss.com/docs/height)).
 
 Use `.animate-xt-filler-<direction>` to assing filler animation. For `<direction>` values use `x` or `y`.
 
@@ -43,7 +43,7 @@ Use `.animate-xt-filler-<direction>` to assing filler animation. For `<direction
 
 </div>
 
-Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color), [opacity](https://tailwindcss.com/docs/opacity)).
+Use **Tailwind CSS** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
 <demo>
   <demoinline src="demos/components/loader/filler-x">
@@ -56,7 +56,7 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 #### Size
 
-Use **tailwind classes** to assign position (e.g. [top-right-bottom-left](https://tailwindcss.com/docs/top-right-bottom-left)).
+Use **Tailwind CSS** to assign position (e.g. [top-right-bottom-left](https://tailwindcss.com/docs/top-right-bottom-left)).
 
 <demo>
   <demoinline src="demos/components/loader/filler-size-x">

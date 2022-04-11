@@ -27,7 +27,7 @@ Use **component classes** to style **disabled**. Check [xtendui/src/global.css.j
 
 ## Other
 
-Use **tailwind classes** to style **fieldset**, **legend** and **note**.
+Use **Tailwind CSS** to style **fieldset**, **legend** and **note**.
 
 <demo>
   <demoinline src="demos/components/form/other">

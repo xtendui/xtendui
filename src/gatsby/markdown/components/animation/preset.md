@@ -16,7 +16,7 @@ Added additional [transition-duration](https://tailwindcss.com/docs/transition-d
 
 Default `transitionDuration` changed to `500ms`, all [transition properties](https://tailwindcss.com/docs/transition-property) now have this duration.
 
-If you want to change the values or **restore tailwind defaults**, use this code inside `tailwind.config.js` setting `theme.extend.transitionDuration`.
+If you want to change the values or **restore Tailwind CSS defaults**, use this code inside `tailwind.config.js` setting `theme.extend.transitionDuration`.
 
 ```js
 theme: {
@@ -32,7 +32,7 @@ theme: {
 
 Default `transitionTimingFunction`, `ease-in`, `ease-out`, `ease-in-out` changed, all [transition properties](https://tailwindcss.com/docs/transition-property) now have this easing.
 
-If you want to change the values or **restore tailwind defaults**, use this code inside `tailwind.config.js` setting `theme.extend.transitionDuration`.
+If you want to change the values or **restore Tailwind CSS defaults**, use this code inside `tailwind.config.js` setting `theme.extend.transitionDuration`.
 
 ```js
 theme: {
@@ -47,7 +47,7 @@ theme: {
 },
 ```
 
-Added additional easing for [tailwind timing functions](https://tailwindcss.com/docs/transition-timing-function).
+Added additional easing for [Tailwind CSS timing functions](https://tailwindcss.com/docs/transition-timing-function).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -82,7 +82,7 @@ Added additional easing for [tailwind timing functions](https://tailwindcss.com/
 
 ## Animation and Keyframes
 
-We add in theme also additional keyframes on [tailwind animation](https://tailwindcss.com/docs/animation).
+We add in theme also additional keyframes on [Tailwind CSS animation](https://tailwindcss.com/docs/animation).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
