@@ -1,5 +1,9 @@
 **Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate)** code for Weback Encore, Nextjs, Parcel, Snowpack, Vite, Webpack ready to go!
 
+## Nodejs
+
+Current tested **node version** is 16.
+
 ## Installation
 
 Install **xtendui**.
