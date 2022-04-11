@@ -12,8 +12,7 @@ const html = /* HTML */ `
             <input
               type="checkbox"
               aria-label="Activate on scroll"
-              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}"
-              checked />
+              class="xt-check xt-checkbox ${classes.checkRadius()} ${classes.checkGray()}" />
             <span class="${classes.checkContent()}">Activate on scroll</span>
           </label>
         </form>

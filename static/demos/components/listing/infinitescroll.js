@@ -23,8 +23,8 @@ const mountInfinitescroll = ({ ref }) => {
       pagination: '[data-xt-infinitescroll-pagination]',
     },
     // activated by switcher
-    //scrollUp = true,
-    //scrollDown = true,
+    //scrollUp: true,
+    //scrollDown: true,
   })
   /***/
 
