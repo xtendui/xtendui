@@ -178,6 +178,10 @@ module.exports = {
             'code:not([class])': {
               fontSize: '0.9em',
               fontWeight: 600,
+              wordBreak: 'break-word',
+              'td &': {
+                wordBreak: 'initial',
+              },
             },
           },
         },
