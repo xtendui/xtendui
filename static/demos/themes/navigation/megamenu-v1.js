@@ -37,7 +37,7 @@ const mountDrops = ({ ref }) => {
     // activated by switcher
     //on: 'mouseenter focus',
     //off: 'mouseleave',
-    //delay: 150,
+    //delay: 100,
   })
   /***/
 
@@ -206,7 +206,7 @@ const mountLine = ({ ref }) => {
   const drops = ref.querySelectorAll('[data-xt-drop-element]')
   const line = ref.querySelector('.megamenu-line')
 
-  const dropDelay = 150
+  const dropDelay = 100
   const lineHeight = 7
   const lineTime = 0.5
   const lineEase = 'quint.out'
@@ -347,7 +347,7 @@ const mountSwitcher = ({ ref }) => {
       if (switcher.checked) {
         self.options.on = 'mouseenter focus'
         self.options.off = 'mouseleave'
-        self.options.delay = 150
+        self.options.delay = 100
       } else {
         self.options.on = 'click'
         self.options.off = 'click'
