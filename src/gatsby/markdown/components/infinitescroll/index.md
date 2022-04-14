@@ -22,10 +22,10 @@ Remember to set a `options.get` variable for a **get request on current url** to
 
 > Depending on website content the load more content may retain website scroll, use `body { overflow-anchor: none; }` to prevent that.
 
-Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2) to preview location hash changes.
+Try the demo [on a new page](/demos/components/infinitescroll/usage?false=2) to preview location hash changes.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/listing/infinitescroll">
+  <div class="gatsby_demo_item" data-iframe="demos/components/infinitescroll/usage">
   </div>
 </demo>
 

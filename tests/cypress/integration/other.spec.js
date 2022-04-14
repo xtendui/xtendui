@@ -536,7 +536,7 @@ describe('demos/components/scrollto/toggle', function () {
   })
 })
 
-describe('demos/components/listing/infinitescroll', function () {
+describe('demos/components/infinitescroll/usage', function () {
   let win
   let doc
   let Xt
@@ -544,7 +544,7 @@ describe('demos/components/listing/infinitescroll', function () {
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/listing/infinitescroll?false=2').window().as('win').document().as('doc')
+    cy.visit('/demos/components/infinitescroll/usage?false=2').window().as('win').document().as('doc')
     cy.get('.demo--infinitescroll').as('demo')
     cy.get('@demo').find('.infinitescroll').as('container')
   })
