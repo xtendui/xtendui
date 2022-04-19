@@ -161,6 +161,9 @@ module.exports = {
           left: '0',
           content: '"\\2022"',
         },
+        '> ul, > ol': {
+          marginTop: theme('spacing.4'),
+        },
       },
     },
     '.xt-ol': {
@@ -185,6 +188,9 @@ module.exports = {
         },
         '&:before': {
           display: 'none',
+        },
+        '> ul, > ol': {
+          marginTop: theme('spacing.4'),
         },
       },
     },

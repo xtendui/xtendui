@@ -154,8 +154,6 @@ You can use figure and figcaption and hr **classes or tags** with customizable s
   </demoinline>
 </demo>
 
-## Other
-
 These are typography's **component utilities**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
