@@ -20,6 +20,14 @@ const animBackgroundOn = ({ background } = {}) => {
     ease: 'quint.inOut',
     duration: 0.65,
   })
+  // fix gsap keyframes animation with gsap.globalTimeline
+  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+    gsap.to(background, {
+      'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      ease: 'quint.inOut',
+      duration: 0.65,
+    })
+  }
 }
 
 const animBackgroundOff = ({ background } = {}) => {
@@ -32,6 +40,14 @@ const animBackgroundOff = ({ background } = {}) => {
     ease: 'quint.inOut',
     duration: 0.5,
   })
+  // fix gsap keyframes animation with gsap.globalTimeline
+  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+    gsap.to(background, {
+      'clip-path': 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
+      ease: 'quint.inOut',
+      duration: 0.5,
+    })
+  }
 }
 
 /* mask */
@@ -64,6 +80,14 @@ const animMaskOn = ({ mask, inverse } = {}) => {
       duration: 0.65,
     })
   }
+  // fix gsap keyframes animation with gsap.globalTimeline
+  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+    gsap.to(mask, {
+      'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      ease: 'quint.inOut',
+      duration: 0.65,
+    })
+  }
 }
 
 const animMaskOff = ({ mask, inverse } = {}) => {
@@ -90,6 +114,14 @@ const animMaskOff = ({ mask, inverse } = {}) => {
         { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)' },
         { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)' },
       ],
+      ease: 'quint.inOut',
+      duration: 0.5,
+    })
+  }
+  // fix gsap keyframes animation with gsap.globalTimeline
+  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
+    gsap.to(mask, {
+      'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
       ease: 'quint.inOut',
       duration: 0.5,
     })
