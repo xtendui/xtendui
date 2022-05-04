@@ -10,7 +10,7 @@ const buttonText = () => ``
 const buttonGroupPrimary = () => `${classes.groupButtonPrimary()}`
 
 const html = /* HTML */ `
-  <div class="demo--polygon-animation-v1">
+  <div class="demo--ellipse-animation-v1">
     <div class="${classes.hBlock()}">Button</div>
 
     <div class="xt-list xt-list-3 items-center">
@@ -40,7 +40,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()}">Toggle</div>
 
     <form class="text-sm">
-      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 650 }">
+      <div class="xt-list xt-list-3 items-center" data-xt-toggle="{ duration: 750 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
@@ -76,7 +76,7 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()}">Drop</div>
 
     <div class="xt-list xt-list-3 items-center">
-      <div data-xt-drop="{ position: 'auto-end', duration: 650 }">
+      <div data-xt-drop="{ position: 'auto-end', duration: 750 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
@@ -114,7 +114,7 @@ const html = /* HTML */ `
         </div>
       </div>
 
-      <div data-xt-drop="{ position: 'auto-end', duration: 650 }">
+      <div data-xt-drop="{ position: 'auto-end', duration: 750 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
@@ -175,7 +175,7 @@ const html = /* HTML */ `
 
     <div class="${classes.hBlock()}">Tooltip</div>
 
-    <div data-xt-tooltip="{ mouseParent: true, duration: 650 }">
+    <div data-xt-tooltip="{ mouseParent: true, duration: 750 }">
       Example tooltips
 
       <span>
@@ -250,7 +250,7 @@ const html = /* HTML */ `
 
     <div class="xt-list xt-list-3 items-center">
       <div
-        data-xt-overlay="{ appendTo: '.demo--polygon-animation-v1, .demo--polygon-animation-v1-react', duration: 650 }">
+        data-xt-overlay="{ appendTo: '.demo--ellipse-animation-v1, .demo--ellipse-animation-v1-react', duration: 750 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
@@ -374,7 +374,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-overlay="{ appendTo: '.demo--polygon-animation-v1, .demo--polygon-animation-v1-react', duration: 650 }">
+        data-xt-overlay="{ appendTo: '.demo--ellipse-animation-v1, .demo--ellipse-animation-v1-react', duration: 750 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonPrimary()}"
@@ -491,7 +491,7 @@ const html = /* HTML */ `
       </div>
 
       <div
-        data-xt-overlay="{ appendTo: '.demo--polygon-animation-v1, .demo--polygon-animation-v1-react', duration: 650 }">
+        data-xt-overlay="{ appendTo: '.demo--ellipse-animation-v1, .demo--ellipse-animation-v1-react', duration: 750 }">
         <button
           type="button"
           class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()}"
@@ -533,7 +533,7 @@ const html = /* HTML */ `
 
                   <div
                     class="*** relative flex flex-col flex-auto ***"
-                    data-xt-toggle="{ min: 1, duration: 650, queue: false }">
+                    data-xt-toggle="{ min: 1, duration: 750, queue: false }">
                     <div
                       class="*** flex flex-col flex-auto h-full py-12 px-7 sm:px-9 text-base *** *** off:hidden out:pointer-events-none absolute top-0 left-0 right-0 on:relative ***"
                       data-xt-toggle-target

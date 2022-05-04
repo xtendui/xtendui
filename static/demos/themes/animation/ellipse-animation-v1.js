@@ -10,13 +10,16 @@ import gsap from 'gsap'
 const animBackgroundOn = ({ background } = {}) => {
   gsap.killTweensOf(background)
   gsap.set(background, {
-    'clip-path': 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
+    'clip-path': 'ellipse(50% 0% at 50% 150%)',
   })
   gsap
     .to(background, {
       keyframes: [
-        { 'clip-path': 'polygon(0% 0%, 50% 0%, 75% 100%, 0% 100%)' },
-        { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+        { 'clip-path': 'ellipse(50% 60% at 50% 125%)' },
+        { 'clip-path': 'ellipse(65% 70% at 50% 100%)' },
+        { 'clip-path': 'ellipse(100% 60% at 50% 75%)' },
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
       ],
       ease: 'quint.inOut',
       duration: 0.65,
@@ -29,11 +32,13 @@ const animBackgroundOff = ({ background } = {}) => {
   gsap
     .to(background, {
       keyframes: [
-        { 'clip-path': 'polygon(50% 0%, 100% 0%, 100% 100%, 100% 100%)' },
-        { 'clip-path': 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)' },
+        { 'clip-path': 'ellipse(100% 60% at 50% 25%)' },
+        { 'clip-path': 'ellipse(65% 70% at 50% 0%)' },
+        { 'clip-path': 'ellipse(50% 60% at 50% -25%)' },
+        { 'clip-path': 'ellipse(50% 0% at 50% -50%)' },
       ],
       ease: 'quint.inOut',
-      duration: 0.5,
+      duration: 0.65,
     })
     .timeline.duration()
 }
@@ -44,31 +49,37 @@ const animMaskOn = ({ mask, inverse } = {}) => {
   if (inverse) {
     gsap.killTweensOf(mask)
     gsap.set(mask, {
-      'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+      'clip-path': 'ellipse(50% 0% at 50% -50%)',
     })
     gsap
       .to(mask, {
         keyframes: [
-          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)' },
-          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+          { 'clip-path': 'ellipse(50% 60% at 50% -25%)' },
+          { 'clip-path': 'ellipse(65% 70% at 50% 0%)' },
+          { 'clip-path': 'ellipse(100% 60% at 50% 25%)' },
+          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+          { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
         ],
         ease: 'quint.inOut',
-        duration: 0.65,
+        duration: 0.75,
       })
       .timeline.duration()
   } else {
     gsap.killTweensOf(mask)
     gsap.set(mask, {
-      'clip-path': 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
+      'clip-path': 'ellipse(50% 0% at 50% 150%)',
     })
     gsap
       .to(mask, {
         keyframes: [
-          { 'clip-path': 'polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)' },
-          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+          { 'clip-path': 'ellipse(50% 60% at 50% 125%)' },
+          { 'clip-path': 'ellipse(65% 70% at 50% 100%)' },
+          { 'clip-path': 'ellipse(100% 60% at 50% 75%)' },
+          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+          { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
         ],
         ease: 'quint.inOut',
-        duration: 0.65,
+        duration: 0.75,
       })
       .timeline.duration()
   }
@@ -80,11 +91,13 @@ const animMaskOff = ({ mask, inverse } = {}) => {
     gsap
       .to(mask, {
         keyframes: [
-          { 'clip-path': 'polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)' },
-          { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)' },
+          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+          { 'clip-path': 'ellipse(100% 60% at 50% 75%)' },
+          { 'clip-path': 'ellipse(65% 70% at 50% 100%)' },
+          { 'clip-path': 'ellipse(50% 0% at 50% 150%)' },
         ],
         ease: 'quint.inOut',
-        duration: 0.5,
+        duration: 0.65,
       })
       .timeline.duration()
   } else {
@@ -92,11 +105,13 @@ const animMaskOff = ({ mask, inverse } = {}) => {
     gsap
       .to(mask, {
         keyframes: [
-          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)' },
-          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)' },
+          { 'clip-path': 'ellipse(100% 60% at 50% 25%)' },
+          { 'clip-path': 'ellipse(65% 70% at 50% 0%)' },
+          { 'clip-path': 'ellipse(50% 60% at 50% -25%)' },
+          { 'clip-path': 'ellipse(50% 0% at 50% -50%)' },
         ],
         ease: 'quint.inOut',
-        duration: 0.5,
+        duration: 0.65,
       })
       .timeline.duration()
   }
@@ -137,8 +152,8 @@ const animShadowOn = ({ shadow } = {}) => {
   gsap.to(shadow, {
     opacity: 0.5,
     ease: 'quint.inOut',
-    duration: 0.25,
-    delay: 0.4,
+    duration: 0.4,
+    delay: 0.25,
   })
 }
 
@@ -278,7 +293,7 @@ const mountButton = ({ ref }) => {
     item.prepend(Xt.node({ str: '<div class="btn-background"></div>' }))
     background = item.querySelector('.btn-background')
     gsap.set(background, {
-      'clip-path': 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
+      'clip-path': 'ellipse(50% 0% at 50% 150%)',
     })
   }
 
@@ -352,7 +367,7 @@ const mountInteraction = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--polygon-animation-v1',
+  matches: '.demo--ellipse-animation-v1',
   mount: ({ ref }) => {
     const unmountInteraction = mountInteraction({ ref })
 
