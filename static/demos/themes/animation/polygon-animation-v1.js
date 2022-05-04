@@ -12,42 +12,30 @@ const animBackgroundOn = ({ background } = {}) => {
   gsap.set(background, {
     'clip-path': 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
   })
-  gsap.to(background, {
-    keyframes: [
-      { 'clip-path': 'polygon(0% 0%, 50% 0%, 75% 100%, 0% 100%)' },
-      { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
-    ],
-    ease: 'quint.inOut',
-    duration: 0.65,
-  })
-  // fix gsap keyframes animation with gsap.globalTimeline
-  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
-    gsap.to(background, {
-      'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+  gsap
+    .to(background, {
+      keyframes: [
+        { 'clip-path': 'polygon(0% 0%, 50% 0%, 75% 100%, 0% 100%)' },
+        { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+      ],
       ease: 'quint.inOut',
       duration: 0.65,
     })
-  }
+    .timeline.duration()
 }
 
 const animBackgroundOff = ({ background } = {}) => {
   gsap.killTweensOf(background)
-  gsap.to(background, {
-    keyframes: [
-      { 'clip-path': 'polygon(50% 0%, 100% 0%, 100% 100%, 100% 100%)' },
-      { 'clip-path': 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)' },
-    ],
-    ease: 'quint.inOut',
-    duration: 0.5,
-  })
-  // fix gsap keyframes animation with gsap.globalTimeline
-  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
-    gsap.to(background, {
-      'clip-path': 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
+  gsap
+    .to(background, {
+      keyframes: [
+        { 'clip-path': 'polygon(50% 0%, 100% 0%, 100% 100%, 100% 100%)' },
+        { 'clip-path': 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)' },
+      ],
       ease: 'quint.inOut',
       duration: 0.5,
     })
-  }
+    .timeline.duration()
 }
 
 /* mask */
@@ -58,35 +46,31 @@ const animMaskOn = ({ mask, inverse } = {}) => {
     gsap.set(mask, {
       'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
     })
-    gsap.to(mask, {
-      keyframes: [
-        { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)' },
-        { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.65,
-    })
+    gsap
+      .to(mask, {
+        keyframes: [
+          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)' },
+          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+        ],
+        ease: 'quint.inOut',
+        duration: 0.65,
+      })
+      .timeline.duration()
   } else {
     gsap.killTweensOf(mask)
     gsap.set(mask, {
       'clip-path': 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
     })
-    gsap.to(mask, {
-      keyframes: [
-        { 'clip-path': 'polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)' },
-        { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.65,
-    })
-  }
-  // fix gsap keyframes animation with gsap.globalTimeline
-  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
-    gsap.to(mask, {
-      'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-      ease: 'quint.inOut',
-      duration: 0.65,
-    })
+    gsap
+      .to(mask, {
+        keyframes: [
+          { 'clip-path': 'polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)' },
+          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' },
+        ],
+        ease: 'quint.inOut',
+        duration: 0.65,
+      })
+      .timeline.duration()
   }
 }
 
@@ -96,35 +80,31 @@ const animMaskOff = ({ mask, inverse } = {}) => {
     gsap.set(mask, {
       'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
     })
-    gsap.to(mask, {
-      keyframes: [
-        { 'clip-path': 'polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)' },
-        { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.5,
-    })
+    gsap
+      .to(mask, {
+        keyframes: [
+          { 'clip-path': 'polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)' },
+          { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)' },
+        ],
+        ease: 'quint.inOut',
+        duration: 0.5,
+      })
+      .timeline.duration()
   } else {
     gsap.killTweensOf(mask)
     gsap.set(mask, {
       'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
     })
-    gsap.to(mask, {
-      keyframes: [
-        { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)' },
-        { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.5,
-    })
-  }
-  // fix gsap keyframes animation with gsap.globalTimeline
-  if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
-    gsap.to(mask, {
-      'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
-      ease: 'quint.inOut',
-      duration: 0.5,
-    })
+    gsap
+      .to(mask, {
+        keyframes: [
+          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)' },
+          { 'clip-path': 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)' },
+        ],
+        ease: 'quint.inOut',
+        duration: 0.5,
+      })
+      .timeline.duration()
   }
 }
 
