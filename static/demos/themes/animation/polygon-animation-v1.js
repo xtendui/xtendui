@@ -106,9 +106,6 @@ const animMaskOff = ({ mask, inverse } = {}) => {
 
 const animBackdropOn = ({ backdrop } = {}) => {
   gsap.killTweensOf(backdrop)
-  gsap.set(backdrop, {
-    opacity: 0,
-  })
   gsap.to(backdrop, {
     opacity: 0.2,
     ease: 'quint.inOut',
@@ -122,8 +119,7 @@ const animBackdropOff = ({ backdrop } = {}) => {
   gsap.to(backdrop, {
     opacity: 0,
     ease: 'quint.inOut',
-    duration: 0.5,
-    delay: 0.15,
+    duration: 0.65,
   })
 }
 
@@ -131,14 +127,11 @@ const animBackdropOff = ({ backdrop } = {}) => {
 
 const animShadowOn = ({ shadow } = {}) => {
   gsap.killTweensOf(shadow)
-  gsap.set(shadow, {
-    opacity: 0,
-  })
   gsap.to(shadow, {
     opacity: 0.5,
     ease: 'quint.inOut',
-    duration: 0.25,
-    delay: 0.4,
+    duration: 0.4,
+    delay: 0.25,
   })
 }
 
@@ -147,7 +140,7 @@ const animShadowOff = ({ shadow } = {}) => {
   gsap.to(shadow, {
     opacity: 0,
     ease: 'quint.inOut',
-    duration: 0.25,
+    duration: 0.4,
   })
 }
 

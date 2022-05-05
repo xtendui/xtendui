@@ -2,7 +2,8 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const grayDesign = () => `${classes.textDefault()} bg-gray-100 border-transparent border`
 const primaryDesign = () => `${classes.textInverse()} bg-primary-500 border-transparent border`
-const shadowDesign = () => 'xt-shadow z-below absolute inset-0'
+const shadowDesign = () => 'xt-shadow z-below absolute inset-0 opacity-0'
+const itemAnimOpacity = () => 'opacity-0'
 
 const buttonGray = () => `${grayDesign()}`
 const buttonPrimary = () => `${primaryDesign()}`
@@ -259,7 +260,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="${classes.overlayShadow()} *** ${shadowDesign()} ***"></div>
@@ -383,7 +384,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="${classes.overlayShadow()} *** ${shadowDesign()} ***"></div>
@@ -500,7 +501,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800"></div>
+          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
               <div class="${classes.overlayShadow()} *** ${shadowDesign()} ***"></div>
