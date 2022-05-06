@@ -269,17 +269,17 @@ function Page() {
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
                       View live demo{' '}
-                      <a href="themes/animation#demos-themes-animation-float-animation-v-1">float-animation-v1</a>
+                      <a href="themes/animation#demos-themes-animation-polygon-animation-v-1">polygon-animation-v1</a>
                     </div>
-                    <Video assets={assets} title="float-animation-v1" />
+                    <Video assets={assets} title="polygon-animation-v1" />
                   </div>
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="gatsby_home-feature_video xt-sticky xt-sticky-nozindex">
                     <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
                       View live demo{' '}
-                      <a href="themes/animation#demos-themes-animation-collapse-animation-v-1">collapse-animation-v1</a>
+                      <a href="themes/animation#demos-themes-animation-float-animation-v-1">float-animation-v1</a>
                     </div>
-                    <Video assets={assets} title="collapse-animation-v1" />
+                    <Video assets={assets} title="float-animation-v1" />
                   </div>
                 </div>
               </div>
