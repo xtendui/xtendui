@@ -1,3 +1,26 @@
+# [1.1.0](https://github.com/xtendui/xtendui/compare/v1.0.16...v1.1.0) (2022-05-09)
+
+
+### Bug Fixes
+
+* **drop:** fix options.closeOutside on mousedown instead of click to prevent closing when click and dragging outside ([169fac9](https://github.com/xtendui/xtendui/commit/169fac9a06de56d9041bae3d86002967251eaa54))
+* **drop:** xt-drop-static remove top and bottom position use popperjs placement for vertical position ([7237358](https://github.com/xtendui/xtendui/commit/7237358e2e81c7917a016c7d97d49163afaccb1e))
+* fix css hover media query pointer coarse ([87a6f2d](https://github.com/xtendui/xtendui/commit/87a6f2dbba8923e295385ec37dee7e364994198f))
+* fix css hover media query with also (pointer: coarse) ([cca471e](https://github.com/xtendui/xtendui/commit/cca471e97be5a32f0d59fc09b4894c81e797b03d))
+* **infinitescroll:** default infinitescroll use bfcache and disable scroll restore, use options.nocache: true; to have old behaviour ([6751966](https://github.com/xtendui/xtendui/commit/67519660b00297f39181fb6aa395c52b33a758f6))
+* **infinitescroll:** fix pagination error when using custom item selector ([68f2805](https://github.com/xtendui/xtendui/commit/68f2805d5c7fb3ed97b04cb29efd4ec2a18b8ffa))
+* **infinitescroll:** fix scroll behaviour when using back button and fix order inverse when loading previous pages ([22ae4c1](https://github.com/xtendui/xtendui/commit/22ae4c145c162cc7d5c2bc95ef15e9476a1f5aa6))
+* **scrollto:** fix anchor page load not scrolling to hancored element ([d700e79](https://github.com/xtendui/xtendui/commit/d700e79a4c0365118b9a0ddc6ed3a90255792464))
+* **toggle:** fix aria error on toggle remove default a11y.expanded ([454f9e5](https://github.com/xtendui/xtendui/commit/454f9e5e0133be0c0869fc1ddf3b546ccbf46ec6))
+* **toggle:** fix collapse height and width inherit on activation end when no animation duration is present ([751d417](https://github.com/xtendui/xtendui/commit/751d417aec34ea21f5e9f31af2c8e2282f481dfe))
+* **typography:** added vertical spacing nested list ul ol ([bb19008](https://github.com/xtendui/xtendui/commit/bb190081ec0d10f73274632e2eefcc310f4b2aab))
+* **typography:** ordered list fix counter and add type attribute ([912a110](https://github.com/xtendui/xtendui/commit/912a110864f6a130ba1be6220271f7adc7361bed))
+
+
+### Features
+
+* **infinitescroll:** added new component infinitescroll ([3113204](https://github.com/xtendui/xtendui/commit/311320456a16b00cb89a3889934ea1907fb474d5))
+
 ## [1.0.16](https://github.com/xtendui/xtendui/compare/v1.0.15...v1.0.16) (2022-02-07)
 
 
