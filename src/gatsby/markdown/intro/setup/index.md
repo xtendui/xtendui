@@ -8,26 +8,30 @@ description: "Installation instructions."
 
 **Check out [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate)** code for Weback Encore, Nextjs, Parcel, Snowpack, Vite, Webpack ready to go!
 
+## Nodejs
+
+Current tested **node version** is 16.
+
 ## Installation
 
 Install **xtendui**.
 
-```sh
+```
 npm install xtendui --save
 ```
 
 ## Css
 
-**Setup compilation using any compiler** see [postcss usage](https://github.com/postcss/postcss#usage) or [tailwind installation](https://tailwindcss.com/docs/installation/framework-guides) or [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
+**Setup compilation using any compiler** see [postcss usage](https://github.com/postcss/postcss#usage) or [Tailwind CSS installation](https://tailwindcss.com/docs/installation/framework-guides) or [xtendui-boilerplate](https://github.com/xtendui/xtendui-boilerplate).
 
-Install **tailwind**, **xtendui**, **postcss import**, **postcss nested**.
+Install **tailwindcss**, **xtendui**, **postcss import**, **postcss nested**.
 
-```sh
+```
 npm install tailwindcss --save
 npm install postcss postcss-import autoprefixer --save-dev
 ```
 
-Then in `postcss.config.js` set up compilation (more info in Tailwind docs [tailwind postcss](https://tailwindcss.com/docs/using-with-preprocessors)).
+Then in `postcss.config.js` set up compilation (more info in Tailwind CSS docs [Tailwind CSS postcss](https://tailwindcss.com/docs/using-with-preprocessors)).
 
 ```jsx
 module.exports = {
@@ -72,7 +76,7 @@ Create your css.
 @import "tailwindcss/utilities";
 ```
 
-You can [customize components css](https://xtendui.com/components/global/preset#customization), more info in Tailwind docs [tailwind theme](https://tailwindcss.com/docs/theme).
+You can [customize components css](https://xtendui.com/components/global/preset#customization), more info in Tailwind CSS docs [Tailwind CSS theme](https://tailwindcss.com/docs/theme).
 
 ## Javascript
 
@@ -91,7 +95,7 @@ import 'xtendui/src/toggle'
 
 Xtend UI uses [gsap](https://github.com/greensock/GSAP) for javascript animations in some demos, but it's not included in the library.
 
-```sh
+```
 npm install gsap --save
 ```
 
@@ -99,7 +103,7 @@ npm install gsap --save
 
 You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [core-js](https://www.npmjs.com/package/core-js), [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime).
 
-```sh
+```
 npm install @babel/core @babel/preset-env core-js regenerator-runtime --save-dev
 ```
 

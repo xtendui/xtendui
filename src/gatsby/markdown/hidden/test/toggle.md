@@ -99,14 +99,6 @@ title: "Toggle Test"
 
 ## Other
 
-`demos/components/drop/reset-to-current`
-- TEST no empty frame when switching from off to reset.
-
-<demo>
-  <demoinline src="demos/components/drop/reset-to-current">
-  </demoinline>
-</demo>
-
 `demos/components/tooltip/swap-click`
 - TEST activation.
 
@@ -136,5 +128,13 @@ title: "Toggle Test"
 
 <demo>
   <demoinline src="demos/components/overlay/animation-noqueue">
+  </demoinline>
+</demo>
+
+`demos/components/drop/reset-to-current`
+- TEST no empty frame when switching from off to reset.
+
+<demo>
+  <demoinline src="demos/components/drop/reset-to-current">
   </demoinline>
 </demo>

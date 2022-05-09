@@ -141,6 +141,17 @@ If you have **links on elements** use `preventEvent: true`, and the **link will 
   </demoinline>
 </demo>
 
+If you want to have **open/close on click on touch devices** use this option.
+
+```js
+matches: {
+  '(hover: none), (pointer: coarse)': {
+    on: 'click',
+    off: 'click',
+  },
+},
+```
+
 There some other event options.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

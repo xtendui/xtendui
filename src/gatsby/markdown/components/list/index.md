@@ -24,7 +24,7 @@ Use `.flex-auto` to expand items to **fill width**.
 
 > For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 
-> You should never use **tailwind width classes** inside `.xt-list`. Otherwise you can space contents with [row](/components/row).
+> You should never use **Tailwind CSS width classes** inside `.xt-list`. Otherwise you can space contents with [row](/components/row).
 
 <demo>
   <demoinline src="demos/components/list/usage">

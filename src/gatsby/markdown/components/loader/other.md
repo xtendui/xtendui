@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Background
 
-Use **tailwind classes** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color), [opacity](https://tailwindcss.com/docs/opacity)).
+Use **Tailwind CSS** to assign variant (e.g. [background-color](https://tailwindcss.com/docs/background-color), [opacity](https://tailwindcss.com/docs/opacity)).
 
 <demo>
   <demoinline src="demos/components/loader/background-spinner">
@@ -19,7 +19,7 @@ Use **tailwind classes** to assign variant (e.g. [background-color](https://tail
 
 ## Activation
 
-Use **tailwind classes** to assign loader activation animation.
+Use **Tailwind CSS** to assign loader activation animation.
 
 Use [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) to activate and animate.
 

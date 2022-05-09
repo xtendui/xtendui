@@ -6,8 +6,9 @@ import 'xtendui/src/toggle'
 import 'xtendui/src/tooltip'
 
 require('prismjs/plugins/unescaped-markup/prism-unescaped-markup')
-require('prismjs/components/prism-jsx.min')
-require('prismjs/components/prism-less.min')
+require('prismjs/components/prism-bash')
+require('prismjs/components/prism-css')
+require('prismjs/components/prism-jsx')
 Prism.manual = true
 
 const classes = require('src/gatsby/templates/snippets/classes').classes
@@ -56,7 +57,7 @@ Xt.ready({
 const highlightCode = (pre, element, language, isReactRename = false) => {
   const code = pre.querySelector('code')
   let text = element.innerHTML
-  language = language ?? element.getAttribute('class') ?? 'language-sh'
+  language = language ?? element.getAttribute('class') ?? 'bash'
   if (language === 'language-html') {
     language = 'html'
   } else if (language === 'language-css') {
@@ -126,7 +127,9 @@ const highlightCode = (pre, element, language, isReactRename = false) => {
   text = text.replace(/\/?\*\*\*\/?\n*\s*([\s\S\r]*?)\n*\s*\/?\*\*\*\/?/g, (_, str) => str) // remove highlight syntax
   Xt.dataStorage.set(pre, 'sourceCode', text)
   // set language
-  if (language === 'html') {
+  if (language === 'bash') {
+    language = 'language-bash'
+  } else if (language === 'html') {
     language = 'language-html'
   } else if (language === 'css') {
     language = 'language-css'

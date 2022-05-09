@@ -110,24 +110,30 @@ class Scrollto {
         }
       }
     }
-    // init
-    // needs frameDouble after ondone
-    Xt.frameDouble({
-      el: self.container,
-      ns: `${self.ns}Init`,
+    // need readyState complete to properly scroll after page load browsers scrolling
+    Xt.ready({
+      state: 'complete',
       func: () => {
-        // initial needs to be inside raf for content added (e.g. react)
-        self._initStart()
-        // initialized class
-        self.container.setAttribute(`data-${self.componentName}-init`, '')
-        // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`init.${self._componentNs}`))
-        self.initial = false
-        // debug
-        if (options.debug) {
-          // eslint-disable-next-line no-console
-          console.debug(`${self.componentName} init`, self)
-        }
+        // init
+        // needs frameDouble after ondone
+        Xt.frameDouble({
+          el: self.container,
+          ns: `${self.ns}Init`,
+          func: () => {
+            // initial needs to be inside raf for content added (e.g. react)
+            self._initStart()
+            // initialized class
+            self.container.setAttribute(`data-${self.componentName}-init`, '')
+            // dispatch event
+            self.container.dispatchEvent(new CustomEvent(`init.${self._componentNs}`))
+            self.initial = false
+            // debug
+            if (options.debug) {
+              // eslint-disable-next-line no-console
+              console.debug(`${self.componentName} init`, self)
+            }
+          },
+        })
       },
     })
   }

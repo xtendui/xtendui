@@ -1,6 +1,6 @@
 ---
-type: "Hidden"
-category: "Future"
+type: "Components"
+category: "Other"
 parent: "InfiniteScroll"
 title: "InfiniteScroll"
 description: "InfiniteScroll is a plugin that manages automating pagination loads with infinite scrolling."
@@ -18,14 +18,16 @@ Initialize manually **within javascript** with `new Xt.Infinitescroll(document.q
 
 Remember to set a `options.get` variable for a **get request on current url** to load items. Also remember to set `options.max` number of pages.
 
-Try the demo [on a new page](/demos/components/listing/infinitescroll?false=2) to preview location hash changes.
+> Infinitescroll uses [bfcache](https://web.dev/bfcache/) to resume previous state when using back/forward browser buttons. Ensure **bfcache** is working on your environment, or use `options.nocache: true`.
+
+> Depending on website content the load more content may retain website scroll, use `body { overflow-anchor: none; }` to prevent that.
+
+Try the demo [on a new page](/demos/components/infinitescroll/usage?false=2) to preview location hash changes.
 
 <demo>
-  <div class="gatsby_demo_item" data-iframe="demos/components/listing/infinitescroll">
+  <div class="gatsby_demo_item" data-iframe="demos/components/infinitescroll/usage">
   </div>
 </demo>
-
-If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) or other code on content added dynamically**, just **check if already done for content added dinamically**.
 
 ## Options
 
@@ -42,6 +44,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `get:String`                          | `false`        | **url get** variable to use            |
+| Option                    | `nocache:Boolean`                          | `false`        | Restore scroll position on back and forward browser buttons            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum page number            |
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum page number            |
 | Option                    | `events.scrollUp:Boolean`                          | `false`        | Automatically activate on scroll up            |

@@ -43,7 +43,7 @@ If you have **custom backend validation** on submit add also the class `.invalid
 
 ## Checks Custom
 
-You can have custom design that contains the `input[type="checkbox"]` or `input[type="radio"]`, just add the tag `label` and then you can use **tailwind variants** `on:`, `group-on:` to assign animations.
+You can have custom design that contains the `input[type="checkbox"]` or `input[type="radio"]`, just add the tag `label` and then you can use **Tailwind CSS variants** `on:`, `group-on:` to assign animations.
 
 > For accessibility purpose **hide the input inside** with `sr-only`, **don't assign `display: none`**.
 
@@ -76,7 +76,7 @@ You can have a **loader on forms automatically on submit** injecting the loader 
 
 ## Label addon
 
-Use **tailwind classes** to create a **label addon**.
+Use **Tailwind CSS** to create a **label addon**.
 
 <demo>
   <demoinline src="demos/components/form/label-addon">

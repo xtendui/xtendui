@@ -956,60 +956,6 @@ describe('demos/components/drop/backdrop', function () {
   })
 })
 
-describe('demos/components/drop/reset-to-current', function () {
-  let win
-  let Xt
-  let container
-  let self
-
-  beforeEach(function () {
-    cy.visit(url).window().as('win')
-    cy.get('.demo--drop-reset-to-current').as('demo')
-    cy.get('@demo').find('[data-xt-drop]').as('container')
-  })
-
-  beforeEach(function () {
-    win = this.win
-    Xt = win.Xt
-    container = this.container[0]
-    cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-drop', el: container })
-  })
-
-  it('TEST no empty frame when switching from off to reset.', function () {
-    cy.get(container)
-      .should('have.attr', 'data-xt-drop-init', '') // racecondition
-      .then(() => {
-        expect(self.targets[0].classList.contains('on')).to.equal(false)
-        expect(self.targets[0].classList.contains('in')).to.equal(false)
-        expect(self.targets[1].classList.contains('on')).to.equal(true)
-        expect(self.targets[1].classList.contains('in')).to.equal(true)
-      })
-      .get(self.elements[0])
-      .trigger('mouseenter')
-      .frame()
-      .then(() => {
-        expect(self.targets[0].classList.contains('on')).to.equal(true)
-        expect(self.targets[1].classList.contains('on')).to.equal(false)
-        cy.frameDouble().then(() => {
-          expect(self.targets[0].classList.contains('in')).to.equal(true)
-          expect(self.targets[1].classList.contains('in')).to.equal(false)
-        })
-      })
-      .get(self.elements[0])
-      .trigger('mouseleave')
-      .frame()
-      .then(() => {
-        expect(self.targets[0].classList.contains('on')).to.equal(false)
-        expect(self.targets[1].classList.contains('on')).to.equal(true)
-        cy.frameDouble().then(() => {
-          expect(self.targets[0].classList.contains('in')).to.equal(false)
-          expect(self.targets[1].classList.contains('in')).to.equal(true)
-        })
-      })
-  })
-})
-
 describe('demos/components/tooltip/swap-click', function () {
   let win
   let Xt
@@ -1218,6 +1164,60 @@ describe('demos/components/overlay/animation-noqueue', function () {
       .tab()
       .then(() => {
         expect(self.targets[1].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
+      })
+  })
+})
+
+describe('demos/components/drop/reset-to-current', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--drop-reset-to-current').as('demo')
+    cy.get('@demo').find('[data-xt-drop]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    cy.get(container).scrollIntoView()
+    self = Xt.get({ name: 'xt-drop', el: container })
+  })
+
+  it('TEST no empty frame when switching from off to reset.', function () {
+    cy.get(container)
+      .should('have.attr', 'data-xt-drop-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('in')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('in')).to.equal(true)
+      })
+      .get(self.elements[0])
+      .trigger('mouseenter')
+      .frame()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[1].classList.contains('in')).to.equal(false)
+        })
+      })
+      .get(self.elements[0])
+      .trigger('mouseleave')
+      .frame()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+        })
       })
   })
 })

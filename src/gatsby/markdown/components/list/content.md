@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 Use **component utility** `.xt-list-<space>` to space content.
 
-For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/customizing-spacing).
+For `<space>` values use any of [Tailwind CSS spacing](https://tailwindcss.com/docs/customizing-spacing).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -41,7 +41,7 @@ For `<space>` values use any of [tailwind spacing](https://tailwindcss.com/docs/
 
 ## Alignment
 
-Use **tailwind classes** to assign alignment (e.g. margin auto, [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
+Use **Tailwind CSS** to assign alignment (e.g. margin auto, [align-items](https://tailwindcss.com/docs/align-items), [justify-content](https://tailwindcss.com/docs/justify-content)).
 
 > By default `.xt-list` has `align-items: stretch`.
 

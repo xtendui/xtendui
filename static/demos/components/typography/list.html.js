@@ -42,7 +42,14 @@ const html = /* HTML */ `
           ex at ex pellentesque efficitur.
         </p>
         <p><strong>Lorem ipsum dolor sit amet.</strong></p>
-        <ol>
+        <ol type="a">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut
+            ex at ex pellentesque efficitur.
+          </li>
+        </ol>
+        <ol type="i">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
           <li>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut

@@ -10,7 +10,7 @@ date: "2005-10-10"
 
 You can set activation styles by adding the class `.on`.
 
-Use **tailwind variants** `active:`, `group-active:`, `on:`, `group-on:` to assign animations.
+Use **Tailwind CSS variants** `active:`, `group-active:`, `on:`, `group-on:` to assign animations.
 
 <demo>
   <demoinline src="demos/components/button/activation">

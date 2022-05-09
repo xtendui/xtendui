@@ -2664,6 +2664,7 @@ class Toggle {
             el.style.height = 'inherit'
             el.style.maxHeight = 'none'
             el.classList.add('xt-collapse-reset')
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseHeightFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             el.style.height = 'auto'
@@ -2689,6 +2690,7 @@ class Toggle {
           if (reset) {
             el.style.height = ''
             el.style.maxHeight = ''
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseHeightFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             const current = el.offsetHeight // fix keep current off initial
@@ -2718,6 +2720,7 @@ class Toggle {
             el.style.width = 'inherit'
             el.style.maxWidth = 'none'
             el.classList.add('xt-collapse-reset')
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseWidthFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             el.style.width = 'auto'
@@ -2743,6 +2746,7 @@ class Toggle {
           if (reset) {
             el.style.width = ''
             el.style.maxWidth = ''
+            Xt.frameDouble({ el, ns: `${self.ns}CollapseWidthFrame` })
           } else {
             el.classList.remove('xt-collapse-reset')
             const current = el.offsetWidth // fix keep current off initial
@@ -2803,13 +2807,13 @@ class Toggle {
           for (const outside of outsides) {
             const specialcloseoutsideHandler = Xt.dataStorage.put(
               outside,
-              `click/close/${self.ns}`,
+              `mousedown/close/${self.ns}`,
               self._eventSpecialcloseoutsideHandler.bind(self)
             )
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
-              outside.removeEventListener('click', specialcloseoutsideHandler)
-              outside.addEventListener('click', specialcloseoutsideHandler)
+              outside.removeEventListener('mousedown', specialcloseoutsideHandler)
+              outside.addEventListener('mousedown', specialcloseoutsideHandler)
             })
           }
         }
@@ -2860,8 +2864,8 @@ class Toggle {
         if (type === 'elements' && el === obj.elements.queueEls[0]) {
           const closeElements = document.querySelectorAll(options.closeOutside)
           for (const closeElement of closeElements) {
-            const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `click/close/${self.ns}`)
-            closeElement.removeEventListener('click', specialcloseoutsideHandler)
+            const specialcloseoutsideHandler = Xt.dataStorage.get(closeElement, `mousedown/close/${self.ns}`)
+            closeElement.removeEventListener('mousedown', specialcloseoutsideHandler)
           }
         }
       }
@@ -3937,7 +3941,7 @@ Toggle.optionsDefaultSuper = {
     labelTargets: true,
     controls: true,
     selected: false,
-    expanded: true,
+    expanded: false,
     live: true,
     disabled: true,
     keyboard: true,

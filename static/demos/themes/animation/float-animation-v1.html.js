@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const transparentAnim = () =>
-  'transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md'
+  'hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:translate-y-0 on:shadow-md'
 const grayDesign = () => `${classes.textDefault()} bg-gray-100 border-transparent border`
 const grayAnim = () =>
   'transition hover:bg-gray-200 hover:border-gray-300 hover:-translate-y-1 hover:shadow-lg active:bg-gray-200 active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md'
@@ -41,13 +41,13 @@ const html = /* HTML */ `
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()} *** ${transparentAnim()} ***">
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${buttonText()}">
         Text
       </button>
 
       <button
         type="button"
-        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link *** ${transparentAnim()} ***">
+        class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} xt-link *** transition ${transparentAnim()} ***">
         Link
       </button>
     </div>

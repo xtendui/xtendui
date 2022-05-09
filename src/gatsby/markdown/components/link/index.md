@@ -26,7 +26,7 @@ Use `a` without classes or `.xt-link` to create a **link**.
 
 </div>
 
-> To have custom styles use **tailwind classes**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/global/preset#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/master/src/link.css.js) for default styles.
+> To have custom styles use **Tailwind CSS**, this styles are for **automatically styling blank html tags**, for example coming from cms or wysiwyg editors. Links `a` are automatically styled when they **don't have `[class]`**. You can [customize components](/components/global/preset#customization) check [xtendui/src/link.css.js](https://github.com/xtendui/xtendui/blob/master/src/link.css.js) for default styles.
 
 > Links `a` with `target="_blank"` needs `rel="noopener"` or `rel="noreferrer"` to avoid [cross-origin issues](https://web.dev/external-anchors-use-rel-noopener/).
 

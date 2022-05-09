@@ -161,27 +161,36 @@ module.exports = {
           left: '0',
           content: '"\\2022"',
         },
+        '> ul, > ol': {
+          marginTop: theme('spacing.4'),
+        },
       },
     },
     '.xt-ol': {
+      listStyleType: 'decimal',
+      '&[type="a"]': {
+        listStyleType: 'lower-alpha',
+      },
+      '&[type="i"]': {
+        listStyleType: 'lower-roman',
+      },
       marginBottom: theme('spacing.4'),
-      paddingLeft: theme('spacing.2'),
+      paddingLeft: theme('spacing.5'),
       '&:last-child': {
         marginBottom: '0',
       },
       '> li': {
         position: 'relative',
         marginBottom: theme('spacing.4'),
-        paddingLeft: theme('spacing.5'),
-        counterIncrement: 'ol-counter',
+        paddingLeft: theme('spacing.2'),
         '&:last-child': {
           marginBottom: '0',
         },
         '&:before': {
-          position: 'absolute',
-          display: 'inline-block',
-          left: '0',
-          content: 'counter(ol-counter) "."',
+          display: 'none',
+        },
+        '> ul, > ol': {
+          marginTop: theme('spacing.4'),
         },
       },
     },

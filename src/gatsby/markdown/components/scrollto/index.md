@@ -14,7 +14,7 @@ Initialize manually **within javascript** with `new Xt.Scrollto(document.querySe
 
 ## Usage
 
-Use **tailwind variants** `on:`, `group-on:` to assign animations to anchors elements.
+Use **Tailwind CSS variants** `on:`, `group-on:` to assign animations to anchors elements.
 
 You can also scroll to a Node also if not anchored using the event `scrollto.trigger.xt.scrollto`.
 

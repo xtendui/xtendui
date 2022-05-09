@@ -91,7 +91,7 @@ Xt.mount({
 
 ## Xt.on and Xt.off
 
-To **show/hide and animate nodes** we use **custom tailwind variants that react to classes**.
+To **show/hide and animate nodes** we use **custom Tailwind CSS variants that react to classes**.
 
 Use `off:hidden out:pointer-events-none` to hide with `display: none;` the node when **not activated or animating**.
 
@@ -112,7 +112,7 @@ You can **toggle activations with javascript**.
 
 You can also **assign duration on single nodes** with `data-xt-duration="Milliseconds"` or `data-xt-duration-in="Milliseconds"` and `data-xt-duration-out="Milliseconds"`
 
-Use **tailwind variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
+Use **Tailwind CSS variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:` to assign animations.
 
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.
 

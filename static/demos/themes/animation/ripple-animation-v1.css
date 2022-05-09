@@ -2,11 +2,11 @@
   .xt-ripple-inner {
     opacity: .075;
   }
+  /* color */
   .xt-ripple {
     background: theme('colors.black');
   }
-  /* custom */
-  [class*="active:bg-primary-"] {
+  [class*="text-white"] {
     > .xt-ripple-inner {
       opacity: .15;
       > .xt-ripple {

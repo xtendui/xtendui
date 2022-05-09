@@ -22,7 +22,7 @@ Use `.w-auto.flex-1` to expand items to **fill width**.
 
 </div>
 
-> You should always use **tailwind width classes** inside `.xt-row`. Otherwise you can space contents with [list](/components/list).
+> You should always use **Tailwind CSS width classes** inside `.xt-row`. Otherwise you can space contents with [list](/components/list).
 
 <demo>
   <demoinline src="demos/components/row/usage">

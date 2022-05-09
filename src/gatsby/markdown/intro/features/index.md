@@ -29,7 +29,7 @@ See [animation setup](/components/animation#setup) to **disable css and js anima
 
 - Mount javascript code on **nodes when they are added to DOM** with **vanilla html and js** with [Xt.mount](/components/global/javascript#xt-mount).
 
-- Animate nodes with **tailwindcss variants** with [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off).
+- Animate nodes with **Tailwind CSS variants** with [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off).
 
 - **Customizable default options for all components of the same type** with [Xt.options](/components/global/javascript#xt-options).
 
@@ -53,7 +53,7 @@ See [drop interaction](/components/drop/interaction), [overlay interaction](/com
 
 #### Animation
 
-You can animate all **toggle components** with **tailwindcss variants** or **css** or **js**, whatever you prefer or need to use. Toggle advanced animation system support also **delay**, **queue**, **collapse**.
+You can animate all **toggle components** with **Tailwind CSS variants** or **css** or **js**, whatever you prefer or need to use. Toggle advanced animation system support also **delay**, **queue**, **collapse**.
 
 See [drop animation](/components/drop/animation), [overlay animation](/components/overlay/animation), [slider animation](/components/slider/animation), [toggle animation](/components/toggle/animation), [tooltip animation](/components/tooltip/animation) for more info.
 

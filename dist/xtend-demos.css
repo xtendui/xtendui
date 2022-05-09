@@ -8,7 +8,7 @@
 @import 'xtendui/static/demos/components/global/animation-css.css';
 @import 'xtendui/static/demos/components/global/googlelocator.css';
 @import 'xtendui/static/demos/components/group/expand.css';
-@import 'xtendui/static/demos/components/listing/infinitescroll.css';
+@import 'xtendui/static/demos/components/infinitescroll/usage.css';
 @import 'xtendui/static/demos/components/media/skeleton.css';
 @import 'xtendui/static/demos/components/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/overlay/class-body.css';
@@ -31,6 +31,8 @@
 @import 'xtendui/static/demos/components/tooltip/animation-css.css';
 @import 'xtendui/static/demos/components/tooltip/disabled.css';
 @import 'xtendui/static/demos/components/typography/listcustom.css';
+@import 'xtendui/static/demos/themes/animation/ellipse-animation-v1.css';
+@import 'xtendui/static/demos/themes/animation/polygon-animation-v1.css';
 @import 'xtendui/static/demos/themes/animation/ripple-animation-v1.css';
 @import 'xtendui/static/demos/themes/listing/products-listing-v1.css';
 @import 'xtendui/static/demos/themes/listing/products-listing-v2.css';

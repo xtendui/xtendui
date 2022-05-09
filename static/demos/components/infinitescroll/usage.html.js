@@ -42,7 +42,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Lorem ipsum</div>
+                <div class="xt-h6">0 Lorem ipsum</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -54,7 +54,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Dolor sit amet</div>
+                <div class="xt-h6">1 Dolor sit amet</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -66,7 +66,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Lorem ipsum</div>
+                <div class="xt-h6">2 Lorem ipsum</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -78,7 +78,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Dolor sit amet</div>
+                <div class="xt-h6">3 Dolor sit amet</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -90,7 +90,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Lorem Ipsum</div>
+                <div class="xt-h6">4 Lorem Ipsum</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -102,7 +102,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Dolor sit amet</div>
+                <div class="xt-h6">5 Dolor sit amet</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -114,7 +114,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Lorem Ipsum</div>
+                <div class="xt-h6">6 Lorem Ipsum</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -126,7 +126,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Dolor sit amet</div>
+                <div class="xt-h6">7 Dolor sit amet</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -138,7 +138,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Lorem Ipsum</div>
+                <div class="xt-h6">8 Lorem Ipsum</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -150,7 +150,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Dolor sit amet</div>
+                <div class="xt-h6">9 Dolor sit amet</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -162,7 +162,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Lorem Ipsum</div>
+                <div class="xt-h6">10 Lorem Ipsum</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>
@@ -174,7 +174,7 @@ const html = /* HTML */ `
                 <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
-                <div class="xt-h6">Dolor sit amet</div>
+                <div class="xt-h6">11 Dolor sit amet</div>
                 <div class="-mt-2 text-sm font-medium">3.772,00 €</div>
               </div>
             </a>

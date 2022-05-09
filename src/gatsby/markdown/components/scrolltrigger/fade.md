@@ -71,7 +71,3 @@ Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animatio
   <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-outside"></div>
   <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/fade-outside-infinite"></div>
 </demo>
-
-## Dynamic Content
-
-If you need to add **[Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) or other code on live content**, just **check if already done for content added dinamically**.

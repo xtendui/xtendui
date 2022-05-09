@@ -1,0 +1,18 @@
+
+.demo--polygon-animation-v1, .demo--polygon-animation-v1-react {
+  .btn-container {
+    @apply z-0;
+  }
+  .btn-background {
+    @apply absolute inset-0 z-below rounded-inherit;
+  }
+  /* color */
+  .btn-background {
+    @apply bg-primary-900/10;
+  }
+  [class*="text-white"] {
+    .btn-background {
+      @apply bg-white/30;
+    }
+  }
+}

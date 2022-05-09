@@ -10,7 +10,7 @@ date: "2030-05-05"
 
 Use **component utility** to assign [row spacing](/components/row/content#space).
 
-Use **tailwind classes** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
+Use **Tailwind CSS** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
   <demoinline src="demos/components/form/mode-row">
@@ -30,7 +30,7 @@ Inline Row mode with `w-auto`.
 
 Use **component utility** to assign [row spacing](/components/row/content#space).
 
-Use **tailwind classes** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
+Use **Tailwind CSS** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
 
 <demo>
   <demoinline src="demos/components/form/mode-horizontal">

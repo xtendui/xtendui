@@ -56,7 +56,7 @@ title: "Other Test"
 
 ## Infinitescroll
 
-`demos/components/listing/infinitescroll`
+`demos/components/infinitescroll/usage`
 - TEST initial activation and scroll position, scroll activation, browser navigation.
 
-[/demos/components/listing/infinitescroll?false=2](/demos/components/listing/infinitescroll?false=2).
+[/demos/components/infinitescroll/usage?false=2](/demos/components/infinitescroll/usage?false=2).

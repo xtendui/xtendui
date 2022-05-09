@@ -251,7 +251,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayRadius()} ${classes.textDefault()} ${classes.cardWhite()} rounded${classes.overlayRadius()} ${classes.overlayShadow()} *** ${designAnim()} ***"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.textDefault()} ${classes.cardWhite()} ${classes.overlayShadow()} *** ${designAnim()} ***"
                 data-xt-overlay-inner>
                 <button
                   type="button"
@@ -375,7 +375,7 @@ const html = /* HTML */ `
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div
-                class="xt-card rounded${classes.overlayRadius()} ${classes.textDefault()} ${classes.cardWhite()} rounded${classes.overlayRadius()} ${classes.overlayShadow()} *** ${designAnim()} ***"
+                class="xt-card rounded${classes.overlayRadius()} ${classes.textDefault()} ${classes.cardWhite()} ${classes.overlayShadow()} *** ${designAnim()} ***"
                 data-xt-overlay-inner>
                 <button
                   type="button"

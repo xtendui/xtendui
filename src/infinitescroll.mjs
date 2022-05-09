@@ -97,14 +97,14 @@ class Infinitescroll {
     self.spaceAdditionals = self.container.querySelectorAll(options.elements.spaceAdditional)
     self.paginations = self.container.querySelectorAll(options.elements.pagination)
     // events
-    const unloadHandler = Xt.dataStorage.put(window, `unload/${self.ns}`, self._eventUnload.bind(self))
-    addEventListener('unload', unloadHandler)
-    const beforeunloadHandler = Xt.dataStorage.put(
-      window,
-      `beforeunload/${self.ns}`,
-      self._eventBeforeunload.bind(self)
-    )
-    addEventListener('beforeunload', beforeunloadHandler)
+    if (options.nocache) {
+      const beforeunloadHandler = Xt.dataStorage.put(
+        window,
+        `beforeunload/${self.ns}`,
+        self._eventBeforeunload.bind(self)
+      )
+      addEventListener('beforeunload', beforeunloadHandler)
+    }
     const scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self._eventScroll.bind(self))
     addEventListener('scroll', scrollHandler)
     // trigger
@@ -168,11 +168,21 @@ class Infinitescroll {
       }
     }
     // resume state
-    const add = self._additionalSpace()
-    const state = history.state
-    if (state && state[`scrollResume${self._componentNs}`]) {
-      const found = self.itemsContainer.querySelector(options.elements.item)
-      document.scrollingElement.scrollTop = state[`scrollResume${self._componentNs}`] + found.offsetTop + add
+    if (options.nocache) {
+      const add = self._additionalSpace()
+      const state = history.state
+      if (state && state[`scrollResume${self._componentNs}`]) {
+        // need readyState complete to properly scroll after page load browsers scrolling
+        Xt.ready({
+          state: 'complete',
+          func: () => {
+            requestAnimationFrame(() => {
+              const found = self.itemsContainer.querySelector(options.elements.item)
+              document.scrollingElement.scrollTop = state[`scrollResume${self._componentNs}`] + found.offsetTop + add
+            })
+          },
+        })
+      }
     }
   }
 
@@ -209,21 +219,6 @@ class Infinitescroll {
         self.inverse = !!up
         self._request()
       }
-    }
-  }
-
-  /**
-   * unload
-   */
-  _eventUnload() {
-    const self = this
-    // disabled
-    if (self.disabled) {
-      return
-    }
-    // save scroll position
-    if (self._scrollResume) {
-      document.scrollingElement.scrollTop = 0
     }
   }
 
@@ -269,8 +264,10 @@ class Infinitescroll {
     self._setCurrent({ page: parseFloat(found.getAttribute('data-item-first')) })
     self._paginate()
     // save scroll position
-    const add = self._additionalSpace()
-    self._scrollResume = scrollTop - found.offsetTop - add
+    if (options.nocache) {
+      const add = self._additionalSpace()
+      self._scrollResume = scrollTop - found.offsetTop - add
+    }
     // replace state
     const linkOrigin = self._url.origin || `${self._url.protocol}//${self._url.host}`
     if (linkOrigin === location.origin) {
@@ -389,14 +386,16 @@ class Infinitescroll {
     // current page
     items[0].setAttribute('data-item-first', self.current)
     // populate dom
-    const first = self.itemsContainer.querySelector(`${options.elements.item}:first-child`)
     let last
+    const all = self.itemsContainer.querySelectorAll(`${options.elements.item}`)
     for (const item of items) {
       if (self.inverse) {
+        const first = all[0]
         first.before(item)
       } else {
-        // querySelector here because it always needs to be the last inside loop
-        last = self.itemsContainer.querySelector(`${options.elements.item}:last-child`)
+        // repeat code querySelectorAll because it always needs to be the last inside loop
+        const all = self.itemsContainer.querySelectorAll(`${options.elements.item}`)
+        last = all[all.length - 1]
         last.after(item)
       }
     }
@@ -545,10 +544,10 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // events
-    const unloadHandler = Xt.dataStorage.get(window, `unload/${self.ns}`)
-    removeEventListener('unload', unloadHandler)
-    const beforeunloadHandler = Xt.dataStorage.get(window, `beforeunload/${self.ns}`)
-    removeEventListener('beforeunload', beforeunloadHandler)
+    if (options.nocache) {
+      const beforeunloadHandler = Xt.dataStorage.get(window, `beforeunload/${self.ns}`)
+      removeEventListener('beforeunload', beforeunloadHandler)
+    }
     const scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
     removeEventListener('scroll', scrollHandler)
     for (const trigger of [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]) {
@@ -577,6 +576,7 @@ Infinitescroll.optionsDefault = {
   debug: false,
   // infinitescroll
   get: false,
+  nocache: false,
   // quantity
   min: 1,
   max: 'Infinity',
