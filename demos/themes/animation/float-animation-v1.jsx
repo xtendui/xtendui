@@ -27,13 +27,13 @@ export default function Demo() {
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md *** *** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md ***">
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug tracking-wider uppercase transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:translate-y-0 on:shadow-md ***">
           Text
         </button>
 
         <button
           type="button"
-          className="xt-button py-2.5 px-3.5 text-sm rounded-md xt-link *** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md ***">
+          className="xt-button py-2.5 px-3.5 text-sm rounded-md xt-link *** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:translate-y-0 on:shadow-md ***">
           Link
         </button>
       </div>
@@ -216,7 +216,7 @@ export default function Demo() {
                   className="xt-list xt-list-1 flex-col py-2 *** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
                   <a
                     href="/"
-                    className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md ***">
+                    className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:translate-y-0 on:shadow-md ***">
                     <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                       <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">
                         <svg
@@ -242,7 +242,7 @@ export default function Demo() {
                   </a>
                   <a
                     href="/"
-                    className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md ***">
+                    className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:translate-y-0 on:shadow-md ***">
                     <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                       <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">
                         <svg
@@ -267,7 +267,7 @@ export default function Demo() {
                   </a>
                   <a
                     href="/"
-                    className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** transition hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:bg-gray-200 on:translate-y-0 on:shadow-md ***">
+                    className="xt-button py-1.5 px-3 text-sm transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 *** hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:translate-y-0 on:shadow-md ***">
                     <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap">
                       <div className="p-2 bg-primary-100 rounded-md text-white xt-links-inverse">
                         <svg

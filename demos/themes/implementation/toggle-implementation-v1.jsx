@@ -134,8 +134,7 @@ export default function Demo() {
 
               <div>
                 <a
-                  href="/"
-                  type="button"
+                  role="button"
                   className="xt-button *** w-full justify-start text-left *** py-2.5 px-3.5 text-sm rounded-md font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500"
                   data-xt-toggle-element
                   data-xt-hash="faq-3">

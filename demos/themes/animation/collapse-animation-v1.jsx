@@ -407,7 +407,7 @@ export default function Demo() {
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div
-                  className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white rounded-2xl shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
+                  className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
                   data-xt-overlay-inner>
                   <button
                     type="button"
@@ -550,7 +550,7 @@ export default function Demo() {
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div
-                  className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white rounded-2xl shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
+                  className="xt-card rounded-2xl text-gray-900 xt-links-default bg-white shadow-xl *** overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2 ***"
                   data-xt-overlay-inner>
                   <button
                     type="button"

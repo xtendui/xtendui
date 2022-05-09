@@ -1,4 +1,7 @@
 import React from 'react'
+import 'xtendui'
+import 'xtendui/src/groupnumber'
+
 export default function Demo() {
   return (
     <div>
