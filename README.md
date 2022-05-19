@@ -62,7 +62,7 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/master/.git
 
 ## Copyright and License
 
-Copyright 2017 - 2021 Riccardo Caroli.
+Copyright 2017-2022 Riccardo Caroli.
 
 Code licensed [MIT](https://github.com/xtendui/xtendui/blob/master/LICENSE.txt).
 
