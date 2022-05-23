@@ -1,0 +1,77 @@
+#carbonads * {
+  margin: initial;
+  padding: initial;
+  line-height: initial;
+}
+
+#carbonads {
+  --carbon-font-size: 16px;
+  --carbon-padding-size: 12px;
+}
+
+#carbonads {
+  z-index: 100;
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+  font-size: var(--carbon-font-size);
+}
+
+#carbonads > span {
+  @apply bg-white shadow-sm;
+  min-width: 18.75em;
+  max-width: clamp(18.75em, 22.5em, 24.5em);
+  min-height: 100px;
+}
+
+#carbonads a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  display: block;
+  position: relative;
+}
+
+#carbonads .carbon-wrap {
+  display: flex;
+}
+
+#carbonads .carbon-img {
+  height: 100px;
+  width: 130px;
+}
+
+#carbonads .carbon-img img {
+  display: block;
+}
+
+#carbonads .carbon-text {
+  padding: 0.625em 1em;
+  font-size: 0.8125em;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  text-align: left;
+}
+
+#carbonads .carbon-poweredby {
+  display: block;
+  padding: 6px 8px;
+  background: #f1f1f2;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1ch;
+  font-weight: 600;
+  font-size: 0.5em;
+  line-height: 1;
+  border-top-left-radius: 3px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

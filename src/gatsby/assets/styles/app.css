@@ -12,5 +12,6 @@
 @import "./_home.css";
 @import "./_article.css";
 @import "./_demo.css";
+@import "./_ads.css";
 
 @import "tailwindcss/utilities";
