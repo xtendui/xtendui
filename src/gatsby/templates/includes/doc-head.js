@@ -7,20 +7,22 @@ function DocHead(props) {
   const { page } = props
   const ref = useRef()
   useEffect(() => {
-    const div = ref.current
-    const script = document.createElement('script')
-    script.src = '//cdn.carbonads.com/carbon.js?serve=CEAIC2QW&placement=xtenduicom'
-    script.id = '_carbonads_js'
-    script.async = true
-    div.appendChild(script)
+    if (process.env.NODE_ENV !== 'development') {
+      const div = ref.current
+      const script = document.createElement('script')
+      script.src = '//cdn.carbonads.com/carbon.js?serve=CEAIC2QW&placement=xtenduicom'
+      script.id = '_carbonads_js'
+      script.async = true
+      div.appendChild(script)
+    }
   }, [])
   return (
     <header className="gatsby_site-article_hero py-10 md:py-16 border-b border-gray-100 overflow-hidden">
       <div className="gatsby_site-article_hero-inner container">
         <div className="gatsby_site-article_hero-content">
           <div className="gatsby_site-article_hero-content-inner">
-            <div className="xt-list xt-list-6 -md:flex-col md:flex-nowrap md:items-center md:justify-between">
-              <div>
+            <div className="xt-row xt-row-4 -md:flex-col md:items-center md:justify-between">
+              <div className="w-full xl:w-6/12 2xl:w-7/12">
                 <h1 className="xt-h1">
                   {page.post.frontmatter.title}{' '}
                   {page.post.frontmatter.parent && page.post.frontmatter.parent !== page.post.frontmatter.title ? (
@@ -51,7 +53,7 @@ function DocHead(props) {
                   <h2 className="-mt-2 mb-2 md:text-lg opacity-70">{page.post.frontmatter.description}</h2>
                 ) : null}
               </div>
-              <div ref={ref}></div>
+              <div className="w-full xl:w-auto" ref={ref}></div>
             </div>
           </div>
         </div>
