@@ -27,8 +27,8 @@ const mountSticky = ({ ref }) => {
         pinSpacing: false,
       })
     },
-    /***/
   })
+  /***/
 
   // unmount
 
