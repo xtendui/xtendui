@@ -21,4 +21,6 @@ if (matchMedia('(prefers-reduced-motion: reduce), (update: slow)').matches) {
 
 /* ScrollTrigger refresh fix */
 
-Xt.scrolltriggerRerfreshFix({ ScrollTrigger })
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+})

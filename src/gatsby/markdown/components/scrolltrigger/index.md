@@ -41,7 +41,12 @@ Examples to do **parallax animations on page scroll**. See [parallax](/component
 ```js
 /* ScrollTrigger refresh fix */
 
-Xt.scrolltriggerRerfreshFix({ ScrollTrigger })
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+})
+
+// before ScrollTrigger v3.10.0 use this instead
+// Xt.scrolltriggerRerfreshFix({ ScrollTrigger })
 ```
 
 Just remember to **refresh ScrollTriggers that are hooked on bottom on resize**.
