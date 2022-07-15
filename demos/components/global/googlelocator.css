@@ -95,8 +95,7 @@
         position: relative;
         top: -2px;
       }
-      img,
-      > span {
+      > * {
         display: none !important;
       }
     }
