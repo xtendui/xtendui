@@ -33,6 +33,7 @@ const mountIframeLazy = ({ ref, type }) => {
 
   const iframe = ref
   const container = iframe.parentNode
+  container.classList.add('group')
   const src = iframe.getAttribute('data-src')
   const id = src.split('/').pop().split('?').shift()
 

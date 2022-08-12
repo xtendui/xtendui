@@ -10,7 +10,7 @@ export default function Demo() {
   return (
     <div className="demo--media-iframe-lazy-react" ref={ref}>
       <div className="xt-list xt-list-3 items-center">
-        <div className="xt-media-container bg-gray-200 pb-[56.2%] *** group ***">
+        <div className="xt-media-container bg-gray-200 pb-[56.2%]">
           <iframe
             className="xt-media"
             data-src="https://www.youtube.com/embed/hNQFjqDvPhA?autoPlay=1&showinfo=0&rel=0"
@@ -20,7 +20,7 @@ export default function Demo() {
             allowFullScreen></iframe>
         </div>
 
-        <div className="xt-media-container bg-gray-200 pb-[56.2%] *** group ***">
+        <div className="xt-media-container bg-gray-200 pb-[56.2%]">
           <iframe
             className="xt-media"
             data-src="https://player.vimeo.com/video/39750791?h=4527890cfb&autoPlay=1"
@@ -67,6 +67,7 @@ const mountIframeLazy = ({ ref, type }) => {
 
   const iframe = ref
   const container = iframe.parentNode
+  container.classList.add('group')
   const src = iframe.getAttribute('data-src')
   const id = src.split('/').pop().split('?').shift()
 
