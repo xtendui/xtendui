@@ -120,7 +120,7 @@
     "gatsby-transformer-remark": "^5.13.0",
     "gh-pages": "^3.2.3",
     "glob": "^8.0.1",
-    "gsap": "^3.10.4",
+    "gsap": "^3.11.0",
     "mini-css-extract-plugin": "^2.6.0",
     "path": "^0.12.7",
     "postcss": "^8.4.13",

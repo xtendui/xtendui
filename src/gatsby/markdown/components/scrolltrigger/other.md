@@ -12,7 +12,7 @@ If you want to **disable the ScrollTrigger** use the method `disable()`.
 
 ## Match Media
 
-Use [`ScrollTrigger.matchMedia`](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.matchMedia()) to control **match media activation**.
+Use [`gsap.matchMedia`](https://greensock.com/docs/v3/GSAP/gsap.matchMedia()) to control **match media activation**.
 
 Example of **fade and sticky only on mobile** (**use narrow screen to see it in action**).
 

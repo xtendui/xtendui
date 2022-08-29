@@ -16,19 +16,17 @@ Xt.mount({
 
     // match media
 
-    ScrollTrigger.matchMedia({
-      '(max-width: 1023px)': () => {
-        // sticky
+    gsap.matchMedia().add('(max-width: 1023px)', () => {
+      // sticky
 
-        ScrollTrigger.create({
-          trigger: sticky,
-          start: 'top top',
-          endTrigger: 'html',
-          end: 'bottom top',
-          pin: true,
-          pinSpacing: false,
-        })
-      },
+      ScrollTrigger.create({
+        trigger: sticky,
+        start: 'top top',
+        endTrigger: 'html',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+      })
     })
   },
 })
