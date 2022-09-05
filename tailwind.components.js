@@ -16,6 +16,7 @@ module.exports = {
   row: require('./src/row.css.js'),
   scrolltrigger: require('./src/scrolltrigger.css.js'),
   slider: require('./src/slider.css.js'),
+  toast: require('./src/toast.css.js'),
   tooltip: require('./src/tooltip.css.js'),
   typography: require('./src/typography.css.js'),
 }

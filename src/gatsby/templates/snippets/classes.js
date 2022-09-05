@@ -68,6 +68,13 @@ export const classes = {
   tooltipMd: () => 'py-2 px-2.5 text-xs',
   tooltipLg: () => 'py-2.5 px-4 text-base',
   tooltipText: () => 'font-medium',
+  // toast
+  toastRadius: () => '-md',
+  toastShadow: () => 'shadow-md',
+  toastSm: () => 'py-1 px-2 text-3xs',
+  toastMd: () => 'py-2 px-2.5 text-xs',
+  toastLg: () => 'py-2.5 px-4 text-base',
+  toastText: () => '',
   // drop
   dropRadius: () => '-md',
   dropShadow: () => 'shadow-lg',

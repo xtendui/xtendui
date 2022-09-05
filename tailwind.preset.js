@@ -39,6 +39,7 @@ module.exports = {
         sticky: '900',
         above: '1000', // above all page components
         overlay: '5000', // same as options.zIndex.targets.start
+        toast: '8000',
         last: '10000', // this is the z-index above all
       },
       inset: {
