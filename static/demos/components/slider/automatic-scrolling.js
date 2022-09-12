@@ -64,12 +64,11 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // duration depending on content size
     const speedFactor = 3
-    dragDuration =
-      self.initial || self.drag._instant
-        ? 0
-        : isAutomatic
-        ? (self.drag.sizeContent * speedFactor) / 1000 // automatic change duration
-        : 0.5 // manual change duration
+    dragDuration = self.drag._instant
+      ? 0
+      : isAutomatic
+      ? (self.drag.sizeContent * speedFactor) / 1000 // automatic change duration
+      : 0.5 // manual change duration
     dragEase = isAutomatic ? dragEaseAutomatic : dragEaseNormal
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)

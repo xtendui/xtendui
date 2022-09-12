@@ -548,6 +548,7 @@ class Slider extends Xt.Toggle {
       ns: `${self.ns}InitDrag`,
       func: () => {
         // dispatch event
+        self.drag._instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
       },
     })
@@ -578,7 +579,7 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // dragposition
     if (!options.dragposition && options.mode !== 'absolute') {
-      self.initial || self.drag._instant ? self.dragger.classList.remove('on') : self.dragger.classList.add('on')
+      self.drag._instant ? self.dragger.classList.remove('on') : self.dragger.classList.add('on')
       // set internal position to resume animation mid dragging
       self.drag._position = self.drag._final
       self.dragger.style.transform = `translateX(${self.drag._final}px)`
@@ -743,8 +744,6 @@ class Slider extends Xt.Toggle {
     const group = found
     el = found.element
     const tr = found.target
-    // fix keep self.drag._instant
-    const isDrag = self.drag._instant
     // activation
     super._eventOn({ el, force }, e)
     // vars
@@ -797,15 +796,6 @@ class Slider extends Xt.Toggle {
     // dispatch event
     self.drag._instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-    // fix keep self.drag._instant
-    self.drag._instant = isDrag
-    Xt.frame({
-      el: self.container,
-      ns: `${self.ns}isDrag`,
-      func: () => {
-        self.drag._instant = false
-      },
-    })
     // wrap after self.drag._final for proper initial initialization direction (e.g. slider api)
     self._eventWrap({ index: self.index })
     // autoHeight and keepHeight
@@ -1177,6 +1167,7 @@ class Slider extends Xt.Toggle {
       return
     }
     // dispatch event
+    self.drag._instant = true
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
