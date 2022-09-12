@@ -195,7 +195,7 @@ TEST drag animations on drag and activation.
 
 ## Absolute
 
-TEST direction and other drag values on initial, reset, drag looping and going back and forth, nav looping, pag jumping of 2 or more.
+TEST direction and other drag values on initial, reset, drag looping going back and forth between first and last, then nav looping back and forth between first and last, then padination jumping of 2 or more, then pagination looping first and second to last, then pagination looping last and second to first.
 
 TEST click should not change slide.
 
