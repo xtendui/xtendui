@@ -260,7 +260,6 @@ const html = /* HTML */ `
             class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </span>
-    </div>
 
       <div class="${classes.hBlock()}">Card</div>
 
