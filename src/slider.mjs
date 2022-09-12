@@ -756,24 +756,28 @@ class Slider extends Xt.Toggle {
     // val
     self.drag._initial = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
     // fix absolute loop
-    if (options.mode === 'absolute' && options.loop && !self.initial) {
-      if (tr === last && (self.drag._direction < 0 || self.drag._position >= min)) {
+    if (options.mode === 'absolute' && !self.initial && self.direction) {
+      const diff = self.drag._initial - self.drag._position
+      const loopingMoreThanOne = Math.abs(diff) > maxCheck
+      if (options.loop && tr === last && (self.drag._position >= min || (loopingMoreThanOne && self.direction < 0))) {
+        // looping to end
         // val
         self.drag._final = max - min + self.drag._position - maxCheck
         // dispatch event
         self.drag._instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-      } else if (tr === first && (self.drag._direction > 0 || self.drag._position <= max)) {
+      } else if (
+        options.loop &&
+        tr === first &&
+        (self.drag._position <= max || (loopingMoreThanOne && self.direction > 0))
+      ) {
+        // looping to start
         self.drag._final = min - max + self.drag._position + maxCheck
         // dispatch event
         self.drag._instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-      }
-    }
-    // fix absolute multi step activation (only if not already applied fix)
-    if (options.mode === 'absolute' && !self.drag._instant && self.direction) {
-      const diff = self.drag._initial - self.drag._position
-      if (Math.abs(diff) > maxCheck) {
+      } else if (loopingMoreThanOne) {
+        // looping more than 1 item
         // remainder add or remove maxCheck depending on direction
         let remainder = diff % maxCheck
         remainder += maxCheck * self.direction
@@ -786,6 +790,7 @@ class Slider extends Xt.Toggle {
     }
     // val
     self.drag._final = self.drag._initial
+    self.drag._direction = null
     // ratio
     self.drag._ratioInverse = Math.abs(self.drag._final - self.drag._position) / Math.abs(maxCheck - min)
     self.drag._ratio = 1 - self.drag._ratioInverse
@@ -1201,6 +1206,7 @@ class Slider extends Xt.Toggle {
     self.drag._ratioInverse = 1 - self.drag._ratio
     // val
     self.drag._final = self.drag._initial
+    self.drag._direction = null
     // dispatch event
     self.drag._instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
