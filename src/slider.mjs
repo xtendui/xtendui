@@ -1017,7 +1017,6 @@ class Slider extends Xt.Toggle {
     self._eventAutostop()
     // vars
     self._autoblock = true
-    self.drag._instant = true
     self.drag._lock = false
     self.drag._index = self.index
     self.drag._old = self.drag._start
