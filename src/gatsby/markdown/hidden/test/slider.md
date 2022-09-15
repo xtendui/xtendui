@@ -193,7 +193,8 @@ title: "Slider Test"
 
 `demos/components/slider/animation-absolute-mask`
 - TEST drag looping going back and forth between first and last, then pagination looping first and second to last, then pagination looping last and second to first, then pagination jumping of 2 or more.
-TEST multiple click should not change slide, click after drag should not stop animation.
+- TEST multiple click should not change slide.
+- TEST click after drag should not stop animation.
 
 <demo>
   <demoinline src="demos/components/slider/animation-absolute-mask">

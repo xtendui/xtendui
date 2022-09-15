@@ -1228,6 +1228,19 @@ describe('demos/components/slider/animation-absolute-mask', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
 
+      // TEST multiple click should not change slide
+      .get(self.targets[0])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+
       .get(self.targets[0])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: 400, clientY: 0 })
@@ -1261,12 +1274,12 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .trigger('mouseup', { force: true })
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
-          translateIn,
-          delta
-        )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
           -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
           delta
         )
       })
@@ -1308,16 +1321,29 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
-          -translateIn,
-          delta
-        )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
           delta
         )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
       })
       .wait(750) // after animation
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+
+      // TEST multiple click should not change slide
+      .get(self.targets[0])
+      .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1335,7 +1361,10 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .trigger('mouseup', { force: true })
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(645, delta)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
           -translateIn,
           delta
@@ -1356,12 +1385,12 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
-          -translateIn,
-          delta
-        )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
           delta
         )
       })
@@ -1402,12 +1431,12 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
-          -translateIn,
-          delta
-        )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
           delta
         )
       })
@@ -1425,19 +1454,53 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
-          -translateIn,
-          delta
-        )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
           delta
         )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
       })
+
+      // TEST click after drag should not stop animation.
+      .get(self.targets[1])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+
       .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+
+      .get(self.targets[1])
+      .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
+      .trigger('mousemove', { clientX: 400, clientY: 0 })
+      .wait(100)
+      .trigger('mouseup', { force: true })
+      .wait(200)
+
+      // TEST click after drag should not stop animation.
+      .get(self.targets[1])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
         expect(self.targets[2].classList.contains('on')).to.equal(false)
         expect(self.targets[3].classList.contains('on')).to.equal(false)
         expect(self.targets[4].classList.contains('on')).to.equal(false)
