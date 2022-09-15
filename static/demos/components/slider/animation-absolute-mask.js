@@ -100,6 +100,8 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // useCapture event propagation check
     if (self.targets.includes(tr) && !self.initial) {
+      // incomings
+      tr.classList.remove('!block')
       // mask
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
