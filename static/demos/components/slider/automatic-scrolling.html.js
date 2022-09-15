@@ -4,48 +4,48 @@ const html = /* HTML */ `
   <div class="demo--slider-automaticscroll">
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-slides xt-row xt-row-10" data-xt-slider-dragger>
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+        <div class="xt-slides" data-xt-slider-dragger>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">One</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Two</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Three</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Four</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Five</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Six</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Seven</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Eight</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Nine</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Ten</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
             <div class="xt-h4">Eleven</div>
           </div>
         </div>
@@ -69,44 +69,44 @@ const html = /* HTML */ `
 
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-slides xt-row xt-row-2" data-xt-slider-dragger>
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+        <div class="xt-slides xt-row" data-xt-slider-dragger>
+          <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover" src="/img-alt.svg" loading="eager" alt="" />
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
             </div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** w-60 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
             <div class="xt-media-container bg-gray-200 pb-[37.5%]">
               <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
             </div>
