@@ -196,20 +196,16 @@ title: "Slider Test"
 - TEST multiple click should not change slide.
 - TEST click after drag should not stop animation.
 
+`demos/components/slider/automatic-scrolling`
+- (manual) TEST loop activation.
+
 <demo>
   <demoinline src="demos/components/slider/animation-absolute-mask">
+  </demoinline>
+  <demoinline src="demos/components/slider/automatic-scrolling">
   </demoinline>
 </demo>
 
 [/demos/themes/hero/slider-hero-v1](/demos/themes/hero/slider-hero-v1).
 
 [/demos/themes/hero/slider-hero-v2](/demos/themes/hero/slider-hero-v2).
-
-## Addon
-
-TEST loop activation.
-
-<demo>
-  <demoinline src="demos/components/slider/automatic-scrolling">
-  </demoinline>
-</demo>
