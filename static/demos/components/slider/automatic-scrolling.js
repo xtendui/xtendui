@@ -156,7 +156,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-automaticscroll',
+  matches: '.demo--slider-automatic-scrolling',
   mount: ({ ref }) => {
     const unmountSliders = mountSliders({ ref })
 
