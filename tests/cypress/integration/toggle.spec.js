@@ -918,7 +918,7 @@ describe('demos/components/drop/backdrop', function () {
       })
       .get(self.targets[0])
       .find('.xt-backdrop')
-      .click()
+      .click({ force: true })
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('in')).to.equal(false)
@@ -946,7 +946,7 @@ describe('demos/components/drop/backdrop', function () {
       })
       .get(self1.targets[0])
       .find('.xt-backdrop')
-      .click()
+      .click({ force: true })
       .then(() => {
         expect(self1.targets[0].classList.contains('on')).to.equal(false)
         cy.frameDouble().then(() => {
