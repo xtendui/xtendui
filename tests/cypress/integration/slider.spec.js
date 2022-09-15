@@ -1213,6 +1213,9 @@ describe('demos/components/slider/animation-absolute-mask', function () {
   })
 
   it('TEST drag looping going back and forth between first and last, then pagination looping first and second to last, then pagination looping last and second to first, then pagination jumping of 2 or more.', function () {
+    const translateOut = 630
+    const translateIn = 130
+    const delta = 100
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
@@ -1232,8 +1235,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .trigger('mouseup', { force: true })
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(675, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(-145, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1252,8 +1261,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .trigger('mouseup', { force: true })
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(145, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(-675, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1270,8 +1285,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(-675, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(145, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1287,8 +1308,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(-145, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(675, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1308,8 +1335,11 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .trigger('mouseup', { force: true })
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(645, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(-145, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(645, delta)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1326,8 +1356,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(-145, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(675, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1343,8 +1379,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(-675, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(145, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1360,8 +1402,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(-145, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(675, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
@@ -1377,8 +1425,14 @@ describe('demos/components/slider/animation-absolute-mask', function () {
       .click()
       .wait(200)
       .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(-145, 30)
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(675, 30)
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
       })
       .wait(750) // after animation
       .then(() => {
