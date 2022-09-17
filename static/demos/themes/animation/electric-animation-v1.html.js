@@ -241,7 +241,7 @@ const html = /* HTML */ `
             <div
               class="xt-card w-80 ${classes.textDefault()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.cardWhite()} *** ${contentAnim()} ***">
               <div class="xt-media-container bg-gray-200 rounded-t${classes.tooltipRadius()} h-32">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div>
                 <div

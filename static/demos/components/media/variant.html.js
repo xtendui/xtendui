@@ -5,7 +5,7 @@ const html = /* HTML */ `
         <img class="xt-media object-cover" src="/img-fake.jpg" loading="lazy" alt="" />
       </div>
 
-      <div class="xt-media-container *** bg-gray-500 *** pb-[25%]">
+      <div class="xt-media-container *** bg-gray-900 *** pb-[25%]">
         <img class="xt-media object-cover" src="/img-fake.jpg" loading="lazy" alt="" />
       </div>
     </div>

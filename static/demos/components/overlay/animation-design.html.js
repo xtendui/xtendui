@@ -11,7 +11,7 @@ const html = /* HTML */ `
       </button>
 
       <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
-        <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
@@ -25,7 +25,7 @@ const html = /* HTML */ `
                 ${classes.iconX()}
               </button>
               <div class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} pb-[37.5%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Lorem ipsum</div>

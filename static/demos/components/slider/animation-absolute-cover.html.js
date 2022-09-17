@@ -8,7 +8,7 @@ const html = /* HTML */ `
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="flex relative h-96">
                 <div
@@ -25,7 +25,7 @@ const html = /* HTML */ `
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="flex relative h-96">
                 <div
@@ -35,14 +35,14 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-900 translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="flex relative h-96">
                 <div
@@ -59,7 +59,7 @@ const html = /* HTML */ `
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="flex relative h-96">
                 <div
@@ -69,14 +69,14 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-900 translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="flex relative h-96">
                 <div
@@ -93,7 +93,7 @@ const html = /* HTML */ `
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
               <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="flex relative h-96">
                 <div
@@ -103,7 +103,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-900 translate-x-full"></div>
         </div>
       </div>
 

@@ -16,31 +16,31 @@ const html = /* HTML */ `
               <div class="xt-list flex-col">
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-200">
-                    <img class="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                    <img class="xt-media relative" id="product-image-5" src="/img.jpg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-200">
-                    <img class="xt-media relative" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
+                    <img class="xt-media relative" id="product-image-5" src="/img-alt.jpg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-200">
-                    <img class="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                    <img class="xt-media relative" id="product-image-5" src="/img.jpg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-200">
-                    <img class="xt-media relative" id="product-image-5" src="/img-alt.svg" loading="lazy" alt="" />
+                    <img class="xt-media relative" id="product-image-5" src="/img-alt.jpg" loading="lazy" alt="" />
                   </div>
                 </div>
 
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-200">
-                    <img class="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                    <img class="xt-media relative" id="product-image-5" src="/img.jpg" loading="lazy" alt="" />
                   </div>
                 </div>
               </div>
