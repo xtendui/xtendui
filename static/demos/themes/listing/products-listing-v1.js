@@ -14,7 +14,7 @@ const mountMedia = ({ ref }) => {
   const items = ref.querySelectorAll('.listing-item')
 
   const mediaScale = 0.04
-  const mediaOpacityIn = 0.75
+  const mediaOpacityIn = 0.7
   const mediaOpacityOut = 1
   const contentY = -10
 
@@ -25,13 +25,13 @@ const mountMedia = ({ ref }) => {
     // media
     const media = tr.querySelector('.xt-media-container')
     gsap.to(media, {
-      opacity: mediaOpacityIn,
       scale: 1 - mediaScale,
       duration: 0.5,
       ease: 'expo.out',
     })
     const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
+      opacity: mediaOpacityIn,
       scale: 1 + mediaScale,
       duration: 0.5,
       ease: 'expo.out',
@@ -58,13 +58,13 @@ const mountMedia = ({ ref }) => {
     // media
     const media = tr.querySelector('.xt-media-container')
     gsap.to(media, {
-      opacity: mediaOpacityOut,
       scale: 1,
       duration: 0.75,
       ease: 'expo.out',
     })
     const mediaInner = tr.querySelector('.xt-media')
     gsap.to(mediaInner, {
+      opacity: mediaOpacityOut,
       scale: 1,
       duration: 0.75,
       ease: 'expo.out',

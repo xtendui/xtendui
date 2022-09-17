@@ -35,7 +35,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-900 translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -69,7 +69,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-900 translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -103,7 +103,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-900 translate-x-full"></div>
         </div>
       </div>
 

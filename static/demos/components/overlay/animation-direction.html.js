@@ -28,7 +28,7 @@ const html = /* HTML */ `
       </button>
 
       <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
-        <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
             class="xt-overlay-inner *** opacity-0 group-dir-before:translate-y-4 group-dir-after:-translate-y-4 group-in:transition group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:opacity-0 group-out-before:-translate-y-4 group-out-after:translate-y-4 ***">
@@ -91,7 +91,7 @@ const html = /* HTML */ `
       </div>
 
       <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
-        <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
             class="xt-overlay-inner *** opacity-0 group-dir-before:translate-y-4 group-dir-after:-translate-y-4 group-in:transition group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:opacity-0 group-out-before:-translate-y-4 group-out-after:translate-y-4 ***">
@@ -154,7 +154,7 @@ const html = /* HTML */ `
       </div>
 
       <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
-        <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
             class="xt-overlay-inner *** opacity-0 group-dir-before:translate-y-4 group-dir-after:-translate-y-4 group-in:transition group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:opacity-0 group-out-before:-translate-y-4 group-out-after:translate-y-4 ***">

@@ -260,7 +260,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} ***"></div>
+          <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="${classes.overlayShadow()} *** ${shadowDesign()} ***"></div>
@@ -384,7 +384,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} ***"></div>
+          <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
               <div class="${classes.overlayShadow()} *** ${shadowDesign()} ***"></div>
@@ -501,7 +501,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} ***"></div>
+          <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
               <div class="${classes.overlayShadow()} *** ${shadowDesign()} ***"></div>
