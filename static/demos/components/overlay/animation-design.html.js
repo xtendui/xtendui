@@ -25,7 +25,7 @@ const html = /* HTML */ `
                 ${classes.iconX()}
               </button>
               <div class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} pb-[37.5%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="${classes.cardMd()}">
                 <div class="xt-h4">Lorem ipsum</div>
