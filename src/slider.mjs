@@ -744,6 +744,8 @@ class Slider extends Xt.Toggle {
     const group = found
     el = found.element
     const tr = found.target
+    // fix keep self.drag._instant (e.g. slider-hero-v2)
+    const isDrag = self.drag._instant
     // activation
     super._eventOn({ el, force }, e)
     // vars
@@ -796,6 +798,8 @@ class Slider extends Xt.Toggle {
     // dispatch event
     self.drag._instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+    // fix keep self.drag._instant (e.g. slider-hero-v2)
+    self.drag._instant = isDrag
     // wrap after self.drag._final for proper initial initialization direction (e.g. slider api)
     self._eventWrap({ index: self.index })
     // autoHeight and keepHeight
