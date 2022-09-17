@@ -209,10 +209,5 @@ title: "Slider Test"
   </demoinline>
 </demo>
 
-<demo>
-  <demoinline src="demos/components/slider/automatic-scrolling">
-  </demoinline>
-</demo>
-
-`demos/components/slider/automatic-scrolling`
+[/hidden/slider/addon#automatic-scrolling](/hidden/slider/addon#automatic-scrolling).
 - (manual) TEST loop activation.
