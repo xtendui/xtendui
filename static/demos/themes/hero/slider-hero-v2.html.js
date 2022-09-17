@@ -2,7 +2,7 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-hero-v2">
-    <div class="xt-slider bg-[#0078ff]">
+    <div class="xt-slider bg-[#0070f0]">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
@@ -19,7 +19,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#7e7e7e] translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#777777] translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -41,7 +41,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#0078ff] translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#0070f0] translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -59,7 +59,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#7e7e7e] translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#777777] translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -85,7 +85,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#0078ff] translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#0070f0] translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -111,7 +111,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#7e7e7e] translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#777777] translate-x-full"></div>
         </div>
 
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -137,7 +137,7 @@ const html = /* HTML */ `
               </div>
             </div>
           </div>
-          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#0078ff] translate-x-full"></div>
+          <div class="*** hero-cover *** absolute inset-0 pointer-events-none bg-[#0070f0] translate-x-full"></div>
         </div>
       </div>
 
