@@ -1192,6 +1192,135 @@ describe('demos/components/slider/dragposition', function () {
   })
 })
 
+describe('demos/components/slider/animation-absolute-cover', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--slider-animation-absolute-cover').as('demo')
+    cy.get('@demo').find('.xt-slider').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    cy.get(container).scrollIntoView()
+    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  it('TEST activation and drag activation.', function () {
+    const translateMoving = 408
+    const translateStill = 816
+    const delta = 400
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(100)
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateMoving,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
+          translateStill,
+          0
+        )
+      })
+      .get(self.elements[2])
+      .click()
+      .wait(100)
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateMoving,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
+          translateStill,
+          0
+        )
+      })
+      .get(self.elements[3])
+      .click()
+      .wait(100)
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateMoving,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero-cover') })[0])).to.closeTo(
+          translateStill,
+          0
+        )
+      })
+      .get(self.elements[0])
+      .click()
+      .wait(100)
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero-cover') })[0])).to.closeTo(
+          translateMoving,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateStill,
+          0
+        )
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(100)
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateMoving,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateStill,
+          0
+        )
+      })
+      .get(self.elements[2])
+      .click()
+      .wait(100)
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateMoving,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateStill,
+          0
+        )
+      })
+      .get(self.elements[3])
+      .click()
+      .wait(100)
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
+          -translateMoving,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero-cover') })[0])).to.closeTo(
+          translateStill,
+          0
+        )
+      })
+  })
+})
+
 describe('demos/components/slider/animation-absolute-mask', function () {
   let win
   let Xt

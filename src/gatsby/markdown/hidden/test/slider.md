@@ -191,21 +191,28 @@ title: "Slider Test"
 
 ## Absolute
 
+`demos/components/slider/animation-absolute-cover`
+- TEST slider cover should not disappear
+
+<demo>
+  <demoinline src="demos/components/slider/animation-absolute-cover">
+  </demoinline>
+</demo>
+
 `demos/components/slider/animation-absolute-mask`
 - TEST drag looping going back and forth between first and last, then pagination looping first and second to last, then pagination looping last and second to first, then pagination jumping of 2 or more.
 - TEST multiple click should not change slide.
 - TEST click after drag should not stop animation.
 
-`demos/components/slider/automatic-scrolling`
-- (manual) TEST loop activation.
-
 <demo>
   <demoinline src="demos/components/slider/animation-absolute-mask">
   </demoinline>
+</demo>
+
+<demo>
   <demoinline src="demos/components/slider/automatic-scrolling">
   </demoinline>
 </demo>
 
-[/demos/themes/hero/slider-hero-v1](/demos/themes/hero/slider-hero-v1).
-
-[/demos/themes/hero/slider-hero-v2](/demos/themes/hero/slider-hero-v2).
+`demos/components/slider/automatic-scrolling`
+- (manual) TEST loop activation.
