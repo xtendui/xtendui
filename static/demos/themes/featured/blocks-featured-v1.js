@@ -159,7 +159,7 @@ const mountButtonsLine = ({ ref }) => {
       gsap.to(media, {
         scale: 1,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
       })
       const mediaInner = link.querySelector('.xt-media')
       gsap.killTweensOf(mediaInner)
@@ -167,7 +167,7 @@ const mountButtonsLine = ({ ref }) => {
         opacity: mediaOpacityOut,
         scale: 1,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
       })
       // content
       const content = link.querySelector('.button--line-content')
@@ -175,7 +175,7 @@ const mountButtonsLine = ({ ref }) => {
       gsap.to(content, {
         x: 0,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
       })
       // line
       const line = link.querySelector('.button--line-design')
@@ -185,7 +185,7 @@ const mountButtonsLine = ({ ref }) => {
         x: 0,
         opacity: lineOpacity,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
         overwrite: true,
       })
     }
