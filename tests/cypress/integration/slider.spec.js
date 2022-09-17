@@ -1228,7 +1228,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(100)
+      .wait(100) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1241,7 +1241,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[2])
       .click()
-      .wait(100)
+      .wait(100) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1254,7 +1254,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[3])
       .click()
-      .wait(100)
+      .wait(100) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1267,7 +1267,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(100)
+      .wait(100) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero-cover') })[0])).to.closeTo(
           translateMoving,
@@ -1280,7 +1280,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(100)
+      .wait(100) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1293,7 +1293,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[2])
       .click()
-      .wait(100)
+      .wait(100) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1306,7 +1306,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[3])
       .click()
-      .wait(100)
+      .wait(100) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1341,7 +1341,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
   })
 
   it('TEST drag looping going back and forth between first and last, then pagination looping first and second to last, then pagination looping last and second to first, then pagination jumping of 2 or more.', function () {
-    const translateOut = 630
+    const translateOut = 680
     const translateIn = 130
     const delta = 100
     cy.get(container)
@@ -1385,7 +1385,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1411,7 +1411,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1435,7 +1435,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1458,7 +1458,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1498,7 +1498,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1522,7 +1522,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -1545,7 +1545,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1568,7 +1568,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1605,7 +1605,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
 
-      .wait(750) // after animation
+      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
