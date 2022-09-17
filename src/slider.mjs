@@ -798,8 +798,16 @@ class Slider extends Xt.Toggle {
     // dispatch event
     self.drag._instant = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-    // fix keep self.drag._instant (e.g. slider-hero-v2)
+    // fix keep self.drag._instant (e.g. slider-hero-v2 dragging mask)
     self.drag._instant = isDrag
+    Xt.frame({
+      el: self.container,
+      ns: `${self.ns}isDrag`,
+      func: () => {
+        // needed for off event (e.g. slider-hero-v2 clicking next furiously)
+        self.drag._instant = false
+      },
+    })
     // wrap after self.drag._final for proper initial initialization direction (e.g. slider api)
     self._eventWrap({ index: self.index })
     // autoHeight and keepHeight
