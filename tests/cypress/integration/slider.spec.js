@@ -1191,15 +1191,15 @@ describe('demos/components/slider/dragposition', function () {
   })
 })
 
-describe('demos/components/slider/animation-absolute-cover', function () {
+describe('demos/themes/hero/slider-hero-v2', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit(url).window().as('win')
-    cy.get('.demo--slider-animation-absolute-cover').as('demo')
+    cy.visit('/demos/themes/hero/slider-hero-v2').window().as('win')
+    cy.get('.demo--slider-hero-v2').as('demo')
     cy.get('@demo').find('.xt-slider').as('container')
   })
 
@@ -1212,9 +1212,9 @@ describe('demos/components/slider/animation-absolute-cover', function () {
   })
 
   it('TEST activation and drag activation.', function () {
-    const translateMoving = 408
-    const translateStill = 816
-    const delta = 400
+    const translateMoving = 635
+    const translateStill = 1270
+    const delta = 600
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
@@ -1228,7 +1228,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1241,7 +1241,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[2])
       .click()
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1254,7 +1254,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[3])
       .click()
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1267,7 +1267,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero-cover') })[0])).to.closeTo(
           translateMoving,
@@ -1280,7 +1280,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1293,7 +1293,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[2])
       .click()
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1306,7 +1306,7 @@ describe('demos/components/slider/animation-absolute-cover', function () {
       })
       .get(self.elements[3])
       .click()
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
           -translateMoving,
@@ -1320,15 +1320,15 @@ describe('demos/components/slider/animation-absolute-cover', function () {
   })
 })
 
-describe('demos/components/slider/animation-absolute-mask', function () {
+describe('demos/themes/hero/slider-hero-v1', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit(url).window().as('win')
-    cy.get('.demo--slider-animation-absolute-mask').as('demo')
+    cy.visit('/demos/themes/hero/slider-hero-v1').window().as('win')
+    cy.get('.demo--slider-hero-v1').as('demo')
     cy.get('@demo').find('.xt-slider').as('container')
   })
 
@@ -1341,9 +1341,10 @@ describe('demos/components/slider/animation-absolute-mask', function () {
   })
 
   it('TEST drag looping going back and forth between first and last, then pagination looping first and second to last, then pagination looping last and second to first, then pagination jumping of 2 or more.', function () {
-    const translateOut = 680
-    const translateIn = 130
-    const delta = 100
+    const translateOut = 850
+    const translateIn = 400
+    const delta = 350
+
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
@@ -1385,7 +1386,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1411,7 +1412,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1435,7 +1436,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1458,7 +1459,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1498,7 +1499,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1522,7 +1523,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -1568,7 +1569,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
           delta
         )
       })
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1605,7 +1606,7 @@ describe('demos/components/slider/animation-absolute-mask', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
 
-      .wait(100) // after some animation
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
