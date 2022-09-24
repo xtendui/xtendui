@@ -1340,7 +1340,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
     self = Xt.get({ name: 'xt-slider', el: container })
   })
 
-  it('TEST drag looping going back and forth between first and last, then pagination looping first and second to last, then pagination looping last and second to first, then pagination jumping of 2 or more.', function () {
+  it('TEST drag looping going back and forth between first and last, pagination looping first and second to last, drag sx then drag 2 times dx, pagination looping last and second to first, pagination jump combinations, multiple click should not change slide, click after drag should not stop animation.', function () {
     const translateOut = 850
     const translateIn = 400
     const delta = 350
@@ -1356,10 +1356,9 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-
-      // TEST multiple click should not change slide
       .get(self.targets[0])
-      .click()
+      .click() // multiple click should not change slide
+      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1369,13 +1368,13 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-
+      // drag looping going back and forth between first and last
       .get(self.targets[0])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: 400, clientY: 0 })
       .wait(100)
       .trigger('mouseup', { force: true })
-      .wait(200)
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
@@ -1386,7 +1385,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
-      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1401,7 +1399,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       .trigger('mousemove', { clientX: -400, clientY: 0 })
       .wait(100)
       .trigger('mouseup', { force: true })
-      .wait(200)
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
           -translateOut,
@@ -1412,7 +1410,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
-      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1422,10 +1419,10 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-
+      // pagination looping first and second to last
       .get(self.elements[4])
       .click()
-      .wait(200)
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
           -translateOut,
@@ -1436,7 +1433,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
-      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1448,7 +1444,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(200)
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
@@ -1459,6 +1455,8 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
+      .get(self.targets[0])
+      .click() // multiple click should not change slide
       .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -1469,10 +1467,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-
-      // TEST multiple click should not change slide
-      .get(self.targets[0])
-      .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1482,39 +1476,18 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-
-      .get(self.targets[0])
+      // drag sx then drag 2 times dx
+      .get(self.elements[2])
+      .click()
+      .wait(200) // after some animation
+      .get(self.targets[2])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: 400, clientY: 0 })
       .wait(100)
       .trigger('mouseup', { force: true })
-      .wait(200)
-      .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[0].querySelector('.hero') })[0])).to.closeTo(
-          translateOut,
-          delta
-        )
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
-          -translateIn,
-          delta
-        )
-      })
       .wait(200) // after some animation
       .then(() => {
-        expect(self.targets[0].classList.contains('on')).to.equal(false)
-        expect(self.targets[1].classList.contains('on')).to.equal(false)
-        expect(self.targets[2].classList.contains('on')).to.equal(false)
-        expect(self.targets[3].classList.contains('on')).to.equal(false)
-        expect(self.targets[4].classList.contains('on')).to.equal(false)
-        expect(self.targets[5].classList.contains('on')).to.equal(true)
-        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
-      })
-
-      .get(self.elements[1])
-      .click()
-      .wait(200)
-      .then(() => {
-        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
           delta
         )
@@ -1523,7 +1496,79 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.targets[1])
+      .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
+      .trigger('mousemove', { clientX: -400, clientY: 0 })
+      .wait(100)
+      .trigger('mouseup', { force: true })
       .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.targets[2])
+      .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
+      .trigger('mousemove', { clientX: -400, clientY: 0 })
+      .wait(100)
+      .trigger('mouseup', { force: true })
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(true)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      // 2 > 5 > 3 > 1
+      .get(self.elements[1])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+      })
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -1535,7 +1580,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       })
       .get(self.elements[5])
       .click()
-      .wait(200)
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
           -translateOut,
@@ -1546,7 +1591,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
-      .wait(100) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1558,7 +1602,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       })
       .get(self.elements[3])
       .click()
-      .wait(200)
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
@@ -1569,7 +1613,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
-      .wait(200) // after some animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1581,7 +1624,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(200)
+      .wait(200) // after some animation
       .then(() => {
         expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
           translateOut,
@@ -1592,10 +1635,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
           delta
         )
       })
-
-      // TEST click after drag should not stop animation.
-      .get(self.targets[1])
-      .click()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -1605,9 +1644,43 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-
+      // 5 > 1 > 5 > 1
+      .get(self.elements[4])
+      .click()
       .wait(200) // after some animation
       .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(true)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+      })
+      .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
         expect(self.targets[2].classList.contains('on')).to.equal(false)
@@ -1616,15 +1689,169 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-
+      .get(self.elements[4])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(true)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      // 2 > 5 > 3 > 1
+      .get(self.elements[5])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(true)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.elements[3])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[5].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(true)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      // 2 > 3 > 1
+      .get(self.elements[4])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(true)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      .get(self.elements[1])
+      .click()
+      .wait(200) // after some animation
+      .then(() => {
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[4].querySelector('.hero') })[0])).to.closeTo(
+          translateOut,
+          delta
+        )
+        expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero') })[0])).to.closeTo(
+          -translateIn,
+          delta
+        )
+      })
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(self.targets[5].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
+      })
+      // click after drag should not stop animation.
       .get(self.targets[1])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: 400, clientY: 0 })
       .wait(100)
       .trigger('mouseup', { force: true })
-      .wait(200)
-
-      // TEST click after drag should not stop animation.
+      .wait(200) // after some animation
       .get(self.targets[1])
       .click()
       .then(() => {

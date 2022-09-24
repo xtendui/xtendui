@@ -200,8 +200,6 @@ title: "Slider Test"
 [/demos/themes/hero/slider-hero-v2](/demos/themes/hero/slider-hero-v2).
 
 `demos/components/slider/animation-absolute-mask`
-- TEST drag looping going back and forth between first and last, then pagination looping first and second to last, then pagination looping last and second to first, then pagination jumping of 2 or more.
-- TEST multiple click should not change slide.
-- TEST click after drag should not stop animation.
+- TEST drag looping going back and forth between first and last, pagination looping first and second to last, drag sx then drag 2 times dx, pagination looping last and second to first, pagination jump combinations, multiple click should not change slide, click after drag should not stop animation.
 
 [/demos/themes/hero/slider-hero-v1](/demos/themes/hero/slider-hero-v1).
