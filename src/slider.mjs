@@ -758,12 +758,12 @@ class Slider extends Xt.Toggle {
     self.drag._initial = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
     // fix absolute loop
     if (options.mode === 'absolute' && !self.initial && self.direction) {
-      const diff = self.drag._initial - self.drag._position
-      const loopingMoreThanOne = Math.abs(diff) > maxCheck
+      const loopingMoreThanOne = Math.abs(self.index - self._oldIndex) > 1
       if (options.loop && tr === last && (self.drag._position >= min || (loopingMoreThanOne && self.direction < 0))) {
-        // looping to end
+        // calculate position when looping to end
+        const remainder = max - min + self.drag._position - maxCheck
         // val
-        self.drag._final = max - min + self.drag._position - maxCheck
+        self.drag._final = remainder
         // dispatch event
         self.drag._instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
@@ -772,16 +772,16 @@ class Slider extends Xt.Toggle {
         tr === first &&
         (self.drag._position <= max || (loopingMoreThanOne && self.direction > 0))
       ) {
-        // looping to start
-        self.drag._final = min - max + self.drag._position + maxCheck
+        // calculate position when looping to start
+        const remainder = min - max + self.drag._position + maxCheck
+        // val
+        self.drag._final = remainder
         // dispatch event
         self.drag._instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
       } else if (loopingMoreThanOne) {
-        // looping more than 1 item
-        // remainder add or remove maxCheck depending on direction
-        let remainder = diff % maxCheck
-        remainder += maxCheck * self.direction
+        // calculate difference of distance still to be covered when looping more than 1 item
+        const remainder = self.drag._final - self.drag._position - maxCheck * self.direction
         // val
         self.drag._final = self.drag._initial - remainder
         // dispatch event
