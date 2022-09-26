@@ -758,7 +758,7 @@ class Slider extends Xt.Toggle {
     self.drag._initial = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
     // fix absolute loop
     if (options.mode === 'absolute' && !self.initial && self.direction) {
-      const loopingMoreThanOne = Math.abs(self.index - self._oldIndex) > 1
+      const loopingMoreThanOne = Math.abs(self.drag._initial - self.drag._position) > maxCheck
       if (options.loop && tr === last && loopingMoreThanOne && self.direction < 0) {
         // calculate position when looping to end
         const remainder = max - min + self.drag._position - maxCheck
