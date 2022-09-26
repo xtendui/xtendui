@@ -759,7 +759,7 @@ class Slider extends Xt.Toggle {
     // fix absolute loop
     if (options.mode === 'absolute' && !self.initial && self.direction) {
       const loopingMoreThanOne = Math.abs(self.index - self._oldIndex) > 1
-      if (options.loop && tr === last && (self.drag._position >= min || (loopingMoreThanOne && self.direction < 0))) {
+      if (options.loop && tr === last && loopingMoreThanOne && self.direction < 0) {
         // calculate position when looping to end
         const remainder = max - min + self.drag._position - maxCheck
         // val
@@ -767,11 +767,7 @@ class Slider extends Xt.Toggle {
         // dispatch event
         self.drag._instant = true
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-      } else if (
-        options.loop &&
-        tr === first &&
-        (self.drag._position <= max || (loopingMoreThanOne && self.direction > 0))
-      ) {
+      } else if (options.loop && tr === first && loopingMoreThanOne && self.direction > 0) {
         // calculate position when looping to start
         const remainder = min - max + self.drag._position + maxCheck
         // val
