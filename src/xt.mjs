@@ -300,7 +300,11 @@ if (typeof window !== 'undefined') {
             const mql = matchMedia(key)
             self.matches.push({ mql, value })
             Xt._eventMatches({ self, mql, value, skipReinit: true, optionsInitial })
-            mql.addEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
+            if (mql.addEventListener) {
+              mql.addEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
+            } else {
+              mql.addListener(Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
+            }
           }
         }
       }
