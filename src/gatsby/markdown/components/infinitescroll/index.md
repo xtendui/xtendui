@@ -47,7 +47,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `get:String`                          | `false`        | **url get** variable to use            |
 | Option                    | `nocache:Boolean`                          | `false`        | Restore scroll position on back and forward browser buttons            |
-| Option                    | `prefetchNext:Boolean`                          | `true`        | Prefetch next page automatically            |
+| Option                    | `prefetch:Boolean`                          | `true`        | Prefetch next page automatically            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum page number            |
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum page number            |
 | Option                    | `events.scrollUp:Boolean`                          | `false`        | Automatically activate on scroll up            |

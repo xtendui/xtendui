@@ -161,7 +161,7 @@ class Infinitescroll {
     self._setCurrent()
     self._update()
     self._paginate()
-    self._prefetchNext()
+    self._prefetch()
     if (self.itemsContainer) {
       const found = self.itemsContainer.querySelector(options.elements.item)
       if (found) {
@@ -217,6 +217,7 @@ class Infinitescroll {
         self._setCurrent({ page: current })
         self.inverse = !!up
         self._request()
+        self._prefetch({ trigger })
       }
     }
   }
@@ -418,7 +419,6 @@ class Infinitescroll {
     // update
     self._update()
     self._paginate()
-    self._prefetchNext()
     self._eventScroll()
     // populate
     Xt.frame({
@@ -545,12 +545,13 @@ class Infinitescroll {
   /**
    * prefetch next page
    */
-  _prefetchNext() {
+  _prefetch({ trigger } = {}) {
     const self = this
     const options = self.options
     // loop scroll down
-    if (options.prefetchNext) {
-      for (const trigger of [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]) {
+    if (options.prefetch) {
+      const triggers = trigger ? [trigger] : [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]
+      for (const trigger of triggers) {
         const up = parseFloat(trigger.getAttribute('data-xt-infinitescroll-up'))
         const down = parseFloat(trigger.getAttribute('data-xt-infinitescroll-down'))
         const amount = up || down
@@ -621,7 +622,7 @@ Infinitescroll.optionsDefault = {
   // infinitescroll
   get: false,
   nocache: false,
-  prefetchNext: true,
+  prefetch: true,
   // quantity
   min: 1,
   max: 'Infinity',
