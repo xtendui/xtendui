@@ -161,6 +161,7 @@ class Infinitescroll {
     self._setCurrent()
     self._update()
     self._paginate()
+    self._prefetchNext()
     if (self.itemsContainer) {
       const found = self.itemsContainer.querySelector(options.elements.item)
       if (found) {
@@ -210,9 +211,7 @@ class Infinitescroll {
       self._setCurrent({ page: options.min })
       location = self._url.href
     } else {
-      let current = self.current + amount
-      current = current < options.min ? options.min : current
-      current = current > options.max ? options.max : current
+      const current = self._getNext({ amount })
       const items = self.itemsContainer.querySelectorAll(`[data-item-first="${current}"]`)
       if (current !== self.current && !items.length) {
         self._setCurrent({ page: current })
@@ -220,6 +219,21 @@ class Infinitescroll {
         self._request()
       }
     }
+  }
+
+  /**
+   * get next page index
+   * @param {Object} params
+   * @param {Number} params.amount
+   */
+  _getNext({ amount } = {}) {
+    const self = this
+    const options = self.options
+    // return next index
+    let current = self.current + amount
+    current = current < options.min ? options.min : current
+    current = current > options.max ? options.max : current
+    return current
   }
 
   /**
@@ -404,6 +418,7 @@ class Infinitescroll {
     // update
     self._update()
     self._paginate()
+    self._prefetchNext()
     self._eventScroll()
     // populate
     Xt.frame({
@@ -523,9 +538,38 @@ class Infinitescroll {
     const get = searchParams.get(options.get)
     self.current = page !== null ? page : get ? parseFloat(get) : self.current
     searchParams.set(options.get, self.current)
-    // set url
     url.search = searchParams.toString()
     self._url = url
+  }
+
+  /**
+   * prefetch next page
+   */
+  _prefetchNext() {
+    const self = this
+    const options = self.options
+    // loop scroll down
+    if (options.prefetchNext) {
+      for (const trigger of [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]) {
+        const up = parseFloat(trigger.getAttribute('data-xt-infinitescroll-up'))
+        const down = parseFloat(trigger.getAttribute('data-xt-infinitescroll-down'))
+        const amount = up || down
+        // check url
+        const url = new URL(location.href)
+        const searchParams = new URLSearchParams(url.search)
+        // prefetch
+        const next = self._getNext({ amount })
+        if (self.current !== next) {
+          searchParams.set(options.get, next)
+          url.search = searchParams.toString()
+          const link = document.createElement('link')
+          link.rel = 'prefetch'
+          link.href = url
+          link.as = 'fetch'
+          document.head.appendChild(link)
+        }
+      }
+    }
   }
 
   /**
@@ -577,6 +621,7 @@ Infinitescroll.optionsDefault = {
   // infinitescroll
   get: false,
   nocache: false,
+  prefetchNext: true,
   // quantity
   min: 1,
   max: 'Infinity',
