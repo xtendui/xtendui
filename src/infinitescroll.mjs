@@ -328,17 +328,22 @@ class Infinitescroll {
       // class
       self.container.classList.add('xt-infinitescroll-loading')
       // request
-      const request = new XMLHttpRequest()
-      request.open('GET', self._url.href, true)
-      request.onload = () => {
-        // response
-        self._response({ request })
-      }
-      request.onerror = () => {
-        // response
-        self._response({ request })
-      }
-      request.send()
+      fetch(self._url.href, {
+        method: 'GET',
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.text()
+          } else {
+            return Promise.reject(response)
+          }
+        })
+        .then(text => {
+          self._success({ text })
+        })
+        .catch(() => {
+          self._error()
+        })
     }
   }
 
@@ -360,14 +365,14 @@ class Infinitescroll {
   /**
    * success
    * @param {Object} params
-   * @param {XMLHttpRequest|Object} params.request Html response
+   * @param {String} params.text Html response
    */
-  _success({ request } = {}) {
+  _success({ text } = {}) {
     const self = this
     const options = self.options
     // set substitute
     const html = document.createElement('html')
-    html.innerHTML = request.responseText.trim()
+    html.innerHTML = text
     const itemsContainer = html.querySelector(options.elements.itemsContainer)
     if (options.get && itemsContainer) {
       self._populate({ itemsContainer })
