@@ -216,8 +216,12 @@ class Infinitescroll {
       if (current !== self.current && !items.length) {
         self._setCurrent({ page: current })
         self.inverse = !!up
-        self._request()
-        self._prefetch({ trigger })
+        // not if requesting
+        if (!self.container.classList.contains('xt-infinitescroll-loading')) {
+          self.container.classList.add('xt-infinitescroll-loading')
+          self._request()
+          self._prefetch({ trigger })
+        }
       }
     }
   }
@@ -323,28 +327,23 @@ class Infinitescroll {
    */
   _request() {
     const self = this
-    // not if requesting
-    if (!self.container.classList.contains('xt-infinitescroll-loading')) {
-      // class
-      self.container.classList.add('xt-infinitescroll-loading')
-      // request
-      fetch(self._url.href, {
-        method: 'GET',
+    // request
+    fetch(self._url.href, {
+      method: 'GET',
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.text()
+        } else {
+          return Promise.reject(response)
+        }
       })
-        .then(response => {
-          if (response.ok) {
-            return response.text()
-          } else {
-            return Promise.reject(response)
-          }
-        })
-        .then(text => {
-          self._success({ text })
-        })
-        .catch(() => {
-          self._error()
-        })
-    }
+      .then(text => {
+        self._success({ text })
+      })
+      .catch(() => {
+        self._error()
+      })
   }
 
   /**
