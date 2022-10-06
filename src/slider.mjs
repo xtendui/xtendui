@@ -673,15 +673,8 @@ class Slider extends Xt.Toggle {
    */
   _eventDragHandler(e) {
     const self = this
-    // raf Drag and Dragend
-    Xt.frame({
-      el: self.dragger,
-      ns: `${self.ns}DragFrame`,
-      func: () => {
-        // logic
-        self._logicDrag(e)
-      },
-    })
+    // logic
+    self._logicDrag(e)
   }
 
   /**
@@ -702,15 +695,8 @@ class Slider extends Xt.Toggle {
     for (const event of eventsmove) {
       removeEventListener(event, dragHandler)
     }
-    // raf Drag and Dragend
-    Xt.frame({
-      el: self.dragger,
-      ns: `${self.ns}DragFrame`,
-      func: () => {
-        // logic
-        self._logicDragend(e)
-      },
-    })
+    // logic
+    self._logicDragend(e)
   }
 
   //
@@ -1026,6 +1012,7 @@ class Slider extends Xt.Toggle {
     // vars
     self._autoblock = true
     self.drag._lock = false
+    self.drag._prevent = false
     self.drag._index = self.index
     self.drag._old = self.drag._start
     self.drag._overflow = null
@@ -1120,20 +1107,28 @@ class Slider extends Xt.Toggle {
     // check threshold
     self.drag._distance = self.drag._start - self.drag._current
     self.drag._distanceOther = self.drag._startOther - self.drag._currentOther
-    // check drag direction
-    if (Math.abs(self.drag._distanceOther) > Math.abs(self.drag._distance)) {
-      // prevent drag logic
+    // prevent drag and lock drag
+    if (!self.drag._lock && !self.drag._prevent) {
+      if (Math.abs(self.drag._distanceOther) > options.drag.threshold) {
+        // only if dragging enough other
+        // prevent drag
+        self.drag._prevent = true
+      } else if (Math.abs(self.drag._distance) > options.drag.threshold) {
+        // only if dragging enough
+        // lock drag
+        self.drag._lock = true
+      }
+    }
+    // prevent drag
+    if (self.drag._prevent) {
       return
-    } else {
+    }
+    if (self.drag._lock) {
       // prevent page scroll
       if (e.cancelable) {
         e.preventDefault()
       }
-    }
-    // only if dragging enough
-    self.drag._lock = self.drag._lock ? self.drag._lock : Math.abs(self.drag._distance) > options.drag.threshold
-    // disable interaction
-    if (self.drag._lock) {
+      // disable interaction
       for (const tr of self.targets) {
         tr.classList.add('pointer-events-none')
       }
@@ -1446,7 +1441,7 @@ Slider.optionsDefault = {
   hideDisable: '[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]',
   drag: {
     dragger: '[data-xt-slider-dragger]',
-    threshold: 15,
+    threshold: 30,
     factor: 1,
     overflow: ({ overflow }) => {
       return Math.min(overflow, Math.log(1 + Math.pow(overflow, 10)))
