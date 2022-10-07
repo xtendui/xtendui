@@ -1056,11 +1056,14 @@ class Slider extends Xt.Toggle {
       // only if dragging enough
       if (self.drag._lock) {
         const index = self.index
-        // if on the same slide as we started dragging
         if (index !== self.drag._index || Math.abs(self.drag._distance) >= self.drag.size) {
-          // goToNum
-          self.goToNum({ index })
+          // if on the same slide as we started dragging or in absolute mode looping
+          // options.free and self.drag._overflow to fix reset when overflowing
+          if (!options.free || self.drag._overflow) {
+            self.goToNum({ index })
+          }
         } else {
+          // if not on the same slide as we started dragging
           // depending on direction and if direction is not going back
           const direction = Math.sign(self.drag._distance)
           if (
@@ -1068,15 +1071,21 @@ class Slider extends Xt.Toggle {
             self.drag._direction > 0 &&
             (options.loop || self._wrap || index !== self.getElementsGroups().length - 1)
           ) {
-            self.goToNext({ amount: 1 })
+            if (!options.free) {
+              self.goToNext({ amount: 1 })
+            }
           } else if (direction < 0 && self.drag._direction < 0 && (options.loop || self._wrap || index !== 0)) {
-            self.goToPrev({ amount: 1 })
+            if (!options.free) {
+              self.goToPrev({ amount: 1 })
+            }
           } else {
             self._logicDragreset()
           }
         }
       } else {
-        self._logicDragreset()
+        if (!options.free) {
+          self._logicDragreset()
+        }
       }
       // auto
       self._eventAutostart()
@@ -1433,6 +1442,7 @@ Slider.optionsDefault = {
   align: 'center',
   contain: true,
   wrap: false,
+  free: false,
   dragposition: false,
   nooverflow: '!transform-none justify-center',
   autoHeight: false,
