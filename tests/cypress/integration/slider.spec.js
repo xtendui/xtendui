@@ -770,13 +770,15 @@ describe('demos/components/slider/navigation', function () {
 
 describe('demos/components/slider/pagination', function () {
   let win
+  let doc
   let Xt
   let container
   let self
   let toggles
+  let scroll
 
   beforeEach(function () {
-    cy.visit(url).window().as('win')
+    cy.visit(url).window().as('win').document().as('doc')
     cy.get('.demo--slider-pagination').as('demo')
     cy.get('@demo').find('[data-xt-slider]').as('container')
     cy.get('@demo').find('[data-xt-slider-element]').as('toggles')
@@ -784,6 +786,7 @@ describe('demos/components/slider/pagination', function () {
 
   beforeEach(function () {
     win = this.win
+    doc = this.doc
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
@@ -791,7 +794,7 @@ describe('demos/components/slider/pagination', function () {
     toggles = this.toggles
   })
 
-  it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none.', function () {
+  it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
@@ -836,12 +839,19 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[15].classList.contains('on')).to.equal(false)
         expect(toggles[16].classList.contains('on')).to.equal(false)
         expect(toggles[17].classList.contains('on')).to.equal(false)
+        scroll = doc.scrollingElement.scrollTop
       })
       .get(toggles[6])
-      .trigger('touchstart', { clientX: 0, clientY: 0, which: 1 })
-      .trigger('touchmove', { clientX: -200, clientY: 0 })
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -200, clientY: 0 }] })
       .then(() => {
         expect(toggles[6].closest('.pointer-events-none')).to.not.equal(null)
+      })
+      .trigger('touchmove', {
+        clientX: undefined,
+        clientY: undefined,
+        touches: [{ pageX: 0, pageY: 200 }],
+        force: true,
       })
       .wait(100)
       .trigger('touchend', { force: true })
@@ -865,10 +875,19 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[15].classList.contains('on')).to.equal(false)
         expect(toggles[16].classList.contains('on')).to.equal(false)
         expect(toggles[17].classList.contains('on')).to.equal(false)
+        expect(doc.scrollingElement.scrollTop).to.equal(scroll)
+      })
+      .get(self.targets[3])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 200 }] })
+      .wait(100)
+      .trigger('touchend', { force: true })
+      .then(() => {
+        expect(doc.scrollingElement.scrollTop).to.not.equal(scroll)
       })
       .get(toggles[18])
-      .trigger('touchstart', { clientX: 0, clientY: 0, which: 1 })
-      .trigger('touchmove', { clientX: -20, clientY: 0 })
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })
       .then(() => {
         expect(toggles[6].closest('.pointer-events-none')).to.equal(null)
       })
