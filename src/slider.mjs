@@ -47,9 +47,12 @@ class Slider extends Xt.Toggle {
     // dragger initial
     self.dragger.classList.add('initial')
     // @PERF
+    self._destroyDrag()
     self.drag._wrapDir = 0
     self.drag._wrapIndex = null
-    self.drag._size = self.dragger.offsetWidth
+    const rect = self.dragger.getBoundingClientRect()
+    self.drag._size = rect.width
+    self.drag._left = rect.left
     // fix when dragger not :visible (offsetWidth === 0) do not initialize
     if (self.drag._size === 0) {
       return
@@ -69,7 +72,6 @@ class Slider extends Xt.Toggle {
     self.drag._position = self.drag._final = self.drag._initial = 0
     // clean
     self._destroyNooverflow()
-    self._destroyDrag()
     self._destroyWrap()
     self._destroyPagination()
     // targets
@@ -109,8 +111,9 @@ class Slider extends Xt.Toggle {
         trLeft = 0
         trWidth = self.drag._size
       } else {
-        trLeft = tr.offsetLeft
-        trWidth = tr.offsetWidth
+        const rect = tr.getBoundingClientRect()
+        trLeft = rect.left - self.drag._left
+        trWidth = rect.width
       }
       sizeContent += trWidth
       trWidthMax = trWidth > trWidthMax ? trWidth : trWidthMax
