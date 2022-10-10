@@ -49,7 +49,7 @@ class Slider extends Xt.Toggle {
     // @PERF
     self.drag._wrapDir = 0
     self.drag._wrapIndex = null
-    self.drag._size = self.dragger.getBoundingClientRect().width
+    self.drag._size = self.dragger.offsetWidth
     // fix when dragger not :visible (offsetWidth === 0) do not initialize
     if (self.drag._size === 0) {
       return
@@ -103,15 +103,14 @@ class Slider extends Xt.Toggle {
     let sizeContent = 0
     let trWidthMax = 0
     for (const tr of self.targets) {
-      const rect = tr.getBoundingClientRect()
       let trLeft
       let trWidth
       if (options.mode === 'absolute') {
         trLeft = 0
         trWidth = self.drag._size
       } else {
-        trLeft = rect.left
-        trWidth = rect.width
+        trLeft = tr.offsetLeft
+        trWidth = tr.offsetWidth
       }
       sizeContent += trWidth
       trWidthMax = trWidth > trWidthMax ? trWidth : trWidthMax
@@ -795,7 +794,7 @@ class Slider extends Xt.Toggle {
       let groupHeight = 0
       for (const tr of group.targets) {
         const content = tr.children.length ? tr.children[0] : tr
-        const height = content.getBoundingClientRect().height
+        const height = content.offsetHeight
         groupHeight = height > groupHeight ? height : groupHeight
       }
       if (groupHeight > 0) {
