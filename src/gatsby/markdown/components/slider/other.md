@@ -81,7 +81,7 @@ The component automatically disable and apply classes to `dragger` when the slid
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `nooverflow:String\|false`                          | `'transform-none justify-center'`        | Classes applied to `dragger` when the slides do not overflow the dragger           |
+| Option                  | `nooverflow:String\|false`                          | `'!transform-none justify-center'`        | Classes applied to `dragger` when the slides do not overflow the dragger           |
 
 </div>
 
