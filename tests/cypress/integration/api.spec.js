@@ -404,7 +404,7 @@ describe('demos/components/slider/api', function () {
 
   it('TEST initial dragger position instant with no transition, initial wrap position, remove until 0 targets should not give errors.', function () {
     expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-2393px)')
-    expect(self.targets[0].style.transform).to.equal('translateX(3462px)')
+    expect(self.targets[0].style.transform).to.equal('translateX(3463px)')
     expect(self.targets[6].style.transform).to.equal('translateX(0px)')
     cy.get('#button--slider-api-remove')
       .click()
