@@ -1199,7 +1199,7 @@ describe('demos/components/slider/media-loaded', function () {
         expect(self.targets[4].classList.contains('on')).to.equal(false)
         expect(self.targets[5].classList.contains('on')).to.equal(true)
         expect(self.targets[6].classList.contains('on')).to.equal(false)
-        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-2833px)')
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-2834px)')
       })
   })
 })
