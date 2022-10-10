@@ -112,7 +112,7 @@ class Slider extends Xt.Toggle {
         trWidth = self.drag.size
       } else {
         const rect = tr.getBoundingClientRect()
-        trLeft = rect.left - self.drag._left
+        trLeft = rect.left - self.drag.left
         trWidth = rect.width
       }
       sizeContent += trWidth
