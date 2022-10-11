@@ -357,7 +357,11 @@ if (typeof window !== 'undefined') {
         // matches
         const mql = obj.mql
         const value = obj.value
-        mql.removeEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
+        if (mql.removeEventListener) {
+          mql.removeEventListener('change', Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
+        } else {
+          mql.removeListener(Xt._eventMatches.bind(null, { self, mql, value, optionsInitial }))
+        }
       }
     }
   }
