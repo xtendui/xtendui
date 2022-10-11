@@ -1074,15 +1074,17 @@ class Slider extends Xt.Toggle {
             self.drag._direction > 0 &&
             (options.loop || self._wrap || index !== self.getElementsGroups().length - 1)
           ) {
-            if (!options.free) {
+            if (!options.free || index === self.getElementsGroups().length - 1) {
               self.goToNext({ amount: 1 })
             }
           } else if (direction < 0 && self.drag._direction < 0 && (options.loop || self._wrap || index !== 0)) {
-            if (!options.free) {
+            if (!options.free || index === 0) {
               self.goToPrev({ amount: 1 })
             }
           } else {
-            self._logicDragreset()
+            if (!self._wrap) {
+              self._logicDragreset()
+            }
           }
         }
       } else {
