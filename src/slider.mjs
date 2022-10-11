@@ -1059,7 +1059,7 @@ class Slider extends Xt.Toggle {
       // only if dragging enough
       if (self.drag._lock) {
         const index = self.index
-        if (index !== self.drag._index || Math.abs(self.drag._distance) >= self.drag.size) {
+        if (index !== self.drag._index) {
           // if on the same slide as we started dragging or in absolute mode looping
           // options.free and self.drag._overflow to fix reset when overflowing
           if (!options.free || self.drag._overflow) {
