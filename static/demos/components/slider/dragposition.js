@@ -36,7 +36,7 @@ const mountSlider = ({ ref }) => {
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.drag.final,
-      duration: dragDuration,
+      duration: self.drag.dragging ? 0.5 : dragDuration,
       ease: dragEase,
     })
   }

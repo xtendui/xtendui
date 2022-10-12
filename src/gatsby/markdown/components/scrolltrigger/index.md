@@ -34,6 +34,10 @@ Examples to do **parallax animations on page scroll**. See [parallax](/component
   <div class="gatsby_demo_item" data-iframe="demos/components/scrolltrigger/parallax"></div>
 </demo>
 
+## Slider Integration
+
+See [slider scrolltrigger](/components/slider/interaction#scrolltrigger) for more info.
+
 ## Fixes
 
 - To fix **touch device ScrollTrigger refresh on vertical scroll**, you can use a fix that refreshes **only if window width changes on resize**. Just need this code one time in the project.

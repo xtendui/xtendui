@@ -156,7 +156,7 @@ Listen to the event `dragposition.xt.slider` and:
 
 - update the value of `self.drag.position` animating it with **that duration and your custom easing**.
 
-- on **relative mode** animates `self.dragger` to the final position value `self.drag.final` with yout custom easing.
+- on **relative mode** animates `self.dragger` to the final position value `self.drag.final` with your custom duration and easing.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

@@ -95,6 +95,22 @@ When `groupSame` is enabled (default) it **groups the slides activation (not pos
   </demoinline>
 </demo>
 
+## Auto Height
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |	
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
+| Option                  | `autoHeight:Query`                          | `false`        | Element inside slider to automaticaly height, remember to transition height            |
+| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide            |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/slider/autoheight">
+  </demoinline>
+</demo>
+
 ## Free
 
 Activate **free drag** while retaining targets activations and elements interactions.
@@ -113,21 +129,5 @@ For smooth free drag animation you can change the **transition and easing** on `
   <demoinline src="demos/components/slider/free">
   </demoinline>
   <demoinline src="demos/components/slider/free-wrap">
-  </demoinline>
-</demo>
-
-## Auto Height
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |	
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |	
-| Option                  | `autoHeight:Query`                          | `false`        | Element inside slider to automaticaly height, remember to transition height            |
-| Option                  | `keepHeight:Query`                          | `false`        | Elements to keep height of the first slide            |
-
-</div>
-
-<demo>
-  <demoinline src="demos/components/slider/autoheight">
   </demoinline>
 </demo>

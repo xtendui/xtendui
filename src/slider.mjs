@@ -552,6 +552,7 @@ class Slider extends Xt.Toggle {
       func: () => {
         // dispatch event
         self.drag.instant = true
+        self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
       },
     })
@@ -755,6 +756,7 @@ class Slider extends Xt.Toggle {
         self.drag.final = remainder
         // dispatch event
         self.drag.instant = true
+        self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
       } else if (options.loop && tr === first && loopingMoreThanOne && self.direction > 0) {
         // calculate position when looping to start
@@ -763,6 +765,7 @@ class Slider extends Xt.Toggle {
         self.drag.final = remainder
         // dispatch event
         self.drag.instant = true
+        self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
       } else if (loopingMoreThanOne) {
         // calculate difference of distance still to be covered when looping more than 1 item
@@ -771,6 +774,7 @@ class Slider extends Xt.Toggle {
         self.drag.final = self.drag._initial - remainder
         // dispatch event
         self.drag.instant = true
+        self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
       }
     }
@@ -782,6 +786,7 @@ class Slider extends Xt.Toggle {
     self.drag.ratio = 1 - self.drag.ratioInverse
     // dispatch event
     self.drag.instant = false
+    self.drag.dragging = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
     // fix keep self.drag.instant (e.g. slider-hero-v2 dragging mask)
     self.drag.instant = isDrag
@@ -993,6 +998,16 @@ class Slider extends Xt.Toggle {
   //
 
   /**
+   * drag on public
+   * @param {Event} e
+   */
+  dragstart(e) {
+    const self = this
+    // logic
+    self._logicDragstart(e)
+  }
+
+  /**
    * drag on logic
    * @param {Event} e
    */
@@ -1021,6 +1036,16 @@ class Slider extends Xt.Toggle {
     self.drag._overflow = null
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self._componentNs}`))
+  }
+
+  /**
+   * drag off public
+   * @param {Event} e
+   */
+  dragend(e) {
+    const self = this
+    // logic
+    self._logicDragend(e)
   }
 
   /**
@@ -1100,10 +1125,21 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * drag logic
+   * drag public
    * @param {Event} e
    */
-  _logicDrag(e) {
+  dragmove(e) {
+    const self = this
+    // logic
+    self._logicDrag(e, true)
+  }
+
+  /**
+   * drag logic
+   * @param {Event} e
+   * @param {Boolean} custom
+   */
+  _logicDrag(e, custom = false) {
     const self = this
     const options = self.options
     // disabled
@@ -1143,8 +1179,10 @@ class Slider extends Xt.Toggle {
         e.preventDefault()
       }
       // disable interaction
-      for (const tr of self.targets) {
-        tr.classList.add('pointer-events-none')
+      if (!custom) {
+        for (const tr of self.targets) {
+          tr.classList.add('pointer-events-none')
+        }
       }
     }
     // calc
@@ -1184,6 +1222,7 @@ class Slider extends Xt.Toggle {
     }
     // dispatch event
     self.drag.instant = true
+    self.drag.dragging = true
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
@@ -1216,6 +1255,7 @@ class Slider extends Xt.Toggle {
     self.drag._direction = null
     // dispatch event
     self.drag.instant = false
+    self.drag.dragging = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self._componentNs}`))

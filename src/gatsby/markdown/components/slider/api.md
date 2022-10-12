@@ -110,7 +110,8 @@ const container = self.container
 | Property                   | `drag.final:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
 | Property                   | `drag.ratio:Number`       | Current drag ratio from 0 to 1             |
 | Property                   | `drag.ratioInverse:Number`       | Current drag inverse from 1 to 0             |
-| Property                   | `drag.instant:Boolean`       | Is `true` if is dragging activation or setup 
+| Property                   | `drag.instant:Boolean`       | Is `true` if is dragging position or setup position 
+| Property                   | `drag.dragging:Boolean`       | Is `true` if is dragging position
 
 </div>
 
@@ -133,6 +134,9 @@ self = null
 | Method                  | `self.getElementsGroups()`                          | Get elements (one per group), returns `Array`             |
 | Method                  | `self.hasCurrent({ el:Node, same:Boolean = false })`                          | Check if element or target is activated, returns `Boolean`             |
 | Method                  | `self.getIndex({ el:Node })`                          | Get activation index of from element or target, returns `Number`             |
+| Method                  | `self.dragstart({ clientX:Number })`                          | Manually activate **drag start**             |
+| Method                  | `self.dragmove({ clientX:Number })`                          | Manually activate **drag move**             |
+| Method                  | `self.dragend({ clientX:Number })`                          | Manually activate **drag end**             |
 | Method                  | `self.reinit({ save:Boolean = true })`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
 | Method                  | `self.disable()`                          | Disable component             |

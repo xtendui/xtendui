@@ -53,7 +53,7 @@ Use `xt-slide-absolute` to position the node in **absolute mode** when **animati
 
 </div>
 
-In **absolute mode** all options of [slider position](/components/slider/position) are not taken in consideration because not applicable.
+In **absolute mode** all options of [slider position](/components/slider/position) are **not taken in consideration because not applicable**.
 
 Check out [slider's animation absolute](/components/slider/animation#absolute) for **advanced usage**.
 
