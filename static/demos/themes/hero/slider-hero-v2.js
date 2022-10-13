@@ -31,7 +31,7 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending on dragger size
+    // duration depending on instant and dragger size
     dragDuration = self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
