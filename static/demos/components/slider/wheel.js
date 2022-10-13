@@ -12,6 +12,9 @@ const mountSlider = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
+  /***/
+  let deltaY = false
+  /***/
 
   // init
 
@@ -22,22 +25,22 @@ const mountSlider = ({ ref }) => {
   // ScrollTrigger
 
   /***/
-  let deltaY = false
-
   ScrollTrigger.observe({
     target: self.dragger,
     type: 'wheel',
-    wheelSpeed: -2,
+    wheelSpeed: -3,
     onWheel: trigger => {
-      if (!deltaY || Math.abs(deltaY) > Math.abs(trigger.deltaY)) {
-        self.dragstart({ clientX: trigger.deltaY })
+      const clientX = trigger.deltaY
+      if (!deltaY || Math.abs(deltaY) > Math.abs(clientX)) {
+        self.dragstart({ clientX: 0 })
       }
       deltaY = trigger.deltaY
-      self.dragmove({ clientX: trigger.deltaY })
+      self.dragmove({ clientX })
     },
     onStop: trigger => {
+      const clientX = trigger.deltaY
       deltaY = false
-      self.dragend({ clientX: trigger.deltaY })
+      self.dragend({ clientX })
     },
     onStopDelay: 0,
     debounce: false,

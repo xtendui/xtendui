@@ -1,6 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 /* mountSlider */
 
@@ -25,11 +29,43 @@ const mountSlider = ({ ref }) => {
   })
   /***/
 
+  // ScrollTrigger
+
+  /***/
+  let deltaY = false
+
+  ScrollTrigger.observe({
+    target: self.dragger,
+    type: 'wheel',
+    wheelSpeed: -3,
+    onWheel: trigger => {
+      const clientX = Math.round(trigger.deltaY)
+      if (!deltaY || Math.abs(deltaY) > Math.abs(clientX)) {
+        self.dragstart({ clientX: 0 })
+      }
+      deltaY = clientX
+      self.dragmove({ clientX })
+    },
+    onStop: trigger => {
+      const clientX = Math.round(trigger.deltaY)
+      deltaY = false
+      self.dragend({ clientX })
+    },
+    onStopDelay: 0,
+    debounce: false,
+    preventDefault: true,
+  })
+  /***/
+
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
     // duration depending on dragger size
     dragDuration = self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
+    /***/
+    // duration only when wheeling
+    dragDuration = self.drag.dragging && deltaY ? 0.5 : dragDuration
+    /***/
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -48,16 +84,19 @@ const mountSlider = ({ ref }) => {
     // mask
     const mask = tr.querySelector('.hero')
     gsap.killTweensOf(mask)
-    gsap.set(mask, {
+    gsap.to(mask, {
       x: `${-maskPercent * self.drag.ratio * self.direction}%`,
+      duration: dragDuration,
+      ease: dragEase,
     })
     const maskInner = mask.querySelector('.hero-inner')
     gsap.killTweensOf(maskInner)
-    gsap.set(maskInner, {
+    gsap.to(maskInner, {
       x: `${maskInnerPercent * self.drag.ratio * self.direction}%`,
       opacity: 1 - maskInnerOpacity * self.drag.ratio,
+      duration: dragDuration,
+      ease: dragEase,
     })
-    /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming', '!block')
@@ -69,17 +108,20 @@ const mountSlider = ({ ref }) => {
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
-      gsap.set(mask, {
+      gsap.to(mask, {
         x: `${maskPercent * self.drag.ratioInverse * self.direction}%`,
+        duration: dragDuration,
+        ease: dragEase,
       })
       const maskInner = mask.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
-      gsap.set(maskInner, {
+      gsap.to(maskInner, {
         x: `${-maskInnerPercent * self.drag.ratioInverse * self.direction}%`,
         opacity: 1 - maskInnerOpacity * self.drag.ratioInverse,
+        duration: dragDuration,
+        ease: dragEase,
       })
     }
-    /***/
   }
 
   self.dragger.addEventListener('drag.xt.slider', drag)
@@ -152,7 +194,6 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
-      /***/
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
       for (const incoming of incomings) {
@@ -178,7 +219,6 @@ const mountSlider = ({ ref }) => {
           ease: dragEase,
         })
       }
-      /***/
     }
   }
 
@@ -195,7 +235,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-animation-absolute-mask',
+  matches: '.demo--slider-absolute-free-wheel',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

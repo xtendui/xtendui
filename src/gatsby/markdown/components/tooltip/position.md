@@ -3,7 +3,7 @@ type: "Components"
 category: "Toggle"
 parent: "Tooltip"
 title: "Position"
-date: "2009-10-10"
+date: "2010-09-10"
 ---
 
 ## Position and arrow

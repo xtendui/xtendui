@@ -36,7 +36,7 @@ Examples to do **parallax animations on page scroll**. See [parallax](/component
 
 ## Slider Integration
 
-See [slider scrolltrigger](/components/slider/interaction#scrolltrigger) for more info.
+See [slider scrolltrigger](/components/slider/animation-advanced#wheel) for more info.
 
 ## Fixes
 

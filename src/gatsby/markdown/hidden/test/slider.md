@@ -194,12 +194,9 @@ title: "Slider Test"
 [/hidden/slider/addon#automatic-scrolling](/hidden/slider/addon#automatic-scrolling).
 - (manual) TEST loop activation.
 
-`demos/components/slider/animation-absolute-cover`
-- TEST slider cover should not disappear
-
 [/demos/themes/hero/slider-hero-v2](/demos/themes/hero/slider-hero-v2).
-
-`demos/components/slider/animation-absolute-mask`
-- TEST drag looping going back and forth between first and last, pagination looping first and second to last, drag sx then drag 2 times dx, pagination looping last and second to first, pagination jump combinations, multiple click should not change slide, click after drag should not stop animation.
+- TEST activation and drag activation.
 
 [/demos/themes/hero/slider-hero-v1](/demos/themes/hero/slider-hero-v1).
+- TEST drag looping going back and forth between first and last, pagination looping first and second to last, drag sx then drag 2 times dx, pagination looping last and second to first, pagination jump combinations, multiple click should not change slide, click after drag should not stop animation.
+

@@ -735,7 +735,7 @@ class Slider extends Xt.Toggle {
     el = found.element
     const tr = found.target
     // fix keep self.drag.instant (e.g. slider-hero-v2)
-    const isDrag = self.drag.instant
+    const isInstant = self.drag.instant
     // activation
     super._eventOn({ el, force }, e)
     // vars
@@ -789,10 +789,10 @@ class Slider extends Xt.Toggle {
     self.drag.dragging = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
     // fix keep self.drag.instant (e.g. slider-hero-v2 dragging mask)
-    self.drag.instant = isDrag
+    self.drag.instant = isInstant
     Xt.frame({
       el: self.container,
-      ns: `${self.ns}isDrag`,
+      ns: `${self.ns}isInstant`,
       func: () => {
         // needed for off event (e.g. slider-hero-v2 clicking next furiously)
         self.drag.instant = false
@@ -1222,10 +1222,10 @@ class Slider extends Xt.Toggle {
     }
     // dispatch event
     self.drag.instant = true
-    self.drag.dragging = true
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
+    self.drag.dragging = true // first drag must be false to setup instantly
     // reset
     self._inverse = null
     // activation

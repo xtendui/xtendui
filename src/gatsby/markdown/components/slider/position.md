@@ -3,7 +3,7 @@ type: "Components"
 category: "Toggle"
 parent: "Slider"
 title: "Position"
-date: "2009-10-10"
+date: "2010-09-10"
 ---
 
 ## Align
@@ -95,6 +95,25 @@ When `groupSame` is enabled (default) it **groups the slides activation (not pos
   </demoinline>
 </demo>
 
+## Free
+
+Activate **free drag** while retaining targets activations and elements interactions.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `free:Boolean`                          | `false`        | Free drag            |
+
+</div>
+
+<demo>
+  <demoinline src="demos/components/slider/free">
+  </demoinline>
+  <demoinline src="demos/components/slider/free-wrap">
+  </demoinline>
+</demo>
+
 ## Auto Height
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -108,26 +127,5 @@ When `groupSame` is enabled (default) it **groups the slides activation (not pos
 
 <demo>
   <demoinline src="demos/components/slider/autoheight">
-  </demoinline>
-</demo>
-
-## Free
-
-Activate **free drag** while retaining targets activations and elements interactions.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Default / Arguments                       | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `free:Boolean`                          | `false`        | Free drag            |
-
-</div>
-
-For smooth free drag animation you can change the **transition and easing** on `dragger` ([see animation drag position](/components/slider/animation#drag-position)).
-
-<demo>
-  <demoinline src="demos/components/slider/free">
-  </demoinline>
-  <demoinline src="demos/components/slider/free-wrap">
   </demoinline>
 </demo>

@@ -224,13 +224,3 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
   </demoinline>
 </demo>
 
-## Scrolltrigger
-
-Use [scrolltrigger](/components/scrolltrigger) for **interaction on mousewheel** and animate using the `self.dragstart`, `self.dragmove` and `self.dragend` methods.
-
-<demo>
-  <demoinline src="demos/components/slider/scrolltrigger">
-  </demoinline>
-  <demoinline src="demos/components/slider/scrolltrigger-free">
-  </demoinline>
-</demo>

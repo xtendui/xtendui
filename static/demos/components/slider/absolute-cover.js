@@ -156,7 +156,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-animation-absolute-cover',
+  matches: '.demo--slider-absolute-cover',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
