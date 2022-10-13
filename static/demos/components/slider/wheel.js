@@ -33,14 +33,18 @@ const mountSlider = ({ ref }) => {
       const clientX = trigger.deltaY
       if (!deltaY || Math.abs(deltaY) > Math.abs(clientX)) {
         self.dragstart({ clientX: 0 })
+        console.log('start')
       }
-      deltaY = trigger.deltaY
+      deltaY = clientX
+      // clientX è sempre 300, event.deltaY sempre 100, wheelDeltaY sempre -120, deltamode 0
+      console.log(clientX, trigger.velocityY, trigger.event)
       self.dragmove({ clientX })
     },
     onStop: trigger => {
       const clientX = trigger.deltaY
       deltaY = false
       self.dragend({ clientX })
+      console.log('end', clientX)
     },
     onStopDelay: 0,
     debounce: false,

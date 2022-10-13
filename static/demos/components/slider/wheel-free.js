@@ -33,7 +33,7 @@ const mountSlider = ({ ref }) => {
     wheelSpeed: -3,
     onWheel: trigger => {
       const clientX = trigger.deltaY
-      if (!deltaY || Math.abs(deltaY) > Math.abs(trigger.deltaY)) {
+      if (!deltaY || Math.abs(deltaY) > Math.abs(clientX)) {
         self.dragstart({ clientX: 0 })
       }
       deltaY = clientX
