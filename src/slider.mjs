@@ -1154,6 +1154,10 @@ class Slider extends Xt.Toggle {
       self.drag._current = e.touches[0].clientX
       self.drag._currentOther = e.touches[0].clientY
     }
+    // fix no drag change when click
+    if (self.drag._start === self.drag._current) {
+      return
+    }
     // check threshold
     self.drag._distance = self.drag._start - self.drag._current
     self.drag._distanceOther = self.drag._startOther - self.drag._currentOther
