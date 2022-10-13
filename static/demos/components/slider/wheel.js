@@ -45,8 +45,9 @@ const mountSlider = ({ ref }) => {
       deltaY = clientX
       console.log(clientX, trigger.deltaY)
       //console.log(trigger.event)
-      // pc clientX è sempre 300, event.deltaY sempre 100, wheelDeltaY sempre -120, deltamode 0
-      // mac clientX e event.deltaY variabile, wheelDeltaY sempre -120, deltamode 0
+      // pc event.deltaY sempre 100, wheelDeltaY sempre -120, deltamode 0
+      // mac event.deltaY variabile, wheelDeltaY sempre -120, deltamode 0
+      // touchpad event.deltaY TODO, wheelDeltaY TODO, deltamode TODO
       self.dragmove({ clientX })
     },
     onStop: trigger => {
