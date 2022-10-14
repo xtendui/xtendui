@@ -1326,13 +1326,13 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * wheel public
+   * wheelEvent public
    * @param {Object} params
    * @param {Number} params.deltaFactor Multiply factor
    * @param {Number} params.timeout End Timeout
    * @param {Event} e
    */
-  wheel({ factor = -1, timeout = 100 } = {}, e) {
+  wheelEvent({ factor = -1, timeout = 100 } = {}, e) {
     const self = this
     // logic
     e.preventDefault()

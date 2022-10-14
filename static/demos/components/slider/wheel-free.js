@@ -25,7 +25,7 @@ const mountSlider = ({ ref }) => {
 
   /***/
   self.dragger.addEventListener('wheel', e => {
-    self.wheel({ factor: -1, timeout: 100 }, e)
+    self.wheelEvent({ factor: -1, timeout: 100 }, e)
   })
   /***/
 
