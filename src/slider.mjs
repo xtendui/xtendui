@@ -1348,22 +1348,34 @@ class Slider extends Xt.Toggle {
    * @param {Number} params.timeout End Timeout
    * @param {Event} e
    */
-  wheelEvent({ factor = -1, timeout = 100 } = {}, e) {
+  wheelEvent({ factor = -1, timeout = 100, threshold = 10 } = {}, e) {
     const self = this
     // prevent scroll
     e.preventDefault()
     // logic
-    const clientX = e.deltaY * factor
-    if (!self.wheel.deltaY) {
-      self._wheelStart()
-      self._wheelMove({ clientX })
-    } else if (Math.abs(self.wheel.deltaY) < Math.abs(clientX)) {
-      self._wheelMove({ clientX })
+    let clientX = e.deltaY * factor
+    if (Math.abs(clientX) < threshold) {
+      // if small value (touchpad smooth)
+      if (self.wheel.deltaY) {
+        console.log('______', Math.abs(clientX))
+        // if running stop
+        self._wheelStop({ clientX })
+      }
+    } else {
+      if (!self.wheel.deltaY) {
+        // if first or resetted wheel start and move
+        self._wheelStart()
+        self._wheelMove({ clientX })
+      } else {
+        // sequential wheel add delta
+        clientX = self.wheel.deltaY + clientX
+        self._wheelMove({ clientX })
+      }
+      clearTimeout(self.wheel.timeout)
+      self.wheel.timeout = setTimeout(() => {
+        self._wheelStop({ clientX })
+      }, timeout)
     }
-    clearTimeout(self.wheel.timeout)
-    self.wheel.timeout = setTimeout(() => {
-      self._wheelStop({ clientX })
-    }, timeout)
   }
 
   /**
