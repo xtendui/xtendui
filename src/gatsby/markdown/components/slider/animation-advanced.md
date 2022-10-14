@@ -70,7 +70,16 @@ Here's an example of absolute animation with **mask and incoming slide**, on `dr
 
 ## Wheel
 
-Use [scrolltrigger](/components/scrolltrigger) for **interaction on mousewheel** and animate using the `self.dragstart`, `self.dragmove` and `self.dragend` methods.
+Use `self.wheelEvent` for **interaction on mousewheel** to attach wheel event to drag.
+
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 100 }, e:Event)`                          | Attach wheel event to drag             |
+
+</div>
 
 <demo>
   <demoinline src="demos/components/slider/wheel">
