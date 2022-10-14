@@ -1348,16 +1348,14 @@ class Slider extends Xt.Toggle {
    * @param {Number} params.timeout End Timeout
    * @param {Event} e
    */
-  wheelEvent({ factor = -1, timeout = 100, threshold = 10 } = {}, e) {
+  wheelEvent({ factor = -1, timeout = 100, threshold = 10, preventDefault = 'always' } = {}, e) {
     const self = this
-    // prevent scroll
-    e.preventDefault()
+    const options = self.options
     // logic
     let clientX = e.deltaY * factor
     if (Math.abs(clientX) < threshold) {
       // if small value (touchpad smooth)
       if (self.wheel.deltaY) {
-        console.log('______', Math.abs(clientX))
         // if running stop
         self._wheelStop({ clientX })
       }
@@ -1376,6 +1374,22 @@ class Slider extends Xt.Toggle {
         self._wheelStop({ clientX })
       }, timeout)
     }
+    // prevent scroll
+    if (preventDefault === 'always') {
+      e.preventDefault()
+    } else if (preventDefault) {
+      if (
+        (!self.drag._direction || self.drag._direction > 0) &&
+        (options.loop || self._wrap || self.index !== self.getElementsGroups().length - 1)
+      ) {
+        e.preventDefault()
+      } else if (
+        (!self.drag._direction || self.drag._direction < 0) &&
+        (options.loop || self._wrap || self.index !== 0)
+      ) {
+        e.preventDefault()
+      }
+    }
   }
 
   /**
@@ -1383,7 +1397,7 @@ class Slider extends Xt.Toggle {
    */
   _wheelStart() {
     const self = this
-    console.log('start', 0)
+    //console.log('start', 0)
     // logic
     self.dragstart({ clientX: 0 })
   }
@@ -1395,7 +1409,7 @@ class Slider extends Xt.Toggle {
    */
   _wheelMove({ clientX }) {
     const self = this
-    console.log(clientX)
+    //console.log(clientX)
     // logic
     self.wheel.deltaY = clientX
     self.wheel.wheeling = true
@@ -1412,7 +1426,7 @@ class Slider extends Xt.Toggle {
    */
   _wheelStop({ clientX }) {
     const self = this
-    console.log('end')
+    //console.log('end')
     // logic
     self.wheel.deltaY = false
     self.wheel.wheeling = false
