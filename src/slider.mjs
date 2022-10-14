@@ -681,7 +681,7 @@ class Slider extends Xt.Toggle {
   _eventDragHandler(e) {
     const self = this
     // logic
-    self._logicDrag(e)
+    self._logicDragmove(e)
   }
 
   /**
@@ -1128,7 +1128,7 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * drag public
+   * drag move public
    * @param {Event} e
    * @param {Object} params
    * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
@@ -1136,16 +1136,17 @@ class Slider extends Xt.Toggle {
   dragmove(e, { keepActivated = true } = {}) {
     const self = this
     // logic
-    self._logicDrag(e, { keepActivated })
+    self._logicDragmove(e, { keepActivated })
   }
 
   /**
-   * drag logic
+   * drag move logic
    * @param {Event} e
    * @param {Object} params
+   * @param {Boolean} params.setup first dragmove instant setup
    * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
    */
-  _logicDrag(e, { keepActivated = false } = {}) {
+  _logicDragmove(e, { setup = false, keepActivated = false } = {}) {
     const self = this
     const options = self.options
     // disabled
@@ -1162,6 +1163,17 @@ class Slider extends Xt.Toggle {
     }
     // fix no drag change when click
     if (self.drag._start === self.drag._current) {
+      return
+    }
+    // first dragmove instant setup
+    if (setup) {
+      self.drag._old = self.drag._start
+      self.drag._current = self.drag._old + Math.sign(self.drag._current - self.drag._old)
+    } else if (!self.drag.dragging) {
+      // first dragmove instant setup
+      self._logicDragmove(e, { setup: true })
+      // second dragmove dragging
+      self._logicDragmove(e)
       return
     }
     // check threshold
@@ -1232,10 +1244,14 @@ class Slider extends Xt.Toggle {
     }
     // dispatch event
     self.drag.instant = true
+    if (setup) {
+      // first dragmove instant setup
+      self.drag.dragging = false
+    }
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+    self.drag.dragging = true // second dragmove dragging
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
-    self.drag.dragging = true // first drag must be false to setup instantly
     // reset
     self._inverse = null
     // activation
@@ -1334,16 +1350,15 @@ class Slider extends Xt.Toggle {
    */
   wheelEvent({ factor = -1, timeout = 100 } = {}, e) {
     const self = this
-    // logic
+    // prevent scroll
     e.preventDefault()
+    // logic
     const clientX = e.deltaY * factor
     if (!self.wheel.deltaY) {
       self._wheelStart()
       self._wheelMove({ clientX })
     } else if (Math.abs(self.wheel.deltaY) < Math.abs(clientX)) {
       self._wheelMove({ clientX })
-    } else {
-      self._wheelStop({ clientX })
     }
     clearTimeout(self.wheel.timeout)
     self.wheel.timeout = setTimeout(() => {
@@ -1385,7 +1400,7 @@ class Slider extends Xt.Toggle {
    */
   _wheelStop({ clientX }) {
     const self = this
-    console.log('end', clientX)
+    console.log('end')
     // logic
     self.wheel.deltaY = false
     self.wheel.wheeling = false
