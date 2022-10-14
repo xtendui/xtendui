@@ -26,8 +26,8 @@ const mountSlider = ({ ref }) => {
 
   const normalizeDelta = e => {
     const evt = {}
-    evt.deltaX = e.wheelDeltaX || e.deltaX * -1
-    evt.deltaY = e.wheelDeltaY || e.deltaY * -1
+    evt.deltaX = /*e.wheelDeltaX || */e.deltaX * -1
+    evt.deltaY = /*e.wheelDeltaY || */e.deltaY * -1
     return evt
   }
 
@@ -35,20 +35,26 @@ const mountSlider = ({ ref }) => {
   ScrollTrigger.observe({
     target: self.dragger,
     type: 'wheel',
-    wheelSpeed: -3,
+    wheelSpeed: -1,
     onWheel: trigger => {
       const clientX = normalizeDelta(trigger.event).deltaY
-      if (!deltaY || Math.abs(deltaY) > Math.abs(clientX)) {
-        self.dragstart({ clientX: 0 })
-        console.log('start')
+      if (clientX && (!deltaY || Math.abs(deltaY) < Math.abs(clientX))) {
+        if (!deltaY) {
+          self.dragstart({ clientX: 0 })
+          console.log('start', 0)
+        }
+        deltaY = clientX
+        console.log(clientX, trigger.event.wheelDeltaY, trigger.event.deltaY)
+        //console.log(trigger.event)
+        // pc event.deltaY sempre 100, wheelDeltaY sempre -120, deltamode 0
+        // mac event.deltaY variabile, wheelDeltaY sempre -120, deltamode 0
+        // touchpad event.deltaY sempre 1, wheelDeltaY sempre -3, deltamode 0
+        self.dragmove({ clientX })
+      } else {
+        deltaY = false
+        self.dragend({ clientX })
+        console.log('end', clientX, trigger.deltaY)
       }
-      deltaY = clientX
-      console.log(clientX, trigger.deltaY)
-      //console.log(trigger.event)
-      // pc event.deltaY sempre 100, wheelDeltaY sempre -120, deltamode 0
-      // mac event.deltaY variabile, wheelDeltaY sempre -120, deltamode 0
-      // touchpad event.deltaY TODO, wheelDeltaY TODO, deltamode TODO
-      self.dragmove({ clientX })
     },
     onStop: trigger => {
       const clientX = normalizeDelta(trigger.event).deltaY
