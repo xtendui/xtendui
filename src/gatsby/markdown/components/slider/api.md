@@ -138,7 +138,7 @@ self = null
 | Method                  | `self.dragstart({ clientX:Number })`                          | Manually activate **drag start**             |
 | Method                  | `self.dragmove({ clientX:Number }, { keepActivated:Boolean = true })`                          | Manually activate **drag move**             |
 | Method                  | `self.dragend({ clientX:Number })`                          | Manually activate **drag end**             |
-| Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 100, threshold:Number = 10, preventDefault:Boolean|String = 'always' }, e:Event)`                          | Attach wheel event to drag             |
+| Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 100, threshold:Number = 10, preventDefault:Boolean\|String = 'always' }, e:Event)`                          | Attach wheel event to drag             |
 | Method                  | `self.reinit({ save:Boolean = true })`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
 | Method                  | `self.disable()`                          | Disable component             |
