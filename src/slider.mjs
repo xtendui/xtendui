@@ -1171,9 +1171,9 @@ class Slider extends Xt.Toggle {
       self.drag._current = self.drag._old + Math.sign(self.drag._current - self.drag._old)
     } else if (!self.drag.dragging) {
       // first dragmove instant setup
-      self._logicDragmove(e, { setup: true })
+      self._logicDragmove(e, { setup: true, keepActivated })
       // second dragmove dragging
-      self._logicDragmove(e)
+      self._logicDragmove(e, { keepActivated })
       return
     }
     // check threshold
