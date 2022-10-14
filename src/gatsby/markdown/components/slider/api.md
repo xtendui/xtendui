@@ -112,6 +112,7 @@ const container = self.container
 | Property                   | `drag.ratioInverse:Number`       | Current drag inverse from 1 to 0             |
 | Property                   | `drag.instant:Boolean`       | Is `true` if is dragging position or setup position 
 | Property                   | `drag.dragging:Boolean`       | Is `true` if is dragging position
+| Property                   | `wheel.wheeling:Boolean`       | Is `true` if is wheeling position
 
 </div>
 
@@ -135,8 +136,9 @@ self = null
 | Method                  | `self.hasCurrent({ el:Node, same:Boolean = false })`                          | Check if element or target is activated, returns `Boolean`             |
 | Method                  | `self.getIndex({ el:Node })`                          | Get activation index of from element or target, returns `Number`             |
 | Method                  | `self.dragstart({ clientX:Number })`                          | Manually activate **drag start**             |
-| Method                  | `self.dragmove({ clientX:Number })`                          | Manually activate **drag move**             |
+| Method                  | `self.dragmove({ clientX:Number }, { keepActivated:Boolean = true })`                          | Manually activate **drag move**             |
 | Method                  | `self.dragend({ clientX:Number })`                          | Manually activate **drag end**             |
+| Method                  | `self.wheel({ factor:Number = -1, timeout:Number = 100 }, e:Event)`                          | Attach wheel event to drag             |
 | Method                  | `self.reinit({ save:Boolean = true })`       | Reinit component and save currents as initial (default: `true`)             |
 | Method                  | `self.restart()`                          | Restart component to initial             |
 | Method                  | `self.disable()`                          | Disable component             |

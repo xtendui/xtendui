@@ -79,7 +79,7 @@ Use [scrolltrigger](/components/scrolltrigger) for **interaction on mousewheel**
   </demoinline>
 </demo>
 
-For **absolute mode** additionally on `dragposition.xt.slider` set the `dragDuration` with the desired animation duration only if `self.drag.dragging && deltaY`.
+For **absolute mode** additionally on `dragposition.xt.slider` set the `dragDuration` with the desired animation duration only if `self.drag.dragging && self.wheel.wheeling`.
 
 <demo>
   <demoinline src="demos/components/slider/absolute-wheel">

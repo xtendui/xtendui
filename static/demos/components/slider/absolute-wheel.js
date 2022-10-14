@@ -31,29 +31,11 @@ const mountSlider = ({ ref }) => {
 
   // ScrollTrigger
 
-  /***/
-  let deltaY = false
+  // Wheel
 
-  ScrollTrigger.observe({
-    target: self.dragger,
-    type: 'wheel',
-    wheelSpeed: -3,
-    onWheel: trigger => {
-      const clientX = Math.round(trigger.deltaY)
-      if (!deltaY || Math.abs(deltaY) > Math.abs(clientX)) {
-        self.dragstart({ clientX: 0 })
-      }
-      deltaY = clientX
-      self.dragmove({ clientX })
-    },
-    onStop: trigger => {
-      const clientX = Math.round(trigger.deltaY)
-      deltaY = false
-      self.dragend({ clientX })
-    },
-    onStopDelay: 0,
-    debounce: false,
-    preventDefault: true,
+  /***/
+  self.dragger.addEventListener('wheel', e => {
+    self.wheel({ factor: -1, timeout: 100 }, e)
   })
   /***/
 
@@ -64,7 +46,7 @@ const mountSlider = ({ ref }) => {
     dragDuration = self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
     /***/
     // duration only when wheeling
-    dragDuration = self.drag.dragging && deltaY ? 0.5 : dragDuration
+    dragDuration = self.drag.dragging && self.wheel.wheeling ? 0.5 : dragDuration
     /***/
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)

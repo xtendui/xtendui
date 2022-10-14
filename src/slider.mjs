@@ -41,6 +41,9 @@ class Slider extends Xt.Toggle {
   _initScope() {
     const self = this
     const options = self.options
+    // wheel
+    self.wheel.deltaY = false
+    self.wheel.timeout
     // dragger
     self.dragger = self.container.querySelector(options.drag.dragger)
     self._destroyElements.push(self.dragger)
@@ -1127,19 +1130,22 @@ class Slider extends Xt.Toggle {
   /**
    * drag public
    * @param {Event} e
+   * @param {Object} params
+   * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
    */
-  dragmove(e) {
+  dragmove(e, { keepActivated = true } = {}) {
     const self = this
     // logic
-    self._logicDrag(e, true)
+    self._logicDrag(e, { keepActivated })
   }
 
   /**
    * drag logic
    * @param {Event} e
-   * @param {Boolean} custom
+   * @param {Object} params
+   * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
    */
-  _logicDrag(e, custom = false) {
+  _logicDrag(e, { keepActivated = false } = {}) {
     const self = this
     const options = self.options
     // disabled
@@ -1183,7 +1189,7 @@ class Slider extends Xt.Toggle {
         e.preventDefault()
       }
       // disable interaction
-      if (!custom) {
+      if (!keepActivated) {
         for (const tr of self.targets) {
           tr.classList.add('pointer-events-none')
         }
@@ -1317,6 +1323,73 @@ class Slider extends Xt.Toggle {
       }
     }
     return null
+  }
+
+  /**
+   * wheel public
+   * @param {Object} params
+   * @param {Number} params.deltaFactor Multiply factor
+   * @param {Number} params.timeout End Timeout
+   * @param {Event} e
+   */
+  wheel({ factor = -1, timeout = 100 } = {}, e) {
+    const self = this
+    // logic
+    e.preventDefault()
+    const clientX = e.deltaY * factor
+    if (!self.wheel.deltaY) {
+      self._wheelStart()
+      self._wheelMove({ clientX })
+    } else if (Math.abs(self.wheel.deltaY) < Math.abs(clientX)) {
+      self._wheelMove({ clientX })
+    } else {
+      self._wheelStop({ clientX })
+    }
+    clearTimeout(self.wheel.timeout)
+    self.wheel.timeout = setTimeout(() => {
+      self._wheelStop({ clientX })
+    }, timeout)
+  }
+
+  /**
+   * wheel start
+   */
+  _wheelStart() {
+    const self = this
+    console.log('start', 0)
+    // logic
+    self.dragstart({ clientX: 0 })
+  }
+
+  /**
+   * wheel move
+   * @param {Object} params
+   * @param {Number} params.clientX
+   */
+  _wheelMove({ clientX }) {
+    const self = this
+    console.log(clientX)
+    // logic
+    self.wheel.deltaY = clientX
+    self.wheel.wheeling = true
+    self.dragmove({ clientX })
+    // pc event.deltaY sempre 100, wheelDeltaY sempre -120, deltamode 0
+    // mac event.deltaY variabile, wheelDeltaY sempre -120, deltamode 0
+    // touchpad event.deltaY sempre 1, wheelDeltaY sempre -3, deltamode 0
+  }
+
+  /**
+   * wheel stop
+   * @param {Object} params
+   * @param {Number} params.clientX
+   */
+  _wheelStop({ clientX }) {
+    const self = this
+    console.log('end', clientX)
+    // logic
+    self.wheel.deltaY = false
+    self.wheel.wheeling = false
+    self.dragend({ clientX })
   }
 
   //
