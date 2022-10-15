@@ -997,7 +997,7 @@ class Slider extends Xt.Toggle {
   }
 
   //
-  // logic
+  // drag
   //
 
   /**
@@ -1132,21 +1132,22 @@ class Slider extends Xt.Toggle {
    * @param {Event} e
    * @param {Object} params
    * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
+   * @param {Number} params.setup
    */
-  dragmove(e, { keepActivated = true } = {}) {
+  dragmove(e, { keepActivated, setup } = {}) {
     const self = this
     // logic
-    self._logicDragmove(e, { keepActivated })
+    self._logicDragmove(e, { keepActivated, setup })
   }
 
   /**
    * drag move logic
    * @param {Event} e
    * @param {Object} params
-   * @param {Boolean} params.setup first dragmove instant setup
    * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
+   * @param {Boolean} params.setup first dragmove instant setup
    */
-  _logicDragmove(e, { setup = false, keepActivated = false } = {}) {
+  _logicDragmove(e, { keepActivated = false, setup = false } = {}) {
     const self = this
     const options = self.options
     // disabled
@@ -1167,14 +1168,8 @@ class Slider extends Xt.Toggle {
     }
     // first dragmove instant setup
     if (setup) {
-      self.drag._old = self.drag._start
+      // only 1 pixel self.drag._old old same direction of self.drag._current
       self.drag._current = self.drag._old + Math.sign(self.drag._current - self.drag._old)
-    } else if (!self.drag.dragging) {
-      // first dragmove instant setup
-      self._logicDragmove(e, { setup: true, keepActivated })
-      // second dragmove dragging
-      self._logicDragmove(e, { keepActivated })
-      return
     }
     // check threshold
     self.drag._distance = self.drag._start - self.drag._current
@@ -1247,9 +1242,10 @@ class Slider extends Xt.Toggle {
     if (setup) {
       // first dragmove instant setup
       self.drag.dragging = false
+    } else {
+      self.drag.dragging = true
     }
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-    self.drag.dragging = true // second dragmove dragging
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
     // reset
@@ -1341,6 +1337,10 @@ class Slider extends Xt.Toggle {
     return null
   }
 
+  //
+  // wheel
+  //
+
   /**
    * wheelEvent public
    * @param {Object} params
@@ -1348,7 +1348,7 @@ class Slider extends Xt.Toggle {
    * @param {Number} params.timeout End Timeout
    * @param {Event} e
    */
-  wheelEvent({ factor = -1, timeout = 100, threshold = 10, preventDefault = 'always' } = {}, e) {
+  wheelEvent({ factor = -2, timeout = 100, threshold = 10, preventDefault = 'always' } = {}, e) {
     const self = this
     const options = self.options
     // logic
@@ -1363,6 +1363,7 @@ class Slider extends Xt.Toggle {
       if (!self.wheel.deltaY) {
         // if first or resetted wheel start and move
         self._wheelStart()
+        self._wheelMove({ clientX, setup: true })
         self._wheelMove({ clientX })
       } else {
         // sequential wheel add delta
@@ -1397,7 +1398,6 @@ class Slider extends Xt.Toggle {
    */
   _wheelStart() {
     const self = this
-    //console.log('start', 0)
     // logic
     self.dragstart({ clientX: 0 })
   }
@@ -1406,17 +1406,14 @@ class Slider extends Xt.Toggle {
    * wheel move
    * @param {Object} params
    * @param {Number} params.clientX
+   * @param {Number} params.setup
    */
-  _wheelMove({ clientX }) {
+  _wheelMove({ clientX, setup }) {
     const self = this
-    //console.log(clientX)
     // logic
     self.wheel.deltaY = clientX
     self.wheel.wheeling = true
-    self.dragmove({ clientX })
-    // pc event.deltaY sempre 100, wheelDeltaY sempre -120, deltamode 0
-    // mac event.deltaY variabile, wheelDeltaY sempre -120, deltamode 0
-    // touchpad event.deltaY sempre 1, wheelDeltaY sempre -3, deltamode 0
+    self.dragmove({ clientX }, { keepActivated: true, setup })
   }
 
   /**
@@ -1426,7 +1423,6 @@ class Slider extends Xt.Toggle {
    */
   _wheelStop({ clientX }) {
     const self = this
-    //console.log('end')
     // logic
     self.wheel.deltaY = false
     self.wheel.wheeling = false

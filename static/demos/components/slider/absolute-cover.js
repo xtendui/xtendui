@@ -44,8 +44,10 @@ const mountSlider = ({ ref }) => {
     // cover
     const cover = tr.querySelector('.hero-cover')
     gsap.killTweensOf(cover)
-    gsap.set(cover, {
+    gsap.to(cover, {
       x: `${100 * self.drag.ratioInverse * self.direction}%`,
+      duration: dragDuration,
+      ease: dragEase,
     })
   }
 

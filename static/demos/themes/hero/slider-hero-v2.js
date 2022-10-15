@@ -52,16 +52,20 @@ const mountSlider = ({ ref }) => {
     const cover = tr.querySelector('.hero-cover')
     const skew = self.drag.ratio < 0.5 ? 10 * self.drag.ratio : 10 * self.drag.ratioInverse
     gsap.killTweensOf(cover)
-    gsap.set(cover, {
+    gsap.to(cover, {
       x: `${100 * self.drag.ratioInverse * self.direction}%`,
       skewX: skew * self.direction,
+      duration: dragDuration,
+      ease: dragEase,
     })
     // content
     const content = tr.querySelector('.hero-content')
     gsap.killTweensOf(content)
-    gsap.set(content, {
+    gsap.to(content, {
       x: -contentX * self.drag.ratio * self.direction,
       opacity: 1 * self.drag.ratioInverse,
+      duration: dragDuration,
+      ease: dragEase,
     })
   }
 

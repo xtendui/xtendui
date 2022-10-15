@@ -136,7 +136,7 @@ self = null
 | Method                  | `self.hasCurrent({ el:Node, same:Boolean = false })`                          | Check if element or target is activated, returns `Boolean`             |
 | Method                  | `self.getIndex({ el:Node })`                          | Get activation index of from element or target, returns `Number`             |
 | Method                  | `self.dragstart({ clientX:Number })`                          | Manually activate **drag start**             |
-| Method                  | `self.dragmove({ clientX:Number }, { keepActivated:Boolean = true })`                          | Manually activate **drag move**             |
+| Method                  | `self.dragmove({ clientX:Number }, { keepActivated:Boolean = true, setup:Boolean = false })`                          | Manually activate **drag move**             |
 | Method                  | `self.dragend({ clientX:Number })`                          | Manually activate **drag end**             |
 | Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 100, threshold:Number = 10, preventDefault:Boolean\|String = 'always' }, e:Event)`                          | Attach wheel event to drag             |
 | Method                  | `self.reinit({ save:Boolean = true })`       | Reinit component and save currents as initial (default: `true`)             |

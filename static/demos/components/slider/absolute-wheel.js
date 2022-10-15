@@ -29,8 +29,6 @@ const mountSlider = ({ ref }) => {
   })
   /***/
 
-  // ScrollTrigger
-
   // Wheel
 
   /***/

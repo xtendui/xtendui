@@ -48,14 +48,18 @@ const mountSlider = ({ ref }) => {
     // mask
     const mask = tr.querySelector('.hero')
     gsap.killTweensOf(mask)
-    gsap.set(mask, {
+    gsap.to(mask, {
       x: `${-maskPercent * self.drag.ratio * self.direction}%`,
+      duration: dragDuration,
+      ease: dragEase,
     })
     const maskInner = mask.querySelector('.hero-inner')
     gsap.killTweensOf(maskInner)
-    gsap.set(maskInner, {
+    gsap.to(maskInner, {
       x: `${maskInnerPercent * self.drag.ratio * self.direction}%`,
       opacity: 1 - maskInnerOpacity * self.drag.ratio,
+      duration: dragDuration,
+      ease: dragEase,
     })
     /***/
     // incomings
@@ -69,14 +73,18 @@ const mountSlider = ({ ref }) => {
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
-      gsap.set(mask, {
+      gsap.to(mask, {
         x: `${maskPercent * self.drag.ratioInverse * self.direction}%`,
+        duration: dragDuration,
+        ease: dragEase,
       })
       const maskInner = mask.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
-      gsap.set(maskInner, {
+      gsap.to(maskInner, {
         x: `${-maskInnerPercent * self.drag.ratioInverse * self.direction}%`,
         opacity: 1 - maskInnerOpacity * self.drag.ratioInverse,
+        duration: dragDuration,
+        ease: dragEase,
       })
     }
     /***/
