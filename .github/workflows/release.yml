@@ -27,23 +27,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: "${{ env.NODE }}"
-    - name: Yarn Cache Path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - name: Yarn Cache
-      uses: actions/cache@v3
-      id: yarn-cache
-      with:
-        path: |
-          ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          **/node_modules
-          ~/.npm
-          ~/.cache/Cypress
-        key: ${{ runner.os }}-node${{ env.NODE }}-yarn-1-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-node${{ env.NODE }}-yarn-1-
     - name: Yarn
-      if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: yarn install --frozen-lockfile --prefer-offline
     # release/action.yml composite
     - name: Release
