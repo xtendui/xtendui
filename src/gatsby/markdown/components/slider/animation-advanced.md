@@ -77,13 +77,20 @@ Use `self.wheelEvent` for **interaction on mousewheel** to attach wheel event to
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 100, threshold:Number = 10, preventDefault:Boolean\|String = 'always' }, e:Event)`                          | Attach wheel event to drag             |
+| Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 100, threshold:Number = 10 }, e:Event)`                          | Attach wheel event to drag, returns `Boolean` if not overflowing             |
 
 </div>
 
 <demo>
   <demoinline src="demos/components/slider/wheel">
   </demoinline>
+</demo>
+
+You can attach wheel event to `window` and use [ScrollTrigger](/components/scrolltrigger) to activate the wheel event.
+
+You can also choose when to `e.preventDefault()`, for this you can check for returned value of `self.wheelEvent` if not overflowing.
+
+<demo>
   <demoinline src="demos/components/slider/wheel-free">
   </demoinline>
 </demo>

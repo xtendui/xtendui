@@ -32,9 +32,12 @@ const mountSlider = ({ ref }) => {
   // Wheel
 
   /***/
-  self.dragger.addEventListener('wheel', e => {
+  const wheel = e => {
     self.wheelEvent({}, e)
-  })
+    e.preventDefault()
+  }
+
+  self.dragger.addEventListener('wheel', wheel, { passive: false })
   /***/
 
   // dragposition (set internal position to resume animation mid dragging)

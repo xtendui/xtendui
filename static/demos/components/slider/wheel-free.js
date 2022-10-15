@@ -18,14 +18,36 @@ const mountSlider = ({ ref }) => {
   /***/
   let self = new Xt.Slider(slider, {
     free: true,
+    drag: {
+      overflow: false,
+    },
   })
   /***/
 
   // Wheel
 
   /***/
-  self.dragger.addEventListener('wheel', e => {
-    self.wheelEvent({}, e)
+  let sticky = false
+
+  const wheel = e => {
+    if (sticky) {
+      const notOverflowing = self.wheelEvent({}, e)
+      if (notOverflowing) {
+        e.preventDefault()
+      }
+    }
+  }
+
+  window.addEventListener('wheel', wheel, { passive: false })
+
+  ScrollTrigger.create({
+    trigger: slider,
+    start: 'bottom bottom',
+    end: 'top top',
+    onToggle: self => {
+      sticky = self.isActive
+      console.log(self.isActive)
+    }
   })
   /***/
 

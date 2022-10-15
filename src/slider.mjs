@@ -516,13 +516,6 @@ class Slider extends Xt.Toggle {
     // init
     const initHandler = Xt.dataStorage.put(self.container, `init/${self.ns}`, self._eventInitHandler.bind(self))
     self.container.addEventListener('init.xt.slider', initHandler)
-    // dragposition
-    const dragpositionHandler = Xt.dataStorage.put(
-      self.dragger,
-      `dragposition/${self.ns}`,
-      self._eventDragpositionHandler.bind(self)
-    )
-    self.dragger.addEventListener('dragposition.xt.slider', dragpositionHandler)
     // drag start
     const dragstartHandler = Xt.dataStorage.put(
       window,
@@ -557,6 +550,7 @@ class Slider extends Xt.Toggle {
         self.drag.instant = true
         self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+        self._logicDragposition()
       },
     })
     // super after
@@ -575,22 +569,6 @@ class Slider extends Xt.Toggle {
     const self = this
     // dragger initial
     self.dragger.classList.remove('initial')
-  }
-
-  /**
-   * drag position handler
-   * @param {Event} e
-   */
-  _eventDragpositionHandler() {
-    const self = this
-    const options = self.options
-    // dragposition
-    if (!options.dragposition && options.mode !== 'absolute') {
-      self.drag.instant ? self.dragger.classList.remove('on') : self.dragger.classList.add('on')
-      // set internal position to resume animation mid dragging
-      self.drag.position = self.drag.final
-      self.dragger.style.transform = `translateX(${self.drag.final}px)`
-    }
   }
 
   /**
@@ -761,6 +739,7 @@ class Slider extends Xt.Toggle {
         self.drag.instant = true
         self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+        self._logicDragposition()
       } else if (options.loop && tr === first && loopingMoreThanOne && self.direction > 0) {
         // calculate position when looping to start
         const remainder = min - max + self.drag.position + maxCheck
@@ -770,6 +749,7 @@ class Slider extends Xt.Toggle {
         self.drag.instant = true
         self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+        self._logicDragposition()
       } else if (loopingMoreThanOne) {
         // calculate difference of distance still to be covered when looping more than 1 item
         const remainder = self.drag.final - self.drag.position - maxCheck * self.direction
@@ -779,6 +759,7 @@ class Slider extends Xt.Toggle {
         self.drag.instant = true
         self.drag.dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+        self._logicDragposition()
       }
     }
     // val
@@ -791,6 +772,7 @@ class Slider extends Xt.Toggle {
     self.drag.instant = false
     self.drag.dragging = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+    self._logicDragposition()
     // fix keep self.drag.instant (e.g. slider-hero-v2 dragging mask)
     self.drag.instant = isInstant
     Xt.frame({
@@ -1213,16 +1195,17 @@ class Slider extends Xt.Toggle {
     self.drag._direction = self.drag._current > self.drag._old ? -1 : 1
     self.drag._old = self.drag._current
     // overflow
-    if (options.drag.overflow && !self._wrap && options.mode !== 'absolute') {
+    if (!self._wrap && options.mode !== 'absolute') {
       const direction = Math.sign(self.drag._distance)
+      const func = options.drag.overflow ? options.drag.overflow : () => 0
       if (final > min && direction < 0) {
         self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
         const overflow = self.drag._current - self.drag._overflow
-        final = overflow > 0 ? min + options.drag.overflow({ overflow }) : final
+        final = overflow >= 0 ? min + func({ overflow }) : final
       } else if (final < max && direction > 0) {
         self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
         const overflow = self.drag._current - self.drag._overflow
-        final = overflow < 0 ? max - options.drag.overflow({ overflow: -overflow }) : final
+        final = overflow <= 0 ? max - func({ overflow: -overflow }) : final
       }
     }
     // val
@@ -1246,6 +1229,7 @@ class Slider extends Xt.Toggle {
       self.drag.dragging = true
     }
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+    self._logicDragposition()
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
     // reset
@@ -1279,6 +1263,7 @@ class Slider extends Xt.Toggle {
     self.drag.instant = false
     self.drag.dragging = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+    self._logicDragposition()
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self._componentNs}`))
     // reset
@@ -1337,6 +1322,21 @@ class Slider extends Xt.Toggle {
     return null
   }
 
+  /**
+   * drag position logic
+   */
+  _logicDragposition() {
+    const self = this
+    const options = self.options
+    // dragposition
+    if (!options.dragposition && options.mode !== 'absolute') {
+      self.drag.instant ? self.dragger.classList.remove('on') : self.dragger.classList.add('on')
+      // set internal position to resume animation mid dragging
+      self.drag.position = self.drag.final
+      self.dragger.style.transform = `translateX(${self.drag.final}px)`
+    }
+  }
+
   //
   // wheel
   //
@@ -1347,8 +1347,9 @@ class Slider extends Xt.Toggle {
    * @param {Number} params.deltaFactor Multiply factor
    * @param {Number} params.timeout End Timeout
    * @param {Event} e
+   * @return {Boolean} If not overflowing
    */
-  wheelEvent({ factor = -2, timeout = 100, threshold = 10, preventDefault = 'always' } = {}, e) {
+  wheelEvent({ factor = -1, timeout = 100, threshold = 10 } = {}, e) {
     const self = this
     const options = self.options
     // logic
@@ -1376,21 +1377,18 @@ class Slider extends Xt.Toggle {
       }, timeout)
     }
     // prevent scroll
-    if (preventDefault === 'always') {
-      e.preventDefault()
-    } else if (preventDefault) {
-      if (
-        (!self.drag._direction || self.drag._direction > 0) &&
-        (options.loop || self._wrap || self.index !== self.getElementsGroups().length - 1)
-      ) {
-        e.preventDefault()
-      } else if (
-        (!self.drag._direction || self.drag._direction < 0) &&
-        (options.loop || self._wrap || self.index !== 0)
-      ) {
-        e.preventDefault()
-      }
+    if (
+      (!self.drag._direction || self.drag._direction > 0) &&
+      (options.loop || self._wrap || self.index !== self.getElementsGroups().length - 1)
+    ) {
+      return true
+    } else if (
+      (!self.drag._direction || self.drag._direction < 0) &&
+      (options.loop || self._wrap || self.index !== 0)
+    ) {
+      return true
     }
+    return false
   }
 
   /**

@@ -14,9 +14,7 @@ const mountSlider = ({ ref }) => {
   let self = new Xt.Slider(slider, {
     drag: {
       factor: 2,
-      overflow: ({ overflow }) => {
-        return Math.pow(overflow, 0.6)
-      },
+      overflow: false,
     },
   })
   /***/
