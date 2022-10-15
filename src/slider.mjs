@@ -1024,92 +1024,6 @@ class Slider extends Xt.Toggle {
   }
 
   /**
-   * drag off public
-   * @param {Event} e
-   */
-  dragend(e) {
-    const self = this
-    // logic
-    self._logicDragend(e)
-  }
-
-  /**
-   * drag off logic
-   * @param {Event} e
-   */
-  _logicDragend(e) {
-    const self = this
-    const options = self.options
-    // disabled
-    if (self.disabled) {
-      return
-    }
-    // save event
-    if (e.clientX !== undefined) {
-      self.drag._current = e.clientX
-      self.drag._currentOther = e.clientY
-    } else if (e.touches && e.touches.length) {
-      self.drag._current = e.touches[0].clientX
-      self.drag._currentOther = e.touches[0].clientY
-    }
-    // vars
-    self._autoblock = false
-    // disable interaction
-    for (const tr of self.targets) {
-      tr.classList.remove('pointer-events-none')
-    }
-    // fix no drag change when click
-    if (self.drag._start === self.drag._current) {
-      // dispatch event
-      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self._componentNs}`))
-      return
-    }
-    // raf because on.xt.slider event after all drag.xt.slider
-    requestAnimationFrame(() => {
-      // only if dragging enough
-      if (self.drag._lock) {
-        const index = self.index
-        if (index !== self.drag._index) {
-          // if on the same slide as we started dragging or in absolute mode looping
-          // options.free and self.drag._overflow to fix reset when overflowing
-          if (!options.free || self.drag._overflow) {
-            self.goToNum({ index })
-          }
-        } else {
-          // if not on the same slide as we started dragging
-          // depending on direction and if direction is not going back
-          const direction = Math.sign(self.drag._distance)
-          if (
-            direction > 0 &&
-            self.drag._direction > 0 &&
-            (options.loop || self._wrap || index !== self.getElementsGroups().length - 1)
-          ) {
-            if (!options.free || index === self.getElementsGroups().length - 1) {
-              self.goToNext({ amount: 1 })
-            }
-          } else if (direction < 0 && self.drag._direction < 0 && (options.loop || self._wrap || index !== 0)) {
-            if (!options.free || index === 0) {
-              self.goToPrev({ amount: 1 })
-            }
-          } else {
-            if (!self._wrap) {
-              self._logicDragreset()
-            }
-          }
-        }
-      } else {
-        if (!options.free) {
-          self._logicDragreset()
-        }
-      }
-      // auto
-      self._eventAutostart()
-      // dispatch event
-      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self._componentNs}`))
-    })
-  }
-
-  /**
    * drag move public
    * @param {Event} e
    * @param {Object} params
@@ -1243,6 +1157,92 @@ class Slider extends Xt.Toggle {
         self._eventWrap({ index: found })
       }
     }
+  }
+
+  /**
+   * drag off public
+   * @param {Event} e
+   */
+  dragend(e) {
+    const self = this
+    // logic
+    self._logicDragend(e)
+  }
+
+  /**
+   * drag off logic
+   * @param {Event} e
+   */
+  _logicDragend(e) {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // save event
+    if (e.clientX !== undefined) {
+      self.drag._current = e.clientX
+      self.drag._currentOther = e.clientY
+    } else if (e.touches && e.touches.length) {
+      self.drag._current = e.touches[0].clientX
+      self.drag._currentOther = e.touches[0].clientY
+    }
+    // vars
+    self._autoblock = false
+    // disable interaction
+    for (const tr of self.targets) {
+      tr.classList.remove('pointer-events-none')
+    }
+    // fix no drag change when click
+    if (self.drag._start === self.drag._current) {
+      // dispatch event
+      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self._componentNs}`))
+      return
+    }
+    // raf because on.xt.slider event after all drag.xt.slider
+    requestAnimationFrame(() => {
+      // only if dragging enough
+      if (self.drag._lock) {
+        const index = self.index
+        if (index !== self.drag._index) {
+          // if on the same slide as we started dragging or in absolute mode looping
+          // options.free and self.drag._overflow to fix reset when overflowing
+          if (!options.free || self.drag._overflow) {
+            self.goToNum({ index })
+          }
+        } else {
+          // if not on the same slide as we started dragging
+          // depending on direction and if direction is not going back
+          const direction = Math.sign(self.drag._distance)
+          if (
+            direction > 0 &&
+            self.drag._direction > 0 &&
+            (options.loop || self._wrap || index !== self.getElementsGroups().length - 1)
+          ) {
+            if (!options.free || index === self.getElementsGroups().length - 1) {
+              self.goToNext({ amount: 1 })
+            }
+          } else if (direction < 0 && self.drag._direction < 0 && (options.loop || self._wrap || index !== 0)) {
+            if (!options.free || index === 0) {
+              self.goToPrev({ amount: 1 })
+            }
+          } else {
+            if (!self._wrap) {
+              self._logicDragreset()
+            }
+          }
+        }
+      } else {
+        if (!options.free) {
+          self._logicDragreset()
+        }
+      }
+      // auto
+      self._eventAutostart()
+      // dispatch event
+      self.dragger.dispatchEvent(new CustomEvent(`dragend.${self._componentNs}`))
+    })
   }
 
   /**
