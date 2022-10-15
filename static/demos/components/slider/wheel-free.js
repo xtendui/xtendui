@@ -46,8 +46,7 @@ const mountSlider = ({ ref }) => {
     end: 'top top',
     onToggle: self => {
       sticky = self.isActive
-      console.log(self.isActive)
-    }
+    },
   })
   /***/
 
