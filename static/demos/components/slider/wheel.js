@@ -33,6 +33,7 @@ const mountSlider = ({ ref }) => {
   // unmount
 
   return () => {
+    self.dragger.removeEventListener('wheel', wheel)
     self.destroy()
     self = null
   }
@@ -41,7 +42,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-scrolltrigger',
+  matches: '.demo--slider-wheel',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

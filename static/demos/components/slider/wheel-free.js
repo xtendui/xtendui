@@ -1,10 +1,5 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 /* mountSlider */
 
@@ -27,32 +22,20 @@ const mountSlider = ({ ref }) => {
   // Wheel
 
   /***/
-  let sticky = false
-
   const wheel = e => {
-    if (sticky) {
-      const notOverflowing = self.wheelEvent({}, e)
-      if (notOverflowing) {
-        e.preventDefault()
-      }
+    const notOverflowing = self.wheelEvent({}, e)
+    if (notOverflowing) {
+      e.preventDefault()
     }
   }
 
-  window.addEventListener('wheel', wheel, { passive: false })
-
-  ScrollTrigger.create({
-    trigger: slider,
-    start: 'bottom bottom',
-    end: 'top top',
-    onToggle: self => {
-      sticky = self.isActive
-    },
-  })
+  self.dragger.addEventListener('wheel', wheel, { passive: false })
   /***/
 
   // unmount
 
   return () => {
+    self.dragger.removeEventListener('wheel', wheel)
     self.destroy()
     self = null
   }
@@ -61,7 +44,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-scrolltrigger-free',
+  matches: '.demo--slider-wheel-free',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

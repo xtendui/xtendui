@@ -68,6 +68,15 @@ Here's an example of absolute animation with **mask and incoming slide**, on `dr
   </demoinline>
 </demo>
 
+## Automatic Scrolling
+
+Example of **infinite automatic scrolling slider**, with also drag and pauses on interaction and automatically disables if not enough space.
+
+<demo>
+  <demoinline src="demos/components/slider/automatic-scrolling">
+  </demoinline>
+</demo>
+
 ## Wheel
 
 Use `self.wheelEvent` for **interaction on mousewheel** to attach wheel event to drag.
@@ -86,9 +95,7 @@ Use `self.wheelEvent` for **interaction on mousewheel** to attach wheel event to
   </demoinline>
 </demo>
 
-You can attach wheel event to `window` and use [ScrollTrigger](/components/scrolltrigger) to activate the wheel event.
-
-You can also choose when to `e.preventDefault()`, for this you can check for returned value of `self.wheelEvent` if not overflowing.
+You can choose when to `e.preventDefault()`, for this you can check for returned value of `self.wheelEvent` if not overflowing.
 
 <demo>
   <demoinline src="demos/components/slider/wheel-free">
@@ -99,5 +106,12 @@ For **absolute mode** additionally on `dragposition.xt.slider` set the `dragDura
 
 <demo>
   <demoinline src="demos/components/slider/absolute-wheel">
+  </demoinline>
+</demo>
+
+You can attach wheel event to `window` or other DOM elements.
+
+<demo>
+  <demoinline src="demos/components/slider/automatic-scrolling-wheel">
   </demoinline>
 </demo>
