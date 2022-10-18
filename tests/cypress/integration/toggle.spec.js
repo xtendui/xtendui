@@ -172,7 +172,7 @@ describe('demos/components/toggle/quantity', function () {
     self = Xt.get({ name: 'xt-toggle', el: container })
   })
 
-  it.only('TEST initial group activation.', function () {
+  it('TEST initial group activation.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
       .then(() => {
