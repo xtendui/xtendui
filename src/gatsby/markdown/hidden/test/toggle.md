@@ -22,6 +22,14 @@ title: "Toggle Test"
   </demoinline>
 </demo>
 
+`demos/components/toggle/quantity`
+- TEST initial group activation.
+
+<demo>
+  <demoinline src="demos/components/toggle/quantity">
+  </demoinline>
+</demo>
+
 `demos/components/toggle/multiple-group`
 - TEST group activation.
 
