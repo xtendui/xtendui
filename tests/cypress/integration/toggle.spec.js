@@ -152,6 +152,72 @@ describe('demos/components/toggle/class', function () {
   })
 })
 
+describe('demos/components/toggle/quantity', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--toggle-quantity').as('demo')
+    cy.get('@demo').find('[data-xt-toggle]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    cy.get(container).scrollIntoView()
+    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  it.only('TEST initial group activation.', function () {
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(true)
+        expect(self.elements[0].classList.contains('in')).to.equal(true)
+        expect(self.elements[1].classList.contains('on')).to.equal(true)
+        expect(self.elements[1].classList.contains('in')).to.equal(true)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('in')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('in')).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('in')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('in')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('in')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('in')).to.equal(false)
+      })
+      .get(self.elements[2])
+      .click()
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(true)
+        expect(self.elements[2].classList.contains('on')).to.equal(true)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        cy.frameDouble().then(() => {
+          expect(self.elements[0].classList.contains('in')).to.equal(false)
+          expect(self.elements[1].classList.contains('in')).to.equal(true)
+          expect(self.elements[2].classList.contains('in')).to.equal(true)
+          expect(self.elements[3].classList.contains('in')).to.equal(false)
+          expect(self.targets[0].classList.contains('in')).to.equal(false)
+          expect(self.targets[1].classList.contains('in')).to.equal(true)
+          expect(self.targets[2].classList.contains('in')).to.equal(true)
+          expect(self.targets[3].classList.contains('in')).to.equal(false)
+        })
+      })
+  })
+})
+
 describe('demos/components/toggle/multiple-group', function () {
   let win
   let Xt
