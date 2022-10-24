@@ -33,8 +33,8 @@ Here are assets for sharing informations like in articles or other internet medi
 
 ## Background
 
-<div style="width: 200px; height: 100px; display: flex; align-items: center; justify-content: center; background: #0078FF; color: white;">
-  #0078FF
+<div style="width: 200px; height: 100px; display: flex; align-items: center; justify-content: center; background: #0067DD; color: white;">
+  #0067DD
 </div>
 
 <p></p>

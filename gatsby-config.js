@@ -43,8 +43,8 @@ module.exports = {
       options: {
         name: 'Xtend UI',
         start_url: '/',
-        background_color: '#0078ff',
-        theme_color: '#0058C6',
+        background_color: '#0067DD',
+        theme_color: '#0067DD',
         display: 'minimal-ui',
         include_favicon: false, // favicon with helmet
         icon: './static/apple-touch-icon.png', // icons generated with this 512x512

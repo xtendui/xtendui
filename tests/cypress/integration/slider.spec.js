@@ -736,8 +736,8 @@ describe('demos/components/slider/navigation', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
       })
       .get(self.targets[0])
-      .trigger('mousedown', { which: 1 })
-      .trigger('mousemove', { clientX: 900, clientY: 0 })
+      .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 })
+      .trigger('mousemove', { clientX: 400, clientY: 0 })
       .wait(100)
       .trigger('mouseup', { force: true })
       .wait(750) // after animation
@@ -751,8 +751,8 @@ describe('demos/components/slider/navigation', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(true)
       })
       .get(self.targets[6])
-      .trigger('mousedown', { which: 1 })
-      .trigger('mousemove', { clientX: 900, clientY: 0 })
+      .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 })
+      .trigger('mousemove', { clientX: -400, clientY: 0 })
       .wait(100)
       .trigger('mouseup', { force: true })
       .wait(750) // after animation
@@ -770,13 +770,15 @@ describe('demos/components/slider/navigation', function () {
 
 describe('demos/components/slider/pagination', function () {
   let win
+  let doc
   let Xt
   let container
   let self
   let toggles
+  let scroll
 
   beforeEach(function () {
-    cy.visit(url).window().as('win')
+    cy.visit(url).window().as('win').document().as('doc')
     cy.get('.demo--slider-pagination').as('demo')
     cy.get('@demo').find('[data-xt-slider]').as('container')
     cy.get('@demo').find('[data-xt-slider-element]').as('toggles')
@@ -784,6 +786,7 @@ describe('demos/components/slider/pagination', function () {
 
   beforeEach(function () {
     win = this.win
+    doc = this.doc
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
@@ -791,7 +794,7 @@ describe('demos/components/slider/pagination', function () {
     toggles = this.toggles
   })
 
-  it('TEST pagination elements activation also on init.', function () {
+  it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
@@ -832,6 +835,81 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[11].classList.contains('on')).to.equal(false)
         expect(toggles[12].classList.contains('on')).to.equal(false)
         expect(toggles[13].classList.contains('on')).to.equal(true)
+        expect(toggles[14].classList.contains('on')).to.equal(false)
+        expect(toggles[15].classList.contains('on')).to.equal(false)
+        expect(toggles[16].classList.contains('on')).to.equal(false)
+        expect(toggles[17].classList.contains('on')).to.equal(false)
+        scroll = doc.scrollingElement.scrollTop
+      })
+      .get(toggles[6])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -200, clientY: 0 }] })
+      .then(() => {
+        expect(toggles[6].closest('.pointer-events-none')).to.not.equal(null)
+      })
+      .trigger('touchmove', {
+        clientX: undefined,
+        clientY: undefined,
+        touches: [{ pageX: 0, pageY: 200 }],
+        force: true,
+      })
+      .wait(100)
+      .trigger('touchend', { force: true })
+      .wait(750) // after animation
+      .then(() => {
+        expect(toggles[0].classList.contains('on')).to.equal(false)
+        expect(toggles[1].classList.contains('on')).to.equal(false)
+        expect(toggles[2].classList.contains('on')).to.equal(true)
+        expect(toggles[3].classList.contains('on')).to.equal(false)
+        expect(toggles[4].classList.contains('on')).to.equal(false)
+        expect(toggles[5].classList.contains('on')).to.equal(false)
+        expect(toggles[6].classList.contains('on')).to.equal(false)
+        expect(toggles[7].classList.contains('on')).to.equal(false)
+        expect(toggles[8].classList.contains('on')).to.equal(true)
+        expect(toggles[9].classList.contains('on')).to.equal(false)
+        expect(toggles[10].classList.contains('on')).to.equal(false)
+        expect(toggles[11].classList.contains('on')).to.equal(false)
+        expect(toggles[12].classList.contains('on')).to.equal(false)
+        expect(toggles[13].classList.contains('on')).to.equal(false)
+        expect(toggles[14].classList.contains('on')).to.equal(true)
+        expect(toggles[15].classList.contains('on')).to.equal(false)
+        expect(toggles[16].classList.contains('on')).to.equal(false)
+        expect(toggles[17].classList.contains('on')).to.equal(false)
+        expect(doc.scrollingElement.scrollTop).to.equal(scroll)
+      })
+      .get(self.targets[3])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 200 }] })
+      .wait(100)
+      .trigger('touchend', { force: true })
+      .then(() => {
+        expect(doc.scrollingElement.scrollTop).to.not.equal(scroll)
+      })
+      .get(toggles[18])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })
+      .then(() => {
+        expect(toggles[6].closest('.pointer-events-none')).to.equal(null)
+      })
+      .wait(100)
+      .trigger('click')
+      .trigger('touchend', { force: true })
+      .wait(750) // after animation
+      .then(() => {
+        expect(toggles[0].classList.contains('on')).to.equal(true)
+        expect(toggles[1].classList.contains('on')).to.equal(false)
+        expect(toggles[2].classList.contains('on')).to.equal(false)
+        expect(toggles[3].classList.contains('on')).to.equal(false)
+        expect(toggles[4].classList.contains('on')).to.equal(false)
+        expect(toggles[5].classList.contains('on')).to.equal(false)
+        expect(toggles[6].classList.contains('on')).to.equal(true)
+        expect(toggles[7].classList.contains('on')).to.equal(false)
+        expect(toggles[8].classList.contains('on')).to.equal(false)
+        expect(toggles[9].classList.contains('on')).to.equal(false)
+        expect(toggles[10].classList.contains('on')).to.equal(false)
+        expect(toggles[11].classList.contains('on')).to.equal(false)
+        expect(toggles[12].classList.contains('on')).to.equal(true)
+        expect(toggles[13].classList.contains('on')).to.equal(false)
         expect(toggles[14].classList.contains('on')).to.equal(false)
         expect(toggles[15].classList.contains('on')).to.equal(false)
         expect(toggles[16].classList.contains('on')).to.equal(false)
@@ -1101,19 +1179,18 @@ describe('demos/components/slider/media-loaded', function () {
     cy.get(container).scrollIntoView()
     self = Xt.get({ name: 'xt-slider', el: container })
   })
-
   it('TEST activation and position on change.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
-      .get(container)
-      .scrollIntoView()
       .find('[data-xt-slider-element]')
       .should('have.class', 'xt-medialoaded') // racecondition
       .eq(5)
       .click({ force: true })
       .get(container)
       .find('[data-xt-slider-target]')
+      .eq(5)
       .should('have.class', 'xt-medialoaded') // racecondition
+      .wait(1000)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1122,7 +1199,7 @@ describe('demos/components/slider/media-loaded', function () {
         expect(self.targets[4].classList.contains('on')).to.equal(false)
         expect(self.targets[5].classList.contains('on')).to.equal(true)
         expect(self.targets[6].classList.contains('on')).to.equal(false)
-        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-3776px)')
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-2834px)')
       })
   })
 })

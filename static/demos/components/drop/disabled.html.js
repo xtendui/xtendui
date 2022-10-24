@@ -36,7 +36,7 @@ const html = /* HTML */ `
                   </button>
 
                   <div class="xt-drop p-3" data-xt-drop-target-nested>
-                    <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+                    <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
                     <div
                       class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()}">
                       <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">

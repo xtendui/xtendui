@@ -161,6 +161,7 @@ class Infinitescroll {
     self._setCurrent()
     self._update()
     self._paginate()
+    self._prefetch()
     if (self.itemsContainer) {
       const found = self.itemsContainer.querySelector(options.elements.item)
       if (found) {
@@ -210,16 +211,34 @@ class Infinitescroll {
       self._setCurrent({ page: options.min })
       location = self._url.href
     } else {
-      let current = self.current + amount
-      current = current < options.min ? options.min : current
-      current = current > options.max ? options.max : current
+      const current = self._getNext({ amount })
       const items = self.itemsContainer.querySelectorAll(`[data-item-first="${current}"]`)
       if (current !== self.current && !items.length) {
         self._setCurrent({ page: current })
         self.inverse = !!up
-        self._request()
+        // not if requesting
+        if (!self.container.classList.contains('xt-infinitescroll-loading')) {
+          self.container.classList.add('xt-infinitescroll-loading')
+          self._request()
+          self._prefetch({ trigger })
+        }
       }
     }
+  }
+
+  /**
+   * get next page index
+   * @param {Object} params
+   * @param {Number} params.amount
+   */
+  _getNext({ amount } = {}) {
+    const self = this
+    const options = self.options
+    // return next index
+    let current = self.current + amount
+    current = current < options.min ? options.min : current
+    current = current > options.max ? options.max : current
+    return current
   }
 
   /**
@@ -308,23 +327,23 @@ class Infinitescroll {
    */
   _request() {
     const self = this
-    // not if requesting
-    if (!self.container.classList.contains('xt-infinitescroll-loading')) {
-      // class
-      self.container.classList.add('xt-infinitescroll-loading')
-      // request
-      const request = new XMLHttpRequest()
-      request.open('GET', self._url.href, true)
-      request.onload = () => {
-        // response
-        self._response({ request })
-      }
-      request.onerror = () => {
-        // response
-        self._response({ request })
-      }
-      request.send()
-    }
+    // request
+    fetch(self._url.href, {
+      method: 'GET',
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.text()
+        } else {
+          return Promise.reject(response)
+        }
+      })
+      .then(text => {
+        self._success({ text })
+      })
+      .catch(() => {
+        self._error()
+      })
   }
 
   /**
@@ -345,14 +364,14 @@ class Infinitescroll {
   /**
    * success
    * @param {Object} params
-   * @param {XMLHttpRequest|Object} params.request Html response
+   * @param {String} params.text Html response
    */
-  _success({ request } = {}) {
+  _success({ text } = {}) {
     const self = this
     const options = self.options
     // set substitute
     const html = document.createElement('html')
-    html.innerHTML = request.responseText.trim()
+    html.innerHTML = text
     const itemsContainer = html.querySelector(options.elements.itemsContainer)
     if (options.get && itemsContainer) {
       self._populate({ itemsContainer })
@@ -523,9 +542,39 @@ class Infinitescroll {
     const get = searchParams.get(options.get)
     self.current = page !== null ? page : get ? parseFloat(get) : self.current
     searchParams.set(options.get, self.current)
-    // set url
     url.search = searchParams.toString()
     self._url = url
+  }
+
+  /**
+   * prefetch next page
+   */
+  _prefetch({ trigger } = {}) {
+    const self = this
+    const options = self.options
+    // loop scroll down
+    if (options.prefetch) {
+      const triggers = trigger ? [trigger] : [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]
+      for (const trigger of triggers) {
+        const up = parseFloat(trigger.getAttribute('data-xt-infinitescroll-up'))
+        const down = parseFloat(trigger.getAttribute('data-xt-infinitescroll-down'))
+        const amount = up || down
+        // check url
+        const url = new URL(location.href)
+        const searchParams = new URLSearchParams(url.search)
+        // prefetch
+        const next = self._getNext({ amount })
+        if (self.current !== next) {
+          searchParams.set(options.get, next)
+          url.search = searchParams.toString()
+          const link = document.createElement('link')
+          link.rel = 'prefetch'
+          link.href = url
+          link.as = 'fetch'
+          document.head.appendChild(link)
+        }
+      }
+    }
   }
 
   /**
@@ -577,6 +626,7 @@ Infinitescroll.optionsDefault = {
   // infinitescroll
   get: false,
   nocache: false,
+  prefetch: true,
   // quantity
   min: 1,
   max: 'Infinity',

@@ -79,6 +79,12 @@ Many advanced usage of toggle components are in the addon pages.
 
 ## Scroll
 
+#### InfiniteScroll
+
+InfiniteScroll is a plugin that makes infinitescroll easy, **also activable on click instead of scroll** and it **automatically prefetches next page**.
+
+See [infinite-scroll](/components/infinite-scroll) for more info.
+
 #### ScrollTrigger
 
 Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sort of interaction on page scroll**.
@@ -152,6 +158,8 @@ The **group nav tabs and toolbar components** are components that use [list](/co
 - Media [html5 video autoplay lazy](/components/media/addon#video-autoplay-lazy).
 
 - Media [html5 video media matches](/components/media/addon#video-matches).
+
+- InfiniteScroll [prefetch automatically next page](/components/infinite-scroll).
 
 ## Themes
 

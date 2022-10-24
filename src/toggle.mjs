@@ -252,17 +252,13 @@ class Toggle {
     // check initial activation
     currents = self._initActivate({ save })
     // if currents < min
-    const todo = options.min - currents
-    const start = 0
+    let todo = options.min - currents
     if (todo > 0) {
       // initial
       currents += todo
-    }
-    // todo
-    if (todo > 0) {
-      for (let i = start; i < todo; i++) {
+      for (let i = 0; i < todo; i++) {
         const el = self.elements[i]
-        if (el) {
+        if (el && !el.classList.contains([...self._classes]) && !el.checked) {
           // toggle event if present because of custom listeners
           if (options.on) {
             const event = options.on.split(' ')[0]
@@ -271,6 +267,8 @@ class Toggle {
           } else {
             self._eventOn({ el, force: true })
           }
+        } else if (todo < self.elements.length - 1) {
+          todo++
         }
       }
     }

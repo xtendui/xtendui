@@ -83,7 +83,7 @@ class Tooltip extends Xt.Toggle {
               name: 'arrow',
               options: {
                 element: arrow,
-                padding: options.spaceArrow === false ? arrow.offsetHeight / 2 : options.spaceArrow,
+                padding: options.spaceArrow === false ? arrow.getBoundingClientRect().height / 2 : options.spaceArrow,
               },
             })
           }

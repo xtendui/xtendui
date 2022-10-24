@@ -111,7 +111,7 @@ export default function Header({ page }) {
           </div>
 
           <div className={`xt-overlay group ${overlayOpen ? 'on' : ''}`} id="gatsby_menu--overlay" aria-label="Menu">
-            <div className="xt-backdrop z-below bg-gray-800 transition opacity-0 group-in:opacity-25"></div>
+            <div className="xt-backdrop z-below bg-gray-900 transition opacity-0 group-in:opacity-25"></div>
             <div className="xt-overlay-container p-0 w-screen max-w-xs ml-auto mr-0">
               <div className="xt-overlay-inner">
                 <div

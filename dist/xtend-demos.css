@@ -21,6 +21,7 @@
 @import 'xtendui/static/demos/components/scrolltrigger/fade.css';
 @import 'xtendui/static/demos/components/scrolltrigger/sticky-hide-direction-sub.css';
 @import 'xtendui/static/demos/components/slider/animation-css.css';
+@import 'xtendui/static/demos/components/slider/exclude.css';
 @import 'xtendui/static/demos/components/slider/expand.css';
 @import 'xtendui/static/demos/components/slider/media-loaded.css';
 @import 'xtendui/static/demos/components/slider/navsides.css';
@@ -31,6 +32,7 @@
 @import 'xtendui/static/demos/components/tooltip/animation-css.css';
 @import 'xtendui/static/demos/components/tooltip/disabled.css';
 @import 'xtendui/static/demos/components/typography/listcustom.css';
+@import 'xtendui/static/demos/themes/animation/electric-animation-v1.css';
 @import 'xtendui/static/demos/themes/animation/ellipse-animation-v1.css';
 @import 'xtendui/static/demos/themes/animation/polygon-animation-v1.css';
 @import 'xtendui/static/demos/themes/animation/ripple-animation-v1.css';

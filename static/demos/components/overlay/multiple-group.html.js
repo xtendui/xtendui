@@ -28,7 +28,7 @@ const html = /* HTML */ `
       </button>
 
       <div class="xt-overlay" data-xt-overlay-target data-xt-group="group0">
-        <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+        <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
@@ -90,7 +90,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-overlay" data-xt-overlay-target data-xt-group="group1">
-        <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+        <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div
@@ -152,7 +152,7 @@ const html = /* HTML */ `
       </div>
 
       <div class="xt-overlay" data-xt-overlay-target data-xt-group="group2">
-        <div class="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+        <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
             <div

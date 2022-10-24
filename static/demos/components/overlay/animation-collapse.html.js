@@ -12,7 +12,7 @@ const html = /* HTML */ `
       </button>
 
       <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
-        <div class="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+        <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
             class="xt-overlay-inner *** transition opacity-0 -translate-y-4 group-in:opacity-100 group-in:translate-y-0 group-out:translate-y-4 ***">

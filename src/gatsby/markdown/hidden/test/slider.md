@@ -120,7 +120,7 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/pagination`
-- TEST pagination elements activation also on init.
+- TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.
 
 <demo>
   <demoinline src="demos/components/slider/pagination">

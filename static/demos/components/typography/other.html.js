@@ -1,7 +1,7 @@
 const html = /* HTML */ `
   <div>
     <figure>
-      <img src="/img.svg" loading="lazy" alt="" />
+      <img src="/img.jpg" loading="lazy" alt="" />
       <figcaption>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex
         at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
