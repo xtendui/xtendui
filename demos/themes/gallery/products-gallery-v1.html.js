@@ -214,7 +214,7 @@ const html = /* HTML */ `
                 </div>
 
                 <div aria-label="Modal" class="xt-overlay group" id="overlay--product-images">
-                  <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
+                  <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
                   <div class="xt-overlay-container *** p-0 ***">
                     <button
                       type="button"

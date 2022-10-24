@@ -391,7 +391,7 @@ export default function Demo() {
               <div className="*** xt-design *** rounded-md shadow-md bg-white *** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
               <div className="xt-card w-80 text-gray-900 xt-links-default">
                 <div className="xt-media-container bg-gray-200 rounded-t-md h-32 *** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div>
                   <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap py-1.5 px-3 text-sm *** opacity-0 translate-y-2 group-in:transition group-in:duration-500 group-in:delay-200 group-in:opacity-100 group-in:translate-y-0 group-out:transition group-out:duration-300 group-out:ease-in-out-quint group-out:-translate-y-2 ***">
@@ -437,7 +437,7 @@ export default function Demo() {
           </button>
 
           <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div className="*** xt-design *** rounded-2xl shadow-xl bg-white *** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
@@ -554,7 +554,7 @@ export default function Demo() {
 
                     <div className="md:w-5/12 *** flex flex-col ***">
                       <div className="xt-media-container bg-gray-200 md:rounded-tr-2xl h-48 md:pb-[100%]">
-                        <img className="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+                        <img className="xt-media object-cover" src="/img.jpg" loading="eager" alt="" />
                       </div>
                       <div className="*** p-7 sm:p-9 text-base rounded-b-2xl md:rounded-bl-none bg-primary-100 flex-auto ***">
                         <p className="xt-h5">Didn&apos;t find what you was looking for?</p>
@@ -580,7 +580,7 @@ export default function Demo() {
           </button>
 
           <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div className="*** xt-design *** rounded-2xl shadow-xl bg-white *** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>
@@ -609,7 +609,7 @@ export default function Demo() {
                   <div className="*** md:xt-card-group ***">
                     <div className="md:w-5/12 *** flex flex-col ***">
                       <div className="xt-media-container bg-gray-200 rounded-t-2xl md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto">
-                        <img className="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+                        <img className="xt-media object-cover" src="/img.jpg" loading="eager" alt="" />
                       </div>
                     </div>
 
@@ -719,7 +719,7 @@ export default function Demo() {
           </button>
 
           <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner">
                 <div className="*** xt-design *** shadow-xl bg-black *** opacity-0 scale-50 group-in:transition group-in:duration-500 group-in:opacity-100 group-in:scale-100 group-out:transition group-out:duration-300 group-out:delay-200 group-out:ease-in-out-quint ***"></div>

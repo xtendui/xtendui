@@ -33,7 +33,7 @@ export default function Demo() {
         </button>
 
         <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
-          <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">
@@ -107,7 +107,7 @@ export default function Demo() {
         </div>
 
         <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
-          <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">
@@ -181,7 +181,7 @@ export default function Demo() {
         </div>
 
         <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
-          <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">

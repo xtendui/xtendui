@@ -39,7 +39,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">0 Lorem ipsum</div>
@@ -51,7 +51,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">1 Dolor sit amet</div>
@@ -63,7 +63,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">2 Lorem ipsum</div>
@@ -75,7 +75,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">3 Dolor sit amet</div>
@@ -87,7 +87,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">4 Lorem Ipsum</div>
@@ -99,7 +99,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">5 Dolor sit amet</div>
@@ -111,7 +111,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">6 Lorem Ipsum</div>
@@ -123,7 +123,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">7 Dolor sit amet</div>
@@ -135,7 +135,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">8 Lorem Ipsum</div>
@@ -147,7 +147,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">9 Dolor sit amet</div>
@@ -159,7 +159,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">10 Lorem Ipsum</div>
@@ -171,7 +171,7 @@ const html = /* HTML */ `
           <div class="w-6/12 md:w-4/12 lg:w-3/12">
             <a href="https://github.com/xtendui/xtendui" class="listing-item block">
               <div class="xt-media-container bg-gray-200 pb-[75%]">
-                <img class="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
               </div>
               <div class="py-4">
                 <div class="xt-h6">11 Dolor sit amet</div>

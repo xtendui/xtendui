@@ -1,0 +1,13 @@
+
+.demo--electric-animation-v1, .demo--electric-animation-v1-react {
+  .anim-border {
+    @apply absolute inset-0 z-10 rounded-inherit border;
+  }
+  /* color */
+  .anim-border {
+    @apply border-black;
+  }
+  [class*="text-white"] .anim-border, .anim-border.anim-border--inverse {
+    @apply border-white;
+  }
+}

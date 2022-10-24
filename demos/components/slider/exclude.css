@@ -1,0 +1,12 @@
+.demo--slider-exclude, .demo--slider-exclude-react {
+  .xt-slider {
+    &:not([data-xt-slider-init]) {
+      .xt-slide:first-child {
+        visibility: hidden !important;
+        [data-xt-toggle-target] {
+          display: block !important;
+        }
+      }
+    }
+  }
+}

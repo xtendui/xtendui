@@ -18,8 +18,8 @@ export default function Demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
-                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
+                <div className="*** xt-media-container *** bg-gray-900 pb-[75%] overflow-hidden">
+                  <img className="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
@@ -46,8 +46,8 @@ export default function Demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
-                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
+                <div className="*** xt-media-container *** bg-gray-900 pb-[75%] overflow-hidden">
+                  <img className="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10 sm:order-1">
@@ -74,8 +74,8 @@ export default function Demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0">
-                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
+                <div className="*** xt-media-container *** bg-gray-900 pb-[75%] overflow-hidden">
+                  <img className="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
@@ -104,8 +104,8 @@ export default function Demo() {
           <div className="container">
             <div className="xt-row items-center">
               <div className="w-full md:w-5/12 z-0 sm:order-2">
-                <div className="*** xt-media-container *** bg-gray-500 pb-[75%] overflow-hidden">
-                  <img className="*** xt-media *** object-cover" src="/img.svg" loading="lazy" alt="" />
+                <div className="*** xt-media-container *** bg-gray-900 pb-[75%] overflow-hidden">
+                  <img className="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
               </div>
               <div className="w-full md:w-7/12 z-10">
@@ -228,7 +228,6 @@ const mountButtonsLine = ({ ref }) => {
       const media = link.querySelector('.xt-media-container')
       gsap.killTweensOf(media)
       gsap.to(media, {
-        opacity: mediaOpacityIn,
         scale: 1 - mediaScale,
         duration: 1,
         ease: 'expo.out',
@@ -236,6 +235,7 @@ const mountButtonsLine = ({ ref }) => {
       const mediaInner = link.querySelector('.xt-media')
       gsap.killTweensOf(mediaInner)
       gsap.to(mediaInner, {
+        opacity: mediaOpacityIn,
         scale: 1 + mediaScale,
         duration: 1,
         ease: 'expo.out',
@@ -284,17 +284,17 @@ const mountButtonsLine = ({ ref }) => {
       const media = link.querySelector('.xt-media-container')
       gsap.killTweensOf(media)
       gsap.to(media, {
-        opacity: mediaOpacityOut,
         scale: 1,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
       })
       const mediaInner = link.querySelector('.xt-media')
       gsap.killTweensOf(mediaInner)
       gsap.to(mediaInner, {
+        opacity: mediaOpacityOut,
         scale: 1,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
       })
       // content
       const content = link.querySelector('.button--line-content')
@@ -302,7 +302,7 @@ const mountButtonsLine = ({ ref }) => {
       gsap.to(content, {
         x: 0,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
       })
       // line
       const line = link.querySelector('.button--line-design')
@@ -312,7 +312,7 @@ const mountButtonsLine = ({ ref }) => {
         x: 0,
         opacity: lineOpacity,
         duration: 1,
-        ease: 'expo.inOut',
+        ease: 'expo.out',
         overwrite: true,
       })
     }

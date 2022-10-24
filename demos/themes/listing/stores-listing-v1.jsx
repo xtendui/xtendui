@@ -17,7 +17,7 @@ export default function Demo() {
                 <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
                   <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <div className="xt-media-container bg-gray-200 w-full rounded-t-2xl h-40">
-                      <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                      <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                     </div>
                     <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -88,7 +88,7 @@ export default function Demo() {
                 <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
                   <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <div className="xt-media-container bg-gray-200 w-full rounded-t-2xl h-40">
-                      <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                      <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                     </div>
                     <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -143,7 +143,7 @@ export default function Demo() {
                 <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
                   <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <div className="xt-media-container bg-gray-200 w-full rounded-t-2xl h-40">
-                      <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                      <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                     </div>
                     <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -214,7 +214,7 @@ export default function Demo() {
                 <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
                   <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <div className="xt-media-container bg-gray-200 w-full rounded-t-2xl h-40">
-                      <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                      <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                     </div>
                     <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>
@@ -269,7 +269,7 @@ export default function Demo() {
                 <div className="*** listing-item-inner *** h-full transition ease-in-out-quad">
                   <div className="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded-2xl text-gray-900 xt-links-default bg-gray-100">
                     <div className="xt-media-container bg-gray-200 w-full rounded-t-2xl h-40">
-                      <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                      <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                     </div>
                     <div className="p-6 sm:p-8 text-sm">
                       <div className="xt-h5">Lorem Ipsum</div>

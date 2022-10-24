@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </button>
 
           <div class="xt-tooltip p-3" data-xt-tooltip-target>
-            <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
+            <div class="*** xt-backdrop z-below bg-gray-900 opacity-25 ***"></div>
             <div
               class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
               <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
@@ -32,7 +32,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-tooltip p-3" data-xt-tooltip-target>
-          <div class="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
+          <div class="*** xt-backdrop z-below bg-gray-900 opacity-25 ***"></div>
           <div
             class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>

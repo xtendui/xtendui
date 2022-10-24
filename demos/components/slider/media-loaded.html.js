@@ -11,7 +11,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/img.svg"
+                src="/img.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -21,7 +21,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/img.svg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/img.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -29,7 +29,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/img-ratio.svg"
+                src="/img-ratio.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -39,7 +39,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/img-ratio.svg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/img-ratio.jpg" loading="eager" alt="" />
             </div>
           </div>
 

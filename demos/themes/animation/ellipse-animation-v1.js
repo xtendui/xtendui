@@ -12,35 +12,31 @@ const animBackgroundOn = ({ background } = {}) => {
   gsap.set(background, {
     'clip-path': 'ellipse(50% 0% at 50% 150%)',
   })
-  gsap
-    .to(background, {
-      keyframes: [
-        { 'clip-path': 'ellipse(50% 60% at 50% 125%)' },
-        { 'clip-path': 'ellipse(65% 70% at 50% 100%)' },
-        { 'clip-path': 'ellipse(100% 60% at 50% 75%)' },
-        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-        { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.65,
-    })
-    .timeline.duration()
+  gsap.to(background, {
+    keyframes: [
+      { 'clip-path': 'ellipse(50% 60% at 50% 125%)' },
+      { 'clip-path': 'ellipse(65% 70% at 50% 100%)' },
+      { 'clip-path': 'ellipse(100% 60% at 50% 75%)' },
+      { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+      { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
+    ],
+    ease: 'quint.inOut',
+    duration: 0.65,
+  })
 }
 
 const animBackgroundOff = ({ background } = {}) => {
   gsap.killTweensOf(background)
-  gsap
-    .to(background, {
-      keyframes: [
-        { 'clip-path': 'ellipse(100% 60% at 50% 25%)' },
-        { 'clip-path': 'ellipse(65% 70% at 50% 0%)' },
-        { 'clip-path': 'ellipse(50% 60% at 50% -25%)' },
-        { 'clip-path': 'ellipse(50% 0% at 50% -50%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.65,
-    })
-    .timeline.duration()
+  gsap.to(background, {
+    keyframes: [
+      { 'clip-path': 'ellipse(100% 60% at 50% 25%)' },
+      { 'clip-path': 'ellipse(65% 70% at 50% 0%)' },
+      { 'clip-path': 'ellipse(50% 60% at 50% -25%)' },
+      { 'clip-path': 'ellipse(50% 0% at 50% -50%)' },
+    ],
+    ease: 'quint.inOut',
+    duration: 0.65,
+  })
 }
 
 /* mask */
@@ -51,70 +47,62 @@ const animMaskOn = ({ mask, inverse } = {}) => {
     gsap.set(mask, {
       'clip-path': 'ellipse(100% 0% at 50% -50%)',
     })
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   } else {
     gsap.killTweensOf(mask)
     gsap.set(mask, {
       'clip-path': 'ellipse(100% 0% at 50% 150%)',
     })
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(100% 60% at 50% 125%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(100% 60% at 50% 125%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   }
 }
 
 const animMaskOff = ({ mask, inverse } = {}) => {
   if (inverse) {
     gsap.killTweensOf(mask)
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
-          { 'clip-path': 'ellipse(100% 0% at 50% 150%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
+        { 'clip-path': 'ellipse(100% 0% at 50% 150%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   } else {
     gsap.killTweensOf(mask)
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
-          { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
-          { 'clip-path': 'ellipse(100% 0% at 50% -50%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
+        { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
+        { 'clip-path': 'ellipse(100% 0% at 50% -50%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   }
 }
 

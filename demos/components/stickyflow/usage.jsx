@@ -19,7 +19,7 @@ export default function Demo() {
                 <div className="xt-list flex-col">
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-200">
-                      <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                      <img className="xt-media relative" id="product-image-5" src="/img.jpg" loading="lazy" alt="" />
                     </div>
                   </div>
 
@@ -28,7 +28,7 @@ export default function Demo() {
                       <img
                         className="xt-media relative"
                         id="product-image-5"
-                        src="/img-alt.svg"
+                        src="/img-alt.jpg"
                         loading="lazy"
                         alt=""
                       />
@@ -37,7 +37,7 @@ export default function Demo() {
 
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-200">
-                      <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                      <img className="xt-media relative" id="product-image-5" src="/img.jpg" loading="lazy" alt="" />
                     </div>
                   </div>
 
@@ -46,7 +46,7 @@ export default function Demo() {
                       <img
                         className="xt-media relative"
                         id="product-image-5"
-                        src="/img-alt.svg"
+                        src="/img-alt.jpg"
                         loading="lazy"
                         alt=""
                       />
@@ -55,7 +55,7 @@ export default function Demo() {
 
                   <div className="w-full">
                     <div className="xt-media-container bg-gray-200">
-                      <img className="xt-media relative" id="product-image-5" src="/img.svg" loading="lazy" alt="" />
+                      <img className="xt-media relative" id="product-image-5" src="/img.jpg" loading="lazy" alt="" />
                     </div>
                   </div>
                 </div>

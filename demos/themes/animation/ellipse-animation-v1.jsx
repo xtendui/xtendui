@@ -380,7 +380,7 @@ export default function Demo() {
               <div className="shadow-md *** xt-shadow z-below absolute inset-0 opacity-0 ***"></div>
               <div className="xt-card w-80 text-gray-900 xt-links-default rounded-md bg-white">
                 <div className="xt-media-container bg-gray-200 rounded-t-md h-32">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div>
                   <div className="xt-list xt-list-3 flex-auto items-center justify-start text-left flex-nowrap py-1.5 px-3 text-sm">
@@ -425,7 +425,7 @@ export default function Demo() {
           </button>
 
           <div aria-label="Modal" className="xt-overlay" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div className="shadow-xl *** xt-shadow z-below absolute inset-0 opacity-0 ***"></div>
@@ -541,7 +541,7 @@ export default function Demo() {
 
                     <div className="md:w-5/12 *** flex flex-col ***">
                       <div className="xt-media-container bg-gray-200 md:rounded-tr-2xl h-48 md:pb-[100%]">
-                        <img className="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+                        <img className="xt-media object-cover" src="/img.jpg" loading="eager" alt="" />
                       </div>
                       <div className="*** p-7 sm:p-9 text-base rounded-b-2xl md:rounded-bl-none bg-primary-100 flex-auto ***">
                         <p className="xt-h5">Didn&apos;t find what you was looking for?</p>
@@ -567,7 +567,7 @@ export default function Demo() {
           </button>
 
           <div aria-label="Modal" className="xt-overlay" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
             <div className="xt-overlay-container max-w-5xl">
               <div className="xt-overlay-inner">
                 <div className="shadow-xl *** xt-shadow z-below absolute inset-0 opacity-0 ***"></div>
@@ -595,7 +595,7 @@ export default function Demo() {
                   <div className="*** md:xt-card-group ***">
                     <div className="md:w-5/12 *** flex flex-col ***">
                       <div className="xt-media-container bg-gray-200 rounded-t-2xl md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto">
-                        <img className="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+                        <img className="xt-media object-cover" src="/img.jpg" loading="eager" alt="" />
                       </div>
                     </div>
 
@@ -705,7 +705,7 @@ export default function Demo() {
           </button>
 
           <div aria-label="Modal" className="xt-overlay" data-xt-overlay-target>
-            <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 ***"></div>
+            <div className="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
             <div className="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
               <div className="xt-overlay-inner">
                 <div className="shadow-xl *** xt-shadow z-below absolute inset-0 opacity-0 ***"></div>
@@ -1187,35 +1187,31 @@ const animBackgroundOn = ({ background } = {}) => {
   gsap.set(background, {
     'clip-path': 'ellipse(50% 0% at 50% 150%)',
   })
-  gsap
-    .to(background, {
-      keyframes: [
-        { 'clip-path': 'ellipse(50% 60% at 50% 125%)' },
-        { 'clip-path': 'ellipse(65% 70% at 50% 100%)' },
-        { 'clip-path': 'ellipse(100% 60% at 50% 75%)' },
-        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-        { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.65,
-    })
-    .timeline.duration()
+  gsap.to(background, {
+    keyframes: [
+      { 'clip-path': 'ellipse(50% 60% at 50% 125%)' },
+      { 'clip-path': 'ellipse(65% 70% at 50% 100%)' },
+      { 'clip-path': 'ellipse(100% 60% at 50% 75%)' },
+      { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+      { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
+    ],
+    ease: 'quint.inOut',
+    duration: 0.65,
+  })
 }
 
 const animBackgroundOff = ({ background } = {}) => {
   gsap.killTweensOf(background)
-  gsap
-    .to(background, {
-      keyframes: [
-        { 'clip-path': 'ellipse(100% 60% at 50% 25%)' },
-        { 'clip-path': 'ellipse(65% 70% at 50% 0%)' },
-        { 'clip-path': 'ellipse(50% 60% at 50% -25%)' },
-        { 'clip-path': 'ellipse(50% 0% at 50% -50%)' },
-      ],
-      ease: 'quint.inOut',
-      duration: 0.65,
-    })
-    .timeline.duration()
+  gsap.to(background, {
+    keyframes: [
+      { 'clip-path': 'ellipse(100% 60% at 50% 25%)' },
+      { 'clip-path': 'ellipse(65% 70% at 50% 0%)' },
+      { 'clip-path': 'ellipse(50% 60% at 50% -25%)' },
+      { 'clip-path': 'ellipse(50% 0% at 50% -50%)' },
+    ],
+    ease: 'quint.inOut',
+    duration: 0.65,
+  })
 }
 
 /* mask */
@@ -1226,70 +1222,62 @@ const animMaskOn = ({ mask, inverse } = {}) => {
     gsap.set(mask, {
       'clip-path': 'ellipse(100% 0% at 50% -50%)',
     })
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   } else {
     gsap.killTweensOf(mask)
     gsap.set(mask, {
       'clip-path': 'ellipse(100% 0% at 50% 150%)',
     })
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(100% 60% at 50% 125%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(100% 60% at 50% 125%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(3000% 50% at 50% 50%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   }
 }
 
 const animMaskOff = ({ mask, inverse } = {}) => {
   if (inverse) {
     gsap.killTweensOf(mask)
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
-          { 'clip-path': 'ellipse(100% 0% at 50% 150%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 75%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 100%)' },
+        { 'clip-path': 'ellipse(100% 0% at 50% 150%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   } else {
     gsap.killTweensOf(mask)
-    gsap
-      .to(mask, {
-        keyframes: [
-          { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
-          { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
-          { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
-          { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
-          { 'clip-path': 'ellipse(100% 0% at 50% -50%)' },
-        ],
-        ease: 'quint.inOut',
-        duration: 0.8,
-      })
-      .timeline.duration()
+    gsap.to(mask, {
+      keyframes: [
+        { 'clip-path': 'ellipse(300% 50% at 50% 50%)' },
+        { 'clip-path': 'ellipse(150% 60% at 50% 25%)' },
+        { 'clip-path': 'ellipse(125% 70% at 50% 0%)' },
+        { 'clip-path': 'ellipse(100% 60% at 50% -25%)' },
+        { 'clip-path': 'ellipse(100% 0% at 50% -50%)' },
+      ],
+      ease: 'quint.inOut',
+      duration: 0.8,
+    })
   }
 }
 

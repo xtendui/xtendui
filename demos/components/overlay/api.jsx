@@ -77,7 +77,7 @@ export default function Demo() {
       </div>
 
       <div className="xt-overlay" id="overlay--nested">
-        <div className="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+        <div className="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div className="xt-overlay-container max-w-5xl">
           <div className="xt-overlay-inner">
             <div className="xt-card rounded-2xl shadow-xl text-gray-900 xt-links-default bg-white">

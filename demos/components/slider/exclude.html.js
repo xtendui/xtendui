@@ -25,7 +25,7 @@ const html = /* HTML */ `
         <div
           class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
           data-xt-slider-dragger>
-          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** hidden ***" data-xt-slider-target>
             <div class="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
               <div
                 class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
@@ -34,7 +34,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** hidden ***" data-xt-slider-target>
             <div class="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0,group1">
               <div
                 class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
@@ -52,7 +52,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-full ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide w-full ${classes.slide()} *** hidden ***" data-xt-slider-target>
             <div class="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
               <div
                 class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
@@ -61,7 +61,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide w-8/12 sm:w-6/12 md:w-5/12 ${classes.slide()} *** hidden ***" data-xt-slider-target>
             <div class="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0">
               <div
                 class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
@@ -79,7 +79,7 @@ const html = /* HTML */ `
             </div>
           </div>
 
-          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
+          <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()} *** hidden ***" data-xt-slider-target>
             <div class="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
               <div
                 class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">

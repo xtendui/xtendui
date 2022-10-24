@@ -33,7 +33,7 @@ export default function Demo() {
           <div
             className="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
             data-xt-slider-dragger>
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group *** hidden ***" data-xt-slider-target>
               <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
                 <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                   <div className="xt-h4">1</div>
@@ -41,7 +41,7 @@ export default function Demo() {
               </div>
             </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group *** hidden ***" data-xt-slider-target>
               <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0,group1">
                 <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                   <div className="xt-h4">2</div>
@@ -57,7 +57,7 @@ export default function Demo() {
               </div>
             </div>
 
-            <div className="xt-slide w-full group" data-xt-slider-target>
+            <div className="xt-slide w-full group *** hidden ***" data-xt-slider-target>
               <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
                 <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                   <div className="xt-h4">4</div>
@@ -65,7 +65,7 @@ export default function Demo() {
               </div>
             </div>
 
-            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group" data-xt-slider-target>
+            <div className="xt-slide w-8/12 sm:w-6/12 md:w-5/12 group *** hidden ***" data-xt-slider-target>
               <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group0">
                 <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                   <div className="xt-h4">5</div>
@@ -81,7 +81,7 @@ export default function Demo() {
               </div>
             </div>
 
-            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+            <div className="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group *** hidden ***" data-xt-slider-target>
               <div className="off:hidden out:pointer-events-none" data-xt-toggle-target data-xt-group="group1">
                 <div className="xt-card text-gray-900 xt-links-default rounded-md bg-gray-100 border-2 border-transparent transition group-in:border-gray-200 p-8 text-base text-center">
                   <div className="xt-h4">7</div>
@@ -142,9 +142,13 @@ const mountToggle = ({ ref }) => {
     // reinit slides
     const selfSlider = Xt.get({ name: 'xt-slider', el: slider })
     if (selfSlider) {
-      requestAnimationFrame(() => {
+      if (selfSlider.initial) {
+        requestAnimationFrame(() => {
+          selfSlider.reinit({ save: false })
+        })
+      } else {
         selfSlider.reinit({ save: false })
-      })
+      }
     }
   }
 

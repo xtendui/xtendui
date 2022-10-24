@@ -15,7 +15,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner *** ${itemAnim()} ***">
               <div
@@ -111,7 +111,7 @@ const html = /* HTML */ `
                   <div class="md:w-5/12 *** flex flex-col ***">
                     <div
                       class="xt-media-container bg-gray-200 md:rounded-tr${classes.overlayRadius()} h-48 md:pb-[100%]">
-                      <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+                      <img class="xt-media object-cover" src="/img.jpg" loading="eager" alt="" />
                     </div>
                     <div
                       class="*** ${classes.cardMd()} rounded-b${classes.overlayRadius()} md:rounded-bl-none ${classes.cardWhiteAccent()} flex-auto ***">
@@ -138,7 +138,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner *** ${itemAnim()} ***">
               <div
@@ -154,7 +154,7 @@ const html = /* HTML */ `
                   <div class="md:w-5/12 *** flex flex-col ***">
                     <div
                       class="xt-media-container bg-gray-200 rounded-t${classes.overlayRadius()} md:rounded-tr-none h-48 lg:pb-[100%] md:flex-auto">
-                      <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+                      <img class="xt-media object-cover" src="/img.jpg" loading="eager" alt="" />
                     </div>
                   </div>
 
@@ -255,7 +255,7 @@ const html = /* HTML */ `
         </button>
 
         <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
-          <div class="xt-backdrop z-below bg-gray-800 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
+          <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner *** ${itemAnim()} ***">
               <div class="xt-card ${classes.overlayShadow()} ${classes.textInverse()} ${classes.cardBlack()}">

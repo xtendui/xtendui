@@ -15,18 +15,16 @@ const mountSticky = ({ ref }) => {
   // match media
 
   /***/
-  ScrollTrigger.matchMedia({
-    '(max-width: 767px)': () => {
-      // sticky
-      ScrollTrigger.create({
-        trigger: sticky,
-        start: 'top top',
-        endTrigger: 'html',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
-      })
-    },
+  gsap.matchMedia().add('(max-width: 767px)', () => {
+    // sticky
+    ScrollTrigger.create({
+      trigger: sticky,
+      start: 'top top',
+      endTrigger: 'html',
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
+    })
   })
   /***/
 

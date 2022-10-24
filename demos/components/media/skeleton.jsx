@@ -7,7 +7,7 @@ export default function Demo() {
           <img className="xt-media object-cover" src="/img-fake.jpg" loading="lazy" alt="" />
         </div>
 
-        <div className="xt-media-container bg-gray-500 pb-[25%]">
+        <div className="xt-media-container bg-gray-900 pb-[25%]">
           <img className="xt-media object-cover" src="/img-fake.jpg" loading="lazy" alt="" />
         </div>
       </div>

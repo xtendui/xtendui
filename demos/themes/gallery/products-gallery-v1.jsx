@@ -215,7 +215,7 @@ export default function Demo() {
                   </div>
 
                   <div aria-label="Modal" className="xt-overlay group" id="overlay--product-images">
-                    <div className="xt-backdrop z-below bg-gray-800 *** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
+                    <div className="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
                     <div className="xt-overlay-container *** p-0 ***">
                       <button
                         type="button"

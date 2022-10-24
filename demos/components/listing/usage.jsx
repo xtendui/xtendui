@@ -8,7 +8,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem ipsum</div>
@@ -20,7 +20,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -32,7 +32,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem ipsum</div>
@@ -44,7 +44,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -56,7 +56,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem Ipsum</div>
@@ -68,7 +68,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>
@@ -80,7 +80,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Lorem Ipsum</div>
@@ -92,7 +92,7 @@ export default function Demo() {
             <div className="*** w-6/12 md:w-4/12 lg:w-3/12 ***">
               <a href="/" className="listing-item">
                 <div className="xt-media-container bg-gray-200 pb-[75%]">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="py-4">
                   <div className="xt-h6">Dolor sit amet</div>

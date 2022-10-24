@@ -4,7 +4,7 @@ export default function Demo() {
     <div>
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-          <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+          <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
         </div>
         <div className="flex relative *** min-h-screen ***">
           <a

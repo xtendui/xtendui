@@ -17,7 +17,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -33,7 +33,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -49,7 +49,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="flex relative h-96">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
@@ -60,22 +60,54 @@ export default function Demo() {
             </div>
             <div className="*** hero-cover *** absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
           </div>
-        </div>
 
-        <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
-          <div className="hero relative overflow-hidden bg-black">
-            <div className="*** hero-inner ***">
-              <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
-              </div>
-              <div className="flex relative h-96">
-                <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
-                  <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">4</h2>
+          <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-200 w-full h-full absolute">
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                </div>
+                <div className="flex relative h-96">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                    <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">4</h2>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
           </div>
-          <div className="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+
+          <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-200 w-full h-full absolute">
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+                </div>
+                <div className="flex relative h-96">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                    <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">5</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="*** hero-cover *** absolute inset-0 pointer-events-none bg-primary-500 translate-x-full"></div>
+          </div>
+
+          <div className="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
+            <div className="hero relative overflow-hidden bg-black">
+              <div className="*** hero-inner ***">
+                <div className="xt-media-container bg-gray-200 w-full h-full absolute">
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                </div>
+                <div className="flex relative h-96">
+                  <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto max-w-2xl text-white xt-links-inverse text-center">
+                    <h2 className="xt-h1 font-black text-4xl md:text-5xl lg:text-6xl">6</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="*** hero-cover *** absolute inset-0 pointer-events-none bg-gray-500 translate-x-full"></div>
+          </div>
         </div>
 
         <nav

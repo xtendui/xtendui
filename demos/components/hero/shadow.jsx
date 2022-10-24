@@ -4,7 +4,7 @@ export default function Demo() {
     <div>
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-          <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+          <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
           <div className="*** absolute inset-0 bg-gradient-to-t from-black opacity-50 ***"></div>
         </div>
         <div className="flex relative min-h-screen">
@@ -24,7 +24,7 @@ export default function Demo() {
 
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-          <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+          <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
           <div className="*** absolute inset-0 bg-gradient-to-r from-black opacity-50 ***"></div>
         </div>
         <div className="flex relative min-h-screen">
@@ -44,7 +44,7 @@ export default function Demo() {
 
       <div className="hero relative overflow-hidden">
         <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-          <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+          <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
           <div className="*** absolute inset-0 bg-gradient-to-l from-black opacity-50 ***"></div>
         </div>
         <div className="flex relative min-h-screen">

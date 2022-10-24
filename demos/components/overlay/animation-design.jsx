@@ -14,7 +14,7 @@ export default function Demo() {
         </button>
 
         <div aria-label="Modal" className="xt-overlay *** group ***" data-xt-overlay-target>
-          <div className="xt-backdrop z-below bg-gray-800 *** transition opacity-0 group-in:opacity-25 ***"></div>
+          <div className="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
           <div className="xt-overlay-container max-w-3xl">
             <div className="xt-overlay-inner">
               <div className="*** xt-design *** rounded-2xl shadow-xl bg-white *** transition opacity-0 translate-y-12 group-in:opacity-100 group-in:translate-y-0 group-out:-translate-y-12 ***"></div>
@@ -40,7 +40,7 @@ export default function Demo() {
                   </svg>
                 </button>
                 <div className="xt-media-container bg-gray-200 rounded-t-2xl pb-[37.5%]">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="p-7 sm:p-9 text-base">
                   <div className="xt-h4">Lorem ipsum</div>

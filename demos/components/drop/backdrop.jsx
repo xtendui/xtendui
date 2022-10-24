@@ -15,7 +15,7 @@ export default function Demo() {
           </button>
 
           <div className="xt-drop p-3" data-xt-drop-target>
-            <div className="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
+            <div className="*** xt-backdrop z-below bg-gray-900 opacity-25 ***"></div>
             <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
               <nav aria-label="Drop" className="xt-list flex-col p-3">
                 <a
@@ -49,7 +49,7 @@ export default function Demo() {
             </button>
 
             <div className="xt-drop p-3" data-xt-drop-target>
-              <div className="*** xt-backdrop z-below bg-gray-800 opacity-25 ***"></div>
+              <div className="*** xt-backdrop z-below bg-gray-900 opacity-25 ***"></div>
               <div className="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
                 <nav aria-label="Drop" className="xt-list flex-col p-3">
                   <a

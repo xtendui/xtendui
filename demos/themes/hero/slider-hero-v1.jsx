@@ -17,7 +17,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <a
@@ -34,7 +34,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <a
@@ -55,7 +55,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <a
@@ -72,7 +72,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 mt-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
@@ -96,7 +96,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img-alt.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:ml-0 max-w-2xl text-white xt-links-inverse text-center md:text-left">
@@ -120,7 +120,7 @@ export default function Demo() {
             <div className="hero relative overflow-hidden bg-black">
               <div className="*** hero-inner ***">
                 <div className="xt-media-container bg-gray-200 w-full h-full absolute">
-                  <img className="xt-media object-cover" src="/img.svg" loading="lazy" alt="" />
+                  <img className="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div className="*** hero-content *** flex relative min-h-screen">
                   <div className="relative px-8 py-16 md:px-24 lg:py-20 xl:py-24 my-auto mx-auto md:mr-0 max-w-2xl text-white xt-links-inverse text-center md:text-right">

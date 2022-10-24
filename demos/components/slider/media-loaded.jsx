@@ -14,7 +14,7 @@ export default function Demo() {
               <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                  src="/img.svg"
+                  src="/img.jpg"
                   loading="lazy"
                   alt=""
                 />
@@ -50,7 +50,7 @@ export default function Demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="/img.svg" loading="eager" alt="" />
+                <img className="h-full w-auto" src="/img.jpg" loading="eager" alt="" />
               </div>
             </div>
 
@@ -58,7 +58,7 @@ export default function Demo() {
               <div className="xt-media-container bg-gray-200 rounded-md overflow-hidden">
                 <img
                   className="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                  src="/img-ratio.svg"
+                  src="/img-ratio.jpg"
                   loading="lazy"
                   alt=""
                 />
@@ -94,7 +94,7 @@ export default function Demo() {
                 </div>
               </div>
               <div className="hidden" data-xt-slider-content>
-                <img className="h-full w-auto" src="/img-ratio.svg" loading="eager" alt="" />
+                <img className="h-full w-auto" src="/img-ratio.jpg" loading="eager" alt="" />
               </div>
             </div>
 

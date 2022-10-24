@@ -41,19 +41,17 @@ const mountTest = ({ ref }) => {
 
   // matchmedia
 
-  ScrollTrigger.matchMedia({
-    '(max-width: 767px)': () => {
-      // sticky
+  gsap.matchMedia().add('(max-width: 767px)', () => {
+    // sticky
 
-      ScrollTrigger.create({
-        trigger: sticky,
-        start: 'top top',
-        endTrigger: 'html',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
-      })
-    },
+    ScrollTrigger.create({
+      trigger: sticky,
+      start: 'top top',
+      endTrigger: 'html',
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
+    })
   })
 
   // unmount

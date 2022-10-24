@@ -69,7 +69,7 @@ export default function Demo() {
       </div>
 
       <div className="xt-overlay" id="overlay--scrollto">
-        <div className="xt-backdrop z-below bg-gray-800 opacity-25"></div>
+        <div className="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div className="xt-overlay-container py-0">
           <div className="xt-overlay-inner">
             <button
