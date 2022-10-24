@@ -267,7 +267,7 @@ class Toggle {
           } else {
             self._eventOn({ el, force: true })
           }
-        } else if (todo < self.elements.length - 1) {
+        } else if (todo < self.elements.length) {
           todo++
         }
       }
