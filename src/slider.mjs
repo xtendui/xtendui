@@ -1223,7 +1223,7 @@ class Slider extends Xt.Toggle {
     if (direction < 0) {
       const first = self._groups[self.drag._wrapFirst].target
       const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
-      if (self.drag.final >= min) {
+      if (self.drag._final >= min) {
         return self.drag._wrapFirst
       }
       for (let i = index; i >= 0; i--) {
@@ -1246,7 +1246,7 @@ class Slider extends Xt.Toggle {
     } else if (direction > 0) {
       const last = self._groups[self.drag._wrapLast].target
       const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
-      if (self.drag.final <= max) {
+      if (self.drag._final <= max) {
         return self.drag._wrapLast
       }
       for (let i = index; i < self._groups.length; i++) {
