@@ -60,7 +60,7 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
 
 </div>
 
-> Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**must have available width** same as **the max target width**).
+> Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**items must be `2.5` times the Dragger size**).
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
