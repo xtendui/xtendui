@@ -140,8 +140,8 @@ class Slider extends Xt.Toggle {
     // initGroupsPosition
     self._initGroupsPosition()
     // wrap
-    if (options.wrap !== false && options.mode !== 'absolute') {
-      if (self.drag._availableSpace >= self.drag._size * 1.5) {
+    if (options.wrap && options.mode !== 'absolute') {
+      if (self.drag._availableSpace >= self.drag.size * 1.5) {
         self._wrap = true
       }
     } else {
