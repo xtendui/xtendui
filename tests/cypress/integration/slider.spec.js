@@ -288,6 +288,60 @@ describe('demos/components/slider/contain-false-right', function () {
   })
 })
 
+describe('demos/components/slider/wrap-nospace', function () {
+  let win
+  let Xt
+  let container
+  let self
+
+  beforeEach(function () {
+    cy.visit(url).window().as('win')
+    cy.get('.demo--slider-wrap-nospace').as('demo')
+    cy.get('@demo').find('[data-xt-slider]').as('container')
+  })
+
+  beforeEach(function () {
+    win = this.win
+    Xt = win.Xt
+    container = this.container[0]
+    cy.get(container).scrollIntoView()
+    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  it('TEST grouping and activation, no wrap.', function () {
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[1].classList.contains('on')).to.equal(true)
+        expect(self.targets[2].classList.contains('on')).to.equal(true)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(false)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
+        expect(self.targets[0].style.transform).to.equal('')
+        expect(self.targets[1].style.transform).to.equal('')
+        expect(self.targets[2].style.transform).to.equal('')
+        expect(self.targets[3].style.transform).to.equal('')
+        expect(self.targets[4].style.transform).to.equal('')
+      })
+      .get(self.elements[3])
+      .click()
+      .then(() => {
+        expect(self.targets[0].classList.contains('on')).to.equal(false)
+        expect(self.targets[1].classList.contains('on')).to.equal(false)
+        expect(self.targets[2].classList.contains('on')).to.equal(false)
+        expect(self.targets[3].classList.contains('on')).to.equal(false)
+        expect(self.targets[4].classList.contains('on')).to.equal(true)
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-1088px)')
+        expect(self.targets[0].style.transform).to.equal('')
+        expect(self.targets[1].style.transform).to.equal('')
+        expect(self.targets[2].style.transform).to.equal('')
+        expect(self.targets[3].style.transform).to.equal('')
+        expect(self.targets[4].style.transform).to.equal('')
+      })
+  })
+})
+
 describe('demos/components/slider/wrap-center', function () {
   let win
   let Xt
@@ -1155,7 +1209,7 @@ describe('demos/components/slider/nooverflow-false', function () {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         expect(self.targets[2].classList.contains('on')).to.equal(true)
-        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(303px)')
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-606px)')
       })
   })
 })

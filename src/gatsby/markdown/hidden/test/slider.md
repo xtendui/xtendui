@@ -59,6 +59,14 @@ title: "Slider Test"
 
 ## Wrap
 
+`demos/components/slider/wrap-nospace`
+- TEST grouping and activation, no wrap.
+
+<demo>
+  <demoinline src="demos/components/slider/wrap-nospace">
+  </demoinline>
+</demo>
+
 `demos/components/slider/wrap-center`
 - TEST grouping and activation, wrap position.
 
