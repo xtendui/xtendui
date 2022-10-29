@@ -22,6 +22,7 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
+    free: true,
   })
   /***/
 
@@ -214,7 +215,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-absolute-free-wheel',
+  matches: '.demo--slider-absolute-free-wheel-free',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

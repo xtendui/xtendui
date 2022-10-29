@@ -7,6 +7,11 @@ tags: ["hidden"]
 menu: true
 ---
 
+<demo>
+  <demoinline src="demos/components/slider/absolute-wheel-free">
+  </demoinline>
+</demo>
+
 > This hidden pages includes **work in progress and future features**, **do not use** because will have **breaking changes** on semversion.
 
 ## Classes not xt Components

@@ -1359,7 +1359,7 @@ class Slider extends Xt.Toggle {
    * @param {Event} e
    * @return {Boolean} If not overflowing
    */
-  wheelEvent({ factor = -1, timeout = 100, threshold = 10 } = {}, e) {
+  wheelEvent({ factor = -1, timeout = 250, threshold = 10 } = {}, e) {
     const self = this
     const options = self.options
     // logic

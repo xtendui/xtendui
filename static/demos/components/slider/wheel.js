@@ -1,10 +1,5 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger)
-}
 
 /* mountSlider */
 

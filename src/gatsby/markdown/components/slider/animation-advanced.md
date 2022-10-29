@@ -86,7 +86,7 @@ Use `self.wheelEvent` for **interaction on mousewheel** to attach wheel event to
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 100, threshold:Number = 10 }, e:Event)`                          | Attach wheel event to drag, returns `Boolean` if not overflowing             |
+| Method                  | `self.wheelEvent({ factor:Number = -1, timeout:Number = 250, threshold:Number = 10 }, e:Event)`                          | Attach wheel event to drag, returns `Boolean` if not overflowing             |
 
 </div>
 
@@ -109,9 +109,21 @@ For **absolute mode** additionally on `dragposition.xt.slider` set the `dragDura
   </demoinline>
 </demo>
 
+<demo>
+  <demoinline src="demos/components/slider/absolute-wheel-free">
+  </demoinline>
+</demo>
+
 You can attach wheel event to `window` or other DOM elements.
 
 <demo>
   <demoinline src="demos/components/slider/automatic-scrolling-wheel">
+  </demoinline>
+</demo>
+
+## ScrollTrigger
+
+<demo>
+  <demoinline src="demos/components/slider/scrolltrigger">
   </demoinline>
 </demo>
