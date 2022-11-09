@@ -1,7 +1,7 @@
 const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--slider-absolute-wheel">
+  <div class="demo--slider-absolute-scrolltrigger">
     <div class="xt-slider bg-primary-500">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>

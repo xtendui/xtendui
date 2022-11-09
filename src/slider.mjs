@@ -1064,8 +1064,8 @@ class Slider extends Xt.Toggle {
     }
     // first dragmove instant setup
     if (setup) {
-      // only 1 pixel self.drag._old old same direction of self.drag._current
-      self.drag._current = self.drag._old + Math.sign(self.drag._current - self.drag._old)
+      // only 1 pixel same direction
+      self.drag._current = Math.sign(self.drag._current)
     }
     // check threshold
     self.drag._distance = self.drag._start - self.drag._current
@@ -1129,15 +1129,23 @@ class Slider extends Xt.Toggle {
     self._inverse = self.direction < 0
     // ratio
     self.drag.ratio = Math.abs(self.drag.final - self.drag._initial) / Math.abs(maxCheck - min)
+    self.drag.ratio = self.drag.ratio > 1 ? 1 : self.drag.ratio
+    self.drag.ratio = self.drag.ratio < -1 ? -1 : self.drag.ratio
     self.drag.ratioInverse = 1 - self.drag.ratio
-    // fix dragging furiously more than one
-    if (options.mode === 'absolute' && (self.drag.ratio > 1 || self.drag.ratio < -1)) {
-      return
+    if (options.mode === 'absolute') {
+      // fix direction and ratio when on dragmove same direction (e.g. wheel)
+      if (
+        (self.direction > 0 && self.drag.final > self.drag._initial) ||
+        (self.direction < 0 && self.drag.final < self.drag._initial)
+      ) {
+        self.drag.ratio = 0
+        self.drag.ratioInverse = 0
+      }
     }
     // dispatch event
     self.drag.instant = true
-    if (setup) {
-      // first dragmove instant setup
+    if (self.direction !== self.directionOld) {
+      // fix direction and ratio when on dragmove same direction (e.g. wheel)
       self.drag.dragging = false
     } else {
       self.drag.dragging = true
@@ -1148,8 +1156,9 @@ class Slider extends Xt.Toggle {
     self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
     // reset
     self._inverse = null
+    self.directionOld = self.direction
     // activation
-    if (options.mode !== 'absolute' && self.drag._lock) {
+    if (self.drag._lock && options.mode !== 'absolute') {
       // get nearest
       const found = self._logicDragfind({ index: self.index })
       if (found !== null && found !== self.index) {
@@ -1368,6 +1377,7 @@ class Slider extends Xt.Toggle {
       // if small value (touchpad smooth)
       if (self.wheel.deltaY) {
         // if running stop
+        clearTimeout(self.wheel.timeout)
         self._wheelStop({ clientX })
       }
     } else {
@@ -1407,6 +1417,8 @@ class Slider extends Xt.Toggle {
   _wheelStart() {
     const self = this
     // logic
+    self.wheel.wheeling = false
+    self.wheel.deltaY = false
     self.dragstart({ clientX: 0 })
   }
 
@@ -1419,8 +1431,10 @@ class Slider extends Xt.Toggle {
   _wheelMove({ clientX, setup }) {
     const self = this
     // logic
+    if (!setup) {
+      self.wheel.wheeling = true
+    }
     self.wheel.deltaY = clientX
-    self.wheel.wheeling = true
     self.dragmove({ clientX }, { keepActivated: true, setup })
   }
 
@@ -1432,8 +1446,8 @@ class Slider extends Xt.Toggle {
   _wheelStop({ clientX }) {
     const self = this
     // logic
-    self.wheel.deltaY = false
     self.wheel.wheeling = false
+    self.wheel.deltaY = false
     self.dragend({ clientX })
   }
 

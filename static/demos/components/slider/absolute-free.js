@@ -22,18 +22,8 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
+    free: true,
   })
-  /***/
-
-  // Wheel
-
-  /***/
-  const wheel = e => {
-    self.wheelEvent({}, e)
-    e.preventDefault()
-  }
-
-  self.dragger.addEventListener('wheel', wheel, { passive: false })
   /***/
 
   // dragposition (set internal position to resume animation mid dragging)
@@ -41,10 +31,6 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // duration depending on instant and dragger size
     dragDuration = self.drag.instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
-    /***/
-    // duration only when wheeling
-    dragDuration = self.drag.dragging && self.wheel.wheeling ? 0.5 : dragDuration
-    /***/
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -214,7 +200,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-absolute-wheel',
+  matches: '.demo--slider-absolute-free',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

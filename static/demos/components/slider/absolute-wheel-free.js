@@ -215,7 +215,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-absolute-free-wheel-free',
+  matches: '.demo--slider-absolute-wheel-free',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

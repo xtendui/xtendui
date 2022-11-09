@@ -2,7 +2,7 @@
 type: "Components"
 category: "Toggle"
 parent: "Slider"
-title: "Animation Advanced"
+title: "Advanced"
 date: "2010-08-09"
 ---
 
@@ -42,6 +42,15 @@ This is done in order to keep the **internal slider values updated** with your *
   </demoinline>
 </demo>
 
+#### Automatic Scrolling
+
+Example of **infinite automatic scrolling slider**, with also drag and pauses on interaction and automatically disables if not enough space.
+
+<demo>
+  <demoinline src="demos/components/slider/automatic-scrolling">
+  </demoinline>
+</demo>
+
 ## Absolute
 
 With **absolute mode** all animation of the slides are given by yout **custom gsap animations**.
@@ -68,12 +77,20 @@ Here's an example of absolute animation with **mask and incoming slide**, on `dr
   </demoinline>
 </demo>
 
-## Automatic Scrolling
+#### Position
 
-Example of **infinite automatic scrolling slider**, with also drag and pauses on interaction and automatically disables if not enough space.
+Activate **free drag** while retaining targets activations and elements interactions.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `free:Boolean`                          | `false`        | Free drag            |
+
+</div>
 
 <demo>
-  <demoinline src="demos/components/slider/automatic-scrolling">
+  <demoinline src="demos/components/slider/absolute-free">
   </demoinline>
 </demo>
 
@@ -125,5 +142,10 @@ You can attach wheel event to `window` or other DOM elements.
 
 <demo>
   <demoinline src="demos/components/slider/scrolltrigger">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/slider/absolute-scrolltrigger">
   </demoinline>
 </demo>
