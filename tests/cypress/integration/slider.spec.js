@@ -1258,7 +1258,7 @@ describe('demos/components/slider/media-loaded', function () {
   })
 })
 
-describe('demos/components/slider/dragposition', function () {
+describe('demos/components/slider/dragposition-js', function () {
   let win
   let Xt
   let container

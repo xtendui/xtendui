@@ -189,11 +189,11 @@ title: "Slider Test"
 
 ## Dragposition
 
-`demos/components/slider/dragposition`
+`demos/components/slider/dragposition-js`
 - TEST activation and drag activation.
 
 <demo>
-  <demoinline src="demos/components/slider/dragposition">
+  <demoinline src="demos/components/slider/dragposition-js">
   </demoinline>
 </demo>
 
