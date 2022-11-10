@@ -15,7 +15,7 @@ Use **Tailwind CSS** to assign animation (e.g. [transition-property](https://tai
 You can also use **Tailwind CSS variants** `on:` on `dragger` to animate differently on activation (**default styles are for all transitions including drag**).
 
 <demo>
-  <demoinline src="demos/components/slider/dragposition-false">
+  <demoinline src="demos/components/slider/dragposition-css">
   </demoinline>
 </demo>
 
@@ -38,7 +38,7 @@ Listen to the event `dragposition.xt.slider` and:
 This is done in order to keep the **internal slider values updated** with your **custom slider animations**, needed especially for **absolute mode**.
 
 <demo>
-  <demoinline src="demos/components/slider/dragposition">
+  <demoinline src="demos/components/slider/dragposition-js">
   </demoinline>
 </demo>
 

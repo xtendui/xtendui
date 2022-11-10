@@ -17,6 +17,11 @@ menu: true
 </demo>
 
 <demo>
+  <demoinline src="demos/components/slider/dragposition-custom">
+  </demoinline>
+</demo>
+
+<demo>
   <demoinline src="demos/components/slider/absolute-wheel">
   </demoinline>
   <demoinline src="demos/components/slider/absolute-wheel-free">
