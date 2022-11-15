@@ -5,6 +5,8 @@
  */
 
 import { Xt } from './xt.js'
+import RJSON from 'relaxed-json'
+Xt.JSON = RJSON
 
 /**
  * Stickyflow
@@ -284,7 +286,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Stickyflow.componentName}`)
-      const options = optionsMarkup ? JSON.stringify(optionsMarkup) : {}
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 

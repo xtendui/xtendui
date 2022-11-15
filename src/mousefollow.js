@@ -5,6 +5,8 @@
  */
 
 import { Xt } from './xt.js'
+import RJSON from 'relaxed-json'
+Xt.JSON = RJSON
 
 /**
  * Mousefollow
@@ -340,7 +342,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Mousefollow.componentName}`)
-      const options = optionsMarkup ? JSON.stringify(optionsMarkup) : {}
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 

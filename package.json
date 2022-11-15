@@ -48,7 +48,8 @@
     "@popperjs/core": "^2.11.6",
     "deepmerge": "^4.2.2",
     "focus-trap": "^7.1.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "relaxed-json": "^1.0.3"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.12"

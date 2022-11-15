@@ -6,6 +6,8 @@
 
 import { Xt } from './xt.js'
 import './toggle.js'
+import RJSON from 'relaxed-json'
+Xt.JSON = RJSON
 
 /**
  * Overlay
@@ -94,7 +96,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Overlay.componentName}`)
-      const options = optionsMarkup ? JSON.stringify(optionsMarkup) : {}
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 

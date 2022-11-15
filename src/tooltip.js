@@ -6,6 +6,8 @@
 
 import { Xt } from './xt.js'
 import './toggle.js'
+import RJSON from 'relaxed-json'
+Xt.JSON = RJSON
 import { createPopper } from '@popperjs/core'
 Xt.createPopper = createPopper
 
@@ -209,7 +211,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Tooltip.componentName}`)
-      const options = optionsMarkup ? JSON.stringify(optionsMarkup) : {}
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 
