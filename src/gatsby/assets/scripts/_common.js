@@ -135,3 +135,12 @@ Xt.mount({
     }
   },
 })
+
+Xt.mount({
+  matches: '.gatsby_tooltip_outside_link.hidden, .gatsby_site-header_item_container.hidden',
+  mount: ({ ref }) => {
+    if (typeof window !== 'undefined' && window.access === 'admin') {
+      ref.classList.remove('hidden')
+    }
+  },
+})
