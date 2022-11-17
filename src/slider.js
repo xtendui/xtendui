@@ -4,10 +4,10 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt.mjs'
-import './toggle.mjs'
-import JSON5 from 'json5'
-Xt.JSON5 = JSON5
+import { Xt } from './xt.js'
+import './toggle.js'
+import RJSON from 'relaxed-json'
+Xt.JSON = RJSON
 
 /**
  * Slider
@@ -1294,7 +1294,7 @@ class Slider extends Xt.Toggle {
     if (direction < 0) {
       const first = self._groups[self.drag._wrapFirst].target
       const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
-      if (self.drag.final >= min) {
+      if (self.drag._final >= min) {
         return self.drag._wrapFirst
       }
       for (let i = index; i >= 0; i--) {
@@ -1317,7 +1317,7 @@ class Slider extends Xt.Toggle {
     } else if (direction > 0) {
       const last = self._groups[self.drag._wrapLast].target
       const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
-      if (self.drag.final <= max) {
+      if (self.drag._final <= max) {
         return self.drag._wrapLast
       }
       for (let i = index; i < self._groups.length; i++) {
@@ -1693,7 +1693,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Slider.componentName}`)
-      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 

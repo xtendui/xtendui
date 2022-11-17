@@ -13,8 +13,6 @@ function DemoIframe(props) {
   seo.title = src
   seo.description = seo.title
   // vanilla
-  const object = require(`static/${src}.html.js`).object
-  const html = object.html
   let hasCss
   let hasJs
   try {
@@ -33,21 +31,37 @@ function DemoIframe(props) {
   } catch (ex) {}
   // react
   const Demo = require(`static/${src}.jsx`).default
-  // iframe
-  if (typeof window !== 'undefined') {
-    document.documentElement.classList.add('gatsby_iframe-inside')
-    document.documentElement.setAttribute('id', id)
-    if (object.container) {
-      document.documentElement.classList.add('gatsby_iframe-container')
-    }
-    if (object.gradient) {
-      document.documentElement.classList.add('gatsby_iframe-gradient')
-    }
-  }
+  /* @TODO lazy
+  const Demo = loadable(() => import('static/demos/components/stickyflow/usage.jsx'))
+  */
   // mode
   const [mode, setMode] = useState(0)
+  const [object, setObject] = useState(0)
   const ref = useRef()
   useEffect(() => {
+    // html
+    setObject(require(`static/${src}.html.js`).object)
+    /* @TODO lazy
+    loadable(
+      import('static/demos/components/stickyflow/usage.html.js').then(module => {
+        setObject(module.object)
+      })
+    )
+    */
+  })
+  useEffect(() => {
+    // iframe
+    if (typeof window !== 'undefined') {
+      document.documentElement.classList.add('gatsby_iframe-inside')
+      document.documentElement.setAttribute('id', id)
+      if (object.container) {
+        document.documentElement.classList.add('gatsby_iframe-container')
+      }
+      if (object.gradient) {
+        document.documentElement.classList.add('gatsby_iframe-gradient')
+      }
+    }
+    // switch demo
     const item = ref.current
     const switchDemo = mode => {
       // fix cypress
@@ -62,7 +76,13 @@ function DemoIframe(props) {
             if (mode === 'react') {
               window.parent.initIframe(src, null, `/${src}.jsx`, hasCss ? `/${src}.css` : null)
             } else if (mode === 'html') {
-              window.parent.initIframe(src, html, null, hasCss ? `/${src}.css` : null, hasJs ? `/${src}.js` : null)
+              window.parent.initIframe(
+                src,
+                object.html,
+                null,
+                hasCss ? `/${src}.css` : null,
+                hasJs ? `/${src}.js` : null
+              )
             }
             // close auto (e.g. overlay self when switching mode)
             dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
@@ -74,7 +94,7 @@ function DemoIframe(props) {
       window.parent.switchDemos.push(switchDemo)
     }
     switchDemo(localStorage.getItem('mode'))
-  }, [])
+  }, [object])
 
   return (
     <LayoutDemo>
@@ -88,7 +108,7 @@ function DemoIframe(props) {
           <div
             id="gatsby_body-inner"
             className="gatsby_demo_source--from relative xt-h-screen"
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={{ __html: object.html }}
           />
         ) : null}
       </div>

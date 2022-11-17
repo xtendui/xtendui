@@ -1,3 +1,33 @@
+# [1.2.0](https://github.com/xtendui/xtendui/compare/v1.1.0...v1.2.0) (2022-10-24)
+
+
+### Bug Fixes
+
+* **drop, tooltip:** fix drop and tooltip arrow spacing floating point numbers ([edd046e](https://github.com/xtendui/xtendui/commit/edd046eb170447001dea2291aa10bd5e47cdefb4))
+* **infinitescroll:** fix multiple prefetch when event is scroll ([f480ba1](https://github.com/xtendui/xtendui/commit/f480ba1209699ae780cf22fc09a9f1005fc3382a))
+* **javascript:** fix js options.matches for safari < 14 ([4d3747e](https://github.com/xtendui/xtendui/commit/4d3747ed36d467683178caddf1d76c06af12f1ac))
+* **javascript:** fix js options.matches for safari < 14 ([e2d4f05](https://github.com/xtendui/xtendui/commit/e2d4f056aeb71803b8a1ea3fe27f44597be80cf2))
+* **slider:** fix slider disabilitation with floating points number instead of int values for slider items ([f97b2b5](https://github.com/xtendui/xtendui/commit/f97b2b528a6ed64c31c28095060949185a40b875))
+* **slider:** fixed position on start and end on some slider configurations ([62ed077](https://github.com/xtendui/xtendui/commit/62ed0770e368aee0535ae95374fd520f05c3936e))
+* **slider:** improved slider lock drag or page scroll on iteraction ([e0e2f39](https://github.com/xtendui/xtendui/commit/e0e2f3966ecd01109c16bbf35613afd0f4c647b3))
+* **slider:** private self.drag._final fixed position on start and end on some slider configurations ([9a792cd](https://github.com/xtendui/xtendui/commit/9a792cda58d58f559723aa8d5dcccee76c607f5e))
+* **toggle:** fix initial activation options.min when elements already have class ([9eb0fe3](https://github.com/xtendui/xtendui/commit/9eb0fe3dc737217130bcf1fbe02eb9a498ffd282))
+* **toggle:** fix initial activation options.min when elements already have class ([7e96738](https://github.com/xtendui/xtendui/commit/7e9673835655163429a81e9764b23e7a910dae47))
+* **toggle:** fix initial activation options.min when elements already have class ([d4b34ba](https://github.com/xtendui/xtendui/commit/d4b34ba9075960ee96122224f381dc3281b72115))
+
+
+### Features
+
+* **infinitescroll:** added automatical prefetch of next page ([180c9fd](https://github.com/xtendui/xtendui/commit/180c9fdcaea349366c3d8b1c98dd5303a13196d7))
+* **infinitescroll:** options.fetchNext to options.fetch and fetch page depending on triggers ([68b91e6](https://github.com/xtendui/xtendui/commit/68b91e67219d9577aa827d937fd5a172450691bd))
+
+
+### Reverts
+
+* Revert "test(slider): fix slider test group responsive and nooverflow" ([5a778ce](https://github.com/xtendui/xtendui/commit/5a778cecac493e4f4834e13eb4a1c8aebc845ffe))
+* Revert "fix(slider): fix deactivation when available space with floating point numbers" ([32974e7](https://github.com/xtendui/xtendui/commit/32974e72a28cc45ec04efe67df653b459d98a139))
+* Revert "chore: yarn upgrade --latest" ([55dfce4](https://github.com/xtendui/xtendui/commit/55dfce44c37869f62f4f6278d6096c58caaffaf3))
+
 # [1.1.0](https://github.com/xtendui/xtendui/compare/v1.0.16...v1.1.0) (2022-05-09)
 
 

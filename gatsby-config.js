@@ -8,8 +8,7 @@ require('dotenv').config()
 
 module.exports = {
   flags: {
-    DEV_SSR: true,
-    //FAST_REFRESH: true,
+    //DEV_SSR: true,
   },
   siteMetadata: {
     siteUrl: 'https://xtendui.com',
@@ -55,15 +54,13 @@ module.exports = {
     },
     // resolve
     {
-      resolve: 'gatsby-plugin-module-resolver',
+      resolve: 'gatsby-plugin-root-import',
       options: {
-        root: './',
-        aliases: {
-          src: './src',
-          static: './static',
-          // resolve xtendui import js and css
-          xtendui: path.resolve(__dirname, './'),
-        },
+        root: path.join(__dirname, ''),
+        src: path.join(__dirname, 'src'),
+        static: path.join(__dirname, 'static'),
+        // resolve xtendui import js and css
+        xtendui: path.resolve(__dirname, './'),
       },
     },
     // filesystem
