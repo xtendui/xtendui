@@ -26,7 +26,9 @@ function DemoInline(props) {
   } catch (ex) {}
   // react
   const Demo = require(`static/${src}.jsx`).default
-  //const Demo = loadable(() => import('static/demos/components/toggle/animation-noqueue.jsx'))
+  /* @TODO lazy
+  const Demo = loadable(() => import('static/demos/components/toggle/animation-noqueue.jsx'))
+  */
   // mode
   const [mode, setMode] = useState(0)
   const [object, setObject] = useState(0)
@@ -34,7 +36,7 @@ function DemoInline(props) {
   useEffect(() => {
     // html
     setObject(require(`static/${src}.html.js`).object)
-    /*
+    /* @TODO lazy
     loadable(
       import('static/demos/components/toggle/animation-noqueue.html.js').then(module => {
         setObject(module.object)

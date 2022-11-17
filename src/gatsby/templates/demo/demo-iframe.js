@@ -32,7 +32,9 @@ function DemoIframe(props) {
   } catch (ex) {}
   // react
   const Demo = require(`static/${src}.jsx`).default
-  //const Demo = loadable(() => import('static/demos/components/stickyflow/usage.jsx'))
+  /* @TODO lazy
+  const Demo = loadable(() => import('static/demos/components/stickyflow/usage.jsx'))
+  */
   // mode
   const [mode, setMode] = useState(0)
   const [object, setObject] = useState(0)
@@ -40,7 +42,7 @@ function DemoIframe(props) {
   useEffect(() => {
     // html
     setObject(require(`static/${src}.html.js`).object)
-    /*
+    /* @TODO lazy
     loadable(
       import('static/demos/components/stickyflow/usage.html.js').then(module => {
         setObject(module.object)
