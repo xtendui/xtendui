@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import SEO from 'src/gatsby/templates/seo'
 import LayoutDemo from 'src/gatsby/templates/layout-demo'
-import loadable from '@loadable/component'
 import { Xt } from 'xtendui'
 
 function DemoIframe(props) {
@@ -18,7 +17,7 @@ function DemoIframe(props) {
   let hasJs
   try {
     // must be first try/catch or yarn serve error
-    loadable(() => import(`static/${src}.js`))
+    require(`static/${src}.js`).default
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {

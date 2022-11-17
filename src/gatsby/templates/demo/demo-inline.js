@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import loadable from '@loadable/component'
 import { Xt } from 'xtendui'
 
 function DemoInline(props) {
@@ -12,7 +11,7 @@ function DemoInline(props) {
   let hasJs
   try {
     // must be first try/catch or yarn serve error
-    loadable(() => import(`static/${src}.js`))
+    require(`static/${src}.js`).default
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
