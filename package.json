@@ -101,6 +101,7 @@
     "gh-pages": "^4.0.0",
     "glob": "^8.0.1",
     "gsap": "^3.11.3",
+    "lodash.kebabcase": "^4.1.1",
     "mini-css-extract-plugin": "^2.6.1",
     "path": "^0.12.7",
     "postcss": "^8.4.19",
