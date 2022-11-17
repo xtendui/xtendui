@@ -893,6 +893,9 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[15].classList.contains('on')).to.equal(false)
         expect(toggles[16].classList.contains('on')).to.equal(false)
         expect(toggles[17].classList.contains('on')).to.equal(false)
+      })
+      .wait(500) // fix scroll position
+      .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
       .get(toggles[6])
