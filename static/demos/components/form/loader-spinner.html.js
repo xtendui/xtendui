@@ -2,13 +2,11 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--form-loader-spinner">
-    <script type="text/x-template" data-node-loader-template>
+    <template data-node-loader-template>
       <div class="${classes.loader()} bg-white bg-opacity-30">
-        <div class="${classes.spinner()} w-6 h-6">
-          ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
-        </div>
+        <div class="${classes.spinner()} w-6 h-6">${classes.svgSpinner({ classes: 'animate-xt-spinner' })}</div>
       </div>
-    </script>
+    </template>
 
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
