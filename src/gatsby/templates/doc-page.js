@@ -120,7 +120,7 @@ export const query = graphql`
   query ($title: String!, $type: String, $category: String, $parent: String, $parents: String) {
     menus: allMarkdownRemark(
       filter: { frontmatter: { menu: { eq: true } } }
-      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
+      sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
     ) {
       posts: edges {
         post: node {
@@ -135,9 +135,9 @@ export const query = graphql`
     }
     categories: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: $type } } }
-      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
+      sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
     ) {
-      category: group(field: frontmatter___category) {
+      category: group(field: { frontmatter: { category: SELECT } }) {
         title: fieldValue
         posts: edges {
           post: node {
@@ -168,7 +168,7 @@ export const query = graphql`
     }
     postsAdiacent: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: $type }, category: { eq: $category }, parent: { regex: $parents } } }
-      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
+      sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
     ) {
       posts: edges {
         post: node {
