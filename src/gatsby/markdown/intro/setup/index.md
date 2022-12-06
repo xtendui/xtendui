@@ -59,6 +59,8 @@ module.exports = {
   presets: [
     require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset'),
   ],
+  // put other content e.g.: './src/**/*.{html,js}'
+  content: ['./node_modules/xtendui/src/*.mjs'],
 }
 ```
 
@@ -86,6 +88,8 @@ You can import the **components you need** as described in the demos.
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 ```
+
+> Some bundlers doesn't support `package.json#exports` if you get module not found use the extensions `.mjs` (e.g. `import 'xtendui/src/toggle.mjs'`).
 
 #### Gsap
 
@@ -119,7 +123,7 @@ module.exports = {
 }
 ```
 
-Be sure to transpile `js` extension and exclude `node_modules` but include `xtendui`, for example with `babel-loader`:
+Be sure to transpile `mjs` extension and exclude `node_modules` but include `xtendui`, for example with `babel-loader`:
 
 ```js
 {

@@ -13,7 +13,7 @@ cssDemosGlob.on('end', () => {
 })
 
 let jsComponents = ''
-const jsComponentsGlob = new glob.Glob('src/*.js', { ignore: ['src/*.css.js'] }, (er, files) => {
+const jsComponentsGlob = new glob.Glob('src/*.mjs', { ignore: ['src/*.css.js'] }, (er, files) => {
   for (const file of files) {
     jsComponents += `import 'xtendui/${file}'\n`
   }

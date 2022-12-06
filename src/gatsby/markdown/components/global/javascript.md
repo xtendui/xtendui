@@ -167,6 +167,18 @@ Xt.options['xt-drop'] = {
 
 > Be sure to assing `Xt.options` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
 
+## Xt.sanitize
+
+You can **sanitize a html string** with [DOMPurify](https://github.com/cure53/DOMPurify) using `Xt.sanitize`. This method is used also internally to sanitize content added to DOM.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- |
+| Method                  | `Xt.sanitize(str:String)`                          | Sanitize string with [DOMPurify](https://github.com/cure53/DOMPurify), returns `String`             |
+
+</div>
+
 ## Xt.node
 
 You can create **DOM node from string** with this method. The string is automatically sanitized with `Xt.sanitize`.
@@ -177,16 +189,6 @@ You can create **DOM node from string** with this method. The string is automati
 | ----------------------- | ----------------------------------------- | ----------------------------- |
 | Method                  | `Xt.node({ str:String, sanitize:Boolean = true })`                          | Create DOM node from string, returns `Node`             |
 | Method                  | `Xt.nodes({ str:String, sanitize:Boolean = true })`                          | Create DOM nodes from string, returns `NodeList`             |
-
-</div>
-
-You can **sanitize a html strings** added with `Xt.node` or internally by Xtend UI setting a function as `Xt.sanitizeFnc`.
-
-<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
-
-|                         | Syntax                                    | Description                   |
-| ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.sanitizeFnc(str:String)`                          | Sanitize strings, returns `String`             |
 
 </div>
 

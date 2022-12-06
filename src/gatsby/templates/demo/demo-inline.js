@@ -7,6 +7,8 @@ function DemoInline(props) {
   const id = src.split('-').join(' ')
   const name = src.split('/').pop().split('.')[0]
   // vanilla
+  const object = require(`static/${src}.html.js`).object
+  const html = object.html
   let hasCss
   let hasJs
   try {
@@ -25,26 +27,10 @@ function DemoInline(props) {
   } catch (ex) {}
   // react
   const Demo = require(`static/${src}.jsx`).default
-  /* @TODO lazy
-  const Demo = loadable(() => import('static/demos/components/toggle/animation-noqueue.jsx'))
-  */
   // mode
   const [mode, setMode] = useState(0)
-  const [object, setObject] = useState(0)
   const ref = useRef()
   useEffect(() => {
-    // html
-    setObject(require(`static/${src}.html.js`).object)
-    /* @TODO lazy
-    loadable(
-      import('static/demos/components/toggle/animation-noqueue.html.js').then(module => {
-        setObject(module.object)
-      })
-    )
-    */
-  })
-  useEffect(() => {
-    // switch demo
     const item = ref.current
     const switchDemo = mode => {
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
@@ -94,9 +80,9 @@ function DemoInline(props) {
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
               object.overflow ? 'gatsby_demo_source--overflow' : ''
             }`}
-            dangerouslySetInnerHTML={{ __html: object.html }}
+            dangerouslySetInnerHTML={{ __html: html }}
           />
-          <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: object.html }} />
+          <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: html }} />
           {hasCss ? (
             <script
               type="text/plain"

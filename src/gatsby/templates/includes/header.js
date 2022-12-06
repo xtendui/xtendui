@@ -168,7 +168,11 @@ export default function Header({ page }) {
                         {page.menus.posts.map(({ post }, i) => (
                           <div
                             className={`gatsby_tooltip_outside_link ${
-                              post.frontmatter.tags && post.frontmatter.tags.includes('hidden') ? 'hidden' : ''
+                              (typeof window === 'undefined' || window.access !== 'admin') &&
+                              post.frontmatter.tags &&
+                              post.frontmatter.tags.includes('hidden')
+                                ? 'hidden'
+                                : ''
                             }`}
                             key={i}>
                             <Link
@@ -203,7 +207,9 @@ export default function Header({ page }) {
                                       post.frontmatter.parent === post.frontmatter.title ? (
                                         <div
                                           className={`gatsby_site-header_item_container ${
-                                            post.frontmatter.tags && post.frontmatter.tags.includes('hidden')
+                                            (typeof window === 'undefined' || window.access !== 'admin') &&
+                                            post.frontmatter.tags &&
+                                            post.frontmatter.tags.includes('hidden')
                                               ? 'hidden'
                                               : ''
                                           }`}

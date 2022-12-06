@@ -22,7 +22,7 @@ export const query = graphql`
   query {
     menus: allMarkdownRemark(
       filter: { frontmatter: { menu: { eq: true } } }
-      sort: [{ frontmatter: { date: DESC } }, { frontmatter: { title: ASC } }]
+      sort: { fields: [frontmatter___date, frontmatter___title], order: [DESC, ASC] }
     ) {
       posts: edges {
         post: node {

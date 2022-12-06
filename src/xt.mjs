@@ -4,11 +4,14 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
+import DOMPurify from 'dompurify'
+
 //
 // constructor
 //
 
 export const Xt = {}
+Xt.DOMPurify = DOMPurify
 
 if (typeof window !== 'undefined') {
   //
@@ -736,7 +739,7 @@ if (typeof window !== 'undefined') {
    */
 
   Xt.sanitize = str => {
-    return Xt.sanitizeFnc ? Xt.sanitizeFnc(str) : str
+    return DOMPurify.sanitize(str)
   }
 
   /**

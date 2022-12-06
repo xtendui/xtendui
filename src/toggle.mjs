@@ -4,10 +4,10 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt.js'
-import RJSON from 'relaxed-json'
-Xt.JSON = RJSON
+import { Xt } from './xt.mjs'
+import JSON5 from 'json5'
 import * as focusTrap from 'focus-trap'
+Xt.JSON5 = JSON5
 Xt.focusTrap = focusTrap
 
 /**
@@ -3965,7 +3965,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Toggle.componentName}`)
-      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
+      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
 
       // init
 
