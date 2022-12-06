@@ -2,14 +2,14 @@ const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--form-loader-filler">
-    <script type="text/x-template" data-node-loader-template>
+    <template data-node-loader-template>
       <div class="${classes.loader()} bg-white bg-opacity-30">
         <span class="xt-filler absolute inset-0 m-auto h-1 left-1/4 right-1/4">
           <span class="block absolute bg-current opacity-25 w-full h-full"></span>
           <span class="block absolute bg-current h-full animate-xt-filler-x"></span>
         </span>
       </div>
-    </script>
+    </template>
 
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">

@@ -111,21 +111,29 @@ const html = /* HTML */ `
           </div>
 
           <div data-xt-googlelocator-items-container>
-            <script type="text/x-template" data-xt-googlelocator-items-template>
+            <template data-xt-googlelocator-items-template>
               <div class="py-4 cursor-pointer border-b border-gray-100 transition in:border-gray-500" tabindex="-1">
                 <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
                   <div class="*** googlelocator-item-content *** text-xs leading-relaxed">
-                    <div class="mb-2 xt-mb-auto font-bold leading-none tracking-tight text-xl" data-xt-populate="name"></div>
+                    <div
+                      class="mb-2 xt-mb-auto font-bold leading-none tracking-tight text-xl"
+                      data-xt-populate="name"></div>
                     <address class="not-italic" data-xt-populate="address"></address>
                     <div data-xt-populate="additional"></div>
                   </div>
-                  <a href="/" target="_blank" rel="noopener" class="text-2xs uppercase xt-list xt-list-2 flex-col items-center" title="directions" data-xt-populate="direction">
+                  <a
+                    href="/"
+                    target="_blank"
+                    rel="noopener"
+                    class="text-2xs uppercase xt-list xt-list-2 flex-col items-center"
+                    title="directions"
+                    data-xt-populate="direction">
                     ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     <span data-xt-populate="distance"></span>
                   </a>
                 </div>
               </div>
-            </script>
+            </template>
           </div>
         </div>
       </div>
