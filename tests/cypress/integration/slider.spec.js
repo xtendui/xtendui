@@ -794,7 +794,7 @@ describe('demos/components/slider/pagination', function () {
     toggles = this.toggles
   })
 
-  it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
+  it.only('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
@@ -839,6 +839,9 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[15].classList.contains('on')).to.equal(false)
         expect(toggles[16].classList.contains('on')).to.equal(false)
         expect(toggles[17].classList.contains('on')).to.equal(false)
+      })
+      .wait(100) // racecondition
+      .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
       .get(toggles[6])
