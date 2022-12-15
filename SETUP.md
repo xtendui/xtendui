@@ -178,4 +178,3 @@ If you need to do a **fast installation** of css and js use [xtendui CDN](https:
 The css CDN `dist/` includes only the styles used in the documentation demos.
 
 The js CDN `dist/` files are large because they include all styles and components, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
-
