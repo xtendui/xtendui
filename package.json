@@ -67,9 +67,9 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "focus-trap": "^7.2.0",
-    "json5": "^2.2.1",
     "lodash": "^4.17.21",
-    "lodash.kebabcase": "^4.1.1"
+    "lodash.kebabcase": "^4.1.1",
+    "relaxed-json": "^1.0.3"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.12"

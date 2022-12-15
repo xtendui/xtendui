@@ -5,8 +5,8 @@
  */
 
 import { Xt } from './xt.mjs'
-import JSON5 from 'json5'
-Xt.JSON5 = JSON5
+import RJSON from 'relaxed-json'
+Xt.JSON = RJSON
 
 /**
  * Mousefollow
@@ -342,7 +342,7 @@ if (typeof window !== 'undefined') {
       // vars
 
       const optionsMarkup = ref.getAttribute(`data-${Xt.Mousefollow.componentName}`)
-      const options = optionsMarkup ? JSON5.parse(optionsMarkup) : {}
+      const options = optionsMarkup ? RJSON.parse(optionsMarkup) : {}
 
       // init
 
