@@ -11,8 +11,8 @@ console.debug(test)
 */
 
 ;(async () => {
-  await del(['static/demos/**/**.jsx'])
-  new glob.Glob('static/demos/**/**.html.js', (er, files) => {
+  await del(['static/demos/components/toggle/animation-queue.jsx'])
+  new glob.Glob('static/demos/components/toggle/animation-queue.html.js', (er, files) => {
     for (const file of files) {
       const name = path.basename(file, '.html.js')
       const dir = path.dirname(file)

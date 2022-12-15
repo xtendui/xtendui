@@ -9,6 +9,7 @@ function DemoInline(props) {
   // vanilla
   let hasCss
   let hasJs
+  let hasJsx
   try {
     // must be first try/catch or yarn serve error
     require(`static/${src}.js`).default
@@ -23,8 +24,13 @@ function DemoInline(props) {
     hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
+  try {
+    // must be first try/catch or yarn serve error
+    hasJsx = require.resolve(`static/${src}.jsx`)
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
   // react
-  const Demo = require(`static/${src}.jsx`).default
+  const Demo = hasJsx ? require(`static/${src}.jsx`).default : null
   /* @TODO lazy
   const Demo = loadable(() => import('static/demos/components/toggle/animation-noqueue.jsx'))
   */
@@ -63,7 +69,7 @@ function DemoInline(props) {
 
   return (
     <div ref={ref} className={'gatsby_demo_item'} data-name={name} data-id={id} data-inline={src}>
-      {mode === 'react' ? (
+      {mode === 'react' && hasJsx ? (
         <div className={`gatsby_demo_item_body`}>
           <div
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
@@ -88,7 +94,7 @@ function DemoInline(props) {
             ''
           )}
         </div>
-      ) : mode === 'html' ? (
+      ) : (
         <div className={`gatsby_demo_item_body`}>
           <div
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
@@ -118,7 +124,7 @@ function DemoInline(props) {
             ''
           )}
         </div>
-      ) : null}
+      )}
     </div>
   )
 }

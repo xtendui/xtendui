@@ -15,6 +15,7 @@ function DemoIframe(props) {
   // vanilla
   let hasCss
   let hasJs
+  let hasJsx
   try {
     // must be first try/catch or yarn serve error
     require(`static/${src}.js`).default
@@ -29,8 +30,13 @@ function DemoIframe(props) {
     hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
+  try {
+    // must be first try/catch or yarn serve error
+    hasJsx = require.resolve(`static/${src}.jsx`)
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
   // react
-  const Demo = require(`static/${src}.jsx`).default
+  const Demo = hasJsx ? require(`static/${src}.jsx`).default : null
   /* @TODO lazy
   const Demo = loadable(() => import('static/demos/components/stickyflow/usage.jsx'))
   */
@@ -75,7 +81,7 @@ function DemoIframe(props) {
           if (window !== window.parent) {
             if (mode === 'react') {
               window.parent.initIframe(src, null, `/${src}.jsx`, hasCss ? `/${src}.css` : null)
-            } else if (mode === 'html') {
+            } else {
               window.parent.initIframe(
                 src,
                 object.html,
@@ -100,17 +106,17 @@ function DemoIframe(props) {
     <LayoutDemo>
       <SEO title={seo.title} description={seo.description} />
       <div id="body-outer">
-        {mode === 'react' ? (
+        {mode === 'react' && hasJsx ? (
           <div id="gatsby_body-inner" className="gatsby_demo_source--from relative xt-h-screen">
             <Demo />
           </div>
-        ) : mode === 'html' ? (
+        ) : (
           <div
             id="gatsby_body-inner"
             className="gatsby_demo_source--from relative xt-h-screen"
             dangerouslySetInnerHTML={{ __html: object.html }}
           />
-        ) : null}
+        )}
       </div>
     </LayoutDemo>
   )
