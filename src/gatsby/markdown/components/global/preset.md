@@ -39,7 +39,7 @@ You can **customize components css** inside `tailwind.config.js`, use `theme.ext
 
 Check [xtendui/tailwind.preset.js](https://github.com/xtendui/xtendui/blob/master/tailwind.preset.js) for default preset.
 
-```jsx
+```js
 module.exports = {
   theme:{
     extend: {
@@ -67,7 +67,7 @@ You can **customize components** inside `tailwind.config.js`, use `theme.extend`
 
 Check [xtendui/tailwind.components.js](https://github.com/xtendui/xtendui/blob/master/tailwind.components.js) for default component styles.
 
-```jsx
+```js
 module.exports = {
   theme:{
     extend: {
