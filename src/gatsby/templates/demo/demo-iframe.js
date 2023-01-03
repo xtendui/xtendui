@@ -40,8 +40,7 @@ function DemoIframe(props) {
   /* @TODO lazy
   const Demo = loadable(() => import('static/demos/components/stickyflow/usage.jsx'))
   */
-  // mode
-  const [mode, setMode] = useState(0)
+  // html
   const [object, setObject] = useState(0)
   const ref = useRef()
   useEffect(() => {
@@ -69,17 +68,14 @@ function DemoIframe(props) {
     }
     // switch demo
     const item = ref.current
-    const switchDemo = mode => {
-      // fix cypress
-      mode = mode ?? 'html'
+    const switchDemo = () => {
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,
         func: () => {
-          setMode(mode)
           // populate
           if (window !== window.parent) {
-            if (mode === 'react') {
+            if (hasJsx) {
               window.parent.initIframe(src, null, `/${src}.jsx`, hasCss ? `/${src}.css` : null)
             } else {
               window.parent.initIframe(
@@ -99,14 +95,14 @@ function DemoIframe(props) {
     if (window !== window.parent) {
       window.parent.switchDemos.push(switchDemo)
     }
-    switchDemo(localStorage.getItem('mode'))
+    switchDemo()
   }, [object])
 
   return (
     <LayoutDemo>
       <SEO title={seo.title} description={seo.description} />
       <div id="body-outer">
-        {mode === 'react' && hasJsx ? (
+        {hasJsx ? (
           <div id="gatsby_body-inner" className="gatsby_demo_source--from relative xt-h-screen">
             <Demo />
           </div>

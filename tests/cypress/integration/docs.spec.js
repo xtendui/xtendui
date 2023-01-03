@@ -93,9 +93,6 @@ describe('docs', function () {
       .then(() => {
         expect(this.button[0]).to.have.text('html')
       })
-      .get('.button--switch-react')
-      .eq(0)
-      .click()
       .get('.button--show-code')
       .eq(0)
       .click()

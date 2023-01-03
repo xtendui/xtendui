@@ -34,8 +34,7 @@ function DemoInline(props) {
   /* @TODO lazy
   const Demo = loadable(() => import('static/demos/components/toggle/animation-noqueue.jsx'))
   */
-  // mode
-  const [mode, setMode] = useState(0)
+  // html
   const [object, setObject] = useState(0)
   const ref = useRef()
   useEffect(() => {
@@ -52,24 +51,23 @@ function DemoInline(props) {
   useEffect(() => {
     // switch demo
     const item = ref.current
-    const switchDemo = mode => {
+    const switchDemo = () => {
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,
         func: () => {
-          setMode(mode)
           // populate
           require('src/gatsby/assets/scripts/demo').populateItem(item)
         },
       })
     }
     window.switchDemos.push(switchDemo)
-    switchDemo(localStorage.getItem('mode'))
+    switchDemo()
   }, [])
 
   return (
     <div ref={ref} className={'gatsby_demo_item'} data-name={name} data-id={id} data-inline={src}>
-      {mode === 'react' && hasJsx ? (
+      {hasJsx ? (
         <div className={`gatsby_demo_item_body`}>
           <div
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${

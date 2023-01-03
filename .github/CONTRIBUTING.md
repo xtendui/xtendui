@@ -14,8 +14,6 @@ Ask first before starting work on any significant new features.
 
 - If fixing bug add issue linking with issue id (e.g.: `(close #xxxx)`).
 
-- Generate and fix code formatting with `yarn generate`.
-
 - Make sure all tests pass with `yarn lint && yarn build && yarn test`.
 
 ## Committing Changes

@@ -420,30 +420,6 @@ function Page() {
               Start Now!
             </div>
           </div>
-          <div className="mt-14 mb-10 xt-my-auto">
-            <div className="gatsby_listing-items gatsby_home-main_scroll">
-              <div className="xt-row xt-row-3.5 flex-nowrap">
-                <div className="w-6/12">
-                  <button
-                    type="button"
-                    className={`xt-button flex-col button--switch-html w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()} group`}>
-                    <span className="font-bold text-lg md:text-xl">Html</span>
-                    <span className="text-2xs md:text-xs opacity-[90%] group-on:hidden">Switch to Html</span>
-                    <span className="text-2xs md:text-xs opacity-[90%] hidden group-on:block">Html chosen</span>
-                  </button>
-                </div>
-                <div className="w-6/12">
-                  <button
-                    type="button"
-                    className={`xt-button flex-col button--switch-react w-full justify-center text-xs py-3 px-4 rounded-md ${classes.textDefault()} leading-snug tracking-wider uppercase ${classes.gatsbyFloat()} group`}>
-                    <span className="font-bold text-lg md:text-xl">React</span>
-                    <span className="text-2xs md:text-xs opacity-[90%] group-on:hidden">Switch to React</span>
-                    <span className="text-2xs md:text-xs opacity-[90%] hidden group-on:block">React chosen</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className="mb-14 mt-10 xt-my-auto">
             <div className="gatsby_listing-items">
               <div className="xt-row xt-row-stretch">
