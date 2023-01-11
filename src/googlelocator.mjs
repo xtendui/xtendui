@@ -187,7 +187,7 @@ class Googlelocator {
       google.maps.event.addListenerOnce(self.map, 'idle', () => {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self._submitCurrent({ empty: true })
+        self._submitCurrent()
       })
     }
   }
