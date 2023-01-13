@@ -41,6 +41,7 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `seachMapBounds:Boolean`                          | `false`        | Map bounds of current map  when searching             |
 | Option                    | `searchRadius:Number`                          | `25000`        | Radius for locate and minimum radius for search (search uses location viewport given by google)            |
 | Option                    | `locateText:String`                          | `'Locate'`        | Locate text for input            |
+| Option                    | `submitDelay:Number`                          | `250`        | Delay before each submit to show loader            |
 | Option                    | `elements.loader:Query`                          | `'[data-xt-googlelocator-loader]'`        | Container query for loader             |
 | Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Container query for searh input             |
 | Option                    | `elements.searchBtn:Query`                          | `'[data-xt-googlelocator-search-btn]'`        | Container query for search button             |
