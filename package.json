@@ -49,8 +49,8 @@
   "scripts": {
     "clean": "gatsby clean",
     "setup": "yarn alias && node ./build/packet.js",
-    "build": "yarn setup && yarn clean && gatsby build",
-    "dev": "yarn setup && yarn clean && gatsby develop -p 8080",
+    "build": "yarn setup && yarn clean && NODE_OPTIONS=--max_old_space_size=8000 gatsby build",
+    "dev": "yarn setup && yarn clean && NODE_OPTIONS=--max_old_space_size=8000 gatsby develop -p 8080",
     "serve": "gatsby serve -p 8080",
     "deploy": "gh-pages -d public",
     "dist": "yarn setup && cross-env DIST=true webpack --progress",
