@@ -60,7 +60,7 @@ class Infinitescroll {
     const state = history.state
     if (state && state.scrollResume) {
       const scrollResume = state.scrollResume
-      // on page load
+      // on page load scroll
       if (document.readyState === 'complete') {
         requestAnimationFrame(() => {
           document.scrollingElement.scrollTop = scrollResume
