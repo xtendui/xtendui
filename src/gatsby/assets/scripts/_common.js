@@ -52,86 +52,11 @@ Xt.mount({
   },
 })
 
-/* switcher */
-
 Xt.mount({
-  matches: '.button--switch-html',
+  matches: '.gatsby_tooltip_outside_link.hidden, .gatsby_site-header_item_container.hidden',
   mount: ({ ref }) => {
-    // vars
-
-    const button = ref
-    const mode = 'html'
-    const currentMode = localStorage.getItem('mode')
-
-    // click
-
-    const click = ({ switchDemos = true } = {}) => {
-      // mode
-      localStorage.setItem('mode', mode)
-      // switchDemos
-      if (switchDemos) {
-        for (const switchDemo of window.switchDemos) {
-          switchDemo(mode)
-        }
-      }
-      // class
-      for (const el of document.querySelectorAll('.button--switch-html')) {
-        Xt.on({ el })
-      }
-      for (const el of document.querySelectorAll('.button--switch-react')) {
-        Xt.off({ el })
-      }
-    }
-
-    button.addEventListener('click', click)
-
-    // init
-
-    if (!currentMode) {
-      localStorage.setItem('mode', mode)
-    }
-
-    if (!currentMode || currentMode === mode) {
-      click({ switchDemos: false })
-    }
-  },
-})
-
-Xt.mount({
-  matches: '.button--switch-react',
-  mount: ({ ref }) => {
-    // vars
-
-    const button = ref
-    const mode = 'react'
-    const currentMode = localStorage.getItem('mode')
-
-    // click
-
-    const click = ({ switchDemos = true } = {}) => {
-      // mode
-      localStorage.setItem('mode', mode)
-      // switchDemos
-      if (switchDemos) {
-        for (const switchDemo of window.switchDemos) {
-          switchDemo(mode)
-        }
-      }
-      // class
-      for (const el of document.querySelectorAll('.button--switch-html')) {
-        Xt.off({ el })
-      }
-      for (const el of document.querySelectorAll('.button--switch-react')) {
-        Xt.on({ el })
-      }
-    }
-
-    button.addEventListener('click', click)
-
-    // init
-
-    if (currentMode === mode) {
-      click({ switchDemos: false })
+    if (typeof window !== 'undefined' && window.access === 'admin') {
+      ref.classList.remove('hidden')
     }
   },
 })

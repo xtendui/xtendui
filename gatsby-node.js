@@ -7,22 +7,11 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
+        src: path.join(__dirname, 'src'),
+        static: path.join(__dirname, 'static'),
         // resolve xtendui import js and css
         xtendui: path.resolve(__dirname, './'),
       },
-    },
-  })
-}
-
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPreset({
-    name: `babel-preset-gatsby`, // https://github.com/gatsbyjs/gatsby/blob/master/packages/babel-preset-gatsby/README.md
-  })
-  actions.setBabelPreset({
-    name: `@babel/preset-env`,
-    options: {
-      useBuiltIns: 'usage',
-      corejs: require('core-js/package.json').version,
     },
   })
 }

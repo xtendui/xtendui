@@ -187,7 +187,7 @@ class Googlelocator {
       google.maps.event.addListenerOnce(self.map, 'idle', () => {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
-        self._submitCurrent({ empty: true })
+        self._submitCurrent()
       })
     }
   }
@@ -329,100 +329,106 @@ class Googlelocator {
     if (self.disabled) {
       return
     }
-    // fix .getBounds not ready
-    if (!self.map.getBounds()) {
-      google.maps.event.addListenerOnce(self.map, 'bounds_changed', () => {
-        self._submit()
-      })
-      return false
-    }
-    // filter
-    self.filters = self.container.querySelectorAll(options.elements.filter)
-    // markers
-    self.locations = []
-    let index = 0
-    const markers = options.markers
-    const bounds = new google.maps.LatLngBounds()
-    if (options.infoWindow) {
-      self.info = new google.maps.InfoWindow(options.infoWindow)
-    }
-    for (const marker of markers) {
-      if (!self.filters.length || self._filterMarker({ marker })) {
-        const latLng = new google.maps.LatLng(
-          options.formatData.lat ? options.formatData.lat(self, marker) : marker.lat,
-          options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng
-        )
-        const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
-        if (
-          (!self.radius && !self.viewport) ||
-          (self.radius && distance <= self.radius) ||
-          (self.viewport && self.viewport.contains(latLng))
-        ) {
-          const loc = new google.maps.Marker({
-            map: self.map,
-            position: latLng,
-            title: marker.name,
-            icon: marker.icon || options.map.icon,
-            animation: marker.animation || options.map.animation,
-            distance: distance,
-            marker: marker,
-            index: index,
-          })
-          bounds.extend(latLng)
-          self.locations.push(loc)
-          loc.addListener('click', () => {
-            self._populateInfo({ loc, type: 'marker' })
-          })
-          index++
+    // loader
+    self._loaderShow()
+    setTimeout(() => {
+      // fix .getBounds not ready
+      if (!self.map.getBounds()) {
+        google.maps.event.addListenerOnce(self.map, 'bounds_changed', () => {
+          self._submit()
+        })
+        return false
+      }
+      // filter
+      self.filters = self.container.querySelectorAll(options.elements.filter)
+      // markers
+      self.locations = []
+      let index = 0
+      const markers = options.markers
+      const bounds = new google.maps.LatLngBounds()
+      if (options.infoWindow) {
+        self.info = new google.maps.InfoWindow(options.infoWindow)
+      }
+      for (const marker of markers) {
+        if (!self.filters.length || self._filterMarker({ marker })) {
+          const latLng = new google.maps.LatLng(
+            options.formatData.lat ? options.formatData.lat(self, marker) : marker.lat,
+            options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng
+          )
+          const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
+          if (
+            (!self.radius && !self.viewport) ||
+            (self.radius && distance <= self.radius) ||
+            (self.viewport && self.viewport.contains(latLng))
+          ) {
+            const loc = new google.maps.Marker({
+              map: self.map,
+              position: latLng,
+              title: marker.name,
+              icon: marker.icon || options.map.icon,
+              animation: marker.animation || options.map.animation,
+              distance: distance,
+              marker: marker,
+              index: index,
+            })
+            bounds.extend(latLng)
+            self.locations.push(loc)
+            loc.addListener('click', () => {
+              self._populateInfo({ loc, type: 'marker' })
+            })
+            index++
+          }
         }
       }
-    }
-    // assign index before sort
-    for (const [i, loc] of self.locations.entries()) {
-      loc.index = i
-    }
-    // order locations
-    options.formatData.sort(self)
-    // populate items after order
-    self._populateItems()
-    // markers
-    if (options.map.cluster) {
-      if (self.cluster) {
-        self.cluster.clearMarkers()
+      // assign index before sort
+      for (const [i, loc] of self.locations.entries()) {
+        loc.index = i
       }
-      self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
-    }
-    // populate
-    if (self.locations.length) {
-      self.container.classList.remove('noplace')
-      self.container.classList.remove('empty')
-      self.container.classList.add('found')
-      self.container.classList.remove('error')
-      if (self.foundElement) {
-        self.foundElement.innerHTML = self.locations.length
+      // order locations
+      options.formatData.sort(self)
+      // populate items after order
+      self._populateItems()
+      // markers
+      if (options.map.cluster) {
+        if (self.cluster) {
+          self.cluster.clearMarkers()
+        }
+        self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
       }
-      // map
-      self.map.fitBounds(bounds)
-      self.map.panToBounds(bounds)
-    } else {
-      self.container.classList.remove('noplace')
-      self.container.classList.add('empty')
-      self.container.classList.remove('found')
-      self.container.classList.remove('error')
-    }
-    if (options.debug) {
-      // eslint-disable-next-line no-console
-      console.debug('xt-googlelocator locations', self.locations)
-    }
-    // change
-    Xt.frame({
-      el: self.container,
-      ns: `${self.ns}Change`,
-      func: () => {
-        // dispatch event
-        self.container.dispatchEvent(new CustomEvent(`change.${self._componentNs}`))
-      },
-    })
+      // loader
+      self._loaderHide()
+      // populate
+      if (self.locations.length) {
+        self.container.classList.remove('noplace')
+        self.container.classList.remove('empty')
+        self.container.classList.add('found')
+        self.container.classList.remove('error')
+        if (self.foundElement) {
+          self.foundElement.innerHTML = self.locations.length
+        }
+        // map
+        self.map.fitBounds(bounds)
+        self.map.panToBounds(bounds)
+      } else {
+        self.container.classList.remove('noplace')
+        self.container.classList.add('empty')
+        self.container.classList.remove('found')
+        self.container.classList.remove('error')
+      }
+      if (options.debug) {
+        // eslint-disable-next-line no-console
+        console.debug('xt-googlelocator locations', self.locations)
+      }
+      // change
+      Xt.frame({
+        el: self.container,
+        ns: `${self.ns}Change`,
+        func: () => {
+          // dispatch event
+          self.container.dispatchEvent(new CustomEvent(`change.${self._componentNs}`))
+        },
+      })
+    }, options.submitDelay)
   }
 
   /**
@@ -751,6 +757,7 @@ Googlelocator.optionsDefault = {
   seachMapBounds: false,
   searchRadius: 25000,
   locateText: 'Locate',
+  submitDelay: 250,
   // element
   elements: {
     loader: '[data-xt-googlelocator-loader]',

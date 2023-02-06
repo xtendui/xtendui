@@ -13,10 +13,9 @@ function DemoIframe(props) {
   seo.title = src
   seo.description = seo.title
   // vanilla
-  const object = require(`static/${src}.html.js`).object
-  const html = object.html
   let hasCss
   let hasJs
+  let hasJsx
   try {
     // must be first try/catch or yarn serve error
     require(`static/${src}.js`).default
@@ -31,38 +30,61 @@ function DemoIframe(props) {
     hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
+  try {
+    // must be first try/catch or yarn serve error
+    hasJsx = require.resolve(`static/${src}.jsx`)
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
   // react
-  const Demo = require(`static/${src}.jsx`).default
-  // iframe
-  if (typeof window !== 'undefined') {
-    document.documentElement.classList.add('gatsby_iframe-inside')
-    document.documentElement.setAttribute('id', id)
-    if (object.container) {
-      document.documentElement.classList.add('gatsby_iframe-container')
-    }
-    if (object.gradient) {
-      document.documentElement.classList.add('gatsby_iframe-gradient')
-    }
-  }
-  // mode
-  const [mode, setMode] = useState(0)
+  const Demo = hasJsx ? require(`static/${src}.jsx`).default : null
+  /* @TODO lazy
+  const Demo = loadable(() => import('static/demos/components/stickyflow/usage.jsx'))
+  */
+  // html
+  const [object, setObject] = useState(0)
   const ref = useRef()
   useEffect(() => {
+    // html
+    setObject(require(`static/${src}.html.js`).object)
+    /* @TODO lazy
+    loadable(
+      import('static/demos/components/stickyflow/usage.html.js').then(module => {
+        setObject(module.object)
+      })
+    )
+    */
+  })
+  useEffect(() => {
+    // iframe
+    if (typeof window !== 'undefined') {
+      document.documentElement.classList.add('gatsby_iframe-inside')
+      document.documentElement.setAttribute('id', id)
+      if (object.container) {
+        document.documentElement.classList.add('gatsby_iframe-container')
+      }
+      if (object.gradient) {
+        document.documentElement.classList.add('gatsby_iframe-gradient')
+      }
+    }
+    // switch demo
     const item = ref.current
-    const switchDemo = mode => {
-      // fix cypress
-      mode = mode ?? 'html'
+    const switchDemo = () => {
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,
         func: () => {
-          setMode(mode)
           // populate
           if (window !== window.parent) {
-            if (mode === 'react') {
+            if (hasJsx) {
               window.parent.initIframe(src, null, `/${src}.jsx`, hasCss ? `/${src}.css` : null)
-            } else if (mode === 'html') {
-              window.parent.initIframe(src, html, null, hasCss ? `/${src}.css` : null, hasJs ? `/${src}.js` : null)
+            } else {
+              window.parent.initIframe(
+                src,
+                object.html,
+                null,
+                hasCss ? `/${src}.css` : null,
+                hasJs ? `/${src}.js` : null
+              )
             }
             // close auto (e.g. overlay self when switching mode)
             dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
@@ -73,24 +95,24 @@ function DemoIframe(props) {
     if (window !== window.parent) {
       window.parent.switchDemos.push(switchDemo)
     }
-    switchDemo(localStorage.getItem('mode'))
-  }, [])
+    switchDemo()
+  }, [object])
 
   return (
     <LayoutDemo>
       <SEO title={seo.title} description={seo.description} />
       <div id="body-outer">
-        {mode === 'react' ? (
+        {hasJsx ? (
           <div id="gatsby_body-inner" className="gatsby_demo_source--from relative xt-h-screen">
             <Demo />
           </div>
-        ) : mode === 'html' ? (
+        ) : (
           <div
             id="gatsby_body-inner"
             className="gatsby_demo_source--from relative xt-h-screen"
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={{ __html: object.html }}
           />
-        ) : null}
+        )}
       </div>
     </LayoutDemo>
   )

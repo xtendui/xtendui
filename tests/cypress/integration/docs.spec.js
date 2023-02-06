@@ -81,32 +81,10 @@ describe('docs', function () {
       })
   })
 
-  it('TEST open code from demos should show code, switching mode should change code, copying code should be without highlight.', function () {
+  it('TEST open code from demos should show code, copying code should be without highlight.', function () {
     cy.get('.button--show-code')
       .eq(0)
       .click()
-      .get('.gatsby_demo_code_tabs_left')
-      .eq(0)
-      .find('button')
-      .as('button')
-      .should('have.length', 2)
-      .then(() => {
-        expect(this.button[0]).to.have.text('html')
-      })
-      .get('.button--switch-react')
-      .eq(0)
-      .click()
-      .get('.button--show-code')
-      .eq(0)
-      .click()
-      .get('.gatsby_demo_code_tabs_left')
-      .eq(0)
-      .find('button')
-      .as('button')
-      .should('have.length', 1)
-      .then(() => {
-        expect(this.button[0]).to.have.text('jsx')
-      })
       .get('.gatsby_demo')
       .as('demo')
       .find('.button--clipboard')

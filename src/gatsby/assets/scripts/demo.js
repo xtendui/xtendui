@@ -1,7 +1,7 @@
 import { Xt } from 'xtendui'
 import Prism from 'prismjs'
 import ClipboardJS from 'clipboard'
-import _ from 'lodash'
+import kebabCase from 'lodash.kebabcase'
 import 'xtendui/src/toggle'
 import 'xtendui/src/tooltip'
 
@@ -22,7 +22,7 @@ const demoHash = () => {
   if (full) {
     if (location.hash) {
       // if hash activate demo from hash
-      const item = document.querySelector(`[id="${_.kebabCase(location.hash)}"]`)
+      const item = document.querySelector(`[id="${kebabCase(location.hash)}"]`)
       if (item) {
         // demo
         const demo = item.closest('.gatsby_demo')
@@ -295,7 +295,7 @@ export const populateDemo = container => {
       item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
     name = id.split('/').pop().split('-').join(' ')
     id = id.split('/').join('-')
-    item.setAttribute('id', _.kebabCase(id))
+    item.setAttribute('id', kebabCase(id))
     container.querySelector('.gatsby_demo_tabs_left').append(
       Xt.node({
         str: `<button type="button" class="xt-button ${classes.textDefault()} ${classes.buttonCode()}">${name}</button>`,
@@ -320,7 +320,7 @@ export const populateDemo = container => {
   }
   // get hash
   if (location.hash) {
-    const item = container.querySelector(`[id="${_.kebabCase(location.hash)}"]`)
+    const item = container.querySelector(`[id="${kebabCase(location.hash)}"]`)
     if (item) {
       item.classList.add('on')
       demoHash()
@@ -426,9 +426,6 @@ export const populateItem = item => {
     duration: 300,
   })
   swapClick({ ref: btnClipboard.parentNode })
-  // populateTabs
-  // need to reset or on iframe reload it doesn't reload code
-  container.removeAttribute('data-code-fetched')
   // .button--show-code
   const btnCode = container.querySelector('.button--show-code')
   const inner = container.querySelector('.gatsby_demo_inner')
@@ -751,34 +748,30 @@ const sourceAsync = async (item, el) => {
 }
 
 const populateTabs = async ({ container } = {}) => {
-  const mode = localStorage.getItem('mode')
-  if (container.getAttribute('data-code-fetched') !== mode) {
-    container.setAttribute('data-code-fetched', mode)
-    for (const item of container.querySelectorAll('.gatsby_demo_item')) {
-      // empty tabs
-      const tabs = item.querySelector('.gatsby_demo_code_tabs_left')
-      if (tabs) {
-        tabs.innerHTML = ''
+  for (const item of container.querySelectorAll('.gatsby_demo_item')) {
+    // empty tabs
+    const tabs = item.querySelector('.gatsby_demo_code_tabs_left')
+    if (tabs) {
+      tabs.innerHTML = ''
+    }
+    // populate tabs
+    for (const el of item.querySelectorAll('[data-lang]')) {
+      try {
+        await sourceAsync(item, el)
+      } catch (ex) {
+        console.error(ex)
       }
-      // populate tabs
-      for (const el of item.querySelectorAll('[data-lang]')) {
-        try {
-          await sourceAsync(item, el)
-        } catch (ex) {
-          console.error(ex)
-        }
-      }
-      // code toggle
-      // with demo multiple iframe do this only when populated
-      const codeInner = item.querySelector('.gatsby_demo_code_inner')
-      if (codeInner) {
-        new Xt.Toggle(codeInner, {
-          elements: '.gatsby_demo_code_tabs_left .xt-button',
-          targets: '.gatsby_demo_code_body_item',
-          min: 1,
-          queue: false,
-        })
-      }
+    }
+    // code toggle
+    // with demo multiple iframe do this only when populated
+    const codeInner = item.querySelector('.gatsby_demo_code_inner')
+    if (codeInner) {
+      new Xt.Toggle(codeInner, {
+        elements: '.gatsby_demo_code_tabs_left .xt-button',
+        targets: '.gatsby_demo_code_body_item',
+        min: 1,
+        queue: false,
+      })
     }
   }
 }

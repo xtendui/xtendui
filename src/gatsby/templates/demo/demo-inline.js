@@ -7,10 +7,9 @@ function DemoInline(props) {
   const id = src.split('-').join(' ')
   const name = src.split('/').pop().split('.')[0]
   // vanilla
-  const object = require(`static/${src}.html.js`).object
-  const html = object.html
   let hasCss
   let hasJs
+  let hasJsx
   try {
     // must be first try/catch or yarn serve error
     require(`static/${src}.js`).default
@@ -25,31 +24,50 @@ function DemoInline(props) {
     hasJs = require.resolve(`static/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
+  try {
+    // must be first try/catch or yarn serve error
+    hasJsx = require.resolve(`static/${src}.jsx`)
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
   // react
-  const Demo = require(`static/${src}.jsx`).default
-  // mode
-  const [mode, setMode] = useState(0)
+  const Demo = hasJsx ? require(`static/${src}.jsx`).default : null
+  /* @TODO lazy
+  const Demo = loadable(() => import('static/demos/components/toggle/animation-noqueue.jsx'))
+  */
+  // html
+  const [object, setObject] = useState(0)
   const ref = useRef()
   useEffect(() => {
+    // html
+    setObject(require(`static/${src}.html.js`).object)
+    /* @TODO lazy
+    loadable(
+      import('static/demos/components/toggle/animation-noqueue.html.js').then(module => {
+        setObject(module.object)
+      })
+    )
+    */
+  })
+  useEffect(() => {
+    // switch demo
     const item = ref.current
-    const switchDemo = mode => {
+    const switchDemo = () => {
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,
         func: () => {
-          setMode(mode)
           // populate
           require('src/gatsby/assets/scripts/demo').populateItem(item)
         },
       })
     }
     window.switchDemos.push(switchDemo)
-    switchDemo(localStorage.getItem('mode'))
+    switchDemo()
   }, [])
 
   return (
     <div ref={ref} className={'gatsby_demo_item'} data-name={name} data-id={id} data-inline={src}>
-      {mode === 'react' ? (
+      {hasJsx ? (
         <div className={`gatsby_demo_item_body`}>
           <div
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
@@ -74,15 +92,15 @@ function DemoInline(props) {
             ''
           )}
         </div>
-      ) : mode === 'html' ? (
+      ) : (
         <div className={`gatsby_demo_item_body`}>
           <div
             className={`gatsby_demo_source gatsby_demo_source--from gatsby_demo_source--container ${
               object.overflow ? 'gatsby_demo_source--overflow' : ''
             }`}
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={{ __html: object.html }}
           />
-          <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: html }} />
+          <script type="text/plain" data-lang="html" dangerouslySetInnerHTML={{ __html: object.html }} />
           {hasCss ? (
             <script
               type="text/plain"
@@ -104,7 +122,7 @@ function DemoInline(props) {
             ''
           )}
         </div>
-      ) : null}
+      )}
     </div>
   )
 }

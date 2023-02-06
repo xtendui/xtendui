@@ -25,7 +25,7 @@ npm install postcss postcss-import autoprefixer --save-dev
 
 Then in `postcss.config.js` set up compilation (more info in Tailwind CSS docs [Tailwind CSS postcss](https://tailwindcss.com/docs/using-with-preprocessors)).
 
-```jsx
+```js
 module.exports = {
   plugins: [require('postcss-import'), require('tailwindcss/nesting'), require('tailwindcss'), require('autoprefixer')],
 };
@@ -33,7 +33,7 @@ module.exports = {
 
 For `nextjs` and other frameworks you might need to use this syntax instead.
 
-```jsx
+```js
 module.exports = {
   plugins: {
     'postcss-import': {},
@@ -46,13 +46,11 @@ module.exports = {
 
 Create a `tailwind.config.js` and add **xtendui preset**, with this purge configuration.
 
-```jsx
+```js
 module.exports = {
   presets: [
     require('tailwindcss/defaultConfig'), require('xtendui/tailwind.preset'),
   ],
-  // put other content e.g.: './src/**/*.{html,js}'
-  content: ['./node_modules/xtendui/src/*.mjs'],
 }
 ```
 
@@ -76,7 +74,7 @@ You can [customize components css](https://xtendui.com/components/global/preset#
 
 You can import the **components you need** as described in the demos.
 
-```jsx
+```js
 import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 ```
@@ -180,4 +178,3 @@ If you need to do a **fast installation** of css and js use [xtendui CDN](https:
 The css CDN `dist/` includes only the styles used in the documentation demos.
 
 The js CDN `dist/` files are large because they include all styles and components, **it's not representative of the sizes** you see when including Xtend UI as part of your build process.
-

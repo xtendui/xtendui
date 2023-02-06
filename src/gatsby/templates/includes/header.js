@@ -122,57 +122,13 @@ export default function Header({ page }) {
                     className="xt-button xt-dismiss fixed z-above top-0 right-0 p-5 pr-3 text-2xl"
                     aria-label="Close"
                     dangerouslySetInnerHTML={{ __html: classes.iconX() }}></div>
-                  <div className="mt-16 lg:mt-0">
-                    <div className="gatsby_site-header_switcher_container">
-                      <div className="xt-list xt-list-1 flex-nowrap">
-                        <div
-                          className="flex-auto"
-                          data-xt-tooltip="{ mouseParent: true, position: 'bottom', duration: 300 }">
-                          <div className="w-full">
-                            <button
-                              type="button"
-                              className={`xt-button button--switch-html w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}
-                              data-xt-tooltip-element>
-                              Html
-                            </button>
-                            <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
-                              <div
-                                className={`xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
-                                Switch to Html
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex-auto" data-xt-tooltip="{ position: 'bottom', duration: 300 }">
-                          <div className="w-full">
-                            <button
-                              type="button"
-                              className={`xt-button button--switch-react w-full justify-center text-xs py-1 px-2.5 rounded-md ${classes.textInverse()} font-black leading-snug tracking-wider uppercase border border-primary-600 bg-primary-600 hover:border-primary-600 hover:bg-primary-600 on:border-primary-700 on:bg-primary-700 transition`}
-                              data-xt-tooltip-element>
-                              React
-                            </button>
-                            <div className="xt-tooltip xt-tooltip--gatsby p-2 group" data-xt-tooltip-target>
-                              <div
-                                className={`xt-card ${classes.tooltipSm()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()} transition duration-300 opacity-0 translate-y-2 group-in:opacity-100 group-in:translate-y-0`}>
-                                Switch to React
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <nav aria-label="Menu" className="mt-4">
                     <div className="gatsby_site-header_links_container">
                       <div className="gatsby_site-header_links">
                         {page.menus.posts.map(({ post }, i) => (
                           <div
                             className={`gatsby_tooltip_outside_link ${
-                              (typeof window === 'undefined' || window.access !== 'admin') &&
-                              post.frontmatter.tags &&
-                              post.frontmatter.tags.includes('hidden')
-                                ? 'hidden'
-                                : ''
+                              post.frontmatter.tags && post.frontmatter.tags.includes('hidden') ? 'hidden' : ''
                             }`}
                             key={i}>
                             <Link
@@ -207,9 +163,7 @@ export default function Header({ page }) {
                                       post.frontmatter.parent === post.frontmatter.title ? (
                                         <div
                                           className={`gatsby_site-header_item_container ${
-                                            (typeof window === 'undefined' || window.access !== 'admin') &&
-                                            post.frontmatter.tags &&
-                                            post.frontmatter.tags.includes('hidden')
+                                            post.frontmatter.tags && post.frontmatter.tags.includes('hidden')
                                               ? 'hidden'
                                               : ''
                                           }`}

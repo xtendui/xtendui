@@ -28,7 +28,6 @@ Xtend UI is a powerful frontend library of Tailwind CSS components enhanced by v
 * Some animations and interactions with [Gsap](https://greensock.com/gsap/)
 * Positioning with [Popperjs](https://popper.js.org/)
 * Focus trap with [Focus Trap](https://github.com/focus-trap/focus-trap)
-* Sanitize with [DOMPurify](https://github.com/cure53/DOMPurify)
 * Docs with [Gatsby](https://www.gatsbyjs.com/)
 * Release with [Semantic Release](https://github.com/semantic-release/semantic-release)
 * Polyfill with [Babel](https://babeljs.io/) and [Core Js](https://github.com/zloirock/core-js)
@@ -41,6 +40,10 @@ Xtend UI is a powerful frontend library of Tailwind CSS components enhanced by v
 
 For a complete css and js setup guide visit [online setup page](https://xtendui.com/intro/setup) or [github setup page](https://github.com/xtendui/xtendui/blob/master/SETUP.md).
 
+## Frameworks
+
+Xtend UI is a framework agnostic vanilla javascript library, you can use inside [any javascript framework](https://xtendui.com/intro/frameworks).
+
 ## Contributing
 
 Read our [contributing docs](https://github.com/xtendui/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
@@ -49,7 +52,6 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/master/.git
 
 * Clone the repository `git clone https://github.com/xtendui/xtendui.git --depth 1`
 * Install required npm packages with `yarn install`
-* Use `yarn generate` to generate react components
 * Use `yarn dev` to serve a develop version with watch
 * Use `yarn build && yarn serve` to serve a production version
 

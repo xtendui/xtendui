@@ -7,7 +7,7 @@ on:
     branches: ['*']
 
 env:
-  NODE: 16.x
+  NODE: 18.x
 
 jobs:
   codeql:
@@ -41,10 +41,6 @@ jobs:
     - name: Yarn
       run: yarn install --frozen-lockfile --prefer-offline
     # build/action.yml composite
-    - name: Generate demos
-      run: yarn generate
-    - name: Check files changes
-      run: echo "Use 'yarn generate' and commit if files changed:" && git diff --name-only --exit-code && echo "No files changed during lint."
     - name: Build
       run: yarn build
     # test/action.yml composite
