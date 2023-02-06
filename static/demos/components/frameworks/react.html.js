@@ -1,5 +1,4 @@
-const html = /* HTML */ `
-`
+const html = /* HTML */ ``
 
 export const object = {
   html: html,
