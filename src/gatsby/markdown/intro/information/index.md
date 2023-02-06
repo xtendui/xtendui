@@ -48,6 +48,10 @@ Xtend UI is a powerful frontend library of Tailwind CSS components enhanced by v
 
 For a complete css and js setup guide visit [online setup page](https://xtendui.com/intro/setup) or [github setup page](https://github.com/xtendui/xtendui/blob/master/SETUP.md).
 
+## Frameworks
+
+Xtend UI is a framework agnostic vanilla javascript library, you can use inside [any javascript framework](https://xtendui.com/intro/frameworks).
+
 ## Contributing
 
 Read our [contributing docs](https://github.com/xtendui/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
