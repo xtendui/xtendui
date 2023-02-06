@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/xtendui/xtendui/compare/v1.2.0...v1.3.0) (2023-02-06)
+
+
+### Bug Fixes
+
+* **googlelocator:** fix initialSearch use options center and zoom ([15c1ae0](https://github.com/xtendui/xtendui/commit/15c1ae0ef4301bce89c9af0e1ff46bda13bacf67))
+* **googlelocator:** show and hide loader on submit and added options.submitDelay ([081e10b](https://github.com/xtendui/xtendui/commit/081e10b94dda7a5236d7d97cc785de3616f75fbb))
+
+
+### Features
+
+* **js:** removed Dompurify and added optional sanitize function with Xt.sanitizeFnc ([29a5f32](https://github.com/xtendui/xtendui/commit/29a5f3216072a156d808961c15b98d7b41613885))
+* **js:** smaller footprint relaxed json instead of json5 ([941021e](https://github.com/xtendui/xtendui/commit/941021ece61d635b4ca1a37c95ce81c15e51f9a8))
+
 # [1.2.0](https://github.com/xtendui/xtendui/compare/v1.1.0...v1.2.0) (2022-10-24)
 
 
