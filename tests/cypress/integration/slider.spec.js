@@ -794,7 +794,7 @@ describe('demos/components/slider/pagination', function () {
     toggles = this.toggles
   })
 
-  it.only('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
+  it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {

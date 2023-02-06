@@ -558,7 +558,7 @@ describe('demos/components/infinitescroll/usage', function () {
     self = Xt.get({ name: 'xt-infinitescroll', el: container })
   })
 
-  it.only('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {
+  it('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-infinitescroll-init', '') // racecondition
       .then(() => {
