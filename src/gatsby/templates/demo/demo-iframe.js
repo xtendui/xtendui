@@ -68,7 +68,7 @@ function DemoIframe(props) {
     }
     // switch demo
     const item = ref.current
-    const switchDemo = () => {
+    const switchDemo = init => {
       // needs raf or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
       Xt.frame({
         el: item,
@@ -86,8 +86,10 @@ function DemoIframe(props) {
                 hasJs ? `/${src}.js` : null
               )
             }
-            // close auto (e.g. overlay self when switching mode)
-            dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
+            if (!init) {
+              // close auto (e.g. overlay self when switching mode)
+              dispatchEvent(new CustomEvent('closeauto.trigger.xt'))
+            }
           }
         },
       })
@@ -95,7 +97,7 @@ function DemoIframe(props) {
     if (window !== window.parent) {
       window.parent.switchDemos.push(switchDemo)
     }
-    switchDemo()
+    switchDemo(true)
   }, [object])
 
   return (
