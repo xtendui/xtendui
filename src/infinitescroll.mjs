@@ -449,7 +449,9 @@ class Infinitescroll {
         let html = pagination.dataset.html
         let regex = new RegExp('xt-num', 'ig')
         if (html.search(regex) !== -1) {
-          html = html.replace(regex, self.current)
+          let current = self.current * options.perPage
+          current = current > options.max ? options.max : current
+          html = html.replace(regex, current)
         }
         regex = new RegExp('xt-tot', 'ig')
         if (html.search(regex) !== -1) {
@@ -627,6 +629,7 @@ Infinitescroll.optionsDefault = {
   get: false,
   nocache: false,
   prefetch: true,
+  perPage: 1,
   // quantity
   min: 1,
   max: 'Infinity',
