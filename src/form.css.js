@@ -39,7 +39,7 @@ module.exports = {
         theme('colors.white')
       )}" xmlns="http://www.w3.org/2000/svg"><path d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"/></svg>')`,
       backgroundSize: '0',
-      backgroundPosition: 'top center',
+      backgroundPosition: 'center center',
       '&:checked': {
         backgroundSize: '100%',
       },
@@ -57,7 +57,7 @@ module.exports = {
         theme('colors.white')
       )}" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>')`,
       backgroundSize: '0',
-      backgroundPosition: 'top center',
+      backgroundPosition: 'center center',
       '&:checked': {
         backgroundSize: '100%',
       },
