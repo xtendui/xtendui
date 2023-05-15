@@ -34,8 +34,8 @@ module.exports = {
         below: '-1',
         slide: '200', // same as options.zIndex.targets.start
         content: '300', // above all page content
+        tooltip: '350', // same as options.zIndex.targets.start
         drop: '400', // same as options.zIndex.targets.start
-        tooltip: '500', // same as options.zIndex.targets.start
         sticky: '900',
         above: '1000', // above all page components
         overlay: '5000', // same as options.zIndex.targets.start
