@@ -1,15 +1,21 @@
 .demo--infinitescroll, .demo--infinitescroll-react {
-  /* first and last */
+  /* init and first and last */
 
-  .xt-infinitescroll-first {
-    [data-xt-infinitescroll-up] {
-      @apply hidden;
+  .infinitescroll {
+    &:not([data-xt-infinitescroll-init]) {
+      [data-xt-infinitescroll-up] {
+        @apply hidden;
+      }
     }
-  }
-
-  .xt-infinitescroll-last {
-    [data-xt-infinitescroll-down] {
-      @apply hidden;
+    &.xt-infinitescroll-first {
+      [data-xt-infinitescroll-up] {
+        @apply hidden;
+      }
+    }
+    &.xt-infinitescroll-last {
+      [data-xt-infinitescroll-down] {
+        @apply hidden;
+      }
     }
   }
 
