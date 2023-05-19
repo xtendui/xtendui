@@ -18,7 +18,7 @@ Initialize manually **within javascript** with `new Xt.Infinitescroll(document.q
 
 Remember to set a `options.get` variable for a **get request on current url** to load items. Also remember to set `options.max` number of pages.
 
-> Infinitescroll uses [bfcache](https://web.dev/bfcache/) to resume previous state when using back/forward browser buttons. Ensure **bfcache** is working on your environment (some extensions can disable this), or use `options.nocache: true`.
+> Infinitescroll works also if your website is eligible for [bfcache](https://web.dev/bfcache/) to resume previous state when using back/forward browser buttons. To disable default behaviour use or use `options.nocache: false`.
 
 > This is a **speed optimization technique**, it automatically **prefetch next page**.
 

@@ -627,7 +627,7 @@ Infinitescroll.optionsDefault = {
   debug: false,
   // infinitescroll
   get: false,
-  nocache: false,
+  nocache: true,
   prefetch: true,
   perPage: 1,
   // quantity
