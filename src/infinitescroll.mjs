@@ -472,7 +472,7 @@ class Infinitescroll {
     if (self.current <= options.min) {
       self.container.classList.add('xt-infinitescroll-first')
     }
-    if (self.current >= options.max) {
+    if (self.current * options.perPage >= options.max) {
       self.container.classList.add('xt-infinitescroll-last')
     }
   }
