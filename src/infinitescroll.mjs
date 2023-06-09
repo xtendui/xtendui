@@ -23,6 +23,7 @@ class Infinitescroll {
   _url
   _scrollResume
   _scrollTopOld
+  _loading
   componentName
   ns
   options
@@ -67,7 +68,7 @@ class Infinitescroll {
     self._optionsInitial = self.options = Xt.merge([self._optionsDefault, self._optionsCustom])
     // vars
     const options = self.options
-    self.current = options.min
+    self.current = Math.floor(options.min / options.perPage)
     // fake
     if (!options.get) {
       self._itemsFake = self.container.querySelector(options.elements.itemsContainer).cloneNode(true)
@@ -208,7 +209,7 @@ class Infinitescroll {
     const down = parseFloat(trigger.getAttribute('data-xt-infinitescroll-down'))
     const amount = up || down
     if (!amount) {
-      self._setCurrent({ page: options.min })
+      self._setCurrent({ page: Math.floor(options.min / options.perPage) })
       location = self._url.href
     } else {
       const current = self._getNext({ amount })
@@ -236,8 +237,10 @@ class Infinitescroll {
     const options = self.options
     // return next index
     let current = self.current + amount
-    current = current < options.min ? options.min : current
-    current = current > options.max ? options.max : current
+    const min = Math.floor(options.min / options.perPage)
+    const max = Math.ceil(options.max / options.perPage)
+    current = current < min ? min : current
+    current = current > max ? max : current
     return current
   }
 
@@ -265,19 +268,20 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // disabled
-    if (self.disabled) {
+    if (self.disabled || self._loading) {
       return
     }
     // scroll
     const scrollTop = document.scrollingElement.scrollTop
     const windowHeight = window.innerHeight
     // current page
-    let found = self.itemsContainer.querySelector(options.elements.item)
-    const items = self.itemsContainer.querySelectorAll('[data-item-first]')
+    const items = Array.from(self.itemsContainer.querySelectorAll('[data-item-first]')).reverse()
+    let found = items[items.length - 1]
     for (const item of items) {
-      const itemTop = item.offsetTop
-      if (scrollTop > itemTop - windowHeight / 2) {
+      const itemTop = item.getBoundingClientRect().top
+      if (itemTop < windowHeight / 2) {
         found = item
+        break
       }
     }
     self._setCurrent({ page: parseFloat(found.getAttribute('data-item-first')) })
@@ -328,6 +332,7 @@ class Infinitescroll {
   _request() {
     const self = this
     // request
+    self._loading = true
     fetch(self._url.href, {
       method: 'GET',
     })
@@ -347,21 +352,6 @@ class Infinitescroll {
   }
 
   /**
-   * response
-   * @param {Object} params
-   * @param {XMLHttpRequest|Object} params.request Html response
-   */
-  _response({ request } = {}) {
-    const self = this
-    // request
-    if (request.status >= 200 && request.status <= 300) {
-      self._success({ request })
-    } else {
-      self._error()
-    }
-  }
-
-  /**
    * success
    * @param {Object} params
    * @param {String} params.text Html response
@@ -374,10 +364,12 @@ class Infinitescroll {
     html.innerHTML = text
     const itemsContainer = html.querySelector(options.elements.itemsContainer)
     if (options.get && itemsContainer) {
+      self._loading = false
       self._populate({ itemsContainer })
     } else {
       // fake
       setTimeout(() => {
+        self._loading = false
         self._populate({ itemsContainer: self._itemsFake.cloneNode(true) })
       }, 1000)
     }
@@ -389,6 +381,7 @@ class Infinitescroll {
   _error() {
     const self = this
     // class
+    self._loading = false
     self.container.classList.remove('xt-infinitescroll-loading')
   }
 
@@ -469,10 +462,10 @@ class Infinitescroll {
     const self = this
     const options = self.options
     // class
-    if (self.current <= options.min) {
+    if (self.current <= Math.floor(options.min / options.perPage)) {
       self.container.classList.add('xt-infinitescroll-first')
     }
-    if (self.current * options.perPage >= options.max) {
+    if (self.current >= Math.ceil(options.max / options.perPage)) {
       self.container.classList.add('xt-infinitescroll-last')
     }
   }
