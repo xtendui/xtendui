@@ -1,44 +1,43 @@
 .demo--infinitescroll, .demo--infinitescroll-react {
-  /* first and last */
+  /* init and first and last */
 
-  .xt-infinitescroll-first {
-    [data-xt-infinitescroll-up] {
-      display: none;
+  .infinitescroll {
+    &:not([data-xt-infinitescroll-init]) {
+      [data-xt-infinitescroll-up] {
+        @apply hidden;
+      }
     }
-  }
-
-  .xt-infinitescroll-last {
-    [data-xt-infinitescroll-down] {
-      display: none;
+    &.xt-infinitescroll-first {
+      [data-xt-infinitescroll-up] {
+        @apply hidden;
+      }
+    }
+    &.xt-infinitescroll-last {
+      [data-xt-infinitescroll-down] {
+        @apply hidden;
+      }
     }
   }
 
   /* loading */
 
-  .infinitescroll-spinner {
-    @apply transition opacity-0;
-    .xt-spinner {
-      @apply transition-all opacity-0 scale-75;
-    }
-  }
-
   [data-xt-infinitescroll-up], [data-xt-infinitescroll-down] {
     > .content {
       @apply transition;
     }
+    > .xt-loader {
+      @apply transition opacity-0;
+    }
   }
 
   .xt-infinitescroll-loading {
-    .infinitescroll-spinner {
-      @apply opacity-100;
-      .xt-spinner {
-        @apply opacity-100 scale-100;
-      }
-    }
     [data-xt-infinitescroll-up], [data-xt-infinitescroll-down] {
-      pointer-events: none;
+      @apply pointer-events-none;
       > .content {
         @apply opacity-0;
+      }
+      > .xt-loader {
+        @apply opacity-100;
       }
     }
   }
