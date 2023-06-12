@@ -18,7 +18,7 @@ Initialize manually **within javascript** with `new Xt.Infinitescroll(document.q
 
 Remember to set a `options.get` variable for a **get request on current url** to load items. Also remember to set `options.max` number of pages.
 
-> Infinitescroll uses [bfcache](https://web.dev/bfcache/) to resume previous state when using back/forward browser buttons. Ensure **bfcache** is working on your environment (some extensions can disable this), or use `options.nocache: true`.
+> Infinitescroll works also if your website is eligible for [bfcache](https://web.dev/bfcache/) to resume previous state when using back/forward browser buttons. To disable default behaviour use or use `options.nocache: false`.
 
 > This is a **speed optimization technique**, it automatically **prefetch next page**.
 
@@ -46,7 +46,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `get:String`                          | `false`        | **url get** variable to use            |
-| Option                    | `nocache:Boolean`                          | `false`        | Restore scroll position on back and forward browser buttons            |
+| Option                    | `nocache:Boolean`                          | `true`        | Restore scroll position on back and forward browser buttons            |
 | Option                    | `prefetch:Boolean`                          | `true`        | Prefetch next page automatically            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum items / page number            |
 | Option                    | `max:Number`                          | `'Infinity'`        | Maximum items / page number            |
