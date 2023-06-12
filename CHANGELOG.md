@@ -1,3 +1,20 @@
+# [1.4.0](https://github.com/xtendui/xtendui/compare/v1.3.0...v1.4.0) (2023-06-12)
+
+
+### Bug Fixes
+
+* **form:** fix css checkbox and radio background position ([3be2325](https://github.com/xtendui/xtendui/commit/3be232522bbede28acb927e6181bcadd92101c44))
+* **groupnumber:** fix css styles before initialization to not have input number appareance ([43459d0](https://github.com/xtendui/xtendui/commit/43459d0c477035feac8d9716e0d54eef7af39647))
+* **infiniscroll:** fix page index when scrolling when changing page, better page index when scrolling, some fixes to work with options.perPage ([2bf22c1](https://github.com/xtendui/xtendui/commit/2bf22c1e59e79c09d5a107f94aef1c47c0a08d22))
+* **infinitescroll:** fix per page pagination ([5514863](https://github.com/xtendui/xtendui/commit/55148635ed89b59c93b3bb8c9687d515127b0153))
+* **infinitescroll:** options.cache is now true to enable default behaviour without bfcache ([9b95d1b](https://github.com/xtendui/xtendui/commit/9b95d1b38a7afecc76a2b9b41eef1e02e8ba4799))
+* **tooltip:** z-index tooltip lower thank drop ([0e0c452](https://github.com/xtendui/xtendui/commit/0e0c4521bc02c2bd56fc3b16486d8ff29d845f5a))
+
+
+### Features
+
+* **infinitescroll:** infinite scroll options.perPage for items pagination instead pages ([ad61031](https://github.com/xtendui/xtendui/commit/ad6103189e7576e5e6b02baf3d66a348ee2a9420))
+
 # [1.3.0](https://github.com/xtendui/xtendui/compare/v1.2.0...v1.3.0) (2023-02-06)
 
 
