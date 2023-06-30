@@ -53,7 +53,9 @@ function DocHead(props) {
                   <h2 className="-mt-2 mb-2 md:text-lg opacity-70">{page.post.frontmatter.description}</h2>
                 ) : null}
               </div>
-              <div className="w-full xl:w-auto" ref={ref}></div>
+              <div className="w-full xl:w-auto">
+                <div ref={ref} className="min-h-[106px]"></div>
+              </div>
             </div>
           </div>
         </div>

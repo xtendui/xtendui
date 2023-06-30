@@ -5,7 +5,7 @@ import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 
 function SEO({ title, description, lang, meta }) {
   const { site } = useSiteMetadata()
-  const titleSuffix = 'Tailwind CSS with Vanilla JS - XtendUI library'
+  const titleSuffix = 'UI library with Tailwind CSS and Vanilla JS'
   let metaTitle = title || site.siteMetadata.description
   if (title === 'Home') {
     metaTitle = site.siteMetadata.description
