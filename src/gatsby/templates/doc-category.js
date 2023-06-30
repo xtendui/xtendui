@@ -25,10 +25,6 @@ function Template(props) {
       ? data.post.frontmatter.parent
       : ''
   seo.title +=
-    data.post.frontmatter.category && data.post.frontmatter.category !== data.post.frontmatter.title
-      ? data.post.frontmatter.category
-      : ''
-  seo.title +=
     data.post.frontmatter.type && data.post.frontmatter.type !== data.post.frontmatter.title
       ? data.post.frontmatter.type
       : ''

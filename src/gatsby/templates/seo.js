@@ -5,8 +5,13 @@ import { useSiteMetadata } from 'src/gatsby/templates/includes/siteMetadata'
 
 function SEO({ title, description, lang, meta }) {
   const { site } = useSiteMetadata()
-  let metaTitle = title === 'Home' ? site.siteMetadata.description : title || site.siteMetadata.description
-  metaTitle = `${site.siteMetadata.title} - ${metaTitle}`
+  const titleSuffix = 'Tailwind CSS with Vanilla JS - XtendUI library'
+  let metaTitle = title || site.siteMetadata.description
+  if (title === 'Home') {
+    metaTitle = site.siteMetadata.description
+  } else {
+    metaTitle = `${metaTitle} - ${titleSuffix}`
+  }
   const metaDescription = description || site.siteMetadata.description
   const keywords = site.siteMetadata.keywords
   return (
