@@ -429,7 +429,7 @@ function Page() {
                       Intro
                     </div>
                     <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
-                      Project overview and instructions to get stated.
+                      Project overview and instructions to get started.
                     </p>
                   </Link>
                 </div>
