@@ -45,7 +45,7 @@ Inside `elements.pagination:Query` you can use this strings that gets populated 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
-| Option                    | `get:String`                          | `false`        | **url get** variable to use            |
+| Option                    | `get:String\|false`                          | `false`        | **url get** variable to use            |
 | Option                    | `nocache:Boolean`                          | `true`        | Restore scroll position on back and forward browser buttons            |
 | Option                    | `prefetch:Boolean`                          | `true`        | Prefetch next page automatically            |
 | Option                    | `min:Number`                          | `1`        | Initial and minimum items / page number            |

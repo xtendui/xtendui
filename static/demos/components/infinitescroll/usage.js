@@ -12,7 +12,7 @@ const mountInfinitescroll = ({ ref }) => {
 
   /***/
   let self = new Xt.Infinitescroll(infinitescroll, {
-    get: false,
+    get: false, // put here your url parameter as string
     max: 4,
     elements: {
       itemsContainer: '[data-xt-infinitescroll-items-container]',
