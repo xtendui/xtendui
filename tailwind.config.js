@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
-  content: ['./{src,static}/**/*.js', './gatsby-config.esm.js'],
+  content: ['./{src,public}/**/*.js'],
   safelist: process.env.DIST
     ? []
     : [

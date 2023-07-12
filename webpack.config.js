@@ -25,11 +25,22 @@ module.exports = {
         test: /\.m?js$/,
         exclude: {
           and: [/node_modules/],
-          not: [/node_modules\/xtendui/],
+          not: [/node_modules\/xtendui/, /core-js/],
         },
         use: [
           {
             loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    useBuiltIns: 'usage',
+                    corejs: require('core-js/package.json').version,
+                  },
+                ],
+              ],
+            },
           },
         ],
       },
