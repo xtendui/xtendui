@@ -1,23 +1,22 @@
-const { Glob } = require('glob')
+const { glob } = require('glob')
 const writeFile = require('write')
 
-let cssDemos = ''
-const cssDemosGlob = new Glob('static/demos/**/*.css', (er, files) => {
-  for (const file of files) {
+async function compileCss() {
+  let cssDemos = ''
+  const cssFiles = await glob('static/demos/**/*.css')
+  for (const file of cssFiles.reverse()) {
     cssDemos += `@import 'xtendui/${file}';\n`
   }
-})
-
-cssDemosGlob.stream().on('end', () => {
   writeFile('./dist/xtend-demos.css', cssDemos)
-})
+}
+compileCss()
 
-let jsComponents = ''
-const jsComponentsGlob = new Glob('src/*.mjs', { ignore: ['src/*.css.js'] }, (er, files) => {
-  for (const file of files) {
+async function compileJs() {
+  let jsComponents = ''
+  const jsFiles = await glob('src/*.mjs', { ignore: ['src/*.css.js'] })
+  for (const file of jsFiles.reverse()) {
     jsComponents += `import 'xtendui/${file}'\n`
   }
-})
-jsComponentsGlob.stream().on('end', () => {
   writeFile('./dist/xtend-components.js', jsComponents)
-})
+  }
+compileJs()

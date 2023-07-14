@@ -1,6 +1,6 @@
-@import 'xtendui/static/demos/components/card/disabled.css';
 @import 'xtendui/static/demos/components/drop/animation-css.css';
 @import 'xtendui/static/demos/components/drop/disabled.css';
+@import 'xtendui/static/demos/components/card/disabled.css';
 @import 'xtendui/static/demos/components/form/loader-filler.css';
 @import 'xtendui/static/demos/components/form/loader-spinner.css';
 @import 'xtendui/static/demos/components/form/validation.css';
@@ -10,6 +10,12 @@
 @import 'xtendui/static/demos/components/group/expand.css';
 @import 'xtendui/static/demos/components/infinitescroll/usage.css';
 @import 'xtendui/static/demos/components/media/skeleton.css';
+@import 'xtendui/static/demos/components/slider/animation-css.css';
+@import 'xtendui/static/demos/components/slider/exclude.css';
+@import 'xtendui/static/demos/components/slider/expand.css';
+@import 'xtendui/static/demos/components/slider/media-loaded.css';
+@import 'xtendui/static/demos/components/slider/navsides.css';
+@import 'xtendui/static/demos/components/slider/touch-overflow.css';
 @import 'xtendui/static/demos/components/overlay/animation-css.css';
 @import 'xtendui/static/demos/components/overlay/class-body.css';
 @import 'xtendui/static/demos/components/overlay/disabled.css';
@@ -20,15 +26,9 @@
 @import 'xtendui/static/demos/components/scrolltrigger/fade-matchmedia.css';
 @import 'xtendui/static/demos/components/scrolltrigger/fade.css';
 @import 'xtendui/static/demos/components/scrolltrigger/sticky-hide-direction-sub.css';
-@import 'xtendui/static/demos/components/slider/animation-css.css';
-@import 'xtendui/static/demos/components/slider/exclude.css';
-@import 'xtendui/static/demos/components/slider/expand.css';
-@import 'xtendui/static/demos/components/slider/media-loaded.css';
-@import 'xtendui/static/demos/components/slider/navsides.css';
-@import 'xtendui/static/demos/components/slider/touch-overflow.css';
-@import 'xtendui/static/demos/components/table/border.css';
 @import 'xtendui/static/demos/components/toggle/animation-css.css';
 @import 'xtendui/static/demos/components/toggle/class-custom.css';
+@import 'xtendui/static/demos/components/table/border.css';
 @import 'xtendui/static/demos/components/tooltip/animation-css.css';
 @import 'xtendui/static/demos/components/tooltip/disabled.css';
 @import 'xtendui/static/demos/components/typography/listcustom.css';
