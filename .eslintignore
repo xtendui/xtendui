@@ -1,6 +1,5 @@
 # folders
-.cache/
-public
+.next/
 
 # files
 **/*.min.js

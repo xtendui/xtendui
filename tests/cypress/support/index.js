@@ -5,7 +5,10 @@ import 'cypress-plugin-tab'
 // set window variables
 
 Cypress.on('window:before:load', win => {
-  win.XtSetGlobal = true
+  if (typeof window !== 'undefined') {
+    win.global ||= win
+    win.XtSetGlobal = true
+  }
 })
 
 // ignore xhr https://github.com/cypress-io/cypress/issues/7362
