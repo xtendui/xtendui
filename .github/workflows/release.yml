@@ -26,9 +26,7 @@ jobs:
     - name: Node setup
       uses: actions/setup-node@v3
       with:
-        node-version: "${{ env.NODE }}"
-    - name: Yarn
-      run: yarn install --frozen-lockfile --prefer-offline
+        node-version: 14 # fix https://github.com/cycjimmy/semantic-release-action/issues/159#issuecomment-1490892625
     # release/action.yml composite
     - name: Release
       uses: cycjimmy/semantic-release-action@v3
