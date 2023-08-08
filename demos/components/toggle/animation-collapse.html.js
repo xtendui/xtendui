@@ -1,4 +1,4 @@
-const classes = require('src/gatsby/templates/snippets/classes').classes
+const classes = require('src/app/snippets/classes').classes
 
 const toggle = () =>
   `xt-button *** w-full justify-start text-left *** ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonLower()} ${classes.buttonGray()} ${classes.buttonTextAnim()}`
