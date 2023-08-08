@@ -1,4 +1,4 @@
-const classes = require('src/app/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const buttonGray = () => `${classes.buttonGray()} ${classes.buttonGrayAnim()}`
 const buttonPrimary = () => `${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`

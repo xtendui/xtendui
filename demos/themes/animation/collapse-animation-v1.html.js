@@ -1,4 +1,4 @@
-const classes = require('src/app/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const designAnim = () =>
   'overflow-hidden transition-all -translate-y-4 group-in:transition-all group-in:duration-300 group-in:translate-y-0 group-out:transition-all group-out:duration-500 group-out:ease-in-out-quint group-out:-translate-y-2'

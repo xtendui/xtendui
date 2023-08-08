@@ -1,4 +1,4 @@
-const classes = require('src/app/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const transparentAnim = () =>
   'hover:-translate-y-1 hover:shadow-lg active:translate-y-0 active:shadow-md on:translate-y-0 on:shadow-md'

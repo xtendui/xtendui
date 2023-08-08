@@ -1,4 +1,4 @@
-const classes = require('src/app/snippets/classes').classes
+const classes = require('src/gatsby/templates/snippets/classes').classes
 
 const buttonLine = 'px-0 text-xs font-medium leading-snug tracking-wider uppercase'
 const buttonLineDesign = 'absolute left-0 w-4 border-t border-current opacity-50'
