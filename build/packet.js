@@ -18,5 +18,5 @@ async function compileJs() {
     jsComponents += `import 'xtendui/${file}'\n`
   }
   writeFile('./dist/xtend-components.js', jsComponents)
-  }
+}
 compileJs()
