@@ -72,7 +72,7 @@ module.exports = {
   theme:{
     extend: {
       xtendui: {
-        layout: { // layout component
+        typography: { // typography component
           utility: theme => ({
             // modify utilities
           }),
