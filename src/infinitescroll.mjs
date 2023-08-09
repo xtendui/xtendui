@@ -102,7 +102,7 @@ class Infinitescroll {
       const beforeunloadHandler = Xt.dataStorage.put(
         window,
         `beforeunload/${self.ns}`,
-        self._eventBeforeunload.bind(self)
+        self._eventBeforeunload.bind(self),
       )
       addEventListener('beforeunload', beforeunloadHandler)
     }
@@ -115,7 +115,7 @@ class Infinitescroll {
         const triggerHandler = Xt.dataStorage.put(
           trigger,
           `${options.events.on}/${self.ns}`,
-          self._eventTrigger.bind(self, { trigger })
+          self._eventTrigger.bind(self, { trigger }),
         )
         for (const event of events) {
           trigger.addEventListener(event, triggerHandler)

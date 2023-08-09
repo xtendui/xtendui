@@ -55,7 +55,7 @@ Xt.mount({
       const sidebar = document.querySelector('.docs_site-article_sidebar')
       sidebar.scrollTop = window.keepSidebarScroll
       let sidebarActive = document.querySelector(
-        '.docs_button-site_article_sidebar--sub.on, .docs_button-site_article_sidebar--sub.current'
+        '.docs_button-site_article_sidebar--sub.on, .docs_button-site_article_sidebar--sub.current',
       )
       if (sidebarActive) {
         const add = 25

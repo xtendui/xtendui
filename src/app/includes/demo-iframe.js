@@ -78,7 +78,7 @@ function DemoIframe(props) {
                 object.html,
                 null,
                 hasCss ? `/${src}.css` : null,
-                hasJs ? `/${src}.js` : null
+                hasJs ? `/${src}.js` : null,
               )
             }
             if (!init) {

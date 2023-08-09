@@ -49,7 +49,7 @@ export default function Structure({ page, children }) {
         x =>
           x.post.frontmatter.type === page.post.frontmatter.type &&
           x.post.frontmatter.category === page.post.frontmatter.category &&
-          x.post.frontmatter.parent === page.post.frontmatter.parent
+          x.post.frontmatter.parent === page.post.frontmatter.parent,
       )
       .sort(postSort)
   }

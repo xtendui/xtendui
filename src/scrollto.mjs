@@ -86,7 +86,7 @@ class Scrollto {
     const hashHandler = Xt.dataStorage.put(
       window,
       `hashchange/${self.ns}`,
-      self._eventChange.bind(self).bind(self, { hashchange: true })
+      self._eventChange.bind(self).bind(self, { hashchange: true }),
     )
     addEventListener('hashchange', hashHandler)
     // scroll
@@ -96,7 +96,7 @@ class Scrollto {
         const scrollHandler = Xt.dataStorage.put(
           scroller,
           `scroll/${self.ns}`,
-          self._eventActivationHandler.bind(self).bind(self, { scroller })
+          self._eventActivationHandler.bind(self).bind(self, { scroller }),
         )
         const events = options.events ? [...options.events.split(' ')] : []
         if (scroller === document.scrollingElement) {
@@ -331,7 +331,7 @@ class Scrollto {
         setTimeout(() => {
           // handler
           self._eventActivation({ scroller })
-        }, options.scrollDelay)
+        }, options.scrollDelay),
       )
     }
   }

@@ -172,7 +172,7 @@ class Ripple {
       self.container.dispatchEvent(
         new CustomEvent(`on.${self._componentNs}`, {
           detail: e,
-        })
+        }),
       )
       // off
       const endHandler = Xt.dataStorage.put(window, `mouseup touchend/${self.ns}`, self._eventEnd.bind(self))
@@ -199,7 +199,7 @@ class Ripple {
     self.container.dispatchEvent(
       new CustomEvent(`off.${self._componentNs}`, {
         detail: e,
-      })
+      }),
     )
   }
 

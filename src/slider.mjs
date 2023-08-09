@@ -517,14 +517,14 @@ class Slider extends Xt.Toggle {
     const dragpositionHandler = Xt.dataStorage.put(
       self.dragger,
       `dragposition/${self.ns}`,
-      self._eventDragpositionHandler.bind(self)
+      self._eventDragpositionHandler.bind(self),
     )
     self.dragger.addEventListener('dragposition.xt.slider', dragpositionHandler)
     // drag start
     const dragstartHandler = Xt.dataStorage.put(
       window,
       `mousedown touchstart/drag/${self.ns}`,
-      self._eventDragstartHandler.bind(self)
+      self._eventDragstartHandler.bind(self),
     )
     const events = ['mousedown', 'touchstart']
     for (const event of events) {
@@ -622,7 +622,7 @@ class Slider extends Xt.Toggle {
       const dragendHandler = Xt.dataStorage.put(
         window,
         `mouseup touchend/drag/${self.ns}`,
-        self._eventDragendHandler.bind(self)
+        self._eventDragendHandler.bind(self),
       )
       const events = ['mouseup', 'touchend']
       for (const event of events) {
@@ -659,7 +659,7 @@ class Slider extends Xt.Toggle {
     const dragHandler = Xt.dataStorage.put(
       window,
       `mousemove touchmove/drag/${self.ns}`,
-      self._eventDragHandler.bind(self)
+      self._eventDragHandler.bind(self),
     )
     const events = ['mousemove', 'touchmove']
     for (const event of events) {

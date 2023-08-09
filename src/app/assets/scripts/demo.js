@@ -102,23 +102,23 @@ const highlightCode = (pre, element, language, isReactRename = false) => {
   let highlighted = Prism.highlight(text, Prism.languages[language] ?? false, language)
   highlighted = highlighted.replace(
     /<span class="token comment">\/\*\*\*\/<\/span>\n*\s*([\s\S\r]*?)\n*\s*<span class="token comment">\/\*\*\*\/.*?>/g,
-    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`,
   ) // js
   highlighted = highlighted.replace(
     /\/?\*\*\*\/?\s?(.*?)\s?\/?\*\*\*\/?/g,
-    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`,
   ) // html and json
   highlighted = highlighted.replace(
     /('?\.?#?demo--.*?)</g,
-    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span><`
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span><`,
   ) // demo--
   highlighted = highlighted.replace(
     /(<span class="token attr-name">data-xt-.*?<\/span>)/g,
-    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`,
   ) // data-xt-
   highlighted = highlighted.replace(
     /(<span class="token attr-name">data-node-.*?<\/span>)/g,
-    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`
+    (_, str) => `<span class="code-highlight bg-code-highlight">${str}</span>`,
   ) // data-node-
   code.innerHTML = highlighted
   // clipboard
@@ -151,7 +151,7 @@ export const populateBlock = () => {
     el.after(
       Xt.node({
         str: `<pre class="${language}"><code class="${language}">${el.innerHTML}</code></pre>`,
-      })
+      }),
     )
     el.remove()
   }
@@ -233,7 +233,7 @@ export const populateDemo = container => {
   inner.prepend(
     Xt.node({
       str: '<div class="docs_demo_tabs bg-gray-100"><div class="docs_demo_tabs_left xt-list xt-list-1.5"></div><div class="docs_demo_tabs_right xt-list xt-list-1.5"></div></div>',
-    })
+    }),
   )
   container.querySelector('.docs_demo_tabs_right').append(
     Xt.node({
@@ -253,7 +253,7 @@ export const populateDemo = container => {
     </div>
   </div>
 </div>`,
-    })
+    }),
   )
   container.querySelector('.docs_demo_tabs_right').append(
     Xt.node({
@@ -269,7 +269,7 @@ export const populateDemo = container => {
     </div>
   </div>
 </div>`,
-    })
+    }),
   )
   container.querySelector('.docs_demo_tabs_right').append(
     Xt.node({
@@ -286,7 +286,7 @@ export const populateDemo = container => {
     </div>
   </div>
 </div>`,
-    })
+    }),
   )
   // loop items
   for (const [k, item] of items.entries()) {
@@ -300,7 +300,7 @@ export const populateDemo = container => {
     container.querySelector('.docs_demo_tabs_left').append(
       Xt.node({
         str: `<button type="button" class="xt-button ${classes.textDefault()} ${classes.buttonCode()}">${name}</button>`,
-      })
+      }),
     )
     // if not iframe
     if (item.getAttribute('data-iframe')) {
@@ -345,7 +345,7 @@ export const populateDemo = container => {
               force: true,
               container: item,
             },
-          })
+          }),
         )
       }
       if (!self.initial) {
@@ -402,7 +402,7 @@ export const populateItem = item => {
     <div class="docs_demo_code_body bg-code"></div>
   </div>
 </div>`,
-    })
+    }),
   )
   // https://github.com/zenorocha/clipboard.js/
   const btnClipboard = item.querySelector('.button--clipboard')
@@ -609,7 +609,7 @@ const makeFullscreen = (demo, item) => {
   demo.before(
     Xt.node({
       str: `<div class="docs_demo xt-ignore" data-xt-origin="docs_open-full-content" style="height: ${demo.offsetHeight}px"></div>`,
-    })
+    }),
   )
   content.innerHTML = ''
   content.append(demo)
@@ -646,7 +646,7 @@ const demoEmpty = ({ reset = false } = {}) => {
           force: true,
           container: moving,
         },
-      })
+      }),
     )
     // move back
     appendOrigin.remove()
@@ -673,7 +673,7 @@ const initializeIframe = item => {
           </div>
           <iframe class="relative" title="Demo" data-src="${Xt.sanitize(src)}"></iframe>
         </div>`,
-      })
+      }),
     )
     // load
     item.addEventListener('on.xt.toggle', () => {
@@ -792,7 +792,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
       Xt.node({
         sanitize: false,
         str: `<script type="text/plain" class="docs_demo_source xt-ignore hidden" data-lang="html">${htmlSource}</script>`,
-      })
+      }),
     )
   }
   if (jsxSource) {
@@ -800,7 +800,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
       Xt.node({
         sanitize: false,
         str: `<script type="text/plain" class="docs_demo_source xt-ignore hidden" data-lang="jsx" data-fetch=${jsxSource}></script>`,
-      })
+      }),
     )
   }
   if (cssSource) {
@@ -808,7 +808,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
       Xt.node({
         sanitize: false,
         str: `<script type="text/plain" class="docs_demo_source xt-ignore hidden" data-lang="css" data-fetch=${cssSource}></script>`,
-      })
+      }),
     )
   }
   if (jsSource) {
@@ -816,7 +816,7 @@ const populateIframe = ({ item, htmlSource, jsxSource, cssSource, jsSource }) =>
       Xt.node({
         sanitize: false,
         str: `<script type="text/plain" class="docs_demo_source xt-ignore hidden" data-lang="js" data-fetch=${jsSource}></script>`,
-      })
+      }),
     )
   }
 }
@@ -845,7 +845,7 @@ const populateSources = (item, element) => {
   tabs.append(
     Xt.node({
       str: `<button type="button" class="xt-button ${classes.textInverse()} ${classes.buttonCodeWhite()}">${lang}</button>`,
-    })
+    }),
   )
   // format code
   const itemInside = item.querySelectorAll('.docs_demo_code_body .docs_demo_code_body_item')
@@ -859,7 +859,7 @@ const populateSources = (item, element) => {
 export const makeDocument = () => {
   // .docs_make-line
   for (const el of document.querySelectorAll(
-    '.docs_site-article_content_inner > * > h2, .docs_site-article_content_inner > * > h4'
+    '.docs_site-article_content_inner > * > h2, .docs_site-article_content_inner > * > h4',
   )) {
     el.classList.add('docs_make-line', 'xt-ignore')
   }
@@ -869,7 +869,7 @@ export const makeDocument = () => {
   }
   // .docs_make-anchor
   for (const el of document.querySelectorAll(
-    '.docs_site-article_content_inner > * > h2, .docs_site-article_content_inner > * > h4'
+    '.docs_site-article_content_inner > * > h2, .docs_site-article_content_inner > * > h4',
   )) {
     el.classList.add('docs_make-line', 'xt-ignore')
     // previous h2 if h4
@@ -893,7 +893,7 @@ export const makeDocument = () => {
     if (el.tagName === 'H2') {
       let activeText =
         document.querySelector(
-          '.docs_button-site_article_sidebar--adiacent.on .docs_button-site_article_sidebar_inner'
+          '.docs_button-site_article_sidebar--adiacent.on .docs_button-site_article_sidebar_inner',
         ) ?? document.querySelector('.docs_button-site_article_sidebar--sub.on .docs_button-site_article_sidebar_inner')
       if (activeText) {
         activeText = activeText.closest('.docs_tooltip_outside_link')
@@ -908,7 +908,7 @@ export const makeDocument = () => {
     </nav>
   </div>
 </div>`,
-            })
+            }),
           )
           new Xt.Tooltip(activeText, {
             elements: ':scope > a',
@@ -924,11 +924,11 @@ export const makeDocument = () => {
           Xt.node({
             str: `
 <a href="#${encodeURIComponent(
-              id
+              id,
             )}" class="xt-button text-3xs py-0.5 px-3 ${classes.groupButton()} justify-start text-left ${classes.groupButtonGray()} ${classes.buttonGrayAnim()}">
   <span class="py-px">- ${el.textContent.trim()} -</span>
 </a>`,
-          })
+          }),
         )
       }
     }
@@ -951,7 +951,7 @@ export const makeDocument = () => {
   ${classes.iconLink()}
   </span>
 </span>`,
-      })
+      }),
     )
   }
 }

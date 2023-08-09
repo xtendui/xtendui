@@ -19,7 +19,7 @@ if (typeof window !== 'undefined') {
         // eslint-disable-next-line no-console
         console.debug(
           '%cXtend UI usability log activated, to deactivate remove xtendui/src/usability.js',
-          'font-weight:bold; color: white; background-color: #0067DD; padding: 6px 10px;'
+          'font-weight:bold; color: white; background-color: #0067DD; padding: 6px 10px;',
         )
 
         // images
@@ -53,7 +53,7 @@ if (typeof window !== 'undefined') {
             if (!labels.length && (!label || label === '')) {
               console.warn(
                 'Xtend UI usability detected an "input" without "label" or "aria-label" or "aria-labelledby"',
-                ref
+                ref,
               )
             }
           },
@@ -72,7 +72,7 @@ if (typeof window !== 'undefined') {
             if (!text.length && (!title || title === '') && (!label || label === '')) {
               console.warn(
                 'Xtend UI usability detected a "link" without "textContent" or "title" or "aria-label" or "aria-labelledby"',
-                ref
+                ref,
               )
             }
             // target
@@ -87,7 +87,7 @@ if (typeof window !== 'undefined') {
                 ) {
                   console.warn(
                     'Xtend UI usability detected a "link" with target="_blank" without rel="noopener" or rel="noreferrer"',
-                    ref
+                    ref,
                   )
                 }
               }

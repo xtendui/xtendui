@@ -5,13 +5,13 @@ const classes = require('src/app/snippets/classes').classes
 function DocFoot(props) {
   const { page } = props
   const postsComponents = page.posts.filter(
-    x => ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.parent === page.post.frontmatter.parent
+    x => ['Components'].includes(x.post.frontmatter.type) && x.post.frontmatter.parent === page.post.frontmatter.parent,
   )
   const postsThemes = page.posts.filter(
     x =>
       ['Themes'].includes(x.post.frontmatter.type) &&
       x.post.frontmatter.title !== page.post.frontmatter.parent &&
-      x.post.frontmatter.parent === page.post.frontmatter.parent
+      x.post.frontmatter.parent === page.post.frontmatter.parent,
   )
   return (
     <div className="docs_site-article_foot">

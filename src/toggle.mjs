@@ -354,7 +354,7 @@ class Toggle {
               ...self._classesDone,
               ...self._classesInitial,
               ...self._classesBefore,
-              ...self._classesAfter
+              ...self._classesAfter,
             )
           }
         }
@@ -369,7 +369,7 @@ class Toggle {
                 ...self._classesDone,
                 ...self._classesInitial,
                 ...self._classesBefore,
-                ...self._classesAfter
+                ...self._classesAfter,
               )
             }
           }
@@ -403,7 +403,7 @@ class Toggle {
               ...self._classesDone,
               ...self._classesInitial,
               ...self._classesBefore,
-              ...self._classesAfter
+              ...self._classesAfter,
             )
           }
           if (options.targetsInner) {
@@ -417,7 +417,7 @@ class Toggle {
                   ...self._classesDone,
                   ...self._classesInitial,
                   ...self._classesBefore,
-                  ...self._classesAfter
+                  ...self._classesAfter,
                 )
               }
             }
@@ -458,7 +458,7 @@ class Toggle {
       const onHandlerCustom = Xt.dataStorage.put(
         el,
         `${options.on}/oncustom/${self.ns}`,
-        self._eventOnHandler.bind(self, { el, force: true })
+        self._eventOnHandler.bind(self, { el, force: true }),
       )
       el.addEventListener(`on.trigger.${self._componentNs}`, onHandlerCustom)
       if (options.on) {
@@ -471,7 +471,7 @@ class Toggle {
           const onHandler = Xt.dataStorage.put(
             elEvent,
             `${options.on}/on/${self.ns}`,
-            self._eventOnHandler.bind(self, { el })
+            self._eventOnHandler.bind(self, { el }),
           )
           elEvent.addEventListener(event, onHandler)
         }
@@ -480,7 +480,7 @@ class Toggle {
       const offHandlerCustom = Xt.dataStorage.put(
         el,
         `${options.off}/offcustom/${self.ns}`,
-        self._eventOffHandler.bind(self, { el, force: true })
+        self._eventOffHandler.bind(self, { el, force: true }),
       )
       el.addEventListener(`off.trigger.${self._componentNs}`, offHandlerCustom)
       if (options.off) {
@@ -495,7 +495,7 @@ class Toggle {
             const offHandler = Xt.dataStorage.put(
               elEvent,
               `${options.off}/off/${self.ns}`,
-              self._eventOffHandler.bind(self, { el })
+              self._eventOffHandler.bind(self, { el }),
             )
             elEvent.addEventListener(event, offHandler)
           }
@@ -510,7 +510,7 @@ class Toggle {
             const preventeventStartHandler = Xt.dataStorage.put(
               el,
               `touchend/preventevent/${self.ns}`,
-              self._eventPreventeventStartHandler.bind(self, { el })
+              self._eventPreventeventStartHandler.bind(self, { el }),
             )
             el.addEventListener('touchend', preventeventStartHandler)
           }
@@ -519,7 +519,7 @@ class Toggle {
             const preventeventStartHandler = Xt.dataStorage.put(
               el,
               `mouseup keyup/preventevent/${self.ns}`,
-              self._eventPreventeventStartHandler.bind(self, { el })
+              self._eventPreventeventStartHandler.bind(self, { el }),
             )
             el.addEventListener('mouseup', preventeventStartHandler)
             el.addEventListener('keyup', preventeventStartHandler)
@@ -534,14 +534,14 @@ class Toggle {
       const onHandlerCustom = Xt.dataStorage.put(
         tr,
         `${options.on}/oncustom/${self.ns}`,
-        self._eventOnHandler.bind(self, { el: tr, force: true })
+        self._eventOnHandler.bind(self, { el: tr, force: true }),
       )
       tr.addEventListener(`on.trigger.${self._componentNs}`, onHandlerCustom)
       // event off
       const offHandlerCustom = Xt.dataStorage.put(
         tr,
         `${options.off}/offcustom/${self.ns}`,
-        self._eventOffHandler.bind(self, { el: tr, force: true })
+        self._eventOffHandler.bind(self, { el: tr, force: true }),
       )
       tr.addEventListener(`off.trigger.${self._componentNs}`, offHandlerCustom)
     }
@@ -550,7 +550,7 @@ class Toggle {
       const autostartHandler = Xt.dataStorage.put(
         self.container,
         `autostart/${self.ns}`,
-        self._eventAutostart.bind(self)
+        self._eventAutostart.bind(self),
       )
       const autostopHandler = Xt.dataStorage.put(self.container, `autostop/${self.ns}`, self._eventAutostop.bind(self))
       // focus
@@ -574,7 +574,7 @@ class Toggle {
             const autopauseOnHandler = Xt.dataStorage.put(
               el,
               `mouseenter focus/auto/${self.ns}`,
-              self._eventAutostop.bind(self)
+              self._eventAutostop.bind(self),
             )
             const eventsPause = ['mouseenter', 'focus']
             for (const event of eventsPause) {
@@ -584,7 +584,7 @@ class Toggle {
             const autoresumeOnHandler = Xt.dataStorage.put(
               el,
               `mouseleave blur/auto/${self.ns}`,
-              self._eventAutostart.bind(self)
+              self._eventAutostart.bind(self),
             )
             const eventsResume = ['mouseleave', 'blur']
             for (const event of eventsResume) {
@@ -616,7 +616,7 @@ class Toggle {
       const hashHandler = Xt.dataStorage.put(
         window,
         `popstate/${self.ns}`,
-        self._hashChange.bind(self).bind(self, { save: true })
+        self._hashChange.bind(self).bind(self, { save: true }),
       )
       addEventListener('popstate', hashHandler)
     }
@@ -626,7 +626,7 @@ class Toggle {
         const jumpHandler = Xt.dataStorage.put(
           el,
           `click/jump/${self.ns}`,
-          self._eventJumpHandler.bind(self).bind(self, { el })
+          self._eventJumpHandler.bind(self).bind(self, { el }),
         )
         el.addEventListener('click', jumpHandler, true) // fix elements inside targets (slider pagination)
         // jump
@@ -644,7 +644,7 @@ class Toggle {
           const navHandler = Xt.dataStorage.put(
             el,
             `click/nav/${self.ns}`,
-            self._eventNavHandler.bind(self).bind(self, { el })
+            self._eventNavHandler.bind(self).bind(self, { el }),
           )
           el.addEventListener('click', navHandler)
         }
@@ -656,7 +656,7 @@ class Toggle {
       const closeautoHandler = Xt.dataStorage.set(
         window,
         `closeauto.trigger.xt/${self.ns}`,
-        self._eventCloseautoHandler.bind(self)
+        self._eventCloseautoHandler.bind(self),
       )
       addEventListener('closeauto.trigger.xt', closeautoHandler, true) // useCapture event propagation
     }
@@ -665,7 +665,7 @@ class Toggle {
       const openautoHandler = Xt.dataStorage.set(
         window,
         `openauto.trigger.xt/${self.ns}`,
-        self._eventOpenautoHandler.bind(self)
+        self._eventOpenautoHandler.bind(self),
       )
       addEventListener('openauto.trigger.xt', openautoHandler, true) // useCapture event propagation
     }
@@ -681,7 +681,7 @@ class Toggle {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 `load/media/${self.ns}`,
-                self._eventMedialoadedHandler.bind(self).bind(self, { img, el, deferred: true })
+                self._eventMedialoadedHandler.bind(self).bind(self, { img, el, deferred: true }),
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
@@ -699,7 +699,7 @@ class Toggle {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
                 `load/media/${self.ns}`,
-                self._eventMedialoadedHandler.bind(self).bind(self, { img, el: tr, deferred: true, reinit: true })
+                self._eventMedialoadedHandler.bind(self).bind(self, { img, el: tr, deferred: true, reinit: true }),
               )
               img.addEventListener('load', medialoadedHandler)
             } else {
@@ -723,7 +723,7 @@ class Toggle {
               }
             }
           },
-          { root: null }
+          { root: null },
         )
         self._observer.observe(self.container)
       }
@@ -801,7 +801,7 @@ class Toggle {
     const preventeventHandler = Xt.dataStorage.put(
       el,
       `click keypress/preventevent/${self.ns}`,
-      self._eventPreventeventHandler.bind(self, { el })
+      self._eventPreventeventHandler.bind(self, { el }),
     )
     el.addEventListener('click', preventeventHandler)
     el.addEventListener('keypress', preventeventHandler)
@@ -809,7 +809,7 @@ class Toggle {
     const preventeventResetHandler = Xt.dataStorage.put(
       el,
       `off/preventevent/${self.ns}`,
-      self._eventPreventeventResetHandler.bind(self, { el })
+      self._eventPreventeventResetHandler.bind(self, { el }),
     )
     el.addEventListener(`off.${self._componentNs}`, preventeventResetHandler)
   }
@@ -1025,7 +1025,7 @@ class Toggle {
         `${self.ns}MedialoadedTimeout`,
         setTimeout(() => {
           self._eventMediaLoadedReinit()
-        }, Xt.medialoadedDelay)
+        }, Xt.medialoadedDelay),
       )
     }
     // mediaLoaded
@@ -1036,7 +1036,7 @@ class Toggle {
     el.dispatchEvent(
       new CustomEvent(`medialoaded.${self._componentNs}`, {
         detail: { deferred: deferred },
-      })
+      }),
     )
   }
 
@@ -1884,7 +1884,7 @@ class Toggle {
             setTimeout(() => {
               // auto
               self._eventAuto()
-            }, time / Xt.autoTimescale)
+            }, time / Xt.autoTimescale),
           )
           // dispatch event
           self.container.dispatchEvent(new CustomEvent(`autostart.${self._componentNs}`))
@@ -2095,7 +2095,7 @@ class Toggle {
           `${self.ns + type}DelayTimeout`,
           setTimeout(() => {
             self._queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame })
-          }, delay)
+          }, delay),
         )
       }
       // queue done
@@ -2154,7 +2154,7 @@ class Toggle {
               el.dispatchEvent(
                 new CustomEvent(`on.${self._componentNs}`, {
                   detail: obj.elements.e,
-                })
+                }),
               )
             },
           })
@@ -2188,7 +2188,7 @@ class Toggle {
               el.dispatchEvent(
                 new CustomEvent(`off.${self._componentNs}`, {
                   detail: obj.elements.e,
-                })
+                }),
               )
             },
           })
@@ -2270,7 +2270,7 @@ class Toggle {
         `${self.ns + type}AnimTimeout`,
         setTimeout(() => {
           self._queueAnimDone({ actionCurrent, actionOther, obj, el, type, skipSame })
-        }, duration)
+        }, duration),
       )
     }
   }
@@ -2316,7 +2316,7 @@ class Toggle {
               el.dispatchEvent(
                 new CustomEvent(`ondone.${self._componentNs}`, {
                   detail: obj.elements.e,
-                })
+                }),
               )
             },
           })
@@ -2349,7 +2349,7 @@ class Toggle {
               el.dispatchEvent(
                 new CustomEvent(`offdone.${self._componentNs}`, {
                   detail: obj.elements.e,
-                })
+                }),
               )
             },
           })
@@ -2788,7 +2788,7 @@ class Toggle {
           const specialcloseinsideHandler = Xt.dataStorage.put(
             closeElement,
             `click/close/${self.ns}`,
-            self._eventSpecialcloseinsideHandler.bind(self)
+            self._eventSpecialcloseinsideHandler.bind(self),
           )
           // raf because do not close when clicking things that trigger this
           requestAnimationFrame(() => {
@@ -2806,7 +2806,7 @@ class Toggle {
             const specialcloseoutsideHandler = Xt.dataStorage.put(
               outside,
               `mousedown/close/${self.ns}`,
-              self._eventSpecialcloseoutsideHandler.bind(self)
+              self._eventSpecialcloseoutsideHandler.bind(self),
             )
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
@@ -2825,7 +2825,7 @@ class Toggle {
             const specialclosedeepHandler = Xt.dataStorage.put(
               closeElement,
               `click/close/${self.ns}`,
-              self._eventSpecialclosedeepHandler.bind(self)
+              self._eventSpecialclosedeepHandler.bind(self),
             )
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
@@ -2836,7 +2836,7 @@ class Toggle {
             const specialclosedeepKeydownHandler = Xt.dataStorage.put(
               closeElement,
               `keydown/close/${self.ns}`,
-              self._eventSpecialclosedeepKeydownHandler.bind(self).bind(self, { closeElement })
+              self._eventSpecialclosedeepKeydownHandler.bind(self).bind(self, { closeElement }),
             )
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
@@ -3397,14 +3397,14 @@ class Toggle {
         const onHandler = Xt.dataStorage.put(
           el,
           `on.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventA11yChangeOn.bind(self).bind(self, { el })
+          self._eventA11yChangeOn.bind(self).bind(self, { el }),
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
           `off.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventA11yChangeOff.bind(self).bind(self, { el })
+          self._eventA11yChangeOff.bind(self).bind(self, { el }),
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
@@ -3468,14 +3468,14 @@ class Toggle {
         const onHandler = Xt.dataStorage.put(
           container,
           `autostart.${self._componentNs}/arialive/${self.ns}`,
-          self._eventA11yAutostart.bind(self).bind(self, { container })
+          self._eventA11yAutostart.bind(self).bind(self, { container }),
         )
         container.addEventListener(`autostart.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           container,
           `autostop.${self._componentNs}/arialive/${self.ns}`,
-          self._eventA11yAutostop.bind(self).bind(self, { container })
+          self._eventA11yAutostop.bind(self).bind(self, { container }),
         )
         container.addEventListener(`autostop.${self._componentNs}`, offHandler)
       }
@@ -3517,7 +3517,7 @@ class Toggle {
       const statusHandler = Xt.dataStorage.put(
         container,
         `status.${self._componentNs}/ariastatus/${self.ns}`,
-        self._eventA11yStatus.bind(self).bind(self, { els })
+        self._eventA11yStatus.bind(self).bind(self, { els }),
       )
       container.addEventListener(`status.${self._componentNs}`, statusHandler)
     }
@@ -3555,14 +3555,14 @@ class Toggle {
         const onHandler = Xt.dataStorage.put(
           el,
           `on.${self._componentNs}/ariakeyboard/${self.ns}`,
-          self._eventA11yOn.bind(self).bind(self, { el })
+          self._eventA11yOn.bind(self).bind(self, { el }),
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
           `off.${self._componentNs}/ariakeyboard/${self.ns}`,
-          self._eventA11yOff.bind(self).bind(self, { el })
+          self._eventA11yOff.bind(self).bind(self, { el }),
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
@@ -3585,7 +3585,7 @@ class Toggle {
       const documentKeydownHandler = Xt.dataStorage.put(
         document,
         `keydown/ariakeyboard/document/${self.ns}`,
-        self._eventA11yDocumentKeydown.bind(self).bind(self, { el })
+        self._eventA11yDocumentKeydown.bind(self).bind(self, { el }),
       )
       document.removeEventListener('keydown', documentKeydownHandler)
       document.addEventListener('keydown', documentKeydownHandler)
@@ -3714,7 +3714,7 @@ class Toggle {
             `${self.ns}SearchTimeout`,
             setTimeout(() => {
               self._search = ''
-            }, 500)
+            }, 500),
           )
         }
         if (item) {

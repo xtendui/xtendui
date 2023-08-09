@@ -92,7 +92,7 @@ export default async function Page(props) {
         x =>
           x.post.frontmatter.type === post.post.frontmatter.type &&
           x.post.frontmatter.category === post.post.frontmatter.category &&
-          x.post.frontmatter.parent === post.post.frontmatter.parent
+          x.post.frontmatter.parent === post.post.frontmatter.parent,
       )
       .sort(postSort)
   }
@@ -164,7 +164,7 @@ export default async function Page(props) {
                                 </Link>
                               </div>
                             )
-                          ) : null
+                          ) : null,
                         )}
                       </div>
                     </div>
@@ -205,7 +205,7 @@ export default async function Page(props) {
                             <p className="xt-p text-sm leading-snug opacity-70">{post.frontmatter.description}</p>
                           </Link>
                         </div>
-                      ) : null
+                      ) : null,
                     )}
                   </div>
                 </div>

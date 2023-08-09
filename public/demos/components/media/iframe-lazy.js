@@ -14,7 +14,7 @@ const posterIframeLazy = ({ container, iframe, poster, src }) => {
           <div class="absolute inset-0 w-0 h-0 m-auto border-l-[18px] border-b-[10px] border-t-[10px] border-transparent border-l-white"></div>
         </div>
       </div>`,
-    })
+    }),
   )
 
   // click

@@ -78,7 +78,7 @@ class Textareaautosize {
     const changeHandler = Xt.dataStorage.put(
       self.container,
       `keydown keyup reset/${self.ns}`,
-      self._keychange.bind(self)
+      self._keychange.bind(self),
     )
     self.container.addEventListener('keydown', changeHandler)
     self.container.addEventListener('keyup', changeHandler)

@@ -22,7 +22,7 @@ const mountTest = ({ ref }) => {
   // eslint-disable-next-line no-console
   console.log(
     'TEST pin mount this should NOT be called on resize and xtNamespace should be 1.',
-    Xt.dataStorage.get(self.ns, 'xtNamespace').length
+    Xt.dataStorage.get(self.ns, 'xtNamespace').length,
   )
 
   // resize
@@ -33,7 +33,7 @@ const mountTest = ({ ref }) => {
     // eslint-disable-next-line no-console
     console.log(
       'TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.',
-      Xt._mountArr.length
+      Xt._mountArr.length,
     )
   }
 
@@ -60,7 +60,7 @@ const mountTest = ({ ref }) => {
     // eslint-disable-next-line no-console
     console.log(
       'TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.',
-      Xt.dataStorage.get(self.ns, 'xtNamespace').length
+      Xt.dataStorage.get(self.ns, 'xtNamespace').length,
     )
     ScrollTrigger.removeEventListener('refresh', refresh)
   }

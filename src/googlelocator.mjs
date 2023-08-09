@@ -256,7 +256,7 @@ class Googlelocator {
               }
               self._submit()
               placesPreview.remove()
-            }
+            },
           )
         } else {
           self.locations = []
@@ -266,7 +266,7 @@ class Googlelocator {
           self.container.classList.remove('found')
           self.container.classList.remove('error')
         }
-      }
+      },
     )
   }
 
@@ -353,7 +353,7 @@ class Googlelocator {
         if (!self.filters.length || self._filterMarker({ marker })) {
           const latLng = new google.maps.LatLng(
             options.formatData.lat ? options.formatData.lat(self, marker) : marker.lat,
-            options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng
+            options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng,
           )
           const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
           if (
@@ -563,7 +563,7 @@ class Googlelocator {
     if (!empty || options.seachMapBounds) {
       self.radius = google.maps.geometry.spherical.computeDistanceBetween(
         self.position,
-        self.map.getBounds().getNorthEast()
+        self.map.getBounds().getNorthEast(),
       )
     }
     self._submit()

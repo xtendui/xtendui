@@ -89,7 +89,7 @@ class Groupnumber {
         const stepHandler = Xt.dataStorage.put(
           step,
           `${options.events.steps}/${self.ns}`,
-          self._eventChange.bind(self, { button: step })
+          self._eventChange.bind(self, { button: step }),
         )
         for (const event of eventsSteps) {
           step.addEventListener(event, stepHandler)
@@ -103,7 +103,7 @@ class Groupnumber {
         const inputHandler = Xt.dataStorage.put(
           input,
           `${options.events.input}/${self.ns}`,
-          self._eventChange.bind(self, {})
+          self._eventChange.bind(self, {}),
         )
         for (const event of eventsInput) {
           input.addEventListener(event, inputHandler)

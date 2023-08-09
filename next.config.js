@@ -26,14 +26,14 @@ const nextConfig = {
       // https://github.com/vercel/next.js/issues/28774
       new webpack.NormalModuleReplacementPlugin(/^node:/, resource => {
         resource.request = resource.request.replace(/^node:/, '')
-      })
+      }),
     )
     // https://dmitriy-comarov.medium.com/app-version-from-package-json-with-react-and-webpack-84097bd3f4f9
     config.plugins.push(
       new webpack.DefinePlugin({
         package_json_version: JSON.stringify(require('./package.json').version),
         package_json_keywords: JSON.stringify(require('./package.json').keywords),
-      })
+      }),
     )
     return config
   },

@@ -803,7 +803,7 @@ if (typeof window !== 'undefined') {
         `${ns}Frame`,
         requestAnimationFrame(() => {
           func()
-        })
+        }),
       )
     }
   }
@@ -828,9 +828,9 @@ if (typeof window !== 'undefined') {
             `${ns}FrameDouble`,
             requestAnimationFrame(() => {
               func()
-            })
+            }),
           )
-        })
+        }),
       )
     }
   }
@@ -1099,7 +1099,7 @@ if (typeof window !== 'undefined') {
         Xt.dataStorage.set(window, 'xtEventDelayWidth', w)
         Xt.dataStorage.set(window, 'xtEventDelayHeight', h)
         dispatchEvent(new CustomEvent('resize.xt', { detail: e?.detail }))
-      }, Xt.resizeDelay)
+      }, Xt.resizeDelay),
     )
   })
 

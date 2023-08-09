@@ -147,7 +147,7 @@ class Mousefollow {
     self.container.dispatchEvent(
       new CustomEvent(`change.${self._componentNs}`, {
         detail: e,
-      })
+      }),
     )
   }
 
@@ -187,7 +187,7 @@ class Mousefollow {
       self.container.dispatchEvent(
         new CustomEvent(`on.${self._componentNs}`, {
           detail: e,
-        })
+        }),
       )
     }
   }
@@ -215,7 +215,7 @@ class Mousefollow {
       self.container.dispatchEvent(
         new CustomEvent(`off.${self._componentNs}`, {
           detail: e,
-        })
+        }),
       )
     }
   }
