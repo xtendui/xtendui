@@ -34,11 +34,11 @@ const mountTest = ({ ref }) => {
     tr.classList.contains('on'),
     tr.classList.contains('in'),
     tr.classList.contains('initial'),
-    self.initial
+    self.initial,
   )
   ref.setAttribute(
     'data-test-initial',
-    `${tr.classList.contains('on')} ${tr.classList.contains('in')} ${tr.classList.contains('initial')} ${self.initial}`
+    `${tr.classList.contains('on')} ${tr.classList.contains('in')} ${tr.classList.contains('initial')} ${self.initial}`,
   )
   requestAnimationFrame(() => {
     // eslint-disable-next-line no-console
@@ -47,7 +47,7 @@ const mountTest = ({ ref }) => {
       tr.classList.contains('on'),
       tr.classList.contains('in'),
       tr.classList.contains('initial'),
-      self.initial
+      self.initial,
     )
   })
 
@@ -78,7 +78,7 @@ const mountTest = ({ ref }) => {
     console.log(
       'TEST unmount, unmountArr should be the same, xtNamespace should be 0.',
       Xt._unmountArr.length,
-      Xt.dataStorage.get(self.ns, 'xtNamespace').length
+      Xt.dataStorage.get(self.ns, 'xtNamespace').length,
     )
     removeEventListener('resize', resize)
   }
