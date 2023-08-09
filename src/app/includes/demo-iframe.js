@@ -12,7 +12,7 @@ function DemoIframe(props) {
   let hasJs
   let hasJsx
   try {
-    // must be first try/catch or yarn serve error
+    // must be first try/catch or serve error
     require(`public/${src}.js`).default
     // eslint-disable-next-line no-empty
   } catch (ex) {}
@@ -21,12 +21,12 @@ function DemoIframe(props) {
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
-    // must be first try/catch or yarn serve error
+    // must be first try/catch or serve error
     hasJs = require.resolve(`public/${src}.js`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
-    // must be first try/catch or yarn serve error
+    // must be first try/catch or serve error
     hasJsx = require.resolve(`public/${src}.jsx`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}

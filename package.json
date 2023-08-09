@@ -47,12 +47,12 @@
     "src/*.*"
   ],
   "scripts": {
-    "setup": "yarn alias && node ./build/packet.js",
-    "build": "yarn setup && next build",
-    "dev": "yarn setup && next dev -p 8080",
+    "setup": "pnpm alias && node ./build/packet.js",
+    "build": "pnpm setup && next build",
+    "dev": "pnpm setup && next dev -p 8080",
     "serve": "npx serve out -p 8080",
     "deploy": "gh-pages -d out",
-    "dist": "yarn setup && cross-env DIST=true webpack --progress",
+    "dist": "pnpm setup && cross-env DIST=true webpack --progress",
     "release": "npx semantic-release --no-ci --dry-run --debug",
     "release:local": "npx semantic-release --no-ci --debug",
     "lint": "eslint . --ext .js,.mjs,.jsx",
@@ -60,7 +60,7 @@
     "test:run": "cypress run",
     "test:open": "cypress open",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
-    "postversion": "yarn dist"
+    "postversion": "pnpm dist"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",

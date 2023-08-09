@@ -21,8 +21,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: "${{ env.NODE }}"
-    - name: Yarn
-      run: yarn install --frozen-lockfile --prefer-offline
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 8
+    - name: Pnpm
+      run: pnpm install --frozen-lockfile --prefer-offline
     # lint/action.yml composite
     - name: Lint
-      run: yarn lint
+      run: pnpm lint
+      env:
+        SHELL: bash

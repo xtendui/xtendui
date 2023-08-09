@@ -14,7 +14,7 @@ Ask first before starting work on any significant new features.
 
 - If fixing bug add issue linking with issue id (e.g.: `(close #xxxx)`).
 
-- Make sure all tests pass with `yarn lint && yarn build && yarn test`.
+- Make sure all tests pass with `pnpm lint && pnpm build && pnpm test`.
 
 ## Committing Changes
 

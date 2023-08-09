@@ -59,10 +59,10 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/master/.git
 ## Documentation
 
 * Clone the repository `git clone https://github.com/xtendui/xtendui.git --depth 1`
-* Install required npm packages with `yarn install`
-* Use `yarn generate` to generate react components
-* Use `yarn dev` to serve a develop version with watch
-* Use `yarn build && yarn serve` to serve a production version
+* Install required npm packages with `pnpm install`
+* Use `pnpm generate` to generate react components
+* Use `pnpm dev` to serve a develop version with watch
+* Use `pnpm build && pnpm serve` to serve a production version
 
 ## Sponsors
 
