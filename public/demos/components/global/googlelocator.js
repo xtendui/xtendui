@@ -17,8 +17,8 @@ const initGooglelocator = ({ ref }) => {
     events: {
       animateMarkerResultClick: google.maps.Animation.BOUNCE,
     },
-    autocompleteOptions: { types: ['(regions)'] }, // search autocomplete also with postal code
-    autocompleteServiceOptions: { types: ['(regions)'] }, // search autocomplete prediction also with postal code
+    //autocompleteOptions: { types: ['(regions)'] }, // search autocomplete options
+    //autocompleteServiceOptions: { types: ['(regions)'] }, // search autocomplete service options
     map: {
       center: { lat: 40, lng: -74 },
       zoom: 2.5,
