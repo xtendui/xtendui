@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  trailingSlash: true,
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
     // fix fs nextjs build
