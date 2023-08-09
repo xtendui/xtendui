@@ -12,9 +12,7 @@ const classes = require('src/app/snippets/classes').classes
 export async function generateStaticParams() {
   const posts = await getPosts()
   return posts.map(post => ({
-    params: {
-      slug: post.slug,
-    },
+    slug: [...post.slug.split('/')],
   }))
 }
 

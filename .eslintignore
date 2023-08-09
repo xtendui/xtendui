@@ -1,5 +1,7 @@
 # folders
 .next/
+node_modules/
+out/
 
 # files
 **/*.min.js
