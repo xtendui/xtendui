@@ -1,4 +1,4 @@
-const classes = require('src/gatsby/templates/snippets/classes').classes
+const classes = require('src/app/snippets/classes').classes
 
 const grayDesign = () => `${classes.textDefault()} bg-gray-100`
 const primaryDesign = () => `${classes.textInverse()} bg-primary-500`

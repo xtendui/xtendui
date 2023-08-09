@@ -1,4 +1,4 @@
-const classes = require('src/gatsby/templates/snippets/classes').classes
+const classes = require('src/app/snippets/classes').classes
 
 const designAnim = () => 'transition opacity-0 group-in:opacity-100'
 const itemAnim = () =>
