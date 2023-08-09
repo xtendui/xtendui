@@ -2,7 +2,7 @@
 
 ## Nodejs
 
-Current tested **node version** is 16.
+Current tested **node version** is 18.
 
 ## Installation
 
