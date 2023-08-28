@@ -50,7 +50,7 @@
     "setup": "pnpm alias && node ./build/packet.js",
     "build": "pnpm setup && next build",
     "dev": "pnpm setup && next dev -p 8080",
-    "serve": "npx serve out -p 8080",
+    "serve": "npx serve out -p 8080 --no-request-logging",
     "deploy": "gh-pages -d out",
     "dist": "pnpm setup && cross-env DIST=true webpack --progress",
     "release": "npx semantic-release --no-ci --dry-run --debug",
