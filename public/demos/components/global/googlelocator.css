@@ -67,7 +67,7 @@
     }
     /* box */
     .gm-style-iw-c {
-      @apply p-4 !important;
+      @apply py-0 px-4 !important;
       border: 0;
       border-radius: 0;
       background: theme('colors.white');
