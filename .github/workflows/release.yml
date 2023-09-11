@@ -27,6 +27,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 14 # fix https://github.com/cycjimmy/semantic-release-action/issues/159#issuecomment-1490892625
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 8
     # release/action.yml composite
     - name: Release
       uses: cycjimmy/semantic-release-action@v3
