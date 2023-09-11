@@ -26,7 +26,7 @@ jobs:
     - name: Node setup
       uses: actions/setup-node@v3
       with:
-        node-version: 14 # fix https://github.com/cycjimmy/semantic-release-action/issues/159#issuecomment-1490892625
+        node-version: "${{ env.NODE }}"
     - uses: pnpm/action-setup@v2
       with:
         version: 8
@@ -34,7 +34,7 @@ jobs:
       run: pnpm install --frozen-lockfile --prefer-offline
     # release/action.yml composite
     - name: Release
-      uses: cycjimmy/semantic-release-action@v3
+      uses: cycjimmy/semantic-release-action@v3.4.1 # https://github.com/cycjimmy/semantic-release-action/issues/159
       with:
         extra_plugins: |
             @semantic-release/commit-analyzer
