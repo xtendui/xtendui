@@ -30,6 +30,8 @@ jobs:
     - uses: pnpm/action-setup@v2
       with:
         version: 8
+    - name: Pnpm
+      run: pnpm install --frozen-lockfile --prefer-offline
     # release/action.yml composite
     - name: Release
       uses: cycjimmy/semantic-release-action@v3

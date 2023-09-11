@@ -60,7 +60,7 @@
     "test:run": "cypress run",
     "test:open": "cypress open",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
-    "postversion": "pnpm dist"
+    "postversion": "SHELL=bash pnpm dist"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
