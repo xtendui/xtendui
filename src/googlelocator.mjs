@@ -214,7 +214,7 @@ class Googlelocator {
         self.position = place.geometry.location
         self.viewport = place.geometry.viewport
         self.radius = options.searchRadius
-        self._submit()
+        self.submit()
         return
       }
     }
@@ -223,7 +223,7 @@ class Googlelocator {
       self.position = self._locateCache.position
       self.viewport = null
       self.radius = options.searchRadius
-      self._submit()
+      self.submit()
       return
     }
     // cached prediction
@@ -231,7 +231,7 @@ class Googlelocator {
       self.position = self._predictionCache.position
       self.viewport = self._predictionCache.viewport
       self.radius = options.searchRadius
-      self._submit()
+      self.submit()
       return
     }
     // new prediction
@@ -254,7 +254,7 @@ class Googlelocator {
                 position: self.position,
                 viewport: self.viewport,
               }
-              self._submit()
+              self.submit()
               placesPreview.remove()
             },
           )
@@ -322,7 +322,7 @@ class Googlelocator {
   /**
    * submit
    */
-  _submit() {
+  submit() {
     const self = this
     const options = self.options
     // disabled
@@ -331,104 +331,111 @@ class Googlelocator {
     }
     // loader
     self._loaderShow()
-    setTimeout(() => {
-      // fix .getBounds not ready
-      if (!self.map.getBounds()) {
-        google.maps.event.addListenerOnce(self.map, 'bounds_changed', () => {
-          self._submit()
-        })
-        return false
-      }
-      // filter
-      self.filters = self.container.querySelectorAll(options.elements.filter)
-      // markers
-      self.locations = []
-      let index = 0
-      const markers = options.markers
-      const bounds = new google.maps.LatLngBounds()
-      if (options.infoWindow) {
-        self.info = new google.maps.InfoWindow(options.infoWindow)
-      }
-      for (const marker of markers) {
-        if (!self.filters.length || self._filterMarker({ marker })) {
-          const latLng = new google.maps.LatLng(
-            options.formatData.lat ? options.formatData.lat(self, marker) : marker.lat,
-            options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng,
-          )
-          const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
-          if (
-            (!self.radius && !self.viewport) ||
-            (self.radius && distance <= self.radius) ||
-            (self.viewport && self.viewport.contains(latLng))
-          ) {
-            const loc = new google.maps.Marker({
-              map: self.map,
-              position: latLng,
-              title: marker.name,
-              icon: marker.icon || options.map.icon,
-              animation: marker.animation || options.map.animation,
-              distance: distance,
-              marker: marker,
-              index: index,
-            })
-            bounds.extend(latLng)
-            self.locations.push(loc)
-            loc.addListener('click', () => {
-              self._populateInfo({ loc, type: 'marker' })
-            })
-            index++
-          }
-        }
-      }
-      // assign index before sort
-      for (const [i, loc] of self.locations.entries()) {
-        loc.index = i
-      }
-      // order locations
-      options.formatData.sort(self)
-      // populate items after order
-      self._populateItems()
-      // markers
-      if (options.map.cluster) {
-        if (self.cluster) {
-          self.cluster.clearMarkers()
-        }
-        self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
-      }
-      // loader
-      self._loaderHide()
-      // populate
-      if (self.locations.length) {
-        self.container.classList.remove('noplace')
-        self.container.classList.remove('empty')
-        self.container.classList.add('found')
-        self.container.classList.remove('error')
-        if (self.foundElement) {
-          self.foundElement.innerHTML = self.locations.length
-        }
-        // map
-        self.map.fitBounds(bounds)
-        self.map.panToBounds(bounds)
-      } else {
-        self.container.classList.remove('noplace')
-        self.container.classList.add('empty')
-        self.container.classList.remove('found')
-        self.container.classList.remove('error')
-      }
-      if (options.debug) {
-        // eslint-disable-next-line no-console
-        console.debug('xt-googlelocator locations', self.locations)
-      }
-      // change
-      Xt.frame({
-        el: self.container,
-        ns: `${self.ns}Change`,
-        func: () => {
-          // dispatch event
-          self.container.dispatchEvent(new CustomEvent(`change.${self._componentNs}`))
-        },
+    setTimeout(self.submitDeferred.bind(self), options.submitDelay)
+  }
+
+  /**
+   * submitDeferred
+   */
+  submitDeferred() {
+    const self = this
+    const options = self.options
+    // fix .getBounds not ready
+    if (!self.map.getBounds()) {
+      google.maps.event.addListenerOnce(self.map, 'bounds_changed', () => {
+        self.submit()
       })
-    }, options.submitDelay)
+      return false
+    }
+    // filter
+    self.filters = self.container.querySelectorAll(options.elements.filter)
+    // markers
+    self.locations = []
+    let index = 0
+    const markers = options.markers
+    const bounds = new google.maps.LatLngBounds()
+    if (options.infoWindow) {
+      self.info = new google.maps.InfoWindow(options.infoWindow)
+    }
+    for (const marker of markers) {
+      if (!self.filters.length || self._filterMarker({ marker })) {
+        const latLng = new google.maps.LatLng(
+          options.formatData.lat ? options.formatData.lat(self, marker) : marker.lat,
+          options.formatData.lng ? options.formatData.lng(self, marker) : marker.lng,
+        )
+        const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
+        if (
+          (!self.radius && !self.viewport) ||
+          (self.radius && distance <= self.radius) ||
+          (self.viewport && self.viewport.contains(latLng))
+        ) {
+          const loc = new google.maps.Marker({
+            map: self.map,
+            position: latLng,
+            title: marker.name,
+            icon: marker.icon || options.map.icon,
+            animation: marker.animation || options.map.animation,
+            distance: distance,
+            marker: marker,
+            index: index,
+          })
+          bounds.extend(latLng)
+          self.locations.push(loc)
+          loc.addListener('click', () => {
+            self._populateInfo({ loc, type: 'marker' })
+          })
+          index++
+        }
+      }
+    }
+    // assign index before sort
+    for (const [i, loc] of self.locations.entries()) {
+      loc.index = i
+    }
+    // order locations
+    options.formatData.sort(self)
+    // populate items after order
+    self._populateItems()
+    // markers
+    if (options.map.cluster) {
+      if (self.cluster) {
+        self.cluster.clearMarkers()
+      }
+      self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
+    }
+    // loader
+    self._loaderHide()
+    // populate
+    if (self.locations.length) {
+      self.container.classList.remove('noplace')
+      self.container.classList.remove('empty')
+      self.container.classList.add('found')
+      self.container.classList.remove('error')
+      if (self.foundElement) {
+        self.foundElement.innerHTML = self.locations.length
+      }
+      // map
+      self.map.fitBounds(bounds)
+      self.map.panToBounds(bounds)
+    } else {
+      self.container.classList.remove('noplace')
+      self.container.classList.add('empty')
+      self.container.classList.remove('found')
+      self.container.classList.remove('error')
+    }
+    if (options.debug) {
+      // eslint-disable-next-line no-console
+      console.debug('xt-googlelocator locations', self.locations)
+    }
+    // change
+    Xt.frame({
+      el: self.container,
+      ns: `${self.ns}Change`,
+      func: () => {
+        // dispatch event
+        self.container.dispatchEvent(new CustomEvent(`change.${self._componentNs}`))
+      },
+    })
   }
 
   /**
@@ -566,7 +573,7 @@ class Googlelocator {
         self.map.getBounds().getNorthEast(),
       )
     }
-    self._submit()
+    self.submit()
   }
 
   /**
@@ -612,7 +619,7 @@ class Googlelocator {
     }
     // submit on zoom only one time
     self.map.setCenter(self.position)
-    self._submit()
+    self.submit()
   }
 
   /**

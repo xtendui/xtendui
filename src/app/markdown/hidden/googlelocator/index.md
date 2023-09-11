@@ -189,3 +189,12 @@ self = null
 | Method                  | `self.destroy()`              | Destroy component            |
 
 </div>
+
+If you want to add markers dynamically override `self.submit` and call `self.submitDeferred()` when done:
+
+```js
+self.submit = async () => {
+  self.options.markers = await queryByLatLng(self.position.lat(), self.position.lng(), self.map.getZoom())
+  self.submitDeferred()
+}
+```
