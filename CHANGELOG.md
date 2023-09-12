@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/xtendui/xtendui/compare/v1.4.0...v1.4.1) (2023-09-12)
+
+
+### Bug Fixes
+
+* **googlelocator:** added self.submit and self.submitDeferred to public methods ([e606fdd](https://github.com/xtendui/xtendui/commit/e606fddd5bc10dc70604007395c7f19f40651ea2))
+
 # [1.4.0](https://github.com/xtendui/xtendui/compare/v1.3.0...v1.4.0) (2023-06-12)
 
 
