@@ -15,7 +15,8 @@ const initGooglelocator = ({ ref }) => {
   new Xt.Googlelocator(googlelocator, {
     initialSearch: true,
     events: {
-      animateMarkerResultClick: google.maps.Animation.BOUNCE,
+      infoWindowMarkerResultClick: true,
+      infoWindowMarkerClick: true,
     },
     //autocompleteOptions: { types: ['(regions)'] }, // search autocomplete options
     //autocompleteServiceOptions: { types: ['(regions)'] }, // search autocomplete service options
