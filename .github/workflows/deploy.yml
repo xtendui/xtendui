@@ -1,13 +1,10 @@
 name: Deploy
 
 on:
-  workflow_run:
-    workflows: ["Release"]
+  push:
     branches:
       - master
       - beta
-    types:
-      - completed
 
 env:
   NODE: 18.x
