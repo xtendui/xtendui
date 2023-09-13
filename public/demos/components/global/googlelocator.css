@@ -50,6 +50,10 @@
     }
   }
 
+  .googlelocator-aside-body, .googlelocator-main {
+    @apply -md:off:hidden -md:transition -md:opacity-0 -md:in:opacity-100 -md:out:opacity-0;
+  }
+  
   /* infoWindow */
 
   .gm-style {

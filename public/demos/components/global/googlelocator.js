@@ -1,5 +1,6 @@
 /* global google */
 import { Xt } from 'xtendui'
+import 'xtendui/src/toggle'
 import 'xtendui/src/googlelocator'
 
 /* initGooglelocator */
@@ -13,7 +14,7 @@ const initGooglelocator = ({ ref }) => {
 
   /***/
   new Xt.Googlelocator(googlelocator, {
-    initialSearch: true,
+    initialSearch: false,
     events: {
       infoWindowMarkerResultClick: true,
       infoWindowMarkerClick: true,
