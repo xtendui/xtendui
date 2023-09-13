@@ -88,31 +88,33 @@ const html = /* HTML */ `
           </form>
         </div>
 
-        <div class="relative w-full p-6 xt-overflow-sub overflow-y-scroll md:flex-1" data-xt-googlelocator-results>
-          <div class="*** googlelocator-result googlelocator-result--initial *** text-xs pb-4 border-b border-gray-100">
+        <div class="relative w-full xt-overflow-sub overflow-y-scroll md:flex-1" data-xt-googlelocator-results>
+          <div class="*** googlelocator-result googlelocator-result--initial *** text-xs p-4 border-b border-gray-100">
             Insert your position and find a place near you
           </div>
 
-          <div class="*** googlelocator-result googlelocator-result--error *** text-xs pb-4 border-b border-gray-100">
+          <div class="*** googlelocator-result googlelocator-result--error *** text-xs p-4 border-b border-gray-100">
             Request timed out, retry
           </div>
 
-          <div class="*** googlelocator-result googlelocator-result--noplace *** text-xs pb-4 border-b border-gray-100">
+          <div class="*** googlelocator-result googlelocator-result--noplace *** text-xs p-4 border-b border-gray-100">
             Not a valid place
           </div>
 
-          <div class="*** googlelocator-result googlelocator-result--empty *** text-xs pb-4 border-b border-gray-100">
+          <div class="*** googlelocator-result googlelocator-result--empty *** text-xs p-4 border-b border-gray-100">
             No place found
           </div>
 
-          <div class="*** googlelocator-result googlelocator-result--founds *** text-xs pb-4 border-b border-gray-100">
+          <div class="*** googlelocator-result googlelocator-result--founds *** text-xs p-4 border-b border-gray-100">
             <span data-xt-googlelocator-results-found></span>
             places found
           </div>
 
           <div data-xt-googlelocator-items-container>
             <template data-xt-googlelocator-items-template>
-              <div class="py-4 cursor-pointer border-b border-gray-100 transition in:border-gray-500" tabindex="-1">
+              <div
+                class="googlelocator-item p-4 cursor-pointer border-b border-gray-100 transition in:bg-primary-500/5 active:bg-primary-500/5"
+                tabindex="-1">
                 <div class="xt-list xt-list-2 flex-nowrap items-center justify-between">
                   <div class="*** googlelocator-item-content *** text-xs leading-relaxed">
                     <div
