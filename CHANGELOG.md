@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/xtendui/xtendui/compare/v1.4.1...v1.4.2) (2023-09-13)
+
+
+### Bug Fixes
+
+* **googlelocator:** refactor googlelocator actiovation of .googlelocator-item ([0542450](https://github.com/xtendui/xtendui/commit/05424502bee3a46bc752043d15bde8aeb9aa3a4f))
+
 ## [1.4.1](https://github.com/xtendui/xtendui/compare/v1.4.0...v1.4.1) (2023-09-12)
 
 
