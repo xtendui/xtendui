@@ -76,6 +76,13 @@
       overflow-x: hidden !important;
       overflow-y: auto !important;
       max-height: 15rem !important;
+      .googlelocator-item {
+        @apply px-0 border-0;
+        cursor: inherit;
+        .xt-list {
+          @apply -md:flex-col;
+        }
+      }
     }
     /* close */
     .gm-style-iw-d + button {
