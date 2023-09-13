@@ -119,6 +119,11 @@ class Googlelocator {
     }
     // search place
     google.maps.event.addListener(self.search, 'place_changed', self._placeChanged.bind(self))
+    // info
+    if (options.infoWindow) {
+      self.info = new google.maps.InfoWindow(options.infoWindow)
+      google.maps.event.addListener(self.info, 'closeclick', self._infoClose.bind(self))
+    }
     // submitCurrent
     if (options.elements.repeatBtn) {
       self.repeatElement = self.container.querySelector(options.elements.repeatBtn)
@@ -271,6 +276,18 @@ class Googlelocator {
   }
 
   /**
+   * infoClose
+   */
+  _infoClose() {
+    const self = this
+    // logic
+    const old = self.itemsContainer.querySelector('[data-xt-index].on')
+    if (old) {
+      Xt.off({ el: old })
+    }
+  }
+
+  /**
    * searchSubmit
    * @param {Event} e
    */
@@ -354,9 +371,6 @@ class Googlelocator {
     let index = 0
     const markers = options.markers
     const bounds = new google.maps.LatLngBounds()
-    if (options.infoWindow) {
-      self.info = new google.maps.InfoWindow(options.infoWindow)
-    }
     for (const marker of markers) {
       if (!self.filters.length || self._filterMarker({ marker })) {
         const latLng = new google.maps.LatLng(
@@ -523,15 +537,10 @@ class Googlelocator {
     }
     // activation
     const item = self.itemsContainer.querySelector(`[data-xt-index="${loc.index}"]`)
-    const old = self.itemsContainer.querySelector('[data-xt-index].on')
-    if (old) {
-      Xt.off({ el: old })
-    }
-    if (type === 'marker') {
-      if (item) {
-        item.focus()
-        Xt.on({ el: item })
-      }
+    self._infoClose()
+    if (item) {
+      item.focus()
+      Xt.on({ el: item })
     }
     // infowindow
     if (options.infoWindow) {
@@ -718,6 +727,10 @@ class Googlelocator {
     }
     // search place
     google.maps.event.removeListener(self.search, 'place_changed', self._placeChanged.bind(self))
+    // info
+    if (options.infoWindow) {
+      google.maps.event.removeListener(self.info, 'closeclick', self._infoClose.bind(self))
+    }
     // locate
     if (options.elements.locateBtn) {
       self.locateElement = self.container.querySelector(options.elements.locateBtn)
