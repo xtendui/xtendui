@@ -788,6 +788,16 @@ if (typeof window !== 'undefined') {
   }
 
   /**
+   * perf
+   * @param {Function} params.func Function to execute after setTimeout
+   */
+  Xt._perf = ({ func } = {}) => {
+    setTimeout(() => {
+      func()
+    }, 0)
+  }
+
+  /**
    * requestAnimationFrame
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
@@ -1041,32 +1051,36 @@ if (typeof window !== 'undefined') {
    * Set scrollbar width of document
    */
   Xt._setScrollbarWidth = () => {
-    if (Xt.scrollbarWidth === undefined) {
-      const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt._setScrollbarWidth)
-      removeEventListener('resize', scrollbarWidthHandler)
-      addEventListener('resize', scrollbarWidthHandler)
-    }
-    // add outer
-    const outer = document.createElement('div')
-    outer.style.visibility = 'hidden'
-    outer.style.width = '100%'
-    outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
-    outer.classList.add('xt-ignore', 'xt-overflow-main')
-    document.body.append(outer)
-    // force scrollbars
-    outer.style.overflow = 'scroll'
-    // add inner
-    const inner = document.createElement('div')
-    inner.style.width = '100%'
-    inner.classList.add('xt-ignore')
-    outer.append(inner)
-    // return
-    const widthNoScroll = outer.offsetWidth
-    const widthWithScroll = inner.offsetWidth
-    Xt.scrollbarWidth = widthNoScroll - widthWithScroll
-    document.documentElement.style.setProperty('--scrollbar-width', `${Xt.scrollbarWidth}px`)
-    // remove
-    outer.remove()
+    Xt._perf({
+      func: () => {
+        if (Xt.scrollbarWidth === undefined) {
+          const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt._setScrollbarWidth)
+          removeEventListener('resize', scrollbarWidthHandler)
+          addEventListener('resize', scrollbarWidthHandler)
+        }
+        // add outer
+        const outer = document.createElement('div')
+        outer.style.visibility = 'hidden'
+        outer.style.width = '100%'
+        outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
+        outer.classList.add('xt-ignore', 'xt-overflow-main')
+        document.body.append(outer)
+        // force scrollbars
+        outer.style.overflow = 'scroll'
+        // add inner
+        const inner = document.createElement('div')
+        inner.style.width = '100%'
+        inner.classList.add('xt-ignore')
+        outer.append(inner)
+        // return
+        const widthNoScroll = outer.offsetWidth
+        const widthWithScroll = inner.offsetWidth
+        Xt.scrollbarWidth = widthNoScroll - widthWithScroll
+        document.documentElement.style.setProperty('--scrollbar-width', `${Xt.scrollbarWidth}px`)
+        // remove
+        outer.remove()
+      },
+    })
   }
 
   Xt.ready({
