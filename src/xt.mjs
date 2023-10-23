@@ -1107,11 +1107,10 @@ if (typeof window !== 'undefined') {
   Xt.dataStorage.set(window, 'xtEventDelayHeight', window.innerHeight + window.outerHeight)
 
   /**
-   * Xt._innerHeightSet and --vh
+   * Xt._innerHeightSet
    */
   Xt._innerHeightSet = () => {
     Xt.innerHeight = window.innerHeight
-    document.documentElement.style.setProperty('--vh', `${Xt.innerHeight * 0.01}px`)
   }
 
   addEventListener('resize.xt', () => {

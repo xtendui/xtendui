@@ -250,15 +250,6 @@ You have some utilities for viewport height that **changes only on horizontal re
 
 </div>
 
-Or also use css variables for viewport height `--vh`.
-
-```css
-.my-selector {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-}
-```
-
 ## resize.xt
 
 For `resize` event we use a special event `resize.xt` that gets **triggered only once after a delay**. Also **fixes interaction jumping on mobile devices** because it doesn't trigger on vertical scroll/resize on mobile when viewport width doesn't change and `matchMedia('(hover: none)').matches`.

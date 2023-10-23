@@ -98,13 +98,13 @@ function DemoIframe(props) {
   return (
     <>
       {hasJsx ? (
-        <div id="docs_body-inner" className="docs_demo_source--from relative xt-h-screen">
+        <div id="docs_body-inner" className="docs_demo_source--from relative h-screen !h-[100svh]">
           <Demo />
         </div>
       ) : (
         <div
           id="docs_body-inner"
-          className="docs_demo_source--from relative xt-h-screen"
+          className="docs_demo_source--from relative h-screen !h-[100svh]"
           dangerouslySetInnerHTML={{ __html: object.html }}
         />
       )}

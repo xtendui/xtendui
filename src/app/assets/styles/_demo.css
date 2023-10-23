@@ -276,9 +276,8 @@ pre {
 }
 
 #docs_open-full-content {
+  @apply h-screen !h-[100svh];
   display: flex;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   pre {
     max-height: none;
   }

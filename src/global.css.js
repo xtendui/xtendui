@@ -21,15 +21,6 @@ module.exports = {
     '.xt-container-y-remove': {
       ...theme('container.padding'),
     },
-    '.xt-h-screen': {
-      height: 'calc(var(--vh, 1vh) * 100)',
-    },
-    '.xt-min-h-screen': {
-      minHeight: 'calc(var(--vh, 1vh) * 100)',
-    },
-    '.xt-max-h-screen': {
-      maxHeight: 'calc(var(--vh, 1vh) * 100)',
-    },
   }),
   component: theme => ({
     '.xt-body:not(.xt-optout-scroll)': {
