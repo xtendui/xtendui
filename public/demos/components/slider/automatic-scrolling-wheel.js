@@ -29,7 +29,7 @@ const mountSlider = ({ ref }) => {
   let dragDuration
   let dragEase
   let isAutomatic = false
-  const dragEaseNormal = 'quart.out'
+  const dragEaseNormal = 'sine.out'
   const dragEaseAutomatic = 'linear'
   const timeScaleTimeOn = 0.75
   const timeScaleEaseOn = 'quint.in'
@@ -48,13 +48,27 @@ const mountSlider = ({ ref }) => {
   })
   /***/
 
+  // Wheel
+
+  /***/
+  const wheel = e => {
+    self.wheelEvent({}, e)
+  }
+
+  window.addEventListener('wheel', wheel, { passive: false })
+  /***/
+
   /***/
   // automaticNext
 
   const automaticNext = () => {
     // go to next slide when animation completes
     isAutomatic = true
-    self.goToNext()
+    if (self.direction < 0) {
+      self.goToPrev()
+    } else {
+      self.goToNext()
+    }
     isAutomatic = false
   }
   /***/
@@ -145,6 +159,7 @@ const mountSlider = ({ ref }) => {
   // unmount
 
   return () => {
+    window.removeEventListener('wheel', wheel)
     gsap.killTweensOf(self.dragger)
     removeEventListener('blur', pause)
     removeEventListener('focus', resume)
@@ -156,7 +171,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-automatic-scrolling',
+  matches: '.demo--slider-automatic-scrolling-wheel',
   mount: ({ ref }) => {
     const unmountSliders = mountSliders({ ref })
 

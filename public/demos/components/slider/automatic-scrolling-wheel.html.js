@@ -1,7 +1,7 @@
 const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--slider-automatic-scrolling">
+  <div class="demo--slider-automatic-scrolling-wheel">
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides" data-xt-slider-dragger>

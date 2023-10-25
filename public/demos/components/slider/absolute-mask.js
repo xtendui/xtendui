@@ -12,7 +12,7 @@ const mountSlider = ({ ref }) => {
   const dragEase = 'quart.out'
 
   const maskPercent = 100
-  const maskInnerPercent = 50
+  const maskInnerPercent = 100
   const maskInnerOpacity = 0.65
 
   // slider
@@ -200,74 +200,17 @@ const mountSlider = ({ ref }) => {
   }
 }
 
-/* mountSlide */
-
-const mountSlide = ({ ref }) => {
-  // vars
-
-  const slides = ref.querySelectorAll('.xt-slide')
-
-  for (const slide of slides) {
-    // vars
-
-    let links = slide.closest('a, button')
-    links = links ? [links] : Array.from(slide.querySelectorAll('a, button')) // query inside
-    if (!links.length) return
-    links = links.filter(x => !x.parentElement.closest('a, button')) // filter nested
-    const img = slide.querySelector('.xt-media')
-    const imgOpacityIn = 0.75
-    const imgOpacityOut = 1
-
-    // enter
-
-    const enter = () => {
-      // img
-      gsap.to(img, {
-        opacity: imgOpacityIn,
-        duration: 0.5,
-        ease: 'quart.out',
-      })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseenter', enter)
-    }
-
-    // enter
-
-    const leave = () => {
-      // img
-      gsap.to(img, {
-        opacity: imgOpacityOut,
-        duration: 0.5,
-        ease: 'quart.out',
-        overwrite: true,
-      })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseleave', leave)
-    }
-  }
-
-  // unmount
-
-  return () => {}
-}
-
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-hero-v1',
+  matches: '.demo--slider-absolute-mask',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
-    const unmountSlide = mountSlide({ ref })
 
     // unmount
 
     return () => {
       unmountSlider()
-      unmountSlide()
     }
   },
 })

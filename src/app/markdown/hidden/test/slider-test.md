@@ -8,7 +8,7 @@ title: "Slider Test"
 ## Align
 
 `demos/components/slider/align-center`
-- TEST grouping and drag activation.
+- TEST grouping and activation.
 
 <demo>
   <demoinline src="demos/components/slider/align-center">
@@ -16,7 +16,7 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/align-left`
-- TEST grouping and drag activation.
+- TEST grouping and activation.
 
 <demo>
   <demoinline src="demos/components/slider/align-left">
@@ -24,7 +24,7 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/align-right`
-- TEST grouping and drag activation.
+- TEST grouping and activation.
 
 <demo>
   <demoinline src="demos/components/slider/align-right">
@@ -34,7 +34,7 @@ title: "Slider Test"
 ## Contain
 
 `demos/components/slider/contain-false-center`
-- TEST grouping and drag activation.
+- TEST grouping and activation.
 
 <demo>
   <demoinline src="demos/components/slider/contain-false-center">
@@ -42,7 +42,7 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/contain-false-left`
-- TEST grouping and drag activation.
+- TEST grouping and activation.
 
 <demo>
   <demoinline src="demos/components/slider/contain-false-left">
@@ -50,7 +50,7 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/contain-false-right`
-- TEST grouping and drag activation.
+- TEST grouping and activation.
 
 <demo>
   <demoinline src="demos/components/slider/contain-false-right">
@@ -60,7 +60,7 @@ title: "Slider Test"
 ## Wrap
 
 `demos/components/slider/wrap-center`
-- TEST grouping and drag activation, wrap position.
+- TEST grouping and activation, wrap position.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
@@ -68,7 +68,7 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/wrap-left`
-- TEST grouping and drag activation, wrap position.
+- TEST grouping and activation, wrap position.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-left">
@@ -76,10 +76,18 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/wrap-right`
-- TEST grouping and drag activation, wrap position.
+- TEST grouping and activation, wrap position.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-right">
+  </demoinline>
+</demo>
+
+`demos/components/slider/wrap-nospace`
+- TEST grouping and activation, wrap position.
+
+<demo>
+  <demoinline src="demos/components/slider/wrap-nospace">
   </demoinline>
 </demo>
 
@@ -184,33 +192,22 @@ title: "Slider Test"
 TEST drag animations on drag and activation.
 
 <demo>
-  <demoinline src="demos/components/slider/dragposition-false">
+  <demoinline src="demos/components/slider/dragposition-css">
   </demoinline>
 </demo>
 
 <demo>
-  <demoinline src="demos/components/slider/dragposition">
+  <demoinline src="demos/components/slider/dragposition-js">
   </demoinline>
 </demo>
 
 ## Absolute
 
-TEST direction and other drag values on initial, reset, drag looping and going back and forth, nav looping, pag jumping of 2 or more.
+[/hidden/slider/addon#automatic-scrolling](/hidden/slider/addon#automatic-scrolling).
+- (manual) TEST loop activation.
 
-TEST click should not change slide.
+[/demos/themes/hero/slider-hero-v2](/demos/themes/hero/slider-hero-v2).
+- TEST activation and drag activation.
 
-<demo>
-  <demoinline src="demos/components/slider/animation-absolute-cover">
-  </demoinline>
-  <demoinline src="demos/components/slider/animation-absolute-mask">
-  </demoinline>
-</demo>
-
-## Addon
-
-TEST activations.
-
-<demo>
-  <demoinline src="demos/components/slider/automatic-scrolling">
-  </demoinline>
-</demo>
+[/demos/themes/hero/slider-hero-v1](/demos/themes/hero/slider-hero-v1).
+- TEST drag looping going back and forth between first and last, pagination looping first and second to last, drag sx then drag 2 times dx, pagination looping last and second to first, pagination jump combinations, multiple click should not change slide, click after drag should not stop animation.

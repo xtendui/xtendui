@@ -1,7 +1,7 @@
 const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
-  <div class="demo--slider-animation-absolute-mask">
+  <div class="demo--slider-absolute-mask">
     <div class="xt-slider bg-primary-500">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
@@ -19,7 +19,6 @@ const html = /* HTML */ `
             </div>
           </div>
         </div>
-
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
@@ -35,7 +34,6 @@ const html = /* HTML */ `
             </div>
           </div>
         </div>
-
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
@@ -51,7 +49,6 @@ const html = /* HTML */ `
             </div>
           </div>
         </div>
-
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
@@ -67,7 +64,6 @@ const html = /* HTML */ `
             </div>
           </div>
         </div>
-
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
@@ -83,7 +79,6 @@ const html = /* HTML */ `
             </div>
           </div>
         </div>
-
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
             <div class="*** hero-inner ***">
@@ -100,7 +95,6 @@ const html = /* HTML */ `
           </div>
         </div>
       </div>
-
       <nav
         class="w-full xt-list xt-list-2 pt-4 items-center justify-center absolute z-content bottom-6"
         data-xt-slider-pagination>

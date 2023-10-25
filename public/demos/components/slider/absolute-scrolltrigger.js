@@ -1,6 +1,10 @@
 import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 /* mountSlider */
 
@@ -12,7 +16,7 @@ const mountSlider = ({ ref }) => {
   const dragEase = 'quart.out'
 
   const maskPercent = 100
-  const maskInnerPercent = 50
+  const maskInnerPercent = 100
   const maskInnerOpacity = 0.65
 
   // slider
@@ -22,6 +26,52 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
+    free: true,
+  })
+  /***/
+
+  // Scroll
+
+  /***/
+  const scrollTrigger = ScrollTrigger.create({
+    trigger: slider,
+    start: 'bottom bottom',
+    end: 'top top',
+    pin: true,
+    pinSpacing: true,
+    onUpdate: selfScrolltrigger => {
+      const first = self._groups[self.drag._wrapFirst].target
+      const last = self._groups[self.drag._wrapLast].target
+      const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
+      const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
+      const maxCheck = Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
+      //console.log(min, max)
+      /*
+      self.dragstart({ clientX: deltaY })
+      self.dragmove({ clientX }, { keepActivated: true, setup: false })
+      self.dragend({ clientX })
+      deltaY = clientX
+      */
+      const clientX = max * selfScrolltrigger.progress
+      //console.log(selfScrolltrigger.progress)
+      //self.wheelEvent({}, { deltaY: clientX })
+      // val
+      self.drag._final = clientX
+      // set direction
+      self.direction = Math.sign(self.drag._initial - self.drag._final)
+      self._inverse = self.direction < 0
+      // ratio
+      self.drag._ratio = Math.abs(self.drag._final - self.drag._initial) / Math.abs(maxCheck - min)
+      self.drag._ratioInverse = 1 - self.drag._ratio
+      // dispatch event
+      self.drag._instant = true
+      self.drag._dragging = true
+      self.dragger.dispatchEvent(new CustomEvent(`dragposition.xt.slider`))
+      self._logicDragposition()
+      self.dragger.dispatchEvent(new CustomEvent(`drag.xt.slider`))
+      // ??? non funzia
+      self.dragend({ clientX })
+    },
   })
   /***/
 
@@ -30,6 +80,10 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // duration depending on instant and dragger size
     dragDuration = self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
+    /***/
+    // duration only when wheeling
+    dragDuration = self.drag._dragging && self.wheel._wheeling ? 0.5 : dragDuration
+    /***/
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -61,7 +115,6 @@ const mountSlider = ({ ref }) => {
       duration: dragDuration,
       ease: dragEase,
     })
-    /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming', '!block')
@@ -87,7 +140,6 @@ const mountSlider = ({ ref }) => {
         ease: dragEase,
       })
     }
-    /***/
   }
 
   self.dragger.addEventListener('drag.xt.slider', drag)
@@ -160,7 +212,6 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
-      /***/
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
       for (const incoming of incomings) {
@@ -186,7 +237,6 @@ const mountSlider = ({ ref }) => {
           ease: dragEase,
         })
       }
-      /***/
     }
   }
 
@@ -195,79 +245,23 @@ const mountSlider = ({ ref }) => {
   // unmount
 
   return () => {
+    scrollTrigger.kill()
     self.destroy()
     self = null
   }
 }
 
-/* mountSlide */
-
-const mountSlide = ({ ref }) => {
-  // vars
-
-  const slides = ref.querySelectorAll('.xt-slide')
-
-  for (const slide of slides) {
-    // vars
-
-    let links = slide.closest('a, button')
-    links = links ? [links] : Array.from(slide.querySelectorAll('a, button')) // query inside
-    if (!links.length) return
-    links = links.filter(x => !x.parentElement.closest('a, button')) // filter nested
-    const img = slide.querySelector('.xt-media')
-    const imgOpacityIn = 0.75
-    const imgOpacityOut = 1
-
-    // enter
-
-    const enter = () => {
-      // img
-      gsap.to(img, {
-        opacity: imgOpacityIn,
-        duration: 0.5,
-        ease: 'quart.out',
-      })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseenter', enter)
-    }
-
-    // enter
-
-    const leave = () => {
-      // img
-      gsap.to(img, {
-        opacity: imgOpacityOut,
-        duration: 0.5,
-        ease: 'quart.out',
-        overwrite: true,
-      })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseleave', leave)
-    }
-  }
-
-  // unmount
-
-  return () => {}
-}
-
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-hero-v1',
+  matches: '.demo--slider-absolute-scrolltrigger',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
-    const unmountSlide = mountSlide({ ref })
 
     // unmount
 
     return () => {
       unmountSlider()
-      unmountSlide()
     }
   },
 })

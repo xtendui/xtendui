@@ -41,6 +41,9 @@ class Slider extends Xt.Toggle {
   _initScope() {
     const self = this
     const options = self.options
+    // wheel
+    self.wheel.deltaY = false
+    self.wheel.timeout
     // dragger
     self.dragger = self.container.querySelector(options.drag.dragger)
     self._destroyElements.push(self.dragger)
@@ -51,10 +54,10 @@ class Slider extends Xt.Toggle {
     self.drag._wrapDir = 0
     self.drag._wrapIndex = null
     const rect = self.dragger.getBoundingClientRect()
-    self.drag._size = rect.width
+    self.drag.size = rect.width
     self.drag._left = rect.left
     // fix when dragger not :visible (offsetWidth === 0) do not initialize
-    if (self.drag._size === 0) {
+    if (self.drag.size === 0) {
       return
     }
     // grab
@@ -103,20 +106,18 @@ class Slider extends Xt.Toggle {
     const options = self.options
     // @PERF
     let sizeContent = 0
-    let trWidthMax = 0
     for (const tr of self.targets) {
       let trLeft
       let trWidth
       if (options.mode === 'absolute') {
         trLeft = 0
-        trWidth = self.drag._size
+        trWidth = self.drag.size
       } else {
         const rect = tr.getBoundingClientRect()
         trLeft = rect.left - self.drag._left
         trWidth = rect.width
       }
       sizeContent += trWidth
-      trWidthMax = trWidth > trWidthMax ? trWidth : trWidthMax
       Xt.dataStorage.set(tr, `${self.ns}TrLeftInitial`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrWidth`, trWidth)
@@ -139,8 +140,10 @@ class Slider extends Xt.Toggle {
     // initGroupsPosition
     self._initGroupsPosition()
     // wrap
-    if (options.wrap !== false && options.mode !== 'absolute' && self.drag._availableSpace > trWidthMax) {
-      self._wrap = true
+    if (options.wrap && options.mode !== 'absolute') {
+      if (self.drag._availableSpace >= self.drag.size * 1.5) {
+        self._wrap = true
+      }
     } else {
       self._wrap = false
     }
@@ -169,9 +172,9 @@ class Slider extends Xt.Toggle {
     self._groups = []
     let currentGroup = 0
     group = group ?? options.group
-    const sizeAvailable = group ? self.drag._size * group : 0
+    const sizeAvailable = group ? self.drag.size * group : 0
     let currentCount = sizeAvailable
-    self.drag._availableSpace = -self.drag._size
+    self.drag._availableSpace = -self.drag.size
     for (const [i, target] of self.targets.entries()) {
       const targetWidth = Xt.dataStorage.get(target, `${self.ns}TrWidth`)
       currentCount -= targetWidth
@@ -230,11 +233,11 @@ class Slider extends Xt.Toggle {
       // left with alignment
       let left
       if (options.align === 'center') {
-        left = self.drag._size / 2 - groupLeft - groupWidth / 2
+        left = self.drag.size / 2 - groupLeft - groupWidth / 2
       } else if (options.align === 'left') {
         left = -groupLeft
       } else if (options.align === 'right') {
-        left = self.drag._size - groupLeft - groupWidth
+        left = self.drag.size - groupLeft - groupWidth
       }
       // save position
       for (const tr of targets) {
@@ -251,7 +254,7 @@ class Slider extends Xt.Toggle {
     const self = this
     const options = self.options
     // contain groups
-    if (options.contain && options.mode !== 'absolute' && !self._wrap && self._usedWidth > self.drag._size) {
+    if (options.contain && options.mode !== 'absolute' && !self._wrap && self._usedWidth > self.drag.size) {
       // only if slides overflow dragger
       const first = self._groups[self.drag._wrapFirst].target
       const last = self._groups[self.drag._wrapLast].target
@@ -259,7 +262,7 @@ class Slider extends Xt.Toggle {
       const lastLeft = Xt.dataStorage.get(last, `${self.ns}TrLeft`)
       const lastWidth = Xt.dataStorage.get(last, `${self.ns}GroupWidth`)
       const min = -firstLeft
-      const max = -lastLeft - lastWidth + self.drag._size
+      const max = -lastLeft - lastWidth + self.drag.size
       // group contain slides with same position
       let iRemoved = 0
       for (let i = 0; i < self._groups.length - iRemoved; i++) {
@@ -365,7 +368,7 @@ class Slider extends Xt.Toggle {
         const groupLeft = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
         const trLeft = Xt.dataStorage.get(tr, `${self.ns}TrLeft`)
         const spaceLeft = trLeft + groupLeft // left space available from slide to dragger
-        const spaceRight = self.drag._size - spaceLeft - groupWidth // right space available from slide to dragger
+        const spaceRight = self.drag.size - spaceLeft - groupWidth // right space available from slide to dragger
         // group on the right of current
         let usedWidth = 0
         for (let i = 0; i <= self._groups.length - 1; i++) {
@@ -513,13 +516,6 @@ class Slider extends Xt.Toggle {
     // init
     const initHandler = Xt.dataStorage.put(self.container, `init/${self.ns}`, self._eventInitHandler.bind(self))
     self.container.addEventListener('init.xt.slider', initHandler)
-    // dragposition
-    const dragpositionHandler = Xt.dataStorage.put(
-      self.dragger,
-      `dragposition/${self.ns}`,
-      self._eventDragpositionHandler.bind(self),
-    )
-    self.dragger.addEventListener('dragposition.xt.slider', dragpositionHandler)
     // drag start
     const dragstartHandler = Xt.dataStorage.put(
       window,
@@ -531,10 +527,10 @@ class Slider extends Xt.Toggle {
       addEventListener(event, dragstartHandler, { passive: false })
     }
     // fix prevent dragging links and images
-    const dragstartFixHandler = Xt.dataStorage.put(window, `dragstart/drag/${self.ns}`, self._eventDragstartFix)
+    const dragstartFixHandler = Xt.dataStorage.put(self.dragger, `dragstart/drag/${self.ns}`, self._eventDragstartFix)
     self.dragger.addEventListener('dragstart', dragstartFixHandler)
     // resize
-    const reinitHandler = Xt.dataStorage.put(window, `resize/reinit/${self.ns}`, Xt._eventReinit.bind(null, { self }))
+    const reinitHandler = Xt.dataStorage.put(window, `resize.xt/${self.ns}`, Xt._eventReinit.bind(null, { self }))
     addEventListener('resize.xt', reinitHandler)
   }
 
@@ -551,7 +547,10 @@ class Slider extends Xt.Toggle {
       ns: `${self.ns}InitDrag`,
       func: () => {
         // dispatch event
+        self.drag._instant = true
+        self.drag._dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+        self._logicDragposition()
       },
     })
     // super after
@@ -570,22 +569,6 @@ class Slider extends Xt.Toggle {
     const self = this
     // dragger initial
     self.dragger.classList.remove('initial')
-  }
-
-  /**
-   * drag position handler
-   * @param {Event} e
-   */
-  _eventDragpositionHandler() {
-    const self = this
-    const options = self.options
-    // dragposition
-    if (!options.dragposition && options.mode !== 'absolute') {
-      self.initial || self.drag._instant ? self.dragger.classList.remove('on') : self.dragger.classList.add('on')
-      // set internal position to resume animation mid dragging
-      self.drag._position = self.drag._final
-      self.dragger.style.transform = `translateX(${self.drag._final}px)`
-    }
   }
 
   /**
@@ -676,7 +659,7 @@ class Slider extends Xt.Toggle {
   _eventDragHandler(e) {
     const self = this
     // logic
-    self._logicDrag(e)
+    self._logicDragmove(e)
   }
 
   /**
@@ -732,8 +715,8 @@ class Slider extends Xt.Toggle {
     const group = found
     el = found.element
     const tr = found.target
-    // fix keep self.drag._instant
-    const isDrag = self.drag._instant
+    // fix keep self.drag._instant (e.g. slider-hero-v2)
+    const isInstant = self.drag._instant
     // activation
     super._eventOn({ el, force }, e)
     // vars
@@ -745,48 +728,58 @@ class Slider extends Xt.Toggle {
     // val
     self.drag._initial = Xt.dataStorage.get(tr, `${self.ns}GroupLeft`)
     // fix absolute loop
-    if (options.mode === 'absolute' && options.loop && !self.initial) {
-      if (tr === last && (self.drag._direction < 0 || self.drag._position >= min)) {
+    if (options.mode === 'absolute' && !self.initial && self.direction) {
+      const loopingMoreThanOne = Math.abs(self.drag._initial - self.drag._position) > maxCheck
+      if (options.loop && tr === last && loopingMoreThanOne && self.direction < 0) {
+        // calculate position when looping to end
+        const remainder = max - min + self.drag._position - maxCheck
         // val
-        self.drag._final = max - min + self.drag._position - maxCheck
+        self.drag._final = remainder
         // dispatch event
         self.drag._instant = true
+        self.drag._dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-      } else if (tr === first && (self.drag._direction > 0 || self.drag._position <= max)) {
-        self.drag._final = min - max + self.drag._position + maxCheck
+        self._logicDragposition()
+      } else if (options.loop && tr === first && loopingMoreThanOne && self.direction > 0) {
+        // calculate position when looping to start
+        const remainder = min - max + self.drag._position + maxCheck
+        // val
+        self.drag._final = remainder
         // dispatch event
         self.drag._instant = true
+        self.drag._dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-      }
-    }
-    // fix absolute multi step activation (only if not already applied fix)
-    if (options.mode === 'absolute' && !self.drag._instant && self.direction) {
-      const diff = self.drag._initial - self.drag._position
-      if (Math.abs(diff) > maxCheck) {
-        // remainder add or remove maxCheck depending on direction
-        let remainder = diff % maxCheck
-        remainder += maxCheck * self.direction
+        self._logicDragposition()
+      } else if (loopingMoreThanOne) {
+        // calculate difference of distance still to be covered when looping more than 1 item
+        const remainder = self.drag._final - self.drag._position - maxCheck * self.direction
         // val
         self.drag._final = self.drag._initial - remainder
         // dispatch event
         self.drag._instant = true
+        self.drag._dragging = false
         self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+        self._logicDragposition()
       }
     }
     // val
     self.drag._final = self.drag._initial
+    self.drag._direction = null
     // ratio
     self.drag._ratioInverse = Math.abs(self.drag._final - self.drag._position) / Math.abs(maxCheck - min)
     self.drag._ratio = 1 - self.drag._ratioInverse
     // dispatch event
     self.drag._instant = false
+    self.drag._dragging = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-    // fix keep self.drag._instant
-    self.drag._instant = isDrag
+    self._logicDragposition()
+    // fix keep self.drag._instant (e.g. slider-hero-v2 dragging mask)
+    self.drag._instant = isInstant
     Xt.frame({
       el: self.container,
-      ns: `${self.ns}isDrag`,
+      ns: `${self.ns}isInstant`,
       func: () => {
+        // needed for off event (e.g. slider-hero-v2 clicking next furiously)
         self.drag._instant = false
       },
     })
@@ -851,7 +844,7 @@ class Slider extends Xt.Toggle {
       let direction = self.direction
       if (!direction) {
         // fix on init and reinit set direction to left (-1) if on left, to right (1) if on right
-        direction = self.drag._final > -self.drag._size ? -1 : 1
+        direction = self.drag._final > -self.drag.size ? -1 : 1
       }
       if (self.drag._wrapDir !== direction || self.drag._wrapIndex !== index) {
         self.drag._wrapDir = direction
@@ -946,14 +939,14 @@ class Slider extends Xt.Toggle {
     if (options.align === 'center') {
       // remove the space between left drag position and final position
       // remove from translate the difference between half drag size and half previous tr width
-      translate -= self.drag._size / 2 - previousWidth / 2
+      translate -= self.drag.size / 2 - previousWidth / 2
     } else if (options.align === 'left') {
       // remove the space between left drag position and final position
       translate -= 0
     } else if (options.align === 'right') {
       // remove the space between left drag position and final position
       // remove from translate the difference from drag size and previous tr width
-      translate -= self.drag._size - previousWidth
+      translate -= self.drag.size - previousWidth
     }
     for (const tr of group) {
       const trLeftInitial = Xt.dataStorage.get(tr, `${self.ns}TrLeftInitial`)
@@ -966,7 +959,7 @@ class Slider extends Xt.Toggle {
       if (options.align === 'center') {
         wrapSpace += width + previousWidth / 2
       } else if (options.align === 'left') {
-        wrapSpace += width + self.drag._size - previousWidth
+        wrapSpace += width + self.drag.size - previousWidth
       } else if (options.align === 'right') {
         wrapSpace += width
       }
@@ -976,18 +969,28 @@ class Slider extends Xt.Toggle {
       } else if (options.align === 'left') {
         wrapSpace += width
       } else if (options.align === 'right') {
-        wrapSpace += width + self.drag._size - previousWidth
+        wrapSpace += width + self.drag.size - previousWidth
       }
     }
     // continue moving only if wrapSpace is smaller than drag
-    if (wrapSpace <= self.drag._size) {
+    if (wrapSpace <= self.drag.size) {
       self._eventMove({ index, direction, wrapLeft: left, previousWidth: width, wrapSpace })
     }
   }
 
   //
-  // logic
+  // drag
   //
+
+  /**
+   * drag on public
+   * @param {Event} e
+   */
+  dragstart(e) {
+    const self = this
+    // logic
+    self._logicDragstart(e)
+  }
 
   /**
    * drag on logic
@@ -1011,7 +1014,6 @@ class Slider extends Xt.Toggle {
     self._eventAutostop()
     // vars
     self._autoblock = true
-    self.drag._instant = true
     self.drag._lock = false
     self.drag._prevent = false
     self.drag._index = self.index
@@ -1019,6 +1021,161 @@ class Slider extends Xt.Toggle {
     self.drag._overflow = null
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragstart.${self._componentNs}`))
+  }
+
+  /**
+   * drag move public
+   * @param {Event} e
+   * @param {Object} params
+   * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
+   * @param {Number} params.setup
+   */
+  dragmove(e, { keepActivated, setup } = {}) {
+    const self = this
+    // logic
+    self._logicDragmove(e, { keepActivated, setup })
+  }
+
+  /**
+   * drag move logic
+   * @param {Event} e
+   * @param {Object} params
+   * @param {Boolean} params.keepActivated Do not disable with pointer-events-none
+   * @param {Boolean} params.setup first dragmove instant setup
+   */
+  _logicDragmove(e, { keepActivated = false, setup = false } = {}) {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // save event
+    if (e.clientX !== undefined) {
+      self.drag._current = e.clientX
+      self.drag._currentOther = e.clientY
+    } else if (e.touches && e.touches.length) {
+      self.drag._current = e.touches[0].clientX
+      self.drag._currentOther = e.touches[0].clientY
+    }
+    // fix no drag change when click
+    if (self.drag._start === self.drag._current) {
+      return
+    }
+    // first dragmove instant setup
+    if (setup) {
+      // only 1 pixel same direction
+      self.drag._current = Math.sign(self.drag._current)
+    }
+    // check threshold
+    self.drag._distance = self.drag._start - self.drag._current
+    self.drag._distanceOther = self.drag._startOther - self.drag._currentOther
+    // prevent drag and lock drag
+    if (!self.drag._lock && !self.drag._prevent) {
+      if (Math.abs(self.drag._distanceOther) > options.drag.threshold) {
+        // only if dragging enough other
+        // prevent drag
+        self.drag._prevent = true
+      } else if (Math.abs(self.drag._distance) > options.drag.threshold) {
+        // only if dragging enough
+        // lock drag
+        self.drag._lock = true
+      }
+    }
+    // prevent drag
+    if (self.drag._prevent) {
+      return
+    }
+    if (self.drag._lock) {
+      // prevent page scroll
+      if (e.cancelable) {
+        e.preventDefault()
+      }
+      // disable interaction
+      if (!keepActivated) {
+        for (const tr of self.targets) {
+          tr.classList.add('pointer-events-none')
+        }
+      }
+    }
+    // calc
+    const first = self._groups[self.drag._wrapFirst].target
+    const last = self._groups[self.drag._wrapLast].target
+    const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
+    const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
+    const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
+    // val
+    let final = self.drag._position + (self.drag._current - self.drag._old) * options.drag.factor
+    self.drag._direction = self.drag._current > self.drag._old ? -1 : 1
+    self.drag._old = self.drag._current
+    // overflow
+    if (!self._wrap && options.mode !== 'absolute') {
+      const direction = Math.sign(self.drag._distance)
+      const func = options.drag.overflow ? options.drag.overflow : () => 0
+      if (final > min && direction < 0) {
+        self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
+        const overflow = self.drag._current - self.drag._overflow
+        final = overflow >= 0 ? min + func({ overflow }) : final
+      } else if (final < max && direction > 0) {
+        self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
+        const overflow = self.drag._current - self.drag._overflow
+        final = overflow <= 0 ? max - func({ overflow: -overflow }) : final
+      }
+    }
+    // val
+    self.drag._final = final
+    // set direction
+    self.direction = Math.sign(self.drag._initial - self.drag._final)
+    self._inverse = self.direction < 0
+    // ratio
+    self.drag._ratio = Math.abs(self.drag._final - self.drag._initial) / Math.abs(maxCheck - min)
+    self.drag._ratio = self.drag._ratio > 1 ? 1 : self.drag._ratio
+    self.drag._ratio = self.drag._ratio < -1 ? -1 : self.drag._ratio
+    self.drag._ratioInverse = 1 - self.drag._ratio
+    if (options.mode === 'absolute') {
+      // fix direction and ratio when on dragmove same direction (e.g. wheel)
+      if (
+        (self.direction > 0 && self.drag._final > self.drag._initial) ||
+        (self.direction < 0 && self.drag._final < self.drag._initial)
+      ) {
+        self.drag._ratio = 0
+        self.drag._ratioInverse = 0
+      }
+    }
+    // dispatch event
+    self.drag._instant = true
+    if (self.direction !== self.directionOld) {
+      // fix direction and ratio when on dragmove same direction (e.g. wheel)
+      self.drag._dragging = false
+    } else {
+      self.drag._dragging = true
+    }
+    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+    self._logicDragposition()
+    // dispatch event
+    self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
+    // reset
+    self._inverse = null
+    self.directionOld = self.direction
+    // activation
+    if (self.drag._lock && options.mode !== 'absolute') {
+      // get nearest
+      const found = self._logicDragfind({ index: self.index })
+      if (found !== null && found !== self.index) {
+        super._eventOn({ el: self._groups[found].element, force: true })
+        self._eventWrap({ index: found })
+      }
+    }
+  }
+
+  /**
+   * drag off public
+   * @param {Event} e
+   */
+  dragend(e) {
+    const self = this
+    // logic
+    self._logicDragend(e)
   }
 
   /**
@@ -1057,11 +1214,14 @@ class Slider extends Xt.Toggle {
       // only if dragging enough
       if (self.drag._lock) {
         const index = self.index
-        // if on the same slide as we started dragging
-        if (index !== self.drag._index || Math.abs(self.drag._distance) >= self.drag._size) {
-          // goToNum
-          self.goToNum({ index })
+        if (index !== self.drag._index) {
+          // if on the same slide as we started dragging or in absolute mode looping
+          // options.free and self.drag._overflow to fix reset when overflowing
+          if (!options.free || self.drag._overflow) {
+            self.goToNum({ index })
+          }
         } else {
+          // if not on the same slide as we started dragging
           // depending on direction and if direction is not going back
           const direction = Math.sign(self.drag._distance)
           if (
@@ -1069,121 +1229,29 @@ class Slider extends Xt.Toggle {
             self.drag._direction > 0 &&
             (options.loop || self._wrap || index !== self.getElementsGroups().length - 1)
           ) {
-            self.goToNext({ amount: 1 })
+            if (!options.free || index === self.getElementsGroups().length - 1) {
+              self.goToNext({ amount: 1 })
+            }
           } else if (direction < 0 && self.drag._direction < 0 && (options.loop || self._wrap || index !== 0)) {
-            self.goToPrev({ amount: 1 })
+            if (!options.free || index === 0) {
+              self.goToPrev({ amount: 1 })
+            }
           } else {
-            self._logicDragreset()
+            if (!self._wrap) {
+              self._logicDragreset()
+            }
           }
         }
       } else {
-        self._logicDragreset()
+        if (!options.free) {
+          self._logicDragreset()
+        }
       }
       // auto
       self._eventAutostart()
       // dispatch event
       self.dragger.dispatchEvent(new CustomEvent(`dragend.${self._componentNs}`))
     })
-  }
-
-  /**
-   * drag logic
-   * @param {Event} e
-   */
-  _logicDrag(e) {
-    const self = this
-    const options = self.options
-    // disabled
-    if (self.disabled) {
-      return
-    }
-    // save event
-    if (e.clientX !== undefined) {
-      self.drag._current = e.clientX
-      self.drag._currentOther = e.clientY
-    } else if (e.touches && e.touches.length) {
-      self.drag._current = e.touches[0].clientX
-      self.drag._currentOther = e.touches[0].clientY
-    }
-    // check threshold
-    self.drag._distance = self.drag._start - self.drag._current
-    self.drag._distanceOther = self.drag._startOther - self.drag._currentOther
-    // prevent drag and lock drag
-    if (!self.drag._lock && !self.drag._prevent) {
-      if (Math.abs(self.drag._distanceOther) > options.drag.threshold) {
-        // only if dragging enough other
-        // prevent drag
-        self.drag._prevent = true
-      } else if (Math.abs(self.drag._distance) > options.drag.threshold) {
-        // only if dragging enough
-        // lock drag
-        self.drag._lock = true
-      }
-    }
-    // prevent drag
-    if (self.drag._prevent) {
-      return
-    }
-    if (self.drag._lock) {
-      // prevent page scroll
-      if (e.cancelable) {
-        e.preventDefault()
-      }
-      // disable interaction
-      for (const tr of self.targets) {
-        tr.classList.add('pointer-events-none')
-      }
-    }
-    // calc
-    const first = self._groups[self.drag._wrapFirst].target
-    const last = self._groups[self.drag._wrapLast].target
-    const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
-    const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
-    const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
-    // val
-    let final = self.drag._position + (self.drag._current - self.drag._old) * options.drag.factor
-    self.drag._direction = self.drag._current > self.drag._old ? -1 : 1
-    self.drag._old = self.drag._current
-    // overflow
-    if (options.drag.overflow && !self._wrap && options.mode !== 'absolute') {
-      const direction = Math.sign(self.drag._distance)
-      if (final > min && direction < 0) {
-        self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
-        const overflow = self.drag._current - self.drag._overflow
-        final = overflow > 0 ? min + options.drag.overflow({ overflow }) : final
-      } else if (final < max && direction > 0) {
-        self.drag._overflow = self.drag._overflow ? self.drag._overflow : self.drag._current
-        const overflow = self.drag._current - self.drag._overflow
-        final = overflow < 0 ? max - options.drag.overflow({ overflow: -overflow }) : final
-      }
-    }
-    // val
-    self.drag._final = final
-    // set direction
-    self.direction = Math.sign(self.drag._initial - self.drag._final)
-    self._inverse = self.direction < 0
-    // ratio
-    self.drag._ratio = Math.abs(self.drag._final - self.drag._initial) / Math.abs(maxCheck - min)
-    self.drag._ratioInverse = 1 - self.drag._ratio
-    // fix dragging furiously more than one
-    if (options.mode === 'absolute' && (self.drag._ratio > 1 || self.drag._ratio < -1)) {
-      return
-    }
-    // dispatch event
-    self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
-    // dispatch event
-    self.dragger.dispatchEvent(new CustomEvent(`drag.${self._componentNs}`))
-    // reset
-    self._inverse = null
-    // activation
-    if (options.mode !== 'absolute' && self.drag._lock) {
-      // get nearest
-      const found = self._logicDragfind({ index: self.index })
-      if (found !== null && found !== self.index) {
-        super._eventOn({ el: self._groups[found].element, force: true })
-        self._eventWrap({ index: found })
-      }
-    }
   }
 
   /**
@@ -1199,9 +1267,12 @@ class Slider extends Xt.Toggle {
     self.drag._ratioInverse = 1 - self.drag._ratio
     // val
     self.drag._final = self.drag._initial
+    self.drag._direction = null
     // dispatch event
     self.drag._instant = false
+    self.drag._dragging = false
     self.dragger.dispatchEvent(new CustomEvent(`dragposition.${self._componentNs}`))
+    self._logicDragposition()
     // dispatch event
     self.dragger.dispatchEvent(new CustomEvent(`dragreset.${self._componentNs}`))
     // reset
@@ -1268,6 +1339,116 @@ class Slider extends Xt.Toggle {
       }
     }
     return null
+  }
+
+  /**
+   * drag position logic
+   */
+  _logicDragposition() {
+    const self = this
+    const options = self.options
+    // dragposition
+    if (!options.dragposition && options.mode !== 'absolute') {
+      self.drag._instant ? self.dragger.classList.remove('on') : self.dragger.classList.add('on')
+      // set internal position to resume animation mid dragging
+      self.drag._position = self.drag._final
+      self.dragger.style.transform = `translateX(${self.drag._final}px)`
+    }
+  }
+
+  //
+  // wheel
+  //
+
+  /**
+   * wheelEvent public
+   * @param {Object} params
+   * @param {Number} params.deltaFactor Multiply factor
+   * @param {Number} params.timeout End Timeout
+   * @param {Event} e
+   * @return {Boolean} If not overflowing
+   */
+  wheelEvent({ factor = -1, timeout = 250, threshold = 10 } = {}, e) {
+    const self = this
+    const options = self.options
+    // logic
+    let clientX = e.deltaY * factor
+    if (Math.abs(clientX) < threshold) {
+      // if small value (touchpad smooth)
+      if (self.wheel.deltaY) {
+        // if running stop
+        clearTimeout(self.wheel.timeout)
+        self._wheelStop({ clientX })
+      }
+    } else {
+      if (!self.wheel.deltaY) {
+        // if first or resetted wheel start and move
+        self._wheelStart()
+        self._wheelMove({ clientX, setup: true })
+        self._wheelMove({ clientX })
+      } else {
+        // sequential wheel add delta
+        clientX = self.wheel.deltaY + clientX
+        self._wheelMove({ clientX })
+      }
+      clearTimeout(self.wheel.timeout)
+      self.wheel.timeout = setTimeout(() => {
+        self._wheelStop({ clientX })
+      }, timeout)
+    }
+    // prevent scroll
+    if (
+      (!self.drag._direction || self.drag._direction > 0) &&
+      (options.loop || self._wrap || self.index !== self.getElementsGroups().length - 1)
+    ) {
+      return true
+    } else if (
+      (!self.drag._direction || self.drag._direction < 0) &&
+      (options.loop || self._wrap || self.index !== 0)
+    ) {
+      return true
+    }
+    return false
+  }
+
+  /**
+   * wheel start
+   */
+  _wheelStart() {
+    const self = this
+    // logic
+    self.wheel._wheeling = false
+    self.wheel.deltaY = false
+    self.dragstart({ clientX: 0 })
+  }
+
+  /**
+   * wheel move
+   * @param {Object} params
+   * @param {Number} params.clientX
+   * @param {Number} params.setup
+   */
+  _wheelMove({ clientX, setup }) {
+    const self = this
+    // logic
+    if (!setup) {
+      self.wheel._wheeling = true
+    }
+    self.wheel.deltaY = clientX
+    self.dragmove({ clientX }, { keepActivated: true, setup })
+  }
+
+  /**
+   * wheel stop
+   * @param {Object} params
+   * @param {Number} params.clientX
+   */
+  _wheelStop({ clientX }) {
+    const self = this
+    // logic
+    self.wheel._wheeling = false
+    self.wheel.deltaY = false
+    self.dragend({ clientX })
   }
 
   //
@@ -1442,6 +1623,7 @@ Slider.optionsDefault = {
   align: 'center',
   contain: true,
   wrap: false,
+  free: false,
   dragposition: false,
   nooverflow: '!transform-none justify-center',
   autoHeight: false,

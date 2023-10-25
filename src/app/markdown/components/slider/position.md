@@ -3,7 +3,7 @@ type: "Components"
 category: "Toggle"
 parent: "Slider"
 title: "Position"
-date: "2009-10-10"
+date: "2010-09-10"
 ---
 
 ## Align
@@ -60,7 +60,7 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
 
 </div>
 
-> Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**must have available width** same as **the max target width**).
+> Wrap **automatically doesn't activate** if there's not enough space to wrap elements (**items overflowing the Dragger must be `1.5` times the Dragger size**).
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
@@ -68,6 +68,8 @@ Wrap the slides for an infinite activation. Automatically has [loop](/components
   <demoinline src="demos/components/slider/wrap-left">
   </demoinline>
   <demoinline src="demos/components/slider/wrap-right">
+  </demoinline>
+  <demoinline src="demos/components/slider/wrap-nospace">
   </demoinline>
 </demo>
 

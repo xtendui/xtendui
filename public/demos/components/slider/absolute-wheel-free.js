@@ -12,7 +12,7 @@ const mountSlider = ({ ref }) => {
   const dragEase = 'quart.out'
 
   const maskPercent = 100
-  const maskInnerPercent = 50
+  const maskInnerPercent = 100
   const maskInnerOpacity = 0.65
 
   // slider
@@ -22,7 +22,19 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
+    free: true,
   })
+  /***/
+
+  // Wheel
+
+  /***/
+  const wheel = e => {
+    self.wheelEvent({}, e)
+    e.preventDefault()
+  }
+
+  self.dragger.addEventListener('wheel', wheel, { passive: false })
   /***/
 
   // dragposition (set internal position to resume animation mid dragging)
@@ -30,6 +42,10 @@ const mountSlider = ({ ref }) => {
   const dragposition = () => {
     // duration depending on instant and dragger size
     dragDuration = self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
+    /***/
+    // duration only when wheeling
+    dragDuration = self.drag._dragging && self.wheel._wheeling ? 0.5 : dragDuration
+    /***/
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -61,7 +77,6 @@ const mountSlider = ({ ref }) => {
       duration: dragDuration,
       ease: dragEase,
     })
-    /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming', '!block')
@@ -87,7 +102,6 @@ const mountSlider = ({ ref }) => {
         ease: dragEase,
       })
     }
-    /***/
   }
 
   self.dragger.addEventListener('drag.xt.slider', drag)
@@ -160,7 +174,6 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
-      /***/
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
       for (const incoming of incomings) {
@@ -186,7 +199,6 @@ const mountSlider = ({ ref }) => {
           ease: dragEase,
         })
       }
-      /***/
     }
   }
 
@@ -200,74 +212,17 @@ const mountSlider = ({ ref }) => {
   }
 }
 
-/* mountSlide */
-
-const mountSlide = ({ ref }) => {
-  // vars
-
-  const slides = ref.querySelectorAll('.xt-slide')
-
-  for (const slide of slides) {
-    // vars
-
-    let links = slide.closest('a, button')
-    links = links ? [links] : Array.from(slide.querySelectorAll('a, button')) // query inside
-    if (!links.length) return
-    links = links.filter(x => !x.parentElement.closest('a, button')) // filter nested
-    const img = slide.querySelector('.xt-media')
-    const imgOpacityIn = 0.75
-    const imgOpacityOut = 1
-
-    // enter
-
-    const enter = () => {
-      // img
-      gsap.to(img, {
-        opacity: imgOpacityIn,
-        duration: 0.5,
-        ease: 'quart.out',
-      })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseenter', enter)
-    }
-
-    // enter
-
-    const leave = () => {
-      // img
-      gsap.to(img, {
-        opacity: imgOpacityOut,
-        duration: 0.5,
-        ease: 'quart.out',
-        overwrite: true,
-      })
-    }
-
-    for (const link of links) {
-      link.addEventListener('mouseleave', leave)
-    }
-  }
-
-  // unmount
-
-  return () => {}
-}
-
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-hero-v1',
+  matches: '.demo--slider-absolute-wheel-free',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
-    const unmountSlide = mountSlide({ ref })
 
     // unmount
 
     return () => {
       unmountSlider()
-      unmountSlide()
     }
   },
 })

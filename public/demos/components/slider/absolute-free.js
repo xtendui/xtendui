@@ -22,14 +22,15 @@ const mountSlider = ({ ref }) => {
     duration: () => dragDuration * 1000,
     mode: 'absolute',
     loop: true,
+    free: true,
   })
   /***/
 
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending on dragger size
-    dragDuration = self.initial || self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag._size / 400)))
+    // duration depending on instant and dragger size
+    dragDuration = self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -48,16 +49,19 @@ const mountSlider = ({ ref }) => {
     // mask
     const mask = tr.querySelector('.hero')
     gsap.killTweensOf(mask)
-    gsap.set(mask, {
+    gsap.to(mask, {
       x: `${-maskPercent * self.drag._ratio * self.direction}%`,
+      duration: dragDuration,
+      ease: dragEase,
     })
     const maskInner = mask.querySelector('.hero-inner')
     gsap.killTweensOf(maskInner)
-    gsap.set(maskInner, {
+    gsap.to(maskInner, {
       x: `${maskInnerPercent * self.drag._ratio * self.direction}%`,
       opacity: 1 - maskInnerOpacity * self.drag._ratio,
+      duration: dragDuration,
+      ease: dragEase,
     })
-    /***/
     // incomings
     for (const incoming of self.targets.filter(x => x.classList.contains('incoming'))) {
       incoming.classList.remove('incoming', '!block')
@@ -69,17 +73,20 @@ const mountSlider = ({ ref }) => {
       // mask
       const mask = incoming.querySelector('.hero')
       gsap.killTweensOf(mask)
-      gsap.set(mask, {
+      gsap.to(mask, {
         x: `${maskPercent * self.drag._ratioInverse * self.direction}%`,
+        duration: dragDuration,
+        ease: dragEase,
       })
       const maskInner = mask.querySelector('.hero-inner')
       gsap.killTweensOf(maskInner)
-      gsap.set(maskInner, {
+      gsap.to(maskInner, {
         x: `${-maskInnerPercent * self.drag._ratioInverse * self.direction}%`,
         opacity: 1 - maskInnerOpacity * self.drag._ratioInverse,
+        duration: dragDuration,
+        ease: dragEase,
       })
     }
-    /***/
   }
 
   self.dragger.addEventListener('drag.xt.slider', drag)
@@ -100,6 +107,8 @@ const mountSlider = ({ ref }) => {
     const tr = e.target
     // useCapture event propagation check
     if (self.targets.includes(tr) && !self.initial) {
+      // incomings
+      tr.classList.remove('!block')
       // mask
       const mask = tr.querySelector('.hero')
       gsap.killTweensOf(mask)
@@ -150,7 +159,6 @@ const mountSlider = ({ ref }) => {
         duration: dragDuration,
         ease: dragEase,
       })
-      /***/
       // incomings
       const incomings = self.targets.filter(x => x.classList.contains('incoming'))
       for (const incoming of incomings) {
@@ -176,7 +184,6 @@ const mountSlider = ({ ref }) => {
           ease: dragEase,
         })
       }
-      /***/
     }
   }
 
@@ -193,7 +200,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-animation-absolute-mask',
+  matches: '.demo--slider-absolute-free',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

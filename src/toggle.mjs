@@ -63,6 +63,7 @@ class Toggle {
   _autoHeight
   _groups
   drag = {}
+  wheel = {}
   pags
 
   /**

@@ -7,6 +7,39 @@ tags: ["hidden"]
 menu: true
 ---
 
+<demo>
+  <demoinline src="demos/components/slider/wheel">
+  </demoinline>
+  <demoinline src="demos/components/slider/wheel-free">
+  </demoinline>
+  <demoinline src="demos/components/slider/free">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/slider/dragposition-custom">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/slider/absolute-wheel">
+  </demoinline>
+  <demoinline src="demos/components/slider/absolute-wheel-free">
+  </demoinline>
+  <demoinline src="demos/components/slider/absolute-free">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/slider/scrolltrigger">
+  </demoinline>
+</demo>
+
+<demo>
+  <demoinline src="demos/components/slider/absolute-scrolltrigger">
+  </demoinline>
+</demo>
+
 > This hidden pages includes **work in progress and future features**, **do not use** because will have **breaking changes** on semversion.
 
 ## Classes not xt Components

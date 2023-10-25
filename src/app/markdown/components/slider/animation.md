@@ -3,7 +3,7 @@ type: "Components"
 category: "Toggle"
 parent: "Slider"
 title: "Animation"
-date: "2010-10-09"
+date: "2010-08-10"
 ---
 
 ## Activation

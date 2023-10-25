@@ -23,8 +23,8 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending on dragger size
-    dragDuration = self.initial || self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag._size / 400)))
+    // duration depending on instant and dragger size
+    dragDuration = self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -36,7 +36,7 @@ const mountSlider = ({ ref }) => {
     gsap.killTweensOf(self.dragger)
     gsap.to(self.dragger, {
       x: self.drag._final,
-      duration: dragDuration,
+      duration: self.drag._dragging ? 0.5 : dragDuration,
       ease: dragEase,
     })
   }
@@ -54,7 +54,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-dragposition',
+  matches: '.demo--slider-dragposition-js',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 

@@ -24,8 +24,8 @@ const mountSlider = ({ ref }) => {
   // dragposition (set internal position to resume animation mid dragging)
 
   const dragposition = () => {
-    // duration depending on dragger size
-    dragDuration = self.initial || self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag._size / 400)))
+    // duration depending on instant and dragger size
+    dragDuration = self.drag._instant ? 0 : Math.max(0.5, Math.min(1, Math.log(self.drag.size / 400)))
     // position animation to keep updated with animation
     gsap.killTweensOf(self.drag)
     gsap.to(self.drag, {
@@ -44,8 +44,10 @@ const mountSlider = ({ ref }) => {
     // cover
     const cover = tr.querySelector('.hero-cover')
     gsap.killTweensOf(cover)
-    gsap.set(cover, {
+    gsap.to(cover, {
       x: `${100 * self.drag._ratioInverse * self.direction}%`,
+      duration: dragDuration,
+      ease: dragEase,
     })
   }
 
@@ -156,7 +158,7 @@ const mountSlider = ({ ref }) => {
 /* mount */
 
 Xt.mount({
-  matches: '.demo--slider-animation-absolute-cover',
+  matches: '.demo--slider-absolute-cover',
   mount: ({ ref }) => {
     const unmountSlider = mountSlider({ ref })
 
