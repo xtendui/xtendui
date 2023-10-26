@@ -1,3 +1,3 @@
-export default function Footer({ data }) {
+export default function Post({ data }) {
   return data
 }
