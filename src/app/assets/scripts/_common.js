@@ -53,7 +53,7 @@ Xt.mount({
 })
 
 Xt.mount({
-  matches: '.docs_tooltip_outside_link.hidden, .docs_site-header_item_container.hidden',
+  matches: '.docs_tooltip_outside_link.hidden, .docs_site-header_item_container.hidden, .docs_listing-column.hidden',
   mount: ({ ref }) => {
     if (localStorage.getItem('access')) {
       ref.classList.remove('hidden')
