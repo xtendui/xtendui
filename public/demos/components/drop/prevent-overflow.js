@@ -11,8 +11,8 @@ const mountDrops = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Drop(drop, {
+  let selfDestroy
+  new Xt.Drop(drop, {
     position: 'bottom-end',
     popperjs: {
       strategy: 'fixed',
@@ -25,14 +25,19 @@ const mountDrops = ({ ref }) => {
         },
       ],
     },
+  }).then(self => {
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
-  /***/
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

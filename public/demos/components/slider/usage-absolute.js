@@ -11,28 +11,33 @@ const mountSlider = ({ ref }) => {
 
   // slider
 
-  /***/
-  let self = new Xt.Slider(slider, {
+  let selfDestroy
+  new Xt.Slider(slider, {
     mode: 'absolute',
+  }).then(self => {
+    // dragposition (set internal position to resume animation mid dragging)
+
+    const dragposition = () => {
+      // position animation to keep updated with animation
+      gsap.set(self.drag, {
+        _position: self.drag._final,
+      })
+    }
+
+    self.dragger.addEventListener('dragposition.xt.slider', dragposition)
+
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
-  /***/
-
-  // dragposition (set internal position to resume animation mid dragging)
-
-  const dragposition = () => {
-    // position animation to keep updated with animation
-    gsap.set(self.drag, {
-      _position: self.drag._final,
-    })
-  }
-
-  self.dragger.addEventListener('dragposition.xt.slider', dragposition)
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

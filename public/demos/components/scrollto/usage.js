@@ -40,55 +40,62 @@ const mountScrollto = () => {
   // init
 
   /***/
-  let self = new Xt.Scrollto(document.documentElement, {
+  let selfDestroy
+  new Xt.Scrollto(document.documentElement, {
     hash: true,
+  }).then(self => {
+    // scrollto
+
+    const scrollto = () => {
+      // scroll
+      gsap.killTweensOf(self.scroller)
+      gsap.to(self.scroller, {
+        scrollTo: self.position,
+        duration: self.duration,
+        ease: 'quint.out',
+      })
+    }
+
+    self.container.addEventListener('scrollto.xt.scrollto', scrollto)
+
+    // fix stop scroll animation on user interaction
+
+    const stopScrolling = () => {
+      gsap.killTweensOf(self.scroller)
+    }
+
+    addEventListener('touchstart', stopScrolling)
+    addEventListener('wheel', stopScrolling)
+
+    // custom
+
+    const buttons = self.container.querySelectorAll('.button--custom')
+    const custom = self.container.querySelector('#anchor-custom')
+
+    const click = () => {
+      custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+    }
+
+    for (const button of buttons) {
+      button.addEventListener('click', click)
+    }
+
+    // destroy
+
+    selfDestroy = () => {
+      removeEventListener('touchstart', stopScrolling)
+      removeEventListener('wheel', stopScrolling)
+      self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
+      self.destroy()
+      self = null
+    }
   })
   /***/
-
-  // scrollto
-
-  const scrollto = () => {
-    // scroll
-    gsap.killTweensOf(self.scroller)
-    gsap.to(self.scroller, {
-      scrollTo: self.position,
-      duration: self.duration,
-      ease: 'quint.out',
-    })
-  }
-
-  self.container.addEventListener('scrollto.xt.scrollto', scrollto)
-
-  // fix stop scroll animation on user interaction
-
-  const stopScrolling = () => {
-    gsap.killTweensOf(self.scroller)
-  }
-
-  addEventListener('touchstart', stopScrolling)
-  addEventListener('wheel', stopScrolling)
-
-  // custom
-
-  const buttons = self.container.querySelectorAll('.button--custom')
-  const custom = self.container.querySelector('#anchor-custom')
-
-  const click = () => {
-    custom.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
-  }
-
-  for (const button of buttons) {
-    button.addEventListener('click', click)
-  }
 
   // unmount
 
   return () => {
-    removeEventListener('touchstart', stopScrolling)
-    removeEventListener('wheel', stopScrolling)
-    self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

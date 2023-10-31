@@ -377,6 +377,21 @@ if (typeof window !== 'undefined') {
     }
   }
 
+  /**
+   * load
+   * @param {Object} params
+   * @param {Object} params.name Class Name
+   * @param {Object} params.suffix Class suffix
+   */
+  Xt._load = ({ name, suffix } = {}) => {
+    return import(`./${name.toLowerCase()}${suffix}.mjs`).then(module => {
+      if (!Xt[name].loaded[name]) {
+        Xt[name].loaded[name] = true
+        Object.setPrototypeOf(Xt[name].prototype, module[`${name}${suffix}`].prototype)
+      }
+    })
+  }
+
   //
   // dataStorage
   // map storage for HTML elements
@@ -1158,6 +1173,4 @@ if (typeof window !== 'undefined') {
     removeEventListener('resize.xt', resize)
     addEventListener('resize.xt', resize)
   }
-
-  //
 }

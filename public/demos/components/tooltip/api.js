@@ -10,251 +10,255 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Tooltip(tooltip, {
+  let selfDestroy
+  new Xt.Tooltip(tooltip, {
     closeOutside: false,
-  })
-  /***/
+  }).then(self => {
+    // log
 
-  // log
+    const log = document.querySelector('#card--tooltip-api-log')
 
-  const log = document.querySelector('#card--tooltip-api-log')
+    const logAdd = str => {
+      log.append(Xt.node({ str: `<div>${str}</div>` }))
+      // hr
+      clearTimeout(window.logTimeout)
+      window.logTimeout = setTimeout(() => {
+        log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+        log.scrollTo(0, log.scrollHeight)
+      }, 1000)
+    }
 
-  const logAdd = str => {
-    log.append(Xt.node({ str: `<div>${str}</div>` }))
-    // hr
-    clearTimeout(window.logTimeout)
-    window.logTimeout = setTimeout(() => {
-      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
-      log.scrollTo(0, log.scrollHeight)
-    }, 1000)
-  }
+    // on first element
 
-  // on first element
+    const firstEl = document.querySelector('#button--tooltip-api-first-element')
 
-  const firstEl = document.querySelector('#button--tooltip-api-first-element')
+    const firstElFnc = () => {
+      logAdd('<strong>1st element</strong>')
+      const els = self.elements
+      els[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    }
 
-  const firstElFnc = () => {
-    logAdd('<strong>1st element</strong>')
-    const els = self.elements
-    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-  }
+    firstEl.addEventListener('click', firstElFnc)
 
-  firstEl.addEventListener('click', firstElFnc)
+    // on first target
 
-  // on first target
+    const firstTr = document.querySelector('#button--tooltip-api-first-target')
 
-  const firstTr = document.querySelector('#button--tooltip-api-first-target')
+    const firstTrFnc = () => {
+      logAdd('<strong>1st target</strong>')
+      const trs = self.targets
+      trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
+    }
 
-  const firstTrFnc = () => {
-    logAdd('<strong>1st target</strong>')
-    const trs = self.targets
-    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.tooltip'))
-  }
+    firstTr.addEventListener('click', firstTrFnc)
 
-  firstTr.addEventListener('click', firstTrFnc)
+    // off first element
 
-  // off first element
+    const firstElOff = ref.querySelector('#button--tooltip-api-first-element-off')
 
-  const firstElOff = ref.querySelector('#button--tooltip-api-first-element-off')
+    const firstElOffFnc = () => {
+      logAdd('<strong>off 1st element</strong>')
+      const els = self.elements
+      els[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    }
 
-  const firstElOffFnc = () => {
-    logAdd('<strong>off 1st element</strong>')
-    const els = self.elements
-    els[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-  }
+    firstElOff.addEventListener('click', firstElOffFnc)
 
-  firstElOff.addEventListener('click', firstElOffFnc)
+    // on first target
 
-  // on first target
+    const firstTrOff = ref.querySelector('#button--tooltip-api-first-target-off')
 
-  const firstTrOff = ref.querySelector('#button--tooltip-api-first-target-off')
+    const firstTrOffFnc = () => {
+      logAdd('<strong>off 1st target</strong>')
+      const trs = self.targets
+      trs[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
+    }
 
-  const firstTrOffFnc = () => {
-    logAdd('<strong>off 1st target</strong>')
-    const trs = self.targets
-    trs[0].dispatchEvent(new CustomEvent('off.trigger.xt.tooltip'))
-  }
+    firstTrOff.addEventListener('click', firstTrOffFnc)
 
-  firstTrOff.addEventListener('click', firstTrOffFnc)
+    // add
 
-  // add
+    const addBtn = document.querySelector('#button--tooltip-api-add')
 
-  const addBtn = document.querySelector('#button--tooltip-api-add')
-
-  const addFnc = () => {
-    logAdd('<strong>add</strong>')
-    // elements
-    const els = self.elements
-    const indexEl = els.length + 1
-    const strEl = `
-        <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
-          data-xt-tooltip-element>
-          Tooltip ${indexEl}
-        </button>
-      `
-    tooltip.append(Xt.node({ str: strEl }))
-    const trs = self.targets
-    const indexTr = trs.length + 1
-    const strTr = `
-        <div class="xt-tooltip p-3" title="Target ${indexTr}"
-          data-xt-tooltip-target>
-          <div class="text-xs py-2 px-3.5 rounded-md shadow-lg font-medium text-white bg-black">
-            Lorem ipsum dolor sit amet
+    const addFnc = () => {
+      logAdd('<strong>add</strong>')
+      // elements
+      const els = self.elements
+      const indexEl = els.length + 1
+      const strEl = `
+          <button type="button" class="xt-button py-2.5 px-3.5 text-sm rounded-md text-white font-medium leading-snug tracking-wider uppercase bg-primary-500 transition hover:bg-primary-600 on:bg-primary-700"
+            data-xt-tooltip-element>
+            Tooltip ${indexEl}
+          </button>
+        `
+      tooltip.append(Xt.node({ str: strEl }))
+      const trs = self.targets
+      const indexTr = trs.length + 1
+      const strTr = `
+          <div class="xt-tooltip p-3" title="Target ${indexTr}"
+            data-xt-tooltip-target>
+            <div class="text-xs py-2 px-3.5 rounded-md shadow-lg font-medium text-white bg-black">
+              Lorem ipsum dolor sit amet
+            </div>
           </div>
-        </div>
-      `
-    tooltip.append(Xt.node({ str: strTr }))
+        `
+      tooltip.append(Xt.node({ str: strTr }))
+      // reinit
+      logAdd('<strong>reinit</strong>')
+      self.restart()
+      self.reinit()
+    }
+
+    addBtn.addEventListener('click', addFnc)
+
+    // remove
+
+    const removeBtn = document.querySelector('#button--tooltip-api-remove')
+
+    const removeFnc = () => {
+      logAdd('<strong>remove</strong>')
+      // element
+      const els = self.elements
+      els[els.length - 1].remove()
+      // reinit
+      logAdd('<strong>reinit</strong>')
+      self.restart()
+      self.reinit()
+    }
+
+    removeBtn.addEventListener('click', removeFnc)
+
     // reinit
-    logAdd('<strong>reinit</strong>')
-    self.restart()
-    self.reinit()
-  }
 
-  addBtn.addEventListener('click', addFnc)
+    const reinitBtn = document.querySelector('#button--tooltip-api-reinit')
 
-  // remove
+    const reinitFnc = () => {
+      // reinit
+      logAdd('<strong>reinit</strong>')
+      self.reinit()
+    }
 
-  const removeBtn = document.querySelector('#button--tooltip-api-remove')
+    reinitBtn.addEventListener('click', reinitFnc)
 
-  const removeFnc = () => {
-    logAdd('<strong>remove</strong>')
-    // element
-    const els = self.elements
-    els[els.length - 1].remove()
-    // reinit
-    logAdd('<strong>reinit</strong>')
-    self.restart()
-    self.reinit()
-  }
+    // restart
 
-  removeBtn.addEventListener('click', removeFnc)
+    const restartBtn = document.querySelector('#button--tooltip-api-restart')
 
-  // reinit
+    const restartFnc = () => {
+      logAdd('<strong>restart</strong>')
+      self.restart()
+    }
 
-  const reinitBtn = document.querySelector('#button--tooltip-api-reinit')
+    restartBtn.addEventListener('click', restartFnc)
 
-  const reinitFnc = () => {
-    // reinit
-    logAdd('<strong>reinit</strong>')
-    self.reinit()
-  }
+    // disable
 
-  reinitBtn.addEventListener('click', reinitFnc)
+    const disableBtn = document.querySelector('#button--tooltip-api-disable')
 
-  // restart
+    const disableFnc = () => {
+      logAdd('<strong>disable</strong>')
+      self.disable()
+    }
 
-  const restartBtn = document.querySelector('#button--tooltip-api-restart')
+    disableBtn.addEventListener('click', disableFnc)
 
-  const restartFnc = () => {
-    logAdd('<strong>restart</strong>')
-    self.restart()
-  }
+    // enable
 
-  restartBtn.addEventListener('click', restartFnc)
+    const enableBtn = document.querySelector('#button--tooltip-api-enable')
 
-  // disable
+    const enableFnc = () => {
+      logAdd('<strong>enable</strong>')
+      self.enable()
+    }
 
-  const disableBtn = document.querySelector('#button--tooltip-api-disable')
+    enableBtn.addEventListener('click', enableFnc)
 
-  const disableFnc = () => {
-    logAdd('<strong>disable</strong>')
-    self.disable()
-  }
+    // destroy
 
-  disableBtn.addEventListener('click', disableFnc)
+    const destroyBtn = document.querySelector('#button--tooltip-api-destroy')
 
-  // enable
+    const destroyFnc = () => {
+      logAdd('<strong>destroy</strong>')
+      self.destroy()
+    }
 
-  const enableBtn = document.querySelector('#button--tooltip-api-enable')
+    destroyBtn.addEventListener('click', destroyFnc)
 
-  const enableFnc = () => {
-    logAdd('<strong>enable</strong>')
-    self.enable()
-  }
+    // unmount
 
-  enableBtn.addEventListener('click', enableFnc)
+    const unmountBtn = document.querySelector('#button--tooltip-api-unmount')
 
-  // destroy
+    const unmountFnc = () => {
+      logAdd('<strong>unmount</strong>')
+      unmount()
+    }
 
-  const destroyBtn = document.querySelector('#button--tooltip-api-destroy')
+    unmountBtn.addEventListener('click', unmountFnc)
 
-  const destroyFnc = () => {
-    logAdd('<strong>destroy</strong>')
-    self.destroy()
-  }
+    // events
 
-  destroyBtn.addEventListener('click', destroyFnc)
+    const events = e => {
+      let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
+      if (self.elements.includes(e.target)) {
+        str += ` type <strong>element</strong>`
+      } else if (self.targets.includes(e.target)) {
+        str += ` type <strong>target</strong>`
+      }
+      let selector
+      if (e.target.getAttribute('title')) {
+        selector = e.target.getAttribute('title')
+      } else if (e.target.querySelector(':scope > .xt-button')) {
+        selector = e.target.querySelector(':scope > .xt-button').textContent
+      } else if (e.target.querySelector('.xt-card > *')) {
+        selector = e.target.querySelector('.xt-card > *').textContent
+      } else if (e.target.querySelector(':scope > *')) {
+        selector = e.target.querySelector(':scope > *').textContent
+      } else if (!e.target.querySelector('*')) {
+        selector = e.target.innerHTML
+      }
+      if (selector) {
+        selector = selector
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+          .replace(/\//g, '&#x2F;')
+        str += ` from <strong>${selector}</strong>`
+      }
+      logAdd(str)
+    }
+
+    tooltip.addEventListener('init.xt.tooltip', events)
+    tooltip.addEventListener('destroy.xt.tooltip', events)
+    document.addEventListener('on.xt.tooltip', events, true) // useCapture event propagation
+    document.addEventListener('off.xt.tooltip', events, true) // useCapture event propagation
+
+    // destroy
+
+    selfDestroy = () => {
+      firstEl.removeEventListener('click', firstElFnc)
+      firstTr.removeEventListener('click', firstTrFnc)
+      addBtn.removeEventListener('click', addFnc)
+      removeBtn.removeEventListener('click', removeFnc)
+      reinitBtn.removeEventListener('click', reinitFnc)
+      restartBtn.removeEventListener('click', restartFnc)
+      destroyBtn.removeEventListener('click', destroyFnc)
+      unmountBtn.removeEventListener('click', unmountFnc)
+      tooltip.removeEventListener('init.xt.tooltip', events)
+      tooltip.removeEventListener('destroy.xt.tooltip', events)
+      document.removeEventListener('on.xt.tooltip', events, true) // useCapture event propagation
+      document.removeEventListener('off.xt.tooltip', events, true) // useCapture event propagation
+      self.destroy()
+      self = null
+    }
+  })
 
   // unmount
 
-  const unmountBtn = document.querySelector('#button--tooltip-api-unmount')
-
-  const unmountFnc = () => {
-    logAdd('<strong>unmount</strong>')
-    unmount()
+  return () => {
+    selfDestroy()
   }
-
-  unmountBtn.addEventListener('click', unmountFnc)
-
-  // events
-
-  const events = e => {
-    let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
-    if (self.elements.includes(e.target)) {
-      str += ` type <strong>element</strong>`
-    } else if (self.targets.includes(e.target)) {
-      str += ` type <strong>target</strong>`
-    }
-    let selector
-    if (e.target.getAttribute('title')) {
-      selector = e.target.getAttribute('title')
-    } else if (e.target.querySelector(':scope > .xt-button')) {
-      selector = e.target.querySelector(':scope > .xt-button').textContent
-    } else if (e.target.querySelector('.xt-card > *')) {
-      selector = e.target.querySelector('.xt-card > *').textContent
-    } else if (e.target.querySelector(':scope > *')) {
-      selector = e.target.querySelector(':scope > *').textContent
-    } else if (!e.target.querySelector('*')) {
-      selector = e.target.innerHTML
-    }
-    if (selector) {
-      selector = selector
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;')
-        .replace(/\//g, '&#x2F;')
-      str += ` from <strong>${selector}</strong>`
-    }
-    logAdd(str)
-  }
-
-  tooltip.addEventListener('init.xt.tooltip', events)
-  tooltip.addEventListener('destroy.xt.tooltip', events)
-  document.addEventListener('on.xt.tooltip', events, true) // useCapture event propagation
-  document.addEventListener('off.xt.tooltip', events, true) // useCapture event propagation
-
-  // unmount
-
-  const unmount = () => {
-    firstEl.removeEventListener('click', firstElFnc)
-    firstTr.removeEventListener('click', firstTrFnc)
-    addBtn.removeEventListener('click', addFnc)
-    removeBtn.removeEventListener('click', removeFnc)
-    reinitBtn.removeEventListener('click', reinitFnc)
-    restartBtn.removeEventListener('click', restartFnc)
-    destroyBtn.removeEventListener('click', destroyFnc)
-    unmountBtn.removeEventListener('click', unmountFnc)
-    tooltip.removeEventListener('init.xt.tooltip', events)
-    tooltip.removeEventListener('destroy.xt.tooltip', events)
-    document.removeEventListener('on.xt.tooltip', events, true) // useCapture event propagation
-    document.removeEventListener('off.xt.tooltip', events, true) // useCapture event propagation
-    self.destroy()
-    self = null
-  }
-  return unmount
 }
 
 /* mount */

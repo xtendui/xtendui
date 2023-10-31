@@ -10,27 +10,32 @@ const mountSlider = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Slider(slider, {})
-  /***/
+  let selfDestroy
+  new Xt.Slider(slider, {}).then(self => {
+    // Wheel
 
-  // Wheel
+    /***/
+    const wheel = e => {
+      self.wheelEvent({}, e)
+      e.preventDefault()
+    }
 
-  /***/
-  const wheel = e => {
-    self.wheelEvent({}, e)
-    e.preventDefault()
-  }
+    self.dragger.addEventListener('wheel', wheel, { passive: false })
+    /***/
 
-  self.dragger.addEventListener('wheel', wheel, { passive: false })
-  /***/
+    // destroy
+
+    selfDestroy = () => {
+      self.dragger.removeEventListener('wheel', wheel)
+      self.destroy()
+      self = null
+    }
+  })
 
   // unmount
 
   return () => {
-    self.dragger.removeEventListener('wheel', wheel)
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

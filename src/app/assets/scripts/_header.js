@@ -43,10 +43,18 @@ Xt.mount({
 
     // overlay
 
-    let self = new Xt.Overlay(button, {
+    let selfDestroy
+    new Xt.Overlay(button, {
       targets: '#docs_menu--overlay',
       duration: 500,
       matches: { '(min-width: 1024px)': { disabled: true } },
+    }).then(self => {
+      // destroy
+
+      selfDestroy = () => {
+        self.destroy()
+        self = null
+      }
     })
 
     // sidebarContain
@@ -88,8 +96,7 @@ Xt.mount({
     // unmount
 
     return () => {
-      self.destroy()
-      self = null
+      selfDestroy()
     }
   },
 })

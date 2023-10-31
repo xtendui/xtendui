@@ -13,23 +13,32 @@ Xt.mount({
   mount: ({ ref }) => {
     // init
 
-    let self = new Xt.Scrollto(ref, {
+    let selfDestroy
+    new Xt.Scrollto(ref, {
       hash: true,
+    }).then(self => {
+      // scrollto
+
+      const scrollto = () => {
+        // scroll
+        gsap.killTweensOf(self.scroller)
+        gsap.to(self.scroller, {
+          scrollTo: self.position,
+          duration: self.duration,
+          ease: 'quint.out',
+        })
+      }
+
+      self.container.addEventListener('scrollto.xt.scrollto', scrollto)
+
+      // destroy
+
+      selfDestroy = () => {
+        self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
+        self.destroy()
+        self = null
+      }
     })
-
-    // scrollto
-
-    const scrollto = () => {
-      // scroll
-      gsap.killTweensOf(self.scroller)
-      gsap.to(self.scroller, {
-        scrollTo: self.position,
-        duration: self.duration,
-        ease: 'quint.out',
-      })
-    }
-
-    self.container.addEventListener('scrollto.xt.scrollto', scrollto)
 
     // fix stop scroll animation on user interaction
 
@@ -43,11 +52,9 @@ Xt.mount({
     // unmount
 
     return () => {
+      selfDestroy()
       removeEventListener('touchstart', stopScrolling)
       removeEventListener('wheel', stopScrolling)
-      self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
-      self.destroy()
-      self = null
     }
   },
 })

@@ -11,51 +11,56 @@ const mountToggle = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Toggle(toggle, {
+  let selfDestroy
+  new Xt.Toggle(toggle, {
     min: 1,
-  })
-  /***/
+  }).then(self => {
+    // change
 
-  // change
-
-  const change = () => {
-    // deactivate slides
-    for (const tr of self.targets.filter(x => !self.hasCurrent({ el: x }))) {
-      const slide = tr.closest('.xt-slide')
-      if (slide) {
-        slide.classList.add('hidden')
+    const change = () => {
+      // deactivate slides
+      for (const tr of self.targets.filter(x => !self.hasCurrent({ el: x }))) {
+        const slide = tr.closest('.xt-slide')
+        if (slide) {
+          slide.classList.add('hidden')
+        }
       }
-    }
-    // activate slides
-    for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
-      const slide = tr.closest('.xt-slide')
-      if (slide) {
-        slide.classList.remove('hidden')
+      // activate slides
+      for (const tr of self.targets.filter(x => self.hasCurrent({ el: x }))) {
+        const slide = tr.closest('.xt-slide')
+        if (slide) {
+          slide.classList.remove('hidden')
+        }
       }
-    }
-    // reinit slides
-    const selfSlider = Xt.get({ name: 'xt-slider', el: slider })
-    if (selfSlider) {
-      if (selfSlider.initial) {
-        requestAnimationFrame(() => {
+      // reinit slides
+      const selfSlider = Xt.get({ name: 'xt-slider', el: slider })
+      if (selfSlider) {
+        if (selfSlider.initial) {
+          requestAnimationFrame(() => {
+            selfSlider.reinit({ save: false })
+          })
+        } else {
           selfSlider.reinit({ save: false })
-        })
-      } else {
-        selfSlider.reinit({ save: false })
+        }
       }
     }
-  }
 
-  for (const el of self.elements) {
-    el.addEventListener('on.xt.toggle', change)
-  }
+    for (const el of self.elements) {
+      el.addEventListener('on.xt.toggle', change)
+    }
+
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
+  })
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

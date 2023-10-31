@@ -18,63 +18,68 @@ const mountTooltip = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Tooltip(tooltip, {
+  let selfDestroy
+  new Xt.Tooltip(tooltip, {
     mouseParent: true,
     duration: 300,
     delay: 50,
+  }).then(self => {
+    // on
+
+    /***/
+    const on = e => {
+      const tr = e.target
+      const target = tr.querySelector(':scope > *')
+      gsap.killTweensOf(target)
+      gsap.set(target, {
+        x: -self.direction * targetXOn,
+        opacity: 0,
+      })
+      gsap.to(target, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
+    }
+
+    for (const tr of self.targets) {
+      tr.addEventListener('on.xt.tooltip', on)
+    }
+    /***/
+
+    // off
+
+    /***/
+    const off = e => {
+      const tr = e.target
+      const target = tr.querySelector(':scope > *')
+      gsap.killTweensOf(target)
+      gsap.to(target, {
+        x: self.direction * targetXOff,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
+    }
+
+    for (const tr of self.targets) {
+      tr.addEventListener('off.xt.tooltip', off)
+    }
+    /***/
+
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
-  /***/
-
-  // on
-
-  /***/
-  const on = e => {
-    const tr = e.target
-    const target = tr.querySelector(':scope > *')
-    gsap.killTweensOf(target)
-    gsap.set(target, {
-      x: -self.direction * targetXOn,
-      opacity: 0,
-    })
-    gsap.to(target, {
-      x: 0,
-      opacity: 1,
-      duration: targetTimeOn,
-      ease: targetEaseOn,
-    })
-  }
-
-  for (const tr of self.targets) {
-    tr.addEventListener('on.xt.tooltip', on)
-  }
-  /***/
-
-  // off
-
-  /***/
-  const off = e => {
-    const tr = e.target
-    const target = tr.querySelector(':scope > *')
-    gsap.killTweensOf(target)
-    gsap.to(target, {
-      x: self.direction * targetXOff,
-      opacity: 0,
-      duration: targetTimeOff,
-      ease: targetEaseOff,
-    })
-  }
-
-  for (const tr of self.targets) {
-    tr.addEventListener('off.xt.tooltip', off)
-  }
-  /***/
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

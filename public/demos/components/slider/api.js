@@ -10,218 +10,222 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Slider(slider, {
+  let selfDestroy
+  new Xt.Slider(slider, {
     wrap: true,
-  })
-  /***/
+  }).then(self => {
+    // log
 
-  // log
+    const log = document.querySelector('#card--slider-api-log')
 
-  const log = document.querySelector('#card--slider-api-log')
+    const logAdd = str => {
+      log.append(Xt.node({ str: `<div>${str}</div>` }))
+      // hr
+      clearTimeout(window.logTimeout)
+      window.logTimeout = setTimeout(() => {
+        log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
+        log.scrollTo(0, log.scrollHeight)
+      }, 1000)
+    }
 
-  const logAdd = str => {
-    log.append(Xt.node({ str: `<div>${str}</div>` }))
-    // hr
-    clearTimeout(window.logTimeout)
-    window.logTimeout = setTimeout(() => {
-      log.append(Xt.node({ str: '<hr class="my-4 border-gray-300"/>' }))
-      log.scrollTo(0, log.scrollHeight)
-    }, 1000)
-  }
+    // on first element
 
-  // on first element
+    const firstEl = document.querySelector('#button--slider-api-first-element')
 
-  const firstEl = document.querySelector('#button--slider-api-first-element')
+    const firstElFnc = () => {
+      logAdd('<strong>1st element</strong>')
+      const els = self.elements
+      els[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
+    }
 
-  const firstElFnc = () => {
-    logAdd('<strong>1st element</strong>')
-    const els = self.elements
-    els[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
-  }
+    firstEl.addEventListener('click', firstElFnc)
 
-  firstEl.addEventListener('click', firstElFnc)
+    // on first target
 
-  // on first target
+    const firstTr = document.querySelector('#button--slider-api-first-target')
 
-  const firstTr = document.querySelector('#button--slider-api-first-target')
+    const firstTrFnc = () => {
+      logAdd('<strong>1st target</strong>')
+      const trs = self.targets
+      trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
+    }
 
-  const firstTrFnc = () => {
-    logAdd('<strong>1st target</strong>')
-    const trs = self.targets
-    trs[0].dispatchEvent(new CustomEvent('on.trigger.xt.slider'))
-  }
+    firstTr.addEventListener('click', firstTrFnc)
 
-  firstTr.addEventListener('click', firstTrFnc)
+    // add
 
-  // add
+    const addBtn = document.querySelector('#button--slider-api-add')
 
-  const addBtn = document.querySelector('#button--slider-api-add')
-
-  const addFnc = () => {
-    logAdd('<strong>add</strong>')
-    // targets
-    const trs = self.targets
-    const indexTr = trs.length + 1
-    const strTr = `
-      <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
-        <div class="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
-          <div class="xt-h4">${indexTr}</div>
+    const addFnc = () => {
+      logAdd('<strong>add</strong>')
+      // targets
+      const trs = self.targets
+      const indexTr = trs.length + 1
+      const strTr = `
+        <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 group" data-xt-slider-target>
+          <div class="xt-card text-gray-900 xt-links-default rounded-md p-8 text-base text-center bg-gray-100 border-2 border-transparent group-in:border-gray-200 transition">
+            <div class="xt-h4">${indexTr}</div>
+          </div>
         </div>
-      </div>
-      `
-    document.querySelector('#slider--eventmethods-targets').append(Xt.node({ str: strTr }))
+        `
+      document.querySelector('#slider--eventmethods-targets').append(Xt.node({ str: strTr }))
+      // reinit
+      logAdd('<strong>reinit</strong>')
+      self.reinit()
+    }
+
+    addBtn.addEventListener('click', addFnc)
+
+    // remove
+
+    const removeBtn = document.querySelector('#button--slider-api-remove')
+
+    const removeFnc = () => {
+      logAdd('<strong>remove</strong>')
+      // elements
+      const els = self.elements
+      els[els.length - 1].remove()
+      // targets
+      const trs = self.targets
+      trs[trs.length - 1].remove()
+      // reinit
+      logAdd('<strong>reinit</strong>')
+      self.reinit()
+    }
+
+    removeBtn.addEventListener('click', removeFnc)
+
     // reinit
-    logAdd('<strong>reinit</strong>')
-    self.reinit()
-  }
 
-  addBtn.addEventListener('click', addFnc)
+    const reinitBtn = document.querySelector('#button--slider-api-reinit')
 
-  // remove
+    const reinitFnc = () => {
+      // reinit
+      logAdd('<strong>reinit</strong>')
+      self.reinit()
+    }
 
-  const removeBtn = document.querySelector('#button--slider-api-remove')
+    reinitBtn.addEventListener('click', reinitFnc)
 
-  const removeFnc = () => {
-    logAdd('<strong>remove</strong>')
-    // elements
-    const els = self.elements
-    els[els.length - 1].remove()
-    // targets
-    const trs = self.targets
-    trs[trs.length - 1].remove()
-    // reinit
-    logAdd('<strong>reinit</strong>')
-    self.reinit()
-  }
+    // restart
 
-  removeBtn.addEventListener('click', removeFnc)
+    const restartBtn = document.querySelector('#button--slider-api-restart')
 
-  // reinit
+    const restartFnc = () => {
+      logAdd('<strong>restart</strong>')
+      self.restart()
+    }
 
-  const reinitBtn = document.querySelector('#button--slider-api-reinit')
+    restartBtn.addEventListener('click', restartFnc)
 
-  const reinitFnc = () => {
-    // reinit
-    logAdd('<strong>reinit</strong>')
-    self.reinit()
-  }
+    // disable
 
-  reinitBtn.addEventListener('click', reinitFnc)
+    const disableBtn = document.querySelector('#button--slider-api-disable')
 
-  // restart
+    const disableFnc = () => {
+      logAdd('<strong>disable</strong>')
+      self.disable()
+    }
 
-  const restartBtn = document.querySelector('#button--slider-api-restart')
+    disableBtn.addEventListener('click', disableFnc)
 
-  const restartFnc = () => {
-    logAdd('<strong>restart</strong>')
-    self.restart()
-  }
+    // enable
 
-  restartBtn.addEventListener('click', restartFnc)
+    const enableBtn = document.querySelector('#button--slider-api-enable')
 
-  // disable
+    const enableFnc = () => {
+      logAdd('<strong>enable</strong>')
+      self.enable()
+    }
 
-  const disableBtn = document.querySelector('#button--slider-api-disable')
+    enableBtn.addEventListener('click', enableFnc)
 
-  const disableFnc = () => {
-    logAdd('<strong>disable</strong>')
-    self.disable()
-  }
+    // destroy
 
-  disableBtn.addEventListener('click', disableFnc)
+    const destroyBtn = document.querySelector('#button--slider-api-destroy')
 
-  // enable
+    const destroyFnc = () => {
+      logAdd('<strong>destroy</strong>')
+      self.destroy()
+    }
 
-  const enableBtn = document.querySelector('#button--slider-api-enable')
+    destroyBtn.addEventListener('click', destroyFnc)
 
-  const enableFnc = () => {
-    logAdd('<strong>enable</strong>')
-    self.enable()
-  }
+    // unmount
 
-  enableBtn.addEventListener('click', enableFnc)
+    const unmountBtn = document.querySelector('#button--slider-api-unmount')
 
-  // destroy
+    const unmountFnc = () => {
+      logAdd('<strong>unmount</strong>')
+      unmount()
+    }
 
-  const destroyBtn = document.querySelector('#button--slider-api-destroy')
+    unmountBtn.addEventListener('click', unmountFnc)
 
-  const destroyFnc = () => {
-    logAdd('<strong>destroy</strong>')
-    self.destroy()
-  }
+    // events
 
-  destroyBtn.addEventListener('click', destroyFnc)
+    const events = e => {
+      let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
+      if (self.elements.includes(e.target)) {
+        str += ` type <strong>element</strong>`
+      } else if (self.targets.includes(e.target)) {
+        str += ` type <strong>target</strong>`
+      }
+      let selector
+      if (e.target.getAttribute('title')) {
+        selector = e.target.getAttribute('title')
+      } else if (e.target.querySelector(':scope > .xt-button')) {
+        selector = e.target.querySelector(':scope > .xt-button').textContent
+      } else if (e.target.querySelector('.xt-card > *')) {
+        selector = e.target.querySelector('.xt-card > *').textContent
+      } else if (e.target.querySelector(':scope > *')) {
+        selector = e.target.querySelector(':scope > *').textContent
+      } else if (!e.target.querySelector('*')) {
+        selector = e.target.innerHTML
+      }
+      if (selector) {
+        selector = selector
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+          .replace(/\//g, '&#x2F;')
+        str += ` from <strong>${selector}</strong>`
+      }
+      logAdd(str)
+    }
+
+    slider.addEventListener('init.xt.slider', events)
+    slider.addEventListener('destroy.xt.slider', events)
+    document.addEventListener('on.xt.slider', events, true) // useCapture event propagation
+    document.addEventListener('off.xt.slider', events, true) // useCapture event propagation
+
+    // destroy
+
+    selfDestroy = () => {
+      firstEl.removeEventListener('click', firstElFnc)
+      firstTr.removeEventListener('click', firstTrFnc)
+      addBtn.removeEventListener('click', addFnc)
+      removeBtn.removeEventListener('click', removeFnc)
+      reinitBtn.removeEventListener('click', reinitFnc)
+      restartBtn.removeEventListener('click', restartFnc)
+      destroyBtn.removeEventListener('click', destroyFnc)
+      unmountBtn.removeEventListener('click', unmountFnc)
+      slider.removeEventListener('init.xt.slider', events)
+      slider.removeEventListener('destroy.xt.slider', events)
+      document.removeEventListener('on.xt.slider', events, true) // useCapture event propagation
+      document.removeEventListener('off.xt.slider', events, true) // useCapture event propagation
+      self.destroy()
+      self = null
+    }
+  })
 
   // unmount
 
-  const unmountBtn = document.querySelector('#button--slider-api-unmount')
-
-  const unmountFnc = () => {
-    logAdd('<strong>unmount</strong>')
-    unmount()
+  return () => {
+    selfDestroy()
   }
-
-  unmountBtn.addEventListener('click', unmountFnc)
-
-  // events
-
-  const events = e => {
-    let str = `event <strong>${e.type}</strong>` + ` direction <strong>${self.direction}</strong>`
-    if (self.elements.includes(e.target)) {
-      str += ` type <strong>element</strong>`
-    } else if (self.targets.includes(e.target)) {
-      str += ` type <strong>target</strong>`
-    }
-    let selector
-    if (e.target.getAttribute('title')) {
-      selector = e.target.getAttribute('title')
-    } else if (e.target.querySelector(':scope > .xt-button')) {
-      selector = e.target.querySelector(':scope > .xt-button').textContent
-    } else if (e.target.querySelector('.xt-card > *')) {
-      selector = e.target.querySelector('.xt-card > *').textContent
-    } else if (e.target.querySelector(':scope > *')) {
-      selector = e.target.querySelector(':scope > *').textContent
-    } else if (!e.target.querySelector('*')) {
-      selector = e.target.innerHTML
-    }
-    if (selector) {
-      selector = selector
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;')
-        .replace(/\//g, '&#x2F;')
-      str += ` from <strong>${selector}</strong>`
-    }
-    logAdd(str)
-  }
-
-  slider.addEventListener('init.xt.slider', events)
-  slider.addEventListener('destroy.xt.slider', events)
-  document.addEventListener('on.xt.slider', events, true) // useCapture event propagation
-  document.addEventListener('off.xt.slider', events, true) // useCapture event propagation
-
-  // unmount
-
-  const unmount = () => {
-    firstEl.removeEventListener('click', firstElFnc)
-    firstTr.removeEventListener('click', firstTrFnc)
-    addBtn.removeEventListener('click', addFnc)
-    removeBtn.removeEventListener('click', removeFnc)
-    reinitBtn.removeEventListener('click', reinitFnc)
-    restartBtn.removeEventListener('click', restartFnc)
-    destroyBtn.removeEventListener('click', destroyFnc)
-    unmountBtn.removeEventListener('click', unmountFnc)
-    slider.removeEventListener('init.xt.slider', events)
-    slider.removeEventListener('destroy.xt.slider', events)
-    document.removeEventListener('on.xt.slider', events, true) // useCapture event propagation
-    document.removeEventListener('off.xt.slider', events, true) // useCapture event propagation
-    self.destroy()
-    self = null
-  }
-  return unmount
 }
 
 /* mount */

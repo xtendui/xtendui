@@ -11,7 +11,8 @@ const mountInfinitescroll = ({ ref }) => {
   // init
 
   /***/
-  let self = new Xt.Infinitescroll(infinitescroll, {
+  let selfDestroy
+  new Xt.Infinitescroll(infinitescroll, {
     get: false, // put here your url parameter as string
     max: 4,
     elements: {
@@ -27,14 +28,20 @@ const mountInfinitescroll = ({ ref }) => {
       //scrollUp: true,
       //scrollDown: true,
     },
+  }).then(self => {
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
   /***/
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

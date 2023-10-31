@@ -42,7 +42,8 @@ Xt.mount({
   mount: ({ ref }) => {
     // init
 
-    let self = new Xt.Overlay(ref, {
+    let selfDestroy
+    new Xt.Overlay(ref, {
       targets: '#docs_open-full',
       closeDeep: '#docs_open-full_close',
       closeauto: true,
@@ -51,6 +52,13 @@ Xt.mount({
       appendTo: false,
       focusLimit: false,
       a11y: false,
+    }).then(self => {
+      // destroy
+
+      selfDestroy = () => {
+        self.destroy()
+        self = null
+      }
     })
 
     // tooltip
@@ -64,8 +72,7 @@ Xt.mount({
     // unmount
 
     return () => {
-      self.destroy()
-      self = null
+      selfDestroy()
     }
   },
 })

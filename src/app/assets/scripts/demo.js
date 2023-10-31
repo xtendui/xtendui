@@ -329,37 +329,38 @@ export const populateDemo = container => {
     }
   }
   // docs_demo_tabs_left
-  const self = new Xt.Toggle(container, {
+  new Xt.Toggle(container, {
     elements: '.docs_demo_tabs_left .xt-button',
     targets: '.docs_demo_item',
     min: 1,
-  })
-  for (const item of items) {
-    item.addEventListener('on.xt.toggle', () => {
-      // only if full opened
-      if (item.closest('#docs_open-full-content')) {
-        // triggering e.detail.container (e.g. slider wrap)
-        dispatchEvent(
-          new CustomEvent('resize', {
-            detail: {
-              force: true,
-              container: item,
-            },
-          }),
-        )
-      }
-      if (!self.initial) {
-        btnOpenIframe(item)
+  }).then(self => {
+    for (const item of items) {
+      item.addEventListener('on.xt.toggle', () => {
         // only if full opened
         if (item.closest('#docs_open-full-content')) {
-          // hash and retain focus because on hashchange focus is automatically lost
-          const activeElement = document.activeElement
-          location.hash = item.getAttribute('id')
-          activeElement.focus()
+          // triggering e.detail.container (e.g. slider wrap)
+          dispatchEvent(
+            new CustomEvent('resize', {
+              detail: {
+                force: true,
+                container: item,
+              },
+            }),
+          )
         }
-      }
-    })
-  }
+        if (!self.initial) {
+          btnOpenIframe(item)
+          // only if full opened
+          if (item.closest('#docs_open-full-content')) {
+            // hash and retain focus because on hashchange focus is automatically lost
+            const activeElement = document.activeElement
+            location.hash = item.getAttribute('id')
+            activeElement.focus()
+          }
+        }
+      })
+    }
+  })
   // only one time
   container.dataset.docsDemoBuilt = 'true'
 }
@@ -426,21 +427,24 @@ export const populateItem = item => {
   new Xt.Tooltip(btnClipboard.parentNode, {
     position: 'bottom-end',
     duration: 300,
+  }).then(() => {
+    swapClick({ ref: btnClipboard.parentNode })
   })
-  swapClick({ ref: btnClipboard.parentNode })
   // .button--show-code
   const btnCode = container.querySelector('.button--show-code')
   const inner = container.querySelector('.docs_demo_inner')
   let selfCode = Xt.get({ name: 'xt-toggle', el: inner })
-  if (selfCode) {
+  if (selfCode && selfCode.reinit) {
     // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
     selfCode.reinit({ save: false })
   } else {
-    selfCode = new Xt.Toggle(inner, {
+    new Xt.Toggle(inner, {
       elements: '.button--show-code',
       targets: `.docs_demo_code`,
       queue: false,
       a11y: false,
+    }).then(self => {
+      selfCode = self
     })
     // populateTabs
     btnCode.addEventListener('on.xt.toggle', populateTabs.bind(container, { container }))
@@ -454,8 +458,9 @@ export const populateItem = item => {
   new Xt.Tooltip(btnCode.parentNode, {
     position: 'bottom-end',
     duration: 300,
+  }).then(() => {
+    swapToggle({ ref: btnCode.parentNode })
   })
-  swapToggle({ ref: btnCode.parentNode })
 }
 
 /**

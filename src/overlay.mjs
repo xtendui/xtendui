@@ -100,13 +100,18 @@ if (typeof window !== 'undefined') {
 
       // init
 
-      let self = new Xt.Overlay(ref, options)
+      let selfDestroy
+      new Xt.Overlay(ref, options).then(self => {
+        selfDestroy = () => {
+          self.destroy()
+          self = null
+        }
+      })
 
       // unmount
 
       return () => {
-        self.destroy()
-        self = null
+        selfDestroy()
       }
     },
   })

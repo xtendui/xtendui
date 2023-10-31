@@ -11,8 +11,8 @@ const mountTooltip = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Tooltip(tooltip, {
+  let selfDestroy
+  new Xt.Tooltip(tooltip, {
     mouseParent: true,
     position: 'bottom-end',
     popperjs: {
@@ -26,14 +26,19 @@ const mountTooltip = ({ ref }) => {
         },
       ],
     },
+  }).then(self => {
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
-  /***/
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

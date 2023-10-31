@@ -18,82 +18,86 @@ const mountSlider = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Slider(slider, {
+  let selfDestroy
+  new Xt.Slider(slider, {
     wrap: true,
     duration: 500,
+  }).then(self => {
+    // setup
+
+    /***/
+    const init = () => {
+      const trs = self.targets.filter(x => !self.hasCurrent({ el: x }))
+      for (const tr of trs) {
+        // content
+        const content = tr.querySelector('[data-node-target-content]')
+        gsap.set(content, {
+          opacity: 0,
+        })
+      }
+    }
+
+    self.container.addEventListener('init.xt.slider', init, true) // useCapture event propagation
+    /***/
+
+    // on
+
+    /***/
+    const on = e => {
+      const tr = e.target
+      // useCapture event propagation check
+      if (self.targets.includes(tr)) {
+        // content
+        const content = tr.querySelector('[data-node-target-content]')
+        gsap.killTweensOf(content)
+        gsap.set(content, {
+          x: self.direction * targetXOn,
+        })
+        gsap.to(content, {
+          x: 0,
+          opacity: 1,
+          duration: targetTimeOn,
+          ease: targetEaseOn,
+        })
+      }
+    }
+
+    self.container.addEventListener('on.xt.slider', on, true) // useCapture event propagation
+    /***/
+
+    // off
+
+    /***/
+    const off = e => {
+      const tr = e.target
+      // useCapture event propagation check
+      if (self.targets.includes(tr)) {
+        // content
+        const content = tr.querySelector('[data-node-target-content]')
+        gsap.killTweensOf(content)
+        gsap.to(content, {
+          x: -self.direction * targetXOff,
+          opacity: 0,
+          duration: targetTimeOff,
+          ease: targetEaseOff,
+        })
+      }
+    }
+
+    self.container.addEventListener('off.xt.slider', off, true) // useCapture event propagation
+    /***/
+
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
-  /***/
-
-  // setup
-
-  /***/
-  const init = () => {
-    const trs = self.targets.filter(x => !self.hasCurrent({ el: x }))
-    for (const tr of trs) {
-      // content
-      const content = tr.querySelector('[data-node-target-content]')
-      gsap.set(content, {
-        opacity: 0,
-      })
-    }
-  }
-
-  self.container.addEventListener('init.xt.slider', init, true) // useCapture event propagation
-  /***/
-
-  // on
-
-  /***/
-  const on = e => {
-    const tr = e.target
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      // content
-      const content = tr.querySelector('[data-node-target-content]')
-      gsap.killTweensOf(content)
-      gsap.set(content, {
-        x: self.direction * targetXOn,
-      })
-      gsap.to(content, {
-        x: 0,
-        opacity: 1,
-        duration: targetTimeOn,
-        ease: targetEaseOn,
-      })
-    }
-  }
-
-  self.container.addEventListener('on.xt.slider', on, true) // useCapture event propagation
-  /***/
-
-  // off
-
-  /***/
-  const off = e => {
-    const tr = e.target
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      // content
-      const content = tr.querySelector('[data-node-target-content]')
-      gsap.killTweensOf(content)
-      gsap.to(content, {
-        x: -self.direction * targetXOff,
-        opacity: 0,
-        duration: targetTimeOff,
-        ease: targetEaseOff,
-      })
-    }
-  }
-
-  self.container.addEventListener('off.xt.slider', off, true) // useCapture event propagation
-  /***/
-
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

@@ -20,8 +20,8 @@ const mountVariants = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Toggle(form, {
+  let selfDestroy
+  new Xt.Toggle(form, {
     min: 1,
     elements: '[data-node-variants-element]',
     targets: '[data-node-variants-target]',
@@ -31,31 +31,36 @@ const mountVariants = ({ ref }) => {
     a11y: {
       keyboard: false,
     },
-  })
-  /***/
+  }).then(self => {
+    // on
 
-  // on
-
-  const ondone = () => {
-    // scrollto
-    if (!self.initial) {
-      // reset scroll
-      form.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
-      gallery.scrollTo(0, 0)
+    const ondone = () => {
+      // scrollto
+      if (!self.initial) {
+        // reset scroll
+        form.dispatchEvent(new CustomEvent('scrollto.trigger.xt.scrollto'))
+        gallery.scrollTo(0, 0)
+      }
+      // initial mobile dots activation
+      gallery.dispatchEvent(new CustomEvent('scroll'))
     }
-    // initial mobile dots activation
-    gallery.dispatchEvent(new CustomEvent('scroll'))
-  }
 
-  for (const element of self.elements) {
-    element.addEventListener('ondone.xt.toggle', ondone)
-  }
+    for (const element of self.elements) {
+      element.addEventListener('ondone.xt.toggle', ondone)
+    }
+
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
+  })
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 
@@ -64,46 +69,51 @@ const mountVariants = ({ ref }) => {
 const mountScrollto = () => {
   // init
 
-  /***/
-  let self = new Xt.Scrollto(document.documentElement, {
+  let selfDestroy
+  new Xt.Scrollto(document.documentElement, {
     scrollers: '.xt-overlay:not([data-xt-overlay-disabled]), .product-gallery',
     space: ({ self }) => {
       return self.scroller.classList.contains(...['xt-overlay', 'product-gallery']) ? 0 : window.innerHeight / 6
     },
+  }).then(self => {
+    // scrollto
+
+    const scrollto = () => {
+      // scroll
+      gsap.killTweensOf(self.scroller)
+      gsap.to(self.scroller, {
+        scrollTo: self.position,
+        duration: self.duration,
+        ease: 'quint.out',
+      })
+    }
+
+    self.container.addEventListener('scrollto.xt.scrollto', scrollto)
+
+    // fix stop scroll animation on user interaction
+
+    const stopScrolling = () => {
+      gsap.killTweensOf(self.scroller)
+    }
+
+    addEventListener('touchstart', stopScrolling)
+    addEventListener('wheel', stopScrolling)
+
+    // destroy
+
+    selfDestroy = () => {
+      removeEventListener('touchstart', stopScrolling)
+      removeEventListener('wheel', stopScrolling)
+      self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
+      self.destroy()
+      self = null
+    }
   })
-  /***/
-
-  // scrollto
-
-  const scrollto = () => {
-    // scroll
-    gsap.killTweensOf(self.scroller)
-    gsap.to(self.scroller, {
-      scrollTo: self.position,
-      duration: self.duration,
-      ease: 'quint.out',
-    })
-  }
-
-  self.container.addEventListener('scrollto.xt.scrollto', scrollto)
-
-  // fix stop scroll animation on user interaction
-
-  const stopScrolling = () => {
-    gsap.killTweensOf(self.scroller)
-  }
-
-  addEventListener('touchstart', stopScrolling)
-  addEventListener('wheel', stopScrolling)
 
   // unmount
 
   return () => {
-    removeEventListener('touchstart', stopScrolling)
-    removeEventListener('wheel', stopScrolling)
-    self.container.removeEventListener('scrollto.xt.scrollto', scrollto)
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

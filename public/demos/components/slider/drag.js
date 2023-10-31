@@ -10,20 +10,25 @@ const mountSlider = ({ ref }) => {
 
   // init
 
-  /***/
-  let self = new Xt.Slider(slider, {
+  let selfDestroy
+  new Xt.Slider(slider, {
     drag: {
       factor: 2,
       overflow: false,
     },
+  }).then(self => {
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
-  /***/
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 
