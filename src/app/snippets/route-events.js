@@ -1,6 +1,6 @@
 export const onRouteUpdate = ({ pathname, prevPathname }) => {
   const btn = document.querySelector('.docs_menu--button')
-  // use demoHashChange instead of hashchange we control when page changes with no hash
+  // we control when page changes with no hash
   dispatchEvent(new CustomEvent('demoHashChange'))
   // keepSidebarScroll
   const overlay = document.querySelector('#docs_menu--overlay')

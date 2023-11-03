@@ -26,6 +26,7 @@ const demoHash = () => {
         const demo = item.closest('.docs_demo')
         if (demo) {
           // trigger fullscreen or change tabs
+          item.classList.add('on')
           item.dispatchEvent(new CustomEvent('on.trigger.xt.toggle'))
           // only if not full opened
           if (!item.closest('#docs_open-full-content')) {
@@ -43,8 +44,9 @@ const demoHash = () => {
 
 Xt.ready({
   func: () => {
-    // use demoHashChange instead of hashchange we control when page changes with no hash
+    // we control when page changes with no hash
     addEventListener('demoHashChange', demoHash)
+    addEventListener('hashchange', demoHash)
   },
 })
 
@@ -169,7 +171,6 @@ export const populateBlock = () => {
         // hash
         if (el.nextSibling.querySelector('.docs_demo_item')) {
           location.hash = el.nextSibling.querySelector('.docs_demo_item').getAttribute('id')
-          dispatchEvent(new CustomEvent('demoHashChange'))
         }
       })
     }
@@ -317,7 +318,6 @@ export const populateDemo = container => {
       e.preventDefault()
       // hash
       location.hash = container.querySelector('.docs_demo_item.on').getAttribute('id')
-      dispatchEvent(new CustomEvent('demoHashChange'))
     })
   }
   // get hash
@@ -603,6 +603,7 @@ const makeFullscreen = (demo, item) => {
   const full = document.querySelector('#docs_open-full')
   requestAnimationFrame(() => {
     // raf or it doesn't open
+    full.classList.add('on')
     full.dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   })
   const listingToggle = demo.previousSibling
