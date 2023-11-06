@@ -19,8 +19,7 @@ npm install xtendui --save
 Install **tailwindcss**, **xtendui**, **postcss import**, **postcss nested**.
 
 ```
-npm install tailwindcss --save
-npm install postcss postcss-import autoprefixer --save-dev
+npm install tailwindcss postcss postcss-import autoprefixer --save
 ```
 
 Then in `postcss.config.js` set up compilation (more info in Tailwind CSS docs [Tailwind CSS postcss](https://tailwindcss.com/docs/using-with-preprocessors)).
@@ -96,7 +95,7 @@ npm install gsap --save
 You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [core-js](https://www.npmjs.com/package/core-js), [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime).
 
 ```
-npm install @babel/core @babel/preset-env core-js regenerator-runtime --save-dev
+npm install @babel/core @babel/preset-env core-js regenerator-runtime --save
 ```
 
 Create on the root of the project `babel.config.js` with:
