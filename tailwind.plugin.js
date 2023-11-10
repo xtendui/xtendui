@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 const _ = require('lodash')
 
 module.exports = plugin.withOptions(() => {
-  return function ({ addComponents, addVariant, e, theme }) {
+  return function ({ addComponents, addVariant, matchVariant, e, theme }) {
     const componentsBase = require('./tailwind.components.js') || {}
     const componentsCustom = theme(`xtendui`, {}) || {}
 
@@ -208,32 +208,54 @@ module.exports = plugin.withOptions(() => {
      * variant
      */
 
-    addVariant('group-dir-before', '.group.dir-before &')
-    addVariant('group-dir-after', '.group.dir-after &')
-    addVariant('group-off-before', '.group.dir-before:not(.on):not(.in):not(.out) &')
-    addVariant('group-off-after', '.group.dir-after:not(.on):not(.in):not(.out) &')
-    addVariant('group-on-before', '.group.on.dir-before &')
-    addVariant('group-on-after', '.group.on.dir-after &')
-    addVariant('group-in-before', '.group.in.dir-before &')
-    addVariant('group-in-after', '.group.in.dir-after &')
-    addVariant('group-out-before', '.group.out.dir-before &')
-    addVariant('group-out-after', '.group.out.dir-after &')
-    addVariant('group-done-before', '.group.done.dir-before &')
-    addVariant('group-done-after', '.group.done.dir-after &')
-    addVariant('group-off', '.group:not(.on):not(.in):not(.out) &')
-    addVariant('group-on', '.group.on &')
-    addVariant('group-in', '.group.in &')
-    addVariant('group-out', '.group.out &')
-    addVariant('group-done', '.group.done &')
-    addVariant('group-active', '.group:active &')
-    addVariant('dir-before', '&.dir-before')
-    addVariant('dir-after', '&.dir-after')
-    addVariant('off', '&:not(.on):not(.in):not(.out)')
-    addVariant('on', '&.on')
-    addVariant('in', '&.in')
-    addVariant('out', '&.out')
-    addVariant('done', '&.done')
-    addVariant('valid-submit', '&.valid-submit')
-    addVariant('invalid-submit', '&.invalid-submit')
+    const pseudoVariants = [
+      ['off-before', '&.dir-before:not(.on):not(.in):not(.out)'],
+      ['off-after', '&.dir-after:not(.on):not(.in):not(.out)'],
+      ['on-before', '&.on.dir-before'],
+      ['on-after', '&.on.dir-after'],
+      ['in-before', '&.in.dir-before'],
+      ['in-after', '&.in.dir-after'],
+      ['out-before', '&.out.dir-before'],
+      ['out-after', '&.out.dir-after'],
+      ['done-before', '&.done.dir-before'],
+      ['done-after', '&.done.dir-after'],
+      ['dir-before', '&.dir-before'],
+      ['dir-after', '&.dir-after'],
+      ['off', '&:not(.on):not(.in):not(.out)'],
+      ['on', '&.on'],
+      ['in', '&.in'],
+      ['out', '&.out'],
+      ['done', '&.done'],
+      ['valid-submit', '&.valid-submit'],
+      ['invalid-submit', '&.invalid-submit'],
+    ].map(variant => (Array.isArray(variant) ? variant : [variant, `&:${variant}`]))
+
+    // group and peer variants
+    // https://github.com/tailwindlabs/tailwindcss/discussions/9713#discussioncomment-4040990
+
+    const variants = {
+      group: (_, { modifier }) => (modifier ? [`:merge(.group\\/${modifier})`, ' &'] : [`:merge(.group)`, ' &']),
+      peer: (_, { modifier }) => (modifier ? [`:merge(.peer\\/${modifier})`, ' ~ &'] : [`:merge(.peer)`, ' ~ &']),
+    }
+
+    for (const [name, fn] of Object.entries(variants)) {
+      matchVariant(
+        name,
+        (value = '', extra) => {
+          let result = value
+          if (!result.includes('&')) result = `&${result}`
+
+          const [a, b] = fn('', extra)
+          return result.replace(/&(\S+)?/g, (_, pseudo = '') => a + pseudo + b)
+        },
+        { values: Object.fromEntries(pseudoVariants) },
+      )
+    }
+
+    // simple variants
+
+    for (const values of pseudoVariants) {
+      addVariant(values[0], values[1])
+    }
   }
 })
