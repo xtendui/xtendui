@@ -115,7 +115,7 @@ const mountEventmethods = ({ ref }) => {
 
     const unmountFnc = () => {
       logAdd('<strong>unmount</strong>')
-      unmount()
+      selfDestroy()
     }
 
     unmountBtn.addEventListener('click', unmountFnc)
