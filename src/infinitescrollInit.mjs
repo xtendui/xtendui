@@ -47,8 +47,6 @@ export class InfinitescrollInit {
   _initLogic() {
     const self = this
     const options = self.options
-    // set self
-    Xt._set({ name: self.componentName, el: self.container, self })
     // namespace
     self.ns = self.ns ?? Xt.uniqueId()
     // enable first for proper initial activation

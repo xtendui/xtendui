@@ -83,16 +83,17 @@ const mountSticky = ({ ref }) => {
 
   const refresh = e => {
     const tr = e.target
-    const self = Xt.get({ name: 'xt-toggle', el: toggle })
-    // useCapture event propagation check
-    if (self.targets.includes(tr)) {
-      // timeout because fix bug scroll when using scrollTrigger.refresh and on browser location prev and next
-      clearTimeout(parseFloat(toggle.dataset.refreshTimeout))
-      toggle.dataset.refreshTimeout = setTimeout(() => {
-        // we refresh sticky values
-        scrollTrigger.refresh()
-      }, 100)
-    }
+    Xt.get({ name: 'xt-toggle', el: toggle }).then(self => {
+      // useCapture event propagation check
+      if (self.targets.includes(tr)) {
+        // timeout because fix bug scroll when using scrollTrigger.refresh and on browser location prev and next
+        clearTimeout(parseFloat(toggle.dataset.refreshTimeout))
+        toggle.dataset.refreshTimeout = setTimeout(() => {
+          // we refresh sticky values
+          scrollTrigger.refresh()
+        }, 100)
+      }
+    })
   }
 
   toggle.addEventListener('ondone.xt.toggle', refresh, true) // useCapture event propagation

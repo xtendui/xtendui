@@ -7,41 +7,49 @@ const mountStatus = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  const self = Xt.get({ name: 'xt-slider', el: slider })
-  const current = slider.querySelector('[data-xt-slider-status-current]')
-  const total = slider.querySelector('[data-xt-slider-status-total]')
+  let selfDestroy
 
-  // change
+  Xt.get({ name: 'xt-slider', el: slider }).then(self => {
+    const current = slider.querySelector('[data-xt-slider-status-current]')
+    const total = slider.querySelector('[data-xt-slider-status-total]')
 
-  const change = e => {
-    // useCapture event propagation check
-    if (self && (e.target === slider || self.elements.includes(e.target))) {
-      // width
-      const trs = self.targets.filter(x => self.hasCurrent({ el: x, same: window.demogroupedstatus })) // switcher window.demogroupedstatus true or false
-      if (!trs.length) return
-      let currentSizeContent = 0
-      const left = trs[0].offsetLeft
-      for (const tr of trs) {
-        currentSizeContent += tr.offsetWidth
+    // change
+
+    const change = e => {
+      // useCapture event propagation check
+      if (e.target === slider || self.elements.includes(e.target)) {
+        // width
+        const trs = self.targets.filter(x => self.hasCurrent({ el: x, same: window.demogroupedstatus })) // switcher window.demogroupedstatus true or false
+        if (!trs.length) return
+        let currentSizeContent = 0
+        const left = trs[0].offsetLeft
+        for (const tr of trs) {
+          currentSizeContent += tr.offsetWidth
+        }
+        // set
+        const totalWidth = total.offsetWidth
+        const currentWidth = (currentSizeContent * totalWidth) / self.drag.sizeContent
+        const currentLeft = (left * totalWidth) / self.drag.sizeContent
+        current.style.width = `${currentWidth}px`
+        current.style.left = `${currentLeft}px`
       }
-      // set
-      const totalWidth = total.offsetWidth
-      const currentWidth = (currentSizeContent * totalWidth) / self.drag.sizeContent
-      const currentLeft = (left * totalWidth) / self.drag.sizeContent
-      current.style.width = `${currentWidth}px`
-      current.style.left = `${currentLeft}px`
     }
-  }
 
-  slider.addEventListener('init.xt.slider', change)
-  slider.addEventListener('status.xt.slider', change)
-  slider.addEventListener('on.xt.slider', change, true) // useCapture event propagation
-  addEventListener('resize', change)
+    slider.addEventListener('init.xt.slider', change)
+    slider.addEventListener('status.xt.slider', change)
+    slider.addEventListener('on.xt.slider', change, true) // useCapture event propagation
+    addEventListener('resize', change)
 
+    // destroy
+
+    selfDestroy = () => {
+      removeEventListener('resize', change)
+    }
+  })
   // unmount
 
   return () => {
-    removeEventListener('resize', change)
+    selfDestroy()
   }
 }
 

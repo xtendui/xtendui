@@ -129,7 +129,7 @@ You can add **additional options** that gets added on **match media query**. You
 You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
+Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
 You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
@@ -172,8 +172,9 @@ Trigger events on **DOM node**.
 Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
-const container = self.container
+Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).then(self => {
+  const container = self.container
+})
 ```
 
 > If you want to **force the self.hashchange value manually for instant duration** set `Xt.scrolltoHashforce` to `true` or `false` just before triggering `scrollto.trigger.xt.scrollto` or changing `location.hash`.
@@ -202,9 +203,9 @@ const container = self.container
 Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') })
-self.destroy()
-self = null
+Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).then(self => {
+  self.destroy()
+})
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

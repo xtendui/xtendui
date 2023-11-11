@@ -241,10 +241,10 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {String} params.name Component name
    * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
-   * @param {Object} params.self Component' self
+   * @param {Promise} params.selfPromise Promise with argument self
    */
-  Xt._set = ({ name, el, self } = {}) => {
-    Xt.dataStorage.set(el, name, self)
+  Xt._set = ({ name, el, selfPromise } = {}) => {
+    Xt.dataStorage.set(el, name, selfPromise)
   }
 
   /**
@@ -255,7 +255,7 @@ if (typeof window !== 'undefined') {
    * @return {Object}
    */
   Xt.get = ({ name, el } = {}) => {
-    return Xt.dataStorage.get(el, name)
+    return Xt.dataStorage.get(el, name) ?? Promise.resolve()
   }
 
   /**

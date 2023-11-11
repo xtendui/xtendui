@@ -18,10 +18,17 @@ describe('demos/components/toggle/disabled', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
     container1 = this.container[1]
-    self1 = Xt.get({ name: 'xt-toggle', el: container1 })
+    cy.get(container).scrollIntoView()
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+      return Xt.get({ name: 'xt-toggle', el: container1 }).then(self1Promise => {
+        self1 = self1Promise
+      })
+    })
   })
 
   it('TEST nested check elements, targets length of nested parent components.', function () {
@@ -87,10 +94,17 @@ describe('demos/components/overlay/disabled', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-overlay', el: container })
     container1 = this.container[1]
-    self1 = Xt.get({ name: 'xt-overlay', el: container1 })
+    cy.get(container).scrollIntoView()
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+      return Xt.get({ name: 'xt-overlay', el: container1 }).then(self1Promise => {
+        self1 = self1Promise
+      })
+    })
   })
 
   it('TEST overlay nested classBody, desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.', function () {
@@ -153,7 +167,12 @@ describe('demos/components/slider/disabled', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST slider instant position, wrap on resize and activation on resize.', function () {
@@ -207,7 +226,12 @@ describe('demos/components/toggle/matches', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST matches.', function () {
@@ -254,7 +278,12 @@ describe('demos/components/toggle/api', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST on init event, add and remove, activated on change > reinit > change > restart, activated on change > destroy > reinit, destroy remove all interactions.', function () {
@@ -355,7 +384,12 @@ describe('demos/components/overlay/api', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST one destroy and reinit and trigger 1st, reinit multiple times and interaction should trigger once.', function () {
@@ -399,7 +433,12 @@ describe('demos/components/slider/api', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST initial dragger position instant with no transition, initial wrap position, remove until 0 targets should not give errors.', function () {

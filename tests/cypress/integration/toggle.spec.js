@@ -16,7 +16,12 @@ describe('demos/components/overlay/usage-self', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST initial activation, overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.', function () {
@@ -87,7 +92,12 @@ describe('demos/components/toggle/class', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST initial group activation, min max activation.', function () {
@@ -169,7 +179,12 @@ describe('demos/components/toggle/quantity', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST initial group activation.', function () {
@@ -235,7 +250,12 @@ describe('demos/components/toggle/multiple-group', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST group activation.', function () {
@@ -321,7 +341,12 @@ describe('demos/components/toggle/multiple-nogroupelements', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST group activation.', function () {
@@ -407,7 +432,12 @@ describe('demos/components/toggle/event', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST should not close when mouseenter > click or mouseleave > mouseenter active elements.', function () {
@@ -476,8 +506,15 @@ describe('demos/components/drop/event', function () {
     container = this.container[0]
     cy.get(container).scrollIntoView()
     container1 = this.container[1]
-    self = Xt.get({ name: 'xt-drop', el: container })
-    self1 = Xt.get({ name: 'xt-drop', el: container1 })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-drop', el: container }).then(selfPromise => {
+      self = selfPromise
+      return Xt.get({ name: 'xt-drop', el: container1 }).then(self1Promise => {
+        self1 = self1Promise
+      })
+    })
   })
 
   it('TEST open and close nested.', function () {
@@ -559,7 +596,12 @@ describe('demos/components/toggle/prevent-event', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST prevent event.', function () {
@@ -598,7 +640,12 @@ describe('demos/components/toggle/hash', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST no hash must not add hash initial activation.', function () {
@@ -635,6 +682,7 @@ describe('demos/components/toggle/hash', function () {
   })
 })
 
+/* WAIT for nextjs to fix router hash change page bugs
 describe('demos/components/toggle/hash', function () {
   let win
   let Xt
@@ -651,12 +699,19 @@ describe('demos/components/toggle/hash', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST initial activation, hash activation, browser navigation.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .hash()
+      .should('eq', '#demo--toggle-hash-group-1')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
         expect(self.elements[0].classList.contains('in')).to.equal(false)
@@ -685,6 +740,8 @@ describe('demos/components/toggle/hash', function () {
       })
       .get(self.elements[1])
       .click()
+      .hash()
+      .should('eq', '#demo--toggle-hash-1')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
         expect(self.elements[1].classList.contains('on')).to.equal(true)
@@ -714,6 +771,8 @@ describe('demos/components/toggle/hash', function () {
         })
       })
       .go(-1)
+      .hash()
+      .should('eq', '#demo--toggle-hash-group-1')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
         expect(self.elements[1].classList.contains('on')).to.equal(false)
@@ -743,6 +802,8 @@ describe('demos/components/toggle/hash', function () {
         })
       })
       .go(1)
+      .hash()
+      .should('eq', '#demo--toggle-hash-1')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
         expect(self.elements[1].classList.contains('on')).to.equal(true)
@@ -793,13 +854,22 @@ describe('demos/components/overlay/hash', function () {
     container = this.container[0]
     cy.get(container).scrollIntoView()
     container1 = this.container[1]
-    self = Xt.get({ name: 'xt-overlay', el: container })
-    self1 = Xt.get({ name: 'xt-overlay', el: container1 })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+      return Xt.get({ name: 'xt-overlay', el: container1 }).then(self1Promise => {
+        self1 = self1Promise
+      })
+    })
   })
 
   it('TEST opened with hash on page load, closing it should not block page interaction (bug with multiple elements same target), should reopen on change page browser navigation.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .hash()
+      .should('eq', '#demo--overlay-hash')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
         expect(self.elements[0].classList.contains('in')).to.equal(true)
@@ -808,6 +878,8 @@ describe('demos/components/overlay/hash', function () {
       })
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
+      .hash()
+      .should('eq', '#')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -818,6 +890,19 @@ describe('demos/components/overlay/hash', function () {
       })
       .get(self1.elements[0])
       .click()
+      .hash()
+      .should('eq', '#demo--overlay-hash')
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(true)
+        expect(self.targets[0].classList.contains('on')).to.equal(true)
+        cy.frameDouble().then(() => {
+          expect(self.elements[0].classList.contains('in')).to.equal(true)
+          expect(self.targets[0].classList.contains('in')).to.equal(true)
+        })
+      })
+      .go(-1)
+      .hash()
+      .should('eq', '#')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -828,7 +913,9 @@ describe('demos/components/overlay/hash', function () {
       })
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
-      .go(-1)
+      .go(1)
+      .hash()
+      .should('eq', '#demo--overlay-hash')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -860,12 +947,19 @@ describe('demos/components/slider/hash', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST initial activation, hash activation, browser navigation.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .hash()
+      .should('eq', '#demo--slider-hash-4')
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('in')).to.equal(false)
@@ -884,6 +978,8 @@ describe('demos/components/slider/hash', function () {
       })
       .get(self.elements[1])
       .click()
+      .hash()
+      .should('eq', '#demo--slider-hash-3')
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -903,6 +999,8 @@ describe('demos/components/slider/hash', function () {
         })
       })
       .go(-1)
+      .hash()
+      .should('eq', '#demo--slider-hash-4')
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -922,6 +1020,8 @@ describe('demos/components/slider/hash', function () {
         })
       })
       .go(1)
+      .hash()
+      .should('eq', '#demo--slider-hash-3')
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -942,6 +1042,7 @@ describe('demos/components/slider/hash', function () {
       })
   })
 })
+*/
 
 describe('demos/components/drop/backdrop', function () {
   let win
@@ -963,8 +1064,15 @@ describe('demos/components/drop/backdrop', function () {
     container = this.container[0]
     cy.get(container).scrollIntoView()
     container1 = this.container[1]
-    self = Xt.get({ name: 'xt-drop', el: container })
-    self1 = Xt.get({ name: 'xt-drop', el: container1 })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-drop', el: container }).then(selfPromise => {
+      self = selfPromise
+      return Xt.get({ name: 'xt-drop', el: container1 }).then(self1Promise => {
+        self1 = self1Promise
+      })
+    })
   })
 
   it('TEST backdrop.', function () {
@@ -1039,7 +1147,12 @@ describe('demos/components/tooltip/swap-click', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-tooltip', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
@@ -1100,7 +1213,12 @@ describe('demos/components/tooltip/swap-toggle', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-tooltip', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
@@ -1160,7 +1278,12 @@ describe('demos/components/tooltip/prevent-overflow', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-tooltip', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST position inside boundary on first element for proper merge of popperjs options, arrow position.', function () {
@@ -1195,7 +1318,12 @@ describe('demos/components/overlay/animation-noqueue', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   beforeEach(function () {
@@ -1251,7 +1379,12 @@ describe('demos/components/drop/reset-to-current', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-drop', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-drop', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {

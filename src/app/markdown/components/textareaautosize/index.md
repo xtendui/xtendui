@@ -28,7 +28,7 @@ You can customize `min-height` and `max-height` of the textarea.
 You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })
+Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
 ## Match Media
@@ -62,8 +62,9 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })
-const container = self.container
+Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') }).then(self => {
+  const container = self.container
+})
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -84,9 +85,9 @@ const container = self.container
 Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') })
-self.destroy()
-self = null
+Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') }).then(self => {
+  self.destroy()
+})
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

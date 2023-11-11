@@ -286,38 +286,39 @@ const mountLine = ({ ref }) => {
       }
       /***/
       // check open drops
-      const self = Xt.get({ name: 'xt-drop', el: megamenu })
-      const dropBtnActive = self.elements.filter(x => self.hasCurrent({ el: x }))[0]
-      if (dropBtnActive) {
-        /***/
-        // when one drop still open
-        /***/
-        const lineX = dropBtnActive.offsetLeft
-        const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
-        const lineWidth = dropBtnActive.offsetWidth
-        gsap.to(line, {
-          x: lineX,
-          y: lineY - lineHeight,
-          width: lineWidth,
-          height: lineHeight,
-          opacity: 1,
-          duration: lineTime,
-          ease: lineEase,
-        })
-      } else {
-        /***/
-        // when no drop still open
-        /***/
-        const lineY = el.offsetTop + el.offsetHeight
-        lineFirst = true
-        gsap.to(line, {
-          y: lineY,
-          height: 0,
-          opacity: 0,
-          duration: lineTime,
-          ease: lineEase,
-        })
-      }
+      Xt.get({ name: 'xt-drop', el: megamenu }).then(self => {
+        const dropBtnActive = self.elements.filter(x => self.hasCurrent({ el: x }))[0]
+        if (dropBtnActive) {
+          /***/
+          // when one drop still open
+          /***/
+          const lineX = dropBtnActive.offsetLeft
+          const lineY = dropBtnActive.offsetTop + dropBtnActive.offsetHeight
+          const lineWidth = dropBtnActive.offsetWidth
+          gsap.to(line, {
+            x: lineX,
+            y: lineY - lineHeight,
+            width: lineWidth,
+            height: lineHeight,
+            opacity: 1,
+            duration: lineTime,
+            ease: lineEase,
+          })
+        } else {
+          /***/
+          // when no drop still open
+          /***/
+          const lineY = el.offsetTop + el.offsetHeight
+          lineFirst = true
+          gsap.to(line, {
+            y: lineY,
+            height: 0,
+            opacity: 0,
+            duration: lineTime,
+            ease: lineEase,
+          })
+        }
+      })
     }, dropDelay)
   }
 
@@ -347,8 +348,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get({ name: 'xt-drop', el: megamenu })
-    if (self) {
+    Xt.get({ name: 'xt-drop', el: megamenu }).then(self => {
       if (switcher.checked) {
         self.options.on = 'mouseenter focus'
         self.options.off = 'mouseleave'
@@ -360,7 +360,7 @@ const mountSwitcher = ({ ref }) => {
       }
       self.destroy({ weak: true })
       self.reinit()
-    }
+    })
   }
 
   switcher.addEventListener('change', change)

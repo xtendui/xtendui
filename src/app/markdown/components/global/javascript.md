@@ -133,14 +133,14 @@ You can get **self object from DOM node** on Xtend UI components.
 
 |                         | Syntax                                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- |
-| Method                  | `Xt.get({ name:String, el:Node })`                          | Get **self object** on DOM node for that component name (e.g. `'xt-toggle'`)             |
+| Method                  | `Xt.get({ name:String, el:Node })`                          | Get a promise with **self object** on DOM node for that component name (e.g. `'xt-toggle'`)             |
 
 </div>
 
 For example if you want to **get the drop object** on a particular node.
 
 ```js
-let self = Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') })
+Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
 > The components initialization of `data-xt-` or `Xt.mount` **is ready after document ready**, so if you use react use `useLayoutEffect` hook or `Xt.ready` or `Xt.mount` or `init.xt.` event to access the data after document ready.
@@ -317,15 +317,15 @@ This method is useful to **capture events also if child nodes gets added in futu
 ```js
 const container = document.querySelector('.my-container')
 
-let self = Xt.get({ name: 'xt-componentname', el: container })
-
-const on = e => {
-  const tr = e.target
-  // useCapture event propagation check
-  if (self.targets.includes(tr)) {
-    // logic
+Xt.get({ name: 'xt-componentname', el: container }).then(self => {
+  const on = e => {
+    const tr = e.target
+    // useCapture event propagation check
+    if (self.targets.includes(tr)) {
+      // logic
+    }
   }
-}
 
-container.addEventListener('eventname.xt.componentname', on, true) // useCapture event propagation
+  self.container.addEventListener('eventname.xt.componentname', on, true) // useCapture event propagation
+})
 ```

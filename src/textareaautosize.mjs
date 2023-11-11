@@ -38,16 +38,20 @@ class Textareaautosize {
     const self = this
     self.container = object
     self._optionsCustom = optionsCustom
+    self.constructorName = self.constructor.constructorName
     self.componentName = self.constructor.componentName
     self._componentNs = self.componentName.replace('-', '.')
     // load
-    return Xt._load({
-      name: self.constructor.name,
+    const selfPromise = Xt._load({
+      name: self.constructorName,
       suffix: 'Init',
     }).then(() => {
       self._init()
       return self
     })
+    // set self
+    Xt._set({ name: self.componentName, el: self.container, selfPromise })
+    return selfPromise
   }
 }
 
@@ -55,6 +59,7 @@ class Textareaautosize {
 // options
 //
 
+Textareaautosize.constructorName = 'Textareaautosize'
 Textareaautosize.componentName = 'xt-textareaautosize'
 Textareaautosize.optionsDefault = {
   debug: false,

@@ -58,8 +58,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get({ name: 'xt-infinitescroll', el: infinitescroll })
-    if (self) {
+    Xt.get({ name: 'xt-infinitescroll', el: infinitescroll }).then(self => {
       if (switcher.checked) {
         self.options.events.scrollUp = true
         self.options.events.scrollDown = true
@@ -67,9 +66,8 @@ const mountSwitcher = ({ ref }) => {
         self.options.events.scrollUp = false
         self.options.events.scrollDown = false
       }
-      self.destroy()
       self.reinit()
-    }
+    })
   }
 
   switcher.addEventListener('change', change)

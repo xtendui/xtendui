@@ -19,7 +19,12 @@ describe('demos/hidden/test/mount-unmount', function () {
     demo = this.demo[0]
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST mount root once, this should be 1 on init, should remain 1 on deactivation.', function () {
@@ -99,7 +104,12 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
     demo = this.demo[0]
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.', function () {
@@ -195,9 +205,14 @@ describe('demos/themes/navigation/megamenu-v1', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-drop', el: container })
     backdrop = this.backdrop[0]
+    cy.get(container).scrollIntoView()
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-drop', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST direction and zIndex sequential activation and zIndex reset.', function () {
@@ -390,7 +405,12 @@ describe('demos/components/scrollto/overlay', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-overlay', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.', function () {
@@ -478,7 +498,12 @@ describe('demos/components/scrollto/toggle', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements.', function () {
@@ -560,7 +585,12 @@ describe('demos/components/infinitescroll/usage', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-infinitescroll', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-infinitescroll', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST initial activation and scroll position, scroll activation, browser navigation.', function () {

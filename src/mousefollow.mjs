@@ -41,16 +41,20 @@ class Mousefollow {
     const self = this
     self.container = object
     self._optionsCustom = optionsCustom
+    self.constructorName = self.constructor.constructorName
     self.componentName = self.constructor.componentName
     self._componentNs = self.componentName.replace('-', '.')
     // load
-    return Xt._load({
-      name: self.constructor.name,
+    const selfPromise = Xt._load({
+      name: self.constructorName,
       suffix: 'Init',
     }).then(() => {
       self._init()
       return self
     })
+    // set self
+    Xt._set({ name: self.componentName, el: self.container, selfPromise })
+    return selfPromise
   }
 }
 
@@ -58,6 +62,7 @@ class Mousefollow {
 // options
 //
 
+Mousefollow.constructorName = 'Mousefollow'
 Mousefollow.componentName = 'xt-mousefollow'
 Mousefollow.optionsDefault = {
   debug: false,

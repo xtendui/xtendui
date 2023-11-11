@@ -119,8 +119,7 @@ const mountSwitcher = ({ ref }) => {
   // change
 
   const change = () => {
-    const self = Xt.get({ name: 'xt-scrollto', el: scrollto })
-    if (self) {
+    Xt.get({ name: 'xt-scrollto', el: scrollto }).then(self => {
       if (switcher.checked) {
         self.options.class = false
         self.options.scrollActivation = false
@@ -128,9 +127,8 @@ const mountSwitcher = ({ ref }) => {
         self.options.class = 'on'
         self.options.scrollActivation = true
       }
-      self.destroy()
       self.reinit()
-    }
+    })
   }
 
   switcher.addEventListener('change', change)

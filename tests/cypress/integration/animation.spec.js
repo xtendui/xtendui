@@ -17,7 +17,12 @@ describe('demos/components/toggle/animation-queue', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST queue activation.', function () {
@@ -78,7 +83,12 @@ describe('demos/components/toggle/animation-noqueue', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST noqueue activations.', function () {
@@ -130,7 +140,12 @@ describe('demos/components/toggle/animation-inverse', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST inverse activations.', function () {
@@ -174,7 +189,12 @@ describe('demos/components/toggle/animation-duration-delay', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST duration, delay.', function () {
@@ -252,7 +272,12 @@ describe('demos/components/toggle/animation-css', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation, direction.', function () {
@@ -318,7 +343,12 @@ describe('demos/components/slider/animation-css', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation.', function () {
@@ -368,7 +398,12 @@ describe('demos/components/toggle/animation-js', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation, direction.', function () {
@@ -427,7 +462,12 @@ describe('demos/components/slider/animation-js', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation.', function () {
@@ -489,7 +529,12 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-toggle', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-toggle', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST height and maxHeight styles on activation and deactivation.', function () {

@@ -82,7 +82,9 @@ describe('docs', function () {
   })
 
   it('TEST open code from demos should show code, copying code should be without highlight.', function () {
-    cy.get('.button--show-code')
+    cy.get('.docs_demo_inner')
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get('.button--show-code')
       .eq(0)
       .click()
       .get('.docs_demo')
@@ -109,7 +111,9 @@ describe('docs', function () {
   })
 
   it('TEST demos demos changing demo should change hash, browser navigation should change demo, initial activation on page load.', function () {
-    cy.get('.docs_demo_tabs_left button')
+    cy.get('.docs_demo_inner')
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get('.docs_demo_tabs_left button')
       .eq(1)
       .click()
       .get('.button--open-full')
@@ -130,6 +134,8 @@ describe('docs', function () {
       .get('#docs_open-full')
       .as('full')
       .should('be.visible') // racecondition
+      .get('.docs_demo_inner')
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
       .frame()
       .then(() => {
         const full = this.full[0]

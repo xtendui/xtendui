@@ -28,6 +28,7 @@ class Tooltip extends Xt.Toggle {
 // options
 //
 
+Tooltip.constructorName = 'Tooltip'
 Tooltip.componentName = 'xt-tooltip'
 Tooltip.optionsDefault = {
   // element

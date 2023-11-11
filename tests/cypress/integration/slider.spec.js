@@ -17,7 +17,12 @@ describe('demos/components/slider/align-center', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation.', function () {
@@ -65,7 +70,12 @@ describe('demos/components/slider/align-left', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation.', function () {
@@ -113,7 +123,12 @@ describe('demos/components/slider/align-right', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation.', function () {
@@ -161,7 +176,12 @@ describe('demos/components/slider/contain-false-center', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation.', function () {
@@ -209,7 +229,12 @@ describe('demos/components/slider/contain-false-left', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation.', function () {
@@ -257,7 +282,12 @@ describe('demos/components/slider/contain-false-right', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation.', function () {
@@ -305,7 +335,12 @@ describe('demos/components/slider/wrap-nospace', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation, no wrap.', function () {
@@ -359,7 +394,12 @@ describe('demos/components/slider/wrap-center', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation, wrap position.', function () {
@@ -421,7 +461,12 @@ describe('demos/components/slider/wrap-left', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation, wrap position.', function () {
@@ -483,7 +528,12 @@ describe('demos/components/slider/wrap-right', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST grouping and activation, wrap position.', function () {
@@ -545,7 +595,12 @@ describe('demos/components/slider/group', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST group responsive.', function () {
@@ -629,7 +684,12 @@ describe('demos/components/slider/group-same-false', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST group.', function () {
@@ -678,6 +738,7 @@ describe('demos/components/slider/exclude', function () {
   let win
   let Xt
   let container
+  let containerToggle
   let self
   let toggles
   let slides
@@ -694,20 +755,29 @@ describe('demos/components/slider/exclude', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+    containerToggle = this.demo[0]
     toggles = this.toggles
     slides = this.slides
+    cy.get(container).scrollIntoView()
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+      return Xt.get({ name: 'xt-toggle', el: containerToggle })
+    })
   })
 
   it('TEST activation exclude.', function () {
-    cy.get('@demo')
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .get(containerToggle)
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
       .then(() => {
         expect(self.targets.length).to.equal(5)
         expect(slides[0].classList.contains('on')).to.equal(true)
         expect(slides[1].classList.contains('on')).to.equal(true)
-        expect(slides[2].classList.contains('on')).to.equal(true)
+        expect(slides[2].classList.contains('on')).to.equal(false)
         expect(slides[3].classList.contains('on')).to.equal(false)
         expect(slides[4].classList.contains('on')).to.equal(false)
         expect(slides[5].classList.contains('on')).to.equal(false)
@@ -759,7 +829,12 @@ describe('demos/components/slider/navigation', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST loop navigation, loop dragging beyond.', function () {
@@ -835,7 +910,7 @@ describe('demos/components/slider/pagination', function () {
     cy.visit(url).window().as('win').document().as('doc')
     cy.get('.demo--slider-pagination').as('demo')
     cy.get('@demo').find('[data-xt-slider]').as('container')
-    cy.get('@demo').find('[data-xt-slider-element]').as('toggles')
+    cy.get('@demo').find('[data-xt-slider-element]:not(.hidden)').as('toggles')
   })
 
   beforeEach(function () {
@@ -843,9 +918,14 @@ describe('demos/components/slider/pagination', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
     toggles = this.toggles
+    cy.get(container).scrollIntoView()
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
@@ -858,19 +938,18 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[2].classList.contains('on')).to.equal(false)
         expect(toggles[3].classList.contains('on')).to.equal(false)
         expect(toggles[4].classList.contains('on')).to.equal(false)
-        expect(toggles[5].classList.contains('on')).to.equal(false)
-        expect(toggles[6].classList.contains('on')).to.equal(true)
+        expect(toggles[5].classList.contains('on')).to.equal(true)
+        expect(toggles[6].classList.contains('on')).to.equal(false)
         expect(toggles[7].classList.contains('on')).to.equal(false)
         expect(toggles[8].classList.contains('on')).to.equal(false)
         expect(toggles[9].classList.contains('on')).to.equal(false)
-        expect(toggles[10].classList.contains('on')).to.equal(false)
+        expect(toggles[10].classList.contains('on')).to.equal(true)
         expect(toggles[11].classList.contains('on')).to.equal(false)
-        expect(toggles[12].classList.contains('on')).to.equal(true)
+        expect(toggles[12].classList.contains('on')).to.equal(false)
         expect(toggles[13].classList.contains('on')).to.equal(false)
         expect(toggles[14].classList.contains('on')).to.equal(false)
-        expect(toggles[15].classList.contains('on')).to.equal(false)
+        expect(toggles[15].classList.contains('on')).to.equal(true)
         expect(toggles[16].classList.contains('on')).to.equal(false)
-        expect(toggles[17].classList.contains('on')).to.equal(false)
       })
       .get(toggles[1])
       .click()
@@ -881,18 +960,17 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[3].classList.contains('on')).to.equal(false)
         expect(toggles[4].classList.contains('on')).to.equal(false)
         expect(toggles[5].classList.contains('on')).to.equal(false)
-        expect(toggles[6].classList.contains('on')).to.equal(false)
-        expect(toggles[7].classList.contains('on')).to.equal(true)
+        expect(toggles[6].classList.contains('on')).to.equal(true)
+        expect(toggles[7].classList.contains('on')).to.equal(false)
         expect(toggles[8].classList.contains('on')).to.equal(false)
         expect(toggles[9].classList.contains('on')).to.equal(false)
         expect(toggles[10].classList.contains('on')).to.equal(false)
-        expect(toggles[11].classList.contains('on')).to.equal(false)
+        expect(toggles[11].classList.contains('on')).to.equal(true)
         expect(toggles[12].classList.contains('on')).to.equal(false)
-        expect(toggles[13].classList.contains('on')).to.equal(true)
+        expect(toggles[13].classList.contains('on')).to.equal(false)
         expect(toggles[14].classList.contains('on')).to.equal(false)
         expect(toggles[15].classList.contains('on')).to.equal(false)
-        expect(toggles[16].classList.contains('on')).to.equal(false)
-        expect(toggles[17].classList.contains('on')).to.equal(false)
+        expect(toggles[16].classList.contains('on')).to.equal(true)
       })
       .wait(100) // racecondition
       .then(() => {
@@ -921,17 +999,17 @@ describe('demos/components/slider/pagination', function () {
         expect(toggles[4].classList.contains('on')).to.equal(false)
         expect(toggles[5].classList.contains('on')).to.equal(false)
         expect(toggles[6].classList.contains('on')).to.equal(false)
-        expect(toggles[7].classList.contains('on')).to.equal(false)
-        expect(toggles[8].classList.contains('on')).to.equal(true)
+        expect(toggles[7].classList.contains('on')).to.equal(true)
+        expect(toggles[8].classList.contains('on')).to.equal(false)
         expect(toggles[9].classList.contains('on')).to.equal(false)
         expect(toggles[10].classList.contains('on')).to.equal(false)
         expect(toggles[11].classList.contains('on')).to.equal(false)
-        expect(toggles[12].classList.contains('on')).to.equal(false)
+        expect(toggles[12].classList.contains('on')).to.equal(true)
         expect(toggles[13].classList.contains('on')).to.equal(false)
-        expect(toggles[14].classList.contains('on')).to.equal(true)
+        expect(toggles[14].classList.contains('on')).to.equal(false)
         expect(toggles[15].classList.contains('on')).to.equal(false)
         expect(toggles[16].classList.contains('on')).to.equal(false)
-        expect(toggles[17].classList.contains('on')).to.equal(false)
+        expect(toggles[17].classList.contains('on')).to.equal(true)
         expect(doc.scrollingElement.scrollTop).to.equal(scroll)
       })
       .get(self.targets[3])
@@ -953,20 +1031,20 @@ describe('demos/components/slider/pagination', function () {
       .trigger('touchend', { force: true })
       .wait(750) // after animation
       .then(() => {
-        expect(toggles[0].classList.contains('on')).to.equal(true)
+        expect(toggles[0].classList.contains('on')).to.equal(false)
         expect(toggles[1].classList.contains('on')).to.equal(false)
         expect(toggles[2].classList.contains('on')).to.equal(false)
-        expect(toggles[3].classList.contains('on')).to.equal(false)
+        expect(toggles[3].classList.contains('on')).to.equal(true)
         expect(toggles[4].classList.contains('on')).to.equal(false)
         expect(toggles[5].classList.contains('on')).to.equal(false)
-        expect(toggles[6].classList.contains('on')).to.equal(true)
+        expect(toggles[6].classList.contains('on')).to.equal(false)
         expect(toggles[7].classList.contains('on')).to.equal(false)
-        expect(toggles[8].classList.contains('on')).to.equal(false)
+        expect(toggles[8].classList.contains('on')).to.equal(true)
         expect(toggles[9].classList.contains('on')).to.equal(false)
         expect(toggles[10].classList.contains('on')).to.equal(false)
         expect(toggles[11].classList.contains('on')).to.equal(false)
-        expect(toggles[12].classList.contains('on')).to.equal(true)
-        expect(toggles[13].classList.contains('on')).to.equal(false)
+        expect(toggles[12].classList.contains('on')).to.equal(false)
+        expect(toggles[13].classList.contains('on')).to.equal(true)
         expect(toggles[14].classList.contains('on')).to.equal(false)
         expect(toggles[15].classList.contains('on')).to.equal(false)
         expect(toggles[16].classList.contains('on')).to.equal(false)
@@ -992,7 +1070,12 @@ describe('demos/components/slider/jump', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST jump and not jump click.', function () {
@@ -1051,7 +1134,12 @@ describe('demos/components/slider/autoheight', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST autoheight.', function () {
@@ -1086,7 +1174,12 @@ describe('demos/components/slider/progress', function () {
     container = this.container[0]
     cy.get(container).scrollIntoView()
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST auto on change.', function () {
@@ -1138,7 +1231,12 @@ describe('demos/components/slider/nooverflow', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST deactivation and position, activation on resize.', function () {
@@ -1181,7 +1279,12 @@ describe('demos/components/slider/nooverflow-false', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST on resize grouping and wrap.', function () {
@@ -1234,8 +1337,14 @@ describe('demos/components/slider/media-loaded', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
   })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
+  })
+
   it('TEST activation and position on change.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
@@ -1278,7 +1387,12 @@ describe('demos/components/slider/dragposition-js', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation and drag activation.', function () {
@@ -1343,7 +1457,12 @@ describe('demos/themes/hero/slider-hero-v2', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST activation and drag activation.', function () {
@@ -1472,7 +1591,12 @@ describe('demos/themes/hero/slider-hero-v1', function () {
     Xt = win.Xt
     container = this.container[0]
     cy.get(container).scrollIntoView()
-    self = Xt.get({ name: 'xt-slider', el: container })
+  })
+
+  beforeEach(function () {
+    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+      self = selfPromise
+    })
   })
 
   it('TEST drag looping going back and forth between first and last, pagination looping first and second to last, drag sx then drag 2 times dx, pagination looping last and second to first, pagination jump combinations, multiple click should not change slide, click after drag should not stop animation.', function () {

@@ -11,7 +11,7 @@ date: "1980-05-05"
 You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-overlay', el: document.querySelector('.my-container') })
+Xt.get({ name: 'xt-overlay', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
 You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
@@ -74,8 +74,9 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 Access properties by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-overlay', el: document.querySelector('.my-container') })
-const container = self.container
+Xt.get({ name: 'xt-overlay', el: document.querySelector('.my-container') }).then(self => {
+  const container = self.container
+})
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
@@ -99,9 +100,9 @@ const container = self.container
 Call methods by getting [self object](/components/global/javascript#xt-get).
 
 ```js
-let self = Xt.get({ name: 'xt-overlay', el: document.querySelector('.my-container') })
-self.destroy()
-self = null
+Xt.get({ name: 'xt-overlay', el: document.querySelector('.my-container') }).then(self => {
+  self.destroy()
+})
 ```
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">

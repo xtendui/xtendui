@@ -75,19 +75,18 @@ class Toggle {
     const self = this
     self.container = object
     self._optionsCustom = optionsCustom
+    self.constructorName = self.constructor.constructorName
     self.componentName = self.constructor.componentName
     self.fileName = self.componentName.split('-').pop()
     self._componentNs = self.componentName.replace('-', '.')
-    // set self
-    Xt._set({ name: self.componentName, el: self.container, self })
     // load
-    return Xt._load({
+    const selfPromise = Xt._load({
       name: 'Toggle',
       suffix: 'Init',
     }).then(() => {
       if (self.componentName !== 'xt-toggle' && self.componentName !== 'xt-overlay') {
         return Xt._load({
-          name: self.constructor.name,
+          name: self.constructorName,
           suffix: 'Init',
         }).then(() => {
           self._init()
@@ -98,6 +97,9 @@ class Toggle {
         return self
       }
     })
+    // set self
+    Xt._set({ name: self.componentName, el: self.container, selfPromise })
+    return selfPromise
   }
 }
 
@@ -105,6 +107,8 @@ class Toggle {
 // options
 //
 
+Toggle.constructorName = 'Toggle'
+Toggle.constructorName = 'Toggle'
 Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
   debug: false,

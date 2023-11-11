@@ -28,6 +28,7 @@ class Slider extends Xt.Toggle {
 // options
 //
 
+Slider.constructorName = 'Slider'
 Slider.componentName = 'xt-slider'
 Slider.optionsDefault = {
   // slider

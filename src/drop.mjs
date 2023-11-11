@@ -28,6 +28,7 @@ class Drop extends Xt.Toggle {
 // options
 //
 
+Drop.constructorName = 'Drop'
 Drop.componentName = 'xt-drop'
 Drop.optionsDefault = {
   // element

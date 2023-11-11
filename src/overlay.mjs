@@ -28,6 +28,7 @@ class Overlay extends Xt.Toggle {
 // options
 //
 
+Overlay.constructorName = 'Overlay'
 Overlay.componentName = 'xt-overlay'
 Overlay.optionsDefault = {
   // element
