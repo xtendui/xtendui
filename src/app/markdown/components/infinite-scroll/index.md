@@ -129,6 +129,7 @@ Xt.get({ name: 'xt-infinitescroll', el: document.querySelector('.my-container') 
 | Property                   | `scrollUp:Nodes`       | Trigger elements when scrolling up             |
 | Property                   | `scrollDown:Nodes`       | Trigger elements when scrolling down             |
 | Property                   | `itemsContainer:Node`       | Items container node             |
+| Property                   | `loadedHtml:Node`       | New html loaded before `populate.xt.infinitescroll` event             |
 | Property                   | `spaceAdditionals:Node`       | Nodes for space additional             |
 | Property                   | `paginations:Node`       | Paginations nodes             |
 | Property                   | `inverse:Boolean`       | If paginating inverse direction             |

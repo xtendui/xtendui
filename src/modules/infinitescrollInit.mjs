@@ -326,6 +326,7 @@ export class InfinitescrollInit {
     // set substitute
     const html = document.createElement('html')
     html.innerHTML = text
+    self.loadedHtml = html
     const itemsContainer = html.querySelector(options.elements.itemsContainer)
     if (options.get && itemsContainer) {
       self._loading = false
