@@ -51,12 +51,12 @@ module.exports = {
       overflow: 'hidden !important',
       '.xt-overlay': {
         overflowY: 'scroll',
-        '.fixed': {
-          marginRight: 'var(--scrollbar-width)',
-        },
       },
       '.xt-backdrop': {
         right: 'var(--scrollbar-width)',
+      },
+      '.fixed': {
+        marginRight: 'var(--scrollbar-width)',
       },
     },
   }),
