@@ -8,8 +8,8 @@ import remarkParse from 'remark-parse'
 import rehypeParse from 'rehype-parse'
 import rehypeReact from 'rehype-react'
 import addClasses from 'rehype-add-classes'
+import * as production from 'react/jsx-runtime'
 import rehypeExternalLinks from 'rehype-external-links'
-import { createElement } from 'react'
 import Demo from 'src/app/includes/demo'
 import DemoInline from 'src/app/includes/demo-inline'
 
@@ -81,7 +81,7 @@ export async function getPostData(post) {
       rel: ['noopener noreferrer'],
     })
     .use(rehypeReact, {
-      createElement,
+      ...production,
       components: {
         demo: Demo,
         demoinline: DemoInline,
