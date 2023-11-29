@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint-config-next": "^14.0.3",
     "focus-trap": "^7.5.4",
     "lodash": "^4.17.21",
