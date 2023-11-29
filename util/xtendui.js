@@ -1,5 +1,5 @@
 import { Xt } from 'xtendui'
-import 'xtendui/dist/xtend-components'
+import 'xtendui/util/xtend-components'
 
 // export UMD
 /* eslint-disable */

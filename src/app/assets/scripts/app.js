@@ -1,5 +1,5 @@
 import 'xtendui'
-import '../../../../dist/xtend-components'
+import '../../../../util/xtend-components'
 
 import './_common.js'
 import './_header.js'

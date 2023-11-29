@@ -5,7 +5,7 @@
 @import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.css";
 @import "./_prism.css";
 
-@import "../../../../dist/xtend-demos.css";
+@import "../../../../util/xtend-demos.css";
 
 @import "./_common.css";
 @import "./_header.css";

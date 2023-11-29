@@ -7,7 +7,7 @@ async function compileCss() {
   for (const file of cssFiles.sort()) {
     cssDemos += `@import '../${file}';\n`
   }
-  writeFile('./dist/xtend-demos.css', cssDemos)
+  writeFile('./util/xtend-demos.css', cssDemos)
 }
 compileCss()
 
@@ -17,6 +17,6 @@ async function compileJs() {
   for (const file of jsFiles.sort()) {
     jsComponents += `import '../${file}'\n`
   }
-  writeFile('./dist/xtend-components.js', jsComponents)
+  writeFile('./util/xtend-components.js', jsComponents)
 }
 compileJs()

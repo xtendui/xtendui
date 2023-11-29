@@ -8,11 +8,12 @@ module.exports = {
   performance: { hints: false },
   context: path.resolve(__dirname, ''),
   entry: {
-    xtendui: ['./dist/xtendui.js', './dist/xtendui.css'],
+    xtendui: ['./util/xtendui.js', './util/xtendui.css'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].min.js',
+    clean: true,
   },
   resolve: {
     alias: {

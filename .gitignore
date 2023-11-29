@@ -37,11 +37,7 @@ next-env.d.ts
 # build
 .env
 *.tgz
-**/*.min.css
-**/*.min.css.map
-**/*.min.js
-**/*.min.js.map
-**/*.LICENSE.txt
+dist
 
 # test
 tests/cypress/videos/

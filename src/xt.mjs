@@ -384,7 +384,7 @@ if (typeof window !== 'undefined') {
    * @param {Object} params.suffix Class suffix
    */
   Xt._load = ({ name, suffix } = {}) => {
-    return import(`./${name.toLowerCase()}${suffix}.mjs`).then(module => {
+    return import(`./modules/${name.toLowerCase()}${suffix}.mjs`).then(module => {
       if (!Xt[name].loaded[name]) {
         Xt[name].loaded[name] = true
         Object.setPrototypeOf(Xt[name].prototype, module[`${name}${suffix}`].prototype)

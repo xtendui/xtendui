@@ -1,4 +1,5 @@
 import '../src/drop.mjs'
+import '../src/dropInit.mjs'
 import '../src/form.mjs'
 import '../src/googlelocator.mjs'
 import '../src/groupnumber.mjs'
