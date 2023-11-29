@@ -486,8 +486,8 @@ export class GooglelocatorInit {
       type === 'marker'
         ? options.events.animateMarkerClick
         : type === 'result'
-        ? options.events.animateMarkerResultClick
-        : null
+          ? options.events.animateMarkerResultClick
+          : null
     if (anim) {
       loc.setAnimation(anim)
       self._animatingLoc = loc
@@ -505,8 +505,8 @@ export class GooglelocatorInit {
         type === 'marker'
           ? options.events.infoWindowMarkerClick
           : type === 'result'
-          ? options.events.infoWindowMarkerResultClick
-          : null
+            ? options.events.infoWindowMarkerResultClick
+            : null
       if (info) {
         if (item) {
           const content = options.formatData.info(self, loc, item)

@@ -133,8 +133,8 @@ export default function Header({ page }) {
                                   ? markdownSlug(page.post) === markdownSlug(post)
                                     ? 'on'
                                     : post.frontmatter.type === page.post.frontmatter.type
-                                    ? 'current'
-                                    : ''
+                                      ? 'current'
+                                      : ''
                                   : ''
                               }`}>
                               <div className="docs_button-site_article_sidebar_inner">{post.frontmatter.title}</div>
@@ -170,9 +170,9 @@ export default function Header({ page }) {
                                                 markdownSlug(page.post) === markdownSlug(post)
                                                   ? 'on'
                                                   : page.post.frontmatter.parent === post.frontmatter.parent &&
-                                                    post.frontmatter.category === page.post.frontmatter.category
-                                                  ? 'current'
-                                                  : ''
+                                                      post.frontmatter.category === page.post.frontmatter.category
+                                                    ? 'current'
+                                                    : ''
                                               }`}>
                                               <div className="docs_button-site_article_sidebar_inner">
                                                 <div className="docs_button-site_article_sidebar_text">

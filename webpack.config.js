@@ -1,14 +1,14 @@
 const path = require('path')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
   mode: 'production',
   performance: { hints: false },
   context: path.resolve(__dirname, ''),
   entry: {
-    'xtendui': ['./dist/xtendui.js', './dist/xtendui.css'],
+    xtendui: ['./dist/xtendui.js', './dist/xtendui.css'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -79,10 +79,7 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimizer: [
-      new TerserJSPlugin(),
-      new CssMinimizerPlugin(),
-    ],
+    minimizer: [new TerserJSPlugin(), new CssMinimizerPlugin()],
   },
   devtool: 'source-map',
 }
