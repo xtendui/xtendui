@@ -4,7 +4,7 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-import { Xt } from './xt.mjs'
+import { Xt } from '../xt.mjs'
 import { createPopper } from '@popperjs/core'
 Xt.createPopper = createPopper
 
