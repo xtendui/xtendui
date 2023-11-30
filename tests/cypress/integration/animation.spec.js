@@ -224,7 +224,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
       })
       .get(self.elements[0])
       .click()
-      .wait(750) // after animation
+      .wait(1000) // after animation
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
