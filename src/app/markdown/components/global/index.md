@@ -47,4 +47,47 @@ These are layout **component classes**.
 | Component                  | `.xt-backdrop`                     | `xt-backdrop`                | Backdrop styles            |
 | Component                  | `.xt-design`                     | `xt-design`                | Setup design styles in position absolute            |
 
+For example to modify the `.xt-overflow-main` and `.xt-overflow-sub` scrollbar colors/size, and the `::selection` color, use this code in `tailwind.config.js`.
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      xtendui: {
+        global: {
+          component: theme => ({
+            '::selection': {
+              backgroundColor: theme('colors.primary.500'),
+              color: theme('colors.white'),
+            },
+            '.xt-overflow-main': {
+              '&::-webkit-scrollbar': {
+                height: '10px',
+                width: '10px',
+                background: theme('colors.white'),
+              },
+              '&::-webkit-scrollbar-thumb': {
+                background: theme('colors.primary.500'),
+              },
+              scrollbarColor: `${theme('colors.primary.500')} ${theme('colors.white')}`,
+            },
+            '.xt-overflow-sub': {
+              '&::-webkit-scrollbar': {
+                height: '5px',
+                width: '5px',
+                background: 'transparent',
+              },
+              '&::-webkit-scrollbar-thumb': {
+                background: theme('colors.gray.500'),
+              },
+              scrollbarColor: `${theme('colors.gray.500')} transparent`,
+            },
+          }),
+        },
+      },
+    },
+  },
+}
+```
+
 </div>
