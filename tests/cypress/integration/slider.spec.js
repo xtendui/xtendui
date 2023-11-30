@@ -762,9 +762,10 @@ describe('demos/components/slider/exclude', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
-      return Xt.get({ name: 'xt-toggle', el: containerToggle })
+    return Xt.get({ name: 'xt-toggle', el: containerToggle }).then(() => {
+      return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+        self = selfPromise
+      })
     })
   })
 
