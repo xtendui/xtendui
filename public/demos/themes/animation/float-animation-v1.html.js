@@ -130,7 +130,7 @@ const html = /* HTML */ `
             </div>
           </div>
           <div
-            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
+            class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </div>
 
@@ -192,7 +192,7 @@ const html = /* HTML */ `
             </div>
           </div>
           <div
-            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
+            class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </div>
     </div>
@@ -239,7 +239,7 @@ const html = /* HTML */ `
             </div>
           </div>
           <div
-            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
+            class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-black *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </span>
 
@@ -271,7 +271,7 @@ const html = /* HTML */ `
             </div>
           </div>
           <div
-            class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
+            class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
         </div>
       </span>
     </div>

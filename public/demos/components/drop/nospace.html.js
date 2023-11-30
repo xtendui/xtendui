@@ -32,7 +32,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 w-3 h-3 bg-white"></div>
+          <div class="xt-arrow rotate-45 -inset-1 w-3 h-3 bg-white"></div>
         </div>
       </div>
 
@@ -65,7 +65,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 w-3 h-3 bg-white"></div>
+          <div class="xt-arrow rotate-45 -inset-1 w-3 h-3 bg-white"></div>
         </div>
       </div>
 
@@ -98,7 +98,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow -inset-1 w-3 h-3 bg-white"></div>
+          <div class="xt-arrow rotate-45 -inset-1 w-3 h-3 bg-white"></div>
         </div>
       </div>
     </div>

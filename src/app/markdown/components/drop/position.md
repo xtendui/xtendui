@@ -21,7 +21,7 @@ If you want to **control a specific drop position** use `[data-xt-position=<valu
 
 </div>
 
-Use `<div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>` inside `.xt-drop` to add an arrow..
+Use `<div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>` inside `.xt-drop` to add an arrow..
 
 > If you cange any of **`xt-drop` padding** or **`xt-arrow` margin and size** you need to **revisit all of those sizes**.
 
@@ -38,7 +38,7 @@ Use `<div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>` insi
   </demoinline>
 </demo>
 
-To not have **space** just omit `.xt-drop` **padding** and `.xt-arrow` **margin**.
+To not have **space** just omit `.xt-drop` **padding** and `.xt-arrow` **margin and `z-below`**.
 
 <demo>
   <demoinline src="demos/components/drop/nospace">

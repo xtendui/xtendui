@@ -17,7 +17,7 @@ const html = /* HTML */ `
               class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
               <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
-            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+            <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@ const html = /* HTML */ `
               class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
               <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
-            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+            <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@ const html = /* HTML */ `
               class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
               <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
             </div>
-            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
+            <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-black"></div>
           </div>
         </div>
       </div>

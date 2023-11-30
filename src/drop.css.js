@@ -25,7 +25,6 @@ module.exports = {
       '> .xt-arrow': {
         position: 'absolute',
         pointerEvents: 'none',
-        transform: 'rotate(45deg)',
       },
     },
   }),
