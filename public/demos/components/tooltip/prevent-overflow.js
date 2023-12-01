@@ -11,7 +11,7 @@ const mountTooltip = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Tooltip(tooltip, {
     mouseParent: true,
     position: 'bottom-end',

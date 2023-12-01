@@ -18,7 +18,7 @@ const mountSlider = ({ ref }) => {
   const fillerEase = 'linear'
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Slider(slider, {
     auto: {
       time: 4000,

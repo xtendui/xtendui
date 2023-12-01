@@ -29,7 +29,7 @@ const mountRipple = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Ripple(item, {}).then(self => {
     // on
 

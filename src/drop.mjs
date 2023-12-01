@@ -107,7 +107,7 @@ if (typeof window !== 'undefined') {
 
       // init
 
-      let selfDestroy
+      let selfDestroy = () => {}
       new Xt.Drop(ref, options).then(self => {
         selfDestroy = () => {
           self.destroy()

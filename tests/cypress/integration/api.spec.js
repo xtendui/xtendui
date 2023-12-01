@@ -19,7 +19,9 @@ describe('demos/components/toggle/disabled', function () {
     Xt = win.Xt
     container = this.container[0]
     container1 = this.container[1]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -95,7 +97,9 @@ describe('demos/components/overlay/disabled', function () {
     Xt = win.Xt
     container = this.container[0]
     container1 = this.container[1]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -166,7 +170,9 @@ describe('demos/components/slider/disabled', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -176,35 +182,39 @@ describe('demos/components/slider/disabled', function () {
   })
 
   it('TEST slider instant position, wrap on resize and activation on resize.', function () {
-    expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal('')
-    expect(self.targets[4].classList.contains('on')).to.equal(true)
-    expect(self.targets[5].classList.contains('on')).to.equal(true)
-    cy.frameDouble()
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
-        expect(self.targets[4].classList.contains('in')).to.equal(true)
-        expect(self.targets[5].classList.contains('in')).to.equal(true)
-        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-1376px)')
-      })
-      .viewport('iphone-6')
-      .get(container)
-      .should('have.not.attr', 'data-xt-slider-disabled') // racecondition
-      .frame()
-      .then(() => {
-        expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal(null)
+        expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal('')
         expect(self.targets[4].classList.contains('on')).to.equal(true)
-        expect(self.targets[5].classList.contains('on')).to.equal(false)
-        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-733px)')
-        cy.frameDouble().then(() => {
-          expect(self.targets[4].classList.contains('in')).to.equal(true)
-          expect(self.targets[5].classList.contains('in')).to.equal(false)
-        })
-      })
-      .wait(500)
-      .get('[data-xt-slider-element]')
-      .eq(6)
-      .click()
-      .then(() => {
-        expect(self.targets[0].style.transform).to.equal('translateX(1313.5px)')
+        expect(self.targets[5].classList.contains('on')).to.equal(true)
+        cy.frameDouble()
+          .then(() => {
+            expect(self.targets[4].classList.contains('in')).to.equal(true)
+            expect(self.targets[5].classList.contains('in')).to.equal(true)
+            expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-1376px)')
+          })
+          .viewport('iphone-6')
+          .get(container)
+          .should('have.not.attr', 'data-xt-slider-disabled') // racecondition
+          .frame()
+          .then(() => {
+            expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal(null)
+            expect(self.targets[4].classList.contains('on')).to.equal(true)
+            expect(self.targets[5].classList.contains('on')).to.equal(false)
+            expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-733px)')
+            cy.frameDouble().then(() => {
+              expect(self.targets[4].classList.contains('in')).to.equal(true)
+              expect(self.targets[5].classList.contains('in')).to.equal(false)
+            })
+          })
+          .wait(500)
+          .get('[data-xt-slider-element]')
+          .eq(6)
+          .click()
+          .then(() => {
+            expect(self.targets[0].style.transform).to.equal('translateX(1313.5px)')
+          })
       })
   })
 })
@@ -225,7 +235,9 @@ describe('demos/components/toggle/matches', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -235,29 +247,33 @@ describe('demos/components/toggle/matches', function () {
   })
 
   it('TEST matches.', function () {
-    expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
-    expect(self.targets[0].classList.contains('on')).to.equal(true)
-    expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
-    expect(self.targets[1].classList.contains('on')).to.equal(false)
-    cy.get(self.elements[1])
-      .click()
+    cy.get(container)
+      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
       .then(() => {
-        expect(self.options.max).to.equal(2)
-        expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
-        expect(self.targets[0].classList.contains('on')).to.equal(true)
-        expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
-        expect(self.targets[1].classList.contains('on')).to.equal(true)
-      })
-      .viewport('iphone-6')
-      .get(self.targets[1])
-      .should('have.not.class', 'on') // racecondition
-      .frame()
-      .then(() => {
-        expect(self.options.max).to.equal(1)
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
+        cy.get(self.elements[1])
+          .click()
+          .then(() => {
+            expect(self.options.max).to.equal(2)
+            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(win.Xt.visible({ el: self.targets[1] })).to.equal(true)
+            expect(self.targets[1].classList.contains('on')).to.equal(true)
+          })
+          .viewport('iphone-6')
+          .get(self.targets[1])
+          .should('have.not.class', 'on') // racecondition
+          .frame()
+          .then(() => {
+            expect(self.options.max).to.equal(1)
+            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+            expect(self.targets[0].classList.contains('on')).to.equal(true)
+            expect(win.Xt.visible({ el: self.targets[1] })).to.equal(false)
+            expect(self.targets[1].classList.contains('on')).to.equal(false)
+          })
       })
   })
 })
@@ -277,7 +293,7 @@ describe('demos/components/toggle/api', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -383,7 +399,7 @@ describe('demos/components/overlay/api', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -432,7 +448,7 @@ describe('demos/components/slider/api', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {

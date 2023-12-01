@@ -18,7 +18,9 @@ describe('demos/hidden/test/mount-unmount', function () {
     Xt = win.Xt
     demo = this.demo[0]
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -28,18 +30,31 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST mount root once, this should be 1 on init, should remain 1 on deactivation.', function () {
-    expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
-    container.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
-    expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
+    cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .frame()
+      .then(() => {
+        expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
+        container.dispatchEvent(new CustomEvent('off.trigger.xt.overlay'))
+        expect(demo.getAttribute('data-test-mountroot')).to.equal('1')
+      })
   })
 
   it('TEST init xtNamespace, should be 1.', function () {
-    const xtNamespace = Xt.dataStorage.get(self.ns, 'xtNamespace')
-    expect(xtNamespace.length).to.equal(1)
+    cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .then(() => {
+        const xtNamespace = Xt.dataStorage.get(self.ns, 'xtNamespace')
+        expect(xtNamespace.length).to.equal(1)
+      })
   })
 
   it('TEST init classes and properties, should be `true true true true`.', function () {
-    expect(demo.getAttribute('data-test-initial')).to.equal('true true true true')
+    cy.get(demo)
+      .should('have.attr', 'data-test-initial') // racecondition
+      .then(() => {
+        expect(demo.getAttribute('data-test-initial')).to.equal('true true true true')
+      })
   })
 
   it('TEST after init classes and properties, should be `true true false false`.', function () {
@@ -103,7 +118,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
     Xt = win.Xt
     demo = this.demo[0]
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -206,7 +221,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
     Xt = win.Xt
     container = this.container[0]
     backdrop = this.backdrop[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -404,7 +419,7 @@ describe('demos/components/scrollto/overlay', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -497,7 +512,7 @@ describe('demos/components/scrollto/toggle', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -584,7 +599,7 @@ describe('demos/components/infinitescroll/usage', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {

@@ -16,7 +16,9 @@ describe('demos/components/slider/align-center', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -69,7 +71,9 @@ describe('demos/components/slider/align-left', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -122,7 +126,9 @@ describe('demos/components/slider/align-right', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -175,7 +181,9 @@ describe('demos/components/slider/contain-false-center', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -228,7 +236,9 @@ describe('demos/components/slider/contain-false-left', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -281,7 +291,9 @@ describe('demos/components/slider/contain-false-right', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -334,7 +346,9 @@ describe('demos/components/slider/wrap-nospace', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -393,7 +407,9 @@ describe('demos/components/slider/wrap-center', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -460,7 +476,9 @@ describe('demos/components/slider/wrap-left', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -527,7 +545,9 @@ describe('demos/components/slider/wrap-right', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -594,7 +614,9 @@ describe('demos/components/slider/group', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -683,7 +705,9 @@ describe('demos/components/slider/group-same-false', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -758,7 +782,9 @@ describe('demos/components/slider/exclude', function () {
     containerToggle = this.demo[0]
     toggles = this.toggles
     slides = this.slides
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -829,7 +855,9 @@ describe('demos/components/slider/navigation', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -904,14 +932,12 @@ describe('demos/components/slider/pagination', function () {
   let Xt
   let container
   let self
-  let toggles
   let scroll
 
   beforeEach(function () {
     cy.visit(url).window().as('win').document().as('doc')
     cy.get('.demo--slider-pagination').as('demo')
     cy.get('@demo').find('[data-xt-slider]').as('container')
-    cy.get('@demo').find('[data-xt-slider-element]:not(.hidden)').as('toggles')
   })
 
   beforeEach(function () {
@@ -919,8 +945,9 @@ describe('demos/components/slider/pagination', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
-    toggles = this.toggles
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -934,54 +961,54 @@ describe('demos/components/slider/pagination', function () {
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
         expect(self.elements.length).to.equal(40)
-        expect(toggles[0].classList.contains('on')).to.equal(true)
-        expect(toggles[1].classList.contains('on')).to.equal(false)
-        expect(toggles[2].classList.contains('on')).to.equal(false)
-        expect(toggles[3].classList.contains('on')).to.equal(false)
-        expect(toggles[4].classList.contains('on')).to.equal(false)
-        expect(toggles[5].classList.contains('on')).to.equal(true)
-        expect(toggles[6].classList.contains('on')).to.equal(false)
-        expect(toggles[7].classList.contains('on')).to.equal(false)
-        expect(toggles[8].classList.contains('on')).to.equal(false)
-        expect(toggles[9].classList.contains('on')).to.equal(false)
-        expect(toggles[10].classList.contains('on')).to.equal(true)
-        expect(toggles[11].classList.contains('on')).to.equal(false)
-        expect(toggles[12].classList.contains('on')).to.equal(false)
-        expect(toggles[13].classList.contains('on')).to.equal(false)
-        expect(toggles[14].classList.contains('on')).to.equal(false)
-        expect(toggles[15].classList.contains('on')).to.equal(true)
-        expect(toggles[16].classList.contains('on')).to.equal(false)
+        expect(self.elements[0].classList.contains('on')).to.equal(true)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(true)
+        expect(self.elements[6].classList.contains('on')).to.equal(false)
+        expect(self.elements[7].classList.contains('on')).to.equal(false)
+        expect(self.elements[8].classList.contains('on')).to.equal(false)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(true)
+        expect(self.elements[11].classList.contains('on')).to.equal(false)
+        expect(self.elements[12].classList.contains('on')).to.equal(false)
+        expect(self.elements[13].classList.contains('on')).to.equal(false)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(true)
+        expect(self.elements[16].classList.contains('on')).to.equal(false)
       })
-      .get(toggles[1])
+      .get(self.elements[1])
       .click()
       .then(() => {
-        expect(toggles[0].classList.contains('on')).to.equal(false)
-        expect(toggles[1].classList.contains('on')).to.equal(true)
-        expect(toggles[2].classList.contains('on')).to.equal(false)
-        expect(toggles[3].classList.contains('on')).to.equal(false)
-        expect(toggles[4].classList.contains('on')).to.equal(false)
-        expect(toggles[5].classList.contains('on')).to.equal(false)
-        expect(toggles[6].classList.contains('on')).to.equal(true)
-        expect(toggles[7].classList.contains('on')).to.equal(false)
-        expect(toggles[8].classList.contains('on')).to.equal(false)
-        expect(toggles[9].classList.contains('on')).to.equal(false)
-        expect(toggles[10].classList.contains('on')).to.equal(false)
-        expect(toggles[11].classList.contains('on')).to.equal(true)
-        expect(toggles[12].classList.contains('on')).to.equal(false)
-        expect(toggles[13].classList.contains('on')).to.equal(false)
-        expect(toggles[14].classList.contains('on')).to.equal(false)
-        expect(toggles[15].classList.contains('on')).to.equal(false)
-        expect(toggles[16].classList.contains('on')).to.equal(true)
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(true)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[6].classList.contains('on')).to.equal(true)
+        expect(self.elements[7].classList.contains('on')).to.equal(false)
+        expect(self.elements[8].classList.contains('on')).to.equal(false)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(false)
+        expect(self.elements[11].classList.contains('on')).to.equal(true)
+        expect(self.elements[12].classList.contains('on')).to.equal(false)
+        expect(self.elements[13].classList.contains('on')).to.equal(false)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(false)
+        expect(self.elements[16].classList.contains('on')).to.equal(true)
       })
       .wait(100) // racecondition
       .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
-      .get(toggles[6])
+      .get(self.elements[6])
       .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
       .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -200, clientY: 0 }] })
       .then(() => {
-        expect(toggles[6].closest('.pointer-events-none')).to.not.equal(null)
+        expect(self.elements[6].closest('.pointer-events-none')).to.not.equal(null)
       })
       .trigger('touchmove', {
         clientX: undefined,
@@ -993,24 +1020,24 @@ describe('demos/components/slider/pagination', function () {
       .trigger('touchend', { force: true })
       .wait(750) // after animation
       .then(() => {
-        expect(toggles[0].classList.contains('on')).to.equal(false)
-        expect(toggles[1].classList.contains('on')).to.equal(false)
-        expect(toggles[2].classList.contains('on')).to.equal(true)
-        expect(toggles[3].classList.contains('on')).to.equal(false)
-        expect(toggles[4].classList.contains('on')).to.equal(false)
-        expect(toggles[5].classList.contains('on')).to.equal(false)
-        expect(toggles[6].classList.contains('on')).to.equal(false)
-        expect(toggles[7].classList.contains('on')).to.equal(true)
-        expect(toggles[8].classList.contains('on')).to.equal(false)
-        expect(toggles[9].classList.contains('on')).to.equal(false)
-        expect(toggles[10].classList.contains('on')).to.equal(false)
-        expect(toggles[11].classList.contains('on')).to.equal(false)
-        expect(toggles[12].classList.contains('on')).to.equal(true)
-        expect(toggles[13].classList.contains('on')).to.equal(false)
-        expect(toggles[14].classList.contains('on')).to.equal(false)
-        expect(toggles[15].classList.contains('on')).to.equal(false)
-        expect(toggles[16].classList.contains('on')).to.equal(false)
-        expect(toggles[17].classList.contains('on')).to.equal(true)
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(true)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[6].classList.contains('on')).to.equal(false)
+        expect(self.elements[7].classList.contains('on')).to.equal(true)
+        expect(self.elements[8].classList.contains('on')).to.equal(false)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(false)
+        expect(self.elements[11].classList.contains('on')).to.equal(false)
+        expect(self.elements[12].classList.contains('on')).to.equal(true)
+        expect(self.elements[13].classList.contains('on')).to.equal(false)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(false)
+        expect(self.elements[16].classList.contains('on')).to.equal(false)
+        expect(self.elements[17].classList.contains('on')).to.equal(true)
         expect(doc.scrollingElement.scrollTop).to.equal(scroll)
       })
       .get(self.targets[3])
@@ -1021,35 +1048,35 @@ describe('demos/components/slider/pagination', function () {
       .then(() => {
         expect(doc.scrollingElement.scrollTop).to.not.equal(scroll)
       })
-      .get(toggles[18])
+      .get(self.elements[18])
       .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
       .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })
       .then(() => {
-        expect(toggles[6].closest('.pointer-events-none')).to.equal(null)
+        expect(self.elements[6].closest('.pointer-events-none')).to.equal(null)
       })
       .wait(100)
       .trigger('click')
       .trigger('touchend', { force: true })
       .wait(750) // after animation
       .then(() => {
-        expect(toggles[0].classList.contains('on')).to.equal(false)
-        expect(toggles[1].classList.contains('on')).to.equal(false)
-        expect(toggles[2].classList.contains('on')).to.equal(false)
-        expect(toggles[3].classList.contains('on')).to.equal(true)
-        expect(toggles[4].classList.contains('on')).to.equal(false)
-        expect(toggles[5].classList.contains('on')).to.equal(false)
-        expect(toggles[6].classList.contains('on')).to.equal(false)
-        expect(toggles[7].classList.contains('on')).to.equal(false)
-        expect(toggles[8].classList.contains('on')).to.equal(true)
-        expect(toggles[9].classList.contains('on')).to.equal(false)
-        expect(toggles[10].classList.contains('on')).to.equal(false)
-        expect(toggles[11].classList.contains('on')).to.equal(false)
-        expect(toggles[12].classList.contains('on')).to.equal(false)
-        expect(toggles[13].classList.contains('on')).to.equal(true)
-        expect(toggles[14].classList.contains('on')).to.equal(false)
-        expect(toggles[15].classList.contains('on')).to.equal(false)
-        expect(toggles[16].classList.contains('on')).to.equal(false)
-        expect(toggles[17].classList.contains('on')).to.equal(false)
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(true)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[6].classList.contains('on')).to.equal(false)
+        expect(self.elements[7].classList.contains('on')).to.equal(false)
+        expect(self.elements[8].classList.contains('on')).to.equal(true)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(false)
+        expect(self.elements[11].classList.contains('on')).to.equal(false)
+        expect(self.elements[12].classList.contains('on')).to.equal(false)
+        expect(self.elements[13].classList.contains('on')).to.equal(true)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(false)
+        expect(self.elements[16].classList.contains('on')).to.equal(false)
+        expect(self.elements[17].classList.contains('on')).to.equal(false)
       })
   })
 })
@@ -1070,7 +1097,9 @@ describe('demos/components/slider/jump', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1134,7 +1163,9 @@ describe('demos/components/slider/autoheight', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1173,8 +1204,12 @@ describe('demos/components/slider/progress', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1231,7 +1266,9 @@ describe('demos/components/slider/nooverflow', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1279,7 +1316,9 @@ describe('demos/components/slider/nooverflow-false', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1337,7 +1376,9 @@ describe('demos/components/slider/media-loaded', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1387,7 +1428,9 @@ describe('demos/components/slider/dragposition-js', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1457,7 +1500,7 @@ describe('demos/themes/hero/slider-hero-v2', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1591,7 +1634,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {

@@ -53,6 +53,7 @@ class Infinitescroll {
     self._componentNs = self.componentName.replace('-', '.')
     // load
     const selfPromise = Xt._load({
+      container: self.container,
       name: self.constructorName,
       suffix: 'Init',
     }).then(() => {
@@ -119,7 +120,7 @@ if (typeof window !== 'undefined') {
 
       // init
 
-      let selfDestroy
+      let selfDestroy = () => {}
       new Xt.Infinitescroll(ref, options).then(self => {
         selfDestroy = () => {
           self.destroy()

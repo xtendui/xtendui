@@ -237,6 +237,39 @@ if (typeof window !== 'undefined') {
   //
 
   /**
+   * intersection observer
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container DOM element
+   * @param {Promise} params.promise Return promise
+   * @param {Boolean} params.observer If load with IntersectionObserver
+   * @param {Object} params.observerOptions IntersectionObserver options
+   * @param {Object} params.observerIntersectionRatio IntersectionObserver intersectionRatio
+   */
+  Xt._observe = ({
+    container,
+    promise,
+    observer,
+    observerOptions = { root: null },
+    observerIntersectionRatio = 0,
+  } = {}) => {
+    if (observer) {
+      return new Promise(resolve => {
+        const observer = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.intersectionRatio > observerIntersectionRatio) {
+              observer.disconnect()
+              resolve(promise)
+            }
+          })
+        }, observerOptions)
+        observer.observe(container)
+      })
+    } else {
+      return promise
+    }
+  }
+
+  /**
    * set component
    * @param {Object} params
    * @param {String} params.name Component name
@@ -252,10 +285,18 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {String} params.name Component name
    * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
+   * @param {Boolean} params.observer If load with IntersectionObserver
+   * @param {Object} params.observerOptions IntersectionObserver options
+   * @param {Object} params.observerIntersectionRatio IntersectionObserver intersectionRatio
    * @return {Object}
    */
-  Xt.get = ({ name, el } = {}) => {
-    return Xt.dataStorage.get(el, name) ?? Promise.resolve()
+  Xt.get = ({ name, el, observer = false, observerOptions = { root: null }, observerIntersectionRatio = 0 } = {}) => {
+    // if container :visible and needs to be height > 0 or intersection observer doesn't fire
+    observer = observer ?? el.offsetHeight > 0
+    const promise = new Promise(resolve => {
+      resolve(Xt.dataStorage.get(el, name))
+    })
+    return Xt._observe({ container: el, promise, observer, observerOptions, observerIntersectionRatio })
   }
 
   /**
@@ -380,16 +421,28 @@ if (typeof window !== 'undefined') {
   /**
    * load
    * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container DOM element
    * @param {Object} params.name Class Name
    * @param {Object} params.suffix Class suffix
+   * @param {Boolean} params.observer If load with IntersectionObserver
+   * @param {Object} params.observerOptions IntersectionObserver options
+   * @param {Object} params.observerIntersectionRatio IntersectionObserver intersectionRatio
    */
-  Xt._load = ({ name, suffix } = {}) => {
-    return import(`./modules/${name.toLowerCase()}${suffix}.mjs`).then(module => {
-      if (!Xt[name].loaded[name]) {
-        Xt[name].loaded[name] = true
-        Object.setPrototypeOf(Xt[name].prototype, module[`${name}${suffix}`].prototype)
-      }
-    })
+  Xt._load = ({ container, name, suffix, observer = false, observerOptions, observerIntersectionRatio } = {}) => {
+    // if container :visible and needs to be height > 0 or intersection observer doesn't fire
+    observer = observer ?? container.offsetHeight > 0
+    let promise
+    if (!Xt[name].loaded[name]) {
+      promise = import(`./modules/${name.toLowerCase()}${suffix}.mjs`).then(module => {
+        if (!Xt[name].loaded[name]) {
+          Xt[name].loaded[name] = true
+          Object.setPrototypeOf(Xt[name].prototype, module[`${name}${suffix}`].prototype)
+        }
+      })
+    } else {
+      promise = Promise.resolve()
+    }
+    return Xt._observe({ container, promise, observer, observerOptions, observerIntersectionRatio })
   }
 
   //

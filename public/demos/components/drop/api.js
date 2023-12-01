@@ -10,7 +10,7 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Drop(drop, {
     closeOutside: false,
   }).then(self => {

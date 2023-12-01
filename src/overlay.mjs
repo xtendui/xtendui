@@ -101,7 +101,7 @@ if (typeof window !== 'undefined') {
 
       // init
 
-      let selfDestroy
+      let selfDestroy = () => {}
       new Xt.Overlay(ref, options).then(self => {
         selfDestroy = () => {
           self.destroy()

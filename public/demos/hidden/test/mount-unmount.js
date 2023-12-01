@@ -8,7 +8,7 @@ const mountTest = ({ ref }) => {
   // vars
 
   const overlay = ref.querySelector('[data-xt-overlay]')
-  let selfDestroy
+  let selfDestroy = () => {}
 
   Xt.get({ name: 'xt-overlay', el: overlay }).then(self => {
     const tr = self.targets[0]

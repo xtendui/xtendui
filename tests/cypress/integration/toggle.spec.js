@@ -15,7 +15,7 @@ describe('demos/components/overlay/usage-self', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -91,7 +91,9 @@ describe('demos/components/toggle/class', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -178,7 +180,9 @@ describe('demos/components/toggle/quantity', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -249,7 +253,9 @@ describe('demos/components/toggle/multiple-group', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -340,7 +346,9 @@ describe('demos/components/toggle/multiple-nogroupelements', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -431,7 +439,9 @@ describe('demos/components/toggle/event', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -504,8 +514,10 @@ describe('demos/components/drop/event', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
     container1 = this.container[1]
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -595,7 +607,9 @@ describe('demos/components/toggle/prevent-event', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -639,7 +653,7 @@ describe('demos/components/toggle/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -698,7 +712,7 @@ describe('demos/components/toggle/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).closest('.docs_demo').scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -852,7 +866,7 @@ describe('demos/components/overlay/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).closest('.docs_demo').scrollIntoView({ offset: { top: 0, left: 0 } })
     container1 = this.container[1]
   })
 
@@ -946,7 +960,7 @@ describe('demos/components/slider/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container).closest('.docs_demo').scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1062,7 +1076,9 @@ describe('demos/components/drop/backdrop', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
     container1 = this.container[1]
   })
 
@@ -1146,7 +1162,9 @@ describe('demos/components/tooltip/swap-click', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1212,7 +1230,9 @@ describe('demos/components/tooltip/swap-toggle', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1277,7 +1297,9 @@ describe('demos/components/tooltip/prevent-overflow', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1317,7 +1339,9 @@ describe('demos/components/overlay/animation-noqueue', function () {
     doc = this.doc
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1378,7 +1402,9 @@ describe('demos/components/drop/reset-to-current', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {

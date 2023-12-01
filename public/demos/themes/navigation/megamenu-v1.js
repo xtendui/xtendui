@@ -28,7 +28,7 @@ const mountDrops = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Drop(megamenu, {
     mouseParent: true,
     queue: false,

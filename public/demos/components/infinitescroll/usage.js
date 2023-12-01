@@ -11,7 +11,7 @@ const mountInfinitescroll = ({ ref }) => {
   // init
 
   /***/
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Infinitescroll(infinitescroll, {
     get: false, // put here your url parameter as string
     max: 4,

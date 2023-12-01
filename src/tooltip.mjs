@@ -111,7 +111,7 @@ if (typeof window !== 'undefined') {
 
       // init
 
-      let selfDestroy
+      let selfDestroy = () => {}
       new Xt.Tooltip(ref, options).then(self => {
         selfDestroy = () => {
           self.destroy()

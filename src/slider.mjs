@@ -112,7 +112,7 @@ if (typeof window !== 'undefined') {
 
       // init
 
-      let selfDestroy
+      let selfDestroy = () => {}
       new Xt.Slider(ref, options).then(self => {
         selfDestroy = () => {
           self.destroy()

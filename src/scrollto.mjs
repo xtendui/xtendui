@@ -47,6 +47,7 @@ class Scrollto {
     self._componentNs = self.componentName.replace('-', '.')
     // load
     const selfPromise = Xt._load({
+      container: self.container,
       name: self.constructorName,
       suffix: 'Init',
     }).then(() => {

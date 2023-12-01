@@ -20,7 +20,7 @@ const mountVariants = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Toggle(form, {
     min: 1,
     elements: '[data-node-variants-element]',
@@ -69,7 +69,7 @@ const mountVariants = ({ ref }) => {
 const mountScrollto = () => {
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Scrollto(document.documentElement, {
     scrollers: '.xt-overlay:not([data-xt-overlay-disabled]), .product-gallery',
     space: ({ self }) => {

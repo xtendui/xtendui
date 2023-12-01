@@ -8,12 +8,10 @@ describe('a11y', function () {
       .checkA11y()
   })
 
-  /*
   it('TEST a11y home.', function () {
     cy.visit('/')
       .wait(1000) // after animation
       .injectAxe()
       .checkA11y()
   })
-  */
 })

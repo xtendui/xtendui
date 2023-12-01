@@ -19,7 +19,7 @@ const mountOverlay = ({ ref }) => {
   // init
 
   /***/
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Overlay(overlay, {
     duration: 500,
   }).then(self => {

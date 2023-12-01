@@ -7,7 +7,7 @@ const mountScrollto = () => {
   // init
 
   /***/
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Scrollto(document.documentElement, {
     hash: true,
   }).then(self => {

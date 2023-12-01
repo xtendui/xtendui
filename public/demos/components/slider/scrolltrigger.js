@@ -15,7 +15,7 @@ const mountSlider = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Slider(slider, {
     free: true,
     drag: {

@@ -43,6 +43,7 @@ class Textareaautosize {
     self._componentNs = self.componentName.replace('-', '.')
     // load
     const selfPromise = Xt._load({
+      container: self.container,
       name: self.constructorName,
       suffix: 'Init',
     }).then(() => {
@@ -86,7 +87,7 @@ if (typeof window !== 'undefined') {
 
       // init
 
-      let selfDestroy
+      let selfDestroy = () => {}
       new Xt.Textareaautosize(ref, options).then(self => {
         selfDestroy = () => {
           self.destroy()

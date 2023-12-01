@@ -7,7 +7,7 @@ const mountStatus = ({ ref }) => {
   // vars
 
   const slider = ref.querySelector('.xt-slider')
-  let selfDestroy
+  let selfDestroy = () => {}
 
   Xt.get({ name: 'xt-slider', el: slider }).then(self => {
     const current = slider.querySelector('[data-xt-slider-status-current]')

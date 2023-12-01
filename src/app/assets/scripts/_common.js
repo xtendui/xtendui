@@ -13,7 +13,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // init
 
-    let selfDestroy
+    let selfDestroy = () => {}
     new Xt.Scrollto(ref, {
       hash: true,
     }).then(self => {

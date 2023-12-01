@@ -15,7 +15,7 @@ import 'xtendui/src/scrollto'
 const mountScrollto = () => {
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Scrollto(document.documentElement, {}).then(self => {
     // scrollto
 

@@ -42,7 +42,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // init
 
-    let selfDestroy
+    let selfDestroy = () => {}
     new Xt.Overlay(ref, {
       targets: '#docs_open-full',
       closeDeep: '#docs_open-full_close',

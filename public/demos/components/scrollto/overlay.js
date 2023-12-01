@@ -46,7 +46,7 @@ const mountSticky = ({ ref }) => {
 const mountScrollto = () => {
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Scrollto(document.documentElement, {
     // deactivated by switcher
     class: false,

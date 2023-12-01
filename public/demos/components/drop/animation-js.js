@@ -18,7 +18,7 @@ const mountDrops = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Drop(drop, {
     mouseParent: true,
     duration: 500,

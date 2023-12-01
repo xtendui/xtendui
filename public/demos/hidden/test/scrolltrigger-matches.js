@@ -14,7 +14,7 @@ const mountTest = ({ ref }) => {
   const sticky = ref.querySelector('.xt-sticky')
   const overlay = ref.querySelector('[data-xt-overlay]')
 
-  let selfDestroy
+  let selfDestroy = () => {}
   Xt.get({ name: 'xt-overlay', el: overlay }).then(self => {
     // init
 

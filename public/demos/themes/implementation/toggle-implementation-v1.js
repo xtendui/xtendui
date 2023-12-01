@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
 const mountScrollto = () => {
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Scrollto(document.documentElement, {}).then(self => {
     // scrollto
 

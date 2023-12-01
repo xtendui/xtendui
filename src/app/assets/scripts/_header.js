@@ -43,7 +43,7 @@ Xt.mount({
 
     // overlay
 
-    let selfDestroy
+    let selfDestroy = () => {}
     new Xt.Overlay(button, {
       targets: '#docs_menu--overlay',
       duration: 500,

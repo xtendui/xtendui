@@ -11,7 +11,7 @@ const mountEventmethods = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Overlay(overlay, {
     targets: '#overlay--nested',
   }).then(self => {

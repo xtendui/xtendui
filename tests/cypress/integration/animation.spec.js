@@ -16,7 +16,9 @@ describe('demos/components/toggle/animation-queue', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -82,7 +84,9 @@ describe('demos/components/toggle/animation-noqueue', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -139,7 +143,9 @@ describe('demos/components/toggle/animation-inverse', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -188,7 +194,9 @@ describe('demos/components/toggle/animation-duration-delay', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -271,7 +279,9 @@ describe('demos/components/toggle/animation-css', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -342,7 +352,9 @@ describe('demos/components/slider/animation-css', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -397,7 +409,9 @@ describe('demos/components/toggle/animation-js', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -461,7 +475,9 @@ describe('demos/components/slider/animation-js', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -528,7 +544,9 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).scrollIntoView()
+    cy.get(container)
+      .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {

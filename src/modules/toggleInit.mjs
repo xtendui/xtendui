@@ -2360,6 +2360,8 @@ export class ToggleInit {
             self.container.setAttribute(`data-${self.componentName}-init`, '')
             // dispatch event
             self.container.dispatchEvent(new CustomEvent(`init.${self._componentNs}`))
+            // initial after autostart
+            self.initial = false
             // remove class initial
             for (const type in obj) {
               for (const el of obj[type].queueEls) {
@@ -2374,10 +2376,6 @@ export class ToggleInit {
           }
           // fix autostart after self.initial or it gives error on reinitialization (demos fullscreen)
           self._eventAutostart()
-          // initial after autostart
-          if (self.initial) {
-            self.initial = false
-          }
           // reset
           self._inverse = null
         },

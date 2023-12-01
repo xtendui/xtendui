@@ -13,7 +13,7 @@ const mountSlider = ({ ref }) => {
 
   // slider
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Slider(slider, {
     duration: () => dragDuration * 1000,
     mode: 'absolute',

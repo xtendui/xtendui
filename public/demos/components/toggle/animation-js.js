@@ -17,7 +17,7 @@ const mountToggle = ({ ref }) => {
 
   // init
 
-  let selfDestroy
+  let selfDestroy = () => {}
   new Xt.Toggle(toggle, {
     duration: 500,
   }).then(self => {
