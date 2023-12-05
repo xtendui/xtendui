@@ -16,6 +16,12 @@ Cypress.Commands.add('frameDouble', () => {
   })
 })
 
+Cypress.Commands.add('perf', () => {
+  return new Cypress.Promise(resolve => {
+    setTimeout(resolve, 0)
+  })
+})
+
 Cypress.Commands.add('addEventListener', (container, event, func) => {
   return new Cypress.Promise(resolve => {
     const merge = () => {

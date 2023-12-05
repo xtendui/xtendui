@@ -109,22 +109,16 @@ if (typeof window !== 'undefined') {
   })
 
   /**
-   * refresh
-   */
-  Xt.refresh = () => {
-    Xt._mountCheck()
-  }
-
-  /**
    * mount
    * @param {Object} obj
+   * @param {Boolean} perf Use setTimeout 0
    */
-  Xt.mount = obj => {
+  Xt.mount = (obj, perf = true) => {
     Xt._mountArr.push(obj)
     Xt.ready({
       raf: obj.raf,
       func: () => {
-        Xt._mountCheck({ obj })
+        Xt._mountCheck({ obj, perf })
       },
     })
   }
@@ -142,8 +136,9 @@ if (typeof window !== 'undefined') {
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.added
    * @param {Object} params.obj
+   * @param {Object} params.perf
    */
-  Xt._mountCheck = ({ added = document.documentElement, obj } = {}) => {
+  Xt._mountCheck = ({ added = document.documentElement, obj, perf } = {}) => {
     // fix multiple mount
     // we do not mount if not in document, it happends for example when you mount ScrollTrigger after overlay menu
     if (!added.closest('html')) {
@@ -179,24 +174,29 @@ if (typeof window !== 'undefined') {
           }
           obj.done.push(ref)
           // call
-          const call = obj.mount({ ref, obj, index })
-          // destroy
-          if (call) {
-            Xt.unmount({
-              ref,
-              root: obj.root,
-              ignoreUnmount: obj.ignoreUnmount,
-              unmount: call,
-              unmountRemove: function () {
-                // fix multiple mount
-                obj.done = obj.done.filter(x => x !== ref)
-                // unmount remove
-                Xt._unmountArr = Xt._unmountArr.filter(x => {
-                  return x !== this // this is unmount object using function
+          Xt.perf({
+            skip: !perf,
+            func: () => {
+              const call = obj.mount({ ref, obj, index })
+              // destroy
+              if (call) {
+                Xt.unmount({
+                  ref,
+                  root: obj.root,
+                  ignoreUnmount: obj.ignoreUnmount,
+                  unmount: call,
+                  unmountRemove: function () {
+                    // fix multiple mount
+                    obj.done = obj.done.filter(x => x !== ref)
+                    // unmount remove
+                    Xt._unmountArr = Xt._unmountArr.filter(x => {
+                      return x !== this // this is unmount object using function
+                    })
+                  },
                 })
-              },
-            })
-          }
+              }
+            },
+          })
         }
       }
     }
@@ -857,12 +857,17 @@ if (typeof window !== 'undefined') {
 
   /**
    * perf
-   * @param {Function} params.func Function to execute after setTimeout
+   * @param {Function} params.func Function to execute after setTimeout 0
+   * @param {Boolean} params.skip Skip setTimeout 0
    */
-  Xt._perf = ({ func } = {}) => {
-    setTimeout(() => {
+  Xt.perf = ({ func, skip } = {}) => {
+    if (skip) {
       func()
-    }, 0)
+    } else {
+      setTimeout(() => {
+        func()
+      }, 0)
+    }
   }
 
   /**
@@ -1119,7 +1124,7 @@ if (typeof window !== 'undefined') {
    * Set scrollbar width of document
    */
   Xt._setScrollbarWidth = () => {
-    Xt._perf({
+    Xt.perf({
       func: () => {
         if (Xt.scrollbarWidth === undefined) {
           const scrollbarWidthHandler = Xt.dataStorage.put(window, 'resize/scrollbar', Xt._setScrollbarWidth)
