@@ -50,6 +50,7 @@ module.exports = {
       overflow: 'hidden !important',
       '.xt-overlay': {
         overflowY: 'scroll',
+        overscrollBehavior: 'contain',
       },
     },
   }),
