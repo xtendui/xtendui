@@ -47,16 +47,9 @@ module.exports = {
       width: '100%',
     },
     '.xt-scrollbar-overlay': {
-      paddingRight: 'var(--scrollbar-width) !important',
       overflow: 'hidden !important',
       '.xt-overlay': {
         overflowY: 'scroll',
-      },
-      '.xt-backdrop': {
-        right: 'var(--scrollbar-width)',
-      },
-      '.fixed': {
-        marginRight: 'var(--scrollbar-width)',
       },
     },
   }),
