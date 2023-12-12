@@ -606,12 +606,12 @@ const makeFullscreen = (demo, item) => {
   const full = document.querySelector('#docs_open-full')
   requestAnimationFrame(() => {
     // raf or it doesn't open
-    full.classList.add('on')
+    full.classList.add('on', 'in')
     full.dispatchEvent(new CustomEvent('on.trigger.xt.overlay'))
   })
   const listingToggle = demo.previousSibling
   if (listingToggle instanceof Element && listingToggle.getAttribute('data-docs-listing-toggle')) {
-    listingToggle.classList.add('on')
+    listingToggle.classList.add('on', 'in')
   }
   // move code block
   const content = document.querySelector('#docs_open-full-content')
