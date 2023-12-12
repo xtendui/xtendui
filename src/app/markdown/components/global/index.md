@@ -31,7 +31,7 @@ These are layout **utilities**.
 
 </div>
 
-To have `.container` fluid so with only one `max-width` in Tailwind CSS preset set `theme.extend.container.fluid: '1536px'` with the desired `max-width`, see [Tailwind CSS container](https://tailwindcss.com/docs/container).
+To have `.container` fluid so with only one `max-width` in Tailwind CSS preset set `theme.extend.container.fluid: '1536px'` with the desired `max-width` (can also be `'none'` to have container with no `max-width`), see [Tailwind CSS container](https://tailwindcss.com/docs/container).
 
 ## Components Styles
 
