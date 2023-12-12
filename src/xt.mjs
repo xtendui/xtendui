@@ -1033,7 +1033,7 @@ if (typeof window !== 'undefined') {
    * @return {Boolean}
    */
   Xt.visible = ({ el } = {}) => {
-    return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+    return el.offsetHeight > 0
   }
 
   /**
