@@ -19,7 +19,7 @@ function DocHead(props) {
       <div className="docs_site-article_hero-inner container">
         <div className="docs_site-article_hero-content">
           <div className="docs_site-article_hero-content-inner">
-            <div className="xt-row xt-row-4 -md:flex-col md:items-center md:justify-between">
+            <div className="xt-row xt-row-4 max-md:flex-col md:items-center md:justify-between">
               <div className="w-full xl:w-6/12 2xl:w-7/12">
                 <h1 className="xt-h1">
                   {page.post.frontmatter.title}{' '}

@@ -10,7 +10,6 @@ date: "2030-10-10"
 
 The following theme values are added with the preset:
 
-* [breakpoints](https://tailwindcss.com/docs/breakpoints) added **desktop first media queries** breakpoints that uses `max-width`: `-sm`, `-md`, `-lg`, `-xl`, `-2xl`.
 * [breakpoints](https://tailwindcss.com/docs/breakpoints) added the [media queries for hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover) `hover-none` and `hover-hover`.
 * [font-size](https://tailwindcss.com/docs/font-size) for better control on small font sizes: `text-15` added with `~15px`, `text-14` added with `~14px`, `text-13` added with `~13px`, `text-12` added with `~12px`, `text-11` added with `~11px`, `text-10` added with `~10px`.
 * [colors](https://tailwindcss.com/docs/customizing-colors) and a default `primary` color stack to be replaced with your primary color.

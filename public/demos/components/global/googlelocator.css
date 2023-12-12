@@ -51,7 +51,7 @@
   }
 
   .googlelocator-aside-body, .googlelocator-main {
-    @apply -md:off:hidden -md:transition -md:opacity-0 -md:in:opacity-100 -md:out:opacity-0;
+    @apply max-md:off:hidden max-md:transition max-md:opacity-0 max-md:in:opacity-100 max-md:out:opacity-0;
   }
   
   /* infoWindow */
@@ -84,7 +84,7 @@
         @apply px-0 border-0;
         cursor: inherit;
         .xt-list {
-          @apply -md:flex-col;
+          @apply max-md:flex-col;
         }
       }
     }

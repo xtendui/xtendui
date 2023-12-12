@@ -257,5 +257,10 @@ module.exports = plugin.withOptions(() => {
     for (const values of pseudoVariants) {
       addVariant(values[0], values[1])
     }
+
+    // other variants
+
+    addVariant('hover-none', '@media (hover: none), (pointer: coarse)')
+    addVariant('hover-hover', '@media (hover: hover), not (pointer: coarse)')
   }
 })

@@ -162,7 +162,7 @@ const html = /* HTML */ `
 
       <div
         class="googlelocator-main relative flex-auto min-h-full md:absolute md:inset-0 md:pl-[20rem] lg:pl-[25rem] xl:pl-[30rem]">
-        <div class="relative w-full h-full -md:h-[400px]">
+        <div class="relative w-full h-full max-md:h-[400px]">
           <div class="w-full h-full" data-xt-googlelocator-map></div>
 
           <button
