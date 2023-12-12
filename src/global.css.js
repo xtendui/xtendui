@@ -27,7 +27,6 @@ module.exports = {
       '@apply xt-overflow-main overflow-y-scroll overflow-x-hidden': '',
     },
     html: {
-      scrollbarGutter: 'stable',
       touchAction: 'manipulation', // disable double-tap
       '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
     },
