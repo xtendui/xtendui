@@ -101,7 +101,7 @@ const html = /* HTML */ `
             <option>Option 2</option>
             <option>Option 3</option>
           </select>
-          <div class="mt-3 text-red-500 text-xs leading-snug *** custom-backend-error ***">
+          <div class="mt-3 text-red-500 text-13 leading-snug *** custom-backend-error ***">
             Backend custom error it scrolls to this on page load
           </div>
         </div>

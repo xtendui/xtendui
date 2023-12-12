@@ -11,7 +11,7 @@ const html = /* HTML */ `
 
               <button
                 type="button"
-                class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+                class="xt-button text-13 py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                 data-xt-nav="-1"
                 aria-label="Previous slide">
                 ${classes.iconArrowLeft({
@@ -21,7 +21,7 @@ const html = /* HTML */ `
 
               <button
                 type="button"
-                class="xt-button text-xs py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+                class="xt-button text-13 py-2 px-2 w-8 h-8 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                 data-xt-nav="1"
                 aria-label="Next slide">
                 ${classes.iconArrowRight({
@@ -42,7 +42,7 @@ const html = /* HTML */ `
                     <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
                         <div class="font-medium text-sm">-35%</div>
-                        <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">
+                        <div class="max-w-[6rem] text-11 leading-tight uppercase opacity-50">
                           For Exhibition Renewal
                         </div>
                       </div>
@@ -64,7 +64,7 @@ const html = /* HTML */ `
                     <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
                         <div class="font-medium text-sm">-40%</div>
-                        <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>
+                        <div class="max-w-[6rem] text-11 leading-tight uppercase opacity-50">Black Friday</div>
                       </div>
                     </div>
                   </div>
@@ -179,7 +179,7 @@ const html = /* HTML */ `
                   <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
                       <div class="font-medium text-sm">-35%</div>
-                      <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">For Exhibition Renewal</div>
+                      <div class="max-w-[6rem] text-11 leading-tight uppercase opacity-50">For Exhibition Renewal</div>
                     </div>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ const html = /* HTML */ `
                   <div class="absolute top-0 left-0 py-2 px-3 bg-black bg-opacity-50 ${classes.textInverse()}">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
                       <div class="font-medium text-sm">-40%</div>
-                      <div class="max-w-[6rem] text-3xs leading-tight uppercase opacity-50">Black Friday</div>
+                      <div class="max-w-[6rem] text-11 leading-tight uppercase opacity-50">Black Friday</div>
                     </div>
                   </div>
                 </div>

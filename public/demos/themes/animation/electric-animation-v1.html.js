@@ -142,7 +142,7 @@ const html = /* HTML */ `
                     </div>
                     <div>
                       <div class="font-medium">Email Us</div>
-                      <div class="text-xs opacity-50">We&apos;ll respond within 24 hours.</div>
+                      <div class="text-13 opacity-50">We&apos;ll respond within 24 hours.</div>
                     </div>
                   </div>
                 </a>
@@ -153,7 +153,7 @@ const html = /* HTML */ `
                     </div>
                     <div>
                       <div class="font-medium">Phone</div>
-                      <div class="text-xs opacity-50">Contact us on 24/7 support line.</div>
+                      <div class="text-13 opacity-50">Contact us on 24/7 support line.</div>
                     </div>
                   </div>
                 </a>
@@ -164,12 +164,12 @@ const html = /* HTML */ `
                     </div>
                     <div>
                       <div class="font-medium">Support</div>
-                      <div class="text-xs opacity-50">Open a ticket on our support site.</div>
+                      <div class="text-13 opacity-50">Open a ticket on our support site.</div>
                     </div>
                   </div>
                 </a>
               </nav>
-              <div class="p-5 text-xs rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto">
+              <div class="p-5 text-13 rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto">
                 <p class="mb-1 font-bold text-sm">Didn&apos;t find what you was looking for?</p>
                 <p>
                   Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at
@@ -206,7 +206,7 @@ const html = /* HTML */ `
                     </div>
                     <div>
                       <div class="font-medium">Shipping Limits</div>
-                      <div class="text-xs opacity-50">Delivery is EU and US only.</div>
+                      <div class="text-13 opacity-50">Delivery is EU and US only.</div>
                     </div>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ const html = /* HTML */ `
                     </div>
                     <div>
                       <div class="font-medium">VAT Excluded</div>
-                      <div class="text-xs opacity-50">The prices is excluding VAT.</div>
+                      <div class="text-13 opacity-50">The prices is excluding VAT.</div>
                     </div>
                   </div>
                 </div>
@@ -249,7 +249,7 @@ const html = /* HTML */ `
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
                     ${classes.iconCreditcard({ classes: 'xt-icon text-2xl text-primary-500' })}
                   </div>
-                  <div class="text-xs">
+                  <div class="text-13">
                     The card security code is the three-digit number at the back of your debit card.
                   </div>
                 </div>

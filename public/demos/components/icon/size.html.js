@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="${classes.hBlock()}">Sizes</div>
 
-    ${classes.iconSearch({ classes: '*** text-xs ***' })} ${classes.iconSearch({ classes: '*** text-base ***' })}
+    ${classes.iconSearch({ classes: '*** text-13 ***' })} ${classes.iconSearch({ classes: '*** text-base ***' })}
     ${classes.iconSearch({ classes: '*** text-xl ***' })}
 
     <div class="${classes.hBlock()}">Custom size and stroke</div>

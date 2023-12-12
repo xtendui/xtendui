@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <div className="text-2xs md:text-xs lg:text-sm">
+    <div className="text-12 md:text-13 lg:text-sm">
       <div className="xt-row xt-row-1.5 text-opacity-75 justify-between flex-auto">
         <div>
           XtendUI v{package_json_version}{' '}

@@ -60,10 +60,10 @@ const mountEventmethods = ({ ref }) => {
       logAdd('<strong>add</strong>')
       // elements
       const index = self.getElementsGroups().length
-      const strEl = `<button type="button" class="xt-button py-2 px-3 text-xs rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 on dir-before in done" data-xt-toggle-element>Toggle ${index}</button>`
+      const strEl = `<button type="button" class="xt-button py-2 px-3 text-13 rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 on dir-before in done" data-xt-toggle-element>Toggle ${index}</button>`
       document.querySelector('#toggle--eventmethods-elements').append(Xt.node({ str: strEl }))
       // targets
-      const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-xs py-2 px-3 font-medium shadow on in done" data-xt-toggle-target>Target ${index}</div>`
+      const strTr = `<div class="off:hidden out:pointer-events-none rounded-full text-13 py-2 px-3 font-medium shadow on in done" data-xt-toggle-target>Target ${index}</div>`
       document.querySelector('#toggle--eventmethods-targets').append(Xt.node({ str: strTr }))
       // reinit
       logAdd('<strong>reinit</strong>')

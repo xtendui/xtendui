@@ -35,7 +35,7 @@ const html = /* HTML */ `
         <div class="xt-list xt-list-3 items-center">
           <button
             type="button"
-            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="-1"
             title="Previous slide">
             ${classes.iconArrowLeft({ classes: 'text-xl -my-1' })}
@@ -43,7 +43,7 @@ const html = /* HTML */ `
 
           <button
             type="button"
-            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="1"
             title="Next slide">
             ${classes.iconArrowRight({ classes: 'text-xl -my-1' })}

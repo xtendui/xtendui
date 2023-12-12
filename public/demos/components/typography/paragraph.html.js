@@ -14,25 +14,25 @@ const html = /* HTML */ `
       eget, vehicula scelerisque elit.
     </div>
 
-    <p class="*** text-4xs mb-3 xt-mb-auto ***">
+    <p class="*** text-10 mb-3 xt-mb-auto ***">
       <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
       eget, vehicula scelerisque elit.
     </p>
 
-    <p class="*** text-3xs mb-3 xt-mb-auto ***">
+    <p class="*** text-11 mb-3 xt-mb-auto ***">
       <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
       eget, vehicula scelerisque elit.
     </p>
 
-    <p class="*** text-2xs mb-3 xt-mb-auto ***">
+    <p class="*** text-12 mb-3 xt-mb-auto ***">
       <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
       eget, vehicula scelerisque elit.
     </p>
 
-    <p class="*** text-xs mb-3 xt-mb-auto ***">
+    <p class="*** text-13 mb-3 xt-mb-auto ***">
       <strong>Lorem ipsum</strong> dolor sit amet, <a href="/">consectetur adipiscing</a> elit. Nullam suscipit, velit
       eu tristique mollis, dui felis dictum turpis, a auctor est odio ac diam. Sed mauris augue, sagittis vitae magna
       eget, vehicula scelerisque elit.

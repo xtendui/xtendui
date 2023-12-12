@@ -5,17 +5,17 @@ export const classes = {
   bgBlur: () => 'backdrop-filter backdrop-blur-sm backdrop-saturate-50',
   docsFloat: () =>
     'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
-  cardToggle: () => 'bg-white rounded-full text-xs py-2 px-3 font-medium shadow',
+  cardToggle: () => 'bg-white rounded-full text-13 py-2 px-3 font-medium shadow',
   buttonSlider: () =>
-    'p-2 min-w-[1.25rem] h-5 rounded-full text-3xs text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
+    'p-2 min-w-[1.25rem] h-5 rounded-full text-11 text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   buttonCode: () =>
     'text-opacity-[90%] font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100',
   buttonCodeWhite: () =>
     'font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20',
   // button
   buttonRadius: () => '-md',
-  buttonXs: () => 'py-1.5 px-2 text-2xs',
-  buttonSm: () => 'py-2 px-3 text-xs',
+  buttonXs: () => 'py-1.5 px-2 text-12',
+  buttonSm: () => 'py-2 px-3 text-13',
   buttonMd: () => 'py-2.5 px-3.5 text-sm',
   buttonLg: () => 'py-3 px-4 text-base',
   buttonLower: () => 'font-medium leading-snug',
@@ -55,7 +55,7 @@ export const classes = {
   // group
   groupMd: () => 'p-3',
   groupButtonRadius: () => '-md',
-  groupButtonSm: () => 'py-1 px-2.5 text-xs',
+  groupButtonSm: () => 'py-1 px-2.5 text-13',
   groupButtonMd: () => 'py-1.5 px-3 text-sm',
   groupButtonLg: () => 'py-2 px-3.5 text-base',
   groupButton: () => 'flex-auto font-medium leading-snug',
@@ -64,8 +64,8 @@ export const classes = {
   // tooltip
   tooltipRadius: () => '-md',
   tooltipShadow: () => 'shadow-md',
-  tooltipSm: () => 'py-1 px-2 text-3xs',
-  tooltipMd: () => 'py-2 px-2.5 text-xs',
+  tooltipSm: () => 'py-1 px-2 text-11',
+  tooltipMd: () => 'py-2 px-2.5 text-13',
   tooltipLg: () => 'py-2.5 px-4 text-base',
   tooltipText: () => 'font-medium',
   // drop
@@ -76,8 +76,8 @@ export const classes = {
   overlayShadow: () => 'shadow-xl',
   // badge
   badgeRadius: () => '-xs',
-  badgeSm: () => 'py-2 px-2.5 text-3xs',
-  badgeMd: () => 'py-3 px-3.5 text-xs',
+  badgeSm: () => 'py-2 px-2.5 text-11',
+  badgeMd: () => 'py-3 px-3.5 text-13',
   badgeLg: () => 'py-3.5 px-4 text-base',
   badgeGray: () => 'text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100',
   badgePrimary: () => 'text-white font-medium leading-snug tracking-wider uppercase bg-primary-500',
@@ -110,7 +110,7 @@ export const classes = {
   input: () => 'block w-full',
   inputRadius: () => 'rounded-md',
   textarea: () => 'h-20 max-h-48',
-  note: () => 'text-gray-900 text-opacity-[90%] text-xs leading-snug',
+  note: () => 'text-gray-900 text-opacity-[90%] text-13 leading-snug',
   // headers
   h1Display: () => {
     return `mt-10 mb-4 xt-my-auto font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none`

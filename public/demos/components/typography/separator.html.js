@@ -10,13 +10,13 @@ const html = /* HTML */ `
     <div class="${classes.hBlock()}">Custom size and color</div>
 
     Lorem ipsum
-    <span class="inline relative align-baseline before:content-['-'] *** mx-1 text-xs text-primary-500 ***"></span>
+    <span class="inline relative align-baseline before:content-['-'] *** mx-1 text-13 text-primary-500 ***"></span>
     dolor sit amet
-    <span class="inline relative align-baseline before:content-['/'] *** mx-1 text-xs text-primary-500 ***"></span>
+    <span class="inline relative align-baseline before:content-['/'] *** mx-1 text-13 text-primary-500 ***"></span>
     Lorem ipsum
-    <span class="inline relative align-baseline before:content-['|'] *** mx-1 text-xs text-primary-500 ***"></span>
+    <span class="inline relative align-baseline before:content-['|'] *** mx-1 text-13 text-primary-500 ***"></span>
     dolor sit amet
-    <span class="inline relative align-baseline before:content-['•'] *** mx-1 text-xs text-primary-500 ***"></span>
+    <span class="inline relative align-baseline before:content-['•'] *** mx-1 text-13 text-primary-500 ***"></span>
     Lorem ipsum
   </div>
 `

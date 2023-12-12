@@ -97,7 +97,7 @@ export default async function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Framework agnostic
                   </h2>
-                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                  <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Use it on vanilla html or in any popular javascript framework.
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export default async function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Custom Design
                   </h2>
-                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                  <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Customizable components that supports a wide range of designs.
                   </p>
                 </div>
@@ -117,7 +117,7 @@ export default async function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Complex Interaction
                   </h2>
-                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                  <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Complex interaction logic managed internally by components.
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default async function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     User Experience
                   </h2>
-                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                  <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Support for advanced interaction and animations with simple usage.
                   </p>
                 </div>
@@ -137,7 +137,7 @@ export default async function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     Accessibility
                   </h2>
-                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                  <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     A11y standards with automatic Aria attributes and keyboard navigation.
                   </p>
                 </div>
@@ -147,7 +147,7 @@ export default async function Page() {
                   <h2 className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                     UX Themes
                   </h2>
-                  <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                  <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                     Themes focused on user experience instead of design.
                   </p>
                 </div>
@@ -425,7 +425,7 @@ export default async function Page() {
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Intro
                     </div>
-                    <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                    <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                       Project overview and instructions to get started.
                     </p>
                   </Link>
@@ -435,7 +435,7 @@ export default async function Page() {
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Components
                     </div>
-                    <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                    <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                       Customizable components with an ecosystem of plugins.
                     </p>
                   </Link>
@@ -445,7 +445,7 @@ export default async function Page() {
                     <div className="xt-h5 text-base leading-tight mb-2 md:text-lg md:leading-tight md:mb-2 lg:text-xl lg:leading-tight lg:mb-2">
                       Themes
                     </div>
-                    <p className="xt-p text-xs leading-snug md:text-sm md:leading-snug opacity-[90%]">
+                    <p className="xt-p text-13 leading-snug md:text-sm md:leading-snug opacity-[90%]">
                       UX themes with advanced interactions and animations.
                     </p>
                   </Link>

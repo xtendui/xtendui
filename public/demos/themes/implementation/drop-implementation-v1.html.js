@@ -62,7 +62,7 @@ const html = /* HTML */ `
                   </div>
                   <div>
                     <div class="font-medium">Email Us</div>
-                    <div class="text-xs opacity-50">We&apos;ll respond within 24 hours.</div>
+                    <div class="text-13 opacity-50">We&apos;ll respond within 24 hours.</div>
                   </div>
                 </div>
               </a>
@@ -73,7 +73,7 @@ const html = /* HTML */ `
                   </div>
                   <div>
                     <div class="font-medium">Phone</div>
-                    <div class="text-xs opacity-50">Contact us on 24/7 support line.</div>
+                    <div class="text-13 opacity-50">Contact us on 24/7 support line.</div>
                   </div>
                 </div>
               </a>
@@ -84,12 +84,12 @@ const html = /* HTML */ `
                   </div>
                   <div>
                     <div class="font-medium">Support</div>
-                    <div class="text-xs opacity-50">Open a ticket on our support site.</div>
+                    <div class="text-13 opacity-50">Open a ticket on our support site.</div>
                   </div>
                 </div>
               </a>
             </nav>
-            <div class="*** p-5 text-xs rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto ***">
+            <div class="*** p-5 text-13 rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto ***">
               <p class="mb-1 font-bold text-sm">Didn&apos;t find what you was looking for?</p>
               <p>
                 Contact our customer service at <a href="tel:+39333010101">+39 333 010101</a> or email us at

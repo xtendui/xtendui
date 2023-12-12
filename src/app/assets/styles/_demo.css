@@ -292,7 +292,7 @@ pre {
     border: 1px solid theme('colors.gray.100');
   }
   th, td:first-child {
-    @apply py-2 px-4 text-xs font-medium leading-snug tracking-wider uppercase text-left;
+    @apply py-2 px-4 text-13 font-medium leading-snug tracking-wider uppercase text-left;
   }
   td {
     @apply py-2.5 px-5 text-sm leading-snug;
