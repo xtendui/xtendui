@@ -868,7 +868,7 @@ const populateSources = (item, element) => {
 export const makeDocument = () => {
   // .docs_make-line
   for (const el of document.querySelectorAll(
-    '.docs_site-article_content_inner > * > h2, .docs_site-article_content_inner > * > h4',
+    '.docs_site-article_content_inner > h2, .docs_site-article_content_inner > h4',
   )) {
     el.classList.add('docs_make-line', 'xt-ignore')
   }
@@ -878,7 +878,7 @@ export const makeDocument = () => {
   }
   // .docs_make-anchor
   for (const el of document.querySelectorAll(
-    '.docs_site-article_content_inner > * > h2, .docs_site-article_content_inner > * > h4',
+    '.docs_site-article_content_inner > h2, .docs_site-article_content_inner > h4',
   )) {
     el.classList.add('docs_make-line', 'xt-ignore')
     // previous h2 if h4
