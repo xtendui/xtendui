@@ -1439,6 +1439,7 @@ describe('demos/components/slider/dragposition-js', function () {
   it('TEST activation and drag activation.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .wait(1000) // after animation // racecondition
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -1449,7 +1450,6 @@ describe('demos/components/slider/dragposition-js', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translate(0px, 0px)')
       })
-      .wait(750) // after animation
       .get(self.targets[0])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 })
       .trigger('mousemove', { clientX: -400, clientY: 0 })
