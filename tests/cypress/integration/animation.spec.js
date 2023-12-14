@@ -208,7 +208,6 @@ describe('demos/components/toggle/animation-duration-delay', function () {
   it('TEST duration, delay.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
-      .wait(1000) // after animation // racecondition
       .get(self.elements[0])
       .click()
       .then(() => {
