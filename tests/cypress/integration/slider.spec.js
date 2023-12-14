@@ -1449,6 +1449,7 @@ describe('demos/components/slider/dragposition-js', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translate(0px, 0px)')
       })
+      .wait(750) // after animation
       .get(self.targets[0])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 })
       .trigger('mousemove', { clientX: -400, clientY: 0 })
