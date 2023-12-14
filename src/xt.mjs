@@ -35,6 +35,10 @@ if (typeof window !== 'undefined') {
   Xt.autoTimescale = 1
   Xt.scrolltoHashforce = null
   Xt.formScrollWindowFactor = 0.2
+  Xt._observerArr = []
+  Xt.observer = true
+  Xt.observerOptions = { root: null }
+  Xt.observerIntersectionRatio = 0
 
   //
   // initialization
@@ -69,6 +73,23 @@ if (typeof window !== 'undefined') {
       document.addEventListener('readystatechange', interactive)
     }
   }
+
+  //
+  // intersectionObserver
+  //
+
+  Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
+    for (const entry of entries) {
+      if (entry.intersectionRatio > Xt.observerIntersectionRatio) {
+        observer.unobserve(entry.target)
+        const objects = Xt._observerArr.filter(x => x.container === entry.target)
+        for (const obj of objects) {
+          obj.resolve(obj.promise)
+          Xt._observerArr = Xt._observerArr.filter(x => x.container !== entry.target)
+        }
+      }
+    }
+  }, Xt.observerOptions)
 
   //
   // mutationObserver
@@ -242,27 +263,18 @@ if (typeof window !== 'undefined') {
    * @param {Node|HTMLElement|EventTarget|Window} params.container DOM element
    * @param {Promise} params.promise Return promise
    * @param {Boolean} params.observer If load with IntersectionObserver
-   * @param {Object} params.observerOptions IntersectionObserver options
-   * @param {Object} params.observerIntersectionRatio IntersectionObserver intersectionRatio
    */
-  Xt._observe = ({
-    container,
-    promise,
-    observer,
-    observerOptions = { root: null },
-    observerIntersectionRatio = 0,
-  } = {}) => {
+  Xt.observe = ({ container, promise, observer } = {}) => {
+    // if container :visible and needs to be height > 0 or intersection observer doesn't fire
+    observer = observer ?? (Xt.observer && container.offsetHeight > 0)
     if (observer) {
       return new Promise(resolve => {
-        const observer = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.intersectionRatio > observerIntersectionRatio) {
-              observer.disconnect()
-              resolve(promise)
-            }
-          })
-        }, observerOptions)
-        observer.observe(container)
+        Xt._observerArr.push({
+          container,
+          resolve,
+          promise,
+        })
+        Xt._intersectionObserver.observe(container)
       })
     } else {
       return promise
@@ -286,17 +298,13 @@ if (typeof window !== 'undefined') {
    * @param {String} params.name Component name
    * @param {Node|HTMLElement|EventTarget|Window} params.el Component's element
    * @param {Boolean} params.observer If load with IntersectionObserver
-   * @param {Object} params.observerOptions IntersectionObserver options
-   * @param {Object} params.observerIntersectionRatio IntersectionObserver intersectionRatio
    * @return {Object}
    */
-  Xt.get = ({ name, el, observer = false, observerOptions = { root: null }, observerIntersectionRatio = 0 } = {}) => {
-    // if container :visible and needs to be height > 0 or intersection observer doesn't fire
-    observer = observer ?? el.offsetHeight > 0
+  Xt.get = ({ name, el, observer } = {}) => {
     const promise = new Promise(resolve => {
       resolve(Xt.dataStorage.get(el, name))
     })
-    return Xt._observe({ container: el, promise, observer, observerOptions, observerIntersectionRatio })
+    return Xt.observe({ container: el, promise, observer })
   }
 
   /**
@@ -425,12 +433,8 @@ if (typeof window !== 'undefined') {
    * @param {Object} params.name Class Name
    * @param {Object} params.suffix Class suffix
    * @param {Boolean} params.observer If load with IntersectionObserver
-   * @param {Object} params.observerOptions IntersectionObserver options
-   * @param {Object} params.observerIntersectionRatio IntersectionObserver intersectionRatio
    */
-  Xt._load = ({ container, name, suffix, observer = false, observerOptions, observerIntersectionRatio } = {}) => {
-    // if container :visible and needs to be height > 0 or intersection observer doesn't fire
-    observer = observer ?? container.offsetHeight > 0
+  Xt._load = ({ container, name, suffix, observer } = {}) => {
     let promise
     if (!Xt[name].loaded[name]) {
       promise = import(`./modules/${name.toLowerCase()}${suffix}.mjs`).then(module => {
@@ -442,7 +446,7 @@ if (typeof window !== 'undefined') {
     } else {
       promise = Promise.resolve()
     }
-    return Xt._observe({ container, promise, observer, observerOptions, observerIntersectionRatio })
+    return Xt.observe({ container, promise, observer })
   }
 
   //

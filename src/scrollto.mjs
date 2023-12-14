@@ -50,6 +50,7 @@ class Scrollto {
       container: self.container,
       name: self.constructorName,
       suffix: 'Init',
+      observer: self._optionsCustom.observer,
     }).then(() => {
       self._init()
       return self

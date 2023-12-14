@@ -84,12 +84,14 @@ class Toggle {
       container: self.container,
       name: 'Toggle',
       suffix: 'Init',
+      observer: self._optionsCustom.observer,
     }).then(() => {
       if (self.componentName !== 'xt-toggle' && self.componentName !== 'xt-overlay') {
         return Xt._load({
           container: self.container,
           name: self.constructorName,
           suffix: 'Init',
+          observer: self._optionsCustom.observer,
         }).then(() => {
           self._init()
           return self

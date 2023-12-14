@@ -31,6 +31,18 @@ You can get **self object from DOM node** on Xtend UI components with [Xt.get](/
 Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
+By default components are **loaded and initialized only when inside viewport**.
+
+You can set [global observer options](/components/global/javascript/#xt-observe) or **singular component observer options** passing this options:
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `observer:Boolean`                          | `true`        | Use intersection observer            |
+
+</div>
+
 ## Match Media
 
 You can add **additional options** that gets added on **match media query**. You can use different queries with different and nested options.

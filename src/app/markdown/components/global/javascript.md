@@ -89,6 +89,28 @@ Xt.mount({
 })
 ```
 
+## Xt.observe
+
+You can execute Javascript code only when **a container** is inside **inside viewport** with `Xt.observe`.
+
+Observe listens and execute the query with [Intersection Obsever](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver). So it's **executed asynchronously and returns a promise**.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `container:Node`                          | `null`        | Resolve the promise only when this node is inside viewport,             |
+| Option                    | `promise:Boolean`                          | `null`        | Promise to resolve when container is inside viewport or to return when no observer            |
+| Option                    | `observer:Boolean`                          | `null`        | Force enable or disable intersection observer, by default only if container is **visible** (not `display: none`)            |
+| Option                    | `observerOptions:Object`                          | `{ root: null }`        | Intersection observer options            |
+| Option                    | `observerIntersectionRatio:Number`                          | `0`        | Intersection observer intersectionRatio            |
+
+</div>
+
+You can change this method and all the components default options of `Xt.observer = true` and `Xt.observerOptions = { root: null }` and `Xt.observerIntersectionRatio = 0`.
+
+> Be sure to assing `Xt.observer` and `Xt.observerOptions` and `Xt.observerIntersectionRatio` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
+
 ## Xt.on and Xt.off
 
 To **show/hide and animate nodes** we use **custom Tailwind CSS variants that react to classes**.

@@ -1207,9 +1207,6 @@ describe('demos/components/slider/progress', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-    cy.get(container)
-      .closest('.docs_demo')
-      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
