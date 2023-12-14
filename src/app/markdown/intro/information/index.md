@@ -42,7 +42,7 @@ Xtend UI is a powerful frontend library of Tailwind CSS components enhanced by v
 * Icons with [Feather Icons](https://feathericons.com/)
 * Hosting with [Github Pages](https://pages.github.com/) and [Cloudflare](https://www.cloudflare.com/)
 
-[Supported browsers](https://github.com/xtendui/xtendui/blob/master/.browserslistrc) are browsers that supports mainly `es6-module`, `es6-module-dynamic-import`, `css variables`, `css grid`, `async`, `event.key`.
+[Supported browsers](https://github.com/xtendui/xtendui/blob/master/.browserslistrc) are browsers that supports mainly `optional chaining`, `JavaScript modules`, `es6-module`, `es6-module-dynamic-import`, `IntersectionObserver`, `async`, `flexbox gap`, `webp`, `Variable fonts`, `css variables`, `css grid`.
 
 ## Setup
 
