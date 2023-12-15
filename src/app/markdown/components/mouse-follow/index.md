@@ -94,7 +94,7 @@ Xt.options['xt-mousefollow'] = {
 
 By default components are **loaded and initialized only when inside viewport**.
 
-You can set [global observer options](/components/global/javascript/#xt-observe) or **singular component observer options** passing this options:
+You can set [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this options:
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

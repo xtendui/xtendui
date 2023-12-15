@@ -99,17 +99,27 @@ Observe listens and execute the query with [Intersection Obsever](https://develo
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `container:Node`                          | `null`        | Resolve the promise only when this node is inside viewport,             |
+| Option                    | `container:Node`                          | `null`        | Resolve the promise only when this node is inside viewport             |
 | Option                    | `promise:Boolean`                          | `null`        | Promise to resolve when container is inside viewport or to return when no observer            |
 | Option                    | `observer:Boolean`                          | `null`        | Force enable or disable intersection observer, by default only if container is **visible** (not `display: none`)            |
-| Option                    | `observerOptions:Object`                          | `{ root: null }`        | Intersection observer options            |
-| Option                    | `observerIntersectionRatio:Number`                          | `0`        | Intersection observer intersectionRatio            |
 
 </div>
 
-You can change this method and all the components default options of `Xt.observer = true` and `Xt.observerOptions = { root: null }` and `Xt.observerIntersectionRatio = 0`.
+#### Globals
 
-> Be sure to assing `Xt.observer` and `Xt.observerOptions` and `Xt.observerIntersectionRatio` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
+You can change this method and all the components default options of `Xt.observer` and `Xt.observerOptions` and `Xt.observerCheck`.
+
+> Be sure to assing `Xt.observer` and `Xt.observerOptions` and `Xt.observerCheck` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                    | `Xt.observer:Boolean`                          | `true`        | Global enable or disable intersection observer             |
+| Option                    | `Xt.observerOptions:Object`                          | `{ root: null }`        | Global intersection observer options            |
+| Option                    | `Xt.observerCheck:Function`                          | `entry => { return entry.intersectionRatio > 0 }`        | Global intersection observer entry check            |
+
+</div>
 
 ## Xt.on and Xt.off
 

@@ -38,7 +38,9 @@ if (typeof window !== 'undefined') {
   Xt._observerArr = []
   Xt.observer = true
   Xt.observerOptions = { root: null }
-  Xt.observerIntersectionRatio = 0
+  Xt.observerCheck = entry => {
+    return entry.intersectionRatio > 0
+  }
 
   //
   // initialization
@@ -80,7 +82,7 @@ if (typeof window !== 'undefined') {
 
   Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
     for (const entry of entries) {
-      if (entry.intersectionRatio > Xt.observerIntersectionRatio) {
+      if (Xt.observerCheck(entry)) {
         observer.unobserve(entry.target)
         const objects = Xt._observerArr.filter(x => x.container === entry.target)
         for (const obj of objects) {
