@@ -59,6 +59,7 @@
     "test": "start-server-and-test serve http://localhost:8080 test:run",
     "test:run": "cypress run",
     "test:open": "cypress open",
+    "test:memory": "memlab run --scenario ./tests/memlab/complex.js --work-dir ./tests/memlab/tmp",
     "alias": "node -e \"var s='../src',d='node_modules/src',fs=require('fs');fs.exists(d,function(e){e||fs.symlinkSync(s,d,'junction')});\"",
     "postversion": "SHELL=bash pnpm dist"
   },

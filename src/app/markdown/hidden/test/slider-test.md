@@ -203,7 +203,7 @@ TEST drag animations on drag and activation.
 
 ## Absolute
 
-[/hidden/slider/addon#automatic-scrolling](/hidden/slider/addon#automatic-scrolling).
+[/hidden/slider/advanced#automatic-scrolling](/hidden/slider/addon#automatic-scrolling).
 - (manual) TEST loop activation.
 
 [/demos/themes/hero/slider-hero-v2](/demos/themes/hero/slider-hero-v2).
