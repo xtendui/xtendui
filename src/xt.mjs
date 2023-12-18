@@ -460,7 +460,7 @@ if (typeof window !== 'undefined') {
     /**
      * properties
      */
-    _storage: new Map(),
+    _storage: new WeakMap(),
 
     /**
      * set key/obj pair on element's map
@@ -470,6 +470,7 @@ if (typeof window !== 'undefined') {
      * @return {*}
      */
     set: (el, key, obj) => {
+      if (!el) return
       // new map if not already there
       if (!Xt.dataStorage._storage.has(el)) {
         Xt.dataStorage._storage.set(el, new Map())

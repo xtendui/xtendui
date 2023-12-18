@@ -44,7 +44,7 @@ describe('demos/hidden/test/mount-unmount', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .then(() => {
-        const xtNamespace = Xt.dataStorage.get(self.ns, 'xtNamespace')
+        const xtNamespace = Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`)
         expect(xtNamespace.length).to.equal(1)
       })
   })
@@ -91,10 +91,10 @@ describe('demos/hidden/test/mount-unmount', function () {
 
   it('TEST unmount, unmountArr should be the same, xtNamespace should be 0.', function () {
     const count = Xt._unmountArr.length
-    expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+    expect(Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length).to.equal(1)
     demo.remove()
     cy.frame().then(() => {
-      expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(0)
+      expect(Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length).to.equal(0)
       expect(Xt._unmountArr.length).to.equal(count - 2)
     })
   })
@@ -148,7 +148,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
   })
 
   it('TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.', function () {
-    expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+    expect(Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length).to.equal(1)
     cy.get('@demo')
       .should('have.attr', 'data-test-mount', '1')
       .get(self.elements[0])
@@ -166,7 +166,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
         cy.frameDouble().then(() => {
           expect(self.targets[0].classList.contains('in')).to.equal(true)
         })
-        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+        expect(Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length).to.equal(1)
       })
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
@@ -181,7 +181,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
       .viewport('macbook-13')
       .frame()
       .then(() => {
-        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(1)
+        expect(Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length).to.equal(1)
       })
       .get(self.elements[0])
       .click()
@@ -198,7 +198,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
       })
       .frame()
       .then(() => {
-        expect(Xt.dataStorage.get(self.ns, 'xtNamespace').length).to.equal(0)
+        expect(Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length).to.equal(0)
       })
   })
 })

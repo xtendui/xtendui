@@ -29,7 +29,10 @@ const mountTest = ({ ref }) => {
     // init
 
     // eslint-disable-next-line no-console
-    console.log('TEST init xtNamespace, should be 1.', Xt.dataStorage.get(self.ns, 'xtNamespace').length)
+    console.log(
+      'TEST init xtNamespace, should be 1.',
+      Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length,
+    )
     // eslint-disable-next-line no-console
     console.log(
       'TEST init classes and properties, should be `true true true true`.',
@@ -82,7 +85,7 @@ const mountTest = ({ ref }) => {
       console.log(
         'TEST unmount, unmountArr should be the same, xtNamespace should be 0.',
         Xt._unmountArr.length,
-        Xt.dataStorage.get(self.ns, 'xtNamespace').length,
+        Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length,
       )
       removeEventListener('resize', resize)
     }

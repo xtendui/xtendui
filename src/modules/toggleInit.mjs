@@ -1054,7 +1054,7 @@ export class ToggleInit {
     } else if (self._mode === 'unique') {
       // xtNamespace linked components
       const final = []
-      const selfs = Xt.dataStorage.get(self.ns, 'xtNamespace')
+      const selfs = Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`)
       if (selfs) {
         for (const s of selfs) {
           // choose element by group
@@ -3693,10 +3693,10 @@ export class ToggleInit {
     const self = this
     // xtNamespace linked components
     if (self._mode === 'unique') {
-      const arr = Xt.dataStorage.get(self.ns, 'xtNamespace') ?? []
+      const arr = Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`) ?? []
       if (!arr.includes(self)) {
         arr.push(self)
-        Xt.dataStorage.set(self.ns, 'xtNamespace', arr)
+        Xt.dataStorage.set(self.container, `xtNamespace${self.ns}`, arr)
       }
     }
   }
@@ -3708,10 +3708,10 @@ export class ToggleInit {
     const self = this
     // xtNamespace linked components
     if (self._mode === 'unique') {
-      let arr = Xt.dataStorage.get(self.ns, 'xtNamespace')
+      let arr = Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`)
       if (arr) {
         arr = arr.filter(x => x !== self)
-        Xt.dataStorage.set(self.ns, 'xtNamespace', arr)
+        Xt.dataStorage.set(self.container, `xtNamespace${self.ns}`, arr)
       }
     }
   }
@@ -3735,7 +3735,8 @@ export class ToggleInit {
                   el.removeEventListener(event, handler)
                   el.removeEventListener(event, handler, true) // useCapture event propagation
                 }
-                // do not remove key because they are not overrided with Xt.dataStorage.put, or they trigger multiple times Xt.dataStorage.remove(element, key)
+                // @MEMORY remove map
+                Xt.dataStorage.remove(el, key)
               }
             }
           }
@@ -3759,6 +3760,8 @@ export class ToggleInit {
     self._removeEvents()
     // namespace
     self._removeNamespace()
+    // @MEMORY
+    self._destroyElements = []
     // weak
     if (!weak) {
       // initialized class
