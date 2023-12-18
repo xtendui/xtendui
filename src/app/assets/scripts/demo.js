@@ -430,6 +430,9 @@ export const populateItem = item => {
   }).then(() => {
     swapClick({ ref: btnClipboard.parentNode })
   })
+  // only one time
+  if (container.dataset.docsDemCodeBuilt) return
+  container.dataset.docsDemCodeBuilt = 'true'
   // .button--show-code
   const btnCode = container.querySelector('.button--show-code')
   const inner = container.querySelector('.docs_demo_inner')
