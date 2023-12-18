@@ -119,45 +119,49 @@ describe('demos/components/overlay/disabled', function () {
     })
   })
 
-  it('TEST overlay nested classBody, desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.', function () {
-    expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
-    expect(container.getAttribute('data-xt-overlay-disabled')).to.equal('')
-    expect(win.Xt.visible({ el: self1.targets[0] })).to.equal(false)
-    expect(container1.getAttribute('data-xt-overlay-disabled')).to.equal(null)
-    cy.viewport('iphone-6')
-      .get(self.elements[0])
-      .click()
-      .get(self1.elements[0])
-      .click()
-      .get(container)
-      .should('have.not.attr', 'data-xt-overlay-disabled') // racecondition
-      .frame()
-      .then(() => {
-        expect(container.getAttribute('data-xt-overlay-disabled')).to.equal(null)
-        expect(container.closest('body')).to.have.class('xt-scrollbar-overlay')
-      })
-      .get(self1.targets[0].querySelector('.xt-dismiss'))
-      .click()
-      .then(() => {
-        expect(container.closest('body')).to.have.class('xt-scrollbar-overlay')
-      })
-      .get(self.targets[0].querySelector('.xt-dismiss'))
-      .click()
-      .then(() => {
-        expect(container.closest('body')).to.not.have.class('xt-scrollbar-overlay')
-      })
-      .get(self.elements[0])
-      .click()
-      .viewport('macbook-13')
-      .get(container)
-      .should('have.attr', 'data-xt-overlay-disabled', '') // racecondition
-      .frame()
+  it.only('TEST overlay nested classBody, desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.', function () {
+    cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
         expect(container.getAttribute('data-xt-overlay-disabled')).to.equal('')
         expect(win.Xt.visible({ el: self1.targets[0] })).to.equal(false)
         expect(container1.getAttribute('data-xt-overlay-disabled')).to.equal(null)
-        expect(container.closest('body')).to.not.have.class('xt-scrollbar-overlay')
+        cy.viewport('iphone-6')
+          .get(self.elements[0])
+          .click()
+          .get(self1.elements[0])
+          .click()
+          .get(container)
+          .should('have.not.attr', 'data-xt-overlay-disabled') // racecondition
+          .frame()
+          .then(() => {
+            expect(container.getAttribute('data-xt-overlay-disabled')).to.equal(null)
+            expect(container.closest('body')).to.have.class('xt-scrollbar-overlay')
+          })
+          .get(self1.targets[0].querySelector('.xt-dismiss'))
+          .click()
+          .then(() => {
+            expect(container.closest('body')).to.have.class('xt-scrollbar-overlay')
+          })
+          .get(self.targets[0].querySelector('.xt-dismiss'))
+          .click()
+          .then(() => {
+            expect(container.closest('body')).to.not.have.class('xt-scrollbar-overlay')
+          })
+          .get(self.elements[0])
+          .click()
+          .viewport('macbook-13')
+          .get(container)
+          .should('have.attr', 'data-xt-overlay-disabled', '') // racecondition
+          .frame()
+          .then(() => {
+            expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
+            expect(container.getAttribute('data-xt-overlay-disabled')).to.equal('')
+            expect(win.Xt.visible({ el: self1.targets[0] })).to.equal(false)
+            expect(container1.getAttribute('data-xt-overlay-disabled')).to.equal(null)
+            expect(container.closest('body')).to.not.have.class('xt-scrollbar-overlay')
+          })
       })
   })
 })
