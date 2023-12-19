@@ -41,6 +41,7 @@ if (typeof window !== 'undefined') {
   Xt.observerCheck = entry => {
     return entry.intersectionRatio > 0
   }
+  Xt.observerCheckArr = []
 
   //
   // initialization
@@ -82,12 +83,32 @@ if (typeof window !== 'undefined') {
 
   Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
     for (const entry of entries) {
-      if (Xt.observerCheck(entry)) {
-        observer.unobserve(entry.target)
-        const objects = Xt._observerArr.filter(x => x.container === entry.target)
+      const container = entry.target
+      if (Xt.observerCheck(entry) && !Xt.observerCheckArr.includes(container)) {
+        const objects = Xt._observerArr.filter(x => x.container === container)
+        const keepAlive = objects.some(x => x.func)
+        if (!keepAlive) {
+          observer.unobserve(container)
+        } else {
+          Xt.observerCheckArr.push(container)
+        }
         for (const obj of objects) {
-          obj.resolve(obj.promise)
-          Xt._observerArr = Xt._observerArr.filter(x => x.container !== entry.target)
+          if (!keepAlive) {
+            Xt._observerArr = Xt._observerArr.filter(x => x.container !== container)
+          }
+          if (obj.func) {
+            obj.func(true)
+          } else {
+            obj.resolve(obj.promise)
+          }
+        }
+      } else if (Xt.observerCheckArr.includes(container)) {
+        Xt.observerCheckArr = Xt.observerCheckArr.filter(x => x !== container)
+        const objects = Xt._observerArr.filter(x => x.container === container)
+        for (const obj of objects) {
+          if (obj.func) {
+            obj.func(false)
+          }
         }
       }
     }
@@ -263,10 +284,11 @@ if (typeof window !== 'undefined') {
    * intersection observer
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.container DOM element
-   * @param {Promise} params.promise Return promise
+   * @param {Promise} params.promise Promise to resolve when container is inside viewport
+   * @param {Function} params.func Function to resolve when container is inside viewport
    * @param {Boolean} params.observer If load with IntersectionObserver
    */
-  Xt.observe = ({ container, promise, observer } = {}) => {
+  Xt.observe = ({ container, promise, func, observer } = {}) => {
     // if container :visible and needs to be height > 0 or intersection observer doesn't fire
     observer = observer ?? (Xt.observer && container.offsetHeight > 0)
     if (observer) {
@@ -275,6 +297,7 @@ if (typeof window !== 'undefined') {
           container,
           resolve,
           promise,
+          func,
         })
         Xt._intersectionObserver.observe(container)
       })

@@ -39,7 +39,7 @@ You can execute a function on Document.readyState, **by default it listens when 
 
 You can add Javascript code as a **vanilla component** with `Xt.mount`.
 
-Mount listens and execute the query with [Mutation Obsever](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). So the **code gets executed also if the Node is added on the DOM asynchronously**.
+Mount listens and execute the query with [Mutation Observer](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). So the **code gets executed also if the Node is added on the DOM asynchronously**.
 
 You can return a function to execute when **the Node is removed from the DOM**.
 
@@ -93,17 +93,42 @@ Xt.mount({
 
 You can execute Javascript code only when **a container** is inside **inside viewport** with `Xt.observe`.
 
-Observe listens and execute the query with [Intersection Obsever](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver). So it's **executed asynchronously and returns a promise**.
+Observe listens and execute the query with [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver). So it's **executed asynchronously**.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `container:Node`                          | `null`        | Resolve the promise only when this node is inside viewport             |
-| Option                    | `promise:Boolean`                          | `null`        | Promise to resolve when container is inside viewport or to return when no observer            |
-| Option                    | `observer:Boolean`                          | `null`        | Force enable or disable intersection observer, by default only if container is **visible** (not `display: none`)            |
+| Option                    | `promise:Promise\|null`                          | `null`        | Promise to resolve when container is inside viewport            |
+| Option                    | `func:Function\|null`                          | `null`        | Function to resolve when container is inside viewport             |
+| Option                    | `observer:Boolean\|null`                          | `null`        | Force enable or disable intersection observer, by default only if container is **visible** (not `display: none`)            |
 
 </div>
+
+And here's a example usage of Intersection Observer that **resolves only one time than disconnects**.
+
+```js
+Xt.observe({ container: el })
+  .then(() => {
+    // code to execute when element is inside viewport only 1 time
+  })
+```
+
+And here's a example usage of Intersection Observer that execute code on entering and **leaving the viewport and doesn't disconnect**.
+
+```js
+Xt.observe({
+  container: el,
+  func: intersecting => {
+    if (intersecting) {
+      // code to execute when element is inside viewport
+    } else {
+      // code to execute when element leave viewport
+    }
+  },
+})
+```
 
 #### Globals
 
