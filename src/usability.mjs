@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
     func: () => {
       if (
         Xt.usabilityHostnames !== false &&
-        (Xt.usabilityHostnames === true || [...Xt.usabilityHostnames.split(' ')].includes(location.hostname))
+        (Xt.usabilityHostnames === true || Xt.usabilityHostnames.split(' ').includes(location.hostname))
       ) {
         // eslint-disable-next-line no-console
         console.debug(

@@ -54,7 +54,7 @@ if (typeof window !== 'undefined') {
    * @param {Function} params.raf Use requestAnimationFrame if the state is instantly matched
    */
   Xt.ready = ({ func, state = 'interactive complete', raf = false } = {}) => {
-    const states = [...state.split(' ')]
+    const states = state.split(' ')
     if (states.includes(document.readyState)) {
       if (raf) {
         // raf because we need all functions defined after mount (e.g. all html demos with mount)

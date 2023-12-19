@@ -45,7 +45,7 @@ export class ScrolltoInit {
     // vars
     self.initial = true
     // class
-    self._classes = options.class ? [...options.class.split(' ')] : []
+    self._classes = options.class ? options.class.split(' ') : []
     // click
     const changeHandler = Xt.dataStorage.put(self.container, `click/${self.ns}`, self._eventChange.bind(self, {}))
     self.container.addEventListener('click', changeHandler)
@@ -68,7 +68,7 @@ export class ScrolltoInit {
           `scroll/${self.ns}`,
           self._eventActivationHandler.bind(self).bind(self, { scroller }),
         )
-        const events = options.events ? [...options.events.split(' ')] : []
+        const events = options.events ? options.events.split(' ') : []
         if (scroller === document.scrollingElement) {
           for (const event of events) {
             addEventListener(event, scrollHandler)
@@ -447,7 +447,7 @@ export class ScrolltoInit {
     for (const scroller of self.scrollers) {
       if (scroller) {
         const scrollHandler = Xt.dataStorage.get(scroller, `scroll/${self.ns}`)
-        const events = options.events ? [...options.events.split(' ')] : []
+        const events = options.events ? options.events.split(' ') : []
         if (scroller === document.scrollingElement) {
           for (const event of events) {
             removeEventListener(event, scrollHandler)

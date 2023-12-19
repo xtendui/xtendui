@@ -78,7 +78,7 @@ const demosIframe = [
 
 export async function generateStaticParams() {
   return demosIframe.map(demoIframe => ({
-    slug: [...demoIframe.split('/')],
+    slug: demoIframe.split('/'),
   }))
 }
 

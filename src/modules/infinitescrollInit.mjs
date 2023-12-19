@@ -73,7 +73,7 @@ export class InfinitescrollInit {
     const scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self._eventScroll.bind(self))
     addEventListener('scroll', scrollHandler)
     // trigger
-    const events = options.events?.on ? [...options.events.on.split(' ')] : []
+    const events = options.events?.on ? options.events.on.split(' ') : []
     if (events.length) {
       for (const trigger of [...Array.from(self.scrollUp), ...Array.from(self.scrollDown)]) {
         const triggerHandler = Xt.dataStorage.put(
@@ -265,7 +265,7 @@ export class InfinitescrollInit {
       console.error('Error: Xt.Infinitescroll cannot set history with different origin', linkOrigin)
     }
     // triggers
-    const events = options.events?.on ? [...options.events.on.split(' ')] : []
+    const events = options.events?.on ? options.events.on.split(' ') : []
     if (events.length) {
       if (options.events.scrollUp && self._scrollTopOld > scrollTop) {
         for (const trigger of self.scrollUp) {

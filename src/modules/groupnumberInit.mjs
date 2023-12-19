@@ -56,7 +56,7 @@ export class GroupnumberInit {
       Xt.dataStorage.set(input, `voidable/${self.ns}`, input.value === '')
     }
     // steps
-    const eventsSteps = options.events?.steps ? [...options.events.steps.split(' ')] : []
+    const eventsSteps = options.events?.steps ? options.events.steps.split(' ') : []
     if (eventsSteps.length) {
       for (const step of self.steps) {
         const stepHandler = Xt.dataStorage.put(
@@ -70,7 +70,7 @@ export class GroupnumberInit {
       }
     }
     // inputs
-    const eventsInput = options.events?.input ? [...options.events.input.split(' ')] : []
+    const eventsInput = options.events?.input ? options.events.input.split(' ') : []
     if (eventsInput.length) {
       for (const input of self.inputs) {
         const inputHandler = Xt.dataStorage.put(
@@ -363,7 +363,7 @@ export class GroupnumberInit {
     const self = this
     const options = self.options
     // remove events
-    const eventsSteps = options.events?.steps ? [...options.events.steps.split(' ')] : []
+    const eventsSteps = options.events?.steps ? options.events.steps.split(' ') : []
     if (eventsSteps.length) {
       for (const step of self.steps) {
         const stepHandler = Xt.dataStorage.get(step, `${options.events.steps}/${self.ns}`)
@@ -372,7 +372,7 @@ export class GroupnumberInit {
         }
       }
     }
-    const eventsInput = options.events?.input ? [...options.events.input.split(' ')] : []
+    const eventsInput = options.events?.input ? options.events.input.split(' ') : []
     if (eventsInput.length) {
       for (const input of self.inputs) {
         const inputHandler = Xt.dataStorage.get(input, `${options.events.input}/${self.ns}`)

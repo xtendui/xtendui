@@ -37,13 +37,13 @@ export class ToggleInit {
     self._optionsInitial = self.options = Xt.merge([self._optionsDefault, self._optionsCustom])
     // classes
     const options = self.options
-    self._classes = options.class ? [...options.class.split(' ')] : []
-    self._classesIn = options.classIn ? [...options.classIn.split(' ')] : []
-    self._classesOut = options.classOut ? [...options.classOut.split(' ')] : []
-    self._classesDone = options.classDone ? [...options.classDone.split(' ')] : []
-    self._classesInitial = options.classInitial ? [...options.classInitial.split(' ')] : []
-    self._classesBefore = options.classBefore ? [...options.classBefore.split(' ')] : []
-    self._classesAfter = options.classAfter ? [...options.classAfter.split(' ')] : []
+    self._classes = options.class ? options.class.split(' ') : []
+    self._classesIn = options.classIn ? options.classIn.split(' ') : []
+    self._classesOut = options.classOut ? options.classOut.split(' ') : []
+    self._classesDone = options.classDone ? options.classDone.split(' ') : []
+    self._classesInitial = options.classInitial ? options.classInitial.split(' ') : []
+    self._classesBefore = options.classBefore ? options.classBefore.split(' ') : []
+    self._classesAfter = options.classAfter ? options.classAfter.split(' ') : []
   }
 
   /**
@@ -187,7 +187,7 @@ export class ToggleInit {
       currents += todo
       for (let i = 0; i < todo; i++) {
         const el = self.elements[i]
-        if (el && !el.classList.contains([...self._classes]) && !el.checked) {
+        if (el && !el.classList.contains(self._classes) && !el.checked) {
           // toggle event if present because of custom listeners
           if (options.on) {
             const event = options.on.split(' ')[0]
@@ -391,7 +391,7 @@ export class ToggleInit {
       )
       el.addEventListener(`on.trigger.${self._componentNs}`, onHandlerCustom)
       if (options.on) {
-        const events = [...options.on.split(' ')]
+        const events = options.on.split(' ')
         for (const event of events) {
           const elEvent = self._getEventParent({ el, event })
           if (elEvent !== el) {
@@ -413,10 +413,10 @@ export class ToggleInit {
       )
       el.addEventListener(`off.trigger.${self._componentNs}`, offHandlerCustom)
       if (options.off) {
-        const events = [...options.off.split(' ')]
+        const events = options.off.split(' ')
         for (const event of events) {
           // same event for on and off same namespace
-          if (![...options.on.split(' ')].includes(event)) {
+          if (!options.on.split(' ').includes(event)) {
             const elEvent = self._getEventParent({ el, event })
             if (elEvent !== el) {
               self._destroyElements.push(elEvent)
@@ -433,7 +433,7 @@ export class ToggleInit {
       // preventEvent
       if (options.on) {
         if (options.preventEvent) {
-          const events = [...options.on.split(' ')]
+          const events = options.on.split(' ')
           if (events.includes('click') || events.includes('mouseenter') || events.includes('mousehover')) {
             // prevent touch links
             const preventeventStartHandler = Xt.dataStorage.put(
@@ -1628,7 +1628,7 @@ export class ToggleInit {
       }
       // return
       return true
-    } else if (options.off && [...options.off.split(' ')].includes(e?.type)) {
+    } else if (options.off && options.off.split(' ').includes(e?.type)) {
       // fix same event for on and off same namespace
       self._eventOff({ el }, e)
     }
