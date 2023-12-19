@@ -563,7 +563,7 @@ if (typeof window !== 'undefined') {
       // remove
       const ret = getEl.delete(key)
       // remove storage if empty
-      if (getEl.size === false) {
+      if (!getEl.size) {
         Xt.dataStorage._storage.delete(el)
       }
       // return
