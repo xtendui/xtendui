@@ -22,14 +22,14 @@ const mountParallax = ({ ref }) => {
 const parallax = ({ ref }) => {
   // check if already done for content added dinamically
 
-  const items = ref.querySelectorAll('.xt-media-container')
+  const items = ref.querySelectorAll('.parallax')
   for (const item of items) {
     item.classList.add('parallaxed')
 
     // vars
 
     const media = item.querySelector('.xt-media')
-    const percent = 20 // percent value of displacement
+    const percent = 10 // percent value of displacement
     const height = 100 + percent * 2 // make bigger with percent
     const translate = (percent * height) / 100 // total translate
 
@@ -53,7 +53,7 @@ const parallax = ({ ref }) => {
         const end = window.innerHeight - document.scrollingElement.scrollHeight + item.offsetTop + item.offsetHeight
         return `bottom${end > 0 ? `-=${end}` : ''} top`
       },
-      scrub: 1,
+      scrub: true,
     }
 
     gsap.set(media, {
@@ -66,7 +66,6 @@ const parallax = ({ ref }) => {
       })
       .to(media, {
         y: `-${translate}%`,
-        ease: 'quint.inOut',
       })
   }
 }

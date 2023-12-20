@@ -28,6 +28,7 @@ menu: true
 .googlelocator
 .slider
 .slider-navs-container
+.parallax
 
 ## Classes not xt Themes
 
