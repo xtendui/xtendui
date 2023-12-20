@@ -150,6 +150,654 @@ const html = /* HTML */ `
               <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
             </div>
           </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img.svg" loading="eager" alt="" />
+            </div>
+          </div>
+
+          <div class="xt-slide w-6/12 ${classes.slide()}" data-xt-slider-target>
+            <div class="xt-media-container bg-gray-200 pb-[100%] rounded-md overflow-hidden">
+              <img class="xt-media object-cover" src="/img-ratio.svg" loading="eager" alt="" />
+            </div>
+          </div>
         </div>
 
         <nav
