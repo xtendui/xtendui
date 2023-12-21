@@ -17,9 +17,16 @@ To make an **overlay full screen** use `.xt-overlay-container.p-0` and `.xt-card
 
 ## Position
 
-To make an **overlay position** use `.xt-overlay-container.p-0` and `.xt-card.min-h-screen` and use **Tailwind CSS** (e.g. [max-width](https://tailwindcss.com/docs/max-width), [margin](https://tailwindcss.com/docs/margin)) on `.xt-overlay-container`.
+To make an **overlay position on left and right** use `.xt-overlay-container.p-0.w-screen` and `.xt-card > .min-h-screen` and add **max-width and margin left and right auto or 0** to `.xt-overlay-container` to position it on left or right.
 
 <demo>
-  <demoinline src="demos/components/overlay/position">
+  <demoinline src="demos/components/overlay/position-horizontal">
+  </demoinline>
+</demo>
+
+To make an **overlay position on top and bottom** use `.xt-overlay-container.p-0.w-screen` and add **margin top and bottom auto or 0** to `.xt-overlay-inner` to position it on top or bottom.
+
+<demo>
+  <demoinline src="demos/components/overlay/position-vertical">
   </demoinline>
 </demo>
