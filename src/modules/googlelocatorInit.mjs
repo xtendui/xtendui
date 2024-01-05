@@ -393,6 +393,10 @@ export class GooglelocatorInit {
       self.container.classList.add('empty')
       self.container.classList.remove('found')
       self.container.classList.remove('error')
+      if (self.viewport) {
+        self.map.fitBounds(self.viewport)
+        self.map.panToBounds(self.viewport)
+      }
     }
     if (options.debug) {
       // eslint-disable-next-line no-console
