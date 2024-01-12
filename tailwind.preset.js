@@ -8,6 +8,10 @@ module.exports = {
         13: ['0.8125rem', { lineHeight: '1rem' }],
         14: ['0.875rem', { lineHeight: '1.25rem' }],
         15: ['0.9375rem', { lineHeight: '1.25rem' }],
+        '4xs': ['0.625rem', { lineHeight: '1rem' }], // 10px
+        '3xs': ['0.6875rem', { lineHeight: '1rem' }], // 11px
+        '2xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
+        xs: ['0.8125rem', { lineHeight: '1rem' }], // 13px
       },
       colors: {
         primary: {
