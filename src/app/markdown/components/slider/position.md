@@ -108,6 +108,8 @@ When `groupSame` is enabled (default) it **groups the slides activation (not pos
 
 </div>
 
+Remember to set `xt-slides` with `items-start`.
+
 <demo>
   <demoinline src="demos/components/slider/autoheight">
   </demoinline>

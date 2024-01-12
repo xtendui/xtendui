@@ -86,6 +86,7 @@ if (typeof window !== 'undefined') {
       const container = entry.target
       if (Xt.observerCheck(entry) && !Xt.observerCheckArr.includes(container)) {
         const objects = Xt._observerArr.filter(x => x.container === container)
+        // keepAlive if there is a func otherwise we don't need observer anymore
         const keepAlive = objects.some(x => x.func)
         if (!keepAlive) {
           observer.unobserve(container)
@@ -287,8 +288,9 @@ if (typeof window !== 'undefined') {
    * @param {Promise} params.promise Promise to resolve when container is inside viewport
    * @param {Function} params.func Function to resolve when container is inside viewport
    * @param {Boolean} params.observer If load with IntersectionObserver
+   * @param {Function} params.id Id for observer removal
    */
-  Xt.observe = ({ container, promise, func, observer } = {}) => {
+  Xt.observe = ({ container, promise, func, observer, id } = {}) => {
     // if container :visible and needs to be height > 0 or intersection observer doesn't fire
     observer = observer ?? (Xt.observer && container.offsetHeight > 0)
     if (observer) {
@@ -298,12 +300,38 @@ if (typeof window !== 'undefined') {
           resolve,
           promise,
           func,
+          id,
         })
         Xt._intersectionObserver.observe(container)
       })
     } else {
       return promise
     }
+  }
+
+  /**
+   * intersection observer disconnect
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container DOM element
+   * @param {Function} params.id Id for observer removal
+   */
+  Xt.unobserve = ({ container, id } = {}) => {
+    Xt._observerArr = Xt._observerArr.filter(x => x.id !== id || x.container !== container)
+    // keepAlive if there is still some containers
+    const keepAlive = Xt._observerArr.some(x => x.container === container)
+    if (!keepAlive) {
+      Xt._intersectionObserver.unobserve(container)
+    }
+  }
+
+  /**
+   * intersection observer has already
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.container DOM element
+   * @param {Function} params.id Id to remove observer
+   */
+  Xt.hasobserve = ({ container, id } = {}) => {
+    return Xt._observerArr.some(x => x.id === id && x.container === container)
   }
 
   /**

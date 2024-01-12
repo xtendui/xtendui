@@ -103,16 +103,19 @@ Observe listens and execute the query with [Intersection Observer](https://devel
 | Option                    | `promise:Promise\|null`                          | `null`        | Promise to resolve when container is inside viewport            |
 | Option                    | `func:Function\|null`                          | `null`        | Function to resolve when container is inside viewport             |
 | Option                    | `observer:Boolean\|null`                          | `null`        | Force enable or disable intersection observer, by default only if container is **visible** (not `display: none`)            |
+| Option                    | `id:String\|null`                          | `null`        | Id for observer removal            |
 
 </div>
 
 And here's a example usage of Intersection Observer that **resolves only one time than disconnects**.
 
 ```js
-Xt.observe({ container: el })
-  .then(() => {
-    // code to execute when element is inside viewport only 1 time
-  })
+Xt.observe({
+  container: el, 
+  observer: true,
+}).then(() => {
+  // code to execute when element is inside viewport only 1 time
+})
 ```
 
 And here's a example usage of Intersection Observer that execute code on entering and **leaving the viewport and doesn't disconnect**.
@@ -120,6 +123,8 @@ And here's a example usage of Intersection Observer that execute code on enterin
 ```js
 Xt.observe({
   container: el,
+  observer: true,
+  id: 'my-id',
   func: intersecting => {
     if (intersecting) {
       // code to execute when element is inside viewport
@@ -130,6 +135,14 @@ Xt.observe({
 })
 ```
 
+And here's the example of removing the observe above.
+
+```js
+Xt.unobserve({
+  container: el,
+  id: 'my-id',
+})
+```
 #### Globals
 
 You can change this method and all the components default options of `Xt.observer` and `Xt.observerOptions` and `Xt.observerCheck`.

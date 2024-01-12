@@ -33,7 +33,8 @@ export class SliderInit extends Xt.Toggle {
     self.drag._wrapDir = 0
     self.drag._wrapIndex = null
     const rect = self.dragger.getBoundingClientRect()
-    self.drag.size = rect.width
+    self.drag.size = self.drag.width = rect.width
+    self.drag.height = rect.height
     self.drag._left = rect.left
     // fix when dragger not :visible (offsetWidth === 0) do not initialize
     if (self.drag.size === 0) {
@@ -88,18 +89,32 @@ export class SliderInit extends Xt.Toggle {
     for (const tr of self.targets) {
       let trLeft
       let trWidth
+      let trHeight
+      let trHeightContent
       if (options.mode === 'absolute') {
         trLeft = 0
-        trWidth = self.drag.size
+        trWidth = self.drag.width
+        trHeight = self.drag.height
+        trHeightContent = self.drag.height
       } else {
+        Xt.unobserve({
+          container: tr,
+          id: self.ns,
+        })
+        self._resetPerfSize.bind(self, tr)()
         const rect = tr.getBoundingClientRect()
         trLeft = rect.left - self.drag._left
         trWidth = rect.width
+        trHeight = rect.height
+        const content = tr.children.length ? tr.children[0] : tr
+        trHeightContent = content.offsetHeight
       }
       sizeContent += trWidth
       Xt.dataStorage.set(tr, `${self.ns}TrLeftInitial`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft)
       Xt.dataStorage.set(tr, `${self.ns}TrWidth`, trWidth)
+      Xt.dataStorage.set(tr, `${self.ns}TrHeight`, trHeight)
+      Xt.dataStorage.set(tr, `${self.ns}TrHeightContent`, trHeightContent)
     }
     self.drag.sizeContent = sizeContent
     // initGroupsInitial
@@ -196,10 +211,12 @@ export class SliderInit extends Xt.Toggle {
       const targets = self.getTargets({ el: tr })
       let groupLeft = Infinity
       let groupWidth = 0
+      let groupHeight = 0
       // vars
       for (const tr of targets) {
         // @PERF
         const targetLeft = Xt.dataStorage.get(tr, `${self.ns}TrLeft`)
+        const targetHeightContent = Xt.dataStorage.get(tr, `${self.ns}TrHeightContent`)
         // groupLeft is last on the left
         groupLeft = targetLeft < groupLeft ? trLeft : groupLeft
         if (options.mode === 'absolute') {
@@ -207,6 +224,7 @@ export class SliderInit extends Xt.Toggle {
           groupLeft += self._usedWidth
         }
         groupWidth += Xt.dataStorage.get(tr, `${self.ns}TrWidth`)
+        groupHeight = targetHeightContent > groupHeight ? targetHeightContent : groupHeight
         self._usedWidth += groupWidth
       }
       // left with alignment
@@ -222,6 +240,7 @@ export class SliderInit extends Xt.Toggle {
       for (const tr of targets) {
         Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.floor(left))
         Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, groupWidth)
+        Xt.dataStorage.set(tr, `${self.ns}GroupHeight`, groupHeight)
       }
     }
   }
@@ -524,6 +543,8 @@ export class SliderInit extends Xt.Toggle {
     if (self.drag.size === 0) {
       return
     }
+    // @PERF
+    self._initPerfSize()
     // init drag
     Xt.frame({
       el: self.container,
@@ -538,6 +559,69 @@ export class SliderInit extends Xt.Toggle {
     })
     // super after
     super._initStart({ save })
+  }
+
+  /**
+   * init performance size
+   */
+  _initPerfSize() {
+    const self = this
+    const options = self.options
+    // @PERF
+    if (options.mode === 'relative') {
+      for (const tr of self.targets) {
+        // intersection observer
+        const func = self._funcPerfSize.bind(self, tr)
+        Xt.observe({
+          container: tr,
+          observer: true,
+          func,
+          id: self.ns,
+        })
+        // hide not inside viewport
+        // fix put after Xt.observe or it will return false negative intersecting
+        self._setPerfSize.bind(self, tr)()
+      }
+    }
+  }
+
+  /**
+   * set performance size
+   */
+  _setPerfSize(tr) {
+    const self = this
+    // logic
+    const width = Xt.dataStorage.get(tr, `${self.ns}TrWidth`)
+    const height = Xt.dataStorage.get(tr, `${self.ns}TrHeight`)
+    tr.style.width = `${width}px`
+    tr.style.height = `${height}px`
+    for (const child of tr.children) {
+      child.style.display = 'none'
+    }
+  }
+
+  /**
+   * reset performance size
+   */
+  _resetPerfSize(tr) {
+    tr.style.height = ''
+    tr.style.width = ''
+    for (const child of tr.children) {
+      child.style.display = ''
+    }
+  }
+
+  /**
+   * func performance size
+   */
+  _funcPerfSize(tr, intersecting) {
+    const self = this
+    // logic
+    if (intersecting) {
+      self._resetPerfSize.bind(self, tr)()
+    } else {
+      self._setPerfSize.bind(self, tr)()
+    }
   }
 
   //
@@ -770,12 +854,7 @@ export class SliderInit extends Xt.Toggle {
     self._eventWrap({ index: self.index })
     // autoHeight and keepHeight
     if (self._autoHeight || (self._keepHeight && self.initial)) {
-      let groupHeight = 0
-      for (const tr of group.targets) {
-        const content = tr.children.length ? tr.children[0] : tr
-        const height = content.offsetHeight
-        groupHeight = height > groupHeight ? height : groupHeight
-      }
+      let groupHeight = Xt.dataStorage.get(group.target, `${self.ns}GroupHeight`)
       if (groupHeight > 0) {
         groupHeight += 'px'
         if (self._autoHeight.style.height !== groupHeight) {
@@ -1504,6 +1583,7 @@ export class SliderInit extends Xt.Toggle {
     self._destroyAutoheight()
     self._destroyPagination()
     self._destroyWrap()
+    self._destroyPerfSize()
     // super after
     super.destroy({ weak })
   }
@@ -1589,6 +1669,25 @@ export class SliderInit extends Xt.Toggle {
     // clean wrap also if no wrap in options
     for (const tr of self.targets) {
       tr.style.transform = ''
+    }
+  }
+
+  /**
+   * destroy performances size
+   */
+  _destroyPerfSize() {
+    const self = this
+    const options = self.options
+    // @PERF
+    if (options.mode === 'relative') {
+      for (const tr of self.targets) {
+        if (Xt.hasobserve({ container: tr, id: self.ns })) {
+          Xt.unobserve({
+            container: tr,
+            id: self.ns,
+          })
+        }
+      }
     }
   }
 }
