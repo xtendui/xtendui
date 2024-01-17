@@ -667,7 +667,7 @@ describe('demos/components/slider/group', function () {
       })
       .viewport('iphone-6')
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[6])
       .should('have.not.class', 'on') // racecondition
       .frame()
@@ -690,7 +690,7 @@ describe('demos/components/slider/group', function () {
       })
       .viewport('macbook-13')
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[6])
       .should('have.class', 'on') // racecondition
       .then(() => {
@@ -920,7 +920,7 @@ describe('demos/components/slider/navigation', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[0])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 })
       .trigger('mousemove', { clientX: 400, clientY: 0 })
@@ -937,7 +937,7 @@ describe('demos/components/slider/navigation', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(true)
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[6])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 })
       .trigger('mousemove', { clientX: -400, clientY: 0 })
@@ -1075,7 +1075,7 @@ describe('demos/components/slider/pagination', function () {
         expect(doc.scrollingElement.scrollTop).to.equal(scroll)
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[3])
       .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 0 }] })
       .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 200 }] })
@@ -1150,7 +1150,7 @@ describe('demos/components/slider/jump', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[2])
       .click()
       .then(() => {
@@ -1163,7 +1163,7 @@ describe('demos/components/slider/jump', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[3])
       .click('left', { force: true })
       .then(() => {
@@ -1176,7 +1176,7 @@ describe('demos/components/slider/jump', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[2])
       .click('right', { force: true })
       .then(() => {
@@ -1384,7 +1384,7 @@ describe('demos/components/slider/nooverflow-false', function () {
       })
       .viewport('iphone-6')
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[1])
       .should('have.not.class', 'on') // racecondition
       .frame()
@@ -1500,7 +1500,7 @@ describe('demos/components/slider/dragposition-js', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translate(0px, 0px)')
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[0])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 })
       .trigger('mousemove', { clientX: -400, clientY: 0 })
@@ -1725,7 +1725,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[0])
       .click() // multiple click should not change slide
       .wait(200) // after some animation
@@ -1740,7 +1740,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       })
       // drag looping going back and forth between first and last
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[0])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: 400, clientY: 0 })
@@ -1767,7 +1767,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[5])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: -400, clientY: 0 })
@@ -1834,7 +1834,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         )
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[0])
       .click() // multiple click should not change slide
       .wait(200) // after some animation
@@ -1863,7 +1863,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       .click()
       .wait(200) // after some animation
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[2])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: 400, clientY: 0 })
@@ -1890,7 +1890,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[1])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: -400, clientY: 0 })
@@ -1917,7 +1917,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[2])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: -400, clientY: 0 })
@@ -2261,7 +2261,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       })
       // click after drag should not stop animation.
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[1])
       .trigger('mousedown', { clientX: 0, clientY: 0, which: 1 }) // not working without client positions
       .trigger('mousemove', { clientX: 400, clientY: 0 })
@@ -2269,7 +2269,7 @@ describe('demos/themes/hero/slider-hero-v1', function () {
       .trigger('mouseup', { force: true })
       .wait(200) // after some animation
       .get(self.targets)
-      .should('exist')
+      .should('be.visible') // racecondition slider
       .get(self.targets[1])
       .click()
       .then(() => {
