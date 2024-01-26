@@ -42,8 +42,7 @@ const mountSlider = ({ ref }) => {
   new Xt.Slider(slider, {
     duration: () => dragDuration * 1000,
     align: 'left',
-    wrap: 0, // needed 0 to have wrap enabled on same available space as slider enable/disable
-    groupSame: false,
+    wrap: true,
     dragposition: true,
   }).then(self => {
     /***/

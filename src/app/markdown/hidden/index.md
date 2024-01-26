@@ -9,7 +9,7 @@ menu: true
 
 
 <demo>
-  <demoinline src="demos/components/slider/perf">
+  <demoinline src="demos/components/slider/automatic-scrolling">
   </demoinline>
   <demoinline src="demos/components/slider/absolute-wheel">
   </demoinline>

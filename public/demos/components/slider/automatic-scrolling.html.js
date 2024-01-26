@@ -4,52 +4,52 @@ const html = /* HTML */ `
   <div class="demo--slider-automatic-scrolling">
     <div class="xt-slider">
       <div class="p-4 md:p-6 lg:p-8">
-        <div class="xt-slides" data-xt-slider-dragger>
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+        <div class="xt-slides xt-row" data-xt-slider-dragger>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">One</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Two</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Three</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Four</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Five</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Six</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Seven</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Eight</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Nine</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Ten</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Eleven</div>
           </div>
 
-          <div class="xt-slide ${classes.slide()} *** px-5 ***" data-xt-slider-target>
+          <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
             <div class="xt-h4">Twelve</div>
           </div>
         </div>
