@@ -1481,8 +1481,11 @@ describe('demos/components/slider/dragposition-js', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    cy.wait(1000).then(() => {
+      // racecondition special
+      return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+        self = selfPromise
+      })
     })
   })
 
