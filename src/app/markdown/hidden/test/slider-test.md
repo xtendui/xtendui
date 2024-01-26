@@ -84,7 +84,7 @@ title: "Slider Test"
 </demo>
 
 `demos/components/slider/wrap-nospace`
-- TEST grouping and activation, wrap position.
+- TEST grouping and activation, wrap position, performance slider.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-nospace">
