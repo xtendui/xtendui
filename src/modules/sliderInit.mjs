@@ -569,17 +569,21 @@ export class SliderInit extends Xt.Toggle {
     const options = self.options
     // @PERF
     if (options.mode === 'relative') {
-      for (const tr of self.targets) {
-        // hide not inside viewport
-        self._setPerfSize.bind(self, tr)()
-        // intersection observer
-        const func = self._funcPerfSize.bind(self, tr)
-        Xt.observe({
-          container: tr,
-          func,
-          id: self.ns,
-        })
-      }
+      Xt.perf({
+        func: () => {
+          for (const tr of self.targets) {
+            // hide not inside viewport
+            self._setPerfSize.bind(self, tr)()
+            // intersection observer
+            const func = self._funcPerfSize.bind(self, tr)
+            Xt.observe({
+              container: tr,
+              func,
+              id: self.ns,
+            })
+          }
+        },
+      })
     }
   }
 
