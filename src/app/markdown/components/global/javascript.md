@@ -112,7 +112,6 @@ And here's a example usage of Intersection Observer that **resolves only one tim
 ```js
 Xt.observe({
   container: el, 
-  observer: true,
 }).then(() => {
   // code to execute when element is inside viewport only 1 time
 })
@@ -123,7 +122,6 @@ And here's a example usage of Intersection Observer that execute code on enterin
 ```js
 Xt.observe({
   container: el,
-  observer: true,
   id: 'my-id',
   func: intersecting => {
     if (intersecting) {
@@ -143,6 +141,7 @@ Xt.unobserve({
   id: 'my-id',
 })
 ```
+
 #### Globals
 
 You can change this method and all the components default options of `Xt.observer` and `Xt.observerOptions` and `Xt.observerCheck`.
@@ -153,7 +152,7 @@ You can change this method and all the components default options of `Xt.observe
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `Xt.observer:Boolean`                          | `true`        | Global enable or disable intersection observer             |
+| Option                    | `Xt.observer:Boolean\|null`                          | `null`        | Global force enable or disable intersection observer             |
 | Option                    | `Xt.observerOptions:Object`                          | `{ root: null }`        | Global intersection observer options            |
 | Option                    | `Xt.observerCheck:Function`                          | `entry => { return entry.intersectionRatio > 0 }`        | Global intersection observer entry check            |
 

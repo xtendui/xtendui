@@ -570,17 +570,15 @@ export class SliderInit extends Xt.Toggle {
     // @PERF
     if (options.mode === 'relative') {
       for (const tr of self.targets) {
+        // hide not inside viewport
+        self._setPerfSize.bind(self, tr)()
         // intersection observer
         const func = self._funcPerfSize.bind(self, tr)
         Xt.observe({
           container: tr,
-          observer: true,
           func,
           id: self.ns,
         })
-        // hide not inside viewport
-        // fix put after Xt.observe or it will return false negative intersecting
-        self._setPerfSize.bind(self, tr)()
       }
     }
   }

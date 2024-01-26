@@ -36,12 +36,11 @@ if (typeof window !== 'undefined') {
   Xt.scrolltoHashforce = null
   Xt.formScrollWindowFactor = 0.2
   Xt._observerArr = []
-  Xt.observer = true
+  Xt.observer = null
   Xt.observerOptions = { root: null }
   Xt.observerCheck = entry => {
     return entry.intersectionRatio > 0
   }
-  Xt.observerCheckArr = []
 
   //
   // initialization
@@ -84,31 +83,32 @@ if (typeof window !== 'undefined') {
   Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
     for (const entry of entries) {
       const container = entry.target
-      if (Xt.observerCheck(entry) && !Xt.observerCheckArr.includes(container)) {
+      if (Xt.observerCheck(entry)) {
         const objects = Xt._observerArr.filter(x => x.container === container)
         // keepAlive if there is a func otherwise we don't need observer anymore
         const keepAlive = objects.some(x => x.func)
         if (!keepAlive) {
           observer.unobserve(container)
-        } else {
-          Xt.observerCheckArr.push(container)
+          Xt._observerArr = Xt._observerArr.filter(x => x.container !== container)
         }
+        // logic
         for (const obj of objects) {
-          if (!keepAlive) {
-            Xt._observerArr = Xt._observerArr.filter(x => x.container !== container)
-          }
           if (obj.func) {
             obj.func(true)
-          } else {
+          }
+          if (obj.promise) {
             obj.resolve(obj.promise)
           }
         }
-      } else if (Xt.observerCheckArr.includes(container)) {
-        Xt.observerCheckArr = Xt.observerCheckArr.filter(x => x !== container)
+      } else {
         const objects = Xt._observerArr.filter(x => x.container === container)
-        for (const obj of objects) {
-          if (obj.func) {
-            obj.func(false)
+        const keepAlive = objects.some(x => x.func)
+        if (keepAlive) {
+          // logic
+          for (const obj of objects) {
+            if (obj.func) {
+              obj.func(false)
+            }
           }
         }
       }
@@ -291,8 +291,12 @@ if (typeof window !== 'undefined') {
    * @param {Function} params.id Id for observer removal
    */
   Xt.observe = ({ container, promise, func, observer, id } = {}) => {
-    // if container :visible and needs to be height > 0 or intersection observer doesn't fire
-    observer = observer ?? (Xt.observer && container.offsetHeight > 0)
+    if (func) {
+      observer = Xt.observer ?? true
+    } else {
+      // we execute instantly if not visible because can be in unique mode etc.. DO NOT USE Xt.visible it bugs demo fullscreen
+      observer = Xt.observer ?? container.offsetHeight > 0
+    }
     if (observer) {
       return new Promise(resolve => {
         Xt._observerArr.push({
@@ -305,7 +309,14 @@ if (typeof window !== 'undefined') {
         Xt._intersectionObserver.observe(container)
       })
     } else {
-      return promise
+      if (func) {
+        func(true)
+      }
+      if (promise) {
+        return new Promise(resolve => {
+          resolve(promise)
+        })
+      }
     }
   }
 

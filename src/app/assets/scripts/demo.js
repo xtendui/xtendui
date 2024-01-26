@@ -430,12 +430,19 @@ export const populateItem = item => {
   }).then(() => {
     swapClick({ ref: btnClipboard.parentNode })
   })
+  // .button--show-code
+  const btnCode = container.querySelector('.button--show-code')
+  const inner = container.querySelector('.docs_demo_inner')
+  Xt.get({ name: 'xt-toggle', el: inner }).then(selfCode => {
+    if (selfCode && selfCode.reinit) {
+      // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
+      selfCode.reinit({ save: false })
+    }
+  })
   // only one time
   if (container.dataset.docsDemCodeBuilt) return
   container.dataset.docsDemCodeBuilt = 'true'
   // .button--show-code
-  const btnCode = container.querySelector('.button--show-code')
-  const inner = container.querySelector('.docs_demo_inner')
   Xt.get({ name: 'xt-toggle', el: inner }).then(selfCode => {
     if (selfCode && selfCode.reinit) {
       // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
