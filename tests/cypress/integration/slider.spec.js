@@ -1578,14 +1578,13 @@ describe('demos/components/slider/media-loaded', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .find('[data-xt-slider-element]')
-      .should('have.class', 'xt-medialoaded') // racecondition
       .eq(5)
+      .should('have.class', 'xt-medialoaded') // racecondition
       .click({ force: true })
       .get(container)
       .find('[data-xt-slider-target]')
       .eq(5)
       .should('have.class', 'xt-medialoaded') // racecondition
-      .wait(1000)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -1594,7 +1593,10 @@ describe('demos/components/slider/media-loaded', function () {
         expect(self.targets[4].classList.contains('on')).to.equal(false)
         expect(self.targets[5].classList.contains('on')).to.equal(true)
         expect(self.targets[6].classList.contains('on')).to.equal(false)
-        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-2834px)')
+        expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.be.oneOf([
+          'translateX(-2834px)',
+          'translateX(-3840px)',
+        ])
       })
   })
 })

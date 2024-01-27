@@ -67,6 +67,7 @@ Slider.optionsDefault = {
   // timing
   queue: false,
   // other
+  noobserver: false,
   visibleReinit: true,
   jump: false,
   navigation: '[data-xt-nav]',

@@ -98,11 +98,13 @@ export class SliderInit extends Xt.Toggle {
         trHeight = self.drag.height
         trHeightContent = self.drag.height
       } else {
-        Xt.unobserve({
-          container: tr,
-          id: self.ns,
-        })
-        self._resetPerfSize.bind(self, tr)()
+        if (!options.noobserver) {
+          Xt.unobserve({
+            container: tr,
+            id: self.ns,
+          })
+          self._resetPerfSize.bind(self, tr)()
+        }
         const rect = tr.getBoundingClientRect()
         trLeft = rect.left - self.drag._left
         trWidth = rect.width
@@ -570,7 +572,7 @@ export class SliderInit extends Xt.Toggle {
     const self = this
     const options = self.options
     // @PERF
-    if (options.mode === 'relative') {
+    if (options.mode === 'relative' && !options.noobserver) {
       Xt.perf({
         func: () => {
           for (const tr of self.targets) {
@@ -1683,7 +1685,7 @@ export class SliderInit extends Xt.Toggle {
     const self = this
     const options = self.options
     // @PERF
-    if (options.mode === 'relative') {
+    if (options.mode === 'relative' && !options.noobserver) {
       for (const tr of self.targets) {
         if (Xt.hasobserve({ container: tr, id: self.ns })) {
           Xt.unobserve({

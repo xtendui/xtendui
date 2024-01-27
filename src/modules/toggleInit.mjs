@@ -605,7 +605,6 @@ export class ToggleInit {
         self._destroyElements.push(...imgs)
         for (const img of imgs) {
           if (!Xt.dataStorage.get(img, `${self.ns}MedialoadedDone`)) {
-            Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true) // useCapture event propagation
             if (!img.complete) {
               const medialoadedHandler = Xt.dataStorage.put(
                 img,
@@ -946,6 +945,8 @@ export class ToggleInit {
     const options = self.options
     // fix multiple calls
     Xt.dataStorage.set(img, `${self.ns}MedialoadedDone`, true)
+    const medialoadedHandler = Xt.dataStorage.get(img, `load/media/${self.ns}`)
+    img.removeEventListener('load', medialoadedHandler)
     // mediaLoadedReinit
     if (options.mediaLoadedReinit && deferred && reinit) {
       clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}MedialoadedTimeout`))

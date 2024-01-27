@@ -30,7 +30,7 @@ if (typeof window !== 'undefined') {
   Xt._unmountArr = []
   Xt.resizeSkip = () => matchMedia('(hover: none), (pointer: coarse)').matches
   Xt.resizeDelay = 200
-  Xt.medialoadedDelay = false
+  Xt.medialoadedDelay = 200
   Xt.durationTimescale = 1
   Xt.autoTimescale = 1
   Xt.scrolltoHashforce = null

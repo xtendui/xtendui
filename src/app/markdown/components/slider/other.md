@@ -6,6 +6,20 @@ title: "Other"
 date: "2005-10-10"
 ---
 
+## Intersection Observer perfomances
+
+The slider plugin automatically hides slides outside of the window, and shows them when they enter the window, all of this with [Xt.observe](/components/global/javascript#xt-observe). This improves the performances of sliders especially when they have many or complex slides and especially on slow mobiles.
+
+To disable this behaviour use `options.noobserver: true`.
+
+<div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
+
+|                         | Syntax                                    | Default / Arguments                       | Description                   |
+| ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Option                  | `noobserver:Boolean`                          | `false`        | Disable intersection observer performances             |
+
+</div>
+
 ## Accessibility
 
 This components follows A11y standards so **aria attributes and keyboard interactions are managed automatically**.
