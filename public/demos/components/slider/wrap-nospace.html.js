@@ -31,12 +31,6 @@ const html = /* HTML */ `
               <div class="xt-h4">4</div>
             </div>
           </div>
-          <div class="xt-slide w-8/12 sm:w-6/12 ${classes.slide()}" data-xt-slider-target>
-            <div
-              class="xt-card ${classes.textDefault()} rounded${classes.cardSlideRadius()} ${classes.cardSlideDesign()} ${classes.cardSlideContent()}">
-              <div class="xt-h4">5</div>
-            </div>
-          </div>
         </div>
         <nav
           aria-label="Slider Navigation"
