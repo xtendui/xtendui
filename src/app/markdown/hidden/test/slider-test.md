@@ -59,8 +59,16 @@ title: "Slider Test"
 
 ## Wrap
 
-`demos/components/slider/wrap-center`
+`demos/components/slider/wrap-nospace`
 - TEST grouping and activation, wrap position.
+
+<demo>
+  <demoinline src="demos/components/slider/wrap-nospace">
+  </demoinline>
+</demo>
+
+`demos/components/slider/wrap-center`
+- TEST grouping and activation, wrap position, performance slider.
 
 <demo>
   <demoinline src="demos/components/slider/wrap-center">
@@ -80,14 +88,6 @@ title: "Slider Test"
 
 <demo>
   <demoinline src="demos/components/slider/wrap-right">
-  </demoinline>
-</demo>
-
-`demos/components/slider/wrap-nospace`
-- TEST grouping and activation, wrap position, performance slider.
-
-<demo>
-  <demoinline src="demos/components/slider/wrap-nospace">
   </demoinline>
 </demo>
 
