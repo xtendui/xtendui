@@ -19,7 +19,6 @@ describe('demos/components/slider/align-center', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -77,7 +76,6 @@ describe('demos/components/slider/align-left', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -135,7 +133,6 @@ describe('demos/components/slider/align-right', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -193,7 +190,6 @@ describe('demos/components/slider/contain-false-center', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -251,7 +247,6 @@ describe('demos/components/slider/contain-false-left', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -309,7 +304,6 @@ describe('demos/components/slider/contain-false-right', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -367,7 +361,6 @@ describe('demos/components/slider/wrap-nospace', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -376,7 +369,7 @@ describe('demos/components/slider/wrap-nospace', function () {
     })
   })
 
-  it('TEST grouping and activation, no wrap, performance slider.', function () {
+  it.only('TEST grouping and activation, no wrap, performance slider.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .then(() => {
@@ -461,7 +454,6 @@ describe('demos/components/slider/wrap-center', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -533,7 +525,6 @@ describe('demos/components/slider/wrap-left', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -605,7 +596,6 @@ describe('demos/components/slider/wrap-right', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -677,7 +667,6 @@ describe('demos/components/slider/group', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -773,7 +762,6 @@ describe('demos/components/slider/group-same-false', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -853,7 +841,6 @@ describe('demos/components/slider/exclude', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -927,7 +914,6 @@ describe('demos/components/slider/navigation', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1022,7 +1008,6 @@ describe('demos/components/slider/pagination', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1183,7 +1168,6 @@ describe('demos/components/slider/jump', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1256,7 +1240,6 @@ describe('demos/components/slider/autoheight', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1300,7 +1283,6 @@ describe('demos/components/slider/progress', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1362,7 +1344,6 @@ describe('demos/components/slider/nooverflow', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1413,7 +1394,6 @@ describe('demos/components/slider/nooverflow-false', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1476,7 +1456,6 @@ describe('demos/components/slider/media-loaded', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
@@ -1529,8 +1508,6 @@ describe('demos/components/slider/dragposition-js', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
-      .wait(500) // racecondition special
-      .wait(500) // racecondition special
   })
 
   beforeEach(function () {
