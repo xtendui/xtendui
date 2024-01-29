@@ -7,7 +7,15 @@ description: "Overview of the main features."
 date: "2010-09-10"
 ---
 
-Interactions and animations are not easy at all. Here's why **Xtend UI is not the usual frontend library**, it's designed to **make hard javascript task effortless**, that could take days or even months to implement and that needs various iterations and complex use case to do properly.
+Interactions and animations are not easy at all. Here's why **Xtend UI is not the usual frontend library**, it's designed to **make hard javascript tasks effortless**, which take days or even months to implement and that needs various iterations and complex use cases to do properly.
+
+## Performances
+
+- Every javascript component **loads its code and executes** it **only when inside viewport**. This improves drastically the pagespeed value of INP (Interaction to Next Paint) and other pagespeed values relative to the amount of javascript code loaded and executed.
+
+- The initialization and execution of components are optimized for perfomance, for example with `setTimeout(fn, 0)` to not block the javascript event loop.
+
+- The slider component automatically hides slides outside of the window, and **shows them when they enter the window**, all of this with [Xt.observe](/components/global/javascript#xt-observe). This **improves the performances** of sliders especially when they have **many or complex slides and especially on slow mobiles**.
 
 ## Accessibility
 
@@ -87,7 +95,7 @@ See [infinite-scroll](/components/infinite-scroll) for more info.
 
 #### ScrollTrigger
 
-Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sort of interaction on page scroll**.
+Xtend UI uses gsap for javascript animations, not only that but it relies on [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) to do **all sorts of interaction on page scroll**.
 
 See [fade](/components/scrolltrigger/fade), [sticky](/components/scrolltrigger/sticky), [parallax](/components/scrolltrigger/parallax) for more info.
 
@@ -99,13 +107,13 @@ See [scrollto](/components/scrollto) for more info.
 
 #### Stickyflow
 
-Stickyflow is a plugin that enhance **css sticky position** by making it **scroll the content also if overflowing the window**.
+Stickyflow is a plugin that enhances **css sticky position** by making it **scroll the content also if overflowing the window**.
 
 See [stickyflow](/components/stickyflow) for more info.
 
 ## Core
 
-All core components are **primitive UI elements** that promotes creativity with its support for complex design.
+All core components are **primitive UI elements** that promote creativity with its support for complex design.
 
 #### Card
 
@@ -117,7 +125,7 @@ The **link component** has cssinjs customizable styles for **automatic styling o
 
 #### List and Row
 
-The **list and row components** are useful to space any element with margins or paddings, they also spaces vertically. When you want to **space child element within flex** they provide simple spacing classes for browsers that still don't support [flex gap](https://caniuse.com/flexbox-gap). See [list](/components/list), [row](/components/row) for more info.
+The **list and row components** are useful to space any element with margins or paddings, they also space vertically. When you want to **space a child element within flex** they provide simple spacing classes for browsers that still don't support [flex gap](https://caniuse.com/flexbox-gap). See [list](/components/list), [row](/components/row) for more info.
 
 #### Media
 
