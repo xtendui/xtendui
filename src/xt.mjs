@@ -370,7 +370,9 @@ if (typeof window !== 'undefined') {
       promise = new Promise(resolve => {
         const namespace = name.split('-').pop()
         const init = () => {
-          resolve(Xt.dataStorage.get(el, name))
+          Xt.dataStorage.get(el, name).then(selfPromise => {
+            resolve(selfPromise)
+          })
           el.removeEventListener(`init.xt.${namespace}`, init)
         }
         el.addEventListener(`init.xt.${namespace}`, init)
