@@ -40,8 +40,6 @@ describe('demos/components/slider/align-center', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .then(() => {
@@ -97,8 +95,6 @@ describe('demos/components/slider/align-left', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .then(() => {
@@ -154,8 +150,6 @@ describe('demos/components/slider/align-right', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .then(() => {
@@ -211,8 +205,6 @@ describe('demos/components/slider/contain-false-center', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(288px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .then(() => {
@@ -268,8 +260,6 @@ describe('demos/components/slider/contain-false-left', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(0px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .then(() => {
@@ -325,8 +315,6 @@ describe('demos/components/slider/contain-false-right', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(576px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .then(() => {
@@ -383,8 +371,6 @@ describe('demos/components/slider/wrap-nospace', function () {
         expect(self.targets[2].style.transform).to.equal('')
         expect(self.targets[3].style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[2])
       .click()
       .then(() => {
@@ -466,8 +452,6 @@ describe('demos/components/slider/wrap-center', function () {
         expect(self.targets[4].children[0].style.display).to.equal('none')
         expect(self.targets[5].children[0].style.display).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[4])
       .click()
       .then(() => {
@@ -558,8 +542,6 @@ describe('demos/components/slider/wrap-left', function () {
         expect(self.targets[5].style.transform).to.equal('')
         expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[6])
       .click()
       .then(() => {
@@ -629,8 +611,6 @@ describe('demos/components/slider/wrap-right', function () {
         expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
         expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[6])
       .click()
       .then(() => {
@@ -795,8 +775,6 @@ describe('demos/components/slider/group-same-false', function () {
         expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
         expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[6])
       .click()
       .then(() => {
@@ -1044,8 +1022,6 @@ describe('demos/components/slider/pagination', function () {
         expect(self.elements[15].classList.contains('on')).to.equal(true)
         expect(self.elements[16].classList.contains('on')).to.equal(false)
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .then(() => {
@@ -1071,8 +1047,6 @@ describe('demos/components/slider/pagination', function () {
       .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[6])
       .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
       .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -200, clientY: 0 }] })
@@ -1119,8 +1093,6 @@ describe('demos/components/slider/pagination', function () {
       .then(() => {
         expect(doc.scrollingElement.scrollTop).to.not.equal(scroll)
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[18])
       .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
       .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })
@@ -1259,8 +1231,6 @@ describe('demos/components/slider/autoheight', function () {
       .then(() => {
         expect(parseFloat(container.querySelector('[data-xt-slider-autoheight]').style.height)).to.closeTo(101, 10)
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[2])
       .click()
       .then(() => {
@@ -1313,8 +1283,6 @@ describe('demos/components/slider/progress', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(self.targets[6].classList.contains('on')).to.equal(false)
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[4])
       .click()
       .wait(4250)
@@ -1554,8 +1522,6 @@ describe('demos/components/slider/dragposition-js', function () {
         expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translate(-704px, 0px)')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(750) // after animation
@@ -1612,8 +1578,6 @@ describe('demos/themes/hero/slider-hero-v2', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
@@ -1627,8 +1591,6 @@ describe('demos/themes/hero/slider-hero-v2', function () {
           0,
         )
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[2])
       .click()
       .wait(200) // after some animation
@@ -1642,8 +1604,6 @@ describe('demos/themes/hero/slider-hero-v2', function () {
           0,
         )
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[3])
       .click()
       .wait(200) // after some animation
@@ -1657,8 +1617,6 @@ describe('demos/themes/hero/slider-hero-v2', function () {
           0,
         )
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[0])
       .click()
       .wait(200) // after some animation
@@ -1672,8 +1630,6 @@ describe('demos/themes/hero/slider-hero-v2', function () {
           0,
         )
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
@@ -1687,8 +1643,6 @@ describe('demos/themes/hero/slider-hero-v2', function () {
           0,
         )
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[2])
       .click()
       .wait(200) // after some animation
@@ -1702,8 +1656,6 @@ describe('demos/themes/hero/slider-hero-v2', function () {
           0,
         )
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[3])
       .click()
       .wait(200) // after some animation
@@ -1831,8 +1783,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       // pagination looping first and second to last
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[4])
       .click()
       .wait(200) // after some animation
@@ -1855,8 +1805,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[0])
       .click()
       .wait(200) // after some animation
@@ -1894,8 +1842,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       // drag sx then drag 2 times dx
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[2])
       .click()
       .wait(200) // after some animation
@@ -1981,8 +1927,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       // 2 > 5 > 3 > 1
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
@@ -2005,8 +1949,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[5])
       .click()
       .wait(200) // after some animation
@@ -2029,8 +1971,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(true)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[3])
       .click()
       .wait(200) // after some animation
@@ -2053,8 +1993,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
@@ -2078,8 +2016,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       // 5 > 1 > 5 > 1
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[4])
       .click()
       .wait(200) // after some animation
@@ -2102,8 +2038,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
@@ -2126,8 +2060,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[4])
       .click()
       .wait(200) // after some animation
@@ -2150,8 +2082,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
@@ -2175,8 +2105,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       // 2 > 5 > 3 > 1
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[5])
       .click()
       .wait(200) // after some animation
@@ -2199,8 +2127,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(true)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[3])
       .click()
       .wait(200) // after some animation
@@ -2223,8 +2149,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
@@ -2248,8 +2172,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
       // 2 > 3 > 1
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[4])
       .click()
       .wait(200) // after some animation
@@ -2272,8 +2194,6 @@ describe('demos/themes/hero/slider-hero-v1', function () {
         expect(self.targets[5].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('')
       })
-      .get(self.elements)
-      .should('exist')
       .get(self.elements[1])
       .click()
       .wait(200) // after some animation
