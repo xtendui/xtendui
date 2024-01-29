@@ -366,7 +366,17 @@ if (typeof window !== 'undefined') {
    */
   Xt.get = ({ name, el, observer } = {}) => {
     const promise = new Promise(resolve => {
-      resolve(Xt.dataStorage.get(el, name))
+      const self = Xt.dataStorage.get(el, name)
+      if (self) {
+        resolve(self)
+      } else {
+        const namespace = name.split('-').pop()
+        const init = () => {
+          resolve(Xt.dataStorage.get(el, name))
+          el.removeEventListener(`init.xt.${namespace}`, init)
+        }
+        el.addEventListener(`init.xt.${namespace}`, init)
+      }
     })
     return Xt.observe({ container: el, promise, observer })
   }
