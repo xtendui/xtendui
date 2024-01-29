@@ -22,8 +22,13 @@ describe('demos/components/slider/align-center', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -77,8 +82,13 @@ describe('demos/components/slider/align-left', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -132,8 +142,13 @@ describe('demos/components/slider/align-right', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -187,8 +202,13 @@ describe('demos/components/slider/contain-false-center', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -242,8 +262,13 @@ describe('demos/components/slider/contain-false-left', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -297,8 +322,13 @@ describe('demos/components/slider/contain-false-right', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -352,8 +382,13 @@ describe('demos/components/slider/wrap-nospace', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -409,8 +444,13 @@ describe('demos/components/slider/wrap-center', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -517,8 +557,13 @@ describe('demos/components/slider/wrap-left', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -586,8 +631,13 @@ describe('demos/components/slider/wrap-right', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -655,8 +705,13 @@ describe('demos/components/slider/group', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -750,8 +805,13 @@ describe('demos/components/slider/group-same-false', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -828,8 +888,13 @@ describe('demos/components/slider/exclude', function () {
 
   beforeEach(function () {
     return Xt.get({ name: 'xt-toggle', el: containerToggle }).then(() => {
-      return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-        self = selfPromise
+      return new Promise(resolve => {
+        container.addEventListener('init.xt.slider', function () {
+          Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+            self = selfPromise
+            resolve()
+          })
+        })
       })
     })
   })
@@ -900,8 +965,13 @@ describe('demos/components/slider/navigation', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -994,8 +1064,13 @@ describe('demos/components/slider/pagination', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1148,8 +1223,13 @@ describe('demos/components/slider/jump', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1220,8 +1300,13 @@ describe('demos/components/slider/autoheight', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1261,8 +1346,13 @@ describe('demos/components/slider/progress', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1320,8 +1410,13 @@ describe('demos/components/slider/nooverflow', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1370,8 +1465,13 @@ describe('demos/components/slider/nooverflow-false', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1432,8 +1532,13 @@ describe('demos/components/slider/media-loaded', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1486,8 +1591,13 @@ describe('demos/components/slider/dragposition-js', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1558,8 +1668,13 @@ describe('demos/themes/hero/slider-hero-v2', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
@@ -1692,8 +1807,13 @@ describe('demos/themes/hero/slider-hero-v1', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
-      self = selfPromise
+    return new Promise(resolve => {
+      container.addEventListener('init.xt.slider', function () {
+        Xt.get({ name: 'xt-slider', el: container }).then(selfPromise => {
+          self = selfPromise
+          resolve()
+        })
+      })
     })
   })
 
