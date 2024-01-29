@@ -119,7 +119,7 @@ describe('demos/components/overlay/disabled', function () {
     })
   })
 
-  it.only('TEST overlay nested classBody, desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.', function () {
+  it('TEST overlay nested classBody, desktop is disabled > resize mobile is enabled > open > resize desktop is disabled and closed.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .then(() => {
