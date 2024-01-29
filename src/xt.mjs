@@ -364,21 +364,19 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.observer If load with IntersectionObserver
    * @return {Object}
    */
-  Xt.get = ({ name, el, observer } = {}) => {
-    let promise
-    let selfPromise = Xt.dataStorage.get(el, name)
-    if (selfPromise) {
-      promise = selfPromise
-    } else {
-      const namespace = name.split('-').pop()
-      const init = () => {
-        selfPromise = Xt.dataStorage.get(el, name)
-        promise = selfPromise
-        el.removeEventListener(`init.xt.${namespace}`, init)
-      }
-      el.addEventListener(`init.xt.${namespace}`, init)
+  Xt.get = ({ name, el } = {}) => {
+    let promise = Xt.dataStorage.get(el, name)
+    if (!promise) {
+      promise = new Promise(resolve => {
+        const namespace = name.split('-').pop()
+        const init = () => {
+          resolve(Xt.dataStorage.get(el, name))
+          el.removeEventListener(`init.xt.${namespace}`, init)
+        }
+        el.addEventListener(`init.xt.${namespace}`, init)
+      })
     }
-    return Xt.observe({ container: el, promise, observer })
+    return promise
   }
 
   /**
