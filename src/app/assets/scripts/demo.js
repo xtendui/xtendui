@@ -434,31 +434,22 @@ export const populateItem = item => {
   const btnCode = container.querySelector('.button--show-code')
   const inner = container.querySelector('.docs_demo_inner')
   Xt.get({ name: 'xt-toggle', el: inner }).then(selfCode => {
-    if (selfCode && selfCode.reinit) {
-      // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
-      selfCode.reinit({ save: false })
-    }
+    // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
+    selfCode.reinit({ save: false })
   })
   // only one time
   if (container.dataset.docsDemCodeBuilt) return
   container.dataset.docsDemCodeBuilt = 'true'
   // .button--show-code
-  Xt.get({ name: 'xt-toggle', el: inner }).then(selfCode => {
-    if (selfCode && selfCode.reinit) {
-      // needs save: false or useLayout inside demos is executed before mutation observer Xt._mountCheck({ added })
-      selfCode.reinit({ save: false })
-    } else {
-      new Xt.Toggle(inner, {
-        elements: '.button--show-code',
-        targets: `.docs_demo_code`,
-        queue: false,
-        a11y: false,
-      }).then(self => {
-        selfCode = self
-      })
-      // populateTabs
-      btnCode.addEventListener('on.xt.toggle', populateTabs.bind(container, { container }))
-    }
+  new Xt.Toggle(inner, {
+    elements: '.button--show-code',
+    targets: `.docs_demo_code`,
+    queue: false,
+    a11y: false,
+  }).then(self => {
+    const selfCode = self
+    // populateTabs
+    btnCode.addEventListener('on.xt.toggle', populateTabs.bind(container, { container }))
     btnCode.addEventListener('on.xt.toggle', () => {
       const targetCode = selfCode.targets[0]
       if (targetCode) {
