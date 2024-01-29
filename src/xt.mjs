@@ -366,14 +366,14 @@ if (typeof window !== 'undefined') {
    */
   Xt.get = ({ name, el, observer } = {}) => {
     let promise
-    let self = Xt.dataStorage.get(el, name)
-    if (self) {
-      promise = self
+    let selfPromise = Xt.dataStorage.get(el, name)
+    if (selfPromise) {
+      promise = selfPromise
     } else {
       const namespace = name.split('-').pop()
       const init = () => {
-        self = Xt.dataStorage.get(el, name)
-        promise = self
+        selfPromise = Xt.dataStorage.get(el, name)
+        promise = selfPromise
         el.removeEventListener(`init.xt.${namespace}`, init)
       }
       el.addEventListener(`init.xt.${namespace}`, init)
