@@ -365,19 +365,19 @@ if (typeof window !== 'undefined') {
    * @return {Object}
    */
   Xt.get = ({ name, el, observer } = {}) => {
-    const promise = new Promise(resolve => {
-      const self = Xt.dataStorage.get(el, name)
-      if (self) {
-        resolve(self)
-      } else {
-        const namespace = name.split('-').pop()
-        const init = () => {
-          resolve(Xt.dataStorage.get(el, name))
-          el.removeEventListener(`init.xt.${namespace}`, init)
-        }
-        el.addEventListener(`init.xt.${namespace}`, init)
+    let promise
+    let self = Xt.dataStorage.get(el, name)
+    if (self) {
+      promise = self
+    } else {
+      const namespace = name.split('-').pop()
+      const init = () => {
+        self = Xt.dataStorage.get(el, name)
+        promise = self
+        el.removeEventListener(`init.xt.${namespace}`, init)
       }
-    })
+      el.addEventListener(`init.xt.${namespace}`, init)
+    }
     return Xt.observe({ container: el, promise, observer })
   }
 
