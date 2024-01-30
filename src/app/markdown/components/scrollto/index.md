@@ -161,6 +161,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `scrollto.xt.scrollto`      | `container` | Scrollto event           |
+| Event                   | `setup.xt.scrollto`           | `container` | Setup event             |
 | Event                   | `init.xt.scrollto`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.scrollto`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.scrollto`           | `container` | Destroy event             |

@@ -368,12 +368,13 @@ if (typeof window !== 'undefined') {
     let promise = Xt.dataStorage.get(el, name)
     if (!promise) {
       promise = new Promise(resolve => {
-        const init = () => {
+        const setup = () => {
           Xt.dataStorage.get(el, name).then(selfPromise => {
             resolve(selfPromise)
           })
         }
-        el.addEventListener(`init.xt.${name.split('-').pop()}`, init, { once: true })
+        // this is the order: Xt._set before self._init and Xt.get listen to setup.xt to have self variables ready
+        el.addEventListener(`setup.xt.${name.split('-').pop()}`, setup, { once: true })
       })
     }
     return promise

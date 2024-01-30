@@ -207,12 +207,15 @@ export class ToggleInit {
     }
     // no currents
     if (currents === 0) {
-      // init
+      // setup
+      // dispatch event
+      self.container.dispatchEvent(new CustomEvent(`setup.${self._componentNs}`))
       // needs frameDouble after ondone
       Xt.frameDouble({
         el: self.container,
         ns: `${self.ns}Init`,
         func: () => {
+          // init
           // fix before _initScope or slider absolute has multiple active and bugs initial calculations
           self.container.setAttribute(`data-${self.componentName}-init`, '')
           // dispatch event
@@ -2350,12 +2353,17 @@ export class ToggleInit {
     const options = self.options
     // logic
     if (actionCurrent === 'In') {
-      // init
+      // setup
+      if (self.initial) {
+        // dispatch event
+        self.container.dispatchEvent(new CustomEvent(`setup.${self._componentNs}`))
+      }
       // needs frameDouble after ondone
-      Xt.frameDouble({
+      Xt.perf({
         el: self.container,
         ns: `${self.ns}Init`,
         func: () => {
+          // init
           if (self.initial) {
             // fix before _initScope or slider absolute has multiple active and bugs initial calculations
             self.container.setAttribute(`data-${self.componentName}-init`, '')

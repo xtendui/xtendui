@@ -88,6 +88,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `change.xt.stickyflow`                        | `input` | Position change event             |
+| Event                   | `setup.xt.stickyflow`           | `container` | Setup event             |
 | Event                   | `init.xt.stickyflow`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.stickyflow`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.stickyflow`           | `container` | Destroy event             |

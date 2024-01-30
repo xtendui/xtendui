@@ -115,6 +115,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | Event                   | `on.xt.mousefollow`       | `container` | Activation event (event `e.detail` is original event)             |
 | Event                   | `off.xt.mousefollow`      | `container` | Deactivation event (event `e.detail` is original event)            |
 | Event                   | `change.xt.mousefollow`       | `container` | Change event (event `e.detail` is original event)             |
+| Event                   | `setup.xt.mousefollow`           | `container` | Setup event             |
 | Event                   | `init.xt.mousefollow`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.mousefollow`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.mousefollow`           | `container` | Destroy event             |

@@ -48,11 +48,11 @@ class Textareaautosize {
       suffix: 'Init',
       observer: self._optionsCustom.observer,
     }).then(() => {
+      // this is the order: Xt._set before self._init and Xt.get listen to setup.xt to have self variables ready
+      Xt._set({ name: self.componentName, el: self.container, selfPromise })
       self._init()
       return self
     })
-    // set self
-    Xt._set({ name: self.componentName, el: self.container, selfPromise })
     return selfPromise
   }
 }

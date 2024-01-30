@@ -62,7 +62,9 @@ export class TextareaautosizeInit {
     }
     // initial
     self._initStart()
-    // init
+    // setup
+    // dispatch event
+    self.container.dispatchEvent(new CustomEvent(`setup.${self._componentNs}`))
     // needs frameDouble after ondone
     Xt.frameDouble({
       el: self.container,

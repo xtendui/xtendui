@@ -26,18 +26,15 @@ const mountSlider = ({ ref }) => {
     // setup
 
     /***/
-    const init = () => {
-      const trs = self.targets.filter(x => !self.hasCurrent({ el: x }))
-      for (const tr of trs) {
-        // content
-        const content = tr.querySelector('[data-node-target-content]')
-        gsap.set(content, {
-          opacity: 0,
-        })
-      }
+    const trs = self.targets.filter(x => !self.hasCurrent({ el: x }))
+    for (const tr of trs) {
+      // content
+      const content = tr.querySelector('[data-node-target-content]')
+      gsap.killTweensOf(content)
+      gsap.set(content, {
+        opacity: 0,
+      })
     }
-
-    self.container.addEventListener('init.xt.slider', init, true) // useCapture event propagation
     /***/
 
     // on
@@ -56,7 +53,7 @@ const mountSlider = ({ ref }) => {
         gsap.to(content, {
           x: 0,
           opacity: 1,
-          duration: targetTimeOn,
+          duration: self.initial ? 0 : targetTimeOn,
           ease: targetEaseOn,
         })
       }

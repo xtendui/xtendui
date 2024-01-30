@@ -49,6 +49,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | Event                   | `medialoaded.xt.toggle`           | `elements` `targets` | Images loaded event            |
 | Event                   | `autostart.xt.toggle`           | `container` | Auto start event             |
 | Event                   | `autostop.xt.toggle`           | `container` | Auto stop event             |
+| Event                   | `setup.xt.toggle`           | `container` | Setup event             |
 | Event                   | `init.xt.toggle`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.toggle`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.toggle`           | `container` | Restart event             |

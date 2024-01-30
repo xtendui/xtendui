@@ -47,6 +47,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | Event                   | `ondone.xt.overlay`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.overlay`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.overlay`           | `elements` `targets` | Images loaded event            |
+| Event                   | `setup.xt.overlay`           | `container` | Setup event             |
 | Event                   | `init.xt.overlay`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.overlay`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.overlay`           | `container` | Restart event             |

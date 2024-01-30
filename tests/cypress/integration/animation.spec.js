@@ -489,7 +489,6 @@ describe('demos/components/slider/animation-js', function () {
   it('TEST activation.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
-      .frame()
       .then(() => {
         expect(self.targets[1].querySelector('[data-node-target-content]').style.transform).to.be.oneOf([
           'translate(0px, 0px)',

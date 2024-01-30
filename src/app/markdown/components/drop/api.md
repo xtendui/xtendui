@@ -47,6 +47,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | Event                   | `ondone.xt.drop`           | `elements` `targets` | Activation event after delay and duration             |
 | Event                   | `offdone.xt.drop`           | `elements` `targets` | Deactivation event after delay and duration             |
 | Event                   | `medialoaded.xt.drop`           | `elements` `targets` | Images loaded event            |
+| Event                   | `setup.xt.drop`           | `container` | Setup event             |
 | Event                   | `init.xt.drop`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.drop`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.drop`           | `container` | Restart event             |

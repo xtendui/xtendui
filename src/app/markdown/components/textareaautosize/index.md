@@ -63,6 +63,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
+| Event                   | `setup.xt.textareaautosize`           | `container` | Setup event             |
 | Event                   | `init.xt.textareaautosize`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.textareaautosize`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.textareaautosize`           | `container` | Destroy event             |

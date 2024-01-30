@@ -137,6 +137,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `change.xt.googlelocator`           | `container` | Change event             |
+| Event                   | `setup.xt.googlelocator`           | `container` | Setup event             |
 | Event                   | `init.xt.googlelocator`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.googlelocator`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.googlelocator`           | `container` | Destroy event             |

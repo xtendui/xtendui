@@ -112,6 +112,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 |                         | Syntax                                    | DOM Element                    | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `populate.xt.infinitescroll`           | `container` | Replace event             |
+| Event                   | `setup.xt.infinitescroll`           | `container` | Setup event             |
 | Event                   | `init.xt.infinitescroll`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.infinitescroll`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.infinitescroll`           | `container` | Destroy event             |

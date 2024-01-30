@@ -134,6 +134,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `input`                        | `input` | Value of input changed             |
 | Event                   | `change`                        | `input` | Value of input changed             |
+| Event                   | `setup.xt.groupnumber`           | `container` | Setup event             |
 | Event                   | `init.xt.groupnumber`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.groupnumber`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.groupnumber`           | `container` | Destroy event             |

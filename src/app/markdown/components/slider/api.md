@@ -50,6 +50,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | Event                   | `autostart.xt.slider`           | `container` | Auto start event             |
 | Event                   | `autostop.xt.slider`           | `container` | Auto stop event             |
 | Event                   | `autoheight.xt.slider`           | `targets` | Autoheight event             |
+| Event                   | `setup.xt.slider`           | `container` | Setup event             |
 | Event                   | `init.xt.slider`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.slider`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `restart.xt.slider`           | `container` | Restart event             |

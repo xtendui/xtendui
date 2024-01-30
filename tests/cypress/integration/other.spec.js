@@ -433,6 +433,7 @@ describe('demos/components/scrollto/overlay', function () {
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .closest('html')
       .should('have.attr', 'data-xt-scrollto-init', '') // racecondition
+      .frameDouble() // racecondition xt-scrollto self._initStart()
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(this.links[0].classList.contains('on')).to.equal(false)

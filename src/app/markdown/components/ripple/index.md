@@ -91,6 +91,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Event                   | `on.xt.ripple`       | `container` | Activation event (event `e.detail` is original event)             |
 | Event                   | `off.xt.ripple`      | `container` | Deactivation event (event `e.detail` is original event)            |
+| Event                   | `setup.xt.ripple`           | `container` | Setup event             |
 | Event                   | `init.xt.ripple`           | `container` | Init or reinit event             |
 | Event                   | `status.xt.ripple`           | `container` | Status event (enabled or disabled)             |
 | Event                   | `destroy.xt.ripple`           | `container` | Destroy event             |

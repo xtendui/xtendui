@@ -57,7 +57,9 @@ export class RippleInit {
     const onHandler = Xt.dataStorage.put(self.container, `mousedown touchstart/${self.ns}`, self._eventStart.bind(self))
     self.container.addEventListener('mousedown', onHandler)
     self.container.addEventListener('touchstart', onHandler, { passive: true })
-    // init
+    // setup
+    // dispatch event
+    self.container.dispatchEvent(new CustomEvent(`setup.${self._componentNs}`))
     // needs frameDouble after ondone
     Xt.frameDouble({
       el: self.container,

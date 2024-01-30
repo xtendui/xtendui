@@ -62,6 +62,7 @@ class Infinitescroll {
       return self
     })
     // set self
+    // this is the order: Xt._set before self._init and Xt.get listen to setup.xt to have self variables ready
     Xt._set({ name: self.componentName, el: self.container, selfPromise })
     return selfPromise
   }

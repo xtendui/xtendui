@@ -60,7 +60,9 @@ export class MousefollowInit {
     self.container.addEventListener('mouseenter', enterHandler)
     const leaveHandler = Xt.dataStorage.put(self.container, `mouseleave/${self.ns}`, self._mouseleave.bind(self))
     self.container.addEventListener('mouseleave', leaveHandler)
-    // init
+    // setup
+    // dispatch event
+    self.container.dispatchEvent(new CustomEvent(`setup.${self._componentNs}`))
     // needs frameDouble after ondone
     Xt.frameDouble({
       el: self.container,

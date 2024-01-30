@@ -84,7 +84,9 @@ export class ScrolltoInit {
     Xt.ready({
       state: 'complete',
       func: () => {
-        // init
+        // setup
+        // dispatch event
+        self.container.dispatchEvent(new CustomEvent(`setup.${self._componentNs}`))
         // needs frameDouble after ondone
         Xt.frameDouble({
           el: self.container,
