@@ -13,25 +13,25 @@ function DemoInline(props) {
   let hasJsx
   try {
     // must be first try/catch or serve error
-    require(`public/${src}.js`).default
+    require(`../../../public/${src}.js`).default
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
-    hasCss = require.resolve(`public/${src}.css`)
-    // eslint-disable-next-line no-empty
-  } catch (ex) {}
-  try {
-    // must be first try/catch or serve error
-    hasJs = require.resolve(`public/${src}.js`)
+    hasCss = require.resolve(`../../../public/${src}.css`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
     // must be first try/catch or serve error
-    hasJsx = require.resolve(`public/${src}.jsx`)
+    hasJs = require.resolve(`../../../public/${src}.js`)
+    // eslint-disable-next-line no-empty
+  } catch (ex) {}
+  try {
+    // must be first try/catch or serve error
+    hasJsx = require.resolve(`../../../public/${src}.jsx`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   // react
-  const Demo = hasJsx ? require(`public/${src}.jsx`).default : null
+  const Demo = hasJsx ? require(`../../../public/${src}.jsx`).default : null
   /* @TODO lazy
   const Demo = loadable(() => import('public/demos/components/toggle/animation-noqueue.jsx'))
   */
@@ -40,7 +40,7 @@ function DemoInline(props) {
   const ref = useRef()
   useEffect(() => {
     // html
-    setObject(require(`public/${src}.html.js`).object)
+    setObject(require(`../../../public/${src}.html.js`).object)
     /* @TODO lazy
     loadable(
       import('public/demos/components/toggle/animation-noqueue.html.js').then(module => {
