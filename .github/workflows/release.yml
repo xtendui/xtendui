@@ -34,9 +34,8 @@ jobs:
       run: pnpm install --frozen-lockfile --prefer-offline
     # release/action.yml composite
     - name: Release
-      uses: cycjimmy/semantic-release-action@v3.4.1 # https://github.com/cycjimmy/semantic-release-action/issues/159
+      uses: cycjimmy/semantic-release-action@v4
       with:
-        semantic_version: 18 # https://github.com/cycjimmy/semantic-release-action/issues/159
         extra_plugins: |
             @semantic-release/commit-analyzer
             @semantic-release/git
