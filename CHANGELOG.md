@@ -68,7 +68,7 @@ Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') }).then(se
 ```
 new Xt.Drop(document.querySelector('.my-container'), {}).then(self => {})
 ```
-* **global:** you can use instead `h-screen !h-[100svh]`
+* **global:** you can use `h-screen !h-[100svh]` instead of removed `--vh, .xt-h-screen, .xt-min-h-screen, .xt-max-h-screen`
 * in `tailwind.config.js` use as content `./node_modules/xtendui/src/**/*.mjs`
 * **css:** use tailwindcss media queries for example `max-md:` instead of `-md:`
 instead of `@screen hover-none` use `@media (hover: none), (pointer: coarse)`
