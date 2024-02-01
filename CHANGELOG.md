@@ -1,3 +1,10 @@
+# [2.0.0-beta.2](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2024-02-01)
+
+
+### Bug Fixes
+
+* fix release files included in npm install ([e6844ed](https://github.com/xtendui/xtendui/commit/e6844eda21bdf70889aa413e04884a2394cd3346))
+
 # [2.0.0-beta.1](https://github.com/xtendui/xtendui/compare/v1.4.2...v2.0.0-beta.1) (2024-02-01)
 
 
