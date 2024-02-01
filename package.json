@@ -42,9 +42,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
+    "index.d.ts",
     "tailwind.*.js",
     "dist/*.min.*",
-    "src/*.*"
+    "src/*.*",
+    "src/modules/*.*"
   ],
   "scripts": {
     "util": "pnpm alias && node ./util/packet.js",
