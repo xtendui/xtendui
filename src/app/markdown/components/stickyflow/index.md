@@ -53,9 +53,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
 
 ```js
+new Xt.Stickyflow(document.querySelector('.my-container'), {}).then(self => {})
+
+// or
+
 Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
@@ -97,37 +101,25 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 ## Properties
 
-Access properties by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') }).then(self => {
-  const container = self.container
-})
-```
+Access properties by getting [self object](/components/stickyflow/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
-| Property                   | `options:Object`       | Final options             |
-| Property                   | `initial:Boolean`       | If initial or reset activation             |
-| Property                   | `disabled:Boolean`       | If component disabled            |
-| Property                   | `container:Node`       | Container node             |
-| Property                   | `element:Node`       | Sticky element             |
-| Property                   | `filler:Nodes`       | Filler element             |
+| Property                   | `self.componentName:String`       | Component name (used in `Xt.get`)             |
+| Property                   | `self.options:Object`       | Final options             |
+| Property                   | `self.initial:Boolean`       | If initial or reset activation             |
+| Property                   | `self.disabled:Boolean`       | If component disabled            |
+| Property                   | `self.container:Node`       | Container node             |
+| Property                   | `self.element:Node`       | Sticky element             |
+| Property                   | `self.filler:Nodes`       | Filler element             |
 
 </div>
 
 ## Methods
 
-Call methods by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-stickyflow', el: document.querySelector('.my-container') }).then(self => {
-  self.destroy()
-})
-```
+Call methods by getting [self object](/components/stickyflow/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

@@ -8,9 +8,13 @@ date: "1980-05-05"
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
 
 ```js
+new Xt.Drop(document.querySelector('.my-container'), {}).then(self => {})
+
+// or
+
 Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
@@ -84,39 +88,27 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 ## Properties
 
-Access properties by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') }).then(self => {
-  const container = self.container
-})
-```
+Access properties by getting [self object](/components/drop/api/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
-| Property                   | `options:Object`       | Final options             |
-| Property                   | `initial:Boolean`       | If initial or reset activation            |
-| Property                   | `disabled:Boolean`       | If component disabled            |
-| Property                   | `container:Node`       | Container node             |
-| Property                   | `elements:Array`       | Elements nodes             |
-| Property                   | `targets:Array`       | Targets nodes            |
-| Property                   | `direction:Number`       | Direction `1` or `-1`            |
-| Property                   | `index:Number\|null`       | Current activated index            |
+| Property                   | `self.componentName:String`       | Component name (used in `Xt.get`)             |
+| Property                   | `self.options:Object`       | Final options             |
+| Property                   | `self.initial:Boolean`       | If initial or reset activation            |
+| Property                   | `self.disabled:Boolean`       | If component disabled            |
+| Property                   | `self.container:Node`       | Container node             |
+| Property                   | `self.elements:Array`       | Elements nodes             |
+| Property                   | `self.targets:Array`       | Targets nodes            |
+| Property                   | `self.direction:Number`       | Direction `1` or `-1`            |
+| Property                   | `self.index:Number\|null`       | Current activated index            |
 
 </div>
 
 ## Methods
 
-Call methods by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') }).then(self => {
-  self.destroy()
-})
-```
+Call methods by getting [self object](/components/drop/api/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

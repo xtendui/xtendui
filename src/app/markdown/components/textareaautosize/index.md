@@ -25,9 +25,13 @@ You can customize `min-height` and `max-height` of the textarea.
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
 
 ```js
+new Xt.Textareaautosize(document.querySelector('.my-container'), {}).then(self => {})
+
+// or
+
 Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
@@ -72,36 +76,24 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 ## Properties
 
-Access properties by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') }).then(self => {
-  const container = self.container
-})
-```
+Access properties by getting [self object](/components/textareaautosize/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
-| Property                   | `options:Object`       | Final options             |
-| Property                   | `initial:Boolean`       | If initial or reset activation             |
-| Property                   | `disabled:Boolean`       | If component disabled            |
-| Property                   | `container:Node`       | Container node             |
-| Property                   | `form:Node`       | Form closest node             |
+| Property                   | `self.componentName:String`       | Component name (used in `Xt.get`)             |
+| Property                   | `self.options:Object`       | Final options             |
+| Property                   | `self.initial:Boolean`       | If initial or reset activation             |
+| Property                   | `self.disabled:Boolean`       | If component disabled            |
+| Property                   | `self.container:Node`       | Container node             |
+| Property                   | `self.form:Node`       | Form closest node             |
 
 </div>
 
 ## Methods
 
-Call methods by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-textareaautosize', el: document.querySelector('.my-container') }).then(self => {
-  self.destroy()
-})
-```
+Call methods by getting [self object](/components/textareaautosize/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

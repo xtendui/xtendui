@@ -102,9 +102,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
 
 ```js
+new Xt.Googlelocator(document.querySelector('.my-container'), {}).then(self => {})
+
+// or
+
 Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
@@ -146,52 +150,40 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 ## Properties
 
-Access properties by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-googlelocator') }).then(self => {
-  const container = self.container
-})
-```
+Access properties by getting [self object](/hidden/googlelocator/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
-| Property                   | `options:Object`       | Final options             |
-| Property                   | `initial:Boolean`       | If initial or reset activation             |
-| Property                   | `disabled:Boolean`       | If component disabled            |
-| Property                   | `container:Node`       | Container node             |
-| Property                   | `locations:Array`       | Current found locations             |
-| Property                   | `loaderElement:Node`       | Loader node             |
-| Property                   | `itemsTemplate:Node`       | Items template node             |
-| Property                   | `itemsContainer:Node`       | Items container node             |
-| Property                   | `resultElement:Node`       | Result node             |
-| Property                   | `foundElement:Node`       | Found node             |
-| Property                   | `mapElement:Node`       | Map node             |
-| Property                   | `map:Object`       | Map object             |
-| Property                   | `info:Object`       | InfoWindow object             |
-| Property                   | `cluster:Object`       | MarkerClusterer object             |
-| Property                   | `searchInput:Node`       | Search input node             |
-| Property                   | `search:Object`       | Search object             |
-| Property                   | `searchBtn:Node`       | Search button node             |
-| Property                   | `filters:Node`       | Filter nodes             |
-| Property                   | `position:Object`       | Current map position             |
-| Property                   | `viewport:Object`       | Current map viewport             |
-| Property                   | `radius:Number`       | Current map radius             |
+| Property                   | `self.componentName:String`       | Component name (used in `Xt.get`)             |
+| Property                   | `self.options:Object`       | Final options             |
+| Property                   | `self.initial:Boolean`       | If initial or reset activation             |
+| Property                   | `self.disabled:Boolean`       | If component disabled            |
+| Property                   | `self.container:Node`       | Container node             |
+| Property                   | `self.locations:Array`       | Current found locations             |
+| Property                   | `self.loaderElement:Node`       | Loader node             |
+| Property                   | `self.itemsTemplate:Node`       | Items template node             |
+| Property                   | `self.itemsContainer:Node`       | Items container node             |
+| Property                   | `self.resultElement:Node`       | Result node             |
+| Property                   | `self.foundElement:Node`       | Found node             |
+| Property                   | `self.mapElement:Node`       | Map node             |
+| Property                   | `self.map:Object`       | Map object             |
+| Property                   | `self.info:Object`       | InfoWindow object             |
+| Property                   | `self.cluster:Object`       | MarkerClusterer object             |
+| Property                   | `self.searchInput:Node`       | Search input node             |
+| Property                   | `self.search:Object`       | Search object             |
+| Property                   | `self.searchBtn:Node`       | Search button node             |
+| Property                   | `self.filters:Node`       | Filter nodes             |
+| Property                   | `self.position:Object`       | Current map position             |
+| Property                   | `self.viewport:Object`       | Current map viewport             |
+| Property                   | `self.radius:Number`       | Current map radius             |
 
 </div>
 
 ## Methods
 
-Call methods by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-googlelocator', el: document.querySelector('.my-container') }).then(self => {
-  self.destroy()
-})
-```
+Call methods by getting [self object](/hidden/googlelocator/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

@@ -26,14 +26,14 @@ date: "1980-05-05"
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `drag._left:Number`       | Dragger left position on viewport             |
-| Property                   | `drag._position:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
-| Property                   | `drag._final:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
-| Property                   | `drag._ratio:Number`       | Current drag ratio from 0 to 1             |
-| Property                   | `drag._ratioInverse:Number`       | Current drag inverse from 1 to 0             |
-| Property                   | `drag._instant:Boolean`       | Is `true` if is dragging position or setup position 
-| Property                   | `drag._dragging:Boolean`       | Is `true` if is dragging position
-| Property                   | `wheel._wheeling:Boolean`       | Is `true` if is wheeling position
+| Property                   | `self.drag._left:Number`       | Dragger left position on viewport             |
+| Property                   | `self.drag._position:Number`       | Current drag position, just set this value in `dragposition.xt.slider`             |
+| Property                   | `self.drag._final:Number`       | Final drag position, just use this value in `dragposition.xt.slider`             |
+| Property                   | `self.drag._ratio:Number`       | Current drag ratio from 0 to 1             |
+| Property                   | `self.drag._ratioInverse:Number`       | Current drag inverse from 1 to 0             |
+| Property                   | `self.drag._instant:Boolean`       | Is `true` if is dragging position or setup position 
+| Property                   | `self.drag._dragging:Boolean`       | Is `true` if is dragging position
+| Property                   | `self.wheel._wheeling:Boolean`       | Is `true` if is wheeling position
 
 </div>
 

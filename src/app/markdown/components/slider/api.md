@@ -87,45 +87,33 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 ## Properties
 
-Access properties by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-slider', el: document.querySelector('.my-container') }).then(self => {
-  const container = self.container
-})
-```
+Access properties by getting [self object](/components/slider/api/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
-| Property                   | `options:Object`       | Final options             |
-| Property                   | `initial:Boolean`       | If initial or reset activation            |
-| Property                   | `index:Number`       | Current index of activation             |
-| Property                   | `disabled:Boolean`       | If component disabled            |
-| Property                   | `container:Node`       | Container node             |
-| Property                   | `elements:Array`       | Elements nodes             |
-| Property                   | `targets:Array`       | Targets nodes            |
-| Property                   | `pags:Array`       | Pagination nodes             |
-| Property                   | `wrap:Boolean`       | If wrap activation             |
-| Property                   | `direction:Number`       | Direction `1` or `-1`            |
-| Property                   | `autoblock:Boolean`       | Block all auto logic            |
-| Property                   | `dragger:Node`       | Dragger node             |
-| Property                   | `drag.size:Number`       | Dragger size             |
-| Property                   | `drag.sizeContent:Number`       | Content size             |
+| Property                   | `self.componentName:String`       | Component name (used in `Xt.get`)             |
+| Property                   | `self.options:Object`       | Final options             |
+| Property                   | `self.initial:Boolean`       | If initial or reset activation            |
+| Property                   | `self.index:Number`       | Current index of activation             |
+| Property                   | `self.disabled:Boolean`       | If component disabled            |
+| Property                   | `self.container:Node`       | Container node             |
+| Property                   | `self.elements:Array`       | Elements nodes             |
+| Property                   | `self.targets:Array`       | Targets nodes            |
+| Property                   | `self.pags:Array`       | Pagination nodes             |
+| Property                   | `self.wrap:Boolean`       | If wrap activation             |
+| Property                   | `self.direction:Number`       | Direction `1` or `-1`            |
+| Property                   | `self.autoblock:Boolean`       | Block all auto logic            |
+| Property                   | `self.dragger:Node`       | Dragger node             |
+| Property                   | `self.drag.size:Number`       | Dragger size             |
+| Property                   | `self.drag.sizeContent:Number`       | Content size             |
 
 </div>
 
 ## Methods
 
-Call methods by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-slider', el: document.querySelector('.my-container') }).then(self => {
-  elf.destroy()
-})
-```
+Call methods by getting [self object](/components/slider/api/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

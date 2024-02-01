@@ -1,10 +1,3 @@
-# [2.0.0-beta.2](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2024-02-01)
-
-
-### Bug Fixes
-
-* fix release files included in npm install ([e6844ed](https://github.com/xtendui/xtendui/commit/e6844eda21bdf70889aa413e04884a2394cd3346))
-
 # [2.0.0-beta.1](https://github.com/xtendui/xtendui/compare/v1.4.2...v2.0.0-beta.1) (2024-02-01)
 
 
@@ -68,13 +61,45 @@
 * changed z-index of sticky to 500 and z-index of tooltip and drop to 700
 * **css:** need new version of tailwindcss 3.3.5 for nested group
 * **javascript:** Xt.get now return a promise with self argument because initializations of all components are async. It's no longer possible to Xt.get after .destroy() on all components
-* **javascript:** on new Xt.Component use promise because now the initializations of all the components are async
-* **global:** you can use instead h-screen !h-[100svh]
-* in tailwind.config.js use as content ./node_modules/xtendui/src/**/*.mjs
-* **css:** use tailwindcss media queries for example 'max-md:' instead of '-md:'
-instead of '@screen hover-none' use '@media (hover: none), (pointer: coarse)'
-instead of '@screen hover-hover' use '@media (hover: hover), not (pointer: coarse)
-* **css:** use text-10 instead of text-4xs, use text-11 instead of text-3xs, use text-12 instead of text-2xs, use text-13 instead of text-xs
+```
+Xt.get({ name: 'xt-drop', el: document.querySelector('.my-container') }).then(self => {})
+```
+* **javascript:** on `new Xt.Component` use promise because now the initializations of all the components are async
+```
+new Xt.Drop(document.querySelector('.my-container'), {}).then(self => {})
+```
+* **global:** you can use instead `h-screen !h-[100svh]`
+* in `tailwind.config.js` use as content `./node_modules/xtendui/src/**/*.mjs`
+* **css:** use tailwindcss media queries for example `max-md:` instead of `-md:`
+instead of `@screen hover-none` use `@media (hover: none), (pointer: coarse)`
+instead of `@screen hover-hover` use `@media (hover: hover), not (pointer: coarse)`
+or add this deprecated `tailwind.config.js` setting:
+```
+theme: {
+  extend: {
+    screens: {
+      '-2xl': { max: '1535px' },
+      '-xl': { max: '1279px' },
+      '-lg': { max: '1023px' },
+      '-md': { max: '767px' },
+      '-sm': { max: '639px' },
+      'hover-none': { raw: '(hover: none), (pointer: coarse)' },
+      'hover-hover': { raw: '(hover: hover), not (pointer: coarse)' },
+    },
+
+```
+
+* **css:** use text-10 instead of text-4xs, use text-11 instead of text-3xs, use text-12 instead of text-2xs, use text-13 instead of text-xs or add this deprecated `tailwind.config.js` setting:
+```
+theme: {
+  extend: {
+    fontSize: {
+      '4xs': ['0.625rem', { lineHeight: '1rem' }], // 10px
+      '3xs': ['0.6875rem', { lineHeight: '1rem' }], // 11px
+      '2xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
+      xs: ['0.8125rem', { lineHeight: '1rem' }], // 13px
+    },
+```
 
 ## [1.4.2](https://github.com/xtendui/xtendui/compare/v1.4.1...v1.4.2) (2023-09-13)
 

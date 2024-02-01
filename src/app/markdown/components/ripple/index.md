@@ -55,9 +55,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
 
 ```js
+new Xt.Ripple(document.querySelector('.my-container'), {}).then(self => {})
+
+// or
+
 Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
@@ -100,42 +104,30 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 ## Properties
 
-Access properties by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') }).then(self => {
-  const container = self.container
-})
-```
+Access properties by getting [self object](/components/ripple/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
-| Property                   | `options:Object`       | Final options             |
-| Property                   | `initial:Boolean`       | If initial or reset activation             |
-| Property                   | `disabled:Boolean`       | If component disabled            |
-| Property                   | `container:Node`       | Container node             |
-| Property                   | `inner:Node`       | Inner node that contains the ripples             |
-| Property                   | `targets:Array`       | Targets nodes            |
-| Property                   | `size:Number`       | Initial size of ripple            |
-| Property                   | `top:Number`       | Initial top position of ripple            |
-| Property                   | `left:Number`       | Initial left position of ripple            |
-| Property                   | `sizeFinal:Number`       | Final size of ripple            |
-| Property                   | `scaleFinal:Number`       | Final scale of ripple            |
+| Property                   | `self.componentName:String`       | Component name (used in `Xt.get`)             |
+| Property                   | `self.options:Object`       | Final options             |
+| Property                   | `self.initial:Boolean`       | If initial or reset activation             |
+| Property                   | `self.disabled:Boolean`       | If component disabled            |
+| Property                   | `self.container:Node`       | Container node             |
+| Property                   | `self.inner:Node`       | Inner node that contains the ripples             |
+| Property                   | `self.targets:Array`       | Targets nodes            |
+| Property                   | `self.size:Number`       | Initial size of ripple            |
+| Property                   | `self.top:Number`       | Initial top position of ripple            |
+| Property                   | `self.left:Number`       | Initial left position of ripple            |
+| Property                   | `self.sizeFinal:Number`       | Final size of ripple            |
+| Property                   | `self.scaleFinal:Number`       | Final scale of ripple            |
 
 </div>
 
 ## Methods
 
-Call methods by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') }).then(self => {
-  self.destroy()
-})
-```
+Call methods by getting [self object](/components/ripple/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

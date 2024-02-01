@@ -126,9 +126,13 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
 
 ```js
+new Xt.Scrollto(document.querySelector('.my-container'), {}).then(self => {})
+
+// or
+
 Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
@@ -182,13 +186,7 @@ Trigger events on **DOM node**.
 
 ## Properties
 
-Access properties by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).then(self => {
-  const container = self.container
-})
-```
+Access properties by getting [self object](/components/scrollto/#util).
 
 > If you want to **force the self.hashchange value manually for instant duration** set `Xt.scrolltoHashforce` to `true` or `false` just before triggering `scrollto.trigger.xt.scrollto` or changing `location.hash`.
 
@@ -196,30 +194,24 @@ Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).the
 
 |                         | Syntax                                   | Description                   |
 | ----------------------- | ---------------------------------------- | ----------------------------- |
-| Property                   | `componentName:String`       | Component name (used in `Xt.get`)             |
-| Property                   | `options:Object`       | Final options             |
-| Property                   | `initial:Boolean`       | If initial or reset activation             |
-| Property                   | `disabled:Boolean`       | If component disabled            |
-| Property                   | `container:Node`       | Container node             |
-| Property                   | `hashchange:Boolean`       | If browser hash change activation             |
-| Property                   | `target:Node`       | Current scroll target             |
-| Property                   | `scrollers:Node`       | All scrolling element             |
-| Property                   | `scroller:Node`       | Current scrolling element             |
-| Property                   | `position:Number`       | Current scroll position             |
-| Property                   | `space:Number`       | Current scroll space             |
-| Property                   | `duration:Number`       | Current scroll duration             |
+| Property                   | `self.componentName:String`       | Component name (used in `Xt.get`)             |
+| Property                   | `self.options:Object`       | Final options             |
+| Property                   | `self.initial:Boolean`       | If initial or reset activation             |
+| Property                   | `self.disabled:Boolean`       | If component disabled            |
+| Property                   | `self.container:Node`       | Container node             |
+| Property                   | `self.hashchange:Boolean`       | If browser hash change activation             |
+| Property                   | `self.target:Node`       | Current scroll target             |
+| Property                   | `self.scrollers:Node`       | All scrolling element             |
+| Property                   | `self.scroller:Node`       | Current scrolling element             |
+| Property                   | `self.position:Number`       | Current scroll position             |
+| Property                   | `self.space:Number`       | Current scroll space             |
+| Property                   | `self.duration:Number`       | Current scroll duration             |
 
 </div>
 
 ## Methods
 
-Call methods by getting [self object](/components/global/javascript#xt-get).
-
-```js
-Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).then(self => {
-  self.destroy()
-})
-```
+Call methods by getting [self object](/components/scrollto/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
