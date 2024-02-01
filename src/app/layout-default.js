@@ -55,7 +55,7 @@ export default function Structure({ page, children }) {
   }
 
   useLayoutEffect(() => {
-    const slug = params.slug.toString() ?? '' // fix homepage no slug
+    const slug = params.slug?.toString() ?? '' // fix homepage no slug
     if (typeof window !== 'undefined' && window.populateDone !== slug) {
       window.populateDone = slug
       require('src/app/assets/scripts/setup')
