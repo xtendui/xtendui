@@ -146,8 +146,6 @@ Xt.unobserve({
 
 You can change this method and all the components default options of `Xt.observer` and `Xt.observerOptions` and `Xt.observerCheck`.
 
-> Be sure to assing `Xt.observer` and `Xt.observerOptions` and `Xt.observerCheck` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
@@ -233,8 +231,6 @@ Xt.options['xt-drop'] = {
   duration: 500,
 }
 ```
-
-> Be sure to assing `Xt.options` in a imported setup file **before all other components imports** or the `data-xt-` initialized components doesn't have those options.
 
 ## Xt.node
 
