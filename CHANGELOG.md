@@ -1,3 +1,10 @@
+# [2.0.0-beta.3](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2024-02-02)
+
+
+### Bug Fixes
+
+* **js:** fix intersection observer options threshold to fix sometimes intersection observer not working ([e20999a](https://github.com/xtendui/xtendui/commit/e20999a192f0f7dfc4b40893ac01bd085d89b774))
+
 # [2.0.0-beta.1](https://github.com/xtendui/xtendui/compare/v1.4.2...v2.0.0-beta.1) (2024-02-01)
 
 
