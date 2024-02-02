@@ -153,7 +153,7 @@ You can change this method and all the components default options of `Xt.observe
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `Xt.observer:Boolean\|null`                          | `null`        | Global force enable or disable intersection observer             |
-| Option                    | `Xt.observerOptions:Object`                          | `{ root: null }`        | Global intersection observer options            |
+| Option                    | `Xt.observerOptions:Object`                          | `{ root: null, threshold: [0.001] }`        | Global intersection observer options            |
 | Option                    | `Xt.observerCheck:Function`                          | `entry => { return entry.intersectionRatio > 0 }`        | Global intersection observer entry check            |
 
 </div>

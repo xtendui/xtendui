@@ -37,7 +37,7 @@ if (typeof window !== 'undefined') {
   Xt.formScrollWindowFactor = 0.2
   Xt._observerArr = []
   Xt.observer = null
-  Xt.observerOptions = { root: null }
+  Xt.observerOptions = { root: null, threshold: [0.001] }
   Xt.observerCheck = entry => {
     return entry.intersectionRatio > 0
   }
