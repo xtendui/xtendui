@@ -601,8 +601,12 @@ export class SliderInit extends Xt.Toggle {
     const height = Xt.dataStorage.get(tr, `${self.ns}TrHeight`)
     tr.style.width = `${width}px`
     tr.style.height = `${height}px`
-    for (const child of tr.children) {
-      child.style.display = 'none'
+    if (Xt._supports_content_visibility) {
+      tr.style.contentVisibility = 'hidden'
+    } else {
+      for (const child of tr.children) {
+        child.style.display = 'none'
+      }
     }
   }
 
@@ -612,8 +616,12 @@ export class SliderInit extends Xt.Toggle {
   _resetPerfSize(tr) {
     tr.style.height = ''
     tr.style.width = ''
-    for (const child of tr.children) {
-      child.style.display = ''
+    if (Xt._supports_content_visibility) {
+      tr.style.contentVisibility = ''
+    } else {
+      for (const child of tr.children) {
+        child.style.display = ''
+      }
     }
   }
 
