@@ -1,3 +1,10 @@
+# [2.0.0-beta.4](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2024-02-03)
+
+
+### Bug Fixes
+
+* **slider:** improve slider perf with contentVisiblity instead of display ([5aa0170](https://github.com/xtendui/xtendui/commit/5aa0170bb42afc9c113052d4e671b4985390f9d0))
+
 # [2.0.0-beta.3](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2024-02-02)
 
 
