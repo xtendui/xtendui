@@ -120,15 +120,15 @@ Xt.options['xt-googlelocator'] = {
 }
 ```
 
-By default components are **loaded and initialized only when inside viewport**.
+By default components are **loaded and initialized only when inside viewport** or instantly if `self.container` is not visible (`display: none`).
 
-You can set [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this options:
+You can force [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                    | `observer:Boolean`                          | `true`        | Use intersection observer            |
+| Option                    | `observer:Boolean\|null`                          | `null`        | Force enable or disable intersection observer            |
 
 </div>
 

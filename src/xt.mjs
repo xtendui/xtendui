@@ -293,10 +293,10 @@ if (typeof window !== 'undefined') {
    */
   Xt.observe = ({ container, promise, func, observer, id } = {}) => {
     if (func) {
-      observer = Xt.observer ?? true
+      observer = observer ?? Xt.observer ?? true
     } else {
       // we execute instantly if not visible because can be in unique mode etc.. DO NOT USE Xt.visible it bugs demo fullscreen
-      observer = Xt.observer ?? container.offsetHeight > 0
+      observer = observer ?? Xt.observer ?? container.offsetHeight > 0
     }
     if (observer) {
       return new Promise(resolve => {
