@@ -45,6 +45,8 @@ describe('demos/components/toggle/disabled', function () {
   it('TEST nested should disable only parent, no interactions on disabled.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .get(self.targets[1])
+      .should('be.visible') // racecondition slider
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
