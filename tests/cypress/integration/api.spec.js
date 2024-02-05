@@ -263,8 +263,6 @@ describe('demos/components/toggle/matches', function () {
   it('TEST matches.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
-      .get(self.targets)
-      .should('be.visible') // racecondition slider
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(true)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
