@@ -77,44 +77,61 @@ if (typeof window !== 'undefined') {
     }
   }
 
+  /**
+   * perf
+   * @param {Function} params.func Function to execute after setTimeout 0
+   * @param {Boolean} params.skip Skip setTimeout 0
+   */
+  Xt.perf = ({ func, skip } = {}) => {
+    if (skip) {
+      func()
+    } else {
+      setTimeout(() => {
+        func()
+      }, 0)
+    }
+  }
+
   //
   // intersectionObserver
   //
 
-  Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
-    for (const entry of entries) {
-      const container = entry.target
-      if (Xt.observerCheck(entry)) {
-        const objects = Xt._observerArr.filter(x => x.container === container)
-        // keepAlive if there is a func otherwise we don't need observer anymore
-        const keepAlive = objects.some(x => x.func)
-        if (!keepAlive) {
-          observer.unobserve(container)
-          Xt._observerArr = Xt._observerArr.filter(x => x.container !== container)
-        }
-        // logic
-        for (const obj of objects) {
-          if (obj.func) {
-            obj.func(true)
+  Xt._intersectionObserverInit = () => {
+    Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
+      for (const entry of entries) {
+        const container = entry.target
+        if (Xt.observerCheck(entry)) {
+          const objects = Xt._observerArr.filter(x => x.container === container)
+          // keepAlive if there is a func otherwise we don't need observer anymore
+          const keepAlive = objects.some(x => x.func)
+          if (!keepAlive) {
+            observer.unobserve(container)
+            Xt._observerArr = Xt._observerArr.filter(x => x.container !== container)
           }
-          if (obj.promise) {
-            obj.resolve(obj.promise)
-          }
-        }
-      } else {
-        const objects = Xt._observerArr.filter(x => x.container === container)
-        const keepAlive = objects.some(x => x.func)
-        if (keepAlive) {
           // logic
           for (const obj of objects) {
             if (obj.func) {
-              obj.func(false)
+              obj.func(true)
+            }
+            if (obj.promise) {
+              obj.resolve(obj.promise)
+            }
+          }
+        } else {
+          const objects = Xt._observerArr.filter(x => x.container === container)
+          const keepAlive = objects.some(x => x.func)
+          if (keepAlive) {
+            // logic
+            for (const obj of objects) {
+              if (obj.func) {
+                obj.func(false)
+              }
             }
           }
         }
       }
-    }
-  }, Xt.observerOptions)
+    }, Xt.observerOptions)
+  }
 
   //
   // mutationObserver
@@ -150,6 +167,12 @@ if (typeof window !== 'undefined') {
         attributes: false,
         childList: true,
         subtree: true,
+      })
+      // after perf or custom options (e.g. Xt.observerOptions) aren't used
+      Xt.perf({
+        func: () => {
+          Xt._intersectionObserverInit()
+        },
       })
     },
   })
@@ -847,21 +870,6 @@ if (typeof window !== 'undefined') {
       script.defer = defer
       script.async = asyncfix
       document.body.append(script)
-    }
-  }
-
-  /**
-   * perf
-   * @param {Function} params.func Function to execute after setTimeout 0
-   * @param {Boolean} params.skip Skip setTimeout 0
-   */
-  Xt.perf = ({ func, skip } = {}) => {
-    if (skip) {
-      func()
-    } else {
-      setTimeout(() => {
-        func()
-      }, 0)
     }
   }
 
