@@ -1,3 +1,11 @@
+# [2.0.0-beta.5](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2024-02-07)
+
+
+### Bug Fixes
+
+* **js:** fix intersection observer after Xt.perf to use custom options ([46edd2f](https://github.com/xtendui/xtendui/commit/46edd2f016c589d57681ea0081f6aa9e9d6fd095))
+* **js:** fix options.observer not being used ([331b1ae](https://github.com/xtendui/xtendui/commit/331b1aee7daa61f0bbf4ea40a3dcf34281b02f4a))
+
 # [2.0.0-beta.4](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.3...v2.0.0-beta.4) (2024-02-03)
 
 
