@@ -1041,7 +1041,8 @@ describe('demos/components/slider/pagination', function () {
         expect(self.elements[15].classList.contains('on')).to.equal(false)
         expect(self.elements[16].classList.contains('on')).to.equal(true)
       })
-      .wait(100) // racecondition
+      .get(self.targets[1])
+      .should('be.visible') // racecondition special
       .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
