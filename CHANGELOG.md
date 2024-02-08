@@ -1,3 +1,10 @@
+# [2.0.0-beta.6](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2024-02-08)
+
+
+### Bug Fixes
+
+* **slider:** fix resize observer computation ([1e9b536](https://github.com/xtendui/xtendui/commit/1e9b5361ef245c4de69b561a4fdd2ee2f77c449b))
+
 # [2.0.0-beta.5](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.4...v2.0.0-beta.5) (2024-02-07)
 
 
