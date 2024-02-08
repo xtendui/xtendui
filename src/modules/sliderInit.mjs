@@ -88,6 +88,16 @@ export class SliderInit extends Xt.Toggle {
     let sizeContent = 0
     let trWidthMax = 0
     for (const tr of self.targets) {
+      // muse reset all targets before computation
+      if (!options.noobserver) {
+        Xt.unobserve({
+          container: tr,
+          id: self.ns,
+        })
+        self._resetPerfSize.bind(self, tr)()
+      }
+    }
+    for (const tr of self.targets) {
       let trLeft
       let trWidth
       let trHeight
@@ -98,13 +108,6 @@ export class SliderInit extends Xt.Toggle {
         trHeight = self.drag.height
         trHeightContent = self.drag.height
       } else {
-        if (!options.noobserver) {
-          Xt.unobserve({
-            container: tr,
-            id: self.ns,
-          })
-          self._resetPerfSize.bind(self, tr)()
-        }
         const rect = tr.getBoundingClientRect()
         trLeft = rect.left - self.drag._left
         trWidth = rect.width
