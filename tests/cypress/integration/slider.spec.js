@@ -417,8 +417,9 @@ describe('demos/components/slider/wrap-center', function () {
   it('TEST grouping and activation, wrap position, performance slider.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .get(self.targets[0])
+      .should('be.visible') // racecondition slider
       .perf() // racecondition perf
-      .wait(500) // racecondition special
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -1001,6 +1002,8 @@ describe('demos/components/slider/pagination', function () {
   it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .get(self.targets[0])
+      .should('be.visible') // racecondition slider
       .then(() => {
         expect(self.elements.length).to.equal(40)
         expect(self.elements[0].classList.contains('on')).to.equal(true)
@@ -1042,7 +1045,6 @@ describe('demos/components/slider/pagination', function () {
         expect(self.elements[15].classList.contains('on')).to.equal(false)
         expect(self.elements[16].classList.contains('on')).to.equal(true)
       })
-      .wait(500) // racecondition special
       .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
@@ -1083,6 +1085,14 @@ describe('demos/components/slider/pagination', function () {
         expect(doc.scrollingElement.scrollTop).to.equal(scroll)
       })
 
+      .get(self.targets[3])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 200 }] })
+      .wait(100)
+      .trigger('touchend', { force: true })
+      .then(() => {
+        expect(doc.scrollingElement.scrollTop).to.not.equal(scroll)
+      })
       .get(self.elements[18])
       .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
       .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })
