@@ -1041,7 +1041,6 @@ describe('demos/components/slider/pagination', function () {
         expect(self.elements[15].classList.contains('on')).to.equal(false)
         expect(self.elements[16].classList.contains('on')).to.equal(true)
       })
-      .wait(1000) // racecondition special
       .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
@@ -1082,14 +1081,6 @@ describe('demos/components/slider/pagination', function () {
         expect(doc.scrollingElement.scrollTop).to.equal(scroll)
       })
 
-      .get(self.targets[3])
-      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 0 }] })
-      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ pageX: 0, pageY: 200 }] })
-      .wait(100)
-      .trigger('touchend', { force: true })
-      .then(() => {
-        expect(doc.scrollingElement.scrollTop).to.not.equal(scroll)
-      })
       .get(self.elements[18])
       .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
       .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })

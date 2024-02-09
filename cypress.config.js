@@ -5,7 +5,7 @@ module.exports = defineConfig({
   viewportWidth: 1280,
   viewportHeight: 800,
   retries: 2,
-  scrollBehavior: 'center',
+  scrollBehavior: false,
   screenshotOnRunFailure: false,
   video: false,
   fixturesFolder: 'tests/cypress/fixtures',
