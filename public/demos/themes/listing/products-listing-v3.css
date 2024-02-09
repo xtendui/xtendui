@@ -1,0 +1,22 @@
+.demo--products-listing-v3, .demo--products-listing-v3-react {
+  .xt-media {
+    @apply origin-bottom;
+    opacity: 0;
+  }
+  .xt-slide {
+    /* initial */
+    @apply transition opacity-0;
+    /* in */
+    &.in {
+      @apply opacity-100;
+      & + .xt-slide {
+        @apply opacity-100;
+      }
+    }
+    /* out */
+    &.out {
+      @apply opacity-0;
+    }
+  }
+}
+

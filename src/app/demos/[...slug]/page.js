@@ -70,6 +70,7 @@ const demosIframe = [
   'themes/implementation/tooltip-implementation-v1',
   'themes/listing/products-listing-v1',
   'themes/listing/products-listing-v2',
+  'themes/listing/products-listing-v3',
   'themes/listing/stores-listing-v1',
   'themes/listing/stores-listing-v2',
   'themes/navigation/megamenu-v1',
