@@ -148,215 +148,155 @@ const animShadowOff = ({ shadow } = {}) => {
   })
 }
 
-/* mountOverlay */
+Xt.mount({
+  matches: '.demo--ellipse-animation-v1 .xt-overlay',
+  mount: ({ ref }) => {
+    // vars
 
-const mountOverlay = ({ ref }) => {
-  // vars
+    const item = ref
+    const content = item.querySelector('.xt-card')
+    const backdrop = item.querySelector('.xt-backdrop')
+    const shadow = item.querySelector('.xt-shadow')
 
-  const item = ref
-  const content = item.querySelector('.xt-card')
-  const backdrop = item.querySelector('.xt-backdrop')
-  const shadow = item.querySelector('.xt-shadow')
+    // on
 
-  // on
+    const on = () => {
+      animMaskOn({ mask: content })
+      animBackdropOn({ backdrop })
+      animShadowOn({ shadow })
+    }
 
-  const on = () => {
-    animMaskOn({ mask: content })
-    animBackdropOn({ backdrop })
-    animShadowOn({ shadow })
-  }
+    item.addEventListener('on.xt.overlay', on)
 
-  item.addEventListener('on.xt.overlay', on)
+    // off
 
-  // off
+    const off = () => {
+      animMaskOff({ mask: content })
+      animBackdropOff({ backdrop })
+      animShadowOff({ shadow })
+    }
 
-  const off = () => {
-    animMaskOff({ mask: content })
-    animBackdropOff({ backdrop })
-    animShadowOff({ shadow })
-  }
-
-  item.addEventListener('off.xt.overlay', off)
-}
-
-/* mountDrop */
-
-const mountDrop = ({ ref }) => {
-  // vars
-
-  const item = ref
-  const content = item.querySelector('.xt-card')
-  const shadow = item.querySelector('.xt-shadow')
-
-  // on
-
-  const on = () => {
-    animMaskOn({ mask: content, inverse: true })
-    animShadowOn({ shadow })
-  }
-
-  item.addEventListener('on.xt.drop', on)
-
-  // off
-
-  const off = () => {
-    animMaskOff({ mask: content, inverse: true })
-    animShadowOff({ shadow })
-  }
-
-  item.addEventListener('off.xt.drop', off)
-}
-
-/* mountTooltip */
-
-const mountTooltip = ({ ref }) => {
-  // vars
-
-  const item = ref
-  const content = item.querySelector('.xt-card')
-  const shadow = item.querySelector('.xt-shadow')
-
-  // on
-
-  const on = () => {
-    animMaskOn({ mask: content, inverse: true })
-    animShadowOn({ shadow })
-  }
-
-  item.addEventListener('on.xt.tooltip', on)
-
-  // off
-
-  const off = () => {
-    animMaskOff({ mask: content, inverse: true })
-    animShadowOff({ shadow })
-  }
-
-  item.addEventListener('off.xt.tooltip', off)
-}
-
-/* mountToggle */
-
-const mountToggle = ({ ref }) => {
-  // vars
-
-  const item = ref
-  const content = item
-
-  // on
-
-  const on = () => {
-    animMaskOn({ mask: content, inverse: true })
-  }
-
-  item.addEventListener('on.xt.toggle', on)
-
-  // off
-
-  const off = () => {
-    animMaskOff({ mask: content, inverse: true })
-  }
-
-  item.addEventListener('off.xt.toggle', off)
-}
-
-/* mountButton */
-
-const mountButton = ({ ref }) => {
-  // vars
-
-  const item = ref
-  let background = item.querySelector('.btn-background')
-
-  // inject
-
-  if (!background) {
-    item.classList.add('btn-container')
-    item.prepend(Xt.node({ str: '<div class="btn-background"></div>' }))
-    background = item.querySelector('.btn-background')
-    gsap.set(background, {
-      'clip-path': 'ellipse(50% 0% at 50% 150%)',
-    })
-  }
-
-  // enter
-
-  const enter = () => {
-    animBackgroundOn({ background })
-  }
-
-  item.addEventListener('mouseenter', enter)
-
-  // leave
-
-  const leave = () => {
-    animBackgroundOff({ background })
-  }
-
-  item.addEventListener('mouseleave', leave)
-}
-
-/* mountInteraction */
-
-const mountInteraction = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-overlay',
-    mount: ({ ref }) => {
-      return mountOverlay({ ref })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-drop',
-    mount: ({ ref }) => {
-      return mountDrop({ ref })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-tooltip',
-    mount: ({ ref }) => {
-      return mountTooltip({ ref })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: '[data-xt-toggle-target]',
-    mount: ({ ref }) => {
-      return mountToggle({ ref })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-button:not([class*=" z-"]), a.xt-card, button.xt-card',
-    mount: ({ ref }) => {
-      return mountButton({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
-/* mount */
+    item.addEventListener('off.xt.overlay', off)
+  },
+})
 
 Xt.mount({
-  matches: '.demo--ellipse-animation-v1',
+  matches: '.demo--ellipse-animation-v1 .xt-drop',
   mount: ({ ref }) => {
-    const unmountInteraction = mountInteraction({ ref })
+    // vars
 
-    // unmount
+    const item = ref
+    const content = item.querySelector('.xt-card')
+    const shadow = item.querySelector('.xt-shadow')
 
-    return () => {
-      unmountInteraction()
+    // on
+
+    const on = () => {
+      animMaskOn({ mask: content, inverse: true })
+      animShadowOn({ shadow })
     }
+
+    item.addEventListener('on.xt.drop', on)
+
+    // off
+
+    const off = () => {
+      animMaskOff({ mask: content, inverse: true })
+      animShadowOff({ shadow })
+    }
+
+    item.addEventListener('off.xt.drop', off)
+  },
+})
+
+Xt.mount({
+  matches: '.demo--ellipse-animation-v1 .xt-tooltip',
+  mount: ({ ref }) => {
+    // vars
+
+    const item = ref
+    const content = item.querySelector('.xt-card')
+    const shadow = item.querySelector('.xt-shadow')
+
+    // on
+
+    const on = () => {
+      animMaskOn({ mask: content, inverse: true })
+      animShadowOn({ shadow })
+    }
+
+    item.addEventListener('on.xt.tooltip', on)
+
+    // off
+
+    const off = () => {
+      animMaskOff({ mask: content, inverse: true })
+      animShadowOff({ shadow })
+    }
+
+    item.addEventListener('off.xt.tooltip', off)
+  },
+})
+
+Xt.mount({
+  matches: '.demo--ellipse-animation-v1 [data-xt-toggle-target]',
+  mount: ({ ref }) => {
+    // vars
+
+    const item = ref
+    const content = item
+
+    // on
+
+    const on = () => {
+      animMaskOn({ mask: content, inverse: true })
+    }
+
+    item.addEventListener('on.xt.toggle', on)
+
+    // off
+
+    const off = () => {
+      animMaskOff({ mask: content, inverse: true })
+    }
+
+    item.addEventListener('off.xt.toggle', off)
+  },
+})
+
+Xt.mount({
+  matches: '.demo--ellipse-animation-v1 .xt-button:not([class*=" z-"]), a.xt-card, button.xt-card',
+  mount: ({ ref }) => {
+    // vars
+
+    const item = ref
+    let background = item.querySelector('.btn-background')
+
+    // inject
+
+    if (!background) {
+      item.classList.add('btn-container')
+      item.prepend(Xt.node({ str: '<div class="btn-background"></div>' }))
+      background = item.querySelector('.btn-background')
+      gsap.set(background, {
+        'clip-path': 'ellipse(50% 0% at 50% 150%)',
+      })
+    }
+
+    // enter
+
+    const enter = () => {
+      animBackgroundOn({ background })
+    }
+
+    item.addEventListener('mouseenter', enter)
+
+    // leave
+
+    const leave = () => {
+      animBackgroundOff({ background })
+    }
+
+    item.addEventListener('mouseleave', leave)
   },
 })

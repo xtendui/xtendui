@@ -5,14 +5,13 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-/* mountItemParallax */
+Xt.mount({
+  matches: '.demo--blocks-featured-v1 .featured-item',
+  mount: ({ ref }) => {
+    // vars
 
-const mountItemsParallax = ({ ref }) => {
-  // vars
+    const item = ref
 
-  const items = ref.querySelectorAll('.featured-item')
-
-  for (const item of items) {
     // vars
 
     const content = item.querySelector('.featured-content')
@@ -70,19 +69,14 @@ const mountItemsParallax = ({ ref }) => {
       .to(img, {
         scale: 1 + imgScale,
       })
-  }
+  },
+})
 
-  // unmount
+Xt.mount({
+  matches: '.demo--blocks-featured-v1 .button--line',
+  mount: ({ ref }) => {
+    const buttonLine = ref.querySelectorAll('.button--line')
 
-  return () => {}
-}
-
-/* mountButtonsLine */
-
-const mountButtonsLine = ({ ref }) => {
-  const buttonsLine = ref.querySelectorAll('.button--line')
-
-  for (const buttonLine of buttonsLine) {
     // vars
 
     const link = buttonLine.closest('a, button')
@@ -191,26 +185,5 @@ const mountButtonsLine = ({ ref }) => {
     }
 
     link.addEventListener('mouseleave', leave)
-  }
-
-  // unmount
-
-  return () => {}
-}
-
-/* mount */
-
-Xt.mount({
-  matches: '.demo--blocks-featured-v1',
-  mount: ({ ref }) => {
-    const unmountItemsParallax = mountItemsParallax({ ref })
-    const unmountButtonsLine = mountButtonsLine({ ref })
-
-    // unmount
-
-    return () => {
-      unmountItemsParallax()
-      unmountButtonsLine()
-    }
   },
 })

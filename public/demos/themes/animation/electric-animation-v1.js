@@ -4,8 +4,6 @@ import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-/* mask */
-
 const animMask = ({ mask, inverse } = {}) => {
   if (inverse) {
     gsap.killTweensOf(mask)
@@ -44,161 +42,108 @@ const animMask = ({ mask, inverse } = {}) => {
   }
 }
 
-/* mountDrop */
+Xt.mount({
+  matches: '.demo--electric-animation-v1 .xt-drop',
+  mount: ({ ref }) => {
+    // vars
 
-const mountDrop = ({ ref }) => {
-  // vars
+    const item = ref
+    const border = item.querySelector('.anim-border')
 
-  const item = ref
-  const border = item.querySelector('.anim-border')
+    // on
 
-  // on
+    const on = () => {
+      animMask({ mask: border })
+    }
 
-  const on = () => {
-    animMask({ mask: border })
-  }
+    item.addEventListener('on.xt.drop', on)
 
-  item.addEventListener('on.xt.drop', on)
+    // off
 
-  // off
+    const off = () => {
+      animMask({ mask: border, inverse: true })
+    }
 
-  const off = () => {
-    animMask({ mask: border, inverse: true })
-  }
-
-  item.addEventListener('off.xt.drop', off)
-}
-
-/* mountTooltip */
-
-const mountTooltip = ({ ref }) => {
-  // vars
-
-  const item = ref
-  const border = item.querySelector('.anim-border')
-
-  // on
-
-  const on = () => {
-    animMask({ mask: border })
-  }
-
-  item.addEventListener('on.xt.tooltip', on)
-
-  // off
-
-  const off = () => {
-    animMask({ mask: border, inverse: true })
-  }
-
-  item.addEventListener('off.xt.tooltip', off)
-}
-
-/* mountToggle */
-
-const mountToggle = ({ ref }) => {
-  // vars
-
-  const item = ref
-  const border = item.querySelector('.anim-border')
-
-  // on
-
-  const on = () => {
-    animMask({ mask: border })
-  }
-
-  item.addEventListener('on.xt.toggle', on)
-
-  // off
-
-  const off = () => {
-    animMask({ mask: border, inverse: true })
-  }
-
-  item.addEventListener('off.xt.toggle', off)
-}
-
-/* mountButton */
-
-const mountButton = ({ ref }) => {
-  // vars
-
-  const item = ref
-  let border = item.querySelector('.anim-border')
-
-  // inject
-
-  if (!border) {
-    item.prepend(Xt.node({ str: '<div class="anim-border"></div>' }))
-    border = item.querySelector('.anim-border')
-    gsap.set(border, {
-      'clip-path': 'circle(0% at 100% 50%)',
-    })
-  }
-
-  // enter
-
-  const enter = () => {
-    animMask({ mask: border })
-  }
-
-  item.addEventListener('mouseenter', enter)
-}
-
-/* mountInteraction */
-
-const mountInteraction = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-drop',
-    mount: ({ ref }) => {
-      return mountDrop({ ref })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-tooltip',
-    mount: ({ ref }) => {
-      return mountTooltip({ ref })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: '[data-xt-toggle-target]',
-    mount: ({ ref }) => {
-      return mountToggle({ ref })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: '.xt-button:not([class*=" z-"]), a.xt-card, button.xt-card',
-    mount: ({ ref }) => {
-      return mountButton({ ref })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
-/* mount */
+    item.addEventListener('off.xt.drop', off)
+  },
+})
 
 Xt.mount({
-  matches: '.demo--electric-animation-v1',
+  matches: '.demo--electric-animation-v1 .xt-tooltip',
   mount: ({ ref }) => {
-    const unmountInteraction = mountInteraction({ ref })
+    // vars
 
-    // unmount
+    const item = ref
+    const border = item.querySelector('.anim-border')
 
-    return () => {
-      unmountInteraction()
+    // on
+
+    const on = () => {
+      animMask({ mask: border })
     }
+
+    item.addEventListener('on.xt.tooltip', on)
+
+    // off
+
+    const off = () => {
+      animMask({ mask: border, inverse: true })
+    }
+
+    item.addEventListener('off.xt.tooltip', off)
+  },
+})
+
+Xt.mount({
+  matches: '.demo--electric-animation-v1 [data-xt-toggle-target]',
+  mount: ({ ref }) => {
+    // vars
+
+    const item = ref
+    const border = item.querySelector('.anim-border')
+
+    // on
+
+    const on = () => {
+      animMask({ mask: border })
+    }
+
+    item.addEventListener('on.xt.toggle', on)
+
+    // off
+
+    const off = () => {
+      animMask({ mask: border, inverse: true })
+    }
+
+    item.addEventListener('off.xt.toggle', off)
+  },
+})
+
+Xt.mount({
+  matches: '.demo--electric-animation-v1 .xt-button:not([class*=" z-"]), a.xt-card, button.xt-card',
+  mount: ({ ref }) => {
+    // vars
+
+    const item = ref
+    let border = item.querySelector('.anim-border')
+
+    // inject
+
+    if (!border) {
+      item.prepend(Xt.node({ str: '<div class="anim-border"></div>' }))
+      border = item.querySelector('.anim-border')
+      gsap.set(border, {
+        'clip-path': 'circle(0% at 100% 50%)',
+      })
+    }
+
+    // enter
+
+    const enter = () => {
+      animMask({ mask: border })
+    }
+
+    item.addEventListener('mouseenter', enter)
   },
 })

@@ -189,45 +189,27 @@ const initGooglelocator = ({ ref }) => {
   /***/
 }
 
-/* mountGooglelocator */
-
-const mountGooglelocator = ({ ref }) => {
-  // init
-
-  const init = () => {
-    initGooglelocator({ ref })
-  }
-
-  window.googlelocatorGmapsLoaded = () => {
-    Xt.script({
-      url: 'https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js',
-      callback: init,
-    })
-  }
-
-  // add yout api key here
-
-  const lang = document.documentElement.getAttribute('lang')
-  Xt.script({
-    url: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=${lang}&&region=US&callback=googlelocatorGmapsLoaded`,
-  })
-
-  // unmount
-
-  return () => {}
-}
-
-/* mount */
-
 Xt.mount({
   matches: '.demo--googlelocator',
   mount: ({ ref }) => {
-    const unmountGooglelocator = mountGooglelocator({ ref })
+    // init
 
-    // unmount
-
-    return () => {
-      unmountGooglelocator()
+    const init = () => {
+      initGooglelocator({ ref })
     }
+
+    window.googlelocatorGmapsLoaded = () => {
+      Xt.script({
+        url: 'https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js',
+        callback: init,
+      })
+    }
+
+    // add yout api key here
+
+    const lang = document.documentElement.getAttribute('lang')
+    Xt.script({
+      url: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=${lang}&&region=US&callback=googlelocatorGmapsLoaded`,
+    })
   },
 })

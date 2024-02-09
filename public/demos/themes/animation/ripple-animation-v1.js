@@ -2,115 +2,83 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/ripple'
 import gsap from 'gsap'
 
-/* mountRipples */
+Xt.mount({
+  matches: '.demo--ripple-animation-v1 .xt-button, .demo--ripple-animation-v1 .xt-card',
+  mount: ({ ref }) => {
+    // vars
 
-const mountRipples = ({ ref }) => {
-  // mount granularly
+    const item = ref
 
-  Xt.mount({
-    root: ref,
-    matches: '.xt-button, .xt-card',
-    mount: ({ ref }) => {
-      return mountRipple({ ref })
-    },
-  })
+    // init
 
-  // unmount
+    let selfDestroy = () => {}
+    new Xt.Ripple(item, {}).then(self => {
+      // on
 
-  return () => {}
-}
-
-/* mountRipple */
-
-const mountRipple = ({ ref }) => {
-  // vars
-
-  const item = ref
-
-  // init
-
-  let selfDestroy = () => {}
-  new Xt.Ripple(item, {}).then(self => {
-    // on
-
-    const on = () => {
-      /***/
-      const ripple = self.inner.querySelector('.xt-ripple:last-child')
-      /***/
-      // animate
-      if (ripple) {
-        gsap.set(ripple, {
-          height: self.size,
-          width: self.size,
-          top: self.top,
-          left: self.left,
-          scale: 1,
-          opacity: 0,
-        })
-        gsap.to(ripple, {
-          opacity: 1,
-          duration: 0.25,
-          ease: 'quad.inOut',
-        })
-        gsap.to(ripple, {
-          scale: self.scaleFinal,
-          duration: 0.5,
-          ease: 'quad.inOut',
-        })
-      }
-    }
-
-    item.addEventListener('on.xt.ripple', on)
-
-    // off
-
-    const off = () => {
-      /***/
-      const ripple = self.inner.querySelector('.xt-ripple:last-child')
-      /***/
-      // animate
-      if (ripple) {
-        gsap
-          .to(ripple, {
+      const on = () => {
+        /***/
+        const ripple = self.inner.querySelector('.xt-ripple:last-child')
+        /***/
+        // animate
+        if (ripple) {
+          gsap.set(ripple, {
+            height: self.size,
+            width: self.size,
+            top: self.top,
+            left: self.left,
+            scale: 1,
             opacity: 0,
+          })
+          gsap.to(ripple, {
+            opacity: 1,
+            duration: 0.25,
+            ease: 'quad.inOut',
+          })
+          gsap.to(ripple, {
+            scale: self.scaleFinal,
             duration: 0.5,
             ease: 'quad.inOut',
-            delay: 0.1,
           })
-          .eventCallback('onComplete', () => {
-            ripple.remove()
-          })
+        }
       }
-    }
 
-    item.addEventListener('off.xt.ripple', off)
+      item.addEventListener('on.xt.ripple', on)
 
-    // destroy
+      // off
 
-    selfDestroy = () => {
-      self.destroy()
-      self = null
-    }
-  })
+      const off = () => {
+        /***/
+        const ripple = self.inner.querySelector('.xt-ripple:last-child')
+        /***/
+        // animate
+        if (ripple) {
+          gsap
+            .to(ripple, {
+              opacity: 0,
+              duration: 0.5,
+              ease: 'quad.inOut',
+              delay: 0.1,
+            })
+            .eventCallback('onComplete', () => {
+              ripple.remove()
+            })
+        }
+      }
 
-  // unmount
+      item.addEventListener('off.xt.ripple', off)
 
-  return () => {
-    selfDestroy()
-  }
-}
+      // destroy
 
-/* mount */
-
-Xt.mount({
-  matches: '.demo--ripple-animation-v1',
-  mount: ({ ref }) => {
-    const unmountRipples = mountRipples({ ref })
+      selfDestroy = () => {
+        self.destroy()
+        self = null
+      }
+    })
 
     // unmount
 
     return () => {
-      unmountRipples()
+      selfDestroy()
     }
   },
 })
