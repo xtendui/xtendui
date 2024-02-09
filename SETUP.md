@@ -168,6 +168,23 @@ If you want to show a warning on unsupported browser you can use [browser update
 </script>
 ```
 
+Or you can include from npm and **prevent error logging for browsers not supported** (if you want for example **new relic console errors** without unsupported browsers).
+
+```js
+import browserUpdate from 'browser-update'
+
+browserUpdate({
+  required: { c: 84, e: 84, s: 14.1, f: 74, o: 70 },
+  api: 2023.12,
+  onshow: () => {
+    // do not log errors on new relic when browser not supported
+    window.addEventListener('error', e => {
+      e.preventDefault()
+    })
+  },
+})
+```
+
 ## CDN
 
 If you need to do a **fast installation** of css and js (for codepen or jsfiddle for example) use [xtendui CDN](https://unpkg.com/xtendui/), the css and js are inside the `dist/` folder.
