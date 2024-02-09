@@ -418,6 +418,7 @@ describe('demos/components/slider/wrap-center', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .perf() // racecondition perf
+      .wait(500) // racecondition special
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -1041,6 +1042,7 @@ describe('demos/components/slider/pagination', function () {
         expect(self.elements[15].classList.contains('on')).to.equal(false)
         expect(self.elements[16].classList.contains('on')).to.equal(true)
       })
+      .wait(500) // racecondition special
       .then(() => {
         scroll = doc.scrollingElement.scrollTop
       })
