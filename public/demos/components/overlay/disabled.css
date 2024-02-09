@@ -1,4 +1,4 @@
-.demo--overlay-disable, .demo--overlay-disable-react {
+.demo--overlay-disable {
   a[data-xt-overlay-disabled], button[data-xt-overlay-disabled] {
     display: none;
   }

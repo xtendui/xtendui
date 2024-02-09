@@ -1,4 +1,4 @@
-.demo--slider-expand, .demo--slider-expand-react {
+.demo--slider-expand {
   @media (max-width: calc(theme('screens.md') - 1px)) {
     .xt-slides {
       overflow: visible !important;

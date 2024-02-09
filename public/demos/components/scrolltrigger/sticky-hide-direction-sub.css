@@ -1,4 +1,4 @@
-.demo--sticky-hide-direction-sub, .demo--sticky-hide-direction-sub-react {
+.demo--sticky-hide-direction-sub {
   .xt-card.p-6 {
     @apply transition-all ease-in-out-quint;
   }

@@ -1,4 +1,4 @@
-.demo--drop-disable, .demo--drop-disable-react {
+.demo--drop-disable {
   [data-xt-drop-element][data-xt-drop-disabled] {
     display: none;
   }

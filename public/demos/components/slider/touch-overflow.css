@@ -1,4 +1,4 @@
-.demo--slider-touch-overflow, .demo--slider-touch-overflow-react {
+.demo--slider-touch-overflow {
   @media (hover: none), (pointer: coarse) {
     .xt-slides {
       @apply xt-overflow-sub !important;

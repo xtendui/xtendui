@@ -1,4 +1,4 @@
-.demo--media-skeleton, .demo--media-skeleton-react {
+.demo--media-skeleton {
   .xt-media {
     /* https://github.com/tailwindlabs/tailwindcss/issues/6451 */
     &[class*="object-cover"], &[class*="relative"] {
