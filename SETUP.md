@@ -132,16 +132,12 @@ Be sure to transpile `mjs` extension and exclude `node_modules` but include `xte
 Create on the root of the project `.browserslistrc` with:
 
 ```
-> 1%
-not ie 11
-not edge <= 18
-not op_mini all
-Edge >= 79
-Firefox >= 67
-Chrome >= 63
-Safari >= 11.1
-Opera >= 50
-iOS >= 11
+Chrome >= 84
+Edge >= 84
+Safari >= 14.1
+Firefox >= 74
+Opera >= 70
+iOS >= 14.5
 ```
 
 ## Global Styles
