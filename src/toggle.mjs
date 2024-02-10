@@ -114,7 +114,6 @@ class Toggle {
 //
 
 Toggle.constructorName = 'Toggle'
-Toggle.constructorName = 'Toggle'
 Toggle.componentName = 'xt-toggle'
 Toggle.optionsDefaultSuper = {
   debug: false,

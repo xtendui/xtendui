@@ -65,6 +65,7 @@ class Ripple {
 // options
 //
 
+Ripple.constructorName = 'Ripple'
 Ripple.componentName = 'xt-ripple'
 Ripple.optionsDefault = {
   debug: false,
