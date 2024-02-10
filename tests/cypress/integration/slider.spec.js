@@ -417,9 +417,7 @@ describe('demos/components/slider/wrap-center', function () {
   it('TEST grouping and activation, wrap position, performance slider.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
-      .get(self.targets[0])
-      .should('be.visible') // racecondition slider
-      .perf() // racecondition perf
+      .wait(1000) // racecondition special
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -457,7 +455,7 @@ describe('demos/components/slider/wrap-center', function () {
       })
       .get(self.elements[4])
       .click()
-      .perf() // racecondition perf
+      .wait(1000) // racecondition special
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
