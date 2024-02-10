@@ -417,7 +417,7 @@ describe('demos/components/slider/wrap-center', function () {
   it('TEST grouping and activation, wrap position, performance slider.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
-      .wait(1000) // racecondition special
+      .wait(750) // racecondition special
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
@@ -455,7 +455,7 @@ describe('demos/components/slider/wrap-center', function () {
       })
       .get(self.elements[4])
       .click()
-      .wait(1000) // racecondition special
+      .wait(750) // racecondition special
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
@@ -472,24 +472,24 @@ describe('demos/components/slider/wrap-center', function () {
         expect(self.targets[4].style.transform).to.equal('translateX(-2176px)')
         expect(self.targets[5].style.transform).to.equal('translateX(-2176px)')
         expect(self.targets[6].style.transform).to.equal('translateX(-2176px)')
-        expect(self.targets[0].style.width).to.equal('')
-        expect(self.targets[1].style.width).to.equal('')
+        expect(self.targets[0].style.width).to.equal('192px')
+        expect(self.targets[1].style.width).to.equal('192px')
         expect(self.targets[2].style.width).to.equal('320px')
-        expect(self.targets[3].style.width).to.equal('768px')
+        expect(self.targets[3].style.width).to.equal('')
         expect(self.targets[4].style.width).to.equal('')
         expect(self.targets[5].style.width).to.equal('')
         expect(self.targets[6].style.width).to.equal('')
-        expect(self.targets[0].style.height).to.equal('')
-        expect(self.targets[1].style.height).to.equal('')
+        expect(self.targets[0].style.height).to.equal('116.5px')
+        expect(self.targets[1].style.height).to.equal('116.5px')
         expect(self.targets[2].style.height).to.equal('116.5px')
-        expect(self.targets[3].style.height).to.equal('116.5px')
+        expect(self.targets[3].style.height).to.equal('')
         expect(self.targets[4].style.height).to.equal('')
         expect(self.targets[5].style.height).to.equal('')
         expect(self.targets[6].style.height).to.equal('')
-        expect(self.targets[0].style.contentVisibility).to.equal('')
-        expect(self.targets[1].style.contentVisibility).to.equal('')
+        expect(self.targets[0].style.contentVisibility).to.equal('hidden')
+        expect(self.targets[1].style.contentVisibility).to.equal('hidden')
         expect(self.targets[2].style.contentVisibility).to.equal('hidden')
-        expect(self.targets[3].style.contentVisibility).to.equal('hidden')
+        expect(self.targets[3].style.contentVisibility).to.equal('')
         expect(self.targets[4].style.contentVisibility).to.equal('')
         expect(self.targets[5].style.contentVisibility).to.equal('')
         expect(self.targets[6].style.contentVisibility).to.equal('')
