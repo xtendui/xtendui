@@ -3,11 +3,11 @@ import 'xtendui/src/drop'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--drop-animation-js',
+  matches: '.demo--drop-animation-js > .xt-list',
   mount: ({ ref }) => {
     // vars
 
-    const drop = ref.querySelector(':scope > .xt-list')
+    const drop = ref
 
     const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'

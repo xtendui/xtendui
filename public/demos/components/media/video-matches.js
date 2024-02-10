@@ -1,11 +1,11 @@
 import { Xt } from 'xtendui'
 
 Xt.mount({
-  matches: '.demo--media-video-matches',
+  matches: '.demo--media-video-matches video source[data-src]',
   mount: ({ ref }) => {
     // vars
 
-    const source = ref.querySelector('video source[data-src]')
+    const source = ref
     const video = source.closest('video')
 
     // resize

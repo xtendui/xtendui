@@ -1,11 +1,11 @@
 import { Xt } from 'xtendui'
 
 Xt.mount({
-  matches: '.demo--javascript-animation',
+  matches: '.demo--javascript-animation [data-node-target]',
   mount: ({ ref }) => {
     // vars
 
-    const tr = ref.querySelector('[data-node-target]')
+    const tr = ref
 
     // init
 

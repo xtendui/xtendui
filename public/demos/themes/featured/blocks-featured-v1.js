@@ -75,7 +75,7 @@ Xt.mount({
 Xt.mount({
   matches: '.demo--blocks-featured-v1 .button--line',
   mount: ({ ref }) => {
-    const buttonLine = ref.querySelectorAll('.button--line')
+    const buttonLine = ref
 
     // vars
 

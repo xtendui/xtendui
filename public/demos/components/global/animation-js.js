@@ -2,11 +2,11 @@ import { Xt } from 'xtendui'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--javascript-animation-js',
+  matches: '.demo--javascript-animation-js [data-node-target]',
   mount: ({ ref }) => {
     // vars
 
-    const tr = ref.querySelector('[data-node-target]')
+    const tr = ref
     const targetTimeOn = 0.5
     const targetEaseOn = 'quint.out'
     const targetXOn = 16

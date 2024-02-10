@@ -6,11 +6,11 @@ if (typeof window !== 'undefined') {
 }
 
 Xt.mount({
-  matches: '.demo--sticky-hide-direction',
+  matches: '.demo--sticky-hide-direction .xt-sticky',
   mount: ({ ref }) => {
     // vars
 
-    const sticky = ref.querySelector('.xt-sticky')
+    const sticky = ref
 
     // .scrolling-hide (always before pin ScrollTrigger)
 

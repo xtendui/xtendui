@@ -2,11 +2,11 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/tooltip'
 
 Xt.mount({
-  matches: '.demo--tooltip-swap-click',
+  matches: '.demo--tooltip-swap-click [data-xt-tooltip]',
   mount: ({ ref }) => {
     // vars
 
-    const tooltip = ref.querySelector('[data-xt-tooltip]')
+    const tooltip = ref
     Xt.get({ name: 'xt-tooltip', el: tooltip }).then(self => {
       const element = self.elements[0]
 

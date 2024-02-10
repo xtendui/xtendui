@@ -2,11 +2,11 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
 Xt.mount({
-  matches: '.demo--toggle-reset-to-current',
+  matches: '.demo--toggle-reset-to-current [data-xt-toggle]',
   mount: ({ ref }) => {
     // vars
 
-    const toggle = ref.querySelector('[data-xt-toggle]')
+    const toggle = ref
     Xt.get({ name: 'xt-toggle', el: toggle }).then(self => {
       // off
 

@@ -7,11 +7,11 @@ if (typeof window !== 'undefined') {
 }
 
 Xt.mount({
-  matches: '.demo--slider-scrolltrigger',
+  matches: '.demo--slider-scrolltrigger .xt-slider',
   mount: ({ ref }) => {
     // vars
 
-    const slider = ref.querySelector('.xt-slider')
+    const slider = ref
 
     // init
 

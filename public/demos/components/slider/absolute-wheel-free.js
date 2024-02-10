@@ -3,11 +3,11 @@ import 'xtendui/src/slider'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-absolute-wheel-free',
+  matches: '.demo--slider-absolute-wheel-free .xt-slider',
   mount: ({ ref }) => {
     // vars
 
-    const slider = ref.querySelector('.xt-slider')
+    const slider = ref
     let dragDuration
     const dragEase = 'quart.out'
 

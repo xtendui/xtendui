@@ -2,11 +2,11 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/drop'
 
 Xt.mount({
-  matches: '.demo--drop-reset-to-current',
+  matches: '.demo--drop-reset-to-current [data-xt-drop]',
   mount: ({ ref }) => {
     // vars
 
-    const drop = ref.querySelector('[data-xt-drop]')
+    const drop = ref
     Xt.get({ name: 'xt-drop', el: drop }).then(self => {
       // off
 

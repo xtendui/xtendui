@@ -4,11 +4,11 @@ import 'xtendui/src/mousefollow'
 import gsap from 'gsap'
 
 Xt.mount({
-  matches: '.demo--slider-progress',
+  matches: '.demo--slider-progress .xt-slider',
   mount: ({ ref }) => {
     // vars
 
-    const slider = ref.querySelector('.xt-slider')
+    const slider = ref
 
     // vars
 

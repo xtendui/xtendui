@@ -6,11 +6,11 @@ if (typeof window !== 'undefined') {
 }
 
 Xt.mount({
-  matches: '.demo--sticky-matchmedia',
+  matches: '.demo--sticky-matchmedia .xt-sticky',
   mount: ({ ref }) => {
     // vars
 
-    const sticky = ref.querySelector('.xt-sticky')
+    const sticky = ref
 
     // match media
 

@@ -1,11 +1,11 @@
 import { Xt } from 'xtendui'
 
 Xt.mount({
-  matches: '.demo--jumptocontent',
+  matches: '.demo--jumptocontent .jumptocontent',
   mount: ({ ref }) => {
     // vars
 
-    const jumptocontent = ref.querySelector('.jumptocontent')
+    const jumptocontent = ref
 
     // focusIn
 

@@ -2,11 +2,11 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/slider'
 
 Xt.mount({
-  matches: '.demo--slider-api',
+  matches: '.demo--slider-api #slider--eventmethods',
   mount: ({ ref }) => {
     // vars
 
-    const slider = ref.querySelector('#slider--eventmethods')
+    const slider = ref
 
     // init
 

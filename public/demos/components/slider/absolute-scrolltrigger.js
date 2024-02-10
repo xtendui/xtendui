@@ -7,11 +7,11 @@ if (typeof window !== 'undefined') {
 }
 
 Xt.mount({
-  matches: '.demo--slider-absolute-scrolltrigger',
+  matches: '.demo--slider-absolute-scrolltrigger .xt-slider',
   mount: ({ ref }) => {
     // vars
 
-    const slider = ref.querySelector('.xt-slider')
+    const slider = ref
     let dragDuration
     const dragEase = 'quart.out'
 

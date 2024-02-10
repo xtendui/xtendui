@@ -207,7 +207,7 @@ Xt.mount({
   mount: ({ ref }) => {
     // vars
 
-    const megamenu = ref.querySelector('.megamenu')
+    const megamenu = ref
     const btns = megamenu.querySelectorAll('.button--line')
     const drops = megamenu.querySelectorAll('[data-xt-drop-element]')
     const line = megamenu.querySelector('.megamenu-line')

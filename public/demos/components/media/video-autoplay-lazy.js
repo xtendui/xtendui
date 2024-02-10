@@ -1,11 +1,11 @@
 import { Xt } from 'xtendui'
 
 Xt.mount({
-  matches: '.demo--media-video-autoplay-lazy',
+  matches: '.demo--media-video-autoplay-lazy video[preload="none"]',
   mount: ({ ref }) => {
     // vars
 
-    const video = ref.querySelector('video[preload="none"]')
+    const video = ref
     let paused = true
     let playing = false
     let timeout

@@ -1,11 +1,11 @@
 import { Xt } from 'xtendui'
 
 Xt.mount({
-  matches: '.demo--group-expand',
+  matches: '.demo--group-expand .xt-list',
   mount: ({ ref }) => {
     // vars
 
-    const list = ref.querySelector('.xt-list')
+    const list = ref
 
     // on
 

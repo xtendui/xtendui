@@ -2,11 +2,11 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/toggle'
 
 Xt.mount({
-  matches: '.demo--toggle-api',
+  matches: '.demo--toggle-api #toggle--eventmethods',
   mount: ({ ref }) => {
     // vars
 
-    const toggle = ref.querySelector('#toggle--eventmethods')
+    const toggle = ref
 
     // init
 

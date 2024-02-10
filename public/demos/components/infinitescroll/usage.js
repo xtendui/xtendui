@@ -2,11 +2,11 @@ import { Xt } from 'xtendui'
 import 'xtendui/src/infinitescroll'
 
 Xt.mount({
-  matches: '.demo--infinitescroll',
+  matches: '.demo--infinitescroll .infinitescroll',
   mount: ({ ref }) => {
     // vars
 
-    const infinitescroll = ref.querySelector('.infinitescroll')
+    const infinitescroll = ref
 
     // init
 

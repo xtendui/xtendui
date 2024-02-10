@@ -11,12 +11,12 @@ if (typeof window !== 'undefined') {
 import 'xtendui/src/scrollto'
 
 Xt.mount({
-  matches: '.demo--scrollto',
+  matches: '.demo--scrollto .xt-sticky',
   mount: ({ ref }) => {
     /* sticky for demo purpose remove this */
     // vars
 
-    const sticky = ref.querySelector('.xt-sticky')
+    const sticky = ref
 
     // sticky
 
