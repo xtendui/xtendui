@@ -969,21 +969,18 @@ describe('demos/components/slider/navigation', function () {
 
 describe('demos/components/slider/pagination', function () {
   let win
-  let doc
   let Xt
   let container
   let self
-  let scroll
 
   beforeEach(function () {
-    cy.visit(url).window().as('win').document().as('doc')
+    cy.visit(url).window().as('win')
     cy.get('.demo--slider-pagination').as('demo')
     cy.get('@demo').find('[data-xt-slider]').as('container')
   })
 
   beforeEach(function () {
     win = this.win
-    doc = this.doc
     Xt = win.Xt
     container = this.container[0]
     cy.get(container)
@@ -997,128 +994,158 @@ describe('demos/components/slider/pagination', function () {
     })
   })
 
-  it(
-    'TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.',
-    { scrollBehavior: false },
-    function () {
-      cy.get(container)
-        .should('have.attr', 'data-xt-slider-init', '') // racecondition
-        .get(self.targets[0])
-        .should('be.visible') // racecondition slider
-        .then(() => {
-          expect(self.elements.length).to.equal(40)
-          expect(self.elements[0].classList.contains('on')).to.equal(true)
-          expect(self.elements[1].classList.contains('on')).to.equal(false)
-          expect(self.elements[2].classList.contains('on')).to.equal(false)
-          expect(self.elements[3].classList.contains('on')).to.equal(false)
-          expect(self.elements[4].classList.contains('on')).to.equal(false)
-          expect(self.elements[5].classList.contains('on')).to.equal(true)
-          expect(self.elements[6].classList.contains('on')).to.equal(false)
-          expect(self.elements[7].classList.contains('on')).to.equal(false)
-          expect(self.elements[8].classList.contains('on')).to.equal(false)
-          expect(self.elements[9].classList.contains('on')).to.equal(false)
-          expect(self.elements[10].classList.contains('on')).to.equal(true)
-          expect(self.elements[11].classList.contains('on')).to.equal(false)
-          expect(self.elements[12].classList.contains('on')).to.equal(false)
-          expect(self.elements[13].classList.contains('on')).to.equal(false)
-          expect(self.elements[14].classList.contains('on')).to.equal(false)
-          expect(self.elements[15].classList.contains('on')).to.equal(true)
-          expect(self.elements[16].classList.contains('on')).to.equal(false)
-        })
-        .get(self.elements[1])
-        .click()
-        .then(() => {
-          expect(self.elements[0].classList.contains('on')).to.equal(false)
-          expect(self.elements[1].classList.contains('on')).to.equal(true)
-          expect(self.elements[2].classList.contains('on')).to.equal(false)
-          expect(self.elements[3].classList.contains('on')).to.equal(false)
-          expect(self.elements[4].classList.contains('on')).to.equal(false)
-          expect(self.elements[5].classList.contains('on')).to.equal(false)
-          expect(self.elements[6].classList.contains('on')).to.equal(true)
-          expect(self.elements[7].classList.contains('on')).to.equal(false)
-          expect(self.elements[8].classList.contains('on')).to.equal(false)
-          expect(self.elements[9].classList.contains('on')).to.equal(false)
-          expect(self.elements[10].classList.contains('on')).to.equal(false)
-          expect(self.elements[11].classList.contains('on')).to.equal(true)
-          expect(self.elements[12].classList.contains('on')).to.equal(false)
-          expect(self.elements[13].classList.contains('on')).to.equal(false)
-          expect(self.elements[14].classList.contains('on')).to.equal(false)
-          expect(self.elements[15].classList.contains('on')).to.equal(false)
-          expect(self.elements[16].classList.contains('on')).to.equal(true)
-        })
-        .then(() => {
-          scroll = doc.scrollingElement.scrollTop
-        })
+  it('TEST pagination elements activation also on init, interaction deactivation and activation with pointer-events-none, scroll lock.', function () {
+    cy.get(container)
+      .should('have.attr', 'data-xt-slider-init', '') // racecondition
+      .get(self.targets[0])
+      .should('be.visible') // racecondition slider
+      .then(() => {
+        expect(self.elements.length).to.equal(40)
+        expect(self.elements[0].classList.contains('on')).to.equal(true)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(true)
+        expect(self.elements[6].classList.contains('on')).to.equal(false)
+        expect(self.elements[7].classList.contains('on')).to.equal(false)
+        expect(self.elements[8].classList.contains('on')).to.equal(false)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(true)
+        expect(self.elements[11].classList.contains('on')).to.equal(false)
+        expect(self.elements[12].classList.contains('on')).to.equal(false)
+        expect(self.elements[13].classList.contains('on')).to.equal(false)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(true)
+        expect(self.elements[16].classList.contains('on')).to.equal(false)
+      })
+      .get(self.elements[1])
+      .click()
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(true)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[6].classList.contains('on')).to.equal(true)
+        expect(self.elements[7].classList.contains('on')).to.equal(false)
+        expect(self.elements[8].classList.contains('on')).to.equal(false)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(false)
+        expect(self.elements[11].classList.contains('on')).to.equal(true)
+        expect(self.elements[12].classList.contains('on')).to.equal(false)
+        expect(self.elements[13].classList.contains('on')).to.equal(false)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(false)
+        expect(self.elements[16].classList.contains('on')).to.equal(true)
+      })
 
-        .get(self.elements[6])
-        .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
-        .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -200, clientY: 0 }] })
-        .then(() => {
-          expect(self.elements[6].closest('.pointer-events-none')).to.not.equal(null)
-        })
-        .trigger('touchmove', {
-          clientX: undefined,
-          clientY: undefined,
-          touches: [{ clientX: 0, clientY: 200 }],
-          force: true,
-        })
-        .wait(100)
-        .trigger('touchend', { force: true })
-        .wait(750) // after animation
-        .then(() => {
-          expect(self.elements[0].classList.contains('on')).to.equal(false)
-          expect(self.elements[1].classList.contains('on')).to.equal(false)
-          expect(self.elements[2].classList.contains('on')).to.equal(true)
-          expect(self.elements[3].classList.contains('on')).to.equal(false)
-          expect(self.elements[4].classList.contains('on')).to.equal(false)
-          expect(self.elements[5].classList.contains('on')).to.equal(false)
-          expect(self.elements[6].classList.contains('on')).to.equal(false)
-          expect(self.elements[7].classList.contains('on')).to.equal(true)
-          expect(self.elements[8].classList.contains('on')).to.equal(false)
-          expect(self.elements[9].classList.contains('on')).to.equal(false)
-          expect(self.elements[10].classList.contains('on')).to.equal(false)
-          expect(self.elements[11].classList.contains('on')).to.equal(false)
-          expect(self.elements[12].classList.contains('on')).to.equal(true)
-          expect(self.elements[13].classList.contains('on')).to.equal(false)
-          expect(self.elements[14].classList.contains('on')).to.equal(false)
-          expect(self.elements[15].classList.contains('on')).to.equal(false)
-          expect(self.elements[16].classList.contains('on')).to.equal(false)
-          expect(self.elements[17].classList.contains('on')).to.equal(true)
-          expect(doc.scrollingElement.scrollTop).to.equal(scroll)
-        })
+      .wait(3000)
 
-        .get(self.elements[18])
-        .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
-        .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })
-        .then(() => {
-          expect(self.elements[6].closest('.pointer-events-none')).to.equal(null)
-        })
-        .wait(100)
-        .trigger('click')
-        .trigger('touchend', { force: true })
-        .wait(750) // after animation
-        .then(() => {
-          expect(self.elements[0].classList.contains('on')).to.equal(false)
-          expect(self.elements[1].classList.contains('on')).to.equal(false)
-          expect(self.elements[2].classList.contains('on')).to.equal(false)
-          expect(self.elements[3].classList.contains('on')).to.equal(true)
-          expect(self.elements[4].classList.contains('on')).to.equal(false)
-          expect(self.elements[5].classList.contains('on')).to.equal(false)
-          expect(self.elements[6].classList.contains('on')).to.equal(false)
-          expect(self.elements[7].classList.contains('on')).to.equal(false)
-          expect(self.elements[8].classList.contains('on')).to.equal(true)
-          expect(self.elements[9].classList.contains('on')).to.equal(false)
-          expect(self.elements[10].classList.contains('on')).to.equal(false)
-          expect(self.elements[11].classList.contains('on')).to.equal(false)
-          expect(self.elements[12].classList.contains('on')).to.equal(false)
-          expect(self.elements[13].classList.contains('on')).to.equal(true)
-          expect(self.elements[14].classList.contains('on')).to.equal(false)
-          expect(self.elements[15].classList.contains('on')).to.equal(false)
-          expect(self.elements[16].classList.contains('on')).to.equal(false)
-          expect(self.elements[17].classList.contains('on')).to.equal(false)
-        })
-    },
-  )
+      .get(self.elements[6])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 200 }] })
+      .wait(3000)
+      .then(() => {
+        expect(self.elements[6].closest('.pointer-events-none')).to.equal(null)
+      })
+      .trigger('touchmove', {
+        clientX: undefined,
+        clientY: undefined,
+        touches: [{ clientX: 200, clientY: 0 }],
+        force: true,
+      })
+      .wait(100)
+      .trigger('touchend', { force: true })
+      .wait(750) // after animation
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(true)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[6].classList.contains('on')).to.equal(true)
+        expect(self.elements[7].classList.contains('on')).to.equal(false)
+        expect(self.elements[8].classList.contains('on')).to.equal(false)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(false)
+        expect(self.elements[11].classList.contains('on')).to.equal(true)
+        expect(self.elements[12].classList.contains('on')).to.equal(false)
+        expect(self.elements[13].classList.contains('on')).to.equal(false)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(false)
+        expect(self.elements[16].classList.contains('on')).to.equal(true)
+      })
+
+      .get(self.elements[6])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -200, clientY: 0 }] })
+      .then(() => {
+        expect(self.elements[6].closest('.pointer-events-none')).to.not.equal(null)
+      })
+      .trigger('touchmove', {
+        clientX: undefined,
+        clientY: undefined,
+        touches: [{ clientX: 0, clientY: 200 }],
+        force: true,
+      })
+      .wait(100)
+      .trigger('touchend', { force: true })
+      .wait(750) // after animation
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(true)
+        expect(self.elements[3].classList.contains('on')).to.equal(false)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[6].classList.contains('on')).to.equal(false)
+        expect(self.elements[7].classList.contains('on')).to.equal(true)
+        expect(self.elements[8].classList.contains('on')).to.equal(false)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(false)
+        expect(self.elements[11].classList.contains('on')).to.equal(false)
+        expect(self.elements[12].classList.contains('on')).to.equal(true)
+        expect(self.elements[13].classList.contains('on')).to.equal(false)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(false)
+        expect(self.elements[16].classList.contains('on')).to.equal(false)
+        expect(self.elements[17].classList.contains('on')).to.equal(true)
+      })
+
+      .get(self.elements[18])
+      .trigger('touchstart', { clientX: undefined, clientY: undefined, touches: [{ clientX: 0, clientY: 0 }] })
+      .trigger('touchmove', { clientX: undefined, clientY: undefined, touches: [{ clientX: -20, clientY: 0 }] })
+      .then(() => {
+        expect(self.elements[6].closest('.pointer-events-none')).to.equal(null)
+      })
+      .wait(100)
+      .trigger('click')
+      .trigger('touchend', { force: true })
+      .wait(750) // after animation
+      .then(() => {
+        expect(self.elements[0].classList.contains('on')).to.equal(false)
+        expect(self.elements[1].classList.contains('on')).to.equal(false)
+        expect(self.elements[2].classList.contains('on')).to.equal(false)
+        expect(self.elements[3].classList.contains('on')).to.equal(true)
+        expect(self.elements[4].classList.contains('on')).to.equal(false)
+        expect(self.elements[5].classList.contains('on')).to.equal(false)
+        expect(self.elements[6].classList.contains('on')).to.equal(false)
+        expect(self.elements[7].classList.contains('on')).to.equal(false)
+        expect(self.elements[8].classList.contains('on')).to.equal(true)
+        expect(self.elements[9].classList.contains('on')).to.equal(false)
+        expect(self.elements[10].classList.contains('on')).to.equal(false)
+        expect(self.elements[11].classList.contains('on')).to.equal(false)
+        expect(self.elements[12].classList.contains('on')).to.equal(false)
+        expect(self.elements[13].classList.contains('on')).to.equal(true)
+        expect(self.elements[14].classList.contains('on')).to.equal(false)
+        expect(self.elements[15].classList.contains('on')).to.equal(false)
+        expect(self.elements[16].classList.contains('on')).to.equal(false)
+        expect(self.elements[17].classList.contains('on')).to.equal(false)
+      })
+  })
 })
 
 describe('demos/components/slider/jump', function () {

@@ -1137,15 +1137,6 @@ export class SliderInit extends Xt.Toggle {
       self.drag._current = e.touches[0].clientX
       self.drag._currentOther = e.touches[0].clientY
     }
-    // fix no drag change when click
-    if (self.drag._start === self.drag._current) {
-      return
-    }
-    // first dragmove instant setup
-    if (setup) {
-      // only 1 pixel same direction
-      self.drag._current = Math.sign(self.drag._current)
-    }
     // check threshold
     self.drag._distance = self.drag._start - self.drag._current
     self.drag._distanceOther = self.drag._startOther - self.drag._currentOther
@@ -1160,6 +1151,15 @@ export class SliderInit extends Xt.Toggle {
         // lock drag
         self.drag._lock = true
       }
+    }
+    // fix no drag change when click
+    if (self.drag._start === self.drag._current) {
+      return
+    }
+    // first dragmove instant setup
+    if (setup) {
+      // only 1 pixel same direction
+      self.drag._current = Math.sign(self.drag._current)
     }
     // prevent drag
     if (self.drag._prevent) {
