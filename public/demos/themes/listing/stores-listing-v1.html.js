@@ -9,18 +9,16 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} h-40">
+                  class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
                     <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                   </div>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street 42, 00134 City, Nation</address>
-                  </div>
-                  <div class="${classes.cardSm()} mt-auto pt-0">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                      class="xt-button mt-auto ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                       data-node-action>
                       More info
                     </button>
@@ -28,14 +26,14 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  class="*** listing-item-back *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <button
                     type="button"
                     class="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     ${classes.iconX()}
                   </button>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Contacts</div>
                     <div class="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -61,18 +59,16 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} h-40">
+                  class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
                     <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                   </div>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
-                  </div>
-                  <div class="${classes.cardSm()} mt-auto pt-0">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                      class="xt-button mt-auto ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                       data-node-action>
                       More info
                     </button>
@@ -80,14 +76,14 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  class="*** listing-item-back *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <button
                     type="button"
                     class="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     ${classes.iconX()}
                   </button>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Contacts</div>
                     <div class="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -103,18 +99,16 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} h-40">
+                  class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
                     <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                   </div>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
-                  </div>
-                  <div class="${classes.cardSm()} mt-auto pt-0">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                      class="xt-button mt-auto ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                       data-node-action>
                       More info
                     </button>
@@ -122,14 +116,14 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  class="*** listing-item-back *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <button
                     type="button"
                     class="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     ${classes.iconX()}
                   </button>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Contacts</div>
                     <div class="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -155,18 +149,16 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} h-40">
+                  class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
                     <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                   </div>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
-                  </div>
-                  <div class="${classes.cardSm()} mt-auto pt-0">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                      class="xt-button mt-auto ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                       data-node-action>
                       More info
                     </button>
@@ -174,14 +166,14 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  class="*** listing-item-back *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <button
                     type="button"
                     class="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     ${classes.iconX()}
                   </button>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Contacts</div>
                     <div class="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
@@ -197,18 +189,16 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block w-full">
               <div class="*** listing-item-inner *** h-full transition ease-in-out-quad">
                 <div
-                  class="*** listing-item-front *** absolute inset-0 z-10 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
-                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} h-40">
+                  class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
                     <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                   </div>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
-                  </div>
-                  <div class="${classes.cardSm()} mt-auto pt-0">
                     <button
                       type="button"
-                      class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
+                      class="xt-button mt-auto ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
                       data-node-action>
                       More info
                     </button>
@@ -216,14 +206,14 @@ const html = /* HTML */ `
                 </div>
 
                 <div
-                  class="*** listing-item-back *** relative h-full min-h-[22rem] xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
+                  class="*** listing-item-back *** absolute inset-0 xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <button
                     type="button"
                     class="xt-button *** xt-dismiss *** absolute z-above top-0 right-0 p-5 text-2xl"
                     aria-label="Close">
                     ${classes.iconX()}
                   </button>
-                  <div class="${classes.cardSm()}">
+                  <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Contacts</div>
                     <div class="xt-p font-sm">
                       <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />

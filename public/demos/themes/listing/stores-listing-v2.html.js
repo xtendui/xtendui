@@ -7,12 +7,11 @@ const html = /* HTML */ `
         <div class="xt-row xt-row-6 xt-row-stretch">
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
                   <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
-                <div class="mt-6 flex flex-col">
+                <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street 42, 00134 City, Nation</address>
@@ -21,7 +20,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -51,12 +50,11 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
                   <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
-                <div class="mt-6 flex flex-col">
+                <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
@@ -65,7 +63,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -85,12 +83,11 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
                   <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
-                <div class="mt-6 flex flex-col">
+                <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
@@ -99,7 +96,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -129,12 +126,11 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
                   <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
-                <div class="mt-6 flex flex-col">
+                <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
@@ -143,7 +139,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -163,12 +159,11 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
                   <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
                 </div>
-                <div class="mt-6 flex flex-col">
+                <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
@@ -177,7 +172,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
@@ -207,12 +202,11 @@ const html = /* HTML */ `
 
           <div class="w-full md:w-6/12 lg:w-4/12">
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div
-                class="*** listing-item-front *** cursor-pointer absolute inset-0 xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 h-40">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
                   <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
                 </div>
-                <div class="mt-6 flex flex-col">
+                <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
                     <div class="xt-h5">Lorem Ipsum</div>
                     <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
@@ -221,7 +215,7 @@ const html = /* HTML */ `
               </div>
 
               <div
-                class="*** listing-item-back *** min-h-[22rem] opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
                 <button
                   type="button"
                   class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
