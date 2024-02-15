@@ -1,3 +1,10 @@
+# [2.0.0-beta.8](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2024-02-15)
+
+
+### Bug Fixes
+
+* **js:** fix Xt.scrolltriggerRerfreshFix ScrollTrigger console error when not using defer ([a8d68dd](https://github.com/xtendui/xtendui/commit/a8d68dd1f5097e7c9bd48b29d424a4d5306a0787))
+
 # [2.0.0-beta.7](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2024-02-15)
 
 
