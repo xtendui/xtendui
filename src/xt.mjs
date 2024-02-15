@@ -1138,16 +1138,20 @@ if (typeof window !== 'undefined') {
    * @param {Function} params.ScrollTrigger
    */
   Xt.scrolltriggerRerfreshFix = ({ ScrollTrigger } = {}) => {
-    // removed resize we trigger it manually
-    ScrollTrigger.config({
-      autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+    Xt.ready({
+      func: () => {
+        // removed resize we trigger it manually
+        ScrollTrigger.config({
+          autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
+        })
+        // window resize
+        const resize = () => {
+          ScrollTrigger.refresh()
+        }
+        removeEventListener('resize.xt', resize)
+        addEventListener('resize.xt', resize)
+      },
     })
-    // window resize
-    const resize = () => {
-      ScrollTrigger.refresh()
-    }
-    removeEventListener('resize.xt', resize)
-    addEventListener('resize.xt', resize)
   }
 
   //
