@@ -579,8 +579,6 @@ export class SliderInit extends Xt.Toggle {
       Xt.perf({
         func: () => {
           for (const tr of self.targets) {
-            // hide not inside viewport
-            self._setPerfSize.bind(self, tr)()
             // intersection observer
             const func = self._funcPerfSize.bind(self, tr)
             Xt.observe({

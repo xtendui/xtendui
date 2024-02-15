@@ -78,106 +78,6 @@ if (typeof window !== 'undefined') {
   }
 
   /**
-   * perf
-   * @param {Function} params.func Function to execute after setTimeout 0
-   * @param {Boolean} params.skip Skip setTimeout 0
-   */
-  Xt.perf = ({ func, skip } = {}) => {
-    if (skip) {
-      func()
-    } else {
-      setTimeout(() => {
-        func()
-      }, 0)
-    }
-  }
-
-  //
-  // intersectionObserver
-  //
-
-  Xt._intersectionObserverInit = () => {
-    Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
-      for (const entry of entries) {
-        const container = entry.target
-        if (Xt.observerCheck(entry)) {
-          const objects = Xt._observerArr.filter(x => x.container === container)
-          // keepAlive if there is a func otherwise we don't need observer anymore
-          const keepAlive = objects.some(x => x.func)
-          if (!keepAlive) {
-            observer.unobserve(container)
-            Xt._observerArr = Xt._observerArr.filter(x => x.container !== container)
-          }
-          // logic
-          for (const obj of objects) {
-            if (obj.func) {
-              obj.func(true)
-            }
-            if (obj.promise) {
-              obj.resolve(obj.promise)
-            }
-          }
-        } else {
-          const objects = Xt._observerArr.filter(x => x.container === container)
-          const keepAlive = objects.some(x => x.func)
-          if (keepAlive) {
-            // logic
-            for (const obj of objects) {
-              if (obj.func) {
-                obj.func(false)
-              }
-            }
-          }
-        }
-      }
-    }, Xt.observerOptions)
-  }
-
-  //
-  // mutationObserver
-  //
-
-  /**
-   * init
-   */
-  Xt._mutationObserver = new MutationObserver(mutationsList => {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'childList') {
-        // added
-        for (const added of mutation.addedNodes) {
-          if (added.nodeType === 1) {
-            Xt._mountCheck({ added })
-          }
-        }
-        // removed
-        for (const removed of mutation.removedNodes) {
-          if (removed.nodeType === 1) {
-            Xt._unmountCheck({ removed })
-          }
-        }
-      }
-    }
-  })
-
-  Xt.ready({
-    func: () => {
-      Xt._mutationObserver.disconnect()
-      Xt._mutationObserver.observe(document.documentElement, {
-        characterData: false,
-        attributes: false,
-        childList: true,
-        subtree: true,
-      })
-      // after perf or custom options (e.g. Xt.observerOptions) aren't used
-      Xt.perf({
-        func: () => {
-          Xt._intersectionObserverInit()
-        },
-      })
-    },
-  })
-
-  /**
    * mount
    * @param {Object} obj
    * @param {Boolean} perf Use setTimeout 0
@@ -922,6 +822,21 @@ if (typeof window !== 'undefined') {
   }
 
   /**
+   * perf
+   * @param {Function} params.func Function to execute after setTimeout 0
+   * @param {Boolean} params.skip Skip setTimeout 0
+   */
+  Xt.perf = ({ func, skip } = {}) => {
+    if (skip) {
+      func()
+    } else {
+      setTimeout(() => {
+        func()
+      }, 0)
+    }
+  }
+
+  /**
    * animation on classes
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el Element animating
@@ -1234,4 +1149,90 @@ if (typeof window !== 'undefined') {
     removeEventListener('resize.xt', resize)
     addEventListener('resize.xt', resize)
   }
+
+  //
+  // mutationObserver
+  //
+
+  Xt._mutationObserver = new MutationObserver(mutationsList => {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'childList') {
+        // added
+        for (const added of mutation.addedNodes) {
+          if (added.nodeType === 1) {
+            Xt._mountCheck({ added })
+          }
+        }
+        // removed
+        for (const removed of mutation.removedNodes) {
+          if (removed.nodeType === 1) {
+            Xt._unmountCheck({ removed })
+          }
+        }
+      }
+    }
+  })
+
+  //
+  // intersectionObserver
+  //
+
+  Xt._intersectionObserverInit = () => {
+    Xt._intersectionObserver = new IntersectionObserver(function (entries, observer) {
+      for (const entry of entries) {
+        const container = entry.target
+        if (Xt.observerCheck(entry)) {
+          const objects = Xt._observerArr.filter(x => x.container === container)
+          // keepAlive if there is a func otherwise we don't need observer anymore
+          const keepAlive = objects.some(x => x.func)
+          if (!keepAlive) {
+            observer.unobserve(container)
+            Xt._observerArr = Xt._observerArr.filter(x => x.container !== container)
+          }
+          // logic
+          for (const obj of objects) {
+            if (obj.func) {
+              obj.func(true)
+            }
+            if (obj.promise) {
+              obj.resolve(obj.promise)
+            }
+          }
+        } else {
+          const objects = Xt._observerArr.filter(x => x.container === container)
+          const keepAlive = objects.some(x => x.func)
+          if (keepAlive) {
+            // logic
+            for (const obj of objects) {
+              if (obj.func) {
+                obj.func(false)
+              }
+            }
+          }
+        }
+      }
+    }, Xt.observerOptions)
+  }
+
+  //
+  // init
+  //
+
+  Xt.ready({
+    func: () => {
+      Xt._mutationObserver.disconnect()
+      Xt._mutationObserver.observe(document.documentElement, {
+        characterData: false,
+        attributes: false,
+        childList: true,
+        subtree: true,
+      })
+      // after perf or custom options (e.g. Xt.observerOptions) aren't used
+      Xt.perf({
+        func: () => {
+          Xt._intersectionObserverInit()
+        },
+      })
+    },
+  })
 }
