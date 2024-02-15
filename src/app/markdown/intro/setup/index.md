@@ -100,10 +100,10 @@ npm install gsap --save
 
 #### Polyfill
 
-You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [core-js](https://www.npmjs.com/package/core-js), [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime).
+You need to install [@babel/core](https://www.npmjs.com/package/@babel/core), [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env), [core-js](https://www.npmjs.com/package/core-js).
 
 ```
-npm install @babel/core @babel/preset-env core-js regenerator-runtime --save
+npm install @babel/core @babel/preset-env core-js --save
 ```
 
 Create on the root of the project `babel.config.js` with:
