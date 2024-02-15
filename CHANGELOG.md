@@ -1,3 +1,12 @@
+# [2.0.0-beta.7](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.6...v2.0.0-beta.7) (2024-02-15)
+
+
+### Bug Fixes
+
+* **ripple:** fix ripple error on initialization ([43fe9e9](https://github.com/xtendui/xtendui/commit/43fe9e962fbab56d90660b2460a8c3d6d73b04bb))
+* **slider:** fix initialization slider perf flickr of slide items visibility ([0725a64](https://github.com/xtendui/xtendui/commit/0725a6473aa8f05a7a982ebdfc95e2b9b78f3473))
+* **slider:** fix slider lock vertical touch also if no horizontal touch happening ([6379686](https://github.com/xtendui/xtendui/commit/6379686bb1c5c4972b11463365ddbab0773999ed))
+
 # [2.0.0-beta.6](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.5...v2.0.0-beta.6) (2024-02-08)
 
 
