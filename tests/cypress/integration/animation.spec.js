@@ -208,6 +208,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
   it('TEST duration, delay.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .wait(750) // racecondition special
       .get(self.elements[0])
       .click()
       .then(() => {
@@ -219,7 +220,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
       })
       .get(self.elements[1])
       .click()
-      .wait(750) // after animation
+      .wait(1000) // after animation
       .then(() => {
         expect(win.Xt.visible({ el: self.targets[0] })).to.equal(false)
         expect(self.targets[3].classList.contains('on')).to.equal(false)
