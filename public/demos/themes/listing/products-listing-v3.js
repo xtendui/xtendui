@@ -7,10 +7,9 @@ if (typeof window !== 'undefined') {
 import { CustomEase } from 'gsap/CustomEase'
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(CustomEase)
+  CustomEase.create('products-listing-v3-out', '0, 0.97, 0.43, 1')
 }
 import 'xtendui/src/slider'
-
-CustomEase.create('products-listing-v3-out', '0, 0.97, 0.43, 1')
 
 Xt.mount({
   matches: '.demo--products-listing-v3',
