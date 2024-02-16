@@ -1,3 +1,10 @@
+# [2.0.0-beta.10](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.9...v2.0.0-beta.10) (2024-02-16)
+
+
+### Bug Fixes
+
+* **js:** fix Xt.observe promise not triggering ([f3a5aa4](https://github.com/xtendui/xtendui/commit/f3a5aa4c66381107980b7a0d018f43d47454aa18))
+
 # [2.0.0-beta.9](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2024-02-16)
 
 
