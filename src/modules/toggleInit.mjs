@@ -461,21 +461,30 @@ export class ToggleInit {
       }
     }
     // targets
-    for (const tr of self.targets) {
-      // event on
-      const onHandlerCustom = Xt.dataStorage.put(
-        tr,
-        `${options.on}/oncustom/${self.ns}`,
-        self._eventOnHandler.bind(self, { el: tr, force: true }),
-      )
-      tr.addEventListener(`on.trigger.${self._componentNs}`, onHandlerCustom)
-      // event off
-      const offHandlerCustom = Xt.dataStorage.put(
-        tr,
-        `${options.off}/offcustom/${self.ns}`,
-        self._eventOffHandler.bind(self, { el: tr, force: true }),
-      )
-      tr.addEventListener(`off.trigger.${self._componentNs}`, offHandlerCustom)
+    let skipTargetsTrigger = false
+    if (self._mode === 'unique') {
+      const selfs = Xt.dataStorage.get(document.documentElement, `xtNamespace${self.ns}`)
+      if (selfs.length > 1) {
+        skipTargetsTrigger = true
+      }
+    }
+    if (!skipTargetsTrigger) {
+      for (const tr of self.targets) {
+        // event on
+        const onHandlerCustom = Xt.dataStorage.put(
+          tr,
+          `${options.on}/oncustom/${self.ns}`,
+          self._eventOnHandler.bind(self, { el: tr, force: true }),
+        )
+        tr.addEventListener(`on.trigger.${self._componentNs}`, onHandlerCustom)
+        // event off
+        const offHandlerCustom = Xt.dataStorage.put(
+          tr,
+          `${options.off}/offcustom/${self.ns}`,
+          self._eventOffHandler.bind(self, { el: tr, force: true }),
+        )
+        tr.addEventListener(`off.trigger.${self._componentNs}`, offHandlerCustom)
+      }
     }
     // auto
     if (options.auto && options.auto.time) {
