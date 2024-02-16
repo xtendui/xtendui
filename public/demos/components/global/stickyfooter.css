@@ -1,0 +1,8 @@
+.demo--stickyfooter {
+  .site-wrapper {
+    @apply flex flex-col min-h-screen !min-h-[100svh];
+  }
+  .site-main {
+    @apply flex flex-col flex-auto;
+  }
+}
