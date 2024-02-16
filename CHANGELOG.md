@@ -1,3 +1,11 @@
+# [2.0.0-beta.9](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.8...v2.0.0-beta.9) (2024-02-16)
+
+
+### Bug Fixes
+
+* **js:** fix unique mode share namespace container ([fb33682](https://github.com/xtendui/xtendui/commit/fb3368212d57d025c2f6aa9cfabf796b183c52a2))
+* **toggle:** fix unique mode trigger targets events skip if same namespace ([2cf4c8f](https://github.com/xtendui/xtendui/commit/2cf4c8fde7cf50827b8e3785c319ec43c31dd0c7))
+
 # [2.0.0-beta.8](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.7...v2.0.0-beta.8) (2024-02-15)
 
 
