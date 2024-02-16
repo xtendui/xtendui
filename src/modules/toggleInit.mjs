@@ -1058,7 +1058,7 @@ export class ToggleInit {
     } else if (self._mode === 'unique') {
       // xtNamespace linked components
       const final = []
-      const selfs = Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`)
+      const selfs = Xt.dataStorage.get(document.documentElement, `xtNamespace${self.ns}`)
       if (selfs) {
         for (const s of selfs) {
           // choose element by group
@@ -3702,10 +3702,10 @@ export class ToggleInit {
     const self = this
     // xtNamespace linked components
     if (self._mode === 'unique') {
-      const arr = Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`) ?? []
+      const arr = Xt.dataStorage.get(document.documentElement, `xtNamespace${self.ns}`) ?? []
       if (!arr.includes(self)) {
         arr.push(self)
-        Xt.dataStorage.set(self.container, `xtNamespace${self.ns}`, arr)
+        Xt.dataStorage.set(document.documentElement, `xtNamespace${self.ns}`, arr)
       }
     }
   }
@@ -3717,10 +3717,10 @@ export class ToggleInit {
     const self = this
     // xtNamespace linked components
     if (self._mode === 'unique') {
-      let arr = Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`)
+      let arr = Xt.dataStorage.get(document.documentElement, `xtNamespace${self.ns}`)
       if (arr) {
         arr = arr.filter(x => x !== self)
-        Xt.dataStorage.set(self.container, `xtNamespace${self.ns}`, arr)
+        Xt.dataStorage.set(document.documentElement, `xtNamespace${self.ns}`, arr)
       }
     }
   }

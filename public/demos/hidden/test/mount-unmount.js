@@ -31,7 +31,7 @@ Xt.mount({
       // eslint-disable-next-line no-console
       console.log(
         'TEST init xtNamespace, should be 1.',
-        Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length,
+        Xt.dataStorage.get(document.documentElement, `xtNamespace${self.ns}`).length,
       )
       // eslint-disable-next-line no-console
       console.log(
@@ -85,7 +85,7 @@ Xt.mount({
         console.log(
           'TEST unmount, unmountArr should be the same, xtNamespace should be 0.',
           Xt._unmountArr.length,
-          Xt.dataStorage.get(self.container, `xtNamespace${self.ns}`).length,
+          Xt.dataStorage.get(document.documentElement, `xtNamespace${self.ns}`).length,
         )
         removeEventListener('resize', resize)
       }
