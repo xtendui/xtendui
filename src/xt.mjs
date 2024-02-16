@@ -1198,7 +1198,7 @@ if (typeof window !== 'undefined') {
             if (obj.func) {
               obj.func(true)
             }
-            if (obj.promise) {
+            if (obj.resolve) {
               obj.resolve(obj.promise)
             }
           }
