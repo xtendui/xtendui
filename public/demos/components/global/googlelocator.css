@@ -54,6 +54,12 @@
     @apply max-md:off:hidden max-md:transition max-md:opacity-0 max-md:in:opacity-100 max-md:out:opacity-0;
   }
   
+  /* places autocomplete */
+
+  .pac-container {
+    @apply z-last;
+  }
+
   /* infoWindow */
 
   .gm-style {
