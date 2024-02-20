@@ -242,7 +242,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       .wait(200) // after delay
       .then(() => {
         expect(self.direction).to.equal(0)
-        expect(self.targets[0].style.zIndex).to.equal('699')
+        expect(self.targets[0].style.zIndex).to.equal('701')
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         cy.frameDouble().then(() => {
@@ -255,7 +255,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       .wait(200) // after delay
       .then(() => {
         expect(self.direction).to.equal(1)
-        expect(self.targets[1].style.zIndex).to.equal('698')
+        expect(self.targets[1].style.zIndex).to.equal('702')
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[1].classList.contains('on')).to.equal(true)
         cy.frameDouble().then(() => {
@@ -268,7 +268,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
       .wait(200) // after delay
       .then(() => {
         expect(self.direction).to.equal(-1)
-        expect(self.targets[0].style.zIndex).to.equal('697')
+        expect(self.targets[0].style.zIndex).to.equal('703')
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[1].classList.contains('on')).to.equal(false)
         cy.frameDouble().then(() => {
