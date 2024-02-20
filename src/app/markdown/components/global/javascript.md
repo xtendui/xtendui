@@ -111,7 +111,8 @@ And here's a example usage of Intersection Observer that **resolves only one tim
 
 ```js
 Xt.observe({
-  container: el, 
+  container: el,
+  observer: true,
 }).then(() => {
   // code to execute when element is inside viewport only 1 time
 })
