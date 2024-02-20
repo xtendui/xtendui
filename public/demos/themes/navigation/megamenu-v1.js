@@ -13,11 +13,10 @@ Xt.mount({
     const contentXOn = -40
     const contentXOff = -40
     const contentTime = 0.5
-    const contentDelayOn = 0.25
     const contentEase = 'quint.out'
 
     const designTime = 0.5
-    const designDelayOff = 0.1 // fix opacity when changing fast
+    const designDelayOff = 0.25 // fix opacity see below
     const designEase = 'expo.out'
 
     const innerTime = 0.5
@@ -34,6 +33,11 @@ Xt.mount({
       queue: false,
       duration: 500,
       preventEvent: true,
+      zIndex: {
+        targets: {
+          factor: 1,
+        },
+      },
       // activated by switcher
       //on: 'mouseenter focus',
       //off: 'mouseleave',
@@ -69,19 +73,24 @@ Xt.mount({
             x: 0,
             opacity: 1,
             duration: contentTime,
-            delay: contentDelayOn,
             ease: contentEase,
           })
           // design
           const design = tr.querySelector('.xt-design')
           gsap.killTweensOf(design)
           gsap.set(design, {
+            opacity: 0,
+          })
+          gsap.to(design, {
             opacity: 1,
+            duration: designTime,
+            ease: designEase,
           })
           // inner
           const inner = tr.querySelector('[data-xt-drop-inner]')
           gsap.killTweensOf(inner)
           gsap.set(inner, {
+            opacity: 1,
             height: '',
           })
           const innerHeight = inner.clientHeight
@@ -107,6 +116,7 @@ Xt.mount({
               const inner = tr.querySelector('[data-xt-drop-inner]')
               gsap.killTweensOf(inner)
               gsap.set(inner, {
+                opacity: 1,
                 height: innerHeightCache,
               })
               gsap.to(inner, {
@@ -158,6 +168,7 @@ Xt.mount({
             gsap.killTweensOf(inner)
             gsap
               .to(inner, {
+                opacity: 0,
                 height: 0,
                 duration: innerTime,
                 ease: innerEase,
