@@ -23,6 +23,9 @@ module.exports = {
     },
   }),
   component: theme => ({
+    '.xt-html:not(.xt-optout-scroll)': {
+      '@apply xt-overflow-main': '',
+    },
     '.xt-body:not(.xt-optout-scroll)': {
       '@apply xt-overflow-main overflow-y-scroll overflow-x-hidden': '',
     },
@@ -41,30 +44,11 @@ module.exports = {
     },
     '.xt-overflow-main': {
       '-webkit-overflow-scrolling': 'touch',
-      '&::-webkit-scrollbar': {
-        height: '10px',
-        width: '10px',
-        background: theme('colors.white'),
-        '@media (hover: none)': {
-          display: 'none',
-        },
-      },
-      '&::-webkit-scrollbar-thumb': {
-        background: theme('colors.gray.300'),
-      },
       scrollbarWidth: 'auto',
       scrollbarColor: `${theme('colors.gray.300')} ${theme('colors.white')}`,
     },
     '.xt-overflow-sub': {
       '-webkit-overflow-scrolling': 'touch',
-      '&::-webkit-scrollbar': {
-        height: '5px',
-        width: '5px',
-        background: 'transparent',
-      },
-      '&::-webkit-scrollbar-thumb': {
-        background: theme('colors.gray.300'),
-      },
       scrollbarWidth: 'thin',
       scrollbarColor: `${theme('colors.gray.300')} transparent`,
     },

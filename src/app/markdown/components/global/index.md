@@ -12,9 +12,9 @@ You can **customize the default styles of this component** inside `tailwind.conf
 
 ## Global Styles
 
-Add to the `body` the class `xt-body` to have this features:
+Add to the `html` the class `xt-html` to have this features, and add to the `body` the class `xt-body` to have this features:
 
-* **Custom body scrollbar** [components styles](/components/global#components-styles). You can disable this feature with `xt-optout-scroll` and keep others `xt-body` features.
+* **Custom body scrollbar and overflow** [components styles](/components/global#components-styles). You can disable this feature with `xt-optout-scroll` and keep others `xt-body` features.
 
 ## Utilities Styles
 
@@ -61,25 +61,9 @@ module.exports = {
               color: theme('colors.white'),
             },
             '.xt-overflow-main': {
-              '&::-webkit-scrollbar': {
-                height: '10px',
-                width: '10px',
-                background: theme('colors.white'),
-              },
-              '&::-webkit-scrollbar-thumb': {
-                background: theme('colors.primary.500'),
-              },
               scrollbarColor: `${theme('colors.primary.500')} ${theme('colors.white')}`,
             },
             '.xt-overflow-sub': {
-              '&::-webkit-scrollbar': {
-                height: '5px',
-                width: '5px',
-                background: 'transparent',
-              },
-              '&::-webkit-scrollbar-thumb': {
-                background: theme('colors.gray.500'),
-              },
               scrollbarColor: `${theme('colors.gray.500')} transparent`,
             },
           }),

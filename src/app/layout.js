@@ -24,7 +24,7 @@ export default async function RootLayout({ children }) {
   }
 
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" className="xt-html" suppressHydrationWarning={true}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" type="image/png" sizes="512x512" />
