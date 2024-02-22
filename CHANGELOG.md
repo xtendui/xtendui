@@ -1,3 +1,20 @@
+# [2.0.0-beta.12](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2024-02-22)
+
+
+### Bug Fixes
+
+* **slider:** round values and fix test new scrollbar ([b2dccfd](https://github.com/xtendui/xtendui/commit/b2dccfdb0627da4c065c47d5d22afde524775901))
+
+
+### Code Refactoring
+
+* **css:** refactor custom scrollbar to use scrollbar-width and scrollbar-color only, removed webkit-scrollbar ([5ca75a9](https://github.com/xtendui/xtendui/commit/5ca75a973cbd1d9f32ffac8f6332544cef0cc7a3))
+
+
+### BREAKING CHANGES
+
+* **css:** to have custom scrollbar colors add to html  and remove from tailwind.config.js  and
+
 # [2.0.0-beta.11](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2024-02-20)
 
 
