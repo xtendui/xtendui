@@ -206,7 +206,7 @@ describe('demos/components/slider/disabled', function () {
           .then(() => {
             expect(self.targets[4].classList.contains('in')).to.equal(true)
             expect(self.targets[5].classList.contains('in')).to.equal(true)
-            expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-1376px)')
+            expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-1367px)')
           })
           .viewport('iphone-6')
           .get(container)
@@ -216,7 +216,7 @@ describe('demos/components/slider/disabled', function () {
             expect(self.targets[4].getAttribute('data-xt-slider-disabled')).to.equal(null)
             expect(self.targets[4].classList.contains('on')).to.equal(true)
             expect(self.targets[5].classList.contains('on')).to.equal(false)
-            expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-733px)')
+            expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-720px)')
             cy.frameDouble().then(() => {
               expect(self.targets[4].classList.contains('in')).to.equal(true)
               expect(self.targets[5].classList.contains('in')).to.equal(false)
@@ -227,7 +227,7 @@ describe('demos/components/slider/disabled', function () {
           .eq(6)
           .click()
           .then(() => {
-            expect(self.targets[0].style.transform).to.equal('translateX(1313.5px)')
+            expect(self.targets[0].style.transform).to.equal('translateX(1291.5px)')
           })
       })
   })
@@ -474,9 +474,9 @@ describe('demos/components/slider/api', function () {
   })
 
   it('TEST initial dragger position instant with no transition, initial wrap position, remove until 0 targets should not give errors.', function () {
-    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-2394px)')
-    expect(self.targets[0].style.transform).to.equal('translateX(3463.25px)')
-    expect(self.targets[6].style.transform).to.equal('translateX(0.9375px)')
+    expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.equal('translateX(-2383px)')
+    expect(self.targets[0].style.transform).to.equal('translateX(3447.5px)')
+    expect(self.targets[6].style.transform).to.equal('translateX(-0.5px)')
     cy.get('#button--slider-api-remove')
       .click()
       .click()
@@ -495,7 +495,7 @@ describe('demos/components/slider/api', function () {
       .click()
       .then(() => {
         expect(self.targets[0].style.transform).to.equal('')
-        expect(self.targets[6].style.transform).to.equal('translateX(-2138.25px)')
+        expect(self.targets[6].style.transform).to.equal('translateX(-2130.5px)')
       })
   })
 })

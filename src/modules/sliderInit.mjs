@@ -117,11 +117,11 @@ export class SliderInit extends Xt.Toggle {
       }
       sizeContent += trWidth
       trWidthMax = trWidth > trWidthMax ? trWidth : trWidthMax
-      Xt.dataStorage.set(tr, `${self.ns}TrLeftInitial`, trLeft)
-      Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeft)
-      Xt.dataStorage.set(tr, `${self.ns}TrWidth`, trWidth)
-      Xt.dataStorage.set(tr, `${self.ns}TrHeight`, trHeight)
-      Xt.dataStorage.set(tr, `${self.ns}TrHeightContent`, trHeightContent)
+      Xt.dataStorage.set(tr, `${self.ns}TrLeftInitial`, Math.round(trLeft))
+      Xt.dataStorage.set(tr, `${self.ns}TrLeft`, Math.round(trLeft))
+      Xt.dataStorage.set(tr, `${self.ns}TrWidth`, Math.round(trWidth))
+      Xt.dataStorage.set(tr, `${self.ns}TrHeight`, Math.round(trHeight))
+      Xt.dataStorage.set(tr, `${self.ns}TrHeightContent`, Math.round(trHeightContent))
     }
     self.drag.sizeContent = sizeContent
     // initGroupsInitial
@@ -245,9 +245,9 @@ export class SliderInit extends Xt.Toggle {
       }
       // save position
       for (const tr of targets) {
-        Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.floor(left))
-        Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, groupWidth)
-        Xt.dataStorage.set(tr, `${self.ns}GroupHeight`, groupHeight)
+        Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.round(left))
+        Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, Math.round(groupWidth))
+        Xt.dataStorage.set(tr, `${self.ns}GroupHeight`, Math.round(groupHeight))
       }
     }
   }
@@ -290,8 +290,8 @@ export class SliderInit extends Xt.Toggle {
             }
             // group firstIndex contain new position on dragger limit
             for (const tr of self._groups[firstIndex].targets) {
-              Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, left)
-              Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, width)
+              Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.round(left))
+              Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, Math.round(width))
             }
             // splice reindex
             if (i > firstIndex) {
@@ -326,8 +326,8 @@ export class SliderInit extends Xt.Toggle {
             }
             // group lastIndex contain new position on dragger limit
             for (const target of self._groups[lastIndex].targets) {
-              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, left)
-              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, width)
+              Xt.dataStorage.set(target, `${self.ns}GroupLeft`, Math.round(left))
+              Xt.dataStorage.set(target, `${self.ns}GroupWidth`, Math.round(width))
             }
             // splice reindex
             if (i < lastIndex) {
@@ -348,8 +348,8 @@ export class SliderInit extends Xt.Toggle {
           groupWidth += Xt.dataStorage.get(tr, `${self.ns}TrWidth`)
         }
         for (const tr of group.targets) {
-          Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, left)
-          Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, groupWidth)
+          Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.round(left))
+          Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, Math.round(groupWidth))
         }
       }
       // wrap indexes
@@ -1002,7 +1002,7 @@ export class SliderInit extends Xt.Toggle {
       }
     }
     for (const tr of group) {
-      Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, left)
+      Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.round(left))
     }
     // calculate translate (translate position of the tr)
     // values are inverted (+ is going left, - is going right)
@@ -1027,7 +1027,7 @@ export class SliderInit extends Xt.Toggle {
     }
     for (const tr of group) {
       const trLeftInitial = Xt.dataStorage.get(tr, `${self.ns}TrLeftInitial`)
-      Xt.dataStorage.set(tr, `${self.ns}TrLeft`, trLeftInitial - translate)
+      Xt.dataStorage.set(tr, `${self.ns}TrLeft`, Math.round(trLeftInitial - translate))
       tr.style.transform = `translateX(${-translate}px)`
     }
     // calculate space (current wrap space difference of activation to check against drag size)
