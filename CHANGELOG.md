@@ -13,7 +13,7 @@
 
 ### BREAKING CHANGES
 
-* **css:** to have custom scrollbar colors add to html  and remove from tailwind.config.js  and
+* **css:** to have custom scrollbar colors add to html `xt-html` and remove from tailwind.config.js `-webkit-scrollbar` and `-webkit-scrollbar-thumb`
 
 # [2.0.0-beta.11](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.10...v2.0.0-beta.11) (2024-02-20)
 
