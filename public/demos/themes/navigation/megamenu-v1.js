@@ -176,6 +176,20 @@ Xt.mount({
               .eventCallback('onUpdate', () => {
                 innerHeightCache = inner.clientHeight
               })
+            // not current targets
+            for (const tr of self.targets.filter(x => !self.hasCurrent({ el: x }))) {
+              // inner
+              const inner = tr.querySelector('[data-xt-drop-inner]')
+              gsap.killTweensOf(inner)
+              gsap.set(inner, {
+                height: innerHeightCache,
+              })
+              gsap.to(inner, {
+                height: 0,
+                duration: innerTime,
+                ease: innerEase,
+              })
+            }
           }
           /***/
         }
