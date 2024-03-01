@@ -1035,7 +1035,14 @@ if (typeof window !== 'undefined') {
    * @return {Boolean}
    */
   Xt.visible = ({ el } = {}) => {
-    return el.offsetHeight > 0 || el.getClientRects().length > 0
+    let visible = true
+    if (el.checkVisibility) {
+      visible = el.checkVisibility()
+    }
+    if (visible) {
+      visible = el.offsetHeight > 0 || el.getClientRects().length > 0
+    }
+    return visible
   }
 
   /**
