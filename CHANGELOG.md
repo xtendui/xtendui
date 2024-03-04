@@ -1,3 +1,11 @@
+# [2.0.0-beta.13](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2024-03-04)
+
+
+### Bug Fixes
+
+* **css:** xt-overflow-main scrollbar background transparent instead of white ([f13b539](https://github.com/xtendui/xtendui/commit/f13b5399603a94c157a88a9162ec61028c024764))
+* **js:** Xt.visible now checks also for checkVisibility ([56ae0b2](https://github.com/xtendui/xtendui/commit/56ae0b20e85d26da8a24338411a1a512b2c2482f))
+
 # [2.0.0-beta.12](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.11...v2.0.0-beta.12) (2024-02-22)
 
 
