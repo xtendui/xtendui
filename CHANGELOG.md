@@ -1,3 +1,10 @@
+# [2.0.0-beta.14](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2024-03-04)
+
+
+### Bug Fixes
+
+* **css:** bump tailwindcss peerDependency ([c4e6a79](https://github.com/xtendui/xtendui/commit/c4e6a791b23c4bfd3aa156215dd5a8010c8a377f))
+
 # [2.0.0-beta.13](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.12...v2.0.0-beta.13) (2024-03-04)
 
 
