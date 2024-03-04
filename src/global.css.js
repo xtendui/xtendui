@@ -45,7 +45,7 @@ module.exports = {
     '.xt-overflow-main': {
       '-webkit-overflow-scrolling': 'touch',
       scrollbarWidth: 'auto',
-      scrollbarColor: `${theme('colors.gray.300')} ${theme('colors.white')}`,
+      scrollbarColor: `${theme('colors.gray.300')} transparent`,
     },
     '.xt-overflow-sub': {
       '-webkit-overflow-scrolling': 'touch',
