@@ -1,3 +1,10 @@
+# [2.0.0-beta.15](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2024-03-08)
+
+
+### Bug Fixes
+
+* **slider:** added [data-xt-slider-exclude] to not have first slide visible on page load ([db2296e](https://github.com/xtendui/xtendui/commit/db2296eb5da2976bf371f1ebfa258d86361b1e86))
+
 # [2.0.0-beta.14](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.13...v2.0.0-beta.14) (2024-03-04)
 
 
