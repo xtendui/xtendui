@@ -20,7 +20,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="xt-slider" data-xt-slider="{ exclude: '.hidden' }">
+    <div class="xt-slider" data-xt-slider="{ exclude: '.hidden' }" data-xt-slider-exclude>
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"

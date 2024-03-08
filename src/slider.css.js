@@ -10,7 +10,7 @@ module.exports = {
       position: 'relative',
       overflow: 'hidden',
       // fix page load height without .on slides
-      '&:not([data-xt-slider-init])': {
+      '&:not([data-xt-slider-init]):not([data-xt-slider-exclude])': {
         '.xt-slide': {
           '&:first-child': {
             display: 'block !important',
