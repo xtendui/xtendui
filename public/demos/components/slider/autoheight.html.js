@@ -3,8 +3,8 @@ const classes = require('src/app/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--slider-autoheight">
     <div class="xt-slider" data-xt-slider="{ autoHeight: '[data-xt-slider-autoheight]' }">
-      <div class="p-4 md:p-6 lg:p-8">
-        <div class="inline-block overflow-hidden w-full transition-all duration-300" data-xt-slider-autoheight>
+      <div class="*** flex flex-col *** p-4 md:p-6 lg:p-8">
+        <div class="*** inline-block overflow-hidden w-full transition-all duration-300 ***" data-xt-slider-autoheight>
           <div
             class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4 ** items-start **"
             data-xt-slider-dragger>

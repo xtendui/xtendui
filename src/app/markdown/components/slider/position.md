@@ -108,7 +108,7 @@ When `groupSame` is enabled (default) it **groups the slides activation (not pos
 
 </div>
 
-Remember to set `xt-slides` with `items-start`.
+Remember to set `xt-slides` with `items-start`, add `flex flex-col` to the parent div of `[data-xt-slider-autoheight]` to fix slider container height bug.
 
 <demo>
   <demoinline src="demos/components/slider/autoheight">
