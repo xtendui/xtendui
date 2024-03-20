@@ -218,12 +218,10 @@ export class SliderInit extends Xt.Toggle {
       const targets = self.getTargets({ el: tr })
       let groupLeft = Infinity
       let groupWidth = 0
-      let groupHeight = 0
       // vars
       for (const tr of targets) {
         // @PERF
         const targetLeft = Xt.dataStorage.get(tr, `${self.ns}TrLeft`)
-        const targetHeightContent = Xt.dataStorage.get(tr, `${self.ns}TrHeightContent`)
         // groupLeft is last on the left
         groupLeft = targetLeft < groupLeft ? trLeft : groupLeft
         if (options.mode === 'absolute') {
@@ -231,7 +229,6 @@ export class SliderInit extends Xt.Toggle {
           groupLeft += self._usedWidth
         }
         groupWidth += Xt.dataStorage.get(tr, `${self.ns}TrWidth`)
-        groupHeight = targetHeightContent > groupHeight ? targetHeightContent : groupHeight
         self._usedWidth += groupWidth
       }
       // left with alignment
@@ -247,7 +244,6 @@ export class SliderInit extends Xt.Toggle {
       for (const tr of targets) {
         Xt.dataStorage.set(tr, `${self.ns}GroupLeft`, Math.round(left))
         Xt.dataStorage.set(tr, `${self.ns}GroupWidth`, Math.round(groupWidth))
-        Xt.dataStorage.set(tr, `${self.ns}GroupHeight`, Math.round(groupHeight))
       }
     }
   }
@@ -869,7 +865,11 @@ export class SliderInit extends Xt.Toggle {
     self._eventWrap({ index: self.index })
     // autoHeight and keepHeight
     if (self._autoHeight || (self._keepHeight && self.initial)) {
-      let groupHeight = Xt.dataStorage.get(group.target, `${self.ns}GroupHeight`)
+      let groupHeight = 0
+      for (const tr of group.targets) {
+        const trHeight = Xt.dataStorage.get(tr, `${self.ns}TrHeightContent`)
+        groupHeight = trHeight > groupHeight ? trHeight : groupHeight
+      }
       if (groupHeight > 0) {
         groupHeight += 'px'
         if (self._autoHeight.style.height !== groupHeight) {
