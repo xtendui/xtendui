@@ -1,3 +1,11 @@
+# [2.0.0-beta.16](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2024-03-20)
+
+
+### Bug Fixes
+
+* **css:** added text-underline-offset of 2px on all links ([a1cf3fd](https://github.com/xtendui/xtendui/commit/a1cf3fdd04f5d54e41827ddc8b63f460e7311b28))
+* **slider:** fix slider autoheight when groups ([69973a9](https://github.com/xtendui/xtendui/commit/69973a9609d7b5b4a2cfed8488858fa776ce22b6))
+
 # [2.0.0-beta.15](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.14...v2.0.0-beta.15) (2024-03-08)
 
 
