@@ -18,5 +18,8 @@ module.exports = {
       height: 'auto !important',
       maxHeight: 'none !important',
     },
+    '.pin-spacer:has(.xt-sticky)': {
+      zIndex: 'auto !important',
+    },
   }),
 }
