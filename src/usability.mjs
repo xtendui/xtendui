@@ -7,7 +7,7 @@
 import { Xt } from './xt.mjs'
 
 if (typeof window !== 'undefined') {
-  Xt.usabilityIgnore = '.sf-toolbar, .gm-style'
+  Xt.usabilityIgnore = '.sf-toolbar, .gm-style, .crt-widget, .g-recaptcha-response'
   Xt.usabilityHostnames = '127.0.0.1 localhost'
 
   Xt.frame({
