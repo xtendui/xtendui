@@ -6,81 +6,35 @@ if (typeof window !== 'undefined') {
 }
 
 Xt.mount({
-  matches: '.demo--sticky-hide-direction-sub .xt-sticky',
+  matches: '.demo--sticky-hide-direction-sub [data-node-sticky-hide]',
   mount: ({ ref }) => {
     // vars
 
     const sticky = ref
-    const sub = sticky.querySelector('[data-node-sticky-hide-sub]')
 
-    // .scrolling-hide (always before pin ScrollTrigger)
+    // hide depending on inner (always before pin or bugs)
 
-    const updateHide = ({ self, refresh } = {}) => {
-      // show/hide depending on position
-      if (self.isActive && self.direction < 0 && (refresh || sticky.classList.contains('scrolling-hide'))) {
-        sticky.classList.remove('scrolling-hide')
-        gsap.killTweensOf(sticky)
-        gsap.to(sticky, {
-          y: 0,
-          duration: refresh ? 0 : 0.5,
-          ease: 'quart.out',
-        })
-      } else if (!self.isActive && self.direction > 0 && (refresh || !sticky.classList.contains('scrolling-hide'))) {
-        sticky.classList.add('scrolling-hide')
-      }
-    }
-
-    /***/
     ScrollTrigger.create({
       trigger: sticky,
       start: -1, // needs -1 because start trigger is sticky
       end: () => `top top-=${sticky.offsetHeight}`,
       onUpdate: self => {
-        updateHide({ self })
-      },
-      onRefresh: self => {
-        sticky.classList.add('!transform-none')
-        // need to update on refresh done
-        requestAnimationFrame(() => {
-          sticky.classList.remove('!transform-none', 'scrolling-down')
-          updateHide({ self, refresh: true })
-        })
+        if (self.isActive && self.direction < 0 && sticky.classList.contains('scrolling-hide')) {
+          sticky.classList.remove('scrolling-hide')
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quint.out',
+          })
+        } else if (!self.isActive && self.direction > 0 && !sticky.classList.contains('scrolling-hide')) {
+          sticky.classList.add('scrolling-hide')
+        }
       },
     })
-    /***/
 
     // sticky
-    const updateSticky = ({ self } = {}) => {
-      // scrolling-down depending on scroll direction
-      if (!self.getVelocity()) return // skip on initial
-      if (
-        sticky.classList.contains('scrolling-down') &&
-        sticky.classList.contains('scrolling-hide') &&
-        self.direction < 0
-      ) {
-        sticky.classList.remove('scrolling-down')
-        gsap.killTweensOf(sticky)
-        gsap.to(sticky, {
-          y: 0,
-          duration: 0.5,
-          ease: 'quart.out',
-        })
-      } else if (
-        !sticky.classList.contains('scrolling-down') &&
-        sticky.classList.contains('scrolling-hide') &&
-        self.direction > 0
-      ) {
-        sticky.classList.add('scrolling-down')
-        gsap.killTweensOf(sticky)
-        gsap.to(sticky, {
-          y: -(sub.offsetTop + sub.offsetHeight),
-          duration: 0.5,
-          ease: 'quart.out',
-        })
-      }
-    }
 
-    /***/
     ScrollTrigger.create({
       trigger: sticky,
       start: 'top top',
@@ -89,7 +43,83 @@ Xt.mount({
       pin: true,
       pinSpacing: false,
       onUpdate: self => {
-        updateSticky({ self })
+        // scrolling-down depending on scroll direction
+        if (!self.getVelocity()) return // skip on initial
+        if (
+          sticky.classList.contains('scrolling-down') &&
+          sticky.classList.contains('scrolling-hide') &&
+          self.direction < 0
+        ) {
+          sticky.classList.remove('scrolling-down')
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quint.out',
+          })
+        } else if (
+          !sticky.classList.contains('scrolling-down') &&
+          sticky.classList.contains('scrolling-hide') &&
+          self.direction > 0
+        ) {
+          sticky.classList.add('scrolling-down')
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            y: -(sticky.offsetTop + sticky.offsetHeight),
+            duration: 0.5,
+            ease: 'quint.out',
+          })
+        }
+      },
+    })
+  },
+})
+
+Xt.mount({
+  matches: '.demo--sticky-hide-direction-sub [data-node-sticky-hide-sub]',
+  mount: ({ ref }) => {
+    // vars
+
+    const sticky = ref
+    const main = document.querySelector('[data-node-sticky-hide]')
+    if (!main) return
+
+    /***/
+    // sticky
+
+    ScrollTrigger.create({
+      trigger: sticky,
+      start: () => `top ${main.offsetTop + main.offsetHeight}px`,
+      endTrigger: 'html',
+      end: 'bottom top',
+      pin: true,
+      pinSpacing: false,
+      onUpdate: self => {
+        // scrolling-down depending on scroll direction
+        if (!self.getVelocity()) return // skip on initial
+        if (
+          !main.classList.contains('scrolling-down') &&
+          main.classList.contains('scrolling-hide') &&
+          self.direction < 0
+        ) {
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            y: 0,
+            duration: 0.5,
+            ease: 'quint.out',
+          })
+        } else if (
+          main.classList.contains('scrolling-down') &&
+          main.classList.contains('scrolling-hide') &&
+          self.direction > 0
+        ) {
+          gsap.killTweensOf(sticky)
+          gsap.to(sticky, {
+            y: -(main.offsetTop + main.offsetHeight),
+            duration: 0.5,
+            ease: 'quint.out',
+          })
+        }
       },
     })
     /***/

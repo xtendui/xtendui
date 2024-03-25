@@ -2,12 +2,15 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--sticky-hide-direction-sub">
-    <div class="*** xt-sticky ***">
-      <div class="xt-card p-4 ${classes.textDefault()} ${classes.cardGray()}" data-node-sticky-hide-sub>
-        <div class="xt-h6">Sub</div>
-      </div>
+    <div class="*** xt-sticky ***" data-node-sticky-hide>
       <div class="xt-card ${classes.cardSm()} ${classes.textInverse()} ${classes.cardPrimary()}">
         <div class="xt-h4">Main</div>
+      </div>
+    </div>
+
+    <div class="*** xt-sticky ***" data-node-sticky-hide-sub>
+      <div class="xt-card p-4 ${classes.textDefault()} ${classes.cardGray()}">
+        <div class="xt-h6">Sub</div>
       </div>
     </div>
 

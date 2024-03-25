@@ -86,15 +86,12 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 
 > Do not transition or transform on `.xt-sticky` when `pin: true` because of transform positioning, **transition the content instead**.
 
-Here's an examples of **sticky that hides depending on scroll position**.
-
-<demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky-hide"></div>
-</demo>
-
 Here's an examples of **sticky that hides depending on scroll position and scroll direction**.
 
 <demo>
   <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky-hide-direction"></div>
+</demo>
+
+<demo>
   <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky-hide-direction-sub"></div>
 </demo>
