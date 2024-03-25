@@ -1,3 +1,11 @@
+# [2.0.0-beta.17](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2024-03-25)
+
+
+### Bug Fixes
+
+* **scrolltrigger:** fix css scrolltrigger pin spacer z-index when has xt-sticky inside ([2cc644b](https://github.com/xtendui/xtendui/commit/2cc644bfe0b0ce256ab809965516d55d0d1aba2b))
+* **usability:** added more Xt.usabilityIgnore ([9eac148](https://github.com/xtendui/xtendui/commit/9eac148ce0952f2ed537586c1758cedec4d1a7a7))
+
 # [2.0.0-beta.16](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.15...v2.0.0-beta.16) (2024-03-20)
 
 
