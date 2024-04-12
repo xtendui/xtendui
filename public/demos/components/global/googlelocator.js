@@ -29,10 +29,6 @@ const initGooglelocator = ({ ref }) => {
       zoomControlOptions: {
         position: google.maps.ControlPosition.RIGHT_CENTER,
       },
-      cluster: {
-        minimumClusterSize: 5,
-        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-      },
     },
     formatData: {
       lat: (self, marker) => {
@@ -194,15 +190,8 @@ Xt.mount({
   mount: ({ ref }) => {
     // init
 
-    const init = () => {
-      initGooglelocator({ ref })
-    }
-
     window.googlelocatorGmapsLoaded = () => {
-      Xt.script({
-        url: 'https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js',
-        callback: init,
-      })
+      initGooglelocator({ ref })
     }
 
     // add yout api key here

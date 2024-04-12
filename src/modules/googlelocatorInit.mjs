@@ -4,8 +4,9 @@
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
-/* global google MarkerClusterer */
+/* global google */
 import { Xt } from '../xt.mjs'
+import { MarkerClusterer } from '@googlemaps/markerclusterer'
 
 /**
  * GooglelocatorInit
@@ -374,7 +375,7 @@ export class GooglelocatorInit {
       if (self.cluster) {
         self.cluster.clearMarkers()
       }
-      self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
+      self.cluster = new MarkerClusterer({ map: self.map, markers: self.locations, ...options.map.cluster })
     }
     // loader
     self._loaderHide()
