@@ -1,3 +1,10 @@
+# [2.0.0-beta.18](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2024-04-12)
+
+
+### Bug Fixes
+
+* **googlelocator:** fixed googlelocator not working anymore because of deprecated MarkerClusterer ([2f1d54c](https://github.com/xtendui/xtendui/commit/2f1d54cca8066477bb08e868e89dc5ec19055df1))
+
 # [2.0.0-beta.17](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.16...v2.0.0-beta.17) (2024-03-25)
 
 
