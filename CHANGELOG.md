@@ -1,3 +1,10 @@
+# [2.0.0-beta.19](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2024-04-12)
+
+
+### Bug Fixes
+
+* **googlelocator:** fix googlelocator dependecies cluster ([1825cfe](https://github.com/xtendui/xtendui/commit/1825cfe0010869d7ce39c423776f4c69250eb310))
+
 # [2.0.0-beta.18](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.17...v2.0.0-beta.18) (2024-04-12)
 
 
