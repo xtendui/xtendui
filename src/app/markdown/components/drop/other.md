@@ -76,7 +76,7 @@ You can add **additional options** that gets added on **match media query**. You
 
 Use `<div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>` inside `.xt-drop` to add a customizable backdrop.
 
-Use `on:z-drop` to have the button above the backdrop.
+Use `on:z-above` to have the button above the backdrop.
 
 <demo>
   <demoinline src="demos/components/drop/backdrop">
