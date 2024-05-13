@@ -95,6 +95,9 @@ export class StickyflowInit {
       return
     }
     // initial
+    const style = getComputedStyle(self.element)
+    self._initialTop = style.top && style.top !== 'auto' ? parseFloat(style.top) : 0
+    self._initialBottom = style.bottom && style.bottom !== 'auto' ? parseFloat(style.bottom) : 0
     self._eventChange()
   }
 
@@ -119,25 +122,25 @@ export class StickyflowInit {
     const objectHeight = self.element.offsetHeight
     if (objectHeight < windowHeight) {
       self.filler.style.height = ''
-      self.element.style.top = '0'
-      self.element.style.bottom = ''
+      self.element.style.top = `${self._initialTop}px`
+      self.element.style.bottom = 'auto'
     } else {
       if (scrollTop > self._scrollTopOld) {
         if (!self.element.classList.contains('xt-stickyflow-top')) {
-          const pos = windowHeight - objectHeight
+          const pos = windowHeight - objectHeight - self._initialBottom
           const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
           self.filler.style.height = `${height}px`
           self.element.style.top = `${pos}px`
-          self.element.style.bottom = ''
+          self.element.style.bottom = 'auto'
           self.element.classList.remove('xt-stickyflow-bottom')
           self.element.classList.add('xt-stickyflow-top')
         }
       } else {
         if (!self.element.classList.contains('xt-stickyflow-bottom')) {
-          const pos = windowHeight - objectHeight
+          const pos = windowHeight - objectHeight - self._initialTop
           const height = Math.max(0, self.element.offsetTop - self.filler.offsetTop)
           self.filler.style.height = `${height}px`
-          self.element.style.top = ''
+          self.element.style.top = 'auto'
           self.element.style.bottom = `${pos}px`
           self.element.classList.add('xt-stickyflow-bottom')
           self.element.classList.remove('xt-stickyflow-top')

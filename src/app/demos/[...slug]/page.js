@@ -43,6 +43,7 @@ const demosIframe = [
   'components/slider/api',
   'components/slider/hash',
   'components/stickyflow/usage',
+  'components/stickyflow/position',
   'components/toggle/api',
   'components/toggle/hash',
   'components/tooltip/api',

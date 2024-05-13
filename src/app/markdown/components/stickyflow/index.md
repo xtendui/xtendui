@@ -25,6 +25,13 @@ Remember to use `.items-stretch` on on the container or `.sticky` doesn't work.
   </div>
 </demo>
 
+You can also set **min and max value** with top and bottom classes (e.g. `top-[100px] bottom-[100px]`) on `self.element`.
+
+<demo>
+  <div class="docs_demo_item" data-iframe="demos/components/stickyflow/position">
+  </div>
+</demo>
+
 ## Options
  
 Here are the main **javascript options**.
