@@ -120,7 +120,7 @@ export class StickyflowInit {
     const scrollTop = document.scrollingElement.scrollTop
     const windowHeight = window.innerHeight
     const objectHeight = self.element.offsetHeight
-    if (objectHeight < windowHeight) {
+    if (objectHeight + self._initialTop + self._initialBottom < windowHeight) {
       self.filler.style.height = ''
       self.element.style.top = `${self._initialTop}px`
       self.element.style.bottom = 'auto'
