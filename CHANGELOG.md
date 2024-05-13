@@ -1,3 +1,10 @@
+# [2.0.0-beta.21](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2024-05-13)
+
+
+### Bug Fixes
+
+* **stickyflow:** fix activation with top and bottom values ([048c34d](https://github.com/xtendui/xtendui/commit/048c34d9366e405cdfa377e4d44563d357fd26ce))
+
 # [2.0.0-beta.20](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2024-05-13)
 
 
