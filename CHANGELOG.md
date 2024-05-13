@@ -1,3 +1,10 @@
+# [2.0.0-beta.20](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.19...v2.0.0-beta.20) (2024-05-13)
+
+
+### Features
+
+* **stickyflow:** added behaviour min and max value with top and bottom classes on element ([4760b3c](https://github.com/xtendui/xtendui/commit/4760b3c33d4b6d2f9897c80e89b391f36fec3e0a))
+
 # [2.0.0-beta.19](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.18...v2.0.0-beta.19) (2024-04-12)
 
 
