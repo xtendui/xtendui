@@ -1,3 +1,10 @@
+# [2.0.0-beta.22](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2024-06-20)
+
+
+### Features
+
+* **stickyflow:** added stickflow options.scrollers with default values to make stickyflow work inside overlay ([a68c360](https://github.com/xtendui/xtendui/commit/a68c360ba2e6d71cc1e059165e31aef03580d3c3))
+
 # [2.0.0-beta.21](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.20...v2.0.0-beta.21) (2024-05-13)
 
 
