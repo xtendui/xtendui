@@ -43,6 +43,8 @@ Here are the main **javascript options**.
 | Option                    | `debug:Boolean`                          | `false`        | Debug on console            |
 | Option                    | `element:Query`                          | `false`        | Sticky element query            |
 | Option                    | `filler:Query`                          | `false`        | Filler element query            |
+| Option                    | `scrollers:Query`                          | `'.xt-overlay:not([data-xt-overlay-disabled])'`        | Query for scroll nodes besides document (ordered parent > child)             |
+
 
 </div>
 
@@ -121,6 +123,8 @@ Access properties by getting [self object](/components/stickyflow/#util).
 | Property                   | `self.container:Node`       | Container node             |
 | Property                   | `self.element:Node`       | Sticky element             |
 | Property                   | `self.filler:Nodes`       | Filler element             |
+| Property                   | `self.scrollers:Node`       | All scrolling element             |
+| Property                   | `self.scroller:Node`       | Current scrolling element             |
 
 </div>
 

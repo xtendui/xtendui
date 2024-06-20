@@ -51,12 +51,26 @@ export class StickyflowInit {
     // elements
     self.element = self.container.querySelector(options.element)
     self.filler = self.container.querySelector(options.filler)
+    self.scrollers = [document.scrollingElement, ...document.querySelectorAll(options.scrollers)].reverse() // need reverse for proper activation
+    for (const scroller of self.scrollers) {
+      if (scroller) {
+        if (scroller.contains(self.element)) {
+          self.scroller = scroller
+          break
+        }
+      }
+    }
     // vars
     self._scrollTopOld = 0
     // events
-    const changeHandler = Xt.dataStorage.put(window, `scroll resize/${self.ns}`, self._eventChange.bind(self))
-    addEventListener('scroll', changeHandler)
-    addEventListener('resize', changeHandler)
+    const scrollHandler = Xt.dataStorage.put(self.scroller, `scroll/${self.ns}`, self._eventChange.bind(self))
+    if (self.scroller === document.scrollingElement) {
+      addEventListener('scroll', scrollHandler)
+    } else {
+      self.scroller.addEventListener('scroll', scrollHandler)
+    }
+    const resizeHandler = Xt.dataStorage.put(window, `resize/${self.ns}`, self._eventChange.bind(self))
+    addEventListener('resize', resizeHandler)
     // initial
     self._initStart()
     // setup
@@ -117,7 +131,7 @@ export class StickyflowInit {
       return
     }
     // position
-    const scrollTop = document.scrollingElement.scrollTop
+    const scrollTop = self.scroller.scrollTop
     const windowHeight = window.innerHeight
     const objectHeight = self.element.offsetHeight
     if (objectHeight + self._initialTop + self._initialBottom < windowHeight) {
@@ -218,9 +232,14 @@ export class StickyflowInit {
   destroy() {
     const self = this
     // remove events
-    const changeHandler = Xt.dataStorage.get(window, `scroll resize/${self.ns}`)
-    removeEventListener('scroll', changeHandler)
-    removeEventListener('resize', changeHandler)
+    const scrollHandler = Xt.dataStorage.get(self.scroller, `scroll/${self.ns}`)
+    if (self.scroller === document.scrollingElement) {
+      removeEventListener('scroll', scrollHandler)
+    } else {
+      self.scroller.removeEventListener('scroll', scrollHandler)
+    }
+    const resizeHandler = Xt.dataStorage.get(window, `resize/${self.ns}`)
+    removeEventListener('resize', resizeHandler)
     // initialized class
     self.container.removeAttribute(`data-${self.componentName}-init`)
     // set self

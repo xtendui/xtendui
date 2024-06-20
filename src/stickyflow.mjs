@@ -70,6 +70,7 @@ Stickyflow.optionsDefault = {
   // elements
   element: false,
   filler: false,
+  scrollers: '.xt-overlay:not([data-xt-overlay-disabled])',
 }
 
 //
