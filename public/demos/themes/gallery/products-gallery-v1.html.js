@@ -27,7 +27,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img
                           class="xt-media relative"
-                          src="https://source.unsplash.com/164_6wVEHfI"
+                          src="/stock/164_6wVEHfI"
                           loading="lazy"
                           alt="" />
                         <div
@@ -44,7 +44,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img
                           class="xt-media relative"
-                          src="https://source.unsplash.com/j7zu2kpTnwY"
+                          src="/stock/j7zu2kpTnwY"
                           loading="lazy"
                           alt="" />
                         <div
@@ -61,7 +61,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img
                           class="xt-media relative"
-                          src="https://source.unsplash.com/kP6knT7tjn4"
+                          src="/stock/kP6knT7tjn4"
                           loading="lazy"
                           alt="" />
                         <div
@@ -78,7 +78,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img
                           class="xt-media relative"
-                          src="https://source.unsplash.com/l8p1aWZqHvE"
+                          src="/stock/l8p1aWZqHvE"
                           loading="lazy"
                           alt="" />
                         <div
@@ -95,7 +95,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img
                           class="xt-media relative"
-                          src="https://source.unsplash.com/gn07k9Kmx9c"
+                          src="/stock/gn07k9Kmx9c"
                           loading="lazy"
                           alt="" />
                         <div
@@ -112,7 +112,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img
                           class="xt-media relative"
-                          src="https://source.unsplash.com/gpii_myxZG0"
+                          src="/stock/gpii_myxZG0"
                           loading="lazy"
                           alt="" />
                         <div
@@ -129,7 +129,7 @@ const html = /* HTML */ `
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img
                           class="xt-media relative"
-                          src="https://source.unsplash.com/DzoOduUanpQ"
+                          src="/stock/DzoOduUanpQ"
                           loading="lazy"
                           alt="" />
                         <div
@@ -233,7 +233,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-1"
-                              src="https://source.unsplash.com/164_6wVEHfI"
+                              src="/stock/164_6wVEHfI"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -245,7 +245,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-2"
-                              src="https://source.unsplash.com/j7zu2kpTnwY"
+                              src="/stock/j7zu2kpTnwY"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -257,7 +257,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-3"
-                              src="https://source.unsplash.com/kP6knT7tjn4"
+                              src="/stock/kP6knT7tjn4"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -269,7 +269,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-4"
-                              src="https://source.unsplash.com/l8p1aWZqHvE"
+                              src="/stock/l8p1aWZqHvE"
                               loading="eagelazyr"
                               alt="" />
                           </div>
@@ -281,7 +281,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-5"
-                              src="https://source.unsplash.com/gn07k9Kmx9c"
+                              src="/stock/gn07k9Kmx9c"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -293,7 +293,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-6"
-                              src="https://source.unsplash.com/gpii_myxZG0"
+                              src="/stock/gpii_myxZG0"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -305,7 +305,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-7"
-                              src="https://source.unsplash.com/DzoOduUanpQ"
+                              src="/stock/DzoOduUanpQ"
                               loading="lazy"
                               alt="" />
                           </div>

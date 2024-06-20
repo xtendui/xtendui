@@ -47,7 +47,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="https://source.unsplash.com/ruJm3dBXCqw"
+                src="/stock/ruJm3dBXCqw.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -57,7 +57,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="https://source.unsplash.com/ruJm3dBXCqw" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/stock/ruJm3dBXCqw.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -65,7 +65,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="https://source.unsplash.com/wQLAGv4_OYs"
+                src="/stock/wQLAGv4_OYs.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -75,7 +75,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="https://source.unsplash.com/wQLAGv4_OYs" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/stock/wQLAGv4_OYs.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -83,7 +83,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="https://source.unsplash.com/OlTjeydUpQw"
+                src="/stock/OlTjeydUpQw.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -93,7 +93,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="https://source.unsplash.com/OlTjeydUpQw" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/stock/OlTjeydUpQw.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -101,7 +101,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="https://source.unsplash.com/wEL2zPX3jDg"
+                src="/stock/Tyg0rVhOTrE.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -111,25 +111,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="https://source.unsplash.com/wEL2zPX3jDg" loading="eager" alt="" />
-            </div>
-          </div>
-
-          <div class="xt-slide ${classes.slide()}" data-xt-slider-target>
-            <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
-              <img
-                class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="https://source.unsplash.com/Tyg0rVhOTrE"
-                loading="lazy"
-                alt="" />
-              <div class="${classes.loader()} bg-white bg-opacity-75">
-                <div class="${classes.spinner()} w-6 h-6 text-primary-500">
-                  ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
-                </div>
-              </div>
-            </div>
-            <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="https://source.unsplash.com/Tyg0rVhOTrE" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/stock/Tyg0rVhOTrE.jpg" loading="eager" alt="" />
             </div>
           </div>
         </div>

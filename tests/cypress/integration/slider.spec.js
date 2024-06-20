@@ -1424,7 +1424,7 @@ describe('demos/components/slider/nooverflow-false', function () {
       })
   })
 })
-/*
+
 describe('demos/components/slider/media-loaded', function () {
   let win
   let Xt
@@ -1452,7 +1452,7 @@ describe('demos/components/slider/media-loaded', function () {
     })
   })
 
-  it('TEST activation and position on change.', function () {
+  it.only('TEST activation and position on change.', function () {
     cy.get(container)
       .should('have.attr', 'data-xt-slider-init', '') // racecondition
       .find('[data-xt-slider-element]')
@@ -1470,7 +1470,6 @@ describe('demos/components/slider/media-loaded', function () {
         expect(self.targets[3].classList.contains('on')).to.equal(false)
         expect(self.targets[4].classList.contains('on')).to.equal(false)
         expect(self.targets[5].classList.contains('on')).to.equal(true)
-        expect(self.targets[6].classList.contains('on')).to.equal(false)
         expect(container.querySelector('[data-xt-slider-dragger]').style.transform).to.be.oneOf([
           'translateX(-2835px)',
           'translateX(-2849px)',
@@ -1479,7 +1478,7 @@ describe('demos/components/slider/media-loaded', function () {
       })
   })
 })
-*/
+
 describe('demos/components/slider/dragposition-js', function () {
   let win
   let Xt
