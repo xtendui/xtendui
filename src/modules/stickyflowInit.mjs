@@ -63,10 +63,11 @@ export class StickyflowInit {
     // vars
     self._scrollTopOld = 0
     // events
-    const scrollHandler = Xt.dataStorage.put(self.scroller, `scroll/${self.ns}`, self._eventChange.bind(self))
     if (self.scroller === document.scrollingElement) {
+      const scrollHandler = Xt.dataStorage.put(window, `scroll/${self.ns}`, self._eventChange.bind(self))
       addEventListener('scroll', scrollHandler)
     } else {
+      const scrollHandler = Xt.dataStorage.put(self.scroller, `scroll/${self.ns}`, self._eventChange.bind(self))
       self.scroller.addEventListener('scroll', scrollHandler)
     }
     const resizeHandler = Xt.dataStorage.put(window, `resize/${self.ns}`, self._eventChange.bind(self))
@@ -232,10 +233,11 @@ export class StickyflowInit {
   destroy() {
     const self = this
     // remove events
-    const scrollHandler = Xt.dataStorage.get(self.scroller, `scroll/${self.ns}`)
     if (self.scroller === document.scrollingElement) {
+      const scrollHandler = Xt.dataStorage.get(window, `scroll/${self.ns}`)
       removeEventListener('scroll', scrollHandler)
     } else {
+      const scrollHandler = Xt.dataStorage.get(self.scroller, `scroll/${self.ns}`)
       self.scroller.removeEventListener('scroll', scrollHandler)
     }
     const resizeHandler = Xt.dataStorage.get(window, `resize/${self.ns}`)

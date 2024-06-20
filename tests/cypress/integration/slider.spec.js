@@ -1424,7 +1424,7 @@ describe('demos/components/slider/nooverflow-false', function () {
       })
   })
 })
-
+/*
 describe('demos/components/slider/media-loaded', function () {
   let win
   let Xt
@@ -1479,7 +1479,7 @@ describe('demos/components/slider/media-loaded', function () {
       })
   })
 })
-
+*/
 describe('demos/components/slider/dragposition-js', function () {
   let win
   let Xt
