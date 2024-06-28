@@ -96,7 +96,7 @@
     "cypress-axe": "^1.5.0",
     "cypress-plugin-tab": "^1.0.5",
     "dotenv": "^16.4.5",
-    "eslint": "9.5.0",
+    "eslint": "8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-cypress": "^3.3.0",
     "eslint-plugin-next": "^0.0.0",
@@ -137,5 +137,6 @@
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
     "write": "^2.0.0"
-  }
+  },
+  "packageManager": "pnpm@9.5.0-beta.0+sha256.bd91cddc9b205c94b5bf0380cec8fc8e4b1dde7b8c5191732f3d4e73848e860e"
 }
