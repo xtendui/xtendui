@@ -1,3 +1,10 @@
+# [2.0.0-beta.23](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2024-06-28)
+
+
+### Bug Fixes
+
+* **slider:** fix do not round values ([c624304](https://github.com/xtendui/xtendui/commit/c624304c7326de38b2b8f26dc8992e47921e5326))
+
 # [2.0.0-beta.22](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.21...v2.0.0-beta.22) (2024-06-20)
 
 
