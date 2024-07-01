@@ -1,19 +1,9 @@
-import { useRef, useEffect } from 'react'
+import Image from 'next/image'
+
 const classes = require('src/app/snippets/classes').classes
 
 function DocHead(props) {
   const { page } = props
-  const ref = useRef()
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'development') {
-      const div = ref.current
-      const script = document.createElement('script')
-      script.src = '//cdn.carbonads.com/carbon.js?serve=CEAIC2QW&placement=xtenduicom'
-      script.id = '_carbonads_js'
-      script.async = true
-      div.appendChild(script)
-    }
-  }, [])
   return (
     <header className="docs_site-article_hero py-10 md:py-16 border-b border-gray-100 overflow-hidden">
       <div className="docs_site-article_hero-inner container">
@@ -52,7 +42,13 @@ function DocHead(props) {
                 ) : null}
               </div>
               <div className="w-full xl:w-auto">
-                <div ref={ref} className="min-h-[106px]"></div>
+                <a
+                  href="https://www.buymeacoffee.com/pa4rznqgwd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-[150px]">
+                  <Image className="w-full" src="/bmc-button.png" loading="lazy" alt="" width="1090" height="306" />
+                </a>
               </div>
             </div>
           </div>
