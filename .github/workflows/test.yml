@@ -38,9 +38,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: "${{ env.NODE }}"
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 9
+    - uses: pnpm/action-setup@v4
     - name: Pnpm
       run: pnpm install --frozen-lockfile --prefer-offline
     # build/action.yml composite
