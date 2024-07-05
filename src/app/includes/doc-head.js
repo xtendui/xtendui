@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 const classes = require('src/app/snippets/classes').classes
 
 function DocHead(props) {
@@ -41,6 +39,9 @@ function DocHead(props) {
                   <h2 className="-mt-2 mb-2 md:text-lg opacity-70">{page.post.frontmatter.description}</h2>
                 ) : null}
               </div>
+              {/*
+              import Image from 'next/image'
+
               <div className="w-full xl:w-auto">
                 <a
                   href="https://www.buymeacoffee.com/pa4rznqgwd"
@@ -50,6 +51,7 @@ function DocHead(props) {
                   <Image className="w-full" src="/bmc-button.png" loading="lazy" alt="" width="1090" height="306" />
                 </a>
               </div>
+              */}
             </div>
           </div>
         </div>
