@@ -87,7 +87,12 @@ if (typeof window !== 'undefined') {
     Xt.ready({
       raf: obj.raf,
       func: () => {
-        Xt._mountCheck({ obj, perf })
+        // after perf or Xt._intersectionObserverInit doesn't work
+        Xt.perf({
+          func: () => {
+            Xt._mountCheck({ obj, perf })
+          },
+        })
       },
     })
   }
@@ -1235,16 +1240,17 @@ if (typeof window !== 'undefined') {
 
   Xt.ready({
     func: () => {
-      Xt._mutationObserver.disconnect()
-      Xt._mutationObserver.observe(document.documentElement, {
-        characterData: false,
-        attributes: false,
-        childList: true,
-        subtree: true,
-      })
-      // after perf or custom options (e.g. Xt.observerOptions) aren't used
       Xt.perf({
         func: () => {
+          // after perf or Xt._intersectionObserverInit doesn't work
+          Xt._mutationObserver.disconnect()
+          Xt._mutationObserver.observe(document.documentElement, {
+            characterData: false,
+            attributes: false,
+            childList: true,
+            subtree: true,
+          })
+          // after perf or custom options (e.g. Xt.observerOptions) aren't used
           Xt._intersectionObserverInit()
         },
       })
