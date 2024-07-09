@@ -1,3 +1,10 @@
+# [2.0.0-beta.24](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2024-07-09)
+
+
+### Bug Fixes
+
+* **javascript:** fix mount after perf or intersectionobserver doesn't fire with alpinejs ([d4978df](https://github.com/xtendui/xtendui/commit/d4978dff7a810514c5c20957ba69c0173ef0be61))
+
 # [2.0.0-beta.23](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.22...v2.0.0-beta.23) (2024-06-28)
 
 
