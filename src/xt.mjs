@@ -87,7 +87,7 @@ if (typeof window !== 'undefined') {
     Xt.ready({
       raf: obj.raf,
       func: () => {
-        // after perf or Xt._intersectionObserverInit doesn't work
+        // after perf or Xt._intersectionObserverInit doesn't work (e.g. alpinejs template)
         Xt.perf({
           func: () => {
             Xt._mountCheck({ obj, perf })
@@ -1242,7 +1242,7 @@ if (typeof window !== 'undefined') {
     func: () => {
       Xt.perf({
         func: () => {
-          // after perf or Xt._intersectionObserverInit doesn't work
+          // after perf or Xt._intersectionObserverInit doesn't work (e.g. alpinejs template)
           Xt._mutationObserver.disconnect()
           Xt._mutationObserver.observe(document.documentElement, {
             characterData: false,
