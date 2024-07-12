@@ -45,7 +45,7 @@ Drop.optionsDefault = {
   closeauto: true,
   openauto: false,
   closeDeep: '.xt-dismiss',
-  closeInside: '.xt-backdrop',
+  closeInside: '.xt-drop, .xt-backdrop',
   closeOutside: 'body',
   preventEvent: false,
   // timing

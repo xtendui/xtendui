@@ -50,7 +50,7 @@ Tooltip.optionsDefault = {
   closeauto: true,
   openauto: false,
   closeDeep: '.xt-dismiss',
-  closeInside: '.xt-backdrop',
+  closeInside: '.xt-tooltip, .xt-backdrop',
   closeOutside: 'body',
   preventEvent: true,
   // timing
