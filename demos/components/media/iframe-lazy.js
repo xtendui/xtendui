@@ -1,7 +1,5 @@
 import { Xt } from 'xtendui'
 
-/* mountIframeLazy */
-
 const posterIframeLazy = ({ container, iframe, poster, src }) => {
   // image
 
@@ -28,7 +26,7 @@ const posterIframeLazy = ({ container, iframe, poster, src }) => {
   container.addEventListener('click', click)
 }
 
-const mountIframeLazy = ({ ref, type }) => {
+const iframeLazy = ({ ref, type }) => {
   // vars
 
   const iframe = ref
@@ -64,41 +62,16 @@ const mountIframeLazy = ({ ref, type }) => {
   return () => {}
 }
 
-const mountIframesLazy = ({ ref }) => {
-  // mount granularly
-
-  Xt.mount({
-    root: ref,
-    matches: 'iframe[data-src*="youtube"]',
-    mount: ({ ref }) => {
-      return mountIframeLazy({ ref, type: 'youtube' })
-    },
-  })
-
-  Xt.mount({
-    root: ref,
-    matches: 'iframe[data-src*="vimeo"]',
-    mount: ({ ref }) => {
-      return mountIframeLazy({ ref, type: 'vimeo' })
-    },
-  })
-
-  // unmount
-
-  return () => {}
-}
-
-/* mount */
+Xt.mount({
+  matches: '.demo--media-iframe-lazy iframe[data-src*="youtube"]',
+  mount: ({ ref }) => {
+    return iframeLazy({ ref, type: 'youtube' })
+  },
+})
 
 Xt.mount({
-  matches: '.demo--media-iframe-lazy',
+  matches: '.demo--media-iframe-lazy iframe[data-src*="vimeo"]',
   mount: ({ ref }) => {
-    const unmountIframesLazy = mountIframesLazy({ ref })
-
-    // unmount
-
-    return () => {
-      unmountIframesLazy()
-    }
+    return iframeLazy({ ref, type: 'vimeo' })
   },
 })

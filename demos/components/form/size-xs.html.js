@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <form class="*** text-xs ***">
+    <form class="*** text-13 ***">
       <div class="xt-row xt-row xt-row-x-6 xt-row-y-4">
         <div class="w-full">
           <label class="${classes.label()} mb-3 ${classes.labelGray()}"> Input </label>

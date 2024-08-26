@@ -8,7 +8,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonSm()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
-        icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-1' })}
+        icon small ${classes.iconSearch({ classes: '*** text-13 *** ml-1' })}
       </button>
 
       <button
@@ -30,7 +30,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
-        icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-1.5' })}
+        icon small ${classes.iconSearch({ classes: '*** text-13 *** ml-1.5' })}
       </button>
 
       <button
@@ -52,7 +52,7 @@ const html = /* HTML */ `
       <button
         type="button"
         class="xt-button ${classes.buttonLg()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
-        icon small ${classes.iconSearch({ classes: '*** text-xs *** ml-2' })}
+        icon small ${classes.iconSearch({ classes: '*** text-13 *** ml-2' })}
       </button>
 
       <button

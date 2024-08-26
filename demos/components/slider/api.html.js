@@ -70,7 +70,7 @@ const html = /* HTML */ `
     <div class="xt-slider" id="slider--eventmethods">
       <div class="p-4 md:p-6 lg:p-8">
         <div
-          class="xt-slides transition ease-out-expo duration-300 on:ease-out-quint on:duration-1000 xt-row xt-row-4"
+          class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
           data-xt-slider-dragger
           id="slider--eventmethods-targets">
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${classes.slide()}" data-xt-slider-target>
@@ -129,7 +129,7 @@ const html = /* HTML */ `
           data-xt-slider-pagination>
           <button
             type="button"
-            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="-1"
             title="Previous slide">
             ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
@@ -143,7 +143,7 @@ const html = /* HTML */ `
           </button>
           <button
             type="button"
-            class="xt-button text-2xs py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="1"
             title="Next slide">
             ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}

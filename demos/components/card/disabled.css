@@ -1,4 +1,4 @@
-.demo--card-disabled, .demo--card-disabled-react {
+.demo--card-disabled {
   .xt-card {
     @apply xt-links-default;
     border-width: 0;

@@ -1,4 +1,4 @@
-.demo--form-loader-filler, .demo--form-loader-filler-react {
+.demo--form-loader-filler {
   .xt-loadable {
     @apply relative;
     > .xt-loader {

@@ -28,7 +28,7 @@ const html = /* HTML */ `
                       </div>
                       <div>
                         <div class="font-medium">Shipping Limits</div>
-                        <div class="text-xs opacity-50">Delivery is EU and US only.</div>
+                        <div class="text-13 opacity-50">Delivery is EU and US only.</div>
                       </div>
                     </div>
                   </div>
@@ -41,14 +41,14 @@ const html = /* HTML */ `
                       </div>
                       <div>
                         <div class="font-medium">VAT Excluded</div>
-                        <div class="text-xs opacity-50">The prices is excluding VAT.</div>
+                        <div class="text-13 opacity-50">The prices is excluding VAT.</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-black *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
+                class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-black *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
             </div>
           </span>
 
@@ -70,14 +70,14 @@ const html = /* HTML */ `
                       class="*** p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()} ***">
                       ${classes.iconCreditcard({ classes: 'xt-icon text-2xl text-primary-500' })}
                     </div>
-                    <div class="text-xs">
+                    <div class="text-13">
                       The card security code is the three-digit number at the back of your debit card.
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
+                class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
             </div>
           </span>
         </div>

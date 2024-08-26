@@ -57,53 +57,60 @@ const mountToggle = ({ ref }) => {
 
   // init
 
-  let self = new Xt.Toggle(toggle, {
+  let selfDestroy = () => {}
+  new Xt.Toggle(toggle, {
     duration: 500,
+  }).then(self => {
+    // on
+
+    const on = e => {
+      const tr = e.target
+      gsap.killTweensOf(tr)
+      gsap.set(tr, {
+        x: -self.direction * targetXOn,
+        opacity: 0,
+      })
+      gsap.to(tr, {
+        x: 0,
+        opacity: 1,
+        duration: targetTimeOn,
+        ease: targetEaseOn,
+      })
+    }
+
+    for (const tr of self.targets) {
+      tr.addEventListener('on.xt.toggle', on)
+    }
+
+    // off
+
+    const off = e => {
+      const tr = e.target
+      gsap.killTweensOf(tr)
+      gsap.to(tr, {
+        x: self.direction * targetXOff,
+        opacity: 0,
+        duration: targetTimeOff,
+        ease: targetEaseOff,
+      })
+    }
+
+    for (const tr of self.targets) {
+      tr.addEventListener('off.xt.toggle', off)
+    }
+
+    // destroy
+
+    selfDestroy = () => {
+      self.destroy()
+      self = null
+    }
   })
-
-  // on
-
-  const on = e => {
-    const tr = e.target
-    gsap.killTweensOf(tr)
-    gsap.set(tr, {
-      x: -self.direction * targetXOn,
-      opacity: 0,
-    })
-    gsap.to(tr, {
-      x: 0,
-      opacity: 1,
-      duration: targetTimeOn,
-      ease: targetEaseOn,
-    })
-  }
-
-  for (const tr of self.targets) {
-    tr.addEventListener('on.xt.toggle', on)
-  }
-
-  // off
-
-  const off = e => {
-    const tr = e.target
-    gsap.killTweensOf(tr)
-    gsap.to(tr, {
-      x: self.direction * targetXOff,
-      opacity: 0,
-      duration: targetTimeOff,
-      ease: targetEaseOff,
-    })
-  }
-
-  for (const tr of self.targets) {
-    tr.addEventListener('off.xt.toggle', off)
-  }
 
   // unmount
 
   return () => {
-    self.destroy()
-    self = null
+    selfDestroy()
   }
 }
 

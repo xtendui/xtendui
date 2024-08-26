@@ -1,4 +1,4 @@
-.demo--form-loader-spinner, .demo--form-loader-spinner-react {
+.demo--form-loader-spinner {
   .xt-loadable {
     @apply relative;
     > .xt-loader {

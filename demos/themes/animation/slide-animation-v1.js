@@ -5,14 +5,13 @@ import 'xtendui/src/drop'
 import 'xtendui/src/tooltip'
 import gsap from 'gsap'
 
-/* mountInteraction */
+Xt.mount({
+  matches: '.demo--slide-animation-v1 .xt-button, .demo--slide-animation-v1 a.xt-card',
+  mount: ({ ref }) => {
+    // vars
 
-const mountInteraction = ({ ref }) => {
-  // vars
+    const item = ref
 
-  const items = ref.querySelectorAll('.xt-button, a.xt-card')
-
-  for (const item of items) {
     // vars
 
     let content = item.querySelector('.content')
@@ -87,24 +86,5 @@ const mountInteraction = ({ ref }) => {
     }
 
     item.addEventListener('click', on)
-  }
-
-  // unmount
-
-  return () => {}
-}
-
-/* mount */
-
-Xt.mount({
-  matches: '.demo--slide-animation-v1',
-  mount: ({ ref }) => {
-    const unmountInteraction = mountInteraction({ ref })
-
-    // unmount
-
-    return () => {
-      unmountInteraction()
-    }
   },
 })

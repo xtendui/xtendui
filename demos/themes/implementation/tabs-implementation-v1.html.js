@@ -1,7 +1,7 @@
 const classes = require('src/app/snippets/classes').classes
 
 const itemAnim = () => 'transition opacity-0 scale-95 in:opacity-100 in:scale-100 out:scale-105'
-const tabsRadius = () => `-full`
+const tabsRadius = () => `-2xl`
 const tabsAnim = () =>
   `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
 

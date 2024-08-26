@@ -1,6 +1,6 @@
 const classes = require('src/app/snippets/classes').classes
 
-const tabsRadius = () => `-full`
+const tabsRadius = () => `-2xl`
 const tabsAnim = () =>
   `transition hover:bg-white hover:text-primary-500 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500`
 

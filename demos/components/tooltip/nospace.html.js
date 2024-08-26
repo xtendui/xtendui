@@ -16,7 +16,7 @@ const html = /* HTML */ `
             class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
+          <div class="xt-arrow rotate-45 -inset-1 w-3 h-3 bg-black"></div>
         </div>
       </div>
 
@@ -33,7 +33,7 @@ const html = /* HTML */ `
             class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
+          <div class="xt-arrow rotate-45 -inset-1 w-3 h-3 bg-black"></div>
         </div>
       </div>
 
@@ -50,7 +50,7 @@ const html = /* HTML */ `
             class="xt-card ${classes.tooltipMd()} rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
             Lorem ipsum dolor sit amet
           </div>
-          <div class="xt-arrow -inset-1 w-3 h-3 bg-black"></div>
+          <div class="xt-arrow rotate-45 -inset-1 w-3 h-3 bg-black"></div>
         </div>
       </div>
     </div>

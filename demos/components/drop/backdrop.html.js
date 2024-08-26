@@ -6,7 +6,7 @@ const html = /* HTML */ `
       <div data-xt-drop>
         <button
           type="button"
-          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-drop"
+          class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-above"
           data-xt-drop-element>
           backdrop
         </button>
@@ -33,7 +33,7 @@ const html = /* HTML */ `
               </button>
             </nav>
           </div>
-          <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
+          <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
         </div>
       </div>
 
@@ -41,7 +41,7 @@ const html = /* HTML */ `
         <div>
           <button
             type="button"
-            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-drop"
+            class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()} on:z-above"
             data-xt-drop-element>
             backdrop mouse
           </button>
@@ -68,7 +68,7 @@ const html = /* HTML */ `
                 </button>
               </nav>
             </div>
-            <div class="xt-arrow z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
+            <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
           </div>
         </div>
       </div>

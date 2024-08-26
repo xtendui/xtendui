@@ -1,4 +1,4 @@
-.demo--googlelocator, .demo--googlelocator-react {
+.demo--googlelocator {
   .googlelocator-item-content {
     a {
       word-break: break-all;
@@ -50,6 +50,16 @@
     }
   }
 
+  .googlelocator-aside-body, .googlelocator-main {
+    @apply max-md:off:hidden max-md:transition max-md:opacity-0 max-md:in:opacity-100 max-md:out:opacity-0;
+  }
+  
+  /* places autocomplete */
+
+  .pac-container {
+    @apply z-last;
+  }
+
   /* infoWindow */
 
   .gm-style {
@@ -80,7 +90,7 @@
         @apply px-0 border-0;
         cursor: inherit;
         .xt-list {
-          @apply -md:flex-col;
+          @apply max-md:flex-col;
         }
       }
     }

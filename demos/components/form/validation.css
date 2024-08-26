@@ -1,4 +1,4 @@
-.demo--form-validation, .demo--form-validation-react {
+.demo--form-validation {
   .valid-submit {
     border-color: theme('colors.green.500') !important;
   }

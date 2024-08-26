@@ -1,9 +1,12 @@
-.demo--infinitescroll, .demo--infinitescroll-react {
+.demo--infinitescroll {
   /* init and first and last */
 
   .infinitescroll {
     &:not([data-xt-infinitescroll-init]) {
       [data-xt-infinitescroll-up] {
+        @apply hidden;
+      }
+      [data-xt-infinitescroll-down] {
         @apply hidden;
       }
     }

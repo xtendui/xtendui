@@ -1,4 +1,4 @@
-.demo--slider-exclude, .demo--slider-exclude-react {
+.demo--slider-exclude {
   .xt-slider {
     &:not([data-xt-slider-init]) {
       .xt-slide:first-child {

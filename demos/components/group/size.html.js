@@ -3,7 +3,7 @@ const classes = require('src/app/snippets/classes').classes
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3 flex-col">
-      <form class="*** text-xs ***">
+      <form class="*** text-13 ***">
         <div class="xt-list flex-col md:flex-row md:flex-nowrap  *** xt-list-1 max-w-xs ***">
           <div class="inline-flex flex-auto">
             <button

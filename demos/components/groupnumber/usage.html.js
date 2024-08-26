@@ -9,7 +9,7 @@ const html = /* HTML */ `
         <div class="*** inline-flex ***">
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-r-none border border-r-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-r-none border border-r-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="-1">
             -
           </button>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
             step="11" />
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-l-none border border-l-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-l-none border border-l-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="1">
             +
           </button>
@@ -48,13 +48,13 @@ const html = /* HTML */ `
         <div class="*** inline-flex flex-col ***">
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-l-none rounded-b-none border border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-l-none rounded-b-none border border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="1">
             +
           </button>
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded-br${classes.groupButtonRadius()} rounded-l-none rounded-t-none border border-t-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded-br${classes.groupButtonRadius()} rounded-l-none rounded-t-none border border-t-0 border-gray-300 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="-1">
             -
           </button>
@@ -69,7 +69,7 @@ const html = /* HTML */ `
         <div class="*** inline-flex flex-col ***" data-xt-groupnumber>
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-b-none border border-gray-300 border-b-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-b-none border border-gray-300 border-b-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="1">
             +
           </button>
@@ -82,7 +82,7 @@ const html = /* HTML */ `
             step="11" />
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-t-none border border-gray-300 border-t-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-t-none border border-gray-300 border-t-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="-1">
             -
           </button>
@@ -93,7 +93,7 @@ const html = /* HTML */ `
         <div class="*** inline-flex flex-col ***" data-xt-groupnumber>
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-b-none border border-gray-300 border-b-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-b-none border border-gray-300 border-b-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="1">
             +
           </button>
@@ -106,7 +106,7 @@ const html = /* HTML */ `
             step="11" />
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-t-none border border-gray-300 border-t-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-t-none border border-gray-300 border-t-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="-1">
             -
           </button>
@@ -117,7 +117,7 @@ const html = /* HTML */ `
         <div class="*** inline-flex flex-col ***" data-xt-groupnumber>
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-b-none border border-gray-300 border-b-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-b-none border border-gray-300 border-b-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="1">
             +
           </button>
@@ -130,7 +130,7 @@ const html = /* HTML */ `
             step="11" />
           <button
             type="button"
-            class="xt-button text-2xs py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-t-none border border-gray-300 border-t-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+            class="xt-button text-12 py-1 px-2.5 *** rounded${classes.groupButtonRadius()} rounded-t-none border border-gray-300 border-t-0 *** ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-step="-1">
             -
           </button>
