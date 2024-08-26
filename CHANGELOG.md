@@ -1,3 +1,112 @@
+# [2.0.0](https://github.com/xtendui/xtendui/compare/v1.4.2...v2.0.0) (2024-08-26)
+
+
+### Bug Fixes
+
+* **css:** added text-underline-offset of 2px on all links ([a1cf3fd](https://github.com/xtendui/xtendui/commit/a1cf3fdd04f5d54e41827ddc8b63f460e7311b28))
+* **css:** bump tailwindcss ([2597192](https://github.com/xtendui/xtendui/commit/2597192be66af81b3778e68f2df6a22ebaffedbd))
+* **css:** bump tailwindcss peerDependency ([c4e6a79](https://github.com/xtendui/xtendui/commit/c4e6a791b23c4bfd3aa156215dd5a8010c8a377f))
+* **css:** xt-overflow-main scrollbar background transparent instead of white ([f13b539](https://github.com/xtendui/xtendui/commit/f13b5399603a94c157a88a9162ec61028c024764))
+* **drop, tooltip:** added rotate class in html for xt-arrow so it can be animated ([aa82fc5](https://github.com/xtendui/xtendui/commit/aa82fc524b03a6192feadc21bb5e4667265ddc64))
+* fix css compilation of tailwindcss of js files ([b3b1f22](https://github.com/xtendui/xtendui/commit/b3b1f226ee85521b3c670d559585129e94090ac1))
+* fix release files included in npm install ([e6844ed](https://github.com/xtendui/xtendui/commit/e6844eda21bdf70889aa413e04884a2394cd3346))
+* **googlelocator:** fix googlelocator dependecies cluster ([1825cfe](https://github.com/xtendui/xtendui/commit/1825cfe0010869d7ce39c423776f4c69250eb310))
+* **googlelocator:** fixed googlelocator not working anymore because of deprecated MarkerClusterer ([2f1d54c](https://github.com/xtendui/xtendui/commit/2f1d54cca8066477bb08e868e89dc5ec19055df1))
+* **javascript:** fix mount after perf or intersectionobserver doesn't fire with alpinejs ([d4978df](https://github.com/xtendui/xtendui/commit/d4978dff7a810514c5c20957ba69c0173ef0be61))
+* **js:** better Xt.visibile working also with height and width 0 ([2444b38](https://github.com/xtendui/xtendui/commit/2444b38ad8aa2fc42517c979a5048d4ac2c24821))
+* **js:** fix intersection observer after Xt.perf to use custom options ([46edd2f](https://github.com/xtendui/xtendui/commit/46edd2f016c589d57681ea0081f6aa9e9d6fd095))
+* **js:** fix intersection observer logic ([9a00fc5](https://github.com/xtendui/xtendui/commit/9a00fc56c968e4602af8e7fab9b83a507e4234d5))
+* **js:** fix intersection observer options threshold to fix sometimes intersection observer not working ([e20999a](https://github.com/xtendui/xtendui/commit/e20999a192f0f7dfc4b40893ac01bd085d89b774))
+* **js:** fix options.observer not being used ([331b1ae](https://github.com/xtendui/xtendui/commit/331b1aee7daa61f0bbf4ea40a3dcf34281b02f4a))
+* **js:** fix unique mode share namespace container ([fb33682](https://github.com/xtendui/xtendui/commit/fb3368212d57d025c2f6aa9cfabf796b183c52a2))
+* **js:** fix Xt.dataset remove map when no size ([111dbe8](https://github.com/xtendui/xtendui/commit/111dbe840a88b0a312ded95322da84fecde014bc))
+* **js:** fix Xt.observe promise not triggering ([f3a5aa4](https://github.com/xtendui/xtendui/commit/f3a5aa4c66381107980b7a0d018f43d47454aa18))
+* **js:** fix Xt.scrolltriggerRerfreshFix ScrollTrigger console error when not using defer ([a8d68dd](https://github.com/xtendui/xtendui/commit/a8d68dd1f5097e7c9bd48b29d424a4d5306a0787))
+* **js:** refactor dist folder and dynamic imports folder ([6646ca5](https://github.com/xtendui/xtendui/commit/6646ca545d26dd76f4913a383df097cf960fe788))
+* **js:** refactor dist folder and dynamic imports folder ([713f131](https://github.com/xtendui/xtendui/commit/713f131449e96536c12c96b713fd664b128edcda))
+* **js:** Xt.get now is a promise that waits for init event if not already inited ([99eb652](https://github.com/xtendui/xtendui/commit/99eb652e049593a4d6461c54b9e26fa4a0a0957f))
+* **js:** Xt.get now is a promise that waits for init event if not already inited ([3400ee6](https://github.com/xtendui/xtendui/commit/3400ee6605cdd2c122dd6c6d481cd204538f68f8))
+* **js:** Xt.get now is a promise that waits for init event if not already inited ([e4e7abf](https://github.com/xtendui/xtendui/commit/e4e7abf4d4e54c31189f37e2deea89d075a9efa0))
+* **js:** Xt.get now is a promise that waits for init event if not already inited ([a0febc6](https://github.com/xtendui/xtendui/commit/a0febc6aea5afc0ce6e175e81d4c98a365a5ef77))
+* **js:** Xt.scrolltriggerRerfreshFix ScrollTrigger console error when not using defer ([12cf0d0](https://github.com/xtendui/xtendui/commit/12cf0d09dcb4b4bf05b2cde627d659b6b0a719ae))
+* **js:** Xt.visible now checks also for checkVisibility ([56ae0b2](https://github.com/xtendui/xtendui/commit/56ae0b20e85d26da8a24338411a1a512b2c2482f))
+* **overlay:** add margin right to fixed element also if outside overlay ([c43ea07](https://github.com/xtendui/xtendui/commit/c43ea076b76597c2046b46093a772aff608da609))
+* **overlay:** added overlay overscroll behaviour contain to prevent body scroll on overlay scroll ([f9c0b9d](https://github.com/xtendui/xtendui/commit/f9c0b9dca1b6cab24c262ffcd96fd9b62dae5119))
+* **overlay:** fix overlay scroll also when wheeling xt-backdrop ([276b057](https://github.com/xtendui/xtendui/commit/276b0575d8630bf0f78c7def86a82fb33f3be2b4))
+* refactor z-index sticky to be above content but below drop and tooltip ([8f29d46](https://github.com/xtendui/xtendui/commit/8f29d46a2e9fb8525457884d2bacb48c53f9ef07))
+* **ripple:** fix ripple error on initialization ([43fe9e9](https://github.com/xtendui/xtendui/commit/43fe9e962fbab56d90660b2460a8c3d6d73b04bb))
+* **scrolltrigger:** fix css scrolltrigger pin spacer z-index when has xt-sticky inside ([2cc644b](https://github.com/xtendui/xtendui/commit/2cc644bfe0b0ce256ab809965516d55d0d1aba2b))
+* **slider:** added [data-xt-slider-exclude] to not have first slide visible on page load ([db2296e](https://github.com/xtendui/xtendui/commit/db2296eb5da2976bf371f1ebfa258d86361b1e86))
+* **slider:** fix do not round values ([c624304](https://github.com/xtendui/xtendui/commit/c624304c7326de38b2b8f26dc8992e47921e5326))
+* **slider:** fix initialization slider perf flickr of slide items visibility ([0725a64](https://github.com/xtendui/xtendui/commit/0725a6473aa8f05a7a982ebdfc95e2b9b78f3473))
+* **slider:** fix resize observer computation ([1e9b536](https://github.com/xtendui/xtendui/commit/1e9b5361ef245c4de69b561a4fdd2ee2f77c449b))
+* **slider:** fix slider autoheight when groups ([69973a9](https://github.com/xtendui/xtendui/commit/69973a9609d7b5b4a2cfed8488858fa776ce22b6))
+* **slider:** fix slider lock vertical touch also if no horizontal touch happening ([6379686](https://github.com/xtendui/xtendui/commit/6379686bb1c5c4972b11463365ddbab0773999ed))
+* **slider:** fix slider wrap do not wrap only if not enough size for max width of slides ([11e4266](https://github.com/xtendui/xtendui/commit/11e4266b6e99184e92e6dc16eed9a8b12c7c7d0d))
+* **slider:** improve slider perf with contentVisiblity instead of display ([5aa0170](https://github.com/xtendui/xtendui/commit/5aa0170bb42afc9c113052d4e671b4985390f9d0))
+* **slider:** round values and fix test new scrollbar ([b2dccfd](https://github.com/xtendui/xtendui/commit/b2dccfdb0627da4c065c47d5d22afde524775901))
+* **stickyflow:** fix activation with top and bottom values ([048c34d](https://github.com/xtendui/xtendui/commit/048c34d9366e405cdfa377e4d44563d357fd26ce))
+* **toggle:** fix unique mode trigger targets events skip if same namespace ([2cf4c8f](https://github.com/xtendui/xtendui/commit/2cf4c8fde7cf50827b8e3785c319ec43c31dd0c7))
+* **tooltip:** z-tooltip and z-drop the same so they follow page order ([8ebb7a2](https://github.com/xtendui/xtendui/commit/8ebb7a28337cea24ac5ec87850a62de64249739f))
+* **usability:** added more Xt.usabilityIgnore ([9eac148](https://github.com/xtendui/xtendui/commit/9eac148ce0952f2ed537586c1758cedec4d1a7a7))
+* **xt:** fix scrollbar width INP and layout invalidation ([cf6f246](https://github.com/xtendui/xtendui/commit/cf6f2463e959aa168ffbd5b114d2bd655a6eedee))
+
+
+### Code Refactoring
+
+* **css:** refactor custom scrollbar to use scrollbar-width and scrollbar-color only, removed webkit-scrollbar ([5ca75a9](https://github.com/xtendui/xtendui/commit/5ca75a973cbd1d9f32ffac8f6332544cef0cc7a3))
+
+
+### Features
+
+* **css:** added variant modifiers https://tailwindcss.com/blog/tailwindcss-v3-2#nested-group-and-multiple-peer-support-using-variant-modifiers ([c7b917d](https://github.com/xtendui/xtendui/commit/c7b917d45dab89b34511fca61188611fbc899f29))
+* **css:** refactor small font size with new names in px ([a755d7d](https://github.com/xtendui/xtendui/commit/a755d7d5888834dcaefef6eddd7246765b8e5cd7))
+* **css:** removed desktop first media query and refactor hover media queries, and use tailwindcss simple screen options to enable desktop first media queries ([e3cc5f2](https://github.com/xtendui/xtendui/commit/e3cc5f21f7e7439680de66b024ea90985d67ec82))
+* **global:** removed --vh, .xt-h-screen, .xt-min-h-screen, .xt-max-h-screen ([bb10c1d](https://github.com/xtendui/xtendui/commit/bb10c1d6be51edd02c25db973e8e2b53ad1af830))
+* **googlelocator:** added zoom to viewport when no results ([2df437b](https://github.com/xtendui/xtendui/commit/2df437b81987e2eb7177a0a1a6ade1686723b684))
+* **inifinitescroll:** added self.loadedHtml property if you want to use it after populate.xt.infinitescroll event ([cabb04b](https://github.com/xtendui/xtendui/commit/cabb04b838c5256f9f22dc7adc3537cefa2469d6))
+* **javascript:** added javascript component initializations by default only when inside viewport ([17d3d05](https://github.com/xtendui/xtendui/commit/17d3d0534ed432841437e511c5fe3817bfac24df))
+* **javascript:** promise for all js components ([8752ff4](https://github.com/xtendui/xtendui/commit/8752ff4a4fc56a2ed4735abe2b786787f208cd47))
+* **javascript:** promise for Xt.get ([2aab9e0](https://github.com/xtendui/xtendui/commit/2aab9e0470796ceeb8ed3cad3114b16e568dacc2))
+* **javascript:** typescript global module ([c00f87c](https://github.com/xtendui/xtendui/commit/c00f87c3bf4636a83dfa44d2703141b6165f111d))
+* **js:** added slider option noobserver to disable intersection observer perfomances, and Xt.medialoadedDelay default to 200 to fix tests slider medialoaded ([d9be677](https://github.com/xtendui/xtendui/commit/d9be677071c488d988a7f26527715b013888a8a5))
+* **js:** added Xt.observe and refactor components observer ([9235dd0](https://github.com/xtendui/xtendui/commit/9235dd091cfc49c0388b97b10f7b1e4c457381fd))
+* **js:** addes setup event before init event and fix xt.get racecondition ([9b4e7bc](https://github.com/xtendui/xtendui/commit/9b4e7bc9a005d98305f6bae9b6636747c9f362bc))
+* **js:** refactor intersection observer options ([f443cf9](https://github.com/xtendui/xtendui/commit/f443cf9397a0de990dd48786320bdedd88b0b14e))
+* **js:** refactor intersection observer to work continuosly with function instead of promise ([1a5a759](https://github.com/xtendui/xtendui/commit/1a5a7597d0b3eb1f202fe4489e181ca8b4c4c022))
+* **slider:** WIP slider absolute and refactor slider relative ([0cd8d2c](https://github.com/xtendui/xtendui/commit/0cd8d2c5dfa628ecea03b67673026f09e3e96102))
+* **stickyflow:** added behaviour min and max value with top and bottom classes on element ([4760b3c](https://github.com/xtendui/xtendui/commit/4760b3c33d4b6d2f9897c80e89b391f36fec3e0a))
+* **stickyflow:** added stickflow options.scrollers with default values to make stickyflow work inside overlay ([a68c360](https://github.com/xtendui/xtendui/commit/a68c360ba2e6d71cc1e059165e31aef03580d3c3))
+
+
+### Performance Improvements
+
+* **js:** added setTimeout 0 on Xt.mount initial mount ([e84e254](https://github.com/xtendui/xtendui/commit/e84e25469955718409c9c1f63a11d7ec15cd7319))
+* **js:** moved Xt._friction inside mousefollow for performances ([10fb1bb](https://github.com/xtendui/xtendui/commit/10fb1bb9df657caa820aaeeec76907693d67d722))
+* **js:** simplified Xt.visible js ([b1fd910](https://github.com/xtendui/xtendui/commit/b1fd910372bcd89083fbdbcca0e3f7f3732b1883))
+* removed spread operator when not needed ([d2cdbd7](https://github.com/xtendui/xtendui/commit/d2cdbd70d6a34f262f1f2164e53f2c93e591a0a2))
+* revision supported browsers to speed up website with less polyfills ([9751b14](https://github.com/xtendui/xtendui/commit/9751b140dcfd6b39254b98b122fff3d4254b6560))
+* **slider:** better performances slider intersection observer ([934a825](https://github.com/xtendui/xtendui/commit/934a82526154c2bb0dbb30e7816e0db52767ce27))
+* **slider:** improved performances on slider, hiding slides outside viewport with intersection observer ([6c3df04](https://github.com/xtendui/xtendui/commit/6c3df04e9420e996ddbf3dd0286ba91d5422f496))
+* Xt.datastorage use weakmap instead of map for garbage collection ([9efbe89](https://github.com/xtendui/xtendui/commit/9efbe8902278eac082dfe584f64a2bcf630ec9da))
+
+
+### BREAKING CHANGES
+
+* **overlay:** in overlay if overritten use closeInside: '.xt-overlay, .xt-backdrop, .xt-overlay-container'
+* **css:** to have custom scrollbar colors add to html  and remove from tailwind.config.js  and
+* **js:** now components are initialized by default only when inside viewport, to override see Xt.observe
+* changed z-index of sticky to 500 and z-index of tooltip and drop to 700
+* **css:** need new version of tailwindcss 3.3.5 for nested group
+* **javascript:** Xt.get now return a promise with self argument because initializations of all components are async. It's no longer possible to Xt.get after .destroy() on all components
+* **javascript:** on new Xt.Component use promise because now the initializations of all the components are async
+* **global:** you can use instead h-screen !h-[100svh]
+* in tailwind.config.js use as content ./node_modules/xtendui/src/**/*.mjs
+* **css:** use tailwindcss media queries for example 'max-md:' instead of '-md:'
+instead of '@screen hover-none' use '@media (hover: none), (pointer: coarse)'
+instead of '@screen hover-hover' use '@media (hover: hover), not (pointer: coarse)
+* **css:** use text-10 instead of text-4xs, use text-11 instead of text-3xs, use text-12 instead of text-2xs, use text-13 instead of text-xs
+
 # [2.0.0-beta.24](https://github.com/xtendui/xtendui/compare/v2.0.0-beta.23...v2.0.0-beta.24) (2024-07-09)
 
 
