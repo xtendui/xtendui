@@ -60,7 +60,6 @@ Read our [contributing docs](https://github.com/xtendui/xtendui/blob/master/.git
 
 * Clone the repository `git clone https://github.com/xtendui/xtendui.git`
 * Install required npm packages with `pnpm install`
-* Use `pnpm generate` to generate react components
 * Use `pnpm dev` to serve a develop version with watch
 * Use `pnpm build && pnpm serve` to serve a production version
 
