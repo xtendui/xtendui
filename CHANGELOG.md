@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/xtendui/xtendui/compare/v2.0.0...v2.0.1) (2024-08-26)
+
+
+### Bug Fixes
+
+* try to fix actions ([52e58be](https://github.com/xtendui/xtendui/commit/52e58be9becca78839388270a4171000cee31850))
+
 # [2.0.0](https://github.com/xtendui/xtendui/compare/v1.4.2...v2.0.0) (2024-08-26)
 
 
