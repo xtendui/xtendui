@@ -40,7 +40,7 @@
         @apply opacity-0;
       }
       > .xt-loader {
-        @apply opacity-100;
+        @apply pointer-events-none opacity-100;
       }
     }
   }
