@@ -20,7 +20,13 @@ export default function Header({ page }) {
                 <Link
                   href="/"
                   title="Xtend UI"
-                  className="docs_site-header_logo inline-block bg-contain transition"></Link>
+                  className="docs_site-header_logo inline-block relative bg-contain transition">
+                  <div className="absolute -bottom-2 -right-4">
+                    <div className="pt-px pb-0 px-1.5 bg-white rounded-full border-2 border-primary-500 font-bold text-[12px] text-primary-500 leading-snug">
+                      v2
+                    </div>
+                  </div>
+                </Link>
                 <div className="docs_site-header_top_social_container">
                   <div className="docs_site-header_top_social">
                     <div data-xt-tooltip="{ position: 'bottom-end', duration: 300 }">

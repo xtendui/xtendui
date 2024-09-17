@@ -9,7 +9,13 @@ export default function Header() {
           <div
             className={`docs_home-header_content relative z-20 pt-8 pb-10 ${classes.textInverse()} text-center transition-all duration-300 ease-out-quart`}>
             <div className="container">
-              <div className="docs_site-header_logo inline-block bg-contain mb-2 transition-all duration-300 ease-out-quart"></div>
+              <div className="docs_site-header_logo inline-block relative bg-contain mb-2 transition-all duration-300 ease-out-quart">
+                <div className="absolute -bottom-2 -right-4">
+                  <div className="pt-px pb-0 px-1.5 bg-white rounded-full border-2 border-primary-500 font-bold text-[12px] text-primary-500 leading-snug">
+                    v2
+                  </div>
+                </div>
+              </div>
               <div className="docs_home-header_actions">
                 <div className="xt-list md:xt-list-1 justify-center">
                   <Link href="/intro" className="xt-button">
