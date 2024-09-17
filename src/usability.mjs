@@ -22,6 +22,20 @@ if (typeof window !== 'undefined') {
           'font-weight:bold; color: white; background-color: #0067DD; padding: 6px 10px;',
         )
 
+        // h1
+
+        Xt.mount({
+          matches: 'body',
+          mount: ({ ref }) => {
+            if (ref.closest(Xt.usabilityIgnore)) return
+            // h1
+            const h1 = ref.querySelector('h1')
+            if (!h1) {
+              console.warn('Xtend UI usability detected no "h1" in the page', ref)
+            }
+          },
+        })
+
         // images
 
         Xt.mount({
