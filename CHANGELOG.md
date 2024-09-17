@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/xtendui/xtendui/compare/v2.0.1...v2.1.0) (2024-09-17)
+
+
+### Features
+
+* **usability:** added usability no h1 detection ([02680f1](https://github.com/xtendui/xtendui/commit/02680f1dd52ead32e522cc4ebcc73249765fd031))
+
 ## [2.0.1](https://github.com/xtendui/xtendui/compare/v2.0.0...v2.0.1) (2024-08-26)
 
 
