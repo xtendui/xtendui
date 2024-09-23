@@ -23,11 +23,13 @@ module.exports = {
       position: 'relative',
       display: 'flex',
       flexWrap: 'nowrap',
-      // prevent browser selection
-      '-webkit-user-select': 'none',
-      '-moz-user-select': 'none',
-      '-ms-user-select': 'none',
-      'user-select': 'none',
+      '&.xt-grab': {
+        // prevent browser selection
+        '-webkit-user-select': 'none',
+        '-moz-user-select': 'none',
+        '-ms-user-select': 'none',
+        'user-select': 'none',
+      },
     },
     '.xt-slide': {
       position: 'relative',

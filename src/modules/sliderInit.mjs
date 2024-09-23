@@ -42,7 +42,9 @@ export class SliderInit extends Xt.Toggle {
     }
     // grab
     if (!self.disabled) {
-      self.dragger.classList.add('xt-grab')
+      if (!options.drag.noMouse) {
+        self.dragger.classList.add('xt-grab')
+      }
     }
     // autoHeight and keepHeight
     if (options.autoHeight) {
@@ -514,6 +516,7 @@ export class SliderInit extends Xt.Toggle {
   _initEvents() {
     super._initEvents()
     const self = this
+    const options = self.options
     // init
     const initHandler = Xt.dataStorage.put(self.container, `init/${self.ns}`, self._eventInitHandler.bind(self))
     self.container.addEventListener('init.xt.slider', initHandler)
@@ -523,7 +526,7 @@ export class SliderInit extends Xt.Toggle {
       `mousedown touchstart/drag/${self.ns}`,
       self._eventDragstartHandler.bind(self),
     )
-    const events = ['mousedown', 'touchstart']
+    const events = options.drag.noMouse ? ['touchstart'] : ['mousedown', 'touchstart']
     for (const event of events) {
       addEventListener(event, dragstartHandler, { passive: false })
     }
@@ -1541,7 +1544,9 @@ export class SliderInit extends Xt.Toggle {
     // enable
     if (self.disabled) {
       // grab
-      self.dragger.classList.add('xt-grab')
+      if (!options.drag.noMouse) {
+        self.dragger.classList.add('xt-grab')
+      }
       // hideDisable
       if (options.hideDisable) {
         const els = self.container.querySelectorAll(options.hideDisable)

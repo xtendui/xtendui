@@ -52,6 +52,7 @@ Slider.optionsDefault = {
     overflow: ({ overflow }) => {
       return Math.min(overflow, Math.log(1 + Math.pow(overflow, 10)))
     },
+    noMouse: false,
   },
   // element
   elementsTemplate: 'hidden',
