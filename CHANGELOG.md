@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/xtendui/xtendui/compare/v2.1.0...v2.2.0) (2024-09-23)
+
+
+### Features
+
+* **slider:** added slider option drag.noMouse that disables mouse drag on slider ([c09fb91](https://github.com/xtendui/xtendui/commit/c09fb91779f3985bf7d06f9921c88df0a84cf482))
+
 # [2.1.0](https://github.com/xtendui/xtendui/compare/v2.0.1...v2.1.0) (2024-09-17)
 
 
