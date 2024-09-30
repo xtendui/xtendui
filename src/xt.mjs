@@ -1088,7 +1088,11 @@ if (typeof window !== 'undefined') {
 
   Xt.ready({
     func: () => {
-      Xt._setScrollbarWidth()
+      Xt.perf({
+        func: () => {
+          Xt._setScrollbarWidth()
+        },
+      })
     },
   })
 
