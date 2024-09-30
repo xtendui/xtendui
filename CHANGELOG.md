@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/xtendui/xtendui/compare/v2.2.0...v2.2.1) (2024-09-30)
+
+
+### Bug Fixes
+
+* **js:** scrollbar width after setTimeout for perf ([c388ed6](https://github.com/xtendui/xtendui/commit/c388ed66da2f84313edd123f6024d1af8b2c7835))
+
 # [2.2.0](https://github.com/xtendui/xtendui/compare/v2.1.0...v2.2.0) (2024-09-23)
 
 
