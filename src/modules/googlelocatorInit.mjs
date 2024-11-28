@@ -343,16 +343,16 @@ export class GooglelocatorInit {
           (self.radius && distance <= self.radius) ||
           (self.viewport && self.viewport.contains(latLng))
         ) {
-          const loc = new google.maps.Marker({
+          const loc = new google.maps.marker.AdvancedMarkerElement({
             map: self.map,
             position: latLng,
             title: marker.name,
-            icon: marker.icon || options.map.icon,
-            animation: marker.animation || options.map.animation,
-            distance: distance,
-            marker: marker,
-            index: index,
           })
+          loc.icon = marker.icon || options.map.icon
+          loc.animation = marker.animation || options.map.animation
+          loc.distance = distance
+          loc.marker = marker
+          loc.index = index
           bounds.extend(latLng)
           self.locations.push(loc)
           loc.addListener('click', () => {

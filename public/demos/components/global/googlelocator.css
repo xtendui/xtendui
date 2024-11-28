@@ -53,7 +53,7 @@
   .googlelocator-aside-body, .googlelocator-main {
     @apply max-md:off:hidden max-md:transition max-md:opacity-0 max-md:in:opacity-100 max-md:out:opacity-0;
   }
-  
+
   /* places autocomplete */
 
   .pac-container {
@@ -64,6 +64,9 @@
 
   .gm-style {
     /* reset */
+    .gm-style-iw-chr {
+      @apply hidden;
+    }
     .gm-style-iw-d {
       overflow: visible !important;
       max-width: none !important;

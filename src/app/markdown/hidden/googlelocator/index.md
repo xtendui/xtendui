@@ -72,6 +72,7 @@ autocompleteOptions: false,
 autocompleteServiceOptions: false,
 // map
 map: {
+  mapId: null,
   center: false,
   zoom: false,
   zoomMin: false,
