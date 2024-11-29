@@ -13,7 +13,7 @@ export default function Header({ page }) {
       className={`docs_site-article_sidebar xt-overflow-sub lg:bg-primary-500 ${classes.textInverse()} leading-none`}>
       <div className="docs_site-article_sidebar_inner">
         <header className="docs_site-header xt-sticky relative">
-          <div className="xt-backdrop absolute pointer-events-none bg-black transition opacity-25 !right-auto"></div>
+          <div className="xt-backdrop absolute pointer-events-none bg-black transition opacity-25 right-auto!"></div>
           <div className={`docs_site-header_inner container bg-primary-500`}>
             <div>
               <div className="docs_site-header_content">

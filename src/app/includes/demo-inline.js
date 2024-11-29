@@ -17,7 +17,7 @@ function DemoInline(props) {
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {
-    hasCss = require.resolve(`../../../public/${src}.css`)
+    hasCss = require.resolve(`raw-loader!../../../public/${src}.css`)
     // eslint-disable-next-line no-empty
   } catch (ex) {}
   try {

@@ -258,48 +258,48 @@ module.exports = {
     '.xt-body:not(.xt-optout-typography)': {
       '-webkit-font-smoothing': 'antialiased',
       '-moz-osx-font-smoothing': 'grayscale',
-    },
-    'h1:not([class])': {
-      '@apply xt-h1': '',
-    },
-    'h2:not([class])': {
-      '@apply xt-h2': '',
-    },
-    'h3:not([class])': {
-      '@apply xt-h3': '',
-    },
-    'h4:not([class])': {
-      '@apply xt-h4': '',
-    },
-    'h5:not([class])': {
-      '@apply xt-h5': '',
-    },
-    'h6:not([class])': {
-      '@apply xt-h6': '',
-    },
-    'p:not([class])': {
-      '@apply xt-p': '',
-    },
-    'ul:not([class])': {
-      '@apply xt-ul': '',
-    },
-    'ol:not([class])': {
-      '@apply xt-ol': '',
-    },
-    'dl:not([class])': {
-      '@apply xt-dl': '',
-    },
-    'blockquote:not([class])': {
-      '@apply xt-blockquote': '',
-    },
-    'hr:not([class])': {
-      '@apply xt-hr': '',
-    },
-    'figure:not([class])': {
-      '@apply xt-figure': '',
-    },
-    'figcaption:not([class])': {
-      '@apply xt-figcaption': '',
+      'h1:not([class])': {
+        '@apply xt-h1': '',
+      },
+      'h2:not([class])': {
+        '@apply xt-h2': '',
+      },
+      'h3:not([class])': {
+        '@apply xt-h3': '',
+      },
+      'h4:not([class])': {
+        '@apply xt-h4': '',
+      },
+      'h5:not([class])': {
+        '@apply xt-h5': '',
+      },
+      'h6:not([class])': {
+        '@apply xt-h6': '',
+      },
+      'p:not([class])': {
+        '@apply xt-p': '',
+      },
+      'ul:not([class])': {
+        '@apply xt-ul': '',
+      },
+      'ol:not([class])': {
+        '@apply xt-ol': '',
+      },
+      'dl:not([class])': {
+        '@apply xt-dl': '',
+      },
+      'blockquote:not([class])': {
+        '@apply xt-blockquote': '',
+      },
+      'hr:not([class])': {
+        '@apply xt-hr': '',
+      },
+      'figure:not([class])': {
+        '@apply xt-figure': '',
+      },
+      'figcaption:not([class])': {
+        '@apply xt-figcaption': '',
+      },
     },
   },
 }

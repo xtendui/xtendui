@@ -115,8 +115,8 @@ module.exports = {
       },
     },
     // instant animations accessibility
-    '@media (prefers-reduced-motion: reduce), (update: slow)': {
-      '.xt-body:not(.xt-optout-prm)': {
+    '.xt-body:not(.xt-optout-prm)': {
+      '@media (prefers-reduced-motion: reduce), (update: slow)': {
         '*': {
           transitionDuration: 'initial !important',
           transitionDelay: 'initial !important',

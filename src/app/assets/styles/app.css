@@ -1,17 +1,16 @@
-@import "tailwindcss/base";
+@import 'tailwindcss';
 
-@import "tailwindcss/components";
+@import 'prismjs/plugins/unescaped-markup/prism-unescaped-markup.css'
+  layer(components);
+@import './_prism.css' layer(components);
 
-@import "prismjs/plugins/unescaped-markup/prism-unescaped-markup.css";
-@import "./_prism.css";
+@import '../../../../util/xtend-demos.css' layer(components);
 
-@import "../../../../util/xtend-demos.css";
+@import './_common.css' layer(components);
+@import './_header.css' layer(components);
+@import './_home.css' layer(components);
+@import './_article.css' layer(components);
+@import './_demo.css' layer(components);
+@import './_ads.css' layer(components);
 
-@import "./_common.css";
-@import "./_header.css";
-@import "./_home.css";
-@import "./_article.css";
-@import "./_demo.css";
-@import "./_ads.css";
-
-@import "tailwindcss/utilities";
+@config "../../../../tailwind.config.js";

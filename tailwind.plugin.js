@@ -6,6 +6,12 @@ module.exports = plugin.withOptions(() => {
     const componentsBase = require('./tailwind.components.js') || {}
     const componentsCustom = theme(`xtendui`, {}) || {}
 
+    e =
+      e ??
+      function (x) {
+        return x
+      }
+
     /**
      * components
      */

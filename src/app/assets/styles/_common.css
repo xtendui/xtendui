@@ -20,7 +20,7 @@
     .docs_make-line_line {
       display: inline-block;
       padding-right: 15px;
-      background: theme('colors.white');
+      background: var(--color-white);
     }
     .docs_make-line_line:after {
       content: '';
@@ -87,8 +87,8 @@
     padding: 7px;
     font-size: 1.25rem;
     border-radius: 50%;
-    border-color: theme('colors.white') !important;
-    background: theme('colors.white') !important;
+    border-color: var(--color-white) !important;
+    background: var(--color-white) !important;
     color: theme('colors.primary.500');
     line-height: 1;
   }

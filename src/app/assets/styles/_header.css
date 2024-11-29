@@ -1,7 +1,7 @@
 /* sidebar */
 
 .docs_site-article_sidebar {
-  @screen lg {
+  @media (width >= theme(--breakpoint-lg)) {
     position: fixed;
     z-index: 2;
     top: 0;
@@ -10,13 +10,13 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
-  @screen lg {
+  @media (width >= theme(--breakpoint-lg)) {
     width: 20rem;
   }
 }
 
 .docs_site-header_menu_link {
-  @apply lg:hidden !important;
+  @apply lg:hidden!;
   > .xt-button {
     padding: 0;
     padding-left: 1.5rem;
@@ -25,7 +25,7 @@
 }
 
 #docs_menu--overlay {
-  @screen lg {
+  @media (width >= theme(--breakpoint-lg)) {
     display: flex !important;
     position: static;
     z-index: auto !important;
@@ -66,7 +66,7 @@
 
 .docs_site-header {
   /* hide sticky when demo-full-open */
-  @media (max-width: calc(theme('screens.lg') - 1px)) {
+  @media (max-width: calc(theme(--breakpoint-lg) - 1px)) {
     html.demo-full-open & {
       display: none;
     }
@@ -76,7 +76,7 @@
 .docs_site-header_logo {
   width: 112px;
   height: 27px;
-  @screen md {
+  @media (width >= theme(--breakpoint-md)) {
     width: 140px;
     height: 35px;
   }
@@ -90,7 +90,7 @@
   max-width: 1280px;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  @screen lg {
+  @media (width >= theme(--breakpoint-lg)) {
     padding-top: 2rem;
     padding-bottom: 1.25rem;
     padding-left: 1.75rem;
@@ -101,7 +101,7 @@
 .docs_site-header_content {
   @apply w-full xt-list;
   align-items: center;
-  @screen lg {
+  @media (width >= theme(--breakpoint-lg)) {
     align-items: flex-end;
   }
 }
@@ -216,16 +216,16 @@
     @apply transition duration-300 ease-out-quint text-white text-opacity-[90%];
     border-radius: 6px;
     padding: 6px 9px;
-    font-weight: theme('fontWeight.normal');
+    font-weight: var(--font-weight-normal);
     font-size: 14px;
     line-height: 1;
-    letter-spacing: theme('letterSpacing.wide');
+    letter-spacing: var(--tracking-wide);
     text-transform: none;
   }
   &.docs_button-site-header_link {
     .docs_button-site_article_sidebar_inner {
       @apply w-full;
-      font-weight: theme('fontWeight.semibold');
+      font-weight: var(--font-weight-semibold);
       text-transform: uppercase;
     }
   }
@@ -259,7 +259,7 @@
     .docs_button-site_article_sidebar_inner {
       @apply bg-primary-900 bg-opacity-50 text-opacity-100;
       transform: none;
-      font-weight: theme('fontWeight.semibold');
+      font-weight: var(--font-weight-semibold);
     }
   }
 }
@@ -270,5 +270,5 @@
 
 .docs_button-site_article_sidebar:not(.on) ~ [data-xt-tooltip-target] {
   /* fix still opens tooltip on change page */
-  @apply !hidden; 
+  @apply hidden!; 
 }

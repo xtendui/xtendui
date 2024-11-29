@@ -5,7 +5,7 @@ export const classes = {
   bgBlur: () => 'backdrop-filter backdrop-blur-sm backdrop-saturate-50',
   docsFloat: () =>
     'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
-  cardToggle: () => 'bg-white rounded-full text-13 py-2 px-3 font-medium shadow',
+  cardToggle: () => 'bg-white rounded-full text-13 py-2 px-3 font-medium shadow-xs',
   buttonSlider: () =>
     'p-2 min-w-[1.25rem] h-5 rounded-full text-11 text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   buttonCode: () =>
@@ -99,11 +99,11 @@ export const classes = {
   switchPrimary: () => 'bg-primary-800 bg-opacity-25 border border-transparent transition-all checked:bg-primary-600',
   switchRadius: () => 'rounded-full',
   inputGray: () =>
-    'py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none',
+    'py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-hidden',
   inputPrimary: () =>
-    'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
+    'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-hidden',
   inputUnderline: () =>
-    'py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
+    'py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-hidden',
   labelGray: () => 'font-medium text-gray-700',
   labelPrimary: () => 'font-medium text-white',
   label: () => 'block', // no flex or tags inside have no space (e.g. links)
