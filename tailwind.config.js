@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  presets: [require('tailwindcss/defaultConfig'), require('./tailwind.preset')],
+  presets: [require('./tailwind.preset')],
   content: ['./{src,public}/**/*.js'],
   safelist: process.env.DIST
     ? []
@@ -163,12 +163,14 @@ module.exports = {
         },
         typography: {
           component: {
-            'code:not([class])': {
-              fontSize: '0.9em',
-              fontWeight: 600,
-              wordBreak: 'break-word',
-              'td &': {
-                wordBreak: 'initial',
+            '.xt-body:not(.xt-optout-typography)': {
+              'code:not([class])': {
+                fontSize: '0.9em',
+                fontWeight: 600,
+                wordBreak: 'break-word',
+                'td &': {
+                  wordBreak: 'initial',
+                },
               },
             },
           },

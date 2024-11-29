@@ -29,7 +29,7 @@ module.exports = {
     '.xt-body:not(.xt-optout-scroll)': {
       '@apply xt-overflow-main overflow-y-scroll overflow-x-hidden': '',
     },
-    html: {
+    '.xt-html:not(.xt-optout-touch)': {
       touchAction: 'manipulation', // disable double-tap
       '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)', // disable tap highlight
     },
@@ -38,9 +38,11 @@ module.exports = {
           maxWidth: `${theme('container.fluid')} !important`,
         }
       : {},
-    '::selection': {
-      backgroundColor: '#00FFDD',
-      color: theme('colors.black'),
+    '.xt-html:not(.xt-optout-selection)': {
+      '::selection': {
+        backgroundColor: '#00FFDD',
+        color: theme('colors.black'),
+      },
     },
     '.xt-overflow-main': {
       '-webkit-overflow-scrolling': 'touch',
@@ -52,10 +54,12 @@ module.exports = {
       scrollbarWidth: 'thin',
       scrollbarColor: `${theme('colors.gray.300')} transparent`,
     },
-    '[readonly], [disabled], .xt-disabled': {
-      pointerEvents: 'none',
-      '&:not(.on)': {
-        opacity: '.5',
+    '.xt-html:not(.xt-optout-disabled)': {
+      '[readonly], [disabled], .xt-disabled': {
+        pointerEvents: 'none',
+        '&:not(.on)': {
+          opacity: '.5',
+        },
       },
     },
     '.xt-backdrop': {
@@ -95,50 +99,52 @@ module.exports = {
     '.xt-collapse-reset': {
       overflow: 'visible !important',
     },
-    '[data-popper-inset]': {
-      padding: '0 !important',
-      '> .xt-arrow': {
-        display: 'none !important',
+    '.xt-html': {
+      '[data-popper-inset]': {
+        padding: '0 !important',
+        '> .xt-arrow': {
+          display: 'none !important',
+        },
       },
-    },
-    '[data-popper-placement^="top"]': {
-      paddingTop: '0 !important',
-      paddingLeft: '0 !important',
-      paddingRight: '0 !important',
-      '> .xt-arrow': {
-        top: 'auto !important',
-        marginLeft: '0 !important',
-        marginRight: '0 !important',
+      '[data-popper-placement^="top"]': {
+        paddingTop: '0 !important',
+        paddingLeft: '0 !important',
+        paddingRight: '0 !important',
+        '> .xt-arrow': {
+          top: 'auto !important',
+          marginLeft: '0 !important',
+          marginRight: '0 !important',
+        },
       },
-    },
-    '[data-popper-placement^="bottom"]': {
-      paddingBottom: '0 !important',
-      paddingLeft: '0 !important',
-      paddingRight: '0 !important',
-      '> .xt-arrow': {
-        bottom: 'auto !important',
-        marginLeft: '0 !important',
-        marginRight: '0 !important',
+      '[data-popper-placement^="bottom"]': {
+        paddingBottom: '0 !important',
+        paddingLeft: '0 !important',
+        paddingRight: '0 !important',
+        '> .xt-arrow': {
+          bottom: 'auto !important',
+          marginLeft: '0 !important',
+          marginRight: '0 !important',
+        },
       },
-    },
-    '[data-popper-placement^="left"]': {
-      paddingLeft: '0 !important',
-      paddingTop: '0 !important',
-      paddingBottom: '0 !important',
-      '> .xt-arrow': {
-        left: 'auto !important',
-        marginTop: '0 !important',
-        marginBottom: '0 !important',
+      '[data-popper-placement^="left"]': {
+        paddingLeft: '0 !important',
+        paddingTop: '0 !important',
+        paddingBottom: '0 !important',
+        '> .xt-arrow': {
+          left: 'auto !important',
+          marginTop: '0 !important',
+          marginBottom: '0 !important',
+        },
       },
-    },
-    '[data-popper-placement^="right"]': {
-      paddingRight: '0 !important',
-      paddingTop: '0 !important',
-      paddingBottom: '0 !important',
-      '> .xt-arrow': {
-        right: 'auto !important',
-        marginTop: '0 !important',
-        marginBottom: '0 !important',
+      '[data-popper-placement^="right"]': {
+        paddingRight: '0 !important',
+        paddingTop: '0 !important',
+        paddingBottom: '0 !important',
+        '> .xt-arrow': {
+          right: 'auto !important',
+          marginTop: '0 !important',
+          marginBottom: '0 !important',
+        },
       },
     },
   }),

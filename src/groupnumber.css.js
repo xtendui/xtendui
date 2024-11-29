@@ -6,11 +6,13 @@
 
 module.exports = {
   component: {
-    '[data-xt-groupnumber], [data-xt-groupnumber-init]': {
-      'input[type="number"]': {
-        '-moz-appearance': 'textfield',
-        '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {
-          appearance: 'none',
+    '.xt-html': {
+      '[data-xt-groupnumber], [data-xt-groupnumber-init]': {
+        'input[type="number"]': {
+          '-moz-appearance': 'textfield',
+          '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {
+            appearance: 'none',
+          },
         },
       },
     },

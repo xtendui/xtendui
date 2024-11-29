@@ -10,7 +10,7 @@
       @apply p-4 md:p-6 lg:p-8;
     }
     .docs_iframe-gradient& {
-      @apply flex items-center justify-center bg-gradient-to-r from-primary-100 via-primary-200 to-primary-300;
+      @apply flex items-center justify-center bg-linear-to-r from-primary-100 via-primary-200 to-primary-300;
     }
   }
 }
@@ -194,7 +194,7 @@ pre {
       height: 0;
       border: 0;
       height: 30rem;
-      @screen lg {
+      @media (width >= theme(--breakpoint-lg)) {
         height: 36rem;
       }
       #docs_open-full & {
@@ -247,10 +247,10 @@ pre {
   bottom: 0;
   right: 0;
   @apply bg-white;
-  @screen lg {
+  @media (width >= theme(--breakpoint-lg)) {
     margin-left: 20rem;
   }
-  @screen xl {
+  @media (width >= theme(--breakpoint-xl)) {
     margin-left: 20rem;
   }
   .docs_demo_tabs_right {
@@ -276,7 +276,7 @@ pre {
 }
 
 #docs_open-full-content {
-  @apply h-screen !h-[100svh];
+  @apply h-screen h-[100svh]!;
   display: flex;
   pre {
     max-height: none;
@@ -287,9 +287,9 @@ pre {
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 6px;
-  border: 2px solid theme('colors.gray.100');
+  border: 2px solid var(--color-gray-100);
   th, td {
-    border: 1px solid theme('colors.gray.100');
+    border: 1px solid var(--color-gray-100);
   }
   th, td:first-child {
     @apply py-2 px-4 text-13 font-medium leading-snug tracking-wider uppercase text-left;
@@ -298,7 +298,7 @@ pre {
     @apply py-2.5 px-5 text-sm leading-snug;
   }
   code {
-    @media (max-width: calc(theme('screens.md') - 1px)) {
+    @media (max-width: calc(theme(--breakpoint-md) - 1px)) {
       white-space: nowrap;
     }
   }
