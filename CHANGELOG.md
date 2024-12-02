@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/xtendui/xtendui/compare/v2.2.2...v2.2.3) (2024-12-02)
+
+
+### Bug Fixes
+
+* **googlelocator:** fix googlelocator custom icon ([f542b4c](https://github.com/xtendui/xtendui/commit/f542b4ccf08110b0484696d1500702127c25ed13))
+
 ## [2.2.2](https://github.com/xtendui/xtendui/compare/v2.2.1...v2.2.2) (2024-12-02)
 
 
