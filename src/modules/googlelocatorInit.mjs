@@ -343,12 +343,18 @@ export class GooglelocatorInit {
           (self.radius && distance <= self.radius) ||
           (self.viewport && self.viewport.contains(latLng))
         ) {
+          const customIcon = marker.icon || options.map.icon
+          let customIconImg
+          if (customIcon) {
+            customIconImg = document.createElement('img');
+            customIconImg.src = customIcon
+          }
           const loc = new google.maps.marker.AdvancedMarkerElement({
             map: self.map,
             position: latLng,
             title: marker.name,
+            content: customIconImg,
           })
-          loc.icon = marker.icon || options.map.icon
           loc.animation = marker.animation || options.map.animation
           loc.distance = distance
           loc.marker = marker
