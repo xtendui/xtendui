@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/xtendui/xtendui/compare/v2.2.1...v2.2.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* **googlelocator:** migrated googlelocator marker to AdvancedMarkerElement ([f9f6166](https://github.com/xtendui/xtendui/commit/f9f616685baffc96cbe90c5395e3188fc359a6cc))
+
 ## [2.2.1](https://github.com/xtendui/xtendui/compare/v2.2.0...v2.2.1) (2024-09-30)
 
 
