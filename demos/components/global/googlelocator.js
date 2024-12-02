@@ -22,6 +22,7 @@ const initGooglelocator = ({ ref }) => {
     //autocompleteOptions: { types: ['(regions)'] }, // search autocomplete options
     //autocompleteServiceOptions: { types: ['(regions)'] }, // search autocomplete service options
     map: {
+      mapId: 'customMapId',
       center: { lat: 40, lng: -74 },
       zoom: 2.5,
       zoomMin: 14,
@@ -198,7 +199,9 @@ Xt.mount({
 
     const lang = document.documentElement.getAttribute('lang')
     Xt.script({
-      url: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry&language=${lang}&callback=googlelocatorGmapsLoaded`,
+      url: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZt9TUgS20QyAbAAL-X3tJIKVLEaCrts&v=3&libraries=places,geometry,marker&language=${lang}&loading=async&callback=googlelocatorGmapsLoaded`,
+      defer: true,
+      async: true,
     })
   },
 })
