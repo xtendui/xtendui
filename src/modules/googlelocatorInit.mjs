@@ -346,7 +346,7 @@ export class GooglelocatorInit {
           const customIcon = marker.icon || options.map.icon
           let customIconImg
           if (customIcon) {
-            customIconImg = document.createElement('img');
+            customIconImg = document.createElement('img')
             customIconImg.src = customIcon
           }
           const loc = new google.maps.marker.AdvancedMarkerElement({
