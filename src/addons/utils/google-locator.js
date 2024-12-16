@@ -244,16 +244,22 @@ class Googlelocator {
         )
         const distance = google.maps.geometry.spherical.computeDistanceBetween(self.position, latLng)
         if ((!self.viewport || self.viewport.contains(latLng)) && (!self.radius || distance <= self.radius)) {
-          const loc = new google.maps.Marker({
+          const customIcon = marker.icon || options.map.icon
+          let customIconImg
+          if (customIcon) {
+            customIconImg = document.createElement('img');
+            customIconImg.src = customIcon
+          }
+          const loc = new google.maps.marker.AdvancedMarkerElement({
             map: self.map,
             position: latLng,
             title: marker.name,
-            icon: marker.icon || options.map.icon,
-            animation: marker.animation || options.map.animation,
-            distance: distance,
-            marker: marker,
-            index: index,
+            content: customIconImg,
           })
+          loc.animation = marker.animation || options.map.animation
+          loc.distance = distance
+          loc.marker = marker
+          loc.index = index
           bounds.extend(latLng)
           self.locations.push(loc)
           loc.addListener('click', () => {
@@ -599,6 +605,7 @@ Googlelocator.optionsDefault = {
     },
   ],
   map: {
+    mapId: null,
     center: { lat: 0, lng: 0 },
     zoom: 2.5,
     zoomMin: 14,
