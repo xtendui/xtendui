@@ -1,6 +1,6 @@
 /* global google */
 import { Xt } from 'xtend-library/src/xt.js'
-import MarkerClusterer from '@google/markerclusterer'
+import { MarkerClusterer } from '@googlemaps/markerclusterer'
 
 /**
  * Googlelocator
@@ -282,7 +282,7 @@ class Googlelocator {
       if (self.cluster) {
         self.cluster.clearMarkers()
       }
-      self.cluster = new MarkerClusterer(self.map, self.locations, options.map.cluster)
+      self.cluster = new MarkerClusterer({ map: self.map, markers: self.locations, ...options.map.cluster })
     }
     // populate
     if (self.locations.length) {
