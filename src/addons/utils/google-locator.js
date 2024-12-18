@@ -387,8 +387,10 @@ class Googlelocator {
     const self = this
     const options = self.options
     // stop animation
-    loc.content.classList.remove('marker-animate')
-    self.animatingLoc = null
+    if (self.animatingLoc) {
+      self.animatingLoc.content.classList.remove('marker-animate')
+      self.animatingLoc = null
+    }
     // animation
     loc.content.classList.add('marker-animate')
     self.animatingLoc = loc
