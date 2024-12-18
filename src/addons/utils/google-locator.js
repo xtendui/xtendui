@@ -390,7 +390,6 @@ class Googlelocator {
     loc.content.classList.remove('marker-animate')
     self.animatingLoc = null
     // animation
-    console.log(loc.content)
     loc.content.classList.add('marker-animate')
     self.animatingLoc = loc
     // activation
