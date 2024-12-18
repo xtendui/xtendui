@@ -387,16 +387,12 @@ class Googlelocator {
     const self = this
     const options = self.options
     // stop animation
-    if (self.animatingLoc) {
-      self.animatingLoc.setAnimation(null)
-      self.animatingLoc = null
-    }
+    loc.content.classList.remove('marker-animate')
+    self.animatingLoc = null
     // animation
-    const anim = type === 'marker' ? options.events.animateMarkerClick : type === 'result' ? options.events.animateMarkerResultClick : null
-    if (anim) {
-      loc.setAnimation(anim)
-      self.animatingLoc = loc
-    }
+    console.log(loc.content)
+    loc.content.classList.add('marker-animate')
+    self.animatingLoc = loc
     // activation
     const item = self.itemsContainer.querySelector('[data-xt-googlelocator-index="' + loc.index + '"]')
     const old = self.itemsContainer.querySelector('[data-xt-googlelocator-index].active')
@@ -552,8 +548,6 @@ Googlelocator.optionsDefault = {
   locateRadius: 25000,
   seachMapBounds: false,
   events: {
-    animateMarkerClick: false,
-    animateMarkerResultClick: false,
     infoWindowMarkerClick: true,
     infoWindowMarkerResultClick: false,
   },
