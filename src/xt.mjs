@@ -437,9 +437,10 @@ if (typeof window !== 'undefined') {
    * @param {Boolean} params.observer If load with IntersectionObserver
    */
   Xt._load = ({ container, name, suffix, observer } = {}) => {
+    const modules = import.meta.glob('./modules/*.mjs');
     let promise
     if (!Xt[name].loaded[name]) {
-      promise = import(`./modules/${name.toLowerCase()}${suffix}.mjs`).then(module => {
+      promise = modules[`./modules/${name.toLowerCase()}${suffix}.mjs`]().then(module => {
         if (!Xt[name].loaded[name]) {
           Xt[name].loaded[name] = true
           Object.setPrototypeOf(Xt[name].prototype, module[`${name}${suffix}`].prototype)
