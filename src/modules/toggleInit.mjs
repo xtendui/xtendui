@@ -3309,13 +3309,14 @@ export class ToggleInit {
       // aria-labelledby
       if (options.a11y.labelTargets) {
         for (const tr of self.targets) {
-          const els = self.getElements({ el: tr })
-          let str = ''
-          for (const el of els) {
-            str += `${el.getAttribute('id')} `
+          if (!tr.getAttribute('aria-label')) {
+            const els = self.getElements({ el: tr })
+            let str = ''
+            for (const el of els) {
+              str += `${el.getAttribute('id')} `
+            }
+            tr.setAttribute('aria-labelledby', str.trim())
           }
-          tr.setAttribute('aria-labelledby', str.trim())
-          tr.removeAttribute('aria-label')
         }
       }
     }

@@ -10,8 +10,6 @@ date: "2005-10-10"
 
 This components follows A11y standards so **aria attributes and keyboard interactions are managed automatically**.
 
-> For accessibility purpose use an accessible name assigning `[aria-label]` or `[aria-labelledby]` on `.xt-overlay`.
-
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |

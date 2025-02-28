@@ -68,7 +68,7 @@ Overlay.optionsDefault = {
   a11y: {
     role: 'dialog',
     labelElements: false,
-    labelTargets: false,
+    labelTargets: true,
     controls: true,
     selected: false,
     expanded: true,

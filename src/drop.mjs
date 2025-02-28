@@ -74,10 +74,10 @@ Drop.optionsDefault = {
   a11y: {
     role: 'popup',
     labelElements: false,
-    labelTargets: false,
+    labelTargets: true,
     controls: true,
     selected: false,
-    expanded: true,
+    expanded: false,
     live: true,
     disabled: true,
     keyboard: true,
