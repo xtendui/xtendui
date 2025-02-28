@@ -11,7 +11,7 @@ on:
       - completed
 
 env:
-  NODE: 20.x
+  NODE: 22.x
 
 jobs:
   release:

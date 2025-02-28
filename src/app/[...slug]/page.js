@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(props) {
-  const slug = props.params.slug.join('/')
+  let { slug } = await props.params
+  slug = slug.join('/')
   const posts = await getPosts()
   const post = posts.filter(x => x.slug === slug)[0]
 
@@ -50,7 +51,8 @@ export async function generateMetadata(props) {
 }
 
 export default async function Page(props) {
-  const slug = props.params.slug.join('/')
+  let { slug } = await props.params
+  slug = slug.join('/')
   const assets = await getAssets()
   const posts = await getPosts()
   const post = posts.filter(x => x.slug === slug)[0]
