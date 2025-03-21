@@ -25,6 +25,7 @@ module.exports = {
   component: theme => ({
     '.xt-html:not(.xt-optout-scroll)': {
       '@apply xt-overflow-main': '',
+      scrollbarGutter: 'stable',
     },
     '.xt-body:not(.xt-optout-scroll)': {
       '@apply xt-overflow-main overflow-y-scroll overflow-x-hidden': '',
