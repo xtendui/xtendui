@@ -10,7 +10,7 @@ on:
       - completed
 
 env:
-  NODE: 22.x
+  NODE: 20.x
 
 jobs:
   deploy:
