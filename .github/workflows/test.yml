@@ -7,7 +7,7 @@ on:
     branches: ['*']
 
 env:
-  NODE: 20.x
+  NODE: 22.x
 
 jobs:
   codeql:
