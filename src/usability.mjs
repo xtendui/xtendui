@@ -29,9 +29,11 @@ if (typeof window !== 'undefined') {
           mount: ({ ref }) => {
             if (ref.closest(Xt.usabilityIgnore)) return
             // h1
-            const h1 = ref.querySelector('h1')
-            if (!h1) {
+            const h1 = ref.querySelectorAll('h1')
+            if (!h1.length) {
               console.warn('Xtend UI usability detected no "h1" in the page', ref)
+            } else if (h1.length > 1) {
+              console.warn('Xtend UI usability detected multiple "h1" in the page', ref)
             }
           },
         })
