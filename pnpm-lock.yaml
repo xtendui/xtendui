@@ -118,7 +118,7 @@ importers:
         specifier: ^4.0.3
         version: 4.0.3
       gsap:
-        specifier: ^3.12.7
+        specifier: ^3.12.5
         version: 3.12.7
       mini-css-extract-plugin:
         specifier: ^2.9.2

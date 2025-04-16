@@ -105,7 +105,7 @@
     "gh-pages": "^6.3.0",
     "glob": "^11.0.1",
     "gray-matter": "^4.0.3",
-    "gsap": "^3.12.7",
+    "gsap": "^3.12.5",
     "mini-css-extract-plugin": "^2.9.2",
     "next": "15.3.0",
     "path": "^0.12.7",

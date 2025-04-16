@@ -19,6 +19,8 @@ describe('demos/components/toggle/animation-queue', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -87,6 +89,8 @@ describe('demos/components/toggle/animation-noqueue', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -146,6 +150,8 @@ describe('demos/components/toggle/animation-inverse', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -196,6 +202,8 @@ describe('demos/components/toggle/animation-duration-delay', function () {
     container = this.container[0]
     cy.get(container)
       .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
       .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
@@ -283,6 +291,8 @@ describe('demos/components/toggle/animation-css', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -356,6 +366,8 @@ describe('demos/components/slider/animation-css', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -412,6 +424,8 @@ describe('demos/components/toggle/animation-js', function () {
     container = this.container[0]
     cy.get(container)
       .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
       .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
@@ -478,6 +492,8 @@ describe('demos/components/slider/animation-js', function () {
     container = this.container[0]
     cy.get(container)
       .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
       .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
@@ -547,6 +563,8 @@ describe('demos/components/toggle/animation-collapse-initial', function () {
     container = this.container[0]
     cy.get(container)
       .closest('.docs_demo')
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
       .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 

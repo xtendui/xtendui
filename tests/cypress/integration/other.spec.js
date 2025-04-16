@@ -23,6 +23,8 @@ describe('demos/hidden/test/mount-unmount', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -639,9 +641,13 @@ describe('demos/components/infinitescroll/usage', function () {
                   doc.scrollingElement.scrollTo(0, 0)
                   cy.wait(500).then(() => {
                     win.dispatchEvent(new Event('scroll'))
-                    expect(doc.querySelector('[data-xt-infinitescroll-pagination]').innerText).to.equal('Page 2 of 4')
-                    expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-up]') })).to.equal(true)
-                    expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-down]') })).to.equal(true)
+                    cy.get('.demo--infinitescroll .infinitescroll')
+                      .should('have.attr', 'data-xt-infinitescroll-init', '') // racecondition
+                      .then(() => {
+                        expect(doc.querySelector('[data-xt-infinitescroll-pagination]').innerText).to.equal('Page 2 of 4')
+                        expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-up]') })).to.equal(true)
+                        expect(win.Xt.visible({ el: doc.querySelector('[data-xt-infinitescroll-down]') })).to.equal(true)
+                      })
                   })
                 })
             })
