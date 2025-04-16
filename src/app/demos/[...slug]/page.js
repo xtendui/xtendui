@@ -85,14 +85,16 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(props) {
-  const slug = props.params.slug.join('/')
+  let { slug } = await props.params
+  slug = slug.join('/')
   return {
     title: `demos/${slug}`,
   }
 }
 
-export default function Page(props) {
-  const slug = props.params.slug.join('/')
+export default async function Page(props) {
+  let { slug } = await props.params
+  slug = slug.join('/')
   if (!demosIframe.includes(slug)) return <></>
   return (
     <>
