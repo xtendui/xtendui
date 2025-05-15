@@ -11,28 +11,7 @@ const html = /* HTML */ `
           <form class="text-sm">
             <div class="xt-row xt-row-x-6 xt-row-y-4">
               <div class="w-full">
-                <div class="xt-list flex-nowrap">
-                  <div class="inline-flex flex-auto">
-                    <input
-                      type="text"
-                      class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputGray()}"
-                      aria-label="Search"
-                      placeholder="Search"
-                      data-xt-googlelocator-search-input />
-                    <button
-                      type="button"
-                      class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                      data-xt-googlelocator-locate-btn>
-                      ${classes.iconLocate({ classes: 'text-xl -my-1' })}
-                    </button>
-                    <button
-                      type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                      data-xt-googlelocator-search-btn>
-                      ${classes.iconSearch({ classes: 'text-xl -my-1' })}
-                    </button>
-                  </div>
-                </div>
+                <div data-xt-googlelocator-search-input-container></div>
               </div>
 
               <div class="w-full">
@@ -86,6 +65,15 @@ const html = /* HTML */ `
                     data-xt-googlelocator-filter />
                   <span class="${classes.checkContent()}">Favourite</span>
                 </label>
+              </div>
+
+              <div class="w-full">
+                <button
+                  type="button"
+                  class="xt-button w-full ${classes.buttonMd()} rounded${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+                  data-xt-googlelocator-locate-btn>
+                  Locate ${classes.iconLocate({ classes: 'text-xl ml-1' })}
+                </button>
               </div>
             </div>
           </form>

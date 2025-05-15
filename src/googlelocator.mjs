@@ -37,9 +37,9 @@ class Googlelocator {
   map
   info
   cluster
+  searchInputContainer
   searchInput
   search
-  searchBtn
   filters
   position
   viewport
@@ -92,8 +92,7 @@ Googlelocator.optionsDefault = {
   // element
   elements: {
     loader: '[data-xt-googlelocator-loader]',
-    searchInput: '[data-xt-googlelocator-search-input]',
-    searchBtn: '[data-xt-googlelocator-search-btn]',
+    searchInputContainer: '[data-xt-googlelocator-search-input-container]',
     map: '[data-xt-googlelocator-map]',
     itemsTemplate: '[data-xt-googlelocator-items-template]',
     itemsContainer: '[data-xt-googlelocator-items-container]',
