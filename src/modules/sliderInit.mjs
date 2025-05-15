@@ -1339,11 +1339,20 @@ export class SliderInit extends Xt.Toggle {
    */
   _logicDragreset() {
     const self = this
+    const options = self.options
     // set direction
-    self.direction = self.direction * -1
+    // inverse of default one
+    self.direction = -Math.sign(self.drag._initial - self.drag._final)
     self._inverse = self.direction < 0
+    // calc
+    const first = self._groups[self.drag._wrapFirst].target
+    const last = self._groups[self.drag._wrapLast].target
+    const min = Xt.dataStorage.get(first, `${self.ns}GroupLeft`)
+    const max = Xt.dataStorage.get(last, `${self.ns}GroupLeft`)
+    const maxCheck = options.mode !== 'absolute' ? max : Xt.dataStorage.get(first, `${self.ns}GroupWidth`)
     // ratio
-    self.drag._ratio = self.drag._ratioInverse
+    // inverse of default one
+    self.drag._ratio = 1 - Math.abs(self.drag._final - self.drag._initial) / Math.abs(maxCheck - min)
     self.drag._ratioInverse = 1 - self.drag._ratio
     // val
     self.drag._final = self.drag._initial
