@@ -43,7 +43,7 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `locateText:String`                          | `'Locate'`        | Locate text for input            |
 | Option                    | `submitDelay:Number`                          | `250`        | Delay before each submit to show loader before js loop stops the render            |
 | Option                    | `elements.loader:Query`                          | `'[data-xt-googlelocator-loader]'`        | Container query for loader             |
-| Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Container query for searh input             |
+| Option                    | `elements.searchInputContainer:Query`                          | `'[data-xt-googlelocator-search-input-container]'`        | Container query for searh input             |
 | Option                    | `elements.searchBtn:Query`                          | `'[data-xt-googlelocator-search-btn]'`        | Container query for search button             |
 | Option                    | `elements.map:Query`                          | `'[data-xt-googlelocator-map]'`        | Container query for google map             |
 | Option                    | `elements.itemsTemplate:Query`                          | `'[data-xt-googlelocator-items-template]'`        | Container query for template cloned for maps items             |
@@ -172,6 +172,7 @@ Access properties by getting [self object](/hidden/googlelocator/#util).
 | Property                   | `self.map:Object`       | Map object             |
 | Property                   | `self.info:Object`       | InfoWindow object             |
 | Property                   | `self.cluster:Object`       | MarkerClusterer object             |
+| Property                   | `self.searchInputContainer:Node`       | Search input container node             |
 | Property                   | `self.searchInput:Node`       | Search input node             |
 | Property                   | `self.search:Object`       | Search object             |
 | Property                   | `self.searchBtn:Node`       | Search button node             |
