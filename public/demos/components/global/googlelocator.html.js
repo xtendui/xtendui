@@ -13,12 +13,7 @@ const html = /* HTML */ `
               <div class="w-full">
                 <div class="xt-list flex-nowrap">
                   <div class="inline-flex flex-auto">
-                    <input
-                      type="text"
-                      class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputGray()}"
-                      aria-label="Search"
-                      placeholder="Search"
-                      data-xt-googlelocator-search-input />
+                    <div class="w-full [&_>*]:w-full" data-xt-googlelocator-search-input-container></div>
                     <button
                       type="button"
                       class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"

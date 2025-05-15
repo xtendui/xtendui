@@ -57,8 +57,9 @@ export class GooglelocatorInit {
     // init
     self.mapElement = self.container.querySelector(options.elements.map)
     self.map = new google.maps.Map(self.mapElement, options.map)
-    self.searchInput = self.container.querySelector(options.elements.searchInput)
-    self.search = new google.maps.places.Autocomplete(self.searchInput, self.options.autocompleteOptions)
+    self.searchInputContainer = self.container.querySelector(options.elements.searchInputContainer)
+    self.searchInput = new google.maps.places.PlaceAutocompleteElement()
+    self.searchInputContainer.appendChild(self.searchInput)
     const searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self._searchSubmit.bind(self))
     self.searchInput.addEventListener('keypress', searchHandler)
     // submit triggers places autocomplete
@@ -76,7 +77,7 @@ export class GooglelocatorInit {
       })
     }
     // search place
-    google.maps.event.addListener(self.search, 'place_changed', self._placeChanged.bind(self))
+    self.searchInput.addEventListener('gmp-select', self._placeChanged.bind(self))
     // info
     if (options.infoWindow) {
       self.info = new google.maps.InfoWindow(options.infoWindow)
@@ -164,7 +165,7 @@ export class GooglelocatorInit {
   /**
    * placeChanged
    */
-  _placeChanged() {
+  async _placeChanged({ placePrediction }) {
     const self = this
     const options = self.options
     // disabled
@@ -172,16 +173,15 @@ export class GooglelocatorInit {
       return
     }
     // search place
-    let place = self.search.getPlace()
-    if (place && place.name && place.name !== '') {
-      if (place.geometry) {
-        // place
-        self.position = place.geometry.location
-        self.viewport = place.geometry.viewport
-        self.radius = options.searchRadius
-        self.submit()
-        return
-      }
+    let place = placePrediction.toPlace()
+    await place.fetchFields({ fields: ['displayName', 'viewport', 'location'] })
+    if (place && place.displayName && place.displayName !== '') {
+      // place
+      self.position = place.location
+      self.viewport = place.viewport
+      self.radius = options.searchRadius
+      self.submit()
+      return
     }
     // locate prediction
     if (self._locateCache && self._locateCache.value === self.searchInput.value) {
@@ -211,8 +211,8 @@ export class GooglelocatorInit {
             results => {
               place = results
               self.searchInput.value = place.formatted_address
-              self.position = place.geometry.location
-              self.viewport = place.geometry.viewport
+              self.position = place.location
+              self.viewport = place.viewport
               self.radius = options.searchRadius
               self._predictionCache = {
                 value: self.searchInput.value,
@@ -292,7 +292,7 @@ export class GooglelocatorInit {
       self._submitCurrent({ empty: true })
     } else {
       // submit triggers places autocomplete
-      google.maps.event.trigger(self.search, 'place_changed')
+      self.searchInput.dispatchEvent(new CustomEvent('gmp-select'))
     }
   }
 
@@ -696,7 +696,7 @@ export class GooglelocatorInit {
       self.repeatElement.removeEventListener('click', repeatHandler)
     }
     // search place
-    google.maps.event.removeListener(self.search, 'place_changed', self._placeChanged.bind(self))
+    self.searchInput.removeEventListener('gmp-select', self._placeChanged.bind(self))
     // info
     if (options.infoWindow) {
       google.maps.event.removeListener(self.info, 'closeclick', self._infoClose.bind(self))
