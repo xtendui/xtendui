@@ -9,7 +9,7 @@ const html = /* HTML */ `
       Overlay
     </button>
 
-    <div aria-label="Modal" class="xt-overlay group" id="overlay--mount-unmount">
+    <div class="xt-overlay group" id="overlay--mount-unmount">
       <div class="xt-backdrop z-below bg-gray-900 transition opacity-0 group-in:opacity-25"></div>
       <div class="xt-overlay-container max-w-3xl">
         <div

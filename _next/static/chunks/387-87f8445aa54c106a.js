@@ -9306,7 +9306,7 @@
         Overlay
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+      <div class="xt-overlay *** group ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -9375,7 +9375,7 @@
         overlay 2
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -9437,7 +9437,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -9499,7 +9499,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -9572,7 +9572,7 @@
         Overlay
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+      <div class="xt-overlay *** group ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner">
@@ -9642,7 +9642,7 @@
         overlay 2
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -9705,7 +9705,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -9768,7 +9768,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -9859,7 +9859,7 @@
         overlay 2
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner" data-xt-overlay-inner>
@@ -9921,7 +9921,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner" data-xt-overlay-inner>
@@ -9983,7 +9983,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div class="xt-overlay-inner" data-xt-overlay-inner>
@@ -10073,7 +10073,7 @@
         overlay 2
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -10136,7 +10136,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -10199,7 +10199,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -10290,7 +10290,7 @@
         overlay 2
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group0">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -10353,7 +10353,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group1">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -10416,7 +10416,7 @@
         </div>
       </div>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
+      <div class="xt-overlay *** group ***" data-xt-overlay-target data-xt-group="group2">
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -10490,7 +10490,7 @@
         Overlay
       </button>
 
-      <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+      <div class="xt-overlay *** group ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-gray-900 *** transition opacity-0 group-in:opacity-25 ***"></div>
         <div class="xt-overlay-container max-w-3xl">
           <div
@@ -12114,7 +12114,7 @@
         overlay 0
       </button>
 
-      <div aria-label="Modal" class="*** xt-overlay ***" data-xt-overlay-target>
+      <div class="*** xt-overlay ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div class="*** xt-overlay-container *** max-w-3xl">
           <div class="*** xt-overlay-inner ***">
@@ -12158,7 +12158,7 @@
         overlay 1
       </button>
 
-      <div aria-label="Modal" class="*** xt-overlay ***" data-xt-overlay-target>
+      <div class="*** xt-overlay ***" data-xt-overlay-target>
         <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div class="*** xt-overlay-container *** max-w-3xl">
           <div class="*** xt-overlay-inner ***">
@@ -12198,7 +12198,7 @@
   </div>
 `}},41503:function(t,e,i){"use strict";i.r(e),i(77302),i(4021)},35048:function(t,e,i){"use strict";i.r(e),i.d(e,{object:function(){return o}});let a=i(4646).S,o={html:`
   <div class="demo--overlay-usage-self">
-    <div aria-label="Modal" class="*** xt-overlay *** *** on ***" data-xt-overlay>
+    <div class="*** xt-overlay *** *** on ***" data-xt-overlay>
       <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
       <div class="*** xt-overlay-container *** max-w-3xl">
         <div class="*** xt-overlay-inner ***">
@@ -12250,7 +12250,7 @@
         Overlay same
       </button>
 
-      <div aria-label="Modal" class="*** xt-overlay ***" id="overlay--unique">
+      <div class="*** xt-overlay ***" id="overlay--unique">
         <div class="xt-backdrop z-below bg-gray-900 opacity-25"></div>
         <div class="*** xt-overlay-container *** max-w-3xl">
           <div class="*** xt-overlay-inner ***">
@@ -24456,7 +24456,7 @@
       Overlay
     </button>
 
-    <div aria-label="Modal" class="xt-overlay group" id="overlay--mount-unmount">
+    <div class="xt-overlay group" id="overlay--mount-unmount">
       <div class="xt-backdrop z-below bg-gray-900 transition opacity-0 group-in:opacity-25"></div>
       <div class="xt-overlay-container max-w-3xl">
         <div
@@ -24503,7 +24503,7 @@
           Overlay
         </button>
 
-        <div aria-label="Modal" class="xt-overlay group" id="overlay--scrolltrigger-matches">
+        <div class="xt-overlay group" id="overlay--scrolltrigger-matches">
           <div class="xt-backdrop z-below bg-gray-900 transition opacity-0 group-in:opacity-25"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
@@ -24797,7 +24797,7 @@
           Contact
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -24921,7 +24921,7 @@
           Newsletter
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -25039,7 +25039,7 @@
           Menu
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-500 ease-in-out-quint group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -25835,7 +25835,7 @@
           Contact
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -25959,7 +25959,7 @@
           Newsletter
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -26076,7 +26076,7 @@
           Menu
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -26636,7 +26636,7 @@
           Contact
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -26761,7 +26761,7 @@
           Newsletter
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -26879,7 +26879,7 @@
           Menu
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-quint group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -27424,7 +27424,7 @@
           Contact
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -27548,7 +27548,7 @@
           Newsletter
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -27665,7 +27665,7 @@
           Menu
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -28308,7 +28308,7 @@
           Contact
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -28431,7 +28431,7 @@
           Newsletter
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -28548,7 +28548,7 @@
           Menu
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
@@ -29104,7 +29104,7 @@
                   </div>
                 </div>
 
-                <div aria-label="Modal" class="xt-overlay group" id="overlay--product-images">
+                <div class="xt-overlay group" id="overlay--product-images">
                   <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity duration-300 ease-in-out-cubic group-in:delay-200 group-in:ease-out-quint group-in:opacity-25 ***"></div>
                   <div class="xt-overlay-container *** p-0 ***">
                     <button
@@ -30187,7 +30187,7 @@
           Contact
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
@@ -30310,7 +30310,7 @@
           Newsletter
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
@@ -30427,7 +30427,7 @@
           Menu
         </button>
 
-        <div aria-label="Modal" class="xt-overlay *** group ***" data-xt-overlay-target>
+        <div class="xt-overlay *** group ***" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** opacity-0 transition-opacity ease-out-quint group-in:duration-300 group-out:duration-100 group-in:opacity-25 ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner *** transition opacity-0 scale-95 group-in:opacity-100 group-in:scale-100 group-out:scale-105 ***">
@@ -33186,58 +33186,58 @@
   </div>
 `,container:!0,gradient:!0}},61235:function(t,e,i){"use strict";i.r(e),i(77302),i(81137)},4646:function(t,e,i){"use strict";i.d(e,{S:function(){return a}});let a={textDefault:()=>"text-gray-900 xt-links-default",textInverse:()=>"text-white xt-links-inverse",bgBlur:()=>"backdrop-filter backdrop-blur-sm backdrop-saturate-50",docsFloat:()=>"rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0",cardToggle:()=>"bg-white rounded-full text-13 py-2 px-3 font-medium shadow",buttonSlider:()=>"p-2 min-w-[1.25rem] h-5 rounded-full text-11 text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all",buttonCode:()=>"text-opacity-[90%] font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100",buttonCodeWhite:()=>"font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20",buttonRadius:()=>"-md",buttonXs:()=>"py-1.5 px-2 text-12",buttonSm:()=>"py-2 px-3 text-13",buttonMd:()=>"py-2.5 px-3.5 text-sm",buttonLg:()=>"py-3 px-4 text-base",buttonLower:()=>"font-medium leading-snug",buttonUpper:()=>"font-medium leading-snug tracking-wider uppercase",buttonGray:()=>"text-gray-900 bg-gray-100",buttonGrayAnim:()=>"transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200",buttonGrayAnimGroup:()=>"group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200",buttonPrimary:()=>"text-white bg-primary-500",buttonPrimaryAnim:()=>"transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600",buttonPrimaryAnimGroup:()=>"group-hover:text-white group-hover:bg-primary-600 group-active:text-white group-active:bg-primary-700 group-on:text-white group-on:bg-primary-600",buttonBorderGray:()=>"text-gray-900 border-2 border-gray-200 hover:border-transparent active:border-transparent on:border-transparent",buttonTextAnim:()=>"transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500",buttonRing:()=>"ring-2 ring-primary-200",buttonRingAnim:()=>"transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300",buttonCloseOutsideAnim:()=>"transition md:text-white md:bg-primary-500 md:hover:bg-primary-600",cardRadius:()=>"-2xl",cardSm:()=>"p-6 sm:p-8 text-sm",cardMd:()=>"p-7 sm:p-9 text-base",cardLg:()=>"p-8 sm:p-10 text-base sm:text-lg",cardBlack:()=>"bg-black",cardWhite:()=>"bg-white",cardWhiteAccent:()=>"bg-primary-100",cardGray:()=>"bg-gray-100",cardGrayInteractive:()=>"transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200",cardPrimary:()=>"bg-primary-500",cardPrimaryAccent:()=>"bg-primary-600",cardPrimaryInteractive:()=>"transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600",cardSlideRadius:()=>"-md",cardSlideDesign:()=>"bg-gray-100 border-2 border-transparent transition group-in:border-gray-200",cardSlideContent:()=>"p-8 text-base text-center",groupMd:()=>"p-3",groupButtonRadius:()=>"-md",groupButtonSm:()=>"py-1 px-2.5 text-13",groupButtonMd:()=>"py-1.5 px-3 text-sm",groupButtonLg:()=>"py-2 px-3.5 text-base",groupButton:()=>"flex-auto font-medium leading-snug",groupButtonGray:()=>"text-gray-900 bg-gray-100",groupButtonPrimary:()=>"text-white bg-primary-500",tooltipRadius:()=>"-md",tooltipShadow:()=>"shadow-md",tooltipSm:()=>"py-1 px-2 text-11",tooltipMd:()=>"py-2 px-2.5 text-13",tooltipLg:()=>"py-2.5 px-4 text-base",tooltipText:()=>"font-medium",dropRadius:()=>"-md",dropShadow:()=>"shadow-lg",overlayRadius:()=>"-2xl",overlayShadow:()=>"shadow-xl",badgeRadius:()=>"-xs",badgeSm:()=>"py-2 px-2.5 text-11",badgeMd:()=>"py-3 px-3.5 text-13",badgeLg:()=>"py-3.5 px-4 text-base",badgeGray:()=>"text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100",badgePrimary:()=>"text-white font-medium leading-snug tracking-wider uppercase bg-primary-500",slide:()=>"group",loader:()=>"xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden",spinner:()=>"xt-spinner absolute inset-0 m-auto",filler:()=>"xt-filler absolute inset-0 m-auto",checkLabel:()=>"cursor-pointer inline-flex items-baseline",checkContent:()=>"ml-4",checkGray:()=>"bg-gray-200 border border-transparent transition checked:bg-primary-500",checkPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600",checkRadius:()=>"rounded-md",radioGray:()=>"bg-gray-200 border border-transparent transition checked:bg-primary-500",radioPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600",radioRadius:()=>"rounded-full",switchGray:()=>"bg-gray-200 border border-transparent transition-all checked:bg-primary-500",switchPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition-all checked:bg-primary-600",switchRadius:()=>"rounded-full",inputGray:()=>"py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none",inputPrimary:()=>"py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none",inputUnderline:()=>"py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none",labelGray:()=>"font-medium text-gray-700",labelPrimary:()=>"font-medium text-white",label:()=>"block",input:()=>"block w-full",inputRadius:()=>"rounded-md",textarea:()=>"h-20 max-h-48",note:()=>"text-gray-900 text-opacity-[90%] text-13 leading-snug",h1Display:()=>"mt-10 mb-4 xt-my-auto font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none",h1:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-3xl md:text-4xl md:leading-none lg:text-5xl lg:leading-none",h2:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-2xl md:text-3xl md:leading-none lg:text-4xl lg:leading-none",h3:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl md:text-2xl md:leading-none lg:text-3xl lg:leading-none",h4:()=>"mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl lg:text-2xl lg:leading-tight",h5:()=>"mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl",h6:()=>"mt-5 mb-2 xt-my-auto font-bold leading-tight tracking-tight normal-case text-lg",hBlock:()=>"mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center",iconX:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`},iconSearch:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`},iconArrowLeft:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>`},iconArrowRight:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`},iconArrowUp:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>`},iconArrowDown:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>`},iconChevronLeft:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>`},iconChevronRight:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`},iconChevronUp:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>`},iconChevronDown:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`},iconLocate:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`},iconTwitter:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon class="st0" points="21.3,21.1 9.9,2.9 2.7,2.9 14.1,21.1 "/><line class="st0" x1="2.7" y1="21.1" x2="9.9" y2="14.5"/><line class="st0" x1="14.1" y1="9.5" x2="21.3" y2="2.9"/></svg>`},iconPackage:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`},iconGithub:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>`},iconLink:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`},iconCode:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`},iconMaximize:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>`},iconExternal:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`},iconCopy:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`},iconEdit:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`},iconDownload:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`},iconFile:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>`},iconFiletext:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`},iconMail:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`},iconPhone:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`},iconUsers:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`},iconInfo:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`},iconAlerttriangle:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`},iconCreditcard:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`},iconGlobe:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`},svgSpinner:function(){let{classes:t,dimension:e=120,radius:i=100,dash:a=628}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg viewBox="0 0 ${2*e} ${2*e}" class="absolute" preserveAspectRatio="xMinYMin meet"><circle class="stroke-current origin-center opacity-25" fill="none" stroke-width="30" cx="${e}" cy="${e}" r="${i}" stroke-dasharray="${a}" stroke-dashoffset="0" pathLength="${a}"/></svg><svg viewBox="0 0 ${2*e} ${2*e}"><circle class="stroke-current origin-center relative${t}" fill="none" stroke-width="30" cx="${e}" cy="${e}" r="${i}" stroke-dasharray="${a}" stroke-dashoffset="${a}" pathLength="${a}"/></svg>`}}},69021:function(){},47037:function(){},51812:function(){},52464:function(){},23121:function(){},30541:function(){},40909:function(){},96773:function(){},76762:function(){},35795:function(){},3865:function(){},53363:function(){},64694:function(){},55645:function(){},38024:function(){},62867:function(){},49511:function(){},45635:function(){},56012:function(){},47693:function(){},51754:function(){},32766:function(){},20172:function(){},21672:function(){},56058:function(){},24227:function(){},97785:function(){},83901:function(){},93528:function(){},76120:function(){},33060:function(){},68889:function(){},83618:function(){},87337:function(){},52170:function(){},68660:function(){},85878:function(){},32022:function(){},70735:function(){},44717:function(){},18600:function(){},21413:function(){},40830:function(t,e,i){"use strict";var a=i(77302);i(81137);var o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
- */a.Xt.JSON=o;class s extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}s.constructorName="Drop",s.componentName="xt-drop",s.optionsDefault={elements:"[data-xt-drop-element]",targets:"[data-xt-drop-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-drop",closeauto:!0,openauto:!1,closeDeep:".xt-dismiss",closeInside:".xt-drop, .xt-backdrop",closeOutside:"body",preventEvent:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,position:"bottom-start",inset:!1,positionInner:!1,strategy:"absolute",spaceOverflow:15,spaceFlip:15,spaceArrow:!1,popperjs:!0,zIndex:{targets:{start:700,factor:-1}},a11y:{role:"popup",labelElements:!1,labelTargets:!1,controls:!0,selected:!1,expanded:!0,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:"a, button"}},a.Xt.Drop=s,a.Xt.mount({matches:`[data-${a.Xt.Drop.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Drop.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Drop(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},32352:function(t,e,i){"use strict";var a=i(77302);a.Xt.mount({matches:'label input[type="checkbox"], label input[type="radio"]',mount:t=>{let{ref:e}=t,i=e.getAttribute("name"),o=e.form,s=document.querySelectorAll(`[name="${i}"]`),r=t=>{let e=t.closest("label");t.checked?a.Xt.on({el:e}):a.Xt.off({el:e})},l=()=>{requestAnimationFrame(()=>{for(let t of s)r(t)})};e.addEventListener("change",l),o&&o.addEventListener("reset",l),e.checked&&l()}}),a.Xt.mount({matches:"form:not([novalidate])",mount:t=>{let{ref:e}=t,i=e.elements,o=t=>{let e=t.target;"true"===e.dataset.xtValidate&&(e.classList.add("valid-submit"),e.classList.remove("invalid-submit"),e.removeAttribute("aria-invalid"),e.checkValidity())};for(let t of i)t.addEventListener("input",o),t.addEventListener("change",o);let s=()=>{window.scrollTo(window.scrollX,window.scrollY-a.Xt.innerHeight*a.Xt.formScrollWindowFactor)},r=t=>{let e=t.target;e.classList.remove("valid-submit"),e.classList.add("invalid-submit"),e.setAttribute("aria-invalid",!0),e.dataset.xtValidate="true",a.Xt.formScrollWindowFactor&&addEventListener("scroll",s,{once:!0})},l=()=>{for(let t of i)delete t.dataset.xtValidate};for(let t of i)t.addEventListener("invalid",r),t.addEventListener("submit",l);return()=>{removeEventListener("scroll",s)}}})},7920:function(t,e,i){"use strict";var a=i(77302);/*!
+ */a.Xt.JSON=o;class s extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}s.constructorName="Drop",s.componentName="xt-drop",s.optionsDefault={elements:"[data-xt-drop-element]",targets:"[data-xt-drop-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-drop",closeauto:!0,openauto:!1,closeDeep:".xt-dismiss",closeInside:".xt-drop, .xt-backdrop",closeOutside:"body",preventEvent:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,position:"bottom-start",inset:!1,positionInner:!1,strategy:"absolute",spaceOverflow:15,spaceFlip:15,spaceArrow:!1,popperjs:!0,zIndex:{targets:{start:700,factor:-1}},a11y:{role:"popup",labelElements:!1,labelTargets:!0,controls:!0,selected:!1,expanded:!1,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:"a, button"}},a.Xt.Drop=s,a.Xt.mount({matches:`[data-${a.Xt.Drop.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Drop.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Drop(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},32352:function(t,e,i){"use strict";var a=i(77302);a.Xt.mount({matches:'label input[type="checkbox"], label input[type="radio"]',mount:t=>{let{ref:e}=t,i=e.getAttribute("name"),o=e.form,s=document.querySelectorAll(`[name="${i}"]`),r=t=>{let e=t.closest("label");t.checked?a.Xt.on({el:e}):a.Xt.off({el:e})},l=()=>{requestAnimationFrame(()=>{for(let t of s)r(t)})};e.addEventListener("change",l),o&&o.addEventListener("reset",l),e.checked&&l()}}),a.Xt.mount({matches:"form:not([novalidate])",mount:t=>{let{ref:e}=t,i=e.elements,o=t=>{let e=t.target;"true"===e.dataset.xtValidate&&(e.classList.add("valid-submit"),e.classList.remove("invalid-submit"),e.removeAttribute("aria-invalid"),e.checkValidity())};for(let t of i)t.addEventListener("input",o),t.addEventListener("change",o);let s=()=>{window.scrollTo(window.scrollX,window.scrollY-a.Xt.innerHeight*a.Xt.formScrollWindowFactor)},r=t=>{let e=t.target;e.classList.remove("valid-submit"),e.classList.add("invalid-submit"),e.setAttribute("aria-invalid",!0),e.dataset.xtValidate="true",a.Xt.formScrollWindowFactor&&addEventListener("scroll",s,{once:!0})},l=()=>{for(let t of i)delete t.dataset.xtValidate};for(let t of i)t.addEventListener("invalid",r),t.addEventListener("submit",l);return()=>{removeEventListener("scroll",s)}}})},7920:function(t,e,i){"use strict";var a=i(77302);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */class o{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}o.loaded={},o.constructorName="Googlelocator",o.componentName="xt-googlelocator",o.optionsDefault={debug:!1,initialLocate:!1,initialSearch:!1,seachMapBounds:!1,searchRadius:25e3,locateText:"Locate",submitDelay:250,elements:{loader:"[data-xt-googlelocator-loader]",searchInput:"[data-xt-googlelocator-search-input]",searchBtn:"[data-xt-googlelocator-search-btn]",map:"[data-xt-googlelocator-map]",itemsTemplate:"[data-xt-googlelocator-items-template]",itemsContainer:"[data-xt-googlelocator-items-container]",results:"[data-xt-googlelocator-results]",resultsFound:"[data-xt-googlelocator-results-found]",locateBtn:"[data-xt-googlelocator-locate-btn]",repeatBtn:"[data-xt-googlelocator-repeat-btn]",filter:"[data-xt-googlelocator-filter]"},events:{animateMarkerClick:!1,animateMarkerResultClick:!1,infoWindowMarkerClick:!0,infoWindowMarkerResultClick:!1},autocompleteOptions:!1,autocompleteServiceOptions:!1,map:{center:!1,zoom:!1,zoomMin:!1,scrollwheel:!1,zoomControl:!0,mapTypeControl:!1,scaleControl:!0,streetViewControl:!1,rotateControl:!1,fullscreenControl:!1,cluster:!1},infoWindow:{},formatData:{lat:!1,lng:!1,sort:!1,filter:!1,name:!1,address:!1,additional:!1,img:!1,direction:!1,distance:!1,info:!1}},a.Xt.Googlelocator=o},80722:function(t,e,i){"use strict";var a=i(77302),o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}s.loaded={},s.constructorName="Groupnumber",s.componentName="xt-groupnumber",s.optionsDefault={debug:!1,limit:!0,voidable:!0,validate:t=>{let{val:e,step:i}=t;return i&&e%i?Math.ceil(e/i)*i:e},min:"-Infinity",max:"Infinity",inputs:'input[type="number"]',steps:"[data-xt-step]",events:{input:"change",steps:"click"},a11y:{controls:!0}},a.Xt.Groupnumber=s,a.Xt.mount({matches:`[data-${a.Xt.Groupnumber.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Groupnumber.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Groupnumber(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},68223:function(t,e,i){"use strict";var a=i(77302),o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(i._init(),i));return a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),o}}s.loaded={},s.constructorName="Infinitescroll",s.componentName="xt-infinitescroll",s.optionsDefault={debug:!1,get:!1,nocache:!0,prefetch:!0,perPage:1,min:1,max:"Infinity",events:{scrollUp:!1,scrollDown:!1,on:"click"},elements:{items:!1,item:!1,scrollUp:!1,scrollDown:!1,spaceAdditional:!1,pagination:!1}},a.Xt.Infinitescroll=s,a.Xt.mount({matches:`[data-${a.Xt.Infinitescroll.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Infinitescroll.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Infinitescroll(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},61230:function(t,e,i){"use strict";var a=i(77302),o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}s.loaded={},s.constructorName="Mousefollow",s.componentName="xt-mousefollow",s.optionsDefault={debug:!1,targets:"[data-xt-mousefollow-target]",classSkip:!1,transform:!0,friction:t=>{let{delta:e}=t;return e/9},mouseCheck:!1},a.Xt.Mousefollow=s,a.Xt.mount({matches:`[data-${a.Xt.Mousefollow.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Mousefollow.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Mousefollow(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},4021:function(t,e,i){"use strict";var a=i(77302);i(81137);var o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
- */a.Xt.JSON=o;class s extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}s.constructorName="Overlay",s.componentName="xt-overlay",s.optionsDefault={elements:"[data-xt-overlay-element]",targets:"[data-xt-overlay-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-overlay",closeauto:!0,openauto:!0,closeDeep:".xt-dismiss",closeInside:".xt-overlay, .xt-backdrop, .xt-overlay-container",closeOutside:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,appendTo:"body",classBody:"xt-scrollbar-overlay",focusLimit:!0,zIndex:{targets:{start:5e3,factor:0}},a11y:{role:"dialog",labelElements:!1,labelTargets:!1,controls:!0,selected:!1,expanded:!0,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Overlay=s,a.Xt.mount({matches:`[data-${a.Xt.Overlay.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Overlay.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Overlay(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},97534:function(t,e,i){"use strict";var a=i(77302);/*!
+ */a.Xt.JSON=o;class s extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}s.constructorName="Overlay",s.componentName="xt-overlay",s.optionsDefault={elements:"[data-xt-overlay-element]",targets:"[data-xt-overlay-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-overlay",closeauto:!0,openauto:!0,closeDeep:".xt-dismiss",closeInside:".xt-overlay, .xt-backdrop, .xt-overlay-container",closeOutside:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,appendTo:"body",classBody:"xt-scrollbar-overlay",focusLimit:!0,zIndex:{targets:{start:5e3,factor:0}},a11y:{role:"dialog",labelElements:!1,labelTargets:!0,controls:!0,selected:!1,expanded:!0,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Overlay=s,a.Xt.mount({matches:`[data-${a.Xt.Overlay.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Overlay.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Overlay(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},97534:function(t,e,i){"use strict";var a=i(77302);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */class o{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}o.loaded={},o.constructorName="Ripple",o.componentName="xt-ripple",o.optionsDefault={debug:!1,sizeInitial:.3,onlyInside:"a, button, .xt-button"},a.Xt.Ripple=o},39576:function(t,e,i){"use strict";var a=i(77302);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */class o{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}o.loaded={},o.constructorName="Scrollto",o.componentName="xt-scrollto",o.optionsDefault={debug:!1,anchors:'[href*="{hash}"]:not([href$="#"])',scrollers:".xt-overlay:not([data-xt-overlay-disabled])",class:"on",events:"scroll off.xt.overlay",scrollActivation:!0,scrollDelay:200,hash:!1,position:t=>{let{self:e}=t,i=e.target.getBoundingClientRect().top+e.scroller.scrollTop;return e.scroller!==document.scrollingElement&&(i-=e.scroller.getBoundingClientRect().top),i},space:()=>window.innerHeight/6,duration:t=>{let{self:e}=t,i=e.target.closest(".xt-overlay");return e.initial||e.hashchange||i&&!i.classList.contains("in")?0:1}},a.Xt.Scrollto=o},20003:function(t,e,i){"use strict";var a=i(77302);i(81137);var o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}s.constructorName="Slider",s.componentName="xt-slider",s.optionsDefault={mode:"relative",group:!1,groupSame:!0,align:"center",contain:!0,wrap:!1,free:!1,dragposition:!1,nooverflow:"!transform-none justify-center",autoHeight:!1,keepHeight:!1,pagination:"[data-xt-slider-pagination]",hideDisable:"[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]",drag:{dragger:"[data-xt-slider-dragger]",threshold:30,factor:1,overflow:t=>{let{overflow:e}=t;return Math.min(e,Math.log(1+Math.pow(e,10)))},noMouse:!1},elementsTemplate:"hidden",elements:"[data-xt-slider-element]",targets:"[data-xt-slider-target]",min:1,max:1,on:"click",off:"click",mouseParent:!1,queue:!1,noobserver:!1,visibleReinit:!0,jump:!1,navigation:"[data-xt-nav]",zIndex:{targets:{start:200,factor:-1}},a11y:{role:"carousel",labelElements:!1,labelTargets:!0,controls:!0,selected:!1,expanded:!1,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Slider=s,a.Xt.mount({matches:`[data-${a.Xt.Slider.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Slider.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Slider(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},42744:function(t,e,i){"use strict";var a=i(77302),o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}s.loaded={},s.constructorName="Stickyflow",s.componentName="xt-stickyflow",s.optionsDefault={debug:!1,element:!1,filler:!1,scrollers:".xt-overlay:not([data-xt-overlay-disabled])"},a.Xt.Stickyflow=s,a.Xt.mount({matches:`[data-${a.Xt.Stickyflow.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Stickyflow.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Stickyflow(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},96879:function(t,e,i){"use strict";var a=i(77302),o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}s.loaded={},s.constructorName="Textareaautosize",s.componentName="xt-textareaautosize",s.optionsDefault={debug:!1},a.Xt.Textareaautosize=s,a.Xt.mount({matches:`[data-${a.Xt.Textareaautosize.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Textareaautosize.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Textareaautosize(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},81137:function(t,e,i){"use strict";var a=i(77302),o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s{constructor(t,e={}){this._classes=[],this._classesIn=[],this._classesOut=[],this._classesDone=[],this._classesInitial=[],this._classesBefore=[],this._classesAfter=[],this._initialCurrents=[],this._queueIn=[],this._queueOut=[],this._search="",this.disabled=!1,this.elements=[],this.targets=[],this.drag={},this.wheel={};let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i.fileName=i.componentName.split("-").pop(),i._componentNs=i.componentName.replace("-",".");let o=a.Xt._load({container:i.container,name:"Toggle",suffix:"Init",observer:i._optionsCustom.observer}).then(()=>"xt-toggle"!==i.componentName&&"xt-overlay"!==i.componentName?a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i)):(a.Xt._set({name:i.componentName,el:i.container,selfPromise:o}),i._init(),i));return o}}s.loaded={},s.constructorName="Toggle",s.componentName="xt-toggle",s.optionsDefaultSuper={debug:!1,elements:"[data-xt-toggle-element]",targets:"[data-xt-toggle-target]",elementsInner:!1,targetsInner:!1,exclude:!1,class:"on",classIn:"in",classOut:"out",classDone:"done",classInitial:"initial",classBefore:"dir-before",classAfter:"dir-after",classSkip:!1,hash:"data-xt-hash",groupSeparator:",",groupElements:!0,min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit",closeDeep:!1,closeInside:!1,closeOutside:!1,preventEvent:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},delay:!1,delayIn:!1,delayOut:!1,duration:!1,durationIn:!1,durationOut:!1,auto:{time:!1,initial:!0,step:1,inverse:!1,pause:"a, button",loop:!0},disableDeactivate:!1,scrollto:!1,scrolltoInit:!1,matches:!1,disabled:!1,visibleReinit:!1,loop:!1,jump:!1,navigation:!1,appendTo:!1,classBody:!1,closeauto:!1,openauto:!1,mediaLoaded:!1,mediaLoadedReinit:!1,zIndex:!1,focusLimit:!1,focusTrap:{initialFocus:!1,preventScroll:!0,allowOutsideClick:!0,fallbackFocus:"body"},collapseHeight:!1,collapseWidth:!1,a11y:{role:!1,labelElements:!1,labelTargets:!0,controls:!0,selected:!1,expanded:!1,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Toggle=s,a.Xt.mount({matches:`[data-${a.Xt.Toggle.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Toggle.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Toggle(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},88501:function(t,e,i){"use strict";var a=i(77302);i(81137);var o=i(3876);/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */a.Xt.JSON=o;class s extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}s.constructorName="Tooltip",s.componentName="xt-tooltip",s.optionsDefault={elements:"[data-xt-tooltip-element]",targets:"[data-xt-tooltip-target]",classSkip:{elements:!0,elementsInner:!0},min:0,max:1,on:"mouseenter focus",off:"mouseleave",mouseParent:!1,eventLimit:".xt-event-limit, .xt-tooltip",closeauto:!0,openauto:!1,closeDeep:".xt-dismiss",closeInside:".xt-tooltip, .xt-backdrop",closeOutside:"body",preventEvent:!0,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,position:"top",positionInner:!1,strategy:"absolute",spaceOverflow:15,spaceFlip:15,spaceArrow:!1,popperjs:!0,zIndex:{targets:{start:700,factor:-1}},a11y:{role:"tooltip",labelElements:!0,labelTargets:!1,controls:!1,selected:!1,expanded:!1,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Tooltip=s,a.Xt.mount({matches:`[data-${a.Xt.Tooltip.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Tooltip.componentName}`),s=i?o.parse(i):{},r=()=>{};return new a.Xt.Tooltip(e,s).then(t=>{r=()=>{t.destroy(),t=null}}),()=>{r()}}})},77302:function(t,e,i){"use strict";i.d(e,{Xt:function(){return a}});/*!
  * Xtend UI (https://xtendui.com/)
- * @copyright (c) 2017-2024 Riccardo Caroli
+ * @copyright (c) 2017-2025 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */let a={};window.XtSetGlobal&&(global["string"==typeof window.XtSetGlobal?window.XtSetGlobal:"Xt"]=a),a._running={},a._currents={},a.options={},a._mountArr=[],a._unmountArr=[],a.resizeSkip=()=>matchMedia("(hover: none), (pointer: coarse)").matches,a.resizeDelay=200,a.medialoadedDelay=200,a.durationTimescale=1,a.autoTimescale=1,a.scrolltoHashforce=null,a.formScrollWindowFactor=.2,a._observerArr=[],a.observer=null,a.observerOptions={root:null,threshold:[.001]},a.observerCheck=t=>t.intersectionRatio>0,a._supports_content_visibility=CSS.supports("content-visibility","hidden"),a.ready=function(){let{func:t,state:e="interactive complete",raf:i=!1}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},a=e.split(" ");if(a.includes(document.readyState))i?requestAnimationFrame(()=>{t()}):t();else{let e=()=>{a.includes(document.readyState)&&(t(),document.removeEventListener("readystatechange",e))};document.addEventListener("readystatechange",e)}},a.mount=function(t){let e=!(arguments.length>1)||void 0===arguments[1]||arguments[1];a._mountArr.push(t),a.ready({raf:t.raf,func:()=>{a.perf({func:()=>{a._mountCheck({obj:t,perf:e})}})}})},a.unmount=t=>{a._unmountArr.push(t)},a._mountCheck=function(){let{added:t=document.documentElement,obj:e,perf:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(t.closest("html"))for(let o of e?[e]:a._mountArr){let e=[];for(let i of(t.matches(o.matches)&&e.push(t),t.querySelectorAll(o.matches)))e.push(i);if(e.length)for(let[t,s]of e.entries()){if(o.root&&!o.root.contains(s))continue;let e=o.ignoreMount??".xt-ignore";if(!(e&&s.closest(e))){if(o.done=o.done?o.done:[],o.done.includes(s))return;o.done.push(s),a.perf({skip:!i,func:()=>{let e=o.mount({ref:s,obj:o,index:t});e&&a.unmount({ref:s,root:o.root,ignoreUnmount:o.ignoreUnmount,unmount:e,unmountRemove:function(){o.done=o.done.filter(t=>t!==s),a._unmountArr=a._unmountArr.filter(t=>t!==this)}})}})}}}},a._unmountCheck=function(){let{removed:t=document.documentElement}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(!t.closest("html")){for(let e of a._unmountArr)if(t===e.ref||t.contains(e.ref)){if(e.root&&!e.root.contains(e.ref))continue;let t=e.ignoreUnmount??".xt-ignore";if(t&&e.ref.closest(t))continue;e.unmount({obj:e}),e.unmountRemove()}}},a.observe=function(){let{container:t,promise:e,func:i,observer:o,id:s}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return(o=i?o??a.observer??!0:o??a.observer??t.offsetHeight>0)?new Promise(o=>{a._observerArr.push({container:t,resolve:o,promise:e,func:i,id:s}),a._intersectionObserver.observe(t)}):(i&&i(!0),e)?new Promise(t=>{t(e)}):void 0},a.unobserve=function(){let{container:t,id:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};a._observerArr=a._observerArr.filter(i=>i.id!==e||i.container!==t),a._observerArr.some(e=>e.container===t)||a._intersectionObserver.unobserve(t)},a.hasobserve=function(){let{container:t,id:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return a._observerArr.some(i=>i.id===e&&i.container===t)},a._set=function(){let{name:t,el:e,selfPromise:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};a.dataStorage.set(e,t,i)},a.get=function(){let{name:t,el:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},i=a.dataStorage.get(e,t);return i||(i=new Promise(i=>{e.addEventListener(`setup.xt.${t.split("-").pop()}`,()=>{a.dataStorage.get(e,t).then(t=>{i(t)})},{once:!0})})),i},a._remove=function(){let{name:t,el:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return a.dataStorage.remove(e,t)},a._initMatches=function(){let{self:t,optionsInitial:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},i=t.options;if(void 0===t.initial&&(t.matches&&a._removeMatches({self:t,optionsInitial:e}),i.matches)){t.matches=[];let o=Object.entries(i.matches);if(o.length)for(let[i,s]of o){let o=matchMedia(i);t.matches.push({mql:o,value:s}),a._eventMatches({self:t,mql:o,value:s,skipReinit:!0,optionsInitial:e}),o.addEventListener?o.addEventListener("change",a._eventMatches.bind(null,{self:t,mql:o,value:s,optionsInitial:e})):o.addListener(a._eventMatches.bind(null,{self:t,mql:o,value:s,optionsInitial:e}))}}},a._eventMatches=function(){let{self:t,mql:e,value:i,skipReinit:o=!1,optionsInitial:s}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};t.container.closest("html")&&(e.matches?t.options=a.merge([t.options,i]):t.options=a.mergeReset({start:t.options,reset:s,check:i}),o||a.frame({el:t.container,ns:`${t.ns}MatchFrame`,func:()=>{a._eventReinit({self:t})}}))},a._removeMatches=function(){var t;let{self:e,optionsInitial:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(null===(t=e.matches)||void 0===t?void 0:t.length)for(let t of e.matches){let o=t.mql,s=t.value;o.removeEventListener?o.removeEventListener("change",a._eventMatches.bind(null,{self:e,mql:o,value:s,optionsInitial:i})):o.removeListener(a._eventMatches.bind(null,{self:e,mql:o,value:s,optionsInitial:i}))}},a._eventReinit=function(){var t,e;let{self:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},a=arguments.length>1?arguments[1]:void 0;(!(null==a?void 0:null===(t=a.detail)||void 0===t?void 0:t.container)||(null==a?void 0:null===(e=a.detail)||void 0===e?void 0:e.container.contains(i.container)))&&i.reinit()},a._load=function(){let t,{container:e,name:o,suffix:s,observer:r}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=a[o].loaded[o]?Promise.resolve():i(15997)(`./${o.toLowerCase()}${s}.mjs`).then(t=>{a[o].loaded[o]||(a[o].loaded[o]=!0,Object.setPrototypeOf(a[o].prototype,t[`${o}${s}`].prototype))}),a.observe({container:e,promise:t,observer:r})},a.dataStorage={_storage:new WeakMap,set:(t,e,i)=>{if(!t)return;a.dataStorage._storage.has(t)||a.dataStorage._storage.set(t,new Map);let o=a.dataStorage._storage.get(t);return o.set(e,i),o.get(e)},put:(t,e,i)=>{a.dataStorage._storage.has(t)||a.dataStorage._storage.set(t,new Map);let o=a.dataStorage._storage.get(t);return o.get(e)||(o.set(e,i),o.get(e))},get:(t,e)=>{let i=a.dataStorage._storage.get(t);return i?i.get(e):null},getAll:t=>a.dataStorage._storage.get(t)||null,has:(t,e)=>a.dataStorage._storage.get(t).has(e),remove:(t,e)=>{let i=a.dataStorage._storage.get(t);if(!i)return null;let o=i.delete(e);return i.size||a.dataStorage._storage.delete(t),o}},a._classBody={currents:[],add:t=>{a._classBody.currents.push(t)},remove:t=>{a._classBody.currents=a._classBody.currents.filter(e=>e.c!==t.c||e.ns!==t.ns)},get:t=>a._classBody.currents.filter(e=>e.c===t.c)},a.getTranslate=function(){let{el:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=[],i=getComputedStyle(t).transform,a=i.match(/^matrix3d\((.+)\)$/);return a?e.push(parseFloat(a[1].split(", ")[13])):((a=i.match(/^matrix\((.+)\)$/))?e.push(parseFloat(a[1].split(", ")[4])):e.push(0),a?e.push(parseFloat(a[1].split(", ")[5])):e.push(0)),e},a.contains=function(){let{els:t,tr:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(t instanceof HTMLElement)return t.contains(e);for(let i of t)if(i.contains(e))return!0;return!1},a.uniqueId=()=>(a.uid=void 0!==a.uid?a.uid:0,`xt-${a.uid++}`),a.merge=t=>{let e={};for(let i of t)if(i)for(let[t,o]of Object.entries(i))Array.isArray(o)?(e[t]=e[t]?e[t]:[],e[t].push(...o)):null===o||"object"!=typeof o||o.nodeName||o===window?e[t]=o:e[t]=a.merge([e[t],o]);return e},a.mergeReset=function(){let{start:t,reset:e,check:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};for(let[o,s]of Object.entries(i))null===s||"object"!=typeof s||Array.isArray(s)||s.nodeName||s===window?t[o]===i[o]&&(t[o]=e[o]):t[o]=a.mergeReset({start:t[o],reset:e[o],check:i[o]});return t},a.sanitize=t=>a.sanitizeFnc?a.sanitizeFnc(t):t,a.node=t=>{let{sanitize:e=!0,str:i}=t,o=document.createElement("template");return o.innerHTML=e?a.sanitize(i.trim()):i.trim(),o.content.firstChild},a.nodes=t=>{let{sanitize:e=!0,str:i}=t,o=document.createElement("template");return o.innerHTML=e?a.sanitize(i.trim()):i.trim(),o.content.childNodes},a.script=function(){let{url:t,callback:e,defer:i=!0,async:a=!0}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(!document.querySelector(`script[src="${t}"]`)){let o=document.createElement("script");e&&(o.onload=e),o.type="text/javascript",o.src=t,o.defer=i,o.async=a,document.body.append(o)}},a.frame=function(){let{el:t,ns:e="",func:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};cancelAnimationFrame(a.dataStorage.get(t,`${e}Frame`)),i&&a.dataStorage.set(t,`${e}Frame`,requestAnimationFrame(()=>{i()}))},a.frameDouble=function(){let{el:t,ns:e="",func:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};cancelAnimationFrame(a.dataStorage.get(t,`${e}FrameDouble`)),i&&a.dataStorage.set(t,`${e}FrameDouble`,requestAnimationFrame(()=>{a.dataStorage.set(t,`${e}FrameDouble`,requestAnimationFrame(()=>{i()}))}))},a.perf=function(){let{func:t,skip:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};e?t():setTimeout(()=>{t()},0)},a.on=function(){let{el:t,ns:e="",duration:i,raf:o=!0,initial:s=!1,callback:r}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};a.animTimeout({el:t,ns:e}),t.classList.add("on"),t.classList.remove("out");let l=()=>{t.classList.add("in"),t.classList.remove("done"),a.animTimeout({el:t,ns:e,duration:i,actionCurrent:"In",func:()=>{t.classList.add("done"),r&&r()}})};o?a.frameDouble({el:t,ns:e,func:l}):(a.frameDouble({el:t,ns:e}),l()),s&&t.classList.add("initial"),a.frameDouble({el:t,ns:`${e}Initial`,func:()=>{s&&t.classList.remove("initial")}})},a.off=function(){let{el:t,ns:e="",duration:i,raf:o=!0,initial:s=!1,callback:r}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};a.animTimeout({el:t,ns:e}),t.classList.remove("on");let l=()=>{t.classList.remove("in","done"),t.classList.add("out"),a.animTimeout({el:t,ns:e,duration:i,actionCurrent:"Out",func:()=>{t.classList.remove("out"),r&&r()}})};o?a.frameDouble({el:t,ns:e,func:l}):(a.frameDouble({el:t,ns:e}),l()),s&&t.classList.add("initial"),a.frameDouble({el:t,ns:`${e}Initial`,func:()=>{s&&t.classList.remove("initial")}})},a.animTimeout=function(){let{el:t,ns:e="",duration:i,actionCurrent:o,func:s}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};clearTimeout(a.dataStorage.get(t,`${e}AnimTimeout`)),s&&((i=a.animTime({el:t,duration:i,actionCurrent:o})??0)?a.dataStorage.set(t,`${e}AnimTimeout`,setTimeout(s,i)):s())},a.animTime=function(){let{el:t,duration:e,actionCurrent:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},o=i&&t.getAttribute(`data-xt-duration-${i}`)||t.getAttribute("data-xt-duration");return o?isNaN(parseFloat(o))?o:parseFloat(o)/a.durationTimescale:"function"==typeof e?e:e||0===e?e/a.durationTimescale:void 0},a.delayTime=function(){let{el:t,duration:e,actionCurrent:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},o=i&&t.getAttribute(`data-xt-delay-${i}`)||t.getAttribute("data-xt-delay");return o?isNaN(parseFloat(o))?o:parseFloat(o)/a.durationTimescale:"function"==typeof e?e:e||0===e?e/a.durationTimescale:void 0},a.queryAll=function(){let{els:t,query:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(!e||0===t.length)return[];if(!t.length)return Array.from(t.querySelectorAll(e));{let i=[];for(let a of t)i.push(...a.querySelectorAll(e));return i}},a.visible=function(){let{el:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=!0;return t.checkVisibility&&(e=t.checkVisibility()),e&&(e=t.offsetHeight>0||t.getClientRects().length>0),e},a._setScrollbarWidth=()=>{a.perf({func:()=>{if(void 0===a.scrollbarWidth){let t=a.dataStorage.put(window,"resize/scrollbar",a._setScrollbarWidth);removeEventListener("resize",t),addEventListener("resize",t)}let t=document.createElement("div");t.style.visibility="hidden",t.style.width="100%",t.style.msOverflowStyle="scrollbar",t.classList.add("xt-ignore","xt-overflow-main"),document.body.append(t),t.style.overflow="scroll";let e=document.createElement("div");e.style.width="100%",e.classList.add("xt-ignore"),t.append(e);let i=t.offsetWidth,o=e.offsetWidth;a.scrollbarWidth=i-o,document.documentElement.style.setProperty("--scrollbar-width",`${a.scrollbarWidth}px`),t.remove()}})},a.ready({func:()=>{a.perf({func:()=>{a._setScrollbarWidth()}})}}),addEventListener("resize",t=>{var e;let i=window.innerWidth+window.outerWidth,o=window.innerHeight+window.outerHeight;!(null==t?void 0:null===(e=t.detail)||void 0===e?void 0:e.force)&&a.dataStorage.get(window,"xtEventDelayWidth")===i&&(a.resizeSkip()||a.dataStorage.get(window,"xtEventDelayHeight")===o)||a.dataStorage.set(window,"eventDelaySaveTimeout",setTimeout(()=>{a.dataStorage.set(window,"xtEventDelayWidth",i),a.dataStorage.set(window,"xtEventDelayHeight",o),dispatchEvent(new CustomEvent("resize.xt",{detail:null==t?void 0:t.detail}))},a.resizeDelay))}),a.dataStorage.set(window,"xtEventDelayWidth",window.innerWidth+window.outerWidth),a.dataStorage.set(window,"xtEventDelayHeight",window.innerHeight+window.outerHeight),a._innerHeightSet=()=>{a.innerHeight=window.innerHeight},addEventListener("resize.xt",()=>{a._innerHeightSet()}),a.ready({func:()=>{a._innerHeightSet()}}),a.scrolltriggerRerfreshFix=function(){let{ScrollTrigger:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};a.ready({func:()=>{a.frame({func:()=>{t.config({autoRefreshEvents:"visibilitychange,DOMContentLoaded,load"});let e=()=>{t.refresh()};removeEventListener("resize.xt",e),addEventListener("resize.xt",e)}})}})},a._mutationObserver=new MutationObserver(t=>{for(let e of t)if("childList"===e.type){for(let t of e.addedNodes)1===t.nodeType&&a._mountCheck({added:t});for(let t of e.removedNodes)1===t.nodeType&&a._unmountCheck({removed:t})}}),a._intersectionObserverInit=()=>{a._intersectionObserver=new IntersectionObserver(function(t,e){for(let i of t){let t=i.target;if(a.observerCheck(i)){let i=a._observerArr.filter(e=>e.container===t);for(let o of(i.some(t=>t.func)||(e.unobserve(t),a._observerArr=a._observerArr.filter(e=>e.container!==t)),i))o.func&&o.func(!0),o.resolve&&o.resolve(o.promise)}else{let e=a._observerArr.filter(e=>e.container===t);if(e.some(t=>t.func))for(let t of e)t.func&&t.func(!1)}}},a.observerOptions)},a.ready({func:()=>{a.perf({func:()=>{a._mutationObserver.disconnect(),a._mutationObserver.observe(document.documentElement,{characterData:!1,attributes:!1,childList:!0,subtree:!0}),a._intersectionObserverInit()}})}})}}]);

@@ -259,7 +259,7 @@ const html = /* HTML */ `
           Contact
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -383,7 +383,7 @@ const html = /* HTML */ `
           Newsletter
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container max-w-5xl">
             <div class="xt-overlay-inner">
@@ -500,7 +500,7 @@ const html = /* HTML */ `
           Menu
         </button>
 
-        <div aria-label="Modal" class="xt-overlay" data-xt-overlay-target>
+        <div class="xt-overlay" data-xt-overlay-target>
           <div class="xt-backdrop z-below bg-gray-900 *** ${itemAnimOpacity()} ***"></div>
           <div class="xt-overlay-container *** p-0 *** *** w-screen max-w-md ml-0 mr-auto ***">
             <div class="xt-overlay-inner">
