@@ -1,3 +1,12 @@
+## [2.2.4](https://github.com/xtendui/xtendui/compare/v2.2.3...v2.2.4) (2025-05-20)
+
+
+### Bug Fixes
+
+* **js:** fix aria attributes drop and overlay with labels and no expanded in drop ([a5c5ad0](https://github.com/xtendui/xtendui/commit/a5c5ad098ccd495ab5b6d3b09593f0393a675392))
+* **js:** usability check for multiple h1 on page ([ab07eb3](https://github.com/xtendui/xtendui/commit/ab07eb3047e7fe838feef5c7c321835f9d60ef51))
+* **slider:** fix slider absolute click drag reset values direction and drag ratio ([67d7fc7](https://github.com/xtendui/xtendui/commit/67d7fc7fc527dc3125a155700e22a5c123c4b13a))
+
 ## [2.2.3](https://github.com/xtendui/xtendui/compare/v2.2.2...v2.2.3) (2024-12-02)
 
 
