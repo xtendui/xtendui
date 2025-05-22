@@ -1405,6 +1405,8 @@ describe('demos/components/drop/reset-to-current', function () {
     cy.get(container)
       .closest('.docs_demo')
       .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
