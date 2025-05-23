@@ -40,7 +40,9 @@ describe('docs', function () {
   it('TEST on change page menu mobile docs should not flickr, should be visible, should be unique, to desktop should disable overlay.', function () {
     cy.viewport('iphone-6')
       .get('.docs_menu--button')
-      .should('have.attr', 'data-xt-overlay-init', '') // racecondition
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-overlay-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
       .click()
       .should('have.class', 'done') // racecondition
       .frame()
@@ -83,7 +85,9 @@ describe('docs', function () {
 
   it('TEST open code from demos should show code, copying code should be without highlight.', function () {
     cy.get('.docs_demo_inner')
-      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
       .get('.button--show-code')
       .eq(0)
       .click()
@@ -112,7 +116,9 @@ describe('docs', function () {
 
   it('TEST demos demos changing demo should change hash, browser navigation should change demo, initial activation on page load.', function () {
     cy.get('.docs_demo_inner')
-      .should('have.attr', 'data-xt-toggle-init', '') // racecondition
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
+      .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
+      .scrollIntoView({ offset: { top: 0, left: 0 } })
       .get('.docs_demo_tabs_left button')
       .eq(1)
       .click()
