@@ -38,7 +38,7 @@ Xt.mount({
         )
       }
 
-      ScrollTrigger.addEventListener('refresh', refresh)
+      addEventListener('resize.xt', refresh)
 
       // matchmedia
 
