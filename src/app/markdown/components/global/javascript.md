@@ -145,14 +145,13 @@ Xt.unobserve({
 
 #### Globals
 
-You can change this method and all the components default options of `Xt.observer` and `Xt.observerOptions` and `Xt.observerCheck`.
+You can change this method and all the components default options of `Xt.observer` and `Xt.observerCheck`.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                    | `Xt.observer:Boolean\|null`                          | `null`        | Global force enable or disable intersection observer             |
-| Option                    | `Xt.observerOptions:Object`                          | `{ root: null, threshold: [0.001] }`        | Global intersection observer options            |
 | Option                    | `Xt.observerCheck:Function`                          | `entry => { return entry.intersectionRatio > 0 }`        | Global intersection observer entry check            |
 
 </div>
