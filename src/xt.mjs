@@ -1113,6 +1113,7 @@ if (typeof window !== 'undefined') {
       // only width no height because it changes on scroll on mobile
       return
     }
+    clearTimeout(Xt.dataStorage.get(window, `eventDelaySaveTimeout`))
     Xt.dataStorage.set(
       window,
       `eventDelaySaveTimeout`,
