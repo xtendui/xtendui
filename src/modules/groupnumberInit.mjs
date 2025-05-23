@@ -157,7 +157,7 @@ export class GroupnumberInit {
         const step =
           inputStep && inputStep !== ''
             ? parseFloat(inputStep) * Math.sign(parseFloat(buttonStep))
-            : parseFloat(buttonStep) ?? 1
+            : (parseFloat(buttonStep) ?? 1)
         let val = parseFloat(input.value)
         val = isNaN(val) ? 0 : val
         if (step) {
