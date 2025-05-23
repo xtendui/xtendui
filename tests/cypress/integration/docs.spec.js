@@ -41,7 +41,6 @@ describe('docs', function () {
     cy.viewport('iphone-6')
       .get('.docs_menu--button')
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
-      .wait(200) // fix test action error "Cannot read properties of undefined (reading 'observe')"
       .click()
       .should('have.class', 'done') // racecondition
       .frame()
@@ -85,7 +84,6 @@ describe('docs', function () {
   it('TEST open code from demos should show code, copying code should be without highlight.', function () {
     cy.get('.docs_demo_inner')
       .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
-      .wait(200) // fix test action error "Cannot read properties of undefined (reading 'observe')"
       .get('.button--show-code')
       .eq(0)
       .click()
@@ -115,7 +113,6 @@ describe('docs', function () {
   it('TEST demos demos changing demo should change hash, browser navigation should change demo, initial activation on page load.', function () {
     cy.get('.docs_demo_inner')
       .should('have.attr', 'data-xt-toggle-init', '') // fix cypress not scrolling right and infinite waiting initialization
-      .wait(200) // fix test action error "Cannot read properties of undefined (reading 'observe')"
       .get('.docs_demo_tabs_left button')
       .eq(1)
       .click()

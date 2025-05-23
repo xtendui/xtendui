@@ -37,7 +37,7 @@ if (typeof window !== 'undefined') {
   Xt.formScrollWindowFactor = 0.2
   Xt._observerArr = []
   Xt.observer = null
-  Xt.observerOptions = { root: null, threshold: [0.001] }
+  Xt._observerOptions = { root: null, threshold: [0.001] }
   Xt.observerCheck = entry => {
     return entry.intersectionRatio > 0
   }
@@ -1236,7 +1236,7 @@ if (typeof window !== 'undefined') {
           }
         }
       }
-    }, Xt.observerOptions)
+    }, Xt._observerOptions)
   }
 
   //
@@ -1245,6 +1245,8 @@ if (typeof window !== 'undefined') {
 
   Xt.ready({
     func: () => {
+      // no perf or github test gives error "Cannot read properties of undefined (reading 'observe')"
+      Xt._intersectionObserverInit()
       Xt.perf({
         func: () => {
           // after perf or Xt._intersectionObserverInit doesn't work (e.g. alpinejs template)
@@ -1255,8 +1257,6 @@ if (typeof window !== 'undefined') {
             childList: true,
             subtree: true,
           })
-          // after perf or custom options (e.g. Xt.observerOptions) aren't used
-          Xt._intersectionObserverInit()
         },
       })
     },
