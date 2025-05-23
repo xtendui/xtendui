@@ -36,7 +36,7 @@ export class TooltipInit extends Xt.Toggle {
         })
         // popperjs
         const element = self.getElements({ el })[0]
-        const popperEl = options.positionInner ? element.querySelector(options.positionInner) ?? element : element
+        const popperEl = options.positionInner ? (element.querySelector(options.positionInner) ?? element) : element
         // fix element and target must be visible
         if (Xt.visible({ el: popperEl }) && Xt.visible({ el })) {
           const arrow = el.querySelector(':scope > .xt-arrow')
