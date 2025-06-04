@@ -80,12 +80,13 @@ export default function Structure({ page, children }) {
   return (
     <>
       <nav
+        aria-label="Hotkey menu"
         className="off:opacity-0 off:pointer-events-none out:pointer-events-none fixed z-above left-0 py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0"
         id="docs_jumptocontent">
         <a
           href="#docs_jumptocontent_target"
           className={`xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}`}>
-          Jump to content
+          Main Content
         </a>
       </nav>
       {pathname === '/' ? (
