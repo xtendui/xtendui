@@ -3328,16 +3328,17 @@ export class ToggleInit {
   _initA11yChange() {
     const self = this
     const options = self.options
-    // aria-selected and aria-expanded
     if (options.a11y.selected || options.a11y.expanded) {
-      if (options.a11y.expanded) {
-        for (const tr of self.targets) {
-          tr.setAttribute('aria-expanded', 'false')
-        }
-      }
       for (const el of self.elements) {
-        if (options.a11y.selected && self._hasContainer && self.targets.length) {
-          el.setAttribute('aria-selected', 'false')
+        if (self.targets.length) {
+          // aria-selected
+          if (options.a11y.selected) {
+            el.setAttribute('aria-selected', 'false')
+          }
+          // aria-expanded
+          if (options.a11y.expanded) {
+            el.setAttribute('aria-expanded', 'false')
+          }
         }
         // on
         const onHandler = Xt.dataStorage.put(
@@ -3365,16 +3366,15 @@ export class ToggleInit {
   _eventA11yChangeOn({ el } = {}) {
     const self = this
     const options = self.options
-    // aria-expanded
-    if (options.a11y.expanded) {
-      const trs = self.getTargets({ el })
-      for (const tr of trs) {
-        tr.setAttribute('aria-expanded', 'true')
+    if (self.targets.length) {
+      // aria-selected
+      if (options.a11y.selected) {
+        el.setAttribute('aria-selected', 'true')
       }
-    }
-    // aria-selected
-    if (options.a11y.selected && self._hasContainer && self.targets.length) {
-      el.setAttribute('aria-selected', 'true')
+      // aria-expanded
+      if (options.a11y.expanded) {
+        el.setAttribute('aria-expanded', 'true')
+      }
     }
   }
 
@@ -3386,16 +3386,15 @@ export class ToggleInit {
   _eventA11yChangeOff({ el } = {}) {
     const self = this
     const options = self.options
-    // aria-expanded
-    if (options.a11y.expanded) {
-      const trs = self.getTargets({ el })
-      for (const tr of trs) {
-        tr.setAttribute('aria-expanded', 'false')
+    if (self.targets.length) {
+      // aria-selected
+      if (options.a11y.selected) {
+        el.setAttribute('aria-selected', 'false')
       }
-    }
-    // aria-selected
-    if (options.a11y.selected && self._hasContainer && self.targets.length) {
-      el.setAttribute('aria-selected', 'false')
+      // aria-expanded
+      if (options.a11y.expanded) {
+        el.setAttribute('aria-expanded', 'false')
+      }
     }
   }
 
