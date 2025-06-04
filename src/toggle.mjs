@@ -188,7 +188,7 @@ Toggle.optionsDefaultSuper = {
   zIndex: false,
   focusLimit: false,
   focusTrap: {
-    initialFocus: false,
+    initialFocus: true,
     preventScroll: true,
     allowOutsideClick: true,
     fallbackFocus: 'body', // needed to prevent error on deactivation sometimes

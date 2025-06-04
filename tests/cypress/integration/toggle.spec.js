@@ -1364,14 +1364,12 @@ describe('demos/components/overlay/animation-noqueue', function () {
       .should('have.attr', 'data-xt-overlay-init', '') // racecondition
       .get(self.elements[0])
       .click()
-      .get('body')
-      .tab()
       .then(() => {
         expect(self.targets[0].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
       })
-      .tab()
-      .tab()
-      .tab()
+      .press(Cypress.Keyboard.Keys.TAB)
+      .press(Cypress.Keyboard.Keys.TAB)
+      .press(Cypress.Keyboard.Keys.TAB)
       .then(() => {
         expect(self.elements[4]).to.equal(doc.activeElement)
       })
@@ -1379,7 +1377,7 @@ describe('demos/components/overlay/animation-noqueue', function () {
       .click()
       .wait(500) // after animation
       .get('body')
-      .tab()
+      .press(Cypress.Keyboard.Keys.TAB)
       .then(() => {
         expect(self.targets[1].querySelector('.xt-dismiss')).to.equal(doc.activeElement)
       })
