@@ -5,8 +5,6 @@
  */
 
 import { Xt } from '../xt.mjs'
-import * as focusTrap from 'focus-trap'
-Xt.focusTrap = focusTrap
 
 /**
  * ToggleInit
@@ -2400,9 +2398,12 @@ export class ToggleInit {
       })
       // focusLimit
       if (options.focusLimit && !self._focusTrap) {
-        const trs = self.targets.length ? self.targets : self.elements
-        self._focusTrap = focusTrap.createFocusTrap(trs, options.focusTrap)
-        self._focusTrap.activate()
+        //import * as focusTrap from 'focus-trap'
+        import('focus-trap').then(focusTrap => {
+          const trs = self.targets.length ? self.targets : self.elements
+          self._focusTrap = focusTrap.createFocusTrap(trs, options.focusTrap)
+          self._focusTrap.activate()
+        })
       }
     } else if (actionCurrent === 'Out') {
       // focusLimit
