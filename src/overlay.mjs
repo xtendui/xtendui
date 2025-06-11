@@ -71,7 +71,7 @@ Overlay.optionsDefault = {
     labelTargets: true,
     controls: true,
     selected: false,
-    expanded: false,
+    expanded: true,
     live: true,
     disabled: true,
     keyboard: true,
