@@ -2787,8 +2787,12 @@ export class ToggleInit {
             // raf because do not close when clicking things that trigger this
             requestAnimationFrame(() => {
               closeElement.addEventListener('keydown', specialclosedeepKeydownHandler)
-              closeElement.setAttribute('tabindex', '0')
-              closeElement.setAttribute('role', 'button')
+              if (!closeElement.getAttribute('tabindex')) {
+                closeElement.setAttribute('tabindex', '0')
+              }
+              if (!closeElement.getAttribute('role')) {
+                closeElement.setAttribute('role', 'button')
+              }
             })
           }
         }
@@ -2824,8 +2828,6 @@ export class ToggleInit {
             // focusable
             const specialclosedeepKeydownHandler = Xt.dataStorage.get(closeElement, `keydown/close/${self.ns}`)
             closeElement.removeEventListener('keydown', specialclosedeepKeydownHandler)
-            closeElement.removeAttribute('tabindex')
-            closeElement.removeAttribute('role')
           }
         }
       }
