@@ -16,7 +16,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${itemAnim()} ***">
-            <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
+            <div class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
@@ -37,7 +37,7 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.groupButtonPrimary()} ${classes.buttonPrimaryAnim()}">
                 ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
               </a>
-            </nav>
+            </div>
           </div>
           <div
             class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>
@@ -54,7 +54,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3 *** group ***" data-xt-drop-target>
           <div
             class="xt-card w-80 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()} *** ${itemAnim()} ***">
-            <nav aria-label="Drop" class="xt-list xt-list-1 flex-col *** py-2 ***">
+            <div class="xt-list xt-list-1 flex-col *** py-2 ***">
               <a href="/" class="xt-button ${classes.groupButtonMd()} ${classes.buttonTextAnim()}">
                 <div class="xt-list xt-list-3 *** flex-auto items-center justify-start text-left flex-nowrap ***">
                   <div class="p-2 bg-primary-100 rounded${classes.groupButtonRadius()} ${classes.textInverse()}">
@@ -88,7 +88,7 @@ const html = /* HTML */ `
                   </div>
                 </div>
               </a>
-            </nav>
+            </div>
             <div class="*** p-5 text-13 rounded-b${classes.dropRadius()} ${classes.cardWhiteAccent()} flex-auto ***">
               <p class="mb-1 font-bold text-sm">Didn&apos;t find what you was looking for?</p>
               <p>

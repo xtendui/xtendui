@@ -70,7 +70,7 @@ const html = /* HTML */ `
           <div
             class="xt-card w-60 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textInverse()} ${classes.cardPrimary()} *** ${designAnim()} ***"
             data-xt-drop-inner>
-            <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
+            <div class="xt-list flex-col ${classes.groupMd()} *** ${itemAnim()} ***">
               <a
                 href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
@@ -91,7 +91,7 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
                 ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
               </a>
-            </nav>
+            </div>
           </div>
           <div
             class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-primary-500 *** ${itemAnimOpacity()} group-in:opacity-100 ***"></div>

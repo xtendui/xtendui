@@ -93,7 +93,7 @@ const html = /* HTML */ `
             <div class="*** anim-border anim-border--inverse ***"></div>
             <div
               class="xt-card w-60 ${classes.textInverse()} rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.cardPrimary()} *** ${contentAnim()} ***">
-              <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
+              <div class="xt-list flex-col ${classes.groupMd()}">
                 <a
                   href="/"
                   class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
@@ -114,7 +114,7 @@ const html = /* HTML */ `
                   class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${buttonGroupPrimary()}">
                   ${classes.iconDownload({ classes: 'xt-icon text-lg opacity-50 mr-2' })} Manuals
                 </a>
-              </nav>
+              </div>
             </div>
           </div>
           <div
