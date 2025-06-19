@@ -27,7 +27,9 @@ You can specify `elements` that listens to event for activation, and `targets` t
 
 > Do not assign **other components** to `xt-slide` or the components activations conflict.
 
-You can **filter elements and targets dynamically** with `exclude`, just **reinit the component** when you want to **recalculate exclude on elements and targets** (add `[data-xt-slider-exclude]` to slider to not have first slide visible on page load).
+You can **filter elements and targets dynamically** with `exclude`, just **reinit the component** when you want to **recalculate exclude on elements and targets**.
+
+> Optionally add `[data-xt-slide-not-show-before-init]` on the first slide, and `[data-xt-slide-show-before-init]` on one slide to choose which slide to show on page load before the slider is initialized.
 
 <demo>
   <demoinline src="demos/components/slider/exclude">

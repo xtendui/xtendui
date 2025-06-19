@@ -11,11 +11,9 @@ module.exports = {
       overflow: 'hidden',
       // fix page load height without .on slides
       '&:not([data-xt-slider-init]):not([data-xt-slider-exclude])': {
-        '.xt-slide': {
-          '&:first-child': {
-            display: 'block !important',
-            position: 'relative !important',
-          },
+        '.xt-slide:not([data-xt-slide-not-show-before-init]):first-child, .xt-slide[data-xt-slide-show-before-init]': {
+          display: 'block !important',
+          position: 'relative !important',
         },
       },
     },
