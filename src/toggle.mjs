@@ -199,6 +199,7 @@ Toggle.optionsDefaultSuper = {
     role: false,
     labelElements: false,
     labelTargets: true,
+    hiddenTargets: false,
     controls: true,
     selected: false,
     expanded: false,

@@ -82,6 +82,7 @@ Slider.optionsDefault = {
     role: 'carousel',
     labelElements: false,
     labelTargets: true,
+    hiddenTargets: false,
     controls: true,
     selected: false,
     expanded: false,

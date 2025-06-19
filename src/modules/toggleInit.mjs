@@ -3292,6 +3292,14 @@ export class ToggleInit {
     const options = self.options
     // not when self mode (no targets)
     if (self.targets.length) {
+      // aria-hidden
+      if (options.a11y.hiddenTargets) {
+        for (const tr of self.targets) {
+          if (!tr.getAttribute('aria-hidden')) {
+            tr.setAttribute('aria-hidden', true)
+          }
+        }
+      }
       // aria-labelledby and aria-controls
       if (options.a11y.labelElements || options.a11y.controls) {
         for (const el of self.elements) {

@@ -75,6 +75,7 @@ Drop.optionsDefault = {
     role: 'popup',
     labelElements: false,
     labelTargets: true,
+    hiddenTargets: false,
     controls: true,
     selected: false,
     expanded: true,

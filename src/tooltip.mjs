@@ -79,6 +79,7 @@ Tooltip.optionsDefault = {
     role: 'tooltip',
     labelElements: true,
     labelTargets: false,
+    hiddenTargets: true,
     controls: false,
     selected: false,
     expanded: false,

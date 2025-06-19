@@ -69,6 +69,7 @@ Overlay.optionsDefault = {
     role: 'dialog',
     labelElements: false,
     labelTargets: true,
+    hiddenTargets: false,
     controls: true,
     selected: false,
     expanded: true,
