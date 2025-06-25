@@ -179,15 +179,19 @@ export class InfinitescrollInit {
       location = self._url.href
     } else {
       const current = self._getNext({ amount })
-      const items = self.itemsContainer.querySelectorAll(`[data-item-first="${current}"]`)
-      if (current !== self.current && !items.length) {
+      const itemCurrent = self.itemsContainer.querySelector(`[data-item-first="${current}"]`)
+      if (current !== self.current && !itemCurrent) {
         self._setCurrent({ page: current })
         self.inverse = !!up
         // not if requesting
         if (!self.container.classList.contains('xt-infinitescroll-loading')) {
           self.container.classList.add('xt-infinitescroll-loading')
-          self._request()
-          self._prefetch({ trigger })
+          Xt.perf({
+            func: () => {
+              self._request()
+              self._prefetch({ trigger })
+            },
+          })
         }
       }
     }
