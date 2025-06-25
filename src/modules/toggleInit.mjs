@@ -2465,7 +2465,7 @@ export class ToggleInit {
       if (type === 'targets' || (!self.targets.length && type === 'elements')) {
         if (actionCurrent === 'In') {
           // raf because only one time on route update
-          Xt.frame({
+          Xt.perf({
             el: self.container,
             ns: `${self.ns}ClassBodyFrame`,
             func: () => {
@@ -2483,7 +2483,7 @@ export class ToggleInit {
           })
         } else if (actionCurrent === 'Out') {
           // raf because only one time on route update
-          Xt.frame({
+          Xt.perf({
             el: self.container,
             ns: `${self.ns}ClassBodyFrame`,
             func: () => {
