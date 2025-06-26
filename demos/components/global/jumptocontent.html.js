@@ -3,11 +3,12 @@ const classes = require('src/app/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--jumptocontent">
     <nav
+      aria-label="Hotkey menu"
       class="*** jumptocontent *** off:sr-only off:opacity-0 off:pointer-events-none out:pointer-events-none fixed z-above left-0 pointer-events-none py-4 w-full flex justify-center transition opacity-0 -translate-y-4 in:opacity-100 in:translate-y-0">
       <a
         href="#jumptocontent"
         class="xt-button pointer-events-auto ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
-        Jump to content
+        Main Content
       </a>
     </nav>
 

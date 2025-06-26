@@ -14,7 +14,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-            <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
+            <div class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
@@ -30,7 +30,7 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Amet
               </button>
-            </nav>
+            </div>
           </div>
           <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
         </div>
@@ -47,7 +47,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-            <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
+            <div class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
@@ -63,7 +63,7 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Amet
               </button>
-            </nav>
+            </div>
           </div>
           <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
         </div>
@@ -80,7 +80,7 @@ const html = /* HTML */ `
         <div class="xt-drop p-3" data-xt-drop-target>
           <div
             class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
-            <nav aria-label="Drop" class="xt-list flex-col ${classes.groupMd()}">
+            <div class="xt-list flex-col ${classes.groupMd()}">
               <a
                 href="/"
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
@@ -96,7 +96,7 @@ const html = /* HTML */ `
                 class="xt-button ${classes.groupButtonMd()} rounded${classes.groupButtonRadius()} ${classes.groupButton()} justify-start text-left ${classes.buttonTextAnim()}">
                 Amet
               </button>
-            </nav>
+            </div>
           </div>
           <div class="xt-arrow rotate-45 z-below -inset-1 m-3 w-3 h-3 bg-gray-200"></div>
         </div>
