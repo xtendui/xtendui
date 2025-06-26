@@ -1,3 +1,24 @@
+# [2.3.0](https://github.com/xtendui/xtendui/compare/v2.2.4...v2.3.0) (2025-06-26)
+
+
+### Bug Fixes
+
+* **a11y:** put aria-expanded on elements and overlay without aria-expanded and drop with aria-expanded ([2a64d27](https://github.com/xtendui/xtendui/commit/2a64d275f2142e6a176e289ff687c30b0d673b87))
+* **infinitescroll:** better INP pagespeed infinitescroll ([a2069fd](https://github.com/xtendui/xtendui/commit/a2069fdb64c6127e9e6bc9e71e6974ed763596c5))
+* **js:** fix multiple resize.xt calls when sequential resizes ([2c2a6d4](https://github.com/xtendui/xtendui/commit/2c2a6d4f7d8a631fbe15a4b294466941c91e3eea))
+* **js:** fix options.closeDeep tabindex and role only if not present, and not reset them ([331a3de](https://github.com/xtendui/xtendui/commit/331a3de1b01baa1ff3ef887cf19c02da21c352ee))
+* **js:** focusTrap with dynamic import, load only when used ([d8cd35b](https://github.com/xtendui/xtendui/commit/d8cd35b36ce560a4cafc926c3d5cd710f531db2c))
+* **js:** removed option Xt.observerOptions it didn't work ([0a2c795](https://github.com/xtendui/xtendui/commit/0a2c7952910d774e83edfc3be21027e1960184a1))
+* **overlay:** a11y overlay with aria-expanded ([c459e41](https://github.com/xtendui/xtendui/commit/c459e41e763ebc1ea0e8c290f7ba183ab5b2d5fa))
+* **overlay:** classBody with setTimeout to improve INP score ([b5b191e](https://github.com/xtendui/xtendui/commit/b5b191ec412226f826d637279a49d175c9b21b5b))
+* **overlay:** focusTrap with initialFocus: true to navigate inside overlay with screen reader keyboard controls, and fix tests ([5cb044d](https://github.com/xtendui/xtendui/commit/5cb044d858db566099ddba1603960e8bb26827dd))
+* **slider:** added [data-xt-slide-not-show-before-init] and [data-xt-slide-show-before-init] to control initialization slider ([ea273bc](https://github.com/xtendui/xtendui/commit/ea273bc750b993e4806f62c05a5ebb0b2488b912))
+
+
+### Features
+
+* **toggle:** added options.a11y.hiddenTargets to set aria-hidden on targets (default true on tooltips) ([1e54699](https://github.com/xtendui/xtendui/commit/1e54699b2859b542a1f8f6c8b8d02863e3404022))
+
 ## [2.2.4](https://github.com/xtendui/xtendui/compare/v2.2.3...v2.2.4) (2025-05-20)
 
 
