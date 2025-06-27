@@ -203,7 +203,7 @@ Toggle.optionsDefaultSuper = {
     controls: true,
     selected: false,
     expanded: false,
-    live: true,
+    live: false,
     disabled: true,
     keyboard: true,
     vertical: false,

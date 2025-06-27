@@ -3211,7 +3211,6 @@ export class ToggleInit {
         }
       } else if (options.a11y.role === 'carousel' && self._hasContainer) {
         // carousel
-        self.container.setAttribute('role', 'group')
         self.container.setAttribute('aria-roledescription', 'carousel')
         for (const tr of trs) {
           tr.setAttribute('role', 'group')
@@ -3416,46 +3415,10 @@ export class ToggleInit {
     const self = this
     const options = self.options
     // aria-live
-    if (options.auto && options.auto.time) {
-      if (options.a11y.live) {
-        const container = self.container
-        container.setAttribute('aria-live', 'polite')
-        // on
-        const onHandler = Xt.dataStorage.put(
-          container,
-          `autostart.${self._componentNs}/arialive/${self.ns}`,
-          self._eventA11yAutostart.bind(self).bind(self, { container }),
-        )
-        container.addEventListener(`autostart.${self._componentNs}`, onHandler)
-        // off
-        const offHandler = Xt.dataStorage.put(
-          container,
-          `autostop.${self._componentNs}/arialive/${self.ns}`,
-          self._eventA11yAutostop.bind(self).bind(self, { container }),
-        )
-        container.addEventListener(`autostop.${self._componentNs}`, offHandler)
-      }
+    if (options.a11y.live) {
+      const container = self.container
+      container.setAttribute('aria-live', 'polite')
     }
-  }
-
-  /**
-   * event a11y autostart
-   * @param {Object} params
-   * @param {Node|HTMLElement|EventTarget|Window} params.container
-   */
-  _eventA11yAutostart({ container } = {}) {
-    // aria-live
-    container.setAttribute('aria-live', 'off')
-  }
-
-  /**
-   * event a11y autostop
-   * @param {Object} params
-   * @param {Node|HTMLElement|EventTarget|Window} params.container
-   */
-  _eventA11yAutostop({ container } = {}) {
-    // aria-live
-    container.setAttribute('aria-live', 'polite')
   }
 
   /**

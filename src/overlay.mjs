@@ -73,7 +73,7 @@ Overlay.optionsDefault = {
     controls: true,
     selected: false,
     expanded: true,
-    live: true,
+    live: false,
     disabled: true,
     keyboard: true,
     vertical: false,
