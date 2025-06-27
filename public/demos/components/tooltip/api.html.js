@@ -77,7 +77,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="tooltip--eventmethods" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="tooltip--eventmethods" aria-label="Object">
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -85,7 +85,7 @@ const html = /* HTML */ `
         Tooltip 0
       </button>
 
-      <div class="xt-tooltip p-3" title="Target 0" data-xt-tooltip-target>
+      <div class="xt-tooltip p-3" aria-label="Target 0" data-xt-tooltip-target>
         <div
           class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
           <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>
@@ -99,7 +99,7 @@ const html = /* HTML */ `
         Tooltip 1
       </button>
 
-      <div class="xt-tooltip p-3" title="Target 1" data-xt-tooltip-target>
+      <div class="xt-tooltip p-3" aria-label="Target 1" data-xt-tooltip-target>
         <div
           class="xt-card rounded${classes.tooltipRadius()} ${classes.tooltipShadow()} ${classes.textInverse()} ${classes.tooltipText()} ${classes.cardBlack()}">
           <div class="${classes.tooltipMd()}">Lorem ipsum dolor sit amet</div>

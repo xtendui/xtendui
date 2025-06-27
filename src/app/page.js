@@ -32,7 +32,7 @@ export default async function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="xt-button docs_home-main_social_btn px-3"
-                title="Twitter"
+                aria-label="Twitter"
                 data-xt-tooltip-element
                 dangerouslySetInnerHTML={{
                   __html: classes.iconTwitter(),
@@ -50,7 +50,7 @@ export default async function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="xt-button docs_home-main_social_btn px-3"
-                title="Npm"
+                aria-label="Npm"
                 data-xt-tooltip-element
                 dangerouslySetInnerHTML={{
                   __html: classes.iconPackage(),
@@ -68,7 +68,7 @@ export default async function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="xt-button docs_home-main_social_btn px-3"
-                title="Github"
+                aria-label="Github"
                 data-xt-tooltip-element
                 dangerouslySetInnerHTML={{
                   __html: classes.iconGithub(),
@@ -469,7 +469,7 @@ export default async function Page() {
                   href="https://www.webgriffe.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Webgriffe"
+                  aria-label="Webgriffe"
                   className="inline-block w-full transition ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint on:opacity-100 on:ease-out-quint">
                   <Image
                     className="inline-block w-full"

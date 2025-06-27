@@ -23,7 +23,7 @@ const html = /* HTML */ `
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
                     data-node-variants-target
                     data-xt-group="red">
-                    <a href="#product-image-overlay-1" id="product-image-1" title="Expand image 1">
+                    <a href="#product-image-overlay-1" id="product-image-1" aria-label="Expand image 1">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/164_6wVEHfI" loading="lazy" alt="" />
                         <div
@@ -36,7 +36,7 @@ const html = /* HTML */ `
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
                     data-node-variants-target
                     data-xt-group="red">
-                    <a href="#product-image-overlay-2" id="product-image-2" title="Expand image 2">
+                    <a href="#product-image-overlay-2" id="product-image-2" aria-label="Expand image 2">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/j7zu2kpTnwY" loading="lazy" alt="" />
                         <div
@@ -49,7 +49,7 @@ const html = /* HTML */ `
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
                     data-node-variants-target
                     data-xt-group="green">
-                    <a href="#product-image-overlay-3" id="product-image-3" title="Expand image 3">
+                    <a href="#product-image-overlay-3" id="product-image-3" aria-label="Expand image 3">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/kP6knT7tjn4" loading="lazy" alt="" />
                         <div
@@ -62,7 +62,7 @@ const html = /* HTML */ `
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
                     data-node-variants-target
                     data-xt-group="blue">
-                    <a href="#product-image-overlay-4" id="product-image-4" title="Expand image 4">
+                    <a href="#product-image-overlay-4" id="product-image-4" aria-label="Expand image 4">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/l8p1aWZqHvE" loading="lazy" alt="" />
                         <div
@@ -75,7 +75,7 @@ const html = /* HTML */ `
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
                     data-node-variants-target
                     data-xt-group="blue">
-                    <a href="#product-image-overlay-5" id="product-image-5" title="Expand image 5">
+                    <a href="#product-image-overlay-5" id="product-image-5" aria-label="Expand image 5">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/gn07k9Kmx9c" loading="lazy" alt="" />
                         <div
@@ -88,7 +88,7 @@ const html = /* HTML */ `
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
                     data-node-variants-target
                     data-xt-group="red,green">
-                    <a href="#product-image-overlay-6" id="product-image-6" title="Expand image 6">
+                    <a href="#product-image-overlay-6" id="product-image-6" aria-label="Expand image 6">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/gpii_myxZG0" loading="lazy" alt="" />
                         <div
@@ -101,7 +101,7 @@ const html = /* HTML */ `
                     class="*** product-image w-full off:hidden out:pointer-events-none ${itemAnimNogroup()} ***"
                     data-node-variants-target
                     data-xt-group="red,green">
-                    <a href="#product-image-overlay-7" id="product-image-7" title="Expand image 7">
+                    <a href="#product-image-overlay-7" id="product-image-7" aria-label="Expand image 7">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/DzoOduUanpQ" loading="lazy" alt="" />
                         <div
@@ -116,7 +116,7 @@ const html = /* HTML */ `
                     <a
                       href="#product-image-1"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 1"
+                      aria-label="Go to image 1"
                       data-node-variants-target
                       data-xt-group="red">
                       <div
@@ -126,7 +126,7 @@ const html = /* HTML */ `
                     <a
                       href="#product-image-2"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 2"
+                      aria-label="Go to image 2"
                       data-node-variants-target
                       data-xt-group="red">
                       <div
@@ -136,7 +136,7 @@ const html = /* HTML */ `
                     <a
                       href="#product-image-3"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 3"
+                      aria-label="Go to image 3"
                       data-node-variants-target
                       data-xt-group="green">
                       <div
@@ -146,7 +146,7 @@ const html = /* HTML */ `
                     <a
                       href="#product-image-4"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 4"
+                      aria-label="Go to image 4"
                       data-node-variants-target
                       data-xt-group="blue">
                       <div
@@ -156,7 +156,7 @@ const html = /* HTML */ `
                     <a
                       href="#product-image-5"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 5"
+                      aria-label="Go to image 5"
                       data-node-variants-target
                       data-xt-group="blue">
                       <div
@@ -166,7 +166,7 @@ const html = /* HTML */ `
                     <a
                       href="#product-image-6"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 6"
+                      aria-label="Go to image 6"
                       data-node-variants-target
                       data-xt-group="red,green">
                       <div
@@ -176,7 +176,7 @@ const html = /* HTML */ `
                     <a
                       href="#product-image-7"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 7"
+                      aria-label="Go to image 7"
                       data-node-variants-target
                       data-xt-group="red,green">
                       <div

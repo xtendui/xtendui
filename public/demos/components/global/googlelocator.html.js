@@ -148,7 +148,7 @@ const html = /* HTML */ `
                     target="_blank"
                     rel="noopener"
                     class="text-12 uppercase xt-list xt-list-2 flex-col items-center"
-                    title="directions"
+                    aria-label="directions"
                     data-xt-populate="direction">
                     ${classes.iconLocate({ classes: 'text-xl -my-1' })}
                     <span data-xt-populate="distance"></span>

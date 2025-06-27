@@ -681,7 +681,7 @@ const initializeIframe = item => {
               ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
             </div>
           </div>
-          <iframe class="relative" title="Demo" data-src="${Xt.sanitize(src)}"></iframe>
+          <iframe class="relative" aria-label="Demo" data-src="${Xt.sanitize(src)}"></iframe>
         </div>`,
       }),
     )

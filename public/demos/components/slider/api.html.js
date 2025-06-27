@@ -131,21 +131,21 @@ const html = /* HTML */ `
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="-1"
-            title="Previous slide">
+            aria-label="Previous slide">
             ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-num
           </button>
           <button
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="1"
-            title="Next slide">
+            aria-label="Next slide">
             ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>

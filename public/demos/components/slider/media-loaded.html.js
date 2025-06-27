@@ -124,7 +124,7 @@ const html = /* HTML */ `
             type="button"
             class="xt-button h-10 rounded-md overflow-hidden hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-content
           </button>
         </nav>

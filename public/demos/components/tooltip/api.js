@@ -95,7 +95,7 @@ Xt.mount({
         const trs = self.targets
         const indexTr = trs.length + 1
         const strTr = `
-            <div class="xt-tooltip p-3" title="Target ${indexTr}"
+            <div class="xt-tooltip p-3" aria-label="Target ${indexTr}"
               data-xt-tooltip-target>
               <div class="text-13 py-2 px-3.5 rounded-md shadow-lg font-medium text-white bg-black">
                 Lorem ipsum dolor sit amet

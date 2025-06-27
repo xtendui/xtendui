@@ -19,7 +19,7 @@ export default function Header({ page }) {
               <div className="docs_site-header_content">
                 <Link
                   href="/"
-                  title="Xtend UI"
+                  aria-label="Xtend UI"
                   className="docs_site-header_logo inline-block relative bg-contain transition">
                   <div className="absolute -bottom-2 -right-4">
                     <div className="pt-px pb-0 px-1.5 bg-white rounded-full border-2 border-primary-500 font-bold text-[12px] text-primary-500 leading-snug">
@@ -35,7 +35,7 @@ export default function Header({ page }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`xt-button docs_site-header_top_social_btn ${classes.textInverse()} transition`}
-                        title="Twitter"
+                        aria-label="Twitter"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
                           __html: classes.iconTwitter(),
@@ -53,7 +53,7 @@ export default function Header({ page }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`xt-button docs_site-header_top_social_btn ${classes.textInverse()} transition`}
-                        title="Npm"
+                        aria-label="Npm"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
                           __html: classes.iconPackage(),
@@ -71,7 +71,7 @@ export default function Header({ page }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`xt-button docs_site-header_top_social_btn ${classes.textInverse()} transition`}
-                        title="Github"
+                        aria-label="Github"
                         data-xt-tooltip-element
                         dangerouslySetInnerHTML={{
                           __html: classes.iconGithub(),

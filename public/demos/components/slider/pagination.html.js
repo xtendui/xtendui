@@ -19,7 +19,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -57,7 +57,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -76,7 +76,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -95,7 +95,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -114,7 +114,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -133,7 +133,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -149,7 +149,7 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-num of xt-tot
           </button>
         </nav>

@@ -106,7 +106,7 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             <span class="${classes.loader()}">
               <span class="${classes.filler()} text-primary-500">
                 <span class="block absolute bg-current opacity-25 w-full h-full"></span>

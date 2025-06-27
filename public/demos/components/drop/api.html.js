@@ -77,7 +77,7 @@ const html = /* HTML */ `
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="drop--eventmethods" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="drop--eventmethods" aria-label="Object">
       <button
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}"
@@ -85,7 +85,7 @@ const html = /* HTML */ `
         Drop 0
       </button>
 
-      <div class="xt-drop p-3" title="Target 0" data-xt-drop-target>
+      <div class="xt-drop p-3" aria-label="Target 0" data-xt-drop-target>
         <div
           class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
           <div class="xt-list flex-col ${classes.groupMd()}">
@@ -115,7 +115,7 @@ const html = /* HTML */ `
         Drop 1
       </button>
 
-      <div class="xt-drop p-3" title="Target 1" data-xt-drop-target>
+      <div class="xt-drop p-3" aria-label="Target 1" data-xt-drop-target>
         <div
           class="xt-card w-64 rounded${classes.dropRadius()} ${classes.dropShadow()} ${classes.textDefault()} ${classes.cardWhite()}">
           <div class="xt-list flex-col ${classes.groupMd()}">
