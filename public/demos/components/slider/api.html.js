@@ -67,7 +67,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-slider" id="slider--eventmethods">
+    <section class="xt-slider" aria-label="Example" id="slider--eventmethods">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -158,7 +158,7 @@ const html = /* HTML */ `
             id="card--slider-api-log"></div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 `
 

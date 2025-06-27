@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-progress">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8" data-xt-mousefollow>
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -123,7 +123,7 @@ const html = /* HTML */ `
           </span>
         </span>
       </div>
-    </div>
+    </section>
   </div>
 `
 

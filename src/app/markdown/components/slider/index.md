@@ -24,3 +24,7 @@ Use this code to create a **slider** in **relative mode**.
   <demoinline src="demos/components/slider/usage-relative">
   </demoinline>
 </demo>
+
+> For accessibility purpose use `<section>` tag and `[aria-label="Your slider description"]` on `.xt-slider`.
+
+> For accessibility purpose use `<section>` tag and `[aria-label="Your slider description"]` on `.xt-slider`.

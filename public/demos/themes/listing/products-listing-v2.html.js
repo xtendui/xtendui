@@ -3,7 +3,7 @@ const classes = require('src/app/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--products-listing-v2">
     <div class="py-10">
-      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left', wrap: true }">
+      <section class="xt-slider pb-10" aria-label="Example" data-xt-slider="{ align: 'left', wrap: true }">
         <div class="container">
           <div class="xt-h3 mb-8">Latest Products</div>
 
@@ -167,7 +167,7 @@ const html = /* HTML */ `
             <button type="button" class="xt-button hidden" data-xt-slider-element></button>
           </nav>
         </div>
-      </div>
+      </section>
 
       <div class="listing">
         <div class="container">

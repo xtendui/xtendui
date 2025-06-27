@@ -3,7 +3,7 @@ const classes = require('src/app/snippets/classes').classes
 const html = /* HTML */ `
   <div class="demo--products-listing-v3">
     <div class="py-10">
-      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left', contain: false }">
+      <section class="xt-slider pb-10" aria-label="Example" data-xt-slider="{ align: 'left', contain: false }">
         <div class="container">
           <div class="xt-row items-stretch">
             <div class="w-full lg:w-4/12">
@@ -11,7 +11,7 @@ const html = /* HTML */ `
                 <div class="xt-h4 mb-2">
                   Latest Products
                 </div>
-      
+
                 <div class="flex flex-nowrap justify-center mb-8">
                   <button type="button" class="ml-auto max-lg:hidden" data-xt-nav="-1" aria-label="Previous slide">
                     <div class="container">
@@ -22,13 +22,13 @@ const html = /* HTML */ `
                       </div>
                     </div>
                   </button>
-      
+
                   <div class="my-auto">
                     <a href="#" class="xt-button mx-auto ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} !px-0 whitespace-nowrap">
                       See all
                     </a>
                   </div>
-      
+
                   <button type="button" class="mr-auto max-lg:hidden" data-xt-nav="1" aria-label="Next slide">
                     <div class="container">
                       <div class="xt-button py-6">
@@ -41,7 +41,7 @@ const html = /* HTML */ `
                 </div>
               </div>
             </div>
-      
+
             <div class="w-full lg:w-8/12">
               <div
                 class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-1"

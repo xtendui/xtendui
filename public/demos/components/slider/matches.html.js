@@ -2,8 +2,9 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div
+    <section
       class="xt-slider"
+      aria-label="Example"
       data-xt-slider="{ align: 'left', wrap: true, matches: { '(min-width: 768px)': { wrap: false, contain: false } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
@@ -70,7 +71,7 @@ const html = /* HTML */ `
             aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 

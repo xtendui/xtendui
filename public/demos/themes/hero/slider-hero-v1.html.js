@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-hero-v1">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -166,7 +166,7 @@ const html = /* HTML */ `
           data-xt-slider-element
           aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `
 

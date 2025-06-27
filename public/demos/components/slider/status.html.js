@@ -2,7 +2,10 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-status">
-    <div class="xt-slider" data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
+    <section
+      class="xt-slider"
+      aria-label="Example"
+      data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <!-- switcher for demo purpose remove this -->
         <form class="text-sm mb-8">
@@ -82,7 +85,7 @@ const html = /* HTML */ `
           <button type="button" class="xt-button hidden" data-xt-slider-element></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 
