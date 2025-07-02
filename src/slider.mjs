@@ -84,7 +84,7 @@ Slider.optionsDefault = {
     labelTargets: true,
     hiddenTargets: false,
     controls: true,
-    selected: true,
+    selected: false,
     expanded: false,
     hidden: true,
     live: true,

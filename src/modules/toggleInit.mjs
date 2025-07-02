@@ -1795,7 +1795,7 @@ export class ToggleInit {
   /**
    * auto start
    */
-  _eventAutostart() {
+  _eventAutostart(e) {
     const self = this
     const options = self.options
     // disabled
@@ -1804,11 +1804,19 @@ export class ToggleInit {
     }
     // start
     if (options.auto && options.auto.time && Xt.autoTimescale) {
+      // unblock auto on focus and mouseenter
+      if (e?.type === 'blur' || e?.type === 'mouseleave') {
+        self._autoblock = false
+      }
       if (!self._autoblock && !self._autorunning) {
         // not when nothing activated
         if (self.index !== null && (!self.initial || options.auto.initial)) {
           // paused
           self._autorunning = true
+          // aria-live
+          if (options.a11y.live) {
+            self.container.setAttribute('aria-live', 'off')
+          }
           // clear
           clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
           // auto
@@ -1836,7 +1844,7 @@ export class ToggleInit {
   /**
    * auto stop
    */
-  _eventAutostop() {
+  _eventAutostop(e) {
     const self = this
     const options = self.options
     // stop
@@ -1844,6 +1852,14 @@ export class ToggleInit {
       if (!self._autoblock && self._autorunning) {
         // paused
         self._autorunning = false
+        // aria-live
+        if (options.a11y.live) {
+          self.container.setAttribute('aria-live', 'polite')
+        }
+        // block auto on focus and mouseenter
+        if (e?.type === 'focus' || e?.type === 'mouseenter') {
+          self._autoblock = true
+        }
         // clear
         clearTimeout(Xt.dataStorage.get(self.container, `${self.ns}AutoTimeout`))
         // dispatch event
@@ -3167,7 +3183,6 @@ export class ToggleInit {
       self._initA11yRole({ els, trs })
       self._initA11yId({ els, trs })
       self._initA11ySetup()
-      self._initA11yAuto()
       self._initA11yChange()
       self._initA11yStatus({ els })
       self._initA11yKeyboard({ els: self.elements })
@@ -3289,6 +3304,10 @@ export class ToggleInit {
   _initA11ySetup() {
     const self = this
     const options = self.options
+    // aria-live
+    if (options.a11y.live) {
+      self.container.setAttribute('aria-live', 'polite')
+    }
     // not when self mode (no targets)
     if (self.targets.length) {
       // aria-hidden
@@ -3455,19 +3474,6 @@ export class ToggleInit {
     // aria-hidden
     if (options.a11y.hidden) {
       tr.setAttribute('aria-hidden', true)
-    }
-  }
-
-  /**
-   * init a11y auto
-   */
-  _initA11yAuto() {
-    const self = this
-    const options = self.options
-    // aria-live
-    if (options.a11y.live) {
-      const container = self.container
-      container.setAttribute('aria-live', 'polite')
     }
   }
 
