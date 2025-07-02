@@ -36,6 +36,7 @@ This components follows A11y standards so **aria attributes and keyboard interac
 | Option                  | `a11y.controls:Boolean`                          | `true`        | Inject `aria-controls` attributes            |
 | Option                  | `a11y.selected:Boolean`                          | `false`        | Inject `aria-selected` attributes            |
 | Option                  | `a11y.expanded:Boolean`                          | `false`        | Inject `aria-expanded` attributes            |
+| Option                  | `a11y.hidden:Boolean`                          | `true`        | Inject `aria-hidden` attributes on targets depending on activation            |
 | Option                  | `a11y.live:Boolean`                          | `true`        | Inject `aria-live` attributes on auto            |
 | Option                  | `a11y.disabled:Boolean`                          | `true`        | Inject `aria-disabled` attributes on enable/disable           |
 | Option                  | `a11y.keyboard:Boolean`                          | `true`        | Automatic keyboard **next**, **previous** and **exit** interactions           |
