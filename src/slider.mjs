@@ -86,6 +86,7 @@ Slider.optionsDefault = {
     controls: true,
     selected: true,
     expanded: false,
+    hidden: true,
     live: true,
     disabled: true,
     keyboard: true,

@@ -83,6 +83,7 @@ Tooltip.optionsDefault = {
     controls: false,
     selected: false,
     expanded: false,
+    hidden: false,
     live: false,
     disabled: true,
     keyboard: true,

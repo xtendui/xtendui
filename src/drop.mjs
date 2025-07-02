@@ -79,6 +79,7 @@ Drop.optionsDefault = {
     controls: true,
     selected: false,
     expanded: true,
+    hidden: false,
     live: false,
     disabled: true,
     keyboard: true,

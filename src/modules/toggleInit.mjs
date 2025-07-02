@@ -3353,27 +3353,49 @@ export class ToggleInit {
         // on
         const onHandler = Xt.dataStorage.put(
           el,
-          `on.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventA11yChangeOn.bind(self).bind(self, { el }),
+          `on.${self._componentNs}/ariaelements/${self.ns}`,
+          self._eventA11yChangeOnElements.bind(self).bind(self, { el }),
         )
         el.addEventListener(`on.${self._componentNs}`, onHandler)
         // off
         const offHandler = Xt.dataStorage.put(
           el,
-          `off.${self._componentNs}/ariaselected/${self.ns}`,
-          self._eventA11yChangeOff.bind(self).bind(self, { el }),
+          `off.${self._componentNs}/ariaelements/${self.ns}`,
+          self._eventA11yChangeOffElements.bind(self).bind(self, { el }),
         )
         el.addEventListener(`off.${self._componentNs}`, offHandler)
+      }
+    }
+    if (options.a11y.hidden) {
+      for (const tr of self.targets) {
+        // aria-hidden
+        if (options.a11y.hidden) {
+          tr.setAttribute('aria-hidden', 'true')
+        }
+        // on
+        const onHandler = Xt.dataStorage.put(
+          tr,
+          `on.${self._componentNs}/ariatargets/${self.ns}`,
+          self._eventA11yChangeOnTargets.bind(self).bind(self, { tr }),
+        )
+        tr.addEventListener(`on.${self._componentNs}`, onHandler)
+        // off
+        const offHandler = Xt.dataStorage.put(
+          tr,
+          `off.${self._componentNs}/ariatargets/${self.ns}`,
+          self._eventA11yChangeOffTargets.bind(self).bind(self, { tr }),
+        )
+        tr.addEventListener(`off.${self._componentNs}`, offHandler)
       }
     }
   }
 
   /**
-   * event a11y change on
+   * event a11y change on elements
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  _eventA11yChangeOn({ el } = {}) {
+  _eventA11yChangeOnElements({ el } = {}) {
     const self = this
     const options = self.options
     if (self.targets.length) {
@@ -3389,11 +3411,11 @@ export class ToggleInit {
   }
 
   /**
-   * event a11y change off
+   * event a11y change off elements
    * @param {Object} params
    * @param {Node|HTMLElement|EventTarget|Window} params.el
    */
-  _eventA11yChangeOff({ el } = {}) {
+  _eventA11yChangeOffElements({ el } = {}) {
     const self = this
     const options = self.options
     if (self.targets.length) {
@@ -3405,6 +3427,34 @@ export class ToggleInit {
       if (options.a11y.expanded) {
         el.setAttribute('aria-expanded', 'false')
       }
+    }
+  }
+
+  /**
+   * event a11y change on targets
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.tr
+   */
+  _eventA11yChangeOnTargets({ tr } = {}) {
+    const self = this
+    const options = self.options
+    // aria-hidden
+    if (options.a11y.hidden) {
+      tr.setAttribute('aria-hidden', false)
+    }
+  }
+
+  /**
+   * event a11y change off targets
+   * @param {Object} params
+   * @param {Node|HTMLElement|EventTarget|Window} params.tr
+   */
+  _eventA11yChangeOffTargets({ tr } = {}) {
+    const self = this
+    const options = self.options
+    // aria-hidden
+    if (options.a11y.hidden) {
+      tr.setAttribute('aria-hidden', true)
     }
   }
 
