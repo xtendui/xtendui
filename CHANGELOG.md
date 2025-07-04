@@ -1,3 +1,16 @@
+# [2.4.0](https://github.com/xtendui/xtendui/compare/v2.3.0...v2.4.0) (2025-07-04)
+
+
+### Bug Fixes
+
+* **js:** a11y no aria-live in options.auto and use aria-live in slider ([dd602c4](https://github.com/xtendui/xtendui/commit/dd602c412713d8d8b55771cc09b728f9f721876c))
+* **js:** pause aria-live on autostop, block auto when focus or mouseenter ([0473e8a](https://github.com/xtendui/xtendui/commit/0473e8a7909622e5d99f6a2f5f454da2c2c72819))
+
+
+### Features
+
+* **js:** added options.a11y.hidden to use aria-hidden on targets depending on activation ([b286fab](https://github.com/xtendui/xtendui/commit/b286fabca1085341f7853c6dba1909f65ae76e6f))
+
 # [2.3.0](https://github.com/xtendui/xtendui/compare/v2.2.4...v2.3.0) (2025-06-26)
 
 
