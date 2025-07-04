@@ -2,7 +2,9 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-group">
-    <div class="xt-slider" data-xt-slider="{ group: 1, wrap: true, matches: { '(min-width: 768px)': { group: 0.8 } } }">
+    <section
+      section="xt-slider"
+      data-xt-slider="{ group: 1, wrap: true, matches: { '(min-width: 768px)': { group: 0.8 } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -65,10 +67,10 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 

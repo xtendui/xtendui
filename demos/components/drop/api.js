@@ -95,7 +95,7 @@ Xt.mount({
         const trs = self.targets
         const indexTr = trs.length + 1
         const strTr = `
-          <div class="xt-drop p-3" title="Target ${indexTr}"
+          <div class="xt-drop p-3" aria-label="Target ${indexTr}"
             data-xt-drop-target>
             <div class="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
               <div class="xt-list flex-col p-3">

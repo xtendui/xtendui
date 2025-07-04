@@ -149,7 +149,7 @@
   </div>
 `}},795:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(24883);var s=i(68477);a.Xt.mount({matches:".demo--slider-absolute-cover .xt-slider",mount:t=>{let e,{ref:i}=t,o="quart.out",l=()=>{};return new a.Xt.Slider(i,{duration:()=>1e3*e,mode:"absolute",loop:!0}).then(t=>{t.dragger.addEventListener("dragposition.xt.slider",()=>{e=t.drag._instant?0:Math.max(.5,Math.min(1,Math.log(t.drag.size/400))),s.Ay.killTweensOf(t.drag),s.Ay.to(t.drag,{_position:t.drag._final,duration:e,ease:o})}),t.dragger.addEventListener("drag.xt.slider",()=>{let i=t.targets.filter(e=>t.hasCurrent({el:e}))[0].querySelector(".hero-cover");s.Ay.killTweensOf(i),s.Ay.to(i,{x:`${100*t.drag._ratioInverse*t.direction}%`,duration:e,ease:o})}),t.dragger.addEventListener("dragreset.xt.slider",()=>{let i=t.targets.filter(e=>t.hasCurrent({el:e}))[0].querySelector(".hero-cover");s.Ay.killTweensOf(i),s.Ay.to(i,{x:`${-100*t.direction}%`,duration:e,ease:o})}),t.container.addEventListener("on.xt.slider",i=>{let a=i.target;if(t.targets.includes(a)&&!t.initial){let i=a.querySelector(".hero");s.Ay.killTweensOf(i),s.Ay.set(i,{x:`${100*t.drag._ratioInverse*t.direction}%`}),s.Ay.to(i,{x:0,duration:e,ease:o});let l=a.querySelector(".hero-inner");s.Ay.killTweensOf(l),s.Ay.set(l,{x:`${-100*t.drag._ratioInverse*t.direction}%`}),s.Ay.to(l,{x:0,duration:e,ease:o}),s.Ay.killTweensOf(t.drag),s.Ay.set(t.drag,{_position:t.drag._final})}},!0),t.container.addEventListener("off.xt.slider",i=>{let a=i.target;if(t.targets.includes(a)){let i=a.querySelector(".hero-cover");s.Ay.killTweensOf(i),t.drag._instant||s.Ay.set(i,{x:`${100*t.direction}%`}),s.Ay.to(i,{x:`${-100*t.direction}%`,duration:e,ease:o});let l=a.querySelector(".hero");s.Ay.killTweensOf(l),s.Ay.to(l,{x:`${-100*t.direction}%`,duration:e,ease:o});let r=a.querySelector(".hero-inner");s.Ay.killTweensOf(r),s.Ay.to(r,{x:`${100*t.direction}%`,duration:e,ease:o})}},!0),l=()=>{t.destroy(),t=null}}),()=>{l()}}})},1197:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},1378:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-automatic-scrolling-wheel">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides" data-xt-slider-dragger>
           <div class="xt-slide ${a.slide()} *** px-5 ***" data-xt-slider-target>
@@ -213,12 +213,12 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
 
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row" data-xt-slider-dragger>
           <div class="xt-slide ${a.slide()} *** px-1 w-60 ***" data-xt-slider-target>
@@ -272,10 +272,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},1408:()=>{},1484:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--toggle-multiple-nogroupelements">
@@ -497,7 +497,7 @@
   </div>
 `}},2017:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-animation-js">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -574,10 +574,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},2019:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -1340,7 +1340,7 @@
                     class="*** product-image w-full off:hidden out:pointer-events-none opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100 ***"
                     data-node-variants-target
                     data-xt-group="red">
-                    <a href="#product-image-overlay-1" id="product-image-1" title="Expand image 1">
+                    <a href="#product-image-overlay-1" id="product-image-1" aria-label="Expand image 1">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/164_6wVEHfI" loading="lazy" alt="" />
                         <div
@@ -1353,7 +1353,7 @@
                     class="*** product-image w-full off:hidden out:pointer-events-none opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100 ***"
                     data-node-variants-target
                     data-xt-group="red">
-                    <a href="#product-image-overlay-2" id="product-image-2" title="Expand image 2">
+                    <a href="#product-image-overlay-2" id="product-image-2" aria-label="Expand image 2">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/j7zu2kpTnwY" loading="lazy" alt="" />
                         <div
@@ -1366,7 +1366,7 @@
                     class="*** product-image w-full off:hidden out:pointer-events-none opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100 ***"
                     data-node-variants-target
                     data-xt-group="green">
-                    <a href="#product-image-overlay-3" id="product-image-3" title="Expand image 3">
+                    <a href="#product-image-overlay-3" id="product-image-3" aria-label="Expand image 3">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/kP6knT7tjn4" loading="lazy" alt="" />
                         <div
@@ -1379,7 +1379,7 @@
                     class="*** product-image w-full off:hidden out:pointer-events-none opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100 ***"
                     data-node-variants-target
                     data-xt-group="blue">
-                    <a href="#product-image-overlay-4" id="product-image-4" title="Expand image 4">
+                    <a href="#product-image-overlay-4" id="product-image-4" aria-label="Expand image 4">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/l8p1aWZqHvE" loading="lazy" alt="" />
                         <div
@@ -1392,7 +1392,7 @@
                     class="*** product-image w-full off:hidden out:pointer-events-none opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100 ***"
                     data-node-variants-target
                     data-xt-group="blue">
-                    <a href="#product-image-overlay-5" id="product-image-5" title="Expand image 5">
+                    <a href="#product-image-overlay-5" id="product-image-5" aria-label="Expand image 5">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/gn07k9Kmx9c" loading="lazy" alt="" />
                         <div
@@ -1405,7 +1405,7 @@
                     class="*** product-image w-full off:hidden out:pointer-events-none opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100 ***"
                     data-node-variants-target
                     data-xt-group="red,green">
-                    <a href="#product-image-overlay-6" id="product-image-6" title="Expand image 6">
+                    <a href="#product-image-overlay-6" id="product-image-6" aria-label="Expand image 6">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/gpii_myxZG0" loading="lazy" alt="" />
                         <div
@@ -1418,7 +1418,7 @@
                     class="*** product-image w-full off:hidden out:pointer-events-none opacity-0 translate-y-6 scale-95 in:transition in:opacity-100 in:translate-y-0 in:scale-100 out:transition out:translate-y-0 out:scale-100 ***"
                     data-node-variants-target
                     data-xt-group="red,green">
-                    <a href="#product-image-overlay-7" id="product-image-7" title="Expand image 7">
+                    <a href="#product-image-overlay-7" id="product-image-7" aria-label="Expand image 7">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
                         <img class="xt-media relative" src="/stock/DzoOduUanpQ" loading="lazy" alt="" />
                         <div
@@ -1433,7 +1433,7 @@
                     <a
                       href="#product-image-1"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 1"
+                      aria-label="Go to image 1"
                       data-node-variants-target
                       data-xt-group="red">
                       <div
@@ -1443,7 +1443,7 @@
                     <a
                       href="#product-image-2"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 2"
+                      aria-label="Go to image 2"
                       data-node-variants-target
                       data-xt-group="red">
                       <div
@@ -1453,7 +1453,7 @@
                     <a
                       href="#product-image-3"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 3"
+                      aria-label="Go to image 3"
                       data-node-variants-target
                       data-xt-group="green">
                       <div
@@ -1463,7 +1463,7 @@
                     <a
                       href="#product-image-4"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 4"
+                      aria-label="Go to image 4"
                       data-node-variants-target
                       data-xt-group="blue">
                       <div
@@ -1473,7 +1473,7 @@
                     <a
                       href="#product-image-5"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 5"
+                      aria-label="Go to image 5"
                       data-node-variants-target
                       data-xt-group="blue">
                       <div
@@ -1483,7 +1483,7 @@
                     <a
                       href="#product-image-6"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 6"
+                      aria-label="Go to image 6"
                       data-node-variants-target
                       data-xt-group="red,green">
                       <div
@@ -1493,7 +1493,7 @@
                     <a
                       href="#product-image-7"
                       class="*** off:hidden out:pointer-events-none *** py-1.5 px-2 flex items-center justify-center group"
-                      title="Go to image 7"
+                      aria-label="Go to image 7"
                       data-node-variants-target
                       data-xt-group="red,green">
                       <div
@@ -1776,7 +1776,7 @@
   </div>
 `}},5611:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(36587),a.Xt.mount({matches:".demo--drop-reset-to-current [data-xt-drop]",mount:t=>{let{ref:e}=t;a.Xt.get({name:"xt-drop",el:e}).then(t=>{let e=()=>{null===t.index&&t.targets.filter(t=>t.classList.contains("current"))[0].dispatchEvent(new CustomEvent("on.trigger.xt.drop"))};for(let i of t.targets)i.addEventListener("off.xt.drop",e)})}})},5800:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},5885:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-navigation">
-    <div class="xt-slider" data-xt-slider="{ loop: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ loop: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -1790,14 +1790,14 @@
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${a.iconChevronLeft({classes:"text-xl -my-1"})}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${a.iconChevronRight({classes:"text-xl -my-1"})}
                 </button>
               </nav>
@@ -1813,14 +1813,14 @@
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${a.iconChevronLeft({classes:"text-xl -my-1"})}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${a.iconChevronRight({classes:"text-xl -my-1"})}
                 </button>
               </nav>
@@ -1836,14 +1836,14 @@
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${a.iconChevronLeft({classes:"text-xl -my-1"})}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${a.iconChevronRight({classes:"text-xl -my-1"})}
                 </button>
               </nav>
@@ -1859,14 +1859,14 @@
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${a.iconChevronLeft({classes:"text-xl -my-1"})}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${a.iconChevronRight({classes:"text-xl -my-1"})}
                 </button>
               </nav>
@@ -1882,14 +1882,14 @@
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${a.iconChevronLeft({classes:"text-xl -my-1"})}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${a.iconChevronRight({classes:"text-xl -my-1"})}
                 </button>
               </nav>
@@ -1905,14 +1905,14 @@
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${a.iconChevronLeft({classes:"text-xl -my-1"})}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${a.iconChevronRight({classes:"text-xl -my-1"})}
                 </button>
               </nav>
@@ -1928,14 +1928,14 @@
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${a.iconChevronLeft({classes:"text-xl -my-1"})}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${a.iconChevronRight({classes:"text-xl -my-1"})}
                 </button>
               </nav>
@@ -1951,24 +1951,24 @@
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
             data-xt-nav="-1"
-            title="Previous slide">
+            aria-label="Previous slide">
             ${a.iconChevronLeft({classes:"text-xl -my-1"})}
           </button>
           <button
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
           <button
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
             data-xt-nav="1"
-            title="Next slide">
+            aria-label="Next slide">
             ${a.iconChevronRight({classes:"text-xl -my-1"})}
           </button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},5980:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -2209,7 +2209,7 @@
   </div>
 `,container:!0}},7374:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-absolute-wheel">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -2309,9 +2309,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},7583:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--toggle-animation-noqueue">
@@ -3783,7 +3783,7 @@
   </div>
 `}},12044:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},12159:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},12173:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-free">
-    <div class="xt-slider" data-xt-slider="{ free: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ free: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides *** transition ease-out-quint duration-500 on:duration-500 *** xt-row xt-row-4"
@@ -3839,10 +3839,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},12298:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -3865,8 +3865,9 @@
   </div>
 `}},12582:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);a.Xt.mount({matches:".demo--javascript-animation-css [data-node-target]",mount:t=>{let{ref:e}=t;return e.dataset.interval=setInterval(()=>{e.classList.contains("on")?a.Xt.off({el:e}):a.Xt.on({el:e})},2e3),()=>{clearTimeout(e.dataset.interval)}}})},12620:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div
+    <section
       class="xt-slider"
+      aria-label="Example"
       data-xt-slider="{ align: 'left', wrap: true, matches: { '(min-width: 768px)': { wrap: false, contain: false } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
@@ -3930,10 +3931,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},12677:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -4034,7 +4035,7 @@
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
             data-xt-nav="-1"
-            title="Previous slide">
+            aria-label="Previous slide">
             ${a.iconArrowLeft({classes:"text-xl -my-1"})}
           </button>
 
@@ -4042,7 +4043,7 @@
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
             data-xt-nav="1"
-            title="Next slide">
+            aria-label="Next slide">
             ${a.iconArrowRight({classes:"text-xl -my-1"})}
           </button>
         </div>
@@ -4059,7 +4060,7 @@
   </div>
 `}},13136:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},13416:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--sticky-hide-direction .xt-sticky",mount:t=>{let{ref:e}=t,i=function(){let{self:t,refresh:i}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};t.isActive&&t.direction<0&&(i||e.classList.contains("scrolling-hide"))?(e.classList.remove("scrolling-hide"),s.Ay.killTweensOf(e),s.Ay.to(e,{y:0,duration:.5*!i,ease:"quart.out"})):!t.isActive&&t.direction>0&&(i||!e.classList.contains("scrolling-hide"))&&e.classList.add("scrolling-hide")};o.u.create({trigger:e,start:-1,end:()=>`top top-=${e.offsetHeight}`,onUpdate:t=>{i({self:t})},onRefresh:t=>{e.classList.add("!transform-none"),requestAnimationFrame(()=>{e.classList.remove("!transform-none","scrolling-down"),i({self:t,refresh:!0})})}});let a=function(){let{self:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};t.getVelocity()&&(e.classList.contains("scrolling-down")&&e.classList.contains("scrolling-hide")&&t.direction<0?(e.classList.remove("scrolling-down"),s.Ay.killTweensOf(e),s.Ay.to(e,{y:0,duration:.5,ease:"quart.out"})):!e.classList.contains("scrolling-down")&&e.classList.contains("scrolling-hide")&&t.direction>0&&(e.classList.add("scrolling-down"),s.Ay.killTweensOf(e),s.Ay.to(e,{y:-(e.offsetTop+e.offsetHeight),duration:.5,ease:"quart.out"})))};o.u.create({trigger:e,start:"top top",endTrigger:"html",end:"bottom top",pin:!0,pinSpacing:!1,onUpdate:t=>{a({self:t})}})}})},13434:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider="{ wrap: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition *** ease-out-quint duration-500 on:duration-500 *** xt-row xt-row-4"
@@ -4122,10 +4123,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},13501:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},13669:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--parallax-image",mount:t=>{let{ref:e}=t;for(let t of e.querySelectorAll(".parallax")){t.classList.add("parallaxed");let e=t.querySelector(".xt-media");t&&!t.closest(".overflow-hidden")&&t.classList.add("overflow-hidden");let i={trigger:t,start:()=>{let e=window.innerHeight-t.offsetTop;return`top${e>0?`+=${e}`:""} bottom`},end:()=>{let e=window.innerHeight-document.scrollingElement.scrollHeight+t.offsetTop+t.offsetHeight;return`bottom${e>0?`-=${e}`:""} top`},scrub:!0};s.Ay.set(e,{height:"120%"}),s.Ay.timeline({scrollTrigger:i}).to(e,{y:"-12%"})}}})},13723:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},13813:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -4377,7 +4378,7 @@
   </div>
 `,container:!0,gradient:!0}},14069:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider="{ wrap: true, duration: 500 }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true, duration: 500 }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -4440,10 +4441,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},14112:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -5442,7 +5443,9 @@
   </div>
 `}},18538:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-group">
-    <div class="xt-slider" data-xt-slider="{ group: 1, wrap: true, matches: { '(min-width: 768px)': { group: 0.8 } } }">
+    <section
+      section="xt-slider"
+      data-xt-slider="{ group: 1, wrap: true, matches: { '(min-width: 768px)': { group: 0.8 } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -5505,10 +5508,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},18560:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--toggle-api">
@@ -5699,7 +5702,7 @@
   </div>
 `}},19032:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-nooverflow">
-    <div class="xt-slider" data-xt-slider>
+    <section class="xt-slider" aria-label="Example" data-xt-slider>
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -5734,10 +5737,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},19077:()=>{},19198:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);a.Xt.mount({matches:".demo--form-loader-spinner",mount:t=>{let{ref:e}=t,i=e.querySelectorAll('button[type="submit"], .xt-loadable'),s=e.querySelector("[data-node-loader-template]");for(let t of i){let e=t.form||t.closest("form"),i=()=>{t.classList.add("xt-loading")};t.classList.contains("xt-loadable-ignore")||e.addEventListener("submit",i);let o=()=>{t.classList.remove("xt-loading")};if(t.classList.contains("xt-loadable-ignore")||(e.addEventListener("reset",o),addEventListener("pageshow",o)),t.classList.contains("xt-loadable"))t.append(a.Xt.node({str:s.innerHTML}));else{t.classList.add("xt-loadable");let e=t.innerHTML;t.innerHTML="",t.append(a.Xt.node({str:'<span class="xt-loadable-content"></span>'})),t.append(a.Xt.node({str:s.innerHTML})),t.querySelector(".xt-loadable-content").innerHTML=a.Xt.sanitize(e)}}}})},19410:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>n});let a=i(91452).L,s=()=>`${a.textDefault()} bg-gray-100`,o=()=>`${a.textInverse()} bg-primary-500`,l=()=>`${s()}`,r=()=>`${o()}`,d=()=>`${a.groupButtonPrimary()}`,n={html:`
   <div class="demo--electric-animation-v1">
@@ -6240,7 +6243,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-12 uppercase xt-list xt-list-2 flex-col items-center"
-                    title="directions"
+                    aria-label="directions"
                     data-xt-populate="direction">
                     ${a.iconLocate({classes:"text-xl -my-1"})}
                     <span data-xt-populate="distance"></span>
@@ -6307,7 +6310,7 @@
   </div>
 `}},21682:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(24883);var s=i(68477);a.Xt.mount({matches:".demo--slider-animation-js .xt-slider",mount:t=>{let{ref:e}=t,i=()=>{};return new a.Xt.Slider(e,{wrap:!0,duration:500}).then(t=>{for(let e of t.targets.filter(e=>!t.hasCurrent({el:e}))){let t=e.querySelector("[data-node-target-content]");s.Ay.killTweensOf(t),s.Ay.set(t,{opacity:0})}t.container.addEventListener("on.xt.slider",e=>{let i=e.target;if(t.targets.includes(i)){let e=i.querySelector("[data-node-target-content]");s.Ay.killTweensOf(e),s.Ay.set(e,{x:192*t.direction}),s.Ay.to(e,{x:0,opacity:1,duration:.5*!t.initial,ease:"quint.out"})}},!0),t.container.addEventListener("off.xt.slider",e=>{let i=e.target;if(t.targets.includes(i)){let e=i.querySelector("[data-node-target-content]");s.Ay.killTweensOf(e),s.Ay.to(e,{x:-(192*t.direction),opacity:0,duration:.5,ease:"quint.out"})}},!0),i=()=>{t.destroy(),t=null}}),()=>{i()}}})},21906:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-dragposition">
-    <div class="xt-slider overflow-visible">
+    <section class="xt-slider overflow-visible" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${a.slide()}" data-xt-slider-target>
@@ -6361,10 +6364,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!1}},21982:(t,e,i)=>{"use strict";i.r(e),i(88300),i(36587)},22104:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -6783,7 +6786,7 @@
   </div>
 `}},22867:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(11616),a.Xt.mount({matches:".demo--scrollto-simple",mount:()=>{let t=()=>{};return new a.Xt.Scrollto(document.documentElement,{hash:!0}).then(e=>{let i=()=>{e.scroller.scrollTo(0,e.position)};e.container.addEventListener("scrollto.xt.scrollto",i),t=()=>{e.container.removeEventListener("scrollto.xt.scrollto",i),e.destroy(),e=null}}),()=>{t()}}})},23130:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-dragposition-js">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row xt-row-4" data-xt-slider-dragger>
           <div class="xt-slide w-6/12 sm:w-4/12 md:w-3/12 ${a.slide()}" data-xt-slider-target>
@@ -6844,14 +6847,14 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},23344:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815),i(81348)},23350:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},23373:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="*** xt-slider ***" data-xt-slider>
+    <section class="*** xt-slider ***" aria-label="Example" data-xt-slider>
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="*** xt-slides transition ease-out-expo duration-300 on:duration-500 *** xt-row xt-row-4"
@@ -6914,10 +6917,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},23482:(t,e,i)=>{"use strict";var a=i(88300);class s{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let s=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:s}),i._init(),i));return s}}s.loaded={},s.constructorName="Ripple",s.componentName="xt-ripple",s.optionsDefault={debug:!1,sizeInitial:.3,onlyInside:"a, button, .xt-button"},a.Xt.Ripple=s},23591:(t,e,i)=>{"use strict";i.r(e),i(88300),i(91398)},23639:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
   <div>
@@ -7016,7 +7019,7 @@
   </div>
 `}},23864:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider="{ loop: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ loop: true }">
       <div class="p-4 md:p-6 lg:p-8 *** slider-navs-container relative ***">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -7111,14 +7114,14 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},23886:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(51816),i(91398),i(36587),i(67815);var s=i(68477);let o=function(){let{background:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};s.Ay.killTweensOf(t),s.Ay.set(t,{"clip-path":"polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"}),s.Ay.to(t,{keyframes:[{"clip-path":"polygon(0% 0%, 50% 0%, 75% 100%, 0% 100%)"},{"clip-path":"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"}],ease:"quint.inOut",duration:.65})},l=function(){let{background:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};s.Ay.killTweensOf(t),s.Ay.to(t,{keyframes:[{"clip-path":"polygon(50% 0%, 100% 0%, 100% 100%, 100% 100%)"},{"clip-path":"polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)"}],ease:"quint.inOut",duration:.5})},r=function(){let{mask:t,inverse:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};e?(s.Ay.killTweensOf(t),s.Ay.set(t,{"clip-path":"polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)"}),s.Ay.to(t,{keyframes:[{"clip-path":"polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)"},{"clip-path":"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"}],ease:"quint.inOut",duration:.65})):(s.Ay.killTweensOf(t),s.Ay.set(t,{"clip-path":"polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"}),s.Ay.to(t,{keyframes:[{"clip-path":"polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)"},{"clip-path":"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"}],ease:"quint.inOut",duration:.65}))},d=function(){let{mask:t,inverse:e}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};e?(s.Ay.killTweensOf(t),s.Ay.to(t,{keyframes:[{"clip-path":"polygon(0% 25%, 100% 75%, 100% 100%, 0% 100%)"},{"clip-path":"polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"}],ease:"quint.inOut",duration:.5})):(s.Ay.killTweensOf(t),s.Ay.to(t,{keyframes:[{"clip-path":"polygon(0% 0%, 100% 0%, 100% 25%, 0% 75%)"},{"clip-path":"polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)"}],ease:"quint.inOut",duration:.5}))},n=function(){let{backdrop:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:.2,ease:"quint.inOut",duration:.5,delay:.15})},u=function(){let{backdrop:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:0,ease:"quint.inOut",duration:.65})},c=function(){let{shadow:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:.5,ease:"quint.inOut",duration:.4,delay:.25})},m=function(){let{shadow:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:0,ease:"quint.inOut",duration:.4})};a.Xt.mount({matches:".demo--polygon-animation-v1 .xt-overlay",mount:t=>{let{ref:e}=t,i=e.querySelector(".xt-card"),a=e.querySelector(".xt-backdrop"),s=e.querySelector(".xt-shadow");e.addEventListener("on.xt.overlay",()=>{r({mask:i}),n({backdrop:a}),c({shadow:s})}),e.addEventListener("off.xt.overlay",()=>{d({mask:i}),u({backdrop:a}),m({shadow:s})})}}),a.Xt.mount({matches:".demo--polygon-animation-v1 .xt-drop",mount:t=>{let{ref:e}=t,i=e.querySelector(".xt-card"),a=e.querySelector(".xt-shadow");e.addEventListener("on.xt.drop",()=>{r({mask:i,inverse:!0}),c({shadow:a})}),e.addEventListener("off.xt.drop",()=>{d({mask:i,inverse:!0}),m({shadow:a})})}}),a.Xt.mount({matches:".demo--polygon-animation-v1 .xt-tooltip",mount:t=>{let{ref:e}=t,i=e.querySelector(".xt-card"),a=e.querySelector(".xt-shadow");e.addEventListener("on.xt.tooltip",()=>{r({mask:i,inverse:!0}),c({shadow:a})}),e.addEventListener("off.xt.tooltip",()=>{d({mask:i,inverse:!0}),m({shadow:a})})}}),a.Xt.mount({matches:".demo--polygon-animation-v1 [data-xt-toggle-target]",mount:t=>{let{ref:e}=t;e.addEventListener("on.xt.toggle",()=>{r({mask:e,inverse:!0})}),e.addEventListener("off.xt.toggle",()=>{d({mask:e,inverse:!0})})}}),a.Xt.mount({matches:'.demo--polygon-animation-v1 .xt-button:not([class*=" z-"]), a.xt-card, button.xt-card',mount:t=>{let{ref:e}=t,i=e.querySelector(".btn-background");i||(e.classList.add("btn-container"),e.prepend(a.Xt.node({str:'<div class="btn-background"></div>'})),i=e.querySelector(".btn-background"),s.Ay.set(i,{"clip-path":"polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"})),e.addEventListener("mouseenter",()=>{o({background:i})}),e.addEventListener("mouseleave",()=>{l({background:i})})}})},23888:(t,e,i)=>{"use strict";var a=i(88300),s=i(57696);a.Xt.JSON=s;class o{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let s=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:s}),i._init(),i));return s}}o.loaded={},o.constructorName="Groupnumber",o.componentName="xt-groupnumber",o.optionsDefault={debug:!1,limit:!0,voidable:!0,validate:t=>{let{val:e,step:i}=t;return i&&e%i?Math.ceil(e/i)*i:e},min:"-Infinity",max:"Infinity",inputs:'input[type="number"]',steps:"[data-xt-step]",events:{input:"change",steps:"click"},a11y:{controls:!0}},a.Xt.Groupnumber=o,a.Xt.mount({matches:`[data-${a.Xt.Groupnumber.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Groupnumber.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Groupnumber(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},23938:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},23980:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},24142:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-wheel">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition *** ease-out-quint duration-500 on:duration-500 *** xt-row xt-row-4"
@@ -7174,10 +7177,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},24629:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -7381,7 +7384,7 @@
   </div>
 `}},24784:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-align-left">
-    <div class="xt-slider" data-xt-slider="{ align: 'left' }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'left' }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -7444,12 +7447,12 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
-`,overflow:!0}},24832:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--blocks-featured-v1 .featured-item",mount:t=>{let{ref:e}=t,i=e.querySelector(".featured-content"),a=e.querySelector(".xt-media-container"),o=a.querySelector(".xt-media"),l={trigger:e,start:()=>{let t=window.innerHeight-e.offsetTop;return`top${t>0?`+=${t}`:""} bottom`},end:()=>{let t=window.innerHeight-document.scrollingElement.scrollHeight+e.offsetTop+e.offsetHeight;return`bottom${t>0?`-=${t}`:""} top`},scrub:1};s.Ay.set(i,{y:-20}),s.Ay.timeline({scrollTrigger:l}).to(i,{y:"20"}),s.Ay.set(a,{y:-50}),s.Ay.timeline({scrollTrigger:l}).to(a,{y:"50"}),s.Ay.timeline({scrollTrigger:l}).to(o,{scale:1.5})}}),a.Xt.mount({matches:".demo--blocks-featured-v1 .button--line",mount:t=>{let{ref:e}=t,i=e.closest("a, button");i.addEventListener("mouseenter",()=>{let t=i.querySelector(".xt-media-container");s.Ay.killTweensOf(t),s.Ay.to(t,{scale:.96,duration:1,ease:"expo.out"});let a=i.querySelector(".xt-media");s.Ay.killTweensOf(a),s.Ay.to(a,{opacity:.75,scale:1.04,duration:1,ease:"expo.out"});let o=e.querySelector(".button--line-content");s.Ay.killTweensOf(o),s.Ay.to(o,{x:15,duration:1,delay:.5,ease:"expo.out"});let l=e.querySelector(".button--line-design");s.Ay.killTweensOf(l),s.Ay.set(l,{width:0,x:-150,opacity:.4,overwrite:!0}),s.Ay.to(l,{width:150,x:-135,opacity:1,duration:.5,ease:"expo.in"}),s.Ay.to(l,{width:30,x:0,opacity:1,duration:1,delay:.5,ease:"expo.out"})}),i.addEventListener("mouseleave",()=>{let t=i.querySelector(".xt-media-container");s.Ay.killTweensOf(t),s.Ay.to(t,{scale:1,duration:1,ease:"expo.out"});let e=i.querySelector(".xt-media");s.Ay.killTweensOf(e),s.Ay.to(e,{opacity:1,scale:1,duration:1,ease:"expo.out"});let a=i.querySelector(".button--line-content");s.Ay.killTweensOf(a),s.Ay.to(a,{x:0,duration:1,ease:"expo.out"});let o=i.querySelector(".button--line-design");s.Ay.killTweensOf(o),s.Ay.to(o,{width:15,x:0,opacity:.4,duration:1,ease:"expo.out",overwrite:!0})})}})},24883:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Slider",o.componentName="xt-slider",o.optionsDefault={mode:"relative",group:!1,groupSame:!0,align:"center",contain:!0,wrap:!1,free:!1,dragposition:!1,nooverflow:"!transform-none justify-center",autoHeight:!1,keepHeight:!1,pagination:"[data-xt-slider-pagination]",hideDisable:"[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]",drag:{dragger:"[data-xt-slider-dragger]",threshold:30,factor:1,overflow:t=>{let{overflow:e}=t;return Math.min(e,Math.log(1+Math.pow(e,10)))},noMouse:!1},elementsTemplate:"hidden",elements:"[data-xt-slider-element]",targets:"[data-xt-slider-target]",min:1,max:1,on:"click",off:"click",mouseParent:!1,queue:!1,noobserver:!1,visibleReinit:!0,jump:!1,navigation:"[data-xt-nav]",zIndex:{targets:{start:200,factor:-1}},a11y:{role:"carousel",labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!1,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Slider=o,a.Xt.mount({matches:`[data-${a.Xt.Slider.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Slider.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Slider(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},25048:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+`,overflow:!0}},24832:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--blocks-featured-v1 .featured-item",mount:t=>{let{ref:e}=t,i=e.querySelector(".featured-content"),a=e.querySelector(".xt-media-container"),o=a.querySelector(".xt-media"),l={trigger:e,start:()=>{let t=window.innerHeight-e.offsetTop;return`top${t>0?`+=${t}`:""} bottom`},end:()=>{let t=window.innerHeight-document.scrollingElement.scrollHeight+e.offsetTop+e.offsetHeight;return`bottom${t>0?`-=${t}`:""} top`},scrub:1};s.Ay.set(i,{y:-20}),s.Ay.timeline({scrollTrigger:l}).to(i,{y:"20"}),s.Ay.set(a,{y:-50}),s.Ay.timeline({scrollTrigger:l}).to(a,{y:"50"}),s.Ay.timeline({scrollTrigger:l}).to(o,{scale:1.5})}}),a.Xt.mount({matches:".demo--blocks-featured-v1 .button--line",mount:t=>{let{ref:e}=t,i=e.closest("a, button");i.addEventListener("mouseenter",()=>{let t=i.querySelector(".xt-media-container");s.Ay.killTweensOf(t),s.Ay.to(t,{scale:.96,duration:1,ease:"expo.out"});let a=i.querySelector(".xt-media");s.Ay.killTweensOf(a),s.Ay.to(a,{opacity:.75,scale:1.04,duration:1,ease:"expo.out"});let o=e.querySelector(".button--line-content");s.Ay.killTweensOf(o),s.Ay.to(o,{x:15,duration:1,delay:.5,ease:"expo.out"});let l=e.querySelector(".button--line-design");s.Ay.killTweensOf(l),s.Ay.set(l,{width:0,x:-150,opacity:.4,overwrite:!0}),s.Ay.to(l,{width:150,x:-135,opacity:1,duration:.5,ease:"expo.in"}),s.Ay.to(l,{width:30,x:0,opacity:1,duration:1,delay:.5,ease:"expo.out"})}),i.addEventListener("mouseleave",()=>{let t=i.querySelector(".xt-media-container");s.Ay.killTweensOf(t),s.Ay.to(t,{scale:1,duration:1,ease:"expo.out"});let e=i.querySelector(".xt-media");s.Ay.killTweensOf(e),s.Ay.to(e,{opacity:1,scale:1,duration:1,ease:"expo.out"});let a=i.querySelector(".button--line-content");s.Ay.killTweensOf(a),s.Ay.to(a,{x:0,duration:1,ease:"expo.out"});let o=i.querySelector(".button--line-design");s.Ay.killTweensOf(o),s.Ay.to(o,{width:15,x:0,opacity:.4,duration:1,ease:"expo.out",overwrite:!0})})}})},24883:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Slider",o.componentName="xt-slider",o.optionsDefault={mode:"relative",group:!1,groupSame:!0,align:"center",contain:!0,wrap:!1,free:!1,dragposition:!1,nooverflow:"!transform-none justify-center",autoHeight:!1,keepHeight:!1,pagination:"[data-xt-slider-pagination]",hideDisable:"[data-xt-slider-pagination], [data-xt-nav], [data-xt-slider-hide-disabled]",drag:{dragger:"[data-xt-slider-dragger]",threshold:30,factor:1,overflow:t=>{let{overflow:e}=t;return Math.min(e,Math.log(1+Math.pow(e,10)))},noMouse:!1},elementsTemplate:"hidden",elements:"[data-xt-slider-element]",targets:"[data-xt-slider-target]",min:1,max:1,on:"click",off:"click",mouseParent:!1,queue:!1,noobserver:!1,visibleReinit:!0,jump:!1,navigation:"[data-xt-nav]",zIndex:{targets:{start:200,factor:-1}},a11y:{role:"carousel",labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!1,hidden:!0,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Slider=o,a.Xt.mount({matches:`[data-${a.Xt.Slider.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Slider.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Slider(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},25048:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
     <div class="xt-card rounded${a.cardRadius()} ${a.textDefault()} ${a.cardGray()}">
       <div class="${a.cardMd()}">
@@ -9220,7 +9223,7 @@
 `,container:!0,gradient:!0}},29010:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},29251:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},29410:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--products-listing-v2">
     <div class="py-10">
-      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left', wrap: true }">
+      <section class="xt-slider pb-10" aria-label="Example" data-xt-slider="{ align: 'left', wrap: true }">
         <div class="container">
           <div class="xt-h3 mb-8">Latest Products</div>
 
@@ -9384,7 +9387,7 @@
             <button type="button" class="xt-button hidden" data-xt-slider-element></button>
           </nav>
         </div>
-      </div>
+      </section>
 
       <div class="listing">
         <div class="container">
@@ -9706,7 +9709,7 @@
       </a>
     </div>
   </div>
-`}},30033:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(91398),a.Xt.mount({matches:".demo--overlay-api",mount:t=>{let{ref:e}=t,i=e.querySelector("#overlay--eventmethods"),s=e.querySelector("#overlay--eventmethods-alt"),o=()=>{};return new a.Xt.Overlay(i,{targets:"#overlay--nested"}).then(t=>{let s=e.querySelector("#card--overlay-api-log"),l=t=>{s.append(a.Xt.node({str:`<div>${t}</div>`})),clearTimeout(window.logTimeout),window.logTimeout=setTimeout(()=>{s.append(a.Xt.node({str:'<hr class="my-4 border-gray-300"/>'})),s.scrollTo(0,s.scrollHeight)},1e3)},r=e.querySelector("#button--overlay-api-first-element"),d=()=>{l("<strong>1st element</strong>"),t.elements[0].dispatchEvent(new CustomEvent("on.trigger.xt.overlay"))};r.addEventListener("click",d);let n=e.querySelector("#button--overlay-api-first-target"),u=()=>{l("<strong>1st target</strong>"),t.targets[0].dispatchEvent(new CustomEvent("on.trigger.xt.overlay"))};n.addEventListener("click",u);let c=e.querySelector("#button--overlay-api-reinit"),m=()=>{l("<strong>reinit</strong>"),t.reinit()};c.addEventListener("click",m);let p=e.querySelector("#button--overlay-api-restart"),v=()=>{l("<strong>restart</strong>"),t.restart()};p.addEventListener("click",v),e.querySelector("#button--overlay-api-disable").addEventListener("click",()=>{l("<strong>disable</strong>"),t.disable()}),e.querySelector("#button--overlay-api-enable").addEventListener("click",()=>{l("<strong>enable</strong>"),t.enable()});let g=e.querySelector("#button--overlay-api-destroy"),b=()=>{l("<strong>destroy</strong>"),t.destroy()};g.addEventListener("click",b);let x=e.querySelector("#button--overlay-api-unmount"),$=()=>{l("<strong>unmount</strong>"),o()};x.addEventListener("click",$);let y=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),l(a)};i.addEventListener("init.xt.overlay",y),i.addEventListener("destroy.xt.overlay",y),document.addEventListener("on.xt.overlay",y,!0),document.addEventListener("off.xt.overlay",y,!0),o=()=>{r.removeEventListener("click",d),n.removeEventListener("click",u),c.removeEventListener("click",m),p.removeEventListener("click",v),g.removeEventListener("click",b),x.removeEventListener("click",$),i.removeEventListener("init.xt.overlay",y),i.removeEventListener("destroy.xt.overlay",y),document.removeEventListener("on.xt.overlay",y,!0),document.removeEventListener("off.xt.overlay",y,!0),t.destroy(),t=null}}),new a.Xt.Overlay(s,{targets:"#overlay--nested"}),()=>{o()}}})},30185:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+`}},30033:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(91398),a.Xt.mount({matches:".demo--overlay-api",mount:t=>{let{ref:e}=t,i=e.querySelector("#overlay--eventmethods"),s=e.querySelector("#overlay--eventmethods-alt"),o=()=>{};return new a.Xt.Overlay(i,{targets:"#overlay--nested"}).then(t=>{let s=e.querySelector("#card--overlay-api-log"),l=t=>{s.append(a.Xt.node({str:`<div>${t}</div>`})),clearTimeout(window.logTimeout),window.logTimeout=setTimeout(()=>{s.append(a.Xt.node({str:'<hr class="my-4 border-gray-300"/>'})),s.scrollTo(0,s.scrollHeight)},1e3)},r=e.querySelector("#button--overlay-api-first-element"),d=()=>{l("<strong>1st element</strong>"),t.elements[0].dispatchEvent(new CustomEvent("on.trigger.xt.overlay"))};r.addEventListener("click",d);let n=e.querySelector("#button--overlay-api-first-target"),u=()=>{l("<strong>1st target</strong>"),t.targets[0].dispatchEvent(new CustomEvent("on.trigger.xt.overlay"))};n.addEventListener("click",u);let c=e.querySelector("#button--overlay-api-reinit"),m=()=>{l("<strong>reinit</strong>"),t.reinit()};c.addEventListener("click",m);let p=e.querySelector("#button--overlay-api-restart"),v=()=>{l("<strong>restart</strong>"),t.restart()};p.addEventListener("click",v),e.querySelector("#button--overlay-api-disable").addEventListener("click",()=>{l("<strong>disable</strong>"),t.disable()}),e.querySelector("#button--overlay-api-enable").addEventListener("click",()=>{l("<strong>enable</strong>"),t.enable()});let b=e.querySelector("#button--overlay-api-destroy"),g=()=>{l("<strong>destroy</strong>"),t.destroy()};b.addEventListener("click",g);let x=e.querySelector("#button--overlay-api-unmount"),$=()=>{l("<strong>unmount</strong>"),o()};x.addEventListener("click",$);let y=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),l(a)};i.addEventListener("init.xt.overlay",y),i.addEventListener("destroy.xt.overlay",y),document.addEventListener("on.xt.overlay",y,!0),document.addEventListener("off.xt.overlay",y,!0),o=()=>{r.removeEventListener("click",d),n.removeEventListener("click",u),c.removeEventListener("click",m),p.removeEventListener("click",v),b.removeEventListener("click",g),x.removeEventListener("click",$),i.removeEventListener("init.xt.overlay",y),i.removeEventListener("destroy.xt.overlay",y),document.removeEventListener("on.xt.overlay",y,!0),document.removeEventListener("off.xt.overlay",y,!0),t.destroy(),t=null}}),new a.Xt.Overlay(s,{targets:"#overlay--nested"}),()=>{o()}}})},30185:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
     <div class="xt-list xt-list-3 items-center justify-center">
       <div class="xt-card rounded${a.cardRadius()} ${a.textDefault()} ${a.cardGray()}">
@@ -10234,7 +10237,7 @@
   </div>
 `}},34526:(t,e,i)=>{"use strict";i.r(e),i(88300),i(36587)},34619:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-pagination">
-    <div class="xt-slider" data-xt-slider>
+    <section class="xt-slider" aria-label="Example" data-xt-slider>
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -10251,7 +10254,7 @@
                   type="button"
                   class="xt-button ${a.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -10270,7 +10273,7 @@
                   type="button"
                   class="xt-button ${a.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -10289,7 +10292,7 @@
                   type="button"
                   class="xt-button ${a.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -10308,7 +10311,7 @@
                   type="button"
                   class="xt-button ${a.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -10327,7 +10330,7 @@
                   type="button"
                   class="xt-button ${a.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -10346,7 +10349,7 @@
                   type="button"
                   class="xt-button ${a.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -10365,7 +10368,7 @@
                   type="button"
                   class="xt-button ${a.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -10381,12 +10384,12 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-num of xt-tot
           </button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},34807:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -10620,7 +10623,7 @@
       </div>
     </div>
 
-    <div class="xt-slider" id="slider--eventmethods">
+    <section class="xt-slider" aria-label="Example" id="slider--eventmethods">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -10684,21 +10687,21 @@
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
             data-xt-nav="-1"
-            title="Previous slide">
+            aria-label="Previous slide">
             ${a.iconChevronLeft({classes:"text-xl -my-1"})}
           </button>
           <button
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-num
           </button>
           <button
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${a.buttonUpper()} ${a.buttonGray()} ${a.buttonGrayAnim()}"
             data-xt-nav="1"
-            title="Next slide">
+            aria-label="Next slide">
             ${a.iconChevronRight({classes:"text-xl -my-1"})}
           </button>
         </nav>
@@ -10711,7 +10714,7 @@
             id="card--slider-api-log"></div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 `}},36219:()=>{},36415:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--tooltip-animation-js">
@@ -11047,7 +11050,7 @@
       </div>
     </div>
   </div>
-`}},36587:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Drop",o.componentName="xt-drop",o.optionsDefault={elements:"[data-xt-drop-element]",targets:"[data-xt-drop-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-drop",closeauto:!0,openauto:!1,closeDeep:".xt-dismiss",closeInside:".xt-drop, .xt-backdrop",closeOutside:"body",preventEvent:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,position:"bottom-start",inset:!1,positionInner:!1,strategy:"absolute",spaceOverflow:15,spaceFlip:15,spaceArrow:!1,popperjs:!0,zIndex:{targets:{start:700,factor:-1}},a11y:{role:"popup",labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!0,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:"a, button"}},a.Xt.Drop=o,a.Xt.mount({matches:`[data-${a.Xt.Drop.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Drop.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Drop(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},36701:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+`}},36587:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Drop",o.componentName="xt-drop",o.optionsDefault={elements:"[data-xt-drop-element]",targets:"[data-xt-drop-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-drop",closeauto:!0,openauto:!1,closeDeep:".xt-dismiss",closeInside:".xt-drop, .xt-backdrop",closeOutside:"body",preventEvent:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,position:"bottom-start",inset:!1,positionInner:!1,strategy:"absolute",spaceOverflow:15,spaceFlip:15,spaceArrow:!1,popperjs:!0,zIndex:{targets:{start:700,factor:-1}},a11y:{role:"popup",labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!0,hidden:!1,live:!1,disabled:!0,keyboard:!0,vertical:!1,items:"a, button"}},a.Xt.Drop=o,a.Xt.mount({matches:`[data-${a.Xt.Drop.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Drop.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Drop(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},36701:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
     <form class="text-sm">
       <div class="xt-row xt-row-x-6 xt-row-y-4">
@@ -11398,7 +11401,7 @@
   </div>
 `}},37914:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-scrolltrigger">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -11454,10 +11457,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},38034:(t,e,i)=>{"use strict";var a=i(88300);a.Xt.mount({matches:'label input[type="checkbox"], label input[type="radio"]',mount:t=>{let{ref:e}=t,i=e.getAttribute("name"),s=e.form,o=document.querySelectorAll(`[name="${i}"]`),l=t=>{let e=t.closest("label");t.checked?a.Xt.on({el:e}):a.Xt.off({el:e})},r=()=>{requestAnimationFrame(()=>{for(let t of o)l(t)})};e.addEventListener("change",r),s&&s.addEventListener("reset",r),e.checked&&r()}}),a.Xt.mount({matches:"form:not([novalidate])",mount:t=>{let{ref:e}=t,i=e.elements,s=t=>{let e=t.target;"true"===e.dataset.xtValidate&&(e.classList.add("valid-submit"),e.classList.remove("invalid-submit"),e.removeAttribute("aria-invalid"),e.checkValidity())};for(let t of i)t.addEventListener("input",s),t.addEventListener("change",s);let o=()=>{window.scrollTo(window.scrollX,window.scrollY-a.Xt.innerHeight*a.Xt.formScrollWindowFactor)},l=t=>{let e=t.target;e.classList.remove("valid-submit"),e.classList.add("invalid-submit"),e.setAttribute("aria-invalid",!0),e.dataset.xtValidate="true",a.Xt.formScrollWindowFactor&&addEventListener("scroll",o,{once:!0})},r=()=>{for(let t of i)delete t.dataset.xtValidate};for(let t of i)t.addEventListener("invalid",l),t.addEventListener("submit",r);return()=>{removeEventListener("scroll",o)}}})},38288:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -11490,7 +11493,7 @@
   </div>
 `}},38319:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider>
+    <section class="xt-slider" aria-label="Example" data-xt-slider>
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -11571,10 +11574,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `}},38320:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -12770,7 +12773,7 @@
 `}},40051:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--products-listing-v3">
     <div class="py-10">
-      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left', contain: false }">
+      <section class="xt-slider pb-10" aria-label="Example" data-xt-slider="{ align: 'left', contain: false }">
         <div class="container">
           <div class="xt-row items-stretch">
             <div class="w-full lg:w-4/12">
@@ -12778,7 +12781,7 @@
                 <div class="xt-h4 mb-2">
                   Latest Products
                 </div>
-      
+
                 <div class="flex flex-nowrap justify-center mb-8">
                   <button type="button" class="ml-auto max-lg:hidden" data-xt-nav="-1" aria-label="Previous slide">
                     <div class="container">
@@ -12787,13 +12790,13 @@
                       </div>
                     </div>
                   </button>
-      
+
                   <div class="my-auto">
                     <a href="#" class="xt-button mx-auto ${a.buttonMd()} rounded${a.buttonRadius()} ${a.buttonUpper()} !px-0 whitespace-nowrap">
                       See all
                     </a>
                   </div>
-      
+
                   <button type="button" class="mr-auto max-lg:hidden" data-xt-nav="1" aria-label="Next slide">
                     <div class="container">
                       <div class="xt-button py-6">
@@ -12804,7 +12807,7 @@
                 </div>
               </div>
             </div>
-      
+
             <div class="w-full lg:w-8/12">
               <div
                 class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-1"
@@ -13236,7 +13239,7 @@
   </div>
 `}},40081:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-drag">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -13299,10 +13302,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},40140:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -14115,7 +14118,7 @@
   </div>
 `}},42437:()=>{},42478:(t,e,i)=>{"use strict";i.r(e),i(88300),i(36587)},42603:(t,e,i)=>{"use strict";var a=i(88300);class s{constructor(t,e={}){this.disabled=!1;let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i._componentNs=i.componentName.replace("-",".");let s=a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:s}),i._init(),i));return s}}s.loaded={},s.constructorName="Googlelocator",s.componentName="xt-googlelocator",s.optionsDefault={debug:!1,initialLocate:!1,initialSearch:!1,seachMapBounds:!1,searchRadius:25e3,locateText:"Locate",submitDelay:250,elements:{loader:"[data-xt-googlelocator-loader]",searchInput:"[data-xt-googlelocator-search-input]",searchBtn:"[data-xt-googlelocator-search-btn]",map:"[data-xt-googlelocator-map]",itemsTemplate:"[data-xt-googlelocator-items-template]",itemsContainer:"[data-xt-googlelocator-items-container]",results:"[data-xt-googlelocator-results]",resultsFound:"[data-xt-googlelocator-results-found]",locateBtn:"[data-xt-googlelocator-locate-btn]",repeatBtn:"[data-xt-googlelocator-repeat-btn]",filter:"[data-xt-googlelocator-filter]"},events:{animateMarkerClick:!1,animateMarkerResultClick:!1,infoWindowMarkerClick:!0,infoWindowMarkerResultClick:!1},autocompleteOptions:!1,autocompleteServiceOptions:!1,map:{center:!1,zoom:!1,zoomMin:!1,scrollwheel:!1,zoomControl:!0,mapTypeControl:!1,scaleControl:!0,streetViewControl:!1,rotateControl:!1,fullscreenControl:!1,cluster:!1},infoWindow:{},formatData:{lat:!1,lng:!1,sort:!1,filter:!1,name:!1,address:!1,additional:!1,img:!1,direction:!1,distance:!1,info:!1}},a.Xt.Googlelocator=s},42853:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(36587),i(91398),a.Xt.mount({matches:".demo--mount-unmount",mount:t=>{let{ref:e}=t,i=e.querySelector("[data-xt-overlay]"),s=()=>{};return a.Xt.get({name:"xt-overlay",el:i}).then(t=>{let i=t.targets[0];a.Xt.mount({root:e,matches:"[data-xt-overlay]",mount:()=>{let t=parseFloat(e.getAttribute("data-test-mountroot")??0)+1;e.setAttribute("data-test-mountroot",t),console.log("TEST mount root once, this should be 1 on init, should remain 1 on deactivation.",t)}}),console.log("TEST init xtNamespace, should be 1.",a.Xt.dataStorage.get(document.documentElement,`xtNamespace${t.ns}`).length),console.log("TEST init classes and properties, should be `true true true true`.",i.classList.contains("on"),i.classList.contains("in"),i.classList.contains("initial"),t.initial),e.setAttribute("data-test-initial",`${i.classList.contains("on")} ${i.classList.contains("in")} ${i.classList.contains("initial")} ${t.initial}`),requestAnimationFrame(()=>{console.log("TEST after init classes and properties, should be `true true false false`.",i.classList.contains("on"),i.classList.contains("in"),i.classList.contains("initial"),t.initial)}),i.addEventListener("off.xt.overlay",()=>{console.log("TEST unmount should disable on deactivate, should remove from dom overlay.")});let o=()=>{let t=parseFloat(e.getAttribute("data-test-resize")??0)+1;e.setAttribute("data-test-resize",t),console.log("TEST unmount, this should increase by one on changing page and resize.",t)};addEventListener("resize",o),s=()=>{console.log("TEST unmount, unmountArr should be the same, xtNamespace should be 0.",a.Xt._unmountArr.length,a.Xt.dataStorage.get(document.documentElement,`xtNamespace${t.ns}`).length),removeEventListener("resize",o)}}),()=>{s()}}})},43114:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider="{ wrap: true, duration: 500 }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true, duration: 500 }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -14199,14 +14202,14 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},43142:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-absolute-cover">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -14318,9 +14321,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},43445:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},43607:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},43974:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(51816),i(11616);var s=i(68477),o=i(25916);s.Ay.registerPlugin(o.I),a.Xt.mount({matches:".demo--toggle-implementation-v1",mount:()=>{let t=()=>{};return new a.Xt.Scrollto(document.documentElement,{}).then(e=>{let i=()=>{s.Ay.killTweensOf(e.scroller),s.Ay.to(e.scroller,{scrollTo:e.position,duration:e.duration,ease:"quint.out"})};e.container.addEventListener("scrollto.xt.scrollto",i);let a=()=>{s.Ay.killTweensOf(e.scroller)};addEventListener("touchstart",a),addEventListener("wheel",a),t=()=>{e.container.removeEventListener("scrollto.xt.scrollto",i),e.destroy(),e=null}}),()=>{t()}}})},44e3:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--sticky">
@@ -14412,7 +14415,7 @@
   </div>
 `}},44048:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},44078:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},44149:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider="{ wrap: true, duration: 500 }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true, duration: 500 }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -14475,10 +14478,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},44257:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--drop-animation-js">
@@ -14574,13 +14577,13 @@
               Tooltip ${e}
             </button>
           `;i.append(a.Xt.node({str:s}));let o=t.targets.length+1,r=`
-            <div class="xt-tooltip p-3" title="Target ${o}"
+            <div class="xt-tooltip p-3" aria-label="Target ${o}"
               data-xt-tooltip-target>
               <div class="text-13 py-2 px-3.5 rounded-md shadow-lg font-medium text-white bg-black">
                 Lorem ipsum dolor sit amet
               </div>
             </div>
-          `;i.append(a.Xt.node({str:r})),l("<strong>reinit</strong>"),t.restart(),t.reinit()};c.addEventListener("click",m);let p=document.querySelector("#button--tooltip-api-remove"),v=()=>{l("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove(),l("<strong>reinit</strong>"),t.restart(),t.reinit()};p.addEventListener("click",v);let g=document.querySelector("#button--tooltip-api-reinit"),b=()=>{l("<strong>reinit</strong>"),t.reinit()};g.addEventListener("click",b);let x=document.querySelector("#button--tooltip-api-restart"),$=()=>{l("<strong>restart</strong>"),t.restart()};x.addEventListener("click",$),document.querySelector("#button--tooltip-api-disable").addEventListener("click",()=>{l("<strong>disable</strong>"),t.disable()}),document.querySelector("#button--tooltip-api-enable").addEventListener("click",()=>{l("<strong>enable</strong>"),t.enable()});let y=document.querySelector("#button--tooltip-api-destroy"),h=()=>{l("<strong>destroy</strong>"),t.destroy()};y.addEventListener("click",h);let f=document.querySelector("#button--tooltip-api-unmount"),w=()=>{l("<strong>unmount</strong>"),s()};f.addEventListener("click",w);let S=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),l(a)};i.addEventListener("init.xt.tooltip",S),i.addEventListener("destroy.xt.tooltip",S),document.addEventListener("on.xt.tooltip",S,!0),document.addEventListener("off.xt.tooltip",S,!0),s=()=>{r.removeEventListener("click",d),n.removeEventListener("click",u),c.removeEventListener("click",m),p.removeEventListener("click",v),g.removeEventListener("click",b),x.removeEventListener("click",$),y.removeEventListener("click",h),f.removeEventListener("click",w),i.removeEventListener("init.xt.tooltip",S),i.removeEventListener("destroy.xt.tooltip",S),document.removeEventListener("on.xt.tooltip",S,!0),document.removeEventListener("off.xt.tooltip",S,!0),t.destroy(),t=null}}),()=>{s()}}})},44865:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+          `;i.append(a.Xt.node({str:r})),l("<strong>reinit</strong>"),t.restart(),t.reinit()};c.addEventListener("click",m);let p=document.querySelector("#button--tooltip-api-remove"),v=()=>{l("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove(),l("<strong>reinit</strong>"),t.restart(),t.reinit()};p.addEventListener("click",v);let b=document.querySelector("#button--tooltip-api-reinit"),g=()=>{l("<strong>reinit</strong>"),t.reinit()};b.addEventListener("click",g);let x=document.querySelector("#button--tooltip-api-restart"),$=()=>{l("<strong>restart</strong>"),t.restart()};x.addEventListener("click",$),document.querySelector("#button--tooltip-api-disable").addEventListener("click",()=>{l("<strong>disable</strong>"),t.disable()}),document.querySelector("#button--tooltip-api-enable").addEventListener("click",()=>{l("<strong>enable</strong>"),t.enable()});let y=document.querySelector("#button--tooltip-api-destroy"),h=()=>{l("<strong>destroy</strong>"),t.destroy()};y.addEventListener("click",h);let f=document.querySelector("#button--tooltip-api-unmount"),w=()=>{l("<strong>unmount</strong>"),s()};f.addEventListener("click",w);let S=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),l(a)};i.addEventListener("init.xt.tooltip",S),i.addEventListener("destroy.xt.tooltip",S),document.addEventListener("on.xt.tooltip",S,!0),document.addEventListener("off.xt.tooltip",S,!0),s=()=>{r.removeEventListener("click",d),n.removeEventListener("click",u),c.removeEventListener("click",m),p.removeEventListener("click",v),b.removeEventListener("click",g),x.removeEventListener("click",$),y.removeEventListener("click",h),f.removeEventListener("click",w),i.removeEventListener("init.xt.tooltip",S),i.removeEventListener("destroy.xt.tooltip",S),document.removeEventListener("on.xt.tooltip",S,!0),document.removeEventListener("off.xt.tooltip",S,!0),t.destroy(),t=null}}),()=>{s()}}})},44865:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
     <div class="xt-list xt-list-3 flex-col">
       <nav aria-label="Navigation" class="xt-list *** xt-list-1 *** flex-col md:flex-row md:flex-nowrap">
@@ -15133,7 +15136,7 @@
   </div>
 `}},47696:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-free">
-    <div class="xt-slider" data-xt-slider="{ wrap: true, free: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true, free: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides *** transition ease-out-expo duration-300 on:duration-500 *** xt-row xt-row-4"
@@ -15189,10 +15192,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},48101:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
   <div class="demo--media-usage">
@@ -15445,7 +15448,7 @@
   </div>
 `}},48553:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-group-same-false">
-    <div class="xt-slider" data-xt-slider="{ wrap: true, groupSame: false }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true, groupSame: false }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -15508,10 +15511,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},48769:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -15906,7 +15909,7 @@
   </div>
 `}},49475:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-jump">
-    <div class="xt-slider" data-xt-slider="{ jump: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ jump: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -15969,10 +15972,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},49478:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -16081,7 +16084,7 @@
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="tooltip--eventmethods" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="tooltip--eventmethods" aria-label="Object">
       <button
         type="button"
         class="xt-button ${a.buttonMd()} rounded${a.buttonRadius()} ${a.buttonUpper()} ${a.buttonPrimary()} ${a.buttonPrimaryAnim()}"
@@ -16089,7 +16092,7 @@
         Tooltip 0
       </button>
 
-      <div class="xt-tooltip p-3" title="Target 0" data-xt-tooltip-target>
+      <div class="xt-tooltip p-3" aria-label="Target 0" data-xt-tooltip-target>
         <div
           class="xt-card rounded${a.tooltipRadius()} ${a.tooltipShadow()} ${a.textInverse()} ${a.tooltipText()} ${a.cardBlack()}">
           <div class="${a.tooltipMd()}">Lorem ipsum dolor sit amet</div>
@@ -16103,7 +16106,7 @@
         Tooltip 1
       </button>
 
-      <div class="xt-tooltip p-3" title="Target 1" data-xt-tooltip-target>
+      <div class="xt-tooltip p-3" aria-label="Target 1" data-xt-tooltip-target>
         <div
           class="xt-card rounded${a.tooltipRadius()} ${a.tooltipShadow()} ${a.textInverse()} ${a.tooltipText()} ${a.cardBlack()}">
           <div class="${a.tooltipMd()}">Lorem ipsum dolor sit amet</div>
@@ -16674,7 +16677,7 @@
   </div>
 `}},51117:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},51141:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-hero-v2">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden">
@@ -16842,13 +16845,13 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `}},51162:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-absolute-scrolltrigger">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -16948,9 +16951,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},51186:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -17237,7 +17240,7 @@
       <div class="off:hidden out:pointer-events-none ${a.cardToggle()}" data-xt-toggle-target>Target 4</div>
     </div>
   </div>
-`}},51816:(t,e,i)=>{"use strict";var a=i(88300),s=i(57696);a.Xt.JSON=s;class o{constructor(t,e={}){this._classes=[],this._classesIn=[],this._classesOut=[],this._classesDone=[],this._classesInitial=[],this._classesBefore=[],this._classesAfter=[],this._initialCurrents=[],this._queueIn=[],this._queueOut=[],this._search="",this.disabled=!1,this.elements=[],this.targets=[],this.drag={},this.wheel={};let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i.fileName=i.componentName.split("-").pop(),i._componentNs=i.componentName.replace("-",".");let s=a.Xt._load({container:i.container,name:"Toggle",suffix:"Init",observer:i._optionsCustom.observer}).then(()=>"xt-toggle"!==i.componentName&&"xt-overlay"!==i.componentName?a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:s}),i._init(),i)):(a.Xt._set({name:i.componentName,el:i.container,selfPromise:s}),i._init(),i));return s}}o.loaded={},o.constructorName="Toggle",o.componentName="xt-toggle",o.optionsDefaultSuper={debug:!1,elements:"[data-xt-toggle-element]",targets:"[data-xt-toggle-target]",elementsInner:!1,targetsInner:!1,exclude:!1,class:"on",classIn:"in",classOut:"out",classDone:"done",classInitial:"initial",classBefore:"dir-before",classAfter:"dir-after",classSkip:!1,hash:"data-xt-hash",groupSeparator:",",groupElements:!0,min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit",closeDeep:!1,closeInside:!1,closeOutside:!1,preventEvent:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},delay:!1,delayIn:!1,delayOut:!1,duration:!1,durationIn:!1,durationOut:!1,auto:{time:!1,initial:!0,step:1,inverse:!1,pause:"a, button",loop:!0},disableDeactivate:!1,scrollto:!1,scrolltoInit:!1,matches:!1,disabled:!1,visibleReinit:!1,loop:!1,jump:!1,navigation:!1,appendTo:!1,classBody:!1,closeauto:!1,openauto:!1,mediaLoaded:!1,mediaLoadedReinit:!1,zIndex:!1,focusLimit:!1,focusTrap:{initialFocus:!0,preventScroll:!0,allowOutsideClick:!0,fallbackFocus:"body"},collapseHeight:!1,collapseWidth:!1,a11y:{role:!1,labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!1,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Toggle=o,a.Xt.mount({matches:`[data-${a.Xt.Toggle.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Toggle.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Toggle(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},51919:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+`}},51816:(t,e,i)=>{"use strict";var a=i(88300),s=i(57696);a.Xt.JSON=s;class o{constructor(t,e={}){this._classes=[],this._classesIn=[],this._classesOut=[],this._classesDone=[],this._classesInitial=[],this._classesBefore=[],this._classesAfter=[],this._initialCurrents=[],this._queueIn=[],this._queueOut=[],this._search="",this.disabled=!1,this.elements=[],this.targets=[],this.drag={},this.wheel={};let i=this;i.container=t,i._optionsCustom=e,i.constructorName=i.constructor.constructorName,i.componentName=i.constructor.componentName,i.fileName=i.componentName.split("-").pop(),i._componentNs=i.componentName.replace("-",".");let s=a.Xt._load({container:i.container,name:"Toggle",suffix:"Init",observer:i._optionsCustom.observer}).then(()=>"xt-toggle"!==i.componentName&&"xt-overlay"!==i.componentName?a.Xt._load({container:i.container,name:i.constructorName,suffix:"Init",observer:i._optionsCustom.observer}).then(()=>(a.Xt._set({name:i.componentName,el:i.container,selfPromise:s}),i._init(),i)):(a.Xt._set({name:i.componentName,el:i.container,selfPromise:s}),i._init(),i));return s}}o.loaded={},o.constructorName="Toggle",o.componentName="xt-toggle",o.optionsDefaultSuper={debug:!1,elements:"[data-xt-toggle-element]",targets:"[data-xt-toggle-target]",elementsInner:!1,targetsInner:!1,exclude:!1,class:"on",classIn:"in",classOut:"out",classDone:"done",classInitial:"initial",classBefore:"dir-before",classAfter:"dir-after",classSkip:!1,hash:"data-xt-hash",groupSeparator:",",groupElements:!0,min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit",closeDeep:!1,closeInside:!1,closeOutside:!1,preventEvent:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},delay:!1,delayIn:!1,delayOut:!1,duration:!1,durationIn:!1,durationOut:!1,auto:{time:!1,initial:!0,step:1,inverse:!1,pause:"a, button",loop:!0},disableDeactivate:!1,scrollto:!1,scrolltoInit:!1,matches:!1,disabled:!1,visibleReinit:!1,loop:!1,jump:!1,navigation:!1,appendTo:!1,classBody:!1,closeauto:!1,openauto:!1,mediaLoaded:!1,mediaLoadedReinit:!1,zIndex:!1,focusLimit:!1,focusTrap:{initialFocus:!0,preventScroll:!0,allowOutsideClick:!0,fallbackFocus:"body"},collapseHeight:!1,collapseWidth:!1,a11y:{role:!1,labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!1,hidden:!1,live:!1,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Toggle=o,a.Xt.mount({matches:`[data-${a.Xt.Toggle.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Toggle.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Toggle(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},51919:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
     <div data-xt-tooltip="{ duration: 300, popperjs: false }" data-xt-mousefollow="{ classSkip: true }">
       <button
@@ -17347,7 +17350,7 @@
   </div>
 `}},52171:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-contain-false-left">
-    <div class="xt-slider" data-xt-slider="{ align: 'left', contain: false }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'left', contain: false }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -17410,10 +17413,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},52194:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--fade-outside",mount:t=>{let{ref:e}=t,i=e.querySelectorAll(".xt-card:not(.faded)");for(let t of i)t.classList.add("faded");o.u.batch(i,{once:!0,onEnter:t=>{let e=t.filter(t=>t.dataset.fadesetup);s.Ay.killTweensOf(e),s.Ay.to(e,{opacity:1,duration:.5,ease:"quart.out",stagger:t=>Math.min(.6,.15*t)})},onRefresh:(t,e)=>{for(let t of e)t.trigger.dataset.fadesetup||0!==t.progress||(t.trigger.dataset.fadesetup="true",s.Ay.killTweensOf(t.trigger),s.Ay.set(t.trigger,{opacity:0}))}})}})},52319:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},52330:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
   <ul class="*** xt-ul demo--listcustom ***">
@@ -17440,7 +17443,7 @@
   </ul>
 `}},52637:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-align-right">
-    <div class="xt-slider" data-xt-slider="{ align: 'right' }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'right' }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -17503,10 +17506,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},52678:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -18055,7 +18058,7 @@
       <iframe
         class="xt-media"
         src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=0&showinfo=0&rel=0"
-        title="YouTube video player"
+        aria-label="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
@@ -18322,7 +18325,7 @@
       </div>
     </div>
   </div>
-`,container:!0}},55054:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(38034),a.Xt.mount({matches:".demo--form-validation",mount:t=>{let{ref:e}=t,i=e.querySelector(".custom-backend-error"),s=e.querySelector("[data-node-required-one]"),o=s.querySelectorAll("input"),l=e.querySelector(".input--constrains");if(i){let t=(i=i.parentNode).getBoundingClientRect();window.scrollTo(window.scrollX,t.top-a.Xt.innerHeight*a.Xt.formScrollWindowFactor)}let r=t=>{var e;if(!(null==t||null==(e=t.detail)?void 0:e.skip)){let t=!1;for(let e of o)if(e.value&&""!==e.value){t=!0;break}for(let e of o)t?e.setCustomValidity(""):e.setCustomValidity(s.getAttribute("data-node-required-one")),e.dispatchEvent(new CustomEvent("change",{detail:{skip:!0}}))}};for(let t of o)t.addEventListener("input",r),t.addEventListener("change",r),r();let d=()=>{RegExp("^(CH-)?\\d{4}$","").test(l.value)?l.setCustomValidity(""):l.setCustomValidity("Switzerland ZIPs must have exactly 4 digits: e.g. CH-1950 or 1950")};l.addEventListener("input",d),l.addEventListener("change",d),d()}})},55133:()=>{},55190:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:""}},55269:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},55413:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(51816),a.Xt.mount({matches:".demo--toggle-api #toggle--eventmethods",mount:t=>{let{ref:e}=t,i=()=>{};return new a.Xt.Toggle(e,{min:1}).then(t=>{let s=document.querySelector("#card--toggle-api-log"),o=t=>{s.append(a.Xt.node({str:`<div>${t}</div>`})),clearTimeout(window.logTimeout),window.logTimeout=setTimeout(()=>{s.append(a.Xt.node({str:'<hr class="my-4 border-gray-300"/>'})),s.scrollTo(0,s.scrollHeight)},1e3)},l=document.querySelector("#button--toggle-api-first-element"),r=()=>{o("<strong>1st element</strong>"),t.elements[0].dispatchEvent(new CustomEvent("on.trigger.xt.toggle"))};l.addEventListener("click",r);let d=document.querySelector("#button--toggle-api-first-target"),n=()=>{o("<strong>1st target</strong>"),t.targets[0].dispatchEvent(new CustomEvent("on.trigger.xt.toggle"))};d.addEventListener("click",n);let u=document.querySelector("#button--toggle-api-add"),c=()=>{o("<strong>add</strong>");let e=t.getElementsGroups().length,i=`<button type="button" class="xt-button py-2 px-3 text-13 rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 on dir-before in done" data-xt-toggle-element>Toggle ${e}</button>`;document.querySelector("#toggle--eventmethods-elements").append(a.Xt.node({str:i}));let s=`<div class="off:hidden out:pointer-events-none rounded-full text-13 py-2 px-3 font-medium shadow on in done" data-xt-toggle-target>Target ${e}</div>`;document.querySelector("#toggle--eventmethods-targets").append(a.Xt.node({str:s})),o("<strong>reinit</strong>"),t.reinit()};u.addEventListener("click",c);let m=document.querySelector("#button--toggle-api-remove"),p=()=>{o("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove();let i=t.targets;i[i.length-1].remove(),o("<strong>reinit</strong>"),t.reinit()};m.addEventListener("click",p);let v=document.querySelector("#button--toggle-api-reinit"),g=()=>{o("<strong>reinit</strong>"),t.reinit()};v.addEventListener("click",g);let b=document.querySelector("#button--toggle-api-restart"),x=()=>{o("<strong>restart</strong>"),t.restart()};b.addEventListener("click",x),document.querySelector("#button--toggle-api-disable").addEventListener("click",()=>{o("<strong>disable</strong>"),t.disable()}),document.querySelector("#button--toggle-api-enable").addEventListener("click",()=>{o("<strong>enable</strong>"),t.enable()});let $=document.querySelector("#button--toggle-api-destroy"),y=()=>{o("<strong>destroy</strong>"),t.destroy()};$.addEventListener("click",y);let h=document.querySelector("#button--toggle-api-unmount"),f=()=>{o("<strong>unmount</strong>"),i()};h.addEventListener("click",f);let w=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),o(a)};e.addEventListener("init.xt.toggle",w),e.addEventListener("destroy.xt.toggle",w),document.addEventListener("on.xt.toggle",w,!0),document.addEventListener("off.xt.toggle",w,!0),i=()=>{l.removeEventListener("click",r),d.removeEventListener("click",n),u.removeEventListener("click",c),m.removeEventListener("click",p),v.removeEventListener("click",g),b.removeEventListener("click",x),$.removeEventListener("click",y),h.removeEventListener("click",f),e.removeEventListener("init.xt.toggle",w),e.removeEventListener("destroy.xt.toggle",w),document.removeEventListener("on.xt.toggle",w,!0),document.removeEventListener("off.xt.toggle",w,!0),t.destroy(),t=null}}),()=>{i()}}})},55420:(t,e,i)=>{"use strict";i.r(e),i(88300),i(91398)},55470:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+`,container:!0}},55054:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(38034),a.Xt.mount({matches:".demo--form-validation",mount:t=>{let{ref:e}=t,i=e.querySelector(".custom-backend-error"),s=e.querySelector("[data-node-required-one]"),o=s.querySelectorAll("input"),l=e.querySelector(".input--constrains");if(i){let t=(i=i.parentNode).getBoundingClientRect();window.scrollTo(window.scrollX,t.top-a.Xt.innerHeight*a.Xt.formScrollWindowFactor)}let r=t=>{var e;if(!(null==t||null==(e=t.detail)?void 0:e.skip)){let t=!1;for(let e of o)if(e.value&&""!==e.value){t=!0;break}for(let e of o)t?e.setCustomValidity(""):e.setCustomValidity(s.getAttribute("data-node-required-one")),e.dispatchEvent(new CustomEvent("change",{detail:{skip:!0}}))}};for(let t of o)t.addEventListener("input",r),t.addEventListener("change",r),r();let d=()=>{RegExp("^(CH-)?\\d{4}$","").test(l.value)?l.setCustomValidity(""):l.setCustomValidity("Switzerland ZIPs must have exactly 4 digits: e.g. CH-1950 or 1950")};l.addEventListener("input",d),l.addEventListener("change",d),d()}})},55133:()=>{},55190:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:""}},55269:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},55413:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(51816),a.Xt.mount({matches:".demo--toggle-api #toggle--eventmethods",mount:t=>{let{ref:e}=t,i=()=>{};return new a.Xt.Toggle(e,{min:1}).then(t=>{let s=document.querySelector("#card--toggle-api-log"),o=t=>{s.append(a.Xt.node({str:`<div>${t}</div>`})),clearTimeout(window.logTimeout),window.logTimeout=setTimeout(()=>{s.append(a.Xt.node({str:'<hr class="my-4 border-gray-300"/>'})),s.scrollTo(0,s.scrollHeight)},1e3)},l=document.querySelector("#button--toggle-api-first-element"),r=()=>{o("<strong>1st element</strong>"),t.elements[0].dispatchEvent(new CustomEvent("on.trigger.xt.toggle"))};l.addEventListener("click",r);let d=document.querySelector("#button--toggle-api-first-target"),n=()=>{o("<strong>1st target</strong>"),t.targets[0].dispatchEvent(new CustomEvent("on.trigger.xt.toggle"))};d.addEventListener("click",n);let u=document.querySelector("#button--toggle-api-add"),c=()=>{o("<strong>add</strong>");let e=t.getElementsGroups().length,i=`<button type="button" class="xt-button py-2 px-3 text-13 rounded-full font-medium leading-snug text-gray-900 bg-gray-100 transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500 on dir-before in done" data-xt-toggle-element>Toggle ${e}</button>`;document.querySelector("#toggle--eventmethods-elements").append(a.Xt.node({str:i}));let s=`<div class="off:hidden out:pointer-events-none rounded-full text-13 py-2 px-3 font-medium shadow on in done" data-xt-toggle-target>Target ${e}</div>`;document.querySelector("#toggle--eventmethods-targets").append(a.Xt.node({str:s})),o("<strong>reinit</strong>"),t.reinit()};u.addEventListener("click",c);let m=document.querySelector("#button--toggle-api-remove"),p=()=>{o("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove();let i=t.targets;i[i.length-1].remove(),o("<strong>reinit</strong>"),t.reinit()};m.addEventListener("click",p);let v=document.querySelector("#button--toggle-api-reinit"),b=()=>{o("<strong>reinit</strong>"),t.reinit()};v.addEventListener("click",b);let g=document.querySelector("#button--toggle-api-restart"),x=()=>{o("<strong>restart</strong>"),t.restart()};g.addEventListener("click",x),document.querySelector("#button--toggle-api-disable").addEventListener("click",()=>{o("<strong>disable</strong>"),t.disable()}),document.querySelector("#button--toggle-api-enable").addEventListener("click",()=>{o("<strong>enable</strong>"),t.enable()});let $=document.querySelector("#button--toggle-api-destroy"),y=()=>{o("<strong>destroy</strong>"),t.destroy()};$.addEventListener("click",y);let h=document.querySelector("#button--toggle-api-unmount"),f=()=>{o("<strong>unmount</strong>"),i()};h.addEventListener("click",f);let w=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),o(a)};e.addEventListener("init.xt.toggle",w),e.addEventListener("destroy.xt.toggle",w),document.addEventListener("on.xt.toggle",w,!0),document.addEventListener("off.xt.toggle",w,!0),i=()=>{l.removeEventListener("click",r),d.removeEventListener("click",n),u.removeEventListener("click",c),m.removeEventListener("click",p),v.removeEventListener("click",b),g.removeEventListener("click",x),$.removeEventListener("click",y),h.removeEventListener("click",f),e.removeEventListener("init.xt.toggle",w),e.removeEventListener("destroy.xt.toggle",w),document.removeEventListener("on.xt.toggle",w,!0),document.removeEventListener("off.xt.toggle",w,!0),t.destroy(),t=null}}),()=>{i()}}})},55420:(t,e,i)=>{"use strict";i.r(e),i(88300),i(91398)},55470:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
     <div class="xt-list xt-list-3 items-center justify-center">
       <div class="xt-card rounded${a.cardRadius()} ${a.textDefault()} ${a.cardGray()}">
@@ -19097,7 +19100,7 @@
   </div>
 `}},57109:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--sticky",mount:t=>{let{ref:e}=t,i=e.querySelector("[data-node-sticky-top]"),a=e.querySelector("[data-node-sticky-bottom]");o.u.create({trigger:i,start:"top top",endTrigger:e.querySelector("[data-node-sticky-top-endtrigger]"),end:"bottom top",pin:!0,pinSpacing:!1});let s=o.u.create({trigger:a,start:"bottom bottom",endTrigger:"html",end:"bottom top",pin:!0,pinSpacing:!1});return addEventListener("resize",s.refresh),()=>{removeEventListener("resize",s.refresh)}}})},57251:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-autoheight">
-    <div class="xt-slider" data-xt-slider="{ autoHeight: '[data-xt-slider-autoheight]' }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ autoHeight: '[data-xt-slider-autoheight]' }">
       <div class="*** flex flex-col *** p-4 md:p-6 lg:p-8">
         <div class="*** inline-block overflow-hidden w-full transition-all duration-300 ***" data-xt-slider-autoheight>
           <div
@@ -19162,10 +19165,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},57480:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);a.Xt.mount({matches:".demo--jumptocontent .jumptocontent",mount:t=>{let{ref:e}=t,i=t=>{e.contains(t.target)?a.Xt.on({el:e}):a.Xt.off({el:e})};return document.addEventListener("focusin",i),()=>{document.removeEventListener("focusin",i)}}})},57869:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -19345,7 +19348,7 @@
   </div>
 `}},58491:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-wheel-free">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition *** ease-out-quint duration-500 on:duration-500 *** xt-row xt-row-4"
@@ -19401,14 +19404,14 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},58493:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},58696:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},58797:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-absolute-free">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -19514,9 +19517,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},58814:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);i(91398),s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--scrolltrigger-matches",mount:t=>{let{ref:e}=t,i=e.querySelector(".xt-sticky"),l=e.querySelector("[data-xt-overlay]"),r=()=>{};return a.Xt.get({name:"xt-overlay",el:l}).then(t=>{let l=parseFloat(e.getAttribute("data-test-mount")??0)+1;e.setAttribute("data-test-mount",l),console.log("TEST pin mount this should NOT be called on resize and xtNamespace should be 1.",a.Xt.dataStorage.get(document.documentElement,`xtNamespace${t.ns}`).length);let d=()=>{let t=parseFloat(e.getAttribute("data-test-refresh")??0)+1;e.setAttribute("data-test-refresh",t),console.log("TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.",a.Xt._mountArr.length)};addEventListener("resize.xt",d),s.Ay.matchMedia().add("(max-width: 767px)",()=>{o.u.create({trigger:i,start:"top top",endTrigger:"html",end:"bottom top",pin:!0,pinSpacing:!1})}),r=()=>{console.log("TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.",a.Xt.dataStorage.get(document.documentElement,`xtNamespace${t.ns}`).length),o.u.removeEventListener("refresh",d)}}),()=>{r()}}})},58873:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -19691,7 +19694,7 @@
   </div>
 `}},60718:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-wrap-right">
-    <div class="xt-slider" data-xt-slider="{ align: 'right', wrap: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'right', wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -19754,10 +19757,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},60815:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -19878,7 +19881,10 @@
   </div>
 `}},61075:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},61439:(t,e,i)=>{"use strict";i.r(e),i(88300),i(36587)},61509:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},61687:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider="{ wrap: true, queue: { targets: true }, duration: 500 }">
+    <section
+      class="xt-slider"
+      aria-label="Example"
+      data-xt-slider="{ wrap: true, queue: { targets: true }, duration: 500 }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -19941,10 +19947,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},61690:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -20210,7 +20216,7 @@
   </div>
 `}},62066:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-nooverflow-false">
-    <div class="xt-slider" data-xt-slider="{ nooverflow: false }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ nooverflow: false }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -20245,10 +20251,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},62155:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -20295,7 +20301,7 @@
               <div class="xt-h4">${e}</div>
             </div>
           </div>
-          `;document.querySelector("#slider--eventmethods-targets").append(a.Xt.node({str:i})),o("<strong>reinit</strong>"),t.reinit()};u.addEventListener("click",c);let m=document.querySelector("#button--slider-api-remove"),p=()=>{o("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove();let i=t.targets;i[i.length-1].remove(),o("<strong>reinit</strong>"),t.reinit()};m.addEventListener("click",p);let v=document.querySelector("#button--slider-api-reinit"),g=()=>{o("<strong>reinit</strong>"),t.reinit()};v.addEventListener("click",g);let b=document.querySelector("#button--slider-api-restart"),x=()=>{o("<strong>restart</strong>"),t.restart()};b.addEventListener("click",x),document.querySelector("#button--slider-api-disable").addEventListener("click",()=>{o("<strong>disable</strong>"),t.disable()}),document.querySelector("#button--slider-api-enable").addEventListener("click",()=>{o("<strong>enable</strong>"),t.enable()});let $=document.querySelector("#button--slider-api-destroy"),y=()=>{o("<strong>destroy</strong>"),t.destroy()};$.addEventListener("click",y);let h=document.querySelector("#button--slider-api-unmount"),f=()=>{o("<strong>unmount</strong>"),i()};h.addEventListener("click",f);let w=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),o(a)};e.addEventListener("init.xt.slider",w),e.addEventListener("destroy.xt.slider",w),document.addEventListener("on.xt.slider",w,!0),document.addEventListener("off.xt.slider",w,!0),i=()=>{l.removeEventListener("click",r),d.removeEventListener("click",n),u.removeEventListener("click",c),m.removeEventListener("click",p),v.removeEventListener("click",g),b.removeEventListener("click",x),$.removeEventListener("click",y),h.removeEventListener("click",f),e.removeEventListener("init.xt.slider",w),e.removeEventListener("destroy.xt.slider",w),document.removeEventListener("on.xt.slider",w,!0),document.removeEventListener("off.xt.slider",w,!0),t.destroy(),t=null}}),()=>{i()}}})},63724:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+          `;document.querySelector("#slider--eventmethods-targets").append(a.Xt.node({str:i})),o("<strong>reinit</strong>"),t.reinit()};u.addEventListener("click",c);let m=document.querySelector("#button--slider-api-remove"),p=()=>{o("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove();let i=t.targets;i[i.length-1].remove(),o("<strong>reinit</strong>"),t.reinit()};m.addEventListener("click",p);let v=document.querySelector("#button--slider-api-reinit"),b=()=>{o("<strong>reinit</strong>"),t.reinit()};v.addEventListener("click",b);let g=document.querySelector("#button--slider-api-restart"),x=()=>{o("<strong>restart</strong>"),t.restart()};g.addEventListener("click",x),document.querySelector("#button--slider-api-disable").addEventListener("click",()=>{o("<strong>disable</strong>"),t.disable()}),document.querySelector("#button--slider-api-enable").addEventListener("click",()=>{o("<strong>enable</strong>"),t.enable()});let $=document.querySelector("#button--slider-api-destroy"),y=()=>{o("<strong>destroy</strong>"),t.destroy()};$.addEventListener("click",y);let h=document.querySelector("#button--slider-api-unmount"),f=()=>{o("<strong>unmount</strong>"),i()};h.addEventListener("click",f);let w=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),o(a)};e.addEventListener("init.xt.slider",w),e.addEventListener("destroy.xt.slider",w),document.addEventListener("on.xt.slider",w,!0),document.addEventListener("off.xt.slider",w,!0),i=()=>{l.removeEventListener("click",r),d.removeEventListener("click",n),u.removeEventListener("click",c),m.removeEventListener("click",p),v.removeEventListener("click",b),g.removeEventListener("click",x),$.removeEventListener("click",y),h.removeEventListener("click",f),e.removeEventListener("init.xt.slider",w),e.removeEventListener("destroy.xt.slider",w),document.removeEventListener("on.xt.slider",w,!0),document.removeEventListener("off.xt.slider",w,!0),t.destroy(),t=null}}),()=>{i()}}})},63724:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
     <div class="xt-list xt-list-3 items-center">
       <div data-xt-drop>
@@ -20802,7 +20808,7 @@
   </div>
 `}},67e3:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-align-center">
-    <div class="xt-slider" data-xt-slider="{ align: 'center' }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'center' }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -20865,10 +20871,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},67034:()=>{},67067:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},67124:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
   <div class="demo--parallax">
@@ -20919,7 +20925,7 @@
       </div>
     </div>
   </div>
-`}},67815:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Tooltip",o.componentName="xt-tooltip",o.optionsDefault={elements:"[data-xt-tooltip-element]",targets:"[data-xt-tooltip-target]",classSkip:{elements:!0,elementsInner:!0},min:0,max:1,on:"mouseenter focus",off:"mouseleave",mouseParent:!1,eventLimit:".xt-event-limit, .xt-tooltip",closeauto:!0,openauto:!1,closeDeep:".xt-dismiss",closeInside:".xt-tooltip, .xt-backdrop",closeOutside:"body",preventEvent:!0,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,position:"top",positionInner:!1,strategy:"absolute",spaceOverflow:15,spaceFlip:15,spaceArrow:!1,popperjs:!0,zIndex:{targets:{start:700,factor:-1}},a11y:{role:"tooltip",labelElements:!0,labelTargets:!1,hiddenTargets:!0,controls:!1,selected:!1,expanded:!1,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Tooltip=o,a.Xt.mount({matches:`[data-${a.Xt.Tooltip.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Tooltip.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Tooltip(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},67855:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
+`}},67815:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Tooltip",o.componentName="xt-tooltip",o.optionsDefault={elements:"[data-xt-tooltip-element]",targets:"[data-xt-tooltip-target]",classSkip:{elements:!0,elementsInner:!0},min:0,max:1,on:"mouseenter focus",off:"mouseleave",mouseParent:!1,eventLimit:".xt-event-limit, .xt-tooltip",closeauto:!0,openauto:!1,closeDeep:".xt-dismiss",closeInside:".xt-tooltip, .xt-backdrop",closeOutside:"body",preventEvent:!0,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,position:"top",positionInner:!1,strategy:"absolute",spaceOverflow:15,spaceFlip:15,spaceArrow:!1,popperjs:!0,zIndex:{targets:{start:700,factor:-1}},a11y:{role:"tooltip",labelElements:!0,labelTargets:!1,hiddenTargets:!0,controls:!1,selected:!1,expanded:!1,hidden:!1,live:!1,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Tooltip=o,a.Xt.mount({matches:`[data-${a.Xt.Tooltip.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Tooltip.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Tooltip(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},67855:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
   <div>
     <dl>
       <dt class="font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</dt>
@@ -21288,7 +21294,7 @@
   </div>
 `}},69470:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-hero-v1">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -21450,9 +21456,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `}},69822:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--drop-prevent-overflow">
@@ -21530,7 +21536,7 @@
   </div>
 `}},69844:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(24883),a.Xt.mount({matches:".demo--slider-wheel-free .xt-slider",mount:t=>{let{ref:e}=t,i=()=>{};return new a.Xt.Slider(e,{free:!0,drag:{overflow:!1}}).then(t=>{let e=e=>{t.wheelEvent({},e)&&e.preventDefault()};t.dragger.addEventListener("wheel",e,{passive:!1}),i=()=>{t.dragger.removeEventListener("wheel",e),t.destroy(),t=null}}),()=>{i()}}})},69893:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-wrap-nospace">
-    <div class="xt-slider" data-xt-slider="{ align: 'center', wrap: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'center', wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -21568,10 +21574,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},70213:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--toggle-prevent-event">
@@ -21724,7 +21730,7 @@
   </div>
 `}},70821:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-wrap-center">
-    <div class="xt-slider" data-xt-slider="{ align: 'center', wrap: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'center', wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -21787,10 +21793,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},70847:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -21807,7 +21813,7 @@
 `}},71145:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--products-listing-v1">
     <div class="py-10">
-      <div class="xt-slider pb-10" data-xt-slider="{ align: 'left', loop: true }">
+      <section class="xt-slider pb-10" aria-label="Example" data-xt-slider="{ align: 'left', loop: true }">
         <div class="container">
           <div class="xt-h3 mb-8">
             <div class="xt-list xt-list-2 items-center">
@@ -21965,7 +21971,7 @@
             <button type="button" class="xt-button hidden" data-xt-slider-element></button>
           </nav>
         </div>
-      </div>
+      </section>
 
       <div class="listing">
         <div class="container">
@@ -22322,7 +22328,7 @@
   </div>
 `}},71578:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-usage-absolute">
-    <div class="*** xt-slider *** bg-primary-500">
+    <section class="*** xt-slider *** bg-primary-500" aria-label="Example">
       <div class="*** xt-slides ***" data-xt-slider-dragger>
         <div class="*** xt-slide xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -22428,9 +22434,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},71595:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--javascript-animation-js">
@@ -23511,7 +23517,7 @@
   </div>
 `}},73969:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-wrap-left">
-    <div class="xt-slider" data-xt-slider="{ align: 'left', wrap: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'left', wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -23574,10 +23580,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},73977:(t,e,i)=>{"use strict";i.r(e),i(88300),i(6333)},74015:(t,e,i)=>{"use strict";i.r(e),i(88300),i(91398)},74037:(t,e,i)=>{"use strict";i.r(e),i(88300),i(36587)},74059:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},74117:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--fade-outside-infinite",mount:t=>{let{ref:e}=t,i=e.querySelectorAll(".xt-card:not(.faded)");for(let t of i)t.classList.add("faded");o.u.batch(i,{onEnter:t=>{s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:1,duration:.5,ease:"quart.out",stagger:t=>Math.min(.6,.15*t)})},onLeave:t=>{s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:0,duration:.5,ease:"quart.out",stagger:t=>Math.min(.6,.15*t)})},onEnterBack:t=>{s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:1,duration:.5,ease:"quart.out",stagger:t=>Math.min(.6,.15*t)})},onLeaveBack:t=>{s.Ay.killTweensOf(t),s.Ay.to(t,{opacity:0,duration:.5,ease:"quart.out",stagger:t=>Math.min(.6,.15*t)})},onRefresh:(t,e)=>{for(let t of e)0!==t.progress?(s.Ay.killTweensOf(t.trigger),s.Ay.set(t.trigger,{opacity:1})):(s.Ay.killTweensOf(t.trigger),s.Ay.set(t.trigger,{opacity:0}))}})}})},74626:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
   <div class="demo--media-minheight">
@@ -25970,7 +25976,10 @@
   </div>
 `}},80303:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-expand">
-    <div class="xt-slider" data-xt-slider="{ wrap: true, matches: { '(max-width: 767px)': { disabled: true } } }">
+    <section
+      class="xt-slider"
+      aria-label="Example"
+      data-xt-slider="{ wrap: true, matches: { '(max-width: 767px)': { disabled: true } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -26033,10 +26042,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},80439:(t,e,i)=>{"use strict";i.r(e),i(88300),i(91398)},80451:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -26784,7 +26793,7 @@
   </div>
 `}},81709:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-media-loaded">
-    <div class="xt-slider" data-xt-slider="{ mediaLoaded: true, mediaLoadedReinit: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ mediaLoaded: true, mediaLoadedReinit: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -26906,12 +26915,12 @@
             type="button"
             class="xt-button h-10 rounded-md overflow-hidden hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-content
           </button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},81848:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--parallax-multiple",mount:t=>{let{ref:e}=t;for(let t of e.querySelectorAll(".box:not(.parallaxed)")){t.classList.add("parallaxed"),s.Ay.set(t,{opacity:0});let e={trigger:t,start:"top bottom",end:"top bottom-=200",scrub:1};s.Ay.timeline({scrollTrigger:e}).set(t,{y:30,opacity:0}).to(t,{opacity:1,y:0,ease:"quint.inOut"});let i={trigger:t,start:"bottom top+=200",end:"bottom top",scrub:1};s.Ay.timeline({scrollTrigger:i}).set(t,{y:0,opacity:1}).to(t,{opacity:0,y:-30,ease:"quint.inOut",immediateRender:!1})}}})},81867:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--megamenu-v1">
@@ -27318,7 +27327,7 @@
   </div>
 `}},82496:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-automatic-scrolling">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row" data-xt-slider-dragger>
           <div class="xt-slide ${a.slide()} px-5" data-xt-slider-target>
@@ -27382,12 +27391,12 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
 
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row" data-xt-slider-dragger>
           <div class="xt-slide ${a.slide()} *** px-1 w-60 ***" data-xt-slider-target>
@@ -27441,10 +27450,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},82621:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},83032:(t,e,i)=>{"use strict";i.r(e),i(88300),i(36587)},83252:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},83271:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -27583,7 +27592,7 @@
   </div>
 `}},83444:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(24883);var s=i(68477);a.Xt.mount({matches:".demo--slider-absolute-wheel-free .xt-slider",mount:t=>{let e,{ref:i}=t,o="quart.out",l=()=>{};return new a.Xt.Slider(i,{duration:()=>1e3*e,mode:"absolute",loop:!0,free:!0}).then(t=>{t.dragger.addEventListener("wheel",e=>{t.wheelEvent({},e),e.preventDefault()},{passive:!1}),t.dragger.addEventListener("dragposition.xt.slider",()=>{e=t.drag._instant?0:Math.max(.5,Math.min(1,Math.log(t.drag.size/400))),e=t.drag._dragging&&t.wheel._wheeling?.5:e,s.Ay.killTweensOf(t.drag),s.Ay.to(t.drag,{_position:t.drag._final,duration:e,ease:o})}),t.dragger.addEventListener("drag.xt.slider",()=>{let i=t.targets.filter(e=>t.hasCurrent({el:e}))[0].querySelector(".hero");s.Ay.killTweensOf(i),s.Ay.to(i,{x:`${-100*t.drag._ratio*t.direction}%`,duration:e,ease:o});let a=i.querySelector(".hero-inner");for(let i of(s.Ay.killTweensOf(a),s.Ay.to(a,{x:`${100*t.drag._ratio*t.direction}%`,opacity:1-.65*t.drag._ratio,duration:e,ease:o}),t.targets.filter(t=>t.classList.contains("incoming"))))i.classList.remove("incoming","!block");for(let i of t.direction<0?t.getTargets({el:t.getPrev()}):t.getTargets({el:t.getNext()})){i.classList.add("incoming","!block");let a=i.querySelector(".hero");s.Ay.killTweensOf(a),s.Ay.to(a,{x:`${100*t.drag._ratioInverse*t.direction}%`,duration:e,ease:o});let l=a.querySelector(".hero-inner");s.Ay.killTweensOf(l),s.Ay.to(l,{x:`${-100*t.drag._ratioInverse*t.direction}%`,opacity:1-.65*t.drag._ratioInverse,duration:e,ease:o})}}),t.dragger.addEventListener("dragreset.xt.slider",()=>{let e=t.targets.filter(e=>t.hasCurrent({el:e}))[0];a({target:e}),i({target:e})});let i=i=>{let a=i.target;if(t.targets.includes(a)&&!t.initial){a.classList.remove("!block");let i=a.querySelector(".hero");s.Ay.killTweensOf(i),s.Ay.set(i,{x:`${100*t.drag._ratioInverse*t.direction}%`}),s.Ay.to(i,{x:0,duration:e,ease:o});let l=i.querySelector(".hero-inner");s.Ay.killTweensOf(l),s.Ay.set(l,{x:`${-100*t.drag._ratioInverse*t.direction}%`,opacity:1-.65*t.drag._ratioInverse}),s.Ay.to(l,{x:0,opacity:1,duration:e,ease:o})}};t.container.addEventListener("on.xt.slider",i,!0);let a=i=>{let a=i.target;if(t.targets.includes(a)){let i=a.querySelector(".hero");s.Ay.killTweensOf(i),s.Ay.to(i,{x:`${-100*t.direction}%`,duration:e,ease:o});let l=i.querySelector(".hero-inner");for(let i of(s.Ay.killTweensOf(l),s.Ay.to(l,{x:`${100*t.direction}%`,opacity:.35,duration:e,ease:o}),t.targets.filter(t=>t.classList.contains("incoming")))){i.classList.remove("incoming");let a=i.querySelector(".hero");s.Ay.killTweensOf(a),s.Ay.to(a,{x:`${-100*t.direction}%`,duration:e,ease:o}).eventCallback("onComplete",()=>{i.classList.remove("!block")});let l=a.querySelector(".hero-inner");s.Ay.killTweensOf(l),s.Ay.to(l,{x:`${100*t.direction}%`,opacity:.35,duration:e,ease:o})}}};t.container.addEventListener("off.xt.slider",a,!0),l=()=>{t.destroy(),t=null}}),()=>{l()}}})},83646:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},83774:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-navsides">
-    <div class="xt-slider" data-xt-slider="{ loop: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ loop: true }">
       <div class="p-4 md:p-6 lg:p-8 *** slider-navs-container relative ***">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -27668,10 +27677,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},83803:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>l});let a=i(91452).L,s=()=>`${a.buttonGray()} ${a.buttonGrayAnim()}`,o=()=>`${a.buttonPrimary()} ${a.buttonPrimaryAnim()}`,l={html:`
   <div class="demo--ripple-animation-v1">
@@ -27794,8 +27803,8 @@
     </div>
   </div>
 `}},83987:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
-  <div class="demo--slider-absolute-mask">
-    <div class="xt-slider bg-primary-500">
+  <div class="demo--slider-absolute-mask" aria-label="Example">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -27895,9 +27904,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},84138:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>d});let a=i(91452).L,s=()=>`${a.buttonGray()} ${a.buttonGrayAnim()}`,o=()=>`${a.buttonPrimary()} ${a.buttonPrimaryAnim()}`,l=()=>`${a.buttonTextAnim()}`,r=()=>`${a.groupButtonPrimary()} ${a.buttonPrimaryAnim()}`,d={html:`
   <div class="demo--slide-animation-v1">
@@ -28657,7 +28666,7 @@
         <iframe
           class="xt-media"
           data-src="https://www.youtube.com/embed/hNQFjqDvPhA?autoplay=1&showinfo=0&rel=0"
-          title="Video player"
+          aria-label="Video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
@@ -28667,7 +28676,7 @@
         <iframe
           class="xt-media"
           data-src="https://player.vimeo.com/video/39750791?h=4527890cfb&autoplay=1"
-          title="Video player"
+          aria-label="Video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
@@ -28824,7 +28833,7 @@
   </div>
 `,container:!0}},84423:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-contain-false-center">
-    <div class="xt-slider" data-xt-slider="{ align: 'center', contain: false }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'center', contain: false }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -28887,14 +28896,14 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},84438:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(38034),i(51816),i(91398),i(6333),i(11616);var s=i(68477),o=i(25916);s.Ay.registerPlugin(o.I),a.Xt.mount({matches:".demo--products-gallery-v1 form",mount:t=>{let{ref:e}=t,i=e.querySelector(".product-gallery"),s=()=>{};return new a.Xt.Toggle(e,{min:1,elements:"[data-node-variants-element]",targets:"[data-node-variants-target]",on:"change",off:!1,duration:500,a11y:{keyboard:!1}}).then(t=>{let a=()=>{t.initial||(e.dispatchEvent(new CustomEvent("scrollto.trigger.xt.scrollto")),i.scrollTo(0,0)),i.dispatchEvent(new CustomEvent("scroll"))};for(let e of t.elements)e.addEventListener("ondone.xt.toggle",a);s=()=>{t.destroy(),t=null}}),()=>{s()}}}),a.Xt.mount({matches:".demo--products-gallery-v1",mount:()=>{let t=()=>{};return new a.Xt.Scrollto(document.documentElement,{scrollers:".xt-overlay:not([data-xt-overlay-disabled]), .product-gallery",space:t=>{let{self:e}=t;return e.scroller.classList.contains("xt-overlay","product-gallery")?0:window.innerHeight/6}}).then(e=>{let i=()=>{s.Ay.killTweensOf(e.scroller),s.Ay.to(e.scroller,{scrollTo:e.position,duration:e.duration,ease:"quint.out"})};e.container.addEventListener("scrollto.xt.scrollto",i);let a=()=>{s.Ay.killTweensOf(e.scroller)};addEventListener("touchstart",a),addEventListener("wheel",a),t=()=>{removeEventListener("touchstart",a),removeEventListener("wheel",a),e.container.removeEventListener("scrollto.xt.scrollto",i),e.destroy(),e=null}}),()=>{t()}}}),a.Xt.mount({matches:".demo--products-gallery-v1",mount:t=>{let{ref:e}=t,i=e.querySelectorAll(".product-image");new a.Xt.Overlay(e,{targets:"#overlay--product-images",duration:500});let o=t=>{let e=t.target,i=e.querySelector(".xt-media-container");s.Ay.to(i,{scale:.985,duration:.5,ease:"quart.out"});let a=e.querySelector(".xt-media");s.Ay.to(a,{scale:1.06,duration:1.5,ease:"quart.out"});let o=e.querySelector(".xt-media-mask");s.Ay.set(o,{height:0,y:i.offsetHeight,skewY:0,opacity:.2}),s.Ay.to(o,{height:"150%",y:0,opacity:.2,duration:.5,ease:"quart.out"}),s.Ay.to(o,{skewY:-10,duration:.25,ease:"quart.out"}).eventCallback("onComplete",()=>{s.Ay.to(o,{skewY:0,duration:.25,ease:"quart.out"})}),s.Ay.to(o,{opacity:.1,duration:.75,ease:"quart.out",delay:.5});let l=e.querySelector(".xt-card-item");l&&s.Ay.to(l,{y:-10,duration:.5,ease:"expo.out"})};for(let t of i)t.addEventListener("mouseenter",o);let l=t=>{let e=t.target,i=e.querySelector(".xt-media-container");s.Ay.to(i,{scale:1,duration:.5,ease:"quart.out"});let a=e.querySelector(".xt-media");s.Ay.to(a,{scale:1,duration:1.5,ease:"quart.out"});let o=e.querySelector(".xt-media-mask");s.Ay.to(o,{height:"50%",y:"-100%",opacity:.2,duration:.5,ease:"quart.out"}),s.Ay.to(o,{skewY:10,duration:.25,ease:"quart.out"}).eventCallback("onComplete",()=>{s.Ay.to(o,{skewY:0,duration:.25,ease:"quart.out"})});let l=e.querySelector(".xt-card-item");l&&s.Ay.to(l,{y:0,duration:.5,ease:"expo.out"})};for(let t of i)t.addEventListener("mouseleave",l)}})},84908:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},85147:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-absolute-wheel-free">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -28994,9 +29003,9 @@
           type="button"
           class="xt-button ${a.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},85401:(t,e,i)=>{"use strict";i.r(e),i(88300),i(91398)},85512:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -29018,7 +29027,7 @@
   </div>
 `}},85576:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-contain-false-right">
-    <div class="xt-slider" data-xt-slider="{ align: 'right', contain: false }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ align: 'right', contain: false }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -29081,10 +29090,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},85606:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -29275,7 +29284,10 @@
   </div>
 `}},85891:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-disabled">
-    <div class="xt-slider" data-xt-slider="{ wrap: true, matches: { '(min-width: 768px)': { disabled: true } } }">
+    <section
+      class="xt-slider"
+      aria-label="Example"
+      data-xt-slider="{ wrap: true, matches: { '(min-width: 768px)': { disabled: true } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -29338,10 +29350,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},86033:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -30050,9 +30062,9 @@
       >
     </nav>
   </div>
-`}},91188:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},91283:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},91398:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Overlay",o.componentName="xt-overlay",o.optionsDefault={elements:"[data-xt-overlay-element]",targets:"[data-xt-overlay-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-overlay",closeauto:!0,openauto:!0,closeDeep:".xt-dismiss",closeInside:".xt-overlay, .xt-backdrop, .xt-overlay-container",closeOutside:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,appendTo:"body",classBody:"xt-scrollbar-overlay",focusLimit:!0,zIndex:{targets:{start:5e3,factor:0}},a11y:{role:"dialog",labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!0,live:!0,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Overlay=o,a.Xt.mount({matches:`[data-${a.Xt.Overlay.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Overlay.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Overlay(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},91452:(t,e,i)=>{"use strict";i.d(e,{L:()=>a});let a={textDefault:()=>"text-gray-900 xt-links-default",textInverse:()=>"text-white xt-links-inverse",bgBlur:()=>"backdrop-filter backdrop-blur-sm backdrop-saturate-50",docsFloat:()=>"rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0",cardToggle:()=>"bg-white rounded-full text-13 py-2 px-3 font-medium shadow",buttonSlider:()=>"p-2 min-w-[1.25rem] h-5 rounded-full text-11 text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all",buttonCode:()=>"text-opacity-[90%] font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100",buttonCodeWhite:()=>"font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20",buttonRadius:()=>"-md",buttonXs:()=>"py-1.5 px-2 text-12",buttonSm:()=>"py-2 px-3 text-13",buttonMd:()=>"py-2.5 px-3.5 text-sm",buttonLg:()=>"py-3 px-4 text-base",buttonLower:()=>"font-medium leading-snug",buttonUpper:()=>"font-medium leading-snug tracking-wider uppercase",buttonGray:()=>"text-gray-900 bg-gray-100",buttonGrayAnim:()=>"transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200",buttonGrayAnimGroup:()=>"group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200",buttonPrimary:()=>"text-white bg-primary-500",buttonPrimaryAnim:()=>"transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600",buttonPrimaryAnimGroup:()=>"group-hover:text-white group-hover:bg-primary-600 group-active:text-white group-active:bg-primary-700 group-on:text-white group-on:bg-primary-600",buttonBorderGray:()=>"text-gray-900 border-2 border-gray-200 hover:border-transparent active:border-transparent on:border-transparent",buttonTextAnim:()=>"transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500",buttonRing:()=>"ring-2 ring-primary-200",buttonRingAnim:()=>"transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300",buttonCloseOutsideAnim:()=>"transition md:text-white md:bg-primary-500 md:hover:bg-primary-600",cardRadius:()=>"-2xl",cardSm:()=>"p-6 sm:p-8 text-sm",cardMd:()=>"p-7 sm:p-9 text-base",cardLg:()=>"p-8 sm:p-10 text-base sm:text-lg",cardBlack:()=>"bg-black",cardWhite:()=>"bg-white",cardWhiteAccent:()=>"bg-primary-100",cardGray:()=>"bg-gray-100",cardGrayInteractive:()=>"transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200",cardPrimary:()=>"bg-primary-500",cardPrimaryAccent:()=>"bg-primary-600",cardPrimaryInteractive:()=>"transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600",cardSlideRadius:()=>"-md",cardSlideDesign:()=>"bg-gray-100 border-2 border-transparent transition group-in:border-gray-200",cardSlideContent:()=>"p-8 text-base text-center",groupMd:()=>"p-3",groupButtonRadius:()=>"-md",groupButtonSm:()=>"py-1 px-2.5 text-13",groupButtonMd:()=>"py-1.5 px-3 text-sm",groupButtonLg:()=>"py-2 px-3.5 text-base",groupButton:()=>"flex-auto font-medium leading-snug",groupButtonGray:()=>"text-gray-900 bg-gray-100",groupButtonPrimary:()=>"text-white bg-primary-500",tooltipRadius:()=>"-md",tooltipShadow:()=>"shadow-md",tooltipSm:()=>"py-1 px-2 text-11",tooltipMd:()=>"py-2 px-2.5 text-13",tooltipLg:()=>"py-2.5 px-4 text-base",tooltipText:()=>"font-medium",dropRadius:()=>"-md",dropShadow:()=>"shadow-lg",overlayRadius:()=>"-2xl",overlayShadow:()=>"shadow-xl",badgeRadius:()=>"-xs",badgeSm:()=>"py-2 px-2.5 text-11",badgeMd:()=>"py-3 px-3.5 text-13",badgeLg:()=>"py-3.5 px-4 text-base",badgeGray:()=>"text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100",badgePrimary:()=>"text-white font-medium leading-snug tracking-wider uppercase bg-primary-500",slide:()=>"group",loader:()=>"xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden",spinner:()=>"xt-spinner absolute inset-0 m-auto",filler:()=>"xt-filler absolute inset-0 m-auto",checkLabel:()=>"cursor-pointer inline-flex items-baseline",checkContent:()=>"ml-4",checkGray:()=>"bg-gray-200 border border-transparent transition checked:bg-primary-500",checkPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600",checkRadius:()=>"rounded-md",radioGray:()=>"bg-gray-200 border border-transparent transition checked:bg-primary-500",radioPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600",radioRadius:()=>"rounded-full",switchGray:()=>"bg-gray-200 border border-transparent transition-all checked:bg-primary-500",switchPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition-all checked:bg-primary-600",switchRadius:()=>"rounded-full",inputGray:()=>"py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none",inputPrimary:()=>"py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none",inputUnderline:()=>"py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none",labelGray:()=>"font-medium text-gray-700",labelPrimary:()=>"font-medium text-white",label:()=>"block",input:()=>"block w-full",inputRadius:()=>"rounded-md",textarea:()=>"h-20 max-h-48",note:()=>"text-gray-900 text-opacity-[90%] text-13 leading-snug",h1Display:()=>"mt-10 mb-4 xt-my-auto font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none",h1:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-3xl md:text-4xl md:leading-none lg:text-5xl lg:leading-none",h2:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-2xl md:text-3xl md:leading-none lg:text-4xl lg:leading-none",h3:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl md:text-2xl md:leading-none lg:text-3xl lg:leading-none",h4:()=>"mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl lg:text-2xl lg:leading-tight",h5:()=>"mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl",h6:()=>"mt-5 mb-2 xt-my-auto font-bold leading-tight tracking-tight normal-case text-lg",hBlock:()=>"mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center",iconX:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`},iconSearch:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`},iconArrowLeft:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>`},iconArrowRight:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`},iconArrowUp:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>`},iconArrowDown:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>`},iconChevronLeft:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>`},iconChevronRight:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`},iconChevronUp:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>`},iconChevronDown:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`},iconLocate:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`},iconTwitter:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon class="st0" points="21.3,21.1 9.9,2.9 2.7,2.9 14.1,21.1 "/><line class="st0" x1="2.7" y1="21.1" x2="9.9" y2="14.5"/><line class="st0" x1="14.1" y1="9.5" x2="21.3" y2="2.9"/></svg>`},iconPackage:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`},iconGithub:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>`},iconLink:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`},iconCode:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`},iconMaximize:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>`},iconExternal:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`},iconCopy:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`},iconEdit:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`},iconDownload:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`},iconFile:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>`},iconFiletext:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`},iconMail:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`},iconPhone:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`},iconUsers:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`},iconInfo:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`},iconAlerttriangle:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`},iconCreditcard:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`},iconGlobe:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`},svgSpinner:function(){let{classes:t,dimension:e=120,radius:i=100,dash:a=628}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg viewBox="0 0 ${2*e} ${2*e}" class="absolute" preserveAspectRatio="xMinYMin meet"><circle class="stroke-current origin-center opacity-25" fill="none" stroke-width="30" cx="${e}" cy="${e}" r="${i}" stroke-dasharray="${a}" stroke-dashoffset="0" pathLength="${a}"/></svg><svg viewBox="0 0 ${2*e} ${2*e}"><circle class="stroke-current origin-center relative${t}" fill="none" stroke-width="30" cx="${e}" cy="${e}" r="${i}" stroke-dasharray="${a}" stroke-dashoffset="${a}" pathLength="${a}"/></svg>`}}},91747:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
+`}},91188:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},91283:(t,e,i)=>{"use strict";i.r(e),i(88300),i(67815)},91398:(t,e,i)=>{"use strict";var a=i(88300);i(51816);var s=i(57696);a.Xt.JSON=s;class o extends a.Xt.Toggle{constructor(t,e={}){super(t,e)}}o.constructorName="Overlay",o.componentName="xt-overlay",o.optionsDefault={elements:"[data-xt-overlay-element]",targets:"[data-xt-overlay-target]",min:0,max:1,on:"click",off:"click",mouseParent:!1,eventLimit:".xt-event-limit, .xt-overlay",closeauto:!0,openauto:!0,closeDeep:".xt-dismiss",closeInside:".xt-overlay, .xt-backdrop, .xt-overlay-container",closeOutside:!1,queue:{elements:!1,targets:!0,elementsInner:!1,targetsInner:!0},disableDeactivate:!0,appendTo:"body",classBody:"xt-scrollbar-overlay",focusLimit:!0,zIndex:{targets:{start:5e3,factor:0}},a11y:{role:"dialog",labelElements:!1,labelTargets:!0,hiddenTargets:!1,controls:!0,selected:!1,expanded:!0,hidden:!1,live:!1,disabled:!0,keyboard:!0,vertical:!1,items:!1}},a.Xt.Overlay=o,a.Xt.mount({matches:`[data-${a.Xt.Overlay.componentName}]`,mount:t=>{let{ref:e}=t,i=e.getAttribute(`data-${a.Xt.Overlay.componentName}`),o=i?s.parse(i):{},l=()=>{};return new a.Xt.Overlay(e,o).then(t=>{l=()=>{t.destroy(),t=null}}),()=>{l()}}})},91452:(t,e,i)=>{"use strict";i.d(e,{L:()=>a});let a={textDefault:()=>"text-gray-900 xt-links-default",textInverse:()=>"text-white xt-links-inverse",bgBlur:()=>"backdrop-filter backdrop-blur-sm backdrop-saturate-50",docsFloat:()=>"rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0",cardToggle:()=>"bg-white rounded-full text-13 py-2 px-3 font-medium shadow",buttonSlider:()=>"p-2 min-w-[1.25rem] h-5 rounded-full text-11 text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all",buttonCode:()=>"text-opacity-[90%] font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100",buttonCodeWhite:()=>"font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20",buttonRadius:()=>"-md",buttonXs:()=>"py-1.5 px-2 text-12",buttonSm:()=>"py-2 px-3 text-13",buttonMd:()=>"py-2.5 px-3.5 text-sm",buttonLg:()=>"py-3 px-4 text-base",buttonLower:()=>"font-medium leading-snug",buttonUpper:()=>"font-medium leading-snug tracking-wider uppercase",buttonGray:()=>"text-gray-900 bg-gray-100",buttonGrayAnim:()=>"transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200",buttonGrayAnimGroup:()=>"group-hover:bg-gray-200 group-active:bg-gray-300 group-on:bg-gray-200",buttonPrimary:()=>"text-white bg-primary-500",buttonPrimaryAnim:()=>"transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600",buttonPrimaryAnimGroup:()=>"group-hover:text-white group-hover:bg-primary-600 group-active:text-white group-active:bg-primary-700 group-on:text-white group-on:bg-primary-600",buttonBorderGray:()=>"text-gray-900 border-2 border-gray-200 hover:border-transparent active:border-transparent on:border-transparent",buttonTextAnim:()=>"transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500",buttonRing:()=>"ring-2 ring-primary-200",buttonRingAnim:()=>"transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300",buttonCloseOutsideAnim:()=>"transition md:text-white md:bg-primary-500 md:hover:bg-primary-600",cardRadius:()=>"-2xl",cardSm:()=>"p-6 sm:p-8 text-sm",cardMd:()=>"p-7 sm:p-9 text-base",cardLg:()=>"p-8 sm:p-10 text-base sm:text-lg",cardBlack:()=>"bg-black",cardWhite:()=>"bg-white",cardWhiteAccent:()=>"bg-primary-100",cardGray:()=>"bg-gray-100",cardGrayInteractive:()=>"transition hover:bg-gray-200 active:bg-gray-300 on:bg-gray-200",cardPrimary:()=>"bg-primary-500",cardPrimaryAccent:()=>"bg-primary-600",cardPrimaryInteractive:()=>"transition hover:text-white hover:bg-primary-600 active:text-white active:bg-primary-700 on:text-white on:bg-primary-600",cardSlideRadius:()=>"-md",cardSlideDesign:()=>"bg-gray-100 border-2 border-transparent transition group-in:border-gray-200",cardSlideContent:()=>"p-8 text-base text-center",groupMd:()=>"p-3",groupButtonRadius:()=>"-md",groupButtonSm:()=>"py-1 px-2.5 text-13",groupButtonMd:()=>"py-1.5 px-3 text-sm",groupButtonLg:()=>"py-2 px-3.5 text-base",groupButton:()=>"flex-auto font-medium leading-snug",groupButtonGray:()=>"text-gray-900 bg-gray-100",groupButtonPrimary:()=>"text-white bg-primary-500",tooltipRadius:()=>"-md",tooltipShadow:()=>"shadow-md",tooltipSm:()=>"py-1 px-2 text-11",tooltipMd:()=>"py-2 px-2.5 text-13",tooltipLg:()=>"py-2.5 px-4 text-base",tooltipText:()=>"font-medium",dropRadius:()=>"-md",dropShadow:()=>"shadow-lg",overlayRadius:()=>"-2xl",overlayShadow:()=>"shadow-xl",badgeRadius:()=>"-xs",badgeSm:()=>"py-2 px-2.5 text-11",badgeMd:()=>"py-3 px-3.5 text-13",badgeLg:()=>"py-3.5 px-4 text-base",badgeGray:()=>"text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100",badgePrimary:()=>"text-white font-medium leading-snug tracking-wider uppercase bg-primary-500",slide:()=>"group",loader:()=>"xt-loader absolute z-content inset-0 rounded-inherit overflow-hidden",spinner:()=>"xt-spinner absolute inset-0 m-auto",filler:()=>"xt-filler absolute inset-0 m-auto",checkLabel:()=>"cursor-pointer inline-flex items-baseline",checkContent:()=>"ml-4",checkGray:()=>"bg-gray-200 border border-transparent transition checked:bg-primary-500",checkPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600",checkRadius:()=>"rounded-md",radioGray:()=>"bg-gray-200 border border-transparent transition checked:bg-primary-500",radioPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600",radioRadius:()=>"rounded-full",switchGray:()=>"bg-gray-200 border border-transparent transition-all checked:bg-primary-500",switchPrimary:()=>"bg-primary-800 bg-opacity-25 border border-transparent transition-all checked:bg-primary-600",switchRadius:()=>"rounded-full",inputGray:()=>"py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none",inputPrimary:()=>"py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none",inputUnderline:()=>"py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none",labelGray:()=>"font-medium text-gray-700",labelPrimary:()=>"font-medium text-white",label:()=>"block",input:()=>"block w-full",inputRadius:()=>"rounded-md",textarea:()=>"h-20 max-h-48",note:()=>"text-gray-900 text-opacity-[90%] text-13 leading-snug",h1Display:()=>"mt-10 mb-4 xt-my-auto font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none",h1:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-3xl md:text-4xl md:leading-none lg:text-5xl lg:leading-none",h2:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-2xl md:text-3xl md:leading-none lg:text-4xl lg:leading-none",h3:()=>"mt-10 mb-4 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl md:text-2xl md:leading-none lg:text-3xl lg:leading-none",h4:()=>"mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl lg:text-2xl lg:leading-tight",h5:()=>"mt-5 mb-3 xt-my-auto font-bold leading-tight tracking-tight normal-case text-xl",h6:()=>"mt-5 mb-2 xt-my-auto font-bold leading-tight tracking-tight normal-case text-lg",hBlock:()=>"mt-10 mb-4 xt-my-auto py-4 px-6 w-full rounded-md bg-gray-100 font-bold leading-tight tracking-tight normal-case text-lg text-center",iconX:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`},iconSearch:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`},iconArrowLeft:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>`},iconArrowRight:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`},iconArrowUp:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>`},iconArrowDown:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>`},iconChevronLeft:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>`},iconChevronRight:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`},iconChevronUp:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>`},iconChevronDown:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`},iconLocate:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`},iconTwitter:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon class="st0" points="21.3,21.1 9.9,2.9 2.7,2.9 14.1,21.1 "/><line class="st0" x1="2.7" y1="21.1" x2="9.9" y2="14.5"/><line class="st0" x1="14.1" y1="9.5" x2="21.3" y2="2.9"/></svg>`},iconPackage:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`},iconGithub:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>`},iconLink:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`},iconCode:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`},iconMaximize:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>`},iconExternal:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`},iconCopy:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`},iconEdit:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`},iconDownload:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`},iconFile:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>`},iconFiletext:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`},iconMail:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`},iconPhone:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`},iconUsers:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`},iconInfo:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`},iconAlerttriangle:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>`},iconCreditcard:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`},iconGlobe:function(){let{classes:t}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg xmlns="http://www.w3.org/2000/svg" class="${t}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`},svgSpinner:function(){let{classes:t,dimension:e=120,radius:i=100,dash:a=628}=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return t=-1!==(t=t?`${t}`:"").search("xt-icon")?t:`xt-icon ${t}`,`<svg viewBox="0 0 ${2*e} ${2*e}" class="absolute" preserveAspectRatio="xMinYMin meet"><circle class="stroke-current origin-center opacity-25" fill="none" stroke-width="30" cx="${e}" cy="${e}" r="${i}" stroke-dasharray="${a}" stroke-dashoffset="0" pathLength="${a}"/></svg><svg viewBox="0 0 ${2*e} ${2*e}"><circle class="stroke-current origin-center relative${t}" fill="none" stroke-width="30" cx="${e}" cy="${e}" r="${i}" stroke-dasharray="${a}" stroke-dashoffset="${a}" pathLength="${a}"/></svg>`}}},91747:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-animation-css">
-    <div class="xt-slider" data-xt-slider="{ wrap: true, duration: 500 }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true, duration: 500 }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -30129,10 +30141,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},91797:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -31451,7 +31463,7 @@
       </button>
     </div>
 
-    <div class="xt-slider" data-xt-slider="{ exclude: '.hidden' }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ exclude: '.hidden' }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -31534,10 +31546,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},95636:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -31935,7 +31947,7 @@
   </div>
 `}},96089:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},96098:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-progress">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8" data-xt-mousefollow>
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -32039,7 +32051,7 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             <span class="${a.loader()}">
               <span class="${a.filler()} text-primary-500">
                 <span class="block absolute bg-current opacity-25 w-full h-full"></span>
@@ -32056,7 +32068,7 @@
           </span>
         </span>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},96160:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -32376,7 +32388,7 @@
             Drop ${e}
           </button>
         `;i.append(a.Xt.node({str:s}));let o=t.targets.length+1,r=`
-          <div class="xt-drop p-3" title="Target ${o}"
+          <div class="xt-drop p-3" aria-label="Target ${o}"
             data-xt-drop-target>
             <div class="xt-card w-64 rounded-md shadow-lg text-gray-900 xt-links-default bg-white">
               <div class="xt-list flex-col p-3">
@@ -32392,7 +32404,7 @@
               </div>
             </div>
           </div>
-        `;i.append(a.Xt.node({str:r})),l("<strong>reinit</strong>"),t.reinit()};c.addEventListener("click",m);let p=e.querySelector("#button--drop-api-remove"),v=()=>{l("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove(),l("<strong>reinit</strong>"),t.reinit()};p.addEventListener("click",v);let g=e.querySelector("#button--drop-api-reinit"),b=()=>{l("<strong>reinit</strong>"),t.reinit()};g.addEventListener("click",b);let x=e.querySelector("#button--drop-api-restart"),$=()=>{l("<strong>restart</strong>"),t.restart()};x.addEventListener("click",$),e.querySelector("#button--drop-api-disable").addEventListener("click",()=>{l("<strong>disable</strong>"),t.disable()}),e.querySelector("#button--drop-api-enable").addEventListener("click",()=>{l("<strong>enable</strong>"),t.enable()});let y=e.querySelector("#button--drop-api-destroy"),h=()=>{l("<strong>destroy</strong>"),t.destroy()};y.addEventListener("click",h);let f=e.querySelector("#button--drop-api-unmount"),w=()=>{l("<strong>unmount</strong>"),s()};f.addEventListener("click",w);let S=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),l(a)};i.addEventListener("init.xt.drop",S),i.addEventListener("destroy.xt.drop",S),document.addEventListener("on.xt.drop",S,!0),document.addEventListener("off.xt.drop",S,!0),s=()=>{r.removeEventListener("click",d),n.removeEventListener("click",u),c.removeEventListener("click",m),p.removeEventListener("click",v),g.removeEventListener("click",b),x.removeEventListener("click",$),y.removeEventListener("click",h),f.removeEventListener("click",w),i.removeEventListener("init.xt.drop",S),i.removeEventListener("destroy.xt.drop",S),document.removeEventListener("on.xt.drop",S,!0),document.removeEventListener("off.xt.drop",S,!0),t.destroy(),t=null}}),()=>{s()}}})},97734:()=>{},97951:()=>{},97963:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},98085:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
+        `;i.append(a.Xt.node({str:r})),l("<strong>reinit</strong>"),t.reinit()};c.addEventListener("click",m);let p=e.querySelector("#button--drop-api-remove"),v=()=>{l("<strong>remove</strong>");let e=t.elements;e[e.length-1].remove(),l("<strong>reinit</strong>"),t.reinit()};p.addEventListener("click",v);let b=e.querySelector("#button--drop-api-reinit"),g=()=>{l("<strong>reinit</strong>"),t.reinit()};b.addEventListener("click",g);let x=e.querySelector("#button--drop-api-restart"),$=()=>{l("<strong>restart</strong>"),t.restart()};x.addEventListener("click",$),e.querySelector("#button--drop-api-disable").addEventListener("click",()=>{l("<strong>disable</strong>"),t.disable()}),e.querySelector("#button--drop-api-enable").addEventListener("click",()=>{l("<strong>enable</strong>"),t.enable()});let y=e.querySelector("#button--drop-api-destroy"),h=()=>{l("<strong>destroy</strong>"),t.destroy()};y.addEventListener("click",h);let f=e.querySelector("#button--drop-api-unmount"),w=()=>{l("<strong>unmount</strong>"),s()};f.addEventListener("click",w);let S=e=>{let i,a=`event <strong>${e.type}</strong> direction <strong>${t.direction}</strong>`;t.elements.includes(e.target)?a+=" type <strong>element</strong>":t.targets.includes(e.target)&&(a+=" type <strong>target</strong>"),e.target.getAttribute("title")?i=e.target.getAttribute("title"):e.target.querySelector(":scope > .xt-button")?i=e.target.querySelector(":scope > .xt-button").textContent:e.target.querySelector(".xt-card > *")?i=e.target.querySelector(".xt-card > *").textContent:e.target.querySelector(":scope > *")?i=e.target.querySelector(":scope > *").textContent:e.target.querySelector("*")||(i=e.target.innerHTML),i&&(i=i.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/\//g,"&#x2F;"),a+=` from <strong>${i}</strong>`),l(a)};i.addEventListener("init.xt.drop",S),i.addEventListener("destroy.xt.drop",S),document.addEventListener("on.xt.drop",S,!0),document.addEventListener("off.xt.drop",S,!0),s=()=>{r.removeEventListener("click",d),n.removeEventListener("click",u),c.removeEventListener("click",m),p.removeEventListener("click",v),b.removeEventListener("click",g),x.removeEventListener("click",$),y.removeEventListener("click",h),f.removeEventListener("click",w),i.removeEventListener("init.xt.drop",S),i.removeEventListener("destroy.xt.drop",S),document.removeEventListener("on.xt.drop",S,!0),document.removeEventListener("off.xt.drop",S,!0),t.destroy(),t=null}}),()=>{s()}}})},97734:()=>{},97951:()=>{},97963:(t,e,i)=>{"use strict";i.r(e),i(88300),i(24883)},98085:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>a});let a={html:`
   <div>
     <figure>
       <img src="/img.jpg" loading="lazy" alt="" />
@@ -32523,7 +32535,7 @@
   </div>
 `}},98812:()=>{},98820:(t,e,i)=>{"use strict";i.r(e);var a=i(88300);i(36587);var s=i(68477);a.Xt.mount({matches:".demo--megamenu-v1 .megamenu",mount:t=>{let{ref:e}=t,i=e.querySelector(".megamenu-backdrop"),o="quint.out",l="expo.out",r="expo.out",d=0,n=0,u=()=>{};return new a.Xt.Drop(e,{mouseParent:!0,queue:!1,duration:500,preventEvent:!0,zIndex:{targets:{factor:1}}}).then(t=>{for(let e of t.targets){let t=e.querySelector("[data-xt-drop-inner]");s.Ay.set(t,{height:0})}t.container.addEventListener("on.xt.drop",e=>{let u=e.target;if(t.targets.includes(u)){i&&a.Xt.on({el:i});let e=u.querySelector(".xt-drop-content");s.Ay.killTweensOf(e),s.Ay.set(e,{x:-40*t.direction,opacity:0}),s.Ay.to(e,{x:0,opacity:1,duration:.5,ease:o});let c=u.querySelector(".xt-design");s.Ay.killTweensOf(c),s.Ay.set(c,{opacity:0}),s.Ay.to(c,{opacity:1,duration:.5,ease:l});let m=u.querySelector("[data-xt-drop-inner]");s.Ay.killTweensOf(m),s.Ay.set(m,{opacity:1,height:""});let p=m.clientHeight;if(d=p,s.Ay.set(m,{height:n}),s.Ay.to(m,{height:p,duration:.5,ease:r}).eventCallback("onUpdate",()=>{n=m.clientHeight}),t.direction)for(let e of t.targets.filter(e=>!t.hasCurrent({el:e}))){let t=e.querySelector("[data-xt-drop-inner]");s.Ay.killTweensOf(t),s.Ay.set(t,{opacity:1,height:n}),s.Ay.to(t,{height:d,duration:.5,ease:r})}}},!0),t.container.addEventListener("off.xt.drop",e=>{let d=e.target;if(t.targets.includes(d)){i&&a.Xt.off({el:i});let e=d.querySelector(".xt-drop-content");s.Ay.killTweensOf(e),s.Ay.to(e,{x:-(-40*t.direction*1),opacity:0,duration:.5,ease:o});let u=d.querySelector(".xt-design");if(s.Ay.killTweensOf(u),s.Ay.to(u,{opacity:0,duration:.5,ease:l,delay:.25}),!t.direction)for(let e of t.targets.filter(t=>a.Xt.visible({el:t}))){let t=e.querySelector("[data-xt-drop-inner]");s.Ay.killTweensOf(t),s.Ay.set(t,{height:n}),s.Ay.to(t,{height:0,duration:.5,ease:r}).eventCallback("onUpdate",()=>{n=t.clientHeight})}}},!0);let e=e=>{let i=e.target;"click"===t.options.on&&i.dispatchEvent(new CustomEvent("off.trigger.xt.drop"))};for(let i of t.targets)i.addEventListener("mouseleave",e);u=()=>{t.destroy(),t=null}}),()=>{u()}}}),a.Xt.mount({matches:".demo--megamenu-v1 .megamenu",mount:t=>{let{ref:e}=t,i=e.querySelectorAll(".button--line"),o=e.querySelectorAll("[data-xt-drop-element]"),l=e.querySelector(".megamenu-line"),r="quint.out",d=!0,n=!1,u=t=>{let e=t.target;"on.xt.drop"===t.type?e=e.parentNode.querySelector(":scope > .button--line"):n=!0;let i=e.offsetLeft,a=e.offsetTop+e.offsetHeight,o=e.offsetWidth;d&&(s.Ay.set(l,{x:i,y:a,width:o,height:0,opacity:0}),d=!1),s.Ay.to(l,{x:i,y:a-7,width:o,height:7,opacity:1,duration:.5,ease:r})};for(let t of i)t.addEventListener("mouseenter",u);for(let t of o)t.addEventListener("on.xt.drop",u);let c=t=>{let i=t.target;"off.xt.drop"===t.type?i=i.parentNode.querySelector(":scope > .button--line"):n=!1,setTimeout(()=>{n||a.Xt.get({name:"xt-drop",el:e}).then(t=>{let e=t.elements.filter(e=>t.hasCurrent({el:e}))[0];if(e){let t=e.offsetLeft,i=e.offsetTop+e.offsetHeight,a=e.offsetWidth;s.Ay.to(l,{x:t,y:i-7,width:a,height:7,opacity:1,duration:.5,ease:r})}else{let t=i.offsetTop+i.offsetHeight;d=!0,s.Ay.to(l,{y:t,height:0,opacity:0,duration:.5,ease:r})}})},100)};for(let t of i)t.addEventListener("mouseleave",c);for(let t of o)t.addEventListener("off.xt.drop",c)}}),a.Xt.mount({matches:".demo--megamenu-v1",mount:t=>{let{ref:e}=t,i=e.querySelector(".megamenu"),s=e.querySelector('input[type="checkbox"]'),o=()=>{a.Xt.get({name:"xt-drop",el:i}).then(t=>{s.checked?(t.options.on="mouseenter focus",t.options.off="mouseleave",t.options.delay=100):(t.options.on="click",t.options.off="click",t.options.delay=!1),t.destroy({weak:!0}),t.reinit()})};s.addEventListener("change",o),requestAnimationFrame(()=>{o()})}})},98822:()=>{},98869:(t,e,i)=>{"use strict";i.r(e),i(88300),i(51816)},98991:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
-    <div class="xt-slider" data-xt-slider="{ wrap: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ wrap: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -32586,10 +32598,10 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},99294:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div>
@@ -32894,7 +32906,10 @@
   </div>
 `}},99617:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-status">
-    <div class="xt-slider" data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
+    <section
+      class="xt-slider"
+      aria-label="Example"
+      data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <!-- switcher for demo purpose remove this -->
         <form class="text-sm mb-8">
@@ -32974,7 +32989,7 @@
           <button type="button" class="xt-button hidden" data-xt-slider-element></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},99729:(t,e,i)=>{"use strict";i.r(e);var a=i(88300),s=i(68477),o=i(60229);s.Ay.registerPlugin(o.u),a.Xt.mount({matches:".demo--parallax",mount:t=>{let{ref:e}=t,i=e.querySelectorAll(".box:not(.parallaxed)");for(let t of i)t.classList.add("parallaxed");let a=i[0];s.Ay.timeline({scrollTrigger:{trigger:a}}).to(a,{x:"50vw",ease:"quint.inOut"});let o=i[1];s.Ay.timeline({scrollTrigger:{trigger:o,scrub:!0}}).to(o,{x:"50vw",ease:"quint.inOut"});let l=i[2];s.Ay.timeline({scrollTrigger:{trigger:l,scrub:1}}).to(l,{x:"50vw",ease:"quint.inOut"})}})},99835:()=>{},99871:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--drop-api">
@@ -33053,7 +33068,7 @@
       </button>
     </div>
 
-    <div class="xt-list xt-list-3 items-center" id="drop--eventmethods" title="Object">
+    <div class="xt-list xt-list-3 items-center" id="drop--eventmethods" aria-label="Object">
       <button
         type="button"
         class="xt-button ${a.buttonMd()} rounded${a.buttonRadius()} ${a.buttonUpper()} ${a.buttonPrimary()} ${a.buttonPrimaryAnim()}"
@@ -33061,7 +33076,7 @@
         Drop 0
       </button>
 
-      <div class="xt-drop p-3" title="Target 0" data-xt-drop-target>
+      <div class="xt-drop p-3" aria-label="Target 0" data-xt-drop-target>
         <div
           class="xt-card w-64 rounded${a.dropRadius()} ${a.dropShadow()} ${a.textDefault()} ${a.cardWhite()}">
           <div class="xt-list flex-col ${a.groupMd()}">
@@ -33091,7 +33106,7 @@
         Drop 1
       </button>
 
-      <div class="xt-drop p-3" title="Target 1" data-xt-drop-target>
+      <div class="xt-drop p-3" aria-label="Target 1" data-xt-drop-target>
         <div
           class="xt-card w-64 rounded${a.dropRadius()} ${a.dropShadow()} ${a.textDefault()} ${a.cardWhite()}">
           <div class="xt-list flex-col ${a.groupMd()}">
@@ -33123,7 +33138,10 @@
   </div>
 `,container:!0}},99911:(t,e,i)=>{"use strict";i.r(e),i.d(e,{object:()=>s});let a=i(91452).L,s={html:`
   <div class="demo--slider-touch-overflow">
-    <div class="xt-slider" data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
+    <section
+      class="xt-slider"
+      aria-label="Example"
+      data-xt-slider="{ matches: { '(hover: none)': { disabled: true } } }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -33186,9 +33204,9 @@
             type="button"
             class="xt-button ${a.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `,overflow:!0}},99990:(t,e,i)=>{"use strict";i.r(e),i(88300).Xt.mount({matches:".demo--group-expand .xt-list",mount:t=>{let{ref:e}=t;e.querySelector("input").addEventListener("focus",()=>{e.classList.add("expand"),e.classList.add("expand-focus")}),e.addEventListener("mouseenter",()=>{e.classList.add("expand-enter")}),e.querySelector("input").addEventListener("blur",()=>{e.classList.remove("expand-focus"),e.classList.contains("expand-enter")||e.classList.remove("expand")}),e.addEventListener("mouseleave",()=>{e.classList.remove("expand-enter"),e.classList.contains("expand-focus")||e.classList.remove("expand")})}})}}]);

@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-automatic-scrolling">
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row" data-xt-slider-dragger>
           <div class="xt-slide ${classes.slide()} px-5" data-xt-slider-target>
@@ -66,12 +66,12 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
 
-    <div class="xt-slider">
+    <section class="xt-slider" aria-label="Example">
       <div class="p-4 md:p-6 lg:p-8">
         <div class="xt-slides xt-row" data-xt-slider-dragger>
           <div class="xt-slide ${classes.slide()} *** px-1 w-60 ***" data-xt-slider-target>
@@ -125,10 +125,10 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 

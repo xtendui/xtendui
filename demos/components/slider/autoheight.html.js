@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-autoheight">
-    <div class="xt-slider" data-xt-slider="{ autoHeight: '[data-xt-slider-autoheight]' }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ autoHeight: '[data-xt-slider-autoheight]' }">
       <div class="*** flex flex-col *** p-4 md:p-6 lg:p-8">
         <div class="*** inline-block overflow-hidden w-full transition-all duration-300 ***" data-xt-slider-autoheight>
           <div
@@ -67,10 +67,10 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 

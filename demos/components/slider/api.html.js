@@ -67,7 +67,7 @@ const html = /* HTML */ `
       </div>
     </div>
 
-    <div class="xt-slider" id="slider--eventmethods">
+    <section class="xt-slider" aria-label="Example" id="slider--eventmethods">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -131,21 +131,21 @@ const html = /* HTML */ `
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="-1"
-            title="Previous slide">
+            aria-label="Previous slide">
             ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-num
           </button>
           <button
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="1"
-            title="Next slide">
+            aria-label="Next slide">
             ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>
@@ -158,7 +158,7 @@ const html = /* HTML */ `
             id="card--slider-api-log"></div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 `
 

@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-navigation">
-    <div class="xt-slider" data-xt-slider="{ loop: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ loop: true }">
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -16,14 +16,14 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
                 </button>
               </nav>
@@ -39,14 +39,14 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
                 </button>
               </nav>
@@ -62,14 +62,14 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
                 </button>
               </nav>
@@ -85,14 +85,14 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
                 </button>
               </nav>
@@ -108,14 +108,14 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
                 </button>
               </nav>
@@ -131,14 +131,14 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
                 </button>
               </nav>
@@ -154,14 +154,14 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="-1"
-                  title="Previous slide">
+                  aria-label="Previous slide">
                   ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
                 </button>
                 <button
                   type="button"
                   class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
                   data-xt-nav="1"
-                  title="Next slide">
+                  aria-label="Next slide">
                   ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
                 </button>
               </nav>
@@ -177,24 +177,24 @@ const html = /* HTML */ `
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="-1"
-            title="Previous slide">
+            aria-label="Previous slide">
             ${classes.iconChevronLeft({ classes: 'text-xl -my-1' })}
           </button>
           <button
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
           <button
             type="button"
             class="xt-button text-12 py-2 px-2 w-7 h-7 rounded-full ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
             data-xt-nav="1"
-            title="Next slide">
+            aria-label="Next slide">
             ${classes.iconChevronRight({ classes: 'text-xl -my-1' })}
           </button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 

@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-pagination">
-    <div class="xt-slider" data-xt-slider>
+    <section class="xt-slider" aria-label="Example" data-xt-slider>
       <div class="p-4 md:p-6 lg:p-8">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -19,7 +19,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -57,7 +57,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -76,7 +76,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -95,7 +95,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -114,7 +114,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -133,7 +133,7 @@ const html = /* HTML */ `
                   type="button"
                   class="xt-button ${classes.buttonSlider()} hidden"
                   data-xt-slider-element
-                  title="Slide xt-num">
+                  aria-label="Slide xt-num">
                   xt-content
                 </button>
               </nav>
@@ -149,12 +149,12 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num">
+            aria-label="Slide xt-num">
             xt-num of xt-tot
           </button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 

@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div>
-    <div class="xt-slider" data-xt-slider="{ loop: true }">
+    <section class="xt-slider" aria-label="Example" data-xt-slider="{ loop: true }">
       <div class="p-4 md:p-6 lg:p-8 *** slider-navs-container relative ***">
         <div
           class="xt-slides transition ease-out-expo duration-300 on:duration-500 xt-row xt-row-4"
@@ -97,10 +97,10 @@ const html = /* HTML */ `
             type="button"
             class="xt-button ${classes.buttonSlider()} hidden"
             data-xt-slider-element
-            title="Slide xt-num"></button>
+            aria-label="Slide xt-num"></button>
         </nav>
       </div>
-    </div>
+    </section>
   </div>
 `
 

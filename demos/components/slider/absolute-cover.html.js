@@ -2,7 +2,7 @@ const classes = require('src/app/snippets/classes').classes
 
 const html = /* HTML */ `
   <div class="demo--slider-absolute-cover">
-    <div class="xt-slider bg-primary-500">
+    <section class="xt-slider bg-primary-500" aria-label="Example">
       <div class="xt-slides" data-xt-slider-dragger>
         <div class="xt-slide *** xt-slide-absolute off:hidden *** w-full" data-xt-slider-target>
           <div class="hero relative overflow-hidden bg-black">
@@ -114,9 +114,9 @@ const html = /* HTML */ `
           type="button"
           class="xt-button ${classes.buttonSlider()} hidden"
           data-xt-slider-element
-          title="Slide xt-num"></button>
+          aria-label="Slide xt-num"></button>
       </nav>
-    </div>
+    </section>
   </div>
 `
 
