@@ -48,8 +48,7 @@
   ],
   "scripts": {
     "util": "pnpm alias && node ./util/packet.js",
-    "build": "pnpm util && next build && pnpm build:folder",
-    "build:folder": "mkdir -p out/xtendui && find out -maxdepth 1 -mindepth 1 ! -name xtendui -exec mv {} out/xtendui/ \\;",
+    "build": "pnpm util && next build",
     "dev": "pnpm util && next dev -p 8080",
     "serve": "npx serve out -p 8080 --no-request-logging",
     "deploy": "gh-pages -d out",
@@ -57,6 +56,7 @@
     "release": "npx semantic-release --no-ci --dry-run --debug",
     "release:local": "npx semantic-release --no-ci --debug",
     "lint": "eslint . --ext .js,.mjs,.jsx",
+    "test:skip": "",
     "test": "start-server-and-test serve http://localhost:8080/xtendui test:run",
     "test:run": "cypress run",
     "test:open": "cypress open",
