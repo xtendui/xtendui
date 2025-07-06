@@ -1,0 +1,15 @@
+{
+	"name": "Xtend UI",
+	"start_url": "/xtendui/",
+	"background_color": "#0067DD",
+	"theme_color": "#0067DD",
+	"display": "minimal-ui",
+	"icons": [
+    {
+      "purpose": "maskable any",
+      "src": "/xtendui/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
