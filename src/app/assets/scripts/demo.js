@@ -709,7 +709,7 @@ const unloadIframe = iframe => {
 }
 
 window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
-  const iframe = document.querySelector(`iframe[data-src="/${src}"]`)
+  const iframe = document.querySelector(`iframe[data-src="/xtendui/${src}"]`)
   const item = iframe.closest('.docs_demo_item')
   // populate
   populateItem(item)
@@ -725,7 +725,7 @@ window.initIframe = (src, htmlSource, jsxSource, cssSource, jsSource) => {
  */
 
 window.switchClean = (item, src) => {
-  item = item ?? document.querySelector(`iframe[data-src="/${src}"]`).closest('.docs_demo_item')
+  item = item ?? document.querySelector(`iframe[data-src="/xtendui/${src}"]`).closest('.docs_demo_item')
   // clean
   const code = item.querySelector('.docs_demo_code_body_item')
   if (code) {

@@ -13,7 +13,7 @@ Assing the desired `min-height` instead of `min-h-screen`, assing the desired `m
 > This demos use [media](/components/media) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/hero/usage">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/hero/usage">
   </div>
 </demo>
 
@@ -22,7 +22,7 @@ Assing the desired `min-height` instead of `min-h-screen`, assing the desired `m
 Use **Tailwind CSS** to customize **content direction**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/hero/direction">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/hero/direction">
   </div>
 </demo>
 
@@ -31,7 +31,7 @@ Use **Tailwind CSS** to customize **content direction**.
 Use **Tailwind CSS** to **add shadow**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/hero/shadow">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/hero/shadow">
   </div>
 </demo>
 
@@ -40,6 +40,6 @@ Use **Tailwind CSS** to **add shadow**.
 Use **Tailwind CSS** to **position content outside**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/hero/outside">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/hero/outside">
   </div>
 </demo>

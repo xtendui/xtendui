@@ -1,6 +1,6 @@
-const url = '/hidden/test/animation-test'
+const url = '/xtendui/hidden/test/animation-test'
 
-describe('demos/components/toggle/animation-queue', function () {
+describe('xtendui/demos/components/toggle/animation-queue', function () {
   let win
   let Xt
   let container
@@ -68,7 +68,7 @@ describe('demos/components/toggle/animation-queue', function () {
   })
 })
 
-describe('demos/components/toggle/animation-noqueue', function () {
+describe('xtendui/demos/components/toggle/animation-noqueue', function () {
   let win
   let Xt
   let container
@@ -127,7 +127,7 @@ describe('demos/components/toggle/animation-noqueue', function () {
   })
 })
 
-describe('demos/components/toggle/animation-inverse', function () {
+describe('xtendui/demos/components/toggle/animation-inverse', function () {
   let win
   let Xt
   let container
@@ -178,7 +178,7 @@ describe('demos/components/toggle/animation-inverse', function () {
   })
 })
 
-describe('demos/components/toggle/animation-duration-delay', function () {
+describe('xtendui/demos/components/toggle/animation-duration-delay', function () {
   let win
   let Xt
   let container
@@ -264,7 +264,7 @@ describe('demos/components/toggle/animation-duration-delay', function () {
   })
 })
 
-describe('demos/components/toggle/animation-css', function () {
+describe('xtendui/demos/components/toggle/animation-css', function () {
   let win
   let Xt
   let container
@@ -337,7 +337,7 @@ describe('demos/components/toggle/animation-css', function () {
   })
 })
 
-describe('demos/components/slider/animation-css', function () {
+describe('xtendui/demos/components/slider/animation-css', function () {
   let win
   let Xt
   let container
@@ -394,7 +394,7 @@ describe('demos/components/slider/animation-css', function () {
   })
 })
 
-describe('demos/components/toggle/animation-js', function () {
+describe('xtendui/demos/components/toggle/animation-js', function () {
   let win
   let Xt
   let container
@@ -460,7 +460,7 @@ describe('demos/components/toggle/animation-js', function () {
   })
 })
 
-describe('demos/components/slider/animation-js', function () {
+describe('xtendui/demos/components/slider/animation-js', function () {
   let win
   let Xt
   let container
@@ -529,7 +529,7 @@ describe('demos/components/slider/animation-js', function () {
   })
 })
 
-describe('demos/components/toggle/animation-collapse-initial', function () {
+describe('xtendui/demos/components/toggle/animation-collapse-initial', function () {
   let win
   let Xt
   let container

@@ -197,7 +197,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1) to preview location hash changes.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/toggle/hash">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/toggle/hash">
   </div>
 </demo>
 

@@ -19,19 +19,19 @@ This demos use [Gsap ScrollTrigger](https://greensock.com/docs/v3/Plugins/Scroll
 Examples to do **fade animations on page scroll**. See [fade](/components/scrolltrigger/fade) for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/fade"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade"></div>
 </demo>
 
 Examples to do **sticky animations on page scroll**. See [sticky](/components/scrolltrigger/sticky) for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/sticky"></div>
 </demo>
 
 Examples to do **parallax animations on page scroll**. See [parallax](/components/scrolltrigger/parallax) for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/parallax"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/parallax"></div>
 </demo>
 
 ## Fixes

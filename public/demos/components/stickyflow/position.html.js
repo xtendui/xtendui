@@ -22,7 +22,12 @@ const html = /* HTML */ `
 
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-200">
-                    <img class="xt-media relative" id="product-image-5" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
+                    <img
+                      class="xt-media relative"
+                      id="product-image-5"
+                      src="/xtendui/img-alt.jpg"
+                      loading="lazy"
+                      alt="" />
                   </div>
                 </div>
 
@@ -34,7 +39,12 @@ const html = /* HTML */ `
 
                 <div class="w-full">
                   <div class="xt-media-container bg-gray-200">
-                    <img class="xt-media relative" id="product-image-5" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
+                    <img
+                      class="xt-media relative"
+                      id="product-image-5"
+                      src="/xtendui/img-alt.jpg"
+                      loading="lazy"
+                      alt="" />
                   </div>
                 </div>
 

@@ -13,7 +13,7 @@ You can create a **multilevel nav** with [toggle group](/components/toggle/inter
 > This demos use [toggle](/components/toggle) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/navigation/multilevel-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/navigation/multilevel-v1">
   </div>
 </demo>
 
@@ -24,7 +24,7 @@ Use [toggle](/components/toggle) to **activate/deactivate and animate**.
 > This demos use [toggle](/components/toggle) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v1">
   </div>
 </demo>
 
@@ -37,7 +37,7 @@ Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 > This demos use [scrollto](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v2">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v2">
   </div>
 </demo>
 
@@ -50,6 +50,6 @@ Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 > This demos use [toggle](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v3">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v3">
   </div>
 </demo>

@@ -25,14 +25,14 @@ You can also scroll to a Node also if not anchored using the event `scrollto.tri
 Try the demo [on a new page](/demos/components/scrollto/usage#anchor-2) to preview location hash changes.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrollto/usage">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrollto/usage">
   </div>
 </demo>
 
 You can also **set scroll position without gsap**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrollto/usage-simple">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrollto/usage-simple">
   </div>
 </demo>
 
@@ -41,7 +41,7 @@ It works also inside [overlay](/components/overlay) and it automatically open **
 Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2) to preview location hash changes.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrollto/overlay">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrollto/overlay">
   </div>
 </demo>
 
@@ -63,7 +63,7 @@ You can use the Scrollto component in conjunction with any **toggle component** 
 Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2) to preview location hash changes.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrollto/toggle">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrollto/toggle">
   </div>
 </demo>
 

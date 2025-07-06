@@ -160,6 +160,6 @@ Index methods, they all consider `options.loop`.
 ## API Demo
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/slider/api">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/slider/api">
   </div>
 </demo>

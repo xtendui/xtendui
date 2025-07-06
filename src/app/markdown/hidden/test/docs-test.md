@@ -18,5 +18,5 @@ title: "Docs Test"
   </demoinline>
   <demoinline src="demos/components/toggle/animation-noqueue">
   </demoinline>
-  <div class="docs_demo_item" data-iframe="demos/components/stickyflow/usage"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/stickyflow/usage"></div>
 </demo>

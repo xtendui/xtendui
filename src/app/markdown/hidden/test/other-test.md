@@ -35,7 +35,7 @@ title: "Other Test"
 - TEST direction and zIndex sequential activation and zIndex reset.
 - TEST move slightly over other and then target should not change with delay, backdrop should not flickr.
 
-[/demos/themes/navigation/megamenu-v1](/demos/themes/navigation/megamenu-v1).
+[/demos/themes/navigation/megamenu-v1](/xtendui/demos/themes/navigation/megamenu-v1).
 
 ## Scroll
 

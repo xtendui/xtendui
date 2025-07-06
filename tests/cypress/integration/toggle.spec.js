@@ -1,13 +1,13 @@
-const url = '/hidden/test/toggle-test'
+const url = '/xtendui/hidden/test/toggle-test'
 
-describe('demos/components/overlay/usage-self', function () {
+describe('xtendui/demos/components/overlay/usage-self', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/overlay/usage-self').window().as('win')
+    cy.visit('/xtendui/demos/components/overlay/usage-self').window().as('win')
     cy.get('[data-xt-overlay]').as('container') // not .get('@demo')
   })
 
@@ -75,7 +75,7 @@ describe('demos/components/overlay/usage-self', function () {
   })
 })
 
-describe('demos/components/toggle/class', function () {
+describe('xtendui/demos/components/toggle/class', function () {
   let win
   let Xt
   let container
@@ -164,7 +164,7 @@ describe('demos/components/toggle/class', function () {
   })
 })
 
-describe('demos/components/toggle/quantity', function () {
+describe('xtendui/demos/components/toggle/quantity', function () {
   let win
   let Xt
   let container
@@ -237,7 +237,7 @@ describe('demos/components/toggle/quantity', function () {
   })
 })
 
-describe('demos/components/toggle/multiple-group', function () {
+describe('xtendui/demos/components/toggle/multiple-group', function () {
   let win
   let Xt
   let container
@@ -330,7 +330,7 @@ describe('demos/components/toggle/multiple-group', function () {
   })
 })
 
-describe('demos/components/toggle/multiple-nogroupelements', function () {
+describe('xtendui/demos/components/toggle/multiple-nogroupelements', function () {
   let win
   let Xt
   let container
@@ -423,7 +423,7 @@ describe('demos/components/toggle/multiple-nogroupelements', function () {
   })
 })
 
-describe('demos/components/toggle/event', function () {
+describe('xtendui/demos/components/toggle/event', function () {
   let win
   let Xt
   let container
@@ -496,7 +496,7 @@ describe('demos/components/toggle/event', function () {
   })
 })
 
-describe('demos/components/drop/event', function () {
+describe('xtendui/demos/components/drop/event', function () {
   let win
   let Xt
   let container
@@ -591,7 +591,7 @@ describe('demos/components/drop/event', function () {
   })
 })
 
-describe('demos/components/toggle/prevent-event', function () {
+describe('xtendui/demos/components/toggle/prevent-event', function () {
   let win
   let Xt
   let container
@@ -638,14 +638,14 @@ describe('demos/components/toggle/prevent-event', function () {
   })
 })
 
-describe('demos/components/toggle/hash', function () {
+describe('xtendui/demos/components/toggle/hash', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('demos/components/toggle/hash').window().as('win')
+    cy.visit('xtendui/demos/components/toggle/hash').window().as('win')
     cy.get('[data-xt-toggle]').as('container') // not .get('@demo')
   })
 
@@ -697,14 +697,14 @@ describe('demos/components/toggle/hash', function () {
 })
 
 /* WAIT for nextjs to fix router hash change page bugs
-describe('demos/components/toggle/hash', function () {
+describe('xtendui/demos/components/toggle/hash', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('demos/components/toggle/hash#demo--toggle-hash-group-1').window().as('win')
+    cy.visit('xtendui/demos/components/toggle/hash#demo--toggle-hash-group-1').window().as('win')
     cy.get('[data-xt-toggle]').as('container') // not .get('@demo')
   })
 
@@ -849,7 +849,7 @@ describe('demos/components/toggle/hash', function () {
   })
 })
 
-describe('demos/components/overlay/hash', function () {
+describe('xtendui/demos/components/overlay/hash', function () {
   let win
   let Xt
   let container
@@ -858,7 +858,7 @@ describe('demos/components/overlay/hash', function () {
   let self1
 
   beforeEach(function () {
-    cy.visit('demos/components/overlay/hash#demo--overlay-hash').window().as('win')
+    cy.visit('xtendui/demos/components/overlay/hash#demo--overlay-hash').window().as('win')
     cy.get('[data-xt-overlay]').as('container') // not .get('@demo')
   })
 
@@ -945,14 +945,14 @@ describe('demos/components/overlay/hash', function () {
   })
 })
 
-describe('demos/components/slider/hash', function () {
+describe('xtendui/demos/components/slider/hash', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('demos/components/slider/hash#demo--slider-hash-4').window().as('win')
+    cy.visit('xtendui/demos/components/slider/hash#demo--slider-hash-4').window().as('win')
     cy.get('[data-xt-slider]').as('container') // not .get('@demo')
   })
 
@@ -1058,7 +1058,7 @@ describe('demos/components/slider/hash', function () {
 })
 */
 
-describe('demos/components/drop/backdrop', function () {
+describe('xtendui/demos/components/drop/backdrop', function () {
   let win
   let Xt
   let container
@@ -1146,7 +1146,7 @@ describe('demos/components/drop/backdrop', function () {
   })
 })
 
-describe('demos/components/tooltip/swap-click', function () {
+describe('xtendui/demos/components/tooltip/swap-click', function () {
   let win
   let Xt
   let container
@@ -1214,7 +1214,7 @@ describe('demos/components/tooltip/swap-click', function () {
   })
 })
 
-describe('demos/components/tooltip/swap-toggle', function () {
+describe('xtendui/demos/components/tooltip/swap-toggle', function () {
   let win
   let Xt
   let container
@@ -1281,7 +1281,7 @@ describe('demos/components/tooltip/swap-toggle', function () {
   })
 })
 
-describe('demos/components/tooltip/prevent-overflow', function () {
+describe('xtendui/demos/components/tooltip/prevent-overflow', function () {
   let win
   let Xt
   let container
@@ -1321,7 +1321,7 @@ describe('demos/components/tooltip/prevent-overflow', function () {
   })
 })
 
-describe('demos/components/overlay/animation-noqueue', function () {
+describe('xtendui/demos/components/overlay/animation-noqueue', function () {
   let win
   let doc
   let Xt
@@ -1384,7 +1384,7 @@ describe('demos/components/overlay/animation-noqueue', function () {
   })
 })
 
-describe('demos/components/drop/reset-to-current', function () {
+describe('xtendui/demos/components/drop/reset-to-current', function () {
   let win
   let Xt
   let container

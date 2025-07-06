@@ -1,10 +1,10 @@
-const url = '/hidden/test/docs-test'
+const url = '/xtendui/hidden/test/docs-test'
 
 describe('home', function () {
   let win
 
   beforeEach(function () {
-    cy.visit('/').window().as('win')
+    cy.visit('/xtendui/').window().as('win')
   })
 
   beforeEach(function () {

@@ -30,6 +30,6 @@ When using cards you can space with `margin auto` on **card content**. When not 
 Style row to have **overflow scroll when overflowing** (**use narrow screen to see it in action**).
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/row/overflow">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/row/overflow">
   </div>
 </demo>

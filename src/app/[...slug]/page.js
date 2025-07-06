@@ -144,7 +144,7 @@ export default async function Page(props) {
                                     return (
                                       <div
                                         className="docs_demo_item"
-                                        data-iframe-fullscreen={`demos/${demo}`}
+                                        data-iframe-fullscreen={`xtendui/demos/${demo}`}
                                         key={i}></div>
                                     )
                                   })}

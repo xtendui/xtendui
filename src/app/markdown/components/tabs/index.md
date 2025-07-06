@@ -30,10 +30,10 @@ You can set activation styles by adding the class `.on`.
 Check out [tabs themes](/themes/tabs) for **advanced implementations**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tabs-implementation-v1">
   </div>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v2">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tabs-implementation-v2">
   </div>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v3">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tabs-implementation-v3">
   </div>
 </demo>

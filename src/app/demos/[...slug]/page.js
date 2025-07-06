@@ -88,7 +88,7 @@ export async function generateMetadata(props) {
   let { slug } = await props.params
   slug = slug.join('/')
   return {
-    title: `demos/${slug}`,
+    title: `xtendui/demos/${slug}`,
   }
 }
 

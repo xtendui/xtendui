@@ -35,7 +35,7 @@ Use other [card content](/components/card/content) to make complex design.
 > This demos use [card](/components/card) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tooltip-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tooltip-implementation-v1">
   </div>
 </demo>
 

@@ -95,7 +95,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4) to preview location hash changes.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/slider/hash">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/slider/hash">
   </div>
 </demo>
 

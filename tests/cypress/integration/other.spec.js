@@ -1,6 +1,6 @@
-const url = '/hidden/test/other-test'
+const url = '/xtendui/hidden/test/other-test'
 
-describe('demos/hidden/test/mount-unmount', function () {
+describe('xtendui/demos/hidden/test/mount-unmount', function () {
   let win
   let Xt
   let demo
@@ -70,7 +70,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 
   it('TEST unmount, this should increase by one on changing page and resize.', function () {
-    cy.visit('/hidden/test')
+    cy.visit('/xtendui/hidden/test')
       .go(-1)
       .get('.demo--mount-unmount')
       .as('demo')
@@ -102,7 +102,7 @@ describe('demos/hidden/test/mount-unmount', function () {
   })
 })
 
-describe('demos/hidden/test/scrolltrigger-matches', function () {
+describe('xtendui/demos/hidden/test/scrolltrigger-matches', function () {
   let win
   let Xt
   let demo
@@ -111,7 +111,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/hidden/test/scrolltrigger-matches').window().as('win')
+    cy.visit('/xtendui/demos/hidden/test/scrolltrigger-matches').window().as('win')
     cy.get('.demo--scrolltrigger-matches').as('demo')
     cy.get('@demo').find('[data-xt-overlay]').as('container')
   })
@@ -207,7 +207,7 @@ describe('demos/hidden/test/scrolltrigger-matches', function () {
   })
 })
 
-describe('demos/themes/navigation/megamenu-v1', function () {
+describe('xtendui/demos/themes/navigation/megamenu-v1', function () {
   let win
   let Xt
   let container
@@ -215,7 +215,7 @@ describe('demos/themes/navigation/megamenu-v1', function () {
   let backdrop
 
   beforeEach(function () {
-    cy.visit('/demos/themes/navigation/megamenu-v1').window().as('win')
+    cy.visit('/xtendui/demos/themes/navigation/megamenu-v1').window().as('win')
     cy.get('.megamenu').as('container') // not .get('@demo')
     cy.get('@container').find('.xt-backdrop').as('backdrop')
   })
@@ -336,11 +336,11 @@ describe('demos/themes/navigation/megamenu-v1', function () {
   })
 })
 
-describe('demos/components/scrollto/usage', function () {
+describe('xtendui/demos/components/scrollto/usage', function () {
   let doc
 
   beforeEach(function () {
-    cy.visit('/demos/components/scrollto/usage#anchor-2').document().as('doc')
+    cy.visit('/xtendui/demos/components/scrollto/usage#anchor-2').document().as('doc')
     cy.get('.demo--scrollto').as('demo')
     cy.get('a').as('links')
     cy.get('.button--custom').as('buttons')
@@ -405,14 +405,14 @@ describe('demos/components/scrollto/usage', function () {
   })
 })
 
-describe('demos/components/scrollto/overlay', function () {
+describe('xtendui/demos/components/scrollto/overlay', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/scrollto/overlay#anchor-2').window().as('win')
+    cy.visit('/xtendui/demos/components/scrollto/overlay#anchor-2').window().as('win')
     cy.get('.demo--scrollto-overlay').as('demo')
     cy.get('@demo').find('[data-xt-overlay]').as('container')
     cy.get('a').as('links')
@@ -501,7 +501,7 @@ describe('demos/components/scrollto/overlay', function () {
   })
 })
 
-describe('demos/components/scrollto/toggle', function () {
+describe('xtendui/demos/components/scrollto/toggle', function () {
   let win
   let doc
   let Xt
@@ -509,7 +509,7 @@ describe('demos/components/scrollto/toggle', function () {
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/scrollto/toggle#anchor-2').window().as('win').document().as('doc')
+    cy.visit('/xtendui/demos/components/scrollto/toggle#anchor-2').window().as('win').document().as('doc')
     cy.get('.demo--scrollto-toggle').as('demo')
     cy.get('@demo').find('[data-xt-toggle]').as('container')
   })
@@ -588,7 +588,7 @@ describe('demos/components/scrollto/toggle', function () {
   })
 })
 
-describe('demos/components/infinitescroll/usage', function () {
+describe('xtendui/demos/components/infinitescroll/usage', function () {
   let win
   let doc
   let Xt
@@ -596,7 +596,7 @@ describe('demos/components/infinitescroll/usage', function () {
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/infinitescroll/usage?false=2').window().as('win').document().as('doc')
+    cy.visit('/xtendui/demos/components/infinitescroll/usage?false=2').window().as('win').document().as('doc')
     cy.get('.demo--infinitescroll').as('demo')
     cy.get('@demo').find('.infinitescroll').as('container')
   })

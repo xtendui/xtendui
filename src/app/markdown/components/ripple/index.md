@@ -23,7 +23,7 @@ Initialize with javascript **on the selectors you want the ripple effect on**, `
 Style ripple effect **with css**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/animation/ripple-animation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/animation/ripple-animation-v1">
   </div>
 </demo>
 
