@@ -75,7 +75,7 @@ Create your css.
 @import "tailwindcss/utilities";
 ```
 
-You can [customize components css](https://xtendui.com/components/global/preset#customization), more info in Tailwind CSS docs [Tailwind CSS theme](https://tailwindcss.com/docs/theme).
+You can [customize components css](https://xtendui.github.io/xtendui/components/global/preset#customization), more info in Tailwind CSS docs [Tailwind CSS theme](https://tailwindcss.com/docs/theme).
 
 ## Javascript
 
@@ -150,11 +150,11 @@ iOS >= 14.5
 
 ## Global Styles
 
-Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.com/components/animation#global-styles), [layout global styles](https://xtendui.com/components/global#global-styles), [typography global styles](https://xtendui.com/components/typography#global-styles).
+Add to the `body` the class `xt-body` to setup [animations global styles](https://xtendui.github.io/xtendui/components/animation#global-styles), [layout global styles](https://xtendui.github.io/xtendui/components/global#global-styles), [typography global styles](https://xtendui.github.io/xtendui/components/typography#global-styles).
 
-Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](https://xtendui.com/components/link#global-styles).
+Add to the `body` the class `xt-links-default` or `xt-links-inverse` to have [link global styles](https://xtendui.github.io/xtendui/components/link#global-styles).
 
-**If you use gsap** add [this javascript](https://xtendui.com/components/animation#setup) to setup animations.
+**If you use gsap** add [this javascript](https://xtendui.github.io/xtendui/components/animation#setup) to setup animations.
 
 ## Unsupported browsers
 
