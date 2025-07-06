@@ -45,7 +45,7 @@ Arrow left right.
 Role `dialog` and `aria-modal`.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/overlay/usage-self">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/overlay/usage-self">
   </div>
 </demo>
 

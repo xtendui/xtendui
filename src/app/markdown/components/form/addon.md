@@ -37,7 +37,7 @@ If you have **custom backend validation** on submit add also the class `.invalid
 > Use **border on all form elements** if you want to **show validation with border color**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/form/validation">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/form/validation">
   </div>
 </demo>
 

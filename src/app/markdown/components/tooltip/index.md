@@ -45,6 +45,6 @@ Use this code to create **tooltip** in **multiple mode**.
 Check out [tooltip themes](/themes/tooltip) for **advanced implementations**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tooltip-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tooltip-implementation-v1">
   </div>
 </demo>

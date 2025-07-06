@@ -30,12 +30,12 @@ You can set activation styles by adding the class `.on`.
 Check out [nav themes](/themes/nav) for **advanced implementations**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/navigation/multilevel-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/navigation/multilevel-v1">
   </div>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v1">
   </div>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v2">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v2">
   </div>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/nav-implementation-v3">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v3">
   </div>
 </demo>

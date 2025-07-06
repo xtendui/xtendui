@@ -27,7 +27,7 @@ Remember to set a `options.get` variable for a **get request on current url** to
 Try the demo [on a new page](/demos/components/infinitescroll/usage?false=2) to preview location hash changes.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/infinitescroll/usage">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/infinitescroll/usage">
   </div>
 </demo>
 

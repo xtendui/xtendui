@@ -34,7 +34,7 @@ Use the **component classes** to create a **sticky**.
 </div>
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/sticky"></div>
 </demo>
 
 You can **toggle classes on activation** using `toggleClass: '<className>'`.
@@ -77,7 +77,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on
 Here's an example of **complex sticky stacking**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky-stack"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/sticky-stack"></div>
 </demo>
 
 ## Event
@@ -89,9 +89,9 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 Here's an examples of **sticky that hides depending on scroll position and scroll direction**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky-hide-direction"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/sticky-hide-direction"></div>
 </demo>
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/sticky-hide-direction-sub"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/sticky-hide-direction-sub"></div>
 </demo>

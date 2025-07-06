@@ -11,7 +11,7 @@ date: "1900-10-10"
 Use **Tailwind CSS** to create a **sticky footer**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/global/stickyfooter">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/global/stickyfooter">
   </div>
 </demo>
 
@@ -20,6 +20,6 @@ Use **Tailwind CSS** to create a **sticky footer**.
 Use the tab key to reveal the **jump to content** button.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/global/jumptocontent">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/global/jumptocontent">
   </div>
 </demo>

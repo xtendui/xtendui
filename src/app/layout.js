@@ -26,13 +26,13 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className="xt-html" suppressHydrationWarning={true}>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" type="image/png" sizes="512x512" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/xtendui/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/xtendui/apple-touch-icon.png" type="image/png" sizes="512x512" />
+        <link rel="manifest" href="/xtendui/manifest.json" />
         <meta name="keywords" content={package_json_keywords.join(', ')} />
         <meta name="theme-color" content="#0067DD" />
-        <meta name="twitter:card" content="/social.png" />
-        <meta property="og:image" content="/social.png" />
+        <meta name="twitter:card" content="/xtendui/social.png" />
+        <meta property="og:image" content="/xtendui/social.png" />
       </head>
       <body
         className={`xt-body ${classes.textDefault()} xl:text-lg ${inter.className}`}

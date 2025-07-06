@@ -1,6 +1,6 @@
-const url = '/hidden/test/slider-test'
+const url = '/xtendui/hidden/test/slider-test'
 
-describe('demos/components/slider/align-center', function () {
+describe('xtendui/demos/components/slider/align-center', function () {
   let win
   let Xt
   let container
@@ -55,7 +55,7 @@ describe('demos/components/slider/align-center', function () {
   })
 })
 
-describe('demos/components/slider/align-left', function () {
+describe('xtendui/demos/components/slider/align-left', function () {
   let win
   let Xt
   let container
@@ -110,7 +110,7 @@ describe('demos/components/slider/align-left', function () {
   })
 })
 
-describe('demos/components/slider/align-right', function () {
+describe('xtendui/demos/components/slider/align-right', function () {
   let win
   let Xt
   let container
@@ -165,7 +165,7 @@ describe('demos/components/slider/align-right', function () {
   })
 })
 
-describe('demos/components/slider/contain-false-center', function () {
+describe('xtendui/demos/components/slider/contain-false-center', function () {
   let win
   let Xt
   let container
@@ -220,7 +220,7 @@ describe('demos/components/slider/contain-false-center', function () {
   })
 })
 
-describe('demos/components/slider/contain-false-left', function () {
+describe('xtendui/demos/components/slider/contain-false-left', function () {
   let win
   let Xt
   let container
@@ -275,7 +275,7 @@ describe('demos/components/slider/contain-false-left', function () {
   })
 })
 
-describe('demos/components/slider/contain-false-right', function () {
+describe('xtendui/demos/components/slider/contain-false-right', function () {
   let win
   let Xt
   let container
@@ -330,7 +330,7 @@ describe('demos/components/slider/contain-false-right', function () {
   })
 })
 
-describe('demos/components/slider/wrap-nospace', function () {
+describe('xtendui/demos/components/slider/wrap-nospace', function () {
   let win
   let Xt
   let container
@@ -387,7 +387,7 @@ describe('demos/components/slider/wrap-nospace', function () {
   })
 })
 
-describe('demos/components/slider/wrap-center', function () {
+describe('xtendui/demos/components/slider/wrap-center', function () {
   let win
   let Xt
   let container
@@ -497,7 +497,7 @@ describe('demos/components/slider/wrap-center', function () {
   })
 })
 
-describe('demos/components/slider/wrap-left', function () {
+describe('xtendui/demos/components/slider/wrap-left', function () {
   let win
   let Xt
   let container
@@ -566,7 +566,7 @@ describe('demos/components/slider/wrap-left', function () {
   })
 })
 
-describe('demos/components/slider/wrap-right', function () {
+describe('xtendui/demos/components/slider/wrap-right', function () {
   let win
   let Xt
   let container
@@ -635,7 +635,7 @@ describe('demos/components/slider/wrap-right', function () {
   })
 })
 
-describe('demos/components/slider/group', function () {
+describe('xtendui/demos/components/slider/group', function () {
   let win
   let Xt
   let container
@@ -728,7 +728,7 @@ describe('demos/components/slider/group', function () {
   })
 })
 
-describe('demos/components/slider/group-same-false', function () {
+describe('xtendui/demos/components/slider/group-same-false', function () {
   let win
   let Xt
   let container
@@ -797,7 +797,7 @@ describe('demos/components/slider/group-same-false', function () {
   })
 })
 
-describe('demos/components/slider/exclude', function () {
+describe('xtendui/demos/components/slider/exclude', function () {
   let win
   let Xt
   let container
@@ -878,7 +878,7 @@ describe('demos/components/slider/exclude', function () {
   })
 })
 
-describe('demos/components/slider/navigation', function () {
+describe('xtendui/demos/components/slider/navigation', function () {
   let win
   let Xt
   let container
@@ -967,7 +967,7 @@ describe('demos/components/slider/navigation', function () {
   })
 })
 
-describe('demos/components/slider/pagination', function () {
+describe('xtendui/demos/components/slider/pagination', function () {
   let win
   let Xt
   let container
@@ -1145,7 +1145,7 @@ describe('demos/components/slider/pagination', function () {
   })
 })
 
-describe('demos/components/slider/jump', function () {
+describe('xtendui/demos/components/slider/jump', function () {
   let win
   let Xt
   let container
@@ -1214,7 +1214,7 @@ describe('demos/components/slider/jump', function () {
   })
 })
 
-describe('demos/components/slider/autoheight', function () {
+describe('xtendui/demos/components/slider/autoheight', function () {
   let win
   let Xt
   let container
@@ -1255,7 +1255,7 @@ describe('demos/components/slider/autoheight', function () {
   })
 })
 
-describe('demos/components/slider/progress', function () {
+describe('xtendui/demos/components/slider/progress', function () {
   let win
   let Xt
   let container
@@ -1326,7 +1326,7 @@ describe('demos/components/slider/progress', function () {
   })
 })
 
-describe('demos/components/slider/nooverflow', function () {
+describe('xtendui/demos/components/slider/nooverflow', function () {
   let win
   let Xt
   let container
@@ -1376,7 +1376,7 @@ describe('demos/components/slider/nooverflow', function () {
   })
 })
 
-describe('demos/components/slider/nooverflow-false', function () {
+describe('xtendui/demos/components/slider/nooverflow-false', function () {
   let win
   let Xt
   let container
@@ -1437,7 +1437,7 @@ describe('demos/components/slider/nooverflow-false', function () {
   })
 })
 
-describe('demos/components/slider/media-loaded', function () {
+describe('xtendui/demos/components/slider/media-loaded', function () {
   let win
   let Xt
   let container
@@ -1491,7 +1491,7 @@ describe('demos/components/slider/media-loaded', function () {
   })
 })
 
-describe('demos/components/slider/dragposition-js', function () {
+describe('xtendui/demos/components/slider/dragposition-js', function () {
   let win
   let Xt
   let container
@@ -1568,14 +1568,14 @@ describe('demos/components/slider/dragposition-js', function () {
   })
 })
 
-describe('demos/themes/hero/slider-hero-v2', function () {
+describe('xtendui/demos/themes/hero/slider-hero-v2', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/themes/hero/slider-hero-v2').window().as('win')
+    cy.visit('/xtendui/demos/themes/hero/slider-hero-v2').window().as('win')
     cy.get('.demo--slider-hero-v2').as('demo')
     cy.get('@demo').find('.xt-slider').as('container')
   })
@@ -1702,14 +1702,14 @@ describe('demos/themes/hero/slider-hero-v2', function () {
   })
 })
 
-describe('demos/themes/hero/slider-hero-v1', function () {
+describe('xtendui/demos/themes/hero/slider-hero-v1', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/themes/hero/slider-hero-v1').window().as('win')
+    cy.visit('/xtendui/demos/themes/hero/slider-hero-v1').window().as('win')
     cy.get('.demo--slider-hero-v1').as('demo')
     cy.get('@demo').find('.xt-slider').as('container')
   })

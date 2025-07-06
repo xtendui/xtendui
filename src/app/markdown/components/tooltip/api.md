@@ -155,6 +155,6 @@ Index methods, they all consider `options.loop`.
 ## API Demo
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/tooltip/api">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/tooltip/api">
   </div>
 </demo>

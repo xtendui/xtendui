@@ -77,7 +77,7 @@ You can add **additional options** that gets added on **match media query**. You
 You can have an **unclosable overlay** with `closeDeep: false` and `closeInside: false`.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/overlay/unclosable">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/overlay/unclosable">
   </div>
 </demo>
 

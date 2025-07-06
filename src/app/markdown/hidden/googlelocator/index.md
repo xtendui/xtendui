@@ -21,7 +21,7 @@ Search for "New York" to see it in action.
 > Needs google API key with **Maps Javascript API**, **Places API**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/global/googlelocator">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/global/googlelocator">
   </div>
 </demo>
 

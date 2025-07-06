@@ -214,9 +214,9 @@ TEST drag animations on drag and activation.
 `demos/themes/hero/slider-hero-v2`
 - TEST activation and drag activation.
 
-[/demos/themes/hero/slider-hero-v2](/demos/themes/hero/slider-hero-v2).
+[/demos/themes/hero/slider-hero-v2](/xtendui/demos/themes/hero/slider-hero-v2).
 
 `demos/themes/hero/slider-hero-v1`
 - TEST drag looping going back and forth between first and last, pagination looping first and second to last, drag sx then drag 2 times dx, pagination looping last and second to first, pagination jump combinations, multiple click should not change slide, click after drag should not stop animation.
 
-[/demos/themes/hero/slider-hero-v1](/demos/themes/hero/slider-hero-v1).
+[/demos/themes/hero/slider-hero-v1](/xtendui/demos/themes/hero/slider-hero-v1).

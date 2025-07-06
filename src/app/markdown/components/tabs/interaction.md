@@ -13,7 +13,7 @@ Use [toggle](/components/toggle) to **activate/deactivate and animate**.
 > This demos use [toggle](/components/toggle) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tabs-implementation-v1">
   </div>
 </demo>
 
@@ -26,7 +26,7 @@ Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 > This demos use [scrollto](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v2">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tabs-implementation-v2">
   </div>
 </demo>
 
@@ -39,6 +39,6 @@ Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 > This demos use [toggle](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/tabs-implementation-v3">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tabs-implementation-v3">
   </div>
 </demo>

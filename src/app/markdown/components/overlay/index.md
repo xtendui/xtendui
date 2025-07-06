@@ -27,7 +27,7 @@ Use this code to create a **overlay** in **self mode**.
 Just use the class `on` if you want to automatically open, or use the [api](/components/overlay/api).
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/overlay/usage-self">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/overlay/usage-self">
   </div>
 </demo>
 
@@ -58,6 +58,6 @@ Use this code to create a **overlay** in **multiple mode**.
 Check out [overlay themes](/themes/overlay) for **advanced implementations**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/overlay-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/overlay-implementation-v1">
   </div>
 </demo>

@@ -156,7 +156,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash) to preview location hash changes.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/overlay/hash">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/overlay/hash">
   </div>
 </demo>
 

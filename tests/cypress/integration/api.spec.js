@@ -1,6 +1,6 @@
-const url = '/hidden/test/api-test'
+const url = '/xtendui/hidden/test/api-test'
 
-describe('demos/components/toggle/disabled', function () {
+describe('xtendui/demos/components/toggle/disabled', function () {
   let win
   let Xt
   let container
@@ -88,7 +88,7 @@ describe('demos/components/toggle/disabled', function () {
   })
 })
 
-describe('demos/components/overlay/disabled', function () {
+describe('xtendui/demos/components/overlay/disabled', function () {
   let win
   let Xt
   let container
@@ -168,7 +168,7 @@ describe('demos/components/overlay/disabled', function () {
   })
 })
 
-describe('demos/components/slider/disabled', function () {
+describe('xtendui/demos/components/slider/disabled', function () {
   let win
   let Xt
   let container
@@ -237,7 +237,7 @@ describe('demos/components/slider/disabled', function () {
   })
 })
 
-describe('demos/components/toggle/matches', function () {
+describe('xtendui/demos/components/toggle/matches', function () {
   let win
   let Xt
   let container
@@ -298,14 +298,14 @@ describe('demos/components/toggle/matches', function () {
   })
 })
 
-describe('demos/components/toggle/api', function () {
+describe('xtendui/demos/components/toggle/api', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/toggle/api').window().as('win')
+    cy.visit('/xtendui/demos/components/toggle/api').window().as('win')
     cy.get('#toggle--eventmethods').as('container') // not .get('@demo')
   })
 
@@ -404,14 +404,14 @@ describe('demos/components/toggle/api', function () {
   })
 })
 
-describe('demos/components/overlay/api', function () {
+describe('xtendui/demos/components/overlay/api', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/overlay/api').window().as('win')
+    cy.visit('/xtendui/demos/components/overlay/api').window().as('win')
     cy.get('#overlay--eventmethods').as('container') // not .get('@demo')
   })
 
@@ -453,14 +453,14 @@ describe('demos/components/overlay/api', function () {
   })
 })
 
-describe('demos/components/slider/api', function () {
+describe('xtendui/demos/components/slider/api', function () {
   let win
   let Xt
   let container
   let self
 
   beforeEach(function () {
-    cy.visit('/demos/components/slider/api').window().as('win')
+    cy.visit('/xtendui/demos/components/slider/api').window().as('win')
     cy.get('#slider--eventmethods').as('container') // not .get('@demo')
   })
 

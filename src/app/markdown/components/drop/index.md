@@ -45,6 +45,6 @@ Use this code to create **drop** in **multiple mode**.
 Check out [drop themes](/themes/drop) for **advanced implementations**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/drop-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/drop-implementation-v1">
   </div>
 </demo>

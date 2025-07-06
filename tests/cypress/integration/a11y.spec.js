@@ -1,4 +1,4 @@
-const url = '/hidden/test/a-11-y-test'
+const url = '/xtendui/hidden/test/a-11-y-test'
 
 describe('a11y', function () {
   it('TEST a11y.', function () {
@@ -9,7 +9,7 @@ describe('a11y', function () {
   })
 
   it('TEST a11y home.', function () {
-    cy.visit('/')
+    cy.visit('/xtendui/')
       .wait(1000) // after animation
       .injectAxe()
       .checkA11y()

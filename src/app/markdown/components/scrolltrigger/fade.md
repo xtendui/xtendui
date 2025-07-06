@@ -13,7 +13,7 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 A **fade** can be achieved by assigning **ScrollTrigger** by setting [ScrollTrigger events](/components/scrolltrigger/fade#event) to **animate depending on scroll position relative to the trigger element**. And using [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/fade"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade"></div>
 </demo>
 
 You can **toggle classes on activation** using `toggleClass: '<className>'`.
@@ -56,7 +56,7 @@ Use `trigger`, `start`, `endTrigger`, `end` to control **activation depending on
 Here's an example of **distance fade** with **animation depending on direction**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/fade-distance"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade-distance"></div>
 </demo>
 
 ## Event
@@ -66,8 +66,8 @@ You can use `onEnter`, `onLeave`, `onEnterBack`, `onLeaveBack`, `onToggle`, `onU
 Use [Gsap stagger](https://greensock.com/docs/v3/Staggers) to control **animation stagger**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/fade-infinite"></div>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/fade-inside"></div>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/fade-outside"></div>
-  <div class="docs_demo_item" data-iframe="demos/components/scrolltrigger/fade-outside-infinite"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade-infinite"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade-inside"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade-outside"></div>
+  <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade-outside-infinite"></div>
 </demo>

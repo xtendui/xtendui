@@ -50,10 +50,10 @@ Use this code to create a **toggle** in **multiple mode**.
 Check out [toggle themes](/themes/toggle) for **advanced implementations**.
 
 <demo>
-  <div class="docs_demo_item" data-iframe="demos/themes/navigation/multilevel-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/navigation/multilevel-v1">
   </div>
-  <div class="docs_demo_item" data-iframe="demos/themes/gallery/products-gallery-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/gallery/products-gallery-v1">
   </div>
-  <div class="docs_demo_item" data-iframe="demos/themes/implementation/toggle-implementation-v1">
+  <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/toggle-implementation-v1">
   </div>
 </demo>
