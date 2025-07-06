@@ -48,7 +48,8 @@
   ],
   "scripts": {
     "util": "pnpm alias && node ./util/packet.js",
-    "build": "pnpm util && next build",
+    "build": "pnpm util && next build && pnpm build:folder",
+    "build:folder": "mkdir -p out/xtendui && find out -maxdepth 1 -mindepth 1 ! -name xtendui -exec mv {} out/xtendui/ \\;",
     "dev": "pnpm util && next dev -p 8080",
     "serve": "npx serve out -p 8080 --no-request-logging",
     "deploy": "gh-pages -d out",
