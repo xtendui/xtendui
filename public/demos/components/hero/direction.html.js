@@ -4,7 +4,7 @@ const html = /* HTML */ `
   <div>
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-        <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+        <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
       </div>
       <div class="flex relative min-h-screen">
         <div
@@ -24,7 +24,7 @@ const html = /* HTML */ `
 
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-        <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+        <img class="xt-media object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
       </div>
       <div class="flex relative min-h-screen">
         <div
@@ -44,7 +44,7 @@ const html = /* HTML */ `
 
     <div class="hero relative overflow-hidden">
       <div class="xt-media-container bg-gray-200 w-full h-full absolute">
-        <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+        <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
       </div>
       <div class="flex relative min-h-screen">
         <div

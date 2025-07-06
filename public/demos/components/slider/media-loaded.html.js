@@ -11,7 +11,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/img.jpg"
+                src="/xtendui/img.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -21,7 +21,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/img.jpg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/xtendui/img.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -29,7 +29,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/img-ratio.jpg"
+                src="/xtendui/img-ratio.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -39,7 +39,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/img-ratio.jpg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/xtendui/img-ratio.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -47,7 +47,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/stock/ruJm3dBXCqw.jpg"
+                src="/xtendui/stock/ruJm3dBXCqw.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -57,7 +57,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/stock/ruJm3dBXCqw.jpg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/xtendui/stock/ruJm3dBXCqw.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -65,7 +65,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/stock/wQLAGv4_OYs.jpg"
+                src="/xtendui/stock/wQLAGv4_OYs.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -75,7 +75,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/stock/wQLAGv4_OYs.jpg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/xtendui/stock/wQLAGv4_OYs.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -83,7 +83,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/stock/OlTjeydUpQw.jpg"
+                src="/xtendui/stock/OlTjeydUpQw.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -93,7 +93,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/stock/OlTjeydUpQw.jpg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/xtendui/stock/OlTjeydUpQw.jpg" loading="eager" alt="" />
             </div>
           </div>
 
@@ -101,7 +101,7 @@ const html = /* HTML */ `
             <div class="xt-media-container bg-gray-200 rounded-md overflow-hidden">
               <img
                 class="xt-media relative *** w-auto h-[10rem] sm:h-[15rem] md:h-[20rem] lg:h-[30rem] ***"
-                src="/stock/Tyg0rVhOTrE.jpg"
+                src="/xtendui/stock/Tyg0rVhOTrE.jpg"
                 loading="lazy"
                 alt="" />
               <div class="${classes.loader()} bg-white bg-opacity-75">
@@ -111,7 +111,7 @@ const html = /* HTML */ `
               </div>
             </div>
             <div class="hidden" data-xt-slider-content>
-              <img class="h-full w-auto" src="/stock/Tyg0rVhOTrE.jpg" loading="eager" alt="" />
+              <img class="h-full w-auto" src="/xtendui/stock/Tyg0rVhOTrE.jpg" loading="eager" alt="" />
             </div>
           </div>
         </div>

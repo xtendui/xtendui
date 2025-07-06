@@ -80,7 +80,7 @@
     width: 140px;
     height: 35px;
   }
-  background-image: url('/logo-white.svg');
+  background-image: url('/xtendui/logo-white.svg');
   a&:hover {
     opacity: .9;
   }
@@ -270,5 +270,5 @@
 
 .docs_button-site_article_sidebar:not(.on) ~ [data-xt-tooltip-target] {
   /* fix still opens tooltip on change page */
-  @apply !hidden; 
+  @apply !hidden;
 }

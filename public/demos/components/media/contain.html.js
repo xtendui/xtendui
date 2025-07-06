@@ -1,7 +1,7 @@
 const html = /* HTML */ `
   <div>
     <div class="xt-media-container bg-gray-200 pb-[37.5%]">
-      <img class="xt-media *** object-contain ***" src="/img.jpg" loading="lazy" alt="" />
+      <img class="xt-media *** object-contain ***" src="/xtendui/img.jpg" loading="lazy" alt="" />
     </div>
   </div>
 `

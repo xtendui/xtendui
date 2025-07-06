@@ -49,7 +49,7 @@ const html = /* HTML */ `
                 <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                     <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                     </div>
                     <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                       <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -58,7 +58,7 @@ const html = /* HTML */ `
                       class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                       <div
                         class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                       </div>
 
                       <div
@@ -74,7 +74,7 @@ const html = /* HTML */ `
                 <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                     <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                     </div>
                     <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                       <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -83,58 +83,7 @@ const html = /* HTML */ `
                       class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                       <div
                         class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
-                      </div>
-
-                      <div
-                        class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
-                        <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-
-                        <div class="text-sm font-medium">3.772,00 €</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
-                  <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
-                  <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
-                    <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
-                    </div>
-                    <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
-                      <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-                    </div>
-                    <div
-                      class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
-                      <div
-                        class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
-                      </div>
-
-                      <div
-                        class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
-                        <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-
-                        <div class="text-sm font-medium">3.772,00 €</div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
-                  <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
-                    <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
-                    </div>
-                    <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
-                      <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-                    </div>
-                    <div
-                      class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
-                      <div
-                        class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                       </div>
 
                       <div
@@ -151,7 +100,7 @@ const html = /* HTML */ `
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                     <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                     </div>
                     <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                       <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -160,7 +109,7 @@ const html = /* HTML */ `
                       class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                       <div
                         class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                       </div>
 
                       <div
@@ -176,7 +125,7 @@ const html = /* HTML */ `
                 <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                     <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                     </div>
                     <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                       <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -185,7 +134,7 @@ const html = /* HTML */ `
                       class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                       <div
                         class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                       </div>
 
                       <div
@@ -202,7 +151,7 @@ const html = /* HTML */ `
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                     <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                     </div>
                     <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                       <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -211,7 +160,7 @@ const html = /* HTML */ `
                       class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                       <div
                         class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                       </div>
 
                       <div
@@ -227,7 +176,7 @@ const html = /* HTML */ `
                 <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
                   <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                     <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                      <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                     </div>
                     <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                       <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -236,7 +185,58 @@ const html = /* HTML */ `
                       class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                       <div
                         class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                        <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
+                      </div>
+
+                      <div
+                        class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
+                        <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+
+                        <div class="text-sm font-medium">3.772,00 €</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
+                  <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
+                  <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
+                    <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
+                    </div>
+                    <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
+                      <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+                    </div>
+                    <div
+                      class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
+                      <div
+                        class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
+                      </div>
+
+                      <div
+                        class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
+                        <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+
+                        <div class="text-sm font-medium">3.772,00 €</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="xt-slide w-[80vw] -lg:max-w-[350px] lg:w-6/12 ${classes.slide()}" data-xt-slider-target>
+                  <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
+                    <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
+                      <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
+                    </div>
+                    <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
+                      <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+                    </div>
+                    <div
+                      class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
+                      <div
+                        class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
+                        <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                       </div>
 
                       <div
@@ -267,7 +267,7 @@ const html = /* HTML */ `
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                 <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                   <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -276,7 +276,7 @@ const html = /* HTML */ `
                   class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                   <div
                     class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                   </div>
 
                   <div
@@ -292,7 +292,7 @@ const html = /* HTML */ `
             <div class="w-full sm:w-6/12 lg:w-4/12">
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                 <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                   <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -301,58 +301,7 @@ const html = /* HTML */ `
                   class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                   <div
                     class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
-                  </div>
-
-                  <div
-                    class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
-                    <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-
-                    <div class="text-sm font-medium">3.772,00 €</div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="w-full sm:w-6/12 lg:w-4/12">
-              <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
-              <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
-                <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
-                </div>
-                <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
-                  <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-                </div>
-                <div
-                  class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
-                  <div
-                    class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
-                  </div>
-
-                  <div
-                    class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
-                    <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-
-                    <div class="text-sm font-medium">3.772,00 €</div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="w-full sm:w-6/12 lg:w-4/12">
-              <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
-                <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
-                </div>
-                <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
-                  <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
-                </div>
-                <div
-                  class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
-                  <div
-                    class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                   </div>
 
                   <div
@@ -369,7 +318,7 @@ const html = /* HTML */ `
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                 <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                   <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -378,7 +327,7 @@ const html = /* HTML */ `
                   class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                   <div
                     class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                   </div>
 
                   <div
@@ -394,7 +343,7 @@ const html = /* HTML */ `
             <div class="w-full sm:w-6/12 lg:w-4/12">
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                 <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                   <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -403,7 +352,7 @@ const html = /* HTML */ `
                   class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                   <div
                     class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                   </div>
 
                   <div
@@ -420,7 +369,7 @@ const html = /* HTML */ `
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                 <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                   <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -429,7 +378,7 @@ const html = /* HTML */ `
                   class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                   <div
                     class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                   </div>
 
                   <div
@@ -445,7 +394,7 @@ const html = /* HTML */ `
             <div class="w-full sm:w-6/12 lg:w-4/12">
               <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
                 <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
-                  <img class="*** xt-media *** object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
                   <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
@@ -454,7 +403,58 @@ const html = /* HTML */ `
                   class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
                   <div
                     class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
-                    <img class="*** xt-media *** object-cover" src="/img.jpg" loading="lazy" alt="" />
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
+                  </div>
+
+                  <div
+                    class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
+                    <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+
+                    <div class="text-sm font-medium">3.772,00 €</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="w-full sm:w-6/12 lg:w-4/12">
+              <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
+              <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
+                <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
+                </div>
+                <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
+                  <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+                </div>
+                <div
+                  class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
+                  <div
+                    class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
+                  </div>
+
+                  <div
+                    class="flex my-auto items-center md:justify-between max-md:flex-col max-md:text-center p-6 lg:p-10">
+                    <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+
+                    <div class="text-sm font-medium">3.772,00 €</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="w-full sm:w-6/12 lg:w-4/12">
+              <a href="/" class="*** listing-item *** relative bg-gray-100 block overflow-hidden group">
+                <div class="*** xt-media-container bg-gray-50 pb-[100%] transition duration-500 hover-hover:group-hover:-translate-y-[25px] ***">
+                  <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
+                </div>
+                <div class="flex my-auto items-center justify-between px-4 py-6 lg:p-10">
+                  <div class="font-medium text-sm leading-tight tracking-wider uppercase">Lorem ipsum</div>
+                </div>
+                <div
+                  class="absolute inset-0 flex flex-col bg-white transition-all duration-500 [clip-path:inset(100%_0%_0%_0%)] hover-hover:group-hover:[clip-path:inset(0%_0%_0%_0%)]">
+                  <div
+                    class="xt-media-container bg-white pb-[100%] transition duration-500 hover-hover:translate-y-[25px] hover-hover:group-hover:translate-y-0">
+                    <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                   </div>
 
                   <div

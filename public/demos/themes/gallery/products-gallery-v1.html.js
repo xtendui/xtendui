@@ -25,7 +25,7 @@ const html = /* HTML */ `
                     data-xt-group="red">
                     <a href="#product-image-overlay-1" id="product-image-1" aria-label="Expand image 1">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                        <img class="xt-media relative" src="/stock/164_6wVEHfI" loading="lazy" alt="" />
+                        <img class="xt-media relative" src="/xtendui/stock/164_6wVEHfI" loading="lazy" alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                       </div>
@@ -38,7 +38,7 @@ const html = /* HTML */ `
                     data-xt-group="red">
                     <a href="#product-image-overlay-2" id="product-image-2" aria-label="Expand image 2">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                        <img class="xt-media relative" src="/stock/j7zu2kpTnwY" loading="lazy" alt="" />
+                        <img class="xt-media relative" src="/xtendui/stock/j7zu2kpTnwY" loading="lazy" alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                       </div>
@@ -51,7 +51,7 @@ const html = /* HTML */ `
                     data-xt-group="green">
                     <a href="#product-image-overlay-3" id="product-image-3" aria-label="Expand image 3">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                        <img class="xt-media relative" src="/stock/kP6knT7tjn4" loading="lazy" alt="" />
+                        <img class="xt-media relative" src="/xtendui/stock/kP6knT7tjn4" loading="lazy" alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                       </div>
@@ -64,7 +64,7 @@ const html = /* HTML */ `
                     data-xt-group="blue">
                     <a href="#product-image-overlay-4" id="product-image-4" aria-label="Expand image 4">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                        <img class="xt-media relative" src="/stock/l8p1aWZqHvE" loading="lazy" alt="" />
+                        <img class="xt-media relative" src="/xtendui/stock/l8p1aWZqHvE" loading="lazy" alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                       </div>
@@ -77,7 +77,7 @@ const html = /* HTML */ `
                     data-xt-group="blue">
                     <a href="#product-image-overlay-5" id="product-image-5" aria-label="Expand image 5">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                        <img class="xt-media relative" src="/stock/gn07k9Kmx9c" loading="lazy" alt="" />
+                        <img class="xt-media relative" src="/xtendui/stock/gn07k9Kmx9c" loading="lazy" alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                       </div>
@@ -90,7 +90,7 @@ const html = /* HTML */ `
                     data-xt-group="red,green">
                     <a href="#product-image-overlay-6" id="product-image-6" aria-label="Expand image 6">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                        <img class="xt-media relative" src="/stock/gpii_myxZG0" loading="lazy" alt="" />
+                        <img class="xt-media relative" src="/xtendui/stock/gpii_myxZG0" loading="lazy" alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                       </div>
@@ -103,7 +103,7 @@ const html = /* HTML */ `
                     data-xt-group="red,green">
                     <a href="#product-image-overlay-7" id="product-image-7" aria-label="Expand image 7">
                       <div class="xt-media-container bg-gray-200 overflow-hidden" data-xt-overlay-element>
-                        <img class="xt-media relative" src="/stock/DzoOduUanpQ" loading="lazy" alt="" />
+                        <img class="xt-media relative" src="/xtendui/stock/DzoOduUanpQ" loading="lazy" alt="" />
                         <div
                           class="*** xt-media-mask *** absolute inset-0 pointer-events-none bg-white -translate-y-full"></div>
                       </div>
@@ -205,7 +205,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-1"
-                              src="/stock/164_6wVEHfI"
+                              src="/xtendui/stock/164_6wVEHfI"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -217,7 +217,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-2"
-                              src="/stock/j7zu2kpTnwY"
+                              src="/xtendui/stock/j7zu2kpTnwY"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -229,7 +229,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-3"
-                              src="/stock/kP6knT7tjn4"
+                              src="/xtendui/stock/kP6knT7tjn4"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -241,7 +241,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-4"
-                              src="/stock/l8p1aWZqHvE"
+                              src="/xtendui/stock/l8p1aWZqHvE"
                               loading="eagelazyr"
                               alt="" />
                           </div>
@@ -253,7 +253,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-5"
-                              src="/stock/gn07k9Kmx9c"
+                              src="/xtendui/stock/gn07k9Kmx9c"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -265,7 +265,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-6"
-                              src="/stock/gpii_myxZG0"
+                              src="/xtendui/stock/gpii_myxZG0"
                               loading="lazy"
                               alt="" />
                           </div>
@@ -277,7 +277,7 @@ const html = /* HTML */ `
                             <img
                               class="xt-media relative"
                               id="product-image-overlay-7"
-                              src="/stock/DzoOduUanpQ"
+                              src="/xtendui/stock/DzoOduUanpQ"
                               loading="lazy"
                               alt="" />
                           </div>

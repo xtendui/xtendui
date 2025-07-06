@@ -48,7 +48,7 @@ function DocHead(props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-[150px]">
-                  <Image className="w-full" src="/bmc-button.png" loading="lazy" alt="" width="1090" height="306" />
+                  <Image className="w-full" src="/xtendui/bmc-button.png" loading="lazy" alt="" width="1090" height="306" />
                 </a>
               </div>
               */}

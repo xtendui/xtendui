@@ -473,7 +473,7 @@ export default async function Page() {
                   className="inline-block w-full transition ease-in-out-quint hover:opacity-75 hover:duration-300 hover:ease-out-quint on:opacity-100 on:ease-out-quint">
                   <Image
                     className="inline-block w-full"
-                    src="/support/webgriffe.svg"
+                    src="/xtendui/support/webgriffe.svg"
                     loading="eager"
                     alt="Webgriffe"
                     width="300"

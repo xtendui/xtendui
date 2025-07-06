@@ -1,7 +1,7 @@
 const html = /* HTML */ `
   <div>
     <figure>
-      <img src="/img.jpg" loading="lazy" alt="" />
+      <img src="/xtendui/img.jpg" loading="lazy" alt="" />
       <figcaption>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in laoreet tellus, nec commodo massa. Aenean ut ex
         at ex pellentesque efficitur. Maecenas pulvinar mauris eget pharetra elementum.
@@ -18,7 +18,7 @@ const html = /* HTML */ `
 
     <figure>
       <video poster="/placeholder-1080.jpg" muted loop playsinline controls>
-        <source type="video/mp4" src="/placeholder-1080.mp4" />
+        <source type="video/mp4" src="/xtendui/placeholder-1080.mp4" />
       </video>
     </figure>
 

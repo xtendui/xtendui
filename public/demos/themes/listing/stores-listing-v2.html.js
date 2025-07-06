@@ -9,7 +9,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
                 <div class="xt-media-container bg-gray-200 pb-[50%]">
-                  <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+                  <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
@@ -52,7 +52,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
                 <div class="xt-media-container bg-gray-200 pb-[50%]">
-                  <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                  <img class="xt-media object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
@@ -85,83 +85,7 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
                 <div class="xt-media-container bg-gray-200 pb-[50%]">
-                  <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
-                </div>
-                <div class="flex flex-col mt-6 min-h-[12rem]">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
-                    <div class="xt-h5">Lorem Ipsum</div>
-                    <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
-                <button
-                  type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
-                  aria-label="Close">
-                  ${classes.iconX()}
-                </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
-                  <div class="xt-h5">Contacts</div>
-                  <div class="xt-p font-sm">
-                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
-                    <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br />
-                  </div>
-                  <div class="xt-h5">Timetable</div>
-                  <div class="xt-p font-sm">
-                    <strong>Monday:</strong> 15:30–19:30<br />
-                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br />
-                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br />
-                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br />
-                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br />
-                    <strong>Saturday:</strong> 10:00–19:30<br />
-                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 pb-[50%]">
-                  <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
-                </div>
-                <div class="flex flex-col mt-6 min-h-[12rem]">
-                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
-                    <div class="xt-h5">Lorem Ipsum</div>
-                    <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
-                <button
-                  type="button"
-                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
-                  aria-label="Close">
-                  ${classes.iconX()}
-                </button>
-                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
-                  <div class="xt-h5">Contacts</div>
-                  <div class="xt-p font-sm">
-                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
-                    <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-full md:w-6/12 lg:w-4/12">
-            <div class="*** listing-item *** block relative overflow-hidden w-full group">
-              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
-                <div class="xt-media-container bg-gray-200 pb-[50%]">
-                  <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+                  <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
@@ -204,7 +128,83 @@ const html = /* HTML */ `
             <div class="*** listing-item *** block relative overflow-hidden w-full group">
               <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
                 <div class="xt-media-container bg-gray-200 pb-[50%]">
-                  <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                  <img class="xt-media object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
+                </div>
+                <div class="flex flex-col mt-6 min-h-[12rem]">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
+                    <div class="xt-h5">Lorem Ipsum</div>
+                    <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                <button
+                  type="button"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
+                  aria-label="Close">
+                  ${classes.iconX()}
+                </button>
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
+                  <div class="xt-h5">Contacts</div>
+                  <div class="xt-p font-sm">
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
+                    <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-6/12 lg:w-4/12">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
+                  <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
+                </div>
+                <div class="flex flex-col mt-6 min-h-[12rem]">
+                  <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
+                    <div class="xt-h5">Lorem Ipsum</div>
+                    <address class="xt-p font-sm not-italic">Street Lorem Ipsum 42, 00134 City, Nation</address>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="*** listing-item-back *** absolute inset-0 opacity-0 pointer-events-none group-on:pointer-events-auto h-full xt-card rounded${classes.cardRadius()}">
+                <button
+                  type="button"
+                  class="xt-button xt-dismiss absolute z-above top-0 right-0 text-xl"
+                  aria-label="Close">
+                  ${classes.iconX()}
+                </button>
+                <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">
+                  <div class="xt-h5">Contacts</div>
+                  <div class="xt-p font-sm">
+                    <strong>Email:</strong> <a href="mailto:info@info.com">info@info.com</a><br />
+                    <strong>Phone:</strong> <a href="tel:+39333010101">+39 333 010101</a><br />
+                  </div>
+                  <div class="xt-h5">Timetable</div>
+                  <div class="xt-p font-sm">
+                    <strong>Monday:</strong> 15:30–19:30<br />
+                    <strong>Tuesday:</strong> 10:00–13:00, 15:30–19:30<br />
+                    <strong>Wednesday:</strong> 10:00–13:00, 15:30–19:30<br />
+                    <strong>Thursday:</strong> 10:00–13:00, 15:30–19:30<br />
+                    <strong>Friday:</strong> 10:00–13:00, 15:30–19:30<br />
+                    <strong>Saturday:</strong> 10:00–19:30<br />
+                    <strong>Sunday:</strong> 10:00–13:00, 15:30–19:30
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-6/12 lg:w-4/12">
+            <div class="*** listing-item *** block relative overflow-hidden w-full group">
+              <div class="*** listing-item-front *** cursor-pointer xt-card rounded${classes.cardRadius()}">
+                <div class="xt-media-container bg-gray-200 pb-[50%]">
+                  <img class="xt-media object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                 </div>
                 <div class="flex flex-col mt-6 min-h-[12rem]">
                   <div class="xt-card text-sm py-0 px-7 flex-initial border-l border-gray-200">

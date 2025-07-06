@@ -11,7 +11,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
-                    <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+                    <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                   </div>
                   <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -61,7 +61,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
-                    <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                    <img class="xt-media object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                   </div>
                   <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -101,7 +101,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
-                    <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+                    <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                   </div>
                   <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -151,7 +151,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
-                    <img class="xt-media object-cover" src="/img-alt.jpg" loading="lazy" alt="" />
+                    <img class="xt-media object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                   </div>
                   <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>
@@ -191,7 +191,7 @@ const html = /* HTML */ `
                 <div
                   class="*** listing-item-front *** xt-card rounded${classes.cardRadius()} ${classes.textDefault()} ${classes.cardGray()}">
                   <div class="xt-media-container bg-gray-200 w-full rounded-t${classes.cardRadius()} pb-[50%]">
-                    <img class="xt-media object-cover" src="/img.jpg" loading="lazy" alt="" />
+                    <img class="xt-media object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                   </div>
                   <div class="flex flex-col ${classes.cardSm()} min-h-[18rem]">
                     <div class="xt-h5">Lorem Ipsum</div>

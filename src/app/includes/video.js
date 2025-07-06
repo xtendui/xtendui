@@ -22,7 +22,7 @@ export default function Video(props) {
         <div className="xt-media-container bg-gray-200 mt-3 rounded-md border-3 border-gray-100 pb-[59.8%]">
           <Image
             className="xt-media inset-0 m-auto w-20 lg:w-32"
-            src="/logo-white.svg"
+            src="/xtendui/logo-white.svg"
             loading="lazy"
             alt=""
             width="300"

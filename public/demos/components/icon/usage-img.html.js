@@ -1,41 +1,41 @@
 const html = /* HTML */ `
   <div>
     <div class="xt-list xt-list-3">
-      <img class="*** xt-icon ***" src="/icons/search.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/search.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/x.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/x.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/arrow-left.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/arrow-left.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/arrow-right.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/arrow-right.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/arrow-up.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/arrow-up.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/arrow-down.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/arrow-down.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/chevron-left.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/chevron-left.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/chevron-right.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/chevron-right.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/chevron-up.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/chevron-up.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/chevron-down.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/chevron-down.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/locate.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/locate.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/github.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/github.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/package.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/package.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/link.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/link.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/code.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/code.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/maximize.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/maximize.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/external-link.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/external-link.svg" loading="lazy" alt="" />
 
-      <img class="*** xt-icon ***" src="/icons/copy.svg" loading="lazy" alt="" />
+      <img class="*** xt-icon ***" src="/xtendui/icons/copy.svg" loading="lazy" alt="" />
     </div>
   </div>
 `

@@ -2,7 +2,7 @@ const webpack = require('webpack')
 
 const nextConfig = {
   output: 'export',
-  basePath: '',
+  basePath: '/xtendui',
   images: {
     unoptimized: true,
   },
