@@ -18,8 +18,10 @@ class Demo extends Component {
   render() {
     const { children } = this.props
     return (
-      <div className="docs_demo" ref={this.demoRef}>
-        <div className="docs_demo_inner">{children}</div>
+      <div>
+        <div className="docs_demo" ref={this.demoRef}>
+          <div className="docs_demo_inner">{children}</div>
+        </div>
       </div>
     )
   }
