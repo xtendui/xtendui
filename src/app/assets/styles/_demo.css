@@ -210,7 +210,7 @@ pre {
   }
 }
 
-[data-docs-listing-toggle] + .docs_demo {
+[data-docs-listing-toggle] + .docs_demo_container {
   display: none;
 }
 
