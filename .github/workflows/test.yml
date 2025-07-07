@@ -47,9 +47,8 @@ jobs:
       env:
         SHELL: bash
     # test/action.yml composite
-    # - name: Test
-    #   run: pnpm test
-    #   env:
-    #     START_SERVER_AND_TEST_INSECURE: 1
-    #     SHELL: bash
-
+    - name: Test
+      run: pnpm test
+      env:
+        START_SERVER_AND_TEST_INSECURE: 1
+        SHELL: bash
