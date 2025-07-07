@@ -48,7 +48,7 @@
   ],
   "scripts": {
     "util": "pnpm alias && node ./util/packet.js",
-    "build": "pnpm util && next build",
+    "build": "pnpm util && next build && cp -r ./out ./xtendui && rm -rf ./out && mkdir ./out && mv ./xtendui ./out",
     "dev": "pnpm util && next dev -p 8080",
     "serve": "npx serve out -p 8080 --no-request-logging",
     "deploy": "gh-pages -d out",
