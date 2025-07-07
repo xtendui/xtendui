@@ -1,0 +1,7 @@
+.demo--overlay-class-html {
+  /* DO NOT APPLY to selector with descendants with position: fixed; or transforms bugs position: fixed; */
+  @apply transition;
+  .classbody & {
+    @apply translate-x-4;
+  }
+}

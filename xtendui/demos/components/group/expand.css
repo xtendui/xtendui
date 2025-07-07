@@ -1,0 +1,9 @@
+.demo--group-expand {
+  .xt-list {
+    @apply transition-all;
+    &.expand {
+      @apply max-w-md;
+    }
+  }
+}
+

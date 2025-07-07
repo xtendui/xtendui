@@ -1,0 +1,126 @@
+import { Xt } from 'xtendui'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
+import 'xtendui/src/slider'
+
+Xt.mount({
+  matches: '.demo--products-listing-v1 .listing-item',
+  mount: ({ ref }) => {
+    // vars
+
+    const item = ref
+
+    const mediaScale = 0.04
+    const mediaOpacityIn = 0.7
+    const mediaOpacityOut = 1
+    const contentY = -10
+
+    // enter
+
+    const enter = e => {
+      const tr = e.target
+      // media
+      const media = tr.querySelector('.xt-media-container')
+      gsap.to(media, {
+        scale: 1 - mediaScale,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
+      const mediaInner = tr.querySelector('.xt-media')
+      gsap.to(mediaInner, {
+        opacity: mediaOpacityIn,
+        scale: 1 + mediaScale,
+        duration: 0.5,
+        ease: 'expo.out',
+      })
+      // content
+      const content = tr.querySelector('.listing-item-content')
+      if (content) {
+        gsap.to(content, {
+          y: contentY,
+          duration: 0.5,
+          ease: 'expo.out',
+        })
+      }
+    }
+
+    item.addEventListener('mouseenter', enter)
+
+    // leave
+
+    const leave = e => {
+      const tr = e.target
+      // media
+      const media = tr.querySelector('.xt-media-container')
+      gsap.to(media, {
+        scale: 1,
+        duration: 0.75,
+        ease: 'expo.out',
+      })
+      const mediaInner = tr.querySelector('.xt-media')
+      gsap.to(mediaInner, {
+        opacity: mediaOpacityOut,
+        scale: 1,
+        duration: 0.75,
+        ease: 'expo.out',
+      })
+      // content
+      const content = tr.querySelector('.listing-item-content')
+      if (content) {
+        gsap.to(content, {
+          y: 0,
+          duration: 0.5,
+          ease: 'expo.out',
+        })
+      }
+    }
+
+    item.addEventListener('mouseleave', leave)
+  },
+})
+
+Xt.mount({
+  matches: '.demo--products-listing-v1',
+  mount: ({ ref }) => {
+    // vars
+
+    const scrollY = 30
+
+    // check if already done for content added dinamically
+
+    const items = ref.querySelectorAll('.listing-item:not(.faded)')
+    for (const item of items) {
+      item.classList.add('faded')
+    }
+
+    // fade
+
+    /***/
+    ScrollTrigger.batch(items, {
+      once: true,
+      start: 'top bottom-=10%',
+      end: 'bottom top+=10%',
+      onEnter: (batch, scrollTriggers) => {
+        const direction = scrollTriggers[0].direction
+        const y = direction > 0 ? -scrollY : scrollY
+        gsap.killTweensOf(batch)
+        gsap.set(batch, {
+          y: y,
+        })
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'quart.out',
+          stagger: index => {
+            return Math.min(0.6, index * 0.15)
+          },
+        })
+      },
+    })
+    /***/
+  },
+})

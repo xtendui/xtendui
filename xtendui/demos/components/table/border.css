@@ -1,0 +1,5 @@
+.demo--table-border {
+  table {
+    border-spacing: 0;
+  }
+}

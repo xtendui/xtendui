@@ -1,0 +1,6 @@
+
+.demo--fade-inside {
+  .xt-card {
+    opacity: 0;
+  }
+}

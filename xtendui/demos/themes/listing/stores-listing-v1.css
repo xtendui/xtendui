@@ -1,0 +1,22 @@
+.demo--stores-listing-v1 {
+  .listing-item-front {
+    backface-visibility: hidden;
+  }
+
+  .listing-item-back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+  }
+
+  .listing-item {
+    perspective: 1400px;
+    .listing-item-inner {
+      transform-style: preserve-3d;
+    }
+    &.in {
+      .listing-item-inner {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
