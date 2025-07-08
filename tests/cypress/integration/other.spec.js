@@ -383,7 +383,6 @@ describe('xtendui/demos/components/scrollto/usage', function () {
         expect(this.links[2].classList.contains('on')).to.equal(true)
         expect(doc.scrollingElement.scrollTop).to.closeTo(1987, 150)
       })
-      /* error nextjs loses cypress vars
       .go(1)
       .wait(1000) // after animation
       .then(() => {
@@ -392,7 +391,6 @@ describe('xtendui/demos/components/scrollto/usage', function () {
         expect(this.links[2].classList.contains('on')).to.equal(false)
         expect(doc.scrollingElement.scrollTop).to.closeTo(801, 150)
       })
-      */
       .get(this.buttons[0])
       .click()
       .wait(1000) // after animation
@@ -465,7 +463,6 @@ describe('xtendui/demos/components/scrollto/overlay', function () {
       .click()
       .get(this.links[1])
       .click()
-    /* error nextjs loses cypress vars
       .go(-1)
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -497,7 +494,6 @@ describe('xtendui/demos/components/scrollto/overlay', function () {
         expect(this.links[2].classList.contains('on')).to.equal(false)
         expect(self.targets[0].scrollTop).to.closeTo(1633, 150)
       })
-      */
   })
 })
 
@@ -571,7 +567,6 @@ describe('xtendui/demos/components/scrollto/toggle', function () {
           expect(self.targets[2].classList.contains('in')).to.equal(true)
         })
       })
-    /* error nextjs loses cypress vars
       .go(1)
       .then(() => {
         expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
@@ -584,7 +579,6 @@ describe('xtendui/demos/components/scrollto/toggle', function () {
           expect(self.targets[2].classList.contains('in')).to.equal(false)
         })
       })
-      */
   })
 })
 
