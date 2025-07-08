@@ -696,7 +696,6 @@ describe('xtendui/demos/components/toggle/hash', function () {
   })
 })
 
-/* WAIT for nextjs to fix router hash change page bugs
 describe('xtendui/demos/components/toggle/hash', function () {
   let win
   let Xt
@@ -712,7 +711,6 @@ describe('xtendui/demos/components/toggle/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).closest('.docs_demo').scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -866,7 +864,6 @@ describe('xtendui/demos/components/overlay/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).closest('.docs_demo').scrollIntoView({ offset: { top: 0, left: 0 } })
     container1 = this.container[1]
   })
 
@@ -893,7 +890,7 @@ describe('xtendui/demos/components/overlay/hash', function () {
       .get(self.targets[0].querySelector('.xt-dismiss'))
       .click()
       .hash()
-      .should('eq', '#')
+      .should('eq', '')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -916,7 +913,7 @@ describe('xtendui/demos/components/overlay/hash', function () {
       })
       .go(-1)
       .hash()
-      .should('eq', '#')
+      .should('eq', '')
       .then(() => {
         expect(self.elements[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -960,7 +957,6 @@ describe('xtendui/demos/components/slider/hash', function () {
     win = this.win
     Xt = win.Xt
     container = this.container[0]
-    cy.get(container).closest('.docs_demo').scrollIntoView({ offset: { top: 0, left: 0 } })
   })
 
   beforeEach(function () {
@@ -1056,7 +1052,6 @@ describe('xtendui/demos/components/slider/hash', function () {
       })
   })
 })
-*/
 
 describe('xtendui/demos/components/drop/backdrop', function () {
   let win
