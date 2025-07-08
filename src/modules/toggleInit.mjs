@@ -2538,11 +2538,13 @@ export class ToggleInit {
         if (actionCurrent === 'In') {
           // appendTo
           const appendToTarget = document.querySelector(options.appendTo)
-          const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
-          if (!appendOrigin) {
-            el.before(Xt.node({ str: `<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>` }))
+          if (el.parentElement !== appendToTarget) {
+            const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
+            if (!appendOrigin) {
+              el.before(Xt.node({ str: `<div class="xt-ignore hidden" data-xt-origin="${self.ns}"></div>` }))
+            }
+            appendToTarget.append(el)
           }
-          appendToTarget.append(el)
         } else if (actionCurrent === 'Out') {
           // appendTo
           const appendOrigin = document.querySelector(`[data-xt-origin="${self.ns}"]`)
