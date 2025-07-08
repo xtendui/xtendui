@@ -33,6 +33,7 @@ export default async function RootLayout({ children }) {
         <meta name="theme-color" content="#0067DD" />
         <meta name="twitter:card" content="/xtendui/social.png" />
         <meta property="og:image" content="/xtendui/social.png" />
+        <link rel="preload" as="image" fetchpriority="high" href="/xtendui/logo-white.svg" />
       </head>
       <body
         className={`xt-body ${classes.textDefault()} xl:text-lg ${inter.className}`}

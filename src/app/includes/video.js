@@ -23,7 +23,8 @@ export default function Video(props) {
           <Image
             className="xt-media inset-0 m-auto w-20 lg:w-32"
             src="/xtendui/logo-white.svg"
-            loading="lazy"
+            priority={true}
+            loading="eager"
             alt=""
             width="300"
             height="72"
