@@ -80,14 +80,14 @@ function DemoInline(props) {
             type="text/plain"
             className="docs_demo_source xt-ignore hidden"
             data-lang="jsx"
-            data-fetch={`/${src}.jsx`}
+            data-fetch={`/xtendui/${src}.jsx`}
           />
           {hasCss ? (
             <script
               type="text/plain"
               className="docs_demo_source xt-ignore hidden"
               data-lang="css"
-              data-fetch={`/${src}.css`}
+              data-fetch={`/xtendui/${src}.css`}
             />
           ) : (
             ''
@@ -107,7 +107,7 @@ function DemoInline(props) {
               type="text/plain"
               className="docs_demo_source xt-ignore hidden"
               data-lang="css"
-              data-fetch={`/${src}.css`}
+              data-fetch={`/xtendui/${src}.css`}
             />
           ) : (
             ''
@@ -117,7 +117,7 @@ function DemoInline(props) {
               type="text/plain"
               className="docs_demo_source xt-ignore hidden"
               data-lang="js"
-              data-fetch={`/${src}.js`}
+              data-fetch={`/xtendui/${src}.js`}
             />
           ) : (
             ''

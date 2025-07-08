@@ -71,14 +71,14 @@ function DemoIframe(props) {
           // populate
           if (window !== window.parent) {
             if (hasJsx) {
-              window.parent.initIframe(src, null, `/${src}.jsx`, hasCss ? `/${src}.css` : null)
+              window.parent.initIframe(src, null, `/xtendui/${src}.jsx`, hasCss ? `/xtendui/${src}.css` : null)
             } else {
               window.parent.initIframe(
                 src,
                 object.html,
                 null,
-                hasCss ? `/${src}.css` : null,
-                hasJs ? `/${src}.js` : null,
+                hasCss ? `/xtendui/${src}.css` : null,
+                hasJs ? `/xtendui/${src}.js` : null,
               )
             }
             if (!init) {
