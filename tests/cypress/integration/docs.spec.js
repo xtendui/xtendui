@@ -108,6 +108,18 @@ describe('docs', function () {
         expect(clipboard).to.not.match(/\*\*\*/)
         expect(clipboard.length).be.gte(1000)
       })
+      .get('@demo')
+      .get('.docs_demo_code_tabs_left button')
+      .eq(1)
+      .click()
+      .get('@demo')
+      .find('.docs_demo_code_body_item.on pre')
+      .as('pre')
+      .then(() => {
+        const clipboard = win.Xt.dataStorage.get(this.pre[0], 'sourceCode')
+        expect(clipboard).to.not.match(/\*\*\*/)
+        expect(clipboard.length).be.equal(44)
+      })
   })
 
   it('TEST demos demos changing demo should change hash, browser navigation should change demo, initial activation on page load.', function () {
