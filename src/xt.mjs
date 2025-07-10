@@ -39,7 +39,7 @@ if (typeof window !== 'undefined') {
   Xt.observer = null
   Xt._observerOptions = { root: null, threshold: [0.001] }
   Xt.observerCheck = entry => {
-    return entry.intersectionRatio > 0
+    return entry.intersectionRatio > 0.001
   }
   Xt._supports_content_visibility = false
 
