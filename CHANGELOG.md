@@ -1,3 +1,12 @@
+## [2.4.1](https://github.com/xtendui/xtendui/compare/v2.4.0...v2.4.1) (2025-07-10)
+
+
+### Bug Fixes
+
+* **js:** fix appendTo do not move if the parent element is already the appendTo element ([01f07c7](https://github.com/xtendui/xtendui/commit/01f07c7318c6ba5bdaf42f801edebb36abfcf71b))
+* **slider:** fix perf slides visible bug with intersection observer intersectionRatio ([87b9b20](https://github.com/xtendui/xtendui/commit/87b9b20d83d296d39da62c6f2409418094a3d0dd))
+* **slider:** removed a11y.hidden on slider and by default use display none instead of content-visibility hidden (to switch back use Xt._supports_content_visibility = CSS.supports('content-visibility', 'hidden') ([07b66ab](https://github.com/xtendui/xtendui/commit/07b66abc605ec0d766f92efba2ce1d90168b663d))
+
 # [2.4.0](https://github.com/xtendui/xtendui/compare/v2.3.0...v2.4.0) (2025-07-04)
 
 
