@@ -1,3 +1,10 @@
+## [2.4.2](https://github.com/xtendui/xtendui/compare/v2.4.1...v2.4.2) (2025-07-18)
+
+
+### Bug Fixes
+
+* **js:** fix appendTo do not move if the parent element is already the appendTo element ([069d02c](https://github.com/xtendui/xtendui/commit/069d02c1ce5f9e8de838d3b11587d075f9b06516))
+
 ## [2.4.1](https://github.com/xtendui/xtendui/compare/v2.4.0...v2.4.1) (2025-07-10)
 
 
