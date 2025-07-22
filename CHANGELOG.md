@@ -1,3 +1,10 @@
+## [2.4.3](https://github.com/xtendui/xtendui/compare/v2.4.2...v2.4.3) (2025-07-22)
+
+
+### Bug Fixes
+
+* **slider:** added a11y hidden on slider ([c9a3bf6](https://github.com/xtendui/xtendui/commit/c9a3bf64adde96794c4d2e7ee4f698f832fce605))
+
 ## [2.4.2](https://github.com/xtendui/xtendui/compare/v2.4.1...v2.4.2) (2025-07-18)
 
 
