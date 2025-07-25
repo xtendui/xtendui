@@ -89,6 +89,7 @@ Groupnumber.optionsDefault = {
   // other
   a11y: {
     controls: true,
+    live: 'assertive',
   },
 }
 

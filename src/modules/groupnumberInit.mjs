@@ -166,6 +166,10 @@ export class GroupnumberInit {
           val = parseFloat(val.toFixed(self._countDecimals({ num: step })))
         }
         self._validate({ val, input })
+        // aria live
+        if (!self.initial) {
+          self._initA11yLive({ input })
+        }
       }
       // disabled
       if (options.limit) {
@@ -332,6 +336,32 @@ export class GroupnumberInit {
       for (const step of self.steps) {
         step.setAttribute('aria-controls', str.trim())
       }
+    }
+  }
+
+  /**
+   * init a11y live
+   */
+  _initA11yLive({ input }) {
+    const self = this
+    const options = self.options
+    // aria-controls
+    if (options.a11y?.live) {
+      self.container.querySelector('[aria-live]')?.remove()
+      clearTimeout(self.container.dataset.liveTimeout)
+      self.container.dataset.liveTimeout = setTimeout(() => {
+        const ariaLive = self.container.appendChild(
+          Xt.node({ str: `<span class="sr-only" aria-live="${options.a11y.live}" aria-atomic="true"></span>` }),
+        )
+        self.container.dataset.liveTimeout = setTimeout(() => {
+          const ariaLivePrepend = input.getAttribute('aria-label') ?? ''
+          if (ariaLivePrepend) {
+            ariaLive.innerHTML = `${ariaLivePrepend} ${input.value}`
+          } else {
+            ariaLive.innerHTML = input.value
+          }
+        }, 500)
+      }, 500)
     }
   }
 

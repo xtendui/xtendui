@@ -31,6 +31,10 @@ Toggle components **have automatic a11y attributes and keyboard navigation**, an
 
 See [animation setup](/components/animation#setup) to **disable css and js animations** when the the user has activated "Prefers Reduced Motion".
 
+#### Groupnumber
+
+Groupnumber component **have automatic a11y attributes and aria-live updates**, see [groupnumber accessibility](/components/groupnumber/#accessibility).
+
 ## Global
 
 #### Javascript

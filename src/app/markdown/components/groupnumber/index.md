@@ -91,6 +91,7 @@ This components follows A11y standards so **aria attributes and keyboard interac
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `a11y:Object\|false`                          | `<Object>`        | Aria options            |
 | Option                  | `a11y.controls:Boolean`                          | `true`        | Inject `aria-controls` attributes            |
+| Option                    | `a11y.live:String\|false`                          | `'assertive'`        | Inject `aria-live` on input change, for content it uses input `aria-label` and the input value             |
 
 </div>
 
