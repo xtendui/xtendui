@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/xtendui/xtendui/compare/v2.5.0...v2.5.1) (2025-07-25)
+
+
+### Bug Fixes
+
+* **slider:** fix options.a11y.hidden with slider and removed Xt._supports_content_visibility now it uses both content visibility and display none ([75aeb47](https://github.com/xtendui/xtendui/commit/75aeb470adb750a1337d5acc5038b1ee75912e4b))
+
 # [2.5.0](https://github.com/xtendui/xtendui/compare/v2.4.3...v2.5.0) (2025-07-25)
 
 
