@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/xtendui/xtendui/compare/v2.4.3...v2.5.0) (2025-07-25)
+
+
+### Features
+
+* **groupnumber:** added options.a11y.live to groupnumber by default ([6f603f5](https://github.com/xtendui/xtendui/commit/6f603f553247dc46abfb15773825415015f2abf4))
+
 ## [2.4.3](https://github.com/xtendui/xtendui/compare/v2.4.2...v2.4.3) (2025-07-22)
 
 
