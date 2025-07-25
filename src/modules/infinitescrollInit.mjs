@@ -368,6 +368,11 @@ export class InfinitescrollInit {
     const items = itemsContainer.querySelectorAll(options.elements.item)
     // current page
     items[0].setAttribute('data-item-first', self.current)
+    Xt.perf({
+      func: () => {
+        items[0].querySelector('input, select, textarea, button, object, a, area[href], [tabindex]')?.focus()
+      },
+    })
     // populate dom
     let last
     const all = self.itemsContainer.querySelectorAll(`${options.elements.item}`)
