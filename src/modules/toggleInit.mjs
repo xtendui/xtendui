@@ -3389,7 +3389,7 @@ export class ToggleInit {
         el.addEventListener(`off.${self._componentNs}`, offHandler)
       }
     }
-    if (options.a11y.hidden) {
+    if (options.a11y.hidden && self.componentName !== 'xt-slider') {
       for (const tr of self.targets) {
         // aria-hidden
         if (options.a11y.hidden) {

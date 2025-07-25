@@ -596,17 +596,18 @@ export class SliderInit extends Xt.Toggle {
    */
   _setPerfSize(tr) {
     const self = this
+    const options = self.options
     // logic
     const width = Xt.dataStorage.get(tr, `${self.ns}TrWidth`)
     const height = Xt.dataStorage.get(tr, `${self.ns}TrHeight`)
     tr.style.width = `${width}px`
     tr.style.height = `${height}px`
-    if (Xt._supports_content_visibility) {
-      tr.style.contentVisibility = 'hidden'
-    } else {
-      for (const child of tr.children) {
-        child.style.display = 'none'
-      }
+    tr.style.contentVisibility = 'hidden'
+    for (const child of tr.children) {
+      child.style.display = 'none'
+    }
+    if (options.a11y.hidden) {
+      tr.setAttribute('aria-hidden', 'true')
     }
   }
 
@@ -614,14 +615,17 @@ export class SliderInit extends Xt.Toggle {
    * reset performance size
    */
   _resetPerfSize(tr) {
+    const self = this
+    const options = self.options
+    // logic
     tr.style.height = ''
     tr.style.width = ''
-    if (Xt._supports_content_visibility) {
-      tr.style.contentVisibility = ''
-    } else {
-      for (const child of tr.children) {
-        child.style.display = ''
-      }
+    tr.style.contentVisibility = ''
+    for (const child of tr.children) {
+      child.style.display = ''
+    }
+    if (options.a11y.hidden) {
+      tr.setAttribute('aria-hidden', 'false')
     }
   }
 

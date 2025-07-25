@@ -41,7 +41,6 @@ if (typeof window !== 'undefined') {
   Xt.observerCheck = entry => {
     return entry.intersectionRatio > 0.001
   }
-  Xt._supports_content_visibility = false
 
   //
   // initialization
