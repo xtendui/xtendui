@@ -8,7 +8,7 @@ date: "1900-10-10"
 
 ## Collapse Text
 
-Refer to [toggle collapse](/components/toggle/animation#collapse).
+Refer to [toggle collapse](/xtendui/components/toggle/animation#collapse).
 
 ## Separator
 
@@ -23,7 +23,7 @@ Use **Tailwind CSS** to assign styles (e.g. [margin](https://tailwindcss.com/doc
 
 ## List Custom
 
-If you want the list style to be the default one [customize default lists instead](/components/typography/content#list).
+If you want the list style to be the default one [customize default lists instead](/xtendui/components/typography/content#list).
 
 <demo>
   <demoinline src="demos/components/typography/listcustom">

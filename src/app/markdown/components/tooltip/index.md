@@ -8,7 +8,7 @@ description: "Tooltip is a toggle plugin to show simple content relative to an e
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip` see [css customization](/components/global/preset#customization). Check [xtendui/src/tooltip.css.js](https://github.com/xtendui/xtendui/blob/master/src/tooltip.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.tooltip` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/tooltip.css.js](https://github.com/xtendui/xtendui/blob/master/src/tooltip.css.js) for default styles.
 
 ## Javascript
 
@@ -42,7 +42,7 @@ Use this code to create **tooltip** in **multiple mode**.
 
 ## Implementation
 
-Check out [tooltip themes](/themes/tooltip) for **advanced implementations**.
+Check out [tooltip themes](/xtendui/themes/tooltip) for **advanced implementations**.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tooltip-implementation-v1">

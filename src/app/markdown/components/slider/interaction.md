@@ -8,7 +8,7 @@ date: "2010-10-10"
 
 ## Elements
 
-See [toggle elements](/components/toggle/interaction#elements) for more info.
+See [toggle elements](/xtendui/components/toggle/interaction#elements) for more info.
 
 You can specify `elements` that listens to event for activation, and `targets` that gets activated.
 
@@ -38,7 +38,7 @@ You can **filter elements and targets dynamically** with `exclude`, just **reini
 
 ## Class	
 
-See [toggle class](/components/toggle/interaction#class) for more info.
+See [toggle class](/xtendui/components/toggle/interaction#class) for more info.
 
 You can set initial activation by adding `on` to the **elements** or **targets**.
 
@@ -61,7 +61,7 @@ Additionally on component initialization the attribute `[data-xt-slider-init]` g
 
 ## Quantity
 
-See [toggle quantity](/components/toggle/interaction#quantity) for more info.
+See [toggle quantity](/xtendui/components/toggle/interaction#quantity) for more info.
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -76,7 +76,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 ## Event
 
-See [toggle event](/components/toggle/interaction#event) for more info.
+See [toggle event](/xtendui/components/toggle/interaction#event) for more info.
 
 ## Hash
 
@@ -92,7 +92,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/slider/hash#demo--slider-hash-4) to preview location hash changes.
+Try the demo [on a new page](/xtendui/demos/components/slider/hash#demo--slider-hash-4) to preview location hash changes.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/slider/hash">
@@ -218,9 +218,9 @@ Use `jump: true` to enable clicking on a **target** to jump to them, only when o
 
 </div>
 
-> Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/components/slider/api#trigger).
+> Auto doesn't run if the slider is `display: none`. Start it manually when visible using [slider events](/xtendui/components/slider/api#trigger).
 
-Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.	
+Use the [api](/xtendui/components/slider/api#listen) and listen to events to make auto progress indicators.	
 
 <demo>
   <demoinline src="demos/components/slider/progress">

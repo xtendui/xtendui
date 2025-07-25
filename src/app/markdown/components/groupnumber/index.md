@@ -8,7 +8,7 @@ description: "Groupnumber is a plugin that manages quantity increments on input 
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber` see [css customization](/components/global/preset#customization). Check [xtendui/src/groupnumber.css.js](https://github.com/xtendui/xtendui/blob/master/src/groupnumber.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.groupnumber` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/groupnumber.css.js](https://github.com/xtendui/xtendui/blob/master/src/groupnumber.css.js) for default styles.
 
 ## Javascript
 
@@ -30,7 +30,7 @@ The component uses the standard `input[type="number"]` attributes and **behaves 
 
 On the steps buttons use `[data-xt-step="value"]` to set the amount to add (`+1`) or remove (`-1`) on click, if you set `input[step="value"]` the **increment and decrement steps are from `[step]`** but the **sign of step is from `[data-xt-step]`**.
 
-> This demos use [group](/components/group) see documentation for more info.
+> This demos use [group](/xtendui/components/group) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/groupnumber/usage">
@@ -99,7 +99,7 @@ This components follows A11y standards so **aria attributes and keyboard interac
 
 ## Util
 
-You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/xtendui/components/global/javascript#xt-get).
 
 ```js
 new Xt.Groupnumber(document.querySelector('.my-container'), {}).then(self => {})
@@ -109,7 +109,7 @@ new Xt.Groupnumber(document.querySelector('.my-container'), {}).then(self => {})
 Xt.get({ name: 'xt-groupnumber', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-groupnumber'] = {
@@ -119,7 +119,7 @@ Xt.options['xt-groupnumber'] = {
 
 By default components are **loaded and initialized only when inside viewport** or instantly if `self.container` is not visible (`display: none`).
 
-You can force [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
+You can force [global observer options](/xtendui/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -131,7 +131,7 @@ You can force [global observer options](/components/global/javascript/#xt-observ
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
+Listen to events, for listeners use [this guideline](/xtendui/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -148,7 +148,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 ## Properties
 
-Access properties by getting [self object](/components/groupnumber/#util).
+Access properties by getting [self object](/xtendui/components/groupnumber/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -166,7 +166,7 @@ Access properties by getting [self object](/components/groupnumber/#util).
 
 ## Methods
 
-Call methods by getting [self object](/components/groupnumber/#util).
+Call methods by getting [self object](/xtendui/components/groupnumber/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

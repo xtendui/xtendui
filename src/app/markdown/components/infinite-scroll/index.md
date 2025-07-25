@@ -24,7 +24,7 @@ Remember to set a `options.get` variable for a **get request on current url** to
 
 > Depending on website content the load more content may retain website scroll, use `body { overflow-anchor: none; }` to prevent that.
 
-Try the demo [on a new page](/demos/components/infinitescroll/usage?false=2) to preview location hash changes.
+Try the demo [on a new page](/xtendui/demos/components/infinitescroll/usage?false=2) to preview location hash changes.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/infinitescroll/usage">
@@ -77,7 +77,7 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/xtendui/components/global/javascript#xt-get).
 
 ```js
 new Xt.Infinitescroll(document.querySelector('.my-container'), {}).then(self => {})
@@ -87,7 +87,7 @@ new Xt.Infinitescroll(document.querySelector('.my-container'), {}).then(self => 
 Xt.get({ name: 'xt-infinitescroll', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-infinitescroll'] = {
@@ -97,7 +97,7 @@ Xt.options['xt-infinitescroll'] = {
 
 By default components are **loaded and initialized only when inside viewport** or instantly if `self.container` is not visible (`display: none`).
 
-You can force [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
+You can force [global observer options](/xtendui/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -109,7 +109,7 @@ You can force [global observer options](/components/global/javascript/#xt-observ
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
+Listen to events, for listeners use [this guideline](/xtendui/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -125,7 +125,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 ## Properties
 
-Access properties by getting [self object](/components/infinite-scroll/#util).
+Access properties by getting [self object](/xtendui/components/infinite-scroll/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -149,7 +149,7 @@ Access properties by getting [self object](/components/infinite-scroll/#util).
 
 ## Methods
 
-Call methods by getting [self object](/components/infinite-scroll/#util).
+Call methods by getting [self object](/xtendui/components/infinite-scroll/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

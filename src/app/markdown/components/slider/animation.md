@@ -10,7 +10,7 @@ date: "2010-08-10"
 
 This component has **automatic activation** you don't need to assign custom variants for activations.
 
-> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/xtendui/components/global/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Animation
 
@@ -34,7 +34,7 @@ Use **Tailwind CSS variants** `dir-before:`, `group-dir-before:`, `group-off-bef
 
 > When you use animations you need to **specity the duration of the animation** for proper interactions.
 
-You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/global/javascript#xt-options).
+You can also set **component's default duration** instead of specify it on each component with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-slider'] = {
@@ -44,7 +44,7 @@ Xt.options['xt-slider'] = {
 
 ## Duration and Delay
 
-See [toggle duration and delay](/components/toggle/animation#duration-and-delay) for more info.
+See [toggle duration and delay](/xtendui/components/toggle/animation#duration-and-delay) for more info.
 
 #### Duration
 
@@ -113,7 +113,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 ## Js Animation
 
-You can use also **javascript animations**, just use [drop api](/components/slider/api).
+You can use also **javascript animations**, just use [drop api](/xtendui/components/slider/api).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

@@ -8,13 +8,13 @@ date: "1980-05-05"
 
 ## Util
 
-You can get **self object from DOM node** on Xtend UI components with [Xt.get](/components/global/javascript#xt-get).
+You can get **self object from DOM node** on Xtend UI components with [Xt.get](/xtendui/components/global/javascript#xt-get).
 
 ```js
 Xt.get({ name: 'xt-slider', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-slider'] = {
@@ -24,7 +24,7 @@ Xt.options['xt-slider'] = {
 
 By default components are **loaded and initialized only when inside viewport** or instantly if `self.container` is not visible (`display: none`).
 
-You can force [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
+You can force [global observer options](/xtendui/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -36,7 +36,7 @@ You can force [global observer options](/components/global/javascript/#xt-observ
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
+Listen to events, for listeners use [this guideline](/xtendui/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -87,7 +87,7 @@ document.querySelector('#my-element-or-target').dispatchEvent(new CustomEvent('o
 
 ## Properties
 
-Access properties by getting [self object](/components/slider/api/#util).
+Access properties by getting [self object](/xtendui/components/slider/api/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -113,7 +113,7 @@ Access properties by getting [self object](/components/slider/api/#util).
 
 ## Methods
 
-Call methods by getting [self object](/components/slider/api/#util).
+Call methods by getting [self object](/xtendui/components/slider/api/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

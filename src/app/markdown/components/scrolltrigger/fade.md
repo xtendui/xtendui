@@ -10,7 +10,7 @@ For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plug
 
 ## Usage
 
-A **fade** can be achieved by assigning **ScrollTrigger** by setting [ScrollTrigger events](/components/scrolltrigger/fade#event) to **animate depending on scroll position relative to the trigger element**. And using [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
+A **fade** can be achieved by assigning **ScrollTrigger** by setting [ScrollTrigger events](/xtendui/components/scrolltrigger/fade#event) to **animate depending on scroll position relative to the trigger element**. And using [Gsap batch](https://greensock.com/docs/v3/Plugins/ScrollTrigger/static.batch()) to control **multiple ScrollTriggers**.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/fade"></div>

@@ -34,9 +34,9 @@ Use `xt-slide-absolute` to position the node in **absolute mode** when **animati
 
 </div>
 
-In **absolute mode** all options of [slider position](/components/slider/position) are **not taken in consideration because not applicable**.
+In **absolute mode** all options of [slider position](/xtendui/components/slider/position) are **not taken in consideration because not applicable**.
 
-Check out [slider's advanced absolute](/components/slider/animation-advanced#absolute) for **advanced usage**.
+Check out [slider's advanced absolute](/xtendui/components/slider/animation-advanced#absolute) for **advanced usage**.
 
 <demo>
   <demoinline src="demos/components/slider/usage-absolute">

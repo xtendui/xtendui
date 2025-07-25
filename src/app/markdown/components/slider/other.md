@@ -8,7 +8,7 @@ date: "2005-10-10"
 
 ## Intersection Observer performances
 
-The slider component automatically hides slides outside of the window, and **shows them when they enter the window**, all of this with [Xt.observe](/components/global/javascript#xt-observe). This **improves the performances** of sliders especially when they have **many or complex slides and especially on slow mobiles**.
+The slider component automatically hides slides outside of the window, and **shows them when they enter the window**, all of this with [Xt.observe](/xtendui/components/global/javascript#xt-observe). This **improves the performances** of sliders especially when they have **many or complex slides and especially on slow mobiles**.
 
 To disable this behaviour use `options.noobserver: true`.
 
@@ -65,7 +65,7 @@ On slider disable/enable the component **automatically add/remove the class `hid
 
 With nested selectors change the `elements` and `targets` query.
 
-Example of **component disabled on desktop** with [match media](/components/slider/api#match-media).
+Example of **component disabled on desktop** with [match media](/xtendui/components/slider/api#match-media).
 
 <demo>
   <demoinline src="demos/components/slider/disabled">
@@ -137,11 +137,11 @@ When you need to reinit the component when the media is loaded and the **width**
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `mediaLoaded:Boolean`                          | `false`        | Add the class `.xt-medialoaded` on img loaded             |
-| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit the component on img loaded after [Xt.medialoadedDelay](/components/global/javascript#xt-eventdelay)             |
+| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit the component on img loaded after [Xt.medialoadedDelay](/xtendui/components/global/javascript#xt-eventdelay)             |
 
 </div>
 
-> This demos use [loader](/components/loader) see documentation for more info.
+> This demos use [loader](/xtendui/components/loader) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/slider/media-loaded">

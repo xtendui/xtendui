@@ -24,7 +24,7 @@ The query is inside `container`, only when specifying **elements and targets wit
 
 </div>
 
-See [slider elements exclude](/components/slider/interaction#elements) for demo.
+See [slider elements exclude](/xtendui/components/slider/interaction#elements) for demo.
 
 ## Group
 
@@ -63,9 +63,9 @@ You can **disable same group elements activation** with the option `groupElement
 
 ## Class
 
-See [toggle class](/components/toggle/interaction#class) for more info.
+See [toggle class](/xtendui/components/toggle/interaction#class) for more info.
 
-You can [style and animate](/components/tooltip/animation#animation) **class names** used by the component.
+You can [style and animate](/xtendui/components/tooltip/animation#animation) **class names** used by the component.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -88,7 +88,7 @@ Additionally on component initialization the attribute `[data-xt-tooltip-init]` 
 
 ## Quantity
 
-See [toggle quantity](/components/toggle/interaction#quantity) for more info.
+See [toggle quantity](/xtendui/components/toggle/interaction#quantity) for more info.
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -176,7 +176,7 @@ If you want a **inner node that trigger off on `click`** use `.xt-dismiss`.
 
 ## Hash
 
-See [toggle hash](/components/toggle/interaction#hash) for more info.
+See [toggle hash](/xtendui/components/toggle/interaction#hash) for more info.
 
 You can **link the activation in the url hash** to be linkable and more usable, hash activation has precedence over class activation.
 
@@ -192,12 +192,12 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 ## Navigation and Loop
 
-See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more info.
+See [toggle navigation and loop](/xtendui/components/toggle/interaction#navigation-and-loop) for more info.
 
 ## Class Body
 
-See [overlay class body](/components/overlay/interaction#class-body) for more info.
+See [overlay class body](/xtendui/components/overlay/interaction#class-body) for more info.
 
 ## Scrollto
 
-See [scrollto toggle](/components/scrollto#toggle-integration) for more info.
+See [scrollto toggle](/xtendui/components/scrollto#toggle-integration) for more info.

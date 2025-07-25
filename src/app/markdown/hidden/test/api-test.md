@@ -61,18 +61,18 @@ title: "Api Test"
 `demos/components/toggle/api`
 - TEST on init event, add and remove, activated on change > reinit > change > restart, activated on change > destroy > reinit, destroy remove all interactions.
 
-[/demos/components/toggle/api](/demos/components/toggle/api).
+[/demos/components/toggle/api](/xtendui/demos/components/toggle/api).
 
 `demos/components/overlay/api`
 - TEST one destroy and reinit and trigger 1st, reinit multiple times and interaction should trigger once.
 
-[/demos/components/overlay/api](/demos/components/overlay/api).
+[/demos/components/overlay/api](/xtendui/demos/components/overlay/api).
 
-[/demos/components/drop/api](/demos/components/drop/api).
+[/demos/components/drop/api](/xtendui/demos/components/drop/api).
 
-[/demos/components/tooltip/api](/demos/components/tooltip/api).
+[/demos/components/tooltip/api](/xtendui/demos/components/tooltip/api).
 
 `demos/components/slider/api`
 - TEST initial dragger position instant with no transition, initial wrap position, remove until 0 targets should not give errors.
 
-[/demos/components/slider/api](/demos/components/slider/api).
+[/demos/components/slider/api](/xtendui/demos/components/slider/api).

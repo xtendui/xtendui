@@ -8,9 +8,9 @@ date: "2010-10-10"
 
 ## Multilevel
 
-You can create a **multilevel nav** with [toggle group](/components/toggle/interaction#group).
+You can create a **multilevel nav** with [toggle group](/xtendui/components/toggle/interaction#group).
 
-> This demos use [toggle](/components/toggle) see documentation for more info.
+> This demos use [toggle](/xtendui/components/toggle) see documentation for more info.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/navigation/multilevel-v1">
@@ -19,9 +19,9 @@ You can create a **multilevel nav** with [toggle group](/components/toggle/inter
 
 ## Toggle simple
 
-Use [toggle](/components/toggle) to **activate/deactivate and animate**.
+Use [toggle](/xtendui/components/toggle) to **activate/deactivate and animate**.
 
-> This demos use [toggle](/components/toggle) see documentation for more info.
+> This demos use [toggle](/xtendui/components/toggle) see documentation for more info.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v1">
@@ -30,11 +30,11 @@ Use [toggle](/components/toggle) to **activate/deactivate and animate**.
 
 ## Toggle complex
 
-Use [scrollto toggle](/components/scrollto#toggle-integration) to **automatically scroll on activation**.
+Use [scrollto toggle](/xtendui/components/scrollto#toggle-integration) to **automatically scroll on activation**.
 
-Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
+Use [sticky](/xtendui/components/scrolltrigger/sticky) to have **sticky elements**.
 
-> This demos use [scrollto](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
+> This demos use [scrollto](/xtendui/components/scrollto) [sticky](/xtendui/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v2">
@@ -43,11 +43,11 @@ Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
 
 ## Scrollto
 
-Use [scrollto](/components/scrollto#toggle-integration) to **automatically scroll with hash links**.
+Use [scrollto](/xtendui/components/scrollto#toggle-integration) to **automatically scroll with hash links**.
 
-Use [sticky](/components/scrolltrigger/sticky) to have **sticky elements**.
+Use [sticky](/xtendui/components/scrolltrigger/sticky) to have **sticky elements**.
 
-> This demos use [toggle](/components/scrollto) [sticky](/components/scrolltrigger/sticky) see documentation for more info.
+> This demos use [toggle](/xtendui/components/scrollto) [sticky](/xtendui/components/scrolltrigger/sticky) see documentation for more info.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/nav-implementation-v3">

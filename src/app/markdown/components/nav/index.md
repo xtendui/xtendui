@@ -16,7 +16,7 @@ Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direct
 
 You can set activation styles by adding the class `.on`.
 
-> This demos use [list](/components/list) see documentation for more info.
+> This demos use [list](/xtendui/components/list) see documentation for more info.
 
 > For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 
@@ -27,7 +27,7 @@ You can set activation styles by adding the class `.on`.
 
 ## Implementation
 
-Check out [nav themes](/themes/nav) for **advanced implementations**.
+Check out [nav themes](/xtendui/themes/nav) for **advanced implementations**.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/navigation/multilevel-v1">

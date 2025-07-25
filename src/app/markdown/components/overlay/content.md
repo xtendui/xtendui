@@ -32,9 +32,9 @@ Use **Tailwind CSS** to assign size (e.g. [padding](https://tailwindcss.com/docs
 
 ## Complex
 
-Use other [card content](/components/card/content) to make complex design.
+Use other [card content](/xtendui/components/card/content) to make complex design.
 
-> This demos use [card](/components/card) see documentation for more info.
+> This demos use [card](/xtendui/components/card) see documentation for more info.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/overlay-implementation-v1">

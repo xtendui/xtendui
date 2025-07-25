@@ -8,7 +8,7 @@ description: "Ripple is a plugin that achieve Material ripple animation."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple` see [css customization](/components/global/preset#customization). Check [xtendui/src/ripple.css.js](https://github.com/xtendui/xtendui/blob/master/src/ripple.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.ripple` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/ripple.css.js](https://github.com/xtendui/xtendui/blob/master/src/ripple.css.js) for default styles.
 
 ## Javascript
 
@@ -55,7 +55,7 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/xtendui/components/global/javascript#xt-get).
 
 ```js
 new Xt.Ripple(document.querySelector('.my-container'), {}).then(self => {})
@@ -65,7 +65,7 @@ new Xt.Ripple(document.querySelector('.my-container'), {}).then(self => {})
 Xt.get({ name: 'xt-ripple', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-ripple'] = {
@@ -75,7 +75,7 @@ Xt.options['xt-ripple'] = {
 
 By default components are **loaded and initialized only when inside viewport** or instantly if `self.container` is not visible (`display: none`).
 
-You can force [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
+You can force [global observer options](/xtendui/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -87,7 +87,7 @@ You can force [global observer options](/components/global/javascript/#xt-observ
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
+Listen to events, for listeners use [this guideline](/xtendui/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -104,7 +104,7 @@ Listen to events, for listeners use [this guideline](/components/global/javascri
 
 ## Properties
 
-Access properties by getting [self object](/components/ripple/#util).
+Access properties by getting [self object](/xtendui/components/ripple/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -127,7 +127,7 @@ Access properties by getting [self object](/components/ripple/#util).
 
 ## Methods
 
-Call methods by getting [self object](/components/ripple/#util).
+Call methods by getting [self object](/xtendui/components/ripple/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

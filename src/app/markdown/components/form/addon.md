@@ -49,14 +49,14 @@ You can have custom design that contains the `input[type="checkbox"]` or `input[
 
 > For accessibility purposeyou can to apply [focus-within styles](https://tailwindcss.com/docs/hover-focus-and-other-states#focus-within) to `label`, or wait for [focus-visible-within](https://github.com/WICG/focus-visible/issues/151).
 
-Use [button](/components/button) with `label` to create **checks with button**.
+Use [button](/xtendui/components/button) with `label` to create **checks with button**.
 
 <demo>
   <demoinline src="demos/components/form/checks-button">
   </demoinline>
 </demo>
 
-Use [card](/components/card) with `label` to create **checks with card**.
+Use [card](/xtendui/components/card) with `label` to create **checks with card**.
 
 <demo>
   <demoinline src="demos/components/form/checks-card">

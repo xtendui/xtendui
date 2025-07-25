@@ -16,7 +16,7 @@ Alternatively you can use your own custom style, for example `off:invisible off:
 
 Use `absolute top-0 left-0 right-0 on:relative` to position the node in absolute mode when **not activated**.
 
-> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/xtendui/components/global/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Animation
 
@@ -33,7 +33,7 @@ Use **Tailwind CSS variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `
 
 Use **Tailwind CSS variants** `dir-before:`, `group-dir-before:`, `group-off-before:`, `group-on-before:`, `group-in-before:`, `group-out-before:`, `dir-after:`, `group-dir-after:`, `group-off-after:`, `group-on-after:`, `group-in-after:`, `group-out-after:` to assign animations.
 
-> Direction needs [multiple mode](/components/toggle#usage-multiple) to work.
+> Direction needs [multiple mode](/xtendui/components/toggle#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-direction">
@@ -49,7 +49,7 @@ For **inverse animation** you can use also **Tailwind CSS variants** `done:`, `g
 
 > When you use animations you need to **specity the duration of the animation** for proper interactions.
 
-You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/global/javascript#xt-options).
+You can also set **component's default duration** instead of specify it on each component with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-toggle'] = {
@@ -115,7 +115,7 @@ The queue option **controls sequential activations putting them in a queue**, or
 
 </div>
 
-> Queue needs [multiple mode](/components/toggle#usage-multiple) to work.
+> Queue needs [multiple mode](/xtendui/components/toggle#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-queue">
@@ -128,7 +128,7 @@ The queue option **controls sequential activations putting them in a queue**, or
 
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.
 
-> Direction needs [multiple mode](/components/drop#usage-multiple) to work.
+> Direction needs [multiple mode](/xtendui/components/drop#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-css">
@@ -137,7 +137,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 ## Js Animation
 
-You can use also **javascript animations**, just use [drop api](/components/drop/api).
+You can use also **javascript animations**, just use [drop api](/xtendui/components/drop/api).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -147,7 +147,7 @@ You can use also **javascript animations**, just use [drop api](/components/drop
 
 </div>
 
-> Direction needs [multiple mode](/components/drop#usage-multiple) to work.
+> Direction needs [multiple mode](/xtendui/components/drop#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/toggle/animation-js">

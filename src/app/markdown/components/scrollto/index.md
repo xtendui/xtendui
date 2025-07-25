@@ -18,11 +18,11 @@ Use **Tailwind CSS variants** `on:`, `group-on:` to assign animations to anchors
 
 You can also scroll to a Node also if not anchored using the event `scrollto.trigger.xt.scrollto`.
 
-> This demo uses [scroll sticky](/components/scrolltrigger/sticky) see documentation for more info.
+> This demo uses [scroll sticky](/xtendui/components/scrolltrigger/sticky) see documentation for more info.
 
 > Do not assign **other components** to `anchors` or the components activations conflict.
 
-Try the demo [on a new page](/demos/components/scrollto/usage#anchor-2) to preview location hash changes.
+Try the demo [on a new page](/xtendui/demos/components/scrollto/usage#anchor-2) to preview location hash changes.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrollto/usage">
@@ -36,9 +36,9 @@ You can also **set scroll position without gsap**.
   </div>
 </demo>
 
-It works also inside [overlay](/components/overlay) and it automatically open **overlay and all parent components** with `openauto: true`.
+It works also inside [overlay](/xtendui/components/overlay) and it automatically open **overlay and all parent components** with `openauto: true`.
 
-Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2) to preview location hash changes.
+Try the demo [on a new page](/xtendui/demos/components/scrollto/overlay#anchor-2) to preview location hash changes.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrollto/overlay">
@@ -47,20 +47,20 @@ Try the demo [on a new page](/demos/components/scrollto/overlay#anchor-2) to pre
 
 ## Toggle Integration
 
-You can use the Scrollto component in conjunction with any **toggle component** ([toggle](/components/toggle/interaction#hash), [drop](/components/drop/interaction#hash), [overlay](/components/overlay/interaction#hash), [slider](/components/slider/interaction#hash), [tooltip](/components/tooltip/interaction#hash)). It also integrates with the **toggle hash** interaction.
+You can use the Scrollto component in conjunction with any **toggle component** ([toggle](/xtendui/components/toggle/interaction#hash), [drop](/xtendui/components/drop/interaction#hash), [overlay](/xtendui/components/overlay/interaction#hash), [slider](/xtendui/components/slider/interaction#hash), [tooltip](/xtendui/components/tooltip/interaction#hash)). It also integrates with the **toggle hash** interaction.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `scrollto:Boolean\|Query\|String`                          | `false`        | On activation trigger [scrollto](/components/scrollto) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
+| Option                  | `scrollto:Boolean\|Query\|String`                          | `false`        | On activation trigger [scrollto](/xtendui/components/scrollto) to `self.container` or to a query or to type can be `elements`, `targets`, `elementsInner`, `targetsInner`            |
 | Option                  | `scrolltoInit:Boolean`                          | `false`        | Scrollto also on initialization (`data-xt-hash` or `.on` or `options.min` etc..)            |
 
 </div>
 
 > Use `a[role="button"]` instead of `a[href]`. Use `queue: false` for proper browser back button.
 
-Try the demo [on a new page](/demos/components/scrollto/toggle#anchor-2) to preview location hash changes.
+Try the demo [on a new page](/xtendui/demos/components/scrollto/toggle#anchor-2) to preview location hash changes.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrollto/toggle">
@@ -126,7 +126,7 @@ You can add **additional options** that gets added on **match media query**. You
 
 ## Util
 
-You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/components/global/javascript#xt-get).
+You can get **self object** on Xtend UI components with **the constructor** or [Xt.get](/xtendui/components/global/javascript#xt-get).
 
 ```js
 new Xt.Scrollto(document.querySelector('.my-container'), {}).then(self => {})
@@ -136,7 +136,7 @@ new Xt.Scrollto(document.querySelector('.my-container'), {}).then(self => {})
 Xt.get({ name: 'xt-scrollto', el: document.querySelector('.my-container') }).then(self => {})
 ```
 
-You can set **default options** for all components of the same type, with [Xt.options](/components/global/javascript#xt-options).
+You can set **default options** for all components of the same type, with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-scrollto'] = {
@@ -146,7 +146,7 @@ Xt.options['xt-scrollto'] = {
 
 By default components are **loaded and initialized only when inside viewport** or instantly if `self.container` is not visible (`display: none`).
 
-You can force [global observer options](/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
+You can force [global observer options](/xtendui/components/global/javascript/#xt-observe-globals) or **singular component observer options** passing this option.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -158,7 +158,7 @@ You can force [global observer options](/components/global/javascript/#xt-observ
 
 ## Listen
 
-Listen to events, for listeners use [this guideline](/components/global/javascript#listeners).
+Listen to events, for listeners use [this guideline](/xtendui/components/global/javascript#listeners).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -186,7 +186,7 @@ Trigger events on **DOM node**.
 
 ## Properties
 
-Access properties by getting [self object](/components/scrollto/#util).
+Access properties by getting [self object](/xtendui/components/scrollto/#util).
 
 > If you want to **force the self.hashchange value manually for instant duration** set `Xt.scrolltoHashforce` to `true` or `false` just before triggering `scrollto.trigger.xt.scrollto` or changing `location.hash`.
 
@@ -211,7 +211,7 @@ Access properties by getting [self object](/components/scrollto/#util).
 
 ## Methods
 
-Call methods by getting [self object](/components/scrollto/#util).
+Call methods by getting [self object](/xtendui/components/scrollto/#util).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

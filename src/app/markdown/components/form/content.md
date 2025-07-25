@@ -34,4 +34,4 @@ Use **Tailwind CSS** to assign size (e.g. [padding](https://tailwindcss.com/docs
 
 ## Toolbar
 
-Refer to [toolbar](/components/toolbar).
+Refer to [toolbar](/xtendui/components/toolbar).

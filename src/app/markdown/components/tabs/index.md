@@ -16,7 +16,7 @@ Use `.flex-auto` to expand items to **fill width**.
 
 You can set activation styles by adding the class `.on`.
 
-> This demos use [list](/components/list) see documentation for more info.
+> This demos use [list](/xtendui/components/list) see documentation for more info.
 
 > For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 
@@ -27,7 +27,7 @@ You can set activation styles by adding the class `.on`.
 
 ## Implementation
 
-Check out [tabs themes](/themes/tabs) for **advanced implementations**.
+Check out [tabs themes](/xtendui/themes/tabs) for **advanced implementations**.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/tabs-implementation-v1">

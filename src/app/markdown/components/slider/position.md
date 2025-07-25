@@ -50,7 +50,7 @@ When `contain` is enabled (default) it **groups the slides activation and positi
 
 ## Wrap
 
-Wrap the slides for an infinite activation. Automatically has [loop](/components/slider/interaction#navigation-and-loop) and [no contain](/components/slider/position#contain).
+Wrap the slides for an infinite activation. Automatically has [loop](/xtendui/components/slider/interaction#navigation-and-loop) and [no contain](/xtendui/components/slider/position#contain).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 

@@ -47,7 +47,7 @@ Use this code to create a **toggle** in **multiple mode**.
 
 ## Implementation
 
-Check out [toggle themes](/themes/toggle) for **advanced implementations**.
+Check out [toggle themes](/xtendui/themes/toggle) for **advanced implementations**.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/navigation/multilevel-v1">

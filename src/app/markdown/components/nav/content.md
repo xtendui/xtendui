@@ -12,7 +12,7 @@ Use **Tailwind CSS** to assign size (e.g. [padding](https://tailwindcss.com/docs
 
 Use **Tailwind CSS** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 
-Use [list space](/components/list/content#space) to space content.
+Use [list space](/xtendui/components/list/content#space) to space content.
 
 <demo>
   <demoinline src="demos/components/nav/size">
@@ -34,7 +34,7 @@ Use **Tailwind CSS** to assign alignment (e.g. [text-align](https://tailwindcss.
 
 > To properly align horizontally also when newlines specify both [text-align](https://tailwindcss.com/docs/text-align) and [justify-content](https://tailwindcss.com/docs/justify-content).
 
-> This demos use [icon](/components/icon) see documentation for more info.
+> This demos use [icon](/xtendui/components/icon) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/nav/alignment">
@@ -43,9 +43,9 @@ Use **Tailwind CSS** to assign alignment (e.g. [text-align](https://tailwindcss.
 
 ## Complex
 
-Use other [list content](/components/list/content) to make complex design.
+Use other [list content](/xtendui/components/list/content) to make complex design.
 
-> This demos use [icon](/components/icon) see documentation for more info.
+> This demos use [icon](/xtendui/components/icon) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/nav/complex">

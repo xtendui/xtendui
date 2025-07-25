@@ -14,7 +14,7 @@ Use **Tailwind CSS** to assign alignment (e.g. margin auto, [align-items](https:
 
 Use `.inline-flex` and [flex-direction](https://tailwindcss.com/docs/flex-direction) to **stack**. Use `.flex-auto` to expand items to **fill width**.
 
-> This demos use [list](/components/list) see documentation for more info.
+> This demos use [list](/xtendui/components/list) see documentation for more info.
 
 > For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 

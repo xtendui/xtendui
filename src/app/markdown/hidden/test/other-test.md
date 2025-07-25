@@ -27,7 +27,7 @@ title: "Other Test"
 - TEST pin resize this should be called one time on resize and Xt._mountArr should not increase.
 - TEST resize and open/close, pin unmount this should NOT be called on resize, xtNamespace should be 1, should be 0 on unmount.
 
-[/demos/hidden/test/scrolltrigger-matches](/demos/hidden/test/scrolltrigger-matches).
+[/demos/hidden/test/scrolltrigger-matches](/xtendui/demos/hidden/test/scrolltrigger-matches).
 
 ## Megamenu
 
@@ -35,28 +35,28 @@ title: "Other Test"
 - TEST direction and zIndex sequential activation and zIndex reset.
 - TEST move slightly over other and then target should not change with delay, backdrop should not flickr.
 
-[/demos/themes/navigation/megamenu-v1](/xtendui/demos/themes/navigation/megamenu-v1).
+[/demos/themes/navigation/megamenu-v1](/xtendui/xtendui/demos/themes/navigation/megamenu-v1).
 
 ## Scroll
 
 `demos/components/scrollto/usage`
 - TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.
 
-[/demos/components/scrollto/usage#anchor-2](/demos/components/scrollto/usage#anchor-2).
+[/demos/components/scrollto/usage#anchor-2](/xtendui/demos/components/scrollto/usage#anchor-2).
 
 `demos/components/scrollto/overlay`
 - TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements, scroll position on click elements custom.
 
-[/demos/components/scrollto/overlay#anchor-2](/demos/components/scrollto/overlay#anchor-2).
+[/demos/components/scrollto/overlay#anchor-2](/xtendui/demos/components/scrollto/overlay#anchor-2).
 
 `demos/components/scrollto/toggle`
 - TEST activation classes and scroll position on page load and scroll and browser navigation, scroll position on click elements.
 
-[/demos/components/scrollto/toggle#anchor-2](/demos/components/scrollto/toggle#anchor-2).
+[/demos/components/scrollto/toggle#anchor-2](/xtendui/demos/components/scrollto/toggle#anchor-2).
 
 ## Infinitescroll
 
 `demos/components/infinitescroll/usage`
 - TEST initial activation and scroll position, scroll activation, browser navigation.
 
-[/demos/components/infinitescroll/usage?false=2](/demos/components/infinitescroll/usage?false=2).
+[/demos/components/infinitescroll/usage?false=2](/xtendui/demos/components/infinitescroll/usage?false=2).

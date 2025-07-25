@@ -10,7 +10,7 @@ date: "2010-08-10"
 
 This component has **automatic activation** you don't need to assign custom variants for activations.
 
-> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
+> If you **only need to show/hide and animate a node** consider using [Xt.on and Xt.off](/xtendui/components/global/javascript#xt-on-and-xt-off) instead of using a complex interaction component.
 
 ## Animation
 
@@ -29,7 +29,7 @@ Use **Tailwind CSS variants** `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `
 
 Use **Tailwind CSS variants** `dir-before:`, `group-dir-before:`, `group-off-before:`, `group-on-before:`, `group-in-before:`, `group-out-before:`, `dir-after:`, `group-dir-after:`, `group-off-after:`, `group-on-after:`, `group-in-after:`, `group-out-after:` to assign animations.
 
-> Direction needs [multiple mode](/components/tooltip#usage-multiple) to work.
+> Direction needs [multiple mode](/xtendui/components/tooltip#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-direction">
@@ -38,7 +38,7 @@ Use **Tailwind CSS variants** `dir-before:`, `group-dir-before:`, `group-off-bef
 
 > When you use animations you need to **specity the duration of the animation** for proper interactions.
 
-You can also set **component's default duration** instead of specify it on each component with [Xt.options](/components/global/javascript#xt-options).
+You can also set **component's default duration** instead of specify it on each component with [Xt.options](/xtendui/components/global/javascript#xt-options).
 
 ```js
 Xt.options['xt-tooltip'] = {
@@ -48,7 +48,7 @@ Xt.options['xt-tooltip'] = {
 
 ## Duration and Delay
 
-See [toggle duration and delay](/components/toggle/animation#duration-and-delay) for more info.
+See [toggle duration and delay](/xtendui/components/toggle/animation#duration-and-delay) for more info.
 
 #### Duration
 
@@ -103,7 +103,7 @@ The queue option **controls sequential activations putting them in a queue**, or
 
 Skip class activation and deactivation e.g.: `{ elements: true, elementsInner: true, targets: true, targetsInner: true }`
 
-> Queue needs [multiple mode](/components/tooltip#usage-multiple) to work.
+> Queue needs [multiple mode](/xtendui/components/tooltip#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-queue">
@@ -116,7 +116,7 @@ Skip class activation and deactivation e.g.: `{ elements: true, elementsInner: t
 
 You can use also **css animations**, just add them with **class names** `.on`, `.in`, `.out`, `.done`, `.dir-before` and `.dir-after`.
 
-> Direction needs [multiple mode](/components/tooltip#usage-multiple) to work.
+> Direction needs [multiple mode](/xtendui/components/tooltip#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-css">
@@ -125,7 +125,7 @@ You can use also **css animations**, just add them with **class names** `.on`, `
 
 ## Js Animation
 
-You can use also **javascript animations**, just use [tooltip api](/components/tooltip/api).
+You can use also **javascript animations**, just use [tooltip api](/xtendui/components/tooltip/api).
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -135,7 +135,7 @@ You can use also **javascript animations**, just use [tooltip api](/components/t
 
 </div>
 
-> Direction needs [multiple mode](/components/tooltip#usage-multiple) to work.
+> Direction needs [multiple mode](/xtendui/components/tooltip#usage-multiple) to work.
 
 <demo>
   <demoinline src="demos/components/tooltip/animation-js">

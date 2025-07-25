@@ -8,7 +8,7 @@ description: "Typography is a component for automatic and customizable styling o
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.typography` see [css customization](/components/global/preset#customization). Check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/master/src/typography.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.typography` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/typography.css.js](https://github.com/xtendui/xtendui/blob/master/src/typography.css.js) for default styles.
 
 ## Global Styles
 

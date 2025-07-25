@@ -21,7 +21,7 @@ Use **Tailwind CSS** to assign variant (e.g. [background-color](https://tailwind
 
 Use **Tailwind CSS** to assign loader activation animation.
 
-Use [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) to activate and animate.
+Use [Xt.on and Xt.off](/xtendui/components/global/javascript#xt-on-and-xt-off) to activate and animate.
 
 Example loader spinner with **activation animation**.
 

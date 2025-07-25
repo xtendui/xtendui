@@ -112,7 +112,7 @@ You can add **multiple ScrollTriggers and animations** on the same elements.
 
 ## Content
 
-Here's an example of **parallax on images** with [media](/components/media).
+Here's an example of **parallax on images** with [media](/xtendui/components/media).
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/scrolltrigger/parallax-image"></div>

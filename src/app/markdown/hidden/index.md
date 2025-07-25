@@ -38,7 +38,7 @@ menu: true
 
 ## Markdown
 
-Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
+Lorem ipsum `dolor sit` amet, *consectetur* **adipiscing** elit. Nam in [laoreet tellus](/xtendui/components/group/button), nec commodo massa. Aenean ut ex at ex pellentesque efficitur.
 
 You can set activation styles by adding the class `.on`.
 
@@ -60,7 +60,7 @@ Use **Tailwind CSS** to assign animation (e.g. [translate](https://tailwindcss.c
 
 > For **full API** see [Gsap ScrollTrigger API](https://greensock.com/docs/v3/Plugins/ScrollTrigger).
 
-> This demos use [loader](/components/loader) see documentation for more info.
+> This demos use [loader](/xtendui/components/loader) see documentation for more info.
 
 > For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 

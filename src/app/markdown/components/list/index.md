@@ -8,7 +8,7 @@ description: "List is a component to space any element with margins, also spaces
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.list` see [css customization](/components/global/preset#customization). Check [xtendui/src/list.css.js](https://github.com/xtendui/xtendui/blob/master/src/list.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.list` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/list.css.js](https://github.com/xtendui/xtendui/blob/master/src/list.css.js) for default styles.
 
 ## Usage
 
@@ -24,7 +24,7 @@ Use `.flex-auto` to expand items to **fill width**.
 
 > For accessibility purpose use `<nav></nav>` with an accessible name assigning `[aria-label]` or `[aria-labelledby]`.
 
-> You should never use **Tailwind CSS width classes** inside `.xt-list`. Otherwise you can space contents with [row](/components/row).
+> You should never use **Tailwind CSS width classes** inside `.xt-list`. Otherwise you can space contents with [row](/xtendui/components/row).
 
 <demo>
   <demoinline src="demos/components/list/usage">

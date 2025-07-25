@@ -8,7 +8,7 @@ date: "2030-05-05"
 
 ## Row
 
-Use **component utility** to assign [row spacing](/components/row/content#space).
+Use **component utility** to assign [row spacing](/xtendui/components/row/content#space).
 
 Use **Tailwind CSS** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
 
@@ -28,7 +28,7 @@ Inline Row mode with `w-auto`.
 
 ## Horizontal
 
-Use **component utility** to assign [row spacing](/components/row/content#space).
+Use **component utility** to assign [row spacing](/xtendui/components/row/content#space).
 
 Use **Tailwind CSS** to assign column size (e.g. [width](https://tailwindcss.com/docs/width)).
 

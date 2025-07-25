@@ -92,7 +92,7 @@ Use **Tailwind CSS** to overflow divs. Use **component classes** to style **over
 
 ## List
 
-You can use [list component](/components/list) to space card's internal content.
+You can use [list component](/xtendui/components/list) to space card's internal content.
 
 <demo>
   <demoinline src="demos/components/card/list">
@@ -110,4 +110,4 @@ Use **Tailwind CSS** to assign size (e.g. [padding](https://tailwindcss.com/docs
 
 ## Checks
 
-Refer to [form checks custom](/components/form/addon#checks-custom).
+Refer to [form checks custom](/xtendui/components/form/addon#checks-custom).

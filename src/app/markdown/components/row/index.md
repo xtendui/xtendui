@@ -8,7 +8,7 @@ description: "Row is a component to space any element with paddings, also spaces
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row` see [css customization](/components/global/preset#customization). Check [xtendui/src/row.css.js](https://github.com/xtendui/xtendui/blob/master/src/row.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.row` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/row.css.js](https://github.com/xtendui/xtendui/blob/master/src/row.css.js) for default styles.
 
 ## Usage
 
@@ -22,7 +22,7 @@ Use `.w-auto.flex-1` to expand items to **fill width**.
 
 </div>
 
-> You should always use **Tailwind CSS width classes** inside `.xt-row`. Otherwise you can space contents with [list](/components/list).
+> You should always use **Tailwind CSS width classes** inside `.xt-row`. Otherwise you can space contents with [list](/xtendui/components/list).
 
 <demo>
   <demoinline src="demos/components/row/usage">

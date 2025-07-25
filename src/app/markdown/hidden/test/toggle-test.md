@@ -10,7 +10,7 @@ title: "Toggle Test"
 `demos/components/overlay/usage-self`
 - TEST initial activation, overlay no close clicking inside with eventLimit, close on backdrop click, should close with event `off.xt.trigger.overlay`.
 
-[/demos/components/overlay/usage-self](/demos/components/overlay/usage-self).
+[/demos/components/overlay/usage-self](/xtendui/demos/components/overlay/usage-self).
 
 ## Interaction
 
@@ -80,17 +80,17 @@ title: "Toggle Test"
 - TEST no hash must not add hash initial activation.
 - TEST initial activation, hash activation, browser navigation.
 
-[/demos/components/toggle/hash#demo--toggle-hash-group-1](/demos/components/toggle/hash#demo--toggle-hash-group-1).
+[/demos/components/toggle/hash#demo--toggle-hash-group-1](/xtendui/demos/components/toggle/hash#demo--toggle-hash-group-1).
 
 `demos/components/overlay/hash`
 - TEST opened with hash on page load, closing it should not block page interaction (bug with multiple elements same target), should reopen on change page browser navigation.
 
-[/demos/components/overlay/hash#demo--overlay-hash](/demos/components/overlay/hash#demo--overlay-hash).
+[/demos/components/overlay/hash#demo--overlay-hash](/xtendui/demos/components/overlay/hash#demo--overlay-hash).
 
 `demos/components/slider/hash`
 - TEST initial activation, hash activation, browser navigation.
 
-[/demos/components/slider/hash#demo--slider-hash-4](/demos/components/slider/hash#demo--slider-hash-4).
+[/demos/components/slider/hash#demo--slider-hash-4](/xtendui/demos/components/slider/hash#demo--slider-hash-4).
 
 ## Backdrop
 

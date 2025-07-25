@@ -55,7 +55,7 @@ Example of **infinite automatic scrolling slider**, with also drag and pauses on
 
 With **absolute mode** all animation of the slides are given by yout **custom gsap animations**.
 
-You only have to listen to slider events [slider's api](/components/slider/api) and animate using the `self.drag._ratio`, `self.drag._ratioInverse`, `self.drag._instant` and `self.direction` values.
+You only have to listen to slider events [slider's api](/xtendui/components/slider/api) and animate using the `self.drag._ratio`, `self.drag._ratioInverse`, `self.drag._instant` and `self.direction` values.
 
 > On absolute mode in `on.xt.slider` and `off.xt.slider` you can use `gsap.set` only if `!self.drag._instant` or if using `self.drag._ratio` or `self.drag._ratioInverse`.
 

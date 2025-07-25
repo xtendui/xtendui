@@ -24,7 +24,7 @@ The query is inside `container`, only when specifying **elements and targets wit
 
 </div>
 
-See [slider elements exclude](/components/slider/interaction#elements) for demo.
+See [slider elements exclude](/xtendui/components/slider/interaction#elements) for demo.
 
 ## Group
 
@@ -75,7 +75,7 @@ It also work on **unique mode with the same targets**.
 
 ## Class
 
-You can [style and animate](/components/toggle/animation#animation) **class names** used by the component.
+You can [style and animate](/xtendui/components/toggle/animation#animation) **class names** used by the component.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -194,7 +194,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/toggle/hash#demo--toggle-hash-group-1) to preview location hash changes.
+Try the demo [on a new page](/xtendui/demos/components/toggle/hash#demo--toggle-hash-group-1) to preview location hash changes.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/toggle/hash">
@@ -260,14 +260,14 @@ Use `jump: true` to enable clicking on a **target** to jump to them.
 
 </div>
 
-> Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/components/toggle/api#trigger).
+> Auto doesn't run if the toggle is `display: none`. Start it manually when visible using [toggle events](/xtendui/components/toggle/api#trigger).
 
 <demo>
   <demoinline src="demos/components/toggle/auto">
   </demoinline>
 </demo>
 
-Use the [api](/components/slider/api#listen) and listen to events to make auto progress indicators.
+Use the [api](/xtendui/components/slider/api#listen) and listen to events to make auto progress indicators.
 
 <demo>
   <demoinline src="demos/components/toggle/progress">
@@ -276,8 +276,8 @@ Use the [api](/components/slider/api#listen) and listen to events to make auto p
 
 ## Class Body
 
-See [overlay class body](/components/overlay/interaction#class-body) for more info.
+See [overlay class body](/xtendui/components/overlay/interaction#class-body) for more info.
 
 ## Scrollto
 
-See [scrollto toggle](/components/scrollto#toggle-integration) for more info.
+See [scrollto toggle](/xtendui/components/scrollto#toggle-integration) for more info.

@@ -48,7 +48,7 @@ If you want to **disable the component** use the `options.disabled`.
 
 With nested selectors change the `elements` and `targets` query.
 
-Example of **component disabled on desktop** with [match media](/components/toggle/api#match-media).
+Example of **component disabled on desktop** with [match media](/xtendui/components/toggle/api#match-media).
 
 <demo>
   <demoinline src="demos/components/toggle/disabled">
@@ -83,11 +83,11 @@ When you need to reinit the component when the media is loaded and the **width**
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
 | Option                  | `mediaLoaded:Boolean`                          | `false`        | Add the class `.xt-medialoaded` on img loaded             |
-| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit the component on img loaded after [Xt.medialoadedDelay](/components/global/javascript#xt-eventdelay)             |
+| Option                  | `mediaLoadedReinit:Boolean`                          | `false`        | Reinit the component on img loaded after [Xt.medialoadedDelay](/xtendui/components/global/javascript#xt-eventdelay)             |
 
 </div>
 
-See [slider media loaded](/components/slider/other#media-loaded) for demo.
+See [slider media loaded](/xtendui/components/slider/other#media-loaded) for demo.
 
 ## Reset to Current
 

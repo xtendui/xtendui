@@ -12,7 +12,7 @@ Use **Tailwind CSS** to assign size (e.g. [padding](https://tailwindcss.com/docs
 
 Use **Tailwind CSS** to assign width (e.g. [width](https://tailwindcss.com/docs/width), [max-width](https://tailwindcss.com/docs/max-width)).
 
-Use [list space](/components/list/content#space) to space content.
+Use [list space](/xtendui/components/list/content#space) to space content.
 
 <demo>
   <demoinline src="demos/components/toolbar/size">

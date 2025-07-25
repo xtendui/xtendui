@@ -48,7 +48,7 @@ If you want to **disable the component** use the `options.disabled`.
 
 With nested selectors change the `elements` and `targets` query.
 
-Example of **component disabled on desktop** with [match media](/components/tooltip/api#match-media).
+Example of **component disabled on desktop** with [match media](/xtendui/components/tooltip/api#match-media).
 
 <demo>
   <demoinline src="demos/components/tooltip/disabled">

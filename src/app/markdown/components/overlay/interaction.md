@@ -24,7 +24,7 @@ The query is inside `container`, only when specifying **elements and targets wit
 
 </div>
 
-See [slider elements exclude](/components/slider/interaction#elements) for demo.
+See [slider elements exclude](/xtendui/components/slider/interaction#elements) for demo.
 
 ## Group
 
@@ -63,9 +63,9 @@ You can **disable same group elements activation** with the option `groupElement
 
 ## Class
 
-See [toggle class](/components/toggle/interaction#class) for more info.
+See [toggle class](/xtendui/components/toggle/interaction#class) for more info.
 
-You can [style and animate](/components/overlay/animation#animation) **class names** used by the component.
+You can [style and animate](/xtendui/components/overlay/animation#animation) **class names** used by the component.
 
 <div class="xt-overflow-sub overflow-y-hidden overflow-x-scroll my-5 xt-my-auto w-full">
 
@@ -88,7 +88,7 @@ Additionally on component initialization the attribute `[data-xt-overlay-init]` 
 
 ## Quantity
 
-See [toggle quantity](/components/toggle/interaction#quantity) for more info.
+See [toggle quantity](/xtendui/components/toggle/interaction#quantity) for more info.
 
 You can specify `min` and `max` concurrent activations. The `min` option is fulfilled on initialization, the `max` options deactivates the first activated when max is reached.
 
@@ -103,7 +103,7 @@ You can specify `min` and `max` concurrent activations. The `min` option is fulf
 
 ## Event
 
-See [toggle event](/components/toggle/interaction#event) for more info.
+See [toggle event](/xtendui/components/toggle/interaction#event) for more info.
 
 You can specify **on** and **off** events for the interactions.
 
@@ -153,7 +153,7 @@ Hash attribute `data-xt-hash` can be on **elements** or **targets**, also hash a
 
 </div>
 
-Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash) to preview location hash changes.
+Try the demo [on a new page](/xtendui/demos/components/overlay/hash#demo--overlay-hash) to preview location hash changes.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/overlay/hash">
@@ -162,7 +162,7 @@ Try the demo [on a new page](/demos/components/overlay/hash#demo--overlay-hash) 
 
 ## Navigation and Loop
 
-See [toggle navigation and loop](/components/toggle/interaction#navigation-and-loop) for more info.
+See [toggle navigation and loop](/xtendui/components/toggle/interaction#navigation-and-loop) for more info.
 
 ## Class Body
 
@@ -183,4 +183,4 @@ You can set **body classes on activation**, remember to keep default `classBody`
 
 ## Scrollto
 
-See [scrollto toggle](/components/scrollto#toggle-integration) for more info.
+See [scrollto toggle](/xtendui/components/scrollto#toggle-integration) for more info.

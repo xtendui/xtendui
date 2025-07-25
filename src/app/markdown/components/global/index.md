@@ -8,13 +8,13 @@ description: "Global is a component with global styles and javascript."
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout` see [css customization](/components/global/preset#customization). Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/master/src/global.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.layout` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/global.css.js](https://github.com/xtendui/xtendui/blob/master/src/global.css.js) for default styles.
 
 ## Global Styles
 
 Add to the `html` the class `xt-html` to have this features, and add to the `body` the class `xt-body` to have this features:
 
-* **Custom body scrollbar and overflow** [components styles](/components/global#components-styles). You can disable this feature with `xt-optout-scroll` and keep others `xt-body` features.
+* **Custom body scrollbar and overflow** [components styles](/xtendui/components/global#components-styles). You can disable this feature with `xt-optout-scroll` and keep others `xt-body` features.
 
 ## Utilities Styles
 

@@ -10,7 +10,7 @@ date: "2030-10-10"
 
 Use **Tailwind CSS** to assign variant (e.g. [border-color](https://tailwindcss.com/docs/border-color), [background-color](https://tailwindcss.com/docs/background-color), [text-color](https://tailwindcss.com/docs/text-color)).
 
-Use `.xt-link` to style as button as [link](/components/link).
+Use `.xt-link` to style as button as [link](/xtendui/components/link).
 
 <demo>
   <demoinline src="demos/components/button/variant">
@@ -19,7 +19,7 @@ Use `.xt-link` to style as button as [link](/components/link).
 
 Do not assign **text styles** to inherit them from parent nodes.
 
-See [link variant](/components/link#variant) to style **links**.
+See [link variant](/xtendui/components/link#variant) to style **links**.
 
 <demo>
   <demoinline src="demos/components/button/variant-inverse">
@@ -41,7 +41,7 @@ Use **Tailwind CSS** to assign alignment (e.g. [text-align](https://tailwindcss.
 
 > To properly align horizontally also when newlines specify both [text-align](https://tailwindcss.com/docs/text-align) and [justify-content](https://tailwindcss.com/docs/justify-content).
 
-> This demos use [icon](/components/icon) see documentation for more info.
+> This demos use [icon](/xtendui/components/icon) see documentation for more info.
 
 <demo>
   <demoinline src="demos/components/button/alignment">
@@ -57,16 +57,16 @@ Use negative [margin](https://tailwindcss.com/docs/margin) on icons if the icon 
 
 ## Checks
 
-Refer to [form checks custom](/components/form/addon#checks-custom).
+Refer to [form checks custom](/xtendui/components/form/addon#checks-custom).
 
 ## Group
 
-Refer to [group](/components/group).
+Refer to [group](/xtendui/components/group).
 
 ## Nav
 
-Refer to [nav](/components/nav).
+Refer to [nav](/xtendui/components/nav).
 
 ## Toolbar
 
-Refer to [toolbar](/components/toolbar).
+Refer to [toolbar](/xtendui/components/toolbar).

@@ -8,7 +8,7 @@ description: "Overlay is a toggle plugin to show interactive content over the ma
 
 ## Styles
 
-You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay` see [css customization](/components/global/preset#customization). Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/master/src/overlay.css.js) for default styles.
+You can **customize the default styles of this component** inside `tailwind.config.js` setting `theme.extend.xtendui.overlay` see [css customization](/xtendui/components/global/preset#customization). Check [xtendui/src/overlay.css.js](https://github.com/xtendui/xtendui/blob/master/src/overlay.css.js) for default styles.
 
 > Overlays are moved to **body** to prevent **z-index** problems. Style and query overlay's content accordingly.
 
@@ -24,7 +24,7 @@ Initialize manually **within javascript** with `new Xt.Overlay(document.querySel
 
 Use this code to create a **overlay** in **self mode**.
 
-Just use the class `on` if you want to automatically open, or use the [api](/components/overlay/api).
+Just use the class `on` if you want to automatically open, or use the [api](/xtendui/components/overlay/api).
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/components/overlay/usage-self">
@@ -55,7 +55,7 @@ Use this code to create a **overlay** in **multiple mode**.
 
 ## Implementation
 
-Check out [overlay themes](/themes/overlay) for **advanced implementations**.
+Check out [overlay themes](/xtendui/themes/overlay) for **advanced implementations**.
 
 <demo>
   <div class="docs_demo_item" data-iframe="xtendui/demos/themes/implementation/overlay-implementation-v1">

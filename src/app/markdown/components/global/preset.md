@@ -18,7 +18,7 @@ The following theme values are added with the preset:
 * [border-radius](https://tailwindcss.com/docs/border-radius) `rounded-inherit` added, `rounded-sm` modified to `~3px`, `rounded-xs` added with `~2px`, for better control on small border radius.
 * [cursor](https://tailwindcss.com/docs/cursor) `cursor-none` added.
 * [outline](https://tailwindcss.com/docs/outline) `outline-browser` added.
-* Added new settings see [animation preset](/components/animation/preset).
+* Added new settings see [animation preset](/xtendui/components/animation/preset).
 
 ## Variants
 
@@ -26,11 +26,11 @@ Xtend UI add **custom Tailwind CSS variants**.
 
 - added variants to style **activation classes** with `off:`, `group-off:`, `on:`, `group-on:`, `in:`, `group-in:`, `out:`, `group-out:`, `dir-before:`, `group-dir-before:`, `dir-after:`, `group-dir-after:`, `done:`, `group-done:`
 
-- added variants to style [form validation after form submit](/components/form/addon#validation) with `valid-submit:` and `invalid-submit:`.
+- added variants to style [form validation after form submit](/xtendui/components/form/addon#validation) with `valid-submit:` and `invalid-submit:`.
 
 - added `group-active:` variant.
 
-> To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/components/global/javascript#xt-on-and-xt-off) or **toggle components** ([toggle](/components/toggle), [drop](/components/drop), [overlay](/components/overlay), [slider](/components/slider), [tooltip](/components/tooltip)).
+> To **show/hide and animate a node with activation classes** you need to use [Xt.on and Xt.off](/xtendui/components/global/javascript#xt-on-and-xt-off) or **toggle components** ([toggle](/xtendui/components/toggle), [drop](/xtendui/components/drop), [overlay](/xtendui/components/overlay), [slider](/xtendui/components/slider), [tooltip](/xtendui/components/tooltip)).
 
 ## Customization
 
