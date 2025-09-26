@@ -2081,6 +2081,8 @@ export class ToggleInit {
    */
   _queueDelayDone({ actionCurrent, actionOther, obj, el, type, skipSame, skipQueue = false } = {}) {
     const self = this
+    // fix in _queueAnim and _queueAnimDone self.initial is already false if queue: options.false because already called _queueDone
+    self._initialAnim = self.initial
     // check if not already running or if force
     if (actionCurrent === 'In' && (self._checkOnRunning({ obj }) || obj.elements.force)) {
       // only one time and if last element
@@ -2575,10 +2577,10 @@ export class ToggleInit {
     if (options.scrollto) {
       if (actionCurrent === 'In') {
         const scrollto = ({ el }) => {
+          const instant = self._initialAnim
           // using data-xt-hash or options.min or .on and scrollto should not scroll on init
-          if (!self.initial || options.scrolltoInit) {
+          if (!instant || options.scrolltoInit) {
             // Xt.ready complete and raf to be right after page refresh
-            const instant = self.initial
             Xt.ready({
               state: 'complete',
               func: () => {
