@@ -1,3 +1,11 @@
+## [2.5.2](https://github.com/xtendui/xtendui/compare/v2.5.1...v2.5.2) (2025-10-01)
+
+
+### Bug Fixes
+
+* **js:** fixed initial scroll when using options.scrollto and options.queue false ([43f6d66](https://github.com/xtendui/xtendui/commit/43f6d66b674d1b43df50b4b91f550c3f1de20338))
+* **slider:** removed content-visibility not needed already using display none ([51e16ec](https://github.com/xtendui/xtendui/commit/51e16ec51977d644968bf5b8546abb08c1d676a4))
+
 ## [2.5.1](https://github.com/xtendui/xtendui/compare/v2.5.0...v2.5.1) (2025-07-25)
 
 
