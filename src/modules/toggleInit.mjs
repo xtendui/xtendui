@@ -3584,7 +3584,7 @@ export class ToggleInit {
     const keydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/${self.ns}`)
     el.removeEventListener('keydown', keydownHandler)
     // documentKeydown
-    const documentKeydownHandler = Xt.dataStorage.get(el, `keydown/ariakeyboard/document/${self.ns}`)
+    const documentKeydownHandler = Xt.dataStorage.get(document, `keydown/ariakeyboard/document/${self.ns}`)
     document.removeEventListener('keydown', documentKeydownHandler)
   }
 

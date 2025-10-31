@@ -43,7 +43,10 @@ Additionally you have to pass functions to `options.formatData` to populate insi
 | Option                    | `locateText:String`                          | `'Locate'`        | Locate text for input            |
 | Option                    | `submitDelay:Number`                          | `250`        | Delay before each submit to show loader before js loop stops the render            |
 | Option                    | `elements.loader:Query`                          | `'[data-xt-googlelocator-loader]'`        | Container query for loader             |
-| Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Container query for searh input             |
+| Option                    | `elements.searchInput:Query`                          | `'[data-xt-googlelocator-search-input]'`        | Container query for search input             |
+| Option                    | `elements.autosuggestContainer:Query`                          | `'[data-xt-googlelocator-autosuggest-container]'`        | Container query for autosuggest container             |
+| Option                    | `elements.autosuggestAction:Query`                          | `'[data-xt-googlelocator-autosuggest-action]'`        | Container query for autosuggest action             |
+| Option                    | `elements.autosuggestTemplate:Query`                          | `'[data-xt-googlelocator-autosuggest-template]'`        | Container query for autosuggest items template             |
 | Option                    | `elements.searchBtn:Query`                          | `'[data-xt-googlelocator-search-btn]'`        | Container query for search button             |
 | Option                    | `elements.map:Query`                          | `'[data-xt-googlelocator-map]'`        | Container query for google map             |
 | Option                    | `elements.itemsTemplate:Query`                          | `'[data-xt-googlelocator-items-template]'`        | Container query for template cloned for maps items             |
@@ -69,7 +72,6 @@ events: {
 },
 // autocomplete
 autocompleteOptions: false,
-autocompleteServiceOptions: false,
 // map
 map: {
   mapId: null,
