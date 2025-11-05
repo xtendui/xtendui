@@ -1,3 +1,10 @@
+## [2.5.3](https://github.com/xtendui/xtendui/compare/v2.5.2...v2.5.3) (2025-11-05)
+
+
+### Bug Fixes
+
+* fake fix commit to test deploy ([8caa064](https://github.com/xtendui/xtendui/commit/8caa064cc377fbb4ebb53c01e345b07dc3516c32))
+
 ## [2.5.2](https://github.com/xtendui/xtendui/compare/v2.5.1...v2.5.2) (2025-10-01)
 
 
