@@ -19,6 +19,8 @@ const html = /* HTML */ `
                         class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputGray()}"
                         aria-label="Search"
                         placeholder="Search"
+                        autocomplete="nope"
+                        data-1p-ignore="true"
                         data-xt-googlelocator-search-input />
                       <button
                         type="button"
