@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/xtendui/xtendui/compare/v2.5.3...v2.6.0) (2025-12-02)
+
+
+### Features
+
+* **googlelocator:** refactor googlelocator from places.Autocomplete to places.AutocompleteSuggestion ([98fae15](https://github.com/xtendui/xtendui/commit/98fae1504eadbd094429b49e03c61974bb4f6cbd))
+
 ## [2.5.3](https://github.com/xtendui/xtendui/compare/v2.5.2...v2.5.3) (2025-11-05)
 
 
