@@ -297,6 +297,6 @@ export const classes = {
       dimension * 2
     } ${
       dimension * 2
-    }"><circle class="stroke-current origin-center relative${classes}" fill="none" stroke-width="30" cx="${dimension}" cy="${dimension}" r="${radius}" stroke-dasharray="${dash}" stroke-dashoffset="${dash}" pathLength="${dash}"/></svg>`
+    }"><circle class="stroke-current origin-center relative ${classes}" fill="none" stroke-width="30" cx="${dimension}" cy="${dimension}" r="${radius}" stroke-dasharray="${dash}" stroke-dashoffset="${dash}" pathLength="${dash}"/></svg>`
   },
 }

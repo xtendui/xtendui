@@ -38,6 +38,8 @@ class Googlelocator {
   info
   cluster
   searchInput
+  autosuggestContainer
+  autosuggestTemplate
   search
   searchBtn
   filters
@@ -89,10 +91,16 @@ Googlelocator.optionsDefault = {
   searchRadius: 25000,
   locateText: 'Locate',
   submitDelay: 250,
+  a11y: {
+    items: 'a, button',
+  },
   // element
   elements: {
     loader: '[data-xt-googlelocator-loader]',
     searchInput: '[data-xt-googlelocator-search-input]',
+    autosuggestContainer: '[data-xt-googlelocator-autosuggest-container]',
+    autosuggestAction: '[data-xt-googlelocator-autosuggest-action]',
+    autosuggestTemplate: '[data-xt-googlelocator-autosuggest-template]',
     searchBtn: '[data-xt-googlelocator-search-btn]',
     map: '[data-xt-googlelocator-map]',
     itemsTemplate: '[data-xt-googlelocator-items-template]',
@@ -112,7 +120,6 @@ Googlelocator.optionsDefault = {
   },
   // autocomplete
   autocompleteOptions: false,
-  autocompleteServiceOptions: false,
   // map
   map: {
     center: false,

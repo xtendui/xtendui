@@ -57,13 +57,29 @@ export class GooglelocatorInit {
     // init
     self.mapElement = self.container.querySelector(options.elements.map)
     self.map = new google.maps.Map(self.mapElement, options.map)
+    self.autosuggestContainer = self.container.querySelector(options.elements.autosuggestContainer)
+    self.autosuggestTemplate = self.container.querySelector(options.elements.autosuggestTemplate)
     self.searchInput = self.container.querySelector(options.elements.searchInput)
-    self.search = new google.maps.places.Autocomplete(self.searchInput, self.options.autocompleteOptions)
-    const searchHandler = Xt.dataStorage.put(self.searchInput, `keypress/${self.ns}`, self._searchSubmit.bind(self))
+    const searchHandler = Xt.dataStorage.put(
+      self.searchInput,
+      `keypress/${self.ns}`,
+      self._searchKeyboardEvent.bind(self),
+    )
     self.searchInput.addEventListener('keypress', searchHandler)
+    const searchChangeHandler = Xt.dataStorage.put(
+      self.searchInput,
+      `input focus/${self.ns}`,
+      self._searchAutocompleteOn.bind(self),
+    )
+    self.searchInput.addEventListener('input', searchChangeHandler)
+    self.searchInput.addEventListener('focus', searchChangeHandler)
+    if (self.autosuggestContainer) {
+      const searchOutHandler = Xt.dataStorage.put(self.container, `focusout/${self.ns}`, self._searchClose.bind(self))
+      self.container.addEventListener('focusout', searchOutHandler)
+    }
     // submit triggers places autocomplete
     self.searchBtn = self.container.querySelector(options.elements.searchBtn)
-    const submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self._searchClick.bind(self))
+    const submitHandler = Xt.dataStorage.put(self.searchBtn, `click/${self.ns}`, self._searchClickEvent.bind(self))
     self.searchBtn.addEventListener('click', submitHandler)
     // minimum zoom
     if (options.map.zoomMin) {
@@ -75,8 +91,6 @@ export class GooglelocatorInit {
         })
       })
     }
-    // search place
-    google.maps.event.addListener(self.search, 'place_changed', self._placeChanged.bind(self))
     // info
     if (options.infoWindow) {
       self.info = new google.maps.InfoWindow(options.infoWindow)
@@ -162,96 +176,118 @@ export class GooglelocatorInit {
   //
 
   /**
-   * placeChanged
+   * _searchAutocompleteOn
    */
-  _placeChanged() {
+  async _searchAutocompleteOn() {
+    const self = this
+    const options = self.options
+    // logic
+    if (self._controller) self._controller.abort() // cancel previous fetch
+    self._controller = new AbortController()
+    if (!self._sessionToken) {
+      self._sessionToken = new google.maps.places.AutocompleteSessionToken()
+    }
+    if (self.searchInput.value.trim() === '') {
+      self._searchAutocompleteOff()
+      return
+    }
+    const { suggestions } = await google.maps.places.AutocompleteSuggestion.fetchAutocompleteSuggestions({
+      input: self.searchInput.value,
+      sessionToken: self._sessionToken,
+      ...self.options.autocompleteOptions,
+    })
+    if (suggestions.length) {
+      self.autosuggestContainer.innerHTML = ''
+      self._searchAutocompleteOff()
+      Xt.on({
+        el: self.autosuggestContainer,
+      })
+      suggestions.forEach(suggestion => {
+        if (suggestion.placePrediction) {
+          const el = Xt.node({ str: self.autosuggestTemplate.innerHTML })
+          options.formatData.autosuggest(self, suggestion, el)
+          self.autosuggestContainer.append(el)
+          // click event
+          el.querySelector(options.elements.autosuggestAction).addEventListener('click', () => {
+            self._searchAutocompleteOff()
+            self._searchSubmit({ suggestion })
+          })
+          // a11y
+          const documentKeydownHandler = Xt.dataStorage.put(
+            document,
+            `keydown/ariakeyboard/document/${self.ns}`,
+            self._eventA11yDocumentKeydown.bind(self),
+          )
+          document.removeEventListener('keydown', documentKeydownHandler)
+          document.addEventListener('keydown', documentKeydownHandler)
+        }
+      })
+    } else {
+      self._searchAutocompleteOff()
+    }
+  }
+
+  /**
+   * _searchAutocompleteOff
+   */
+  _searchAutocompleteOff() {
+    const self = this
+    // logic
+    Xt.off({
+      el: self.autosuggestContainer,
+    })
+    // a11y
+    const documentKeydownHandler = Xt.dataStorage.get(document, `keydown/ariakeyboard/document/${self.ns}`)
+    document.removeEventListener('keydown', documentKeydownHandler)
+  }
+
+  /**
+   * _searchSubmit
+   * @param {Object} params
+   * @param {Object} params.suggestion
+   */
+  async _searchSubmit({ suggestion } = {}) {
     const self = this
     const options = self.options
     // disabled
     if (self.disabled) {
       return
     }
+    // logic
+    const { place } = await suggestion.placePrediction.toPlace().fetchFields({
+      fields: ['displayName', 'location', 'viewport', 'formattedAddress'],
+    })
+    self.searchInput.value = suggestion.placePrediction.text.text
     // search place
-    let place = self.search.getPlace()
-    if (place && place.name && place.name !== '') {
-      if (place.geometry) {
-        // place
-        self.position = place.geometry.location
-        self.viewport = place.geometry.viewport
+    if (place && place.displayName && place.displayName !== '') {
+      if (place.location) {
+        self.position = place.location
+        self.viewport = place.viewport
         self.radius = options.searchRadius
         self.submit()
-        return
       }
     }
-    // locate prediction
-    if (self._locateCache && self._locateCache.value === self.searchInput.value) {
-      self.position = self._locateCache.position
-      self.viewport = null
-      self.radius = options.searchRadius
-      self.submit()
-      return
-    }
-    // cached prediction
-    if (self._predictionCache && self._predictionCache.value === self.searchInput.value) {
-      self.position = self._predictionCache.position
-      self.viewport = self._predictionCache.viewport
-      self.radius = options.searchRadius
-      self.submit()
-      return
-    }
-    // new prediction
-    new google.maps.places.AutocompleteService().getPlacePredictions(
-      { input: self.searchInput.value, ...self.options.autocompleteServiceOptions },
-      results => {
-        if (results && results.length) {
-          const placesPreview = document.createElement('div')
-          placesPreview.classList.add('hidden')
-          new google.maps.places.PlacesService(placesPreview).getDetails(
-            { reference: results[0].reference },
-            results => {
-              place = results
-              self.searchInput.value = place.formatted_address
-              self.position = place.geometry.location
-              self.viewport = place.geometry.viewport
-              self.radius = options.searchRadius
-              self._predictionCache = {
-                value: self.searchInput.value,
-                position: self.position,
-                viewport: self.viewport,
-              }
-              self.submit()
-              placesPreview.remove()
-            },
-          )
-        } else {
-          self.locations = []
-          self._populateItems()
-          self.container.classList.add('noplace')
-          self.container.classList.remove('empty')
-          self.container.classList.remove('found')
-          self.container.classList.remove('error')
-        }
-      },
-    )
   }
 
   /**
-   * infoClose
-   */
-  _infoClose() {
-    const self = this
-    // logic
-    const old = self.itemsContainer.querySelector('[data-xt-index].on')
-    if (old) {
-      Xt.off({ el: old })
-    }
-  }
-
-  /**
-   * searchSubmit
+   * _searchClose
    * @param {Event} e
    */
-  _searchSubmit(e) {
+  _searchClose(e) {
+    const self = this
+    // logic
+    setTimeout(() => {
+      if (!e?.relatedTarget || !self.container.contains(e.relatedTarget)) {
+        self._searchAutocompleteOff()
+      }
+    }, 0)
+  }
+
+  /**
+   * _searchKeyboardEvent
+   * @param {Event} e
+   */
+  _searchKeyboardEvent(e) {
     const self = this
     const options = self.options
     // disabled
@@ -263,20 +299,24 @@ export class GooglelocatorInit {
     if (key === 'Enter') {
       // prevent form submit
       e.preventDefault()
+      // blur input
+      self.searchInput.blur()
       // reset map and submit
       if (self.searchInput.value === '') {
         self.map.setCenter(options.map.center)
         self.map.setZoom(options.map.zoom)
         self._submitCurrent({ empty: true })
+      } else {
+        self._searchFirst()
       }
     }
   }
 
   /**
-   * searchClick
+   * _searchClickEvent
    * @param {Event} e
    */
-  _searchClick(e) {
+  _searchClickEvent(e) {
     const self = this
     const options = self.options
     // disabled
@@ -291,9 +331,38 @@ export class GooglelocatorInit {
       self.map.setZoom(options.map.zoom)
       self._submitCurrent({ empty: true })
     } else {
-      // submit triggers places autocomplete
-      google.maps.event.trigger(self.search, 'place_changed')
+      self._searchFirst()
     }
+  }
+
+  /**
+   * _searchFirst
+   */
+  _searchFirst() {
+    const self = this
+    const options = self.options
+    // logic
+    self._searchClose()
+    const firstResult = self.autosuggestContainer.querySelector(options.elements.autosuggestAction)
+    if (firstResult) {
+      firstResult.click()
+      return
+    }
+    // locate prediction
+    if (self._locateCache && self._locateCache.value === self.searchInput.value) {
+      self.position = self._locateCache.position
+      self.viewport = null
+      self.radius = options.searchRadius
+      self.submit()
+      return
+    }
+    // no results
+    self.locations = []
+    self._populateItems()
+    self.container.classList.add('noplace')
+    self.container.classList.remove('empty')
+    self.container.classList.remove('found')
+    self.container.classList.remove('error')
   }
 
   /**
@@ -535,6 +604,18 @@ export class GooglelocatorInit {
   }
 
   /**
+   * infoClose
+   */
+  _infoClose() {
+    const self = this
+    // logic
+    const old = self.itemsContainer.querySelector('[data-xt-index].on')
+    if (old) {
+      Xt.off({ el: old })
+    }
+  }
+
+  /**
    * submitCurrent
    * @param {Object} params
    * @param {Boolean} params.empty
@@ -630,6 +711,59 @@ export class GooglelocatorInit {
   }
 
   //
+  // a11y
+  //
+
+  /**
+   * _eventA11yDocumentKeydown
+   */
+  _eventA11yDocumentKeydown(e) {
+    const self = this
+    const options = self.options
+    // disabled
+    if (self.disabled) {
+      return
+    }
+    // logic
+    const key = e.key
+    const prevKey = options.a11y.vertical ? 'ArrowLeft' : 'ArrowUp'
+    const nextKey = options.a11y.vertical ? 'ArrowRight' : 'ArrowDown'
+    // navigate items
+    if (options.a11y.items) {
+      let item
+      const items = []
+      items.push(...self.autosuggestContainer.querySelectorAll(options.a11y.items))
+      if (items.length) {
+        const current = items.indexOf(document.activeElement)
+        if (key === prevKey) {
+          if (current === -1) {
+            item = items[items.length - 1]
+          } else {
+            const prev = (current - 1 + items.length) % items.length
+            item = items[prev]
+          }
+          // prevent page scroll
+          e.preventDefault()
+        } else if (key === nextKey) {
+          if (current === -1) {
+            item = items[0]
+          } else {
+            const next = (current + 1) % items.length
+            item = items[next]
+          }
+          // prevent page scroll
+          e.preventDefault()
+        }
+        if (item) {
+          // focus
+          item.focus()
+          return
+        }
+      }
+    }
+  }
+
+  //
   // status
   //
 
@@ -685,6 +819,11 @@ export class GooglelocatorInit {
     // events
     const searchHandler = Xt.dataStorage.get(self.searchInput, `keypress/${self.ns}`)
     self.searchInput.removeEventListener('keypress', searchHandler)
+    const searchChangeHandler = Xt.dataStorage.get(self.searchInput, `input focus/${self.ns}`)
+    self.searchInput.removeEventListener('input', searchChangeHandler)
+    self.searchInput.removeEventListener('focus', searchChangeHandler)
+    const searchOutHandler = Xt.dataStorage.get(self.container, `focusout/${self.ns}`)
+    self.container.removeEventListener('focusout', searchOutHandler)
     const submitHandler = Xt.dataStorage.get(self.searchBtn, `click/${self.ns}`)
     self.searchBtn.removeEventListener('click', submitHandler)
     if (self.locateElement) {
@@ -695,8 +834,6 @@ export class GooglelocatorInit {
       const repeatHandler = Xt.dataStorage.get(self.repeatElement, `click/${self.ns}`)
       self.repeatElement.removeEventListener('click', repeatHandler)
     }
-    // search place
-    google.maps.event.removeListener(self.search, 'place_changed', self._placeChanged.bind(self))
     // info
     if (options.infoWindow) {
       google.maps.event.removeListener(self.info, 'closeclick', self._infoClose.bind(self))
