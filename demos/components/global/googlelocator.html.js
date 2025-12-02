@@ -11,27 +11,46 @@ const html = /* HTML */ `
           <form class="text-sm">
             <div class="xt-row xt-row-x-6 xt-row-y-4">
               <div class="w-full">
-                <div class="xt-list flex-nowrap">
-                  <div class="inline-flex flex-auto">
-                    <input
-                      type="text"
-                      class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputGray()}"
-                      aria-label="Search"
-                      placeholder="Search"
-                      data-xt-googlelocator-search-input />
-                    <button
-                      type="button"
-                      class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                      data-xt-googlelocator-locate-btn>
-                      ${classes.iconLocate({ classes: 'text-xl -my-1' })}
-                    </button>
-                    <button
-                      type="button"
-                      class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
-                      data-xt-googlelocator-search-btn>
-                      ${classes.iconSearch({ classes: 'text-xl -my-1' })}
-                    </button>
+                <div class="relative">
+                  <div class="xt-list flex-nowrap">
+                    <div class="inline-flex flex-auto">
+                      <input
+                        type="text"
+                        class="${classes.input()} rounded-l${classes.groupButtonRadius()} ${classes.inputGray()}"
+                        aria-label="Search"
+                        placeholder="Search"
+                        autocomplete="nope"
+                        data-1p-ignore="true"
+                        data-xt-googlelocator-search-input />
+                      <button
+                        type="button"
+                        class="xt-button ${classes.buttonMd()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+                        data-xt-googlelocator-locate-btn>
+                        ${classes.iconLocate({ classes: 'text-xl -my-1' })}
+                      </button>
+                      <button
+                        type="button"
+                        class="xt-button ${classes.buttonMd()} rounded-r${classes.groupButtonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}"
+                        data-xt-googlelocator-search-btn>
+                        ${classes.iconSearch({ classes: 'text-xl -my-1' })}
+                      </button>
+                    </div>
                   </div>
+
+                  <ul
+                    class="absolute z-drop top-full inset-x-0 bg-white shadow-lg off:hidden out:pointer-events-none transition opacity-0 on:opacity-100"
+                    data-xt-duration="500"
+                    data-xt-googlelocator-autosuggest-container></ul>
+                  <template data-xt-googlelocator-autosuggest-template>
+                    <li>
+                      <button
+                        type="button"
+                        class="xt-button w-full justify-start text-left leading-tight py-2.5 px-4 border-t border-gray-300 transition hover:bg-gray-100"
+                        data-xt-googlelocator-autosuggest-action>
+                        <span data-xt-populate></span>
+                      </button>
+                    </li>
+                  </template>
                 </div>
               </div>
 

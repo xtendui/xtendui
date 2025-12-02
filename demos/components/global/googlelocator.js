@@ -19,8 +19,7 @@ const initGooglelocator = ({ ref }) => {
       infoWindowMarkerResultClick: true,
       infoWindowMarkerClick: true,
     },
-    //autocompleteOptions: { types: ['(regions)'] }, // search autocomplete options
-    //autocompleteServiceOptions: { types: ['(regions)'] }, // search autocomplete service options
+    //autocompleteOptions: { includedPrimaryTypes: ['premise', 'subpremise', 'street_address', 'route'] }, // search autocomplete options
     map: {
       mapId: 'customMapId',
       center: { lat: 40, lng: -74 },
@@ -128,6 +127,20 @@ const initGooglelocator = ({ ref }) => {
       },
       info: (self, loc, el) => {
         return el.outerHTML
+      },
+      autosuggest: (self, suggestion, el) => {
+        // highlight self.searchInput.value
+        const safePattern = self.searchInput.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        const regex = new RegExp(safePattern, 'gi')
+        let text = suggestion.placePrediction.text.text
+        const matchableText = text.replace(/,/g, '') // search ignoring commas etc..
+        const match = matchableText.match(regex)
+        if (match) {
+          const highlightedPattern = new RegExp(match[0].split('').join(',?'), 'gi')
+          text = text.replace(highlightedPattern, '<strong>$&</strong>')
+        }
+        // populate
+        el.querySelector('[data-xt-populate]').innerHTML = text
       },
     },
     markers: [
