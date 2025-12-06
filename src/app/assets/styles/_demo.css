@@ -72,8 +72,11 @@ pre {
   max-height: 21rem;
 }
 
-.docs_demo {
+.docs_demo_container {
   @apply my-5 xt-my-auto;
+}
+
+.docs_demo {
   border-radius: 6px;
   pre {
     border-width: 0 !important;
