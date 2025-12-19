@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/xtendui/xtendui/compare/v2.6.0...v2.6.1) (2025-12-19)
+
+
+### Bug Fixes
+
+* bump copyright year ([1d7316b](https://github.com/xtendui/xtendui/commit/1d7316bb30907df01453830494dfe42decfa2dd3))
+
 # [2.6.0](https://github.com/xtendui/xtendui/compare/v2.5.3...v2.6.0) (2025-12-02)
 
 
