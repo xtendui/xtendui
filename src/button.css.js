@@ -1,6 +1,6 @@
 /*!
  * Xtend UI (https://xtendui.github.io/xtendui/)
- * @copyright (c) 2017-2025 Riccardo Caroli
+ * @copyright (c) 2017-2026 Riccardo Caroli
  * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
  */
 
