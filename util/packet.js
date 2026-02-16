@@ -32,10 +32,10 @@ Xtend UI is a powerful frontend library of Tailwind CSS components enhanced by v
 
 ## Demos Source Code Extraction
 
-In the [website](https://xtendui.github.io/xtendui/), demos have source code stored in hidden scripts:
+In the [website](https://xtendui.github.io/xtendui/), demos have source code generated in html:
 - **Location:** '<script type="text/plain" class="docs_demo_source">'
 - **Language:** Indicated by 'data-lang' (html, css, js).
-- **External Files:** If 'data-fetch' is present, the full source is at 'https://xtendui.github.io' + the attribute value.
+- **External source code:** If 'data-fetch' is present, the full source is at 'https://xtendui.github.io' + the attribute value.
 
 ## Documentation\n`
   const files = await glob('src/app/markdown/**/*.md', { ignore: ['src/**/hidden/**'] })
