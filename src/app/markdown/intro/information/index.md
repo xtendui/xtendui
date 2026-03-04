@@ -56,6 +56,11 @@ Xtend UI is a framework agnostic vanilla javascript library, you can use inside 
 
 Read our [contributing docs](https://github.com/xtendui/xtendui/blob/master/.github/CONTRIBUTING.md) before submitting a pull request.
 
+## LLMS
+
+- [llms.txt](https://github.com/xtendui/xtendui/blob/master/llms.txt)
+- [llms-full.txt](https://github.com/xtendui/xtendui/blob/master/llms-full.txt)
+
 ## Documentation
 
 * Clone the repository `git clone https://github.com/xtendui/xtendui.git`
