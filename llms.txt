@@ -1,19 +1,25 @@
 # [Xtendui](https://xtendui.github.io/xtendui/)
 
-Xtend UI is a powerful frontend library of Tailwind CSS components enhanced by vanilla js. It helps you build interfaces with advanced interactions and animations.
-
-- [intro](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/README.md)
-- [setup](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/SETUP.md)
-- [features](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/features/index.md)
-
 ## Demos Source Code Extraction
 
 In the [website](https://xtendui.github.io/xtendui/), demos have source code generated in html:
 - **Location:** '<script type="text/plain" class="docs_demo_source">'
 - **Language:** Indicated by 'data-lang' (html, css, js).
-- **External source code:** If 'data-fetch' is present, the full source is at 'https://xtendui.github.io' + the attribute value.
+- **External source code:** If 'data-fetch' is present in the website source, the full source is at 'https://xtendui.github.io' + the attribute value.
+- **Demos in .md files:** If 'demos: []' is present, the full demos is at 'https://xtendui.github.io/xtendui/demos/' + the demo string inside demos array.
 
-## Documentation
+# Intro
+
+- [README](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/README.md)
+- [intro/brand](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/brand/index.md)
+- [intro/features](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/features/index.md)
+- [intro/frameworks](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/frameworks/index.md)
+- [intro](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/index.md)
+- [intro/information](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/information/index.md)
+- [intro/setup](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/setup/index.md)
+
+# Docs
+
 - [components/animation](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/components/animation/index.md)
 - [components/animation/preset](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/components/animation/preset.md)
 - [components/button/content](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/components/button/content.md)
@@ -112,12 +118,6 @@ In the [website](https://xtendui.github.io/xtendui/), demos have source code gen
 - [components/typography/addon](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/components/typography/addon.md)
 - [components/typography/content](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/components/typography/content.md)
 - [components/typography](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/components/typography/index.md)
-- [intro/brand](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/brand/index.md)
-- [intro/features](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/features/index.md)
-- [intro/frameworks](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/frameworks/index.md)
-- [intro](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/index.md)
-- [intro/information](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/information/index.md)
-- [intro/setup](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/intro/setup/index.md)
 - [themes/animation/collapse-animation-v1](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/themes/animation/collapse-animation-v1.md)
 - [themes/animation/electric-animation-v1](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/themes/animation/electric-animation-v1.md)
 - [themes/animation/ellipse-animation-v1](https://raw.githubusercontent.com/xtendui/xtendui/refs/heads/master/src/app/markdown/themes/animation/ellipse-animation-v1.md)
