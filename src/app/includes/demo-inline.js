@@ -15,21 +15,21 @@ function DemoInline(props) {
     // must be first try/catch or serve error
     require(`../../../public/${src}.js`).default
     // eslint-disable-next-line no-empty
-  } catch (ex) {}
+  } catch {}
   try {
     hasCss = require.resolve(`../../../public/${src}.css`)
     // eslint-disable-next-line no-empty
-  } catch (ex) {}
+  } catch {}
   try {
     // must be first try/catch or serve error
     hasJs = require.resolve(`../../../public/${src}.js`)
     // eslint-disable-next-line no-empty
-  } catch (ex) {}
+  } catch {}
   try {
     // must be first try/catch or serve error
     hasJsx = require.resolve(`../../../public/${src}.jsx`)
     // eslint-disable-next-line no-empty
-  } catch (ex) {}
+  } catch {}
   // react
   const Demo = hasJsx ? require(`../../../public/${src}.jsx`).default : null
   /* @TODO lazy
