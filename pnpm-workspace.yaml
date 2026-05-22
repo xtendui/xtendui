@@ -1,0 +1,5 @@
+allowBuilds:
+  core-js: true
+  cypress: true
+  sharp: true
+  unrs-resolver: true
