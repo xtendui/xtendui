@@ -1173,6 +1173,7 @@ describe('xtendui/demos/components/tooltip/swap-click', function () {
       .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
       .get(self.elements[0])
       .trigger('mouseenter')
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
@@ -1199,7 +1200,7 @@ describe('xtendui/demos/components/tooltip/swap-click', function () {
       })
       .get(self.elements[0])
       .trigger('mouseleave')
-      .frame()
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
@@ -1241,6 +1242,7 @@ describe('xtendui/demos/components/tooltip/swap-toggle', function () {
       .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
       .get(self.elements[0])
       .trigger('mouseenter')
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
@@ -1267,6 +1269,7 @@ describe('xtendui/demos/components/tooltip/swap-toggle', function () {
       })
       .get(self.elements[0])
       .trigger('mouseleave')
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
@@ -1308,6 +1311,7 @@ describe('xtendui/demos/components/tooltip/prevent-overflow', function () {
       .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
       .get(self.elements[0])
       .trigger('mouseenter')
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].offsetWidth).to.be.closeTo(189, 10)
         expect(self.targets[0].offsetHeight).to.be.closeTo(44, 10)
