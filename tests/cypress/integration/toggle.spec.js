@@ -1163,16 +1163,19 @@ describe('xtendui/demos/components/tooltip/swap-click', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
-      self = selfPromise
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition: wait for init before Xt.get()
+      .then(() => {
+        return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+          self = selfPromise
+        })
+      })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
-    cy.get(container)
-      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
-      .get(self.elements[0])
+    cy.get(self.elements[0])
       .trigger('mouseenter')
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
@@ -1199,7 +1202,7 @@ describe('xtendui/demos/components/tooltip/swap-click', function () {
       })
       .get(self.elements[0])
       .trigger('mouseleave')
-      .frame()
+      .wait(750) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(false)
         expect(self.targets[0].classList.contains('hidden')).to.equal(false)
@@ -1231,15 +1234,17 @@ describe('xtendui/demos/components/tooltip/swap-toggle', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
-      self = selfPromise
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition: wait for init before Xt.get()
+      .then(() => {
+        return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+          self = selfPromise
+        })
+      })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
-    cy.get(container)
-      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
-      .get(self.elements[0])
+    cy.get(self.elements[0])
       .trigger('mouseenter')
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
@@ -1340,9 +1345,13 @@ describe('xtendui/demos/components/overlay/animation-noqueue', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
-      self = selfPromise
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-overlay-init', '') // racecondition: wait for init before Xt.get()
+      .then(() => {
+        return Xt.get({ name: 'xt-overlay', el: container }).then(selfPromise => {
+          self = selfPromise
+        })
+      })
   })
 
   beforeEach(function () {
@@ -1403,9 +1412,13 @@ describe('xtendui/demos/components/drop/reset-to-current', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-drop', el: container }).then(selfPromise => {
-      self = selfPromise
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-drop-init', '') // racecondition: wait for init before Xt.get()
+      .then(() => {
+        return Xt.get({ name: 'xt-drop', el: container }).then(selfPromise => {
+          self = selfPromise
+        })
+      })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
