@@ -558,6 +558,7 @@ describe('xtendui/demos/components/scrollto/toggle', function () {
         })
       })
       .go(-1)
+      .wait(1000) // after animation
       .then(() => {
         expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
         expect(self.targets[0].classList.contains('on')).to.equal(false)
@@ -570,6 +571,7 @@ describe('xtendui/demos/components/scrollto/toggle', function () {
         })
       })
       .go(1)
+      .wait(1000) // after animation
       .then(() => {
         expect(doc.scrollingElement.scrollTop).to.closeTo(545, 150)
         expect(self.targets[0].classList.contains('on')).to.equal(true)
