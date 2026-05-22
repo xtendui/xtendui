@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useLayoutEffect } from 'react'
+import { useLayoutEffect } from 'react'
 
 export default function Layout({ children }) {
   // no useEffect cause bugs demos hash

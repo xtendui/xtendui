@@ -16,42 +16,51 @@ export default function Structure({ page, children }) {
   const pathname = usePathname()
   const params = useParams()
 
-  page.post = page.posts.filter(x => x.slug === params.slug?.join('/'))[0]?.post
+  const post = page.posts.filter(x => x.slug === params.slug?.join('/'))[0]?.post
 
   const category = []
-  for (const post of page.posts) {
-    const title = post.post.frontmatter.category
+  for (const p of page.posts) {
+    const title = p.post.frontmatter.category
     if (title) {
       let object = category.filter(x => x.title === title)
       if (!object.length) {
         object = {}
         object.title = title
-        object.type = post.post.frontmatter.type
+        object.type = p.post.frontmatter.type
         object.posts = []
         category.push(object)
       } else {
         object = object[0]
       }
-      object.posts.push(post)
+      object.posts.push(p)
     }
   }
   for (const cat of category) {
     cat.posts = cat.posts.sort(postSort)
   }
-  page.categories.category = category
 
-  if (page.post) {
-    page.categories.category = page.categories.category
-      .filter(x => x.type === page.post.frontmatter.type)
+  let filteredCategory = category
+  let postsAdiacentPosts = page.postsAdiacent.posts
+
+  if (post) {
+    filteredCategory = category
+      .filter(x => x.type === post.frontmatter.type)
       .sort((a, b) => a.title.localeCompare(b.title))
-    page.postsAdiacent.posts = page.posts
+    postsAdiacentPosts = page.posts
       .filter(
         x =>
-          x.post.frontmatter.type === page.post.frontmatter.type &&
-          x.post.frontmatter.category === page.post.frontmatter.category &&
-          x.post.frontmatter.parent === page.post.frontmatter.parent,
+          x.post.frontmatter.type === post.frontmatter.type &&
+          x.post.frontmatter.category === post.frontmatter.category &&
+          x.post.frontmatter.parent === post.frontmatter.parent,
       )
       .sort(postSort)
+  }
+
+  const pageData = {
+    ...page,
+    post,
+    categories: { ...page.categories, category: filteredCategory },
+    postsAdiacent: { ...page.postsAdiacent, posts: postsAdiacentPosts },
   }
 
   useLayoutEffect(() => {
@@ -103,10 +112,10 @@ export default function Structure({ page, children }) {
         </div>
       ) : (
         <div className="docs_site-wrapper">
-          <Header page={page} />
+          <Header page={pageData} />
           <div className="docs_site-article docs_site-article--markdown flex flex-col flex-auto prose max-w-none bg-white">
             <main className="docs_site-main flex flex-col flex-auto min-h-screen">
-              {page && page.post ? <DocHead page={page} /> : null}
+              {pageData && pageData.post ? <DocHead page={pageData} /> : null}
               <article
                 className="docs_site-article_content flex-auto container py-10 md:py-20"
                 id="docs_jumptocontent_target">
@@ -114,8 +123,8 @@ export default function Structure({ page, children }) {
               </article>
               <footer className="docs_site-footer border-t border-gray-100">
                 <div className="docs_site-footer_inner container py-4 lg:py-8">
-                  {page && page.post && page.post.frontmatter.type !== page.post.frontmatter.title ? (
-                    <DocFoot page={page} />
+                  {pageData && pageData.post && pageData.post.frontmatter.type !== pageData.post.frontmatter.title ? (
+                    <DocFoot page={pageData} />
                   ) : null}
                   <Footer />
                 </div>

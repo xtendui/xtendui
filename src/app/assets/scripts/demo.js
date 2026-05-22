@@ -290,12 +290,11 @@ export const populateDemo = container => {
     }),
   )
   // loop items
-  for (const [k, item] of items.entries()) {
+  for (const [, item] of items.entries()) {
     // populate tabs
-    let name = k
     let id =
       item.getAttribute('data-id') || item.getAttribute('data-iframe') || item.getAttribute('data-iframe-fullscreen')
-    name = id.split('/').pop().split('-').join(' ')
+    const name = id.split('/').pop().split('-').join(' ')
     id = id.split('/').join('-')
     item.setAttribute('id', kebabCase(id))
     container.querySelector('.docs_demo_tabs_left').append(

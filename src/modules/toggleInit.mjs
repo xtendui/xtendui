@@ -170,14 +170,13 @@ export class ToggleInit {
     // currents
     self._setCurrents([])
     // vars
-    let currents = 0
     self.initial = true
     self.index = null
     self._oldIndex = null
     Xt._running[self.ns] = []
     // INSTANT ACTIVATION because we need activation classes right away (e.g.: slider inside demos toggle must be visible to get values)
     // check initial activation
-    currents = self._initActivate({ save })
+    let currents = self._initActivate({ save })
     // if currents < min
     let todo = options.min - currents
     if (todo > 0) {

@@ -1,8 +1,0 @@
-# folders
-.next/
-node_modules/
-out/
-
-# files
-**/*.min.js
-**/*.min.js.map

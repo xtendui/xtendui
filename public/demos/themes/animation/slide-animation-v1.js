@@ -14,7 +14,7 @@ Xt.mount({
 
     // vars
 
-    let content = item.querySelector('.content')
+    let content
     const contentX = 20
 
     let clone = item.querySelector('.clone')
