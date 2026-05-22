@@ -18,15 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         ref: ${{ github.event.workflow_run.head_branch }}
     # setup/action.yml composite
     - name: Node setup
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: "${{ env.NODE }}"
-    - uses: pnpm/action-setup@v4
+    - uses: pnpm/action-setup@v6
     - name: Pnpm
       run: pnpm install --frozen-lockfile --prefer-offline --frozen-lockfile --prefer-offline
     # build/action.yml composite
