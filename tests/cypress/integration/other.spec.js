@@ -465,6 +465,7 @@ describe('xtendui/demos/components/scrollto/overlay', function () {
       .get(this.links[1])
       .click()
       .go(-1)
+      .wait(1000) // after animation
       .then(() => {
         expect(self.targets[0].classList.contains('on')).to.equal(true)
         expect(this.links[0].classList.contains('on')).to.equal(false)
