@@ -377,6 +377,7 @@ describe('xtendui/demos/components/scrollto/usage', function () {
         expect(doc.scrollingElement.scrollTop).to.closeTo(801, 150)
       })
       .go(-1)
+      .wait(1000) // after animation
       .then(() => {
         expect(this.links[0].classList.contains('on')).to.equal(false)
         expect(this.links[1].classList.contains('on')).to.equal(false)
