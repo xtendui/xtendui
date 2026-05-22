@@ -14,9 +14,6 @@ importers:
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
-      css-minimizer-webpack-plugin:
-        specifier: ^8.0.0
-        version: 8.0.0(webpack@5.107.0)
       focus-trap:
         specifier: ^8.2.1
         version: 8.2.1
@@ -78,6 +75,9 @@ importers:
       css-loader:
         specifier: ^7.1.4
         version: 7.1.4(webpack@5.107.0)
+      css-minimizer-webpack-plugin:
+        specifier: ^8.0.0
+        version: 8.0.0(webpack@5.107.0)
       cssnano:
         specifier: ^8.0.1
         version: 8.0.1(postcss@8.5.15)
