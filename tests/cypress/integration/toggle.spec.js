@@ -1163,15 +1163,17 @@ describe('xtendui/demos/components/tooltip/swap-click', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
-      self = selfPromise
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition: wait for init before Xt.get()
+      .then(() => {
+        return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+          self = selfPromise
+        })
+      })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
-    cy.get(container)
-      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
-      .get(self.elements[0])
+    cy.get(self.elements[0])
       .trigger('mouseenter')
       .wait(750) // after animation
       .then(() => {
@@ -1232,15 +1234,17 @@ describe('xtendui/demos/components/tooltip/swap-toggle', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
-      self = selfPromise
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition: wait for init before Xt.get()
+      .then(() => {
+        return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+          self = selfPromise
+        })
+      })
   })
 
   it('TEST no empty frame when switching from off to reset.', function () {
-    cy.get(container)
-      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
-      .get(self.elements[0])
+    cy.get(self.elements[0])
       .trigger('mouseenter')
       .wait(750) // after animation
       .then(() => {
@@ -1301,15 +1305,17 @@ describe('xtendui/demos/components/tooltip/prevent-overflow', function () {
   })
 
   beforeEach(function () {
-    return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
-      self = selfPromise
-    })
+    cy.get(container)
+      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition: wait for init before Xt.get()
+      .then(() => {
+        return Xt.get({ name: 'xt-tooltip', el: container }).then(selfPromise => {
+          self = selfPromise
+        })
+      })
   })
 
   it('TEST position inside boundary on first element for proper merge of popperjs options, arrow position.', function () {
-    cy.get(container)
-      .should('have.attr', 'data-xt-tooltip-init', '') // racecondition
-      .get(self.elements[0])
+    cy.get(self.elements[0])
       .trigger('mouseenter')
       .wait(750) // after animation
       .then(() => {
