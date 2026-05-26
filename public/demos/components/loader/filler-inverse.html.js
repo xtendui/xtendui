@@ -13,7 +13,7 @@ const html = /* HTML */ `
           </p>
         </div>
         <span class="*** ${classes.loader()} ***">
-          <span class="*** ${classes.filler()} text-white text-opacity-50 ***">
+          <span class="*** ${classes.filler()} text-white/50 ***">
             <span class="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
             <span class="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>
           </span>
@@ -25,7 +25,7 @@ const html = /* HTML */ `
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonPrimary()} ${classes.buttonPrimaryAnim()}">
         Lorem ipsum
         <span class="*** ${classes.loader()} ***">
-          <span class="*** ${classes.filler()} text-white text-opacity-50 ***">
+          <span class="*** ${classes.filler()} text-white/50 ***">
             <span class="*** block absolute bg-current opacity-25 w-full h-full ***"></span>
             <span class="*** block absolute bg-current h-full animate-xt-filler-x ***"></span>
           </span>

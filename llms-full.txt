@@ -527,13 +527,9 @@ module.exports = {
 Create your css.
 
 ```css
-@import "tailwindcss/base";
-
-@import "tailwindcss/components";
+@import "tailwindcss";
 
 @import "./_custom.css"; /* custom css here */
-
-@import "tailwindcss/utilities";
 ```
 
 You can [customize components css](https://xtendui.github.io/xtendui/components/global/preset#customization), more info in Tailwind CSS docs [Tailwind CSS theme](https://tailwindcss.com/docs/theme).
@@ -2398,7 +2394,7 @@ These are layout **utilities**.
 
 </div>
 
-To have `.container` fluid so with only one `max-width` in Tailwind CSS preset set `theme.extend.container.fluid: '1536px'` with the desired `max-width` (can also be `'none'` to have container with no `max-width`), see [Tailwind CSS container](https://tailwindcss.com/docs/container).
+To have `.container` fluid so with only one `max-width` in Tailwind CSS preset set `--container-fluid: 1536px;` with the desired `max-width`, see [Tailwind CSS container](https://tailwindcss.com/docs/container).
 
 ## Components Styles
 
@@ -6778,7 +6774,7 @@ The component automatically disable and apply classes to `dragger` when the slid
 
 |                         | Syntax                                    | Default / Arguments                       | Description                   |
 | ----------------------- | ----------------------------------------- | ----------------------------- | ----------------------------- |
-| Option                  | `nooverflow:String\|false`                          | `'!transform-none justify-center'`        | Classes applied to `dragger` when the slides do not overflow the dragger           |
+| Option                  | `nooverflow:String\|false`                          | `'!transform-none !translate-none justify-center'`        | Classes applied to `dragger` when the slides do not overflow the dragger           |
 
 </div>
 

@@ -19,7 +19,6 @@
   "exports": {
     ".": "./src/xt.mjs",
     "./src/xt": "./src/xt.mjs",
-    "./tailwind.preset": "./tailwind.preset.js",
     "./src/drop": "./src/drop.mjs",
     "./src/form": "./src/form.mjs",
     "./src/googlelocator": "./src/googlelocator.mjs",
@@ -72,7 +71,7 @@
     "relaxed-json": "^1.0.3"
   },
   "peerDependencies": {
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
@@ -85,7 +84,7 @@
     "@semantic-release/github": "^12.0.8",
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.1",
-    "autoprefixer": "^10.5.0",
+    "@tailwindcss/postcss": "^4.3.0",
     "babel-loader": "^10.1.1",
     "clipboard": "^2.0.11",
     "core-js": "^3.49.0",
@@ -112,12 +111,12 @@
     "next": "16.2.6",
     "path": "^0.12.7",
     "postcss": "^8.5.15",
-    "postcss-import": "^16.1.1",
     "postcss-loader": "^8.2.1",
     "prettier-eslint": "^16.4.2",
     "prismjs": "^1.30.0",
     "prop-types": "^15.8.1",
     "purgecss": "^8.0.0",
+    "raw-loader": "^4.0.2",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-helmet": "^6.1.0",
@@ -132,7 +131,7 @@
     "semantic-release": "^25.0.3",
     "serve": "^14.2.6",
     "start-server-and-test": "^3.0.5",
-    "tailwindcss": "^3.4.19",
+    "tailwindcss": "^4.1.13",
     "terser-webpack-plugin": "^5.6.0",
     "unified": "^11.0.5",
     "uuid": "^14.0.0",

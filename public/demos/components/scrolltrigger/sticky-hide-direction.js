@@ -38,10 +38,10 @@ Xt.mount({
         updateHide({ self })
       },
       onRefresh: self => {
-        sticky.classList.add('!transform-none')
+        sticky.classList.add('!transform-none', '!translate-none')
         // need to update on refresh done
         requestAnimationFrame(() => {
-          sticky.classList.remove('!transform-none', 'scrolling-down')
+          sticky.classList.remove('!transform-none', '!translate-none', 'scrolling-down')
           updateHide({ self, refresh: true })
         })
       },

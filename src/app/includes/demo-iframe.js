@@ -17,7 +17,7 @@ function DemoIframe(props) {
     // eslint-disable-next-line no-empty
   } catch {}
   try {
-    hasCss = require.resolve(`../../../public/${src}.css`)
+    hasCss = require.resolve(`!!raw-loader!../../../public/${src}.css`)
     // eslint-disable-next-line no-empty
   } catch {}
   try {
@@ -93,13 +93,13 @@ function DemoIframe(props) {
   return (
     <>
       {hasJsx ? (
-        <div id="docs_body-inner" className="docs_demo_source--from relative min-h-screen !min-h-[100svh]">
+        <div id="docs_body-inner" className="docs_demo_source--from relative min-h-screen min-h-[100svh]!">
           <Demo />
         </div>
       ) : (
         <div
           id="docs_body-inner"
-          className="docs_demo_source--from relative min-h-screen !min-h-[100svh]"
+          className="docs_demo_source--from relative min-h-screen min-h-[100svh]!"
           dangerouslySetInnerHTML={{ __html: object.html }}
         />
       )}

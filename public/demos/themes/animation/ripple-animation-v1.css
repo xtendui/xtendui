@@ -4,13 +4,13 @@
   }
   /* color */
   .xt-ripple {
-    background: theme('colors.black');
+    background: var(--color-black);
   }
   [class*="text-white"] {
     > .xt-ripple-inner {
       opacity: .15;
       > .xt-ripple {
-        background: theme('colors.white');
+        background: var(--color-white);
       }
     }
   }

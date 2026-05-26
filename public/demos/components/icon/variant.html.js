@@ -21,11 +21,11 @@ const html = /* HTML */ `
 
     <div class="${classes.hBlock()}">Black opacity</div>
 
-    ${classes.iconSearch({ classes: '*** text-black text-opacity-0 ***' })}
-    ${classes.iconSearch({ classes: '*** text-black text-opacity-25 ***' })}
-    ${classes.iconSearch({ classes: '*** text-black text-opacity-50 ***' })}
-    ${classes.iconSearch({ classes: '*** text-black text-opacity-75 ***' })}
-    ${classes.iconSearch({ classes: '*** text-black text-opacity-100 ***' })}
+    ${classes.iconSearch({ classes: '*** text-black/0 ***' })}
+    ${classes.iconSearch({ classes: '*** text-black/25 ***' })}
+    ${classes.iconSearch({ classes: '*** text-black/50 ***' })}
+    ${classes.iconSearch({ classes: '*** text-black/75 ***' })}
+    ${classes.iconSearch({ classes: '*** text-black/100 ***' })}
   </div>
 `
 

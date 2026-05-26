@@ -5,13 +5,13 @@ export const classes = {
   bgBlur: () => 'backdrop-filter backdrop-blur-sm backdrop-saturate-50',
   docsFloat: () =>
     'rounded-md transition ease-in-out hover:ease-out hover:text-white hover:bg-primary-500 hover:shadow-lg hover:-translate-y-1 active:ease-out active:text-white active:bg-primary-500 active:shadow-md active:translate-y-0 on:ease-out on:text-white on:bg-primary-500 on:shadow-md on:translate-y-0',
-  cardToggle: () => 'bg-white rounded-full text-13 py-2 px-3 font-medium shadow',
+  cardToggle: () => 'bg-white rounded-full text-13 py-2 px-3 font-medium shadow-xs',
   buttonSlider: () =>
     'p-2 min-w-[1.25rem] h-5 rounded-full text-11 text-gray-900 font-medium leading-snug tracking-wider uppercase bg-gray-100 hover:bg-gray-200 on:px-4 active:bg-gray-300 on:bg-gray-200 transition-all',
   buttonCode: () =>
-    'text-opacity-[90%] font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-opacity-100 in:border-white in:bg-white in:text-opacity-100',
+    'text-black/90 font-medium leading-tight tracking-normal capitalize rounded-md border-gray-100 bg-gray-100 transition hover:text-black/100 in:border-white in:bg-white in:text-black/100',
   buttonCodeWhite: () =>
-    'font-medium leading-tight tracking-normal capitalize rounded-md bg-white bg-opacity-0 transition hover:bg-opacity-10 in:bg-opacity-20',
+    'font-medium leading-tight tracking-normal capitalize rounded-md bg-white/0 transition hover:bg-white/10 in:bg-white/20',
   // button
   buttonRadius: () => '-md',
   buttonXs: () => 'py-1.5 px-2 text-12',
@@ -31,7 +31,7 @@ export const classes = {
   buttonBorderGray: () =>
     'text-gray-900 border-2 border-gray-200 hover:border-transparent active:border-transparent on:border-transparent',
   buttonTextAnim: () =>
-    'transition hover:bg-primary-300 hover:bg-opacity-25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
+    'transition hover:bg-primary-300/25 active:text-white active:bg-primary-500 on:text-white on:bg-primary-500',
   buttonRing: () => 'ring-2 ring-primary-200',
   buttonRingAnim: () => 'transition hover:ring-primary-300 active:ring-primary-400 on:ring-primary-300',
   buttonCloseOutsideAnim: () => 'transition md:text-white md:bg-primary-500 md:hover:bg-primary-600',
@@ -90,27 +90,27 @@ export const classes = {
   checkLabel: () => 'cursor-pointer inline-flex items-baseline',
   checkContent: () => 'ml-4',
   checkGray: () => 'bg-gray-200 border border-transparent transition checked:bg-primary-500',
-  checkPrimary: () => 'bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600',
+  checkPrimary: () => 'bg-primary-800/25 border border-transparent transition checked:bg-primary-600',
   checkRadius: () => 'rounded-md',
   radioGray: () => 'bg-gray-200 border border-transparent transition checked:bg-primary-500',
-  radioPrimary: () => 'bg-primary-800 bg-opacity-25 border border-transparent transition checked:bg-primary-600',
+  radioPrimary: () => 'bg-primary-800/25 border border-transparent transition checked:bg-primary-600',
   radioRadius: () => 'rounded-full',
   switchGray: () => 'bg-gray-200 border border-transparent transition-all checked:bg-primary-500',
-  switchPrimary: () => 'bg-primary-800 bg-opacity-25 border border-transparent transition-all checked:bg-primary-600',
+  switchPrimary: () => 'bg-primary-800/25 border border-transparent transition-all checked:bg-primary-600',
   switchRadius: () => 'rounded-full',
   inputGray: () =>
-    'py-2.5 px-3.5 text-gray-900 placeholder-black placeholder-opacity-75 bg-gray-100 transition focus:bg-gray-200 focus:outline-none',
+    'py-2.5 px-3.5 text-gray-900 placeholder-black/75 bg-gray-100 transition focus:bg-gray-200 focus:outline-hidden',
   inputPrimary: () =>
-    'py-2.5 px-3.5 text-white placeholder-white placeholder-opacity-75 bg-primary-800 bg-opacity-25 transition focus:bg-opacity-50 focus:outline-none',
+    'py-2.5 px-3.5 text-white placeholder-white/75 bg-primary-800/25 transition focus:bg-primary-800/50 focus:outline-hidden',
   inputUnderline: () =>
-    'py-2.5 text-gray-900 placeholder-black placeholder-opacity-75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-none',
+    'py-2.5 text-gray-900 placeholder-black/75 border-b-2 border-gray-100 bg-transparent transition focus:border-gray-200 focus:outline-hidden',
   labelGray: () => 'font-medium text-gray-700',
   labelPrimary: () => 'font-medium text-white',
   label: () => 'block', // no flex or tags inside have no space (e.g. links)
   input: () => 'block w-full',
   inputRadius: () => 'rounded-md',
   textarea: () => 'h-20 max-h-48',
-  note: () => 'text-gray-900 text-opacity-[90%] text-13 leading-snug',
+  note: () => 'text-gray-900/90 text-13 leading-snug',
   // headers
   h1Display: () => {
     return `mt-10 mb-4 xt-my-auto font-black leading-tight tracking-tight normal-case text-4xl md:text-5xl md:leading-none lg:text-6xl lg:leading-none`

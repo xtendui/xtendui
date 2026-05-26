@@ -597,7 +597,7 @@ const html = /* HTML */ `
                       </div>
 
                       <div class="mt-auto">
-                        <div class="-mx-3.5 mt-6 pt-6 border-t border-white border-opacity-20">
+                        <div class="-mx-3.5 mt-6 pt-6 border-t border-white/20">
                           <nav aria-label="Navigation" class="xt-list xt-list-1 flex-col">
                             <a
                               href="/"

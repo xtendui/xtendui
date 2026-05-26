@@ -1595,6 +1595,7 @@ describe('xtendui/demos/themes/hero/slider-hero-v2', function () {
 
   it('TEST activation and drag activation.', function () {
     const translateMoving = 635
+    const translateInitial = 0
     const translateStill = 1265
     const delta = 600
     cy.get(container)
@@ -1617,7 +1618,7 @@ describe('xtendui/demos/themes/hero/slider-hero-v2', function () {
           delta,
         )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[1].querySelector('.hero-cover') })[0])).to.closeTo(
-          translateStill,
+          translateInitial,
           0,
         )
       })
@@ -1630,7 +1631,7 @@ describe('xtendui/demos/themes/hero/slider-hero-v2', function () {
           delta,
         )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[2].querySelector('.hero-cover') })[0])).to.closeTo(
-          translateStill,
+          translateInitial,
           0,
         )
       })
@@ -1643,7 +1644,7 @@ describe('xtendui/demos/themes/hero/slider-hero-v2', function () {
           delta,
         )
         expect(parseFloat(Xt.getTranslate({ el: self.targets[3].querySelector('.hero-cover') })[0])).to.closeTo(
-          translateStill,
+          translateInitial,
           0,
         )
       })

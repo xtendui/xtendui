@@ -9,7 +9,7 @@ const html = /* HTML */ `
         data-xt-toggle-element>
         Toggle 0
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-black text-opacity-50">
+          <span class="${classes.filler()} text-black/50">
             <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>
@@ -22,7 +22,7 @@ const html = /* HTML */ `
         data-xt-toggle-element>
         Toggle 1
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-black text-opacity-50">
+          <span class="${classes.filler()} text-black/50">
             <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>
@@ -35,7 +35,7 @@ const html = /* HTML */ `
         data-xt-toggle-element>
         Toggle 2
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-black text-opacity-50">
+          <span class="${classes.filler()} text-black/50">
             <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>
@@ -48,7 +48,7 @@ const html = /* HTML */ `
         data-xt-toggle-element>
         Toggle 3
         <span class="${classes.loader()}">
-          <span class="${classes.filler()} text-black text-opacity-50">
+          <span class="${classes.filler()} text-black/50">
             <span class="block absolute bg-current opacity-0 w-full h-full"></span>
             <span class="block absolute bg-current w-full"></span>
           </span>

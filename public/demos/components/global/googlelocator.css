@@ -75,15 +75,15 @@
     /* arrow */
     .gm-style-iw-t {
       &:after {
-        background: theme('colors.white');
+        background: var(--color-white);
       }
     }
     /* box */
     .gm-style-iw-c {
-      @apply py-0 px-4 !important;
+      @apply !py-0 !px-4;
       border: 0;
       border-radius: 0;
-      background: theme('colors.white');
+      background: var(--color-white);
       /* scroll */
       @apply xt-overflow-sub;
       overflow-x: hidden !important;
@@ -103,10 +103,10 @@
       right: 0 !important;
       width: 2rem !important;
       height: 2rem !important;
-      background: theme('colors.primary.500') !important;
+      background: var(--color-primary-500) !important;
       border-bottom-left-radius: 0.7rem;
       font-size: 25px;
-      color: theme('colors.white') !important;
+      color: var(--color-white) !important;
       line-height: 0;
       text-align: center;
       opacity: 1 !important;

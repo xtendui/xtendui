@@ -14,7 +14,7 @@ const html = /* HTML */ `
                 src="/xtendui/img.jpg"
                 loading="lazy"
                 alt="" />
-              <div class="${classes.loader()} bg-white bg-opacity-75">
+              <div class="${classes.loader()} bg-white/75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
@@ -32,7 +32,7 @@ const html = /* HTML */ `
                 src="/xtendui/img-ratio.jpg"
                 loading="lazy"
                 alt="" />
-              <div class="${classes.loader()} bg-white bg-opacity-75">
+              <div class="${classes.loader()} bg-white/75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
@@ -50,7 +50,7 @@ const html = /* HTML */ `
                 src="/xtendui/stock/ruJm3dBXCqw.jpg"
                 loading="lazy"
                 alt="" />
-              <div class="${classes.loader()} bg-white bg-opacity-75">
+              <div class="${classes.loader()} bg-white/75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
@@ -68,7 +68,7 @@ const html = /* HTML */ `
                 src="/xtendui/stock/wQLAGv4_OYs.jpg"
                 loading="lazy"
                 alt="" />
-              <div class="${classes.loader()} bg-white bg-opacity-75">
+              <div class="${classes.loader()} bg-white/75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
@@ -86,7 +86,7 @@ const html = /* HTML */ `
                 src="/xtendui/stock/OlTjeydUpQw.jpg"
                 loading="lazy"
                 alt="" />
-              <div class="${classes.loader()} bg-white bg-opacity-75">
+              <div class="${classes.loader()} bg-white/75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>
@@ -104,7 +104,7 @@ const html = /* HTML */ `
                 src="/xtendui/stock/Tyg0rVhOTrE.jpg"
                 loading="lazy"
                 alt="" />
-              <div class="${classes.loader()} bg-white bg-opacity-75">
+              <div class="${classes.loader()} bg-white/75">
                 <div class="${classes.spinner()} w-6 h-6 text-primary-500">
                   ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
                 </div>

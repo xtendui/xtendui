@@ -40,7 +40,7 @@ Slider.optionsDefault = {
   wrap: false,
   free: false,
   dragposition: false,
-  nooverflow: '!transform-none justify-center',
+  nooverflow: '!transform-none !translate-none justify-center',
   autoHeight: false,
   keepHeight: false,
   pagination: '[data-xt-slider-pagination]',

@@ -12,7 +12,7 @@ const html = /* HTML */ `
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
-        <div class="${classes.loader()} *** bg-white bg-opacity-75 ***">
+        <div class="${classes.loader()} *** bg-white/75 ***">
           <div class="${classes.spinner()} w-6 h-6 text-primary-500">
             ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
           </div>
@@ -23,7 +23,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
         Lorem ipsum
-        <span class="${classes.loader()} *** bg-white bg-opacity-75 ***">
+        <span class="${classes.loader()} *** bg-white/75 ***">
           <span class="${classes.spinner()} w-6 h-6 text-primary-500">
             ${classes.svgSpinner({ classes: 'animate-xt-spinner' })}
           </span>

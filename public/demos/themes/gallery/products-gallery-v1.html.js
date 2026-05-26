@@ -395,7 +395,7 @@ const html = /* HTML */ `
                 </div>
               </div>
 
-              <div class="leading-loose text-black text-opacity-75">
+              <div class="leading-loose text-black/75">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec mauris est. Etiam egestas efficitur
                   semper. Donec imperdiet eget justo at pellentesque. Proin a ultricies orci. Vivamus ut scelerisque

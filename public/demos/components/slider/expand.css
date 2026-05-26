@@ -1,5 +1,5 @@
 .demo--slider-expand {
-  @media (max-width: calc(theme('screens.md') - 1px)) {
+  @media (max-width: calc(theme(--breakpoint-md) - 1px)) {
     .xt-slides {
       overflow: visible !important;
       height: auto !important;

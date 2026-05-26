@@ -1,9 +1,9 @@
 .demo--form-validation {
   .valid-submit {
-    border-color: theme('colors.green.500') !important;
+    border-color: var(--color-green-500) !important;
   }
   .invalid-submit {
-    border-color: theme('colors.red.500') !important;
+    border-color: var(--color-red-500) !important;
   }
   .label-required {
     &:after {

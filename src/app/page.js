@@ -202,7 +202,7 @@ export default async function Page() {
                 </div>
                 <div className="w-full md:w-7/12 lg:w-8/12">
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo{' '}
                       <a href="themes/overlay#demos-themes-implementation-overlay-implementation-v-1">
                         overlay-implementation-v1
@@ -212,7 +212,7 @@ export default async function Page() {
                   </div>
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo{' '}
                       <a href="themes/drop#demos-themes-implementation-drop-implementation-v-1">
                         drop-implementation-v1
@@ -222,7 +222,7 @@ export default async function Page() {
                   </div>
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo{' '}
                       <a href="themes/tooltip#demos-themes-implementation-tooltip-implementation-v-1">
                         tooltip-implementation-v1
@@ -264,7 +264,7 @@ export default async function Page() {
                 </div>
                 <div className="w-full md:w-7/12 lg:w-8/12">
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo{' '}
                       <a href="themes/animation#demos-themes-animation-polygon-animation-v-1">polygon-animation-v1</a>
                     </div>
@@ -272,7 +272,7 @@ export default async function Page() {
                   </div>
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo{' '}
                       <a href="themes/animation#demos-themes-animation-float-animation-v-1">float-animation-v1</a>
                     </div>
@@ -311,7 +311,7 @@ export default async function Page() {
                 </div>
                 <div className="w-full md:w-7/12 lg:w-8/12">
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo{' '}
                       <a href="themes/toggle#demos-themes-gallery-products-gallery-v-1">products-gallery-v1</a>
                     </div>
@@ -319,14 +319,14 @@ export default async function Page() {
                   </div>
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo <a href="themes/toggle#demos-themes-navigation-multilevel-v-1">multilevel-v1</a>
                     </div>
                     <Video assets={assets} title="multilevel-v1" />
                   </div>
                   <div className="md:-mb-40 lg:-mb-80"></div>
                   <div className="docs_home-feature_video xt-sticky xt-sticky-nozindex">
-                    <div className="mb-3 text-white text-opacity-[90%] text-sm leading-snug">
+                    <div className="mb-3 text-white/90 text-sm leading-snug">
                       View live demo{' '}
                       <a href="themes/scrolltrigger#demos-themes-listing-products-listing-v-2">products-listing-v1</a>
                     </div>

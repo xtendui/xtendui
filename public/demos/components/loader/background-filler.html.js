@@ -12,7 +12,7 @@ const html = /* HTML */ `
             vitae magna eget, vehicula scelerisque elit.
           </p>
         </div>
-        <span class="${classes.loader()} *** bg-white bg-opacity-75 ***">
+        <span class="${classes.loader()} *** bg-white/75 ***">
           <span class="${classes.filler()} text-primary-500 h-1 left-1/4 right-1/4">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
             <span class="block absolute bg-current h-full animate-xt-filler-x"></span>
@@ -24,7 +24,7 @@ const html = /* HTML */ `
         type="button"
         class="xt-button ${classes.buttonMd()} rounded${classes.buttonRadius()} ${classes.buttonUpper()} ${classes.buttonGray()} ${classes.buttonGrayAnim()}">
         Lorem ipsum
-        <span class="${classes.loader()} *** bg-white bg-opacity-75 ***">
+        <span class="${classes.loader()} *** bg-white/75 ***">
           <span class="${classes.filler()} text-primary-500 h-1 left-1/4 right-1/4">
             <span class="block absolute bg-current opacity-25 w-full h-full"></span>
             <span class="block absolute bg-current h-full animate-xt-filler-x"></span>

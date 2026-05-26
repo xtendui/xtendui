@@ -1,0 +1,72 @@
+/*!
+ * Xtend UI (https://xtendui.github.io/xtendui/)
+ * @copyright (c) 2017-2026 Riccardo Caroli
+ * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
+ */
+
+/* content */
+
+@source "../../../../{src,public}/**/*.js";
+
+/* safelist (was conditional on process.env.DIST in v3, now always included) */
+
+@source inline("rounded-sm rounded rounded-md rounded-lg rounded-xl rounded-2xl rounded-t-sm rounded-t rounded-t-md rounded-t-lg rounded-t-xl rounded-t-2xl rounded-b-sm rounded-b rounded-b-md rounded-b-lg rounded-b-xl rounded-b-2xl rounded-l-sm rounded-l rounded-l-md rounded-l-lg rounded-l-xl rounded-l-2xl rounded-r-sm rounded-r rounded-r-md rounded-r-lg rounded-r-xl rounded-r-2xl rounded-tl-sm rounded-tl rounded-tl-md rounded-tl-lg rounded-tl-xl rounded-tl-2xl rounded-tr-sm rounded-tr rounded-tr-md rounded-tr-lg rounded-tr-xl rounded-tr-2xl rounded-bl-sm rounded-bl rounded-bl-md rounded-bl-lg rounded-bl-xl rounded-bl-2xl rounded-br-sm rounded-br rounded-br-md rounded-br-lg rounded-br-xl rounded-br-2xl");
+@source inline("md:rounded-sm md:rounded md:rounded-md md:rounded-lg md:rounded-xl md:rounded-2xl md:rounded-t-sm md:rounded-t md:rounded-t-md md:rounded-t-lg md:rounded-t-xl md:rounded-t-2xl md:rounded-b-sm md:rounded-b md:rounded-b-md md:rounded-b-lg md:rounded-b-xl md:rounded-b-2xl md:rounded-l-sm md:rounded-l md:rounded-l-md md:rounded-l-lg md:rounded-l-xl md:rounded-l-2xl md:rounded-r-sm md:rounded-r md:rounded-r-md md:rounded-r-lg md:rounded-r-xl md:rounded-r-2xl md:rounded-tl-sm md:rounded-tl md:rounded-tl-md md:rounded-tl-lg md:rounded-tl-xl md:rounded-tl-2xl md:rounded-tr-sm md:rounded-tr md:rounded-tr-md md:rounded-tr-lg md:rounded-tr-xl md:rounded-tr-2xl md:rounded-bl-sm md:rounded-bl md:rounded-bl-md md:rounded-bl-lg md:rounded-bl-xl md:rounded-bl-2xl md:rounded-br-sm md:rounded-br md:rounded-br-md md:rounded-br-lg md:rounded-br-xl md:rounded-br-2xl");
+
+/* theme */
+
+@theme {
+  --color-code: #2b2b2b;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --border-width-3: 3px;
+}
+
+/* container */
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  @variant sm {
+    padding-inline: var(--container-padding-sm);
+  }
+  @variant md {
+    padding-inline: var(--container-padding-md);
+  }
+  @variant lg {
+    padding-inline: var(--container-padding-lg);
+  }
+  @variant xl {
+    padding-inline: var(--container-padding-xl);
+  }
+}
+
+/* code */
+
+@layer components {
+  .xt-links-inverse,
+  .xt-links-default .xt-links-inverse {
+    code:not([class]) {
+      color: var(--color-white) !important;
+    }
+  }
+
+  .xt-links-default,
+  .xt-links-inverse .xt-links-default {
+    code:not([class]) {
+      color: var(--color-primary-500) !important;
+    }
+  }
+
+  .xt-body:not(.xt-optout-typography) {
+    code:not([class]) {
+      font-size: 0.9em;
+      font-weight: 600;
+      word-break: break-word;
+      td & {
+        word-break: initial;
+      }
+    }
+  }
+}

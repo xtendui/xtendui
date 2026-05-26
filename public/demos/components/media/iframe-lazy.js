@@ -8,7 +8,7 @@ const posterIframeLazy = ({ container, iframe, poster, src }) => {
       str: `
       <div class="cursor-pointer transition group-in:opacity-0 group-done:hidden">
         <img class="xt-media object-cover" src="${poster}" loading="lazy" alt="" />
-        <div class="absolute inset-0 m-auto w-20 h-12 rounded-xl shadow-xl bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
+        <div class="absolute inset-0 m-auto w-20 h-12 rounded-xl shadow-xl bg-black/60 backdrop-filter backdrop-blur-sm backdrop-saturate-50">
           <div class="absolute inset-0 w-0 h-0 m-auto border-l-[18px] border-b-[10px] border-t-[10px] border-transparent border-l-white"></div>
         </div>
       </div>`,

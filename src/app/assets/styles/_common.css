@@ -20,7 +20,7 @@
     .docs_make-line_line {
       display: inline-block;
       padding-right: 15px;
-      background: theme('colors.white');
+      background: var(--color-white);
     }
     .docs_make-line_line:after {
       content: '';
@@ -30,7 +30,7 @@
       left: 0;
       width: 100%;
       height: 2px;
-      background: theme('colors.primary.200');
+      background: var(--color-primary-200);
     }
   }
   .docs_make-line_container {
@@ -87,9 +87,9 @@
     padding: 7px;
     font-size: 1.25rem;
     border-radius: 50%;
-    border-color: theme('colors.white') !important;
-    background: theme('colors.white') !important;
-    color: theme('colors.primary.500');
+    border-color: var(--color-white) !important;
+    background: var(--color-white) !important;
+    color: var(--color-primary-500);
     line-height: 1;
   }
 }

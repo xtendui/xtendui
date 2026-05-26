@@ -24,11 +24,11 @@ const html = /* HTML */ `
 
         <div class="${classes.hBlock()}">White opacity</div>
 
-        ${classes.iconSearch({ classes: '*** text-white text-opacity-0 ***' })}
-        ${classes.iconSearch({ classes: '*** text-white text-opacity-25 ***' })}
-        ${classes.iconSearch({ classes: '*** text-white text-opacity-50 ***' })}
-        ${classes.iconSearch({ classes: '*** text-white text-opacity-75 ***' })}
-        ${classes.iconSearch({ classes: '*** text-white text-opacity-100 ***' })}
+        ${classes.iconSearch({ classes: '*** text-white/0 ***' })}
+        ${classes.iconSearch({ classes: '*** text-white/25 ***' })}
+        ${classes.iconSearch({ classes: '*** text-white/50 ***' })}
+        ${classes.iconSearch({ classes: '*** text-white/75 ***' })}
+        ${classes.iconSearch({ classes: '*** text-white/100 ***' })}
       </div>
     </div>
   </div>

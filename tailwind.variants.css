@@ -1,0 +1,83 @@
+/*!
+ * Xtend UI (https://xtendui.github.io/xtendui/)
+ * @copyright (c) 2017-2026 Riccardo Caroli
+ * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
+ */
+
+/* xtendui state variants */
+
+@custom-variant off-before (&.dir-before:not(.on):not(.in):not(.out));
+@custom-variant off-after (&.dir-after:not(.on):not(.in):not(.out));
+@custom-variant on-before (&.on.dir-before);
+@custom-variant on-after (&.on.dir-after);
+@custom-variant in-before (&.in.dir-before);
+@custom-variant in-after (&.in.dir-after);
+@custom-variant out-before (&.out.dir-before);
+@custom-variant out-after (&.out.dir-after);
+@custom-variant done-before (&.done.dir-before);
+@custom-variant done-after (&.done.dir-after);
+@custom-variant dir-before (&.dir-before);
+@custom-variant dir-after (&.dir-after);
+@custom-variant off (&:not(.on):not(.in):not(.out));
+@custom-variant on (&.on);
+@custom-variant in (&.in);
+@custom-variant out (&.out);
+@custom-variant done (&.done);
+@custom-variant valid-submit (&.valid-submit);
+@custom-variant invalid-submit (&.invalid-submit);
+
+/* group variants */
+
+@custom-variant group-off-before (:where(.group.dir-before:not(.on):not(.in):not(.out)) &);
+@custom-variant group-off-after (:where(.group.dir-after:not(.on):not(.in):not(.out)) &);
+@custom-variant group-on-before (:where(.group.on.dir-before) &);
+@custom-variant group-on-after (:where(.group.on.dir-after) &);
+@custom-variant group-in-before (:where(.group.in.dir-before) &);
+@custom-variant group-in-after (:where(.group.in.dir-after) &);
+@custom-variant group-out-before (:where(.group.out.dir-before) &);
+@custom-variant group-out-after (:where(.group.out.dir-after) &);
+@custom-variant group-done-before (:where(.group.done.dir-before) &);
+@custom-variant group-done-after (:where(.group.done.dir-after) &);
+@custom-variant group-dir-before (:where(.group.dir-before) &);
+@custom-variant group-dir-after (:where(.group.dir-after) &);
+@custom-variant group-off (:where(.group:not(.on):not(.in):not(.out)) &);
+@custom-variant group-on (:where(.group.on) &);
+@custom-variant group-in (:where(.group.in) &);
+@custom-variant group-out (:where(.group.out) &);
+@custom-variant group-done (:where(.group.done) &);
+@custom-variant group-valid-submit (:where(.group.valid-submit) &);
+@custom-variant group-invalid-submit (:where(.group.invalid-submit) &);
+
+/* peer variants */
+
+@custom-variant peer-off-before (:where(.peer.dir-before:not(.on):not(.in):not(.out)) ~ &);
+@custom-variant peer-off-after (:where(.peer.dir-after:not(.on):not(.in):not(.out)) ~ &);
+@custom-variant peer-on-before (:where(.peer.on.dir-before) ~ &);
+@custom-variant peer-on-after (:where(.peer.on.dir-after) ~ &);
+@custom-variant peer-in-before (:where(.peer.in.dir-before) ~ &);
+@custom-variant peer-in-after (:where(.peer.in.dir-after) ~ &);
+@custom-variant peer-out-before (:where(.peer.out.dir-before) ~ &);
+@custom-variant peer-out-after (:where(.peer.out.dir-after) ~ &);
+@custom-variant peer-done-before (:where(.peer.done.dir-before) ~ &);
+@custom-variant peer-done-after (:where(.peer.done.dir-after) ~ &);
+@custom-variant peer-dir-before (:where(.peer.dir-before) ~ &);
+@custom-variant peer-dir-after (:where(.peer.dir-after) ~ &);
+@custom-variant peer-off (:where(.peer:not(.on):not(.in):not(.out)) ~ &);
+@custom-variant peer-on (:where(.peer.on) ~ &);
+@custom-variant peer-in (:where(.peer.in) ~ &);
+@custom-variant peer-out (:where(.peer.out) ~ &);
+@custom-variant peer-done (:where(.peer.done) ~ &);
+@custom-variant peer-valid-submit (:where(.peer.valid-submit) ~ &);
+@custom-variant peer-invalid-submit (:where(.peer.invalid-submit) ~ &);
+
+@custom-variant hover-none {
+  @media (hover: none), (pointer: coarse) {
+    @slot;
+  }
+}
+
+@custom-variant hover-hover {
+  @media (hover: hover), not (pointer: coarse) {
+    @slot;
+  }
+}

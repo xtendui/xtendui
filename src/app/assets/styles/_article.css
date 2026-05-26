@@ -7,20 +7,20 @@
 /* layout */
 
 .docs_site-article_hero {
-  background: theme('colors.gray.100');
-  background: linear-gradient(225deg, theme('colors.gray.50') 33%, theme('colors.gray.100') 100%);
+  background: var(--color-gray-100);
+  background: linear-gradient(225deg, var(--color-gray-50) 33%, var(--color-gray-100) 100%);
 }
 
 .docs_site-footer {
-  background: theme('colors.gray.100');
-  background: linear-gradient(225deg, theme('colors.gray.50') 33%, theme('colors.gray.100') 100%);
+  background: var(--color-gray-100);
+  background: linear-gradient(225deg, var(--color-gray-50) 33%, var(--color-gray-100) 100%);
 }
 
 .docs_site-article--markdown {
-  @screen lg {
+  @media (width >= theme(--breakpoint-lg)) {
     margin-left: 20rem;
   }
-  @screen xl {
+  @media (width >= theme(--breakpoint-xl)) {
     margin-left: 20rem;
   }
   .docs_site-article_hero-inner, .docs_site-article_content, .docs_site-footer_inner {
@@ -62,9 +62,9 @@
     /* row same as card */
     @apply -m-3.5 md:-m-5 lg:-m-6;
     .docs_site-article_foot & {
-      @apply my-0 !important;
+      @apply my-0!;
       .docs_listing-column {
-        @apply mb-4 !important;
+        @apply mb-4!;
       }
     }
   }

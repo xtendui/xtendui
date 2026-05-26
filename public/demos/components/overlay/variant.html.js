@@ -58,7 +58,7 @@ const html = /* HTML */ `
         </button>
 
         <div class="xt-overlay" data-xt-overlay-target>
-          <div class="*** xt-backdrop z-below bg-primary-700 bg-opacity-25 ***"></div>
+          <div class="*** xt-backdrop z-below bg-primary-700/25 ***"></div>
           <div class="xt-overlay-container max-w-3xl">
             <div class="xt-overlay-inner">
               <div

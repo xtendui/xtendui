@@ -9,7 +9,7 @@ const html = /* HTML */ `
     <div class="max-w-xl mx-auto">
       <div class="*** xt-sticky ***" data-node-sticky>
         <div
-          class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-opacity-80 ${classes.bgBlur()}">
+          class="xt-card p-1.5 rounded${tabsRadius()} ${classes.textDefault()} ${classes.cardWhite()} bg-white/80 ${classes.bgBlur()}">
           <nav aria-label="Navigation" class="*** xt-list xt-list-1 flex-col md:flex-row md:flex-nowrap ***">
             <a
               href="#description"

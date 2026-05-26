@@ -58,13 +58,9 @@ module.exports = {
 Create your css.
 
 ```css
-@import "tailwindcss/base";
-
-@import "tailwindcss/components";
+@import "tailwindcss";
 
 @import "./_custom.css"; /* custom css here */
-
-@import "tailwindcss/utilities";
 ```
 
 You can [customize components css](https://xtendui.github.io/xtendui/components/global/preset#customization), more info in Tailwind CSS docs [Tailwind CSS theme](https://tailwindcss.com/docs/theme).

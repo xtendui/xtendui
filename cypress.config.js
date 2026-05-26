@@ -4,6 +4,7 @@ module.exports = defineConfig({
   projectId: 'd4b2fy',
   viewportWidth: 1280,
   viewportHeight: 800,
+  defaultCommandTimeout: 10000,
   retries: 2,
   scrollBehavior: 'center',
   screenshotOnRunFailure: false,

@@ -16,7 +16,7 @@ const html = /* HTML */ `
                   <div class="*** xt-media-container *** bg-gray-900 pb-[125%] overflow-hidden">
                     <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                     <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
+                    <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white/90">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
                         <div class="font-medium text-sm">-35%</div>
                       </div>
@@ -36,7 +36,7 @@ const html = /* HTML */ `
                   <div class="*** xt-media-container *** bg-gray-900 pb-[125%] overflow-hidden">
                     <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                     <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                    <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
+                    <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white/90">
                       <div class="xt-list xt-list-3 items-center flex-nowrap">
                         <div class="font-medium text-sm">-40%</div>
                       </div>
@@ -179,7 +179,7 @@ const html = /* HTML */ `
                 <div class="*** xt-media-container *** bg-gray-900 pb-[125%] overflow-hidden">
                   <img class="*** xt-media *** object-cover" src="/xtendui/img.jpg" loading="lazy" alt="" />
                   <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                  <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
+                  <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white/90">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
                       <div class="font-medium text-sm">-35%</div>
                     </div>
@@ -197,7 +197,7 @@ const html = /* HTML */ `
                 <div class="*** xt-media-container *** bg-gray-900 pb-[125%] overflow-hidden">
                   <img class="*** xt-media *** object-cover" src="/xtendui/img-alt.jpg" loading="lazy" alt="" />
                   <div class="*** xt-media-mask *** absolute top-0 lelft-0 w-full h-0 bg-white"></div>
-                  <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white bg-opacity-90">
+                  <div class="absolute top-0 left-0 m-4 py-2 px-3 bg-white/90">
                     <div class="xt-list xt-list-3 items-center flex-nowrap">
                       <div class="font-medium text-sm">-40%</div>
                     </div>

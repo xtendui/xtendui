@@ -77,7 +77,7 @@ const html = /* HTML */ `
             <div
               class="absolute left-0 top-0 h-0 border-t border-b border-black bg-black transition-all ease-in-out"
               data-xt-slider-status-current></div>
-            <div class="h-0 w-full border-t border-b border-black border-opacity-5" data-xt-slider-status-total></div>
+            <div class="h-0 w-full border-t border-b border-black/5" data-xt-slider-status-total></div>
           </div>
         </div>
 

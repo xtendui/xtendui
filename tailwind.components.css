@@ -1,0 +1,517 @@
+/*!
+ * Xtend UI (https://xtendui.github.io/xtendui/)
+ * @copyright (c) 2017-2026 Riccardo Caroli
+ * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
+ */
+
+/* animation */
+
+.xt-body:not(.xt-optout-initial) {
+  .initial {
+    &, * {
+      transition-duration: initial !important;
+      transition-delay: initial !important;
+      animation-duration: initial !important;
+      animation-delay: initial !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+.xt-body:not(.xt-optout-prm) {
+  @media (prefers-reduced-motion: reduce), (update: slow) {
+    * {
+      transition-duration: initial !important;
+      transition-delay: initial !important;
+      animation-duration: initial !important;
+      animation-delay: initial !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+/* button */
+
+.xt-button {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  vertical-align: middle;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  touch-action: manipulation;
+  div& {
+    cursor: inherit;
+  }
+}
+
+/* card */
+
+.xt-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+/* drop */
+
+.xt-drop {
+  position: absolute;
+  z-index: var(--z-drop);
+  &:not(.on):not(.in):not(.out) {
+    display: none;
+  }
+  &.out {
+    pointer-events: none;
+  }
+  > .xt-arrow {
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+/* form */
+
+.xt-select {
+  appearance: none;
+  background-repeat: no-repeat;
+  padding-right: 3em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-size: 1em;
+  background-position: right 1rem center;
+  &[multiple] {
+    background-image: none;
+  }
+}
+
+.xt-check {
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+}
+
+.xt-checkbox {
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  top: .25em;
+  width: 1.2375em;
+  height: 1.2375em;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z"/></svg>');
+  background-size: 0;
+  background-position: center center;
+  &:checked {
+    background-size: 100%;
+  }
+}
+
+.xt-radio {
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  top: .25em;
+  width: 1.2375em;
+  height: 1.2375em;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="-6 -6 12 12" fill="white" xmlns="http://www.w3.org/2000/svg"><circle r="3"/></svg>');
+  background-size: 0;
+  background-position: center center;
+  &:checked {
+    background-size: 100%;
+  }
+}
+
+.xt-switch {
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  top: .25em;
+  width: 2.25em;
+  height: 1.2375em;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 36.3 36.3" fill="white" stroke="%23D1D5DB" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><circle cx="18" cy="18" r="17"/></svg>');
+  background-size: contain;
+  background-position: left center;
+  &:checked {
+    background-position: right center;
+  }
+}
+
+/* global */
+
+.xt-html:not(.xt-optout-scroll) {
+  @apply xt-overflow-main;
+}
+
+.xt-body:not(.xt-optout-scroll) {
+  @apply xt-overflow-main overflow-y-scroll overflow-x-hidden;
+}
+
+.xt-html:not(.xt-optout-touch) {
+  touch-action: manipulation; /* disable double-tap */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* disable tap highlight */
+}
+
+.container {
+  max-width: var(--container-fluid);
+}
+
+.xt-html:not(.xt-optout-selection) {
+  ::selection {
+    background-color: #00FFDD;
+    color: var(--color-black);
+  }
+}
+.xt-html:not(.xt-optout-disabled) {
+  [readonly], [disabled], .xt-disabled {
+    pointer-events: none;
+    &:not(.on) {
+      opacity: .5;
+    }
+  }
+}
+
+.xt-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.xt-design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: inherit;
+}
+
+.xt-jump {
+  &:not(.on) {
+    cursor: pointer;
+  }
+}
+
+.xt-grab {
+  cursor: grab;
+  a, img {
+    /* prevent browser drag */
+    -webkit-user-drag: none;
+    user-drag: none;
+    /* prevent browser selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+.xt-collapse-reset {
+  overflow: visible !important;
+}
+
+.xt-html {
+  [data-popper-inset] {
+    padding: 0 !important;
+    > .xt-arrow {
+      display: none !important;
+    }
+  }
+  [data-popper-placement^="top"] {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    > .xt-arrow {
+      top: auto !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+  [data-popper-placement^="bottom"] {
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    > .xt-arrow {
+      bottom: auto !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+  [data-popper-placement^="left"] {
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    > .xt-arrow {
+      left: auto !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+  [data-popper-placement^="right"] {
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    > .xt-arrow {
+      right: auto !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+/* groupnumber */
+
+.xt-html {
+  [data-xt-groupnumber],
+  [data-xt-groupnumber-init] {
+    input[type="number"] {
+      -moz-appearance: textfield;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+      }
+    }
+  }
+}
+
+/* media */
+
+.xt-media-container {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.xt-media {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+/* mousefollow */
+
+.xt-mousefollow {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  overflow: visible;
+}
+
+/* overlay */
+
+.xt-overlay {
+  @apply xt-overflow-main;
+  position: fixed;
+  z-index: var(--z-overlay);
+  top: 0;
+  left: 0;
+  bottom: 0; /* fix no width and height or it bugs */
+  right: 0; /* fix no width and height or it bugs */
+  overflow: hidden;
+  &:not(.on):not(.in):not(.out) {
+    display: none;
+  }
+  &.out {
+    pointer-events: none;
+  }
+}
+
+.xt-overlay-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto; /* fix http://stackoverflow.com/questions/33454533/cant-scroll-to-top-of-flex-item-that-is-overflowing-container */
+  width: 100%;
+  min-height: 100vh;
+}
+
+.xt-overlay-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.xt-scrollbar-overlay {
+  padding-right: var(--scrollbar-width) !important;
+  overflow: hidden !important;
+  .xt-overlay {
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+  }
+  .xt-backdrop {
+    right: var(--scrollbar-width);
+  }
+  .fixed {
+    margin-right: var(--scrollbar-width);
+  }
+}
+
+/* ripple */
+
+.xt-ripple-inner {
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; /* fix no width and height or it bugs */
+  right: 0; /* fix no width and height or it bugs */
+}
+
+.xt-ripple {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* scrolltrigger */
+
+.xt-sticky:not(.xt-sticky-nozindex) {
+  /* needs z-index because after ScrollTrigger end animations */
+  position: relative;
+  z-index: calc(var(--z-sticky) - 1);
+  &[style*="position: fixed"] {
+    z-index: var(--z-sticky);
+  }
+}
+
+.xt-sticky:not(.xt-sticky-noheight) {
+  height: auto !important;
+  max-height: none !important;
+}
+
+.pin-spacer:has(.xt-sticky) {
+  z-index: auto !important;
+}
+
+/* slider */
+
+.xt-slider {
+  position: relative;
+  overflow: hidden;
+  /* fix page load height without .on slides */
+  &:not([data-xt-slider-init]):not([data-xt-slider-exclude]) {
+    .xt-slide:not([data-xt-slide-not-show-before-init]):first-child,
+    .xt-slide[data-xt-slide-show-before-init] {
+      display: block !important;
+      position: relative !important;
+    }
+  }
+}
+
+.xt-slides {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap !important;
+  &.xt-grab {
+    /* prevent browser selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+.xt-slide {
+  position: relative;
+  z-index: var(--z-slide);
+}
+
+.xt-slide-absolute {
+  position: relative;
+  &:not(.on) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+/* tooltip */
+
+.xt-tooltip {
+  position: absolute;
+  z-index: var(--z-tooltip);
+  margin: 0 !important;
+  &:not(.on):not(.in):not(.out) {
+    display: none;
+  }
+  &.out {
+    pointer-events: none;
+  }
+  > .xt-arrow {
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+/* typography */
+
+.xt-body:not(.xt-optout-typography) {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  h1:not([class]) {
+    @apply xt-h1;
+  }
+  h2:not([class]) {
+    @apply xt-h2;
+  }
+  h3:not([class]) {
+    @apply xt-h3;
+  }
+  h4:not([class]) {
+    @apply xt-h4;
+  }
+  h5:not([class]) {
+    @apply xt-h5;
+  }
+  h6:not([class]) {
+    @apply xt-h6;
+  }
+  p:not([class]) {
+    @apply xt-p;
+  }
+  ul:not([class]) {
+    @apply xt-ul;
+  }
+  ol:not([class]) {
+    @apply xt-ol;
+  }
+  dl:not([class]) {
+    @apply xt-dl;
+  }
+  blockquote:not([class]) {
+    @apply xt-blockquote;
+  }
+  hr:not([class]) {
+    @apply xt-hr;
+  }
+  figure:not([class]) {
+    @apply xt-figure;
+  }
+  figcaption:not([class]) {
+    @apply xt-figcaption;
+  }
+}

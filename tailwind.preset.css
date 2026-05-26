@@ -1,0 +1,211 @@
+/*!
+ * Xtend UI (https://xtendui.github.io/xtendui/)
+ * @copyright (c) 2017-2026 Riccardo Caroli
+ * @license MIT (https://github.com/xtendui/xtendui/blob/master/LICENSE.txt)
+ */
+
+@layer theme, base, components, utilities;
+
+@import "./tailwind.components.css" layer(utilities);
+@import "./tailwind.utilities.css";
+@import "./tailwind.variants.css";
+
+@theme {
+  /* font size */
+  --text-10: 0.625rem;
+  --text-10--line-height: 1rem;
+  --text-11: 0.6875rem;
+  --text-11--line-height: 1rem;
+  --text-12: 0.75rem;
+  --text-12--line-height: 1rem;
+  --text-13: 0.8125rem;
+  --text-13--line-height: 1rem;
+  --text-14: 0.875rem;
+  --text-14--line-height: 1.25rem;
+  --text-15: 0.9375rem;
+  --text-15--line-height: 1.25rem;
+
+  /* colors */
+  --color-primary-50: #E0EFFF;
+  --color-primary-100: #C7E1FF;
+  --color-primary-200: #8AC0FF;
+  --color-primary-300: #52A3FF;
+  --color-primary-400: #1A85FF;
+  --color-primary-500: #0067DD;
+  --color-primary-600: #0053B3;
+  --color-primary-700: #003E85;
+  --color-primary-800: #002857;
+  --color-primary-900: #00152E;
+
+  /* z-index */
+  --z-below: -1;
+  --z-slide: 200;
+  --z-content: 300;
+  --z-sticky: 500;
+  --z-tooltip: 700;
+  --z-drop: 700;
+  --z-above: 1000;
+  --z-overlay: 5000;
+  --z-last: 10000;
+
+  /* inset */
+  --inset-100: 100%;
+
+  /* border radius */
+  --radius-inherit: inherit;
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.1875rem;
+
+  /* cursor */
+  --cursor-none: none;
+
+  /* container padding */
+  --container-padding: 1.25rem;
+  --container-padding-sm: 1.5rem;
+  --container-padding-md: 2rem;
+  --container-padding-lg: 3rem;
+  --container-padding-xl: 4rem;
+
+  /* transition delay */
+  --transition-delay-0: 0ms;
+
+  /* transition duration */
+  --default-transition-duration: 500ms;
+  --transition-duration-0: 0ms;
+
+  /* transition timing function */
+  --default-transition-timing-function: cubic-bezier(.23, 1, .32, 1); /* out-quint */
+  --ease-in: cubic-bezier(.755, .05, .855, .06); /* in-quint */
+  --ease-out: cubic-bezier(.23, 1, .32, 1); /* out-quint */
+  --ease-in-out: cubic-bezier(.86, 0, .07, 1); /* in-out-quint */
+  --ease-in-sine: cubic-bezier(.47, 0, .745, .715);
+  --ease-out-sine: cubic-bezier(.39, .575, .565, 1);
+  --ease-in-out-sine: cubic-bezier(.445, .05, .55, .95);
+  --ease-in-quad: cubic-bezier(.55, .085, .68, .53);
+  --ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+  --ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);
+  --ease-in-cubic: cubic-bezier(.55, .055, .675, .19);
+  --ease-out-cubic: cubic-bezier(.215, .61, .355, 1);
+  --ease-in-out-cubic: cubic-bezier(.645, .045, .355, 1);
+  --ease-in-quart: cubic-bezier(.895, .03, .685, .22);
+  --ease-out-quart: cubic-bezier(.165, .84, .44, 1);
+  --ease-in-out-quart: cubic-bezier(.77, 0, .175, 1);
+  --ease-in-quint: cubic-bezier(.755, .05, .855, .06);
+  --ease-out-quint: cubic-bezier(.23, 1, .32, 1);
+  --ease-in-out-quint: cubic-bezier(.86, 0, .07, 1);
+  --ease-in-expo: cubic-bezier(.95, .05, .795, .035);
+  --ease-out-expo: cubic-bezier(.19, 1, .22, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-circ: cubic-bezier(.6, .04, .98, .335);
+  --ease-out-circ: cubic-bezier(.075, .82, .165, 1);
+  --ease-in-out-circ: cubic-bezier(.785, .135, .15, .86);
+  --ease-in-back: cubic-bezier(.6, -.28, .735, .045);
+  --ease-out-back: cubic-bezier(.175, .885, .32, 1.275);
+  --ease-in-out-back: cubic-bezier(.68, -.55, .265, 1.55);
+
+  /* animations */
+  --animate-xt-spinner: xt-spinner 1500ms infinite;
+  --animate-xt-filler-x: xt-filler-x 1500ms infinite;
+  --animate-xt-filler-y: xt-filler-y 1500ms infinite;
+
+  @keyframes xt-spinner {
+    0% {
+      stroke-dashoffset: 628;
+      transform: rotateY(0deg) rotateZ(-90deg);
+      animation-timing-function: var(--ease-in);
+    }
+    50% {
+      stroke-dashoffset: 0;
+      transform: rotateY(0deg) rotateZ(90deg);
+    }
+    50.0001% {
+      stroke-dashoffset: 0;
+      transform: rotateY(180deg) rotateZ(90deg);
+      animation-timing-function: var(--ease-out);
+    }
+    100% {
+      stroke-dashoffset: 628;
+      transform: rotateY(180deg) rotateZ(-90deg);
+    }
+  }
+
+  @keyframes xt-filler-x {
+    0% {
+      left: 0;
+      width: 0;
+      animation-timing-function: var(--ease-in);
+    }
+    50% {
+      left: 0;
+      width: 100%;
+      animation-timing-function: var(--ease-out);
+    }
+    100% {
+      left: 100%;
+      width: 0;
+    }
+  }
+
+  @keyframes xt-filler-y {
+    0% {
+      top: 0;
+      height: 0;
+      animation-timing-function: var(--ease-in);
+    }
+    50% {
+      top: 0;
+      height: 100%;
+      animation-timing-function: var(--ease-out);
+    }
+    100% {
+      top: 100%;
+      height: 0;
+    }
+  }
+}
+
+/* explicit utilities for @apply compatibility */
+
+@utility z-below {
+  z-index: var(--z-below);
+}
+
+@utility z-slide {
+  z-index: var(--z-slide);
+}
+
+@utility z-content {
+  z-index: var(--z-content);
+}
+
+@utility z-sticky {
+  z-index: var(--z-sticky);
+}
+
+@utility z-tooltip {
+  z-index: var(--z-tooltip);
+}
+
+@utility z-drop {
+  z-index: var(--z-drop);
+}
+
+@utility z-above {
+  z-index: var(--z-above);
+}
+
+@utility z-overlay {
+  z-index: var(--z-overlay);
+}
+
+@utility z-last {
+  z-index: var(--z-last);
+}
+
+@utility rounded-inherit {
+  border-radius: var(--radius-inherit);
+}
+
+@utility rounded-xs {
+  border-radius: var(--radius-xs);
+}

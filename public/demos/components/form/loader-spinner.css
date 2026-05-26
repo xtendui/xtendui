@@ -10,7 +10,7 @@
     /* variant */
     &[class*="bg-primary-"] {
       > .xt-loader {
-        @apply bg-black bg-opacity-30;
+        @apply bg-black/30;
       }
     }
   }

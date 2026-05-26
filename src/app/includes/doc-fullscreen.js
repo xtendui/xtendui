@@ -11,7 +11,7 @@ function DocFullscreen() {
           <button
             type="button"
             id="docs_open-full_close"
-            className={`xt-button xt-dismiss absolute z-above top-0 right-0 ${classes.textInverse()} rounded-md border-primary-500 bg-primary-500 hover:text-opacity-75 hover:border-primary-600 hover:bg-primary-600`}
+            className={`xt-button xt-dismiss absolute z-above top-0 right-0 ${classes.textInverse()} rounded-md border-primary-500 bg-primary-500 hover:text-white/75 hover:border-primary-600 hover:bg-primary-600`}
             aria-label="Close"
             data-xt-tooltip-element
             dangerouslySetInnerHTML={{ __html: classes.iconX() }}></button>
