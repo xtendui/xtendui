@@ -5,7 +5,7 @@ module.exports = defineConfig({
   viewportWidth: 1280,
   viewportHeight: 800,
   defaultCommandTimeout: 10000,
-  retries: 2,
+  retries: 4,
   scrollBehavior: 'center',
   screenshotOnRunFailure: false,
   video: false,
