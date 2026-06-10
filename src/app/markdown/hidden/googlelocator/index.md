@@ -72,6 +72,7 @@ events: {
 },
 // autocomplete
 autocompleteOptions: false,
+//autocompleteOptions: { includedPrimaryTypes: ['locality', 'postal_code', 'street_address', 'route'] }, // example search autocomplete options
 // map
 map: {
   mapId: null,

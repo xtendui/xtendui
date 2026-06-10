@@ -19,7 +19,7 @@ const initGooglelocator = ({ ref }) => {
       infoWindowMarkerResultClick: true,
       infoWindowMarkerClick: true,
     },
-    //autocompleteOptions: { includedPrimaryTypes: ['premise', 'subpremise', 'street_address', 'route'] }, // search autocomplete options
+    //autocompleteOptions: { includedPrimaryTypes: ['locality', 'postal_code', 'street_address', 'route'] }, // example search autocomplete options
     map: {
       mapId: 'customMapId',
       center: { lat: 40, lng: -74 },
