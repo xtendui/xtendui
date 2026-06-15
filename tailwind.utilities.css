@@ -6,39 +6,39 @@
 
 /* card */
 
- @utility xt-card-group {
+@utility xt-card-group {
   display: flex;
   align-items: inherit;
 }
 
 /* drop */
 
- @utility xt-drop-static {
+@utility xt-drop-static {
   left: 0 !important;
   right: 0 !important;
 }
 
 /* global */
 
- @utility xt-overflow-main {
+@utility xt-overflow-main {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: auto;
   scrollbar-color: var(--color-gray-300) transparent;
 }
 
- @utility xt-overflow-sub {
+@utility xt-overflow-sub {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--color-gray-300) transparent;
 }
 
- @utility xt-container-reset {
+@utility xt-container-reset {
   padding: 0 !important;
   width: auto !important;
   max-width: none !important;
 }
 
- @utility xt-container-y {
+@utility xt-container-y {
   padding-top: var(--container-padding);
   padding-bottom: var(--container-padding);
   @variant sm {
@@ -59,7 +59,7 @@
   }
 }
 
- @utility xt-container-remove {
+@utility xt-container-remove {
   margin-left: calc(-1 * var(--container-padding));
   margin-right: calc(-1 * var(--container-padding));
   @variant sm {
@@ -80,7 +80,7 @@
   }
 }
 
- @utility xt-container-y-remove {
+@utility xt-container-y-remove {
   margin-top: calc(-1 * var(--container-padding));
   margin-bottom: calc(-1 * var(--container-padding));
   @variant sm {

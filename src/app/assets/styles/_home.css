@@ -52,7 +52,9 @@
 /* main */
 
 .docs_home-header_inner, .docs_home-main, .docs_home-footer {
-  --container-fluid: var(--breakpoint-lg);
+  .container {
+    --container-fluid: var(--breakpoint-lg);
+  }
 }
 
 /* social */

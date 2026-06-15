@@ -164,7 +164,7 @@
 }
 
 .container {
-  max-width: var(--container-fluid);
+  max-width: var(--container-fluid) !important;
 }
 
 .xt-html:not(.xt-optout-selection) {
